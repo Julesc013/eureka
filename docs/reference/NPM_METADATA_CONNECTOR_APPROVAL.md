@@ -33,3 +33,9 @@
         ## Future Path
 
         Future implementation requires explicit approval, official source-policy review, package and scoped package identity review, lifecycle script risk review, token policy review, User-Agent/contact decision, rate limit, timeout, retry/backoff, circuit breaker, cache policy, evidence attribution, and operator approval.
+
+<!-- P76-SOFTWARE-HERITAGE-SUMMARY-START -->
+## P76 Software Heritage Connector Approval Pack v0
+
+Completed as an approval-only software identity/archive metadata connector pack. It adds no live Software Heritage connector runtime, no external calls, no Software Heritage API calls, no SWHID resolution, no origin/visit/snapshot/release/revision/directory/content lookup, no source code download, no repository clone, no source archive download, no source file retrieval, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. It requires SWHID/origin/repository identity review, source-code-content risk policy, source policy review, User-Agent/contact decisions, and cache-first evidence outputs. Next recommended branch: P77 Public Hosted Deployment Evidence v0.
+<!-- P76-SOFTWARE-HERITAGE-SUMMARY-END -->

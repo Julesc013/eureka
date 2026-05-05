@@ -1,0 +1,1087 @@
+{
+  "schema_version": "0.1.0",
+  "approval_record_id": "example.connector.software_heritage.approval.v0",
+  "approval_record_kind": "software_heritage_connector_approval",
+  "status": "draft_example",
+  "created_by_tool": "p76_software_heritage_connector_approval_builder_v0",
+  "connector_ref": {
+    "connector_id": "software_heritage_connector",
+    "connector_label": "Software Heritage connector",
+    "source_family": "software_heritage",
+    "connector_version": "v0-approval-pack",
+    "source_inventory_ref": "control/inventory/sources/software-heritage-placeholder.source.json",
+    "source_status": "approval_required",
+    "limitations": [
+      "Approval reference only; Software Heritage placeholder and recorded fixtures exist, but live Software Heritage acquisition is not approved or implemented by P76."
+    ]
+  },
+  "connector_scope": {
+    "scope_kind": "software_identity_and_archive_metadata_only",
+    "allowed_target_types": [
+      "swhid_from_reviewed_source_record",
+      "origin_url_from_reviewed_source_record",
+      "repository_identity_from_source_pack_future",
+      "reviewed_search_need_future",
+      "bounded_swhid_metadata_query_future",
+      "bounded_origin_metadata_query_future",
+      "snapshot_metadata_summary_future",
+      "release_metadata_summary_future",
+      "revision_metadata_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_origin_url",
+      "private_repository",
+      "credentialed_repository",
+      "local_repository_path",
+      "repository_clone",
+      "source_code_content_fetch",
+      "content_blob_fetch",
+      "directory_content_fetch",
+      "raw_file_fetch",
+      "source_archive_download",
+      "origin_crawl",
+      "bulk_graph_traversal",
+      "account_private_data",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P76 permits only future SWHID, origin, visit, snapshot, release, revision, directory, content identifier, and archival presence metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_capabilities": [
+    {
+      "capability": "swhid_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "origin_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "visit_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "snapshot_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "release_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "revision_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "directory_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "content_identifier_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "archival_presence_observation_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "historical_source_identity_observation_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_origin_fetch",
+      "reason": "arbitrary_origin_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "private_repository_access",
+      "reason": "private_repository_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "credentialed_repository_access",
+      "reason": "credentialed_repository_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "token_required_access",
+      "reason": "token_required_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "repository_clone",
+      "reason": "repository_clone is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "source_code_content_fetch",
+      "reason": "source_code_content_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "content_blob_fetch",
+      "reason": "content_blob_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "raw_file_fetch",
+      "reason": "raw_file_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "directory_content_fetch",
+      "reason": "directory_content_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "source_archive_download",
+      "reason": "source_archive_download is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "graph_crawl",
+      "reason": "graph_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "origin_bulk_crawl",
+      "reason": "origin_bulk_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "source_code_safety_decision",
+      "reason": "source_code_safety_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "source_completeness_decision",
+      "reason": "source_completeness_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "swhid_origin_repository_policy": {
+    "swhid_review_required": true,
+    "origin_url_review_required": true,
+    "repository_identity_review_required": true,
+    "arbitrary_public_query_origin_allowed": false,
+    "private_repository_allowed": false,
+    "credentialed_repository_allowed": false,
+    "token_required_repository_allowed": false,
+    "local_repository_path_allowed": false,
+    "raw_origin_url_publication_allowed": false,
+    "normalized_origin_publication_allowed_after_review": true,
+    "swhid_publication_allowed_after_review": true,
+    "origin_hashing_allowed_future": true,
+    "origin_redaction_required_for_sensitive_inputs": true,
+    "allowed_identity_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_identity_sources": [
+      "raw_public_query_parameter",
+      "user_private_repository",
+      "credentialed_repository",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_swhid": "synthetic-swhid-placeholder-not-resolved",
+    "example_origin_url": "https://example.invalid/software-heritage/example-project",
+    "notes": [
+      "SWHID and origin examples are synthetic placeholders and are never resolved or fetched."
+    ]
+  },
+  "source_code_content_risk_policy": {
+    "metadata_only_scope": true,
+    "source_code_content_fetch_allowed": false,
+    "content_blob_fetch_allowed": false,
+    "raw_file_fetch_allowed": false,
+    "directory_content_fetch_allowed": false,
+    "repository_clone_allowed": false,
+    "source_archive_download_allowed": false,
+    "source_code_execution_allowed": false,
+    "source_code_safety_claim_allowed": false,
+    "source_completeness_claim_allowed": false,
+    "source_license_or_rights_clearance_claim_allowed": false,
+    "code_snippet_publication_requires_review": true,
+    "limitations": [
+      "Source identity metadata may be observed later; source content must not be fetched, published, executed, or treated as safety/completeness/license proof."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "API_terms_review_required": true,
+    "automated_access_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_or_abuse_limit_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/SOFTWARE_HERITAGE_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official Software Heritage API/source policy review is pending; P76 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_and_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P76; operator decision is required before any future live connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_or_abuse_limit_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P76."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_source_code_payload_cache": true,
+    "no_content_blob_cache": true,
+    "no_repository_clone_cache": true,
+    "no_source_archive_cache": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call Software Heritage live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "software_heritage_swhid_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_origin_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_visit_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_snapshot_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_release_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_revision_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_directory_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_archival_presence_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "software_identity_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "archival_presence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "origin_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "release_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "revision_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "snapshot_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "SWHID_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P76 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_origin_url_param": false,
+    "public_search_may_accept_arbitrary_swhid_param": false,
+    "public_search_may_fetch_source_content": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no Software Heritage live search is enabled."
+    ]
+  },
+  "rights_access_and_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_source_code_download",
+      "no_content_blob_fetch",
+      "no_repository_clone",
+      "no_source_archive_download",
+      "no_private_repositories"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "source_code_safety_claimed": false,
+    "source_completeness_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "source_code_download_enabled": false,
+    "content_blob_fetch_enabled": false,
+    "repository_clone_enabled": false,
+    "source_archive_download_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "Software Heritage metadata observations are not rights clearance, malware safety, source-code safety, or source completeness claims."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "repository_identity_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_repository": false,
+    "contains_private_origin_url": false,
+    "contains_private_url": false,
+    "publishable": true,
+    "limitations": [
+      "P76 examples contain no private paths, credentials, accounts, private repositories, private origin URLs, private URLs, or tokens."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.swhid_policy_review",
+      "item": "swhid_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.origin_url_policy_review",
+      "item": "origin_url_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.repository_identity_policy_review",
+      "item": "repository_identity_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.source_code_content_risk_policy_review",
+      "item": "source_code_content_risk_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.token_policy_review",
+      "item": "token_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_swhid_filter",
+      "item": "configure_swhid_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_origin_url_filter",
+      "item": "configure_origin_url_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_repository_identity_filter",
+      "item": "configure_repository_identity_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_token_required_for_v0",
+      "item": "confirm_no_token_required_for_v0",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_source_code_download_clone_or_content_fetch",
+      "item": "confirm_no_source_code_download_clone_or_content_fetch",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    }
+  ],
+  "implementation_prerequisites": [
+    "Official Software Heritage source policy review",
+    "SWHID, origin URL, and repository identity policy review",
+    "Source-code-content risk policy review",
+    "Token policy review confirming no token required for v0",
+    "User-Agent and contact decision",
+    "Bounded rate-limit, timeout, retry, and circuit-breaker values",
+    "Source sync worker runtime approval",
+    "Source cache and evidence ledger runtime approval",
+    "Live connector implementation review"
+  ],
+  "limitations": [
+    "Approval pack only; no live connector runtime, Software Heritage API call, SWHID resolution, origin lookup, visit lookup, snapshot lookup, release lookup, revision lookup, directory lookup, content blob lookup, repository clone, source code download, source archive download, source file retrieval, cache write, evidence write, or index mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "connector_runtime_implemented": false,
+    "connector_approved_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "software_heritage_api_called": false,
+    "swhid_resolved_live": false,
+    "origin_lookup_performed": false,
+    "visit_lookup_performed": false,
+    "snapshot_lookup_performed": false,
+    "release_lookup_performed": false,
+    "revision_lookup_performed": false,
+    "directory_lookup_performed": false,
+    "content_blob_lookup_performed": false,
+    "repository_cloned": false,
+    "source_code_downloaded": false,
+    "source_archive_downloaded": false,
+    "source_file_retrieved": false,
+    "public_search_live_fanout_enabled": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "credentials_used": false,
+    "software_heritage_token_used": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth: Software Heritage metadata may become evidence only after approval, identity review, source-content risk review, cache, review, and promotion gates."
+  ]
+}

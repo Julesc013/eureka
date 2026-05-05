@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/software_heritage_connector_approval.v0.json",
+  "title": "Eureka Software Heritage Connector Approval v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-connector_runtime_implemented": false,
+  "x-connector_approved_now": false,
+  "x-live_source_calls_allowed_now": false,
+  "x-external_calls_allowed_now": false,
+  "x-software_heritage_api_calls_allowed_now": false,
+  "x-swhid_resolution_allowed_now": false,
+  "x-origin_lookup_allowed_now": false,
+  "x-visit_lookup_allowed_now": false,
+  "x-snapshot_lookup_allowed_now": false,
+  "x-release_lookup_allowed_now": false,
+  "x-revision_lookup_allowed_now": false,
+  "x-directory_lookup_allowed_now": false,
+  "x-content_blob_lookup_allowed_now": false,
+  "x-repository_clone_allowed": false,
+  "x-source_code_download_allowed": false,
+  "x-source_archive_download_allowed": false,
+  "x-source_file_retrieval_allowed": false,
+  "x-public_search_live_fanout_allowed": false,
+  "x-arbitrary_origin_fetch_allowed": false,
+  "x-arbitrary_swhid_fetch_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-public_index_mutation_allowed_now": false,
+  "x-local_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed": false,
+  "x-downloads_allowed": false,
+  "x-file_retrieval_allowed": false,
+  "x-mirroring_allowed": false,
+  "x-token_required_now": false,
+  "x-software_heritage_token_used": false,
+  "x-rights_clearance_claimed": false,
+  "x-malware_safety_claimed": false,
+  "x-source_code_safety_claimed": false,
+  "x-source_completeness_claimed": false,
+  "x-telemetry_implemented": false,
+  "x-credentials_configured": false,
+  "required": [
+    "schema_version",
+    "approval_record_id",
+    "approval_record_kind",
+    "status",
+    "created_by_tool",
+    "connector_ref",
+    "connector_scope",
+    "allowed_capabilities",
+    "forbidden_capabilities",
+    "swhid_origin_repository_policy",
+    "source_code_content_risk_policy",
+    "source_policy_review",
+    "user_agent_and_contact_policy",
+    "rate_limit_timeout_retry_circuit_breaker_policy",
+    "cache_first_policy",
+    "expected_source_cache_outputs",
+    "expected_evidence_ledger_outputs",
+    "query_intelligence_relationship",
+    "public_search_boundary",
+    "rights_access_and_risk_policy",
+    "privacy_policy",
+    "approval_checklist",
+    "operator_checklist",
+    "implementation_prerequisites",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: schema_version."
+    },
+    "approval_record_id": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: approval_record_id."
+    },
+    "approval_record_kind": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: approval_record_kind."
+    },
+    "status": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: created_by_tool."
+    },
+    "connector_ref": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: connector_ref."
+    },
+    "connector_scope": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: connector_scope."
+    },
+    "allowed_capabilities": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: allowed_capabilities."
+    },
+    "forbidden_capabilities": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: forbidden_capabilities."
+    },
+    "swhid_origin_repository_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: swhid_origin_repository_policy."
+    },
+    "source_code_content_risk_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: source_code_content_risk_policy."
+    },
+    "source_policy_review": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: source_policy_review."
+    },
+    "user_agent_and_contact_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: user_agent_and_contact_policy."
+    },
+    "rate_limit_timeout_retry_circuit_breaker_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: rate_limit_timeout_retry_circuit_breaker_policy."
+    },
+    "cache_first_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: cache_first_policy."
+    },
+    "expected_source_cache_outputs": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: expected_source_cache_outputs."
+    },
+    "expected_evidence_ledger_outputs": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: expected_evidence_ledger_outputs."
+    },
+    "query_intelligence_relationship": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: query_intelligence_relationship."
+    },
+    "public_search_boundary": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: public_search_boundary."
+    },
+    "rights_access_and_risk_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: rights_access_and_risk_policy."
+    },
+    "privacy_policy": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: privacy_policy."
+    },
+    "approval_checklist": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: approval_checklist."
+    },
+    "operator_checklist": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: operator_checklist."
+    },
+    "implementation_prerequisites": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: implementation_prerequisites."
+    },
+    "limitations": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: limitations."
+    },
+    "no_runtime_guarantees": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Eureka Software Heritage Connector Approval v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "operator_required",
+      "blocked_by_policy",
+      "approved_future",
+      "rejected_future",
+      "superseded_future"
+    ],
+    "source_family": [
+      "software_heritage"
+    ],
+    "allowed_capabilities": [
+      "swhid_metadata_summary_future",
+      "origin_metadata_summary_future",
+      "visit_metadata_summary_future",
+      "snapshot_metadata_summary_future",
+      "release_metadata_summary_future",
+      "revision_metadata_summary_future",
+      "directory_metadata_summary_future",
+      "content_identifier_metadata_summary_future",
+      "archival_presence_observation_future",
+      "historical_source_identity_observation_future"
+    ],
+    "forbidden_capabilities": [
+      "arbitrary_origin_fetch",
+      "direct_public_query_fanout",
+      "private_repository_access",
+      "credentialed_repository_access",
+      "token_required_access",
+      "repository_clone",
+      "source_code_content_fetch",
+      "content_blob_fetch",
+      "raw_file_fetch",
+      "directory_content_fetch",
+      "source_archive_download",
+      "graph_crawl",
+      "origin_bulk_crawl",
+      "account_access",
+      "upload",
+      "install",
+      "execute",
+      "unbounded_crawl",
+      "scraping",
+      "bypass_access_restrictions",
+      "raw_payload_dump",
+      "malware_safety_decision",
+      "rights_clearance_decision",
+      "source_code_safety_decision",
+      "source_completeness_decision"
+    ]
+  }
+}

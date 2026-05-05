@@ -85,5 +85,24 @@
     ],
     "next_coverage_step": "Add recorded source snapshot fixtures and provenance examples before any connector behavior."
   },
-  "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation."
+  "notes": "Planning placeholder only. This record identifies a likely future source family without claiming implementation.",
+  "connector_approval": {
+    "status": "approval_required",
+    "connector_inventory_ref": "control/inventory/connectors/software_heritage_connector.json",
+    "approval_audit_ref": "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json",
+    "connector_runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "software_heritage_api_calls_enabled": false,
+    "swhid_resolution_enabled": false,
+    "origin_lookup_enabled": false,
+    "content_blob_lookup_enabled": false,
+    "repository_clone_enabled": false,
+    "source_code_download_enabled": false,
+    "source_archive_download_enabled": false,
+    "source_cache_populated_from_live_calls": false,
+    "evidence_ledger_populated_from_live_calls": false,
+    "limitations": [
+      "P76 references this placeholder source only; it does not enable live Software Heritage API access, token use, SWHID resolution, origin lookup, visit/snapshot/release/revision/directory/content lookup, repository clone, source code download, source archive download, source file retrieval, source cache writes, evidence ledger writes, or public-query fanout."
+    ]
+  }
 }

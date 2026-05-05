@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1.0",
+  "connector_id": "software_heritage_connector",
+  "connector_kind": "software_heritage_connector",
+  "status": "draft_example",
+  "source_family": "software_heritage",
+  "supported_capabilities": [
+    "swhid_metadata_summary_future",
+    "origin_metadata_summary_future",
+    "visit_metadata_summary_future",
+    "snapshot_metadata_summary_future",
+    "release_metadata_summary_future",
+    "revision_metadata_summary_future",
+    "directory_metadata_summary_future",
+    "content_identifier_metadata_summary_future",
+    "archival_presence_observation_future",
+    "historical_source_identity_observation_future"
+  ],
+  "disabled_capabilities": [
+    "arbitrary_origin_fetch",
+    "direct_public_query_fanout",
+    "private_repository_access",
+    "credentialed_repository_access",
+    "token_required_access",
+    "repository_clone",
+    "source_code_content_fetch",
+    "content_blob_fetch",
+    "raw_file_fetch",
+    "directory_content_fetch",
+    "source_archive_download",
+    "graph_crawl",
+    "origin_bulk_crawl",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision",
+    "source_code_safety_decision",
+    "source_completeness_decision"
+  ],
+  "default_policy": {
+    "software_identity_metadata_only_scope": true,
+    "swhid_review_required": true,
+    "origin_url_review_required": true,
+    "repository_identity_review_required": true,
+    "source_code_content_risk_policy_required": true,
+    "token_policy_review_required": true,
+    "no_token_required_now": true,
+    "no_source_code_download_clone_or_content_fetch": true,
+    "approval_required_for_live_network_access": true,
+    "source_policy_review_required": true,
+    "cache_first_required": true,
+    "evidence_attribution_required": true
+  },
+  "source_sync_worker_relationship": {
+    "source_sync_worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "source_sync_worker_runtime_implemented_now": false,
+    "future_jobs_must_be_approval_gated": true,
+    "notes": [
+      "Future source sync worker jobs may reference this connector only after approval."
+    ]
+  },
+  "source_cache_relationship": {
+    "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_mutation_allowed_now": false,
+    "future_outputs": [
+      "software_heritage_swhid_metadata_summary",
+      "software_heritage_origin_metadata_summary",
+      "software_heritage_visit_metadata_summary",
+      "software_heritage_snapshot_metadata_summary",
+      "software_heritage_release_metadata_summary",
+      "software_heritage_revision_metadata_summary",
+      "software_heritage_directory_metadata_summary",
+      "software_heritage_archival_presence_summary"
+    ]
+  },
+  "evidence_ledger_relationship": {
+    "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_mutation_allowed_now": false,
+    "future_outputs": [
+      "software_identity_observation",
+      "archival_presence_observation",
+      "origin_metadata_observation",
+      "release_metadata_observation",
+      "revision_metadata_observation",
+      "snapshot_metadata_observation",
+      "SWHID_observation",
+      "scoped_absence_observation"
+    ]
+  },
+  "safety_defaults": {
+    "no_downloads": true,
+    "no_file_retrieval": true,
+    "no_mirroring": true,
+    "no_arbitrary_origin_fetch": true,
+    "no_arbitrary_swhid_fetch": true,
+    "no_repository_clone": true,
+    "no_source_code_download": true,
+    "no_source_archive_download": true,
+    "no_content_blob_fetch": true,
+    "no_directory_content_fetch": true,
+    "no_origin_crawl": true,
+    "no_public_query_fanout": true,
+    "no_credentials": true,
+    "no_software_heritage_token": true,
+    "no_telemetry": true
+  },
+  "no_runtime_guarantees": {
+    "runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "public_query_fanout_allowed": false,
+    "downloads_allowed": false,
+    "arbitrary_url_fetch_allowed": false,
+    "repository_clone_allowed": false,
+    "source_code_download_allowed": false,
+    "source_archive_download_allowed": false,
+    "content_blob_fetch_allowed": false,
+    "origin_crawl_allowed": false,
+    "token_required_now": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false
+  },
+  "notes": [
+    "Manifest is an approval-pack fixture only; it is not a runtime connector manifest."
+  ]
+}
