@@ -1,0 +1,49 @@
+{
+  "schema_version": "pack_import_dry_run_input.v0",
+  "pack_schema_version": "index_pack.v0",
+  "pack_id": "example.pack_import_dry_run.index_pack.v0",
+  "pack_version": "0.1.0",
+  "pack_kind": "index_pack",
+  "title": "Minimal Index Pack Compare Dry-Run",
+  "description": "Synthetic index-pack candidate summary for compare-only dry-run planning. It never replaces or rebuilds an index.",
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "risk_status": "metadata_only",
+  "mutation_impact": "public_index_candidate_effect",
+  "promotion_readiness": "not_ready",
+  "candidate_effects": [
+    "index comparison candidate effect only",
+    "public index mutation disabled",
+    "master index mutation disabled"
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "authoritative_pack_import_runtime_implemented": false,
+    "real_pack_staging_performed": false,
+    "quarantine_store_written": false,
+    "promotion_decision_created": false,
+    "accepted_record_created": false,
+    "pack_content_executed": false,
+    "pack_urls_followed": false,
+    "external_calls_performed": false,
+    "live_source_called": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_contribution_intake_enabled": false,
+    "upload_endpoint_enabled": false,
+    "admin_endpoint_enabled": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "This is a synthetic dry-run input, not an imported index pack.",
+    "No index replacement, rebuild, or mutation is performed."
+  ]
+}

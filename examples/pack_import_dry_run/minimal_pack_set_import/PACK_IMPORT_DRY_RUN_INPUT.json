@@ -1,0 +1,61 @@
+{
+  "schema_version": "pack_import_dry_run_input.v0",
+  "pack_schema_version": "pack_set.v0",
+  "pack_id": "example.pack_import_dry_run.pack_set.v0",
+  "pack_version": "0.1.0",
+  "pack_kind": "pack_set",
+  "title": "Minimal Pack Set Import Dry-Run",
+  "description": "Synthetic pack-set candidate summary with cross-pack references for local dry-run planning only.",
+  "privacy_status": "public_safe",
+  "public_safety_status": "review_required",
+  "risk_status": "metadata_only",
+  "mutation_impact": "candidate_index_candidate_effect",
+  "promotion_readiness": "review_required",
+  "dependencies": [
+    "example.pack_import_dry_run.source_pack.v0",
+    "example.pack_import_dry_run.evidence_pack.v0",
+    "example.pack_import_dry_run.index_pack.v0"
+  ],
+  "cross_pack_refs": [
+    {
+      "from_pack": "example.pack_import_dry_run.evidence_pack.v0",
+      "to_pack": "example.pack_import_dry_run.source_pack.v0",
+      "relationship": "synthetic provenance reference"
+    }
+  ],
+  "candidate_effects": [
+    "dependency classification only",
+    "no staging store write",
+    "no mutation"
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "authoritative_pack_import_runtime_implemented": false,
+    "real_pack_staging_performed": false,
+    "quarantine_store_written": false,
+    "promotion_decision_created": false,
+    "accepted_record_created": false,
+    "pack_content_executed": false,
+    "pack_urls_followed": false,
+    "external_calls_performed": false,
+    "live_source_called": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_contribution_intake_enabled": false,
+    "upload_endpoint_enabled": false,
+    "admin_endpoint_enabled": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "limitations": [
+    "This is a synthetic dry-run input, not an imported pack set.",
+    "Dependency references are synthetic labels and are not resolved by live fetch."
+  ]
+}
