@@ -1,0 +1,246 @@
+{
+  "AI_generated_answer": false,
+  "acceptance_criteria": [
+    "search result explanation contract valid",
+    "explanation examples valid",
+    "public search contract valid",
+    "public result-card contract valid",
+    "public index/result envelope valid",
+    "public search safety valid",
+    "public search runtime integration audit valid",
+    "privacy/redaction policy accepted",
+    "user-facing copy policy accepted",
+    "no-model/no-AI boundary accepted",
+    "no-hidden-score/no-suppression policy accepted",
+    "source/evidence/candidate boundary accepted",
+    "ranking/merge/identity dependency handling accepted",
+    "fallback/rollback model accepted",
+    "hosted deployment evidence required for hosted mode",
+    "operator approval"
+  ],
+  "accounts_enabled": false,
+  "ai_answer_generation_enabled": false,
+  "api_static_lite_text_output_plan": {
+    "api": "future structured component list with warnings and limitations only after runtime gate",
+    "html": "future escaped output with no external fetch or risky controls",
+    "static_lite_text": "future old-client-safe bounded explanation summaries"
+  },
+  "approved_input_model": {
+    "allowed_future": [
+      "public search result envelope",
+      "public index document",
+      "public-safe result card fields",
+      "reviewed object/source/comparison page refs",
+      "reviewed source/evidence refs",
+      "ranking dry-run output future",
+      "result merge dry-run output future",
+      "synthetic examples"
+    ],
+    "forbidden": [
+      "raw private query",
+      "IP/account/session data",
+      "user profile",
+      "telemetry",
+      "private source cache records",
+      "private evidence ledger records",
+      "arbitrary local paths",
+      "arbitrary URLs",
+      "live connector responses",
+      "model responses",
+      "private uploaded files",
+      "unreviewed private cache entries"
+    ]
+  },
+  "branch": "main",
+  "candidate_index_mutated": false,
+  "candidate_promotion_performed": false,
+  "command_results": {
+    "adjacent_planning_and_contract_validators": "passed; deep extraction plan, pack import dry-run, page dry-run, manual observation follow-up, connector audit, public search integration audit, evidence ledger dry-run, source cache dry-run, ranking plan, explanation contract, deep extraction contract, pack import runtime plan, page runtime plan, compatibility-aware ranking, evidence-weighted ranking, merge/deduplication, and identity resolution validators passed",
+    "architecture_boundaries": "passed; checked 472 Python files",
+    "archive_eval_status": "passed",
+    "final_git_status_before_commit": "dirty with P106 planned artifacts only",
+    "git_diff_check": "passed; Git emitted CRLF normalization warnings for existing site/dist files",
+    "initial_git_status": "clean on main...origin/main",
+    "initial_head": "f279e097476cd8df31e31dea6504a481a9650c44",
+    "optional_cargo": "not available in PATH; cargo check/test not run",
+    "optional_gh": "not available in PATH; GitHub Actions status not checked",
+    "public_search_and_eval_checks": "passed; external baseline comparison report, public search contract/card/safety/local runtime, public_search_smoke, archive resolution evals, and search usefulness audit passed",
+    "search_usefulness_status": "passed; local audit only, no external observations performed by P106",
+    "tests": "passed; tests/runtime 27, tests/scripts 712, tests/operations 643, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, tests all 1551",
+    "validate_search_result_explanation_runtime_plan": "passed",
+    "validate_search_result_explanation_runtime_plan_json": "passed"
+  },
+  "component_assembly_plan": [
+    "query_interpretation",
+    "match_and_recall",
+    "source_coverage",
+    "evidence_and_provenance",
+    "identity_grouping_deduplication",
+    "ranking_relationship",
+    "compatibility",
+    "absence_near_miss_gaps",
+    "action_safety",
+    "rights_risk",
+    "limitations"
+  ],
+  "created_by_slice": "P106_search_result_explanation_runtime_planning_v0",
+  "dependency_gate_review": {
+    "compatibility_aware_ranking_contract": "present_contract_only",
+    "deep_extraction": "planning_blocked_resource_limit_policy_missing",
+    "evidence_ledger": "local_dry_run_only_not_authoritative",
+    "evidence_weighted_ranking_contract": "present_contract_only",
+    "identity_resolution_contract": "present_contract_only",
+    "object_source_comparison_pages": "local_dry_run_only_no_routes",
+    "result_merge_contract": "present_contract_only",
+    "source_cache": "local_dry_run_only_not_authoritative"
+  },
+  "downloads_enabled": false,
+  "evidence_ledger_mutated": false,
+  "evidence_ledger_read": false,
+  "execution_enabled": false,
+  "explanation_api_routes_enabled": false,
+  "explanation_applied_to_live_search": false,
+  "explanation_contract_gate_review": {
+    "contract_files_present": true,
+    "examples_present": true,
+    "status": "contract_only",
+    "validators_present": true
+  },
+  "explanation_generated_by_runtime": false,
+  "explanation_pipeline_plan": [
+    "validate public search request",
+    "receive public-safe result envelope",
+    "check privacy/no-model/no-hidden-score policy",
+    "assemble components",
+    "render user-facing and audit-readable copy",
+    "include explanation only after runtime gate approval",
+    "stop before mutation"
+  ],
+  "external_calls_performed": false,
+  "failure_fallback_rollback_model": {
+    "kill_switch_required": true,
+    "no_mutation_rollback_required": true,
+    "privacy_failure": "omit_or_redact",
+    "runtime_failure": "return_search_result_without_explanation"
+  },
+  "hidden_score_used": false,
+  "hidden_scores_enabled": false,
+  "hidden_suppression_performed": false,
+  "hosted_deployment_gate_review": {
+    "backend_url": null,
+    "deployment_verified": false,
+    "hosted_backend_status": "not_configured",
+    "hosted_explanation_staging_ready": false,
+    "status": "blocked_hosted_deployment_unverified"
+  },
+  "implementation_phases": [
+    "Phase 0 planning and validation only",
+    "Phase 1 local dry-run assembler over synthetic examples only after approval",
+    "Phase 2 local shadow explanations from public search smoke result envelopes only after approval",
+    "Phase 3 local visible development explanations only after approval",
+    "Phase 4 hosted staging behind disabled-by-default flag only after hosted evidence and approval",
+    "Phase 5 public alpha explanations with fallback and kill switch only after approval"
+  ],
+  "installs_enabled": false,
+  "live_source_called": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "model_ai_hidden_score_boundary_review": {
+    "AI_answers": false,
+    "hidden_scores": false,
+    "model_calls": false,
+    "result_suppression": false
+  },
+  "model_call_performed": false,
+  "model_calls_enabled": false,
+  "next_recommended_branch": "P107 Public Search Ranking Local Dry-Run Runtime v0 only after eval gate approval",
+  "notes": [
+    "P106 is planning-only and creates no runtime modules.",
+    "Local dry-run explanation runtime remains future and operator-approved.",
+    "Hosted explanation staging remains blocked by unverified hosted deployment evidence."
+  ],
+  "persistent_explanation_store_implemented": false,
+  "planning_only": true,
+  "privacy_redaction_copy_policy_review": {
+    "copy_policy": "plain, cautious, conflict/gap visible, no superiority overclaim",
+    "privacy_policy": "no raw private query, private path, private URL, secret, IP, account, session, telemetry, or local fingerprint"
+  },
+  "public_index_mutated": false,
+  "public_index_result_envelope_gate_review": {
+    "document_count": 584,
+    "external_calls_performed": false,
+    "live_sources_used": false,
+    "private_paths_detected": false,
+    "result_envelope_status": "present_local_public_search",
+    "status": "present_static_artifact"
+  },
+  "public_search_order_changed": false,
+  "public_search_response_changed": false,
+  "public_search_result_card_gate_review": {
+    "public_search_contract": "present",
+    "result_card_contract": "present",
+    "routes_changed_by_P106": false,
+    "runtime_status": "implemented_local_index_only"
+  },
+  "public_search_routes_changed": false,
+  "readiness_decision": "ready_for_local_dry_run_runtime_after_operator_approval",
+  "remaining_blockers": [
+    "operator approval required before local dry-run explanation runtime",
+    "hosted deployment unverified",
+    "no explanation runtime implemented",
+    "source-cache/evidence-ledger authoritative reads not approved",
+    "ranking runtime planning-only",
+    "manual external baseline observations pending"
+  ],
+  "repo_head": "f279e097476cd8df31e31dea6504a481a9650c44",
+  "report_id": "search_result_explanation_runtime_planning_v0",
+  "result_suppressed": false,
+  "result_suppression_enabled": false,
+  "runtime_architecture_plan": {
+    "future_modules_only": [
+      "runtime/engine/explanations/input.py",
+      "runtime/engine/explanations/components.py",
+      "runtime/engine/explanations/match.py",
+      "runtime/engine/explanations/sources.py",
+      "runtime/engine/explanations/evidence.py",
+      "runtime/engine/explanations/identity.py",
+      "runtime/engine/explanations/ranking.py",
+      "runtime/engine/explanations/compatibility.py",
+      "runtime/engine/explanations/gaps.py",
+      "runtime/engine/explanations/actions.py",
+      "runtime/engine/explanations/copy.py",
+      "runtime/engine/explanations/policy.py",
+      "runtime/engine/explanations/report.py",
+      "runtime/engine/explanations/errors.py",
+      "runtime/gateway/public_api/explanations.py"
+    ],
+    "runtime_files_created_by_P106": false
+  },
+  "runtime_boundary": "P106 does not implement explanation runtime, public-search response changes, public/API routes, stores, model calls, hidden scores, suppression, source/evidence reads, live calls, telemetry, accounts, downloads, installs, execution, or mutation.",
+  "runtime_explanation_implemented": false,
+  "security_abuse_review": {
+    "controls_required": [
+      "length cap",
+      "component count cap",
+      "no raw private query",
+      "no selector params",
+      "no local file access",
+      "no live source calls",
+      "no model calls",
+      "no hidden scores",
+      "HTML escaping",
+      "operator kill switch"
+    ]
+  },
+  "source_cache_evidence_candidate_boundary_review": {
+    "accepted_truth": false,
+    "candidate_promotion": false,
+    "evidence_ledger_read": false,
+    "source_cache_read": false,
+    "writes": false
+  },
+  "source_cache_mutated": false,
+  "source_cache_read": false,
+  "telemetry_enabled": false,
+  "worktree_status": "## main...origin/main (dirty while P106 artifacts are created)"
+}
