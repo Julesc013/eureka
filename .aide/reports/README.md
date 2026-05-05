@@ -416,3 +416,9 @@ Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
 
 Audit report: `control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json`.
 <!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->
+
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P87 Internet Archive Metadata Connector Runtime Planning v0
+
+Audit report: `control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json`.
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

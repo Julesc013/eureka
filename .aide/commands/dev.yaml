@@ -1300,3 +1300,12 @@ notes:
   - id: public_query_observation_runtime_plan_tests
     run: python -m unittest tests.operations.test_public_query_observation_runtime_plan tests.scripts.test_validate_public_query_observation_runtime_plan
 <!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->
+
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+  - id: ia_metadata_connector_runtime_plan_validator
+    run: python scripts/validate_internet_archive_metadata_connector_runtime_plan.py
+  - id: ia_metadata_connector_runtime_plan_validator_json
+    run: python scripts/validate_internet_archive_metadata_connector_runtime_plan.py --json
+  - id: ia_metadata_connector_runtime_plan_tests
+    run: python -m unittest tests.operations.test_internet_archive_metadata_connector_runtime_plan tests.scripts.test_validate_internet_archive_metadata_connector_runtime_plan
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

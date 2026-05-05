@@ -865,6 +865,13 @@
       "priority": 0,
       "notes": "Addressed by control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json. Planning-only; no runtime observation writes, storage, telemetry, raw query retention, public aggregates, public search mutation, or index/cache/ledger/candidate/master mutation.",
       "addressed_by": "control/audits/public-query-observation-runtime-planning-v0/public_query_observation_runtime_planning_report.json"
+    },
+    {
+      "id": "p87_internet_archive_metadata_connector_runtime_planning_v0",
+      "title": "P87 Internet Archive Metadata Connector Runtime Planning v0 audit pack",
+      "status": "addressed_planning_blocked_connector_approval_pending",
+      "notes": "Addressed by control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json. Planning-only; no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.",
+      "addressed_by": "control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json"
     }
   ]
 }

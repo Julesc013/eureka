@@ -853,3 +853,12 @@ These are contract-only checks. They perform no network calls, implement no runt
 
 Planning-only validation; no runtime observation writes, telemetry, raw query retention, public aggregates, or index/cache/ledger/candidate/master mutations are added.
 <!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->
+
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P87 Internet Archive Metadata Connector Runtime Planning
+
+- `python scripts/validate_internet_archive_metadata_connector_runtime_plan.py`
+- `python scripts/validate_internet_archive_metadata_connector_runtime_plan.py --json`
+
+These commands are stdlib-only and validate planning artifacts only; they perform no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

@@ -504,3 +504,11 @@ Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
 
 See `control/audits/public-query-observation-runtime-planning-v0/`. Readiness is blocked by unverified hosted deployment; this is planning-only and adds no runtime observation capture.
 <!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->
+
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P87 Internet Archive Metadata Connector Runtime Planning v0
+
+Audit pack: `control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json`.
+
+Readiness: `blocked_connector_approval_pending`. Planning-only; no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.
+<!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

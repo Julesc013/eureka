@@ -915,9 +915,9 @@
     },
     {
       "id": "pypi_metadata_connector_runtime_planning_v0",
-      "title": "P84 PyPI Metadata Connector Runtime Planning v0 only after approval",
+      "title": "P90 PyPI Metadata Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 125,
+      "priority": 131,
       "notes": "Future runtime planning only after PyPI metadata approval, package identity review, dependency metadata caution, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
@@ -929,9 +929,9 @@
     },
     {
       "id": "npm_metadata_connector_runtime_planning_v0",
-      "title": "P85 npm Metadata Connector Runtime Planning v0 only after approval",
+      "title": "P91 npm Metadata Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 126,
+      "priority": 132,
       "notes": "Future runtime planning only after npm metadata approval, package/scoped package identity review, dependency metadata caution, lifecycle script risk review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
@@ -943,17 +943,17 @@
     },
     {
       "id": "software_heritage_connector_runtime_planning_v0",
-      "title": "P86 Software Heritage Connector Runtime Planning v0 only after approval",
+      "title": "P92 Software Heritage Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 127,
+      "priority": 133,
       "notes": "Future runtime planning only after Software Heritage approval, SWHID/origin/repository identity review, source-code-content risk review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
       "id": "ia_metadata_connector_runtime_planning_v0",
       "title": "P87 IA Metadata Connector Runtime Planning v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 128,
-      "notes": "Future runtime planning only after IA metadata connector approval, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+      "notes": "P87 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P71 keeps connector_approved_now false; no IA calls, connector runtime, source sync execution, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "wayback_cdx_memento_connector_runtime_planning_v0",
@@ -971,44 +971,44 @@
     },
     {
       "id": "object_and_source_page_runtime_planning_v0",
-      "title": "P90 Object/Source/Comparison Page Runtime Planning v0",
+      "title": "P93 Object/Source/Comparison Page Runtime Planning v0",
       "status": "queued_codex_safe_future",
-      "priority": 131,
+      "priority": 134,
       "notes": "Future planning only; no runtime page implementation until hosted/runtime gates and page contracts are governed."
     },
     {
       "id": "pack_import_runtime_planning_v0",
-      "title": "P91 Pack Import Runtime Planning v0",
+      "title": "P94 Pack Import Runtime Planning v0",
       "status": "queued_codex_safe_future",
-      "priority": 132,
+      "priority": 135,
       "notes": "Future planning only after pack import policy and mutation boundaries are governed."
     },
     {
       "id": "deep_extraction_contract_v0",
-      "title": "P92 Deep Extraction Contract v0",
+      "title": "P95 Deep Extraction Contract v0",
       "status": "queued_codex_safe_future",
-      "priority": 133,
+      "priority": 136,
       "notes": "Future contract only; no extraction runtime or payload retrieval without governed policy."
     },
     {
       "id": "search_result_explanation_contract_v0",
-      "title": "P93 Search Result Explanation Contract v0",
+      "title": "P96 Search Result Explanation Contract v0",
       "status": "queued_codex_safe_future",
-      "priority": 134,
-      "notes": "Future contract for explaining search result ordering, grouping, evidence, gaps, and safe action posture."
+      "priority": 137,
+      "notes": "Future contract for explaining search result ordering, grouping, evidence, gaps, compatibility, and safe action posture."
     },
     {
       "id": "public_search_ranking_runtime_planning_v0",
-      "title": "P94 Public Search Ranking Runtime Planning v0 only after contracts and evals",
+      "title": "P97 Public Search Ranking Runtime Planning v0 only after contracts and evals",
       "status": "blocked_pending_contracts_and_evals",
-      "priority": 135,
-      "notes": "Future planning only after evidence-weighted and compatibility-aware ranking contracts plus eval evidence; no runtime ranking until then."
+      "priority": 138,
+      "notes": "Future planning only after ranking contracts and eval evidence; no runtime ranking until then."
     },
     {
       "id": "compatibility_evidence_pack_contract_v0",
-      "title": "P95 Compatibility Evidence Pack Contract v0",
+      "title": "P98 Compatibility Evidence Pack Contract v0",
       "status": "queued_codex_safe_future",
-      "priority": 136,
+      "priority": 139,
       "notes": "Future contract for governed compatibility evidence packs after ranking/page contracts."
     },
     {
