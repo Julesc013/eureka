@@ -1,0 +1,3 @@
+# Allowed Metadata Capabilities
+
+Allowed capabilities are future and disabled now: npm_package_metadata_future, npm_version_metadata_future, npm_dist_tag_metadata_future, npm_tarball_metadata_summary_future, npm_engines_metadata_future, npm_license_metadata_future, npm_dependency_metadata_summary_future, npm_deprecation_yanked_like_status_summary_future, npm_maintainer_publisher_metadata_summary_future. Tarball metadata summary is metadata-only; tarball download is forbidden.

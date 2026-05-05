@@ -1,0 +1,3 @@
+# Example Approval Record Review
+
+The synthetic example states connector_runtime_implemented, connector_approved_now, live_source_called, external_calls_performed, npm_registry_api_called, npm_cli_called, package_metadata_fetched, versions_fetched, dist_tags_fetched, tarball_metadata_fetched, tarballs_downloaded, package_files_downloaded, package_installed, dependency_resolution_performed, package_archive_inspected, lifecycle_scripts_executed, npm_audit_performed, cache/ledger/index mutations, public fanout, downloads, file retrieval, mirroring, arbitrary package fetch, credentials, and tokens are false.

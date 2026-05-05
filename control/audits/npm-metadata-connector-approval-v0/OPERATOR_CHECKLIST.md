@@ -1,0 +1,3 @@
+# Operator Checklist
+
+All operator checklist items remain pending: configure_user_agent, configure_contact_policy, configure_timeout, configure_rate_limit, configure_retry_backoff, configure_circuit_breaker, configure_cache_destination, configure_evidence_destination, configure_package_identity_filter, configure_scoped_package_filter, confirm_no_token_required_for_v0, confirm_no_package_download_install_or_script_execution, enable_connector_flag_future, monitor_connector_health_future, record_approval_evidence.

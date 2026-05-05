@@ -1,0 +1,3 @@
+# Approval Checklist
+
+All approval checklist items remain pending: source_policy_review, official_docs_review, package_identity_policy_review, scoped_package_policy_review, dependency_metadata_policy_review, lifecycle_script_risk_policy_review, user_agent_contact_decision, rate_limit_timeout_retry_policy, circuit_breaker_policy, cache_output_contract_review, evidence_output_contract_review, rights_access_risk_review, privacy_review, public_search_boundary_review, token_policy_review, operator_approval, human_approval.
