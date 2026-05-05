@@ -1164,3 +1164,18 @@ notes:
   - id: external_baseline_comparison_report_tests
     run: python -m unittest tests.operations.test_external_baseline_comparison_report tests.scripts.test_run_external_baseline_comparison tests.scripts.test_validate_external_baseline_comparison_report
 <!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+  - id: object_page_examples_validator
+    run: python scripts/validate_object_page.py --all-examples
+  - id: object_page_examples_validator_json
+    run: python scripts/validate_object_page.py --all-examples --json
+  - id: object_page_contract_validator
+    run: python scripts/validate_object_page_contract.py
+  - id: object_page_contract_validator_json
+    run: python scripts/validate_object_page_contract.py --json
+  - id: object_page_dry_run_json
+    run: python scripts/dry_run_object_page.py --label "Windows 7 compatible application" --object-kind software_version --json
+  - id: object_page_contract_tests
+    run: python -m unittest tests.operations.test_object_page_contract tests.scripts.test_validate_object_page tests.scripts.test_validate_object_page_contract tests.scripts.test_dry_run_object_page
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->

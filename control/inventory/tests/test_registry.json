@@ -7050,6 +7050,132 @@
       "failure_means": "P78 runner/validator/audit honesty checks regressed.",
       "advisory_or_required": "required",
       "notes": "No external network is required."
+    },
+    {
+      "test_id": "object_page_examples_validator",
+      "label": "Object Page Examples Validator",
+      "command": "python scripts/validate_object_page.py --all-examples",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Object Page v0 examples drifted, became unsafe, or weakened no-runtime/no-mutation guarantees.",
+      "advisory_or_required": "required",
+      "notes": "P79 contract-only validation; no runtime object pages, live source calls, downloads, installs, execution, telemetry, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "object_page_examples_validator_json",
+      "label": "Object Page Examples Validator JSON",
+      "command": "python scripts/validate_object_page.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Object Page v0 JSON validation output no longer parses.",
+      "advisory_or_required": "required",
+      "notes": "JSON mode for P79 example validator."
+    },
+    {
+      "test_id": "object_page_contract_validator",
+      "label": "Object Page Contract Validator",
+      "command": "python scripts/validate_object_page_contract.py",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Object Page v0 contract, docs, policy, audit, or example validation drifted.",
+      "advisory_or_required": "required",
+      "notes": "P79 governance validation only."
+    },
+    {
+      "test_id": "object_page_contract_validator_json",
+      "label": "Object Page Contract Validator JSON",
+      "command": "python scripts/validate_object_page_contract.py --json",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Object Page v0 contract validator JSON output no longer parses.",
+      "advisory_or_required": "required",
+      "notes": "JSON mode for P79 contract validator."
+    },
+    {
+      "test_id": "object_page_dry_run_json",
+      "label": "Object Page Dry Run JSON",
+      "command": "python scripts/dry_run_object_page.py --label \"Windows 7 compatible application\" --object-kind software_version --json",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "Object Page v0 dry-run payload generation drifted or writes/policy guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "Dry-run emits stdout only and writes no files."
+    },
+    {
+      "test_id": "object_page_contract_tests",
+      "label": "Object Page Contract Tests",
+      "command": "python -m unittest tests.operations.test_object_page_contract tests.scripts.test_validate_object_page tests.scripts.test_validate_object_page_contract tests.scripts.test_dry_run_object_page",
+      "category": "contract",
+      "owner_area": "pages",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P79 validator, contract, dry-run, or audit tests regressed.",
+      "advisory_or_required": "required",
+      "notes": "No external network is required."
     }
   ],
   "notes": [
@@ -7060,6 +7186,7 @@
     "P74 PyPI Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, PyPI API calls, package download/install, dependency resolution, token use, cache/ledger mutation, or public-query fanout.",
     "P75 npm Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, npm registry API calls, npm/yarn/pnpm CLI calls, package download/install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout.",
     "P76 Software Heritage Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout.",
-    "P77 Public Hosted Deployment Evidence commands are evidence-only; verifier may check only configured Eureka static/backend URLs and performs no deployment or external-source fanout."
+    "P77 Public Hosted Deployment Evidence commands are evidence-only; verifier may check only configured Eureka static/backend URLs and performs no deployment or external-source fanout.",
+    "P79 Object Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime object pages, live source calls, downloads, installs, execution, telemetry, object-page store, candidate promotion, or index/cache/ledger/master-index mutation."
   ]
 }

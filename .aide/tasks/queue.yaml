@@ -874,43 +874,43 @@
     {
       "id": "object_page_contract_v0",
       "title": "P79 Object Page Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 120,
-      "notes": "Recommended Codex-safe next branch while Manual Observation Batch 0 remains pending; contract-only, no runtime pages or index mutation."
+      "notes": "P79 completed as contract/schema/validator/example/audit work only; no runtime object pages, live source calls, source/evidence/candidate/master-index mutation, downloads, installs, execution, or truth/safety claims were added."
     },
     {
       "id": "source_page_contract_v0",
       "title": "P80 Source Page Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 121,
-      "notes": "Future contract; do not implement runtime pages, live source calls, downloads, or index mutation without governed contracts."
+      "notes": "Next Codex-safe branch; define source page contract without runtime pages, live calls, downloads, or index mutation."
     },
     {
       "id": "cross_source_identity_resolution_contract_v0",
-      "title": "P81 Cross-Source Identity Resolution Contract v0",
+      "title": "P82 Cross-Source Identity Resolution Contract v0",
       "status": "queued_codex_safe_future",
-      "priority": 122,
-      "notes": "Future identity resolution contract after source page work; no runtime identity authority, source trust, or master-index mutation without governed review."
+      "priority": 123,
+      "notes": "Future identity resolution contract; no runtime identity authority, source trust, or master-index mutation without governed review."
     },
     {
       "id": "ia_metadata_connector_runtime_planning_v0",
-      "title": "P81 IA Metadata Connector Runtime Planning v0 only after approval",
+      "title": "P87 IA Metadata Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 122,
+      "priority": 128,
       "notes": "Future runtime planning only after IA metadata connector approval, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
       "id": "wayback_cdx_memento_connector_runtime_planning_v0",
-      "title": "P82 Wayback/CDX/Memento Connector Runtime Planning v0 only after approval",
+      "title": "P88 Wayback/CDX/Memento Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 123,
+      "priority": 129,
       "notes": "Future runtime planning only after Wayback/CDX/Memento approval, URI privacy, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
       "id": "github_releases_connector_runtime_planning_v0",
-      "title": "P83 GitHub Releases Connector Runtime Planning v0 only after approval",
+      "title": "P89 GitHub Releases Connector Runtime Planning v0 only after approval",
       "status": "blocked_pending_explicit_approval",
-      "priority": 124,
+      "priority": 130,
       "notes": "Future runtime planning only after GitHub Releases approval, repository identity review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     },
     {
@@ -933,6 +933,41 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 127,
       "notes": "Future runtime planning only after Software Heritage approval, SWHID/origin/repository identity review, source-code-content risk review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+    },
+    {
+      "id": "comparison_page_contract_v0",
+      "title": "P81 Comparison Page Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 122,
+      "notes": "Future contract after object/source pages; no runtime comparison authority or external baseline fabrication."
+    },
+    {
+      "id": "result_merge_and_deduplication_contract_v0",
+      "title": "P83 Result Merge and Deduplication Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 124,
+      "notes": "Future merge/dedup contract; preserve conflicts and avoid destructive merges without review."
+    },
+    {
+      "id": "evidence_weighted_ranking_contract_v0",
+      "title": "P84 Evidence-Weighted Ranking Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 125,
+      "notes": "Future ranking contract; no production ranking authority without evidence and validation."
+    },
+    {
+      "id": "compatibility_aware_ranking_contract_v0",
+      "title": "P85 Compatibility-Aware Ranking Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 126,
+      "notes": "Future compatibility ranking contract; unknown compatibility remains honest."
+    },
+    {
+      "id": "public_query_observation_runtime_planning_v0",
+      "title": "P86 Public Query Observation Runtime Planning v0 only after hosted deployment",
+      "status": "blocked_pending_hosted_deployment",
+      "priority": 127,
+      "notes": "Runtime planning only after hosted deployment and privacy/logging policies are approved."
     }
   ]
 }

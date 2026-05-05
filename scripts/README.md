@@ -748,3 +748,15 @@ P76 adds `validate_software_heritage_connector_approval.py`, `validate_software_
 
 These P78 commands are stdlib/local-only. They read committed manual baseline records and local Eureka audit/index evidence, perform no web calls, no search-engine calls, no source API calls, no model calls, no live probes, and no index/cache/ledger/candidate/master-index mutation.
 <!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0 Commands
+
+- `python scripts/validate_object_page.py --all-examples`
+- `python scripts/validate_object_page.py --all-examples --json`
+- `python scripts/validate_object_page_contract.py`
+- `python scripts/validate_object_page_contract.py --json`
+- `python scripts/dry_run_object_page.py --label "Windows 7 compatible application" --object-kind software_version --json`
+
+These commands are stdlib-only and local-only. They add no runtime object pages, live source calls, downloads, installs, execution, telemetry, or index/cache/ledger/candidate/master-index mutation.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->

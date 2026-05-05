@@ -360,3 +360,9 @@ Completed as evidence-only deployment review. It adds no deployment, provider mu
 
 P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
 <!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+The P79 report is in `control/audits/object-page-contract-v0/`. It is evidence-first and contract-only; it adds no runtime object-page generation.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->

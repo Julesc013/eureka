@@ -1913,3 +1913,15 @@ Configured URL evidence is required before public claims. P77 does not invent UR
 
 P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
 <!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+Object Page Contract v0 is contract-only and evidence-first. It defines future public object pages that preserve provisional identity, source/evidence/provenance, compatibility, conflicts, scoped absence, and gaps without implementing runtime object pages.
+
+Boundary notes:
+
+- No runtime object routes, database, persistent object-page store, source connector runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, installs, execution, uploads, telemetry, accounts, rights clearance, or malware safety claim are added.
+- Public search may reference object page links only after a future governed integration; P79 does not mutate public search result cards or the public index.
+- Object pages are not app-store, downloader, installer, or execution surfaces.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->
