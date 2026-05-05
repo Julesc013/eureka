@@ -581,3 +581,9 @@ Adds contract-only explanation schemas, examples, validators, docs, and audit re
 
 Adds planning-only ranking runtime architecture, gates, validator, and report. No ranking runtime, public search order/response change, hidden score, suppression, telemetry, model call, live source call, or mutation is added.
 <!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->
+
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-START -->
+## P98 Source Cache Local Dry-Run Runtime v0
+
+Adds a bounded local dry-run source-cache candidate loader, classifier, report builder, CLI, validator, synthetic examples, tests, docs, inventory, and audit report. No live source calls, connector execution, source-sync execution, authoritative source-cache writes, evidence-ledger writes, candidate/public/local/master index mutation, public-search integration, hosted runtime, telemetry, credentials, downloads, installs, or execution are added.
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-END -->

@@ -1,0 +1,288 @@
+{
+  "report_id": "source_cache_local_dry_run_runtime_v0",
+  "created_by_slice": "P98 Source Cache Local Dry-Run Runtime v0",
+  "repo_head": "0edf1fcfba7fc90513aaefee3363cbf3598b6ffa",
+  "branch": "main",
+  "worktree_status": "dirty_during_p98_implementation",
+  "runtime_scope": {
+    "implemented": [
+      "local dry-run source cache candidate loader",
+      "local dry-run source cache candidate classifier",
+      "local dry-run source cache report builder",
+      "CLI dry-run script",
+      "dry-run report validator",
+      "tests"
+    ],
+    "not_implemented": [
+      "live source calls",
+      "connector runtime",
+      "source sync worker execution",
+      "authoritative source-cache storage",
+      "evidence ledger writes",
+      "candidate index writes",
+      "public index writes",
+      "master index writes",
+      "public search integration",
+      "hosted runtime",
+      "telemetry",
+      "accounts",
+      "downloads/uploads/installers"
+    ]
+  },
+  "input_model": {
+    "approved_input_roots": [
+      "examples/source_cache/dry_run"
+    ],
+    "forbidden_inputs": [
+      "URLs",
+      "live source identifiers",
+      "connector parameters",
+      "database paths",
+      "cache roots",
+      "uploaded files",
+      "credentials",
+      "arbitrary local paths outside approved examples except isolated tests"
+    ]
+  },
+  "output_model": {
+    "mode": "local_dry_run",
+    "reports_candidate_effects_only": true,
+    "authoritative_state_written": false
+  },
+  "runtime_modules": [
+    "runtime/source_cache/models.py",
+    "runtime/source_cache/policy.py",
+    "runtime/source_cache/dry_run.py",
+    "runtime/source_cache/report.py",
+    "runtime/source_cache/errors.py"
+  ],
+  "cli_script": "scripts/run_source_cache_dry_run.py",
+  "validator_script": "scripts/validate_source_cache_dry_run_report.py",
+  "examples": [
+    "examples/source_cache/dry_run/minimal_internet_archive_metadata_summary",
+    "examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary",
+    "examples/source_cache/dry_run/minimal_github_release_metadata_summary",
+    "examples/source_cache/dry_run/minimal_package_metadata_summary",
+    "examples/source_cache/dry_run/minimal_software_heritage_identity_summary"
+  ],
+  "dry_run_results": {
+    "report_id": "source-cache-dry-run-4d8b85d3dc93fa0e",
+    "mode": "local_dry_run",
+    "input_roots": [
+      "examples/source_cache/dry_run"
+    ],
+    "candidates_seen": 5,
+    "candidates_valid": 5,
+    "candidates_invalid": 0,
+    "candidate_summaries": [
+      {
+        "candidate_id": "source-cache-dry-run-github-release-v0",
+        "path": "examples/source_cache/dry_run/minimal_github_release_metadata_summary/SOURCE_CACHE_CANDIDATE.json",
+        "source_family": "github_releases",
+        "record_kind": "release_metadata_summary",
+        "privacy_status": "public_safe",
+        "public_safety_status": "public_safe",
+        "evidence_readiness": "evidence_review_required",
+        "policy_status": "approved_example",
+        "valid": true,
+        "source_ref": "github_releases",
+        "summary_text": "Synthetic release metadata summary with release label, tag label, and asset count bucket only.",
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "candidate_id": "source-cache-dry-run-ia-metadata-v0",
+        "path": "examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/SOURCE_CACHE_CANDIDATE.json",
+        "source_family": "internet_archive",
+        "record_kind": "metadata_summary",
+        "privacy_status": "public_safe",
+        "public_safety_status": "public_safe",
+        "evidence_readiness": "evidence_candidate_ready",
+        "policy_status": "approved_example",
+        "valid": true,
+        "source_ref": "internet_archive",
+        "summary_text": "Synthetic item metadata summary with title, identifier label, and collection posture only.",
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "candidate_id": "source-cache-dry-run-package-metadata-v0",
+        "path": "examples/source_cache/dry_run/minimal_package_metadata_summary/SOURCE_CACHE_CANDIDATE.json",
+        "source_family": "pypi",
+        "record_kind": "package_metadata_summary",
+        "privacy_status": "public_safe",
+        "public_safety_status": "public_safe",
+        "evidence_readiness": "evidence_review_required",
+        "policy_status": "approved_example",
+        "valid": true,
+        "source_ref": "pypi",
+        "summary_text": "Synthetic package metadata summary with package label, version label, and dependency caution only.",
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "candidate_id": "source-cache-dry-run-software-heritage-identity-v0",
+        "path": "examples/source_cache/dry_run/minimal_software_heritage_identity_summary/SOURCE_CACHE_CANDIDATE.json",
+        "source_family": "software_heritage",
+        "record_kind": "software_identity_summary",
+        "privacy_status": "public_safe",
+        "public_safety_status": "public_safe",
+        "evidence_readiness": "evidence_review_required",
+        "policy_status": "approved_example",
+        "valid": true,
+        "source_ref": "software_heritage",
+        "summary_text": "Synthetic software identity summary with origin label, snapshot label, and provenance caution only.",
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "candidate_id": "source-cache-dry-run-wayback-capture-v0",
+        "path": "examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary/SOURCE_CACHE_CANDIDATE.json",
+        "source_family": "wayback_cdx_memento",
+        "record_kind": "capture_metadata_summary",
+        "privacy_status": "public_safe",
+        "public_safety_status": "public_safe",
+        "evidence_readiness": "evidence_review_required",
+        "policy_status": "approved_example",
+        "valid": true,
+        "source_ref": "wayback_cdx_memento",
+        "summary_text": "Synthetic capture listing summary with timestamp bucket and availability posture only.",
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "source_families": {
+      "github_releases": 1,
+      "internet_archive": 1,
+      "pypi": 1,
+      "software_heritage": 1,
+      "wayback_cdx_memento": 1
+    },
+    "record_kinds": {
+      "capture_metadata_summary": 1,
+      "metadata_summary": 1,
+      "package_metadata_summary": 1,
+      "release_metadata_summary": 1,
+      "software_identity_summary": 1
+    },
+    "privacy_status_counts": {
+      "public_safe": 5
+    },
+    "public_safety_status_counts": {
+      "public_safe": 5
+    },
+    "evidence_readiness_counts": {
+      "evidence_candidate_ready": 1,
+      "evidence_review_required": 4
+    },
+    "policy_status_counts": {
+      "approved_example": 5
+    },
+    "mutation_summary": {
+      "authoritative_source_cache_written": false,
+      "candidate_index_mutated": false,
+      "evidence_ledger_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "public_index_mutated": false,
+      "public_search_runtime_mutated": false,
+      "source_cache_mutated": false
+    },
+    "warnings": [],
+    "errors": [],
+    "hard_booleans": {
+      "local_dry_run": true,
+      "live_source_called": false,
+      "external_calls_performed": false,
+      "connector_runtime_executed": false,
+      "source_sync_worker_executed": false,
+      "authoritative_source_cache_written": false,
+      "source_cache_mutated": false,
+      "evidence_ledger_mutated": false,
+      "candidate_index_mutated": false,
+      "public_index_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "public_search_runtime_mutated": false,
+      "telemetry_exported": false,
+      "credentials_used": false,
+      "downloads_enabled": false,
+      "installs_enabled": false,
+      "execution_enabled": false
+    }
+  },
+  "classification_summary": {
+    "source_families": {
+      "github_releases": 1,
+      "internet_archive": 1,
+      "pypi": 1,
+      "software_heritage": 1,
+      "wayback_cdx_memento": 1
+    },
+    "record_kinds": {
+      "capture_metadata_summary": 1,
+      "metadata_summary": 1,
+      "package_metadata_summary": 1,
+      "release_metadata_summary": 1,
+      "software_identity_summary": 1
+    }
+  },
+  "privacy_public_safety_review": "Examples are synthetic/public-safe; the runtime rejects URL-like values, private paths, secret markers, credentials, IP addresses, account identifiers, and forbidden path/source parameters.",
+  "source_attribution_policy_review": "Each candidate includes source family and source reference metadata. Policy status is descriptive only and does not approve connectors or source availability.",
+  "evidence_ledger_boundary": "Evidence readiness is classified only; no evidence-ledger record is created or mutated.",
+  "candidate_public_master_boundary": "No candidate record is created, no candidate is promoted, and no public/local/runtime/master index is mutated.",
+  "connector_runtime_boundary": "No connector runtime or source-sync worker is executed; examples only resemble future connector outputs.",
+  "public_search_boundary": "Public search does not read or call this dry-run runtime; search results and ordering are unchanged.",
+  "command_results": {
+    "initial_git_status": "## main...origin/main",
+    "initial_head": "0edf1fcfba7fc90513aaefee3363cbf3598b6ffa",
+    "dry_run_all_examples": "passed; 5 candidates seen, 5 valid, 0 invalid",
+    "source_cache_record_examples": "passed; 3 canonical examples valid",
+    "source_cache_contract": "passed",
+    "source_cache_dry_run_report_validator": "passed",
+    "adjacent_contract_and_plan_validators": "passed",
+    "public_search_safety_and_smoke": "passed",
+    "hosted_public_search_rehearsal": "passed locally; hosted deployment remains operator-gated",
+    "hosted_deployment_verifier": "ran; static URL still verified_failed with HTTP 404 evidence and backend not configured",
+    "archive_resolution_evals": "passed; satisfied=6",
+    "search_usefulness_audit": "passed; covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2",
+    "external_baseline_status": "valid; 0 observed and 192 pending global slots",
+    "unit_discovery": "passed; tests/scripts=644, tests/operations=604, tests/hardening=53, tests/parity=25, runtime=320, surfaces=168, tests/runtime=6, tests=1423",
+    "architecture_boundaries": "passed; 452 Python files checked",
+    "git_diff_check": "passed with line-ending warnings only",
+    "cargo_status": "unavailable; cargo command not found"
+  },
+  "remaining_blockers": [
+    "authoritative source-cache storage policy and runtime are not implemented",
+    "connector runtimes remain approval-gated",
+    "evidence ledger local dry-run runtime remains future work",
+    "public search source-cache reads require separate approval",
+    "hosted runtime is not enabled"
+  ],
+  "next_recommended_branch": "P99 Evidence Ledger Local Dry-Run Runtime v0 only after approval",
+  "notes": [
+    "P98 is local dry-run implementation only.",
+    "Source cache is not truth.",
+    "No live source calls, external calls, connector execution, authoritative writes, public-search changes, telemetry, credentials, downloads, installs, execution, or mutation occurred."
+  ],
+  "local_dry_run_runtime_implemented": true,
+  "authoritative_source_cache_runtime_implemented": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "connector_runtime_executed": false,
+  "source_sync_worker_executed": false,
+  "authoritative_source_cache_written": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "public_search_runtime_mutated": false,
+  "hosted_runtime_enabled": false,
+  "telemetry_exported": false,
+  "credentials_used": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}
