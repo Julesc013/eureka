@@ -1113,3 +1113,17 @@ notes:
   - id: pypi_metadata_connector_approval_tests
     run: python -m unittest tests.operations.test_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_approval tests.scripts.test_validate_pypi_metadata_connector_contract tests.scripts.test_dry_run_pypi_metadata_connector_approval
 <!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-END -->
+<!-- P75-NPM-METADATA-CONNECTOR-APPROVAL-START -->
+  - id: npm_metadata_connector_approval_examples_validator
+    run: python scripts/validate_npm_metadata_connector_approval.py --all-examples
+  - id: npm_metadata_connector_approval_examples_validator_json
+    run: python scripts/validate_npm_metadata_connector_approval.py --all-examples --json
+  - id: npm_metadata_connector_contract_validator
+    run: python scripts/validate_npm_metadata_connector_contract.py
+  - id: npm_metadata_connector_contract_validator_json
+    run: python scripts/validate_npm_metadata_connector_contract.py --json
+  - id: npm_metadata_connector_dry_run_json
+    run: python scripts/dry_run_npm_metadata_connector_approval.py --json
+  - id: npm_metadata_connector_approval_tests
+    run: python -m unittest tests.operations.test_npm_metadata_connector_approval tests.scripts.test_validate_npm_metadata_connector_approval tests.scripts.test_validate_npm_metadata_connector_contract tests.scripts.test_dry_run_npm_metadata_connector_approval
+<!-- P75-NPM-METADATA-CONNECTOR-APPROVAL-END -->

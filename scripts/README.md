@@ -722,3 +722,8 @@ Completed as an approval-only release metadata connector pack. It adds no live G
 
 Completed as an approval-only package metadata connector pack. It adds no live PyPI connector runtime, no external calls, no PyPI API calls, no package metadata fetch, no release fetch, no wheel download, no sdist download, no package file download, no package install, no dependency resolution, no package archive inspection, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. Next recommended branch: P75 npm Metadata Connector Approval Pack v0.
 <!-- P74-PYPI-METADATA-SUMMARY-END -->
+<!-- P75-NPM-METADATA-CONNECTOR-APPROVAL-START -->
+## P75 npm Metadata Connector Approval Pack v0
+
+P75 adds `validate_npm_metadata_connector_approval.py`, `validate_npm_metadata_connector_contract.py`, and `dry_run_npm_metadata_connector_approval.py`. Commands: `python scripts/validate_npm_metadata_connector_approval.py --all-examples`, `python scripts/validate_npm_metadata_connector_approval.py --all-examples --json`, `python scripts/validate_npm_metadata_connector_contract.py`, `python scripts/validate_npm_metadata_connector_contract.py --json`, and `python scripts/dry_run_npm_metadata_connector_approval.py --json`. They are stdlib-only and write no connector runtime, telemetry, credentials, source cache, evidence ledger, candidate index, public/local/master indexes, external calls, live npm registry calls, npm/yarn/pnpm CLI calls, package downloads, package installs, dependency resolution, lifecycle script execution, npm audit, file retrieval, mirroring, installs, or execution.
+<!-- P75-NPM-METADATA-CONNECTOR-APPROVAL-END -->

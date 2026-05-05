@@ -289,7 +289,13 @@
         "pypi_metadata_connector_contract_validator",
         "pypi_metadata_connector_contract_validator_json",
         "pypi_metadata_connector_dry_run_json",
-        "pypi_metadata_connector_approval_tests"
+        "pypi_metadata_connector_approval_tests",
+        "npm_metadata_connector_approval_examples_validator",
+        "npm_metadata_connector_approval_examples_validator_json",
+        "npm_metadata_connector_contract_validator",
+        "npm_metadata_connector_contract_validator_json",
+        "npm_metadata_connector_dry_run_json",
+        "npm_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -592,7 +598,13 @@
         "pypi_metadata_connector_contract_validator",
         "pypi_metadata_connector_contract_validator_json",
         "pypi_metadata_connector_dry_run_json",
-        "pypi_metadata_connector_approval_tests"
+        "pypi_metadata_connector_approval_tests",
+        "npm_metadata_connector_approval_examples_validator",
+        "npm_metadata_connector_approval_examples_validator_json",
+        "npm_metadata_connector_contract_validator",
+        "npm_metadata_connector_contract_validator_json",
+        "npm_metadata_connector_dry_run_json",
+        "npm_metadata_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1239,6 +1251,7 @@
     "P71 Internet Archive Metadata Connector Approval Pack v0 commands are approval-only and perform no IA calls, downloads, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P72 Wayback/CDX/Memento Connector Approval Pack v0 commands are approval-only and perform no Wayback/CDX/Memento calls, capture replay, WARC download, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P73 GitHub Releases Connector Approval Pack v0 commands are approval-only and perform no GitHub API calls, repository clone, release asset/source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout.",
-    "P74 PyPI Metadata Connector Approval Pack v0 commands are approval-only and perform no PyPI API calls, package downloads, installs, dependency resolution, connector runtime, cache/ledger mutation, or public-query fanout."
+    "P74 PyPI Metadata Connector Approval Pack v0 commands are approval-only and perform no PyPI API calls, package downloads, installs, dependency resolution, connector runtime, cache/ledger mutation, or public-query fanout.",
+    "P75 npm Metadata Connector Approval Pack v0 commands are approval-only and perform no npm registry API calls, npm/yarn/pnpm CLI calls, package downloads, installs, dependency resolution, lifecycle script execution, npm audit, connector runtime, cache/ledger mutation, or public-query fanout."
   ]
 }

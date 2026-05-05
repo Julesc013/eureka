@@ -769,6 +769,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json. Approval-only; no live PyPI API calls, connector runtime, package download, package install, dependency resolution, token use, cache/ledger mutation, or public-query fanout.",
       "addressed_by": "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json"
+    },
+    {
+      "id": "audit-backlog-npm-metadata-connector-approval-v0",
+      "title": "P75 npm Metadata Connector Approval Pack v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json. Approval-only; no live npm registry API calls, connector runtime, npm/yarn/pnpm CLI calls, package download, package install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout.",
+      "addressed_by": "control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json"
     }
   ]
 }

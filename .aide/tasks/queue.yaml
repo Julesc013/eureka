@@ -846,16 +846,16 @@
     {
       "id": "npm_metadata_connector_approval_pack_v0",
       "title": "P75 npm Metadata Connector Approval Pack v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed",
       "priority": 116,
-      "notes": "Next recommended branch after P74; approval pack only, with no live npm calls or connector runtime without explicit approval."
+      "notes": "Completed P75 as an approval-only package metadata connector pack; no live npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, package download/install, dependency resolution, lifecycle script execution, npm audit, token use, source cache/evidence ledger mutation, or public-query fanout."
     },
     {
       "id": "software_heritage_connector_approval_pack_v0",
       "title": "P76 Software Heritage Connector Approval Pack v0",
-      "status": "approval_gated_future",
+      "status": "queued_codex_safe_future",
       "priority": 117,
-      "notes": "Future approval pack; no live Software Heritage calls or connector runtime without explicit approval."
+      "notes": "Next recommended branch after P75; approval pack only, with no live Software Heritage calls or connector runtime without explicit approval."
     },
     {
       "id": "public_hosted_deployment_evidence_v0",
@@ -919,6 +919,13 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 125,
       "notes": "Future runtime planning only after PyPI metadata approval, package identity review, dependency metadata caution, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+    },
+    {
+      "id": "npm_metadata_connector_runtime_planning_v0",
+      "title": "P85 npm Metadata Connector Runtime Planning v0 only after approval",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 126,
+      "notes": "Future runtime planning only after npm metadata approval, package/scoped package identity review, dependency metadata caution, lifecycle script risk review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     }
   ]
 }
