@@ -458,3 +458,9 @@ Planning-only and approval-gated. The runtime remains blocked because P76 keeps 
 Audit report: `control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json`.
 
 Planning-only and read-only page runtime plan. Local dry-run work requires operator approval; hosted runtime remains blocked by deployment evidence.
+
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-START -->
+## P94 Pack Import Runtime Planning v0
+
+Added planning-only pack import runtime audit metadata. The runtime remains unimplemented and disabled; no packs are imported or staged, no pack content is executed, no URLs are followed, no public contribution intake is enabled, and no indexes/cache/ledger/candidates are mutated.
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->

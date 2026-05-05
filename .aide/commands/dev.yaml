@@ -1359,3 +1359,12 @@ notes:
     run: python scripts/validate_page_runtime_plan.py --json
   - id: page_runtime_plan_tests
     run: python -m unittest tests.operations.test_page_runtime_plan tests.scripts.test_validate_page_runtime_plan
+
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-START -->
+- id: pack_import_runtime_plan_validator
+    run: python scripts/validate_pack_import_runtime_plan.py
+  - id: pack_import_runtime_plan_validator_json
+    run: python scripts/validate_pack_import_runtime_plan.py --json
+  - id: pack_import_runtime_plan_tests
+    run: python -m unittest tests.operations.test_pack_import_runtime_plan tests.scripts.test_validate_pack_import_runtime_plan
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->

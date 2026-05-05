@@ -979,9 +979,9 @@
     {
       "id": "pack_import_runtime_planning_v0",
       "title": "P94 Pack Import Runtime Planning v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed_planning_ready_local_dry_run_after_operator_approval",
       "priority": 135,
-      "notes": "Future planning only after pack import policy and mutation boundaries are governed."
+      "notes": "P94 completed as planning/audit/validator work only. Local dry-run runtime planning is ready after operator approval; quarantine/staging runtime, promotion runtime, public contribution intake, upload/admin endpoints, execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decisions, and accepted records remain disabled."
     },
     {
       "id": "deep_extraction_contract_v0",
@@ -1044,21 +1044,28 @@
       "title": "P101 Connector Approval and Runtime Planning Audit v0",
       "status": "queued_codex_safe_future",
       "priority": 142,
-      "notes": "Future queued planning/runtime-governance work."
+      "notes": "Future connector approval/runtime governance audit."
     },
     {
       "id": "manual_observation_batch_0_follow_up_plan_v0",
       "title": "P102 Manual Observation Batch 0 Follow-up Plan v0 if manual observations remain pending",
       "status": "human_operator_gated",
       "priority": 143,
-      "notes": "Future queued planning/runtime-governance work."
+      "notes": "Future plan only if Manual Observation Batch 0 remains pending."
     },
     {
       "id": "object_source_comparison_page_local_dry_run_runtime_v0",
       "title": "P103 Object/Source/Comparison Page Local Dry-Run Runtime v0 only after approval",
       "status": "blocked_pending_operator_approval",
       "priority": 144,
-      "notes": "Future queued planning/runtime-governance work."
+      "notes": "Future local dry-run runtime only after page runtime approval and safe page ID gates."
+    },
+    {
+      "id": "pack_import_local_dry_run_runtime_v0",
+      "title": "P104 Pack Import Local Dry-Run Runtime v0 only after approval",
+      "status": "blocked_pending_operator_approval",
+      "priority": 145,
+      "notes": "Future local dry-run runtime only after P94 planning is reviewed, operator approval is explicit, and import path, executable payload, rollback, and mutation boundaries are accepted."
     }
   ]
 }

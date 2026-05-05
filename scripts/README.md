@@ -912,3 +912,12 @@ Validates the planning-only Software Heritage runtime audit pack. The validator 
 - `python scripts/validate_page_runtime_plan.py --json`
 
 Validates the planning-only object/source/comparison page runtime audit pack. The validator is stdlib-only and performs no network calls, route implementation, renderer implementation, public-search mutation, live source calls, downloads, telemetry, accounts, or index/cache/ledger/candidate/master mutation.
+
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-START -->
+## P94 Pack Import Runtime Planning
+
+- `python scripts/validate_pack_import_runtime_plan.py`
+- `python scripts/validate_pack_import_runtime_plan.py --json`
+
+These commands are stdlib-only and validate planning artifacts only. They perform no pack import runtime, no real pack staging, no upload/admin endpoint, no public contribution intake, no pack content execution, no URL fetching, no arbitrary local path access, no telemetry/accounts, no source/evidence/candidate/public/local/master mutation, no promotion decision, and no accepted record creation.
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->
