@@ -267,3 +267,9 @@ P72 defines a future availability/capture-metadata-only Wayback/CDX/Memento conn
 
 P73 defines a future release-metadata-only GitHub Releases connector approval pack. The live connector is not implemented, no external calls are made, no GitHub API calls are made, public queries do not fan out to GitHub, arbitrary repository fetch is forbidden, repository clone is forbidden, release asset download is forbidden, source archive download is forbidden, raw file/blob/tree fetch is forbidden, scraping/crawling is forbidden, token use is not allowed now, and future outputs must be cache-first/evidence-first after repository identity review and approval.
 <!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->
+
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-START -->
+## P74 PyPI Metadata Connector Approval Pack v0
+
+P74 adds an approval-only, package metadata-only PyPI connector pack. It adds no live PyPI connector runtime, no external calls, no PyPI API calls, no package metadata fetch, no release fetch, no wheel/sdist/package file download, no package install, no dependency resolution, no package archive inspection, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. Package identity review, dependency metadata caution, source policy review, User-Agent/contact, token policy, rate limits, timeouts, retry/backoff, circuit breaker, cache-first output, and evidence attribution remain approval gates.
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-END -->

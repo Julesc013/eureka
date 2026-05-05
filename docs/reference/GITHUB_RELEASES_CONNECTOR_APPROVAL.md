@@ -41,3 +41,9 @@ GitHub Releases metadata is not rights clearance and not malware safety. The app
 ## Future Path
 
 Before live runtime work: complete official source-policy review, choose approved User-Agent/contact policy, confirm no token is required for v0, define rate/timeout/retry/circuit-breaker values, approve source sync worker output destinations, review source cache/evidence ledger integration, and approve the live connector implementation. P73 itself is not production readiness.
+
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-START -->
+## P74 PyPI Metadata Connector Approval Pack v0
+
+P74 adds an approval-only, package metadata-only PyPI connector pack. It adds no live PyPI connector runtime, no external calls, no PyPI API calls, no package metadata fetch, no release fetch, no wheel/sdist/package file download, no package install, no dependency resolution, no package archive inspection, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. Package identity review, dependency metadata caution, source policy review, User-Agent/contact, token policy, rate limits, timeouts, retry/backoff, circuit breaker, cache-first output, and evidence attribution remain approval gates.
+<!-- P74-PYPI-METADATA-CONNECTOR-APPROVAL-END -->

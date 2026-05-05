@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/pypi_metadata_connector_manifest.v0.json",
+  "title": "Eureka PyPI Metadata Connector Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-runtime_implemented": false,
+  "x-live_enabled_by_default": false,
+  "x-public_query_fanout_allowed": false,
+  "x-downloads_allowed": false,
+  "x-arbitrary_url_fetch_allowed": false,
+  "x-package_install_allowed": false,
+  "x-wheel_download_allowed": false,
+  "x-sdist_download_allowed": false,
+  "x-package_file_download_allowed": false,
+  "x-dependency_resolution_allowed_now": false,
+  "x-token_required_now": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed_now": false,
+  "required": [
+    "schema_version",
+    "connector_id",
+    "connector_kind",
+    "status",
+    "source_family",
+    "supported_capabilities",
+    "disabled_capabilities",
+    "default_policy",
+    "source_sync_worker_relationship",
+    "source_cache_relationship",
+    "evidence_ledger_relationship",
+    "safety_defaults",
+    "no_runtime_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: schema_version."
+    },
+    "connector_id": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: connector_id."
+    },
+    "connector_kind": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: connector_kind."
+    },
+    "status": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: status."
+    },
+    "source_family": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: source_family."
+    },
+    "supported_capabilities": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: supported_capabilities."
+    },
+    "disabled_capabilities": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: disabled_capabilities."
+    },
+    "default_policy": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: default_policy."
+    },
+    "source_sync_worker_relationship": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: source_sync_worker_relationship."
+    },
+    "source_cache_relationship": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: source_cache_relationship."
+    },
+    "evidence_ledger_relationship": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: evidence_ledger_relationship."
+    },
+    "safety_defaults": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: safety_defaults."
+    },
+    "no_runtime_guarantees": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: no_runtime_guarantees."
+    },
+    "notes": {
+      "description": "Eureka PyPI Metadata Connector Manifest v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "operator_required",
+      "blocked_by_policy",
+      "approved_future",
+      "rejected_future",
+      "superseded_future"
+    ],
+    "source_family": [
+      "pypi"
+    ],
+    "allowed_capabilities": [
+      "package_project_metadata_future",
+      "package_release_metadata_future",
+      "package_file_metadata_summary_future",
+      "requires_python_metadata_future",
+      "classifier_metadata_future",
+      "yanked_status_metadata_future",
+      "package_summary_description_metadata_future",
+      "dependency_metadata_summary_future"
+    ],
+    "forbidden_capabilities": [
+      "arbitrary_package_fetch",
+      "direct_public_query_fanout",
+      "private_package_index_access",
+      "token_required_access",
+      "package_file_download",
+      "wheel_download",
+      "sdist_download",
+      "package_install",
+      "dependency_resolution",
+      "dependency_safety_decision",
+      "package_archive_inspection",
+      "setup_py_execution",
+      "build_script_execution",
+      "raw_file_fetch",
+      "alternate_index_fetch",
+      "account_access",
+      "upload",
+      "install",
+      "execute",
+      "unbounded_crawl",
+      "scraping",
+      "bypass_access_restrictions",
+      "raw_payload_dump",
+      "malware_safety_decision",
+      "rights_clearance_decision"
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "connector_id": "pypi_metadata_connector",
+  "connector_kind": "pypi_metadata_connector",
+  "status": "draft_example",
+  "source_family": "pypi",
+  "supported_capabilities": [
+    "package_project_metadata_future",
+    "package_release_metadata_future",
+    "package_file_metadata_summary_future",
+    "requires_python_metadata_future",
+    "classifier_metadata_future",
+    "yanked_status_metadata_future",
+    "package_summary_description_metadata_future",
+    "dependency_metadata_summary_future"
+  ],
+  "disabled_capabilities": [
+    "arbitrary_package_fetch",
+    "direct_public_query_fanout",
+    "private_package_index_access",
+    "token_required_access",
+    "package_file_download",
+    "wheel_download",
+    "sdist_download",
+    "package_install",
+    "dependency_resolution",
+    "dependency_safety_decision",
+    "package_archive_inspection",
+    "setup_py_execution",
+    "build_script_execution",
+    "raw_file_fetch",
+    "alternate_index_fetch",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision"
+  ],
+  "default_policy": {
+    "package_metadata_only_scope": true,
+    "package_identity_review_required": true,
+    "dependency_metadata_caution_required": true,
+    "token_policy_review_required": true,
+    "no_token_required_now": true,
+    "no_package_download_or_install": true,
+    "approval_required_for_live_network_access": true,
+    "source_policy_review_required": true,
+    "cache_first_required": true,
+    "evidence_attribution_required": true
+  },
+  "source_sync_worker_relationship": {
+    "source_sync_worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "source_sync_worker_runtime_implemented_now": false,
+    "future_jobs_must_be_approval_gated": true,
+    "notes": [
+      "Future source sync worker jobs may reference this connector only after approval."
+    ]
+  },
+  "source_cache_relationship": {
+    "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_mutation_allowed_now": false,
+    "future_outputs": [
+      "pypi_project_metadata_summary",
+      "pypi_release_metadata_summary",
+      "pypi_file_metadata_summary",
+      "pypi_requires_python_summary",
+      "pypi_classifier_summary",
+      "pypi_yanked_status_summary",
+      "pypi_dependency_metadata_summary"
+    ]
+  },
+  "evidence_ledger_relationship": {
+    "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_mutation_allowed_now": false,
+    "future_outputs": [
+      "package_metadata_observation",
+      "package_release_observation",
+      "package_version_observation",
+      "package_file_metadata_observation",
+      "requires_python_observation",
+      "classifier_observation",
+      "yanked_status_observation",
+      "dependency_metadata_observation",
+      "scoped_absence_observation"
+    ]
+  },
+  "safety_defaults": {
+    "no_downloads": true,
+    "no_file_retrieval": true,
+    "no_mirroring": true,
+    "no_arbitrary_package_fetch": true,
+    "no_package_install": true,
+    "no_wheel_download": true,
+    "no_sdist_download": true,
+    "no_package_file_download": true,
+    "no_dependency_resolution": true,
+    "no_package_archive_inspection": true,
+    "no_public_query_fanout": true,
+    "no_credentials": true,
+    "no_pypi_token": true,
+    "no_telemetry": true
+  },
+  "no_runtime_guarantees": {
+    "runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "public_query_fanout_allowed": false,
+    "downloads_allowed": false,
+    "arbitrary_url_fetch_allowed": false,
+    "package_install_allowed": false,
+    "wheel_download_allowed": false,
+    "sdist_download_allowed": false,
+    "package_file_download_allowed": false,
+    "dependency_resolution_allowed_now": false,
+    "token_required_now": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false
+  },
+  "notes": [
+    "Manifest is an approval-pack fixture only; it is not a runtime connector manifest."
+  ]
+}

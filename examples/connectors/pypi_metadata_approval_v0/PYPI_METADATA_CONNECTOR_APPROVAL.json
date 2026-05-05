@@ -1,0 +1,989 @@
+{
+  "schema_version": "0.1.0",
+  "approval_record_id": "example.connector.pypi_metadata.approval.v0",
+  "approval_record_kind": "pypi_metadata_connector_approval",
+  "status": "draft_example",
+  "created_by_tool": "p74_pypi_metadata_connector_approval_builder_v0",
+  "connector_ref": {
+    "connector_id": "pypi_metadata_connector",
+    "connector_label": "PyPI metadata connector",
+    "source_family": "pypi",
+    "connector_version": "v0-approval-pack",
+    "source_inventory_ref": "control/inventory/sources/package-registry-recorded-fixtures.source.json",
+    "source_status": "approval_required",
+    "limitations": [
+      "Approval reference only; recorded package-registry fixtures exist, but live PyPI acquisition is not approved or implemented by P74."
+    ]
+  },
+  "connector_scope": {
+    "scope_kind": "package_metadata_only",
+    "allowed_target_types": [
+      "package_name_from_reviewed_source_record",
+      "package_name_from_approved_search_need_future",
+      "package_name_from_source_pack_future",
+      "bounded_package_metadata_query_future",
+      "release_metadata_future",
+      "file_metadata_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_package",
+      "private_package",
+      "credentialed_package_index",
+      "alternate_package_index",
+      "package_file_download",
+      "wheel_download",
+      "sdist_download",
+      "package_install",
+      "dependency_resolution",
+      "package_archive_inspection",
+      "package_execution",
+      "account_private_data",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P74 permits only future Python package, release, and file metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_capabilities": [
+    {
+      "capability": "package_project_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "package_release_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "package_file_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "requires_python_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "classifier_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "yanked_status_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "package_summary_description_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    },
+    {
+      "capability": "dependency_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live PyPI capability is implemented or approved by P74."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_package_fetch",
+      "reason": "arbitrary_package_fetch is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "private_package_index_access",
+      "reason": "private_package_index_access is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "token_required_access",
+      "reason": "token_required_access is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "package_file_download",
+      "reason": "package_file_download is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "wheel_download",
+      "reason": "wheel_download is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "sdist_download",
+      "reason": "sdist_download is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "package_install",
+      "reason": "package_install is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "dependency_resolution",
+      "reason": "dependency_resolution is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "dependency_safety_decision",
+      "reason": "dependency_safety_decision is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "package_archive_inspection",
+      "reason": "package_archive_inspection is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "setup_py_execution",
+      "reason": "setup_py_execution is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "build_script_execution",
+      "reason": "build_script_execution is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "raw_file_fetch",
+      "reason": "raw_file_fetch is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "alternate_index_fetch",
+      "reason": "alternate_index_fetch is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside the P74 package-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "package_identity_policy": {
+    "package_name_review_required": true,
+    "arbitrary_public_query_package_allowed": false,
+    "private_package_allowed": false,
+    "credentialed_package_index_allowed": false,
+    "token_required_package_allowed": false,
+    "alternate_index_allowed_now": false,
+    "local_package_path_allowed": false,
+    "raw_package_url_publication_allowed": false,
+    "normalized_package_name_publication_allowed_after_review": true,
+    "package_name_hashing_allowed_future": true,
+    "package_name_redaction_required_for_sensitive_inputs": true,
+    "allowed_package_name_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_package_name_sources": [
+      "raw_public_query_parameter",
+      "user_private_package",
+      "credentialed_package_index",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_package_name": "example-package",
+    "notes": [
+      "Example package name is synthetic and is never fetched."
+    ]
+  },
+  "dependency_metadata_caution_policy": {
+    "dependency_metadata_allowed_as_summary_future": true,
+    "dependency_resolution_allowed_now": false,
+    "dependency_graph_expansion_allowed_now": false,
+    "installability_claim_allowed": false,
+    "security_or_vulnerability_claim_allowed": false,
+    "dependency_safety_claim_allowed": false,
+    "requires_python_metadata_allowed_future": true,
+    "dependency_names_publication_requires_review": true,
+    "limitations": [
+      "Dependency fields are metadata only; P74 does not resolve dependencies, expand graphs, claim installability, or claim dependency safety."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "API_terms_review_required": true,
+    "automated_access_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_or_abuse_limit_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/PYPI_METADATA_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official PyPI API/source policy review is pending; P74 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_and_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P74; operator decision is required before any future live connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_or_abuse_limit_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P74."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_package_payload_cache": true,
+    "no_wheel_payload_cache": true,
+    "no_sdist_payload_cache": true,
+    "no_installation_artifact_cache": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call PyPI live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "pypi_project_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_release_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_file_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_requires_python_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_classifier_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_yanked_status_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "pypi_dependency_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "wheel_payload_allowed": false,
+      "sdist_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "package_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "package_release_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "package_version_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "package_file_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "requires_python_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "classifier_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "yanked_status_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "dependency_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P74 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_package_param": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no PyPI live search is enabled."
+    ]
+  },
+  "rights_access_and_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_package_file_download",
+      "no_wheel_download",
+      "no_sdist_download",
+      "no_install",
+      "no_private_indexes"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "dependency_safety_claimed": false,
+    "installability_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "package_file_download_enabled": false,
+    "wheel_download_enabled": false,
+    "sdist_download_enabled": false,
+    "package_install_enabled": false,
+    "dependency_resolution_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "PyPI metadata observations are not rights clearance, malware safety, dependency safety, or installability claims."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "package_identity_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_package": false,
+    "contains_private_url": false,
+    "publishable": true,
+    "limitations": [
+      "P74 examples contain no private paths, credentials, accounts, private packages, private URLs, or tokens."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.package_identity_policy_review",
+      "item": "package_identity_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.dependency_metadata_policy_review",
+      "item": "dependency_metadata_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.token_policy_review",
+      "item": "token_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.configure_package_identity_filter",
+      "item": "configure_package_identity_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_token_required_for_v0",
+      "item": "confirm_no_token_required_for_v0",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_package_download_or_install",
+      "item": "confirm_no_package_download_or_install",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P74 does not approve or configure live PyPI access."
+    }
+  ],
+  "implementation_prerequisites": [
+    "Official PyPI source policy review",
+    "Package identity policy review",
+    "Dependency metadata caution policy review",
+    "Token policy review confirming no token required for v0",
+    "User-Agent and contact decision",
+    "Bounded rate-limit, timeout, retry, and circuit-breaker values",
+    "Source sync worker runtime approval",
+    "Source cache and evidence ledger runtime approval",
+    "Live connector implementation review"
+  ],
+  "limitations": [
+    "Approval pack only; no live connector runtime, PyPI API call, package metadata fetch, release fetch, file metadata fetch, wheel download, sdist download, package file download, package install, dependency resolution, package archive inspection, cache write, evidence write, or index mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "connector_runtime_implemented": false,
+    "connector_approved_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "pypi_api_called": false,
+    "package_metadata_fetched": false,
+    "releases_fetched": false,
+    "files_metadata_fetched": false,
+    "wheels_downloaded": false,
+    "sdists_downloaded": false,
+    "package_files_downloaded": false,
+    "package_installed": false,
+    "dependency_resolution_performed": false,
+    "package_archive_inspected": false,
+    "public_search_live_fanout_enabled": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "credentials_used": false,
+    "pypi_token_used": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth: PyPI metadata may become evidence only after approval, package identity review, cache, review, and promotion gates."
+  ]
+}

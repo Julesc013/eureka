@@ -3,20 +3,43 @@
   "name": "Package Registry Recorded Fixtures",
   "source_family": "package_registry_recorded",
   "status": "active_recorded_fixture",
-  "roles": ["discovery_index", "citation_source", "fixture"],
-  "surfaces": ["search", "item_record", "fixture_file"],
+  "roles": [
+    "discovery_index",
+    "citation_source",
+    "fixture"
+  ],
+  "surfaces": [
+    "search",
+    "item_record",
+    "fixture_file"
+  ],
   "trust_lane": "community",
   "authority_class": "recorded_package_registry_fixture",
-  "protocols": ["fixture_json"],
-  "object_types": ["package_release", "software_release", "package_member"],
-  "artifact_types": ["metadata_record", "source_archive_metadata", "member_listing"],
-  "identifier_types_emitted": ["package_fixture_id", "target_ref"],
+  "protocols": [
+    "fixture_json"
+  ],
+  "object_types": [
+    "package_release",
+    "software_release",
+    "package_member"
+  ],
+  "artifact_types": [
+    "metadata_record",
+    "source_archive_metadata",
+    "member_listing"
+  ],
+  "identifier_types_emitted": [
+    "package_fixture_id",
+    "target_ref"
+  ],
   "connector": {
     "label": "Source expansion recorded fixture connector",
     "entrypoint": "runtime.connectors.source_expansion_recorded",
     "status": "fixture_backed"
   },
-  "fixture_paths": ["runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json"],
+  "fixture_paths": [
+    "runtime/connectors/source_expansion_recorded/fixtures/source_expansion_v2_fixture.json"
+  ],
   "live_access": {
     "mode": "recorded_fixture_only",
     "notes": "Current runtime replays committed package-registry-shaped fixtures only. No live package registry calls, downloads, or installer handoff are implemented."
@@ -53,12 +76,39 @@
   "coverage": {
     "coverage_depth": "content_or_member_indexed",
     "coverage_status": "active_recorded_fixture_scope",
-    "indexed_scopes": ["package_release_metadata", "source_archive_metadata", "readme_member"],
+    "indexed_scopes": [
+      "package_release_metadata",
+      "source_archive_metadata",
+      "readme_member"
+    ],
     "connector_mode": "recorded_fixture_only",
     "last_fixture_update": "search_usefulness_source_expansion_v2",
     "coverage_notes": "Tiny package release and README member metadata for source tarball and service-pack queries.",
-    "current_limitations": ["Recorded fixture scope only", "No live package registry access", "No package download", "No install handoff"],
+    "current_limitations": [
+      "Recorded fixture scope only",
+      "No live package registry access",
+      "No package download",
+      "No install handoff"
+    ],
     "next_coverage_step": "Define Index Pack and Evidence Pack contracts before expanding package registry fixtures."
   },
-  "notes": "Active recorded fixture source for package-release metadata; it must not imply package download or installer support."
+  "notes": "Active recorded fixture source for package-release metadata; it must not imply package download or installer support.",
+  "connector_approval": {
+    "status": "approval_required",
+    "connector_inventory_ref": "control/inventory/connectors/pypi_metadata_connector.json",
+    "approval_audit_ref": "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
+    "connector_runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "pypi_api_calls_enabled": false,
+    "package_download_enabled": false,
+    "wheel_download_enabled": false,
+    "sdist_download_enabled": false,
+    "package_install_enabled": false,
+    "dependency_resolution_enabled": false,
+    "source_cache_populated_from_live_calls": false,
+    "evidence_ledger_populated_from_live_calls": false,
+    "limitations": [
+      "P74 references this recorded-fixture source only; it does not enable live PyPI API access, token use, package metadata fetching, release fetching, file metadata fetching, wheel or sdist downloads, package installs, dependency resolution, package archive inspection, source cache writes, evidence ledger writes, or public-query fanout."
+    ]
+  }
 }
