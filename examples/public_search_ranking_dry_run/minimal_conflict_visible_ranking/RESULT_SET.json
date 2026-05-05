@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1.0",
+  "result_set_id": "minimal_conflict_visible_ranking",
+  "status": "synthetic_example",
+  "current_order": [
+    "conflicted_result",
+    "unconflicted_result"
+  ],
+  "results": [
+    {
+      "result_id": "conflicted_result",
+      "title": "Synthetic Conflicted Result",
+      "current_rank": 0,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "refs": [
+          "synthetic_conflict_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "medium",
+        "platform_os_match": "conflicting",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "weak"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "medium"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [
+        "synthetic platform conflict"
+      ],
+      "gaps": [],
+      "limitations": [
+        "conflict must stay visible"
+      ]
+    },
+    {
+      "result_id": "unconflicted_result",
+      "title": "Synthetic Unconflicted Result",
+      "current_rank": 1,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "refs": [
+          "synthetic_unconflicted_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "medium",
+        "platform_os_match": "medium",
+        "architecture_match": "medium",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "weak"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "medium"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [],
+      "limitations": []
+    }
+  ],
+  "policy": {
+    "allow_dry_run_ranking": true,
+    "fallback_to_current_order": true,
+    "public_search_response_changed": false,
+    "public_search_order_changed": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false
+  }
+}
+

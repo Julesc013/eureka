@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1.0",
+  "result_set_id": "minimal_current_order_fallback",
+  "status": "synthetic_example",
+  "current_order": [
+    "fallback_first",
+    "fallback_second"
+  ],
+  "fallback_reasons": [
+    "missing factor data"
+  ],
+  "results": [
+    {
+      "result_id": "fallback_first",
+      "title": "Synthetic Current First Result",
+      "current_rank": 0,
+      "requires_current_order_fallback": true,
+      "source": {
+        "posture": "unknown"
+      },
+      "evidence": {
+        "strength": "unknown",
+        "provenance_strength": "unknown",
+        "refs": []
+      },
+      "compatibility": {
+        "evidence_strength": "unknown",
+        "platform_os_match": "unknown",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "unknown",
+        "member_access": "unknown"
+      },
+      "candidate_status": "review_required",
+      "manual_review": {
+        "status": "unknown"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [
+        "factor data missing"
+      ],
+      "limitations": [
+        "current-order fallback required"
+      ]
+    },
+    {
+      "result_id": "fallback_second",
+      "title": "Synthetic Current Second Result",
+      "current_rank": 1,
+      "source": {
+        "posture": "unknown"
+      },
+      "evidence": {
+        "strength": "unknown",
+        "provenance_strength": "unknown",
+        "refs": []
+      },
+      "compatibility": {
+        "evidence_strength": "unknown",
+        "platform_os_match": "unknown",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "unknown",
+        "member_access": "unknown"
+      },
+      "candidate_status": "review_required",
+      "manual_review": {
+        "status": "unknown"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [
+        "factor data missing"
+      ],
+      "limitations": [
+        "current-order fallback required"
+      ]
+    }
+  ],
+  "policy": {
+    "allow_dry_run_ranking": true,
+    "force_current_order_fallback": true,
+    "fallback_to_current_order": true,
+    "public_search_response_changed": false,
+    "public_search_order_changed": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false
+  }
+}
+

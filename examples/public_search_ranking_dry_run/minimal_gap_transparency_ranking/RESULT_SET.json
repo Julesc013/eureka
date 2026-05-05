@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.1.0",
+  "result_set_id": "minimal_gap_transparency_ranking",
+  "status": "synthetic_example",
+  "current_order": [
+    "gap_visible_result",
+    "less_gap_result"
+  ],
+  "results": [
+    {
+      "result_id": "gap_visible_result",
+      "title": "Synthetic Result With Source Gap",
+      "current_rank": 0,
+      "source": {
+        "posture": "weak"
+      },
+      "evidence": {
+        "strength": "weak",
+        "provenance_strength": "weak",
+        "refs": [
+          "synthetic_gap_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "unknown",
+        "platform_os_match": "unknown",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "weak",
+        "member_access": "absent"
+      },
+      "candidate_status": "candidate",
+      "manual_review": {
+        "status": "weak"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [
+        "source gap",
+        "capability gap"
+      ],
+      "limitations": [
+        "not enough source coverage"
+      ]
+    },
+    {
+      "result_id": "less_gap_result",
+      "title": "Synthetic Result With Better Coverage",
+      "current_rank": 1,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "refs": [
+          "synthetic_less_gap_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "medium",
+        "platform_os_match": "medium",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "medium"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "medium"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [],
+      "limitations": []
+    }
+  ],
+  "policy": {
+    "allow_dry_run_ranking": true,
+    "fallback_to_current_order": true,
+    "public_search_response_changed": false,
+    "public_search_order_changed": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false
+  }
+}
+

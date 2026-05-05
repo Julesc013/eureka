@@ -15,3 +15,11 @@ This is deliberately not final production ranking. It does not add fuzzy
 retrieval, vector search, LLM scoring, live source behavior, crawling, source
 federation, or new connectors. The goal is to explain why a member-level result
 may be lower effort than a parent bundle while keeping parent context visible.
+
+## Public Search Ranking Dry-Run
+
+P107 adds a local dry-run ranking report path for approved repo-local examples.
+It extracts explicit evidence-weighted and compatibility-aware categorical
+factors, builds a deterministic proposed order, and emits explanations. It does
+not change public search ordering, routes, responses, indexes, source cache,
+evidence ledger, candidates, telemetry, or hosted runtime behavior.

@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1.0",
+  "result_set_id": "minimal_compatibility_aware_ranking",
+  "status": "synthetic_example",
+  "target_profile": {
+    "platform": "synthetic_os_v1",
+    "architecture": "x86"
+  },
+  "current_order": [
+    "unknown_compatibility_result",
+    "compatible_result"
+  ],
+  "results": [
+    {
+      "result_id": "unknown_compatibility_result",
+      "title": "Synthetic Package With Unknown Compatibility",
+      "current_rank": 0,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "refs": [
+          "synthetic_package_metadata_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "unknown",
+        "platform_os_match": "unknown",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "absent"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "medium"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [
+        "compatibility gap"
+      ],
+      "limitations": [
+        "compatibility unknown"
+      ]
+    },
+    {
+      "result_id": "compatible_result",
+      "title": "Synthetic Package With Compatibility Evidence",
+      "current_rank": 1,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "refs": [
+          "synthetic_compatibility_note_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "strong",
+        "platform_os_match": "strong",
+        "architecture_match": "strong",
+        "runtime_dependency_match": "medium"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "medium"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "strong"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect",
+          "compare"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [],
+      "limitations": [
+        "no installability claim"
+      ]
+    }
+  ],
+  "policy": {
+    "allow_dry_run_ranking": true,
+    "fallback_to_current_order": true,
+    "public_search_response_changed": false,
+    "public_search_order_changed": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false
+  }
+}
+

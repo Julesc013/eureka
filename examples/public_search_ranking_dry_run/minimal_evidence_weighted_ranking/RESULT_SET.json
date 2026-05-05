@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.1.0",
+  "result_set_id": "minimal_evidence_weighted_ranking",
+  "status": "synthetic_example",
+  "query": {
+    "query_id": "synthetic_public_query_evidence",
+    "public_safe_query": "synthetic utility archive"
+  },
+  "current_order": [
+    "weak_lexical_match",
+    "strong_evidence_match",
+    "medium_source_backed_match"
+  ],
+  "results": [
+    {
+      "result_id": "weak_lexical_match",
+      "title": "Synthetic Utility Mention",
+      "current_rank": 0,
+      "source": {
+        "posture": "weak"
+      },
+      "evidence": {
+        "strength": "weak",
+        "provenance_strength": "weak",
+        "intrinsic_identifier_match": false,
+        "refs": [
+          "synthetic_evidence_ref_weak"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "unknown",
+        "platform_os_match": "unknown",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "weak",
+        "member_access": "absent"
+      },
+      "freshness": {
+        "status": "unknown"
+      },
+      "candidate_status": "candidate",
+      "manual_review": {
+        "status": "weak"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true,
+        "limitations": [
+          "rights not cleared"
+        ]
+      },
+      "conflicts": [],
+      "gaps": [
+        "source coverage gap"
+      ],
+      "limitations": [
+        "lexical match only"
+      ]
+    },
+    {
+      "result_id": "strong_evidence_match",
+      "title": "Synthetic Utility Exact Archive Record",
+      "current_rank": 1,
+      "source": {
+        "posture": "strong"
+      },
+      "evidence": {
+        "strength": "strong",
+        "provenance_strength": "strong",
+        "intrinsic_identifier_match": true,
+        "refs": [
+          "synthetic_checksum_ref",
+          "synthetic_manifest_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "medium",
+        "platform_os_match": "medium",
+        "architecture_match": "medium",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "strong",
+        "member_access": "medium"
+      },
+      "freshness": {
+        "status": "medium"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "strong"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect",
+          "cite"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true,
+        "limitations": [
+          "metadata only"
+        ]
+      },
+      "conflicts": [],
+      "gaps": [],
+      "limitations": []
+    },
+    {
+      "result_id": "medium_source_backed_match",
+      "title": "Synthetic Utility Recorded Metadata",
+      "current_rank": 2,
+      "source": {
+        "posture": "medium"
+      },
+      "evidence": {
+        "strength": "medium",
+        "provenance_strength": "medium",
+        "intrinsic_identifier_match": false,
+        "refs": [
+          "synthetic_recorded_metadata_ref"
+        ]
+      },
+      "compatibility": {
+        "evidence_strength": "weak",
+        "platform_os_match": "weak",
+        "architecture_match": "unknown",
+        "runtime_dependency_match": "unknown"
+      },
+      "representation": {
+        "availability": "medium",
+        "member_access": "weak"
+      },
+      "freshness": {
+        "status": "weak"
+      },
+      "candidate_status": "reviewed",
+      "manual_review": {
+        "status": "medium"
+      },
+      "actions": {
+        "safe_actions": [
+          "inspect"
+        ],
+        "risky_actions_enabled": false
+      },
+      "rights_risk": {
+        "caution": true
+      },
+      "conflicts": [],
+      "gaps": [],
+      "limitations": []
+    }
+  ],
+  "policy": {
+    "allow_dry_run_ranking": true,
+    "fallback_to_current_order": true,
+    "public_search_response_changed": false,
+    "public_search_order_changed": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "master_index_mutated": false
+  }
+}
+
