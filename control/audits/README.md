@@ -556,3 +556,9 @@ Planning-only runtime architecture review. Readiness is `blocked_connector_appro
 Audit pack: `control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json`.
 
 Planning-only runtime architecture review. Readiness is `ready_for_local_dry_run_runtime_after_operator_approval`; hosted runtime remains blocked by unverified deployment evidence. No runtime routes, renderers, stores, live source calls, public-search mutation, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion was added.
+
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-START -->
+## P94 Pack Import Runtime Planning v0
+
+Planning-only audit pack under `control/audits/pack-import-runtime-planning-v0/`. Readiness: local dry-run runtime planning after operator approval. No pack import runtime, real staging, upload/admin endpoint, public contribution intake, execution, URL fetching, telemetry/accounts, promotion, accepted record, or mutation was added.
+<!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->

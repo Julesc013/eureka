@@ -1,0 +1,23 @@
+# Acceptance Criteria
+
+- source pack contract valid
+- evidence pack contract valid
+- index pack contract valid
+- contribution pack contract valid
+- pack set validator valid
+- validate-only import tool valid
+- import report contract valid
+- local quarantine/staging model valid
+- staging report path contract valid
+- local staging manifest valid
+- staged-pack inspector valid
+- master index review queue contract valid
+- privacy/path/secret policy accepted
+- executable payload policy accepted
+- mutation/promotion boundary accepted
+- rollback/audit model accepted
+- operator approval
+- no public upload
+- no execution
+- no URL fetching
+- no mutation by default

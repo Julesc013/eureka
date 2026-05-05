@@ -1,0 +1,411 @@
+{
+  "report_id": "pack_import_runtime_planning_v0",
+  "created_by_slice": "P94 Pack Import Runtime Planning v0",
+  "repo_head": "3821f5771780d1257ba3c8f42e3a10228e8ef4a0",
+  "branch": "main",
+  "worktree_status": [
+    "P94 verification ran with only P94 planning, docs, validator, tests, and metadata changes pending before commit.",
+    "No runtime files, pack imports, staging stores, source/evidence/candidate/index mutations, promotions, uploads, execution, URL fetching, credentials, telemetry, accounts, deployments, external source calls, or model calls were added."
+  ],
+  "readiness_decision": "ready_for_local_dry_run_runtime_after_operator_approval",
+  "pack_contract_gate_review": {
+    "source_pack_contract_valid": true,
+    "evidence_pack_contract_valid": true,
+    "index_pack_contract_valid": true,
+    "contribution_pack_contract_valid": true,
+    "pack_set_validator_valid": true,
+    "examples_valid": true,
+    "validators_present": true,
+    "schema_drift": "none_detected",
+    "cli_drift": "none_detected",
+    "gaps": [
+      "pack import runtime is not implemented",
+      "operator approval is required before local dry-run runtime work"
+    ]
+  },
+  "validate_only_import_gate_review": {
+    "validate_only_import_tool_valid": true,
+    "known_examples_valid": true,
+    "import_report_contract_valid": true,
+    "no_mutation_guarantee_present": true,
+    "report_output_valid": true,
+    "gaps": [
+      "validate-only tool remains a script/tooling surface, not runtime import behavior",
+      "candidate effect reports remain future planning"
+    ]
+  },
+  "quarantine_staging_gate_review": {
+    "local_quarantine_staging_model_valid": true,
+    "staging_report_path_contract_valid": true,
+    "local_staging_manifest_valid": true,
+    "staged_pack_inspector_valid": true,
+    "path_policy_present": true,
+    "public_private_data_boundary_present": true,
+    "gaps": [
+      "no runtime quarantine store exists",
+      "real pack staging remains blocked until operator-approved local runtime work"
+    ]
+  },
+  "review_queue_promotion_gate_review": {
+    "master_index_review_queue_contract_valid": true,
+    "promotion_policy_present": true,
+    "candidate_review_policy_present": true,
+    "accepted_record_mutation_enabled": false,
+    "runtime_implementation_present": false,
+    "gaps": [
+      "promotion remains a separate future runtime after explicit approval",
+      "no accepted records or promotion decisions are created by P94"
+    ]
+  },
+  "runtime_boundary": [
+    "P94 does not implement pack import runtime.",
+    "No packs are imported into runtime state.",
+    "No real packs are staged beyond existing examples.",
+    "No source cache records are written.",
+    "No evidence ledger records are written.",
+    "No candidate index records are written.",
+    "No public/local/runtime/master indexes are mutated.",
+    "No promotion decisions are created.",
+    "No pack contents are executed.",
+    "No pack URLs are fetched.",
+    "No upload/admin/public contribution endpoints are added.",
+    "No database tables or persistent import queues are added."
+  ],
+  "pack_import_runtime_architecture_plan": [
+    "future runtime/packs/validate.py wraps existing validators",
+    "future runtime/packs/quarantine.py manages an operator-approved quarantine root",
+    "future runtime/packs/stage.py manages deterministic local staging",
+    "future runtime/packs/inspect.py adapts staged-pack inspection",
+    "future runtime/packs/report.py builds import reports",
+    "future runtime/packs/diff.py builds candidate effect diffs",
+    "future runtime/packs/policy.py enforces privacy/path/executable/mutation guards",
+    "future runtime/packs/promote.py remains disabled in v0 and review-gated later",
+    "future runtime/packs/errors.py emits stable error envelopes"
+  ],
+  "pack_input_trust_model": {
+    "allowed_future_origins": [
+      "repo canonical examples",
+      "local operator-provided pack path after explicit approval",
+      "signed maintainer pack future",
+      "reviewed institutional pack future",
+      "community contribution pack future after public contribution contract"
+    ],
+    "forbidden_v0_origins": [
+      "public upload endpoint",
+      "arbitrary URL",
+      "untrusted web download",
+      "private cache root",
+      "arbitrary local filesystem tree",
+      "executable installer",
+      "package manager output",
+      "live connector response",
+      "raw user telemetry"
+    ],
+    "trust_rules": [
+      "pack claims are untrusted until validated",
+      "validation is structural, not truth acceptance",
+      "provenance must be preserved",
+      "source/evidence/candidate promotion remains separate",
+      "invalid packs are rejected or quarantined",
+      "pack secrets/private paths cause rejection or redaction according to policy"
+    ]
+  },
+  "validation_pipeline_plan": [
+    "locate approved pack path or repo example",
+    "verify path is inside approved root",
+    "check manifest exists",
+    "check schema version and pack kind",
+    "check checksums/fixity",
+    "check forbidden fields, private paths, secrets, credentials",
+    "check payload policy",
+    "run pack-kind validator",
+    "run pack-set validator if applicable",
+    "build validate-only import report",
+    "build diff/candidate effect report",
+    "stop before mutation unless later explicit promotion runtime is approved"
+  ],
+  "quarantine_staging_inspection_flow": [
+    "quarantine root is an explicit operator-approved path, not a user-controlled request parameter",
+    "staging paths are deterministic and bounded",
+    "pack content is copied or referenced according to policy",
+    "no execution",
+    "no URL fetching",
+    "no decompression bombs without future extraction policy",
+    "staged-pack inspector reads metadata/reports only",
+    "stage can be discarded without mutation",
+    "staged reports are auditable"
+  ],
+  "import_report_diff_model": [
+    "pack identity",
+    "pack kind",
+    "validation status",
+    "privacy/path/secret scan status",
+    "executable/content policy status",
+    "expected candidate effects",
+    "source cache candidate effects",
+    "evidence ledger candidate effects",
+    "candidate index candidate effects",
+    "public/master index effects",
+    "conflicts",
+    "missing prerequisites",
+    "review requirements",
+    "no-mutation guarantees",
+    "all effects are candidate/dry-run only",
+    "no accepted records are created"
+  ],
+  "source_pack_import_plan": "Validate source packs, normalize source identity, review source policy and connector posture, report source inventory candidate effects, and perform no live source calls, source cache mutation, or master index mutation.",
+  "evidence_pack_import_plan": "Validate evidence packs, preserve claim/evidence/provenance, review rights/risk, preserve conflicts, report evidence ledger candidate effects with accepted_as_truth false, and perform no evidence ledger or master index mutation.",
+  "index_pack_import_plan": "Validate index packs, verify identity/fixity, compare-only first, diff against public/local index, do not replace or mutate indexes, and require rollback policy before any future runtime.",
+  "contribution_pack_import_plan": "Validate contribution packs, preserve contributor identity privacy, require no account in v0, report review queue candidate effects, require future anti-spam/poisoning policy, and allow no public contribution endpoint or automatic acceptance.",
+  "pack_set_import_plan": "Validate pack sets, order dependencies, check cross-pack references, detect conflicts, require review, and perform no mutation or promotion.",
+  "privacy_path_secret_policy": [
+    "reject absolute paths",
+    "reject path traversal",
+    "reject private cache roots",
+    "reject home/user paths",
+    "reject credentials/secrets/API keys/tokens",
+    "reject private URLs unless redaction policy explicitly allows local-private future",
+    "reject IP/account/user identifiers in public examples",
+    "normalize paths as pack-internal logical paths only",
+    "no local filesystem scanning beyond approved pack root"
+  ],
+  "executable_payload_content_safety_policy": [
+    "no execution",
+    "no installers",
+    "no scripts",
+    "no package manager invocation",
+    "no emulator/VM launch",
+    "no binary inspection beyond metadata unless future extraction sandbox is approved",
+    "no archive deep extraction unless future extraction policy is approved",
+    "no malware safety claims",
+    "executable references require risk label",
+    "payloads remain out of scope unless separately governed"
+  ],
+  "rights_risk_provenance_review": [
+    "source terms apply",
+    "pack license metadata may be recorded but is not rights clearance",
+    "evidence provenance must be preserved",
+    "claims are not truth",
+    "malware safety is not claimed",
+    "conflict preservation required",
+    "manual/human review required before promotion"
+  ],
+  "mutation_promotion_boundary": [
+    "validate-only import may produce reports",
+    "quarantine may stage candidate material in future local store only after approval",
+    "promotion is separate from import",
+    "source cache mutation requires source-cache runtime approval",
+    "evidence ledger mutation requires evidence-ledger runtime approval",
+    "candidate index mutation requires candidate runtime approval",
+    "public index mutation requires index rebuild/promotion approval",
+    "master index mutation requires master index review queue and explicit review",
+    "import runtime must not bypass promotion policy"
+  ],
+  "failure_rollback_audit_model": [
+    "failed validation report",
+    "quarantine discard",
+    "staging cleanup",
+    "no partial mutation in v0",
+    "future transactional boundaries",
+    "command results recorded",
+    "operator-visible errors",
+    "stable error envelope",
+    "reproducible validation",
+    "audit log without private data"
+  ],
+  "public_contribution_boundary": [
+    "P94 does not implement public contribution intake.",
+    "No upload endpoint.",
+    "No account system.",
+    "No moderation runtime.",
+    "No public pack submission.",
+    "Public contribution requires separate contract, abuse policy, storage policy, privacy policy, and review workflow."
+  ],
+  "implementation_phases": [
+    "Phase 0: keep runtime disabled; complete planning and validation",
+    "Phase 1: local dry-run import report over canonical examples only; no quarantine store; no mutation",
+    "Phase 2: local quarantine/staging runtime over operator-approved local packs; no promotion; no public endpoint",
+    "Phase 3: local review queue candidate generation; no accepted records",
+    "Phase 4: explicit promotion runtime for source/evidence/candidate stores after separate approval; transactional rollback required",
+    "Phase 5: hosted/private maintainer import workflow; still no public upload",
+    "Phase 6: public contribution intake only after separate contribution runtime, moderation, abuse, privacy, and storage contracts"
+  ],
+  "acceptance_criteria": [
+    "source pack contract valid",
+    "evidence pack contract valid",
+    "index pack contract valid",
+    "contribution pack contract valid",
+    "pack set validator valid",
+    "validate-only import tool valid",
+    "import report contract valid",
+    "local quarantine/staging model valid",
+    "staging report path contract valid",
+    "local staging manifest valid",
+    "staged-pack inspector valid",
+    "master index review queue contract valid",
+    "privacy/path/secret policy accepted",
+    "executable payload policy accepted",
+    "mutation/promotion boundary accepted",
+    "rollback/audit model accepted",
+    "operator approval",
+    "no public upload",
+    "no execution",
+    "no URL fetching",
+    "no mutation by default"
+  ],
+  "command_results": {
+    "initial_inspection": {
+      "status": "completed",
+      "commands": [
+        "git status --short --branch",
+        "git rev-parse HEAD",
+        "git rev-parse origin/main",
+        "git log --oneline -n 80",
+        "rg --files contracts/packs control/audits examples scripts docs control/inventory .aide"
+      ],
+      "summary": "Initial inspection started clean on main tracking origin/main. Pack contracts, examples, validators, validate-only import tooling, quarantine/staging model, staged-pack inspection, and review queue contracts were present."
+    },
+    "p94_plan_validation": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_pack_import_runtime_plan.py",
+        "python scripts/validate_pack_import_runtime_plan.py --json",
+        "python -m unittest tests.operations.test_pack_import_runtime_plan tests.scripts.test_validate_pack_import_runtime_plan"
+      ],
+      "summary": "P94 validator and focused tests passed; readiness is ready_for_local_dry_run_runtime_after_operator_approval."
+    },
+    "pack_contract_import_staging_gates": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_source_pack.py --all-examples",
+        "python scripts/validate_evidence_pack.py --all-examples",
+        "python scripts/validate_index_pack.py --all-examples",
+        "python scripts/validate_contribution_pack.py --all-examples",
+        "python scripts/validate_pack_set.py",
+        "python scripts/validate_pack_import_report.py --all-examples",
+        "python scripts/validate_only_pack_import.py --known-examples",
+        "python scripts/validate_local_quarantine_staging_model.py",
+        "python scripts/validate_staging_report_path_contract.py",
+        "python scripts/validate_local_staging_manifest.py --all-examples",
+        "python scripts/inspect_staged_pack.py --all-examples"
+      ],
+      "summary": "All pack/import/staging gates passed: source/evidence/index/contribution examples 1/1 each; pack set 5/5; import report 3/3; validate-only import 5/5; local quarantine/staging, staging path, local staging manifest, and staged inspector all valid. Tool outputs reported no import, staging, indexing, upload, network, runtime, public-search, local-index, or master-index mutation."
+    },
+    "related_runtime_plans_and_contracts": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_page_runtime_plan.py",
+        "python scripts/validate_software_heritage_connector_runtime_plan.py",
+        "python scripts/validate_npm_metadata_connector_runtime_plan.py",
+        "python scripts/validate_pypi_metadata_connector_runtime_plan.py",
+        "python scripts/validate_github_releases_connector_runtime_plan.py",
+        "python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py",
+        "python scripts/validate_internet_archive_metadata_connector_runtime_plan.py",
+        "python scripts/validate_public_query_observation_runtime_plan.py",
+        "python scripts/validate_compatibility_aware_ranking_contract.py",
+        "python scripts/validate_evidence_weighted_ranking_contract.py",
+        "python scripts/validate_result_merge_deduplication_contract.py",
+        "python scripts/validate_cross_source_identity_resolution_contract.py"
+      ],
+      "summary": "P82-P93 identity, merge, ranking, query-observation, connector-runtime, and page-runtime planning gates remained valid."
+    },
+    "public_search_static_and_safety": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_search_contract.py",
+        "python scripts/validate_public_search_result_card_contract.py",
+        "python scripts/validate_public_search_safety.py",
+        "python scripts/validate_local_public_search_runtime.py",
+        "python scripts/public_search_smoke.py",
+        "python scripts/public_search_smoke.py --json",
+        "python scripts/run_public_search_safety_evidence.py",
+        "python scripts/validate_public_search_safety_evidence.py",
+        "python scripts/run_hosted_public_search_rehearsal.py",
+        "python scripts/validate_hosted_public_search_rehearsal.py",
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/validate_publication_inventory.py",
+        "python scripts/validate_public_static_site.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/check_generated_artifact_drift.py"
+      ],
+      "summary": "Public-search contracts, local runtime, safety evidence, hosted local rehearsal, static site, publication inventory, static artifact, and generated-artifact drift checks passed. Public search remains local_index_only; P94 added no public-query fanout or pack-import route."
+    },
+    "hosted_deployment_and_baseline": {
+      "status": "passed_with_blockers_recorded",
+      "commands": [
+        "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+        "python scripts/validate_public_hosted_deployment_evidence.py",
+        "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+        "python scripts/validate_external_baseline_comparison_report.py",
+        "python scripts/report_external_baseline_status.py --json"
+      ],
+      "summary": "Hosted deployment evidence remains operator-gated: hosted backend not configured and configured static route verification failed. External baseline comparison remains not eligible with Manual Observation Batch 0 at 0 observed / 39 pending and 192 global pending slots."
+    },
+    "evals_and_full_tests": {
+      "status": "passed",
+      "commands": [
+        "python scripts/run_archive_resolution_evals.py",
+        "python scripts/run_archive_resolution_evals.py --json",
+        "python scripts/run_search_usefulness_audit.py",
+        "python scripts/run_search_usefulness_audit.py --json",
+        "python scripts/generate_python_oracle_golden.py --check",
+        "python -m unittest discover -s tests/scripts -t .",
+        "python -m unittest discover -s tests/operations -t .",
+        "python -m unittest discover -s tests/hardening -t .",
+        "python -m unittest discover -s tests/parity -t .",
+        "python -m unittest discover -s runtime -t .",
+        "python -m unittest discover -s surfaces -t .",
+        "python -m unittest discover -s tests -t .",
+        "python scripts/check_architecture_boundaries.py",
+        "git diff --check"
+      ],
+      "summary": "Archive evals passed 6/6 satisfied. Search usefulness remains 64 queries with capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2. Unit discovers passed: tests/scripts 613, tests/operations 589, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, tests 1371. Architecture boundaries passed for 446 Python files. git diff --check exited 0 with line-ending warnings only."
+    },
+    "optional": {
+      "status": "skipped_unavailable",
+      "commands": [
+        "Get-Command gh",
+        "Get-Command cargo"
+      ],
+      "summary": "Optional GitHub CLI and Cargo commands were unavailable because the executables are not installed."
+    }
+  },
+  "remaining_blockers": [
+    "Operator approval is required before local dry-run runtime work.",
+    "Pack import runtime is not implemented.",
+    "Runtime quarantine/staging store is not implemented.",
+    "Promotion runtime remains blocked and separate.",
+    "Source-cache, evidence-ledger, candidate-index, public-index, local-index, and master-index mutation remain blocked.",
+    "Public contribution intake, upload endpoints, admin endpoints, accounts, telemetry, and hosted moderation remain out of scope."
+  ],
+  "next_recommended_branch": "P95 Deep Extraction Contract v0",
+  "notes": [
+    "P94 plans a validate-first, quarantine-first, inspect-before-promote future runtime only.",
+    "No runtime files, pack import runtime, real staging, source/evidence/candidate/index mutation, promotion decision, upload endpoint, execution, URL fetching, telemetry, accounts, credentials, deployment, external source call, or model call was added.",
+    "Fast learning, slow truth."
+  ],
+  "pack_import_runtime_implemented": false,
+  "validate_only_runtime_implemented": false,
+  "quarantine_runtime_implemented": false,
+  "staging_runtime_implemented": false,
+  "promotion_runtime_implemented": false,
+  "public_contribution_intake_enabled": false,
+  "upload_endpoint_enabled": false,
+  "admin_endpoint_enabled": false,
+  "pack_content_execution_enabled": false,
+  "pack_url_fetching_enabled": false,
+  "arbitrary_local_path_enabled": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "promotion_decision_created": false,
+  "accepted_record_created": false,
+  "external_calls_performed": false,
+  "live_source_called": false,
+  "telemetry_enabled": false,
+  "accounts_enabled": false
+}
