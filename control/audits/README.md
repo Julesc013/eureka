@@ -562,3 +562,10 @@ Planning-only runtime architecture review. Readiness is `ready_for_local_dry_run
 
 Planning-only audit pack under `control/audits/pack-import-runtime-planning-v0/`. Readiness: local dry-run runtime planning after operator approval. No pack import runtime, real staging, upload/admin endpoint, public contribution intake, execution, URL fetching, telemetry/accounts, promotion, accepted record, or mutation was added.
 <!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->
+<!-- P95-DEEP-EXTRACTION-CONTRACT-START -->
+## P95 Deep Extraction Contract v0
+
+P95 adds Deep Extraction Contract v0 as contract/schema/example/validator work only. It defines metadata-first extraction requests, result summaries, policies, tiers, container/member/manifest/text/OCR hooks, sandbox/resource requirements, privacy/path/secret rejection, executable-risk labels, provenance, synthetic-record boundaries, and future relationships to source cache, evidence ledger, candidate records, public search, object pages, comparison pages, and result explanations.
+
+No extraction runtime is implemented. No files are opened, archives unpacked, payloads executed, package managers invoked, emulators or VMs launched, OCR/transcription performed, URLs fetched, live sources called, source/evidence/candidate/index records mutated, or candidates promoted.
+<!-- P95-DEEP-EXTRACTION-CONTRACT-END -->
