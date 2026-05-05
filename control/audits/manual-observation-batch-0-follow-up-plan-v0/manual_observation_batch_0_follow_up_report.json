@@ -1,0 +1,287 @@
+{
+  "report_id": "manual_observation_batch_0_follow_up_plan_v0",
+  "created_by_slice": "P102_manual_observation_batch_0_follow_up_plan_v0",
+  "repo_head": "7e0538265736e765bddcf7bda3048807f573fffe",
+  "branch": "main",
+  "worktree_status": "dirty_with_p102_follow_up_artifacts_verified",
+  "batch_id": "batch_0",
+  "batch_0_status": "pending",
+  "observation_schema_status": "complete",
+  "observation_validator_status": "complete",
+  "observation_record_status": "pending",
+  "comparison_readiness_status": "comparison_not_eligible",
+  "human_work_status": "ready_for_human_operation",
+  "observed_count": 0,
+  "pending_count": 39,
+  "invalid_count": 0,
+  "valid_count": 0,
+  "task_review_summary": {
+    "batch_0_task_count": 13,
+    "selected_system_count": 3,
+    "observation_slot_count": 39,
+    "selected_query_ids": [
+      "windows_7_apps",
+      "windows_7_portable_apps_archive",
+      "latest_firefox_before_xp_support_ended",
+      "old_blue_ftp_client_xp",
+      "windows_98_registry_repair",
+      "driver_inf_inside_support_cd",
+      "driver_thinkpad_t42_wifi_windows_2000",
+      "pc_magazine_july_1994_ray_tracing",
+      "mac_os_9_browser",
+      "powerpc_osx_104_browser",
+      "windows_xp_software",
+      "creative_ct1740_driver_windows_98",
+      "threecom_3c905_windows_95_driver"
+    ],
+    "selected_system_ids": [
+      "google_web_search",
+      "internet_archive_metadata_search",
+      "internet_archive_full_text_search"
+    ]
+  },
+  "human_work_required": true,
+  "codex_boundary": {
+    "may_inspect_local_files": true,
+    "may_create_templates_docs_validators": true,
+    "manual_observations_performed_by_codex": false,
+    "external_calls_performed": false,
+    "web_browsing_performed": false,
+    "fabricated_observations": false,
+    "fabricated_external_results": false
+  },
+  "command_results": [
+    {
+      "command": "python scripts/validate_manual_observation_batch_0_follow_up.py",
+      "status": "passed",
+      "summary": "P102 follow-up audit valid; Batch 0 pending 39, observed 0."
+    },
+    {
+      "command": "python scripts/validate_manual_observation_batch_0_follow_up.py --json",
+      "status": "passed",
+      "summary": "JSON parsed; status valid."
+    },
+    {
+      "command": "python scripts/report_manual_observation_batch_0_status.py --json",
+      "status": "passed",
+      "summary": "Read-only local report; Batch 0 pending 39, observed 0, comparison_not_eligible."
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "summary": "External baseline status ready; global pending 192, observed 0; Batch 0 pending 39."
+    },
+    {
+      "command": "python scripts/list_external_baseline_observations.py --batch batch_0",
+      "status": "passed",
+      "summary": "Listed 39 Batch 0 slots, all pending_manual_observation."
+    },
+    {
+      "command": "python scripts/validate_external_baseline_observations.py",
+      "status": "passed",
+      "summary": "Observation validator status valid; pending records are structurally valid."
+    },
+    {
+      "command": "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+      "status": "passed",
+      "summary": "ok true; eligibility no_observations; observed 0, pending 39, compared 0."
+    },
+    {
+      "command": "python scripts/validate_external_baseline_comparison_report.py",
+      "status": "passed_with_warning",
+      "summary": "Report valid; warning notes no manual baseline observations are present."
+    },
+    {
+      "command": "python scripts/validate_connector_approval_runtime_planning_audit.py",
+      "status": "passed",
+      "summary": "P101 connector audit valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_runtime_integration_audit.py",
+      "status": "passed",
+      "summary": "P100 public search integration audit valid."
+    },
+    {
+      "command": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
+      "status": "passed",
+      "summary": "7 synthetic evidence candidates valid; no mutation hard booleans remain false."
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_dry_run_report.py",
+      "status": "passed",
+      "summary": "P99 evidence-ledger dry-run report valid."
+    },
+    {
+      "command": "python scripts/run_source_cache_dry_run.py --all-examples --json",
+      "status": "passed",
+      "summary": "5 synthetic source-cache candidates valid; no mutation hard booleans remain false."
+    },
+    {
+      "command": "python scripts/validate_source_cache_dry_run_report.py",
+      "status": "passed",
+      "summary": "P98 source-cache dry-run report valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_ranking_runtime_plan.py",
+      "status": "passed",
+      "summary": "P97 ranking runtime plan valid."
+    },
+    {
+      "command": "python scripts/validate_search_result_explanation_contract.py",
+      "status": "passed",
+      "summary": "P96 explanation contract valid; 53 items checked."
+    },
+    {
+      "command": "python scripts/validate_deep_extraction_contract.py",
+      "status": "passed",
+      "summary": "P95 deep extraction contract valid; 49 items checked."
+    },
+    {
+      "command": "python scripts/validate_pack_import_runtime_plan.py",
+      "status": "passed",
+      "summary": "P94 pack import runtime plan valid."
+    },
+    {
+      "command": "python scripts/validate_page_runtime_plan.py",
+      "status": "passed",
+      "summary": "P93 page runtime plan valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "summary": "Public search contract valid; local_index_only first allowed mode."
+    },
+    {
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "summary": "Public search result card contract valid."
+    },
+    {
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "summary": "Public search safety/abuse guard valid."
+    },
+    {
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "summary": "Local public search runtime valid; routes 6, local_index_only."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "summary": "30/30 checks passed; 9 safe queries and 14 blocked requests."
+    },
+    {
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "summary": "JSON status passed; downloads/installs/uploads/live probes disabled."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "summary": "6 archive resolution eval tasks satisfied."
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "summary": "JSON status counts satisfied=6."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "summary": "64 queries; covered 5, partial 40, source_gap 10, capability_gap 7, unknown 2."
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "summary": "JSON emitted; external baseline pending counts remain 64 for each configured baseline system."
+    },
+    {
+      "command": "python -m unittest discover -s tests/runtime -t .",
+      "status": "passed",
+      "summary": "14 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "summary": "667 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "summary": "623 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "summary": "53 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "summary": "25 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "summary": "320 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "summary": "168 tests passed."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "summary": "1473 tests passed."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "summary": "No architecture-boundary violations found."
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed_with_warnings",
+      "summary": "No whitespace errors; Git emitted existing LF-to-CRLF working-copy warnings."
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "passed",
+      "summary": "Branch main tracks origin/main with P102 files modified/untracked before commit."
+    }
+  ],
+  "remaining_blockers": [
+    "Batch 0 has zero valid observed records.",
+    "External baseline comparison is not eligible until human observations are recorded and validated.",
+    "Codex cannot perform external observations.",
+    "Hosted deployment evidence remains operator-gated/unverified in current local reports."
+  ],
+  "next_recommended_branch": "P103 Object/Source/Comparison Page Local Dry-Run Runtime v0 only after approval, while a human executes Manual Observation Batch 0.",
+  "notes": [
+    "This report performs planning and workflow work only.",
+    "No external observations were performed.",
+    "Pending observation records are not baseline evidence.",
+    "Fixture-backed Eureka evals are not proof of external superiority.",
+    "Final verification remained local-only and performed no external observations.",
+    "Initial P102 validator phrase drift was repaired before final verification."
+  ],
+  "follow_up_plan_only": true,
+  "manual_observations_performed_by_codex": false,
+  "external_calls_performed": false,
+  "web_browsing_performed": false,
+  "fabricated_observations": false,
+  "fabricated_external_results": false,
+  "comparison_claimed_complete": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "telemetry_enabled": false,
+  "accounts_enabled": false,
+  "uploads_enabled": false,
+  "downloads_enabled": false
+}

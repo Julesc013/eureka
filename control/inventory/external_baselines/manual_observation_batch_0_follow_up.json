@@ -1,0 +1,28 @@
+{
+  "schema_version": "manual_observation_batch_0_follow_up_inventory.v0",
+  "inventory_id": "manual_observation_batch_0_follow_up_v0",
+  "status": "ready_for_human_operation",
+  "batch_id": "batch_0",
+  "observed_count": 0,
+  "pending_count": 39,
+  "invalid_count": 0,
+  "valid_count": 0,
+  "comparison_readiness_status": "comparison_not_eligible",
+  "manual_work_required": true,
+  "codex_external_observation_allowed": false,
+  "external_calls_performed": false,
+  "fabricated_observations": false,
+  "fabricated_results": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "next_recommended_branch": "P103 Object/Source/Comparison Page Local Dry-Run Runtime v0 only after approval, while human operators execute Manual Observation Batch 0.",
+  "notes": [
+    "Batch 0 exists and validates as pending-only.",
+    "External baseline comparison is not eligible with zero valid observations.",
+    "Codex must not perform or fabricate external observations."
+  ]
+}
+
