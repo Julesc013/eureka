@@ -474,3 +474,9 @@ These are contract-only/source-page governance checks. They make no network call
 
 `control/audits/comparison-page-contract-v0/` records the Comparison Page Contract v0 governance pack. It is contract-only and does not claim runtime comparison pages, ranking authority, candidate promotion, winner selection, live source calls, downloads, installs, execution, rights clearance, malware safety, source trust, source cache/evidence ledger runtime, or index mutation.
 <!-- P81-COMPARISON-PAGE-CONTRACT-END -->
+
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-START -->
+## P82 Cross-Source Identity Resolution Contract v0
+
+`control/audits/cross-source-identity-resolution-contract-v0/` records the Cross-Source Identity Resolution Contract v0 governance pack. It is contract-only and does not claim runtime identity resolution, destructive deduplication, record merge, candidate promotion, live source calls, source trust, rights clearance, malware safety, telemetry, or index/cache/ledger mutation.
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
