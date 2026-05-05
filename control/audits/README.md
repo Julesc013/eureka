@@ -492,3 +492,9 @@ These are contract-only/source-page governance checks. They make no network call
 
 Audit pack: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json`. Contract-only; no runtime ranking, public search ordering change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, or index/cache/ledger mutation.
 <!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+## P85 Compatibility-Aware Ranking Contract v0
+
+Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
