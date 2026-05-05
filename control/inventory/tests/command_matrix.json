@@ -352,7 +352,17 @@
         "evidence_weighted_ranking_contract_validator",
         "evidence_weighted_ranking_contract_validator_json",
         "evidence_weighted_ranking_dry_run_json",
-        "evidence_weighted_ranking_contract_tests"
+        "evidence_weighted_ranking_contract_tests",
+        "compatibility_target_profile_examples_validator",
+        "compatibility_target_profile_examples_validator_json",
+        "compatibility_aware_ranking_assessment_examples_validator",
+        "compatibility_aware_ranking_assessment_examples_validator_json",
+        "compatibility_explanation_examples_validator",
+        "compatibility_explanation_examples_validator_json",
+        "compatibility_aware_ranking_contract_validator",
+        "compatibility_aware_ranking_contract_validator_json",
+        "compatibility_aware_ranking_dry_run_json",
+        "compatibility_aware_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -718,7 +728,17 @@
         "evidence_weighted_ranking_contract_validator",
         "evidence_weighted_ranking_contract_validator_json",
         "evidence_weighted_ranking_dry_run_json",
-        "evidence_weighted_ranking_contract_tests"
+        "evidence_weighted_ranking_contract_tests",
+        "compatibility_target_profile_examples_validator",
+        "compatibility_target_profile_examples_validator_json",
+        "compatibility_aware_ranking_assessment_examples_validator",
+        "compatibility_aware_ranking_assessment_examples_validator_json",
+        "compatibility_explanation_examples_validator",
+        "compatibility_explanation_examples_validator_json",
+        "compatibility_aware_ranking_contract_validator",
+        "compatibility_aware_ranking_contract_validator_json",
+        "compatibility_aware_ranking_dry_run_json",
+        "compatibility_aware_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1358,7 +1378,17 @@
         "evidence_weighted_ranking_contract_validator",
         "evidence_weighted_ranking_contract_validator_json",
         "evidence_weighted_ranking_dry_run_json",
-        "evidence_weighted_ranking_contract_tests"
+        "evidence_weighted_ranking_contract_tests",
+        "compatibility_target_profile_examples_validator",
+        "compatibility_target_profile_examples_validator_json",
+        "compatibility_aware_ranking_assessment_examples_validator",
+        "compatibility_aware_ranking_assessment_examples_validator_json",
+        "compatibility_explanation_examples_validator",
+        "compatibility_explanation_examples_validator_json",
+        "compatibility_aware_ranking_contract_validator",
+        "compatibility_aware_ranking_contract_validator_json",
+        "compatibility_aware_ranking_dry_run_json",
+        "compatibility_aware_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1437,6 +1467,9 @@
     "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
     "P82 Cross-Source Identity Resolution Contract v0 validation is stdlib-only and contract-only; it adds no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
     "P83 adds Result Merge and Deduplication v0 contract validators and tests; all are local-only and network-free.",
-    "P84 adds Evidence-Weighted Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger."
+    "P84 adds Evidence-Weighted Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger.",
+    "P85 adds Compatibility-Aware Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger.",
+    "P85 adds Compatibility-Aware Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger.",
+    "P85 adds Compatibility-Aware Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger."
   ]
 }

@@ -1268,3 +1268,26 @@ notes:
   - id: evidence_weighted_ranking_contract_tests
     run: python -m unittest tests.operations.test_evidence_weighted_ranking_contract tests.scripts.test_validate_evidence_weighted_ranking_assessment tests.scripts.test_validate_ranking_explanation tests.scripts.test_validate_evidence_weighted_ranking_contract tests.scripts.test_dry_run_evidence_weighted_ranking
 <!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+  - id: compatibility_target_profile_examples_validator
+    run: python scripts/validate_compatibility_target_profile.py --all-examples
+  - id: compatibility_target_profile_examples_validator_json
+    run: python scripts/validate_compatibility_target_profile.py --all-examples --json
+  - id: compatibility_aware_ranking_assessment_examples_validator
+    run: python scripts/validate_compatibility_aware_ranking_assessment.py --all-examples
+  - id: compatibility_aware_ranking_assessment_examples_validator_json
+    run: python scripts/validate_compatibility_aware_ranking_assessment.py --all-examples --json
+  - id: compatibility_explanation_examples_validator
+    run: python scripts/validate_compatibility_explanation.py --all-examples
+  - id: compatibility_explanation_examples_validator_json
+    run: python scripts/validate_compatibility_explanation.py --all-examples --json
+  - id: compatibility_aware_ranking_contract_validator
+    run: python scripts/validate_compatibility_aware_ranking_contract.py
+  - id: compatibility_aware_ranking_contract_validator_json
+    run: python scripts/validate_compatibility_aware_ranking_contract.py --json
+  - id: compatibility_aware_ranking_dry_run_json
+    run: python scripts/dry_run_compatibility_aware_ranking.py --target-os "Windows 7 x64" --left-title "Strong compatibility evidence result" --right-title "Unknown compatibility result" --json
+  - id: compatibility_aware_ranking_contract_tests
+    run: python -m unittest tests.operations.test_compatibility_aware_ranking_contract tests.scripts.test_validate_compatibility_target_profile tests.scripts.test_validate_compatibility_aware_ranking_assessment tests.scripts.test_validate_compatibility_explanation tests.scripts.test_validate_compatibility_aware_ranking_contract tests.scripts.test_dry_run_compatibility_aware_ranking
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->

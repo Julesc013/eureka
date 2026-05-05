@@ -404,3 +404,9 @@ Report: `control/audits/result-merge-deduplication-contract-v0/result_merge_dedu
 
 Report: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json`.
 <!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+## P85 Compatibility-Aware Ranking Contract v0
+
+Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->

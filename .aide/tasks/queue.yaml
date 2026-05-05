@@ -923,9 +923,9 @@
     {
       "id": "compatibility_aware_ranking_contract_v0",
       "title": "P85 Compatibility-Aware Ranking Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 126,
-      "notes": "Expected next contract after evidence-weighted ranking; compatibility ranking must remain scoped, evidence-backed, and non-runtime until governed."
+      "notes": "P85 completed as contract/schema/validator/example/audit work only; no runtime compatibility ranking, public search ordering change, hidden suppression, installability/dependency-safety/malware-safety claim, package manager invocation, emulator/VM launch, candidate promotion, live source call, or index/cache/ledger mutation was added."
     },
     {
       "id": "npm_metadata_connector_runtime_planning_v0",
@@ -939,7 +939,7 @@
       "title": "P86 Public Query Observation Runtime Planning v0 only after hosted deployment",
       "status": "blocked_pending_hosted_deployment",
       "priority": 127,
-      "notes": "Runtime planning only after hosted deployment and privacy/logging policies are approved."
+      "notes": "Expected next as planning only if hosted deployment remains unverified; preserve hosted-deployment, privacy, and logging gates."
     },
     {
       "id": "software_heritage_connector_runtime_planning_v0",
@@ -1003,6 +1003,13 @@
       "status": "blocked_pending_contracts_and_evals",
       "priority": 135,
       "notes": "Future planning only after evidence-weighted and compatibility-aware ranking contracts plus eval evidence; no runtime ranking until then."
+    },
+    {
+      "id": "compatibility_evidence_pack_contract_v0",
+      "title": "P95 Compatibility Evidence Pack Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 136,
+      "notes": "Future contract for governed compatibility evidence packs after ranking/page contracts."
     }
   ]
 }

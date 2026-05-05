@@ -828,3 +828,19 @@ These are contract-only result merge/deduplication checks. They make no network 
 
 These are contract-only checks. They perform no network calls, implement no runtime ranking, change no public search order, suppress no results, promote no candidates, use no popularity/telemetry/ad/user-profile signals, mutate no index/cache/ledger, and enable no downloads, installs, or execution.
 <!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+## P85 Compatibility-Aware Ranking Contract v0
+
+- `python scripts/validate_compatibility_target_profile.py --all-examples`
+- `python scripts/validate_compatibility_target_profile.py --all-examples --json`
+- `python scripts/validate_compatibility_aware_ranking_assessment.py --all-examples`
+- `python scripts/validate_compatibility_aware_ranking_assessment.py --all-examples --json`
+- `python scripts/validate_compatibility_explanation.py --all-examples`
+- `python scripts/validate_compatibility_explanation.py --all-examples --json`
+- `python scripts/validate_compatibility_aware_ranking_contract.py`
+- `python scripts/validate_compatibility_aware_ranking_contract.py --json`
+- `python scripts/dry_run_compatibility_aware_ranking.py --target-os "Windows 7 x64" --left-title "Strong compatibility evidence result" --right-title "Unknown compatibility result" --json`
+
+These are contract-only checks. They perform no network calls, implement no runtime compatibility ranking, change no public search order, suppress no results, claim no installability/dependency safety/malware safety, invoke no package managers, launch no emulators/VMs, mutate no index/cache/ledger, and enable no downloads, installs, or execution.
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->

@@ -849,6 +849,14 @@
       "status": "addressed_contract_only",
       "notes": "Addressed by control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json. Contract-only; no runtime ranking/order change/suppression/popularity/telemetry/ad/user-profile ranking/promotion/mutation.",
       "addressed_by": "control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json"
+    },
+    {
+      "id": "audit-backlog-compatibility-aware-ranking-contract-v0",
+      "title": "P85 Compatibility-Aware Ranking Contract v0 audit pack",
+      "status": "addressed_contract_only",
+      "priority": 0,
+      "notes": "Addressed by control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json. Contract-only; no runtime compatibility ranking, public search order change, hidden suppression, installability claim, dependency safety claim, emulator or VM launch, package-manager invocation, telemetry, candidate promotion, or index/cache/ledger/master-index mutation.",
+      "addressed_by": "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json"
     }
   ]
 }
