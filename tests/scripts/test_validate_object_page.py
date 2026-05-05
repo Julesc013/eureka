@@ -1,0 +1,111 @@
+import copy
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+EXAMPLE = ROOT / "examples" / "object_pages" / "minimal_software_object_page_v0" / "OBJECT_PAGE.json"
+
+
+class ObjectPageValidatorTests(unittest.TestCase):
+    def test_validator_passes_all_examples(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "scripts/validate_object_page.py", "--all-examples"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        self.assertIn("status: valid", completed.stdout)
+        self.assertIn("example_count: 4", completed.stdout)
+
+    def test_validator_json_parses(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "scripts/validate_object_page.py", "--all-examples", "--json"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        report = json.loads(completed.stdout)
+        self.assertEqual(report["status"], "valid")
+        self.assertEqual(report["example_count"], 4)
+
+    def test_hard_booleans_and_truth_flags_are_safe(self) -> None:
+        page = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+        for key in (
+            "runtime_object_page_implemented",
+            "persistent_object_page_store_implemented",
+            "live_source_called",
+            "external_calls_performed",
+            "source_cache_mutated",
+            "evidence_ledger_mutated",
+            "candidate_index_mutated",
+            "candidate_promotion_performed",
+            "public_index_mutated",
+            "local_index_mutated",
+            "master_index_mutated",
+            "downloads_enabled",
+            "uploads_enabled",
+            "installs_enabled",
+            "execution_enabled",
+            "arbitrary_url_fetch_enabled",
+            "rights_clearance_claimed",
+            "malware_safety_claimed",
+        ):
+            self.assertFalse(page[key])
+        self.assertTrue(page["object_identity"]["identity_not_truth"])
+        self.assertTrue(all(item["confidence_not_truth"] for item in page["evidence"]))
+        self.assertFalse(page["absence_near_misses_gaps"]["global_absence_claimed"])
+        self.assertTrue(all(not item["payload_included"] for item in page["representations"]))
+
+    def test_negative_mutations_and_actions_fail(self) -> None:
+        for path, value in (
+            (("runtime_object_page_implemented",), True),
+            (("live_source_called",), True),
+            (("downloads_enabled",), True),
+            (("installs_enabled",), True),
+            (("execution_enabled",), True),
+            (("master_index_mutated",), True),
+            (("rights_clearance_claimed",), True),
+            (("malware_safety_claimed",), True),
+            (("absence_near_misses_gaps", "global_absence_claimed"), True),
+        ):
+            with self.subTest(path=path):
+                self._assert_invalid(path, value)
+
+    def test_negative_private_path_fails(self) -> None:
+        self._assert_invalid(("members", 0, "member_path_public_safe"), "C:\\\\Users\\\\Example\\\\private.bin", source="member")
+
+    def test_negative_credential_like_value_fails(self) -> None:
+        self._assert_invalid(("notes", 0), "api_key=example-value")
+
+    def _assert_invalid(self, key_path: tuple, value, *, source: str = "software") -> None:
+        base_path = EXAMPLE
+        if source == "member":
+            base_path = ROOT / "examples" / "object_pages" / "minimal_container_member_object_page_v0" / "OBJECT_PAGE.json"
+        page = json.loads(base_path.read_text(encoding="utf-8"))
+        target = page
+        for part in key_path[:-1]:
+            target = target[part]
+        target[key_path[-1]] = value
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp) / "OBJECT_PAGE.json"
+            tmp_path.write_text(json.dumps(page), encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, "scripts/validate_object_page.py", "--page", str(tmp_path), "--json"],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+            )
+        self.assertNotEqual(completed.returncode, 0, completed.stdout)
+        report = json.loads(completed.stdout)
+        self.assertEqual(report["status"], "invalid")
+
+
+if __name__ == "__main__":
+    unittest.main()
