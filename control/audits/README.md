@@ -655,3 +655,14 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   promotion decision, accepted record, telemetry, credentials, downloads,
   installs, or source/evidence/candidate/public/local/master mutation.
 <!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-START -->
+## P105 Deep Extraction Runtime Planning v0
+
+- Audit pack: `control/audits/deep-extraction-runtime-planning-v0/`
+- Status: planning-only; readiness is `blocked_resource_limit_policy_missing`.
+- Boundary: no extraction runtime, file opening, archive unpacking, arbitrary
+  path access, URL fetching, payload execution, OCR/transcription, queue/store,
+  public-search/page/pack/connector integration, telemetry, accounts, downloads,
+  installs, or source/evidence/candidate/public/local/master mutation.
+<!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-END -->

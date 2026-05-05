@@ -9644,6 +9644,69 @@
       "failure_means": "P104 runtime modules, CLI, validator, audit docs, inventory, or command metadata regressed.",
       "advisory_or_required": "required",
       "notes": "Tests pack classification, policy rejection, CLI forbidden args, strict temp failure, output path policy, validator negatives, and operations metadata."
+    },
+    {
+      "test_id": "deep_extraction_runtime_plan_validator",
+      "label": "P105 deep extraction runtime plan validator",
+      "command": "python scripts/validate_deep_extraction_runtime_plan.py",
+      "category": "governance",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P105 planning audit, inventory, readiness decision, or hard no-runtime/no-mutation booleans drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates planning-only posture; no runtime extraction, file opening, archive unpacking, URL fetching, execution, OCR/transcription, integration, telemetry, or mutation."
+    },
+    {
+      "test_id": "deep_extraction_runtime_plan_validator_json",
+      "label": "P105 deep extraction runtime plan validator JSON",
+      "command": "python scripts/validate_deep_extraction_runtime_plan.py --json",
+      "category": "governance",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P105 validator JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validation output for the deep extraction runtime planning audit."
+    },
+    {
+      "test_id": "deep_extraction_runtime_plan_tests",
+      "label": "P105 deep extraction runtime plan tests",
+      "command": "python -m unittest tests.operations.test_deep_extraction_runtime_plan tests.scripts.test_validate_deep_extraction_runtime_plan",
+      "category": "unit",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P105 validator, audit docs, inventory, command metadata, or negative hard-boolean checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Tests readiness values, required audit files, command matrix entries, docs, and negative no-runtime/no-unpack/no-file-open/no-URL/no-OCR/no-mutation report claims."
     }
   ],
   "notes": [
@@ -9677,6 +9740,7 @@
     "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation.",
     "P101 Connector Approval and Runtime Planning Audit commands are stdlib-only audit/report checks; they perform no connector runtime implementation, live source calls, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, or mutation. Command strings: python scripts/validate_connector_approval_runtime_planning_audit.py; python scripts/validate_connector_approval_runtime_planning_audit.py --json; python scripts/report_connector_approval_runtime_status.py --json.",
     "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public/hosted/API route change, public-search integration, source-cache/evidence-ledger reads, live source calls, risky actions, telemetry, credentials, downloads, uploads, installs, execution, or source/evidence/candidate/index mutation. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json.",
-    "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, staging/quarantine writes, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json."
+    "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, staging/quarantine writes, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json.",
+    "P105 Deep Extraction Runtime Planning commands are stdlib-only planning validators; they perform no runtime extraction, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_deep_extraction_runtime_plan.py; python scripts/validate_deep_extraction_runtime_plan.py --json."
   ]
 }

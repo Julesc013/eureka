@@ -1117,3 +1117,16 @@ contribution intake, upload/admin endpoint, pack execution, URL fetching,
 promotion decision, accepted record, telemetry, credentials, downloads,
 installs, or source/evidence/candidate/public/local/master mutation.
 <!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-START -->
+## P105 Deep Extraction Runtime Planning v0
+
+- `python scripts/validate_deep_extraction_runtime_plan.py`
+- `python scripts/validate_deep_extraction_runtime_plan.py --json`
+
+These commands are stdlib-only planning validators. They add no runtime
+extraction, file opening, archive unpacking, arbitrary path access, URL
+fetching, payload execution, OCR/transcription, public-search/page/pack/connector
+integration, telemetry, accounts, downloads, installs, or source/evidence/
+candidate/public/local/master mutation.
+<!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-END -->

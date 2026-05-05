@@ -1070,9 +1070,9 @@
     {
       "id": "deep_extraction_runtime_planning_v0",
       "title": "P105 Deep Extraction Runtime Planning v0 only after sandbox policy approval",
-      "status": "blocked_pending_sandbox_policy_approval",
+      "status": "completed_planning_blocked_resource_limit_policy_missing",
       "priority": 146,
-      "notes": "Future planning only after P95 contract is reviewed and extraction sandbox/resource/executable payload safety policy is approved."
+      "notes": "P105 completed as planning/audit/validator work only. Readiness is blocked_resource_limit_policy_missing because concrete operator-approved resource limits and sandbox approval remain incomplete. No extraction runtime, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, queues/stores, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/index mutation was added."
     },
     {
       "id": "search_result_explanation_runtime_planning_v0",
@@ -1136,6 +1136,13 @@
       "status": "queued_codex_safe_future",
       "priority": 156,
       "notes": "Future planning for quarantine/staging runtime after P104 dry-run review and explicit operator approval; no quarantine or staging runtime is implemented by P104."
+    },
+    {
+      "id": "deep_extraction_local_dry_run_request_runtime_v0",
+      "title": "P115 Deep Extraction Local Dry-Run Request Runtime v0 only after sandbox approval",
+      "status": "blocked_pending_sandbox_resource_operator_approval",
+      "priority": 157,
+      "notes": "Future local dry-run request/report runtime only after extraction sandbox, concrete resource limits, payload safety, OCR/transcription boundary, approved input model, and operator approval are recorded. No extraction runtime is authorized by P105."
     }
   ]
 }
