@@ -621,3 +621,15 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   execution, telemetry, deployment, source/evidence write, candidate promotion,
   or index/cache/ledger/master mutation is added.
 <!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-END -->
+
+<!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-START -->
+## P102 Manual Observation Batch 0 Follow-up Plan v0
+
+- Audit pack: `control/audits/manual-observation-batch-0-follow-up-plan-v0/`
+- Status: planning/workflow checkpoint, ready for human operation.
+- Boundary: Batch 0 remains pending with 39 pending slots and 0 observed
+  records. No external observations, browsing, scraping, source/search API
+  calls, fabricated results, comparison-complete claim, hosted deployment,
+  telemetry, accounts, uploads, downloads, or index/cache/ledger/candidate
+  mutation is added.
+<!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-END -->

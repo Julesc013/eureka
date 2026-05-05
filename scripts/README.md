@@ -1005,3 +1005,16 @@ runtime implementation, live source calls, public-search fanout,
 credentials/tokens, downloads, installs, execution, telemetry, deployment, or
 mutation.
 <!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-END -->
+
+<!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-START -->
+## P102 Manual Observation Batch 0 Follow-up Plan v0
+
+- `python scripts/validate_manual_observation_batch_0_follow_up.py`
+- `python scripts/validate_manual_observation_batch_0_follow_up.py --json`
+- `python scripts/report_manual_observation_batch_0_status.py --json`
+
+These commands are stdlib-only local planning/reporting checks. They perform no
+manual observations, browsing, scraping, external source or search calls, model
+calls, fabricated observations, index/cache/ledger/candidate mutation,
+telemetry, accounts, uploads, downloads, or comparison-complete claims.
+<!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-END -->

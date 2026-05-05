@@ -9361,6 +9361,89 @@
       "failure_means": "P101 audit docs, inventory, validator, reporter, or negative hard-boolean checks regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms all six connectors are present, approval-gated, not live, not public-search integrated, and not mutating source/evidence/index state."
+    },
+    {
+      "test_id": "manual_observation_batch_0_follow_up_validator",
+      "label": "Manual Observation Batch 0 Follow-up validator",
+      "command": "python scripts/validate_manual_observation_batch_0_follow_up.py",
+      "category": "operations",
+      "owner_area": "evals/external_baselines",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P102 manual-observation follow-up pack, report, inventory, docs, or hard no-external-observation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates planning-only Batch 0 follow-up artifacts; performs no external calls, browsing, observations, or mutation."
+    },
+    {
+      "test_id": "manual_observation_batch_0_follow_up_validator_json",
+      "label": "Manual Observation Batch 0 Follow-up validator JSON",
+      "command": "python scripts/validate_manual_observation_batch_0_follow_up.py --json",
+      "category": "operations",
+      "owner_area": "evals/external_baselines",
+      "required_for": [
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P102 validator JSON projection is missing or invalid.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validation output for the manual observation follow-up plan."
+    },
+    {
+      "test_id": "manual_observation_batch_0_status_report_json",
+      "label": "Manual Observation Batch 0 status report JSON",
+      "command": "python scripts/report_manual_observation_batch_0_status.py --json",
+      "category": "operations",
+      "owner_area": "evals/external_baselines",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The read-only Batch 0 status reporter failed or emitted invalid status data.",
+      "advisory_or_required": "required",
+      "notes": "Read-only local reporter; performs no external observations, browsing, scraping, or mutation."
+    },
+    {
+      "test_id": "manual_observation_batch_0_follow_up_tests",
+      "label": "Manual Observation Batch 0 Follow-up tests",
+      "command": "python -m unittest tests.operations.test_manual_observation_batch_0_follow_up tests.scripts.test_validate_manual_observation_batch_0_follow_up tests.scripts.test_report_manual_observation_batch_0_status",
+      "category": "operations",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only for negative validator fixtures",
+      "expected_runtime": "seconds",
+      "failure_means": "The P102 audit, validator, reporter, or metadata registration regressed.",
+      "advisory_or_required": "required",
+      "notes": "Includes negative tests for external calls/fabrication/mutation claims."
     }
   ],
   "notes": [
