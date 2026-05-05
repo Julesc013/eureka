@@ -322,7 +322,13 @@
         "source_page_contract_validator",
         "source_page_contract_validator_json",
         "source_page_dry_run_json",
-        "source_page_contract_tests"
+        "source_page_contract_tests",
+        "comparison_page_examples_validator",
+        "comparison_page_examples_validator_json",
+        "comparison_page_contract_validator",
+        "comparison_page_contract_validator_json",
+        "comparison_page_dry_run_json",
+        "comparison_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -658,7 +664,13 @@
         "source_page_contract_validator",
         "source_page_contract_validator_json",
         "source_page_dry_run_json",
-        "source_page_contract_tests"
+        "source_page_contract_tests",
+        "comparison_page_examples_validator",
+        "comparison_page_examples_validator_json",
+        "comparison_page_contract_validator",
+        "comparison_page_contract_validator_json",
+        "comparison_page_dry_run_json",
+        "comparison_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1268,7 +1280,13 @@
         "source_page_contract_validator",
         "source_page_contract_validator_json",
         "source_page_dry_run_json",
-        "source_page_contract_tests"
+        "source_page_contract_tests",
+        "comparison_page_examples_validator",
+        "comparison_page_examples_validator_json",
+        "comparison_page_contract_validator",
+        "comparison_page_contract_validator_json",
+        "comparison_page_dry_run_json",
+        "comparison_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1343,6 +1361,7 @@
     "P77 Public Hosted Deployment Evidence adds verifier/validator commands; repo-config verifier may perform HTTP only to configured Eureka URLs and makes no deployment claim.",
     "P78 External Baseline Comparison Report commands are local-only evidence/reporting checks. They read committed manual observations and local Eureka audit/index outputs, perform no web/search/source/model calls, and make no superiority or production claim.",
     "P79 Object Page Contract commands are local-only governance checks. They do not implement runtime pages, call sources, enable downloads/installs/execution, or mutate indexes/cache/ledger/candidates.",
-    "P80 Source Page Contract commands are local-only governance checks. They do not implement runtime pages, connector runtime, source sync execution, call sources, enable downloads/installs/execution, claim source trust, or mutate indexes/cache/ledger/candidates."
+    "P80 Source Page Contract commands are local-only governance checks. They do not implement runtime pages, connector runtime, source sync execution, call sources, enable downloads/installs/execution, claim source trust, or mutate indexes/cache/ledger/candidates.",
+    "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
   ]
 }

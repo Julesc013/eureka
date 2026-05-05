@@ -1196,3 +1196,18 @@ notes:
     run: python -m unittest tests.operations.test_source_page_contract tests.scripts.test_validate_source_page tests.scripts.test_validate_source_page_contract tests.scripts.test_dry_run_source_page
 <!-- P80-SOURCE-PAGE-CONTRACT-END -->
 <!-- P80-SOURCE-PAGE-CONTRACT-END -->
+
+<!-- P81-COMPARISON-PAGE-CONTRACT-START -->
+  - id: comparison_page_examples_validator
+    run: python scripts/validate_comparison_page.py --all-examples
+  - id: comparison_page_examples_validator_json
+    run: python scripts/validate_comparison_page.py --all-examples --json
+  - id: comparison_page_contract_validator
+    run: python scripts/validate_comparison_page_contract.py
+  - id: comparison_page_contract_validator_json
+    run: python scripts/validate_comparison_page_contract.py --json
+  - id: comparison_page_dry_run_json
+    run: python scripts/dry_run_comparison_page.py --label "Compare two Windows 7 compatible app candidates" --comparison-type object_identity_comparison --json
+  - id: comparison_page_contract_tests
+    run: python -m unittest tests.operations.test_comparison_page_contract tests.scripts.test_validate_comparison_page tests.scripts.test_validate_comparison_page_contract tests.scripts.test_dry_run_comparison_page
+<!-- P81-COMPARISON-PAGE-CONTRACT-END -->

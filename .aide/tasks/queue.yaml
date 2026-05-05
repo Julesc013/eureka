@@ -888,30 +888,30 @@
     {
       "id": "comparison_page_contract_v0",
       "title": "P81 Comparison Page Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 122,
-      "notes": "Next contract after object/source pages; no runtime comparison authority, external baseline fabrication, source trust, or master-index mutation."
+      "notes": "P81 completed as contract/schema/validator/example/audit work only; no runtime comparison pages, ranking authority, winner selection, live source calls, source/evidence/candidate/master-index mutation, downloads, installs, execution, source trust, rights clearance, or malware safety claims were added."
     },
     {
       "id": "cross_source_identity_resolution_contract_v0",
       "title": "P82 Cross-Source Identity Resolution Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 123,
-      "notes": "Future identity resolution contract; no runtime identity authority, source trust, or master-index mutation without governed review."
+      "notes": "Next contract after comparison pages; preserve conflicts and avoid authoritative identity claims without evidence."
     },
     {
       "id": "result_merge_and_deduplication_contract_v0",
       "title": "P83 Result Merge and Deduplication Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 124,
-      "notes": "Future merge/dedup contract; preserve conflicts and avoid destructive merges without review."
+      "notes": "Future merge/dedup contract; preserve disagreements and avoid destructive merges without review."
     },
     {
       "id": "evidence_weighted_ranking_contract_v0",
       "title": "P84 Evidence-Weighted Ranking Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 125,
-      "notes": "Future ranking contract; no production ranking authority without evidence and validation."
+      "notes": "Future ranking contract; no production ranking authority without governed evidence weighting and validation."
     },
     {
       "id": "pypi_metadata_connector_runtime_planning_v0",
@@ -971,10 +971,17 @@
     },
     {
       "id": "object_and_source_page_runtime_planning_v0",
-      "title": "P90 Object and Source Page Runtime Planning v0",
+      "title": "P90 Object/Source/Comparison Page Runtime Planning v0",
       "status": "queued_codex_safe_future",
       "priority": 131,
       "notes": "Future planning only; no runtime page implementation until comparison/identity/merge/ranking contracts are governed."
+    },
+    {
+      "id": "pack_import_runtime_planning_v0",
+      "title": "P91 Pack Import Runtime Planning v0",
+      "status": "queued_codex_safe_future",
+      "priority": 132,
+      "notes": "Future planning only after pack import policy and mutation boundaries are governed."
     }
   ]
 }
