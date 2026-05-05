@@ -1042,9 +1042,9 @@
     {
       "id": "connector_approval_and_runtime_planning_audit_v0",
       "title": "P101 Connector Approval and Runtime Planning Audit v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed_audit_approval_gated",
       "priority": 142,
-      "notes": "Future connector approval/runtime governance audit."
+      "notes": "P101 completed as audit/validation/reporting only. All six first-wave connector approval packs and runtime planning packs are present, but connector approval remains pending and runtime is approval/operator/policy/dependency-gated. No live source calls, connector runtime implementation, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, source/evidence writes, or index mutation were added."
     },
     {
       "id": "manual_observation_batch_0_follow_up_plan_v0",
@@ -1108,6 +1108,13 @@
       "status": "queued_codex_safe_future",
       "priority": 152,
       "notes": "Future hardening after P100/P101 and operator-hosted evidence; no live fanout, telemetry, uploads/downloads, ranking, or mutation without explicit approval."
+    },
+    {
+      "id": "connector_runtime_approval_decision_pack_v0",
+      "title": "P111 Connector Runtime Approval Decision Pack v0, human/operator gated",
+      "status": "human_operator_gated",
+      "priority": 153,
+      "notes": "Future human/operator-gated decision pack for connector runtime approval after source/API policy, User-Agent/contact, rate-limit, token/auth, identity/privacy, cache/evidence destination, and hosted/operator gates are reviewed."
     }
   ]
 }

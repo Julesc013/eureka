@@ -992,3 +992,16 @@ integration, public-search route/response/order change, source-cache or
 evidence-ledger dry-run public-search integration, live source fanout, telemetry,
 deployment, accounts, uploads, downloads, installs, execution, or mutation.
 <!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-END -->
+
+<!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-START -->
+## P101 Connector Approval and Runtime Planning Audit v0
+
+- `python scripts/validate_connector_approval_runtime_planning_audit.py`
+- `python scripts/validate_connector_approval_runtime_planning_audit.py --json`
+- `python scripts/report_connector_approval_runtime_status.py --json`
+
+These commands are stdlib-only audit/report checks. They add no connector
+runtime implementation, live source calls, public-search fanout,
+credentials/tokens, downloads, installs, execution, telemetry, deployment, or
+mutation.
+<!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-END -->

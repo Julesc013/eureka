@@ -609,3 +609,15 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   fanout, hosted deployment, telemetry, accounts, uploads, downloads, installs,
   execution, candidate promotion, or index/cache/ledger/master mutation.
 <!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-END -->
+
+<!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-START -->
+## P101 Connector Approval and Runtime Planning Audit v0
+
+- Audit pack: `control/audits/connector-approval-runtime-planning-audit-v0/`
+- Status: audit-only checkpoint.
+- Boundary: all six first-wave connector approval packs and runtime planning
+  packs are present, but approval remains pending. No connector runtime, live
+  source call, public-search fanout, credentials/tokens, downloads, installs,
+  execution, telemetry, deployment, source/evidence write, candidate promotion,
+  or index/cache/ledger/master mutation is added.
+<!-- P101-CONNECTOR-APPROVAL-RUNTIME-PLANNING-AUDIT-END -->

@@ -9273,6 +9273,94 @@
       "failure_means": "P100 audit docs, inventory, validator, reporter, or negative hard-boolean checks regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms factual audit status, dry-run non-integration, disabled live fanout, no telemetry/accounts/downloads, and no mutation claims."
+    },
+    {
+      "test_id": "connector_approval_runtime_planning_audit_validator",
+      "label": "P101 connector approval runtime planning audit validator",
+      "command": "python scripts/validate_connector_approval_runtime_planning_audit.py",
+      "category": "audit",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P101 connector approval/runtime planning audit artifacts, classifications, or hard no-live/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates approval packs, runtime plans, connector matrix, public-search boundary, operator gates, and no live connector/runtime/mutation claims."
+    },
+    {
+      "test_id": "connector_approval_runtime_planning_audit_validator_json",
+      "label": "P101 connector approval runtime planning audit validator JSON",
+      "command": "python scripts/validate_connector_approval_runtime_planning_audit.py --json",
+      "category": "audit",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P101 connector approval/runtime planning audit validator JSON output drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable P101 audit validation."
+    },
+    {
+      "test_id": "connector_approval_runtime_status_report_json",
+      "label": "P101 connector approval runtime status reporter JSON",
+      "command": "python scripts/report_connector_approval_runtime_status.py --json",
+      "category": "audit",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P101 read-only connector status projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Reports first-wave connector status matrix without importing connector runtimes or performing network calls."
+    },
+    {
+      "test_id": "connector_approval_runtime_planning_audit_tests",
+      "label": "P101 connector approval runtime planning audit tests",
+      "command": "python -m unittest tests.operations.test_connector_approval_runtime_planning_audit tests.scripts.test_validate_connector_approval_runtime_planning_audit tests.scripts.test_report_connector_approval_runtime_status",
+      "category": "unit",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P101 audit docs, inventory, validator, reporter, or negative hard-boolean checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms all six connectors are present, approval-gated, not live, not public-search integrated, and not mutating source/evidence/index state."
     }
   ],
   "notes": [
@@ -9303,6 +9391,7 @@
     "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
     "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
     "P99 Evidence Ledger Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation.",
-    "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation."
+    "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation.",
+    "P101 Connector Approval and Runtime Planning Audit commands are stdlib-only audit/report checks; they perform no connector runtime implementation, live source calls, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, or mutation. Command strings: python scripts/validate_connector_approval_runtime_planning_audit.py; python scripts/validate_connector_approval_runtime_planning_audit.py --json; python scripts/report_connector_approval_runtime_status.py --json."
   ]
 }
