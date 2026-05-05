@@ -442,7 +442,11 @@
         "deep_extraction_runtime_plan_tests",
         "search_result_explanation_runtime_plan_validator",
         "search_result_explanation_runtime_plan_validator_json",
-        "search_result_explanation_runtime_plan_tests"
+        "search_result_explanation_runtime_plan_tests",
+        "public_search_ranking_dry_run_json",
+        "public_search_ranking_dry_run_report_validator",
+        "public_search_ranking_dry_run_report_validator_json",
+        "public_search_ranking_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -898,7 +902,11 @@
         "deep_extraction_runtime_plan_tests",
         "search_result_explanation_runtime_plan_validator",
         "search_result_explanation_runtime_plan_validator_json",
-        "search_result_explanation_runtime_plan_tests"
+        "search_result_explanation_runtime_plan_tests",
+        "public_search_ranking_dry_run_json",
+        "public_search_ranking_dry_run_report_validator",
+        "public_search_ranking_dry_run_report_validator_json",
+        "public_search_ranking_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1685,6 +1693,7 @@
     "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved examples. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json.",
     "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, real staging/quarantine, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json.",
     "P105 Deep Extraction Runtime Planning commands are stdlib-only planning validators; they perform no runtime extraction, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_deep_extraction_runtime_plan.py; python scripts/validate_deep_extraction_runtime_plan.py --json.",
-    "P106 Search Result Explanation Runtime Planning commands are stdlib-only planning validators; they perform no runtime explanation generation, public-search route/response/order change, model call, AI answer, hidden score, result suppression, telemetry, source/evidence read or write, live source call, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_search_result_explanation_runtime_plan.py; python scripts/validate_search_result_explanation_runtime_plan.py --json."
+    "P106 Search Result Explanation Runtime Planning commands are stdlib-only planning validators; they perform no runtime explanation generation, public-search route/response/order change, model call, AI answer, hidden score, result suppression, telemetry, source/evidence read or write, live source call, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_search_result_explanation_runtime_plan.py; python scripts/validate_search_result_explanation_runtime_plan.py --json.",
+    "P107 Public Search Ranking Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public search route/response/order change, hidden score, result suppression, model call, AI reranking, telemetry, popularity/user-profile/ad signal, source/evidence authoritative read or write, live source call, download, install, execution, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_public_search_ranking_dry_run.py --all-examples --json; python scripts/validate_public_search_ranking_dry_run_report.py; python scripts/validate_public_search_ranking_dry_run_report.py --json."
   ]
 }

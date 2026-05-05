@@ -1520,3 +1520,18 @@ accounts, source-cache or evidence-ledger read/write, live source call,
 download, install, execution, or source/evidence/candidate/public/local/master
 mutation.
 <!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-END -->
+
+<!-- P107-PUBLIC-SEARCH-RANKING-LOCAL-DRY-RUN-RUNTIME-START -->
+## P107 Public Search Ranking Local Dry-Run Runtime v0
+
+- `python scripts/run_public_search_ranking_dry_run.py --all-examples --json`
+- `python scripts/validate_public_search_ranking_dry_run_report.py`
+- `python scripts/validate_public_search_ranking_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks over approved repo
+examples. They add no public-search route, response, result-card, or order
+change; hidden score; result suppression; model call; AI reranking; telemetry;
+popularity, user-profile, or ad signal; source-cache or evidence-ledger
+authoritative read/write; live source call; download; install; execution; or
+source/evidence/candidate/public/local/master mutation.
+<!-- P107-PUBLIC-SEARCH-RANKING-LOCAL-DRY-RUN-RUNTIME-END -->

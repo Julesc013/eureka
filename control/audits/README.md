@@ -679,3 +679,15 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   source call, downloads, installs, execution, or source/evidence/candidate/
   public/local/master mutation.
 <!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-END -->
+
+<!-- P107-PUBLIC-SEARCH-RANKING-LOCAL-DRY-RUN-RUNTIME-START -->
+## P107 Public Search Ranking Local Dry-Run Runtime v0
+
+- Audit pack: `control/audits/public-search-ranking-local-dry-run-runtime-v0/`
+- Status: implemented local dry-run only.
+- Boundary: no public-search route/response/result-card/order change, hidden
+  score, result suppression, model call, AI reranking, telemetry, popularity,
+  user-profile, ad signal, source-cache or evidence-ledger authoritative
+  read/write, live source call, downloads, installs, execution, candidate
+  promotion, or source/evidence/candidate/public/local/master mutation.
+<!-- P107-PUBLIC-SEARCH-RANKING-LOCAL-DRY-RUN-RUNTIME-END -->

@@ -9770,6 +9770,86 @@
       "failure_means": "P106 validator, audit docs, inventory, command metadata, or negative hard-boolean checks regressed.",
       "advisory_or_required": "required",
       "notes": "Tests readiness values, required audit files, command matrix entries, docs, and negative no-runtime/no-search-change/no-route/no-model/no-hidden-score/no-source-read/no-mutation report claims."
+    },
+    {
+      "test_id": "public_search_ranking_dry_run_json",
+      "label": "P107 public search ranking local dry-run JSON",
+      "command": "python scripts/run_public_search_ranking_dry_run.py --all-examples --json",
+      "category": "runtime",
+      "owner_area": "runtime/engine/ranking",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless an explicit approved output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "P107 ranking dry-run fixture loading, factor extraction, ordering, explanation, or hard no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Runs a local dry-run over approved public-search ranking examples only; no public search route/response/order change, hidden score, suppression, model call, telemetry, source/evidence read, live source call, or mutation."
+    },
+    {
+      "test_id": "public_search_ranking_dry_run_report_validator",
+      "label": "P107 public search ranking dry-run report validator",
+      "command": "python scripts/validate_public_search_ranking_dry_run_report.py",
+      "category": "runtime",
+      "owner_area": "runtime/engine/ranking",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P107 audit report, required files, or hard no-runtime/no-mutation booleans drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates the P107 audit report and no public search mutation, hidden score, suppression, model, telemetry, source/evidence read/write, live source, or index mutation claims."
+    },
+    {
+      "test_id": "public_search_ranking_dry_run_report_validator_json",
+      "label": "P107 public search ranking dry-run report validator JSON",
+      "command": "python scripts/validate_public_search_ranking_dry_run_report.py --json",
+      "category": "runtime",
+      "owner_area": "runtime/engine/ranking",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "P107 JSON validator output or report contract drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validator for the P107 local ranking dry-run audit report."
+    },
+    {
+      "test_id": "public_search_ranking_local_dry_run_runtime_tests",
+      "label": "P107 public search ranking local dry-run tests",
+      "command": "python -m unittest tests.runtime.test_public_search_ranking_dry_run tests.scripts.test_run_public_search_ranking_dry_run tests.scripts.test_validate_public_search_ranking_dry_run_report tests.operations.test_public_search_ranking_local_dry_run_runtime",
+      "category": "runtime",
+      "owner_area": "runtime/engine/ranking",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only in approved example roots or OS temp during tests",
+      "expected_runtime": "seconds",
+      "failure_means": "P107 runtime, CLI, validator, or operations metadata regressed.",
+      "advisory_or_required": "required",
+      "notes": "Tests local dry-run ranking, forbidden input rejection, strict invalid example behavior, validator negatives, and metadata publication."
     }
   ],
   "notes": [
@@ -9805,6 +9885,7 @@
     "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public/hosted/API route change, public-search integration, source-cache/evidence-ledger reads, live source calls, risky actions, telemetry, credentials, downloads, uploads, installs, execution, or source/evidence/candidate/index mutation. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json.",
     "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, staging/quarantine writes, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json.",
     "P105 Deep Extraction Runtime Planning commands are stdlib-only planning validators; they perform no runtime extraction, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_deep_extraction_runtime_plan.py; python scripts/validate_deep_extraction_runtime_plan.py --json.",
-    "P106 Search Result Explanation Runtime Planning commands are stdlib-only planning validators; they perform no runtime explanation generation, public-search route/response/order change, model call, AI answer, hidden score, result suppression, telemetry, source/evidence read or write, live source call, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_search_result_explanation_runtime_plan.py; python scripts/validate_search_result_explanation_runtime_plan.py --json."
+    "P106 Search Result Explanation Runtime Planning commands are stdlib-only planning validators; they perform no runtime explanation generation, public-search route/response/order change, model call, AI answer, hidden score, result suppression, telemetry, source/evidence read or write, live source call, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_search_result_explanation_runtime_plan.py; python scripts/validate_search_result_explanation_runtime_plan.py --json.",
+    "P107 Public Search Ranking Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public search route/response/order change, hidden score, result suppression, model call, AI reranking, telemetry, popularity/user-profile/ad signal, source/evidence authoritative read or write, live source call, download, install, execution, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_public_search_ranking_dry_run.py --all-examples --json; python scripts/validate_public_search_ranking_dry_run_report.py; python scripts/validate_public_search_ranking_dry_run_report.py --json."
   ]
 }

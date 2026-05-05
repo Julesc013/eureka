@@ -1084,9 +1084,9 @@
     {
       "id": "public_search_ranking_local_dry_run_runtime_v0",
       "title": "P107 Public Search Ranking Local Dry-Run Runtime v0 only after eval gate approval",
-      "status": "blocked_pending_eval_gate_approval",
+      "status": "completed_implemented_local_dry_run",
       "priority": 148,
-      "notes": "Future gated milestone; P97 grants no runtime behavior."
+      "notes": "P107 completed as a local dry-run public-search ranking runtime over approved synthetic examples. It emits explicit evidence-weighted and compatibility-aware factors, proposed dry-run order, explanations, and current-order fallback. No public search route/response/order/card change, hidden score, suppression, model call, telemetry, popularity/user-profile/ad signal, source/evidence authoritative read or write, live source call, or mutation was added."
     },
     {
       "id": "source_cache_authoritative_local_runtime_planning_v0",
@@ -1150,6 +1150,13 @@
       "status": "blocked_pending_operator_explanation_runtime_approval",
       "priority": 158,
       "notes": "Future local dry-run explanation assembler only after P106 gates, public-search explanation copy/privacy policy review, source/evidence/candidate boundary approval, no-model/no-hidden-score approval, fallback policy approval, and operator approval are recorded. No explanation runtime is authorized by P106."
+    },
+    {
+      "id": "public_search_ranking_runtime_integration_plan_refresh_v0",
+      "title": "P117 Public Search Ranking Runtime Integration Plan Refresh v0",
+      "status": "queued_codex_safe_future",
+      "priority": 159,
+      "notes": "Future planning refresh only after P107 dry-run review, eval acceptance criteria, public-search safety, explanation boundary, and operator approval. No integration is enabled by P107."
     }
   ]
 }
