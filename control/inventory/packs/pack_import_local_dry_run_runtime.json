@@ -1,0 +1,40 @@
+{
+  "schema_version": "pack_import_local_dry_run_runtime_inventory.v0",
+  "runtime_id": "pack_import_local_dry_run_runtime_v0",
+  "status": "implemented_local_dry_run",
+  "local_dry_run_runtime_implemented": true,
+  "authoritative_pack_import_runtime_implemented": false,
+  "validate_only_adapter_enabled": true,
+  "quarantine_runtime_enabled": false,
+  "staging_runtime_enabled": false,
+  "promotion_runtime_enabled": false,
+  "public_contribution_intake_enabled": false,
+  "upload_endpoint_enabled": false,
+  "admin_endpoint_enabled": false,
+  "pack_content_execution_enabled": false,
+  "pack_url_fetching_enabled": false,
+  "arbitrary_local_path_enabled": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "telemetry_enabled": false,
+  "credentials_enabled": false,
+  "approved_input_roots": [
+    "examples/source_packs",
+    "examples/evidence_packs",
+    "examples/index_packs",
+    "examples/contribution_packs",
+    "examples/packs",
+    "examples/pack_import_dry_run"
+  ],
+  "cli": "python scripts/run_pack_import_dry_run.py --all-examples --json",
+  "validator": "python scripts/validate_pack_import_dry_run_report.py",
+  "next_runtime_branch_recommendation": "P105 Deep Extraction Runtime Planning v0 only after sandbox policy approval",
+  "notes": [
+    "P104 is local dry-run only.",
+    "No authoritative import, staging/quarantine write, public contribution intake, upload/admin endpoint, execution, URL fetch, promotion decision, or mutation is enabled."
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "accepted_record_created": false,
+  "admin_endpoint_enabled": false,
+  "authoritative_pack_import_runtime_implemented": false,
+  "branch": "main",
+  "candidate_index_mutated": false,
+  "classification_summary": {
+    "mutation_impact_counts": {
+      "candidate_index_candidate_effect": 3,
+      "evidence_ledger_candidate_effect": 2,
+      "public_index_candidate_effect": 2,
+      "source_cache_candidate_effect": 2
+    },
+    "pack_kinds": {
+      "contribution_pack": 2,
+      "evidence_pack": 2,
+      "index_pack": 2,
+      "pack_set": 1,
+      "source_pack": 2
+    },
+    "privacy_status_counts": {
+      "public_safe": 9
+    },
+    "promotion_readiness_counts": {
+      "not_ready": 6,
+      "review_required": 3
+    },
+    "public_safety_status_counts": {
+      "public_safe": 7,
+      "review_required": 2
+    },
+    "risk_status_counts": {
+      "metadata_only": 9
+    },
+    "schema_versions": {
+      "contribution_pack.v0": 2,
+      "evidence_pack.v0": 2,
+      "index_pack.v0": 2,
+      "pack_set.v0": 1,
+      "source_pack.v0": 2
+    },
+    "validation_status_counts": {
+      "valid": 4,
+      "validator_not_run": 5
+    }
+  },
+  "cli_script": "scripts/run_pack_import_dry_run.py",
+  "command_results": {
+    "architecture_boundaries": "passed; no architecture-boundary violations found",
+    "external_baseline_comparison": "passed; comparison remains not eligible because Batch 0 has 0 observed and 39 pending manual observations",
+    "final_git_diff_check": "passed; Git emitted CRLF normalization warnings for existing site/dist files",
+    "initial_git_status": "clean at start",
+    "optional_cargo": "not available in PATH; optional cargo checks not run",
+    "optional_gh": "not available in PATH; GitHub Actions status not checked",
+    "pack_contract_and_staging_validators": "passed; source/evidence/index/contribution pack validators, pack-set validator, validate-only import, import report, quarantine/staging model, staging path contract, staging manifest examples, and staged-pack inspector all passed",
+    "public_search_and_eval_checks": "passed; public search contract/card/safety/local runtime/smoke checks, archive resolution evals, and search usefulness audit passed",
+    "run_pack_import_dry_run_all_examples_json": "passed; 9 packs seen, 9 valid, 0 invalid",
+    "run_pack_import_dry_run_no_validator_commands_json": "passed; 9 packs seen, 9 valid, 0 invalid",
+    "tests": "passed after test-registry metadata repair; tests/runtime 27, tests/scripts 685, tests/operations 629, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, tests all 1510",
+    "validate_pack_import_dry_run_report": "passed",
+    "validate_pack_import_dry_run_report_json": "passed",
+    "validator_metadata_repair": "moved P104 command records from a stray tests key into control/inventory/tests/test_registry.json records; generated artifact drift guard then passed"
+  },
+  "created_by_slice": "P104_pack_import_local_dry_run_runtime_v0",
+  "credentials_used": false,
+  "downloads_enabled": false,
+  "dry_run_results": {
+    "dry_run_effects": {
+      "accepted_records_created": false,
+      "authoritative_import_performed": false,
+      "candidate_effects_only": true,
+      "effect_pack_ids": [
+        "example.minimal_contribution_pack_v0",
+        "example.minimal_evidence_pack_v0",
+        "example.minimal_index_pack_v0",
+        "example.pack_import_dry_run.contribution_pack.v0",
+        "example.pack_import_dry_run.evidence_pack.v0",
+        "example.pack_import_dry_run.index_pack.v0",
+        "example.pack_import_dry_run.pack_set.v0",
+        "example.pack_import_dry_run.source_pack.v0",
+        "example.minimal_recorded_source_pack_v0"
+      ],
+      "mutation_impact_counts": {
+        "candidate_index_candidate_effect": 3,
+        "evidence_ledger_candidate_effect": 2,
+        "public_index_candidate_effect": 2,
+        "source_cache_candidate_effect": 2
+      },
+      "notes": [
+        "Dry-run effects summarize candidate impact only.",
+        "No quarantine, staging, source-cache, evidence-ledger, candidate-index, public-index, local-index, or master-index state was written."
+      ],
+      "promotion_decisions_created": false
+    },
+    "errors": [],
+    "hard_booleans": {
+      "accepted_record_created": false,
+      "admin_endpoint_enabled": false,
+      "authoritative_pack_import_runtime_implemented": false,
+      "candidate_index_mutated": false,
+      "credentials_used": false,
+      "downloads_enabled": false,
+      "evidence_ledger_mutated": false,
+      "execution_enabled": false,
+      "external_calls_performed": false,
+      "hosted_runtime_enabled": false,
+      "installs_enabled": false,
+      "live_source_called": false,
+      "local_dry_run": true,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "pack_content_executed": false,
+      "pack_urls_followed": false,
+      "promotion_decision_created": false,
+      "promotion_runtime_enabled": false,
+      "public_contribution_intake_enabled": false,
+      "public_index_mutated": false,
+      "quarantine_store_written": false,
+      "real_pack_staging_performed": false,
+      "source_cache_mutated": false,
+      "staging_store_written": false,
+      "telemetry_exported": false,
+      "upload_endpoint_enabled": false
+    },
+    "input_roots": [
+      "examples/contribution_packs",
+      "examples/evidence_packs",
+      "examples/index_packs",
+      "examples/pack_import_dry_run",
+      "examples/source_packs"
+    ],
+    "mode": "local_dry_run",
+    "mutation_impact_counts": {
+      "candidate_index_candidate_effect": 3,
+      "evidence_ledger_candidate_effect": 2,
+      "public_index_candidate_effect": 2,
+      "source_cache_candidate_effect": 2
+    },
+    "mutation_summary": {
+      "accepted_record_created": false,
+      "authoritative_pack_import_runtime_implemented": false,
+      "candidate_index_mutated": false,
+      "evidence_ledger_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "promotion_decision_created": false,
+      "public_index_mutated": false,
+      "quarantine_store_written": false,
+      "real_pack_staging_performed": false,
+      "source_cache_mutated": false,
+      "staging_store_written": false
+    },
+    "pack_kinds": {
+      "contribution_pack": 2,
+      "evidence_pack": 2,
+      "index_pack": 2,
+      "pack_set": 1,
+      "source_pack": 2
+    },
+    "pack_summaries": [
+      {
+        "errors": [],
+        "mutation_impact": "candidate_index_candidate_effect",
+        "pack_id": "example.minimal_contribution_pack_v0",
+        "pack_kind": "contribution_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/contribution_packs/minimal_contribution_pack_v0/CONTRIBUTION_PACK.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "review_required",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "contribution_pack.v0",
+        "summary_text": "Synthetic public-safe contribution candidates for contract testing. The pack proposes review candidates only and does not upload, import, mutate, or accept records.",
+        "title": "Minimal Synthetic Contribution Pack v0",
+        "valid": true,
+        "validation_status": "valid",
+        "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/contribution_packs/minimal_contribution_pack_v0 --json",
+        "validator_exit_code": 0,
+        "warnings": []
+      },
+      {
+        "errors": [],
+        "mutation_impact": "evidence_ledger_candidate_effect",
+        "pack_id": "example.minimal_evidence_pack_v0",
+        "pack_kind": "evidence_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/evidence_packs/minimal_evidence_pack_v0/EVIDENCE_PACK.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "evidence_pack.v0",
+        "summary_text": "Synthetic public-safe evidence pack demonstrating metadata, compatibility, member-path, and absence claims without import, indexing, upload, live fetch, executable payloads, or master-index acceptance.",
+        "title": "Minimal Evidence Pack v0",
+        "valid": true,
+        "validation_status": "valid",
+        "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0 --json",
+        "validator_exit_code": 0,
+        "warnings": []
+      },
+      {
+        "errors": [],
+        "mutation_impact": "public_index_candidate_effect",
+        "pack_id": "example.minimal_index_pack_v0",
+        "pack_kind": "index_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/index_packs/minimal_index_pack_v0/INDEX_PACK.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "index_pack.v0",
+        "summary_text": "Synthetic public-safe summary-only index pack demonstrating index build metadata, source coverage, field coverage, query examples, and record summaries without import, merge, upload, database export, live fetch, executable payloads, or master-index acceptance.",
+        "title": "Minimal Index Pack v0",
+        "valid": true,
+        "validation_status": "valid",
+        "validator_command": "python scripts/validate_index_pack.py --pack-root examples/index_packs/minimal_index_pack_v0 --json",
+        "validator_exit_code": 0,
+        "warnings": []
+      },
+      {
+        "errors": [],
+        "mutation_impact": "candidate_index_candidate_effect",
+        "pack_id": "example.pack_import_dry_run.contribution_pack.v0",
+        "pack_kind": "contribution_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "review_required",
+        "public_safety_status": "review_required",
+        "risk_status": "metadata_only",
+        "schema_version": "contribution_pack.v0",
+        "summary_text": "Synthetic contribution-pack candidate summary for review-required dry-run planning. It has no public contribution intake.",
+        "title": "Minimal Contribution Pack Review Dry-Run",
+        "valid": true,
+        "validation_status": "validator_not_run",
+        "validator_command": null,
+        "validator_exit_code": null,
+        "warnings": [
+          "synthetic dry-run input classified without invoking pack validators"
+        ]
+      },
+      {
+        "errors": [],
+        "mutation_impact": "evidence_ledger_candidate_effect",
+        "pack_id": "example.pack_import_dry_run.evidence_pack.v0",
+        "pack_kind": "evidence_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "evidence_pack.v0",
+        "summary_text": "Synthetic evidence-pack candidate summary for local dry-run import planning. Evidence remains an observation candidate and is not accepted as truth.",
+        "title": "Minimal Evidence Pack Import Dry-Run",
+        "valid": true,
+        "validation_status": "validator_not_run",
+        "validator_command": null,
+        "validator_exit_code": null,
+        "warnings": [
+          "synthetic dry-run input classified without invoking pack validators"
+        ]
+      },
+      {
+        "errors": [],
+        "mutation_impact": "public_index_candidate_effect",
+        "pack_id": "example.pack_import_dry_run.index_pack.v0",
+        "pack_kind": "index_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "index_pack.v0",
+        "summary_text": "Synthetic index-pack candidate summary for compare-only dry-run planning. It never replaces or rebuilds an index.",
+        "title": "Minimal Index Pack Compare Dry-Run",
+        "valid": true,
+        "validation_status": "validator_not_run",
+        "validator_command": null,
+        "validator_exit_code": null,
+        "warnings": [
+          "synthetic dry-run input classified without invoking pack validators"
+        ]
+      },
+      {
+        "errors": [],
+        "mutation_impact": "candidate_index_candidate_effect",
+        "pack_id": "example.pack_import_dry_run.pack_set.v0",
+        "pack_kind": "pack_set",
+        "pack_version": "0.1.0",
+        "path": "examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "review_required",
+        "public_safety_status": "review_required",
+        "risk_status": "metadata_only",
+        "schema_version": "pack_set.v0",
+        "summary_text": "Synthetic pack-set candidate summary with cross-pack references for local dry-run planning only.",
+        "title": "Minimal Pack Set Import Dry-Run",
+        "valid": true,
+        "validation_status": "validator_not_run",
+        "validator_command": null,
+        "validator_exit_code": null,
+        "warnings": [
+          "synthetic dry-run input classified without invoking pack validators"
+        ]
+      },
+      {
+        "errors": [],
+        "mutation_impact": "source_cache_candidate_effect",
+        "pack_id": "example.pack_import_dry_run.source_pack.v0",
+        "pack_kind": "source_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "source_pack.v0",
+        "summary_text": "Synthetic source-pack candidate summary for local dry-run import planning. It records candidate effects only and performs no live source call.",
+        "title": "Minimal Source Pack Import Dry-Run",
+        "valid": true,
+        "validation_status": "validator_not_run",
+        "validator_command": null,
+        "validator_exit_code": null,
+        "warnings": [
+          "synthetic dry-run input classified without invoking pack validators"
+        ]
+      },
+      {
+        "errors": [],
+        "mutation_impact": "source_cache_candidate_effect",
+        "pack_id": "example.minimal_recorded_source_pack_v0",
+        "pack_kind": "source_pack",
+        "pack_version": "0.1.0",
+        "path": "examples/source_packs/minimal_recorded_source_pack_v0/SOURCE_PACK.json",
+        "privacy_status": "public_safe",
+        "promotion_readiness": "not_ready",
+        "public_safety_status": "public_safe",
+        "risk_status": "metadata_only",
+        "schema_version": "source_pack.v0",
+        "summary_text": "A tiny synthetic source pack that demonstrates source metadata, public-safe evidence records, representation metadata, fixture files, rights notes, privacy posture, and checksum validation without import, indexing, uploads, live connectors, or executable payloads.",
+        "title": "Example FOSS Project Release Metadata Fixture",
+        "valid": true,
+        "validation_status": "valid",
+        "validator_command": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0 --json",
+        "validator_exit_code": 0,
+        "warnings": []
+      }
+    ],
+    "packs_invalid": 0,
+    "packs_seen": 9,
+    "packs_valid": 9,
+    "privacy_status_counts": {
+      "public_safe": 9
+    },
+    "promotion_readiness_counts": {
+      "not_ready": 6,
+      "review_required": 3
+    },
+    "public_safety_status_counts": {
+      "public_safe": 7,
+      "review_required": 2
+    },
+    "report_id": "pack-import-dry-run-241165530d6cc335",
+    "risk_status_counts": {
+      "metadata_only": 9
+    },
+    "schema_versions": {
+      "contribution_pack.v0": 2,
+      "evidence_pack.v0": 2,
+      "index_pack.v0": 2,
+      "pack_set.v0": 1,
+      "source_pack.v0": 2
+    },
+    "validation_status_counts": {
+      "valid": 4,
+      "validator_not_run": 5
+    },
+    "warnings": []
+  },
+  "evidence_ledger_mutated": false,
+  "examples": [
+    "examples/pack_import_dry_run/minimal_source_pack_import",
+    "examples/pack_import_dry_run/minimal_evidence_pack_import",
+    "examples/pack_import_dry_run/minimal_index_pack_compare",
+    "examples/pack_import_dry_run/minimal_contribution_pack_review",
+    "examples/pack_import_dry_run/minimal_pack_set_import"
+  ],
+  "executable_payload_url_policy": {
+    "downloads_enabled": false,
+    "pack_content_execution_enabled": false,
+    "pack_url_fetching_enabled": false,
+    "script_execution_enabled": false
+  },
+  "execution_enabled": false,
+  "external_calls_performed": false,
+  "hosted_runtime_enabled": false,
+  "import_report_diff_model": {
+    "accepted_records_created": false,
+    "authoritative_store_diff_performed": false,
+    "candidate_effects_only": true,
+    "promotion_decisions_created": false
+  },
+  "input_model": {
+    "approved_roots": [
+      "examples/source_packs",
+      "examples/evidence_packs",
+      "examples/index_packs",
+      "examples/contribution_packs",
+      "examples/packs",
+      "examples/pack_import_dry_run"
+    ],
+    "forbidden": [
+      "arbitrary local paths",
+      "absolute private paths",
+      "path traversal",
+      "URLs",
+      "live source identifiers",
+      "connector params",
+      "source/evidence/cache/index/database roots",
+      "uploads",
+      "credentials",
+      "executable package paths"
+    ]
+  },
+  "installs_enabled": false,
+  "live_source_called": false,
+  "local_dry_run_runtime_implemented": true,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "mutation_promotion_boundary": {
+    "accepted_record": false,
+    "authoritative_import": false,
+    "index_mutation": false,
+    "promotion_decision": false,
+    "reports_only": true
+  },
+  "next_recommended_branch": "P105 Deep Extraction Runtime Planning v0 only after sandbox policy approval",
+  "notes": [
+    "P104 is local dry-run only.",
+    "No authoritative import, staging/quarantine writes, execution, URL fetching, public contribution intake, upload/admin endpoint, promotion, telemetry, credentials, or mutation is implemented."
+  ],
+  "output_model": {
+    "mode": "local_dry_run",
+    "required_fields": [
+      "report_id",
+      "mode",
+      "input_roots",
+      "packs_seen",
+      "packs_valid",
+      "packs_invalid",
+      "pack_summaries",
+      "pack_kinds",
+      "schema_versions",
+      "validation_status_counts",
+      "privacy_status_counts",
+      "public_safety_status_counts",
+      "risk_status_counts",
+      "mutation_impact_counts",
+      "promotion_readiness_counts",
+      "dry_run_effects",
+      "mutation_summary",
+      "warnings",
+      "errors",
+      "hard_booleans"
+    ]
+  },
+  "pack_content_executed": false,
+  "pack_handling_summary": {
+    "contribution_pack": "review-required candidate effect; no public intake",
+    "evidence_pack": "evidence-ledger candidate effects only; accepted_as_truth false",
+    "index_pack": "compare-only future effect; no index mutation",
+    "pack_set": "synthetic dependency classification only; no mutation",
+    "source_pack": "source-cache/source-inventory candidate effects only; no live source calls or writes"
+  },
+  "pack_urls_followed": false,
+  "privacy_path_secret_policy": {
+    "arbitrary_filesystem_scan_enabled": false,
+    "path_traversal_rejected": true,
+    "private_paths_rejected": true,
+    "secret_like_fields_rejected": true
+  },
+  "promotion_decision_created": false,
+  "promotion_runtime_enabled": false,
+  "public_contribution_boundary": {
+    "account_system_enabled": false,
+    "admin_endpoint_enabled": false,
+    "public_contribution_intake_enabled": false,
+    "upload_endpoint_enabled": false
+  },
+  "public_contribution_intake_enabled": false,
+  "public_index_mutated": false,
+  "quarantine_staging_boundary": {
+    "pack_copy_performed": false,
+    "real_quarantine_store_created": false,
+    "real_staging_store_created": false
+  },
+  "quarantine_store_written": false,
+  "real_pack_staging_performed": false,
+  "remaining_blockers": [
+    "real quarantine/staging runtime",
+    "authoritative import storage",
+    "promotion runtime",
+    "public contribution intake",
+    "hosted import runtime"
+  ],
+  "repo_head": "472220b37312304c05969be9df8a0254a4e97d41",
+  "report_id": "pack_import_local_dry_run_runtime_v0",
+  "rights_risk_provenance_review": {
+    "malware_safety_claimed": false,
+    "pack_claims_are_truth": false,
+    "provenance_preserved_as_metadata": true,
+    "rights_clearance_claimed": false
+  },
+  "runtime_modules": [
+    "runtime/packs/dry_run.py",
+    "runtime/packs/models.py",
+    "runtime/packs/policy.py",
+    "runtime/packs/report.py",
+    "runtime/packs/validators.py",
+    "runtime/packs/errors.py"
+  ],
+  "runtime_scope": {
+    "implemented": [
+      "local dry-run pack discovery",
+      "pack candidate classifier",
+      "validator adapter",
+      "dry-run report builder",
+      "dry-run effect summary",
+      "CLI",
+      "report validator",
+      "tests"
+    ],
+    "not_implemented": [
+      "authoritative import",
+      "real staging/quarantine",
+      "promotion runtime",
+      "public contribution intake",
+      "upload/admin endpoints",
+      "database tables",
+      "persistent queues",
+      "source/evidence/candidate/index mutation",
+      "pack execution",
+      "URL fetching",
+      "hosted runtime"
+    ]
+  },
+  "source_cache_mutated": false,
+  "staging_store_written": false,
+  "telemetry_exported": false,
+  "upload_endpoint_enabled": false,
+  "validation_pipeline_summary": {
+    "synthetic_inputs_classified_without_validator_commands": 5,
+    "validation_is_not_import_or_truth_acceptance": true,
+    "validator_adapter_enabled": true,
+    "validator_commands_repo_local_only": true,
+    "validators_run_for_real_pack_examples": 4
+  },
+  "validator_script": "scripts/validate_pack_import_dry_run_report.py",
+  "worktree_status": "## main...origin/main\n?? control/audits/pack-import-local-dry-run-runtime-v0/\n?? control/inventory/packs/pack_import_local_dry_run_runtime.json\n?? docs/operations/PACK_IMPORT_LOCAL_DRY_RUN_RUNTIME.md\n?? examples/pack_import_dry_run/\n?? runtime/packs/\n?? scripts/run_pack_import_dry_run.py\n?? scripts/validate_pack_import_dry_run_report.py\n?? tests/operations/test_pack_import_local_dry_run_runtime.py\n?? tests/runtime/test_pack_import_dry_run.py\n?? tests/scripts/test_run_pack_import_dry_run.py\n?? tests/scripts/test_validate_pack_import_dry_run_report.py"
+}
