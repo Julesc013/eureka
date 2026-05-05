@@ -929,6 +929,13 @@
       "status": "addressed_contract_only",
       "addressed_by": "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
       "notes": "Contract-only explanation schemas, examples, validators, and audit report added; no runtime search behavior changed."
+    },
+    {
+      "id": "audit-backlog-public-search-ranking-runtime-planning-v0",
+      "title": "P97 Public Search Ranking Runtime Planning v0",
+      "status": "addressed_planning_only",
+      "addressed_by": "control/audits/public-search-ranking-runtime-planning-v0/public_search_ranking_runtime_planning_report.json",
+      "notes": "Planning-only ranking runtime architecture and gates added; no public search runtime behavior changed."
     }
   ]
 }

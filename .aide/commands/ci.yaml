@@ -1022,3 +1022,12 @@ notes:
 
 These commands are stdlib-only and local. They add no runtime explanation generation, public search response/order changes, hidden score, result suppression, model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-START -->
+## P97 Public Search Ranking Runtime Planning v0
+
+- `python scripts/validate_public_search_ranking_runtime_plan.py`
+- `python scripts/validate_public_search_ranking_runtime_plan.py --json`
+
+These commands are stdlib-only planning validators. They add no ranking runtime, public search order/response change, hidden score, suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->

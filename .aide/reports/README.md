@@ -477,3 +477,9 @@ No extraction runtime is implemented. No files are opened, archives unpacked, pa
 
 Report: `control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json`.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-START -->
+## P97 Public Search Ranking Runtime Planning v0
+
+Report: `control/audits/public-search-ranking-runtime-planning-v0/public_search_ranking_runtime_planning_report.json`.
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->

@@ -8965,6 +8965,66 @@
       "failure_means": "P96 validator, examples, docs, inventory, or negative checks regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms contract-only/no-runtime/no-hidden-score/no-suppression/no-AI/no-mutation search explanation guarantees."
+    },
+    {
+      "test_id": "public_search_ranking_runtime_plan_validator",
+      "label": "P97 public search ranking runtime plan validator",
+      "command": "python scripts/validate_public_search_ranking_runtime_plan.py",
+      "category": "governance",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P97 ranking runtime planning artifacts, gates, or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Planning-only validation; no ranking runtime, public-search order/response change, hidden score, suppression, telemetry, model call, live source call, or mutation."
+    },
+    {
+      "test_id": "public_search_ranking_runtime_plan_validator_json",
+      "label": "P97 public search ranking runtime plan validator JSON",
+      "command": "python scripts/validate_public_search_ranking_runtime_plan.py --json",
+      "category": "governance",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P97 ranking runtime planning JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Planning-only JSON validation; no runtime ranking or public-search mutation."
+    },
+    {
+      "test_id": "public_search_ranking_runtime_plan_tests",
+      "label": "P97 public search ranking runtime plan tests",
+      "command": "python -m unittest tests.operations.test_public_search_ranking_runtime_plan tests.scripts.test_validate_public_search_ranking_runtime_plan",
+      "category": "unit",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "P97 ranking runtime planning validator or audit assertions regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms planning-only/no-runtime/no-search-change/no-hidden-score/no-suppression/no-telemetry/no-mutation ranking gates."
     }
   ],
   "notes": [
@@ -8991,6 +9051,7 @@
     "P93 Object/Source/Comparison Page Runtime Planning v0 validation is planning-only and adds no runtime routes, renderers, stores, public-search mutation, live source calls, arbitrary URL/local path access, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion.",
     "P94 Pack Import Runtime Planning v0 validation is planning-only and adds no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decision, or accepted record.",
     "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service.",
-    "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation."
+    "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
+    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation."
   ]
 }

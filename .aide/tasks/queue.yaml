@@ -1007,9 +1007,9 @@
     {
       "id": "public_search_ranking_runtime_planning_v0",
       "title": "P97 Public Search Ranking Runtime Planning v0 only after contracts and evals",
-      "status": "blocked_pending_contracts_and_evals",
+      "status": "completed_planning_ready_local_dry_run_after_operator_approval_hosted_blocked",
       "priority": 138,
-      "notes": "Next codex-safe branch after P96; planning only after contracts and eval evidence, with no runtime ranking until approved."
+      "notes": "P97 completed as planning/audit/validator work only. Local dry-run ranking planning is ready after operator approval; hosted staging remains blocked by deployment evidence and production quality claims remain blocked by missing external baselines. No ranking runtime, public search order/response change, hidden score, suppression, telemetry, model call, live source call, or mutation was added."
     },
     {
       "id": "compatibility_evidence_pack_contract_v0",
@@ -1080,6 +1080,13 @@
       "status": "blocked_pending_public_search_runtime_gate",
       "priority": 147,
       "notes": "Future gated milestone; no runtime behavior is approved by P96."
+    },
+    {
+      "id": "public_search_ranking_local_dry_run_runtime_v0",
+      "title": "P107 Public Search Ranking Local Dry-Run Runtime v0 only after eval gate approval",
+      "status": "blocked_pending_eval_gate_approval",
+      "priority": 148,
+      "notes": "Future gated milestone; P97 grants no runtime behavior."
     }
   ]
 }

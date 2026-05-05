@@ -575,3 +575,9 @@ No extraction runtime is implemented. No files are opened, archives unpacked, pa
 
 Adds contract-only explanation schemas, examples, validators, docs, and audit report. No runtime explanation, hidden score, suppression, AI answer, live source call, telemetry, or mutation is added.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-START -->
+## P97 Public Search Ranking Runtime Planning v0
+
+Adds planning-only ranking runtime architecture, gates, validator, and report. No ranking runtime, public search order/response change, hidden score, suppression, telemetry, model call, live source call, or mutation is added.
+<!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->

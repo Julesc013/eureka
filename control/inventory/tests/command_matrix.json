@@ -403,7 +403,10 @@
         "search_result_explanation_contract_validator",
         "search_result_explanation_contract_validator_json",
         "search_result_explanation_dry_run_json",
-        "search_result_explanation_contract_tests"
+        "search_result_explanation_contract_tests",
+        "public_search_ranking_runtime_plan_validator",
+        "public_search_ranking_runtime_plan_validator_json",
+        "public_search_ranking_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -820,7 +823,10 @@
         "search_result_explanation_contract_validator",
         "search_result_explanation_contract_validator_json",
         "search_result_explanation_dry_run_json",
-        "search_result_explanation_contract_tests"
+        "search_result_explanation_contract_tests",
+        "public_search_ranking_runtime_plan_validator",
+        "public_search_ranking_runtime_plan_validator_json",
+        "public_search_ranking_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1566,6 +1572,7 @@
     "P93 Object/Source/Comparison Page Runtime Planning v0 validation is planning-only; it performs no runtime route, renderer, store, public-search mutation, live source call, arbitrary URL/local path access, download, telemetry, account, source/evidence/candidate/public/master mutation, or candidate promotion.",
     "P94 Pack Import Runtime Planning v0 validation is planning-only; it performs no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, mutation, promotion decision, or accepted record.",
     "P95 Deep Extraction Contract commands are local/stdout-only governance checks. They perform no runtime extraction, archive unpacking, file opening, OCR/transcription, execution, URL fetching, live source calls, telemetry, source/evidence/candidate/index mutation, or production deployment.",
-    "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation."
+    "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
+    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation."
   ]
 }
