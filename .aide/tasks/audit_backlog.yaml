@@ -900,6 +900,13 @@
       "status": "addressed_planning_blocked_connector_approval_pending",
       "notes": "Addressed by control/audits/npm-metadata-connector-runtime-planning-v0/npm_metadata_connector_runtime_planning_report.json. Planning-only; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.",
       "addressed_by": "control/audits/npm-metadata-connector-runtime-planning-v0/npm_metadata_connector_runtime_planning_report.json"
+    },
+    {
+      "id": "p92_software_heritage_connector_runtime_planning_v0",
+      "title": "P92 Software Heritage Connector Runtime Planning v0 audit pack",
+      "status": "addressed_planning_blocked_connector_approval_pending",
+      "notes": "Addressed by control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json. Planning-only; no Software Heritage API calls, SWHID live resolution, origin/visit/snapshot/release/revision/directory/content lookup, connector runtime, arbitrary SWHID/origin/repository fetch, source code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
+      "addressed_by": "control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json"
     }
   ]
 }

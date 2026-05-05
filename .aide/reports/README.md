@@ -446,3 +446,9 @@ Audit report: `control/audits/pypi-metadata-connector-runtime-planning-v0/pypi_m
 
 Audit report: `control/audits/npm-metadata-connector-runtime-planning-v0/npm_metadata_connector_runtime_planning_report.json`.
 <!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+## P92 Software Heritage Connector Runtime Planning v0
+
+Audit report: `control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json`.
+
+Planning-only and approval-gated. The runtime remains blocked because P76 keeps connector approval pending.

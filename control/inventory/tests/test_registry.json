@@ -8505,6 +8505,66 @@
       "failure_means": "P91 npm metadata runtime planning validator or audit assertions regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms planning-only/no-runtime/no-mutation package identity, scoped package, dependency metadata, lifecycle script, and token-free gates."
+    },
+    {
+      "test_id": "software_heritage_connector_runtime_plan_validator",
+      "label": "P92 Software Heritage connector runtime plan validator",
+      "command": "python scripts/validate_software_heritage_connector_runtime_plan.py",
+      "category": "governance",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P92 Software Heritage connector runtime planning artifacts, gates, or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Planning-only validation; no Software Heritage API calls, SWHID live resolution, source-code/content/blob fetch, repository clone, source archive download, token use, cache/ledger writes, public fanout, telemetry, credentials, or index mutation."
+    },
+    {
+      "test_id": "software_heritage_connector_runtime_plan_validator_json",
+      "label": "P92 Software Heritage connector runtime plan validator JSON",
+      "command": "python scripts/validate_software_heritage_connector_runtime_plan.py --json",
+      "category": "governance",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P92 Software Heritage connector runtime planning JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Planning-only JSON validation; no live Software Heritage calls, token use, source-code fetch, repository clone, public fanout, or mutation."
+    },
+    {
+      "test_id": "software_heritage_connector_runtime_plan_tests",
+      "label": "P92 Software Heritage connector runtime plan tests",
+      "command": "python -m unittest tests.operations.test_software_heritage_connector_runtime_plan tests.scripts.test_validate_software_heritage_connector_runtime_plan",
+      "category": "unit",
+      "owner_area": "connectors",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "P92 Software Heritage runtime planning validator or audit assertions regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms planning-only/no-runtime/no-mutation SWHID, origin URL, repository identity, source-code-content, and token-free gates."
     }
   ],
   "notes": [
@@ -8526,6 +8586,7 @@
     "P85 Compatibility-Aware Ranking v0 validation is stdlib-only and contract-only; it adds no runtime compatibility ranking, public search ordering change, hidden suppression, installability/dependency-safety/malware-safety claim, package manager invocation, emulator/VM launch, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
     "P89 GitHub Releases Connector Runtime Planning v0 validation is planning-only and adds no GitHub API calls, connector runtime, repository clone, release asset/source archive download, raw file/blob fetch, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
     "P90 PyPI Metadata Connector Runtime Planning v0 validation is planning-only and adds no PyPI API calls, connector runtime, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
-    "P91 npm Metadata Connector Runtime Planning v0 validation is planning-only and adds no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation."
+    "P91 npm Metadata Connector Runtime Planning v0 validation is planning-only and adds no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
+    "P92 Software Heritage Connector Runtime Planning v0 validation is planning-only and adds no Software Heritage API calls, SWHID live resolution, source-code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation."
   ]
 }

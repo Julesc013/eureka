@@ -544,3 +544,9 @@ Audit pack: `control/audits/npm-metadata-connector-runtime-planning-v0/npm_metad
 
 Planning-only; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
 <!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+## P92 Software Heritage Connector Runtime Planning v0
+
+Audit pack: `control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json`.
+
+Planning-only runtime architecture review. Readiness is `blocked_connector_approval_pending`; no Software Heritage API calls, SWHID live resolution, connector runtime, source-code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added.

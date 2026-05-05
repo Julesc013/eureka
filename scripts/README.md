@@ -898,3 +898,10 @@ These commands are stdlib-only and validate planning artifacts only; they perfor
 
 These commands are stdlib-only and validate planning artifacts only; they perform no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
 <!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+### P92 Software Heritage Connector Runtime Planning
+
+- `python scripts/validate_software_heritage_connector_runtime_plan.py`
+- `python scripts/validate_software_heritage_connector_runtime_plan.py --json`
+
+Validates the planning-only Software Heritage runtime audit pack. The validator is stdlib-only and performs no network calls, SWHID live resolution, source-code/content/blob fetches, repository clones, source archive downloads, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.

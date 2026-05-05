@@ -944,9 +944,9 @@
     {
       "id": "software_heritage_connector_runtime_planning_v0",
       "title": "P92 Software Heritage Connector Runtime Planning v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 133,
-      "notes": "Future runtime planning only after Software Heritage approval, SWHID/origin/repository identity review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+      "notes": "P92 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P76 keeps connector_approved_now false; no Software Heritage API calls, SWHID live resolution, origin/visit/snapshot/release/revision/directory/content lookup, connector runtime, arbitrary SWHID/origin/repository fetch, source code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "ia_metadata_connector_runtime_planning_v0",
@@ -1038,6 +1038,20 @@
       "status": "queued_codex_safe_future",
       "priority": 141,
       "notes": "Future audit after connector/runtime planning gates; no runtime ranking, connector fanout, telemetry, or mutation without explicit approval."
+    },
+    {
+      "id": "connector_approval_and_runtime_planning_audit_v0",
+      "title": "P101 Connector Approval and Runtime Planning Audit v0",
+      "status": "queued_codex_safe_future",
+      "priority": 142,
+      "notes": "Future queued planning/runtime-governance work."
+    },
+    {
+      "id": "manual_observation_batch_0_follow_up_plan_v0",
+      "title": "P102 Manual Observation Batch 0 Follow-up Plan v0 if manual observations remain pending",
+      "status": "human_operator_gated",
+      "priority": 143,
+      "notes": "Future queued planning/runtime-governance work."
     }
   ]
 }
