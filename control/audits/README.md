@@ -569,3 +569,9 @@ P95 adds Deep Extraction Contract v0 as contract/schema/example/validator work o
 
 No extraction runtime is implemented. No files are opened, archives unpacked, payloads executed, package managers invoked, emulators or VMs launched, OCR/transcription performed, URLs fetched, live sources called, source/evidence/candidate/index records mutated, or candidates promoted.
 <!-- P95-DEEP-EXTRACTION-CONTRACT-END -->
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+Adds contract-only explanation schemas, examples, validators, docs, and audit report. No runtime explanation, hidden score, suppression, AI answer, live source call, telemetry, or mutation is added.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
