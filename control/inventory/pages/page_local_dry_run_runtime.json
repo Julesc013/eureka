@@ -1,0 +1,41 @@
+{
+  "api_routes_enabled": false,
+  "approved_input_roots": [
+    "examples/object_pages",
+    "examples/source_pages",
+    "examples/comparison_pages",
+    "examples/page_runtime_dry_run"
+  ],
+  "authoritative_page_store_implemented": false,
+  "candidate_index_mutation_allowed": false,
+  "candidate_promotion_allowed": false,
+  "cli": "python scripts/run_page_dry_run.py --all-examples --json",
+  "connector_runtime_enabled": false,
+  "credentials_enabled": false,
+  "downloads_enabled": false,
+  "evidence_ledger_mutation_allowed": false,
+  "evidence_ledger_reads_enabled": false,
+  "execution_enabled": false,
+  "hosted_page_runtime_implemented": false,
+  "installs_enabled": false,
+  "live_source_calls_enabled": false,
+  "local_dry_run_runtime_implemented": true,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "next_runtime_branch_recommendation": "P104 Pack Import Local Dry-Run Runtime v0 only after approval",
+  "notes": [
+    "Local dry-run renderer only. No public/hosted/API routes or public-search integration are enabled.",
+    "Source-cache and evidence-ledger reads remain disabled."
+  ],
+  "public_index_mutation_allowed": false,
+  "public_routes_enabled": false,
+  "public_search_integration_enabled": false,
+  "runtime_id": "object_source_comparison_page_local_dry_run_runtime_v0",
+  "schema_version": "0.1.0",
+  "source_cache_mutation_allowed": false,
+  "source_cache_reads_enabled": false,
+  "status": "implemented_local_dry_run",
+  "telemetry_enabled": false,
+  "uploads_enabled": false,
+  "validator": "python scripts/validate_page_dry_run_report.py"
+}
