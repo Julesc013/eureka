@@ -832,16 +832,16 @@
     {
       "id": "github_releases_connector_approval_pack_v0",
       "title": "P73 GitHub Releases Connector Approval Pack v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed",
       "priority": 114,
-      "notes": "Next recommended branch after P72; approval pack only, with no live GitHub API calls or connector runtime without explicit approval."
+      "notes": "Completed P73 as an approval-only release metadata connector pack; no live GitHub API calls, connector runtime, repository clone, release asset/source archive download, token use, source cache/evidence ledger mutation, or public-query fanout."
     },
     {
       "id": "pypi_metadata_connector_approval_pack_v0",
       "title": "P74 PyPI Metadata Connector Approval Pack v0",
-      "status": "approval_gated_future",
+      "status": "queued_codex_safe_future",
       "priority": 115,
-      "notes": "Future approval pack; no live PyPI calls or connector runtime without explicit approval."
+      "notes": "Next recommended branch after P73; approval pack only, with no live PyPI calls or connector runtime without explicit approval."
     },
     {
       "id": "npm_metadata_connector_approval_pack_v0",
@@ -905,6 +905,13 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 123,
       "notes": "Future runtime planning only after Wayback/CDX/Memento approval, URI privacy, source policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+    },
+    {
+      "id": "github_releases_connector_runtime_planning_v0",
+      "title": "P83 GitHub Releases Connector Runtime Planning v0 only after approval",
+      "status": "blocked_pending_explicit_approval",
+      "priority": 124,
+      "notes": "Future runtime planning only after GitHub Releases approval, repository identity review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
     }
   ]
 }

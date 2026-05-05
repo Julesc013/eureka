@@ -707,3 +707,18 @@ notes:
   - id: wayback_cdx_memento_connector_approval_tests
     run: python -m unittest tests.operations.test_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_approval tests.scripts.test_validate_wayback_cdx_memento_connector_contract tests.scripts.test_dry_run_wayback_cdx_memento_connector_approval
 <!-- P72-WAYBACK-CDX-MEMENTO-CONNECTOR-APPROVAL-END -->
+
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-START -->
+  - id: github_releases_connector_approval_examples_validator
+    run: python scripts/validate_github_releases_connector_approval.py --all-examples
+  - id: github_releases_connector_approval_examples_validator_json
+    run: python scripts/validate_github_releases_connector_approval.py --all-examples --json
+  - id: github_releases_connector_contract_validator
+    run: python scripts/validate_github_releases_connector_contract.py
+  - id: github_releases_connector_contract_validator_json
+    run: python scripts/validate_github_releases_connector_contract.py --json
+  - id: github_releases_connector_dry_run_json
+    run: python scripts/dry_run_github_releases_connector_approval.py --json
+  - id: github_releases_connector_approval_tests
+    run: python -m unittest tests.operations.test_github_releases_connector_approval tests.scripts.test_validate_github_releases_connector_approval tests.scripts.test_validate_github_releases_connector_contract tests.scripts.test_dry_run_github_releases_connector_approval
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->

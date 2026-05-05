@@ -277,7 +277,13 @@
         "wayback_cdx_memento_connector_contract_validator",
         "wayback_cdx_memento_connector_contract_validator_json",
         "wayback_cdx_memento_connector_dry_run_json",
-        "wayback_cdx_memento_connector_approval_tests"
+        "wayback_cdx_memento_connector_approval_tests",
+        "github_releases_connector_approval_examples_validator",
+        "github_releases_connector_approval_examples_validator_json",
+        "github_releases_connector_contract_validator",
+        "github_releases_connector_contract_validator_json",
+        "github_releases_connector_dry_run_json",
+        "github_releases_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -568,7 +574,13 @@
         "wayback_cdx_memento_connector_contract_validator",
         "wayback_cdx_memento_connector_contract_validator_json",
         "wayback_cdx_memento_connector_dry_run_json",
-        "wayback_cdx_memento_connector_approval_tests"
+        "wayback_cdx_memento_connector_approval_tests",
+        "github_releases_connector_approval_examples_validator",
+        "github_releases_connector_approval_examples_validator_json",
+        "github_releases_connector_contract_validator",
+        "github_releases_connector_contract_validator_json",
+        "github_releases_connector_dry_run_json",
+        "github_releases_connector_approval_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1213,6 +1225,7 @@
     "P66 Known Absence Page v0 validation is stdlib-only contract/example governance; it adds no runtime pages, telemetry, persistent query logging, global absence claims, live probes, downloads, uploads, installs, source-cache mutation, evidence-ledger mutation, candidate mutation, external calls, or index/master-index mutation.",
     "P67 Query Privacy and Poisoning Guard v0 validation is stdlib-only contract/example governance; it adds no runtime guard, telemetry, account/IP tracking, public query logging, query-intelligence mutation, external calls, or index/master-index mutation.",
     "P71 Internet Archive Metadata Connector Approval Pack v0 commands are approval-only and perform no IA calls, downloads, connector runtime, cache/ledger mutation, or public-query fanout.",
-    "P72 Wayback/CDX/Memento Connector Approval Pack v0 commands are approval-only and perform no Wayback/CDX/Memento calls, capture replay, WARC download, connector runtime, cache/ledger mutation, or public-query fanout."
+    "P72 Wayback/CDX/Memento Connector Approval Pack v0 commands are approval-only and perform no Wayback/CDX/Memento calls, capture replay, WARC download, connector runtime, cache/ledger mutation, or public-query fanout.",
+    "P73 GitHub Releases Connector Approval Pack v0 commands are approval-only and perform no GitHub API calls, repository clone, release asset/source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout."
   ]
 }
