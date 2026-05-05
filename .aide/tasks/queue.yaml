@@ -930,9 +930,9 @@
     {
       "id": "npm_metadata_connector_runtime_planning_v0",
       "title": "P91 npm Metadata Connector Runtime Planning v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 132,
-      "notes": "Future runtime planning only after npm metadata approval, package identity review, lifecycle script risk review, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+      "notes": "P91 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P75 keeps connector_approved_now false; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package or registry fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "public_query_observation_runtime_planning_v0",

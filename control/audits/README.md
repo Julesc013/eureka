@@ -536,3 +536,11 @@ Audit pack: `control/audits/pypi-metadata-connector-runtime-planning-v0/pypi_met
 
 Readiness: `blocked_connector_approval_pending`. Planning-only; no PyPI API calls, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
 <!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P91 npm Metadata Connector Runtime Planning v0
+
+Audit pack: `control/audits/npm-metadata-connector-runtime-planning-v0/npm_metadata_connector_runtime_planning_report.json`.
+
+Planning-only; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

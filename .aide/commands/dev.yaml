@@ -1336,3 +1336,12 @@ notes:
   - id: pypi_metadata_connector_runtime_plan_tests
     run: python -m unittest tests.operations.test_pypi_metadata_connector_runtime_plan tests.scripts.test_validate_pypi_metadata_connector_runtime_plan
 <!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+  - id: npm_metadata_connector_runtime_plan_validator
+    run: python scripts/validate_npm_metadata_connector_runtime_plan.py
+  - id: npm_metadata_connector_runtime_plan_validator_json
+    run: python scripts/validate_npm_metadata_connector_runtime_plan.py --json
+  - id: npm_metadata_connector_runtime_plan_tests
+    run: python -m unittest tests.operations.test_npm_metadata_connector_runtime_plan tests.scripts.test_validate_npm_metadata_connector_runtime_plan
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

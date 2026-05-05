@@ -440,3 +440,9 @@ Audit report: `control/audits/github-releases-connector-runtime-planning-v0/gith
 
 Audit report: `control/audits/pypi-metadata-connector-runtime-planning-v0/pypi_metadata_connector_runtime_planning_report.json`.
 <!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P91 npm Metadata Connector Runtime Planning v0
+
+Audit report: `control/audits/npm-metadata-connector-runtime-planning-v0/npm_metadata_connector_runtime_planning_report.json`.
+<!-- P91-NPM-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
