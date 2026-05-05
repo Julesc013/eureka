@@ -666,3 +666,16 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   public-search/page/pack/connector integration, telemetry, accounts, downloads,
   installs, or source/evidence/candidate/public/local/master mutation.
 <!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-END -->
+
+<!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-START -->
+## P106 Search Result Explanation Runtime Planning v0
+
+- Audit pack: `control/audits/search-result-explanation-runtime-planning-v0/`
+- Status: planning-only; readiness is
+  `ready_for_local_dry_run_runtime_after_operator_approval`.
+- Boundary: no explanation runtime, public-search response/order/route change,
+  explanation API route, model call, AI answer, hidden score, result
+  suppression, telemetry, source-cache or evidence-ledger read/write, live
+  source call, downloads, installs, execution, or source/evidence/candidate/
+  public/local/master mutation.
+<!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-END -->

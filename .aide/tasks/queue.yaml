@@ -1077,9 +1077,9 @@
     {
       "id": "search_result_explanation_runtime_planning_v0",
       "title": "P106 Search Result Explanation Runtime Planning v0 only after public search runtime gate",
-      "status": "blocked_pending_public_search_runtime_gate",
+      "status": "completed_planning_ready_local_dry_run_after_operator_approval_hosted_blocked",
       "priority": 147,
-      "notes": "Future gated milestone; no runtime behavior is approved by P96."
+      "notes": "P106 completed as planning/audit/validator work only. Readiness is ready_for_local_dry_run_runtime_after_operator_approval; hosted staging remains blocked by unverified deployment evidence. No explanation runtime, public-search response/order/route change, explanation API route, model call, AI answer, hidden score, suppression, source/evidence read or write, live source call, telemetry, accounts, downloads, installs, execution, or mutation was added."
     },
     {
       "id": "public_search_ranking_local_dry_run_runtime_v0",
@@ -1143,6 +1143,13 @@
       "status": "blocked_pending_sandbox_resource_operator_approval",
       "priority": 157,
       "notes": "Future local dry-run request/report runtime only after extraction sandbox, concrete resource limits, payload safety, OCR/transcription boundary, approved input model, and operator approval are recorded. No extraction runtime is authorized by P105."
+    },
+    {
+      "id": "search_result_explanation_local_dry_run_runtime_v0",
+      "title": "P116 Search Result Explanation Local Dry-Run Runtime v0 only after approval",
+      "status": "blocked_pending_operator_explanation_runtime_approval",
+      "priority": 158,
+      "notes": "Future local dry-run explanation assembler only after P106 gates, public-search explanation copy/privacy policy review, source/evidence/candidate boundary approval, no-model/no-hidden-score approval, fallback policy approval, and operator approval are recorded. No explanation runtime is authorized by P106."
     }
   ]
 }

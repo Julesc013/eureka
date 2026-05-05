@@ -1061,3 +1061,17 @@ fetching, payload execution, OCR/transcription, public-search/page/pack/connecto
 integration, telemetry, accounts, downloads, installs, or
 source/evidence/candidate/public/local/master mutation.
 <!-- P105-DEEP-EXTRACTION-RUNTIME-PLAN-END -->
+
+<!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-START -->
+## P106 Search Result Explanation Runtime Planning v0
+
+- `python scripts/validate_search_result_explanation_runtime_plan.py`
+- `python scripts/validate_search_result_explanation_runtime_plan.py --json`
+
+These commands are stdlib-only planning validators. They perform no runtime
+explanation generation, public-search route/response/order change, explanation
+API route, model call, AI answer, hidden score, result suppression, telemetry,
+accounts, source-cache or evidence-ledger read/write, live source call,
+download, install, execution, or source/evidence/candidate/public/local/master
+mutation.
+<!-- P106-SEARCH-RESULT-EXPLANATION-RUNTIME-PLAN-END -->

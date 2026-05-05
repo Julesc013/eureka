@@ -439,7 +439,10 @@
         "pack_import_local_dry_run_json",
         "deep_extraction_runtime_plan_validator",
         "deep_extraction_runtime_plan_validator_json",
-        "deep_extraction_runtime_plan_tests"
+        "deep_extraction_runtime_plan_tests",
+        "search_result_explanation_runtime_plan_validator",
+        "search_result_explanation_runtime_plan_validator_json",
+        "search_result_explanation_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -892,7 +895,10 @@
         "pack_import_local_dry_run_json",
         "deep_extraction_runtime_plan_validator",
         "deep_extraction_runtime_plan_validator_json",
-        "deep_extraction_runtime_plan_tests"
+        "deep_extraction_runtime_plan_tests",
+        "search_result_explanation_runtime_plan_validator",
+        "search_result_explanation_runtime_plan_validator_json",
+        "search_result_explanation_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1571,7 +1577,10 @@
         "manual_observation_batch_0_follow_up_tests",
         "deep_extraction_runtime_plan_validator",
         "deep_extraction_runtime_plan_validator_json",
-        "deep_extraction_runtime_plan_tests"
+        "deep_extraction_runtime_plan_tests",
+        "search_result_explanation_runtime_plan_validator",
+        "search_result_explanation_runtime_plan_validator_json",
+        "search_result_explanation_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1675,6 +1684,7 @@
     "P102 Manual Observation Batch 0 Follow-up commands are stdlib-only planning/read-only reporting checks; they perform no external observations, browsing, scraping, APIs, fabricated results, index/cache/ledger/candidate mutation, telemetry, accounts, uploads, or downloads. Command strings: python scripts/validate_manual_observation_batch_0_follow_up.py; python scripts/validate_manual_observation_batch_0_follow_up.py --json; python scripts/report_manual_observation_batch_0_status.py --json.",
     "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved examples. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json.",
     "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, real staging/quarantine, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json.",
-    "P105 Deep Extraction Runtime Planning commands are stdlib-only planning validators; they perform no runtime extraction, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_deep_extraction_runtime_plan.py; python scripts/validate_deep_extraction_runtime_plan.py --json."
+    "P105 Deep Extraction Runtime Planning commands are stdlib-only planning validators; they perform no runtime extraction, file opening, archive unpacking, arbitrary path access, URL fetching, payload execution, OCR/transcription, public-search/page/pack/connector integration, telemetry, accounts, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_deep_extraction_runtime_plan.py; python scripts/validate_deep_extraction_runtime_plan.py --json.",
+    "P106 Search Result Explanation Runtime Planning commands are stdlib-only planning validators; they perform no runtime explanation generation, public-search route/response/order change, model call, AI answer, hidden score, result suppression, telemetry, source/evidence read or write, live source call, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/validate_search_result_explanation_runtime_plan.py; python scripts/validate_search_result_explanation_runtime_plan.py --json."
   ]
 }
