@@ -1,0 +1,24 @@
+# Do Not Implement Yet
+
+- no Software Heritage API calls
+- no connector runtime
+- no source sync execution
+- no source cache writes
+- no evidence ledger writes
+- no public search live fanout
+- no arbitrary SWHID/origin/repository fetch
+- no SWHID live resolution
+- no origin lookup
+- no visit/snapshot/release/revision/directory/content lookup
+- no content blob fetch
+- no directory traversal
+- no source code download
+- no source archive download
+- no repository clone
+- no origin crawl
+- no source code execution
+- no downloads/mirroring/file retrieval
+- no raw payload cache
+- no credentials or tokens
+- no telemetry
+- no index/master mutation
