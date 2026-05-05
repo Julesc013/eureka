@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.0",
+  "connector_id": "github_releases_connector",
+  "connector_kind": "github_releases_connector",
+  "status": "approval_required",
+  "source_family": "github_releases",
+  "supported_capabilities": [
+    "repository_release_metadata_future",
+    "release_tag_metadata_future",
+    "release_asset_metadata_summary_future",
+    "latest_release_metadata_future",
+    "release_date_version_summary_future",
+    "release_prerelease_draft_status_summary_future"
+  ],
+  "disabled_capabilities": [
+    "arbitrary_repository_fetch",
+    "direct_public_query_fanout",
+    "private_repository_access",
+    "token_required_access",
+    "repository_clone",
+    "tag_fetch_runtime_now",
+    "release_fetch_runtime_now",
+    "release_asset_download",
+    "source_archive_download",
+    "raw_file_fetch",
+    "blob_fetch",
+    "tree_fetch",
+    "org_or_user_bulk_crawl",
+    "account_access",
+    "upload",
+    "install",
+    "execute",
+    "unbounded_crawl",
+    "scraping",
+    "bypass_access_restrictions",
+    "raw_payload_dump",
+    "malware_safety_decision",
+    "rights_clearance_decision"
+  ],
+  "default_policy": {
+    "mode": "disabled_until_approval",
+    "release_metadata_only_scope": true,
+    "repository_identity_review_required": true,
+    "token_policy_review_required": true,
+    "no_token_required_now": true,
+    "approval_required_for_live_network_access": true,
+    "source_policy_review_required": true,
+    "cache_first_required": true,
+    "evidence_attribution_required": true
+  },
+  "source_sync_worker_relationship": {
+    "worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "source_sync_worker_runtime_required_future": true,
+    "source_sync_worker_runtime_implemented_now": false
+  },
+  "source_cache_relationship": {
+    "source_cache_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_runtime_implemented_now": false,
+    "source_cache_mutation_allowed_now": false
+  },
+  "evidence_ledger_relationship": {
+    "evidence_ledger_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_runtime_implemented_now": false,
+    "evidence_ledger_mutation_allowed_now": false
+  },
+  "safety_defaults": {
+    "no_downloads": true,
+    "no_file_retrieval": true,
+    "no_mirroring": true,
+    "no_arbitrary_repository_fetch": true,
+    "no_repository_clone": true,
+    "no_release_asset_download": true,
+    "no_source_archive_download": true,
+    "no_public_query_fanout": true,
+    "no_credentials": true,
+    "no_github_token": true,
+    "no_telemetry": true
+  },
+  "no_runtime_guarantees": {
+    "runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "public_query_fanout_allowed": false,
+    "downloads_allowed": false,
+    "arbitrary_url_fetch_allowed": false,
+    "repository_clone_allowed": false,
+    "release_asset_download_allowed": false,
+    "source_archive_download_allowed": false,
+    "token_required_now": false,
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false
+  },
+  "notes": [
+    "Manifest is an approval-contract projection for future live GitHub metadata work; it is not a live connector module."
+  ]
+}

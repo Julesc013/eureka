@@ -1,0 +1,825 @@
+{
+  "schema_version": "0.1.0",
+  "approval_record_id": "example.connector.github_releases.approval.v0",
+  "approval_record_kind": "github_releases_connector_approval",
+  "status": "draft_example",
+  "created_by_tool": "p73_github_releases_connector_approval_builder_v0",
+  "connector_ref": {
+    "connector_id": "github_releases_connector",
+    "connector_label": "GitHub Releases metadata connector",
+    "source_family": "github_releases",
+    "connector_version": "v0-approval-pack",
+    "source_inventory_ref": "control/inventory/sources/github-releases-recorded-fixtures.source.json",
+    "source_status": "approval_required",
+    "limitations": [
+      "Approval reference only; recorded fixtures exist, but live GitHub API acquisition is not approved or implemented by P73."
+    ]
+  },
+  "connector_scope": {
+    "scope_kind": "release_metadata_only",
+    "allowed_target_types": [
+      "owner_repo_from_reviewed_source_record",
+      "owner_repo_from_approved_search_need_future",
+      "owner_repo_from_source_pack_future",
+      "bounded_repository_release_metadata_query_future",
+      "release_tag_metadata_future",
+      "release_asset_metadata_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_repository",
+      "private_repository",
+      "credentialed_repository",
+      "repository_clone",
+      "release_asset_download",
+      "source_archive_download",
+      "git_tree_fetch",
+      "file_content_fetch",
+      "raw_blob_fetch",
+      "unbounded_org_crawl",
+      "account_private_data",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P73 permits only future repository release metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_capabilities": [
+    {
+      "capability": "repository_release_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    },
+    {
+      "capability": "release_tag_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    },
+    {
+      "capability": "release_asset_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    },
+    {
+      "capability": "latest_release_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    },
+    {
+      "capability": "release_date_version_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    },
+    {
+      "capability": "release_prerelease_draft_status_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_repository_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live GitHub Releases capability is implemented or approved by P73."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_repository_fetch",
+      "reason": "arbitrary_repository_fetch is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "private_repository_access",
+      "reason": "private_repository_access is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "token_required_access",
+      "reason": "token_required_access is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "repository_clone",
+      "reason": "repository_clone is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "tag_fetch_runtime_now",
+      "reason": "tag_fetch_runtime_now is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "release_fetch_runtime_now",
+      "reason": "release_fetch_runtime_now is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "release_asset_download",
+      "reason": "release_asset_download is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "source_archive_download",
+      "reason": "source_archive_download is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "raw_file_fetch",
+      "reason": "raw_file_fetch is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "blob_fetch",
+      "reason": "blob_fetch is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "tree_fetch",
+      "reason": "tree_fetch is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "org_or_user_bulk_crawl",
+      "reason": "org_or_user_bulk_crawl is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside the P73 release-metadata-only approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "repository_identity_policy": {
+    "owner_repo_review_required": true,
+    "arbitrary_public_query_repository_allowed": false,
+    "private_repository_allowed": false,
+    "credentialed_repository_allowed": false,
+    "token_required_repository_allowed": false,
+    "local_repository_path_allowed": false,
+    "raw_repository_url_publication_allowed": false,
+    "normalized_owner_repo_publication_allowed_after_review": true,
+    "repository_hashing_allowed_future": true,
+    "repository_redaction_required_for_sensitive_inputs": true,
+    "allowed_repository_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_repository_sources": [
+      "raw_public_query_parameter",
+      "user_private_repository",
+      "credentialed_repository",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_owner_repo": "example-org/example-project",
+    "notes": [
+      "Example owner/repo is synthetic and is never fetched."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "API_terms_review_required": true,
+    "automated_access_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_or_abuse_limit_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/GITHUB_RELEASES_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official GitHub API/source policy review is pending; P73 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_and_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P73; operator decision is required before any future live connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_or_abuse_limit_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P73."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_raw_repository_payload_cache": true,
+    "no_release_asset_payload_cache": true,
+    "no_source_archive_payload_cache": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call GitHub live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "github_repository_release_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "repository_payload_allowed": false,
+      "release_asset_payload_allowed": false,
+      "source_archive_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "github_release_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "repository_payload_allowed": false,
+      "release_asset_payload_allowed": false,
+      "source_archive_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "github_release_asset_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "repository_payload_allowed": false,
+      "release_asset_payload_allowed": false,
+      "source_archive_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "github_release_tag_date_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "repository_payload_allowed": false,
+      "release_asset_payload_allowed": false,
+      "source_archive_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "github_latest_release_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "repository_payload_allowed": false,
+      "release_asset_payload_allowed": false,
+      "source_archive_payload_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "release_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "package_or_release_availability_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "version_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "asset_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "repository_source_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P73 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_repository_param": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no GitHub live search is enabled."
+    ]
+  },
+  "rights_access_and_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_repository_clone",
+      "no_release_asset_download",
+      "no_source_archive_download",
+      "no_private_repositories"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "release_asset_download_enabled": false,
+    "repository_clone_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "GitHub Releases metadata observations are not rights clearance or malware safety."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "repository_identity_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_repository": false,
+    "contains_private_url": false,
+    "publishable": true,
+    "limitations": [
+      "P73 examples contain no private paths, credentials, accounts, private repositories, private URLs, or tokens."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.repository_identity_policy_review",
+      "item": "repository_identity_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.token_policy_review",
+      "item": "token_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.configure_repository_identity_filter",
+      "item": "configure_repository_identity_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_token_required_for_v0",
+      "item": "confirm_no_token_required_for_v0",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P73 does not approve or configure live GitHub access."
+    }
+  ],
+  "implementation_prerequisites": [
+    "Official GitHub source policy review",
+    "Repository identity policy review",
+    "Token policy review confirming no token required for v0",
+    "User-Agent and contact decision",
+    "Bounded rate-limit, timeout, retry, and circuit-breaker values",
+    "Source sync worker runtime approval",
+    "Source cache and evidence ledger runtime approval",
+    "Live connector implementation review"
+  ],
+  "limitations": [
+    "Approval pack only; no live connector runtime, GitHub API call, repository clone, release fetch, asset download, source archive download, cache write, evidence write, or index mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "connector_runtime_implemented": false,
+    "connector_approved_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "github_api_called": false,
+    "repository_cloned": false,
+    "tags_fetched": false,
+    "releases_fetched": false,
+    "release_assets_downloaded": false,
+    "source_archive_downloaded": false,
+    "public_search_live_fanout_enabled": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "credentials_used": false,
+    "github_token_used": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth: GitHub Releases metadata may become evidence only after approval, repository review, cache, review, and promotion gates."
+  ]
+}

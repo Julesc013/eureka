@@ -295,3 +295,9 @@ This cross-reference keeps `docs/reference/SOURCE_PACK_CONTRACT.md` aligned with
 ## P72 Wayback/CDX/Memento Connector Approval Pack v0
 
 P72 defines a future availability/capture-metadata-only Wayback/CDX/Memento connector approval pack. The connector is not implemented, no external calls are made, public queries do not fan out to Wayback/CDX/Memento, arbitrary URL fetch is forbidden, archived content fetch/capture replay/WARC download are forbidden, and future outputs must be cache-first/evidence-first after URI privacy review and approval.
+
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-START -->
+## P73 GitHub Releases Connector Approval Pack v0
+
+P73 defines a future release-metadata-only GitHub Releases connector approval pack. The live connector is not implemented, no external calls are made, no GitHub API calls are made, public queries do not fan out to GitHub, arbitrary repository fetch is forbidden, repository clone is forbidden, release asset download is forbidden, source archive download is forbidden, raw file/blob/tree fetch is forbidden, scraping/crawling is forbidden, token use is not allowed now, and future outputs must be cache-first/evidence-first after repository identity review and approval.
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->

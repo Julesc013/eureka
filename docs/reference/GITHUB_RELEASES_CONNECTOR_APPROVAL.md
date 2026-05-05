@@ -1,0 +1,43 @@
+# GitHub Releases Connector Approval Pack v0
+
+P73 defines the approval pack for a future GitHub Releases metadata connector. The live connector is not implemented. The pack makes no external calls, performs no GitHub API calls, clones no repositories, fetches no tags or releases, downloads no release assets or source archives, uses no tokens, and mutates no source cache, evidence ledger, candidate index, public index, local index, or master index.
+
+## Scope
+
+The scope is release metadata-only. Future capabilities may include repository release metadata, release tag metadata summaries, release asset metadata summaries, latest release metadata, release date/version summaries, and prerelease/draft status summaries. These are future-after-approval capabilities only. Existing recorded GitHub Releases fixtures remain fixture-only and do not imply live GitHub acquisition approval.
+
+## Repository Identity And Privacy Policy
+
+Repository owner/name review is required before any future connector can operate. Arbitrary public query repositories are forbidden, public search may not accept an arbitrary repository parameter for live fanout, raw repository URL publication is forbidden, private repositories are forbidden, credentialed repositories are forbidden, token-required repositories are forbidden for v0, local repository paths are forbidden, and sensitive repository inputs must be redacted or rejected. Example owner/repo values must be synthetic public-safe placeholders such as `example-org/example-project` and must not be fetched.
+
+## Forbidden Behavior
+
+Arbitrary repository fetch, direct public-query fanout, private repository access, token-required access, repository clone, tag fetch runtime now, release fetch runtime now, release asset download, source archive download, raw file fetch, blob fetch, tree fetch, org/user bulk crawl, account access, upload, install, execute, unbounded crawl, scraping, bypassing access restrictions, raw payload dumps, malware-safety decisions, and rights-clearance decisions are forbidden.
+
+## Source Policy, User-Agent, Contact, And Token Gates
+
+Official GitHub API/source policy, automated access policy, rate-limit, retry-after or abuse-limit, cache, rights/access, User-Agent, contact, repository identity, and token policy review are required before implementation approval. No User-Agent value, contact value, credential, or GitHub token is configured now; fake contact values and token use are forbidden.
+
+## Rate Limits And Circuit Breakers
+
+Future implementation must define source-policy-reviewed rate limits, timeouts, retry/backoff, retry-after or abuse-limit handling, and circuit breakers. P73 configures no runtime values and starts no workers.
+
+## Cache-First And Evidence-First
+
+Future GitHub Releases metadata must flow through approved source sync workers into source cache summaries and evidence ledger observations before public use. Source cache outputs are metadata summaries only and raw repository payloads, release asset payloads, and source archive payloads are forbidden. Evidence ledger outputs are observations, not accepted truth, and require review plus promotion policy before candidate or master-index use.
+
+## Public Search Boundary
+
+Public search must not call GitHub live. Public search must not accept arbitrary repository parameters for live fanout. A future public search path may read reviewed source cache output, but P73 does not implement that path and makes no static-site or hosted-backend live claim.
+
+## Query Intelligence Boundary
+
+Demand dashboard, search need, known absence, and probe queue records may reference this connector as future approval-gated work. P73 mutates no query observation, result cache, miss ledger, search need, probe queue, or candidate index records.
+
+## Rights, Access, Risk, And Privacy
+
+GitHub Releases metadata is not rights clearance and not malware safety. The approval pack is public-safe metadata policy only; it permits no private repositories, private data, credentials, account access, private paths, private URLs, tokens, release asset downloads, source archive downloads, repository clones, installs, or execution in examples.
+
+## Future Path
+
+Before live runtime work: complete official source-policy review, choose approved User-Agent/contact policy, confirm no token is required for v0, define rate/timeout/retry/circuit-breaker values, approve source sync worker output destinations, review source cache/evidence ledger integration, and approve the live connector implementation. P73 itself is not production readiness.

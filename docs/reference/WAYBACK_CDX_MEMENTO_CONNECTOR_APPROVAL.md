@@ -29,3 +29,9 @@ Source sync workers may later request bounded jobs only after approval. Source c
 ## Remaining Future Work
 
 The approval checklist, operator checklist, official source policy review, URI privacy filter, rate-limit/timeout/retry/circuit breaker values, User-Agent/contact decision, source sync runtime, source cache runtime, evidence ledger runtime, and connector implementation remain future/deferred.
+
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-START -->
+## P73 GitHub Releases Connector Approval Pack v0
+
+P73 defines a future release-metadata-only GitHub Releases connector approval pack. The live connector is not implemented, no external calls are made, no GitHub API calls are made, public queries do not fan out to GitHub, arbitrary repository fetch is forbidden, repository clone is forbidden, release asset download is forbidden, source archive download is forbidden, raw file/blob/tree fetch is forbidden, scraping/crawling is forbidden, token use is not allowed now, and future outputs must be cache-first/evidence-first after repository identity review and approval.
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->

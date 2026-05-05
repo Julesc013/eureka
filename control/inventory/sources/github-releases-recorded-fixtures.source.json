@@ -94,5 +94,21 @@
     ],
     "next_coverage_step": "Add more recorded source families before considering any live GitHub connector behavior."
   },
-  "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access."
+  "notes": "Active bounded real-source slice backed by recorded GitHub Releases fixtures, not live network access.",
+  "connector_approval": {
+    "status": "approval_required",
+    "connector_inventory_ref": "control/inventory/connectors/github_releases_connector.json",
+    "approval_audit_ref": "control/audits/github-releases-connector-approval-v0/github_releases_connector_approval_report.json",
+    "connector_runtime_implemented": false,
+    "live_enabled_by_default": false,
+    "github_api_calls_enabled": false,
+    "repository_clone_enabled": false,
+    "release_asset_download_enabled": false,
+    "source_archive_download_enabled": false,
+    "source_cache_populated_from_live_calls": false,
+    "evidence_ledger_populated_from_live_calls": false,
+    "limitations": [
+      "P73 references this recorded-fixture source only; it does not enable live GitHub API access, token use, repository cloning, release fetching, asset downloads, source archive downloads, source cache writes, evidence ledger writes, or public-query fanout."
+    ]
+  }
 }

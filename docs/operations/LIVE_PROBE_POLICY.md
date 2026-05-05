@@ -47,3 +47,9 @@ privacy review, and promotion policy before authoritative use.
 ## P65 Candidate Promotion Boundary
 
 P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate promotion policy is not promotion runtime; candidate confidence is not truth; automatic promotion is forbidden; destructive merge is forbidden; future promotion assessment requires evidence, provenance, source policy, privacy, rights, risk, conflict, human, policy, and operator gates. No candidate, source, evidence, public index, local index, or master-index state is mutated.
+
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-START -->
+## P73 GitHub Releases Connector Approval Pack v0
+
+P73 defines a future release-metadata-only GitHub Releases connector approval pack. The live connector is not implemented, no external calls are made, no GitHub API calls are made, public queries do not fan out to GitHub, arbitrary repository fetch is forbidden, repository clone is forbidden, release asset download is forbidden, source archive download is forbidden, raw file/blob/tree fetch is forbidden, scraping/crawling is forbidden, token use is not allowed now, and future outputs must be cache-first/evidence-first after repository identity review and approval.
+<!-- P73-GITHUB-RELEASES-CONNECTOR-APPROVAL-END -->
