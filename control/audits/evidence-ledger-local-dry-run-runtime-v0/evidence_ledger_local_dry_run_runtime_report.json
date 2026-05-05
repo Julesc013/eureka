@@ -1,0 +1,239 @@
+{
+  "report_id": "evidence-ledger-local-dry-run-runtime-v0",
+  "created_by_slice": "P99 Evidence Ledger Local Dry-Run Runtime v0",
+  "repo_head": "00fb9517841ab3188d0f1db01ea035592e9a262b",
+  "branch": "main",
+  "worktree_status": "dirty during P99 implementation",
+  "runtime_scope": {
+    "implemented": [
+      "local dry-run evidence candidate loader",
+      "local dry-run evidence candidate classifier",
+      "local dry-run evidence ledger report builder",
+      "CLI dry-run script",
+      "dry-run report validator",
+      "tests"
+    ],
+    "not_implemented": [
+      "live source calls",
+      "connector runtime",
+      "source sync worker execution",
+      "authoritative evidence-ledger storage",
+      "source cache writes",
+      "candidate/public/local/master index writes",
+      "public search integration",
+      "hosted runtime"
+    ]
+  },
+  "input_model": "Approved repo-local examples under examples/evidence_ledger/dry_run, explicit approved example roots, and synthetic temp test records only.",
+  "output_model": "Deterministic local_dry_run report with candidate summaries, classification counts, mutation summary, warnings, errors, and hard booleans.",
+  "runtime_modules": [
+    "runtime/evidence_ledger/__init__.py",
+    "runtime/evidence_ledger/dry_run.py",
+    "runtime/evidence_ledger/models.py",
+    "runtime/evidence_ledger/policy.py",
+    "runtime/evidence_ledger/report.py",
+    "runtime/evidence_ledger/errors.py",
+    "runtime/evidence_ledger/README.md"
+  ],
+  "cli_script": "scripts/run_evidence_ledger_dry_run.py",
+  "validator_script": "scripts/validate_evidence_ledger_dry_run_report.py",
+  "examples": [
+    "examples/evidence_ledger/dry_run/minimal_source_metadata_observation",
+    "examples/evidence_ledger/dry_run/minimal_availability_observation",
+    "examples/evidence_ledger/dry_run/minimal_release_metadata_observation",
+    "examples/evidence_ledger/dry_run/minimal_package_metadata_observation",
+    "examples/evidence_ledger/dry_run/minimal_capture_presence_observation",
+    "examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation",
+    "examples/evidence_ledger/dry_run/minimal_scoped_absence_observation"
+  ],
+  "dry_run_results": {
+    "report_id": "evidence-ledger-dry-run-1379c689d809acd1",
+    "mode": "local_dry_run",
+    "input_roots": [
+      "examples/evidence_ledger/dry_run"
+    ],
+    "candidates_seen": 7,
+    "candidates_valid": 7,
+    "candidates_invalid": 0,
+    "candidate_summaries": [
+      {
+        "candidate_id": "evidence-ledger-dry-run-availability-v0",
+        "evidence_kind": "availability_observation",
+        "claim_kind": "availability_claim",
+        "source_family": "internet_archive",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-capture-presence-v0",
+        "evidence_kind": "capture_presence_observation",
+        "claim_kind": "source_presence_claim",
+        "source_family": "wayback_cdx_memento",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-conflict-v0",
+        "evidence_kind": "conflict_observation",
+        "claim_kind": "conflict_claim",
+        "source_family": "local_fixture",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-package-metadata-v0",
+        "evidence_kind": "package_metadata_observation",
+        "claim_kind": "metadata_claim",
+        "source_family": "pypi",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-release-metadata-v0",
+        "evidence_kind": "release_metadata_observation",
+        "claim_kind": "version_claim",
+        "source_family": "github_releases",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-scoped-absence-v0",
+        "evidence_kind": "scoped_absence_observation",
+        "claim_kind": "scoped_absence_claim",
+        "source_family": "local_fixture",
+        "valid": true
+      },
+      {
+        "candidate_id": "evidence-ledger-dry-run-source-metadata-v0",
+        "evidence_kind": "source_metadata_observation",
+        "claim_kind": "metadata_claim",
+        "source_family": "internet_archive",
+        "valid": true
+      }
+    ],
+    "evidence_kinds": {
+      "availability_observation": 1,
+      "capture_presence_observation": 1,
+      "conflict_observation": 1,
+      "package_metadata_observation": 1,
+      "release_metadata_observation": 1,
+      "scoped_absence_observation": 1,
+      "source_metadata_observation": 1
+    },
+    "claim_kinds": {
+      "availability_claim": 1,
+      "conflict_claim": 1,
+      "metadata_claim": 2,
+      "scoped_absence_claim": 1,
+      "source_presence_claim": 1,
+      "version_claim": 1
+    },
+    "source_families": {
+      "github_releases": 1,
+      "internet_archive": 2,
+      "local_fixture": 2,
+      "pypi": 1,
+      "wayback_cdx_memento": 1
+    },
+    "provenance_status_counts": {
+      "fixture_backed": 2,
+      "source_cache_candidate": 5
+    },
+    "review_status_counts": {
+      "conflict_review_required": 1,
+      "review_required": 6
+    },
+    "privacy_status_counts": {
+      "public_safe": 7
+    },
+    "public_safety_status_counts": {
+      "public_safe": 5,
+      "review_required": 2
+    },
+    "rights_risk_status_counts": {
+      "metadata_only": 2,
+      "review_required": 2,
+      "source_terms_apply": 3
+    },
+    "promotion_readiness_counts": {
+      "review_required": 7
+    },
+    "mutation_summary": {
+      "authoritative_evidence_ledger_written": false,
+      "evidence_ledger_mutated": false,
+      "source_cache_mutated": false,
+      "candidate_index_mutated": false,
+      "public_index_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "public_search_runtime_mutated": false,
+      "claim_accepted_as_truth": false,
+      "promotion_decision_created": false
+    },
+    "warnings": [],
+    "errors": [],
+    "hard_booleans": {
+      "local_dry_run": true,
+      "live_source_called": false,
+      "external_calls_performed": false,
+      "connector_runtime_executed": false,
+      "source_sync_worker_executed": false,
+      "authoritative_evidence_ledger_written": false,
+      "evidence_ledger_mutated": false,
+      "source_cache_mutated": false,
+      "candidate_index_mutated": false,
+      "public_index_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false,
+      "public_search_runtime_mutated": false,
+      "claim_accepted_as_truth": false,
+      "promotion_decision_created": false,
+      "telemetry_exported": false,
+      "credentials_used": false,
+      "downloads_enabled": false,
+      "installs_enabled": false,
+      "execution_enabled": false
+    }
+  },
+  "classification_summary": "Seven synthetic candidates classify into source metadata, availability, release metadata, package metadata, capture presence, conflict, and scoped absence observations.",
+  "claim_scope_truth_boundary": "Observations are not truth, accepted_as_truth is false, scoped absence is not global absence, and promotion requires separate review.",
+  "provenance_source_attribution_review": "Candidates preserve source/provenance context but do not approve sources, prove source trust, or perform lookups.",
+  "privacy_public_safety_review": "Examples are synthetic and public-safe; policy checks reject private paths, URLs, secrets, identifiers, and unsafe local path patterns.",
+  "rights_risk_action_review": "No rights clearance, malware safety, dependency safety, installability proof, downloads, installs, or execution are enabled.",
+  "source_cache_boundary": "Synthetic source-cache refs are references only; no authoritative source-cache read or write occurs.",
+  "candidate_public_master_boundary": "No candidates are created, no promotion occurs, and public/local/master indexes are not mutated.",
+  "connector_runtime_boundary": "No connector runtime, source-sync worker, live source call, or connector health claim is added.",
+  "public_search_boundary": "Public search does not read or call this dry-run and public search results are unchanged.",
+  "command_results": [
+    {
+      "command": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
+      "status": "passed",
+      "summary": "7 candidates seen, 7 valid, 0 invalid."
+    }
+  ],
+  "remaining_blockers": [
+    "Authoritative evidence-ledger storage remains unimplemented.",
+    "Source-cache reads, connector runtimes, public-search evidence reads, truth acceptance, and promotion decisions require separate approval."
+  ],
+  "next_recommended_branch": "P100 Public Search Runtime Integration Audit v0",
+  "notes": [
+    "Local dry-run only; no production readiness claim."
+  ],
+  "local_dry_run_runtime_implemented": true,
+  "authoritative_evidence_ledger_runtime_implemented": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "connector_runtime_executed": false,
+  "source_sync_worker_executed": false,
+  "authoritative_evidence_ledger_written": false,
+  "evidence_ledger_mutated": false,
+  "source_cache_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "public_search_runtime_mutated": false,
+  "claim_accepted_as_truth": false,
+  "promotion_decision_created": false,
+  "hosted_runtime_enabled": false,
+  "telemetry_exported": false,
+  "credentials_used": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false
+}

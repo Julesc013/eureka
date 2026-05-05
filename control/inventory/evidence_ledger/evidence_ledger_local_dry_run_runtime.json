@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "runtime_id": "evidence-ledger-local-dry-run-runtime-v0",
+  "status": "implemented_local_dry_run",
+  "local_dry_run_runtime_implemented": true,
+  "authoritative_evidence_ledger_runtime_implemented": false,
+  "live_source_calls_enabled": false,
+  "connector_runtime_enabled": false,
+  "source_sync_worker_execution_enabled": false,
+  "authoritative_writes_enabled": false,
+  "source_cache_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_search_integration_enabled": false,
+  "hosted_runtime_enabled": false,
+  "telemetry_enabled": false,
+  "credentials_enabled": false,
+  "truth_acceptance_enabled": false,
+  "promotion_decision_enabled": false,
+  "approved_input_roots": [
+    "examples/evidence_ledger/dry_run",
+    "examples/evidence_ledger"
+  ],
+  "cli": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
+  "validator": "python scripts/validate_evidence_ledger_dry_run_report.py",
+  "next_runtime_branch_recommendation": "P100 Public Search Runtime Integration Audit v0",
+  "notes": [
+    "P99 is local dry-run only over synthetic repo examples.",
+    "No live source calls, connector runtime, authoritative evidence-ledger writes, source-cache mutation, candidate/index mutation, public-search integration, truth acceptance, or promotion decision is enabled."
+  ]
+}
