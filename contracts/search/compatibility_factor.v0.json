@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/compatibility_factor.v0.json",
+  "title": "Compatibility Factor",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "factor_id",
+    "factor_type",
+    "direction",
+    "weight_policy",
+    "score_applied_now",
+    "evidence_refs",
+    "limitations"
+  ],
+  "properties": {
+    "factor_id": {},
+    "factor_type": {
+      "type": "string",
+      "enum": [
+        "platform_os_match",
+        "os_version_match",
+        "architecture_match",
+        "cpu_feature_match",
+        "abi_match",
+        "API_match",
+        "runtime_dependency_match",
+        "library_dependency_match",
+        "package_dependency_match",
+        "hardware_requirement_match",
+        "peripheral_requirement_match",
+        "driver_requirement_match",
+        "emulator_vm_feasibility",
+        "compatibility_evidence_strength",
+        "incompatibility_evidence",
+        "unknown_gap",
+        "action_safety",
+        "rights_risk_caution",
+        "unknown"
+      ]
+    },
+    "direction": {},
+    "weight_policy": {},
+    "score_applied_now": {},
+    "evidence_refs": {},
+    "limitations": {}
+  }
+}

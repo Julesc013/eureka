@@ -202,3 +202,9 @@ This policy does not implement:
 - rights clearance
 - live source probes
 - production readiness
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+## P85 Compatibility-Aware Ranking Contract v0
+
+P85 adds a contract-only compatibility-aware ranking layer. It defines public-safe target profiles, compatibility factors, cautious explanations, no installability without evidence, no emulator/VM or package-manager launch, no runtime ranking, no public search order change, no hidden suppression, and no index/cache/ledger/candidate/master-index mutation.
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->

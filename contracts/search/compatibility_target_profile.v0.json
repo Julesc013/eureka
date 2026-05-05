@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/compatibility_target_profile.v0.json",
+  "title": "Compatibility Target Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "compatibility_target_profile_id",
+    "compatibility_target_profile_kind",
+    "status",
+    "created_by_tool",
+    "profile_identity",
+    "target_environment",
+    "platform_requirements",
+    "architecture_requirements",
+    "runtime_dependency_requirements",
+    "hardware_peripheral_driver_requirements",
+    "emulator_vm_reconstruction_requirements",
+    "action_preferences",
+    "privacy",
+    "limitations",
+    "no_runtime_guarantees",
+    "notes",
+    "runtime_profile_store_implemented",
+    "persistent_profile_store_implemented",
+    "user_profile_tracking_enabled",
+    "telemetry_exported",
+    "private_path_included",
+    "credentials_included",
+    "local_machine_fingerprint_included"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "compatibility_target_profile_id": {},
+    "compatibility_target_profile_kind": {
+      "type": "string",
+      "const": "compatibility_target_profile"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "local_private_future",
+        "runtime_future",
+        "rejected_by_policy"
+      ]
+    },
+    "created_by_tool": {},
+    "profile_identity": {},
+    "target_environment": {},
+    "platform_requirements": {},
+    "architecture_requirements": {},
+    "runtime_dependency_requirements": {},
+    "hardware_peripheral_driver_requirements": {},
+    "emulator_vm_reconstruction_requirements": {},
+    "action_preferences": {},
+    "privacy": {},
+    "limitations": {},
+    "no_runtime_guarantees": {},
+    "notes": {},
+    "runtime_profile_store_implemented": {},
+    "persistent_profile_store_implemented": {},
+    "user_profile_tracking_enabled": {},
+    "telemetry_exported": {},
+    "private_path_included": {},
+    "credentials_included": {},
+    "local_machine_fingerprint_included": {}
+  }
+}

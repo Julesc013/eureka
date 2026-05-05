@@ -1,0 +1,351 @@
+{
+  "schema_version": "0.1.0",
+  "compatibility_ranking_assessment_id": "compat-ranking:minimal_emulator_vm_feasibility_ranking_v0",
+  "compatibility_ranking_assessment_kind": "compatibility_aware_ranking_assessment",
+  "status": "public_safe_example",
+  "created_by_tool": "p85_compatibility_aware_ranking_contract_v0",
+  "ranking_scope": {
+    "scope_kind": "public_search_results",
+    "ranking_mode": "compatibility_aware_future",
+    "current_runtime_order_preserved": true,
+    "live_runtime_changed": false,
+    "limitations": [
+      "Synthetic example only; public search order is unchanged."
+    ]
+  },
+  "target_profile_ref": "compat-target:minimal_emulator_vm_feasibility_ranking_v0",
+  "ranked_items": [
+    {
+      "item_ref": "synthetic:compat:minimal_emulator_vm_feasibility_ranking_v0:strong",
+      "item_kind": "synthetic_example",
+      "item_label": "Emulator VM feasibility example - stronger scoped compatibility evidence",
+      "item_status": "evidence_backed",
+      "proposed_rank": 1,
+      "current_rank": 1,
+      "rank_changed_now": false,
+      "source_refs": [
+        "source:synthetic-compat-fixture"
+      ],
+      "evidence_refs": [
+        "evidence:minimal_emulator_vm_feasibility_ranking_v0:platform"
+      ],
+      "compatibility_status": "likely_compatible",
+      "limitations": [
+        "Proposed rank is explanatory and not applied."
+      ]
+    },
+    {
+      "item_ref": "synthetic:compat:minimal_emulator_vm_feasibility_ranking_v0:unknown",
+      "item_kind": "synthetic_example",
+      "item_label": "Emulator VM feasibility example - unknown compatibility evidence",
+      "item_status": "review_required",
+      "proposed_rank": 2,
+      "current_rank": 2,
+      "rank_changed_now": false,
+      "source_refs": [
+        "source:synthetic-compat-fixture"
+      ],
+      "evidence_refs": [],
+      "compatibility_status": "unknown",
+      "limitations": [
+        "Unknown compatibility is visible and not suppressed."
+      ]
+    }
+  ],
+  "compatibility_factors": [
+    {
+      "factor_id": "factor:minimal_emulator_vm_feasibility_ranking_v0:platform",
+      "factor_type": "emulator_vm_feasibility",
+      "direction": "positive",
+      "weight_policy": "descriptive_only",
+      "score_value": null,
+      "score_applied_now": false,
+      "evidence_refs": [
+        "evidence:minimal_emulator_vm_feasibility_ranking_v0:platform"
+      ],
+      "limitations": [
+        "Platform evidence is not compatibility truth."
+      ]
+    },
+    {
+      "factor_id": "factor:minimal_emulator_vm_feasibility_ranking_v0:gap",
+      "factor_type": "unknown_gap",
+      "direction": "informational",
+      "weight_policy": "descriptive_only",
+      "score_applied_now": false,
+      "evidence_refs": [],
+      "limitations": [
+        "Unknown gaps remain visible."
+      ]
+    }
+  ],
+  "platform_os_version_matching": {
+    "platform_match_status": "likely_compatible",
+    "target_platforms": [
+      "windows"
+    ],
+    "result_platforms": [
+      "windows"
+    ],
+    "os_version_relation": "within_range",
+    "platform_evidence_refs": [
+      "evidence:minimal_emulator_vm_feasibility_ranking_v0:platform"
+    ],
+    "platform_match_not_truth": true,
+    "limitations": [
+      "Platform name and version are evidence dimensions, not truth."
+    ]
+  },
+  "architecture_cpu_abi_api_matching": {
+    "architecture_match_status": "compatible",
+    "cpu_match_status": "unknown",
+    "abi_match_status": "unknown",
+    "api_match_status": "unknown",
+    "target_architectures": [
+      "x86_64"
+    ],
+    "result_architectures": [
+      "x86_64"
+    ],
+    "target_cpu_features": [],
+    "result_cpu_requirements": [],
+    "target_apis": [
+      "Win32 API"
+    ],
+    "result_api_requirements": [],
+    "evidence_refs": [],
+    "limitations": [
+      "Architecture/API details are metadata-only unless evidence refs exist."
+    ]
+  },
+  "runtime_dependency_requirements": {
+    "runtime_match_status": "unknown",
+    "required_runtimes": [],
+    "required_libraries": [],
+    "package_dependencies": [],
+    "dependency_metadata_status": "metadata_only",
+    "dependency_resolution_performed": false,
+    "dependency_safety_claimed": false,
+    "installability_claimed": false,
+    "evidence_refs": [],
+    "gaps": [
+      "runtime_dependency_gap"
+    ],
+    "limitations": [
+      "No dependency resolver or package manager was invoked."
+    ]
+  },
+  "hardware_peripheral_driver_requirements": {
+    "hardware_match_status": "unknown",
+    "required_hardware": [],
+    "required_peripherals": [],
+    "required_drivers": [],
+    "driver_evidence_status": "unknown",
+    "evidence_refs": [],
+    "gaps": [],
+    "limitations": [
+      "No hardware or driver probing occurred."
+    ]
+  },
+  "emulator_vm_reconstruction_feasibility": {
+    "feasibility_status": "likely_feasible_future",
+    "emulator_or_vm_kind": "QEMU_like",
+    "launch_enabled": false,
+    "VM_launch_enabled": false,
+    "emulator_launch_enabled": false,
+    "reconstruction_manifest_required_future": true,
+    "evidence_refs": [],
+    "gaps": [],
+    "limitations": [
+      "No emulator or VM launch is enabled."
+    ]
+  },
+  "compatibility_evidence_strength": {
+    "compatibility_evidence_class": "medium",
+    "evidence_basis": "fixture_record",
+    "evidence_refs": [
+      "evidence:minimal_emulator_vm_feasibility_ranking_v0:platform"
+    ],
+    "compatibility_evidence_not_truth": true,
+    "limitations": [
+      "Compatibility evidence supports a scoped explanation only."
+    ]
+  },
+  "incompatibility_and_unknown_gaps": {
+    "incompatibility_status": "none_known",
+    "unknown_gap_status": "compatibility_evidence_gap",
+    "gaps": [
+      {
+        "gap_type": "compatibility_evidence_gap",
+        "explanation": "The weaker item lacks direct compatibility evidence.",
+        "future_next_step": "Add reviewed compatibility evidence before runtime ranking.",
+        "limitations": []
+      }
+    ],
+    "absence_of_evidence_is_not_incompatibility": true,
+    "limitations": [
+      "Unknown does not mean incompatible."
+    ]
+  },
+  "source_provenance_candidate_caution": {
+    "source_refs": [
+      "source:synthetic-compat-fixture"
+    ],
+    "evidence_refs": [
+      "evidence:minimal_emulator_vm_feasibility_ranking_v0:platform"
+    ],
+    "provenance_refs": [
+      "provenance:synthetic-fixture"
+    ],
+    "candidate_refs": [],
+    "source_posture": "active_fixture",
+    "provenance_strength": "fixture",
+    "candidate_status": "review_required",
+    "source_trust_claimed": false,
+    "candidate_confidence_not_truth": true,
+    "provenance_not_truth": true,
+    "limitations": [
+      "Source/provenance/candidate posture is explanatory only."
+    ]
+  },
+  "action_safety_installability_caution": {
+    "action_safety_class": "safe_metadata_actions_only",
+    "allowed_actions": [
+      "inspect_metadata",
+      "view_sources",
+      "view_evidence",
+      "compare",
+      "cite"
+    ],
+    "disabled_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "mirror",
+      "arbitrary_url_fetch",
+      "package_manager_invoke",
+      "emulator_launch",
+      "VM_launch"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "package_manager_invoked": false,
+    "emulator_launch_enabled": false,
+    "VM_launch_enabled": false,
+    "installability_claimed": false,
+    "installability_evidence_required": true,
+    "limitations": [
+      "Compatibility ranking does not enable action execution."
+    ]
+  },
+  "rights_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "dependency_safety_claimed": false,
+    "risk_caution_required": true,
+    "rights_risk_affects_rank_future": true,
+    "rights_risk_score_applied_now": false,
+    "limitations": [
+      "No rights, malware, or dependency safety claims are made."
+    ]
+  },
+  "tie_breaks": {
+    "tie_break_policy": "preserve_current_order_v0",
+    "tie_break_factors": [
+      "stable_id",
+      "compatibility_evidence_strength_future"
+    ],
+    "tie_break_applied_now": false,
+    "random_tie_break_allowed": false,
+    "limitations": [
+      "Tie breaks are future-only and deterministic."
+    ]
+  },
+  "compatibility_explanation_ref": "compat-explanation:minimal_emulator_vm_feasibility_ranking_v0",
+  "public_projection": {
+    "result_card_projection": "future compatibility badge with explanation",
+    "result_merge_group_projection": "future grouped compatibility summary",
+    "object_page_projection": "future object compatibility section",
+    "source_page_projection": "future source posture link",
+    "comparison_page_projection": "future compatibility comparison section",
+    "compatibility_badge_projection": "categorical_future",
+    "explanation_visibility": "user_visible_summary",
+    "user_visible_compatibility_reason_required": true,
+    "compatibility_score_publication_policy": "no_numeric_score_v0",
+    "limitations": [
+      "No runtime projection is enabled."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_local_machine_fingerprint": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic compatibility ranking example."
+    ]
+  },
+  "limitations": [
+    "Contract-only example. Ranking is not applied to live/current search."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_compatibility_ranking_implemented": false
+  },
+  "no_ranking_change_guarantees": {
+    "compatibility_ranking_applied_to_live_search": false,
+    "public_search_order_changed": false,
+    "result_suppressed": false
+  },
+  "no_mutation_guarantees": {
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "notes": [
+    "Compatibility-aware ranking is future-only and evidence-gated."
+  ],
+  "runtime_compatibility_ranking_implemented": false,
+  "persistent_compatibility_ranking_store_implemented": false,
+  "compatibility_ranking_applied_to_live_search": false,
+  "public_search_order_changed": false,
+  "result_suppressed": false,
+  "hidden_suppression_performed": false,
+  "candidate_promotion_performed": false,
+  "installability_claimed": false,
+  "compatibility_truth_claimed": false,
+  "dependency_safety_claimed": false,
+  "emulator_vm_launch_enabled": false,
+  "package_manager_invoked": false,
+  "executable_inspected": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "telemetry_exported": false,
+  "popularity_signal_used": false,
+  "user_profile_signal_used": false,
+  "ad_signal_used": false,
+  "model_call_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "compatibility_aware_ranking_policy_v0",
+  "status": "contract_only",
+  "runtime_compatibility_ranking_implemented": false,
+  "persistent_compatibility_ranking_store_implemented": false,
+  "public_search_order_changed": false,
+  "compatibility_ranking_applied_to_live_search": false,
+  "hidden_suppression_allowed": false,
+  "result_suppression_allowed_without_explanation": false,
+  "candidate_promotion_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "installability_claim_allowed_without_evidence": false,
+  "dependency_safety_claim_allowed": false,
+  "malware_safety_claim_allowed": false,
+  "emulator_vm_launch_allowed": false,
+  "package_manager_invocation_allowed": false,
+  "executable_inspection_allowed": false,
+  "popularity_signal_allowed": false,
+  "user_profile_signal_allowed": false,
+  "ad_signal_allowed": false,
+  "telemetry_signal_allowed": false,
+  "compatibility_evidence_required": true,
+  "unknown_gap_transparency_required": true,
+  "absence_of_evidence_is_not_incompatibility": true,
+  "random_tie_break_allowed": false,
+  "next_contracts": [
+    "public_search_runtime_ranking_planning",
+    "search_result_explanation_contract",
+    "compatibility_evidence_pack_contract"
+  ],
+  "notes": [
+    "P85 is contract-only; no runtime compatibility ranking, package manager, emulator/VM launch, or mutation is allowed."
+  ]
+}

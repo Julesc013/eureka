@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.1.0",
+  "compatibility_target_profile_id": "compat-target:minimal_emulator_vm_feasibility_ranking_v0",
+  "compatibility_target_profile_kind": "compatibility_target_profile",
+  "status": "public_safe_example",
+  "created_by_tool": "p85_compatibility_aware_ranking_contract_v0",
+  "profile_identity": {
+    "profile_label": "Emulator VM feasibility example",
+    "profile_basis": "synthetic_example",
+    "public_safe": true,
+    "limitations": [
+      "Synthetic target profile for contract validation only."
+    ]
+  },
+  "target_environment": {
+    "target_environment_kind": "emulator",
+    "operating_systems": [
+      "Windows"
+    ],
+    "os_versions": [
+      "Windows 7"
+    ],
+    "architectures": [
+      "x86_64"
+    ],
+    "cpu_requirements": [
+      "generic x86_64"
+    ],
+    "abi_requirements": [
+      "win32-compatible ABI"
+    ],
+    "api_requirements": [
+      "Win32 API"
+    ],
+    "runtime_requirements": [
+      "metadata-only runtime requirement"
+    ],
+    "hardware_requirements": [],
+    "peripheral_requirements": [],
+    "driver_requirements": [],
+    "compatibility_goal": "run_in_emulator",
+    "limitations": [
+      "No local machine fingerprint or private profile data is included."
+    ]
+  },
+  "platform_requirements": {
+    "target_platforms": [
+      "windows"
+    ],
+    "target_os_versions": [
+      "Windows 7"
+    ],
+    "limitations": []
+  },
+  "architecture_requirements": {
+    "target_architectures": [
+      "x86_64"
+    ],
+    "target_abi": [
+      "win32-compatible ABI"
+    ],
+    "limitations": []
+  },
+  "runtime_dependency_requirements": {
+    "required_runtimes": [],
+    "required_libraries": [],
+    "package_dependencies": [],
+    "dependency_resolution_performed": false,
+    "limitations": [
+      "Metadata-only; no package manager or dependency resolver was invoked."
+    ]
+  },
+  "hardware_peripheral_driver_requirements": {
+    "required_hardware": [],
+    "required_peripherals": [],
+    "required_drivers": [],
+    "limitations": [
+      "No device probing occurred."
+    ]
+  },
+  "emulator_vm_reconstruction_requirements": {
+    "emulator_or_vm_required": false,
+    "preferred_emulator_or_vm_kind": "none",
+    "launch_enabled": false,
+    "limitations": [
+      "No emulator or VM launch is enabled."
+    ]
+  },
+  "action_preferences": {
+    "allowed_actions": [
+      "inspect_metadata",
+      "view_sources",
+      "view_evidence",
+      "compare",
+      "cite"
+    ],
+    "disabled_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "mirror",
+      "arbitrary_url_fetch",
+      "package_manager_invoke",
+      "emulator_launch",
+      "VM_launch"
+    ],
+    "limitations": []
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_local_machine_fingerprint": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe target profile."
+    ]
+  },
+  "limitations": [
+    "Contract example only; not a runtime user profile."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_profile_store_implemented": false,
+    "persistent_profile_store_implemented": false,
+    "user_profile_tracking_enabled": false,
+    "telemetry_exported": false
+  },
+  "notes": [
+    "Compatibility target profile is synthetic and public safe."
+  ],
+  "runtime_profile_store_implemented": false,
+  "persistent_profile_store_implemented": false,
+  "user_profile_tracking_enabled": false,
+  "telemetry_exported": false,
+  "private_path_included": false,
+  "credentials_included": false,
+  "local_machine_fingerprint_included": false
+}

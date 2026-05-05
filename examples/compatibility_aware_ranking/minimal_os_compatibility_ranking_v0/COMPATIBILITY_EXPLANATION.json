@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1.0",
+  "compatibility_explanation_id": "compat-explanation:minimal_os_compatibility_ranking_v0",
+  "compatibility_explanation_kind": "compatibility_explanation",
+  "status": "public_safe_example",
+  "created_by_tool": "p85_compatibility_aware_ranking_contract_v0",
+  "explanation_scope": {
+    "scope_kind": "public_search_results",
+    "target_profile_ref": "compat-target:minimal_os_compatibility_ranking_v0",
+    "limitations": [
+      "Explanation is a synthetic contract example."
+    ]
+  },
+  "target_profile_summary": "Synthetic public-safe target profile for Windows 7 x64 OS compatibility example.",
+  "item_explanations": [
+    {
+      "item_ref": "synthetic:compat:minimal_os_compatibility_ranking_v0:strong",
+      "summary": "Shown with stronger scoped compatibility evidence in the example, but not as truth.",
+      "compatibility_status": "likely_compatible",
+      "limitations": []
+    },
+    {
+      "item_ref": "synthetic:compat:minimal_os_compatibility_ranking_v0:unknown",
+      "summary": "Compatibility is unknown and remains visible.",
+      "compatibility_status": "unknown",
+      "limitations": []
+    }
+  ],
+  "factor_explanations": [
+    "Platform, architecture, dependency, hardware, emulator/VM, evidence, action, and risk factors are separate.",
+    "No numeric score is published in v0."
+  ],
+  "compatibility_status_explanations": [
+    "Supported, likely supported, unknown, likely unsupported, unsupported, and conflicting are distinct."
+  ],
+  "unknown_gap_explanations": [
+    "Unknown compatibility is a gap, not an incompatibility claim."
+  ],
+  "conflict_explanations": [
+    "Conflicts must remain visible when present."
+  ],
+  "action_safety_explanations": [
+    "Downloads, installs, execution, package managers, emulators, and VMs remain disabled."
+  ],
+  "public_user_text": "Windows 7 x64 OS compatibility example has a scoped compatibility explanation only. It is not installability proof or compatibility truth.",
+  "limitations": [
+    "Contract-only explanation; no live search output was changed."
+  ],
+  "no_installability_without_evidence_guarantees": {
+    "installability_claimed": false,
+    "installability_evidence_required": true
+  },
+  "no_runtime_guarantees": {
+    "explanation_generated_by_runtime": false,
+    "explanation_applied_to_live_search": false
+  },
+  "notes": [
+    "Cautious public text is required."
+  ],
+  "explanation_generated_by_runtime": false,
+  "explanation_applied_to_live_search": false,
+  "compatibility_ranking_applied_to_live_search": false,
+  "installability_claimed": false,
+  "result_suppressed": false,
+  "hidden_suppression_performed": false
+}

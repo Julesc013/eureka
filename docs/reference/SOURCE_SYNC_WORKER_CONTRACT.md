@@ -119,3 +119,9 @@ P84 adds no runtime ranking, production ranking, public search order change, hid
 
 Future public search, result merge groups, object/source/comparison pages, and ranking-runtime planning may reference P84 only after governed runtime planning and eval evidence.
 <!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
+
+<!-- P85-COMPATIBILITY-AWARE-RANKING-START -->
+## P85 Compatibility-Aware Ranking Contract v0
+
+P85 adds a contract-only compatibility-aware ranking layer. It defines public-safe target profiles, compatibility factors, cautious explanations, no installability without evidence, no emulator/VM or package-manager launch, no runtime ranking, no public search order change, no hidden suppression, and no index/cache/ledger/candidate/master-index mutation.
+<!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
