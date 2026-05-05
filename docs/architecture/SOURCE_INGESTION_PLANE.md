@@ -143,3 +143,17 @@ execution, authoritative source-cache writes, evidence-ledger writes,
 candidate/public/local/master index mutation, public-search integration,
 hosted runtime, telemetry, credentials, downloads, installs, or execution.
 <!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-START -->
+## P99 Evidence Ledger Local Dry-Run Runtime v0
+
+P99 introduces a bounded local dry-run lane under `runtime/evidence_ledger/`
+for approved synthetic evidence-ledger candidate examples. The lane validates,
+classifies, and reports observation candidate effects only.
+
+It performs no live source calls, connector execution, source-sync worker
+execution, authoritative evidence-ledger writes, source-cache mutation,
+candidate/public/local/master index mutation, truth acceptance, promotion
+decisions, public-search integration, hosted runtime, telemetry, credentials,
+downloads, installs, or execution.
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->

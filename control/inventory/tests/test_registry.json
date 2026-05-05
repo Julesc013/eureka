@@ -9105,6 +9105,86 @@
       "failure_means": "P98 runtime, CLI, validator, docs, inventory, or metadata guardrails regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms local dry-run only behavior, forbidden args, private-path/URL/secret rejection, deterministic reports, and no authoritative/public-search/mutation claims."
+    },
+    {
+      "test_id": "evidence_ledger_local_dry_run_json",
+      "label": "P99 evidence ledger local dry-run JSON",
+      "command": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
+      "category": "runtime",
+      "owner_area": "runtime/evidence_ledger",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless an explicit approved output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "P99 evidence-ledger dry-run examples, classification, or hard no-mutation/no-truth guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Runs a local dry-run over synthetic repo examples only; no live source calls, connector execution, authoritative writes, source-cache mutation, public-search mutation, truth acceptance, promotion, telemetry, credentials, downloads, installs, or execution."
+    },
+    {
+      "test_id": "evidence_ledger_dry_run_report_validator",
+      "label": "P99 evidence ledger dry-run report validator",
+      "command": "python scripts/validate_evidence_ledger_dry_run_report.py",
+      "category": "runtime",
+      "owner_area": "runtime/evidence_ledger",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P99 audit report or dry-run report hard booleans/counts drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates local_dry_run mode and no live source, connector, telemetry, credential, public-search, truth-acceptance, promotion, or mutation claims."
+    },
+    {
+      "test_id": "evidence_ledger_dry_run_report_validator_json",
+      "label": "P99 evidence ledger dry-run report validator JSON",
+      "command": "python scripts/validate_evidence_ledger_dry_run_report.py --json",
+      "category": "runtime",
+      "owner_area": "runtime/evidence_ledger",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P99 dry-run report validator JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable dry-run report validation."
+    },
+    {
+      "test_id": "evidence_ledger_local_dry_run_runtime_tests",
+      "label": "P99 evidence ledger local dry-run runtime tests",
+      "command": "python -m unittest tests.runtime.test_evidence_ledger_dry_run tests.scripts.test_run_evidence_ledger_dry_run tests.scripts.test_validate_evidence_ledger_dry_run_report tests.operations.test_evidence_ledger_local_dry_run_runtime",
+      "category": "unit",
+      "owner_area": "runtime/evidence_ledger",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P99 runtime, CLI, validator, docs, inventory, or metadata guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms local dry-run only behavior, forbidden args, private-path/URL/secret rejection, deterministic reports, no truth acceptance, no promotion, and no authoritative/public-search/mutation claims."
     }
   ],
   "notes": [
@@ -9133,6 +9213,7 @@
     "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service.",
     "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
     "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
-    "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation."
+    "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
+    "P99 Evidence Ledger Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation."
   ]
 }

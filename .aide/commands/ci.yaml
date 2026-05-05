@@ -1039,3 +1039,13 @@ These commands are stdlib-only planning validators. They add no ranking runtime,
 
 These commands are stdlib-only local dry-run checks. They add no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, candidate/public/local/master index mutation, public-search integration, telemetry, credentials, downloads, installs, or execution.
 <!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->
+
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-START -->
+## P99 Evidence Ledger Local Dry-Run Runtime v0
+
+- `python scripts/run_evidence_ledger_dry_run.py --all-examples --json`
+- `python scripts/validate_evidence_ledger_dry_run_report.py`
+- `python scripts/validate_evidence_ledger_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks. They add no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, candidate/public/local/master index mutation, truth acceptance, promotion decisions, public-search integration, telemetry, credentials, downloads, installs, or execution.
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->

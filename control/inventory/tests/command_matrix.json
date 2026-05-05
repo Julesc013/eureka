@@ -410,7 +410,11 @@
         "source_cache_local_dry_run_json",
         "source_cache_dry_run_report_validator",
         "source_cache_dry_run_report_validator_json",
-        "source_cache_local_dry_run_runtime_tests"
+        "source_cache_local_dry_run_runtime_tests",
+        "evidence_ledger_local_dry_run_json",
+        "evidence_ledger_dry_run_report_validator",
+        "evidence_ledger_dry_run_report_validator_json",
+        "evidence_ledger_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -834,7 +838,11 @@
         "source_cache_local_dry_run_json",
         "source_cache_dry_run_report_validator",
         "source_cache_dry_run_report_validator_json",
-        "source_cache_local_dry_run_runtime_tests"
+        "source_cache_local_dry_run_runtime_tests",
+        "evidence_ledger_local_dry_run_json",
+        "evidence_ledger_dry_run_report_validator",
+        "evidence_ledger_dry_run_report_validator_json",
+        "evidence_ledger_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1583,6 +1591,8 @@
     "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
     "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
     "P98 Source Cache Local Dry-Run Runtime commands are stdlib-only local dry-run checks over synthetic examples; they perform no live source calls, connector execution, source-sync execution, authoritative source-cache writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
-    "P98 command strings: python scripts/run_source_cache_dry_run.py --all-examples --json; python scripts/validate_source_cache_dry_run_report.py; python scripts/validate_source_cache_dry_run_report.py --json."
+    "P98 command strings: python scripts/run_source_cache_dry_run.py --all-examples --json; python scripts/validate_source_cache_dry_run_report.py; python scripts/validate_source_cache_dry_run_report.py --json.",
+    "P99 Evidence Ledger Local Dry-Run Runtime commands are stdlib-only local dry-run checks over synthetic examples; they perform no live source calls, connector execution, source-sync execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation.",
+    "P99 command strings: python scripts/run_evidence_ledger_dry_run.py --all-examples --json; python scripts/validate_evidence_ledger_dry_run_report.py; python scripts/validate_evidence_ledger_dry_run_report.py --json."
   ]
 }

@@ -1028,9 +1028,9 @@
     {
       "id": "evidence_ledger_local_dry_run_runtime_v0",
       "title": "P99 Evidence Ledger Local Dry-Run Runtime v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_implemented_local_dry_run",
       "priority": 140,
-      "notes": "Future local dry-run runtime only after evidence-ledger runtime gates, source policies, review workflow, and operator approval."
+      "notes": "P99 completed as a local dry-run evidence-ledger candidate loader/classifier/report runtime over approved synthetic repo examples. No live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, candidate/public/local/master index mutation, public-search integration, truth acceptance, promotion decisions, hosted runtime, telemetry, credentials, downloads, installs, or execution were added."
     },
     {
       "id": "public_search_runtime_integration_audit_v0",
@@ -1087,6 +1087,20 @@
       "status": "blocked_pending_eval_gate_approval",
       "priority": 148,
       "notes": "Future gated milestone; P97 grants no runtime behavior."
+    },
+    {
+      "id": "source_cache_authoritative_local_runtime_planning_v0",
+      "title": "P108 Source Cache Authoritative Local Runtime Planning v0",
+      "status": "queued_codex_safe_future",
+      "priority": 150,
+      "notes": "Future planning for authoritative local source-cache storage only after P98 dry-run review and explicit storage/mutation approval."
+    },
+    {
+      "id": "evidence_ledger_authoritative_local_runtime_planning_v0",
+      "title": "P109 Evidence Ledger Authoritative Local Runtime Planning v0",
+      "status": "queued_codex_safe_future",
+      "priority": 151,
+      "notes": "Future planning for authoritative local evidence-ledger storage only after P99 dry-run review and explicit review/truth/promotion boundary approval."
     }
   ]
 }

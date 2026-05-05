@@ -587,3 +587,14 @@ Adds planning-only ranking runtime architecture, gates, validator, and report. N
 
 Adds a bounded local dry-run source-cache candidate loader, classifier, report builder, CLI, validator, synthetic examples, tests, docs, inventory, and audit report. No live source calls, connector execution, source-sync execution, authoritative source-cache writes, evidence-ledger writes, candidate/public/local/master index mutation, public-search integration, hosted runtime, telemetry, credentials, downloads, installs, or execution are added.
 <!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-START -->
+## P99 Evidence Ledger Local Dry-Run Runtime v0
+
+- Audit pack: `control/audits/evidence-ledger-local-dry-run-runtime-v0/`
+- Status: implemented local dry-run only.
+- Boundary: no live source calls, connector execution, authoritative
+  evidence-ledger writes, source-cache mutation, truth acceptance, promotion
+  decisions, public-search integration, telemetry, credentials, downloads,
+  installs, execution, or index mutation.
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->

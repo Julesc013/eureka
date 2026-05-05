@@ -130,3 +130,21 @@ Search Result Explanation Contract v0 is contract-only. It defines future eviden
 
 No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-START -->
+## P99 Evidence Ledger Local Dry-Run Runtime v0
+
+P99 adds a bounded local dry-run helper under `runtime/evidence_ledger/` for
+synthetic evidence-ledger candidate examples. It loads, validates, classifies,
+and reports candidate effects only.
+
+Boundary notes:
+
+- Evidence observations remain not truth by default.
+- No authoritative evidence-ledger storage is added.
+- No source cache write, candidate promotion, public-index mutation,
+  local-index mutation, or master-index mutation is added.
+- No live source calls, connector execution, public-search evidence read,
+  telemetry, credentials, downloads, installs, execution, truth acceptance, or
+  promotion decision is added.
+<!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->
