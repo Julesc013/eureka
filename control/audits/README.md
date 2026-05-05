@@ -468,3 +468,9 @@ Commands:
 
 These are contract-only/source-page governance checks. They make no network calls, implement no runtime source pages, execute no source sync worker, enable no connector, mutate no cache/ledger/index, and enable no downloads, installs, or execution.
 <!-- P80-SOURCE-PAGE-CONTRACT-END -->
+
+<!-- P81-COMPARISON-PAGE-CONTRACT-START -->
+## P81 Comparison Page Contract v0
+
+`control/audits/comparison-page-contract-v0/` records the Comparison Page Contract v0 governance pack. It is contract-only and does not claim runtime comparison pages, ranking authority, candidate promotion, winner selection, live source calls, downloads, installs, execution, rights clearance, malware safety, source trust, source cache/evidence ledger runtime, or index mutation.
+<!-- P81-COMPARISON-PAGE-CONTRACT-END -->
