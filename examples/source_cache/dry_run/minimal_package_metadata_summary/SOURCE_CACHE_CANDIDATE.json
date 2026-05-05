@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "source-cache-dry-run-package-metadata-v0",
+  "candidate_kind": "source_cache_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p98_source_cache_dry_run_example_builder_v0",
+  "source_family": "pypi",
+  "record_kind": "package_metadata_summary",
+  "source_ref": {
+    "source_id": "pypi",
+    "source_ref_id": "synthetic-package-metadata-source",
+    "source_label": "Synthetic package metadata source",
+    "source_status": "approval_required",
+    "package_label": "synthetic-package-name",
+    "limitations": [
+      "Synthetic package metadata only; no package manager, package download, or dependency resolver is represented."
+    ]
+  },
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "evidence_readiness": "evidence_review_required",
+  "policy_status": "approved_example",
+  "summary": {
+    "summary_text": "Synthetic package metadata summary with package label, version label, and dependency caution only.",
+    "field_count": 3,
+    "raw_payload_included": false
+  },
+  "candidate_effects": {
+    "source_cache_candidate_effect": "package_metadata_candidate",
+    "evidence_ledger_candidate_effect": "evidence_review_required",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Dry-run example only; package metadata does not prove installability or dependency safety."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_source_cache_written": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No PyPI API call, package download, package manager invocation, install, or dependency resolver is involved."
+  ]
+}

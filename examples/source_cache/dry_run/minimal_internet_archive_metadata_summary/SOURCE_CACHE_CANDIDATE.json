@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "source-cache-dry-run-ia-metadata-v0",
+  "candidate_kind": "source_cache_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p98_source_cache_dry_run_example_builder_v0",
+  "source_family": "internet_archive",
+  "record_kind": "metadata_summary",
+  "source_ref": {
+    "source_id": "internet_archive",
+    "source_ref_id": "synthetic-internet-archive-source",
+    "source_label": "Synthetic Internet Archive metadata source",
+    "source_status": "approval_required",
+    "limitations": [
+      "Synthetic metadata-only source reference; no live source call is represented."
+    ]
+  },
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "evidence_readiness": "evidence_candidate_ready",
+  "policy_status": "approved_example",
+  "summary": {
+    "summary_text": "Synthetic item metadata summary with title, identifier label, and collection posture only.",
+    "field_count": 3,
+    "raw_payload_included": false
+  },
+  "candidate_effects": {
+    "source_cache_candidate_effect": "metadata_summary_candidate",
+    "evidence_ledger_candidate_effect": "evidence_review_possible",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Dry-run example only; source cache is not truth and no authoritative record is written."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_source_cache_written": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No Internet Archive API, scraping, download, or source-sync worker is involved."
+  ]
+}

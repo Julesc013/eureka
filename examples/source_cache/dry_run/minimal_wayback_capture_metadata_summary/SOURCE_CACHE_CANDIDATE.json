@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "source-cache-dry-run-wayback-capture-v0",
+  "candidate_kind": "source_cache_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p98_source_cache_dry_run_example_builder_v0",
+  "source_family": "wayback_cdx_memento",
+  "record_kind": "capture_metadata_summary",
+  "source_ref": {
+    "source_id": "wayback_cdx_memento",
+    "source_ref_id": "synthetic-wayback-source",
+    "source_label": "Synthetic Wayback capture metadata source",
+    "source_status": "approval_required",
+    "uri_r_label": "synthetic-redacted-uri-r",
+    "limitations": [
+      "Synthetic capture metadata only; no URI-R value, capture replay, or WARC fetch is included."
+    ]
+  },
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "evidence_readiness": "evidence_review_required",
+  "policy_status": "approved_example",
+  "summary": {
+    "summary_text": "Synthetic capture listing summary with timestamp bucket and availability posture only.",
+    "field_count": 3,
+    "raw_payload_included": false
+  },
+  "candidate_effects": {
+    "source_cache_candidate_effect": "capture_metadata_candidate",
+    "evidence_ledger_candidate_effect": "evidence_review_required",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Dry-run example only; no archived content is fetched or replayed."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_source_cache_written": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No Wayback, CDX, Memento, capture replay, or WARC behavior is enabled."
+  ]
+}
