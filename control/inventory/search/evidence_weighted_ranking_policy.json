@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "evidence_weighted_ranking_policy_v0",
+  "status": "contract_only",
+  "runtime_ranking_implemented": false,
+  "persistent_ranking_store_implemented": false,
+  "public_search_order_changed": false,
+  "ranking_applied_to_live_search": false,
+  "hidden_suppression_allowed": false,
+  "result_suppression_allowed_without_explanation": false,
+  "candidate_promotion_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "popularity_signal_allowed": false,
+  "user_profile_signal_allowed": false,
+  "ad_signal_allowed": false,
+  "telemetry_signal_allowed": false,
+  "evidence_strength_required": true,
+  "provenance_strength_required": true,
+  "conflict_explanation_required": true,
+  "gap_transparency_required": true,
+  "random_tie_break_allowed": false,
+  "next_contracts": [
+    "compatibility_aware_ranking_contract",
+    "public_search_runtime_ranking_planning",
+    "search_result_explanation_contract"
+  ],
+  "notes": [
+    "P84 is contract-only and does not affect current public search ordering."
+  ]
+}

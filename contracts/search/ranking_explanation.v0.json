@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/ranking_explanation.v0.json",
+  "title": "Ranking Explanation",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "ranking_explanation_id",
+    "ranking_explanation_kind",
+    "status",
+    "created_by_tool",
+    "explanation_scope",
+    "item_explanations",
+    "factor_explanations",
+    "uncertainty_explanations",
+    "conflict_explanations",
+    "gap_explanations",
+    "tie_break_explanations",
+    "public_user_text",
+    "limitations",
+    "no_hidden_suppression_guarantees",
+    "no_runtime_guarantees",
+    "notes",
+    "explanation_generated_by_runtime",
+    "explanation_applied_to_live_search",
+    "result_suppressed",
+    "hidden_suppression_performed",
+    "ranking_applied_to_live_search"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "ranking_explanation_kind": {
+      "type": "string",
+      "const": "ranking_explanation"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "runtime_future"
+      ]
+    },
+    "ranking_explanation_id": {
+      "description": "Governed ranking_explanation_id section."
+    },
+    "created_by_tool": {
+      "description": "Governed created_by_tool section."
+    },
+    "explanation_scope": {
+      "description": "Governed explanation_scope section."
+    },
+    "item_explanations": {
+      "description": "Governed item_explanations section."
+    },
+    "factor_explanations": {
+      "description": "Governed factor_explanations section."
+    },
+    "uncertainty_explanations": {
+      "description": "Governed uncertainty_explanations section."
+    },
+    "conflict_explanations": {
+      "description": "Governed conflict_explanations section."
+    },
+    "gap_explanations": {
+      "description": "Governed gap_explanations section."
+    },
+    "tie_break_explanations": {
+      "description": "Governed tie_break_explanations section."
+    },
+    "public_user_text": {
+      "description": "Governed public_user_text section."
+    },
+    "limitations": {
+      "description": "Governed limitations section."
+    },
+    "no_hidden_suppression_guarantees": {
+      "description": "Governed no_hidden_suppression_guarantees section."
+    },
+    "no_runtime_guarantees": {
+      "description": "Governed no_runtime_guarantees section."
+    },
+    "notes": {
+      "description": "Governed notes section."
+    },
+    "explanation_generated_by_runtime": {
+      "type": "boolean",
+      "const": false
+    },
+    "explanation_applied_to_live_search": {
+      "type": "boolean",
+      "const": false
+    },
+    "result_suppressed": {
+      "type": "boolean",
+      "const": false
+    },
+    "hidden_suppression_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "ranking_applied_to_live_search": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-contract-only": true,
+  "x-runtime-ranking-implemented": false,
+  "x-public-search-order-changed": false,
+  "x-hidden-suppression-allowed": false,
+  "x-mutation-allowed": false
+}

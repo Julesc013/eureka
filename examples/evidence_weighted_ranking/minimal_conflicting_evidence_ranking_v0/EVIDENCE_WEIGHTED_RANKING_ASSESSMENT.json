@@ -1,0 +1,290 @@
+{
+  "schema_version": "0.1.0",
+  "ranking_assessment_id": "minimal_conflicting_evidence_ranking_v0_assessment",
+  "ranking_assessment_kind": "evidence_weighted_ranking_assessment",
+  "status": "review_required",
+  "created_by_tool": "p84_contract_generator",
+  "ranking_scope": {
+    "scope_kind": "synthetic_example",
+    "ranking_mode": "contract_only",
+    "current_runtime_order_preserved": true,
+    "live_runtime_changed": false,
+    "limitations": [
+      "No current public search ordering is changed."
+    ]
+  },
+  "ranked_items": [
+    {
+      "item_ref": "synthetic:ranking:conflict:left",
+      "item_kind": "synthetic_example",
+      "item_label": "Conflicting version result A",
+      "item_status": "conflicted",
+      "proposed_rank": 1,
+      "current_rank": 1,
+      "rank_changed_now": false,
+      "source_refs": [
+        "synthetic:source:recorded-fixture"
+      ],
+      "evidence_refs": [
+        "synthetic:evidence:version-a"
+      ],
+      "limitations": [
+        "Synthetic public-safe item; proposed rank is not applied to live search."
+      ]
+    },
+    {
+      "item_ref": "synthetic:ranking:conflict:right",
+      "item_kind": "synthetic_example",
+      "item_label": "Conflicting version result B",
+      "item_status": "conflicted",
+      "proposed_rank": 2,
+      "current_rank": 2,
+      "rank_changed_now": false,
+      "source_refs": [
+        "synthetic:source:recorded-fixture"
+      ],
+      "evidence_refs": [
+        "synthetic:evidence:version-b"
+      ],
+      "limitations": [
+        "Synthetic public-safe item; proposed rank is not applied to live search."
+      ]
+    }
+  ],
+  "ranking_factors": [
+    {
+      "factor_id": "factor-conflict",
+      "factor_type": "conflict_penalty",
+      "direction": "negative",
+      "weight_policy": "future_weighted",
+      "score_applied_now": false,
+      "evidence_refs": [
+        "synthetic:evidence:version-a",
+        "synthetic:evidence:version-b"
+      ],
+      "limitations": [
+        "Conflict must be visible and cannot suppress results now."
+      ]
+    }
+  ],
+  "evidence_strength": {
+    "evidence_strength_class": "conflicting",
+    "evidence_basis": "source_backed_metadata",
+    "evidence_refs": [
+      "synthetic:evidence:version-a",
+      "synthetic:evidence:version-b"
+    ],
+    "evidence_count_policy": "example_count",
+    "evidence_strength_not_truth": true,
+    "limitations": [
+      "Evidence strength explains proposed ranking only; it is not truth."
+    ]
+  },
+  "provenance_strength": {
+    "provenance_strength_class": "conflicting",
+    "provenance_basis": "recorded_fixture",
+    "provenance_refs": [
+      "synthetic:provenance:reviewed-fixture"
+    ],
+    "chain_complete": false,
+    "chain_limitations": [
+      "Synthetic provenance chain only."
+    ],
+    "provenance_not_truth": true,
+    "limitations": [
+      "Provenance is not a source trust claim."
+    ]
+  },
+  "source_posture": {
+    "source_posture_class": "active_recorded_fixture",
+    "source_policy_status": "fixture_only",
+    "connector_status": "fixture_only",
+    "live_enabled": false,
+    "source_trust_claimed": false,
+    "source_refs": [
+      "synthetic:source:recorded-fixture"
+    ],
+    "limitations": [
+      "Source posture is explanatory and not authoritative trust."
+    ]
+  },
+  "freshness": {
+    "freshness_class": "recorded_fixture_static",
+    "freshness_basis": "Committed synthetic example metadata only.",
+    "stale_penalty_future": true,
+    "freshness_score_applied_now": false,
+    "limitations": [
+      "Freshness/staleness does not change live ordering in v0."
+    ]
+  },
+  "conflicts_and_uncertainty": {
+    "conflict_status": "evidence_conflict",
+    "uncertainty_status": "high",
+    "penalty_policy": "future_penalty",
+    "conflict_hidden": false,
+    "conflict_suppresses_result_now": false,
+    "uncertainty_explanation_required": true,
+    "limitations": [
+      "Conflicts and uncertainty must be visible, not hidden."
+    ]
+  },
+  "candidate_status": {
+    "candidate_class": "review_required",
+    "candidate_penalty_future": true,
+    "candidate_promotion_performed": false,
+    "candidate_confidence_not_truth": true,
+    "limitations": [
+      "Candidate status may require review but cannot promote or suppress now."
+    ]
+  },
+  "absence_and_gaps": {
+    "absence_status": "not_absent",
+    "global_absence_claimed": false,
+    "gaps": [],
+    "gap_transparency_required": true,
+    "absence_or_gap_suppresses_result_now": false,
+    "limitations": [
+      "Absence and gaps are scoped and transparent."
+    ]
+  },
+  "action_safety": {
+    "action_safety_class": "safe_metadata_actions_only",
+    "allowed_actions": [
+      "inspect_metadata",
+      "view_sources",
+      "view_evidence",
+      "compare",
+      "cite"
+    ],
+    "disabled_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "mirror",
+      "arbitrary_url_fetch"
+    ],
+    "risky_action_bonus_allowed": false,
+    "risky_action_penalty_future": true,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "limitations": [
+      "No download, install, execute, upload, mirror, or arbitrary URL fetch action is enabled."
+    ]
+  },
+  "rights_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "risk_caution_required": true,
+    "rights_risk_affects_rank_future": true,
+    "rights_risk_score_applied_now": false,
+    "limitations": [
+      "No rights clearance or malware safety decision is made."
+    ]
+  },
+  "tie_breaks": {
+    "tie_break_policy": "preserve_current_order_v0",
+    "tie_break_factors": [
+      "stable_id",
+      "none"
+    ],
+    "tie_break_applied_now": false,
+    "random_tie_break_allowed": false,
+    "limitations": [
+      "Random tie breaks are forbidden; current order is preserved in v0."
+    ]
+  },
+  "ranking_explanation_ref": "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/RANKING_EXPLANATION.json",
+  "public_projection": {
+    "result_card_projection": "future categorical explanation badge",
+    "result_merge_group_projection": "future grouped result explanation",
+    "object_page_projection": "future object page ranking caveat",
+    "source_page_projection": "future source posture caveat",
+    "comparison_page_projection": "future comparison candidate explanation",
+    "explanation_visibility": "user_visible_summary",
+    "user_visible_ranking_reason_required": true,
+    "ranking_score_publication_policy": "no_numeric_score_v0",
+    "limitations": [
+      "No public route or result-card behavior is changed now."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic labels and refs only."
+    ]
+  },
+  "limitations": [
+    "Contract-only example; no runtime ranking, hidden suppression, promotion, or mutation.",
+    "Conflicting evidence is surfaced, not hidden."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_ranking_implemented": false,
+    "persistent_ranking_store_implemented": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "model_call_performed": false,
+    "telemetry_exported": false
+  },
+  "no_ranking_change_guarantees": {
+    "ranking_applied_to_live_search": false,
+    "public_search_order_changed": false,
+    "result_suppressed": false,
+    "hidden_suppression_performed": false,
+    "popularity_signal_used": false,
+    "user_profile_signal_used": false,
+    "ad_signal_used": false
+  },
+  "no_mutation_guarantees": {
+    "candidate_promotion_performed": false,
+    "records_merged": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false
+  },
+  "notes": [
+    "Ranking is not truth.",
+    "Current runtime order is preserved.",
+    "Conflicting evidence is surfaced, not hidden."
+  ],
+  "runtime_ranking_implemented": false,
+  "persistent_ranking_store_implemented": false,
+  "ranking_applied_to_live_search": false,
+  "public_search_order_changed": false,
+  "result_suppressed": false,
+  "hidden_suppression_performed": false,
+  "candidate_promotion_performed": false,
+  "records_merged": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "telemetry_exported": false,
+  "popularity_signal_used": false,
+  "user_profile_signal_used": false,
+  "ad_signal_used": false,
+  "model_call_performed": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false
+}

@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/evidence_weighted_ranking_assessment.v0.json",
+  "title": "Evidence Weighted Ranking Assessment",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "ranking_assessment_id",
+    "ranking_assessment_kind",
+    "status",
+    "created_by_tool",
+    "ranking_scope",
+    "ranked_items",
+    "ranking_factors",
+    "evidence_strength",
+    "provenance_strength",
+    "source_posture",
+    "freshness",
+    "conflicts_and_uncertainty",
+    "candidate_status",
+    "absence_and_gaps",
+    "action_safety",
+    "rights_risk",
+    "tie_breaks",
+    "ranking_explanation_ref",
+    "public_projection",
+    "privacy",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_ranking_change_guarantees",
+    "no_mutation_guarantees",
+    "notes",
+    "runtime_ranking_implemented",
+    "persistent_ranking_store_implemented",
+    "ranking_applied_to_live_search",
+    "public_search_order_changed",
+    "result_suppressed",
+    "hidden_suppression_performed",
+    "candidate_promotion_performed",
+    "records_merged",
+    "master_index_mutated",
+    "public_index_mutated",
+    "local_index_mutated",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "live_source_called",
+    "external_calls_performed",
+    "telemetry_exported",
+    "popularity_signal_used",
+    "user_profile_signal_used",
+    "ad_signal_used",
+    "model_call_performed",
+    "downloads_enabled",
+    "installs_enabled",
+    "execution_enabled",
+    "rights_clearance_claimed",
+    "malware_safety_claimed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "ranking_assessment_kind": {
+      "type": "string",
+      "const": "evidence_weighted_ranking_assessment"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "review_required",
+        "ranking_policy_candidate",
+        "runtime_future",
+        "rejected_by_policy"
+      ]
+    },
+    "ranking_assessment_id": {
+      "description": "Governed ranking_assessment_id section."
+    },
+    "created_by_tool": {
+      "description": "Governed created_by_tool section."
+    },
+    "ranking_scope": {
+      "description": "Governed ranking_scope section."
+    },
+    "ranked_items": {
+      "description": "Governed ranked_items section."
+    },
+    "ranking_factors": {
+      "description": "Governed ranking_factors section."
+    },
+    "evidence_strength": {
+      "description": "Governed evidence_strength section."
+    },
+    "provenance_strength": {
+      "description": "Governed provenance_strength section."
+    },
+    "source_posture": {
+      "description": "Governed source_posture section."
+    },
+    "freshness": {
+      "description": "Governed freshness section."
+    },
+    "conflicts_and_uncertainty": {
+      "description": "Governed conflicts_and_uncertainty section."
+    },
+    "candidate_status": {
+      "description": "Governed candidate_status section."
+    },
+    "absence_and_gaps": {
+      "description": "Governed absence_and_gaps section."
+    },
+    "action_safety": {
+      "description": "Governed action_safety section."
+    },
+    "rights_risk": {
+      "description": "Governed rights_risk section."
+    },
+    "tie_breaks": {
+      "description": "Governed tie_breaks section."
+    },
+    "ranking_explanation_ref": {
+      "description": "Governed ranking_explanation_ref section."
+    },
+    "public_projection": {
+      "description": "Governed public_projection section."
+    },
+    "privacy": {
+      "description": "Governed privacy section."
+    },
+    "limitations": {
+      "description": "Governed limitations section."
+    },
+    "no_runtime_guarantees": {
+      "description": "Governed no_runtime_guarantees section."
+    },
+    "no_ranking_change_guarantees": {
+      "description": "Governed no_ranking_change_guarantees section."
+    },
+    "no_mutation_guarantees": {
+      "description": "Governed no_mutation_guarantees section."
+    },
+    "notes": {
+      "description": "Governed notes section."
+    },
+    "runtime_ranking_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "persistent_ranking_store_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "ranking_applied_to_live_search": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_search_order_changed": {
+      "type": "boolean",
+      "const": false
+    },
+    "result_suppressed": {
+      "type": "boolean",
+      "const": false
+    },
+    "hidden_suppression_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_promotion_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "records_merged": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_cache_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_ledger_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "live_source_called": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_calls_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "telemetry_exported": {
+      "type": "boolean",
+      "const": false
+    },
+    "popularity_signal_used": {
+      "type": "boolean",
+      "const": false
+    },
+    "user_profile_signal_used": {
+      "type": "boolean",
+      "const": false
+    },
+    "ad_signal_used": {
+      "type": "boolean",
+      "const": false
+    },
+    "model_call_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "downloads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "installs_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "execution_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "rights_clearance_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "malware_safety_claimed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-contract-only": true,
+  "x-runtime-ranking-implemented": false,
+  "x-public-search-order-changed": false,
+  "x-hidden-suppression-allowed": false,
+  "x-mutation-allowed": false
+}

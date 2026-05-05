@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.1.0",
+  "ranking_explanation_id": "minimal_weak_evidence_ranking_v0_explanation",
+  "ranking_explanation_kind": "ranking_explanation",
+  "status": "public_safe_example",
+  "created_by_tool": "p84_contract_generator",
+  "explanation_scope": {
+    "scope_kind": "synthetic_example",
+    "explanation_mode": "contract_only",
+    "current_runtime_order_preserved": true,
+    "limitations": [
+      "No runtime explanation is generated or applied."
+    ]
+  },
+  "item_explanations": [
+    {
+      "item_ref": "synthetic:ranking:weak:left",
+      "item_label": "Name-only match result",
+      "proposed_rank_label": "example proposed rank 2",
+      "current_rank_preserved": true,
+      "explanation": "This item is described by synthetic evidence factors only; no live search order changed.",
+      "evidence_refs": [
+        "synthetic:evidence:name-match"
+      ],
+      "caveats": [
+        "Proposed rank is not truth and is not applied to live search."
+      ]
+    },
+    {
+      "item_ref": "synthetic:ranking:weak:right",
+      "item_label": "Fixture-backed result",
+      "proposed_rank_label": "example proposed rank 1",
+      "current_rank_preserved": true,
+      "explanation": "This item is described by synthetic evidence factors only; no live search order changed.",
+      "evidence_refs": [
+        "synthetic:evidence:fixture-record"
+      ],
+      "caveats": [
+        "Proposed rank is not truth and is not applied to live search."
+      ]
+    }
+  ],
+  "factor_explanations": [
+    {
+      "factor_id": "factor-name-only",
+      "factor_type": "evidence_strength",
+      "public_label": "evidence strength",
+      "score_applied_now": false,
+      "explanation": "Factor is explanatory in v0 and not a runtime score.",
+      "evidence_refs": [
+        "synthetic:evidence:name-match"
+      ]
+    },
+    {
+      "factor_id": "factor-review",
+      "factor_type": "manual_review_status",
+      "public_label": "manual review status",
+      "score_applied_now": false,
+      "explanation": "Factor is explanatory in v0 and not a runtime score.",
+      "evidence_refs": []
+    }
+  ],
+  "uncertainty_explanations": [
+    "Uncertainty is disclosed and cannot silently suppress a result."
+  ],
+  "conflict_explanations": [
+    "Conflict status is none_known; conflicts remain visible and are not hidden."
+  ],
+  "gap_explanations": [
+    "No scoped gap is asserted in this example."
+  ],
+  "tie_break_explanations": [
+    "Tie breaks preserve current order in v0 and random tie breaks are forbidden."
+  ],
+  "public_user_text": "Contract-only ranking explanation: name-only evidence is weak and review-required. This is not truth, not production ranking, and not applied to live search.",
+  "limitations": [
+    "No runtime ranking explanation is generated."
+  ],
+  "no_hidden_suppression_guarantees": {
+    "result_suppressed": false,
+    "hidden_suppression_performed": false,
+    "public_reason_required": true
+  },
+  "no_runtime_guarantees": {
+    "explanation_generated_by_runtime": false,
+    "explanation_applied_to_live_search": false,
+    "ranking_applied_to_live_search": false
+  },
+  "notes": [
+    "Explanation is public-safe and synthetic."
+  ],
+  "explanation_generated_by_runtime": false,
+  "explanation_applied_to_live_search": false,
+  "result_suppressed": false,
+  "hidden_suppression_performed": false,
+  "ranking_applied_to_live_search": false
+}

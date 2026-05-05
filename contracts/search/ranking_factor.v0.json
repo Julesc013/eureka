@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/ranking_factor.v0.json",
+  "title": "Ranking Factor v0",
+  "description": "Reusable evidence-weighted ranking factor taxonomy. Factors are explanatory in v0 and never apply runtime scores.",
+  "type": "object",
+  "required": [
+    "factor_id",
+    "factor_type",
+    "direction",
+    "weight_policy",
+    "score_applied_now",
+    "evidence_refs",
+    "limitations"
+  ],
+  "properties": {
+    "factor_id": {
+      "type": "string"
+    },
+    "factor_type": {
+      "type": "string",
+      "enum": [
+        "evidence_strength",
+        "provenance_strength",
+        "source_posture",
+        "intrinsic_identifier_match",
+        "compatibility_evidence",
+        "representation_availability",
+        "member_access",
+        "freshness",
+        "conflict_penalty",
+        "uncertainty_penalty",
+        "candidate_penalty",
+        "rights_risk_caution",
+        "action_safety",
+        "absence_transparency",
+        "gap_transparency",
+        "result_merge_group_quality",
+        "identity_resolution_strength",
+        "manual_review_status",
+        "unknown"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "negative",
+        "neutral",
+        "informational"
+      ]
+    },
+    "weight_policy": {
+      "type": "string",
+      "enum": [
+        "descriptive_only",
+        "future_weighted",
+        "not_weighted_v0"
+      ]
+    },
+    "score_applied_now": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-runtime-ranking-implemented": false
+}

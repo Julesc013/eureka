@@ -290,3 +290,13 @@ P83 defines contract-only search-result grouping and deduplication semantics. It
 
 Future public search, object/source/comparison pages, cross-source identity resolution, and ranking contracts may reference P83 only after governed runtime planning.
 <!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
+
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-START -->
+## P84 Evidence-Weighted Ranking Contract v0
+
+P84 defines contract-only evidence-weighted ranking assessments and public explanations. It is explanation-first ranking by evidence quality, provenance, source posture, freshness, conflict state, candidate/provisional status, action safety, rights/risk caution, and gap transparency.
+
+P84 adds no runtime ranking, production ranking, public search order change, hidden suppression, result hiding, candidate promotion, source trust authority, popularity/telemetry/ad/user-profile ranking, model calls, live source fanout, downloads, installs, execution, or source-cache/evidence-ledger/candidate/public/local/runtime/master-index mutation.
+
+Future public search, result merge groups, object/source/comparison pages, and ranking-runtime planning may reference P84 only after governed runtime planning and eval evidence.
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
