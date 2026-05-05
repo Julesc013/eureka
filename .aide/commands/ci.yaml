@@ -835,3 +835,22 @@ notes:
   - id: comparison_page_contract_tests
     run: python -m unittest tests.operations.test_comparison_page_contract tests.scripts.test_validate_comparison_page tests.scripts.test_validate_comparison_page_contract tests.scripts.test_dry_run_comparison_page
 <!-- P81-COMPARISON-PAGE-CONTRACT-END -->
+
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-START -->
+  - id: identity_resolution_assessment_examples_validator
+    run: python scripts/validate_identity_resolution_assessment.py --all-examples
+  - id: identity_resolution_assessment_examples_validator_json
+    run: python scripts/validate_identity_resolution_assessment.py --all-examples --json
+  - id: identity_cluster_examples_validator
+    run: python scripts/validate_identity_cluster.py --all-examples
+  - id: identity_cluster_examples_validator_json
+    run: python scripts/validate_identity_cluster.py --all-examples --json
+  - id: cross_source_identity_resolution_contract_validator
+    run: python scripts/validate_cross_source_identity_resolution_contract.py
+  - id: cross_source_identity_resolution_contract_validator_json
+    run: python scripts/validate_cross_source_identity_resolution_contract.py --json
+  - id: identity_resolution_dry_run_json
+    run: python scripts/dry_run_identity_resolution_assessment.py --left-label "Example App 1.0" --right-label "ExampleApp v1.0" --relation-type possible_same_object --json
+  - id: cross_source_identity_resolution_contract_tests
+    run: python -m unittest tests.operations.test_cross_source_identity_resolution_contract tests.scripts.test_validate_identity_resolution_assessment tests.scripts.test_validate_identity_cluster tests.scripts.test_validate_cross_source_identity_resolution_contract tests.scripts.test_dry_run_identity_resolution_assessment
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->

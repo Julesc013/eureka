@@ -386,3 +386,9 @@ These are contract-only/source-page governance checks. They make no network call
 
 P81 reports comparison-page governance only. The validation commands are stdlib-only and local-only, and comparison pages remain future runtime work.
 <!-- P81-COMPARISON-PAGE-CONTRACT-END -->
+
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-START -->
+## P82 Cross-Source Identity Resolution Contract v0
+
+P82 reports identity-resolution governance only. Validation is stdlib-only and local-only; runtime identity resolution remains future work.
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->

@@ -826,6 +826,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/comparison-page-contract-v0/comparison_page_contract_report.json. Contract-only; no runtime comparison pages, ranking authority, winner selection, live source calls, downloads, installs, execution, telemetry, source trust, rights clearance, malware safety, or index/cache/ledger/master-index mutation.",
       "addressed_by": "control/audits/comparison-page-contract-v0/comparison_page_contract_report.json"
+    },
+    {
+      "id": "audit-backlog-cross-source-identity-resolution-contract-v0",
+      "title": "P82 Cross-Source Identity Resolution Contract v0 audit pack",
+      "status": "addressed_contract_only",
+      "priority": 0,
+      "notes": "Addressed by control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json. Contract-only; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust, rights clearance, malware safety, or index/cache/ledger/master-index mutation.",
+      "addressed_by": "control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json"
     }
   ]
 }

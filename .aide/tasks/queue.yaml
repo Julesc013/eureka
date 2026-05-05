@@ -895,16 +895,16 @@
     {
       "id": "cross_source_identity_resolution_contract_v0",
       "title": "P82 Cross-Source Identity Resolution Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 123,
-      "notes": "Next contract after comparison pages; preserve conflicts and avoid authoritative identity claims without evidence."
+      "notes": "P82 completed as contract/schema/validator/example/audit work only; no runtime identity resolver, destructive merge, record merge, candidate promotion, source/evidence/candidate/master-index mutation, live source calls, source trust, rights clearance, or malware safety claims were added."
     },
     {
       "id": "result_merge_and_deduplication_contract_v0",
       "title": "P83 Result Merge and Deduplication Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 124,
-      "notes": "Future merge/dedup contract; preserve disagreements and avoid destructive merges without review."
+      "notes": "Next contract after identity resolution; preserve conflicts and avoid destructive merges without governed review."
     },
     {
       "id": "evidence_weighted_ranking_contract_v0",
@@ -974,7 +974,7 @@
       "title": "P90 Object/Source/Comparison Page Runtime Planning v0",
       "status": "queued_codex_safe_future",
       "priority": 131,
-      "notes": "Future planning only; no runtime page implementation until comparison/identity/merge/ranking contracts are governed."
+      "notes": "Future planning only; no runtime page implementation until identity/merge/ranking contracts are governed."
     },
     {
       "id": "pack_import_runtime_planning_v0",
@@ -982,6 +982,13 @@
       "status": "queued_codex_safe_future",
       "priority": 132,
       "notes": "Future planning only after pack import policy and mutation boundaries are governed."
+    },
+    {
+      "id": "deep_extraction_contract_v0",
+      "title": "P92 Deep Extraction Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 133,
+      "notes": "Future contract only; no extraction runtime or payload retrieval without governed policy."
     }
   ]
 }

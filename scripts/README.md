@@ -786,3 +786,17 @@ These are contract-only/source-page governance checks. They make no network call
 
 These are contract-only comparison-page governance checks. They make no network calls, implement no runtime comparison pages, call no live source, execute no source sync worker, mutate no cache/ledger/index, select no winner, and enable no downloads, installs, or execution.
 <!-- P81-COMPARISON-PAGE-CONTRACT-END -->
+
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-START -->
+## P82 Cross-Source Identity Resolution Contract v0
+
+- `python scripts/validate_identity_resolution_assessment.py --all-examples`
+- `python scripts/validate_identity_resolution_assessment.py --all-examples --json`
+- `python scripts/validate_identity_cluster.py --all-examples`
+- `python scripts/validate_identity_cluster.py --all-examples --json`
+- `python scripts/validate_cross_source_identity_resolution_contract.py`
+- `python scripts/validate_cross_source_identity_resolution_contract.py --json`
+- `python scripts/dry_run_identity_resolution_assessment.py --left-label "Example App 1.0" --right-label "ExampleApp v1.0" --relation-type possible_same_object --json`
+
+These are contract-only identity governance checks. They make no network calls, implement no identity resolver, merge no records, promote no candidates, mutate no cache/ledger/index, and enable no live sources, downloads, installs, or execution.
+<!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->

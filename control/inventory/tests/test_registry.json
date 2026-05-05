@@ -7428,6 +7428,174 @@
       "failure_means": "Comparison Page v0 examples, contract, docs, audit, or no-runtime/no-mutation/no-winner guarantees drifted.",
       "advisory_or_required": "required",
       "notes": "P81 contract-only validation; no runtime comparison pages, live source calls, source sync execution, winner selection, downloads, installs, execution, telemetry, source trust claims, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "identity_resolution_assessment_examples_validator",
+      "label": "Identity Resolution Assessment Examples Validator",
+      "command": "python scripts/validate_identity_resolution_assessment.py --all-examples",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "identity_resolution_assessment_examples_validator_json",
+      "label": "Identity Resolution Assessment Examples Validator JSON",
+      "command": "python scripts/validate_identity_resolution_assessment.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "identity_cluster_examples_validator",
+      "label": "Identity Cluster Examples Validator",
+      "command": "python scripts/validate_identity_cluster.py --all-examples",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "identity_cluster_examples_validator_json",
+      "label": "Identity Cluster Examples Validator JSON",
+      "command": "python scripts/validate_identity_cluster.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "cross_source_identity_resolution_contract_validator",
+      "label": "Cross-Source Identity Resolution Contract Validator",
+      "command": "python scripts/validate_cross_source_identity_resolution_contract.py",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "cross_source_identity_resolution_contract_validator_json",
+      "label": "Cross-Source Identity Resolution Contract Validator JSON",
+      "command": "python scripts/validate_cross_source_identity_resolution_contract.py --json",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "identity_resolution_dry_run_json",
+      "label": "Identity Resolution Dry Run JSON",
+      "command": "python scripts/dry_run_identity_resolution_assessment.py --left-label \"Example App 1.0\" --right-label \"ExampleApp v1.0\" --relation-type possible_same_object --json",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "cross_source_identity_resolution_contract_tests",
+      "label": "Cross-Source Identity Resolution Contract Tests",
+      "command": "python -m unittest tests.operations.test_cross_source_identity_resolution_contract tests.scripts.test_validate_identity_resolution_assessment tests.scripts.test_validate_identity_cluster tests.scripts.test_validate_cross_source_identity_resolution_contract tests.scripts.test_dry_run_identity_resolution_assessment",
+      "category": "contract",
+      "owner_area": "identity",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Cross-Source Identity Resolution v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P82 contract-only validation; no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
     }
   ],
   "notes": [
@@ -7441,6 +7609,7 @@
     "P77 Public Hosted Deployment Evidence commands are evidence-only; verifier may check only configured Eureka static/backend URLs and performs no deployment or external-source fanout.",
     "P79 Object Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime object pages, live source calls, downloads, installs, execution, telemetry, object-page store, candidate promotion, or index/cache/ledger/master-index mutation.",
     "P80 Source Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime source pages, connector runtime, source sync execution, live source calls, downloads, mirrors, installs, execution, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
-    "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
+    "P82 Cross-Source Identity Resolution Contract v0 validation is stdlib-only and contract-only; it adds no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation."
   ]
 }
