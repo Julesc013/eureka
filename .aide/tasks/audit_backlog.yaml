@@ -810,6 +810,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/object-page-contract-v0/object_page_contract_report.json. Contract-only; no runtime object pages, live source calls, downloads, installs, execution, telemetry, candidate promotion, or index/cache/ledger/master-index mutation.",
       "addressed_by": "control/audits/object-page-contract-v0/object_page_contract_report.json"
+    },
+    {
+      "id": "audit-backlog-source-page-contract-v0",
+      "title": "P80 Source Page Contract v0 audit pack",
+      "status": "addressed_contract_only",
+      "priority": 0,
+      "notes": "Addressed by control/audits/source-page-contract-v0/source_page_contract_report.json. Contract-only; no runtime source pages, connector runtime, source sync execution, live source calls, downloads, mirrors, installs, execution, telemetry, source trust, rights clearance, malware safety, or index/cache/ledger/master-index mutation.",
+      "addressed_by": "control/audits/source-page-contract-v0/source_page_contract_report.json"
     }
   ]
 }

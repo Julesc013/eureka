@@ -1039,3 +1039,15 @@ Boundary notes:
 - Public search may reference object page links only after a future governed integration; P79 does not mutate public search result cards or the public index.
 - Object pages are not app-store, downloader, installer, or execution surfaces.
 <!-- P79-OBJECT-PAGE-CONTRACT-END -->
+
+<!-- P80-SOURCE-PAGE-CONTRACT-START -->
+## P80 Source Page Contract v0
+
+Source Page Contract v0 is contract-only and evidence-first. It defines future public source pages for source identity, status, coverage, connector posture, source policy gates, source cache/evidence posture, public search projection, query-intelligence projection, limitations, provenance caution, and rights/risk posture.
+
+Boundary notes:
+
+- No runtime source routes, database, persistent source-page store, connector runtime, source sync runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, mirrors, installs, execution, uploads, telemetry, accounts, rights clearance, malware safety claim, or authoritative source trust claim are added.
+- Public search may reference source page links or source badges only after a future governed integration; P80 does not mutate public search result cards or the public index.
+- Source pages explain source posture and limitations; they are not source API proxies, scrapers, crawlers, download pages, mirrors, or connector health dashboards.
+<!-- P80-SOURCE-PAGE-CONTRACT-END -->

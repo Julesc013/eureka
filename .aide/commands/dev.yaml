@@ -1179,3 +1179,20 @@ notes:
   - id: object_page_contract_tests
     run: python -m unittest tests.operations.test_object_page_contract tests.scripts.test_validate_object_page tests.scripts.test_validate_object_page_contract tests.scripts.test_dry_run_object_page
 <!-- P79-OBJECT-PAGE-CONTRACT-END -->
+
+<!-- P80-SOURCE-PAGE-CONTRACT-START -->
+<!-- P80-SOURCE-PAGE-CONTRACT-START -->
+  - id: source_page_examples_validator
+    run: python scripts/validate_source_page.py --all-examples
+  - id: source_page_examples_validator_json
+    run: python scripts/validate_source_page.py --all-examples --json
+  - id: source_page_contract_validator
+    run: python scripts/validate_source_page_contract.py
+  - id: source_page_contract_validator_json
+    run: python scripts/validate_source_page_contract.py --json
+  - id: source_page_dry_run_json
+    run: python scripts/dry_run_source_page.py --source-id internet-archive-placeholder --source-family internet_archive --json
+  - id: source_page_contract_tests
+    run: python -m unittest tests.operations.test_source_page_contract tests.scripts.test_validate_source_page tests.scripts.test_validate_source_page_contract tests.scripts.test_dry_run_source_page
+<!-- P80-SOURCE-PAGE-CONTRACT-END -->
+<!-- P80-SOURCE-PAGE-CONTRACT-END -->

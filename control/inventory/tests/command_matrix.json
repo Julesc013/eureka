@@ -316,7 +316,13 @@
         "object_page_contract_validator",
         "object_page_contract_validator_json",
         "object_page_dry_run_json",
-        "object_page_contract_tests"
+        "object_page_contract_tests",
+        "source_page_examples_validator",
+        "source_page_examples_validator_json",
+        "source_page_contract_validator",
+        "source_page_contract_validator_json",
+        "source_page_dry_run_json",
+        "source_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -646,7 +652,13 @@
         "object_page_contract_validator",
         "object_page_contract_validator_json",
         "object_page_dry_run_json",
-        "object_page_contract_tests"
+        "object_page_contract_tests",
+        "source_page_examples_validator",
+        "source_page_examples_validator_json",
+        "source_page_contract_validator",
+        "source_page_contract_validator_json",
+        "source_page_dry_run_json",
+        "source_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1250,7 +1262,13 @@
         "object_page_contract_validator",
         "object_page_contract_validator_json",
         "object_page_dry_run_json",
-        "object_page_contract_tests"
+        "object_page_contract_tests",
+        "source_page_examples_validator",
+        "source_page_examples_validator_json",
+        "source_page_contract_validator",
+        "source_page_contract_validator_json",
+        "source_page_dry_run_json",
+        "source_page_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1324,6 +1342,7 @@
     "P76 Software Heritage Connector Approval Pack v0 commands are approval-only and perform no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, connector runtime, cache/ledger mutation, or public-query fanout.",
     "P77 Public Hosted Deployment Evidence adds verifier/validator commands; repo-config verifier may perform HTTP only to configured Eureka URLs and makes no deployment claim.",
     "P78 External Baseline Comparison Report commands are local-only evidence/reporting checks. They read committed manual observations and local Eureka audit/index outputs, perform no web/search/source/model calls, and make no superiority or production claim.",
-    "P79 Object Page Contract commands are local-only governance checks. They do not implement runtime pages, call sources, enable downloads/installs/execution, or mutate indexes/cache/ledger/candidates."
+    "P79 Object Page Contract commands are local-only governance checks. They do not implement runtime pages, call sources, enable downloads/installs/execution, or mutate indexes/cache/ledger/candidates.",
+    "P80 Source Page Contract commands are local-only governance checks. They do not implement runtime pages, connector runtime, source sync execution, call sources, enable downloads/installs/execution, claim source trust, or mutate indexes/cache/ledger/candidates."
   ]
 }

@@ -760,3 +760,17 @@ These P78 commands are stdlib/local-only. They read committed manual baseline re
 
 These commands are stdlib-only and local-only. They add no runtime object pages, live source calls, downloads, installs, execution, telemetry, or index/cache/ledger/candidate/master-index mutation.
 <!-- P79-OBJECT-PAGE-CONTRACT-END -->
+
+<!-- P80-SOURCE-PAGE-CONTRACT-START -->
+## P80 Source Page Contract v0
+
+Commands:
+
+- `python scripts/validate_source_page.py --all-examples`
+- `python scripts/validate_source_page.py --all-examples --json`
+- `python scripts/validate_source_page_contract.py`
+- `python scripts/validate_source_page_contract.py --json`
+- `python scripts/dry_run_source_page.py --source-id internet-archive-placeholder --source-family internet_archive --json`
+
+These are contract-only/source-page governance checks. They make no network calls, implement no runtime source pages, execute no source sync worker, enable no connector, mutate no cache/ledger/index, and enable no downloads, installs, or execution.
+<!-- P80-SOURCE-PAGE-CONTRACT-END -->
