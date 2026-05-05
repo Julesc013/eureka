@@ -512,3 +512,11 @@ Audit pack: `control/audits/internet-archive-metadata-connector-runtime-planning
 
 Readiness: `blocked_connector_approval_pending`. Planning-only; no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.
 <!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-START -->
+## P88 Wayback/CDX/Memento Connector Runtime Planning v0
+
+Audit pack: `control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json`.
+
+Readiness: `blocked_connector_approval_pending`. Planning-only; no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->

@@ -422,3 +422,9 @@ Audit report: `control/audits/public-query-observation-runtime-planning-v0/publi
 
 Audit report: `control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json`.
 <!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-START -->
+## P88 Wayback/CDX/Memento Connector Runtime Planning v0
+
+Audit report: `control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json`.
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->

@@ -872,6 +872,13 @@
       "status": "addressed_planning_blocked_connector_approval_pending",
       "notes": "Addressed by control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json. Planning-only; no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.",
       "addressed_by": "control/audits/internet-archive-metadata-connector-runtime-planning-v0/internet_archive_metadata_connector_runtime_planning_report.json"
+    },
+    {
+      "id": "p88_wayback_cdx_memento_connector_runtime_planning_v0",
+      "title": "P88 Wayback/CDX/Memento Connector Runtime Planning v0 audit pack",
+      "status": "addressed_planning_blocked_connector_approval_pending",
+      "notes": "Addressed by control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json. Planning-only; no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
+      "addressed_by": "control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json"
     }
   ]
 }

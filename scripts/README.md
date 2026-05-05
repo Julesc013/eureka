@@ -862,3 +862,12 @@ Planning-only validation; no runtime observation writes, telemetry, raw query re
 
 These commands are stdlib-only and validate planning artifacts only; they perform no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.
 <!-- P87-IA-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-START -->
+## P88 Wayback/CDX/Memento Connector Runtime Planning
+
+- `python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py`
+- `python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py --json`
+
+These commands are stdlib-only and validate planning artifacts only; they perform no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.
+<!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->

@@ -368,7 +368,10 @@
         "public_query_observation_runtime_plan_tests",
         "ia_metadata_connector_runtime_plan_validator",
         "ia_metadata_connector_runtime_plan_validator_json",
-        "ia_metadata_connector_runtime_plan_tests"
+        "ia_metadata_connector_runtime_plan_tests",
+        "wayback_cdx_memento_connector_runtime_plan_validator",
+        "wayback_cdx_memento_connector_runtime_plan_validator_json",
+        "wayback_cdx_memento_connector_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -750,7 +753,10 @@
         "public_query_observation_runtime_plan_tests",
         "ia_metadata_connector_runtime_plan_validator",
         "ia_metadata_connector_runtime_plan_validator_json",
-        "ia_metadata_connector_runtime_plan_tests"
+        "ia_metadata_connector_runtime_plan_tests",
+        "wayback_cdx_memento_connector_runtime_plan_validator",
+        "wayback_cdx_memento_connector_runtime_plan_validator_json",
+        "wayback_cdx_memento_connector_runtime_plan_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1487,6 +1493,7 @@
     "P85 adds Compatibility-Aware Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger.",
     "P85 adds Compatibility-Aware Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger.",
     "P86 Public Query Observation Runtime Planning v0 validation is planning-only and adds no runtime observation writes, telemetry, raw query retention, public aggregates, or mutation.",
-    "P87 Internet Archive Metadata Connector Runtime Planning v0 validation is planning-only and adds no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation."
+    "P87 Internet Archive Metadata Connector Runtime Planning v0 validation is planning-only and adds no IA calls, connector runtime, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation.",
+    "P88 Wayback/CDX/Memento Connector Runtime Planning v0 validation is planning-only and adds no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation."
   ]
 }
