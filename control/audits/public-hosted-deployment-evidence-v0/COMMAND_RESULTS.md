@@ -1,0 +1,23 @@
+# Command Results
+
+- `python scripts/verify_public_hosted_deployment.py --from-repo-config --json`: exit 0; passed; static_url configured and returned verified_failed/404; backend not_configured
+- `python scripts/verify_public_hosted_deployment.py --from-env --json`: exit 0; passed; no deployment URL env vars configured
+- `python scripts/validate_public_hosted_deployment_evidence.py`: exit 0; passed with warnings for static failed and backend unverified
+- `python scripts/validate_public_hosted_deployment_evidence.py --json`: exit 0; passed with warnings for static failed and backend unverified
+- `connector approval validators P71-P76 --all-examples`: exit 0; passed for IA, Wayback/CDX/Memento, GitHub Releases, PyPI, npm, and Software Heritage approval packs
+- `query/source contract validators P59-P70 subset`: exit 0; passed for observation, cache, miss ledger, search need, probe queue, candidate, demand dashboard, source sync, and source cache/evidence ledger contracts
+- `public search/static/deployment validators and smokes`: exit 0; passed after preserving deployment_targets legacy deployment_status vocabulary
+- `python scripts/run_archive_resolution_evals.py and --json`: exit 0; passed
+- `python scripts/run_search_usefulness_audit.py and --json`: exit 0; passed
+- `python scripts/report_external_baseline_status.py --json`: exit 0; passed; manual baselines remain pending
+- `python -m unittest discover -s tests/scripts -t .`: exit 0; 488 tests passed
+- `python -m unittest discover -s tests/operations -t .`: exit 0; 527 tests passed
+- `python -m unittest discover -s tests/hardening -t .`: exit 0; 53 tests passed
+- `python -m unittest discover -s tests/parity -t .`: exit 0; 25 tests passed
+- `python -m unittest discover -s runtime -t .`: exit 0; 320 tests passed
+- `python -m unittest discover -s surfaces -t .`: exit 0; 168 tests passed
+- `python -m unittest discover -s tests -t .`: exit 0; 1184 tests passed
+- `python scripts/check_architecture_boundaries.py`: exit 0; passed
+- `git diff --check`: exit 0; passed
+- `gh --version`: exit 1; unavailable: gh not installed on PATH; GitHub Actions/Pages status unverified
+- `cargo --version`: exit 1; unavailable: cargo not installed on PATH; cargo check/test not run

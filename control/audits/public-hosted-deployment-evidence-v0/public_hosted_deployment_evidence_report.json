@@ -1,0 +1,1081 @@
+{
+  "accounts_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "backend_deployment_verified": false,
+  "backend_url": null,
+  "branch": "main",
+  "cache_header_status": "verified_passed",
+  "candidate_index_runtime_enabled": false,
+  "command_results": [
+    {
+      "command": "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+      "exit_code": 0,
+      "summary": "passed; static_url configured and returned verified_failed/404; backend not_configured"
+    },
+    {
+      "command": "python scripts/verify_public_hosted_deployment.py --from-env --json",
+      "exit_code": 0,
+      "summary": "passed; no deployment URL env vars configured"
+    },
+    {
+      "command": "python scripts/validate_public_hosted_deployment_evidence.py",
+      "exit_code": 0,
+      "summary": "passed with warnings for static failed and backend unverified"
+    },
+    {
+      "command": "python scripts/validate_public_hosted_deployment_evidence.py --json",
+      "exit_code": 0,
+      "summary": "passed with warnings for static failed and backend unverified"
+    },
+    {
+      "command": "connector approval validators P71-P76 --all-examples",
+      "exit_code": 0,
+      "summary": "passed for IA, Wayback/CDX/Memento, GitHub Releases, PyPI, npm, and Software Heritage approval packs"
+    },
+    {
+      "command": "query/source contract validators P59-P70 subset",
+      "exit_code": 0,
+      "summary": "passed for observation, cache, miss ledger, search need, probe queue, candidate, demand dashboard, source sync, and source cache/evidence ledger contracts"
+    },
+    {
+      "command": "public search/static/deployment validators and smokes",
+      "exit_code": 0,
+      "summary": "passed after preserving deployment_targets legacy deployment_status vocabulary"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py and --json",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py and --json",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "exit_code": 0,
+      "summary": "passed; manual baselines remain pending"
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "exit_code": 0,
+      "summary": "488 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "exit_code": 0,
+      "summary": "527 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "exit_code": 0,
+      "summary": "53 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "exit_code": 0,
+      "summary": "25 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "exit_code": 0,
+      "summary": "320 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "exit_code": 0,
+      "summary": "168 tests passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "exit_code": 0,
+      "summary": "1184 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "gh --version",
+      "exit_code": 1,
+      "summary": "unavailable: gh not installed on PATH; GitHub Actions/Pages status unverified"
+    },
+    {
+      "command": "cargo --version",
+      "exit_code": 1,
+      "summary": "unavailable: cargo not installed on PATH; cargo check/test not run"
+    }
+  ],
+  "cors_status": "verified_passed",
+  "created_by_slice": "p77_public_hosted_deployment_evidence_v0",
+  "deployment_verified": false,
+  "downloads_enabled": false,
+  "evidence_ledger_runtime_enabled": false,
+  "external_source_calls_enabled": false,
+  "github_actions_status": "unverified_gh_unavailable",
+  "hosted_backend_status": "not_configured",
+  "hosted_public_search_live": false,
+  "installs_enabled": false,
+  "live_probes_enabled": false,
+  "local_paths_enabled": false,
+  "logging_telemetry_status": "operator_gated",
+  "master_index_mutation_enabled": false,
+  "next_recommended_branch": "P78 External Baseline Comparison Report v0 after Manual Batch 0; if Manual Batch 0 is still pending, Codex-safe next branch is P79 Object Page Contract v0.",
+  "notes": [
+    "P77 is deployment evidence only and performs no deployment or provider mutation.",
+    "Static hosting is separate from the hosted public search backend.",
+    "Public hosted search must remain local_index_only, cache/index-read only, and must not fan out to external sources."
+  ],
+  "operator_actions_required": [
+    "Enable or repair the static host for the configured GitHub Pages URL, then rerun python scripts/verify_public_hosted_deployment.py --static-url <url> --json.",
+    "Deploy the hosted public search wrapper separately, with safe environment flags, then record EUREKA_PUBLIC_BACKEND_URL or inventory base_url and rerun the verifier.",
+    "Configure and evidence edge or application rate limits before any hosted public-search claim.",
+    "Record TLS, CORS, cache, and security header evidence from the deployed static and backend hosts.",
+    "Update static search handoff only after backend verification, rebuild site/dist, and verify the handoff points to the verified backend URL.",
+    "Keep live connectors, downloads, uploads, accounts, telemetry, arbitrary URL fetch, and index/cache/ledger mutation disabled."
+  ],
+  "optional_command_status": {
+    "cargo": "unavailable_not_installed",
+    "gh": "unavailable_not_installed"
+  },
+  "production_ready_claimed": false,
+  "public_claim_review": {
+    "claim_summary": "P77 does not claim a live static site or hosted backend. The configured static URL returned 404 and the backend URL is not configured.",
+    "download_upload_account_claimed": false,
+    "hosted_public_search_live_claimed": false,
+    "live_connector_claimed": false,
+    "master_index_mutation_claimed": false,
+    "production_readiness_claimed": false,
+    "static_site_live_claimed": false
+  },
+  "public_search_mode_local_index_only": true,
+  "rate_limit_status": "operator_gated",
+  "remaining_blockers": [
+    "Configured static URL https://julesc013.github.io/eureka/ returned HTTP 404 for root, search.html, search_config.json, and public_index_summary.json during P77 verification.",
+    "No hosted backend URL is configured in environment variables, repo deployment inventory, live backend handoff, or site/dist search_config.json.",
+    "Backend health/status/search/query-plan/source routes were not checked against a public backend because no backend URL exists.",
+    "Safe-query and blocked-request verification against a public backend remains operator-gated.",
+    "Rate-limit and edge evidence is unavailable; no rate-limit headers or provider evidence were recorded.",
+    "CORS/TLS/cache evidence is partial for the failed static 404 responses and unavailable for backend routes.",
+    "Logging retention and telemetry evidence from hosted status endpoints is unavailable because no hosted backend was verified.",
+    "GitHub Actions/Pages status is unverified unless a later authenticated gh check is recorded.",
+    "Manual Observation Batch 0 remains a human-operated prerequisite for P78 baseline comparison."
+  ],
+  "repo_head": "b0126948b62f0c5af0fb610c4f32d9b1993d9e38",
+  "report_id": "public_hosted_deployment_evidence_v0",
+  "route_verification_status": "not_configured",
+  "safety_verification_status": "operator_gated",
+  "search_handoff_status": "operator_gated",
+  "source_cache_runtime_enabled": false,
+  "source_connectors_enabled": false,
+  "static_deployment_verified": false,
+  "static_site_status": "verified_failed",
+  "static_url": "https://julesc013.github.io/eureka/",
+  "telemetry_enabled": false,
+  "tls_status": "operator_gated",
+  "uploads_enabled": false,
+  "verifier_results": {
+    "backend_url": null,
+    "backend_url_source": "unavailable",
+    "blocked_request_results": [
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "query_too_long",
+        "forbidden_parameter": "q_too_long",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "limit_too_large",
+        "forbidden_parameter": "limit_too_large",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "limit",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "live_probes_disabled",
+        "forbidden_parameter": "mode_live_probe",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "mode",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "live_probes_disabled",
+        "forbidden_parameter": "mode_live_federated",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "mode",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "unsupported_include",
+        "forbidden_parameter": "include_raw_source_payload",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "include",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "index_path",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "index_path",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "store_root",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "store_root"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "local_path",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "local_path",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "path",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "path",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "file_path",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "file_path",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "directory",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "directory",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "local_paths_forbidden",
+        "forbidden_parameter": "root",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "root"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "url",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "url"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "fetch_url",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "fetch_url",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "crawl_url",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "crawl_url",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "source_url",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "source_url"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "downloads_disabled",
+        "forbidden_parameter": "download",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "download",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "installs_disabled",
+        "forbidden_parameter": "install",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "install",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "installs_disabled",
+        "forbidden_parameter": "execute",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "execute",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "uploads_disabled",
+        "forbidden_parameter": "upload",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "upload"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "source_credentials",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q",
+          "source_credentials"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "auth_token",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "auth_token",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "api_key",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "api_key",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "live_probes_disabled",
+        "forbidden_parameter": "live_probe",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "live_probe",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "live_probes_disabled",
+        "forbidden_parameter": "live_source",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "live_source",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "network",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "network",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_error": null,
+        "actual_status": null,
+        "expected_rejection": "forbidden_parameter",
+        "forbidden_parameter": "arbitrary_source",
+        "leaked_secret_or_path": false,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "arbitrary_source",
+          "q"
+        ],
+        "route": "/api/v1/search"
+      }
+    ],
+    "cache_header_results": {
+      "entries": [
+        {
+          "headers": {
+            "etag": "\"64d39a40-24a3\""
+          },
+          "target": "static:root",
+          "url": "https://julesc013.github.io/eureka/"
+        },
+        {
+          "headers": {
+            "etag": "\"64d39a40-24a3\""
+          },
+          "target": "static:search_page",
+          "url": "https://julesc013.github.io/eureka/search.html"
+        },
+        {
+          "headers": {
+            "etag": "\"64d39a40-24a3\""
+          },
+          "target": "static:search_config",
+          "url": "https://julesc013.github.io/eureka/data/search_config.json"
+        },
+        {
+          "headers": {
+            "etag": "\"64d39a40-24a3\""
+          },
+          "target": "static:public_index_summary",
+          "url": "https://julesc013.github.io/eureka/data/public_index_summary.json"
+        }
+      ],
+      "notes": [
+        "Missing CORS/cache headers are recorded as evidence gaps unless a future contract requires them."
+      ],
+      "status": "verified_passed"
+    },
+    "cache_header_status": "verified_passed",
+    "cors_results": {
+      "entries": [
+        {
+          "headers": {
+            "access-control-allow-origin": "*"
+          },
+          "target": "static:root",
+          "url": "https://julesc013.github.io/eureka/"
+        },
+        {
+          "headers": {
+            "access-control-allow-origin": "*"
+          },
+          "target": "static:search_page",
+          "url": "https://julesc013.github.io/eureka/search.html"
+        },
+        {
+          "headers": {
+            "access-control-allow-origin": "*"
+          },
+          "target": "static:search_config",
+          "url": "https://julesc013.github.io/eureka/data/search_config.json"
+        },
+        {
+          "headers": {
+            "access-control-allow-origin": "*"
+          },
+          "target": "static:public_index_summary",
+          "url": "https://julesc013.github.io/eureka/data/public_index_summary.json"
+        }
+      ],
+      "notes": [
+        "Missing CORS/cache headers are recorded as evidence gaps unless a future contract requires them."
+      ],
+      "status": "verified_passed"
+    },
+    "cors_status": "verified_passed",
+    "evidence_id": "public_hosted_deployment_evidence_v0",
+    "hard_booleans": {
+      "accounts_enabled": false,
+      "arbitrary_url_fetch_enabled": false,
+      "backend_deployment_verified": false,
+      "candidate_index_runtime_enabled": false,
+      "deployment_verified": false,
+      "downloads_enabled": false,
+      "evidence_ledger_runtime_enabled": false,
+      "external_source_calls_enabled": false,
+      "hosted_public_search_live": false,
+      "installs_enabled": false,
+      "live_probes_enabled": false,
+      "local_paths_enabled": false,
+      "master_index_mutation_enabled": false,
+      "production_ready_claimed": false,
+      "public_search_mode_local_index_only": true,
+      "source_cache_runtime_enabled": false,
+      "source_connectors_enabled": false,
+      "static_deployment_verified": false,
+      "telemetry_enabled": false,
+      "uploads_enabled": false
+    },
+    "hosted_backend_status": "not_configured",
+    "limitations": [
+      "No hosted backend URL is configured; backend route, safe-query, blocked-request, CORS, telemetry, and rate-limit evidence are operator-gated.",
+      "Rate-limit or edge evidence is unavailable unless response headers or operator evidence are recorded.",
+      "Hosted backend URL unavailable; hosted route and safety checks are operator-gated."
+    ],
+    "logging_telemetry_status": "operator_gated",
+    "notes": [
+      "Only explicitly configured static/backend URLs are eligible for HTTP checks.",
+      "Redirects are recorded but not followed.",
+      "No deployment, provider API, external source API, model API, source connector, telemetry, account, upload, download, install, arbitrary URL fetch, or index/cache/ledger mutation is performed."
+    ],
+    "ok": true,
+    "privacy_logging_telemetry_results": {
+      "logging_policy_verified": false,
+      "notes": [
+        "No hosted backend status endpoint was verified; logging/telemetry evidence remains operator-gated."
+      ],
+      "status": "operator_gated",
+      "telemetry_enabled": null
+    },
+    "public_index_results": [
+      {
+        "checked": false,
+        "contains_executables": null,
+        "contains_live_data": null,
+        "contains_private_data": null,
+        "document_count": null,
+        "local_index_only": null,
+        "notes": [
+          "public_index_summary_json_missing_or_invalid",
+          "contains_live_data_not_false",
+          "contains_private_data_not_false",
+          "contains_executables_not_false",
+          "local_index_only_not_true"
+        ],
+        "passed": false,
+        "source_count": null,
+        "status": "verified_failed"
+      }
+    ],
+    "rate_limit_results": {
+      "edge_provider_evidence": null,
+      "entries": [],
+      "host_platform_evidence": null,
+      "notes": [
+        "No edge/rate-limit claim is made without response headers or operator evidence."
+      ],
+      "status": "operator_gated"
+    },
+    "rate_limit_status": "operator_gated",
+    "route_results": [
+      {
+        "actual_status": null,
+        "check_id": "healthz",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [],
+        "route": "/healthz"
+      },
+      {
+        "actual_status": null,
+        "check_id": "status",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [],
+        "route": "/status"
+      },
+      {
+        "actual_status": null,
+        "check_id": "api_status",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [],
+        "route": "/api/v1/status"
+      },
+      {
+        "actual_status": null,
+        "check_id": "sources",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [],
+        "route": "/api/v1/sources"
+      },
+      {
+        "actual_status": null,
+        "check_id": "api_search_windows_7_apps",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q"
+        ],
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_status": null,
+        "check_id": "query_plan_windows_7_apps",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q"
+        ],
+        "route": "/api/v1/query-plan"
+      },
+      {
+        "actual_status": null,
+        "check_id": "html_search_windows_7_apps",
+        "content_type": null,
+        "contract_alignment": "not_checked",
+        "expected_status": "2xx",
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query_keys": [
+          "q"
+        ],
+        "route": "/search"
+      }
+    ],
+    "route_verification_status": "not_configured",
+    "safe_query_results": [
+      {
+        "actual_status": null,
+        "expected": "2xx local_index_only response",
+        "local_index_only": null,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query": "windows 7 apps",
+        "result_count": null,
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_status": null,
+        "expected": "2xx local_index_only response",
+        "local_index_only": null,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query": "driver.inf",
+        "result_count": null,
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_status": null,
+        "expected": "2xx local_index_only response",
+        "local_index_only": null,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query": "pc magazine ray tracing",
+        "result_count": null,
+        "route": "/api/v1/search"
+      },
+      {
+        "actual_status": null,
+        "expected": "2xx local_index_only response",
+        "local_index_only": null,
+        "notes": [
+          "Hosted backend URL not configured."
+        ],
+        "passed": false,
+        "query": "no-such-local-index-hit",
+        "result_count": null,
+        "route": "/api/v1/search"
+      }
+    ],
+    "safety_verification_status": "operator_gated",
+    "search_handoff_status": "operator_gated",
+    "static_handoff_results": [
+      {
+        "backend_url_in_search_config": null,
+        "backend_url_verified": false,
+        "contract_alignment": "failed",
+        "hosted_backend_verified": null,
+        "notes": [
+          "search_config_json_missing_or_invalid"
+        ],
+        "passed": false,
+        "search_config_checked": false,
+        "search_form_enabled": null
+      }
+    ],
+    "static_route_results": [
+      {
+        "check": "root",
+        "content_type": "text/html; charset=utf-8",
+        "error": "HTTP 404",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"64d39a40-24a3\"",
+          "strict-transport-security": "max-age=31556952"
+        },
+        "status": "verified_failed",
+        "status_code": 404,
+        "url": "https://julesc013.github.io/eureka/"
+      },
+      {
+        "check": "search_page",
+        "content_type": "text/html; charset=utf-8",
+        "error": "HTTP 404",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"64d39a40-24a3\"",
+          "strict-transport-security": "max-age=31556952"
+        },
+        "status": "verified_failed",
+        "status_code": 404,
+        "url": "https://julesc013.github.io/eureka/search.html"
+      },
+      {
+        "check": "search_config",
+        "content_type": "text/html; charset=utf-8",
+        "error": "HTTP 404",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"64d39a40-24a3\"",
+          "strict-transport-security": "max-age=31556952"
+        },
+        "status": "verified_failed",
+        "status_code": 404,
+        "url": "https://julesc013.github.io/eureka/data/search_config.json"
+      },
+      {
+        "check": "public_index_summary",
+        "content_type": "text/html; charset=utf-8",
+        "error": "HTTP 404",
+        "headers": {
+          "access-control-allow-origin": "*",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"64d39a40-24a3\"",
+          "strict-transport-security": "max-age=31556952"
+        },
+        "status": "verified_failed",
+        "status_code": 404,
+        "url": "https://julesc013.github.io/eureka/data/public_index_summary.json"
+      }
+    ],
+    "static_site_status": "verified_failed",
+    "static_url": "https://julesc013.github.io/eureka/",
+    "static_url_source": "repo:control/inventory/publication/deployment_targets.json",
+    "status_flags": {
+      "accounts_enabled": false,
+      "arbitrary_url_fetch_enabled": false,
+      "downloads_enabled": false,
+      "external_calls_performed": false,
+      "external_source_calls_enabled": false,
+      "installs_enabled": false,
+      "live_probes_enabled": false,
+      "local_paths_enabled": false,
+      "mode": "local_index_only",
+      "source_connectors_enabled": false,
+      "telemetry_enabled": false,
+      "uploads_enabled": false
+    },
+    "tls_results": {
+      "entries": [
+        {
+          "https": true,
+          "local_dev": false,
+          "notes": [
+            "HTTPS configured but route evidence is incomplete."
+          ],
+          "role": "static",
+          "status": "configured_unverified"
+        },
+        {
+          "https": null,
+          "notes": [
+            "URL not configured."
+          ],
+          "role": "backend",
+          "status": "not_configured"
+        }
+      ],
+      "status": "operator_gated"
+    },
+    "tls_status": "operator_gated",
+    "warnings": [
+      "search_config_json_missing_or_invalid",
+      "public_index_summary_json_missing_or_invalid",
+      "contains_live_data_not_false",
+      "contains_private_data_not_false",
+      "contains_executables_not_false",
+      "local_index_only_not_true"
+    ]
+  },
+  "worktree_status": [
+    "## main...origin/main",
+    " M .aide/commands/ci.yaml",
+    " M .aide/commands/dev.yaml",
+    " M .aide/reports/README.md",
+    " M .aide/tasks/audit_backlog.yaml",
+    " M .aide/tasks/queue.yaml",
+    " M control/inventory/publication/deployment_targets.json",
+    " M control/inventory/publication/live_backend_handoff.json",
+    " M control/inventory/publication/public_search_handoff.json",
+    " M control/inventory/publication/public_search_routes.json",
+    " M control/inventory/publication/public_search_safety.json",
+    " M control/inventory/publication/surface_capabilities.json",
+    " M control/inventory/tests/command_matrix.json",
+    " M control/inventory/tests/test_registry.json",
+    " M docs/DECISIONS.md",
+    " M docs/OPEN_QUESTIONS.md",
+    " M docs/ROADMAP.md",
+    " M docs/operations/GITHUB_PAGES_DEPLOYMENT.md",
+    " M docs/operations/HOSTED_PUBLIC_SEARCH.md",
+    " M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md",
+    " M docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md",
+    " M docs/operations/PUBLIC_SEARCH_HOSTING.md",
+    " M docs/operations/PUBLIC_SEARCH_ROLLBACK.md",
+    " M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md",
+    " M docs/operations/STATIC_SITE_SEARCH_INTEGRATION.md",
+    " M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md",
+    " M docs/reference/PUBLIC_SEARCH_PRODUCTION_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+    " M docs/roadmap/BACKEND_ROADMAP.md",
+    " M scripts/README.md",
+    "?? control/audits/public-hosted-deployment-evidence-v0/",
+    "?? docs/operations/PUBLIC_HOSTED_DEPLOYMENT_EVIDENCE.md",
+    "?? scripts/validate_public_hosted_deployment_evidence.py",
+    "?? scripts/verify_public_hosted_deployment.py",
+    "?? tests/operations/test_public_hosted_deployment_evidence.py",
+    "?? tests/scripts/test_validate_public_hosted_deployment_evidence.py",
+    "?? tests/scripts/test_verify_public_hosted_deployment.py"
+  ]
+}
