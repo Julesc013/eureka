@@ -45,3 +45,9 @@ PyPI metadata is not rights clearance, not malware safety, not dependency safety
 ## Future Path
 
 Before live runtime work: complete official source-policy review, choose approved User-Agent/contact policy, confirm no token is required for v0, define rate/timeout/retry/circuit-breaker values, approve source sync worker output destinations, review source cache/evidence ledger integration, and approve the live connector implementation. P74 itself is not production readiness.
+
+<!-- P75-NPM-METADATA-SUMMARY-START -->
+## P75 npm Metadata Connector Approval Pack v0
+
+Completed as an approval-only package metadata connector pack. It adds no live npm connector runtime, no external calls, no npm registry API calls, no npm/yarn/pnpm CLI calls, no package metadata fetch, no version fetch, no dist-tag fetch, no tarball metadata fetch, no tarball download, no package file download, no package install, no dependency resolution, no package archive inspection, no lifecycle script execution, no npm audit, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. It requires package identity review, scoped package review, dependency metadata caution, lifecycle script risk policy, source policy review, User-Agent/contact decisions, and cache-first evidence outputs. Next recommended branch: P76 Software Heritage Connector Approval Pack v0.
+<!-- P75-NPM-METADATA-SUMMARY-END -->

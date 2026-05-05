@@ -110,5 +110,44 @@
     "limitations": [
       "P74 references this recorded-fixture source only; it does not enable live PyPI API access, token use, package metadata fetching, release fetching, file metadata fetching, wheel or sdist downloads, package installs, dependency resolution, package archive inspection, source cache writes, evidence ledger writes, or public-query fanout."
     ]
-  }
+  },
+  "connector_approvals": [
+    {
+      "status": "approval_required",
+      "connector_inventory_ref": "control/inventory/connectors/pypi_metadata_connector.json",
+      "approval_audit_ref": "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
+      "connector_runtime_implemented": false,
+      "live_enabled_by_default": false,
+      "pypi_api_calls_enabled": false,
+      "package_download_enabled": false,
+      "wheel_download_enabled": false,
+      "sdist_download_enabled": false,
+      "package_install_enabled": false,
+      "dependency_resolution_enabled": false,
+      "source_cache_populated_from_live_calls": false,
+      "evidence_ledger_populated_from_live_calls": false,
+      "limitations": [
+        "P74 references this recorded-fixture source only; it does not enable live PyPI API access, token use, package metadata fetching, release fetching, file metadata fetching, wheel or sdist downloads, package installs, dependency resolution, package archive inspection, source cache writes, evidence ledger writes, or public-query fanout."
+      ]
+    },
+    {
+      "status": "approval_required",
+      "connector_inventory_ref": "control/inventory/connectors/npm_metadata_connector.json",
+      "approval_audit_ref": "control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json",
+      "connector_runtime_implemented": false,
+      "live_enabled_by_default": false,
+      "npm_registry_api_calls_enabled": false,
+      "npm_cli_calls_enabled": false,
+      "package_download_enabled": false,
+      "tarball_download_enabled": false,
+      "package_install_enabled": false,
+      "dependency_resolution_enabled": false,
+      "lifecycle_script_execution_enabled": false,
+      "source_cache_populated_from_live_calls": false,
+      "evidence_ledger_populated_from_live_calls": false,
+      "limitations": [
+        "P75 references this recorded-fixture source only; it does not enable live npm registry API access, npm CLI calls, token use, package metadata fetching, version fetching, dist-tag fetching, tarball metadata fetching, tarball downloads, package file downloads, package installs, dependency resolution, package archive inspection, lifecycle script execution, npm audit, source cache writes, evidence ledger writes, or public-query fanout."
+      ]
+    }
+  ]
 }

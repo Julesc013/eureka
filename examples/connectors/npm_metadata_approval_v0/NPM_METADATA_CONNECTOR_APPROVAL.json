@@ -1,0 +1,1215 @@
+{
+  "schema_version": "0.1.0",
+  "approval_record_id": "example.connector.npm_metadata.approval.v0",
+  "approval_record_kind": "npm_metadata_connector_approval",
+  "status": "draft_example",
+  "created_by_tool": "p75_npm_metadata_connector_approval_builder_v0",
+  "connector_ref": {
+    "connector_id": "npm_metadata_connector",
+    "connector_label": "npm metadata connector",
+    "source_family": "npm",
+    "connector_version": "v0-approval-pack",
+    "source_inventory_ref": "control/inventory/sources/package-registry-recorded-fixtures.source.json",
+    "source_status": "approval_required",
+    "limitations": [
+      "Approval reference only; recorded package-registry fixtures exist, but live npm acquisition is not approved or implemented by P75."
+    ]
+  },
+  "connector_scope": {
+    "scope_kind": "package_metadata_only",
+    "allowed_target_types": [
+      "package_name_from_reviewed_source_record",
+      "scoped_package_name_from_reviewed_source_record",
+      "package_name_from_approved_search_need_future",
+      "package_name_from_source_pack_future",
+      "bounded_package_metadata_query_future",
+      "version_metadata_future",
+      "dist_tag_metadata_future",
+      "tarball_metadata_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_package",
+      "private_package",
+      "private_scope_package",
+      "credentialed_registry",
+      "alternate_registry",
+      "package_tarball_download",
+      "package_file_download",
+      "package_install",
+      "dependency_resolution",
+      "package_archive_inspection",
+      "lifecycle_script_execution",
+      "npm_audit",
+      "account_private_data",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P75 permits only future npm package, version, dist-tag, and tarball metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_capabilities": [
+    {
+      "capability": "npm_package_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_version_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_dist_tag_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_tarball_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_engines_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_license_metadata_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_dependency_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_deprecation_yanked_like_status_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    },
+    {
+      "capability": "npm_maintainer_publisher_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_package_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live npm capability is implemented or approved by P75."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_package_fetch",
+      "reason": "arbitrary_package_fetch is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "private_package_access",
+      "reason": "private_package_access is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "private_scope_package_access",
+      "reason": "private_scope_package_access is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "alternate_registry_access",
+      "reason": "alternate_registry_access is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "token_required_access",
+      "reason": "token_required_access is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "package_tarball_download",
+      "reason": "package_tarball_download is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "package_file_download",
+      "reason": "package_file_download is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "package_install",
+      "reason": "package_install is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "npm_install",
+      "reason": "npm_install is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "npm_pack",
+      "reason": "npm_pack is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "npm_view_runtime_now",
+      "reason": "npm_view_runtime_now is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "npm_audit",
+      "reason": "npm_audit is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "dependency_resolution",
+      "reason": "dependency_resolution is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "dependency_safety_decision",
+      "reason": "dependency_safety_decision is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "vulnerability_status_decision",
+      "reason": "vulnerability_status_decision is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "package_archive_inspection",
+      "reason": "package_archive_inspection is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "lifecycle_script_execution",
+      "reason": "lifecycle_script_execution is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "preinstall_script_execution",
+      "reason": "preinstall_script_execution is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "install_script_execution",
+      "reason": "install_script_execution is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "postinstall_script_execution",
+      "reason": "postinstall_script_execution is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "raw_file_fetch",
+      "reason": "raw_file_fetch is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside the P75 package-metadata-only npm approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "package_identity_policy": {
+    "package_name_review_required": true,
+    "scoped_package_review_required": true,
+    "arbitrary_public_query_package_allowed": false,
+    "private_package_allowed": false,
+    "private_scope_package_allowed": false,
+    "credentialed_registry_allowed": false,
+    "token_required_package_allowed": false,
+    "alternate_registry_allowed_now": false,
+    "local_package_path_allowed": false,
+    "raw_package_url_publication_allowed": false,
+    "normalized_package_name_publication_allowed_after_review": true,
+    "package_name_hashing_allowed_future": true,
+    "package_name_redaction_required_for_sensitive_inputs": true,
+    "allowed_package_name_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_package_name_sources": [
+      "raw_public_query_parameter",
+      "user_private_package",
+      "credentialed_registry",
+      "private_scope",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_package_name": "example-package",
+    "example_scoped_package_name": "@example-scope/example-package",
+    "notes": [
+      "Example package names are synthetic and are never fetched."
+    ]
+  },
+  "scoped_package_policy": {
+    "scoped_packages_allowed_future_after_review": true,
+    "scope_name_review_required": true,
+    "private_scope_detection_required_future": true,
+    "organization_scope_confusion_review_required": true,
+    "public_scope_metadata_allowed_after_review": true,
+    "private_scope_metadata_forbidden": true,
+    "raw_scope_publication_allowed_after_review": true,
+    "scope_redaction_required_for_sensitive_inputs": true,
+    "limitations": [
+      "Scoped packages can become public metadata candidates only after review; private scopes are forbidden and scope names do not prove organization trust."
+    ]
+  },
+  "dependency_metadata_caution_policy": {
+    "dependency_metadata_allowed_as_summary_future": true,
+    "peer_dependency_metadata_allowed_as_summary_future": true,
+    "optional_dependency_metadata_allowed_as_summary_future": true,
+    "dev_dependency_metadata_allowed_as_summary_future": true,
+    "bundled_dependency_metadata_allowed_as_summary_future": true,
+    "dependency_resolution_allowed_now": false,
+    "dependency_graph_expansion_allowed_now": false,
+    "installability_claim_allowed": false,
+    "vulnerability_status_claim_allowed": false,
+    "dependency_safety_claim_allowed": false,
+    "dependency_names_publication_requires_review": true,
+    "limitations": [
+      "Dependency fields are metadata only; P75 does not resolve dependencies, expand graphs, claim installability, claim vulnerability status, or claim dependency safety."
+    ]
+  },
+  "package_script_and_lifecycle_risk_policy": {
+    "lifecycle_script_metadata_allowed_as_summary_future": true,
+    "lifecycle_script_execution_allowed": false,
+    "preinstall_execution_allowed": false,
+    "install_execution_allowed": false,
+    "postinstall_execution_allowed": false,
+    "script_content_publication_requires_review": true,
+    "script_risk_classification_required": true,
+    "script_safety_claim_allowed": false,
+    "package_execution_allowed": false,
+    "limitations": [
+      "Lifecycle script metadata may only be summarized after approval; P75 never executes scripts and never claims script safety."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "API_terms_review_required": true,
+    "automated_access_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_or_abuse_limit_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/NPM_METADATA_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official npm registry/source policy review is pending; P75 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_and_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P75; operator decision is required before any future live connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_or_abuse_limit_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P75."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_package_payload_cache": true,
+    "no_tarball_payload_cache": true,
+    "no_installation_artifact_cache": true,
+    "no_lifecycle_script_execution": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call npm live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "npm_package_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_version_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_dist_tag_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_tarball_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_engines_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_license_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_dependency_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_lifecycle_script_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_deprecation_status_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "npm_publisher_maintainer_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "package_payload_allowed": false,
+      "tarball_payload_allowed": false,
+      "installation_artifact_allowed": false,
+      "script_execution_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "package_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "package_version_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "dist_tag_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "tarball_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "engines_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "license_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "dependency_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "deprecation_status_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "lifecycle_script_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_package_identity_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "installability_claimed": false,
+      "dependency_safety_claimed": false,
+      "vulnerability_status_claimed": false,
+      "script_safety_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P75 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_package_param": false,
+    "public_search_may_accept_arbitrary_registry_param": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no npm live search is enabled."
+    ]
+  },
+  "rights_access_and_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_package_file_download",
+      "no_tarball_download",
+      "no_install",
+      "no_private_registries"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "dependency_safety_claimed": false,
+    "vulnerability_status_claimed": false,
+    "script_safety_claimed": false,
+    "installability_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "package_file_download_enabled": false,
+    "tarball_download_enabled": false,
+    "package_install_enabled": false,
+    "dependency_resolution_enabled": false,
+    "lifecycle_script_execution_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "npm metadata observations are not rights clearance, malware safety, dependency safety, vulnerability status, script safety, or installability claims."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "scoped_package_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_package": false,
+    "contains_private_scope": false,
+    "contains_private_registry": false,
+    "contains_private_url": false,
+    "publishable": true,
+    "limitations": [
+      "P75 examples contain no private paths, credentials, accounts, private packages, private scopes, private registries, private URLs, or tokens."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.package_identity_policy_review",
+      "item": "package_identity_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.scoped_package_policy_review",
+      "item": "scoped_package_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.dependency_metadata_policy_review",
+      "item": "dependency_metadata_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.lifecycle_script_risk_policy_review",
+      "item": "lifecycle_script_risk_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.token_policy_review",
+      "item": "token_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_package_identity_filter",
+      "item": "configure_package_identity_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.configure_scoped_package_filter",
+      "item": "configure_scoped_package_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_token_required_for_v0",
+      "item": "confirm_no_token_required_for_v0",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_package_download_install_or_script_execution",
+      "item": "confirm_no_package_download_install_or_script_execution",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P75 does not approve or configure live npm access."
+    }
+  ],
+  "implementation_prerequisites": [
+    "Official npm registry source policy review",
+    "Package identity and scoped package policy review",
+    "Dependency metadata caution policy review",
+    "Lifecycle script risk policy review",
+    "Token policy review confirming no token required for v0",
+    "User-Agent and contact decision",
+    "Bounded rate-limit, timeout, retry, and circuit-breaker values",
+    "Source sync worker runtime approval",
+    "Source cache and evidence ledger runtime approval",
+    "Live connector implementation review"
+  ],
+  "limitations": [
+    "Approval pack only; no live connector runtime, npm registry API call, npm CLI call, package metadata fetch, version fetch, dist-tag fetch, tarball metadata fetch, tarball download, package file download, package install, dependency resolution, package archive inspection, lifecycle script execution, npm audit, cache write, evidence write, or index mutation is implemented."
+  ],
+  "no_runtime_guarantees": {
+    "connector_runtime_implemented": false,
+    "connector_approved_now": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "npm_registry_api_called": false,
+    "npm_cli_called": false,
+    "package_metadata_fetched": false,
+    "versions_fetched": false,
+    "dist_tags_fetched": false,
+    "tarball_metadata_fetched": false,
+    "tarballs_downloaded": false,
+    "package_files_downloaded": false,
+    "package_installed": false,
+    "dependency_resolution_performed": false,
+    "package_archive_inspected": false,
+    "lifecycle_scripts_executed": false,
+    "npm_audit_performed": false,
+    "public_search_live_fanout_enabled": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "mirroring_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "credentials_used": false,
+    "npm_token_used": false,
+    "telemetry_exported": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth: npm metadata may become evidence only after approval, package identity review, scoped package review, cache, review, and promotion gates."
+  ]
+}

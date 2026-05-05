@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/npm_metadata_connector_approval.v0.json",
+  "title": "Eureka npm Metadata Connector Approval v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "contract_only",
+  "x-connector_runtime_implemented": false,
+  "x-connector_approved_now": false,
+  "x-live_source_calls_allowed_now": false,
+  "x-external_calls_allowed_now": false,
+  "x-npm_registry_api_calls_allowed_now": false,
+  "x-npm_cli_calls_allowed_now": false,
+  "x-package_metadata_fetch_allowed_now": false,
+  "x-versions_fetch_allowed_now": false,
+  "x-dist_tags_fetch_allowed_now": false,
+  "x-tarball_metadata_fetch_allowed_now": false,
+  "x-tarball_download_allowed": false,
+  "x-package_file_download_allowed": false,
+  "x-package_install_allowed": false,
+  "x-dependency_resolution_allowed_now": false,
+  "x-package_archive_inspection_allowed_now": false,
+  "x-lifecycle_script_execution_allowed": false,
+  "x-npm_audit_allowed_now": false,
+  "x-public_search_live_fanout_allowed": false,
+  "x-arbitrary_package_fetch_allowed": false,
+  "x-source_cache_mutation_allowed_now": false,
+  "x-evidence_ledger_mutation_allowed_now": false,
+  "x-candidate_index_mutation_allowed_now": false,
+  "x-public_index_mutation_allowed_now": false,
+  "x-local_index_mutation_allowed_now": false,
+  "x-master_index_mutation_allowed": false,
+  "x-downloads_allowed": false,
+  "x-file_retrieval_allowed": false,
+  "x-mirroring_allowed": false,
+  "x-token_required_now": false,
+  "x-npm_token_used": false,
+  "x-dependency_safety_claimed": false,
+  "x-vulnerability_status_claimed": false,
+  "x-script_safety_claimed": false,
+  "x-installability_claimed": false,
+  "x-telemetry_implemented": false,
+  "x-credentials_configured": false,
+  "required": [
+    "schema_version",
+    "approval_record_id",
+    "approval_record_kind",
+    "status",
+    "created_by_tool",
+    "connector_ref",
+    "connector_scope",
+    "allowed_capabilities",
+    "forbidden_capabilities",
+    "package_identity_policy",
+    "scoped_package_policy",
+    "dependency_metadata_caution_policy",
+    "package_script_and_lifecycle_risk_policy",
+    "source_policy_review",
+    "user_agent_and_contact_policy",
+    "rate_limit_timeout_retry_circuit_breaker_policy",
+    "cache_first_policy",
+    "expected_source_cache_outputs",
+    "expected_evidence_ledger_outputs",
+    "query_intelligence_relationship",
+    "public_search_boundary",
+    "rights_access_and_risk_policy",
+    "privacy_policy",
+    "approval_checklist",
+    "operator_checklist",
+    "implementation_prerequisites",
+    "limitations",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: schema_version."
+    },
+    "approval_record_id": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: approval_record_id."
+    },
+    "approval_record_kind": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: approval_record_kind."
+    },
+    "status": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: status."
+    },
+    "created_by_tool": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: created_by_tool."
+    },
+    "connector_ref": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: connector_ref."
+    },
+    "connector_scope": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: connector_scope."
+    },
+    "allowed_capabilities": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: allowed_capabilities."
+    },
+    "forbidden_capabilities": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: forbidden_capabilities."
+    },
+    "package_identity_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: package_identity_policy."
+    },
+    "scoped_package_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: scoped_package_policy."
+    },
+    "dependency_metadata_caution_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: dependency_metadata_caution_policy."
+    },
+    "package_script_and_lifecycle_risk_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: package_script_and_lifecycle_risk_policy."
+    },
+    "source_policy_review": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: source_policy_review."
+    },
+    "user_agent_and_contact_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: user_agent_and_contact_policy."
+    },
+    "rate_limit_timeout_retry_circuit_breaker_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: rate_limit_timeout_retry_circuit_breaker_policy."
+    },
+    "cache_first_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: cache_first_policy."
+    },
+    "expected_source_cache_outputs": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: expected_source_cache_outputs."
+    },
+    "expected_evidence_ledger_outputs": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: expected_evidence_ledger_outputs."
+    },
+    "query_intelligence_relationship": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: query_intelligence_relationship."
+    },
+    "public_search_boundary": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: public_search_boundary."
+    },
+    "rights_access_and_risk_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: rights_access_and_risk_policy."
+    },
+    "privacy_policy": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: privacy_policy."
+    },
+    "approval_checklist": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: approval_checklist."
+    },
+    "operator_checklist": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: operator_checklist."
+    },
+    "implementation_prerequisites": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: implementation_prerequisites."
+    },
+    "limitations": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: limitations."
+    },
+    "no_runtime_guarantees": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: no_runtime_guarantees."
+    },
+    "no_mutation_guarantees": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: no_mutation_guarantees."
+    },
+    "notes": {
+      "description": "Eureka npm Metadata Connector Approval v0 field: notes."
+    }
+  },
+  "$defs": {
+    "statuses": [
+      "draft_example",
+      "approval_required",
+      "operator_required",
+      "blocked_by_policy",
+      "approved_future",
+      "rejected_future",
+      "superseded_future"
+    ],
+    "source_family": [
+      "npm"
+    ],
+    "allowed_capabilities": [
+      "npm_package_metadata_future",
+      "npm_version_metadata_future",
+      "npm_dist_tag_metadata_future",
+      "npm_tarball_metadata_summary_future",
+      "npm_engines_metadata_future",
+      "npm_license_metadata_future",
+      "npm_dependency_metadata_summary_future",
+      "npm_deprecation_yanked_like_status_summary_future",
+      "npm_maintainer_publisher_metadata_summary_future"
+    ],
+    "forbidden_capabilities": [
+      "arbitrary_package_fetch",
+      "direct_public_query_fanout",
+      "private_package_access",
+      "private_scope_package_access",
+      "alternate_registry_access",
+      "token_required_access",
+      "package_tarball_download",
+      "package_file_download",
+      "package_install",
+      "npm_install",
+      "npm_pack",
+      "npm_view_runtime_now",
+      "npm_audit",
+      "dependency_resolution",
+      "dependency_safety_decision",
+      "vulnerability_status_decision",
+      "package_archive_inspection",
+      "lifecycle_script_execution",
+      "preinstall_script_execution",
+      "install_script_execution",
+      "postinstall_script_execution",
+      "raw_file_fetch",
+      "account_access",
+      "upload",
+      "install",
+      "execute",
+      "unbounded_crawl",
+      "scraping",
+      "bypass_access_restrictions",
+      "raw_payload_dump",
+      "malware_safety_decision",
+      "rights_clearance_decision"
+    ]
+  }
+}
