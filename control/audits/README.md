@@ -498,3 +498,9 @@ Audit pack: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weigh
 
 Audit pack: `control/audits/compatibility-aware-ranking-contract-v0/`.
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-START -->
+## P86 Public Query Observation Runtime Planning v0
+
+See `control/audits/public-query-observation-runtime-planning-v0/`. Readiness is blocked by unverified hosted deployment; this is planning-only and adds no runtime observation capture.
+<!-- P86-PUBLIC-QUERY-OBSERVATION-RUNTIME-PLAN-END -->

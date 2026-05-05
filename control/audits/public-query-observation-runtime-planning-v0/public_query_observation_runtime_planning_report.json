@@ -1,0 +1,244 @@
+{
+  "report_id": "public_query_observation_runtime_planning_v0",
+  "created_by_slice": "P86 Public Query Observation Runtime Planning v0",
+  "repo_head": "2a38650d2de8269a4799adca1109eefababc9104",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    " M .aide/commands/ci.yaml",
+    " M .aide/commands/dev.yaml",
+    " M .aide/reports/README.md",
+    " M .aide/tasks/audit_backlog.yaml",
+    " M .aide/tasks/queue.yaml",
+    " M control/audits/README.md",
+    " M control/inventory/tests/command_matrix.json",
+    " M control/inventory/tests/test_registry.json",
+    " M scripts/README.md",
+    "?? control/audits/public-query-observation-runtime-planning-v0/",
+    "?? control/inventory/query_intelligence/public_query_observation_runtime_plan.json",
+    "?? docs/operations/PUBLIC_QUERY_OBSERVATION_RUNTIME_PLAN.md",
+    "?? scripts/validate_public_query_observation_runtime_plan.py",
+    "?? tests/operations/test_public_query_observation_runtime_plan.py",
+    "?? tests/scripts/test_validate_public_query_observation_runtime_plan.py"
+  ],
+  "readiness_decision": "blocked_hosted_deployment_unverified",
+  "hosted_deployment_gate": {
+    "status": "unverified",
+    "deployment_verified": false,
+    "hosted_backend_status": "not_configured",
+    "static_site_status": "verified_failed",
+    "rate_limit_status": "operator_gated",
+    "decision": "runtime_blocked"
+  },
+  "query_observation_contract_status": {
+    "status": "valid_contract_only",
+    "contract": "contracts/query/query_observation.v0.json",
+    "runtime_persistence_implemented": false
+  },
+  "privacy_poisoning_guard_status": {
+    "status": "valid_contract_only",
+    "contract": "contracts/query/query_guard_decision.v0.json",
+    "runtime_guard_implemented": false
+  },
+  "public_search_safety_status": {
+    "local_safety": "valid",
+    "hosted_safety": "operator_gated",
+    "public_search_runtime_mutated": false
+  },
+  "storage_retention_plan": {
+    "storage_status": "planned_only",
+    "candidate_storage_backends": [
+      "append-only local development file store",
+      "SQLite local development store",
+      "managed Postgres hosted store"
+    ],
+    "recommended_first_runtime": "append-only local development store or SQLite only if explicitly approved",
+    "hosted_production_prerequisite": "managed DB with migrations, retention, deletion, backup, and access control",
+    "raw_query_retention_default": "none"
+  },
+  "safe_field_model": [
+    "observation_id",
+    "schema_version",
+    "normalized_query_fingerprint",
+    "query_intent",
+    "target_object_kind",
+    "platform_hint",
+    "artifact_type_hint",
+    "result_count_bucket",
+    "top_result_lane",
+    "miss_type",
+    "gap_type",
+    "checked_index_id",
+    "search_mode",
+    "safety_decision",
+    "created_at_bucket",
+    "retention_class"
+  ],
+  "forbidden_field_model": [
+    "raw query",
+    "full sensitive query string",
+    "IP address",
+    "account ID",
+    "session ID",
+    "browser fingerprint",
+    "precise geolocation",
+    "private path",
+    "private URL",
+    "secret/token/API key",
+    "uploaded file name",
+    "local machine details",
+    "exact user-agent string unless approved"
+  ],
+  "runtime_boundary": "P86 is planning-only. It does not implement runtime query observation, add storage, wire public search writes, enable telemetry, retain raw queries, track IPs/accounts/users, enable public aggregates, call external source APIs, or mutate public, local, runtime, master, result-cache, miss-ledger, search-need, probe-queue, candidate, source-cache, or evidence-ledger state.",
+  "implementation_phases": [
+    "phase_0_disabled_dry_run_tests",
+    "phase_1_local_dev_store_flagged",
+    "phase_2_hosted_staging_private_retention",
+    "phase_3_production_alpha_no_raw_query_retention",
+    "phase_4_guarded_aggregate_query_intelligence"
+  ],
+  "acceptance_criteria": [
+    "hosted backend verified",
+    "public search safety evidence passed",
+    "rate-limit evidence present",
+    "privacy/poisoning guard contract passed",
+    "query observation contract passed",
+    "retention/deletion policy accepted",
+    "storage backend selected",
+    "migration/backup/rollback plan accepted",
+    "operator approval",
+    "no raw query retention",
+    "no IP/account tracking",
+    "disabled-by-default config",
+    "full tests passing"
+  ],
+  "command_results": {
+    "p86_plan_validation": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_query_observation_runtime_plan.py",
+        "python scripts/validate_public_query_observation_runtime_plan.py --json",
+        "python -m unittest tests.operations.test_public_query_observation_runtime_plan tests.scripts.test_validate_public_query_observation_runtime_plan"
+      ],
+      "readiness_decision": "blocked_hosted_deployment_unverified"
+    },
+    "hosted_deployment_gate": {
+      "status": "blocked_hosted_deployment_unverified",
+      "commands": [
+        "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+        "python scripts/validate_public_hosted_deployment_evidence.py"
+      ],
+      "summary": "Verifier completed without deployment mutation; hosted backend is not configured, configured static URL verification remains failed/404, deployment_verified is false, rate limits are operator-gated."
+    },
+    "query_intelligence_contracts": {
+      "status": "passed_contract_only",
+      "commands": [
+        "python scripts/validate_query_observation_contract.py",
+        "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+        "python scripts/validate_shared_query_result_cache_contract.py",
+        "python scripts/validate_search_miss_ledger_contract.py",
+        "python scripts/validate_search_need_record_contract.py",
+        "python scripts/validate_demand_dashboard_contract.py",
+        "python scripts/validate_source_sync_worker_contract.py"
+      ],
+      "summary": "All remained valid as contract-only/deferred; no runtime observation, guard, cache, ledger, need, dashboard, source sync, or mutation behavior was added."
+    },
+    "page_identity_merge_ranking_contracts": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_compatibility_aware_ranking_contract.py",
+        "python scripts/validate_evidence_weighted_ranking_contract.py",
+        "python scripts/validate_result_merge_deduplication_contract.py",
+        "python scripts/validate_cross_source_identity_resolution_contract.py",
+        "python scripts/validate_comparison_page_contract.py",
+        "python scripts/validate_source_page_contract.py",
+        "python scripts/validate_object_page_contract.py"
+      ]
+    },
+    "public_search_static_safety": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_search_contract.py",
+        "python scripts/validate_public_search_result_card_contract.py",
+        "python scripts/validate_public_search_safety.py",
+        "python scripts/validate_local_public_search_runtime.py",
+        "python scripts/public_search_smoke.py",
+        "python scripts/public_search_smoke.py --json",
+        "python scripts/run_public_search_safety_evidence.py",
+        "python scripts/validate_public_search_safety_evidence.py",
+        "python scripts/run_hosted_public_search_rehearsal.py",
+        "python scripts/validate_hosted_public_search_rehearsal.py",
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/validate_publication_inventory.py",
+        "python scripts/validate_public_static_site.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/check_generated_artifact_drift.py"
+      ],
+      "summary": "Local public search smoke passed 30/30, safety evidence passed 64/64, hosted local rehearsal passed 60/60, public index remained 584 docs, generated drift guard passed."
+    },
+    "evals_and_baselines": {
+      "status": "passed_with_manual_baselines_pending",
+      "commands": [
+        "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+        "python scripts/validate_external_baseline_comparison_report.py",
+        "python scripts/run_archive_resolution_evals.py",
+        "python scripts/run_archive_resolution_evals.py --json",
+        "python scripts/run_search_usefulness_audit.py",
+        "python scripts/run_search_usefulness_audit.py --json",
+        "python scripts/report_external_baseline_status.py --json",
+        "python scripts/generate_python_oracle_golden.py --check"
+      ],
+      "archive_resolution": "6/6 tasks satisfied in local-index mode",
+      "search_usefulness": "64 queries: capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2; top gaps source_coverage_gap=49 and compatibility_evidence_gap=25",
+      "external_baselines": "batch_0 observed=0 pending=39; global observed=0 pending=192; no superiority claim"
+    },
+    "unit_and_boundary_lanes": {
+      "status": "passed",
+      "tests_scripts": 589,
+      "tests_operations": 556,
+      "tests_hardening": 53,
+      "tests_parity": 25,
+      "runtime": 320,
+      "surfaces": 168,
+      "tests_all": 1314,
+      "architecture_boundary_python_files_checked": 446,
+      "git_diff_check": "passed with CRLF warnings only"
+    },
+    "optional": {
+      "gh": "unavailable_not_installed",
+      "cargo": "unavailable_not_installed"
+    }
+  },
+  "remaining_blockers": [
+    "Hosted backend deployment is unverified and not configured.",
+    "Configured static site verification remains failed/operator-gated.",
+    "Hosted public search safety and rate-limit evidence are operator-gated.",
+    "Retention/deletion/export/backup policy is not accepted for runtime storage.",
+    "Runtime query guard and observation store are not implemented.",
+    "Manual Observation Batch 0 remains pending with 0 observed and 39 pending batch records.",
+    "Optional GitHub CLI and Rust checks were unavailable because gh and cargo are not installed."
+  ],
+  "next_recommended_branch": "P87 IA Metadata Connector Runtime Planning v0 only after approval, or Hosted Deployment Remediation v0 if P77 remains failed",
+  "notes": [
+    "Public query observation is not telemetry and not public demand proof.",
+    "Fast learning, slow truth."
+  ],
+  "runtime_query_observation_implemented": false,
+  "persistent_observation_store_implemented": false,
+  "hosted_runtime_enabled": false,
+  "telemetry_implemented": false,
+  "raw_query_retention_enabled": false,
+  "ip_tracking_enabled": false,
+  "account_tracking_enabled": false,
+  "user_profile_tracking_enabled": false,
+  "public_aggregate_enabled": false,
+  "public_search_runtime_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false
+}
