@@ -480,3 +480,9 @@ These are contract-only/source-page governance checks. They make no network call
 
 `control/audits/cross-source-identity-resolution-contract-v0/` records the Cross-Source Identity Resolution Contract v0 governance pack. It is contract-only and does not claim runtime identity resolution, destructive deduplication, record merge, candidate promotion, live source calls, source trust, rights clearance, malware safety, telemetry, or index/cache/ledger mutation.
 <!-- P82-CROSS-SOURCE-IDENTITY-RESOLUTION-END -->
+
+<!-- P83-RESULT-MERGE-DEDUPLICATION-START -->
+## P83 Result Merge and Deduplication Contract v0
+
+`control/audits/result-merge-deduplication-contract-v0/` records the contract-only result merge/deduplication pack. It makes no production-readiness, ranking, merge, suppression, or mutation claim.
+<!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
