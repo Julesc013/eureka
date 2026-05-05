@@ -1,0 +1,448 @@
+{
+  "aggregate_comparison": {
+    "baseline_better_count": 0,
+    "baseline_only_count": 0,
+    "both_good_count": 0,
+    "both_partial_count": 0,
+    "compared_count": 0,
+    "eureka_better_count": 0,
+    "eureka_only_count": 0,
+    "insufficient_data_count": 0,
+    "neither_count": 0,
+    "not_comparable_count": 0
+  },
+  "archive_eval_summary": {
+    "status_counts": {
+      "satisfied": 6
+    },
+    "task_summaries": [
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "find_document_article",
+        "planner_observed_task_kind": "find_document_article",
+        "planner_status": "satisfied",
+        "query_family": "article_inside_scan",
+        "raw_query": "article inside 1994 magazine scan about ray tracing",
+        "search_mode": "local_index",
+        "search_observed_result_count": 9,
+        "task_id": "article_inside_magazine_scan"
+      },
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "find_driver",
+        "planner_observed_task_kind": "find_driver",
+        "planner_status": "satisfied",
+        "query_family": "driver_by_hardware_and_platform",
+        "raw_query": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+        "search_mode": "local_index",
+        "search_observed_result_count": 50,
+        "task_id": "driver_inside_support_cd"
+      },
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "find_latest_compatible_release",
+        "planner_observed_task_kind": "find_latest_compatible_release",
+        "planner_status": "satisfied",
+        "query_family": "latest_compatible_release",
+        "raw_query": "latest Firefox before XP support ended",
+        "search_mode": "local_index",
+        "search_observed_result_count": 50,
+        "task_id": "latest_firefox_before_xp_drop"
+      },
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "identify_software",
+        "planner_observed_task_kind": "identify_software",
+        "planner_status": "satisfied",
+        "query_family": "vague_software_identity",
+        "raw_query": "old blue FTP client for XP",
+        "search_mode": "local_index",
+        "search_observed_result_count": 44,
+        "task_id": "old_blue_ftp_client_xp"
+      },
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "identify_software",
+        "planner_observed_task_kind": "identify_software",
+        "planner_status": "satisfied",
+        "query_family": "software_by_function_and_platform",
+        "raw_query": "software to fix broken registry on Windows 98",
+        "search_mode": "local_index",
+        "search_observed_result_count": 26,
+        "task_id": "win98_registry_repair"
+      },
+      {
+        "capability_gap_count": 0,
+        "failed_check_count": 0,
+        "not_evaluable_check_count": 0,
+        "overall_status": "satisfied",
+        "planner_expected_task_kind": "browse_software",
+        "planner_observed_task_kind": "browse_software",
+        "planner_status": "satisfied",
+        "query_family": "software_by_platform",
+        "raw_query": "Windows 7 apps",
+        "search_mode": "local_index",
+        "search_observed_result_count": 29,
+        "task_id": "windows_7_apps"
+      }
+    ],
+    "total_task_count": 6
+  },
+  "baseline_status": {
+    "batch_0": {
+      "completion_percent": 0.0,
+      "expected_observation_count": 39,
+      "missing_observation_slots": [],
+      "observation_count": 39,
+      "observed_observation_count": 0,
+      "pending_observation_count": 39,
+      "selected_query_count": 13,
+      "selected_query_ids": [
+        "windows_7_apps",
+        "windows_7_portable_apps_archive",
+        "latest_firefox_before_xp_support_ended",
+        "old_blue_ftp_client_xp",
+        "windows_98_registry_repair",
+        "driver_inf_inside_support_cd",
+        "driver_thinkpad_t42_wifi_windows_2000",
+        "pc_magazine_july_1994_ray_tracing",
+        "mac_os_9_browser",
+        "powerpc_osx_104_browser",
+        "windows_xp_software",
+        "creative_ct1740_driver_windows_98",
+        "threecom_3c905_windows_95_driver"
+      ],
+      "selected_system_count": 3,
+      "selected_system_ids": [
+        "google_web_search",
+        "internet_archive_metadata_search",
+        "internet_archive_full_text_search"
+      ],
+      "status": "pending_manual_observation"
+    },
+    "errors": [],
+    "global_slot_counts": {
+      "observed": 0,
+      "pending_manual_observation": 192
+    },
+    "systems": [
+      "google_web_search",
+      "internet_archive_full_text_search",
+      "internet_archive_metadata_search"
+    ],
+    "validation_status": "valid"
+  },
+  "batch_id": "batch_0",
+  "branch": "main",
+  "candidate_index_mutated": false,
+  "claims_and_non_claims": {
+    "does_not_claim_eureka_beats_external_search": true,
+    "fixture_backed_quality_is_not_global_superiority": true,
+    "local_index_only_is_not_live_source_search": true,
+    "no_comparisons_fabricated": true,
+    "no_external_calls_performed": true,
+    "no_observations_fabricated": true,
+    "no_production_readiness_claim": true
+  },
+  "command_results": [
+    {
+      "command": "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+      "exit_code": 0,
+      "summary": "passed; eligibility=no_observations, observed=0, pending=39, compared=0"
+    },
+    {
+      "command": "python scripts/validate_external_baseline_comparison_report.py",
+      "exit_code": 0,
+      "summary": "passed with expected no-observations warning"
+    },
+    {
+      "command": "python scripts/validate_external_baseline_comparison_report.py --json",
+      "exit_code": 0,
+      "summary": "passed and JSON parsed"
+    },
+    {
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "exit_code": 0,
+      "summary": "passed; global observed=0 pending=192; batch_0 observed=0 pending=39"
+    },
+    {
+      "command": "python scripts/list_external_baseline_observations.py --batch batch_0",
+      "exit_code": 0,
+      "summary": "passed; listed 39 pending Batch 0 slots"
+    },
+    {
+      "command": "python scripts/validate_external_baseline_observations.py",
+      "exit_code": 0,
+      "summary": "passed; current manual baseline records are structurally valid"
+    },
+    {
+      "command": "python scripts/run_search_usefulness_audit.py and --json",
+      "exit_code": 0,
+      "summary": "passed; covered=5 partial=40 source_gap=10 capability_gap=7 unknown=2"
+    },
+    {
+      "command": "python scripts/run_archive_resolution_evals.py and --json",
+      "exit_code": 0,
+      "summary": "passed; status_counts.satisfied=6"
+    },
+    {
+      "command": "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+      "exit_code": 0,
+      "summary": "passed; static remains verified_failed and hosted backend not_configured"
+    },
+    {
+      "command": "python scripts/validate_public_hosted_deployment_evidence.py",
+      "exit_code": 0,
+      "summary": "passed with expected static/backend warning state"
+    },
+    {
+      "command": "connector approval validators P71-P76 --all-examples",
+      "exit_code": 0,
+      "summary": "passed for IA, Wayback/CDX/Memento, GitHub Releases, PyPI, npm, and Software Heritage approval packs"
+    },
+    {
+      "command": "query/source contract validators P59-P70 subset",
+      "exit_code": 0,
+      "summary": "passed for query observation/cache/miss/search need/probe/candidate/demand/source sync/source cache evidence ledger contracts"
+    },
+    {
+      "command": "hosted/public/static search validators and smokes",
+      "exit_code": 0,
+      "summary": "passed for hosted rehearsal, public search safety, static integration, public index, wrapper, production contract, runtime, smokes, site/static/publication checks"
+    },
+    {
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s runtime -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s surfaces -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "exit_code": 0,
+      "summary": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "summary": "passed; PowerShell reported CRLF warnings only for existing generated static files"
+    },
+    {
+      "command": "git status --short --branch",
+      "exit_code": 0,
+      "summary": "passed; P78 files modified/untracked before commit"
+    },
+    {
+      "command": "gh --version",
+      "exit_code": 1,
+      "summary": "unavailable: gh not installed on PATH; GitHub Actions status unverified"
+    },
+    {
+      "command": "cargo --version",
+      "exit_code": 1,
+      "summary": "unavailable: cargo not installed on PATH; cargo check/test not run"
+    }
+  ],
+  "compared_count": 0,
+  "comparison_completed": false,
+  "created_by_slice": "p78_external_baseline_comparison_report_v0",
+  "eligibility": "no_observations",
+  "eureka_search_mode": "local_index_only",
+  "evidence_ledger_mutated": false,
+  "external_calls_performed": false,
+  "fabricated_comparisons": false,
+  "fabricated_observations": false,
+  "hosted_backend_status": "not_configured",
+  "invalid_count": 0,
+  "live_source_calls_performed": false,
+  "manual_work_remaining": [
+    "Manual Observation Batch 0 Execution: record 39 human-collected observations across 13 queries and 3 baseline systems.",
+    "Validate observations with python scripts/validate_external_baseline_observations.py.",
+    "Rerun python scripts/run_external_baseline_comparison.py --batch batch_0 --json after at least one valid observation exists.",
+    "Hosted deployment remains separately operator-gated until P77 evidence is repaired."
+  ],
+  "master_index_mutated": false,
+  "model_calls_performed": false,
+  "next_recommended_branch": "P79 Object Page Contract v0 (Codex-safe) while Manual Observation Batch 0 remains human-operated.",
+  "notes": [
+    "P78 creates comparison readiness/reporting infrastructure only because no manual baseline observations exist.",
+    "No web calls, source API calls, model calls, live probes, or index/cache/ledger/candidate/master-index mutations were performed.",
+    "Fast learning, slow truth."
+  ],
+  "observed_count": 0,
+  "pending_count": 39,
+  "production_claimed": false,
+  "public_index_mutated": false,
+  "query_comparisons": [],
+  "remaining_blockers": [
+    "No valid manual external baseline observations are present.",
+    "Batch 0 remains 0 of 39 observed.",
+    "Hosted backend is not configured per P77; hosted comparison is not eligible.",
+    "Configured static URL failed P77 verification with HTTP 404.",
+    "Source cache and evidence ledger remain contract-only, not runtime evidence stores."
+  ],
+  "repo_head": "c533468366de11dfe0344d57970431ba618b2b22",
+  "report_id": "external_baseline_comparison_report_v0",
+  "search_usefulness_summary": {
+    "eureka_status_counts": {
+      "capability_gap": 7,
+      "covered": 5,
+      "partial": 40,
+      "source_gap": 10,
+      "unknown": 2
+    },
+    "external_baseline_pending_counts": {
+      "google": 64,
+      "internet_archive_full_text": 64,
+      "internet_archive_metadata": 64
+    },
+    "failure_mode_counts": {
+      "absence_reasoning_gap": 2,
+      "actionability_gap": 2,
+      "compatibility_evidence_gap": 25,
+      "decomposition_gap": 12,
+      "external_baseline_pending": 64,
+      "identity_cluster_gap": 14,
+      "index_gap": 2,
+      "live_source_gap": 10,
+      "member_access_gap": 12,
+      "planner_gap": 24,
+      "query_interpretation_gap": 21,
+      "ranking_gap": 9,
+      "representation_gap": 14,
+      "source_coverage_gap": 49,
+      "surface_ux_gap": 4
+    },
+    "future_work_recommendations": [
+      {
+        "count": 49,
+        "description": "Add governed source coverage or recorded fixtures for the observed query family.",
+        "label": "source_coverage_gap"
+      },
+      {
+        "count": 25,
+        "description": "Add source-backed compatibility clues and host-profile evidence.",
+        "label": "compatibility_evidence_gap"
+      },
+      {
+        "count": 24,
+        "description": "Teach deterministic Query Planner v0 another bounded query family.",
+        "label": "planner_gap"
+      },
+      {
+        "count": 21,
+        "description": "Capture missing structured intent or constraints in the planner.",
+        "label": "query_interpretation_gap"
+      },
+      {
+        "count": 14,
+        "description": "Add representation/access-path metadata for actionable units.",
+        "label": "representation_gap"
+      },
+      {
+        "count": 14,
+        "description": "Group ambiguous names, versions, and source-backed states without merging truth.",
+        "label": "identity_cluster_gap"
+      },
+      {
+        "count": 12,
+        "description": "Represent container/member-level evidence for packages, ISOs, scans, or support media.",
+        "label": "decomposition_gap"
+      },
+      {
+        "count": 12,
+        "description": "Expose useful member previews/readback where bounded local fixtures support it.",
+        "label": "member_access_gap"
+      }
+    ],
+    "total_query_count": 64
+  },
+  "source_cache_mutated": false,
+  "source_capability_gap_analysis": {
+    "compatibility_evidence_gap_count": 25,
+    "dominant_gap": "manual_external_baseline_pending",
+    "external_baseline_pending_count": 64,
+    "live_source_gap_count": 10,
+    "planner_gap_count": 24,
+    "query_interpretation_gap_count": 21,
+    "recommended_priorities": [
+      "Human: complete Manual Observation Batch 0.",
+      "Codex-safe: define Object Page Contract v0 and Source Page Contract v0.",
+      "Continue source/capability work based on actual comparison gaps after observations exist."
+    ],
+    "source_coverage_gap_count": 49
+  },
+  "static_site_status": "verified_failed",
+  "superiority_claimed": false,
+  "worktree_status": [
+    "## main...origin/main",
+    " M .aide/commands/ci.yaml",
+    " M .aide/commands/dev.yaml",
+    " M .aide/reports/README.md",
+    " M .aide/tasks/audit_backlog.yaml",
+    " M .aide/tasks/queue.yaml",
+    " M control/audits/README.md",
+    " M control/inventory/tests/command_matrix.json",
+    " M control/inventory/tests/test_registry.json",
+    " M docs/BOOTSTRAP_STATUS.md",
+    " M docs/DECISIONS.md",
+    " M docs/OPEN_QUESTIONS.md",
+    " M docs/ROADMAP.md",
+    " M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md",
+    " M docs/reference/PUBLIC_SEARCH_PRODUCTION_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+    " M docs/roadmap/BACKEND_ROADMAP.md",
+    " M scripts/README.md",
+    "?? control/audits/external-baseline-comparison-report-v0/",
+    "?? docs/operations/EXTERNAL_BASELINE_COMPARISON.md",
+    "?? scripts/run_external_baseline_comparison.py",
+    "?? scripts/validate_external_baseline_comparison_report.py",
+    "?? tests/operations/test_external_baseline_comparison_report.py",
+    "?? tests/scripts/test_run_external_baseline_comparison.py",
+    "?? tests/scripts/test_validate_external_baseline_comparison_report.py"
+  ]
+}
