@@ -942,3 +942,12 @@ notes:
   - id: wayback_cdx_memento_connector_runtime_plan_tests
     run: python -m unittest tests.operations.test_wayback_cdx_memento_connector_runtime_plan tests.scripts.test_validate_wayback_cdx_memento_connector_runtime_plan
 <!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-START -->
+- id: github_releases_connector_runtime_plan_validator
+    run: python scripts/validate_github_releases_connector_runtime_plan.py
+  - id: github_releases_connector_runtime_plan_validator_json
+    run: python scripts/validate_github_releases_connector_runtime_plan.py --json
+  - id: github_releases_connector_runtime_plan_tests
+    run: python -m unittest tests.operations.test_github_releases_connector_runtime_plan tests.scripts.test_validate_github_releases_connector_runtime_plan
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->

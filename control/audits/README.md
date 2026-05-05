@@ -520,3 +520,11 @@ Audit pack: `control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wa
 
 Readiness: `blocked_connector_approval_pending`. Planning-only; no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.
 <!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-START -->
+## P89 GitHub Releases Connector Runtime Planning v0
+
+Audit pack: `control/audits/github-releases-connector-runtime-planning-v0/github_releases_connector_runtime_planning_report.json`.
+
+Readiness: `blocked_connector_approval_pending`. Planning-only; no GitHub API calls, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->

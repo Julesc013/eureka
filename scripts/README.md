@@ -871,3 +871,12 @@ These commands are stdlib-only and validate planning artifacts only; they perfor
 
 These commands are stdlib-only and validate planning artifacts only; they perform no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.
 <!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-START -->
+## P89 GitHub Releases Connector Runtime Planning
+
+- `python scripts/validate_github_releases_connector_runtime_plan.py`
+- `python scripts/validate_github_releases_connector_runtime_plan.py --json`
+
+These commands are stdlib-only and validate planning artifacts only; they perform no GitHub API calls, connector runtime, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->

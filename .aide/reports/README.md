@@ -428,3 +428,9 @@ Audit report: `control/audits/internet-archive-metadata-connector-runtime-planni
 
 Audit report: `control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json`.
 <!-- P88-WAYBACK-CDX-MEMENTO-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-START -->
+## P89 GitHub Releases Connector Runtime Planning v0
+
+Audit report: `control/audits/github-releases-connector-runtime-planning-v0/github_releases_connector_runtime_planning_report.json`.
+<!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->

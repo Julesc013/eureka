@@ -879,6 +879,13 @@
       "status": "addressed_planning_blocked_connector_approval_pending",
       "notes": "Addressed by control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json. Planning-only; no live Wayback/CDX/Memento calls, arbitrary URL fetch, archived content fetch, capture replay, WARC download, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
       "addressed_by": "control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json"
+    },
+    {
+      "id": "p89_github_releases_connector_runtime_planning_v0",
+      "title": "P89 GitHub Releases Connector Runtime Planning v0 audit pack",
+      "status": "addressed_planning_blocked_connector_approval_pending",
+      "notes": "Addressed by control/audits/github-releases-connector-runtime-planning-v0/github_releases_connector_runtime_planning_report.json. Planning-only; no GitHub API calls, connector runtime, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.",
+      "addressed_by": "control/audits/github-releases-connector-runtime-planning-v0/github_releases_connector_runtime_planning_report.json"
     }
   ]
 }
