@@ -486,3 +486,9 @@ These are contract-only/source-page governance checks. They make no network call
 
 `control/audits/result-merge-deduplication-contract-v0/` records the contract-only result merge/deduplication pack. It makes no production-readiness, ranking, merge, suppression, or mutation claim.
 <!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
+
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-START -->
+## P84 Evidence-Weighted Ranking Contract v0
+
+Audit pack: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json`. Contract-only; no runtime ranking, public search ordering change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, or index/cache/ledger mutation.
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
