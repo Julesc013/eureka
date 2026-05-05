@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "evidence-ledger-dry-run-scoped-absence-v0",
+  "candidate_kind": "evidence_ledger_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p99_evidence_ledger_dry_run_example_builder_v0",
+  "evidence_kind": "scoped_absence_observation",
+  "claim_kind": "scoped_absence_claim",
+  "source_family": "local_fixture",
+  "provenance_status": "fixture_backed",
+  "review_status": "review_required",
+  "privacy_status": "public_safe",
+  "public_safety_status": "review_required",
+  "rights_risk_status": "review_required",
+  "promotion_readiness": "review_required",
+  "source_ref": {
+    "source_id": "synthetic-local-absence-fixture",
+    "source_label": "Synthetic scoped absence fixture",
+    "source_status": "approval_required"
+  },
+  "provenance_ref": {
+    "provenance_id": "synthetic-scoped-absence-fixture-v0",
+    "provenance_status": "fixture_backed"
+  },
+  "claim": {
+    "claim_value": {
+      "absence_status": "no_verified_result",
+      "summary": "Synthetic scoped absence claim for one fixture scope only."
+    },
+    "claim_scope": "synthetic_fixture_scope",
+    "global_absence_claimed": false,
+    "accepted_as_truth": false
+  },
+  "observation": {
+    "summary_text": "Synthetic scoped absence observation; live sources were not checked.",
+    "raw_payload_included": false,
+    "snippet_public_safe": true
+  },
+  "candidate_effects": {
+    "evidence_ledger_candidate_effect": "scoped_absence_observation_candidate",
+    "source_cache_effect": "none_now",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Scoped absence is not global absence and cannot be promoted without separate review."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_evidence_ledger_written": false,
+    "evidence_ledger_mutated": false,
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "claim_accepted_as_truth": false,
+    "promotion_decision_created": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No global absence claim, public-search mutation, or live source fanout is represented."
+  ]
+}

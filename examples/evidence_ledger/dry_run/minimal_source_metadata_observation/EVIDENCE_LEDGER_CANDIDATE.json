@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "evidence-ledger-dry-run-source-metadata-v0",
+  "candidate_kind": "evidence_ledger_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p99_evidence_ledger_dry_run_example_builder_v0",
+  "evidence_kind": "source_metadata_observation",
+  "claim_kind": "metadata_claim",
+  "source_family": "internet_archive",
+  "provenance_status": "source_cache_candidate",
+  "review_status": "review_required",
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "rights_risk_status": "metadata_only",
+  "promotion_readiness": "review_required",
+  "source_ref": {
+    "source_id": "synthetic-internet-archive-source",
+    "source_label": "Synthetic Internet Archive metadata source",
+    "source_status": "approval_required"
+  },
+  "provenance_ref": {
+    "provenance_id": "synthetic-source-cache-candidate-source-metadata-v0",
+    "provenance_status": "source_cache_candidate"
+  },
+  "claim": {
+    "claim_value": "Synthetic source metadata observation describes a public-safe metadata summary.",
+    "claim_scope": "metadata_summary",
+    "global_absence_claimed": false,
+    "accepted_as_truth": false
+  },
+  "observation": {
+    "summary_text": "Synthetic observation over source metadata fields only.",
+    "raw_payload_included": false,
+    "snippet_public_safe": true
+  },
+  "candidate_effects": {
+    "evidence_ledger_candidate_effect": "source_metadata_observation_candidate",
+    "source_cache_effect": "none_now",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Dry-run example only; evidence observations are not truth and no ledger record is written."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_evidence_ledger_written": false,
+    "evidence_ledger_mutated": false,
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "claim_accepted_as_truth": false,
+    "promotion_decision_created": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No live source, connector, source-cache write, evidence-ledger write, or promotion is involved."
+  ]
+}

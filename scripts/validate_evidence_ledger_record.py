@@ -163,7 +163,7 @@ def validate_record(payload: Mapping[str, Any], errors: list[str], warnings: lis
 def validate_all_examples(strict: bool = False) -> dict[str, Any]:
     results = []
     errors: list[str] = []
-    for root in sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir()):
+    for root in sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir() and (path / RECORD_FILE).is_file()):
         result = validate_record_path(root / RECORD_FILE, record_root=root, strict=True or strict)
         result["record_root"] = str(root.relative_to(REPO_ROOT))
         results.append(result)

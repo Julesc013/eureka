@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "evidence-ledger-dry-run-capture-presence-v0",
+  "candidate_kind": "evidence_ledger_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p99_evidence_ledger_dry_run_example_builder_v0",
+  "evidence_kind": "capture_presence_observation",
+  "claim_kind": "source_presence_claim",
+  "source_family": "wayback_cdx_memento",
+  "provenance_status": "source_cache_candidate",
+  "review_status": "review_required",
+  "privacy_status": "public_safe",
+  "public_safety_status": "public_safe",
+  "rights_risk_status": "source_terms_apply",
+  "promotion_readiness": "review_required",
+  "source_ref": {
+    "source_id": "synthetic-wayback-capture-source",
+    "source_label": "Synthetic Wayback capture metadata source",
+    "source_status": "approval_required"
+  },
+  "provenance_ref": {
+    "provenance_id": "synthetic-source-cache-candidate-capture-v0",
+    "provenance_status": "source_cache_candidate"
+  },
+  "claim": {
+    "claim_value": "Synthetic capture metadata reports a public-safe URI label was present in a fixture listing.",
+    "claim_scope": "capture_metadata_summary",
+    "global_absence_claimed": false,
+    "accepted_as_truth": false
+  },
+  "observation": {
+    "summary_text": "Synthetic capture presence observation with no replay or archived content fetch.",
+    "raw_payload_included": false,
+    "snippet_public_safe": true
+  },
+  "candidate_effects": {
+    "evidence_ledger_candidate_effect": "capture_presence_observation_candidate",
+    "source_cache_effect": "none_now",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Capture presence is scoped metadata only and does not prove safety, rights, or global availability."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_evidence_ledger_written": false,
+    "evidence_ledger_mutated": false,
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "claim_accepted_as_truth": false,
+    "promotion_decision_created": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No CDX, Memento, capture replay, WARC read, or arbitrary URL fetch is represented."
+  ]
+}

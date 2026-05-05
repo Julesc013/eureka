@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "candidate_id": "evidence-ledger-dry-run-conflict-v0",
+  "candidate_kind": "evidence_ledger_candidate",
+  "status": "synthetic_example",
+  "created_by_tool": "p99_evidence_ledger_dry_run_example_builder_v0",
+  "evidence_kind": "conflict_observation",
+  "claim_kind": "conflict_claim",
+  "source_family": "local_fixture",
+  "provenance_status": "fixture_backed",
+  "review_status": "conflict_review_required",
+  "privacy_status": "public_safe",
+  "public_safety_status": "review_required",
+  "rights_risk_status": "review_required",
+  "promotion_readiness": "review_required",
+  "source_ref": {
+    "source_id": "synthetic-local-conflict-fixture",
+    "source_label": "Synthetic conflicting claim fixture",
+    "source_status": "approval_required"
+  },
+  "provenance_ref": {
+    "provenance_id": "synthetic-conflict-fixture-v0",
+    "provenance_status": "fixture_backed"
+  },
+  "claim": {
+    "claim_value": "Synthetic conflicting claim indicates two candidate observations disagree.",
+    "claim_scope": "conflict_summary",
+    "global_absence_claimed": false,
+    "accepted_as_truth": false
+  },
+  "observation": {
+    "summary_text": "Synthetic conflict observation; conflict must remain visible and review-gated.",
+    "raw_payload_included": false,
+    "snippet_public_safe": true
+  },
+  "candidate_effects": {
+    "evidence_ledger_candidate_effect": "conflict_observation_candidate",
+    "source_cache_effect": "none_now",
+    "candidate_index_effect": "none_now",
+    "public_index_effect": "none_now",
+    "master_index_effect": "none_now"
+  },
+  "limitations": [
+    "Conflict observation does not resolve the conflict, suppress alternatives, or promote a winner."
+  ],
+  "hard_booleans": {
+    "local_dry_run": true,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "connector_runtime_executed": false,
+    "source_sync_worker_executed": false,
+    "authoritative_evidence_ledger_written": false,
+    "evidence_ledger_mutated": false,
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false,
+    "public_search_runtime_mutated": false,
+    "claim_accepted_as_truth": false,
+    "promotion_decision_created": false,
+    "telemetry_exported": false,
+    "credentials_used": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false
+  },
+  "notes": [
+    "No destructive merge, candidate promotion, or master-index mutation is represented."
+  ]
+}
