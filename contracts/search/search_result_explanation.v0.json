@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "search_result_explanation.v0",
+  "title": "Search Result Explanation Contract v0",
+  "status": "contract_only",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "search_result_explanation_id",
+    "search_result_explanation_kind",
+    "status",
+    "created_by_tool",
+    "explanation_scope",
+    "explained_result",
+    "query_interpretation",
+    "match_and_recall",
+    "source_coverage",
+    "evidence_and_provenance",
+    "identity_grouping_deduplication",
+    "ranking_relationship",
+    "compatibility",
+    "absence_near_miss_gaps",
+    "action_safety",
+    "rights_risk",
+    "user_facing_summary",
+    "detailed_components",
+    "api_projection",
+    "static_lite_text_projection",
+    "privacy",
+    "limitations",
+    "no_truth_guarantees",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes",
+    "runtime_explanation_implemented",
+    "explanation_generated_by_runtime",
+    "explanation_applied_to_live_search",
+    "public_search_response_changed",
+    "public_search_order_changed",
+    "hidden_score_used",
+    "hidden_suppression_performed",
+    "result_suppressed",
+    "model_call_performed",
+    "AI_generated_answer",
+    "candidate_promotion_performed",
+    "ranking_applied_to_live_search",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "public_index_mutated",
+    "local_index_mutated",
+    "master_index_mutated",
+    "live_source_called",
+    "external_calls_performed",
+    "downloads_enabled",
+    "installs_enabled",
+    "execution_enabled",
+    "telemetry_exported"
+  ],
+  "properties": {
+    "search_result_explanation_kind": {
+      "const": "search_result_explanation"
+    },
+    "status": {
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "fixture_explanation",
+        "recorded_fixture_explanation",
+        "candidate_explanation",
+        "review_required",
+        "runtime_future",
+        "rejected_by_policy"
+      ]
+    },
+    "detailed_components": {
+      "type": "array",
+      "items": {
+        "$ref": "search_result_explanation_component.v0.json"
+      }
+    },
+    "runtime_explanation_implemented": {
+      "const": false
+    },
+    "explanation_applied_to_live_search": {
+      "const": false
+    },
+    "public_search_response_changed": {
+      "const": false
+    },
+    "public_search_order_changed": {
+      "const": false
+    },
+    "hidden_score_used": {
+      "const": false
+    },
+    "model_call_performed": {
+      "const": false
+    }
+  },
+  "additionalProperties": true,
+  "notes": [
+    "Contract-only P96 schema. It defines future public-safe explanation records only.",
+    "It does not implement runtime explanation generation or mutate public search behavior."
+  ]
+}

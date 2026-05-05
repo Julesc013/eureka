@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "search_result_explanation_component.v0",
+  "title": "Search Result Explanation Component Contract v0",
+  "status": "contract_only",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "component_id",
+    "component_kind",
+    "component_type",
+    "status",
+    "public_user_text",
+    "audit_text",
+    "evidence_refs",
+    "source_refs",
+    "confidence",
+    "uncertainty",
+    "limitations",
+    "privacy",
+    "no_truth_guarantees",
+    "component_claimed_as_truth",
+    "hidden_from_user",
+    "private_data_included",
+    "raw_payload_included"
+  ],
+  "properties": {
+    "component_kind": {
+      "const": "search_result_explanation_component"
+    },
+    "component_type": {
+      "enum": [
+        "query_interpretation",
+        "lexical_match",
+        "phrase_match",
+        "identifier_match",
+        "alias_match",
+        "source_match",
+        "metadata_field_match",
+        "compatibility_match",
+        "representation_match",
+        "member_match",
+        "evidence_strength",
+        "provenance_strength",
+        "source_coverage",
+        "ranking_reason",
+        "grouping_reason",
+        "identity_reason",
+        "conflict_warning",
+        "candidate_warning",
+        "absence_explanation",
+        "near_miss_explanation",
+        "gap_explanation",
+        "action_safety",
+        "rights_risk_caution",
+        "privacy_redaction_notice",
+        "not_checked_notice",
+        "unknown"
+      ]
+    },
+    "component_claimed_as_truth": {
+      "const": false
+    },
+    "hidden_from_user": {
+      "const": false
+    },
+    "private_data_included": {
+      "const": false
+    },
+    "raw_payload_included": {
+      "const": false
+    }
+  },
+  "additionalProperties": true,
+  "notes": [
+    "Contract-only P96 schema. It defines future public-safe explanation records only.",
+    "It does not implement runtime explanation generation or mutate public search behavior."
+  ]
+}

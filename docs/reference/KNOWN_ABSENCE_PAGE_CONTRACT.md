@@ -113,3 +113,11 @@ Future public search, result merge groups, object/source/comparison pages, and r
 
 P85 adds a contract-only compatibility-aware ranking layer. It defines public-safe target profiles, compatibility factors, cautious explanations, no installability without evidence, no emulator/VM or package-manager launch, no runtime ranking, no public search order change, no hidden suppression, and no index/cache/ledger/candidate/master-index mutation.
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+Search Result Explanation Contract v0 is contract-only. It defines future evidence-first explanations for why a result appeared, what matched, what evidence/provenance/source/identity/ranking/compatibility/gap/action posture applies, and what must not be claimed.
+
+No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

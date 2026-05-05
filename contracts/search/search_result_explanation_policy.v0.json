@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "search_result_explanation_policy.v0",
+  "title": "Search Result Explanation Policy Contract v0",
+  "status": "contract_only",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "policy_kind",
+    "status",
+    "required_components",
+    "forbidden_claims",
+    "privacy_policy",
+    "copy_policy",
+    "projection_policy",
+    "runtime_policy",
+    "mutation_policy",
+    "notes",
+    "runtime_explanation_enabled",
+    "hidden_scores_allowed",
+    "result_suppression_without_explanation_allowed",
+    "truth_claim_allowed_without_review",
+    "rights_clearance_claim_allowed",
+    "malware_safety_claim_allowed",
+    "installability_claim_allowed_without_evidence"
+  ],
+  "properties": {
+    "policy_kind": {
+      "const": "search_result_explanation_policy"
+    },
+    "status": {
+      "enum": [
+        "contract_only",
+        "runtime_future",
+        "disabled"
+      ]
+    },
+    "runtime_explanation_enabled": {
+      "const": false
+    },
+    "hidden_scores_allowed": {
+      "const": false
+    },
+    "result_suppression_without_explanation_allowed": {
+      "const": false
+    },
+    "truth_claim_allowed_without_review": {
+      "const": false
+    }
+  },
+  "additionalProperties": true,
+  "notes": [
+    "Contract-only P96 schema. It defines future public-safe explanation records only.",
+    "It does not implement runtime explanation generation or mutate public search behavior."
+  ]
+}

@@ -16,3 +16,9 @@ Search contracts define governed public-search presentation and future search be
 - `compatibility_explanation.v0.json` defines cautious user-facing explanations for compatibility fit, unknowns, conflicts, and disabled actions.
 - `compatibility_factor.v0.json` lists the compatibility factor item shape.
 <!-- P85-COMPATIBILITY-AWARE-RANKING-END -->
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+P96 adds contract-only search result explanation schemas for future result-level explanations. They define evidence-first, public-safe, user-readable and audit-readable explanation records, components, and policy gates. No runtime explanation generator, hidden score, result suppression, public search response change, ranking change, model call, telemetry, source/evidence/candidate/index mutation, or production search behavior is added.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

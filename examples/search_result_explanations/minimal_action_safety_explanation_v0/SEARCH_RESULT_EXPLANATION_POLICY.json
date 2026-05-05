@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "search-result-explanation-policy-v0",
+  "policy_kind": "search_result_explanation_policy",
+  "status": "contract_only",
+  "required_components": [
+    "query_interpretation",
+    "lexical_match",
+    "source_coverage",
+    "evidence_strength",
+    "action_safety",
+    "rights_risk_caution"
+  ],
+  "forbidden_claims": [
+    "rights_clearance",
+    "malware_safety",
+    "installability_without_evidence",
+    "dependency_safety",
+    "global_absence",
+    "truth_without_review",
+    "hidden_score",
+    "hidden_suppression"
+  ],
+  "privacy_policy": {
+    "raw_query_in_explanation_allowed": false,
+    "private_data_in_public_explanation_allowed": false,
+    "redaction_required": true
+  },
+  "copy_policy": {
+    "plain_language_required": true,
+    "no_marketing_claims": true,
+    "no_false_certainty": true,
+    "mention_unchecked_live_sources": true
+  },
+  "projection_policy": {
+    "api_projection_future_only": true,
+    "static_lite_text_projection_future": true,
+    "old_client_safe": true
+  },
+  "runtime_policy": {
+    "runtime_explanation_enabled": false,
+    "model_calls_allowed": false,
+    "public_search_response_change_allowed_now": false,
+    "public_search_order_change_allowed_now": false
+  },
+  "mutation_policy": {
+    "source_cache_mutation_allowed_now": false,
+    "evidence_ledger_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "public_index_mutation_allowed_now": false,
+    "master_index_mutation_allowed_now": false
+  },
+  "notes": [
+    "Contract-only P96 policy. Future runtime must pass separate approval gates."
+  ],
+  "runtime_explanation_enabled": false,
+  "hidden_scores_allowed": false,
+  "result_suppression_without_explanation_allowed": false,
+  "truth_claim_allowed_without_review": false,
+  "rights_clearance_claim_allowed": false,
+  "malware_safety_claim_allowed": false,
+  "installability_claim_allowed_without_evidence": false
+}

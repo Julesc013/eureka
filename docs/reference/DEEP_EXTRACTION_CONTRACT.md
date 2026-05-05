@@ -24,3 +24,11 @@ Deep extraction is metadata-first. Member enumeration is not payload trust. Mani
 ## Relationships
 
 Future extraction summaries may create reviewed source-cache candidates, evidence-ledger observation candidates, and candidate-index records only after separate runtime approvals. Public search, object pages, comparison pages, and result explanations may later cite reviewed summaries and gaps, but must never trigger live extraction from a public request.
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+Search Result Explanation Contract v0 is contract-only. It defines future evidence-first explanations for why a result appeared, what matched, what evidence/provenance/source/identity/ranking/compatibility/gap/action posture applies, and what must not be claimed.
+
+No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

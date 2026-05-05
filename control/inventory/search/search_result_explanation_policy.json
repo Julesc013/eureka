@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "search_result_explanation_policy_v0",
+  "status": "contract_only",
+  "runtime_explanation_implemented": false,
+  "persistent_explanation_store_implemented": false,
+  "explanation_applied_to_live_search": false,
+  "public_search_response_changed": false,
+  "public_search_order_changed": false,
+  "hidden_scores_allowed": false,
+  "hidden_suppression_allowed": false,
+  "result_suppression_without_explanation_allowed": false,
+  "model_calls_allowed": false,
+  "AI_answer_generation_allowed": false,
+  "telemetry_enabled": false,
+  "candidate_promotion_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "raw_query_in_explanation_allowed": false,
+  "private_data_in_public_explanation_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "malware_safety_claim_allowed": false,
+  "installability_claim_allowed_without_evidence": false,
+  "live_source_call_allowed": false,
+  "required_components": [
+    "query_interpretation",
+    "lexical_match",
+    "source_coverage",
+    "evidence_strength",
+    "action_safety",
+    "rights_risk_caution"
+  ],
+  "next_runtime_branch_recommendation": "P106 Search Result Explanation Runtime Planning v0 only after public search runtime gate",
+  "notes": [
+    "P96 is contract-only and adds no runtime explanation behavior.",
+    "Future runtime must preserve no hidden scores, no suppression without explanation, no truth overclaim, and no mutation."
+  ]
+}

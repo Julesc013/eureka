@@ -35,3 +35,11 @@ No runtime ranking, no public search order change, no hidden suppression, no pop
 ## Relationships
 
 P85 builds on evidence-weighted ranking, result merge/deduplication, cross-source identity resolution, object pages, source pages, comparison pages, public search result cards, public index contracts, source cache/evidence ledger contracts, candidate index, and promotion policy. Future runtime planning remains gated by hosted deployment evidence, eval evidence, compatibility evidence packs, and explicit approval.
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+Search Result Explanation Contract v0 is contract-only. It defines future evidence-first explanations for why a result appeared, what matched, what evidence/provenance/source/identity/ranking/compatibility/gap/action posture applies, and what must not be claimed.
+
+No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

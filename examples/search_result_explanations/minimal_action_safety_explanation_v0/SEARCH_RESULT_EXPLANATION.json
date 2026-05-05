@@ -1,0 +1,552 @@
+{
+  "schema_version": "0.1.0",
+  "search_result_explanation_id": "minimal-action-safety-explanation-v0",
+  "search_result_explanation_kind": "search_result_explanation",
+  "status": "public_safe_example",
+  "created_by_tool": "p96_search_result_explanation_contract_v0",
+  "explanation_scope": {
+    "scope_kind": "public_search_result",
+    "search_mode": "fixture_example",
+    "explanation_basis": "synthetic_example",
+    "limitations": [
+      "Synthetic example only; no runtime search response was changed."
+    ]
+  },
+  "explained_result": {
+    "result_ref": "synthetic-result-minimal-action-safety-explanation-v0",
+    "result_title": "Synthetic Action Safety Explanation",
+    "result_kind": "synthetic_example",
+    "result_status": "fixture_backed",
+    "result_lane": "demo",
+    "limitations": [
+      "Not a live public search result.",
+      "No source truth is claimed."
+    ]
+  },
+  "query_interpretation": {
+    "raw_query_included": false,
+    "normalized_query_included": true,
+    "normalized_query_public_safe": "example result",
+    "interpreted_intent": "find_software",
+    "extracted_hints": [
+      "public-safe synthetic title hint"
+    ],
+    "redacted_hints": [],
+    "interpretation_confidence": "medium",
+    "interpretation_not_truth": true,
+    "limitations": [
+      "Raw query text is omitted from the example."
+    ]
+  },
+  "match_and_recall": {
+    "match_types": [
+      "lexical_match"
+    ],
+    "matched_fields": [
+      "title",
+      "identifier"
+    ],
+    "unmatched_terms": [],
+    "recall_scope": "public_index_only",
+    "exact_identifier_match_present": false,
+    "lexical_match_present": true,
+    "semantic_match_present_future": false,
+    "compatibility_match_present": false,
+    "member_match_present": false,
+    "match_strength": "medium",
+    "match_strength_not_truth": true,
+    "limitations": [
+      "Live sources were not checked."
+    ]
+  },
+  "source_coverage": {
+    "checked_sources": [
+      {
+        "source_id": "synthetic-source",
+        "source_family": "fixture",
+        "source_status": "synthetic_example",
+        "checked_scope": "fixture metadata only",
+        "evidence_refs": [
+          "synthetic-evidence-ref"
+        ],
+        "limitations": [
+          "Synthetic fixture source only."
+        ]
+      }
+    ],
+    "not_checked_sources": [
+      {
+        "source_family": "live_connectors",
+        "reason_not_checked": "live_connector_disabled",
+        "limitations": [
+          "P96 does not enable live source fanout."
+        ]
+      }
+    ],
+    "source_coverage_status": "fixture_backed",
+    "source_gap_types": [
+      "live_sources_disabled"
+    ],
+    "source_coverage_not_exhaustive": true,
+    "limitations": [
+      "Fixture coverage is not exhaustive."
+    ]
+  },
+  "evidence_and_provenance": {
+    "evidence_summary": "Synthetic evidence reference supports why this example would be explained.",
+    "provenance_summary": "Public-safe synthetic example provenance.",
+    "evidence_refs": [
+      "synthetic-evidence-ref"
+    ],
+    "provenance_refs": [
+      "synthetic-provenance-ref"
+    ],
+    "evidence_strength": "medium",
+    "provenance_strength": "medium",
+    "evidence_not_truth": true,
+    "provenance_not_truth": true,
+    "accepted_as_truth": false,
+    "limitations": [
+      "Evidence examples are not source-cache or evidence-ledger records."
+    ]
+  },
+  "identity_grouping_deduplication": {
+    "identity_relation_explained": "No runtime identity resolver was applied.",
+    "grouping_relation_explained": "No runtime group was created.",
+    "deduplication_relation_explained": "No destructive deduplication occurred.",
+    "identity_assessment_refs": [],
+    "result_merge_group_refs": [],
+    "duplicate_or_variant_status": "not_grouped",
+    "alternatives_preserved": true,
+    "conflicts_hidden": false,
+    "destructive_merge_performed": false,
+    "limitations": [
+      "Identity, grouping, and deduplication remain future contract relationships."
+    ]
+  },
+  "ranking_relationship": {
+    "ranking_explanation_available": false,
+    "ranking_contract_refs": [
+      "evidence_weighted_ranking_contract_v0",
+      "compatibility_aware_ranking_contract_v0"
+    ],
+    "ranking_factors_summarized": [
+      "evidence presence",
+      "source coverage caveat",
+      "action safety"
+    ],
+    "ranking_applied_to_live_search": false,
+    "public_search_order_changed": false,
+    "hidden_score_used": false,
+    "numeric_score_publication_policy": "no_numeric_score_v0",
+    "ranking_not_truth": true,
+    "limitations": [
+      "P96 does not run ranking or change result order."
+    ]
+  },
+  "compatibility": {
+    "compatibility_explanation_available": false,
+    "target_profile_ref": "synthetic-profile-ref",
+    "compatibility_status": "unknown",
+    "compatibility_evidence_refs": [],
+    "compatibility_evidence_strength": "unknown",
+    "compatibility_not_truth": true,
+    "installability_claimed": false,
+    "dependency_safety_claimed": false,
+    "limitations": [
+      "No installability or dependency-safety claim is made."
+    ]
+  },
+  "absence_near_miss_gaps": {
+    "absence_status": "not_absent",
+    "global_absence_claimed": false,
+    "near_miss_refs": [],
+    "gaps": [
+      {
+        "gap_type": "live_probe_disabled",
+        "user_visible_explanation": "Live sources were not checked for this explanation example.",
+        "future_next_step": "Future runtime may cite reviewed cache or evidence after approval.",
+        "limitations": [
+          "No live source fanout in P96."
+        ]
+      }
+    ],
+    "checked_scope": "synthetic fixture only",
+    "not_checked_scope": "live sources, connectors, and external baselines",
+    "absence_not_truth": true,
+    "limitations": [
+      "No global absence claim is made."
+    ]
+  },
+  "action_safety": {
+    "safe_actions": [
+      "inspect_metadata",
+      "view_sources",
+      "view_evidence",
+      "compare",
+      "cite"
+    ],
+    "disabled_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "mirror",
+      "arbitrary_url_fetch",
+      "package_manager_invoke",
+      "emulator_launch",
+      "VM_launch"
+    ],
+    "action_safety_status": "risky_actions_disabled",
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "package_manager_invoked": false,
+    "emulator_vm_launch_enabled": false,
+    "limitations": [
+      "Unsafe actions remain disabled."
+    ]
+  },
+  "rights_risk": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "executable_reference",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "dependency_safety_claimed": false,
+    "installability_claimed": false,
+    "risk_caution_required": true,
+    "public_user_caution": "This explanation is metadata-only and does not clear rights, safety, or installability.",
+    "limitations": [
+      "Source terms and safety review remain separate."
+    ]
+  },
+  "user_facing_summary": {
+    "summary_text": "This synthetic result appears because public-safe metadata matched the example title and identifier hints.",
+    "why_this_result": "The example matched local fixture metadata only.",
+    "evidence_caveat": "Evidence is explanatory and not accepted as truth.",
+    "source_caveat": "Live sources were not checked.",
+    "compatibility_caveat": "Compatibility is unknown unless separately evidenced.",
+    "action_caveat": "Only inspect, compare, view evidence, view sources, and cite actions are safe here.",
+    "gap_caveat": "Missing live-source coverage is shown as a gap.",
+    "plain_language_required": true,
+    "no_marketing_claims": true,
+    "no_unscoped_superiority_claims": true,
+    "limitations": [
+      "User-facing copy must stay cautious and public-safe."
+    ]
+  },
+  "detailed_components": [
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-query",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "query_interpretation",
+      "status": "synthetic_example",
+      "public_user_text": "The query was interpreted as a public-safe software lookup.",
+      "audit_text": "Synthetic normalized intent was used; raw query text is not included.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-match",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "lexical_match",
+      "status": "synthetic_example",
+      "public_user_text": "The title or identifier matched fixture metadata.",
+      "audit_text": "Lexical and identifier-like matching is explanation context, not truth.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-source",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "source_coverage",
+      "status": "synthetic_example",
+      "public_user_text": "Only fixture or public-index scope was checked.",
+      "audit_text": "Coverage is non-exhaustive and live connectors remain disabled.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-evidence",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "evidence_strength",
+      "status": "synthetic_example",
+      "public_user_text": "The example has a public-safe evidence reference.",
+      "audit_text": "Evidence reference is synthetic and not an accepted source-cache or ledger record.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-action",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "action_safety",
+      "status": "synthetic_example",
+      "public_user_text": "Only inspect, compare, cite, and evidence/source viewing actions are in scope.",
+      "audit_text": "Download, install, execute, upload, mirror, package manager, emulator, and VM actions are disabled.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-risk",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "rights_risk_caution",
+      "status": "synthetic_example",
+      "public_user_text": "This explanation does not clear rights, malware safety, dependency safety, or installability.",
+      "audit_text": "Rights and risk posture remains cautionary metadata-only explanation.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    },
+    {
+      "schema_version": "0.1.0",
+      "component_id": "minimal-action-safety-explanation-v0-safety",
+      "component_kind": "search_result_explanation_component",
+      "component_type": "not_checked_notice",
+      "status": "synthetic_example",
+      "public_user_text": "Executable safety, rights, and installability were not checked.",
+      "audit_text": "Action safety remains inspect-only.",
+      "evidence_refs": [
+        "synthetic-evidence-ref"
+      ],
+      "source_refs": [
+        "synthetic-source-ref"
+      ],
+      "confidence": "medium",
+      "uncertainty": "known limits",
+      "limitations": [
+        "Synthetic example only.",
+        "Not generated by runtime."
+      ],
+      "privacy": {
+        "privacy_classification": "public_safe_example",
+        "publishable": true
+      },
+      "no_truth_guarantees": [
+        "This component is explanatory, not truth acceptance."
+      ],
+      "component_claimed_as_truth": false,
+      "hidden_from_user": false,
+      "private_data_included": false,
+      "raw_payload_included": false
+    }
+  ],
+  "api_projection": {
+    "response_kind": "search_result_explanation_response",
+    "route_future": "/api/v1/result/{result_id}/explanation",
+    "implemented_now": false,
+    "compatible_with_public_search_response": true,
+    "included_sections": [
+      "summary",
+      "components",
+      "limitations",
+      "safe_actions"
+    ],
+    "limitations": [
+      "No runtime route is implemented in P96."
+    ]
+  },
+  "static_lite_text_projection": {
+    "static_demo_available": false,
+    "lite_text_available_future": true,
+    "old_client_safe": true,
+    "no_js_required": true,
+    "concise_summary_available": true,
+    "detailed_audit_view_available_future": true,
+    "generated_static_artifact": false,
+    "limitations": [
+      "P96 does not generate static explanation pages."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "raw_query_included": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "contains_local_machine_fingerprint": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic public-safe example.",
+      "No raw query or private path is included."
+    ]
+  },
+  "limitations": [
+    "Contract-only P96 example.",
+    "No runtime explanation generation.",
+    "No mutation."
+  ],
+  "no_truth_guarantees": [
+    "Explanation is not source truth.",
+    "Ranking is not truth.",
+    "Evidence is not accepted truth."
+  ],
+  "no_runtime_guarantees": [
+    "No runtime explanation generator exists.",
+    "No public search response is changed."
+  ],
+  "no_mutation_guarantees": [
+    "No source cache, evidence ledger, candidate, public, local, or master index mutation occurs."
+  ],
+  "notes": [
+    "Synthetic public-safe P96 example."
+  ],
+  "runtime_explanation_implemented": false,
+  "explanation_generated_by_runtime": false,
+  "explanation_applied_to_live_search": false,
+  "public_search_response_changed": false,
+  "public_search_order_changed": false,
+  "hidden_score_used": false,
+  "hidden_suppression_performed": false,
+  "result_suppressed": false,
+  "model_call_performed": false,
+  "AI_generated_answer": false,
+  "candidate_promotion_performed": false,
+  "ranking_applied_to_live_search": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "telemetry_exported": false
+}
