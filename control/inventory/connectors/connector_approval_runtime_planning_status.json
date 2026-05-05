@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "inventory_id": "connector_approval_runtime_planning_status_v0",
+  "status": "audited",
+  "connectors": {
+    "internet_archive_metadata": "approval_gated",
+    "wayback_cdx_memento": "approval_gated",
+    "github_releases": "approval_gated",
+    "pypi_metadata": "approval_gated",
+    "npm_metadata": "approval_gated",
+    "software_heritage": "approval_gated"
+  },
+  "aggregate_status": "approval_gated",
+  "live_connector_runtime_enabled": false,
+  "public_search_connector_fanout_enabled": false,
+  "external_calls_performed": false,
+  "credentials_configured": false,
+  "tokens_enabled": false,
+  "downloads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "source_cache_authoritative_writes_enabled": false,
+  "evidence_ledger_authoritative_writes_enabled": false,
+  "candidate_index_mutation_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "next_recommended_branch": "P102 Manual Observation Batch 0 Follow-up Plan v0 if manual observations remain pending",
+  "notes": [
+    "P101 is audit-only.",
+    "Approval packs and runtime planning packs are present, but connector approval remains pending.",
+    "No live connector runtime, public-search fanout, credentials, downloads, installs, execution, telemetry, source-cache/evidence-ledger authoritative writes, or index mutation is enabled."
+  ]
+}
