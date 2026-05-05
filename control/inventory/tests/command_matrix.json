@@ -431,7 +431,12 @@
         "page_local_dry_run_render_preview_json",
         "page_local_dry_run_report_validator",
         "page_local_dry_run_report_validator_json",
-        "page_local_dry_run_runtime_tests"
+        "page_local_dry_run_runtime_tests",
+        "pack_import_local_dry_run_runtime_tests",
+        "pack_import_dry_run_report_validator_json",
+        "pack_import_dry_run_report_validator",
+        "pack_import_local_dry_run_no_validators_json",
+        "pack_import_local_dry_run_json"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -876,7 +881,12 @@
         "page_local_dry_run_render_preview_json",
         "page_local_dry_run_report_validator",
         "page_local_dry_run_report_validator_json",
-        "page_local_dry_run_runtime_tests"
+        "page_local_dry_run_runtime_tests",
+        "pack_import_local_dry_run_runtime_tests",
+        "pack_import_dry_run_report_validator_json",
+        "pack_import_dry_run_report_validator",
+        "pack_import_local_dry_run_no_validators_json",
+        "pack_import_local_dry_run_json"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1654,6 +1664,7 @@
     "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation. Command strings: python scripts/validate_public_search_runtime_integration_audit.py; python scripts/validate_public_search_runtime_integration_audit.py --json; python scripts/report_public_search_runtime_integration_status.py --json.",
     "P101 Connector Approval and Runtime Planning Audit commands are stdlib-only audit/report checks; they perform no connector runtime implementation, live source calls, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, or mutation. Command strings: python scripts/validate_connector_approval_runtime_planning_audit.py; python scripts/validate_connector_approval_runtime_planning_audit.py --json; python scripts/report_connector_approval_runtime_status.py --json.",
     "P102 Manual Observation Batch 0 Follow-up commands are stdlib-only planning/read-only reporting checks; they perform no external observations, browsing, scraping, APIs, fabricated results, index/cache/ledger/candidate mutation, telemetry, accounts, uploads, or downloads. Command strings: python scripts/validate_manual_observation_batch_0_follow_up.py; python scripts/validate_manual_observation_batch_0_follow_up.py --json; python scripts/report_manual_observation_batch_0_status.py --json.",
-    "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved examples. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json."
+    "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved examples. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json.",
+    "P104 Pack Import Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no authoritative import, real staging/quarantine, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_pack_import_dry_run.py --all-examples --json; python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json; python scripts/validate_pack_import_dry_run_report.py; python scripts/validate_pack_import_dry_run_report.py --json."
   ]
 }

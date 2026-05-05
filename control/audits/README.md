@@ -644,3 +644,14 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   connector execution, candidate promotion, telemetry, credentials, downloads,
   uploads, installs, execution, or index mutation.
 <!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-START -->
+## P104 Pack Import Local Dry-Run Runtime v0
+
+- Audit pack: `control/audits/pack-import-local-dry-run-runtime-v0/`
+- Status: implemented local dry-run only.
+- Boundary: no authoritative import, real staging/quarantine, public
+  contribution intake, upload/admin endpoint, pack execution, URL fetching,
+  promotion decision, accepted record, telemetry, credentials, downloads,
+  installs, or source/evidence/candidate/public/local/master mutation.
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-END -->

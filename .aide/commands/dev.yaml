@@ -1478,3 +1478,18 @@ evidence-ledger reads, live source calls, connector execution, candidate
 promotion, telemetry, credentials, downloads, uploads, installs, execution, or
 index mutation.
 <!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-START -->
+## P104 Pack Import Local Dry-Run Runtime v0
+
+- `python scripts/run_pack_import_dry_run.py --all-examples --json`
+- `python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json`
+- `python scripts/validate_pack_import_dry_run_report.py`
+- `python scripts/validate_pack_import_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks over approved repo
+examples. They add no authoritative import, real staging/quarantine, public
+contribution intake, upload/admin endpoint, pack execution, URL fetching,
+promotion decision, accepted record, telemetry, credentials, downloads,
+installs, or source/evidence/candidate/public/local/master mutation.
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-END -->

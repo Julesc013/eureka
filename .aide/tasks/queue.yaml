@@ -1063,9 +1063,9 @@
     {
       "id": "pack_import_local_dry_run_runtime_v0",
       "title": "P104 Pack Import Local Dry-Run Runtime v0 only after approval",
-      "status": "blocked_pending_operator_approval",
+      "status": "completed_implemented_local_dry_run",
       "priority": 145,
-      "notes": "Future local dry-run runtime only after P94 planning is reviewed, operator approval is explicit, and import path, executable payload, rollback, and mutation boundaries are accepted."
+      "notes": "P104 completed as a local dry-run pack discovery/classification/validator-adapter/report runtime over approved repo examples. No authoritative import, real staging/quarantine, public contribution intake, upload/admin endpoint, pack execution, URL fetching, promotion decision, accepted record creation, telemetry, credentials, downloads, installs, or source/evidence/candidate/public/local/master mutation was added."
     },
     {
       "id": "deep_extraction_runtime_planning_v0",
@@ -1129,6 +1129,13 @@
       "status": "queued_codex_safe_future",
       "priority": 155,
       "notes": "Future contract for static page snapshots after page dry-run and hosted planning review; no generator or public artifacts are implemented by P103."
+    },
+    {
+      "id": "pack_import_quarantine_runtime_planning_v0",
+      "title": "P114 Pack Import Quarantine Runtime Planning v0",
+      "status": "queued_codex_safe_future",
+      "priority": 156,
+      "notes": "Future planning for quarantine/staging runtime after P104 dry-run review and explicit operator approval; no quarantine or staging runtime is implemented by P104."
     }
   ]
 }

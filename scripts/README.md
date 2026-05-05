@@ -1033,3 +1033,18 @@ integration, source-cache or evidence-ledger read, live source call, connector
 execution, candidate promotion, risky action enablement, telemetry, credential,
 download, upload, install, execution, or index mutation behavior.
 <!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-START -->
+## P104 Pack Import Local Dry-Run Runtime v0
+
+- `python scripts/run_pack_import_dry_run.py --all-examples --json`
+- `python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands --json`
+- `python scripts/validate_pack_import_dry_run_report.py`
+- `python scripts/validate_pack_import_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks over approved repo examples.
+They perform no authoritative import, real staging/quarantine, public
+contribution intake, upload/admin endpoint, pack execution, URL fetching,
+promotion decision, accepted record creation, telemetry, credential, download,
+install, or source/evidence/candidate/public/local/master mutation behavior.
+<!-- P104-PACK-IMPORT-LOCAL-DRY-RUN-RUNTIME-END -->
