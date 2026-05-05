@@ -398,3 +398,9 @@ P82 reports identity-resolution governance only. Validation is stdlib-only and l
 
 Report: `control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json`.
 <!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
+
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-START -->
+## P84 Evidence-Weighted Ranking Contract v0
+
+Report: `control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json`.
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->

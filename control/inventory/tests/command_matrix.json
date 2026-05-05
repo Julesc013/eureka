@@ -344,7 +344,15 @@
         "result_merge_deduplication_contract_validator",
         "result_merge_deduplication_contract_validator_json",
         "result_merge_dry_run_json",
-        "result_merge_deduplication_contract_tests"
+        "result_merge_deduplication_contract_tests",
+        "evidence_weighted_ranking_assessment_examples_validator",
+        "evidence_weighted_ranking_assessment_examples_validator_json",
+        "ranking_explanation_examples_validator",
+        "ranking_explanation_examples_validator_json",
+        "evidence_weighted_ranking_contract_validator",
+        "evidence_weighted_ranking_contract_validator_json",
+        "evidence_weighted_ranking_dry_run_json",
+        "evidence_weighted_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -702,7 +710,15 @@
         "result_merge_deduplication_contract_validator",
         "result_merge_deduplication_contract_validator_json",
         "result_merge_dry_run_json",
-        "result_merge_deduplication_contract_tests"
+        "result_merge_deduplication_contract_tests",
+        "evidence_weighted_ranking_assessment_examples_validator",
+        "evidence_weighted_ranking_assessment_examples_validator_json",
+        "ranking_explanation_examples_validator",
+        "ranking_explanation_examples_validator_json",
+        "evidence_weighted_ranking_contract_validator",
+        "evidence_weighted_ranking_contract_validator_json",
+        "evidence_weighted_ranking_dry_run_json",
+        "evidence_weighted_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1334,7 +1350,15 @@
         "result_merge_deduplication_contract_validator",
         "result_merge_deduplication_contract_validator_json",
         "result_merge_dry_run_json",
-        "result_merge_deduplication_contract_tests"
+        "result_merge_deduplication_contract_tests",
+        "evidence_weighted_ranking_assessment_examples_validator",
+        "evidence_weighted_ranking_assessment_examples_validator_json",
+        "ranking_explanation_examples_validator",
+        "ranking_explanation_examples_validator_json",
+        "evidence_weighted_ranking_contract_validator",
+        "evidence_weighted_ranking_contract_validator_json",
+        "evidence_weighted_ranking_dry_run_json",
+        "evidence_weighted_ranking_contract_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1412,6 +1436,7 @@
     "P80 Source Page Contract commands are local-only governance checks. They do not implement runtime pages, connector runtime, source sync execution, call sources, enable downloads/installs/execution, claim source trust, or mutate indexes/cache/ledger/candidates.",
     "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
     "P82 Cross-Source Identity Resolution Contract v0 validation is stdlib-only and contract-only; it adds no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
-    "P83 adds Result Merge and Deduplication v0 contract validators and tests; all are local-only and network-free."
+    "P83 adds Result Merge and Deduplication v0 contract validators and tests; all are local-only and network-free.",
+    "P84 adds Evidence-Weighted Ranking v0 contract validators and tests; all are local-only, network-free, and do not apply runtime ranking or mutate indexes/cache/ledger."
   ]
 }

@@ -909,9 +909,9 @@
     {
       "id": "evidence_weighted_ranking_contract_v0",
       "title": "P84 Evidence-Weighted Ranking Contract v0",
-      "status": "queued_codex_safe_next",
+      "status": "completed_contract_only",
       "priority": 125,
-      "notes": "Next contract after result merge/deduplication; ranking must remain evidence-scoped and non-production until governed."
+      "notes": "P84 completed as contract/schema/validator/example/audit work only; no runtime ranking, public search ordering change, hidden suppression, popularity/telemetry/ad/user-profile ranking, model calls, candidate promotion, source trust, rights clearance, malware safety, or index/cache/ledger mutation was added."
     },
     {
       "id": "pypi_metadata_connector_runtime_planning_v0",
@@ -923,9 +923,9 @@
     {
       "id": "compatibility_aware_ranking_contract_v0",
       "title": "P85 Compatibility-Aware Ranking Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 126,
-      "notes": "Future compatibility ranking contract; unknown compatibility remains honest."
+      "notes": "Expected next contract after evidence-weighted ranking; compatibility ranking must remain scoped, evidence-backed, and non-runtime until governed."
     },
     {
       "id": "npm_metadata_connector_runtime_planning_v0",
@@ -996,6 +996,13 @@
       "status": "queued_codex_safe_future",
       "priority": 134,
       "notes": "Future contract for explaining search result ordering, grouping, evidence, gaps, and safe action posture."
+    },
+    {
+      "id": "public_search_ranking_runtime_planning_v0",
+      "title": "P94 Public Search Ranking Runtime Planning v0 only after contracts and evals",
+      "status": "blocked_pending_contracts_and_evals",
+      "priority": 135,
+      "notes": "Future planning only after evidence-weighted and compatibility-aware ranking contracts plus eval evidence; no runtime ranking until then."
     }
   ]
 }

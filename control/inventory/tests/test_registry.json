@@ -7764,6 +7764,174 @@
       "failure_means": "Result Merge and Deduplication v0 examples, contracts, docs, audit, or no-runtime/no-merge/no-ranking/no-mutation guarantees drifted.",
       "advisory_or_required": "required",
       "notes": "P83 contract-only validation; no runtime result grouping, deduplication, ranking changes, suppression, destructive merge, candidate promotion, live source calls, telemetry, downloads, installs, execution, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_assessment_examples_validator",
+      "label": "Evidence-Weighted Ranking Assessment Examples Validator",
+      "command": "python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_assessment_examples_validator_json",
+      "label": "Evidence-Weighted Ranking Assessment Examples Validator JSON",
+      "command": "python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "ranking_explanation_examples_validator",
+      "label": "Ranking Explanation Examples Validator",
+      "command": "python scripts/validate_ranking_explanation.py --all-examples",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "ranking_explanation_examples_validator_json",
+      "label": "Ranking Explanation Examples Validator JSON",
+      "command": "python scripts/validate_ranking_explanation.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_contract_validator",
+      "label": "Evidence-Weighted Ranking Contract Validator",
+      "command": "python scripts/validate_evidence_weighted_ranking_contract.py",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_contract_validator_json",
+      "label": "Evidence-Weighted Ranking Contract Validator JSON",
+      "command": "python scripts/validate_evidence_weighted_ranking_contract.py --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_dry_run_json",
+      "label": "Evidence-Weighted Ranking Dry Run JSON",
+      "command": "python scripts/dry_run_evidence_weighted_ranking.py --left-title \"Strong evidence result\" --right-title \"Weak evidence result\" --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
+    },
+    {
+      "test_id": "evidence_weighted_ranking_contract_tests",
+      "label": "Evidence-Weighted Ranking Contract Tests",
+      "command": "python -m unittest tests.operations.test_evidence_weighted_ranking_contract tests.scripts.test_validate_evidence_weighted_ranking_assessment tests.scripts.test_validate_ranking_explanation tests.scripts.test_validate_evidence_weighted_ranking_contract tests.scripts.test_dry_run_evidence_weighted_ranking",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "Evidence-Weighted Ranking v0 examples, contracts, docs, audit, or no-runtime/no-ranking-change/no-suppression/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "P84 contract-only validation; no runtime ranking, public search order change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, or index/cache/ledger/candidate/master-index mutation."
     }
   ],
   "notes": [
@@ -7778,6 +7946,7 @@
     "P79 Object Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime object pages, live source calls, downloads, installs, execution, telemetry, object-page store, candidate promotion, or index/cache/ledger/master-index mutation.",
     "P80 Source Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime source pages, connector runtime, source sync execution, live source calls, downloads, mirrors, installs, execution, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
     "P81 Comparison Page Contract v0 validation is stdlib-only and contract-only; it adds no runtime comparison pages, live source calls, source sync execution, winner selection, telemetry, downloads, installs, execution, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
-    "P82 Cross-Source Identity Resolution Contract v0 validation is stdlib-only and contract-only; it adds no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation."
+    "P82 Cross-Source Identity Resolution Contract v0 validation is stdlib-only and contract-only; it adds no runtime identity resolver, destructive merge, record merge, candidate promotion, live source calls, telemetry, source trust claim, or index/cache/ledger/candidate/master-index mutation.",
+    "P84 Evidence-Weighted Ranking Contract v0 validation is stdlib-only and contract-only; it adds no runtime ranking, public search ordering change, hidden suppression, popularity/telemetry/ad/user-profile ranking, candidate promotion, live source calls, model calls, source trust claim, or index/cache/ledger/candidate/master-index mutation."
   ]
 }

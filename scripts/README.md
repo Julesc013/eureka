@@ -814,3 +814,17 @@ These are contract-only identity governance checks. They make no network calls, 
 
 These are contract-only result merge/deduplication checks. They make no network calls, implement no runtime grouping/deduplication, hide no results, change no ranking, merge no records, promote no candidates, mutate no cache/ledger/index, and enable no downloads, installs, or execution.
 <!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
+
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-START -->
+## Evidence-Weighted Ranking Contract v0
+
+- `python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples`
+- `python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples --json`
+- `python scripts/validate_ranking_explanation.py --all-examples`
+- `python scripts/validate_ranking_explanation.py --all-examples --json`
+- `python scripts/validate_evidence_weighted_ranking_contract.py`
+- `python scripts/validate_evidence_weighted_ranking_contract.py --json`
+- `python scripts/dry_run_evidence_weighted_ranking.py --left-title "Strong evidence result" --right-title "Weak evidence result" --json`
+
+These are contract-only checks. They perform no network calls, implement no runtime ranking, change no public search order, suppress no results, promote no candidates, use no popularity/telemetry/ad/user-profile signals, mutate no index/cache/ledger, and enable no downloads, installs, or execution.
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->

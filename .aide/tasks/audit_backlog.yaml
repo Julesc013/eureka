@@ -842,6 +842,13 @@
       "priority": 0,
       "notes": "Addressed by control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json. Contract-only; no runtime grouping/deduplication/ranking/suppression/merge/promotion/mutation.",
       "addressed_by": "control/audits/result-merge-deduplication-contract-v0/result_merge_deduplication_report.json"
+    },
+    {
+      "id": "audit-backlog-evidence-weighted-ranking-contract-v0",
+      "title": "Evidence-Weighted Ranking Contract v0 audit pack",
+      "status": "addressed_contract_only",
+      "notes": "Addressed by control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json. Contract-only; no runtime ranking/order change/suppression/popularity/telemetry/ad/user-profile ranking/promotion/mutation.",
+      "addressed_by": "control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json"
     }
   ]
 }

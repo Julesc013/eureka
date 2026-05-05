@@ -1249,3 +1249,22 @@ notes:
   - id: result_merge_deduplication_contract_tests
     run: python -m unittest tests.operations.test_result_merge_deduplication_contract tests.scripts.test_validate_result_merge_group tests.scripts.test_validate_deduplication_assessment tests.scripts.test_validate_result_merge_deduplication_contract tests.scripts.test_dry_run_result_merge_group
 <!-- P83-RESULT-MERGE-DEDUPLICATION-END -->
+
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-START -->
+  - id: evidence_weighted_ranking_assessment_examples_validator
+    run: python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples
+  - id: evidence_weighted_ranking_assessment_examples_validator_json
+    run: python scripts/validate_evidence_weighted_ranking_assessment.py --all-examples --json
+  - id: ranking_explanation_examples_validator
+    run: python scripts/validate_ranking_explanation.py --all-examples
+  - id: ranking_explanation_examples_validator_json
+    run: python scripts/validate_ranking_explanation.py --all-examples --json
+  - id: evidence_weighted_ranking_contract_validator
+    run: python scripts/validate_evidence_weighted_ranking_contract.py
+  - id: evidence_weighted_ranking_contract_validator_json
+    run: python scripts/validate_evidence_weighted_ranking_contract.py --json
+  - id: evidence_weighted_ranking_dry_run_json
+    run: python scripts/dry_run_evidence_weighted_ranking.py --left-title "Strong evidence result" --right-title "Weak evidence result" --json
+  - id: evidence_weighted_ranking_contract_tests
+    run: python -m unittest tests.operations.test_evidence_weighted_ranking_contract tests.scripts.test_validate_evidence_weighted_ranking_assessment tests.scripts.test_validate_ranking_explanation tests.scripts.test_validate_evidence_weighted_ranking_contract tests.scripts.test_dry_run_evidence_weighted_ranking
+<!-- P84-EVIDENCE-WEIGHTED-RANKING-END -->
