@@ -1,0 +1,34 @@
+# Acceptance Criteria
+
+- P75 approval complete
+- Package identity policy reviewed
+- Scoped package policy reviewed
+- Dependency metadata caution policy reviewed
+- Lifecycle-script risk policy reviewed
+- Token/auth boundary reviewed
+- Source policy reviewed
+- User-Agent/contact configured
+- Rate limits approved
+- Timeout approved
+- Retry/circuit-breaker values approved
+- Source sync worker runtime approved
+- Source-cache runtime approved
+- Evidence-ledger runtime approved
+- Cache destination configured
+- Evidence destination configured
+- Evidence attribution required
+- Public search fanout disabled
+- Arbitrary package fetch disabled
+- Tarball/package file download disabled
+- Package install disabled
+- Dependency resolution disabled
+- Package archive inspection disabled
+- Lifecycle script execution disabled
+- npm audit disabled
+- Package manager invocation disabled
+- Kill switch present
+- No download/mirror/install/execute
+- No raw payload storage
+- No credentials required for v0
+- Tests for blocked public params
+- Operator approval

@@ -1,0 +1,332 @@
+{
+  "report_id": "npm_metadata_connector_runtime_planning_v0",
+  "created_by_slice": "P91 npm Metadata Connector Runtime Planning v0",
+  "repo_head": "3e6b756c75182f4c60be664dd9281340939babe5",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    "P91 artifacts generated after initial clean inspection."
+  ],
+  "readiness_decision": "blocked_connector_approval_pending",
+  "approval_gate_review": {
+    "approval_pack_present": true,
+    "approval_contract_present": true,
+    "connector_inventory_present": true,
+    "connector_approved_now": false,
+    "approval_status": "approval_required",
+    "decision": "runtime_blocked",
+    "approval_audit_ref": "control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json"
+  },
+  "package_identity_scoped_package_source_policy_gate_review": {
+    "package_identity_review_status": "pending",
+    "scoped_package_policy_review_status": "pending",
+    "source_policy_review_status": "pending",
+    "operator_approval_status": "pending",
+    "package_identity_review_required": true,
+    "scoped_package_policy_review_required": true,
+    "source_policy_review_required": true,
+    "operator_approval_required": true
+  },
+  "dependency_metadata_boundary_review": {
+    "dependency_metadata_policy_status": "pending",
+    "dependency_metadata_summary_future_only": true,
+    "dependency_resolution_enabled": false,
+    "dependency_graph_expansion_enabled": false,
+    "dependency_safety_claimed": false,
+    "installability_claimed": false,
+    "vulnerability_status_claimed": false,
+    "package_manager_invocation_enabled": false
+  },
+  "lifecycle_script_risk_boundary_review": {
+    "lifecycle_script_policy_status": "pending",
+    "lifecycle_script_metadata_summary_future_only": true,
+    "lifecycle_script_execution_enabled": false,
+    "preinstall_install_postinstall_execution_enabled": false,
+    "npm_audit_enabled": false,
+    "script_safety_claimed": false,
+    "package_execution_claimed": false
+  },
+  "token_auth_boundary_review": {
+    "token_auth_review_status": "pending",
+    "auth_mode": "none_until_explicit_future_policy",
+    "token_free_v0": true,
+    "npm_token_enabled": false,
+    "credentials_configured": false
+  },
+  "user_agent_contact_rate_limit_review": {
+    "user_agent_configured": false,
+    "contact_configured": false,
+    "rate_limit_configured": false,
+    "timeout_configured": false,
+    "circuit_breaker_configured": false,
+    "status": "operator_values_missing"
+  },
+  "runtime_boundary": "P91 is planning-only. It does not implement the npm metadata connector runtime, does not call npm registry APIs or npmjs.com, does not call npm/yarn/pnpm CLI, does not fetch package metadata, version metadata, dist-tag metadata, or tarball metadata, does not download tarballs or package files, does not install packages, resolve dependencies, run npm audit, inspect package archives, execute lifecycle scripts, run source sync jobs, write source-cache or evidence-ledger records, wire public search to live calls, enable arbitrary package or registry fetch, downloads, mirroring, credentials, tokens, or telemetry, and does not mutate public, local, runtime, candidate, source-cache, evidence-ledger, or master indexes.",
+  "connector_runtime_architecture_plan": [
+    "future client.py bounded npm package metadata client",
+    "future package_policy.py package identity and scoped-package guard",
+    "future dependency_policy.py dependency metadata caution guard",
+    "future script_policy.py lifecycle-script risk guard",
+    "future policy.py approval/source-policy/rate-limit/token guard",
+    "future normalize.py source-cache npm summary normalizer",
+    "future evidence.py evidence observation candidate builder",
+    "future errors.py bounded error model"
+  ],
+  "source_sync_job_flow": [
+    "approved source sync job selected",
+    "source policy guard checks connector approval",
+    "package identity guard validates approved package-name source",
+    "scoped package guard rejects private or credentialed scopes",
+    "dependency metadata caution guard verifies metadata-only handling",
+    "lifecycle-script risk guard verifies no execution and no script-safety claim",
+    "token/auth guard verifies token-free v0 unless future policy approves otherwise",
+    "operator config checked",
+    "bounded metadata-only request future",
+    "normalize package/version/dist-tag/tarball metadata summary",
+    "validate source-cache candidate",
+    "build evidence-ledger observation candidate",
+    "keep review-required",
+    "no public/master index mutation",
+    "bounded failure record without raw payload"
+  ],
+  "package_identity_review_normalization_plan": "Allowed future package-name sources are reviewed source records, reviewed search needs, source pack records, manual observation records, and fixture examples. Raw public query parameters, private packages, private scopes, credentialed registries, alternate registries without future approval, localhost URLs, file URLs, uploaded files, local paths, and arbitrary URLs are forbidden.",
+  "source_cache_output_plan": [
+    "npm_package_metadata_summary",
+    "npm_version_metadata_summary",
+    "npm_dist_tag_metadata_summary",
+    "npm_tarball_metadata_summary",
+    "npm_engines_metadata_summary",
+    "npm_license_metadata_summary",
+    "npm_dependency_metadata_summary",
+    "npm_lifecycle_script_metadata_summary",
+    "npm_deprecation_status_summary",
+    "npm_publisher_maintainer_metadata_summary"
+  ],
+  "evidence_ledger_output_plan": [
+    "package_metadata_observation",
+    "package_version_observation",
+    "dist_tag_observation",
+    "tarball_metadata_observation",
+    "engines_observation",
+    "license_metadata_observation",
+    "dependency_metadata_observation",
+    "lifecycle_script_metadata_observation",
+    "deprecation_status_observation",
+    "scoped_package_identity_observation",
+    "scoped_absence_observation"
+  ],
+  "validation_normalization_plan": "Validate response shape, package name, scoped package names, package metadata, versions, dist-tags, deprecation status, engines metadata, dependency metadata without dependency resolution, lifecycle script metadata without execution, tarball metadata without tarball download, checksum/digest metadata when present as metadata, license/source terms caution, publisher/maintainer caution, source attribution, error envelopes, raw payload exclusion, tarball/package file exclusion, and private package/registry redaction or rejection.",
+  "failure_retry_timeout_circuit_breaker_plan": "Timeouts, bounded retries, retry-after/abuse-limit backoff, per-source rate limits, circuit breaker, no retry storms, no public-search blocking, no raw error leaks, connector disabled on policy violation, and operator-visible summaries are required.",
+  "public_search_boundary": "Public search must not call npm live or accept arbitrary package, scoped-package, or registry parameters for live fetch; future cards may only read reviewed public-safe summaries after separate runtime and review.",
+  "privacy_rights_risk_review": "Package-metadata-only with package identity review, scoped package review, dependency metadata caution, and lifecycle-script risk review; no private packages, private scopes, token-required registries, alternate registries without future policy, tarball/package file download, package archive inspection, package install, dependency resolution, lifecycle script execution, npm audit, package manager invocation, downloads, mirroring, install, execute, credentials, private account access, rights clearance claim, tarball safety claim, script safety claim, installability claim, dependency safety claim, vulnerability claim, or malware safety claim.",
+  "security_abuse_review": "Rate limits, timeout, circuit breaker, User-Agent/contact, token-free default, cache requirement, kill switch, no public fanout, package identity guard, scoped package guard, dependency metadata guard, lifecycle-script guard, source policy guard, token/auth guard, and operator approval are required.",
+  "implementation_phases": [
+    "phase_0_disabled_planning_validation",
+    "phase_1_local_dry_run_synthetic_fixtures_no_network",
+    "phase_2_local_approved_live_metadata_probe_after_operator_approval_token_free_no_download_resolution_lifecycle_or_audit",
+    "phase_3_source_sync_worker_cache_evidence_candidates",
+    "phase_4_public_index_rebuild_from_reviewed_cache_evidence",
+    "phase_5_hosted_connector_worker_with_monitoring_rollback_quotas_kill_switch"
+  ],
+  "acceptance_criteria": [
+    "P75 approval complete",
+    "package identity policy reviewed",
+    "scoped package policy reviewed",
+    "dependency metadata caution policy reviewed",
+    "lifecycle-script risk policy reviewed",
+    "token/auth boundary reviewed",
+    "source policy reviewed",
+    "User-Agent/contact configured",
+    "rate limits approved",
+    "timeout approved",
+    "retry/circuit-breaker values approved",
+    "source sync worker runtime approved",
+    "source-cache runtime approved",
+    "evidence-ledger runtime approved",
+    "cache destination configured",
+    "evidence destination configured",
+    "evidence attribution required",
+    "public search fanout disabled",
+    "arbitrary package fetch disabled",
+    "tarball/package file download disabled",
+    "package install disabled",
+    "dependency resolution disabled",
+    "package archive inspection disabled",
+    "lifecycle script execution disabled",
+    "npm audit disabled",
+    "package manager invocation disabled",
+    "kill switch present",
+    "no download/mirror/install/execute",
+    "no raw payload storage",
+    "no credentials required for v0",
+    "tests for blocked public params",
+    "operator approval"
+  ],
+  "command_results": {
+    "initial_inspection": {
+      "status": "completed",
+      "summary": "P75 approval pack and contracts were present; connector_approved_now is false; package identity, scoped package, dependency metadata, lifecycle-script, token/auth, source policy, package download/install/dependency/script boundaries, and operator values are pending."
+    },
+    "p91_plan_validation": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_npm_metadata_connector_runtime_plan.py",
+        "python scripts/validate_npm_metadata_connector_runtime_plan.py --json",
+        "python -m unittest tests.operations.test_npm_metadata_connector_runtime_plan tests.scripts.test_validate_npm_metadata_connector_runtime_plan"
+      ],
+      "summary": "P91 validator and tests passed; readiness remains blocked_connector_approval_pending."
+    },
+    "approval_and_ingestion_contracts": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_npm_metadata_connector_approval.py --all-examples",
+        "python scripts/validate_npm_metadata_connector_contract.py",
+        "python scripts/validate_pypi_metadata_connector_runtime_plan.py",
+        "python scripts/validate_pypi_metadata_connector_approval.py --all-examples",
+        "python scripts/validate_github_releases_connector_runtime_plan.py",
+        "python scripts/validate_github_releases_connector_approval.py --all-examples",
+        "python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py",
+        "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples",
+        "python scripts/validate_internet_archive_metadata_connector_runtime_plan.py",
+        "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+        "python scripts/validate_source_sync_worker_contract.py",
+        "python scripts/validate_source_cache_evidence_ledger_contract.py",
+        "python scripts/validate_source_cache_contract.py",
+        "python scripts/validate_evidence_ledger_contract.py"
+      ],
+      "summary": "Existing npm approval, PyPI/GitHub/Wayback/IA runtime plans, source sync, source cache, and evidence ledger contracts remained valid and contract-only."
+    },
+    "related_contracts_and_plans": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_query_observation_runtime_plan.py",
+        "python scripts/validate_compatibility_aware_ranking_contract.py",
+        "python scripts/validate_evidence_weighted_ranking_contract.py",
+        "python scripts/validate_result_merge_deduplication_contract.py",
+        "python scripts/validate_cross_source_identity_resolution_contract.py",
+        "python scripts/validate_comparison_page_contract.py",
+        "python scripts/validate_source_page_contract.py",
+        "python scripts/validate_object_page_contract.py"
+      ],
+      "summary": "P79-P90 contracts/plans remained valid."
+    },
+    "public_search_static_and_safety": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_search_contract.py",
+        "python scripts/validate_public_search_result_card_contract.py",
+        "python scripts/validate_public_search_safety.py",
+        "python scripts/validate_local_public_search_runtime.py",
+        "python scripts/public_search_smoke.py",
+        "python scripts/public_search_smoke.py --json",
+        "python scripts/run_public_search_safety_evidence.py",
+        "python scripts/validate_public_search_safety_evidence.py",
+        "python scripts/run_hosted_public_search_rehearsal.py",
+        "python scripts/validate_hosted_public_search_rehearsal.py",
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/validate_publication_inventory.py",
+        "python scripts/validate_public_static_site.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/check_generated_artifact_drift.py"
+      ],
+      "summary": "Local public-search safety/static lanes passed. No public-search runtime fanout or npm connector behavior was added."
+    },
+    "hosted_deployment_and_baseline": {
+      "status": "passed_with_blockers_recorded",
+      "commands": [
+        "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+        "python scripts/validate_public_hosted_deployment_evidence.py",
+        "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+        "python scripts/validate_external_baseline_comparison_report.py",
+        "python scripts/report_external_baseline_status.py --json"
+      ],
+      "summary": "Hosted backend remains not configured, static route verification remains failed, and Manual Observation Batch 0 remains 0 observed / 39 pending."
+    },
+    "evals_and_full_tests": {
+      "status": "passed",
+      "commands": [
+        "python scripts/run_archive_resolution_evals.py",
+        "python scripts/run_archive_resolution_evals.py --json",
+        "python scripts/run_search_usefulness_audit.py",
+        "python scripts/run_search_usefulness_audit.py --json",
+        "python scripts/generate_python_oracle_golden.py --check",
+        "python -m unittest discover -s tests/scripts -t .",
+        "python -m unittest discover -s tests/operations -t .",
+        "python -m unittest discover -s tests/hardening -t .",
+        "python -m unittest discover -s tests/parity -t .",
+        "python -m unittest discover -s runtime -t .",
+        "python -m unittest discover -s surfaces -t .",
+        "python -m unittest discover -s tests -t .",
+        "python scripts/check_architecture_boundaries.py",
+        "git diff --check",
+        "git status --short --branch"
+      ],
+      "summary": "Archive evals passed 6/6. Search usefulness remains 64 queries with capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2. Full Python/unit/boundary/diff lanes passed."
+    },
+    "optional": {
+      "status": "skipped_unavailable",
+      "commands": [
+        "gh availability",
+        "cargo availability"
+      ],
+      "summary": "Optional gh and cargo commands were unavailable because the executables are not installed."
+    }
+  },
+  "remaining_blockers": [
+    "Connector approval remains pending.",
+    "Package identity policy review is pending.",
+    "Scoped package policy review is pending.",
+    "Dependency metadata caution policy review is pending.",
+    "Lifecycle-script risk policy review is pending.",
+    "npm registry/source policy review is pending.",
+    "Token/auth policy review is pending; v0 remains token-free.",
+    "Package download/install/dependency/lifecycle boundary review remains pending.",
+    "User-Agent/contact decision is pending.",
+    "Rate-limit, timeout, retry, and circuit-breaker values are pending.",
+    "Source sync worker execution, source-cache runtime, and evidence-ledger runtime remain future.",
+    "Hosted deployment remains unverified for future public integration."
+  ],
+  "next_recommended_branch": "P92 Software Heritage Connector Runtime Planning v0 only after approval",
+  "notes": [
+    "No npm registry, npmjs.com, npm/yarn/pnpm CLI, package manager, or other source calls were made.",
+    "Fast learning, slow truth."
+  ],
+  "runtime_connector_implemented": false,
+  "live_calls_enabled": false,
+  "external_calls_performed": false,
+  "npm_registry_api_called": false,
+  "npmjs_com_called": false,
+  "npm_cli_called": false,
+  "package_metadata_fetched": false,
+  "version_metadata_fetched": false,
+  "dist_tag_metadata_fetched": false,
+  "tarball_metadata_fetched": false,
+  "source_sync_worker_execution_enabled": false,
+  "source_cache_runtime_enabled": false,
+  "evidence_ledger_runtime_enabled": false,
+  "public_search_live_fanout_enabled": false,
+  "arbitrary_package_fetch_enabled": false,
+  "tarball_download_enabled": false,
+  "package_file_download_enabled": false,
+  "package_install_enabled": false,
+  "dependency_resolution_enabled": false,
+  "npm_audit_enabled": false,
+  "package_archive_inspection_enabled": false,
+  "lifecycle_script_execution_enabled": false,
+  "package_manager_invocation_enabled": false,
+  "downloads_enabled": false,
+  "mirroring_enabled": false,
+  "file_retrieval_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "telemetry_enabled": false,
+  "credentials_configured": false,
+  "npm_token_enabled": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false
+}

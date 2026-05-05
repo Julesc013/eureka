@@ -1,0 +1,23 @@
+# Do Not Implement Yet
+
+- No npm registry API calls
+- No npmjs.com calls
+- No connector runtime
+- No source sync execution
+- No source cache writes
+- No evidence ledger writes
+- No public search live fanout
+- No arbitrary package fetch
+- No tarball download
+- No package file download
+- No package install
+- No dependency resolution
+- No npm audit
+- No package archive inspection
+- No package manager invocation
+- No lifecycle script execution
+- No downloads/mirroring/file retrieval
+- No raw payload cache
+- No credentials or tokens
+- No telemetry
+- No index/master mutation
