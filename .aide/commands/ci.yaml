@@ -951,3 +951,12 @@ notes:
   - id: github_releases_connector_runtime_plan_tests
     run: python -m unittest tests.operations.test_github_releases_connector_runtime_plan tests.scripts.test_validate_github_releases_connector_runtime_plan
 <!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+- id: pypi_metadata_connector_runtime_plan_validator
+    run: python scripts/validate_pypi_metadata_connector_runtime_plan.py
+  - id: pypi_metadata_connector_runtime_plan_validator_json
+    run: python scripts/validate_pypi_metadata_connector_runtime_plan.py --json
+  - id: pypi_metadata_connector_runtime_plan_tests
+    run: python -m unittest tests.operations.test_pypi_metadata_connector_runtime_plan tests.scripts.test_validate_pypi_metadata_connector_runtime_plan
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

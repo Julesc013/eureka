@@ -528,3 +528,11 @@ Audit pack: `control/audits/github-releases-connector-runtime-planning-v0/github
 
 Readiness: `blocked_connector_approval_pending`. Planning-only; no GitHub API calls, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
 <!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P90 PyPI Metadata Connector Runtime Planning v0
+
+Audit pack: `control/audits/pypi-metadata-connector-runtime-planning-v0/pypi_metadata_connector_runtime_planning_report.json`.
+
+Readiness: `blocked_connector_approval_pending`. Planning-only; no PyPI API calls, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->

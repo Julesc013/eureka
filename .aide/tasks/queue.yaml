@@ -916,9 +916,9 @@
     {
       "id": "pypi_metadata_connector_runtime_planning_v0",
       "title": "P90 PyPI Metadata Connector Runtime Planning v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 131,
-      "notes": "Future runtime planning only after PyPI metadata approval, package identity review, dependency metadata caution, source policy, token policy, User-Agent/contact, rate limits, source cache/evidence runtime, and operator approval."
+      "notes": "P90 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P74 keeps connector_approved_now false; no PyPI API calls, connector runtime, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "compatibility_aware_ranking_contract_v0",
@@ -1031,6 +1031,13 @@
       "status": "blocked_pending_explicit_approval",
       "priority": 140,
       "notes": "Future local dry-run runtime only after evidence-ledger runtime gates, source policies, review workflow, and operator approval."
+    },
+    {
+      "id": "public_search_runtime_integration_audit_v0",
+      "title": "P100 Public Search Runtime Integration Audit v0",
+      "status": "queued_codex_safe_future",
+      "priority": 141,
+      "notes": "Future audit after connector/runtime planning gates; no runtime ranking, connector fanout, telemetry, or mutation without explicit approval."
     }
   ]
 }

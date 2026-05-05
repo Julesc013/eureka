@@ -880,3 +880,12 @@ These commands are stdlib-only and validate planning artifacts only; they perfor
 
 These commands are stdlib-only and validate planning artifacts only; they perform no GitHub API calls, connector runtime, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
 <!-- P89-GITHUB-RELEASES-CONNECTOR-RUNTIME-PLAN-END -->
+
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-START -->
+## P90 PyPI Metadata Connector Runtime Planning
+
+- `python scripts/validate_pypi_metadata_connector_runtime_plan.py`
+- `python scripts/validate_pypi_metadata_connector_runtime_plan.py --json`
+
+These commands are stdlib-only and validate planning artifacts only; they perform no PyPI API calls, connector runtime, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, source-cache/evidence-ledger writes, public fanout, token use, telemetry, credentials, or index mutation.
+<!-- P90-PYPI-METADATA-CONNECTOR-RUNTIME-PLAN-END -->
