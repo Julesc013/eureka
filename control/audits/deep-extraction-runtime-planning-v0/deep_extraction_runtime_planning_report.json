@@ -1,0 +1,227 @@
+{
+  "OCR_performed": false,
+  "OCR_transcription_text_boundary_review": {
+    "OCR_runtime_status": "disabled",
+    "review": "Hooks exist in the contract, but OCR and transcription runtimes are not implemented and outputs are not truth.",
+    "transcription_runtime_status": "disabled"
+  },
+  "URL_fetched": false,
+  "accounts_enabled": false,
+  "approved_input_model": {
+    "allowed_future": [
+      "repo-local synthetic extraction examples",
+      "fixture containers created specifically for tests",
+      "operator-approved local fixture path after explicit approval",
+      "reviewed pack-import dry-run output future",
+      "reviewed source-cache candidate future",
+      "reviewed object-page representation future"
+    ],
+    "forbidden": [
+      "arbitrary local paths",
+      "arbitrary directories",
+      "user-uploaded files",
+      "URLs",
+      "private cache roots",
+      "connector live responses",
+      "package-manager outputs",
+      "executable installer paths",
+      "raw telemetry",
+      "private query observations"
+    ]
+  },
+  "arbitrary_local_path_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "archive_unpacked": false,
+  "branch": "main",
+  "candidate_index_mutated": false,
+  "command_results": {
+    "adjacent_dry_run_and_planning_validators": "passed; pack import dry-run, page dry-run, manual observation follow-up, connector audit, public-search integration audit, evidence-ledger dry-run, source-cache dry-run, ranking plan, explanation contract, deep extraction contract, pack import runtime plan, page runtime plan, extraction request examples, and extraction result summary examples all passed",
+    "architecture_boundaries": "passed",
+    "external_baseline_status": "passed; comparison remains not eligible because Batch 0 has 0 observed and 39 pending manual observations",
+    "final_git_diff_check": "passed; Git emitted CRLF normalization warnings for existing site/dist files",
+    "initial_git_status": "clean at start",
+    "optional_cargo": "not available in PATH; optional cargo checks not run",
+    "optional_gh": "not available in PATH; GitHub Actions status not checked",
+    "public_search_and_eval_checks": "passed; public search contract/card/safety/local runtime/smoke checks, archive resolution evals, and search usefulness audit passed",
+    "repo_head": "ed3ced416825fa7af520f7370f97d09bf86121d0",
+    "tests": "passed; tests/runtime 27, tests/scripts 698, tests/operations 636, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, tests all 1530",
+    "validate_deep_extraction_runtime_plan": "passed",
+    "validate_deep_extraction_runtime_plan_json": "passed"
+  },
+  "connector_runtime_executed": false,
+  "created_by_slice": "P105_deep_extraction_runtime_planning_v0",
+  "downloads_enabled": false,
+  "emulator_vm_launched": false,
+  "evidence_ledger_mutated": false,
+  "executable_payload_content_safety_gate_review": {
+    "payload_execution": "disabled",
+    "review": "Executable references require risk labels; no execution, installer, script, macro, package manager, emulator, VM, malware safety, or source-code safety claim is approved."
+  },
+  "execution_enabled": false,
+  "external_calls_performed": false,
+  "extraction_contract_gate_review": {
+    "contract_files_present": true,
+    "examples_present": true,
+    "validators_present": true
+  },
+  "extraction_executed": false,
+  "extraction_pipeline_plan": [
+    "validate approved request",
+    "check sandbox/resource/privacy/executable policies",
+    "create isolated temporary workspace",
+    "detect container type",
+    "run metadata-first tiers",
+    "build candidate-effect report",
+    "clean workspace",
+    "stop before mutation"
+  ],
+  "extraction_queue_implemented": false,
+  "extraction_store_implemented": false,
+  "failure_rollback_audit_model": {
+    "bounded_errors": true,
+    "no_partial_mutation": true,
+    "private_payload_dumps_forbidden": true
+  },
+  "files_opened": false,
+  "implementation_phases": [
+    "Phase 0 planning and validation only",
+    "Phase 1 synthetic request/report builder only after approval",
+    "Phase 2 local fixture metadata detector only after approval",
+    "Phase 3 sandboxed Tier 0/Tier 1 approved fixtures only after approval",
+    "Phase 4 sandboxed Tier 2/Tier 3 summaries only after approval",
+    "Phase 5 candidate-effect reporting only",
+    "Phase 6 integrations only after separate approval"
+  ],
+  "installs_enabled": false,
+  "installer_executed": false,
+  "live_source_called": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "notes": [
+    "P105 is planning-only. It intentionally adds no runtime extraction modules.",
+    "Runtime implementation remains blocked by concrete resource-limit and sandbox/operator approval."
+  ],
+  "output_report_candidate_effect_model": {
+    "candidate_effects_are_writes": false,
+    "raw_payloads_excluded": true,
+    "raw_text_dumps_excluded": true,
+    "reports_are_truth": false
+  },
+  "pack_import_runtime_mutated": false,
+  "pack_import_staging_boundary_review": {
+    "pack_import_dry_run_status": "implemented_local_dry_run",
+    "review": "No extraction integration with pack import is added; real pack extraction requires separate sandbox/quarantine approval."
+  },
+  "package_manager_invoked": false,
+  "page_runtime_mutated": false,
+  "payload_executed": false,
+  "planning_only": true,
+  "privacy_path_secret_gate_review": {
+    "review": "Private paths, traversal, home/user paths, private cache roots, credentials, private URLs, account/user/IP identifiers, and raw private query data remain forbidden."
+  },
+  "public_index_mutated": false,
+  "public_search_page_boundary_review": {
+    "page_runtime_calls_extraction": false,
+    "public_search_calls_extraction": false,
+    "review": "No public search, page, explanation, connector, or pack runtime may trigger extraction."
+  },
+  "public_search_runtime_mutated": false,
+  "readiness_decision": "blocked_resource_limit_policy_missing",
+  "remaining_blockers": [
+    "concrete resource limits operator approval",
+    "sandbox policy operator approval",
+    "sandbox runtime absent",
+    "payload safety operator approval",
+    "OCR/transcription approval absent",
+    "source-cache/evidence-ledger/candidate mutation approvals absent"
+  ],
+  "report_id": "deep_extraction_runtime_planning_v0",
+  "repo_head": "ed3ced416825fa7af520f7370f97d09bf86121d0",
+  "runtime_architecture_plan": {
+    "future_modules_only": [
+      "runtime/extraction/request.py",
+      "runtime/extraction/sandbox.py",
+      "runtime/extraction/resource_limits.py",
+      "runtime/extraction/detect.py",
+      "runtime/extraction/enumerate.py",
+      "runtime/extraction/manifests.py",
+      "runtime/extraction/text.py",
+      "runtime/extraction/ocr.py",
+      "runtime/extraction/transcribe.py",
+      "runtime/extraction/normalize.py",
+      "runtime/extraction/report.py",
+      "runtime/extraction/policy.py",
+      "runtime/extraction/errors.py"
+    ],
+    "runtime_files_created_by_P105": false
+  },
+  "runtime_boundary": "P105 does not implement extraction runtime, queues, stores, sandbox runtime, unpackers, OCR/transcription, file reads, URL fetching, payload execution, mutation, or integrations.",
+  "runtime_extraction_implemented": false,
+  "sandbox_resource_limit_gate_review": {
+    "readiness": "blocked_resource_limit_policy_missing",
+    "review": "Sandbox requirements exist as contract-only policy, but sandbox runtime is not implemented and concrete resource limit values remain operator-pending."
+  },
+  "sandbox_resource_timeout_plan": {
+    "max_OCR_pages": "0 until approval",
+    "max_depth": "operator_pending",
+    "max_member_size": "operator_pending",
+    "max_members": "operator_pending",
+    "max_runtime_ms": "operator_pending",
+    "max_text_bytes": "operator_pending",
+    "max_total_uncompressed_size": "operator_pending"
+  },
+  "sandbox_runtime_implemented": false,
+  "script_execution_enabled": false,
+  "security_abuse_review": {
+    "controls_required": [
+      "network disabled",
+      "execution disabled",
+      "sandbox required",
+      "resource limits approved",
+      "operator kill switch"
+    ],
+    "risks": [
+      "archive bombs",
+      "path traversal",
+      "symlinks/hardlinks",
+      "nested archives",
+      "malicious installers",
+      "macros",
+      "URL smuggling",
+      "sandbox escape"
+    ]
+  },
+  "source_cache_evidence_candidate_boundary_review": {
+    "authoritative_evidence_ledger_status": "disabled",
+    "authoritative_source_cache_status": "disabled",
+    "candidate_effects_only": true,
+    "review": "Extraction outputs remain future candidate effects only; no source/evidence/candidate mutation or promotion is allowed."
+  },
+  "source_cache_mutated": false,
+  "telemetry_enabled": false,
+  "transcription_performed": false,
+  "worktree_status": "## main...origin/main (dirty while P105 artifacts are created)",
+  "acceptance_criteria": [
+    "deep extraction contract valid",
+    "extraction examples valid",
+    "sandbox policy approved",
+    "resource limits approved",
+    "privacy/path/secret policy approved",
+    "executable payload policy approved",
+    "OCR/transcription boundary approved",
+    "pack import boundary approved",
+    "source-cache/evidence-ledger boundary approved",
+    "candidate/public/master mutation boundary approved",
+    "public-search/page boundary approved",
+    "approved input roots defined",
+    "no arbitrary local path support",
+    "no URL fetch support",
+    "no execution support",
+    "no OCR/transcription runtime by default",
+    "no mutation by default",
+    "rollback/audit model accepted",
+    "operator approval"
+  ],
+  "container_type_handling_plan": "Metadata-only first for archives, ISO, disk images, installers, packages, wheels, sdists, npm tarballs, WARC/WACZ, PDF, scanned volumes, source bundles, repository snapshots, and unknown containers; no execution, install, source-code safety claim, malware safety claim, or payload extraction until approved.",
+  "next_recommended_branch": "P106 Search Result Explanation Runtime Planning v0 only after public search runtime gate"
+}
