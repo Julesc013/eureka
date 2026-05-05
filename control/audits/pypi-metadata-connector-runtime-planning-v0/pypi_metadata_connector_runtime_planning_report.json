@@ -1,0 +1,299 @@
+{
+  "report_id": "pypi_metadata_connector_runtime_planning_v0",
+  "created_by_slice": "P90 PyPI Metadata Connector Runtime Planning v0",
+  "repo_head": "8c4440f1b37de642882d889db8a8d7d8d675fa09",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    "P90 artifacts generated after initial clean inspection."
+  ],
+  "readiness_decision": "blocked_connector_approval_pending",
+  "approval_gate_review": {
+    "approval_pack_present": true,
+    "approval_contract_present": true,
+    "connector_inventory_present": true,
+    "connector_approved_now": false,
+    "approval_status": "approval_required",
+    "decision": "runtime_blocked",
+    "approval_audit_ref": "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json"
+  },
+  "package_identity_source_policy_gate_review": {
+    "package_identity_review_status": "pending",
+    "source_policy_review_status": "pending",
+    "operator_approval_status": "pending",
+    "package_identity_review_required": true,
+    "source_policy_review_required": true,
+    "operator_approval_required": true
+  },
+  "dependency_metadata_boundary_review": {
+    "dependency_metadata_policy_status": "pending",
+    "dependency_metadata_summary_future_only": true,
+    "dependency_resolution_enabled": false,
+    "dependency_safety_claimed": false,
+    "installability_claimed": false,
+    "package_manager_invocation_enabled": false
+  },
+  "token_auth_boundary_review": {
+    "token_auth_review_status": "pending",
+    "auth_mode": "none_until_explicit_future_policy",
+    "token_free_v0": true,
+    "pypi_token_enabled": false,
+    "credentials_configured": false
+  },
+  "user_agent_contact_rate_limit_review": {
+    "user_agent_configured": false,
+    "contact_configured": false,
+    "rate_limit_configured": false,
+    "timeout_configured": false,
+    "circuit_breaker_configured": false,
+    "status": "operator_values_missing"
+  },
+  "runtime_boundary": "P90 is planning-only. It does not implement the PyPI metadata connector runtime, does not call PyPI APIs, does not fetch package metadata, release metadata, or file metadata, does not download wheels, sdists, package files, or package archives, does not install packages, invoke pip, resolve dependencies, inspect package archives, execute setup.py or build scripts, run source sync jobs, write source-cache or evidence-ledger records, wire public search to live calls, enable arbitrary package fetch, downloads, mirroring, credentials, tokens, or telemetry, and does not mutate public, local, runtime, candidate, source-cache, evidence-ledger, or master indexes.",
+  "connector_runtime_architecture_plan": [
+    "future client.py bounded package metadata client",
+    "future package_policy.py package identity guard",
+    "future dependency_policy.py dependency metadata caution guard",
+    "future policy.py approval/source-policy/rate-limit/token guard",
+    "future normalize.py source-cache package summary normalizer",
+    "future evidence.py evidence observation candidate builder",
+    "future errors.py bounded error model"
+  ],
+  "source_sync_job_flow": [
+    "approved source sync job selected",
+    "source policy guard checks connector approval",
+    "package identity guard validates approved package-name source",
+    "dependency metadata caution guard verifies metadata-only handling",
+    "token/auth guard verifies token-free v0 unless future policy approves otherwise",
+    "operator config checked",
+    "bounded metadata-only request future",
+    "normalize project/release/file metadata summary",
+    "validate source-cache candidate",
+    "build evidence-ledger observation candidate",
+    "keep review-required",
+    "no public/master index mutation",
+    "bounded failure record without raw payload"
+  ],
+  "package_identity_review_normalization_plan": "Allowed future package-name sources are reviewed source records, reviewed search needs, source pack records, manual observation records, and fixture examples. Raw public query parameters, private packages, credentialed indexes, alternate indexes without future approval, localhost URLs, file URLs, uploaded files, local paths, and arbitrary URLs are forbidden.",
+  "source_cache_output_plan": [
+    "pypi_project_metadata_summary",
+    "pypi_release_metadata_summary",
+    "pypi_file_metadata_summary",
+    "pypi_requires_python_summary",
+    "pypi_classifier_summary",
+    "pypi_yanked_status_summary",
+    "pypi_dependency_metadata_summary"
+  ],
+  "evidence_ledger_output_plan": [
+    "package_metadata_observation",
+    "package_release_observation",
+    "package_version_observation",
+    "package_file_metadata_observation",
+    "requires_python_observation",
+    "classifier_observation",
+    "yanked_status_observation",
+    "dependency_metadata_observation",
+    "scoped_absence_observation"
+  ],
+  "validation_normalization_plan": "Validate response shape, package name, project metadata, release versions, release dates, file metadata summaries, yanked status, requires_python, classifiers, dependency metadata without dependency resolution, checksum/digest metadata when present as metadata, source attribution, error envelopes, raw payload exclusion, wheel/sdist/package file exclusion, and private package/index redaction or rejection.",
+  "failure_retry_timeout_circuit_breaker_plan": "Timeouts, bounded retries, retry-after/abuse-limit backoff, per-source rate limits, circuit breaker, no retry storms, no public-search blocking, no raw error leaks, and operator-visible summaries are required.",
+  "public_search_boundary": "Public search must not call PyPI live or accept arbitrary package parameters for live fetch; future cards may only read reviewed public-safe summaries after separate runtime and review.",
+  "privacy_rights_risk_review": "Package-metadata-only with package identity review and dependency metadata caution; no private packages, token-required indexes, alternate indexes without future policy, wheel/sdist/package file download, package archive inspection, package install, dependency resolution, package manager invocation, downloads, mirroring, install, execute, credentials, private account access, rights clearance claim, file safety claim, installability claim, dependency safety claim, vulnerability claim, or malware safety claim.",
+  "security_abuse_review": "Rate limits, timeout, circuit breaker, User-Agent/contact, token-free default, cache requirement, kill switch, no public fanout, package identity guard, dependency metadata guard, source policy guard, token/auth guard, and operator approval are required.",
+  "implementation_phases": [
+    "phase_0_disabled_planning_validation",
+    "phase_1_local_dry_run_synthetic_fixtures_no_network",
+    "phase_2_local_approved_live_metadata_probe_after_operator_approval_token_free_no_download_or_resolution",
+    "phase_3_source_sync_worker_cache_evidence_candidates",
+    "phase_4_public_index_rebuild_from_reviewed_cache_evidence",
+    "phase_5_hosted_connector_worker_with_monitoring_rollback_quotas_kill_switch"
+  ],
+  "acceptance_criteria": [
+    "P74 approval complete",
+    "package identity policy reviewed",
+    "dependency metadata caution policy reviewed",
+    "token/auth boundary reviewed",
+    "source policy reviewed",
+    "User-Agent/contact configured",
+    "rate limits approved",
+    "timeout approved",
+    "retry/circuit-breaker values approved",
+    "source sync worker runtime approved",
+    "source-cache runtime approved",
+    "evidence-ledger runtime approved",
+    "cache destination configured",
+    "evidence destination configured",
+    "evidence attribution required",
+    "public search fanout disabled",
+    "arbitrary package fetch disabled",
+    "wheel/sdist/package file download disabled",
+    "package install disabled",
+    "dependency resolution disabled",
+    "package archive inspection disabled",
+    "package manager invocation disabled",
+    "kill switch present",
+    "no download/mirror/install/execute",
+    "no raw payload storage",
+    "no credentials required for v0",
+    "tests for blocked public params",
+    "operator approval"
+  ],
+  "command_results": {
+    "initial_inspection": {
+      "status": "completed",
+      "summary": "P74 approval pack and contracts were present; connector_approved_now is false; package identity, dependency metadata, token/auth, source policy, package download/install/dependency boundaries, and operator values are pending."
+    },
+    "p90_plan_validation": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_pypi_metadata_connector_runtime_plan.py",
+        "python scripts/validate_pypi_metadata_connector_runtime_plan.py --json",
+        "python -m unittest tests.operations.test_pypi_metadata_connector_runtime_plan tests.scripts.test_validate_pypi_metadata_connector_runtime_plan"
+      ],
+      "summary": "P90 validator and tests passed; readiness remains blocked_connector_approval_pending."
+    },
+    "approval_and_ingestion_contracts": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_pypi_metadata_connector_approval.py --all-examples",
+        "python scripts/validate_pypi_metadata_connector_contract.py",
+        "python scripts/validate_github_releases_connector_runtime_plan.py",
+        "python scripts/validate_github_releases_connector_approval.py --all-examples",
+        "python scripts/validate_wayback_cdx_memento_connector_runtime_plan.py",
+        "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples",
+        "python scripts/validate_internet_archive_metadata_connector_runtime_plan.py",
+        "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+        "python scripts/validate_source_sync_worker_contract.py",
+        "python scripts/validate_source_cache_evidence_ledger_contract.py",
+        "python scripts/validate_source_cache_contract.py",
+        "python scripts/validate_evidence_ledger_contract.py"
+      ],
+      "summary": "Existing PyPI approval, GitHub/Wayback/IA runtime plans, source sync, source cache, and evidence ledger contracts remained valid and contract-only."
+    },
+    "related_contracts_and_plans": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_query_observation_runtime_plan.py",
+        "python scripts/validate_compatibility_aware_ranking_contract.py",
+        "python scripts/validate_evidence_weighted_ranking_contract.py",
+        "python scripts/validate_result_merge_deduplication_contract.py",
+        "python scripts/validate_cross_source_identity_resolution_contract.py",
+        "python scripts/validate_comparison_page_contract.py",
+        "python scripts/validate_source_page_contract.py",
+        "python scripts/validate_object_page_contract.py"
+      ],
+      "summary": "P79-P89 contracts/plans remained valid."
+    },
+    "public_search_static_and_safety": {
+      "status": "passed",
+      "commands": [
+        "python scripts/validate_public_search_contract.py",
+        "python scripts/validate_public_search_result_card_contract.py",
+        "python scripts/validate_public_search_safety.py",
+        "python scripts/validate_local_public_search_runtime.py",
+        "python scripts/public_search_smoke.py",
+        "python scripts/public_search_smoke.py --json",
+        "python scripts/run_public_search_safety_evidence.py",
+        "python scripts/validate_public_search_safety_evidence.py",
+        "python scripts/run_hosted_public_search_rehearsal.py",
+        "python scripts/validate_hosted_public_search_rehearsal.py",
+        "python site/build.py --check",
+        "python site/validate.py",
+        "python scripts/validate_publication_inventory.py",
+        "python scripts/validate_public_static_site.py",
+        "python scripts/check_github_pages_static_artifact.py --path site/dist",
+        "python scripts/check_generated_artifact_drift.py"
+      ],
+      "summary": "Local public-search safety/static lanes passed. No public-search runtime fanout or PyPI connector behavior was added."
+    },
+    "hosted_deployment_and_baseline": {
+      "status": "passed_with_blockers_recorded",
+      "commands": [
+        "python scripts/verify_public_hosted_deployment.py --from-repo-config --json",
+        "python scripts/validate_public_hosted_deployment_evidence.py",
+        "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+        "python scripts/validate_external_baseline_comparison_report.py",
+        "python scripts/report_external_baseline_status.py --json"
+      ],
+      "summary": "Hosted backend remains not configured, static route verification remains failed, and Manual Observation Batch 0 remains 0 observed / 39 pending."
+    },
+    "evals_and_full_tests": {
+      "status": "passed",
+      "commands": [
+        "python scripts/run_archive_resolution_evals.py",
+        "python scripts/run_archive_resolution_evals.py --json",
+        "python scripts/run_search_usefulness_audit.py",
+        "python scripts/run_search_usefulness_audit.py --json",
+        "python scripts/generate_python_oracle_golden.py --check",
+        "python -m unittest discover -s tests/scripts -t .",
+        "python -m unittest discover -s tests/operations -t .",
+        "python -m unittest discover -s tests/hardening -t .",
+        "python -m unittest discover -s tests/parity -t .",
+        "python -m unittest discover -s runtime -t .",
+        "python -m unittest discover -s surfaces -t .",
+        "python -m unittest discover -s tests -t .",
+        "python scripts/check_architecture_boundaries.py",
+        "git diff --check",
+        "git status --short --branch"
+      ],
+      "summary": "Archive evals passed 6/6. Search usefulness remains 64 queries with capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2. Full Python/unit/boundary/diff lanes passed."
+    },
+    "optional": {
+      "status": "skipped_unavailable",
+      "commands": [
+        "gh availability",
+        "cargo availability"
+      ],
+      "summary": "Optional gh and cargo commands were unavailable because the executables are not installed."
+    }
+  },
+  "remaining_blockers": [
+    "Connector approval remains pending.",
+    "Package identity policy review is pending.",
+    "Dependency metadata caution policy review is pending.",
+    "PyPI API/source policy review is pending.",
+    "Token/auth policy review is pending; v0 remains token-free.",
+    "Package download/install/dependency-resolution boundary review remains pending.",
+    "User-Agent/contact decision is pending.",
+    "Rate-limit, timeout, retry, and circuit-breaker values are pending.",
+    "Source sync worker execution, source-cache runtime, and evidence-ledger runtime remain future.",
+    "Hosted deployment remains unverified for future public integration."
+  ],
+  "next_recommended_branch": "P91 npm Metadata Connector Runtime Planning v0 only after approval",
+  "notes": [
+    "No PyPI, pypi.org, files.pythonhosted.org, package manager, or other source calls were made.",
+    "Fast learning, slow truth."
+  ],
+  "runtime_connector_implemented": false,
+  "live_calls_enabled": false,
+  "external_calls_performed": false,
+  "pypi_api_called": false,
+  "package_metadata_fetched": false,
+  "release_metadata_fetched": false,
+  "file_metadata_fetched": false,
+  "source_sync_worker_execution_enabled": false,
+  "source_cache_runtime_enabled": false,
+  "evidence_ledger_runtime_enabled": false,
+  "public_search_live_fanout_enabled": false,
+  "arbitrary_package_fetch_enabled": false,
+  "wheel_download_enabled": false,
+  "sdist_download_enabled": false,
+  "package_file_download_enabled": false,
+  "package_install_enabled": false,
+  "dependency_resolution_enabled": false,
+  "package_archive_inspection_enabled": false,
+  "package_manager_invocation_enabled": false,
+  "downloads_enabled": false,
+  "mirroring_enabled": false,
+  "file_retrieval_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "telemetry_enabled": false,
+  "credentials_configured": false,
+  "pypi_token_enabled": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false
+}

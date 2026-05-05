@@ -1,0 +1,22 @@
+# Do Not Implement Yet
+
+- no PyPI API calls
+- no connector runtime
+- no source sync execution
+- no source cache writes
+- no evidence ledger writes
+- no public search live fanout
+- no arbitrary package fetch
+- no wheel download
+- no sdist download
+- no package file download
+- no package install
+- no dependency resolution
+- no package archive inspection
+- no package manager invocation
+- no setup.py/build script execution
+- no downloads/mirroring/file retrieval
+- no raw payload cache
+- no credentials or tokens
+- no telemetry
+- no index/master mutation
