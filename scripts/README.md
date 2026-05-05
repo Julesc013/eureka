@@ -921,3 +921,16 @@ Validates the planning-only object/source/comparison page runtime audit pack. Th
 
 These commands are stdlib-only and validate planning artifacts only. They perform no pack import runtime, no real pack staging, no upload/admin endpoint, no public contribution intake, no pack content execution, no URL fetching, no arbitrary local path access, no telemetry/accounts, no source/evidence/candidate/public/local/master mutation, no promotion decision, and no accepted record creation.
 <!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->
+<!-- P95-DEEP-EXTRACTION-CONTRACT-START -->
+## P95 Deep Extraction Contract v0
+
+- `python scripts/validate_deep_extraction_request.py --all-examples`
+- `python scripts/validate_deep_extraction_request.py --all-examples --json`
+- `python scripts/validate_extraction_result_summary.py --all-examples`
+- `python scripts/validate_extraction_result_summary.py --all-examples --json`
+- `python scripts/validate_deep_extraction_contract.py`
+- `python scripts/validate_deep_extraction_contract.py --json`
+- `python scripts/dry_run_deep_extraction_request.py --label "Example archive" --container-kind zip_archive --json`
+
+These commands are stdlib-only and contract-only. They perform no runtime extraction, no file opening, no archive unpacking, no OCR/transcription, no execution, no URL fetching, no live source calls, no telemetry, no source/evidence/candidate/index mutation, and no production extraction claim.
+<!-- P95-DEEP-EXTRACTION-CONTRACT-END -->

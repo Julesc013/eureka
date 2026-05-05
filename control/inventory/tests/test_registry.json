@@ -8685,6 +8685,166 @@
       "failure_means": "P94 pack import runtime planning validator or audit assertions regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms planning-only/no-runtime/no-upload/no-execution/no-URL-fetching/no-mutation pack import gates."
+    },
+    {
+      "test_id": "deep_extraction_request_examples_validator",
+      "label": "P95 deep extraction request examples validator",
+      "command": "python scripts/validate_deep_extraction_request.py --all-examples",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic deep extraction request examples without runtime extraction, file opening, URL fetching, OCR/transcription, or mutation."
+    },
+    {
+      "test_id": "deep_extraction_request_examples_validator_json",
+      "label": "P95 deep extraction request examples validator JSON",
+      "command": "python scripts/validate_deep_extraction_request.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates request examples and emits machine-readable results."
+    },
+    {
+      "test_id": "extraction_result_summary_examples_validator",
+      "label": "P95 extraction result summary examples validator",
+      "command": "python scripts/validate_extraction_result_summary.py --all-examples",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic extraction result summaries with no raw payloads, raw text dumps, OCR/transcription, truth claims, or mutation."
+    },
+    {
+      "test_id": "extraction_result_summary_examples_validator_json",
+      "label": "P95 extraction result summary examples validator JSON",
+      "command": "python scripts/validate_extraction_result_summary.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates result summaries and emits machine-readable results."
+    },
+    {
+      "test_id": "deep_extraction_contract_validator",
+      "label": "P95 deep extraction contract validator",
+      "command": "python scripts/validate_deep_extraction_contract.py",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates extraction contracts, inventory, audit docs, examples, and no-runtime/no-mutation guarantees."
+    },
+    {
+      "test_id": "deep_extraction_contract_validator_json",
+      "label": "P95 deep extraction contract validator JSON",
+      "command": "python scripts/validate_deep_extraction_contract.py --json",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates extraction contract pack and emits machine-readable results."
+    },
+    {
+      "test_id": "deep_extraction_request_dry_run_json",
+      "label": "P95 deep extraction request dry-run JSON",
+      "command": "python scripts/dry_run_deep_extraction_request.py --label \"Example archive\" --container-kind zip_archive --json",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Emits a stdout-only hypothetical request; writes no files and performs no extraction."
+    },
+    {
+      "test_id": "deep_extraction_contract_tests",
+      "label": "P95 deep extraction contract tests",
+      "command": "python -m unittest tests.operations.test_deep_extraction_contract tests.scripts.test_validate_deep_extraction_request tests.scripts.test_validate_extraction_result_summary tests.scripts.test_validate_deep_extraction_contract tests.scripts.test_dry_run_deep_extraction_request",
+      "category": "contract",
+      "owner_area": "extraction",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Confirms P95 schemas, examples, validators, dry-run output, no-runtime booleans, no private paths, no raw payloads, sandbox/resource requirements, and no mutation."
     }
   ],
   "notes": [
@@ -8709,6 +8869,7 @@
     "P91 npm Metadata Connector Runtime Planning v0 validation is planning-only and adds no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
     "P92 Software Heritage Connector Runtime Planning v0 validation is planning-only and adds no Software Heritage API calls, SWHID live resolution, source-code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
     "P93 Object/Source/Comparison Page Runtime Planning v0 validation is planning-only and adds no runtime routes, renderers, stores, public-search mutation, live source calls, arbitrary URL/local path access, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion.",
-    "P94 Pack Import Runtime Planning v0 validation is planning-only and adds no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decision, or accepted record."
+    "P94 Pack Import Runtime Planning v0 validation is planning-only and adds no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decision, or accepted record.",
+    "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service."
   ]
 }

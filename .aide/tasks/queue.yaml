@@ -914,25 +914,11 @@
       "notes": "P84 completed as contract/schema/validator/example/audit work only; no runtime ranking, public search ordering change, hidden suppression, popularity/telemetry/ad/user-profile ranking, model calls, candidate promotion, source trust, rights clearance, malware safety, or index/cache/ledger mutation was added."
     },
     {
-      "id": "pypi_metadata_connector_runtime_planning_v0",
-      "title": "P90 PyPI Metadata Connector Runtime Planning v0 only after approval",
-      "status": "completed_planning_blocked_connector_approval_pending",
-      "priority": 131,
-      "notes": "P90 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P74 keeps connector_approved_now false; no PyPI API calls, connector runtime, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
-    },
-    {
       "id": "compatibility_aware_ranking_contract_v0",
       "title": "P85 Compatibility-Aware Ranking Contract v0",
       "status": "completed_contract_only",
       "priority": 126,
       "notes": "P85 completed as contract/schema/validator/example/audit work only; no runtime compatibility ranking, public search ordering change, hidden suppression, installability/dependency-safety/malware-safety claim, package manager invocation, emulator/VM launch, candidate promotion, live source call, or index/cache/ledger mutation was added."
-    },
-    {
-      "id": "npm_metadata_connector_runtime_planning_v0",
-      "title": "P91 npm Metadata Connector Runtime Planning v0 only after approval",
-      "status": "completed_planning_blocked_connector_approval_pending",
-      "priority": 132,
-      "notes": "P91 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P75 keeps connector_approved_now false; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package or registry fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "public_query_observation_runtime_planning_v0",
@@ -942,18 +928,18 @@
       "notes": "P86 completed as planning/audit/validator work only. Readiness is blocked_hosted_deployment_unverified; no runtime observation writes, storage, telemetry, raw query retention, public aggregate, public search mutation, or index/cache/ledger/candidate/master mutation was added."
     },
     {
-      "id": "software_heritage_connector_runtime_planning_v0",
-      "title": "P92 Software Heritage Connector Runtime Planning v0 only after approval",
-      "status": "completed_planning_blocked_connector_approval_pending",
-      "priority": 133,
-      "notes": "P92 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P76 keeps connector_approved_now false; no Software Heritage API calls, SWHID live resolution, origin/visit/snapshot/release/revision/directory/content lookup, connector runtime, arbitrary SWHID/origin/repository fetch, source code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
-    },
-    {
       "id": "ia_metadata_connector_runtime_planning_v0",
       "title": "P87 IA Metadata Connector Runtime Planning v0 only after approval",
       "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 128,
       "notes": "P87 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P71 keeps connector_approved_now false; no IA calls, connector runtime, source sync execution, source-cache/evidence-ledger writes, public fanout, downloads, telemetry, credentials, or index mutation was added."
+    },
+    {
+      "id": "hosted_deployment_remediation_v0",
+      "title": "Hosted Deployment Remediation v0 if P77 remains failed",
+      "status": "blocked_pending_operator_hosted_deployment",
+      "priority": 128,
+      "notes": "Operator deploys hosted wrapper, configures backend URL, edge/rate limits, and verifies static site before query observation runtime."
     },
     {
       "id": "wayback_cdx_memento_connector_runtime_planning_v0",
@@ -968,6 +954,27 @@
       "status": "completed_planning_blocked_connector_approval_pending",
       "priority": 130,
       "notes": "P89 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P73 keeps connector_approved_now false; no GitHub API calls, connector runtime, arbitrary repository fetch, repository clone, release asset/source archive download, raw blob/file fetch, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
+    },
+    {
+      "id": "pypi_metadata_connector_runtime_planning_v0",
+      "title": "P90 PyPI Metadata Connector Runtime Planning v0 only after approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
+      "priority": 131,
+      "notes": "P90 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P74 keeps connector_approved_now false; no PyPI API calls, connector runtime, arbitrary package fetch, wheel/sdist/package file download, package install, dependency resolution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
+    },
+    {
+      "id": "npm_metadata_connector_runtime_planning_v0",
+      "title": "P91 npm Metadata Connector Runtime Planning v0 only after approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
+      "priority": 132,
+      "notes": "P91 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P75 keeps connector_approved_now false; no npm registry API calls, npm/yarn/pnpm CLI calls, connector runtime, arbitrary package or registry fetch, tarball/package file download, package install, dependency resolution, npm audit, lifecycle script execution, package archive inspection, package manager invocation, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
+    },
+    {
+      "id": "software_heritage_connector_runtime_planning_v0",
+      "title": "P92 Software Heritage Connector Runtime Planning v0 only after approval",
+      "status": "completed_planning_blocked_connector_approval_pending",
+      "priority": 133,
+      "notes": "P92 completed as planning/audit/validator work only. Readiness is blocked_connector_approval_pending because P76 keeps connector_approved_now false; no Software Heritage API calls, SWHID live resolution, origin/visit/snapshot/release/revision/directory/content lookup, connector runtime, arbitrary SWHID/origin/repository fetch, source code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added."
     },
     {
       "id": "object_source_comparison_page_runtime_planning_v0",
@@ -986,23 +993,23 @@
     {
       "id": "deep_extraction_contract_v0",
       "title": "P95 Deep Extraction Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed_contract_only",
       "priority": 136,
-      "notes": "Future contract only; no extraction runtime or payload retrieval without governed policy."
+      "notes": "P95 completed as contract/schema/validator/example/audit work only. No extraction runtime, payload opening, archive unpacking, execution, installer execution, package manager invocation, emulator/VM launch, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service was added."
     },
     {
       "id": "search_result_explanation_contract_v0",
       "title": "P96 Search Result Explanation Contract v0",
       "status": "queued_codex_safe_future",
       "priority": 137,
-      "notes": "Future contract for explaining search result ordering, grouping, evidence, gaps, compatibility, and safe action posture."
+      "notes": "Next codex-safe branch after P95; contract-only explanations for evidence, ranking, grouping, gaps, limitations, and action posture."
     },
     {
       "id": "public_search_ranking_runtime_planning_v0",
       "title": "P97 Public Search Ranking Runtime Planning v0 only after contracts and evals",
       "status": "blocked_pending_contracts_and_evals",
       "priority": 138,
-      "notes": "Future planning only after ranking contracts and eval evidence; no runtime ranking until then."
+      "notes": "Future planning only after contracts and eval evidence; no runtime ranking until then."
     },
     {
       "id": "compatibility_evidence_pack_contract_v0",
@@ -1010,13 +1017,6 @@
       "status": "queued_codex_safe_future",
       "priority": 139,
       "notes": "Future contract for governed compatibility evidence packs after ranking/page contracts."
-    },
-    {
-      "id": "hosted_deployment_remediation_v0",
-      "title": "Hosted Deployment Remediation v0 if P77 remains failed",
-      "status": "blocked_pending_operator_hosted_deployment",
-      "priority": 128,
-      "notes": "Operator deploys hosted wrapper, configures backend URL, edge/rate limits, and verifies static site before query observation runtime."
     },
     {
       "id": "source_cache_local_dry_run_runtime_v0",
@@ -1066,6 +1066,13 @@
       "status": "blocked_pending_operator_approval",
       "priority": 145,
       "notes": "Future local dry-run runtime only after P94 planning is reviewed, operator approval is explicit, and import path, executable payload, rollback, and mutation boundaries are accepted."
+    },
+    {
+      "id": "deep_extraction_runtime_planning_v0",
+      "title": "P105 Deep Extraction Runtime Planning v0 only after sandbox policy approval",
+      "status": "blocked_pending_sandbox_policy_approval",
+      "priority": 146,
+      "notes": "Future planning only after P95 contract is reviewed and extraction sandbox/resource/executable payload safety policy is approved."
     }
   ]
 }

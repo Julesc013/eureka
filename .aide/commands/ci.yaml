@@ -992,3 +992,21 @@ notes:
   - id: pack_import_runtime_plan_tests
     run: python -m unittest tests.operations.test_pack_import_runtime_plan tests.scripts.test_validate_pack_import_runtime_plan
 <!-- P94-PACK-IMPORT-RUNTIME-PLAN-END -->
+<!-- P95-DEEP-EXTRACTION-CONTRACT-START -->
+  - id: deep_extraction_request_examples_validator
+    run: python scripts/validate_deep_extraction_request.py --all-examples
+  - id: deep_extraction_request_examples_validator_json
+    run: python scripts/validate_deep_extraction_request.py --all-examples --json
+  - id: extraction_result_summary_examples_validator
+    run: python scripts/validate_extraction_result_summary.py --all-examples
+  - id: extraction_result_summary_examples_validator_json
+    run: python scripts/validate_extraction_result_summary.py --all-examples --json
+  - id: deep_extraction_contract_validator
+    run: python scripts/validate_deep_extraction_contract.py
+  - id: deep_extraction_contract_validator_json
+    run: python scripts/validate_deep_extraction_contract.py --json
+  - id: deep_extraction_request_dry_run_json
+    run: python scripts/dry_run_deep_extraction_request.py --label "Example archive" --container-kind zip_archive --json
+  - id: deep_extraction_contract_tests
+    run: python -m unittest tests.operations.test_deep_extraction_contract tests.scripts.test_validate_deep_extraction_request tests.scripts.test_validate_extraction_result_summary tests.scripts.test_validate_deep_extraction_contract tests.scripts.test_dry_run_deep_extraction_request
+<!-- P95-DEEP-EXTRACTION-CONTRACT-END -->
