@@ -777,6 +777,14 @@
       "priority": 0,
       "notes": "Addressed by control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json. Approval-only; no live npm registry API calls, connector runtime, npm/yarn/pnpm CLI calls, package download, package install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout.",
       "addressed_by": "control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json"
+    },
+    {
+      "id": "audit-backlog-software-heritage-connector-approval-v0",
+      "title": "P76 Software Heritage Connector Approval Pack v0 audit pack",
+      "status": "addressed",
+      "priority": 0,
+      "notes": "Addressed by control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json. Approval-only; no live Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout.",
+      "addressed_by": "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json"
     }
   ]
 }

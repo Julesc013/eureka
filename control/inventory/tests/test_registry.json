@@ -6736,6 +6736,126 @@
       "label": "npm Metadata Connector Approval Tests",
       "command": "python -m unittest tests.operations.test_npm_metadata_connector_approval tests.scripts.test_validate_npm_metadata_connector_approval tests.scripts.test_validate_npm_metadata_connector_contract tests.scripts.test_dry_run_npm_metadata_connector_approval",
       "writes": "temporary files only"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_approval_examples_validator",
+      "label": "Software Heritage Connector Approval Examples Validator",
+      "command": "python scripts/validate_software_heritage_connector_approval.py --all-examples",
+      "writes": "none"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_approval_examples_validator_json",
+      "label": "Software Heritage Connector Approval Examples Validator JSON",
+      "command": "python scripts/validate_software_heritage_connector_approval.py --all-examples --json",
+      "writes": "none"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_contract_validator",
+      "label": "Software Heritage Connector Contract Validator",
+      "command": "python scripts/validate_software_heritage_connector_contract.py",
+      "writes": "none"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_contract_validator_json",
+      "label": "Software Heritage Connector Contract Validator JSON",
+      "command": "python scripts/validate_software_heritage_connector_contract.py --json",
+      "writes": "none"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_dry_run_json",
+      "label": "Software Heritage Connector Dry Run JSON",
+      "command": "python scripts/dry_run_software_heritage_connector_approval.py --json",
+      "writes": "stdout only"
+    },
+    {
+      "category": "contract",
+      "owner_area": "source_ingestion",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P76 Software Heritage connector approval drifted or boundary guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P76 approval-only validation; no Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, connector runtime, telemetry, credentials, tokens, cache/ledger runtime, or index mutation.",
+      "test_id": "software_heritage_connector_approval_tests",
+      "label": "Software Heritage Connector Approval Tests",
+      "command": "python -m unittest tests.operations.test_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_approval tests.scripts.test_validate_software_heritage_connector_contract tests.scripts.test_dry_run_software_heritage_connector_approval",
+      "writes": "temporary files only"
     }
   ],
   "notes": [
@@ -6744,6 +6864,7 @@
     "P72 Wayback/CDX/Memento Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no connector runtime, external calls, capture replay, WARC download, cache/ledger mutation, or public-query fanout.",
     "P73 GitHub Releases Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, GitHub API calls, repository clone, release asset/source archive download, token use, cache/ledger mutation, or public-query fanout.",
     "P74 PyPI Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, PyPI API calls, package download/install, dependency resolution, token use, cache/ledger mutation, or public-query fanout.",
-    "P75 npm Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, npm registry API calls, npm/yarn/pnpm CLI calls, package download/install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout."
+    "P75 npm Metadata Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, npm registry API calls, npm/yarn/pnpm CLI calls, package download/install, dependency resolution, lifecycle script execution, npm audit, token use, cache/ledger mutation, or public-query fanout.",
+    "P76 Software Heritage Connector Approval Pack v0 validation is stdlib-only and approval-only; it adds no live connector runtime, Software Heritage API calls, SWHID resolution, origin lookup, source content/blob fetch, repository clone, source archive download, token use, cache/ledger mutation, or public-query fanout."
   ]
 }
