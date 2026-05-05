@@ -1,0 +1,3 @@
+# Allowed Metadata Capabilities
+
+Allowed capabilities are future and disabled now: swhid_metadata_summary_future, origin_metadata_summary_future, visit_metadata_summary_future, snapshot_metadata_summary_future, release_metadata_summary_future, revision_metadata_summary_future, directory_metadata_summary_future, content_identifier_metadata_summary_future, archival_presence_observation_future, historical_source_identity_observation_future. Content/blob/directory file content retrieval is forbidden.

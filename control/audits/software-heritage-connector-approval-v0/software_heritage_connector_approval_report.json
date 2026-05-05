@@ -1,0 +1,1927 @@
+{
+  "report_id": "software_heritage_connector_approval_v0",
+  "created_by_slice": "p76_software_heritage_connector_approval_pack_v0",
+  "repo_head": "e3458d48a50a21d5f61bf18b4da12d5eec26dd6c",
+  "branch": "main",
+  "worktree_status": [
+    "## main...origin/main",
+    " M .aide/commands/ci.yaml",
+    " M .aide/commands/dev.yaml",
+    " M .aide/reports/README.md",
+    " M .aide/tasks/audit_backlog.yaml",
+    " M .aide/tasks/queue.yaml",
+    " M contracts/connectors/README.md",
+    " M control/audits/README.md",
+    " M control/inventory/sources/software-heritage-placeholder.source.json",
+    " M control/inventory/tests/command_matrix.json",
+    " M control/inventory/tests/test_registry.json",
+    " M docs/BOOTSTRAP_STATUS.md",
+    " M docs/DECISIONS.md",
+    " M docs/OPEN_QUESTIONS.md",
+    " M docs/ROADMAP.md",
+    " M docs/architecture/SOURCE_INGESTION_PLANE.md",
+    " M docs/operations/HOSTED_PUBLIC_SEARCH_REHEARSAL.md",
+    " M docs/operations/LIVE_PROBE_POLICY.md",
+    " M docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md",
+    " M docs/reference/CANDIDATE_INDEX_CONTRACT.md",
+    " M docs/reference/CANDIDATE_PROMOTION_POLICY.md",
+    " M docs/reference/DEMAND_DASHBOARD_CONTRACT.md",
+    " M docs/reference/EVIDENCE_LEDGER_CONTRACT.md",
+    " M docs/reference/EVIDENCE_PACK_CONTRACT.md",
+    " M docs/reference/GITHUB_RELEASES_CONNECTOR_APPROVAL.md",
+    " M docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
+    " M docs/reference/NPM_METADATA_CONNECTOR_APPROVAL.md",
+    " M docs/reference/PROBE_QUEUE_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+    " M docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md",
+    " M docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+    " M docs/reference/PYPI_METADATA_CONNECTOR_APPROVAL.md",
+    " M docs/reference/SOURCE_CACHE_CONTRACT.md",
+    " M docs/reference/SOURCE_PACK_CONTRACT.md",
+    " M docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+    " M docs/reference/SOURCE_SYNC_WORKER_CONTRACT.md",
+    " M docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md",
+    " M docs/roadmap/BACKEND_ROADMAP.md",
+    " M scripts/README.md",
+    "?? contracts/connectors/software_heritage_connector_approval.v0.json",
+    "?? contracts/connectors/software_heritage_connector_manifest.v0.json",
+    "?? control/audits/software-heritage-connector-approval-v0/",
+    "?? control/inventory/connectors/software_heritage_connector.json",
+    "?? docs/reference/SOFTWARE_HERITAGE_CONNECTOR_APPROVAL.md",
+    "?? examples/connectors/software_heritage_approval_v0/",
+    "?? scripts/dry_run_software_heritage_connector_approval.py",
+    "?? scripts/validate_software_heritage_connector_approval.py",
+    "?? scripts/validate_software_heritage_connector_contract.py",
+    "?? tests/operations/test_software_heritage_connector_approval.py",
+    "?? tests/scripts/test_dry_run_software_heritage_connector_approval.py",
+    "?? tests/scripts/test_validate_software_heritage_connector_approval.py",
+    "?? tests/scripts/test_validate_software_heritage_connector_contract.py"
+  ],
+  "contract_files": [
+    "contracts/connectors/software_heritage_connector_approval.v0.json",
+    "contracts/connectors/software_heritage_connector_manifest.v0.json"
+  ],
+  "validator_scripts": [
+    "scripts/validate_software_heritage_connector_approval.py",
+    "scripts/validate_software_heritage_connector_contract.py",
+    "scripts/dry_run_software_heritage_connector_approval.py"
+  ],
+  "example_approval_root": "examples/connectors/software_heritage_approval_v0",
+  "connector_inventory_ref": "control/inventory/connectors/software_heritage_connector.json",
+  "source_inventory_ref": "control/inventory/sources/software-heritage-placeholder.source.json",
+  "connector_scope": {
+    "scope_kind": "software_identity_and_archive_metadata_only",
+    "allowed_target_types": [
+      "swhid_from_reviewed_source_record",
+      "origin_url_from_reviewed_source_record",
+      "repository_identity_from_source_pack_future",
+      "reviewed_search_need_future",
+      "bounded_swhid_metadata_query_future",
+      "bounded_origin_metadata_query_future",
+      "snapshot_metadata_summary_future",
+      "release_metadata_summary_future",
+      "revision_metadata_summary_future"
+    ],
+    "prohibited_target_types": [
+      "arbitrary_public_query_origin_url",
+      "private_repository",
+      "credentialed_repository",
+      "local_repository_path",
+      "repository_clone",
+      "source_code_content_fetch",
+      "content_blob_fetch",
+      "directory_content_fetch",
+      "raw_file_fetch",
+      "source_archive_download",
+      "origin_crawl",
+      "bulk_graph_traversal",
+      "account_private_data",
+      "executable_download"
+    ],
+    "default_mode": "disabled_until_approval",
+    "notes": [
+      "P76 permits only future SWHID, origin, visit, snapshot, release, revision, directory, content identifier, and archival presence metadata summaries after explicit approval."
+    ]
+  },
+  "allowed_metadata_capabilities": [
+    {
+      "capability": "swhid_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "origin_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "visit_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "snapshot_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "release_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "revision_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "directory_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "content_identifier_metadata_summary_future",
+      "status": "future_after_approval",
+      "output_destination": "evidence_ledger_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "archival_presence_observation_future",
+      "status": "future_after_approval",
+      "output_destination": "candidate_index_future_after_review",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    },
+    {
+      "capability": "historical_source_identity_observation_future",
+      "status": "future_after_approval",
+      "output_destination": "source_cache_future",
+      "requires_cache": true,
+      "requires_evidence_attribution": true,
+      "requires_rate_limit": true,
+      "requires_timeout": true,
+      "requires_circuit_breaker": true,
+      "requires_identity_review": true,
+      "limitations": [
+        "Future only and disabled now; no live Software Heritage capability is implemented or approved by P76."
+      ]
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "capability": "arbitrary_origin_fetch",
+      "reason": "arbitrary_origin_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "direct_public_query_fanout",
+      "reason": "direct_public_query_fanout is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "private_repository_access",
+      "reason": "private_repository_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "credentialed_repository_access",
+      "reason": "credentialed_repository_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "token_required_access",
+      "reason": "token_required_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "repository_clone",
+      "reason": "repository_clone is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "source_code_content_fetch",
+      "reason": "source_code_content_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "content_blob_fetch",
+      "reason": "content_blob_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "raw_file_fetch",
+      "reason": "raw_file_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "directory_content_fetch",
+      "reason": "directory_content_fetch is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "source_archive_download",
+      "reason": "source_archive_download is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "graph_crawl",
+      "reason": "graph_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "origin_bulk_crawl",
+      "reason": "origin_bulk_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": "new approval pack required"
+    },
+    {
+      "capability": "account_access",
+      "reason": "account_access is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "upload",
+      "reason": "upload is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "install",
+      "reason": "install is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "execute",
+      "reason": "execute is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "unbounded_crawl",
+      "reason": "unbounded_crawl is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "scraping",
+      "reason": "scraping is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "bypass_access_restrictions",
+      "reason": "bypass_access_restrictions is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "raw_payload_dump",
+      "reason": "raw_payload_dump is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "malware_safety_decision",
+      "reason": "malware_safety_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "rights_clearance_decision",
+      "reason": "rights_clearance_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "source_code_safety_decision",
+      "reason": "source_code_safety_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    },
+    {
+      "capability": "source_completeness_decision",
+      "reason": "source_completeness_decision is outside the P76 identity/archive-metadata-only Software Heritage approval scope.",
+      "forbidden_now": true,
+      "future_policy_required": null
+    }
+  ],
+  "swhid_origin_repository_policy": {
+    "swhid_review_required": true,
+    "origin_url_review_required": true,
+    "repository_identity_review_required": true,
+    "arbitrary_public_query_origin_allowed": false,
+    "private_repository_allowed": false,
+    "credentialed_repository_allowed": false,
+    "token_required_repository_allowed": false,
+    "local_repository_path_allowed": false,
+    "raw_origin_url_publication_allowed": false,
+    "normalized_origin_publication_allowed_after_review": true,
+    "swhid_publication_allowed_after_review": true,
+    "origin_hashing_allowed_future": true,
+    "origin_redaction_required_for_sensitive_inputs": true,
+    "allowed_identity_sources": [
+      "source_record",
+      "source_pack_future",
+      "reviewed_search_need_future",
+      "manual_observation_future",
+      "fixture_example"
+    ],
+    "prohibited_identity_sources": [
+      "raw_public_query_parameter",
+      "user_private_repository",
+      "credentialed_repository",
+      "local_path",
+      "uploaded_file"
+    ],
+    "example_swhid": "synthetic-swhid-placeholder-not-resolved",
+    "example_origin_url": "https://example.invalid/software-heritage/example-project",
+    "notes": [
+      "SWHID and origin examples are synthetic placeholders and are never resolved or fetched."
+    ]
+  },
+  "source_code_content_risk_policy": {
+    "metadata_only_scope": true,
+    "source_code_content_fetch_allowed": false,
+    "content_blob_fetch_allowed": false,
+    "raw_file_fetch_allowed": false,
+    "directory_content_fetch_allowed": false,
+    "repository_clone_allowed": false,
+    "source_archive_download_allowed": false,
+    "source_code_execution_allowed": false,
+    "source_code_safety_claim_allowed": false,
+    "source_completeness_claim_allowed": false,
+    "source_license_or_rights_clearance_claim_allowed": false,
+    "code_snippet_publication_requires_review": true,
+    "limitations": [
+      "Source identity metadata may be observed later; source content must not be fetched, published, executed, or treated as safety/completeness/license proof."
+    ]
+  },
+  "source_policy_review": {
+    "official_policy_review_required": true,
+    "API_terms_review_required": true,
+    "automated_access_policy_review_required": true,
+    "rate_limit_policy_review_required": true,
+    "retry_after_or_abuse_limit_policy_review_required": true,
+    "cache_policy_review_required": true,
+    "rights_access_policy_review_required": true,
+    "review_status": "review_required",
+    "authoritative_docs_refs": [
+      "docs/reference/SOURCE_SYNC_SOURCE_POLICY.md",
+      "docs/reference/SOFTWARE_HERITAGE_CONNECTOR_APPROVAL.md"
+    ],
+    "notes": [
+      "Official Software Heritage API/source policy review is pending; P76 intentionally performs no web browsing or source calls."
+    ]
+  },
+  "user_agent_contact_policy": {
+    "descriptive_user_agent_required_future": true,
+    "contact_policy_required_future": true,
+    "contact_value_configured_now": false,
+    "contact_value": null,
+    "fake_contact_forbidden": true,
+    "user_agent_value_configured_now": false,
+    "user_agent_value": null,
+    "operator_decision_required": true,
+    "notes": [
+      "No contact value or User-Agent string is configured by P76; operator decision is required before any future live connector implementation."
+    ]
+  },
+  "rate_limit_timeout_retry_circuit_breaker_policy": {
+    "rate_limit_required_future": true,
+    "timeout_required_future": true,
+    "retry_backoff_required_future": true,
+    "retry_after_or_abuse_limit_respect_required_future": true,
+    "circuit_breaker_required_future": true,
+    "cache_required_before_public_use": true,
+    "max_results_per_request_future": null,
+    "max_runtime_ms_future": null,
+    "concurrent_request_limit_future": null,
+    "per_source_qps_future": null,
+    "policy_values_configured_now": false,
+    "operator_review_required": true,
+    "notes": [
+      "Concrete values are operator/source-policy decisions, not fabricated in P76."
+    ]
+  },
+  "cache_first_policy": {
+    "source_cache_required_before_public_use": true,
+    "evidence_ledger_required_for_claims": true,
+    "public_search_reads_cache_not_live_source_future": true,
+    "public_query_fanout_forbidden": true,
+    "cache_invalidation_required_future": true,
+    "freshness_policy_required_future": true,
+    "no_source_code_payload_cache": true,
+    "no_content_blob_cache": true,
+    "no_repository_clone_cache": true,
+    "no_source_archive_cache": true,
+    "notes": [
+      "Future public search may only read reviewed cache/evidence outputs, never call Software Heritage live."
+    ]
+  },
+  "expected_source_cache_outputs": [
+    {
+      "output_kind": "software_heritage_swhid_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_origin_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_visit_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_snapshot_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_release_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_revision_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_directory_metadata_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    },
+    {
+      "output_kind": "software_heritage_archival_presence_summary",
+      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "output_runtime_implemented": false,
+      "raw_payload_allowed": false,
+      "source_code_payload_allowed": false,
+      "content_blob_allowed": false,
+      "repository_clone_allowed": false,
+      "source_archive_allowed": false,
+      "public_safe_metadata_only": true,
+      "requires_validation": true,
+      "limitations": [
+        "Expected output model only; no source cache record is written."
+      ]
+    }
+  ],
+  "expected_evidence_ledger_outputs": [
+    {
+      "output_kind": "software_identity_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "archival_presence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "origin_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "release_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "revision_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "snapshot_metadata_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "SWHID_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    },
+    {
+      "output_kind": "scoped_absence_observation",
+      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "output_runtime_implemented": false,
+      "accepted_as_truth": false,
+      "requires_review": true,
+      "requires_promotion_policy": true,
+      "global_absence_claimed": false,
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "source_code_safety_claimed": false,
+      "source_completeness_claimed": false,
+      "limitations": [
+        "Expected output model only; no evidence ledger record is written."
+      ]
+    }
+  ],
+  "query_intelligence_relationship": {
+    "demand_dashboard_can_prioritize_future": true,
+    "search_need_can_reference_future": true,
+    "probe_queue_can_request_future": true,
+    "candidate_index_can_receive_future_after_review": true,
+    "known_absence_can_reference_future": true,
+    "query_observation_mutation_allowed_now": false,
+    "result_cache_mutation_allowed_now": false,
+    "miss_ledger_mutation_allowed_now": false,
+    "search_need_mutation_allowed_now": false,
+    "probe_queue_mutation_allowed_now": false,
+    "candidate_index_mutation_allowed_now": false,
+    "notes": [
+      "Query intelligence may only reference this approval pack as future work; P76 mutates no query intelligence object."
+    ]
+  },
+  "public_search_boundary": {
+    "public_search_live_fanout_allowed": false,
+    "public_search_may_read_source_cache_future": true,
+    "public_search_may_read_live_connector_now": false,
+    "public_search_may_accept_arbitrary_origin_url_param": false,
+    "public_search_may_accept_arbitrary_swhid_param": false,
+    "public_search_may_fetch_source_content": false,
+    "static_site_claim_allowed_now": false,
+    "hosted_backend_claim_allowed_now": false,
+    "limitations": [
+      "No public search route is changed and no Software Heritage live search is enabled."
+    ]
+  },
+  "rights_access_risk_policy": {
+    "rights_classification": "source_terms_apply",
+    "access_policy": [
+      "metadata_only",
+      "no_source_code_download",
+      "no_content_blob_fetch",
+      "no_repository_clone",
+      "no_source_archive_download",
+      "no_private_repositories"
+    ],
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "source_code_safety_claimed": false,
+    "source_completeness_claimed": false,
+    "downloads_enabled": false,
+    "file_retrieval_enabled": false,
+    "source_code_download_enabled": false,
+    "content_blob_fetch_enabled": false,
+    "repository_clone_enabled": false,
+    "source_archive_download_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "risk_review_required": true,
+    "limitations": [
+      "Software Heritage metadata observations are not rights clearance, malware safety, source-code safety, or source completeness claims."
+    ]
+  },
+  "privacy_policy": {
+    "privacy_classification": "repository_identity_review_required",
+    "private_data_allowed": false,
+    "credentials_required_now": false,
+    "account_access_allowed": false,
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_repository": false,
+    "contains_private_origin_url": false,
+    "contains_private_url": false,
+    "publishable": true,
+    "limitations": [
+      "P76 examples contain no private paths, credentials, accounts, private repositories, private origin URLs, private URLs, or tokens."
+    ]
+  },
+  "approval_checklist": [
+    {
+      "checklist_id": "approval.source_policy_review",
+      "item": "source_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.official_docs_review",
+      "item": "official_docs_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.swhid_policy_review",
+      "item": "swhid_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.origin_url_policy_review",
+      "item": "origin_url_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.repository_identity_policy_review",
+      "item": "repository_identity_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.source_code_content_risk_policy_review",
+      "item": "source_code_content_risk_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.user_agent_contact_decision",
+      "item": "user_agent_contact_decision",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.rate_limit_timeout_retry_policy",
+      "item": "rate_limit_timeout_retry_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.circuit_breaker_policy",
+      "item": "circuit_breaker_policy",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.cache_output_contract_review",
+      "item": "cache_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.evidence_output_contract_review",
+      "item": "evidence_output_contract_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.rights_access_risk_review",
+      "item": "rights_access_risk_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.privacy_review",
+      "item": "privacy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.public_search_boundary_review",
+      "item": "public_search_boundary_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.token_policy_review",
+      "item": "token_policy_review",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.operator_approval",
+      "item": "operator_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "approval.human_approval",
+      "item": "human_approval",
+      "required": true,
+      "status": "pending",
+      "evidence_ref": null,
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    }
+  ],
+  "operator_checklist": [
+    {
+      "checklist_id": "operator.configure_user_agent",
+      "item": "configure_user_agent",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_contact_policy",
+      "item": "configure_contact_policy",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_timeout",
+      "item": "configure_timeout",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_rate_limit",
+      "item": "configure_rate_limit",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_retry_backoff",
+      "item": "configure_retry_backoff",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_circuit_breaker",
+      "item": "configure_circuit_breaker",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_cache_destination",
+      "item": "configure_cache_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_evidence_destination",
+      "item": "configure_evidence_destination",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_swhid_filter",
+      "item": "configure_swhid_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_origin_url_filter",
+      "item": "configure_origin_url_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.configure_repository_identity_filter",
+      "item": "configure_repository_identity_filter",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_token_required_for_v0",
+      "item": "confirm_no_token_required_for_v0",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.confirm_no_source_code_download_clone_or_content_fetch",
+      "item": "confirm_no_source_code_download_clone_or_content_fetch",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.enable_connector_flag_future",
+      "item": "enable_connector_flag_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.monitor_connector_health_future",
+      "item": "monitor_connector_health_future",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    },
+    {
+      "checklist_id": "operator.record_approval_evidence",
+      "item": "record_approval_evidence",
+      "required_future": true,
+      "status": "pending",
+      "notes": "Pending; P76 does not approve or configure live Software Heritage access."
+    }
+  ],
+  "no_runtime_no_mutation_guarantees": {
+    "runtime": {
+      "connector_runtime_implemented": false,
+      "connector_approved_now": false,
+      "live_source_called": false,
+      "external_calls_performed": false,
+      "software_heritage_api_called": false,
+      "swhid_resolved_live": false,
+      "origin_lookup_performed": false,
+      "visit_lookup_performed": false,
+      "snapshot_lookup_performed": false,
+      "release_lookup_performed": false,
+      "revision_lookup_performed": false,
+      "directory_lookup_performed": false,
+      "content_blob_lookup_performed": false,
+      "repository_cloned": false,
+      "source_code_downloaded": false,
+      "source_archive_downloaded": false,
+      "source_file_retrieved": false,
+      "public_search_live_fanout_enabled": false,
+      "downloads_enabled": false,
+      "file_retrieval_enabled": false,
+      "mirroring_enabled": false,
+      "installs_enabled": false,
+      "execution_enabled": false,
+      "credentials_used": false,
+      "software_heritage_token_used": false,
+      "telemetry_exported": false
+    },
+    "mutation": {
+      "source_cache_mutated": false,
+      "evidence_ledger_mutated": false,
+      "candidate_index_mutated": false,
+      "public_index_mutated": false,
+      "local_index_mutated": false,
+      "master_index_mutated": false
+    }
+  },
+  "runtime_status": "approval_only_no_runtime_no_mutation",
+  "command_results": [
+    {
+      "label": "P76 approval examples validator",
+      "command": "python scripts/validate_software_heritage_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.09,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P76 approval examples validator JSON",
+      "command": "python scripts/validate_software_heritage_connector_approval.py --all-examples --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.087,
+      "summary": "{\n  \"status\": \"valid\",\n  \"created_by\": \"software_heritage_connector_approval_validator_v0\",\n  \"example_count\": 1,\n  \"results\": [\n    {\n      \"status\": \"valid\",\n      \"created_by\": \"software_heritage_connector_approval_validator_v0\","
+    },
+    {
+      "label": "P76 contract validator",
+      "command": "python scripts/validate_software_heritage_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.101,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/software_heritage_connector_approval.v0.json"
+    },
+    {
+      "label": "P76 contract validator JSON",
+      "command": "python scripts/validate_software_heritage_connector_contract.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.101,
+      "summary": "{\n  \"status\": \"valid\",\n  \"created_by\": \"software_heritage_connector_contract_validator_v0\",\n  \"contract_file\": \"contracts/connectors/software_heritage_connector_approval.v0.json\",\n  \"example_count\": 1,\n  \"errors\": [],\n  \"warnings\": []\n}"
+    },
+    {
+      "label": "P76 dry-run approval JSON",
+      "command": "python scripts/dry_run_software_heritage_connector_approval.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.062,
+      "summary": "{\n  \"schema_version\": \"0.1.0\",\n  \"approval_record_id\": \"dry_run.connector.software_heritage.approval.v0\",\n  \"approval_record_kind\": \"software_heritage_connector_approval\",\n  \"status\": \"draft_example\",\n  \"created_by_tool\": \"dry_run_software_heritage_connector_approval_v0\",\n  \"connector_ref\": {\n    \"connector_id\": \"software_heritage_connector\","
+    },
+    {
+      "label": "P75 approval examples validator",
+      "command": "python scripts/validate_npm_metadata_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.088,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P75 contract validator",
+      "command": "python scripts/validate_npm_metadata_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.117,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/npm_metadata_connector_approval.v0.json"
+    },
+    {
+      "label": "P74 approval examples validator",
+      "command": "python scripts/validate_pypi_metadata_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.084,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P74 contract validator",
+      "command": "python scripts/validate_pypi_metadata_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.109,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/pypi_metadata_connector_approval.v0.json"
+    },
+    {
+      "label": "P73 approval examples validator",
+      "command": "python scripts/validate_github_releases_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.08,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P73 contract validator",
+      "command": "python scripts/validate_github_releases_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.119,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/github_releases_connector_approval.v0.json"
+    },
+    {
+      "label": "P72 approval examples validator",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.076,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P72 contract validator",
+      "command": "python scripts/validate_wayback_cdx_memento_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.103,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/wayback_cdx_memento_connector_approval.v0.json"
+    },
+    {
+      "label": "P71 approval examples validator",
+      "command": "python scripts/validate_internet_archive_metadata_connector_approval.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.075,
+      "summary": "status: valid\nexample_count: 1"
+    },
+    {
+      "label": "P71 contract validator",
+      "command": "python scripts/validate_internet_archive_metadata_connector_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.092,
+      "summary": "status: valid\nexample_count: 1\ncontract_file: contracts/connectors/internet_archive_metadata_connector_approval.v0.json"
+    },
+    {
+      "label": "Source cache record examples validator",
+      "command": "python scripts/validate_source_cache_record.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "status: valid\nexample_count: 3"
+    },
+    {
+      "label": "Source cache contract validator",
+      "command": "python scripts/validate_source_cache_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json"
+    },
+    {
+      "label": "Evidence ledger record examples validator",
+      "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.071,
+      "summary": "status: valid\nexample_count: 3"
+    },
+    {
+      "label": "Evidence ledger contract validator",
+      "command": "python scripts/validate_evidence_ledger_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json"
+    },
+    {
+      "label": "Source cache/evidence ledger contract validator",
+      "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.078,
+      "summary": "status: valid\nreport_id: source_cache_evidence_ledger_v0"
+    },
+    {
+      "label": "Source sync worker job examples validator",
+      "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.078,
+      "summary": "status: valid\nexample_count: 4"
+    },
+    {
+      "label": "Source sync worker contract validator",
+      "command": "python scripts/validate_source_sync_worker_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.123,
+      "summary": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4"
+    },
+    {
+      "label": "Demand dashboard examples validator",
+      "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.076,
+      "summary": "status: valid\nexample_count: 2"
+    },
+    {
+      "label": "Demand dashboard contract validator",
+      "command": "python scripts/validate_demand_dashboard_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.088,
+      "summary": "status: valid\ncontract_file: contracts/query/demand_dashboard_snapshot.v0.json\nexample_count: 2"
+    },
+    {
+      "label": "Query guard examples validator",
+      "command": "python scripts/validate_query_guard_decision.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.077,
+      "summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred."
+    },
+    {
+      "label": "Query privacy poisoning guard contract validator",
+      "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.084,
+      "summary": "Query Privacy and Poisoning Guard Contract validation\nstatus: valid\ncontract_file: contracts/query/query_guard_decision.v0.json\nreport_id: query_privacy_poisoning_guard_v0\nexample_count: 5\nwarnings:\n- P67 is contract-only; runtime query privacy and poisoning guard remains deferred."
+    },
+    {
+      "label": "Known absence page examples validator",
+      "command": "python scripts/validate_known_absence_page.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.075,
+      "summary": "Known Absence Page validation\nstatus: valid\nexample_count: 3\nwarnings:\n- examples/known_absence_pages/minimal_near_miss_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_no_verified_result_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred.\n- examples/known_absence_pages/minimal_policy_blocked_absence_v0: P66 validates contract/example artifacts only; runtime known absence pages remain deferred."
+    },
+    {
+      "label": "Known absence page contract validator",
+      "command": "python scripts/validate_known_absence_page_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.089,
+      "summary": "Known Absence Page Contract validation\nstatus: valid\ncontract_file: contracts/query/known_absence_page.v0.json\nreport_id: known_absence_page_v0\nexample_count: 3\nwarnings:\n- P66 is contract-only; runtime known absence page serving remains deferred."
+    },
+    {
+      "label": "Candidate promotion assessment examples validator",
+      "command": "python scripts/validate_candidate_promotion_assessment.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.075,
+      "summary": "Candidate Promotion Assessment validation\nstatus: valid\nexample_count: 4"
+    },
+    {
+      "label": "Candidate promotion policy validator",
+      "command": "python scripts/validate_candidate_promotion_policy.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.084,
+      "summary": "Candidate Promotion Policy validation\nstatus: valid\ncontract_file: contracts/query/candidate_promotion_assessment.v0.json\nreport_id: candidate_promotion_policy_v0\nexample_count: 4\nwarnings:\n- P65 is contract-only; candidate promotion runtime remains deferred."
+    },
+    {
+      "label": "Candidate index record examples validator",
+      "command": "python scripts/validate_candidate_index_record.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Candidate Index Record validation\nstatus: valid\nexample_count: 4"
+    },
+    {
+      "label": "Candidate index contract validator",
+      "command": "python scripts/validate_candidate_index_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.077,
+      "summary": "Candidate Index Contract validation\nstatus: valid\ncontract_file: contracts/query/candidate_index_record.v0.json\nreport_id: candidate_index_v0\nexample_count: 4\nwarnings:\n- P64 is contract-only; candidate index runtime and promotion remain deferred."
+    },
+    {
+      "label": "Probe queue item examples validator",
+      "command": "python scripts/validate_probe_queue_item.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "Probe Queue Item validation\nstatus: valid\nexample_count: 3"
+    },
+    {
+      "label": "Probe queue contract validator",
+      "command": "python scripts/validate_probe_queue_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.075,
+      "summary": "Probe Queue Contract validation\nstatus: valid\ncontract_file: contracts/query/probe_queue_item.v0.json\nreport_id: probe_queue_v0\nexample_count: 3\nwarnings:\n- P63 is contract-only; probe queue runtime and probe execution remain deferred."
+    },
+    {
+      "label": "Search need record examples validator",
+      "command": "python scripts/validate_search_need_record.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "Search Need Record validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "label": "Search need record contract validator",
+      "command": "python scripts/validate_search_need_record_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Search Need Record Contract validation\nstatus: valid\ncontract_file: contracts/query/search_need_record.v0.json\nreport_id: search_need_record_v0\nexample_count: 2\nwarnings:\n- P62 is contract-only; search need runtime storage remains deferred."
+    },
+    {
+      "label": "Search miss ledger entry examples validator",
+      "command": "python scripts/validate_search_miss_ledger_entry.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "Search Miss Ledger Entry validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "label": "Search miss ledger contract validator",
+      "command": "python scripts/validate_search_miss_ledger_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Search Miss Ledger Contract validation\nstatus: valid\ncontract_file: contracts/query/search_miss_ledger_entry.v0.json\nreport_id: search_miss_ledger_v0\nexample_count: 2\nwarnings:\n- P61 is contract-only; miss ledger runtime writes remain deferred."
+    },
+    {
+      "label": "Search result cache entry examples validator",
+      "command": "python scripts/validate_search_result_cache_entry.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Search Result Cache Entry validation\nstatus: valid\nexample_count: 2"
+    },
+    {
+      "label": "Shared query result cache contract validator",
+      "command": "python scripts/validate_shared_query_result_cache_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.073,
+      "summary": "Shared Query/Result Cache Contract validation\nstatus: valid\ncontract_file: contracts/query/search_result_cache_entry.v0.json\nreport_id: shared_query_result_cache_v0\nexample_count: 2\nwarnings:\n- P60 is contract-only; runtime cache reads/writes remain deferred."
+    },
+    {
+      "label": "Query observation examples validator",
+      "command": "python scripts/validate_query_observation.py --all-examples",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.069,
+      "summary": "Query Observation validation\nstatus: valid\nexample_count: 1"
+    },
+    {
+      "label": "Query observation contract validator",
+      "command": "python scripts/validate_query_observation_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.072,
+      "summary": "Query Observation Contract validation\nstatus: valid\ncontract_file: contracts/query/query_observation.v0.json\nreport_id: query_observation_contract_v0\nexample_count: 1\nwarnings:\n- P59 is contract-only; runtime query observation collection remains deferred."
+    },
+    {
+      "label": "Live probe gateway validator",
+      "command": "python scripts/validate_live_probe_gateway.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.248,
+      "summary": "Live probe gateway validation\nstatus: valid\ncandidate_sources: 9\ndisabled_sources: 9\nwrapper_live_probes_enabled: False\nwrapper_live_internet_archive_enabled: False"
+    },
+    {
+      "label": "Hosted public search rehearsal runner",
+      "command": "python scripts/run_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.991,
+      "summary": "Hosted Public Search Rehearsal\nstatus: passed\nmode: hosted_local_rehearsal\nbase_url: http://127.0.0.1:58995\nserver_started: True\nchecks: 60/60\nsafe routes: 9\nsafe queries: 5"
+    },
+    {
+      "label": "Hosted public search rehearsal validator",
+      "command": "python scripts/validate_hosted_public_search_rehearsal.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.92,
+      "summary": "Hosted Public Search Rehearsal validation\nstatus: valid\nreport_id: hosted_public_search_rehearsal_v0\nroutes: 9\nsafe_queries: 5\nblocked_requests: 34\nlive_rehearsal_status: passed\nwarnings:"
+    },
+    {
+      "label": "Public search safety evidence runner",
+      "command": "python scripts/run_public_search_safety_evidence.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.413,
+      "summary": "Public Search Safety Evidence\nstatus: passed\nmode: local_index_only\nchecks: 64/64\nsafe routes: 9\nsafe queries: 4\nblocked requests: 32/32\npublic index documents: 584"
+    },
+    {
+      "label": "Public search safety evidence validator",
+      "command": "python scripts/validate_public_search_safety_evidence.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.424,
+      "summary": "Public Search Safety Evidence validation\nstatus: valid\nreport_id: public_search_safety_evidence_v0\nsafe_query_count: 4\nblocked_request_count: 32"
+    },
+    {
+      "label": "Static site search integration validator",
+      "command": "python scripts/validate_static_site_search_integration.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Static Site Search Integration validation\nstatus: valid\nreport_id: static_site_search_integration_v0\nbackend_status: backend_unconfigured\ndocument_count: 584"
+    },
+    {
+      "label": "Public search index builder validator",
+      "command": "python scripts/validate_public_search_index_builder.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.788,
+      "summary": "Public Search Index Builder validation\nstatus: valid\nreport_id: public_search_index_builder_v0\ndocument_count: 584"
+    },
+    {
+      "label": "Public search index validator",
+      "command": "python scripts/validate_public_search_index.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.265,
+      "summary": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False"
+    },
+    {
+      "label": "Hosted public search wrapper validator",
+      "command": "python scripts/validate_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.279,
+      "summary": "Hosted public search wrapper validation\nstatus: valid\nreport_id: hosted_public_search_wrapper_v0\npublic_search_mode: local_index_only\nhosted_wrapper_implemented: True\nhosted_backend_deployed: False\nhosted_deployment_verified: False"
+    },
+    {
+      "label": "Hosted public search wrapper check",
+      "command": "python scripts/check_hosted_public_search_wrapper.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.274,
+      "summary": "Hosted public search wrapper check\nstatus: passed\nmode: local_index_only\nchecks: 14/14\n- PASS check_config: Safe defaults accepted.\n- PASS healthz: OK\n- PASS status_top_level: OK\n- PASS status_api: OK"
+    },
+    {
+      "label": "Hosted public search config check",
+      "command": "python scripts/run_hosted_public_search.py --check-config",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.232,
+      "summary": "Hosted public search wrapper config\nstatus: valid\nhost: 127.0.0.1\nport: 8080\nmode: local_index_only\nhosted_deployment_verified: False\nlive_probes_enabled: False\ndownloads_enabled: False"
+    },
+    {
+      "label": "Public search production contract validator",
+      "command": "python scripts/validate_public_search_production_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.077,
+      "summary": "Public search production contract validation\nstatus: valid\nreport_id: public_search_production_contract_v0\nactive_mode: local_index_only\nhosted_search_implemented: False\nlive_probes_enabled: False"
+    },
+    {
+      "label": "Static deployment evidence validator",
+      "command": "python scripts/validate_static_deployment_evidence.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.068,
+      "summary": "Static deployment evidence validation\nstatus: valid\nreport_id: static_deployment_evidence_v0\nartifact_root: site/dist\nworkflow_path: .github/workflows/pages.yml\ndeployment_verified: False\ndeployment_success_claimed: False"
+    },
+    {
+      "label": "Post-P50 remediation validator",
+      "command": "python scripts/validate_post_p50_remediation.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.068,
+      "summary": "post-p50 remediation validation passed: 17 required files checked"
+    },
+    {
+      "label": "Post-P49 platform audit validator",
+      "command": "python scripts/validate_post_p49_platform_audit.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.068,
+      "summary": "post-p49 platform audit validation passed: 28 required files checked"
+    },
+    {
+      "label": "Public search contract validator",
+      "command": "python scripts/validate_public_search_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Public search contract validation\nstatus: valid\ncontract_id: public_search_api_contract_v0\nfirst_allowed_mode: local_index_only\nruntime_routes_implemented: True\nregistered_routes: 6\nforbidden_parameters: 26"
+    },
+    {
+      "label": "Public search result-card contract validator",
+      "command": "python scripts/validate_public_search_result_card_contract.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "summary": "status: valid\ncontract_id: public_search_result_card_contract_v0\nschema: contracts/api/search_result_card.v0.json\nresponse_schema: contracts/api/search_response.v0.json\naudit_pack: control/audits/public-search-result-card-contract-v0\nexamples: 5"
+    },
+    {
+      "label": "Public search safety validator",
+      "command": "python scripts/validate_public_search_safety.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.07,
+      "summary": "Public Search Safety / Abuse Guard validation\nstatus: valid\nsafety_policy_id: eureka-public-search-safety-abuse-guard-v0\nfirst_allowed_mode: local_index_only\nmax_query_length: 160\nmax_result_limit: 25\nmax_runtime_ms_contract: 3000\ntelemetry_default: off"
+    },
+    {
+      "label": "Local public search runtime validator",
+      "command": "python scripts/validate_local_public_search_runtime.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.068,
+      "summary": "Local Public Search Runtime validation\nstatus: valid\nruntime_scope: local_prototype_backend\nmode: local_index_only\nroutes: 6\nhosted_public_deployment: False\nstatic_search_handoff: True"
+    },
+    {
+      "label": "Public search smoke",
+      "command": "python scripts/public_search_smoke.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.55,
+      "summary": "Public Search Smoke\nstatus: passed\nmode: local_index_only\nchecks: 30/30 passed\nsafe queries: 9\nblocked requests: 14\n\n[PASS] status: /api/v1/status (ok)"
+    },
+    {
+      "label": "Public search smoke JSON",
+      "command": "python scripts/public_search_smoke.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.544,
+      "summary": "{\n  \"base_runtime_slice\": \"local_public_search_runtime_v0\",\n  \"blocked_request_results\": [\n    {\n      \"actual_error_code\": \"query_required\",\n      \"expected_error_code\": \"query_required\",\n      \"message\": \"Check passed.\",\n      \"name\": \"missing q\","
+    },
+    {
+      "label": "Public search index builder check",
+      "command": "python scripts/build_public_search_index.py --check",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.483,
+      "summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True"
+    },
+    {
+      "label": "Static site build check",
+      "command": "python site/build.py --check",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.918,
+      "summary": "Static site generator\nstatus: valid\nsource_root: site\ndeploy_artifact_current: site/dist"
+    },
+    {
+      "label": "Static site validate",
+      "command": "python site/validate.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.098,
+      "summary": "Static site generator validation\nstatus: valid\npage_count: 9\ndist_validation: valid"
+    },
+    {
+      "label": "Publication inventory validator",
+      "command": "python scripts/validate_publication_inventory.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.074,
+      "summary": "Publication inventory validation\nstatus: valid\nregistered_routes: 51\ncurrent_static_artifact_pages: 9\nrequired_client_profiles: 9\nrequired_public_data_paths: 14"
+    },
+    {
+      "label": "Public static site validator",
+      "command": "python scripts/validate_public_static_site.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.09,
+      "summary": "Public static site validation\nstatus: valid\npages: 9\nsource_ids_checked: 15"
+    },
+    {
+      "label": "GitHub Pages static artifact checker",
+      "command": "python scripts/check_github_pages_static_artifact.py --path site/dist",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.161,
+      "summary": "GitHub Pages static artifact check\nstatus: valid\nsite_dir: <repo>\\site\\dist\nstatic_site_validator: valid\npublication_inventory_validator: valid"
+    },
+    {
+      "label": "Generated artifact drift check",
+      "command": "python scripts/check_generated_artifact_drift.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 9.096,
+      "summary": "Generated Artifact Drift Guard v0\nstatus: valid\ninventory: control/inventory/generated_artifacts/generated_artifacts.json\npolicy: control/inventory/generated_artifacts/drift_policy.json\nstrict: False\nstatus_counts: {'passed': 12}\n- public_data_summaries: passed\n  - check_command: passed (python scripts/generate_public_data_summaries.py --check)"
+    },
+    {
+      "label": "Public alpha smoke",
+      "command": "python scripts/public_alpha_smoke.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.591,
+      "summary": "Public Alpha Smoke\nstatus: passed\nmode: public_alpha\nchecks: 18/18 passed\n\n[PASS] status: /api/status (ok)\n[PASS] source list: /api/sources (ok)\n[PASS] query plan: /api/query-plan?q=Windows+7+apps (ok)"
+    },
+    {
+      "label": "Archive resolution evals",
+      "command": "python scripts/run_archive_resolution_evals.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.322,
+      "summary": "Archive resolution evals\ncreated_by_slice: archive_resolution_eval_runner_v0\ntask_count: 6\nstatus_counts: satisfied=6\n\nTasks\n- article_inside_magazine_scan: satisfied (planner=satisfied, search=local_index, results=9)\n- driver_inside_support_cd: satisfied (planner=satisfied, search=local_index, results=50)"
+    },
+    {
+      "label": "Archive resolution evals JSON",
+      "command": "python scripts/run_archive_resolution_evals.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.33,
+      "summary": "{\n  \"created_at\": \"2026-05-05T10:09:29.040557+00:00\",\n  \"created_by_slice\": \"archive_resolution_eval_runner_v0\",\n  \"load_errors\": [],\n  \"notices\": [\n    {\n      \"code\": \"transient_local_index\",\n      \"message\": \"Built a transient Local Index v0 database for this eval run. The report omits the temporary path so JSON remains inspectable.\","
+    },
+    {
+      "label": "Search usefulness audit",
+      "command": "python scripts/run_search_usefulness_audit.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.359,
+      "summary": "Search usefulness audit\ncreated_by_slice: search_usefulness_audit_v0\nquery_count: 64\neureka_status_counts: capability_gap=7, covered=5, partial=40, source_gap=10, unknown=2\nexternal_pending_counts: google=64, internet_archive_full_text=64, internet_archive_metadata=64\nfailure_mode_counts: absence_reasoning_gap=2, actionability_gap=2, compatibility_evidence_gap=25, decomposition_gap=12, external_baseline_pending=64, identity_cluster_gap=14, index_gap=2, live_source_gap=10, member_access_gap=12, planner_gap=24, query_interpretation_gap=21, ranking_gap=9, representation_gap=14, source_coverage_gap=49, surface_ux_gap=4\n\nTop future-work recommendations"
+    },
+    {
+      "label": "Search usefulness audit JSON",
+      "command": "python scripts/run_search_usefulness_audit.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.376,
+      "summary": "{\n  \"created_at\": \"2026-05-05T10:09:29.764600+00:00\",\n  \"created_by_slice\": \"search_usefulness_audit_v0\",\n  \"eureka_status_counts\": {\n    \"capability_gap\": 7,\n    \"covered\": 5,\n    \"partial\": 40,\n    \"source_gap\": 10,"
+    },
+    {
+      "label": "External baseline status JSON",
+      "command": "python scripts/report_external_baseline_status.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.069,
+      "summary": "{\n  \"batches\": {\n    \"batch_0\": {\n      \"completion_percent\": 0.0,\n      \"directory\": \"<repo>\\\\evals\\\\search_usefulness\\\\external_baselines\\\\batches\\\\batch_0\",\n      \"expected_observation_count\": 39,\n      \"missing_observation_slots\": [],\n      \"next_pending_slots\": ["
+    },
+    {
+      "label": "Python oracle golden check",
+      "command": "python scripts/generate_python_oracle_golden.py --check",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.837,
+      "summary": "Python oracle golden fixture pack\nstatus: passed\nfixture_pack_id: python_oracle_golden_v0\nfixture_pack_version: 0.1.0\noutput_root: <repo>\\tests\\parity\\golden\\python_oracle\\v0\nfile_count: 40"
+    },
+    {
+      "label": "Unittest tests/scripts",
+      "command": "python -m unittest discover -s tests/scripts -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 105.182,
+      "summary": "stderr: .................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 481 tests in 105.018s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest tests/operations",
+      "command": "python -m unittest discover -s tests/operations -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 8.664,
+      "summary": "stderr: ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 524 tests in 8.382s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest tests/hardening",
+      "command": "python -m unittest discover -s tests/hardening -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 5.419,
+      "summary": "stderr: .....................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 53 tests in 5.189s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest tests/parity",
+      "command": "python -m unittest discover -s tests/parity -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 1.402,
+      "summary": "stderr: .........................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 25 tests in 1.320s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest runtime",
+      "command": "python -m unittest discover -s runtime -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 4.88,
+      "summary": "stderr: ................................................................................................................................................................................................................................................................................................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 320 tests in 4.602s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest surfaces",
+      "command": "python -m unittest discover -s surfaces -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 30.408,
+      "summary": "stderr: ........................................................................................................................................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 168 tests in 30.159s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Unittest all tests",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 126.76,
+      "summary": "stderr: ......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\nstderr: ----------------------------------------------------------------------\nstderr: Ran 1174 tests in 126.382s\nstderr: \nstderr: OK"
+    },
+    {
+      "label": "Architecture boundary check",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.482,
+      "summary": "Checked 446 Python files under <repo>\nNo architecture-boundary violations found."
+    },
+    {
+      "label": "Git diff check",
+      "command": "git diff --check",
+      "status": "repaired",
+      "exit_code": 2,
+      "duration_seconds": 0.102,
+      "summary": ".aide/commands/ci.yaml:768: new blank line at EOF.\n.aide/commands/dev.yaml:1144: new blank line at EOF.\nscripts/README.md:735: new blank line at EOF.\nstderr: warning: in the working copy of 'site/dist/assets/site.css', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of 'site/dist/demo/README.txt', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of 'site/dist/demo/absence-example.html', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of 'site/dist/demo/comparison-example.html', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of 'site/dist/demo/data/demo_snapshots.json', LF will be replaced by CRLF the next time Git touches it\nFollow-up: trailing blank lines were removed from .aide/commands/ci.yaml, .aide/commands/dev.yaml, and scripts/README.md; rerun passed."
+    },
+    {
+      "label": "Git diff check rerun after whitespace repair",
+      "command": "git diff --check",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.087,
+      "summary": "stderr: warning: in the working copy of '.aide/commands/ci.yaml', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of '.aide/commands/dev.yaml', LF will be replaced by CRLF the next time Git touches it\nstderr: warning: in the working copy of 'scripts/README.md', LF will be replaced by CRLF the next time Git touches it"
+    },
+    {
+      "label": "P76 contract validator rerun after command evidence update",
+      "command": "python scripts/validate_software_heritage_connector_contract.py --json",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.108,
+      "summary": "{\n  \"status\": \"valid\",\n  \"created_by\": \"software_heritage_connector_contract_validator_v0\",\n  \"contract_file\": \"contracts/connectors/software_heritage_connector_approval.v0.json\",\n  \"example_count\": 1,\n  \"errors\": [],\n  \"warnings\": []\n}"
+    },
+    {
+      "label": "Git status after verification",
+      "command": "git status --short --branch",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.061,
+      "summary": "## main...origin/main\n M .aide/commands/ci.yaml\n M .aide/commands/dev.yaml\n M .aide/reports/README.md\n M .aide/tasks/audit_backlog.yaml\n M .aide/tasks/queue.yaml\n M contracts/connectors/README.md\n M control/audits/README.md"
+    },
+    {
+      "label": "Cargo version optional check",
+      "command": "cargo --version",
+      "status": "skipped",
+      "exit_code": null,
+      "duration_seconds": 0.0,
+      "summary": "cargo is not available in this PowerShell environment."
+    },
+    {
+      "label": "Cargo workspace check optional",
+      "command": "cargo check --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped",
+      "exit_code": null,
+      "duration_seconds": 0.0,
+      "summary": "not run because cargo is unavailable locally."
+    },
+    {
+      "label": "Cargo workspace test optional",
+      "command": "cargo test --workspace --manifest-path crates/Cargo.toml",
+      "status": "skipped",
+      "exit_code": null,
+      "duration_seconds": 0.0,
+      "summary": "not run because cargo is unavailable locally."
+    }
+  ],
+  "remaining_blockers": [
+    "Official Software Heritage API/source policy review remains pending.",
+    "User-Agent/contact decision remains pending.",
+    "Token policy remains disabled for v0 unless a future explicit credential policy is approved.",
+    "Rate-limit, timeout, retry/backoff, and circuit-breaker values remain operator/source-policy pending.",
+    "Source cache and evidence ledger runtimes remain approval-gated.",
+    "Live Software Heritage metadata connector implementation remains approval-gated."
+  ],
+  "next_recommended_branch": "P77 Public Hosted Deployment Evidence v0",
+  "notes": [
+    "P76 is approval-only and does not implement or approve live Software Heritage connector behavior.",
+    "No external calls, Software Heritage API calls, SWHID resolution, origin lookup, content/blob/source-code fetch, repository clone, source archive download, token use, telemetry, cache/ledger mutation, or public-query fanout were performed."
+  ],
+  "connector_runtime_implemented": false,
+  "connector_approved_now": false,
+  "live_enabled_by_default": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "software_heritage_api_called": false,
+  "swhid_resolved_live": false,
+  "origin_lookup_performed": false,
+  "visit_lookup_performed": false,
+  "snapshot_lookup_performed": false,
+  "release_lookup_performed": false,
+  "revision_lookup_performed": false,
+  "directory_lookup_performed": false,
+  "content_blob_lookup_performed": false,
+  "repository_cloned": false,
+  "source_code_downloaded": false,
+  "source_archive_downloaded": false,
+  "source_file_retrieved": false,
+  "public_query_fanout_allowed": false,
+  "public_search_live_fanout_enabled": false,
+  "arbitrary_origin_fetch_allowed": false,
+  "arbitrary_swhid_fetch_allowed": false,
+  "repository_clone_allowed": false,
+  "source_code_download_allowed": false,
+  "source_archive_download_allowed": false,
+  "content_blob_fetch_allowed": false,
+  "downloads_allowed": false,
+  "file_retrieval_allowed": false,
+  "mirroring_allowed": false,
+  "source_cache_mutation_allowed_now": false,
+  "evidence_ledger_mutation_allowed_now": false,
+  "candidate_index_mutation_allowed_now": false,
+  "public_index_mutation_allowed_now": false,
+  "local_index_mutation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "source_code_safety_claimed": false,
+  "source_completeness_claimed": false,
+  "telemetry_implemented": false,
+  "credentials_configured": false,
+  "token_required_now": false,
+  "software_heritage_token_used": false,
+  "verification_summary": {
+    "passed": 88,
+    "failed": 0,
+    "skipped": 3,
+    "repaired": 1
+  }
+}
