@@ -186,3 +186,15 @@ Boundary notes:
 - Public search may reference source page links or source badges only after a future governed integration; P80 does not mutate public search result cards or the public index.
 - Source pages explain source posture and limitations; they are not source API proxies, scrapers, crawlers, download pages, mirrors, or connector health dashboards.
 <!-- P80-SOURCE-PAGE-CONTRACT-END -->
+
+<!-- P81-COMPARISON-PAGE-CONTRACT-START -->
+## P81 Comparison Page Contract v0
+
+Comparison Page Contract v0 is contract-only and evidence-first. It defines future public comparison pages for subjects, criteria, matrices, identity/version/representation/source/evidence/compatibility/action comparisons, conflict preservation, scoped gaps, and future result-card/object/source projections.
+
+Boundary notes:
+
+- No runtime comparison pages, database, persistent comparison-page store, connector runtime, source sync runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, installs, execution, uploads, telemetry, accounts, rights clearance, malware safety claim, authoritative source trust claim, or winner without evidence are added.
+- Public search may reference comparison links only after a future governed integration; P81 does not mutate public search result cards or the public index.
+- Comparison pages explain evidence-backed similarity, difference, conflict, and gaps; they are not ranking authority, candidate promotion, source API proxies, download pages, installer pages, or production comparison services.
+<!-- P81-COMPARISON-PAGE-CONTRACT-END -->

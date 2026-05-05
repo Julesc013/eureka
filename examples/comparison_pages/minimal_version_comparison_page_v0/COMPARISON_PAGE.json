@@ -1,0 +1,592 @@
+{
+  "schema_version": "0.1.0",
+  "comparison_page_id": "comparison_page_version_synthetic_v0",
+  "comparison_page_kind": "comparison_page",
+  "status": "public_safe_example",
+  "created_by_tool": "p81_comparison_page_contract_v0",
+  "comparison_identity": {
+    "comparison_id": "comparison_page_version_synthetic_v0",
+    "canonical_label": "Synthetic Version Comparison",
+    "comparison_scope": "version_to_version",
+    "comparison_basis": "synthetic_example",
+    "limitations": [
+      "Synthetic public-safe example; not production comparison evidence."
+    ]
+  },
+  "comparison_type": {
+    "type": "version_comparison",
+    "comparison_goal": "explain_same_or_different",
+    "winner_allowed": false,
+    "scoped_recommendation_allowed": false,
+    "limitations": [
+      "No winner is allowed in v0 examples."
+    ]
+  },
+  "subjects": [
+    {
+      "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+      "subject_kind": "object_page",
+      "subject_label": "Synthetic Version Comparison A",
+      "subject_status": "candidate",
+      "object_kind": "software_version",
+      "source_family": null,
+      "version": "1.0",
+      "platform": "Windows 7",
+      "representation_kind": "metadata_record",
+      "evidence_status": "candidate",
+      "limitations": [
+        "Synthetic public-safe subject; not accepted truth."
+      ]
+    },
+    {
+      "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+      "subject_kind": "object_page",
+      "subject_label": "Synthetic Version Comparison B",
+      "subject_status": "candidate",
+      "object_kind": "software_version",
+      "source_family": null,
+      "version": "1.1",
+      "platform": "Windows 7",
+      "representation_kind": "metadata_record",
+      "evidence_status": "review_required",
+      "limitations": [
+        "Synthetic public-safe subject; not accepted truth."
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "criterion_id": "identity",
+      "criterion_type": "identity_match",
+      "criterion_label": "Identity relation",
+      "required": true,
+      "scoring_policy": "categorical",
+      "evidence_required": true,
+      "limitations": [
+        "Descriptive comparison only; not a merge decision."
+      ]
+    },
+    {
+      "criterion_id": "evidence",
+      "criterion_type": "evidence_strength",
+      "criterion_label": "Evidence support",
+      "required": true,
+      "scoring_policy": "descriptive_only",
+      "evidence_required": true,
+      "limitations": [
+        "Evidence confidence is not truth."
+      ]
+    }
+  ],
+  "comparison_matrix": {
+    "matrix_kind": "descriptive",
+    "rows": [
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:a",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a"
+      },
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:b",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b"
+      }
+    ],
+    "columns": [
+      {
+        "criterion_id": "identity",
+        "criterion_label": "Identity relation"
+      },
+      {
+        "criterion_id": "evidence",
+        "criterion_label": "Evidence support"
+      }
+    ],
+    "cells": [
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:a:identity",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "criterion_id": "identity",
+        "value": "unknown",
+        "status": "unknown",
+        "evidence_refs": [
+          "synthetic:evidence:identity-note"
+        ],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "confidence": "unknown",
+        "confidence_not_truth": true,
+        "limitations": [
+          "Cell is synthetic and not authoritative."
+        ]
+      },
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:a:evidence",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "criterion_id": "evidence",
+        "value": "fixture note only",
+        "status": "evidence_required",
+        "evidence_refs": [
+          "synthetic:evidence:metadata-note"
+        ],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "confidence": "low",
+        "confidence_not_truth": true,
+        "limitations": [
+          "No live source was called."
+        ]
+      },
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:b:identity",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "criterion_id": "identity",
+        "value": "unknown",
+        "status": "unknown",
+        "evidence_refs": [
+          "synthetic:evidence:identity-note"
+        ],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "confidence": "unknown",
+        "confidence_not_truth": true,
+        "limitations": [
+          "Cell is synthetic and not authoritative."
+        ]
+      },
+      {
+        "row_id": "synthetic:comparison_page_version_synthetic_v0:b:evidence",
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "criterion_id": "evidence",
+        "value": "fixture note only",
+        "status": "evidence_required",
+        "evidence_refs": [
+          "synthetic:evidence:metadata-note"
+        ],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "confidence": "low",
+        "confidence_not_truth": true,
+        "limitations": [
+          "No live source was called."
+        ]
+      }
+    ],
+    "scoring_used_now": false,
+    "ranking_used_now": false,
+    "winner_selected_now": false,
+    "limitations": [
+      "Matrix is descriptive and does not rank subjects."
+    ]
+  },
+  "identity_comparison": {
+    "identity_relation": "unknown",
+    "identity_evidence_refs": [
+      "synthetic:evidence:identity-note"
+    ],
+    "identity_conflicts": [],
+    "duplicate_policy": "preserve_separate",
+    "destructive_merge_allowed": false,
+    "limitations": [
+      "No destructive merge or candidate promotion."
+    ]
+  },
+  "version_state_release_comparison": {
+    "versions_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "version_label": "1.0",
+        "version_status": "known",
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "evidence_refs": [
+          "synthetic:evidence:version-note"
+        ],
+        "limitations": [
+          "Synthetic version label."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "version_label": "1.1",
+        "version_status": "known",
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "evidence_refs": [
+          "synthetic:evidence:version-note"
+        ],
+        "limitations": [
+          "Synthetic version label."
+        ]
+      }
+    ],
+    "release_dates_compared": "unknown",
+    "platform_architecture_compared": "Windows 7 platform note only; architecture unknown.",
+    "lifecycle_status_compared": "unknown",
+    "newer_older_claim_scoped": true,
+    "version_conflicts": [
+      "Version labels differ and require review."
+    ],
+    "limitations": [
+      "Version relation is scoped to synthetic labels."
+    ]
+  },
+  "representation_member_comparison": {
+    "representations_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "representation_kind": "metadata_record",
+        "availability_status": "metadata_only",
+        "checksum_refs": [],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "evidence_refs": [
+          "synthetic:evidence:representation-note"
+        ],
+        "limitations": [
+          "No payload is included."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "representation_kind": "metadata_record",
+        "availability_status": "metadata_only",
+        "checksum_refs": [],
+        "source_refs": [
+          "synthetic:source:fixture-note"
+        ],
+        "evidence_refs": [
+          "synthetic:evidence:representation-note"
+        ],
+        "limitations": [
+          "No payload is included."
+        ]
+      }
+    ],
+    "members_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "member_label": "synthetic manifest member",
+        "member_path_public_safe": "synthetic/public/manifest.txt",
+        "member_status": "future_extraction",
+        "limitations": [
+          "Public-safe synthetic path only."
+        ]
+      }
+    ],
+    "representation_availability_summary": "Metadata-only representation comparison.",
+    "member_access_summary": "Member extraction is future-only.",
+    "payload_included": false,
+    "downloads_enabled": false,
+    "limitations": [
+      "No source payload, archive member, or download is available."
+    ]
+  },
+  "source_evidence_provenance_comparison": {
+    "sources_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "source_id": "synthetic-source-1",
+        "source_family": "local_fixture",
+        "source_status": "fixture",
+        "source_role": "supporting",
+        "source_trust_claimed": false,
+        "limitations": [
+          "Synthetic source note only."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "source_id": "synthetic-source-2",
+        "source_family": "local_fixture",
+        "source_status": "fixture",
+        "source_role": "supporting",
+        "source_trust_claimed": false,
+        "limitations": [
+          "Synthetic source note only."
+        ]
+      }
+    ],
+    "evidence_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "evidence_ref": "synthetic:evidence:1",
+        "evidence_kind": "metadata_note",
+        "evidence_status": "fixture",
+        "confidence": "low",
+        "confidence_not_truth": true,
+        "limitations": [
+          "Evidence is synthetic and not accepted truth."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "evidence_ref": "synthetic:evidence:2",
+        "evidence_kind": "metadata_note",
+        "evidence_status": "fixture",
+        "confidence": "low",
+        "confidence_not_truth": true,
+        "limitations": [
+          "Evidence is synthetic and not accepted truth."
+        ]
+      }
+    ],
+    "provenance_compared": [
+      "Synthetic fixture provenance notes only."
+    ],
+    "evidence_strength_summary": "Evidence is insufficient for authoritative comparison.",
+    "provenance_limitations": [
+      "No source cache or evidence ledger record exists."
+    ],
+    "accepted_as_truth": false,
+    "limitations": [
+      "No source trust claim."
+    ]
+  },
+  "compatibility_comparison": {
+    "compatibility_subjects": [
+      "synthetic:comparison_page_version_synthetic_v0:a",
+      "synthetic:comparison_page_version_synthetic_v0:b"
+    ],
+    "operating_systems": [
+      "Windows 7"
+    ],
+    "architectures": [
+      "unknown"
+    ],
+    "runtime_requirements": [
+      "unknown"
+    ],
+    "compatibility_relation": "unknown",
+    "compatibility_evidence_refs": [
+      "synthetic:evidence:compatibility-note"
+    ],
+    "compatibility_claim_scoped": true,
+    "limitations": [
+      "Compatibility is scoped and not a safety or install claim."
+    ]
+  },
+  "rights_risk_action_comparison": {
+    "rights_comparison": "public metadata only; rights review required before payload actions.",
+    "risk_comparison": "metadata only; executable safety not assessed.",
+    "action_comparison": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "allowed_actions": [
+          "inspect_metadata",
+          "view_sources",
+          "view_evidence",
+          "compare",
+          "cite"
+        ],
+        "disabled_actions": [
+          "download",
+          "install",
+          "execute",
+          "upload",
+          "mirror",
+          "arbitrary_url_fetch"
+        ],
+        "limitations": [
+          "Inspect-only example."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "allowed_actions": [
+          "inspect_metadata",
+          "view_sources",
+          "view_evidence",
+          "compare",
+          "cite"
+        ],
+        "disabled_actions": [
+          "download",
+          "install",
+          "execute",
+          "upload",
+          "mirror",
+          "arbitrary_url_fetch"
+        ],
+        "limitations": [
+          "Inspect-only example."
+        ]
+      }
+    ],
+    "safe_action_summary": "Inspect metadata, sources, evidence, compare, and cite only.",
+    "disabled_action_summary": "Download, install, execute, upload, mirror, and arbitrary URL fetch are disabled.",
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "uploads_enabled": false,
+    "mirroring_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "limitations": [
+      "No rights clearance or malware safety claim."
+    ]
+  },
+  "conflicts_and_disagreements": {
+    "conflict_status": "none_known",
+    "conflicts": [],
+    "disagreement_preserved": true,
+    "destructive_merge_allowed": false,
+    "resolution_status": "not_needed",
+    "limitations": [
+      "Disagreement is preserved."
+    ]
+  },
+  "absence_near_miss_gap_comparison": {
+    "absence_status": "unknown",
+    "global_absence_claimed": false,
+    "near_misses_compared": [],
+    "gaps_compared": [
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:a",
+        "gap_type": "source_cache_missing",
+        "explanation": "No source cache runtime record exists for this synthetic subject.",
+        "limitations": [
+          "Contract-only example."
+        ]
+      },
+      {
+        "subject_ref": "synthetic:comparison_page_version_synthetic_v0:b",
+        "gap_type": "source_cache_missing",
+        "explanation": "No source cache runtime record exists for this synthetic subject.",
+        "limitations": [
+          "Contract-only example."
+        ]
+      }
+    ],
+    "checked_scope_summary": "Synthetic examples only.",
+    "not_checked_scope_summary": "No live sources, source cache, evidence ledger, or external baseline were checked.",
+    "limitations": [
+      "No global absence claim."
+    ]
+  },
+  "result_card_object_source_projection": {
+    "public_search_result_card_refs": [],
+    "object_page_refs": [
+      "synthetic:comparison_page_version_synthetic_v0:a",
+      "synthetic:comparison_page_version_synthetic_v0:b"
+    ],
+    "source_page_refs": [],
+    "can_project_to_result_card": true,
+    "can_project_to_object_page": true,
+    "can_project_to_source_page": true,
+    "projection_status": "contract_only",
+    "limitations": [
+      "No public search runtime mutation."
+    ]
+  },
+  "api_projection": {
+    "response_kind": "comparison_page_response",
+    "route_future": [
+      "/compare",
+      "/comparison/{comparison_id}",
+      "/api/v1/compare",
+      "/api/v1/comparison/{comparison_id}"
+    ],
+    "implemented_now": false,
+    "compatible_with_public_search_response": true,
+    "included_sections": [
+      "subjects",
+      "criteria",
+      "comparison_matrix",
+      "evidence",
+      "conflicts",
+      "gaps",
+      "actions"
+    ],
+    "limitations": [
+      "No runtime route exists in P81."
+    ]
+  },
+  "static_projection": {
+    "static_demo_available": false,
+    "generated_static_artifact": false,
+    "no_js_required": true,
+    "base_path_safe": true,
+    "old_client_safe": true,
+    "limitations": [
+      "No generated static demo in P81."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic identifiers and public-safe metadata only."
+    ]
+  },
+  "limitations": [
+    "Contract-only example.",
+    "No external calls, source fetches, runtime routes, or index mutation."
+  ],
+  "no_winner_without_evidence_guarantees": {
+    "winner_allowed": false,
+    "comparison_winner_claimed": false,
+    "winner_selected_now": false,
+    "scoped_recommendation_requires_evidence": true,
+    "limitations": [
+      "No best/winner claim in v0 examples."
+    ]
+  },
+  "no_runtime_guarantees": {
+    "runtime_comparison_page_implemented": false,
+    "persistent_comparison_page_store_implemented": false,
+    "comparison_page_generated_from_live_source": false,
+    "live_source_called": false,
+    "external_calls_performed": false,
+    "source_sync_worker_executed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "candidate_promotion_performed": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth.",
+    "Evidence-first comparison does not mean ranking authority."
+  ],
+  "runtime_comparison_page_implemented": false,
+  "persistent_comparison_page_store_implemented": false,
+  "comparison_page_generated_from_live_source": false,
+  "comparison_winner_claimed": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "source_sync_worker_executed": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "candidate_promotion_performed": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "source_trust_claimed": false,
+  "telemetry_exported": false
+}

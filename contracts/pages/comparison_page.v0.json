@@ -1,0 +1,570 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/pages/comparison_page.v0.json",
+  "title": "EurekaComparisonPageV0",
+  "description": "Contract-only, evidence-first public comparison page shape. It defines future comparison pages without runtime routes, live source calls, winner claims without evidence, downloads, or index/cache/ledger mutation.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "comparison_page_id",
+    "comparison_page_kind",
+    "status",
+    "created_by_tool",
+    "comparison_identity",
+    "comparison_type",
+    "subjects",
+    "criteria",
+    "comparison_matrix",
+    "identity_comparison",
+    "version_state_release_comparison",
+    "representation_member_comparison",
+    "source_evidence_provenance_comparison",
+    "compatibility_comparison",
+    "rights_risk_action_comparison",
+    "conflicts_and_disagreements",
+    "absence_near_miss_gap_comparison",
+    "result_card_object_source_projection",
+    "api_projection",
+    "static_projection",
+    "privacy",
+    "limitations",
+    "no_winner_without_evidence_guarantees",
+    "no_runtime_guarantees",
+    "no_mutation_guarantees",
+    "notes",
+    "runtime_comparison_page_implemented",
+    "persistent_comparison_page_store_implemented",
+    "comparison_page_generated_from_live_source",
+    "comparison_winner_claimed",
+    "live_source_called",
+    "external_calls_performed",
+    "source_sync_worker_executed",
+    "source_cache_mutated",
+    "evidence_ledger_mutated",
+    "candidate_index_mutated",
+    "candidate_promotion_performed",
+    "public_index_mutated",
+    "local_index_mutated",
+    "master_index_mutated",
+    "downloads_enabled",
+    "uploads_enabled",
+    "installs_enabled",
+    "execution_enabled",
+    "arbitrary_url_fetch_enabled",
+    "rights_clearance_claimed",
+    "malware_safety_claimed",
+    "source_trust_claimed",
+    "telemetry_exported"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "comparison_page_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comparison_page_kind": {
+      "type": "string",
+      "const": "comparison_page"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "dry_run_validated",
+        "synthetic_example",
+        "public_safe_example",
+        "fixture_comparison",
+        "recorded_fixture_comparison",
+        "candidate_comparison",
+        "conflicted_comparison",
+        "runtime_future",
+        "rejected_by_policy"
+      ]
+    },
+    "created_by_tool": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "comparison_identity": {
+      "$ref": "#/$defs/comparison_identity"
+    },
+    "comparison_type": {
+      "$ref": "#/$defs/comparison_type"
+    },
+    "subjects": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/subject"
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/criterion"
+      }
+    },
+    "comparison_matrix": {
+      "$ref": "#/$defs/comparison_matrix"
+    },
+    "identity_comparison": {
+      "$ref": "#/$defs/identity_comparison"
+    },
+    "version_state_release_comparison": {
+      "$ref": "#/$defs/version_state_release_comparison"
+    },
+    "representation_member_comparison": {
+      "$ref": "#/$defs/representation_member_comparison"
+    },
+    "source_evidence_provenance_comparison": {
+      "$ref": "#/$defs/source_evidence_provenance_comparison"
+    },
+    "compatibility_comparison": {
+      "$ref": "#/$defs/compatibility_comparison"
+    },
+    "rights_risk_action_comparison": {
+      "$ref": "#/$defs/rights_risk_action_comparison"
+    },
+    "conflicts_and_disagreements": {
+      "$ref": "#/$defs/conflicts_and_disagreements"
+    },
+    "absence_near_miss_gap_comparison": {
+      "$ref": "#/$defs/absence_near_miss_gap_comparison"
+    },
+    "result_card_object_source_projection": {
+      "$ref": "#/$defs/result_card_object_source_projection"
+    },
+    "api_projection": {
+      "$ref": "#/$defs/api_projection"
+    },
+    "static_projection": {
+      "$ref": "#/$defs/static_projection"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_winner_without_evidence_guarantees": {
+      "type": "object"
+    },
+    "no_runtime_guarantees": {
+      "type": "object"
+    },
+    "no_mutation_guarantees": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_comparison_page_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "persistent_comparison_page_store_implemented": {
+      "type": "boolean",
+      "const": false
+    },
+    "comparison_page_generated_from_live_source": {
+      "type": "boolean",
+      "const": false
+    },
+    "comparison_winner_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "live_source_called": {
+      "type": "boolean",
+      "const": false
+    },
+    "external_calls_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_sync_worker_executed": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_cache_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "evidence_ledger_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "candidate_promotion_performed": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "local_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_mutated": {
+      "type": "boolean",
+      "const": false
+    },
+    "downloads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "uploads_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "installs_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "execution_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "arbitrary_url_fetch_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "rights_clearance_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "malware_safety_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_trust_claimed": {
+      "type": "boolean",
+      "const": false
+    },
+    "telemetry_exported": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "comparison_identity": {
+      "type": "object",
+      "required": [
+        "comparison_id",
+        "canonical_label",
+        "comparison_scope",
+        "comparison_basis",
+        "limitations"
+      ],
+      "properties": {
+        "comparison_id": {
+          "type": "string"
+        },
+        "canonical_label": {
+          "type": "string"
+        },
+        "comparison_scope": {
+          "type": "string",
+          "enum": [
+            "object_to_object",
+            "version_to_version",
+            "source_to_source",
+            "representation_to_representation",
+            "compatibility_claims",
+            "evidence_to_evidence",
+            "candidate_to_candidate",
+            "near_miss_to_result",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "comparison_basis": {
+          "type": "string",
+          "enum": [
+            "synthetic_example",
+            "fixture_backed",
+            "recorded_fixture_backed",
+            "public_index_future",
+            "source_cache_future",
+            "evidence_ledger_future",
+            "candidate_index_future",
+            "manual_review_future",
+            "unknown"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "comparison_type": {
+      "type": "object",
+      "required": [
+        "type",
+        "comparison_goal",
+        "winner_allowed",
+        "scoped_recommendation_allowed",
+        "limitations"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "object_identity_comparison",
+            "version_comparison",
+            "source_coverage_comparison",
+            "representation_comparison",
+            "member_comparison",
+            "compatibility_comparison",
+            "evidence_strength_comparison",
+            "provenance_comparison",
+            "rights_risk_action_comparison",
+            "conflict_comparison",
+            "absence_near_miss_comparison",
+            "candidate_review_comparison",
+            "unknown"
+          ]
+        },
+        "comparison_goal": {
+          "type": "string",
+          "enum": [
+            "explain_same_or_different",
+            "choose_review_priority",
+            "explain_conflict",
+            "explain_source_coverage",
+            "explain_compatibility",
+            "explain_safe_action",
+            "explain_absence",
+            "unknown"
+          ]
+        },
+        "winner_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "scoped_recommendation_allowed": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "subject_ref",
+        "subject_kind",
+        "subject_label",
+        "subject_status",
+        "limitations"
+      ],
+      "properties": {
+        "subject_ref": {
+          "type": "string"
+        },
+        "subject_kind": {
+          "type": "string",
+          "enum": [
+            "object_page",
+            "source_page",
+            "public_search_result",
+            "public_index_document",
+            "source_cache_record",
+            "evidence_ledger_record",
+            "candidate_index_record",
+            "known_absence_page",
+            "synthetic_example",
+            "unknown"
+          ]
+        },
+        "subject_label": {
+          "type": "string"
+        },
+        "subject_status": {
+          "type": "string",
+          "enum": [
+            "fixture_backed",
+            "recorded_fixture_backed",
+            "candidate",
+            "review_required",
+            "placeholder",
+            "future",
+            "conflicted",
+            "unknown"
+          ]
+        },
+        "object_kind": {
+          "type": "string"
+        },
+        "source_family": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "representation_kind": {
+          "type": "string"
+        },
+        "evidence_status": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "required": [
+        "criterion_id",
+        "criterion_type",
+        "criterion_label",
+        "required",
+        "scoring_policy",
+        "evidence_required",
+        "limitations"
+      ],
+      "properties": {
+        "criterion_id": {
+          "type": "string"
+        },
+        "criterion_type": {
+          "type": "string",
+          "enum": [
+            "identity_match",
+            "version_match",
+            "platform_compatibility",
+            "architecture_compatibility",
+            "source_coverage",
+            "evidence_strength",
+            "provenance_quality",
+            "representation_availability",
+            "member_access",
+            "rights_access",
+            "risk_posture",
+            "actionability",
+            "conflict_status",
+            "absence_scope",
+            "user_cost",
+            "unknown"
+          ]
+        },
+        "criterion_label": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "scoring_policy": {
+          "type": "string",
+          "enum": [
+            "descriptive_only",
+            "categorical",
+            "future_weighted",
+            "not_scored"
+          ]
+        },
+        "evidence_required": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "comparison_matrix": {
+      "type": "object"
+    },
+    "comparison_cell": {
+      "type": "object"
+    },
+    "identity_comparison": {
+      "type": "object"
+    },
+    "version_state_release_comparison": {
+      "type": "object"
+    },
+    "representation_member_comparison": {
+      "type": "object"
+    },
+    "source_evidence_provenance_comparison": {
+      "type": "object"
+    },
+    "compatibility_comparison": {
+      "type": "object"
+    },
+    "rights_risk_action_comparison": {
+      "type": "object"
+    },
+    "conflicts_and_disagreements": {
+      "type": "object"
+    },
+    "absence_near_miss_gap_comparison": {
+      "type": "object"
+    },
+    "result_card_object_source_projection": {
+      "type": "object"
+    },
+    "api_projection": {
+      "type": "object"
+    },
+    "static_projection": {
+      "type": "object"
+    },
+    "privacy": {
+      "type": "object"
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_comparison_page_implemented": false,
+  "x-persistent_comparison_page_store_implemented": false,
+  "x-live_source_calls_allowed": false,
+  "x-downloads_enabled": false,
+  "x-installs_enabled": false,
+  "x-execution_enabled": false,
+  "x-winner_claims_allowed_without_evidence": false,
+  "x-source_sync_worker_execution_allowed": false,
+  "x-source_cache_mutation_allowed": false,
+  "x-evidence_ledger_mutation_allowed": false,
+  "x-candidate_index_mutation_allowed": false,
+  "x-candidate_promotion_allowed": false,
+  "x-public_index_mutation_allowed": false,
+  "x-local_index_mutation_allowed": false,
+  "x-master_index_mutation_allowed": false,
+  "x-telemetry_implemented": false
+}

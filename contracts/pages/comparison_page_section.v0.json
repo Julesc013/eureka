@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/pages/comparison_page_section.v0.json",
+  "title": "EurekaComparisonPageSectionV0",
+  "description": "Optional reusable section shape for future comparison pages. Contract-only; no runtime route, no winner selection, no live source call, and no mutation.",
+  "type": "object",
+  "required": [
+    "section_id",
+    "section_kind",
+    "title",
+    "summary",
+    "items",
+    "limitations"
+  ],
+  "properties": {
+    "section_id": {
+      "type": "string"
+    },
+    "section_kind": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_comparison_page_implemented": false,
+  "x-winner_claims_allowed_without_evidence": false,
+  "x-live_source_calls_allowed": false,
+  "x-source_cache_mutation_allowed": false,
+  "x-evidence_ledger_mutation_allowed": false,
+  "x-candidate_promotion_allowed": false,
+  "x-master_index_mutation_allowed": false
+}

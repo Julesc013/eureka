@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "comparison_page_policy_v0",
+  "status": "contract_only",
+  "runtime_comparison_pages_implemented": false,
+  "persistent_comparison_page_store_implemented": false,
+  "static_demo_available": false,
+  "public_search_comparison_links_enabled_now": false,
+  "live_source_calls_allowed": false,
+  "connector_runtime_allowed": false,
+  "source_sync_worker_execution_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "candidate_promotion_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "winner_claims_allowed_without_evidence": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "next_contracts": [
+    "cross_source_identity_resolution_contract",
+    "result_merge_deduplication_contract",
+    "evidence_weighted_ranking_contract"
+  ],
+  "notes": [
+    "P81 is contract-only. No runtime comparison pages or winner/ranking authority are implemented."
+  ]
+}
