@@ -9444,6 +9444,106 @@
       "failure_means": "The P102 audit, validator, reporter, or metadata registration regressed.",
       "advisory_or_required": "required",
       "notes": "Includes negative tests for external calls/fabrication/mutation claims."
+    },
+    {
+      "test_id": "page_local_dry_run_json",
+      "label": "P103 page local dry-run JSON",
+      "command": "python scripts/run_page_dry_run.py --all-examples --json",
+      "category": "runtime",
+      "owner_area": "runtime/pages",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless an explicit approved output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "P103 page dry-run examples, classification, or hard no-route/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Runs a local dry-run over approved repo examples only; no public routes, hosted runtime, public-search integration, source/evidence reads, live calls, risky actions, telemetry, credentials, or mutation."
+    },
+    {
+      "test_id": "page_local_dry_run_render_preview_json",
+      "label": "P103 page local dry-run preview JSON",
+      "command": "python scripts/run_page_dry_run.py --all-examples --render-preview --json",
+      "category": "runtime",
+      "owner_area": "runtime/pages",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless an explicit approved output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "P103 text/HTML/JSON preview generation regressed.",
+      "advisory_or_required": "required",
+      "notes": "Generates deterministic preview output in JSON only by default; no public site artifact, route, external asset, live source, or mutation behavior."
+    },
+    {
+      "test_id": "page_local_dry_run_report_validator",
+      "label": "P103 page dry-run report validator",
+      "command": "python scripts/validate_page_dry_run_report.py",
+      "category": "runtime",
+      "owner_area": "runtime/pages",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P103 audit report or dry-run report hard booleans/counts drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates local_dry_run mode and no public/hosted/API route, public-search, source/evidence read, live call, risky action, telemetry, credential, or mutation claims."
+    },
+    {
+      "test_id": "page_local_dry_run_report_validator_json",
+      "label": "P103 page dry-run report validator JSON",
+      "command": "python scripts/validate_page_dry_run_report.py --json",
+      "category": "runtime",
+      "owner_area": "runtime/pages",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P103 validator JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable validation output for the page local dry-run runtime audit."
+    },
+    {
+      "test_id": "page_local_dry_run_runtime_tests",
+      "label": "P103 page local dry-run runtime tests",
+      "command": "python -m unittest tests.runtime.test_page_dry_run tests.scripts.test_run_page_dry_run tests.scripts.test_validate_page_dry_run_report tests.operations.test_page_local_dry_run_runtime",
+      "category": "unit",
+      "owner_area": "runtime/pages",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P103 runtime modules, CLI, validator, operations docs, or negative hard-boolean checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Tests classification, rendering, forbidden args, invalid strict temp input, approved output path policy, and no public/hosted/source/evidence/mutation/risky-action claims."
     }
   ],
   "notes": [
@@ -9475,6 +9575,7 @@
     "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
     "P99 Evidence Ledger Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation.",
     "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation.",
-    "P101 Connector Approval and Runtime Planning Audit commands are stdlib-only audit/report checks; they perform no connector runtime implementation, live source calls, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, or mutation. Command strings: python scripts/validate_connector_approval_runtime_planning_audit.py; python scripts/validate_connector_approval_runtime_planning_audit.py --json; python scripts/report_connector_approval_runtime_status.py --json."
+    "P101 Connector Approval and Runtime Planning Audit commands are stdlib-only audit/report checks; they perform no connector runtime implementation, live source calls, public-search fanout, credentials/tokens, downloads, installs, execution, telemetry, deployment, or mutation. Command strings: python scripts/validate_connector_approval_runtime_planning_audit.py; python scripts/validate_connector_approval_runtime_planning_audit.py --json; python scripts/report_connector_approval_runtime_status.py --json.",
+    "P103 Object/Source/Comparison Page Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public/hosted/API route change, public-search integration, source-cache/evidence-ledger reads, live source calls, risky actions, telemetry, credentials, downloads, uploads, installs, execution, or source/evidence/candidate/index mutation. Command strings: python scripts/run_page_dry_run.py --all-examples --json; python scripts/run_page_dry_run.py --all-examples --render-preview --json; python scripts/validate_page_dry_run_report.py; python scripts/validate_page_dry_run_report.py --json."
   ]
 }

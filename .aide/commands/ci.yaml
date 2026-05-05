@@ -1087,3 +1087,18 @@ external observations, browsing, scraping, external API calls, fabricated
 results, external baseline comparison claims, index/cache/ledger/candidate
 mutation, telemetry, accounts, uploads, or downloads.
 <!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-END -->
+
+<!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-START -->
+## P103 Object/Source/Comparison Page Local Dry-Run Runtime v0
+
+- `python scripts/run_page_dry_run.py --all-examples --json`
+- `python scripts/run_page_dry_run.py --all-examples --render-preview --json`
+- `python scripts/validate_page_dry_run_report.py`
+- `python scripts/validate_page_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks. They add no public routes,
+hosted routes, API routes, public-search integration, source-cache or
+evidence-ledger reads, live source calls, connector execution, candidate
+promotion, telemetry, credentials, downloads, uploads, installs, execution, or
+index mutation.
+<!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-END -->

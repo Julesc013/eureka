@@ -633,3 +633,14 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   telemetry, accounts, uploads, downloads, or index/cache/ledger/candidate
   mutation is added.
 <!-- P102-MANUAL-OBSERVATION-BATCH-0-FOLLOW-UP-END -->
+
+<!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-START -->
+## P103 Object/Source/Comparison Page Local Dry-Run Runtime v0
+
+- Audit pack: `control/audits/object-source-comparison-page-local-dry-run-runtime-v0/`
+- Status: implemented local dry-run only.
+- Boundary: no public routes, hosted routes, API routes, public-search
+  integration, source-cache or evidence-ledger reads, live source calls,
+  connector execution, candidate promotion, telemetry, credentials, downloads,
+  uploads, installs, execution, or index mutation.
+<!-- P103-PAGE-LOCAL-DRY-RUN-RUNTIME-END -->

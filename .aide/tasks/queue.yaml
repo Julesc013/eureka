@@ -1056,9 +1056,9 @@
     {
       "id": "object_source_comparison_page_local_dry_run_runtime_v0",
       "title": "P103 Object/Source/Comparison Page Local Dry-Run Runtime v0 only after approval",
-      "status": "blocked_pending_operator_approval",
+      "status": "completed_implemented_local_dry_run",
       "priority": 144,
-      "notes": "Future local dry-run runtime only after page runtime approval and safe page ID gates."
+      "notes": "P103 completed as a local dry-run page loader/classifier/renderer/report runtime over approved object/source/comparison and page preview examples. No public routes, hosted routes, API routes, public-search integration, source-cache or evidence-ledger reads, live source calls, connector execution, candidate promotion, risky actions, telemetry, credentials, downloads, uploads, installs, execution, or index mutation were added."
     },
     {
       "id": "pack_import_local_dry_run_runtime_v0",
@@ -1115,6 +1115,20 @@
       "status": "human_operator_gated",
       "priority": 153,
       "notes": "Future human/operator-gated decision pack for connector runtime approval after source/API policy, User-Agent/contact, rate-limit, token/auth, identity/privacy, cache/evidence destination, and hosted/operator gates are reviewed."
+    },
+    {
+      "id": "page_hosted_runtime_planning_refresh_v0",
+      "title": "P112 Page Hosted Runtime Planning Refresh v0",
+      "status": "queued_codex_safe_future",
+      "priority": 154,
+      "notes": "Future planning refresh only after P103 dry-run review, hosted deployment evidence, public-search integration policy, safe route tests, and operator approval."
+    },
+    {
+      "id": "static_page_snapshot_generator_contract_v0",
+      "title": "P113 Static Page Snapshot Generator Contract v0",
+      "status": "queued_codex_safe_future",
+      "priority": 155,
+      "notes": "Future contract for static page snapshots after page dry-run and hosted planning review; no generator or public artifacts are implemented by P103."
     }
   ]
 }
