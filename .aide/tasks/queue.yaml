@@ -1013,17 +1013,17 @@
     },
     {
       "id": "compatibility_evidence_pack_contract_v0",
-      "title": "P98 Compatibility Evidence Pack Contract v0",
+      "title": "Compatibility Evidence Pack Contract v0",
       "status": "queued_codex_safe_future",
-      "priority": 139,
-      "notes": "Future contract for governed compatibility evidence packs after ranking/page contracts."
+      "priority": 149,
+      "notes": "Future contract for governed compatibility evidence packs after ranking/page/source-cache lanes; not part of the P98 source-cache dry-run milestone."
     },
     {
       "id": "source_cache_local_dry_run_runtime_v0",
       "title": "P98 Source Cache Local Dry-Run Runtime v0 only after approval",
-      "status": "blocked_pending_explicit_approval",
+      "status": "completed_implemented_local_dry_run",
       "priority": 139,
-      "notes": "Future local dry-run runtime only after source-cache/evidence-ledger runtime gates, source policies, and operator approval."
+      "notes": "P98 completed as a local dry-run source-cache candidate loader/classifier/report runtime over approved synthetic repo examples. No live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, candidate/public/local/master index mutation, public-search integration, hosted runtime, telemetry, credentials, downloads, installs, or execution were added."
     },
     {
       "id": "evidence_ledger_local_dry_run_runtime_v0",

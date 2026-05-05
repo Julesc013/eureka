@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "runtime_id": "source_cache_local_dry_run_runtime_v0",
+  "status": "implemented_local_dry_run",
+  "local_dry_run_runtime_implemented": true,
+  "authoritative_source_cache_runtime_implemented": false,
+  "live_source_calls_enabled": false,
+  "connector_runtime_enabled": false,
+  "source_sync_worker_execution_enabled": false,
+  "authoritative_writes_enabled": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_search_integration_enabled": false,
+  "hosted_runtime_enabled": false,
+  "telemetry_enabled": false,
+  "credentials_enabled": false,
+  "approved_input_roots": [
+    "examples/source_cache/dry_run"
+  ],
+  "cli": "python scripts/run_source_cache_dry_run.py --all-examples --json",
+  "validator": "python scripts/validate_source_cache_dry_run_report.py",
+  "next_runtime_branch_recommendation": "P99 Evidence Ledger Local Dry-Run Runtime v0 only after approval",
+  "notes": [
+    "P98 implements local dry-run report generation only.",
+    "No authoritative source-cache storage, connector execution, live source call, public search integration, telemetry, credentials, or mutation is enabled."
+  ]
+}

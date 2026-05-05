@@ -955,3 +955,13 @@ These commands are stdlib-only and local. They add no runtime explanation genera
 
 These commands are stdlib-only planning validators. They add no ranking runtime, public search order/response change, hidden score, suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.
 <!-- P97-PUBLIC-SEARCH-RANKING-RUNTIME-PLAN-END -->
+
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-START -->
+## P98 Source Cache Local Dry-Run Runtime v0
+
+- `python scripts/run_source_cache_dry_run.py --all-examples --json`
+- `python scripts/validate_source_cache_dry_run_report.py`
+- `python scripts/validate_source_cache_dry_run_report.py --json`
+
+These commands are stdlib-only local dry-run checks. They add no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, candidate/public/local/master index mutation, public-search integration, telemetry, credentials, downloads, installs, or execution.
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-END -->

@@ -9025,6 +9025,86 @@
       "failure_means": "P97 ranking runtime planning validator or audit assertions regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms planning-only/no-runtime/no-search-change/no-hidden-score/no-suppression/no-telemetry/no-mutation ranking gates."
+    },
+    {
+      "test_id": "source_cache_local_dry_run_json",
+      "label": "P98 source cache local dry-run JSON",
+      "command": "python scripts/run_source_cache_dry_run.py --all-examples --json",
+      "category": "runtime",
+      "owner_area": "runtime/source_cache",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "stdout only unless an explicit approved output path is provided",
+      "expected_runtime": "seconds",
+      "failure_means": "P98 source-cache dry-run examples, classification, or hard no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Runs a local dry-run over synthetic repo examples only; no live source calls, connector execution, authoritative writes, public-search mutation, telemetry, credentials, downloads, installs, or execution."
+    },
+    {
+      "test_id": "source_cache_dry_run_report_validator",
+      "label": "P98 source cache dry-run report validator",
+      "command": "python scripts/validate_source_cache_dry_run_report.py",
+      "category": "runtime",
+      "owner_area": "runtime/source_cache",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P98 audit report or dry-run report hard booleans/counts drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates local_dry_run mode and no live source, connector, telemetry, credential, public-search, or mutation claims."
+    },
+    {
+      "test_id": "source_cache_dry_run_report_validator_json",
+      "label": "P98 source cache dry-run report validator JSON",
+      "command": "python scripts/validate_source_cache_dry_run_report.py --json",
+      "category": "runtime",
+      "owner_area": "runtime/source_cache",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P98 dry-run report validator JSON projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable dry-run report validation."
+    },
+    {
+      "test_id": "source_cache_local_dry_run_runtime_tests",
+      "label": "P98 source cache local dry-run runtime tests",
+      "command": "python -m unittest tests.runtime.test_source_cache_dry_run tests.scripts.test_run_source_cache_dry_run tests.scripts.test_validate_source_cache_dry_run_report tests.operations.test_source_cache_local_dry_run_runtime",
+      "category": "unit",
+      "owner_area": "runtime/source_cache",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P98 runtime, CLI, validator, docs, inventory, or metadata guardrails regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms local dry-run only behavior, forbidden args, private-path/URL/secret rejection, deterministic reports, and no authoritative/public-search/mutation claims."
     }
   ],
   "notes": [
@@ -9052,6 +9132,7 @@
     "P94 Pack Import Runtime Planning v0 validation is planning-only and adds no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decision, or accepted record.",
     "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service.",
     "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
-    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation."
+    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
+    "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation."
   ]
 }

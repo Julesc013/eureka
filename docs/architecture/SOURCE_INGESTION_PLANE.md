@@ -130,3 +130,16 @@ Search Result Explanation Contract v0 is contract-only. It defines future eviden
 
 No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-START -->
+## P98 Source Cache Local Dry-Run Runtime v0
+
+P98 introduces a bounded local dry-run lane under `runtime/source_cache/` for
+approved synthetic source-cache candidate examples. The lane validates,
+classifies, and reports candidate effects only.
+
+It performs no live source calls, connector execution, source-sync worker
+execution, authoritative source-cache writes, evidence-ledger writes,
+candidate/public/local/master index mutation, public-search integration,
+hosted runtime, telemetry, credentials, downloads, installs, or execution.
+<!-- P98-SOURCE-CACHE-LOCAL-DRY-RUN-RUNTIME-END -->

@@ -406,7 +406,11 @@
         "search_result_explanation_contract_tests",
         "public_search_ranking_runtime_plan_validator",
         "public_search_ranking_runtime_plan_validator_json",
-        "public_search_ranking_runtime_plan_tests"
+        "public_search_ranking_runtime_plan_tests",
+        "source_cache_local_dry_run_json",
+        "source_cache_dry_run_report_validator",
+        "source_cache_dry_run_report_validator_json",
+        "source_cache_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -826,7 +830,11 @@
         "search_result_explanation_contract_tests",
         "public_search_ranking_runtime_plan_validator",
         "public_search_ranking_runtime_plan_validator_json",
-        "public_search_ranking_runtime_plan_tests"
+        "public_search_ranking_runtime_plan_tests",
+        "source_cache_local_dry_run_json",
+        "source_cache_dry_run_report_validator",
+        "source_cache_dry_run_report_validator_json",
+        "source_cache_local_dry_run_runtime_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1573,6 +1581,8 @@
     "P94 Pack Import Runtime Planning v0 validation is planning-only; it performs no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, mutation, promotion decision, or accepted record.",
     "P95 Deep Extraction Contract commands are local/stdout-only governance checks. They perform no runtime extraction, archive unpacking, file opening, OCR/transcription, execution, URL fetching, live source calls, telemetry, source/evidence/candidate/index mutation, or production deployment.",
     "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
-    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation."
+    "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
+    "P98 Source Cache Local Dry-Run Runtime commands are stdlib-only local dry-run checks over synthetic examples; they perform no live source calls, connector execution, source-sync execution, authoritative source-cache writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
+    "P98 command strings: python scripts/run_source_cache_dry_run.py --all-examples --json; python scripts/validate_source_cache_dry_run_report.py; python scripts/validate_source_cache_dry_run_report.py --json."
   ]
 }
