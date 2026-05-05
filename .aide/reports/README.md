@@ -354,3 +354,9 @@ Completed as an approval-only software identity/archive metadata connector pack.
 
 Completed as evidence-only deployment review. It adds no deployment, provider mutation, DNS changes, credentials, live source calls, hosted backend runtime, telemetry, accounts, downloads, uploads, or index/cache/ledger mutation. The configured GitHub Pages URL returned 404 for required routes, and no hosted backend URL is configured. Next recommended branch: P78 External Baseline Comparison Report v0 after Manual Batch 0, or P79 Object Page Contract v0 if the manual batch remains pending.
 <!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-END -->
+
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-START -->
+## P78 External Baseline Comparison Report v0
+
+P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->

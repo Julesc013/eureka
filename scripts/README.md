@@ -738,3 +738,13 @@ P76 adds `validate_software_heritage_connector_approval.py`, `validate_software_
 - `python scripts/verify_public_hosted_deployment.py --from-repo-config --json` checks only explicitly configured Eureka static/backend URLs and writes no files.
 - `python scripts/verify_public_hosted_deployment.py --from-env --json` checks only URL environment variables.
 - `python scripts/validate_public_hosted_deployment_evidence.py` validates the P77 audit pack without network calls.
+
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-START -->
+## External Baseline Comparison Report v0
+
+- `python scripts/run_external_baseline_comparison.py --batch batch_0 --json`
+- `python scripts/validate_external_baseline_comparison_report.py`
+- `python scripts/validate_external_baseline_comparison_report.py --json`
+
+These P78 commands are stdlib/local-only. They read committed manual baseline records and local Eureka audit/index evidence, perform no web calls, no search-engine calls, no source API calls, no model calls, no live probes, and no index/cache/ledger/candidate/master-index mutation.
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->

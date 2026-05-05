@@ -793,6 +793,15 @@
       "priority": 0,
       "notes": "Addressed by P77. Configured static URL returned 404, hosted backend URL is not configured, and no production/live-hosted claim is made.",
       "addressed_by": "control/audits/public-hosted-deployment-evidence-v0/public_hosted_deployment_evidence_report.json"
+    },
+    {
+      "id": "audit-backlog-manual-observation-batch-0",
+      "finding_refs": [
+        "P78-BASELINE-001"
+      ],
+      "title": "Complete Manual Observation Batch 0 before external comparison claims",
+      "status": "human_operator_gated",
+      "suggested_milestone": "Manual Observation Batch 0 Execution"
     }
   ]
 }

@@ -872,3 +872,9 @@ Completed as an approval-only software identity/archive metadata connector pack.
 ## P77 Evidence Result
 
 Public hosted deployment remains operator-gated. Repair/verify static hosting and deploy/verify the hosted backend before advertising hosted search. If Manual Observation Batch 0 remains pending, P79 Object Page Contract v0 is the next Codex-safe branch.
+
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-START -->
+## P78 External Baseline Comparison Report v0
+
+P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->

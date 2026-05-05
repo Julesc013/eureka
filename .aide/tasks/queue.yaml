@@ -867,16 +867,16 @@
     {
       "id": "external_baseline_comparison_report_v0",
       "title": "P78 External Baseline Comparison Report v0 after Manual Batch 0",
-      "status": "human_operator_gated_future",
+      "status": "completed_not_eligible_no_observations",
       "priority": 119,
-      "notes": "Future report only after Manual Observation Batch 0 evidence exists; P77 leaves hosted backend unverified."
+      "notes": "P78 report infrastructure completed. Manual Batch 0 has 0 observed records and 39 pending slots, so external comparison is not eligible yet; no external calls or fabricated comparisons were made. Codex-safe next branch: P79 Object Page Contract v0; human-operated parallel work: Manual Observation Batch 0."
     },
     {
       "id": "object_page_contract_v0",
       "title": "P79 Object Page Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "queued_codex_safe_next",
       "priority": 120,
-      "notes": "Codex-safe next branch if Manual Batch 0 remains pending; contract-only, no runtime pages or index mutation."
+      "notes": "Recommended Codex-safe next branch while Manual Observation Batch 0 remains pending; contract-only, no runtime pages or index mutation."
     },
     {
       "id": "source_page_contract_v0",

@@ -162,3 +162,9 @@ Demand Dashboard v0 is future/contract-only. It can later summarize privacy-filt
 ## P77 Hosted Evidence Boundary
 
 P77 does not make hosted public search live. The production-facing contract remains `local_index_only` for any future verified backend and requires blocked-request, route, rate-limit, and no-live-source evidence before public claims.
+
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-START -->
+## P78 External Baseline Comparison Report v0
+
+P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->

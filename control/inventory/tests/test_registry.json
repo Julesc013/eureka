@@ -6966,6 +6966,90 @@
       "failure_means": "P77 hosted deployment evidence drifted or made an unsupported deployment claim.",
       "advisory_or_required": "required",
       "notes": "P77 evidence validation; no deployment, provider mutation, external source calls, live probes, telemetry, downloads, uploads, accounts, or index/cache/ledger mutation."
+    },
+    {
+      "test_id": "external_baseline_comparison_runner_json",
+      "label": "External Baseline Comparison Runner JSON",
+      "command": "python scripts/run_external_baseline_comparison.py --batch batch_0 --json",
+      "category": "audit",
+      "owner_area": "evals/search_usefulness",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P78 comparison readiness drifted, baseline records are invalid, or no-fabrication guarantees weakened.",
+      "advisory_or_required": "required",
+      "notes": "P78 local-only comparison runner; no web/search/source/model calls and no index/cache/ledger mutation."
+    },
+    {
+      "test_id": "external_baseline_comparison_report_validator",
+      "label": "External Baseline Comparison Report Validator",
+      "command": "python scripts/validate_external_baseline_comparison_report.py",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P78 audit pack lost required files, count consistency, no-fabrication guarantees, or manual-work blockers.",
+      "advisory_or_required": "required",
+      "notes": "Validates recorded P78 evidence only; no network."
+    },
+    {
+      "test_id": "external_baseline_comparison_report_validator_json",
+      "label": "External Baseline Comparison Report Validator JSON",
+      "command": "python scripts/validate_external_baseline_comparison_report.py --json",
+      "category": "audit",
+      "owner_area": "control/audits",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "The P78 audit pack JSON validation output no longer parses.",
+      "advisory_or_required": "required",
+      "notes": "JSON mode for P78 validator."
+    },
+    {
+      "test_id": "external_baseline_comparison_report_tests",
+      "label": "External Baseline Comparison Report Tests",
+      "command": "python -m unittest tests.operations.test_external_baseline_comparison_report tests.scripts.test_run_external_baseline_comparison tests.scripts.test_validate_external_baseline_comparison_report",
+      "category": "audit",
+      "owner_area": "tests",
+      "required_for": [
+        "standard",
+        "full",
+        "audit"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P78 runner/validator/audit honesty checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "No external network is required."
     }
   ],
   "notes": [

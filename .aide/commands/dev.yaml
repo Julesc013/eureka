@@ -1154,3 +1154,13 @@ notes:
   - id: public_hosted_deployment_evidence_tests
     run: python -m unittest tests.operations.test_public_hosted_deployment_evidence tests.scripts.test_verify_public_hosted_deployment tests.scripts.test_validate_public_hosted_deployment_evidence
 <!-- P77-PUBLIC-HOSTED-DEPLOYMENT-EVIDENCE-END -->
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-START -->
+  - id: external_baseline_comparison_runner_json
+    run: python scripts/run_external_baseline_comparison.py --batch batch_0 --json
+  - id: external_baseline_comparison_report_validator
+    run: python scripts/validate_external_baseline_comparison_report.py
+  - id: external_baseline_comparison_report_validator_json
+    run: python scripts/validate_external_baseline_comparison_report.py --json
+  - id: external_baseline_comparison_report_tests
+    run: python -m unittest tests.operations.test_external_baseline_comparison_report tests.scripts.test_run_external_baseline_comparison tests.scripts.test_validate_external_baseline_comparison_report
+<!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
