@@ -448,3 +448,9 @@ Completed as an approval-only software identity/archive metadata connector pack.
 
 P78 added local-only comparison readiness for manual external baselines. Current eligibility is `no_observations`: Batch 0 has 0 observed records and 39 pending slots. No web calls, source API calls, model calls, fabricated observations, fabricated comparisons, production readiness claim, or index/cache/ledger/candidate/master-index mutation were made. Codex-safe next branch is P79 Object Page Contract v0 while Manual Observation Batch 0 remains human-operated.
 <!-- P78-EXTERNAL-BASELINE-COMPARISON-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+`control/audits/object-page-contract-v0/` records the Object Page Contract v0 governance pack. It is contract-only and does not claim runtime object pages, deployment, download/install/execute behavior, rights clearance, malware safety, source cache/evidence ledger runtime, candidate promotion, or index mutation.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->
