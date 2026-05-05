@@ -414,7 +414,11 @@
         "evidence_ledger_local_dry_run_json",
         "evidence_ledger_dry_run_report_validator",
         "evidence_ledger_dry_run_report_validator_json",
-        "evidence_ledger_local_dry_run_runtime_tests"
+        "evidence_ledger_local_dry_run_runtime_tests",
+        "public_search_runtime_integration_audit_validator",
+        "public_search_runtime_integration_audit_validator_json",
+        "public_search_runtime_integration_status_report_json",
+        "public_search_runtime_integration_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before final response for most tasks unless a narrower user request explicitly scopes verification down.",
@@ -842,7 +846,11 @@
         "evidence_ledger_local_dry_run_json",
         "evidence_ledger_dry_run_report_validator",
         "evidence_ledger_dry_run_report_validator_json",
-        "evidence_ledger_local_dry_run_runtime_tests"
+        "evidence_ledger_local_dry_run_runtime_tests",
+        "public_search_runtime_integration_audit_validator",
+        "public_search_runtime_integration_audit_validator_json",
+        "public_search_runtime_integration_status_report_json",
+        "public_search_runtime_integration_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "Before origin sync for large repo-wide tasks.",
@@ -1047,7 +1055,11 @@
         "source_cache_evidence_ledger_contract_validator_json",
         "source_cache_dry_run_json",
         "evidence_ledger_dry_run_json",
-        "source_cache_evidence_ledger_contract_tests"
+        "source_cache_evidence_ledger_contract_tests",
+        "public_search_runtime_integration_audit_validator",
+        "public_search_runtime_integration_audit_validator_json",
+        "public_search_runtime_integration_status_report_json",
+        "public_search_runtime_integration_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "After documentation-only changes that do not touch executable Python paths.",
@@ -1495,7 +1507,11 @@
         "compatibility_aware_ranking_contract_tests",
         "public_query_observation_runtime_plan_validator",
         "public_query_observation_runtime_plan_validator_json",
-        "public_query_observation_runtime_plan_tests"
+        "public_query_observation_runtime_plan_tests",
+        "public_search_runtime_integration_audit_validator",
+        "public_search_runtime_integration_audit_validator_json",
+        "public_search_runtime_integration_status_report_json",
+        "public_search_runtime_integration_audit_tests"
       ],
       "required_status": "required",
       "when_to_run": "After eval runner, eval fixture, search usefulness, planner, index, or source-coverage changes.",
@@ -1593,6 +1609,7 @@
     "P98 Source Cache Local Dry-Run Runtime commands are stdlib-only local dry-run checks over synthetic examples; they perform no live source calls, connector execution, source-sync execution, authoritative source-cache writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
     "P98 command strings: python scripts/run_source_cache_dry_run.py --all-examples --json; python scripts/validate_source_cache_dry_run_report.py; python scripts/validate_source_cache_dry_run_report.py --json.",
     "P99 Evidence Ledger Local Dry-Run Runtime commands are stdlib-only local dry-run checks over synthetic examples; they perform no live source calls, connector execution, source-sync execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation.",
-    "P99 command strings: python scripts/run_evidence_ledger_dry_run.py --all-examples --json; python scripts/validate_evidence_ledger_dry_run_report.py; python scripts/validate_evidence_ledger_dry_run_report.py --json."
+    "P99 command strings: python scripts/run_evidence_ledger_dry_run.py --all-examples --json; python scripts/validate_evidence_ledger_dry_run_report.py; python scripts/validate_evidence_ledger_dry_run_report.py --json.",
+    "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation. Command strings: python scripts/validate_public_search_runtime_integration_audit.py; python scripts/validate_public_search_runtime_integration_audit.py --json; python scripts/report_public_search_runtime_integration_status.py --json."
   ]
 }

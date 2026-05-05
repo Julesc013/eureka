@@ -979,3 +979,16 @@ evidence-ledger writes, source-cache mutation, candidate/public/local/master
 index mutation, truth acceptance, promotion decisions, public-search
 integration, telemetry, credentials, downloads, installs, or execution.
 <!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-START -->
+## P100 Public Search Runtime Integration Audit v0
+
+- `python scripts/validate_public_search_runtime_integration_audit.py`
+- `python scripts/validate_public_search_runtime_integration_audit.py --json`
+- `python scripts/report_public_search_runtime_integration_status.py --json`
+
+These commands are stdlib-only audit/report checks. They add no runtime
+integration, public-search route/response/order change, source-cache or
+evidence-ledger dry-run public-search integration, live source fanout, telemetry,
+deployment, accounts, uploads, downloads, installs, execution, or mutation.
+<!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-END -->

@@ -9185,6 +9185,94 @@
       "failure_means": "P99 runtime, CLI, validator, docs, inventory, or metadata guardrails regressed.",
       "advisory_or_required": "required",
       "notes": "Confirms local dry-run only behavior, forbidden args, private-path/URL/secret rejection, deterministic reports, no truth acceptance, no promotion, and no authoritative/public-search/mutation claims."
+    },
+    {
+      "test_id": "public_search_runtime_integration_audit_validator",
+      "label": "P100 public search runtime integration audit validator",
+      "command": "python scripts/validate_public_search_runtime_integration_audit.py",
+      "category": "audit",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P100 integration audit artifacts, classifications, or hard no-integration guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Audit-only validation; no public-search routes/responses/order, dry-run integration, telemetry, live source fanout, deployment, or mutation."
+    },
+    {
+      "test_id": "public_search_runtime_integration_audit_validator_json",
+      "label": "P100 public search runtime integration audit validator JSON",
+      "command": "python scripts/validate_public_search_runtime_integration_audit.py --json",
+      "category": "audit",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P100 integration audit validator JSON output drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable audit validation."
+    },
+    {
+      "test_id": "public_search_runtime_integration_status_report_json",
+      "label": "P100 public search runtime integration status reporter JSON",
+      "command": "python scripts/report_public_search_runtime_integration_status.py --json",
+      "category": "audit",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "P100 read-only status projection drifted.",
+      "advisory_or_required": "required",
+      "notes": "Read-only artifact reporter; starts no public-search server and performs no network, live source, connector, telemetry, or mutation behavior."
+    },
+    {
+      "test_id": "public_search_runtime_integration_audit_tests",
+      "label": "P100 public search runtime integration audit tests",
+      "command": "python -m unittest tests.operations.test_public_search_runtime_integration_audit tests.scripts.test_validate_public_search_runtime_integration_audit tests.scripts.test_report_public_search_runtime_integration_status",
+      "category": "unit",
+      "owner_area": "publication",
+      "required_for": [
+        "standard",
+        "full",
+        "audit",
+        "docs_only"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process files only",
+      "expected_runtime": "seconds",
+      "failure_means": "P100 audit docs, inventory, validator, reporter, or negative hard-boolean checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms factual audit status, dry-run non-integration, disabled live fanout, no telemetry/accounts/downloads, and no mutation claims."
     }
   ],
   "notes": [
@@ -9214,6 +9302,7 @@
     "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.",
     "P97 Public Search Ranking Runtime Planning v0 validation is planning-only; it adds no ranking runtime, public search order/response change, hidden score, result suppression, telemetry, popularity/user-profile/ad/model signals, live source calls, downloads, installs, execution, or source/evidence/candidate/index mutation.",
     "P98 Source Cache Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative source-cache writes, evidence-ledger writes, public-search integration, telemetry, credentials, downloads, installs, execution, or index mutation.",
-    "P99 Evidence Ledger Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation."
+    "P99 Evidence Ledger Local Dry-Run Runtime v0 validation is stdlib-only and local-only; it adds no live source calls, connector execution, source-sync worker execution, authoritative evidence-ledger writes, source-cache mutation, public-search integration, truth acceptance, promotion decisions, telemetry, credentials, downloads, installs, execution, or index mutation.",
+    "P100 Public Search Runtime Integration Audit commands are stdlib-only audit/report checks; they perform no runtime integration, public-search route/response/order change, live source fanout, dry-run public-search integration, telemetry, deployment, or mutation."
   ]
 }

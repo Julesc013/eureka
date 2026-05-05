@@ -1035,9 +1035,9 @@
     {
       "id": "public_search_runtime_integration_audit_v0",
       "title": "P100 Public Search Runtime Integration Audit v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed_audit_no_unexpected_integration",
       "priority": 141,
-      "notes": "Future audit after connector/runtime planning gates; no runtime ranking, connector fanout, telemetry, or mutation without explicit approval."
+      "notes": "P100 completed as audit/validation/reporting only. Public search remains local_index_only; P98/P99 dry-run runtimes, query observation, pages, connectors, pack import, deep extraction, explanations, and ranking are not public-search integrated. Hosted deployment remains operator-gated and no runtime integration, telemetry, live fanout, deployment, or mutation was added."
     },
     {
       "id": "connector_approval_and_runtime_planning_audit_v0",
@@ -1101,6 +1101,13 @@
       "status": "queued_codex_safe_future",
       "priority": 151,
       "notes": "Future planning for authoritative local evidence-ledger storage only after P99 dry-run review and explicit review/truth/promotion boundary approval."
+    },
+    {
+      "id": "public_search_alpha_hardening_v0",
+      "title": "P110 Public Search Alpha Hardening v0",
+      "status": "queued_codex_safe_future",
+      "priority": 152,
+      "notes": "Future hardening after P100/P101 and operator-hosted evidence; no live fanout, telemetry, uploads/downloads, ranking, or mutation without explicit approval."
     }
   ]
 }

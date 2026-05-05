@@ -598,3 +598,14 @@ Adds a bounded local dry-run source-cache candidate loader, classifier, report b
   decisions, public-search integration, telemetry, credentials, downloads,
   installs, execution, or index mutation.
 <!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-END -->
+
+<!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-START -->
+## P100 Public Search Runtime Integration Audit v0
+
+- Audit pack: `control/audits/public-search-runtime-integration-audit-v0/`
+- Status: audit-only checkpoint.
+- Boundary: no runtime integration, public-search route/response/order change,
+  source-cache or evidence-ledger dry-run public-search integration, live source
+  fanout, hosted deployment, telemetry, accounts, uploads, downloads, installs,
+  execution, candidate promotion, or index/cache/ledger/master mutation.
+<!-- P100-PUBLIC-SEARCH-RUNTIME-INTEGRATION-AUDIT-END -->
