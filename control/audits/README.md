@@ -550,3 +550,9 @@ Planning-only; no npm registry API calls, npm/yarn/pnpm CLI calls, connector run
 Audit pack: `control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json`.
 
 Planning-only runtime architecture review. Readiness is `blocked_connector_approval_pending`; no Software Heritage API calls, SWHID live resolution, connector runtime, source-code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation was added.
+
+## P93 Object/Source/Comparison Page Runtime Planning v0
+
+Audit pack: `control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json`.
+
+Planning-only runtime architecture review. Readiness is `ready_for_local_dry_run_runtime_after_operator_approval`; hosted runtime remains blocked by unverified deployment evidence. No runtime routes, renderers, stores, live source calls, public-search mutation, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion was added.

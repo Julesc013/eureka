@@ -452,3 +452,9 @@ Audit report: `control/audits/npm-metadata-connector-runtime-planning-v0/npm_met
 Audit report: `control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json`.
 
 Planning-only and approval-gated. The runtime remains blocked because P76 keeps connector approval pending.
+
+## P93 Object/Source/Comparison Page Runtime Planning v0
+
+Audit report: `control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json`.
+
+Planning-only and read-only page runtime plan. Local dry-run work requires operator approval; hosted runtime remains blocked by deployment evidence.

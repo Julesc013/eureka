@@ -905,3 +905,10 @@ These commands are stdlib-only and validate planning artifacts only; they perfor
 - `python scripts/validate_software_heritage_connector_runtime_plan.py --json`
 
 Validates the planning-only Software Heritage runtime audit pack. The validator is stdlib-only and performs no network calls, SWHID live resolution, source-code/content/blob fetches, repository clones, source archive downloads, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.
+
+### P93 Object/Source/Comparison Page Runtime Planning
+
+- `python scripts/validate_page_runtime_plan.py`
+- `python scripts/validate_page_runtime_plan.py --json`
+
+Validates the planning-only object/source/comparison page runtime audit pack. The validator is stdlib-only and performs no network calls, route implementation, renderer implementation, public-search mutation, live source calls, downloads, telemetry, accounts, or index/cache/ledger/candidate/master mutation.

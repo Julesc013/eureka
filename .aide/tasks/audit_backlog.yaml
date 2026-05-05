@@ -907,6 +907,13 @@
       "status": "addressed_planning_blocked_connector_approval_pending",
       "notes": "Addressed by control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json. Planning-only; no Software Heritage API calls, SWHID live resolution, origin/visit/snapshot/release/revision/directory/content lookup, connector runtime, arbitrary SWHID/origin/repository fetch, source code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
       "addressed_by": "control/audits/software-heritage-connector-runtime-planning-v0/software_heritage_connector_runtime_planning_report.json"
+    },
+    {
+      "id": "p93_object_source_comparison_page_runtime_planning_v0",
+      "title": "P93 Object/Source/Comparison Page Runtime Planning v0 audit pack",
+      "status": "addressed_planning_ready_local_dry_run_after_operator_approval_hosted_blocked",
+      "notes": "Addressed by control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json. Planning-only; no runtime routes, renderers, page stores, public-search mutation, live source calls, arbitrary URL/local path access, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion.",
+      "addressed_by": "control/audits/object-source-comparison-page-runtime-planning-v0/object_source_comparison_page_runtime_planning_report.json"
     }
   ]
 }
