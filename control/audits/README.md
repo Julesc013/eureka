@@ -454,3 +454,17 @@ P78 added local-only comparison readiness for manual external baselines. Current
 
 `control/audits/object-page-contract-v0/` records the Object Page Contract v0 governance pack. It is contract-only and does not claim runtime object pages, deployment, download/install/execute behavior, rights clearance, malware safety, source cache/evidence ledger runtime, candidate promotion, or index mutation.
 <!-- P79-OBJECT-PAGE-CONTRACT-END -->
+
+<!-- P80-SOURCE-PAGE-CONTRACT-START -->
+## P80 Source Page Contract v0
+
+Commands:
+
+- `python scripts/validate_source_page.py --all-examples`
+- `python scripts/validate_source_page.py --all-examples --json`
+- `python scripts/validate_source_page_contract.py`
+- `python scripts/validate_source_page_contract.py --json`
+- `python scripts/dry_run_source_page.py --source-id internet-archive-placeholder --source-family internet_archive --json`
+
+These are contract-only/source-page governance checks. They make no network calls, implement no runtime source pages, execute no source sync worker, enable no connector, mutate no cache/ledger/index, and enable no downloads, installs, or execution.
+<!-- P80-SOURCE-PAGE-CONTRACT-END -->
