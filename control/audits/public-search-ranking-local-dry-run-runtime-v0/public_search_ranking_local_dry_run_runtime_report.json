@@ -1,0 +1,186 @@
+{
+  "AI_reranking_performed": false,
+  "ad_signal_used": false,
+  "branch": "main",
+  "candidate_index_mutated": false,
+  "candidate_promotion_performed": false,
+  "cli_script": "scripts/run_public_search_ranking_dry_run.py",
+  "command_results": {
+    "adjacent_contract_and_planning_validators": "passed; P106 explanation runtime plan, P105 deep extraction plan, P104 pack import dry-run, P103 page dry-run, P102 manual observation follow-up, P101 connector audit, P100 public search integration audit, P97 ranking plan, explanation contract, deep extraction contract, pack/page runtime plans, compatibility-aware ranking, evidence-weighted ranking, merge/deduplication, and identity validators passed",
+    "architecture_boundaries": "passed; checked 479 Python files",
+    "archive_resolution_eval": "passed; 6/6 satisfied",
+    "external_baseline_comparison": "valid report; comparison not eligible because Batch 0 has 0 observed and 39 pending observations",
+    "git_diff_check": "passed; Git emitted CRLF normalization warnings for existing/new working-copy files",
+    "hosted_deployment_evidence": "validator passed; configured static URL verification remains failed and hosted backend is not configured",
+    "initial_git_status": "clean on main...origin/main before P107 edits",
+    "initial_head": "c54ebaca8830e5b1adb753b0a6344061091da3c4",
+    "optional_cargo": "not available in PATH; cargo check/test not run",
+    "optional_gh": "not available in PATH; GitHub Actions status not checked",
+    "public_search_checks": "passed; public search contract/card/safety/local runtime, smoke, safety evidence, and local hosted rehearsal checks passed",
+    "run_public_search_ranking_dry_run_json": "passed; 5 result sets seen, 5 valid, 0 invalid",
+    "search_usefulness_audit": "passed; 64 queries with counts covered=5, partial=40, source_gap=10, capability_gap=7, unknown=2",
+    "tests": "passed; focused P107 tests 22, tests/runtime 38, tests/scripts 720, tests/operations 646, tests/hardening 53, tests/parity 25, runtime 320, surfaces 168, all tests 1573",
+    "validate_public_search_ranking_dry_run_report": "passed",
+    "validate_public_search_ranking_dry_run_report_json": "passed"
+  },
+  "compatibility_aware_factor_summary": {
+    "behavior": "platform, architecture, runtime dependency, representation, and unknown compatibility are exposed as categorical public-safe factors",
+    "installability_claimed": false,
+    "unknowns_visible": true
+  },
+  "created_by_slice": "P107 Public Search Ranking Local Dry-Run Runtime v0",
+  "credentials_used": false,
+  "downloads_enabled": false,
+  "dry_run_results": {
+    "conflict_visible": 1,
+    "fallback_used": 1,
+    "gap_visible": 5,
+    "result_sets_invalid": 0,
+    "result_sets_seen": 5,
+    "result_sets_valid": 5
+  },
+  "evidence_ledger_mutated": false,
+  "evidence_ledger_read": false,
+  "evidence_weighted_factor_summary": {
+    "behavior": "strong, medium, weak, absent, conflicting, and unknown evidence categories are emitted as explicit public factors",
+    "evidence_as_truth": false,
+    "missing_evidence_visible": true
+  },
+  "eval_gate_status": {
+    "archive_resolution_eval_command_status": "passed in prior P97/P106 verification; rerun in P107 verification",
+    "external_baseline_comparison_status": "comparison_not_eligible_for_production_claims",
+    "known_counts": {
+      "capability_gap": 7,
+      "covered": 5,
+      "partial": 40,
+      "source_gap": 10,
+      "unknown": 2
+    },
+    "local_dry_run_implementation_allowed": true,
+    "manual_observation_batch_0_status": "0 observed / 39 pending in P102/P106 evidence",
+    "production_quality_claims_eligible": false,
+    "search_usefulness_audit_command_status": "passed in prior P97/P106 verification; rerun in P107 verification"
+  },
+  "examples": [
+    "examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking",
+    "examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking",
+    "examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking",
+    "examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking",
+    "examples/public_search_ranking_dry_run/minimal_current_order_fallback"
+  ],
+  "execution_enabled": false,
+  "external_calls_performed": false,
+  "factor_summary": {
+    "factor_types": [
+      "evidence_strength",
+      "provenance_strength",
+      "source_posture",
+      "intrinsic_identifier_match",
+      "compatibility_evidence",
+      "platform_os_match",
+      "architecture_match",
+      "runtime_dependency_match",
+      "representation_availability",
+      "member_access",
+      "freshness",
+      "conflict_penalty",
+      "uncertainty_penalty",
+      "candidate_penalty",
+      "rights_risk_caution",
+      "action_safety",
+      "absence_gap_transparency",
+      "result_merge_group_quality",
+      "identity_resolution_strength",
+      "manual_review_status"
+    ],
+    "hidden_scores": false,
+    "model_confidence": false
+  },
+  "grouping_identity_boundary": "Grouping and identity refs may inform display factors only; no destructive merge, duplicate deletion, truth claim, or candidate promotion is performed.",
+  "hidden_scores_enabled": false,
+  "hidden_suppression_performed": false,
+  "hosted_runtime_enabled": false,
+  "current_order_fallback_model": "Current order is preserved outside dry-run. Missing factor data, policy rejection, invalid input, or missing explanation requires current-order fallback; strict mode can fail but still performs no mutation.",
+  "explanation_user_reason_model": "Every proposed dry-run ranking change receives a public reason and audit reason with visible match, evidence, source, compatibility, gap, action, and risk caveats where available.",
+  "input_model": {
+    "approved_roots": [
+      "examples/public_search_ranking_dry_run",
+      "examples/evidence_weighted_ranking",
+      "examples/compatibility_aware_ranking"
+    ],
+    "forbidden_inputs": [
+      "arbitrary local paths",
+      "absolute private paths",
+      "URLs",
+      "live source identifiers",
+      "connector params",
+      "source cache paths",
+      "evidence ledger paths",
+      "database paths",
+      "raw query observation logs",
+      "telemetry",
+      "user profile",
+      "ad signal",
+      "uploaded files",
+      "credentials"
+    ]
+  },
+  "installs_enabled": false,
+  "live_source_called": false,
+  "local_dry_run_runtime_implemented": true,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "model_call_performed": false,
+  "mutation_promotion_boundary": "Report-only dry-run; no source cache writes, evidence ledger writes, candidate index writes, public/local/master index writes, candidate promotion, accepted records, destructive merge, or duplicate deletion.",
+  "next_recommended_branch": "P108 Source Cache Authoritative Local Runtime Planning v0",
+  "notes": [
+    "P107 is local dry-run only.",
+    "Production ranking claims remain blocked by external baseline and eval-gate readiness.",
+    "No public search route, response, card, or ordering behavior was changed."
+  ],
+  "output_model": {
+    "mode": "local_dry_run",
+    "required_fields": [
+      "current_order",
+      "proposed_dry_run_order",
+      "fallback_order",
+      "ranking_factors",
+      "explanation_summaries",
+      "hard_booleans"
+    ]
+  },
+  "popularity_signal_used": false,
+  "privacy_no_telemetry_hidden_score_review": "Public-safe synthetic examples only; no raw private query, IP/account/session/user-profile data, telemetry, popularity, ad signal, model signal, hidden score, suppression, private path, private URL, or local machine fingerprint.",
+  "public_index_mutated": false,
+  "public_search_boundary": "Public search does not call this dry-run runtime; routes, responses, result cards, ordering, and safety checks are unchanged.",
+  "public_search_order_changed": false,
+  "public_search_ranking_runtime_enabled": false,
+  "public_search_response_changed": false,
+  "public_search_routes_changed": false,
+  "remaining_blockers": [
+    "Manual Observation Batch 0 remains pending.",
+    "External baseline comparison is not eligible for production-quality ranking claims.",
+    "Dedicated ranking regression acceptance remains future.",
+    "Public search ranking integration requires separate approval."
+  ],
+  "report_id": "public_search_ranking_local_dry_run_runtime_v0",
+  "repo_head": "c54ebaca8830e5b1adb753b0a6344061091da3c4",
+  "result_suppression_enabled": false,
+  "runtime_modules": [
+    "runtime/engine/ranking/models.py",
+    "runtime/engine/ranking/policy.py",
+    "runtime/engine/ranking/factors.py",
+    "runtime/engine/ranking/explain.py",
+    "runtime/engine/ranking/dry_run.py",
+    "runtime/engine/ranking/report.py",
+    "runtime/engine/ranking/errors.py"
+  ],
+  "runtime_scope": "Implemented stdlib-only local dry-run ranking over approved examples; no public search integration, hosted runtime, hidden scores, suppression, model calls, telemetry, source/evidence reads, or mutation.",
+  "source_cache_evidence_candidate_boundary": "Dry-run may read synthetic refs present in examples only; it does not read authoritative source cache or evidence ledger, write source/evidence/candidate stores, create candidates, promote candidates, or accept refs as truth.",
+  "source_cache_mutated": false,
+  "source_cache_read": false,
+  "telemetry_signal_used": false,
+  "user_profile_signal_used": false,
+  "validator_script": "scripts/validate_public_search_ranking_dry_run_report.py",
+  "worktree_status": "dirty with P107 local dry-run runtime, tests, audit, docs, and metadata before commit"
+}

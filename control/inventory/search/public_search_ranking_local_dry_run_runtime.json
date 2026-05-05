@@ -1,0 +1,42 @@
+{
+  "AI_reranking_enabled": false,
+  "ad_signal_enabled": false,
+  "approved_input_roots": [
+    "examples/public_search_ranking_dry_run",
+    "examples/evidence_weighted_ranking",
+    "examples/compatibility_aware_ranking"
+  ],
+  "candidate_index_mutation_allowed": false,
+  "candidate_promotion_allowed": false,
+  "cli": "python scripts/run_public_search_ranking_dry_run.py --all-examples --json",
+  "evidence_ledger_mutation_allowed": false,
+  "evidence_ledger_reads_enabled": false,
+  "hidden_scores_enabled": false,
+  "hosted_ranking_runtime_enabled": false,
+  "live_source_calls_enabled": false,
+  "local_dry_run_runtime_implemented": true,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "model_calls_enabled": false,
+  "next_runtime_branch_recommendation": "P108 Source Cache Authoritative Local Runtime Planning v0",
+  "notes": [
+    "Local dry-run only.",
+    "Public search routes, responses, cards, and order remain unchanged.",
+    "No source/evidence authoritative reads or writes occur."
+  ],
+  "popularity_signal_enabled": false,
+  "public_index_mutation_allowed": false,
+  "public_search_order_changed": false,
+  "public_search_ranking_runtime_enabled": false,
+  "public_search_response_changed": false,
+  "public_search_routes_changed": false,
+  "result_suppression_enabled": false,
+  "runtime_id": "public_search_ranking_local_dry_run_runtime_v0",
+  "schema_version": "1.0.0",
+  "source_cache_mutation_allowed": false,
+  "source_cache_reads_enabled": false,
+  "status": "implemented_local_dry_run",
+  "telemetry_signal_enabled": false,
+  "user_profile_signal_enabled": false,
+  "validator": "python scripts/validate_public_search_ranking_dry_run_report.py"
+}
