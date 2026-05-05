@@ -202,3 +202,15 @@ P65 adds Candidate Promotion Policy v0 as contract-only governance. Candidate pr
 ## P66 Known Absence Page v0
 
 Known Absence Page v0 is contract-only. It defines scoped absence, not global absence, for future no-result explanations with checked/not-checked scope, near misses, weak hits, gap explanations, safe next actions, privacy redaction, and no download/install/upload/live fetch. Known absence page is not a runtime page yet, not evidence acceptance, not candidate promotion, not master-index mutation, and not telemetry.
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+Object Page Contract v0 is contract-only and evidence-first. It defines future public object pages that preserve provisional identity, source/evidence/provenance, compatibility, conflicts, scoped absence, and gaps without implementing runtime object pages.
+
+Boundary notes:
+
+- No runtime object routes, database, persistent object-page store, source connector runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, installs, execution, uploads, telemetry, accounts, rights clearance, or malware safety claim are added.
+- Public search may reference object page links only after a future governed integration; P79 does not mutate public search result cards or the public index.
+- Object pages are not app-store, downloader, installer, or execution surfaces.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->

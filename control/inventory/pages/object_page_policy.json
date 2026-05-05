@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "object_page_policy_v0",
+  "status": "contract_only",
+  "runtime_object_pages_implemented": false,
+  "persistent_object_page_store_implemented": false,
+  "static_demo_available": false,
+  "public_search_object_links_enabled_now": false,
+  "live_source_calls_allowed": false,
+  "source_cache_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "candidate_index_mutation_allowed": false,
+  "candidate_promotion_allowed": false,
+  "public_index_mutation_allowed": false,
+  "local_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "next_contracts": [
+    "source_page_contract",
+    "comparison_page_contract",
+    "cross_source_identity_resolution_contract"
+  ],
+  "notes": [
+    "P79 defines contract-only object pages.",
+    "Object page runtime, persistent storage, static demo generation, public search object links, and candidate promotion remain future work."
+  ]
+}

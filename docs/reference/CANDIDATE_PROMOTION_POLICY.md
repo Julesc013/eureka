@@ -85,3 +85,15 @@ Completed as an approval-only package metadata connector pack. It adds no live n
 
 Completed as an approval-only software identity/archive metadata connector pack. It adds no live Software Heritage connector runtime, no external calls, no Software Heritage API calls, no SWHID resolution, no origin/visit/snapshot/release/revision/directory/content lookup, no source code download, no repository clone, no source archive download, no source file retrieval, no public-query fanout, no telemetry, no credentials or tokens, and no source cache/evidence ledger/candidate/index mutation. It requires SWHID/origin/repository identity review, source-code-content risk policy, source policy review, User-Agent/contact decisions, and cache-first evidence outputs. Next recommended branch: P77 Public Hosted Deployment Evidence v0.
 <!-- P76-SOFTWARE-HERITAGE-SUMMARY-END -->
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+Object Page Contract v0 is contract-only and evidence-first. It defines future public object pages that preserve provisional identity, source/evidence/provenance, compatibility, conflicts, scoped absence, and gaps without implementing runtime object pages.
+
+Boundary notes:
+
+- No runtime object routes, database, persistent object-page store, source connector runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, installs, execution, uploads, telemetry, accounts, rights clearance, or malware safety claim are added.
+- Public search may reference object page links only after a future governed integration; P79 does not mutate public search result cards or the public index.
+- Object pages are not app-store, downloader, installer, or execution surfaces.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/pages/object_page_section.v0.json",
+  "title": "EurekaObjectPageSectionV0",
+  "description": "Optional reusable section descriptor for object page renderers. Contract-only; no renderer/runtime is implemented.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "section_id",
+    "section_kind",
+    "title",
+    "status",
+    "items",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "section_id": {
+      "type": "string"
+    },
+    "section_kind": {
+      "type": "string",
+      "enum": [
+        "identity",
+        "versions",
+        "representations",
+        "members",
+        "sources",
+        "evidence",
+        "compatibility",
+        "rights_risk",
+        "conflicts",
+        "gaps",
+        "projection",
+        "privacy",
+        "unknown"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_example",
+        "public_safe_example",
+        "contract_only",
+        "runtime_future"
+      ]
+    },
+    "items": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-status": "contract_only",
+  "x-runtime_object_page_implemented": false
+}

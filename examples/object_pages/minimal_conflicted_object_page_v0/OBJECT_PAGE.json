@@ -1,0 +1,343 @@
+{
+  "schema_version": "0.1.0",
+  "object_page_id": "object_page_demo_conflicted_1",
+  "object_page_kind": "object_page",
+  "status": "public_safe_example",
+  "created_by_tool": "p79_object_page_contract_v0",
+  "object_identity": {
+    "object_id": "demo-conflicted-object-1",
+    "object_kind": "software",
+    "canonical_label": "Synthetic Utility Name Conflict",
+    "aliases": [],
+    "product_name": "Synthetic Utility Name Conflict",
+    "vendor": "Example Vendor",
+    "version": "1.0",
+    "platform": "DemoOS",
+    "architecture": "x86",
+    "artifact_type": "metadata_record",
+    "identifiers": [
+      {
+        "identifier_kind": "synthetic_public_ref",
+        "identifier_value": "demo-conflicted-object-1"
+      }
+    ],
+    "parent_object_ref": null,
+    "child_object_refs": [],
+    "identity_confidence": "low",
+    "identity_status": "conflicted",
+    "identity_not_truth": true,
+    "limitations": [
+      "Synthetic example identity; not authoritative object truth."
+    ]
+  },
+  "object_status": {
+    "page_lane": "conflicted",
+    "verification_status": "conflicted",
+    "public_visibility": "public_safe_example",
+    "actionability_status": "inspect_only",
+    "limitations": [
+      "Example page only; future runtime serving is not implemented."
+    ]
+  },
+  "title": "Synthetic Utility Name Conflict",
+  "summary": "A synthetic conflicted object page preserving disagreement between two candidate identities.",
+  "versions_states_releases": [
+    {
+      "state_ref": "state-demo-conflicted-object-1-1",
+      "label": "Synthetic state 1.0",
+      "version": "1.0",
+      "platform": "DemoOS",
+      "architecture": "x86",
+      "lifecycle_status": "unknown",
+      "source_refs": [
+        "source-demo-conflicted-object-1"
+      ],
+      "evidence_refs": [
+        "evidence-demo-conflicted-object-1"
+      ],
+      "confidence": "low",
+      "limitations": [
+        "Version is synthetic and review-required."
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "representation_ref": "representation-demo-conflicted-object-1",
+      "representation_kind": "metadata_record",
+      "label": "Conflicted metadata summary",
+      "source_refs": [
+        "source-demo-conflicted-object-1"
+      ],
+      "evidence_refs": [
+        "evidence-demo-conflicted-object-1"
+      ],
+      "checksum_refs": [],
+      "size_summary": "not included",
+      "access_status": "metadata_only",
+      "payload_included": false,
+      "downloads_enabled": false,
+      "limitations": [
+        "Metadata-only representation; no payload, download, install, or execution path."
+      ]
+    }
+  ],
+  "members": [],
+  "sources": [
+    {
+      "source_id": "source-demo-conflicted-object-1",
+      "source_family": "synthetic_fixture",
+      "source_status": "active_fixture",
+      "source_role": "primary",
+      "source_cache_ref": null,
+      "limitations": [
+        "Fixture source only; no live source call was made."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_ref": "evidence-demo-conflicted-object-1",
+      "evidence_kind": "synthetic_metadata_observation",
+      "evidence_status": "fixture",
+      "claim_summary": "Synthetic public-safe metadata supports displaying the object page shape only.",
+      "provenance_refs": [
+        "source-demo-conflicted-object-1"
+      ],
+      "confidence": "low",
+      "confidence_not_truth": true,
+      "limitations": [
+        "Evidence illustrates contract shape and is not accepted truth."
+      ]
+    }
+  ],
+  "compatibility": {
+    "compatibility_status": "conflicting",
+    "platform_refs": [
+      "demo-platform"
+    ],
+    "operating_systems": [
+      "DemoOS"
+    ],
+    "architectures": [
+      "x86"
+    ],
+    "runtime_requirements": [
+      "unknown"
+    ],
+    "source_refs": [
+      "source-demo-conflicted-object-1"
+    ],
+    "evidence_refs": [
+      "evidence-demo-conflicted-object-1"
+    ],
+    "confidence": "unknown",
+    "limitations": [
+      "Compatibility is not claimed beyond the synthetic example."
+    ]
+  },
+  "rights_risk_action_posture": {
+    "rights_classification": "public_metadata_only",
+    "risk_classification": "metadata_only",
+    "allowed_actions": [
+      "inspect_metadata",
+      "view_sources",
+      "view_evidence",
+      "compare",
+      "cite"
+    ],
+    "disabled_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "mirror",
+      "arbitrary_url_fetch"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "uploads_enabled": false,
+    "mirroring_enabled": false,
+    "arbitrary_url_fetch_enabled": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "limitations": [
+      "Rights and safety are not cleared; risky actions stay disabled."
+    ]
+  },
+  "conflicts": [
+    {
+      "conflict_id": "conflict-demo-identity-1",
+      "conflict_type": "identity_conflict",
+      "summary": "Two synthetic labels may refer to the same object, but the conflict is preserved for review.",
+      "conflicting_refs": [
+        "demo-conflicted-object-1",
+        "demo-conflicted-object-alias-1"
+      ],
+      "resolution_status": "preserved_conflict",
+      "destructive_merge_allowed": false,
+      "limitations": [
+        "No destructive merge or candidate promotion is performed."
+      ]
+    },
+    {
+      "conflict_id": "conflict-demo-version-1",
+      "conflict_type": "version_conflict",
+      "summary": "Synthetic version labels disagree and require later review.",
+      "conflicting_refs": [
+        "state-demo-conflicted-object-1-1",
+        "state-demo-conflicted-object-1-alt"
+      ],
+      "resolution_status": "review_required",
+      "destructive_merge_allowed": false,
+      "limitations": [
+        "Conflict is a display model only."
+      ]
+    }
+  ],
+  "absence_near_misses_gaps": {
+    "absence_status": "not_absent",
+    "global_absence_claimed": false,
+    "near_misses": [],
+    "gaps": [
+      {
+        "gap_type": "source_coverage_gap",
+        "explanation": "Only synthetic fixture evidence is present.",
+        "future_next_step": "Compare source cache and evidence ledger outputs when those runtimes exist.",
+        "limitations": [
+          "No live source query was made."
+        ]
+      },
+      {
+        "gap_type": "external_baseline_pending",
+        "explanation": "Manual external baseline observations remain pending.",
+        "future_next_step": "Use validated manual observations after Batch 0 is completed.",
+        "limitations": [
+          "No comparison claim is made."
+        ]
+      }
+    ],
+    "known_absence_page_refs": [],
+    "checked_scope": [
+      "synthetic fixture metadata"
+    ],
+    "not_checked_scope": [
+      "live sources",
+      "source cache runtime",
+      "evidence ledger runtime"
+    ],
+    "limitations": [
+      "No global absence claim is made."
+    ]
+  },
+  "result_card_projection": {
+    "result_card_contract_ref": "contracts/api/search_result_card.v0.json",
+    "can_project_to_result_card": true,
+    "result_title": "Synthetic Utility Name Conflict",
+    "result_subtitle": "software",
+    "result_lane": "conflicted",
+    "source_summary": "Synthetic fixture source only.",
+    "evidence_summary": "One synthetic public-safe evidence summary.",
+    "compatibility_summary": "conflicting",
+    "action_summary": "Inspect, compare, cite only.",
+    "warnings": [
+      "No runtime page, download, install, execution, or source call exists."
+    ],
+    "limitations": [
+      "Projection is contract-only and does not mutate public search."
+    ]
+  },
+  "api_projection": {
+    "response_kind": "object_page_response",
+    "route_future": [
+      "/object/{object_id}",
+      "/api/v1/object/{object_id}"
+    ],
+    "implemented_now": false,
+    "compatible_with_public_search_response": true,
+    "included_sections": [
+      "identity",
+      "sources",
+      "evidence",
+      "compatibility",
+      "representations",
+      "members",
+      "conflicts",
+      "gaps",
+      "privacy"
+    ],
+    "limitations": [
+      "Future route only; no runtime route was added."
+    ]
+  },
+  "static_projection": {
+    "static_demo_available": false,
+    "static_demo_path": null,
+    "generated_static_artifact": false,
+    "no_js_required": true,
+    "base_path_safe": true,
+    "old_client_safe": true,
+    "limitations": [
+      "Static HTML demo deferred to avoid generated artifact churn in P79."
+    ]
+  },
+  "privacy": {
+    "privacy_classification": "public_safe_example",
+    "contains_private_path": false,
+    "contains_secret": false,
+    "contains_private_url": false,
+    "contains_user_identifier": false,
+    "contains_ip_address": false,
+    "contains_raw_private_query": false,
+    "publishable": true,
+    "public_aggregate_allowed": true,
+    "reasons": [
+      "Synthetic values only."
+    ]
+  },
+  "limitations": [
+    "Contract-only object page example.",
+    "No source cache, evidence ledger, candidate index, public index, local index, or master index mutation.",
+    "No rights clearance, malware safety, download, install, execution, upload, telemetry, or account behavior."
+  ],
+  "no_runtime_guarantees": {
+    "runtime_object_page_implemented": false,
+    "persistent_object_page_store_implemented": false,
+    "object_page_generated_from_live_source": false,
+    "live_source_called": false,
+    "external_calls_performed": false
+  },
+  "no_mutation_guarantees": {
+    "source_cache_mutated": false,
+    "evidence_ledger_mutated": false,
+    "candidate_index_mutated": false,
+    "candidate_promotion_performed": false,
+    "public_index_mutated": false,
+    "local_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "notes": [
+    "Fast learning, slow truth."
+  ],
+  "runtime_object_page_implemented": false,
+  "persistent_object_page_store_implemented": false,
+  "object_page_generated_from_live_source": false,
+  "live_source_called": false,
+  "external_calls_performed": false,
+  "source_cache_mutated": false,
+  "evidence_ledger_mutated": false,
+  "candidate_index_mutated": false,
+  "candidate_promotion_performed": false,
+  "public_index_mutated": false,
+  "local_index_mutated": false,
+  "master_index_mutated": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "installs_enabled": false,
+  "execution_enabled": false,
+  "arbitrary_url_fetch_enabled": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "telemetry_exported": false
+}

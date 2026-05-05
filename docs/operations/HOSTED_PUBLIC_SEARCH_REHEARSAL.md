@@ -147,3 +147,15 @@ Completed as an approval-only software identity/archive metadata connector pack.
 ## P77 Public Hosted Deployment Evidence
 
 P77 confirms that P58 remains localhost rehearsal evidence only. The configured public static URL failed required checks with 404 responses, and no hosted backend URL is configured for route, safe-query, blocked-request, telemetry, or rate-limit verification.
+
+<!-- P79-OBJECT-PAGE-CONTRACT-START -->
+## P79 Object Page Contract v0
+
+Object Page Contract v0 is contract-only and evidence-first. It defines future public object pages that preserve provisional identity, source/evidence/provenance, compatibility, conflicts, scoped absence, and gaps without implementing runtime object pages.
+
+Boundary notes:
+
+- No runtime object routes, database, persistent object-page store, source connector runtime, source cache runtime, evidence ledger runtime, candidate promotion, public-index mutation, local-index mutation, master-index mutation, live source fanout, downloads, installs, execution, uploads, telemetry, accounts, rights clearance, or malware safety claim are added.
+- Public search may reference object page links only after a future governed integration; P79 does not mutate public search result cards or the public index.
+- Object pages are not app-store, downloader, installer, or execution surfaces.
+<!-- P79-OBJECT-PAGE-CONTRACT-END -->
