@@ -1386,3 +1386,15 @@ notes:
   - id: deep_extraction_contract_tests
     run: python -m unittest tests.operations.test_deep_extraction_contract tests.scripts.test_validate_deep_extraction_request tests.scripts.test_validate_extraction_result_summary tests.scripts.test_validate_deep_extraction_contract tests.scripts.test_dry_run_deep_extraction_request
 <!-- P95-DEEP-EXTRACTION-CONTRACT-END -->
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+- `python scripts/validate_search_result_explanation.py --all-examples`
+- `python scripts/validate_search_result_explanation.py --all-examples --json`
+- `python scripts/validate_search_result_explanation_contract.py`
+- `python scripts/validate_search_result_explanation_contract.py --json`
+- `python scripts/dry_run_search_result_explanation.py --title "Example result" --match-kind lexical_match --json`
+
+These commands are stdlib-only and local. They add no runtime explanation generation, public search response/order changes, hidden score, result suppression, model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

@@ -1000,16 +1000,16 @@
     {
       "id": "search_result_explanation_contract_v0",
       "title": "P96 Search Result Explanation Contract v0",
-      "status": "queued_codex_safe_future",
+      "status": "completed_contract_only",
       "priority": 137,
-      "notes": "Next codex-safe branch after P95; contract-only explanations for evidence, ranking, grouping, gaps, limitations, and action posture."
+      "notes": "P96 completed as contract/schema/validator/example/audit work only. No runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, source/evidence/candidate/index mutation, candidate promotion, or production search behavior was added."
     },
     {
       "id": "public_search_ranking_runtime_planning_v0",
       "title": "P97 Public Search Ranking Runtime Planning v0 only after contracts and evals",
       "status": "blocked_pending_contracts_and_evals",
       "priority": 138,
-      "notes": "Future planning only after contracts and eval evidence; no runtime ranking until then."
+      "notes": "Next codex-safe branch after P96; planning only after contracts and eval evidence, with no runtime ranking until approved."
     },
     {
       "id": "compatibility_evidence_pack_contract_v0",
@@ -1073,6 +1073,13 @@
       "status": "blocked_pending_sandbox_policy_approval",
       "priority": 146,
       "notes": "Future planning only after P95 contract is reviewed and extraction sandbox/resource/executable payload safety policy is approved."
+    },
+    {
+      "id": "search_result_explanation_runtime_planning_v0",
+      "title": "P106 Search Result Explanation Runtime Planning v0 only after public search runtime gate",
+      "status": "blocked_pending_public_search_runtime_gate",
+      "priority": 147,
+      "notes": "Future gated milestone; no runtime behavior is approved by P96."
     }
   ]
 }

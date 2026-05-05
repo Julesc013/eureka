@@ -934,3 +934,15 @@ These commands are stdlib-only and validate planning artifacts only. They perfor
 
 These commands are stdlib-only and contract-only. They perform no runtime extraction, no file opening, no archive unpacking, no OCR/transcription, no execution, no URL fetching, no live source calls, no telemetry, no source/evidence/candidate/index mutation, and no production extraction claim.
 <!-- P95-DEEP-EXTRACTION-CONTRACT-END -->
+
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-START -->
+## P96 Search Result Explanation Contract v0
+
+- `python scripts/validate_search_result_explanation.py --all-examples`
+- `python scripts/validate_search_result_explanation.py --all-examples --json`
+- `python scripts/validate_search_result_explanation_contract.py`
+- `python scripts/validate_search_result_explanation_contract.py --json`
+- `python scripts/dry_run_search_result_explanation.py --title "Example result" --match-kind lexical_match --json`
+
+These commands are stdlib-only and local. They add no runtime explanation generation, public search response/order changes, hidden score, result suppression, model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation.
+<!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->

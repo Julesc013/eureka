@@ -922,6 +922,13 @@
       "priority": 0,
       "notes": "Addressed by control/audits/deep-extraction-contract-v0/deep_extraction_contract_report.json. Contract-only; no extraction runtime, file opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service.",
       "addressed_by": "control/audits/deep-extraction-contract-v0/deep_extraction_contract_report.json"
+    },
+    {
+      "id": "audit-backlog-search-result-explanation-contract-v0",
+      "title": "P96 Search Result Explanation Contract v0",
+      "status": "addressed_contract_only",
+      "addressed_by": "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
+      "notes": "Contract-only explanation schemas, examples, validators, and audit report added; no runtime search behavior changed."
     }
   ]
 }

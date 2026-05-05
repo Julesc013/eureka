@@ -8845,6 +8845,126 @@
       "failure_means": "Deep Extraction Contract v0 schema/example/no-runtime/no-mutation guarantees drifted.",
       "advisory_or_required": "required",
       "notes": "Confirms P95 schemas, examples, validators, dry-run output, no-runtime booleans, no private paths, no raw payloads, sandbox/resource requirements, and no mutation."
+    },
+    {
+      "test_id": "search_result_explanation_examples_validator",
+      "label": "P96 search result explanation examples validator",
+      "command": "python scripts/validate_search_result_explanation.py --all-examples",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Result Explanation Contract v0 examples or no-runtime/no-mutation guarantees drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates synthetic public-safe examples without runtime explanation, hidden scores, suppression, model calls, or mutation."
+    },
+    {
+      "test_id": "search_result_explanation_examples_validator_json",
+      "label": "P96 search result explanation examples validator JSON",
+      "command": "python scripts/validate_search_result_explanation.py --all-examples --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Result Explanation Contract v0 JSON validation drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable example validation."
+    },
+    {
+      "test_id": "search_result_explanation_contract_validator",
+      "label": "P96 search result explanation contract validator",
+      "command": "python scripts/validate_search_result_explanation_contract.py",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Result Explanation Contract v0 docs, contracts, inventory, examples, or audit pack drifted.",
+      "advisory_or_required": "required",
+      "notes": "Validates no runtime explanation, no public search mutation, no hidden score, no suppression, no AI/model behavior, and no mutation claims."
+    },
+    {
+      "test_id": "search_result_explanation_contract_validator_json",
+      "label": "P96 search result explanation contract validator JSON",
+      "command": "python scripts/validate_search_result_explanation_contract.py --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "none",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Result Explanation Contract v0 contract validator JSON output drifted.",
+      "advisory_or_required": "required",
+      "notes": "Machine-readable contract validation."
+    },
+    {
+      "test_id": "search_result_explanation_dry_run_json",
+      "label": "P96 search result explanation dry-run JSON",
+      "command": "python scripts/dry_run_search_result_explanation.py --title \"Example result\" --match-kind lexical_match --json",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "Search Result Explanation Contract v0 dry-run helper drifted.",
+      "advisory_or_required": "required",
+      "notes": "Stdout-only hypothetical explanation; writes no files and does not alter public search."
+    },
+    {
+      "test_id": "search_result_explanation_contract_tests",
+      "label": "P96 search result explanation contract tests",
+      "command": "python -m unittest tests.operations.test_search_result_explanation_contract tests.scripts.test_validate_search_result_explanation tests.scripts.test_validate_search_result_explanation_contract tests.scripts.test_dry_run_search_result_explanation",
+      "category": "contract",
+      "owner_area": "search",
+      "required_for": [
+        "standard",
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": "temporary test process output only",
+      "expected_runtime": "seconds",
+      "failure_means": "P96 validator, examples, docs, inventory, or negative checks regressed.",
+      "advisory_or_required": "required",
+      "notes": "Confirms contract-only/no-runtime/no-hidden-score/no-suppression/no-AI/no-mutation search explanation guarantees."
     }
   ],
   "notes": [
@@ -8870,6 +8990,7 @@
     "P92 Software Heritage Connector Runtime Planning v0 validation is planning-only and adds no Software Heritage API calls, SWHID live resolution, source-code/content/blob fetch, repository clone, source archive download, token use, source-cache/evidence-ledger writes, public fanout, telemetry, credentials, or index mutation.",
     "P93 Object/Source/Comparison Page Runtime Planning v0 validation is planning-only and adds no runtime routes, renderers, stores, public-search mutation, live source calls, arbitrary URL/local path access, downloads, telemetry, accounts, source/evidence/candidate/public/master mutation, or candidate promotion.",
     "P94 Pack Import Runtime Planning v0 validation is planning-only and adds no pack import runtime, real staging, upload/admin endpoint, public contribution intake, pack content execution, URL fetching, telemetry, accounts, source/evidence/candidate/public/local/master mutation, promotion decision, or accepted record.",
-    "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service."
+    "P95 Deep Extraction Contract v0 validation is stdlib-only and contract-only; it adds no extraction runtime, payload opening, archive unpacking, execution, OCR/transcription runtime, URL fetching, live source calls, source/evidence/candidate/index mutation, telemetry, or production extraction service.",
+    "P96 Search Result Explanation Contract v0 validation is stdlib-only and contract-only; it adds no runtime explanation generation, public search response/order change, hidden score, result suppression, AI/model call, telemetry, live source call, download/install/execute behavior, or source/evidence/candidate/index mutation."
   ]
 }
