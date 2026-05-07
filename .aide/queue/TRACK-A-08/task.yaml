@@ -1,0 +1,36 @@
+schema_version: aide.task.v0
+id: TRACK-A-08
+title: PackPage, TaskPage, and ReviewPage view model contracts
+status: active
+source: user_prompt
+scope:
+  - contracts/views/pack_page.v0.json
+  - contracts/views/task_page.v0.json
+  - contracts/views/review_page.v0.json
+  - control/inventory/publication/pack_page_view_model_policy.json
+  - control/inventory/publication/task_page_view_model_policy.json
+  - control/inventory/publication/review_page_view_model_policy.json
+  - examples/view_models/pack_page/**
+  - examples/view_models/task_page/**
+  - examples/view_models/review_page/**
+  - scripts/validate_pack_task_review_page_view_models.py
+  - tests/contracts/test_pack_task_review_page_view_models.py
+  - docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md
+  - docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md
+  - docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md
+  - control/audits/track-a-08-pack-task-review-page-view-models-v0/**
+  - docs/roadmap/TRACK_EXECUTION_PLAN.md
+non_goals:
+  - no runtime behavior changes
+  - no public route activation
+  - no generated site artifact changes
+  - no hosted backend
+  - no live probes
+  - no source sync or connectors
+  - no node runtime
+  - no pack import runtime
+  - no review runtime
+  - no uploads, downloads, accounts, or telemetry
+  - no model or provider calls
+  - no master-index mutation
+next_task: TRACK-A-09 - DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model contracts

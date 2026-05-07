@@ -1,0 +1,353 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "contribution_pack_page_v0",
+  "view_family": "PackPageView",
+  "route_family": "pack_page_future",
+  "canonical_route": "/packs/contribution-pack-sample",
+  "page_title": "Contribution Pack Sample",
+  "page_status": "contract_only",
+  "pack": {
+    "pack_id": "pack_contribution_sample",
+    "label": "Contribution pack sample"
+  },
+  "pack_identity": {
+    "pack_id": "pack_contribution_sample",
+    "pack_slug": "contribution-pack-sample",
+    "pack_type": "contribution_pack",
+    "canonical_route": "/packs/contribution-pack-sample",
+    "pack_label": "Contribution pack sample",
+    "pack_schema_version": "0.1.0",
+    "pack_format_version": "0.1.0",
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "index_pack_refs": [],
+    "contribution_pack_refs": [
+      "contribution_pack_sample"
+    ],
+    "review_queue_refs": [
+      "review_queue_sample"
+    ],
+    "checksum_or_digest_refs": [
+      "digest_contribution_sample"
+    ],
+    "signature_status": "unsigned_example",
+    "producer_or_submitter_posture": "fixture_author",
+    "pack_confidence": "low",
+    "pack_limitations": [
+      "Contribution items are candidates only."
+    ],
+    "notes": []
+  },
+  "pack_type": "contribution_pack",
+  "pack_status": "policy_blocked",
+  "pack_validation_summary": {
+    "validation_status": "policy_blocked",
+    "validator_refs": [
+      "scripts/validate_pack_set.py"
+    ],
+    "validation_report_refs": [],
+    "checksum_status": "not_checked",
+    "schema_status": "blocked_before_import",
+    "issue_count": 1,
+    "issue_summary": [
+      "Hosted submission is unavailable."
+    ],
+    "warnings": [
+      "Contribution cannot be accepted automatically."
+    ],
+    "notes": []
+  },
+  "pack_contents_summary": {
+    "contents_posture": "contribution_candidates",
+    "pack_contents_public_truth_claimed": false,
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "referenced_sources": [],
+  "referenced_evidence": [],
+  "referenced_index_records": [],
+  "referenced_contribution_items": [
+    "contribution_item_sample"
+  ],
+  "related_candidate_refs": [
+    "candidate_sample_minimal"
+  ],
+  "related_need_refs": [
+    "need_sample_minimal"
+  ],
+  "related_review_refs": [
+    "review_sample_minimal"
+  ],
+  "related_object_refs": [],
+  "related_source_refs": [],
+  "import_summary": {
+    "import_status": "policy_blocked",
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "local_only": true,
+    "public_search_impact": false,
+    "master_index_impact": false,
+    "upload_status": "unavailable",
+    "moderation_status": "unavailable",
+    "automatic_acceptance_status": "unavailable",
+    "automatic_acceptance_enabled": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "public_truth_claimed": false,
+    "master_index_mutation_allowed": false
+  },
+  "quarantine_summary": {
+    "quarantine_status": "policy_blocked",
+    "local_only": true
+  },
+  "review_summary": {
+    "review_required": true,
+    "review_status": "blocked_before_review",
+    "accepted_public_status": false,
+    "public_acceptance_claimed": false,
+    "master_index_mutation_allowed": false
+  },
+  "rights_summary": {
+    "rights_posture": "review_required",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "authorized_bulk_access_claimed": false
+  },
+  "risk_summary": {
+    "risk_posture": "review_required",
+    "executable_risk": "not_exposed",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "production_suitability_claimed": false
+  },
+  "privacy_summary": {
+    "privacy_posture": "review_required",
+    "personal_data_posture": "none_claimed",
+    "telemetry_enabled": false
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "contribution_pack_sample",
+      "contribution_item_sample"
+    ],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_pack_contents",
+      "view_pack_policy",
+      "view_related_reviews",
+      "copy_pack_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "account_unavailable",
+      "automatic_acceptance_unavailable",
+      "download_unavailable",
+      "execute_unavailable",
+      "hosted_backend_unavailable",
+      "import_runtime_unavailable",
+      "install_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable",
+      "moderation_runtime_unavailable",
+      "pack_import_unavailable",
+      "public_truth_unavailable",
+      "rights_clearance_unavailable",
+      "source_sync_unavailable",
+      "telemetry_unavailable",
+      "upload_unavailable",
+      "verified_installability_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "moderation_runtime_enabled": false,
+    "automatic_acceptance_enabled": false,
+    "public_search_impact": false,
+    "master_index_mutation_allowed": false,
+    "public_truth_claimed": false
+  },
+  "actions": [
+    {
+      "action_id": "view_pack_contents"
+    },
+    {
+      "action_id": "view_pack_policy"
+    },
+    {
+      "action_id": "view_related_reviews"
+    },
+    {
+      "action_id": "copy_pack_id"
+    },
+    {
+      "action_id": "copy_citation_hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "account_unavailable"
+    },
+    {
+      "action_id": "automatic_acceptance_unavailable"
+    },
+    {
+      "action_id": "download_unavailable"
+    },
+    {
+      "action_id": "execute_unavailable"
+    },
+    {
+      "action_id": "hosted_backend_unavailable"
+    },
+    {
+      "action_id": "import_runtime_unavailable"
+    },
+    {
+      "action_id": "install_unavailable"
+    },
+    {
+      "action_id": "live_probe_unavailable"
+    },
+    {
+      "action_id": "malware_safety_unavailable"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable"
+    },
+    {
+      "action_id": "moderation_runtime_unavailable"
+    },
+    {
+      "action_id": "pack_import_unavailable"
+    },
+    {
+      "action_id": "public_truth_unavailable"
+    },
+    {
+      "action_id": "rights_clearance_unavailable"
+    },
+    {
+      "action_id": "source_sync_unavailable"
+    },
+    {
+      "action_id": "telemetry_unavailable"
+    },
+    {
+      "action_id": "upload_unavailable"
+    },
+    {
+      "action_id": "verified_installability_unavailable"
+    }
+  ],
+  "limitations": [
+    "Contribution pack is blocked from hosted submission."
+  ],
+  "warnings": [
+    {
+      "warning_id": "contribution_not_accepted",
+      "message": "Contribution items are not accepted public records."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_pack_identity_preserved",
+    "pack_validation_status_preserved",
+    "pack_contents_not_truth_preserved",
+    "provenance_and_lineage_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "import_upload_acceptance_disabled",
+    "no_master_index_mutation",
+    "no_public_truth_from_packs",
+    "limitations_and_gaps_visible"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/packs/contribution_pack.v0.json",
+      "docs/reference/CONTRIBUTION_PACK_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/pack_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "pack_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no hosted submission",
+    "no automatic acceptance",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Contribution PackPageView example for Track A-08."
+  ]
+}

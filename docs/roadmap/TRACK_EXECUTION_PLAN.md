@@ -17,7 +17,7 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-08 - PackPage, TaskPage, and ReviewPage view model contracts`
+`TRACK-A-09 - DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model contracts`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
@@ -37,7 +37,10 @@ connector-disabled status, source cache/evidence ledger posture, rights/risk/
 privacy caution, and source coverage gaps. Track A-07 established the canonical
 NeedPage and CandidatePage view-model contracts for scoped unresolved demand,
 known absence, source gaps, provisional discoveries, review state, and
-no-public-truth candidate posture.
+no-public-truth candidate posture. Track A-08 established the canonical
+PackPage, TaskPage, and ReviewPage view-model contracts for validate-only
+packs, future governed work units, review decisions, promotion requirements,
+and no-public-truth review posture.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

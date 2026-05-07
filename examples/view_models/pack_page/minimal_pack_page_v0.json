@@ -1,0 +1,387 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "minimal_pack_page_v0",
+  "view_family": "PackPageView",
+  "route_family": "pack_page_future",
+  "canonical_route": "/packs/sample-pack",
+  "page_title": "Sample Pack",
+  "page_status": "contract_only",
+  "pack": {
+    "pack_id": "pack_sample_minimal",
+    "label": "Sample validate-only pack",
+    "summary": "A portable metadata bundle shown for validation posture only."
+  },
+  "pack_identity": {
+    "pack_id": "pack_sample_minimal",
+    "pack_slug": "sample-pack",
+    "pack_type": "index_pack",
+    "canonical_route": "/packs/sample-pack",
+    "pack_label": "Sample validate-only pack",
+    "pack_schema_version": "0.1.0",
+    "pack_format_version": "0.1.0",
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "index_pack_refs": [
+      "index_pack_sample"
+    ],
+    "contribution_pack_refs": [],
+    "review_queue_refs": [],
+    "checksum_or_digest_refs": [
+      "digest_sample_index"
+    ],
+    "signature_status": "unsigned_example",
+    "producer_or_submitter_posture": "fixture_author",
+    "pack_confidence": "low",
+    "pack_limitations": [
+      "Example pack is not imported."
+    ],
+    "notes": [
+      "No pack content is accepted public truth."
+    ]
+  },
+  "pack_type": "index_pack",
+  "pack_status": "example_only",
+  "pack_validation_summary": {
+    "validation_status": "validate_only",
+    "validator_refs": [
+      "scripts/validate_pack_set.py"
+    ],
+    "validation_report_refs": [],
+    "checksum_status": "not_checked",
+    "schema_status": "example_shape_only",
+    "issue_count": 0,
+    "issue_summary": [],
+    "warnings": [
+      "Validation posture is illustrative."
+    ],
+    "notes": [
+      "Validation is not acceptance."
+    ]
+  },
+  "pack_contents_summary": {
+    "contents_posture": "metadata_only",
+    "pack_contents_public_truth_claimed": false,
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false,
+    "limitations": [
+      "Contents are portable records, not public truth."
+    ]
+  },
+  "referenced_sources": [],
+  "referenced_evidence": [],
+  "referenced_index_records": [
+    "index_record_sample"
+  ],
+  "referenced_contribution_items": [],
+  "related_candidate_refs": [],
+  "related_need_refs": [],
+  "related_review_refs": [],
+  "related_object_refs": [],
+  "related_source_refs": [],
+  "import_summary": {
+    "import_status": "unavailable",
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "local_only": true,
+    "public_search_impact": false,
+    "master_index_impact": false,
+    "upload_status": "unavailable",
+    "moderation_status": "unavailable",
+    "automatic_acceptance_status": "unavailable",
+    "automatic_acceptance_enabled": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "public_truth_claimed": false,
+    "master_index_mutation_allowed": false,
+    "notes": [
+      "No import or upload runtime is enabled."
+    ]
+  },
+  "quarantine_summary": {
+    "quarantine_status": "not_applicable",
+    "local_only": true,
+    "notes": [
+      "No quarantine runtime is active."
+    ]
+  },
+  "review_summary": {
+    "review_required": true,
+    "review_status": "not_started",
+    "accepted_public_status": false,
+    "public_acceptance_claimed": false,
+    "master_index_mutation_allowed": false,
+    "notes": [
+      "Review would be separate future governance."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "limitations": [
+      "No rights clearance is claimed."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "metadata_only",
+    "executable_risk": "not_exposed",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "production_suitability_claimed": false,
+    "limitations": [
+      "No executable payload is exposed."
+    ]
+  },
+  "privacy_summary": {
+    "privacy_posture": "public_safe_example",
+    "personal_data_posture": "none_claimed",
+    "telemetry_enabled": false,
+    "limitations": [
+      "Example contains no user tracking."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "index_pack_sample"
+    ],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_pack_contents",
+      "view_validation_report",
+      "copy_pack_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "account_unavailable",
+      "automatic_acceptance_unavailable",
+      "download_unavailable",
+      "execute_unavailable",
+      "hosted_backend_unavailable",
+      "import_runtime_unavailable",
+      "install_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable",
+      "moderation_runtime_unavailable",
+      "pack_import_unavailable",
+      "public_truth_unavailable",
+      "rights_clearance_unavailable",
+      "source_sync_unavailable",
+      "telemetry_unavailable",
+      "upload_unavailable",
+      "verified_installability_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "moderation_runtime_enabled": false,
+    "automatic_acceptance_enabled": false,
+    "public_search_impact": false,
+    "master_index_mutation_allowed": false,
+    "public_truth_claimed": false
+  },
+  "actions": [
+    {
+      "action_id": "view_pack_contents",
+      "status": "available"
+    },
+    {
+      "action_id": "view_validation_report",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_pack_id",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled."
+    },
+    {
+      "action_id": "automatic_acceptance_unavailable",
+      "reason": "Automatic acceptance is not enabled."
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled."
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled."
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend is not enabled."
+    },
+    {
+      "action_id": "import_runtime_unavailable",
+      "reason": "Import runtime is not enabled."
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled."
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled."
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety is claimed."
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled."
+    },
+    {
+      "action_id": "moderation_runtime_unavailable",
+      "reason": "Moderation runtime is not enabled."
+    },
+    {
+      "action_id": "pack_import_unavailable",
+      "reason": "Pack import is not enabled."
+    },
+    {
+      "action_id": "public_truth_unavailable",
+      "reason": "Pack contents are not public truth."
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance is claimed."
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled."
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled."
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled."
+    },
+    {
+      "action_id": "verified_installability_unavailable",
+      "reason": "Verified installability is not claimed."
+    }
+  ],
+  "limitations": [
+    "Pack is example-only and validate-only."
+  ],
+  "warnings": [
+    {
+      "warning_id": "pack_not_truth",
+      "message": "This pack is not an accepted public record."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_pack_identity_preserved",
+    "pack_validation_status_preserved",
+    "pack_contents_not_truth_preserved",
+    "provenance_and_lineage_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "import_upload_acceptance_disabled",
+    "no_master_index_mutation",
+    "no_public_truth_from_packs",
+    "limitations_and_gaps_visible"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/packs/index_pack.v0.json",
+      "docs/reference/INDEX_PACK_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/pack_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "pack_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no pack import",
+    "no hosted upload",
+    "no automatic acceptance",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Minimal PackPageView example for Track A-08."
+  ]
+}

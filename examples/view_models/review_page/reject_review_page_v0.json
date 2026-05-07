@@ -1,0 +1,327 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "reject_review_page_v0",
+  "view_family": "ReviewPageView",
+  "route_family": "review_page_future",
+  "canonical_route": "/reviews/reject-sample",
+  "page_title": "Rejected Review",
+  "page_status": "contract_only",
+  "review": {
+    "review_id": "review_reject_sample",
+    "label": "Rejected review sample"
+  },
+  "review_identity": {
+    "review_id": "review_reject_sample",
+    "review_slug": "reject-sample",
+    "review_type": "candidate_review",
+    "canonical_route": "/reviews/reject-sample",
+    "review_label": "Rejected review sample",
+    "subject_ref": "candidate_rejected_sample",
+    "queue_entry_ref": "queue_entry_reject_sample",
+    "review_confidence": "medium",
+    "review_limitations": [
+      "Rejection is governance evidence, not runtime deletion."
+    ],
+    "notes": []
+  },
+  "review_type": "candidate_review",
+  "review_status": "rejected",
+  "queue_entry_summary": {
+    "queue_entry_id": "queue_entry_reject_sample",
+    "hosted_moderation_enabled": false,
+    "accounts_enabled": false,
+    "write_routes_enabled": false,
+    "public_submission_runtime_enabled": false,
+    "accepted_public_status": false
+  },
+  "review_decision_summary": {
+    "review_decision": "reject",
+    "decision_status": "rejected",
+    "review_required": true,
+    "master_index_mutation_allowed": false,
+    "accepted_public_status": false,
+    "public_acceptance_claimed": false
+  },
+  "subject_refs": [
+    "candidate_rejected_sample"
+  ],
+  "candidate_refs": [
+    "candidate_rejected_sample"
+  ],
+  "pack_refs": [
+    "contribution_pack_sample"
+  ],
+  "evidence_refs": [],
+  "source_refs": [],
+  "need_refs": [],
+  "object_refs": [],
+  "validation_summary": {
+    "validation_status": "validation_failed",
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "acceptance_requirements": [
+    "valid evidence",
+    "non-conflicting source posture"
+  ],
+  "rejection_summary": {
+    "rejection_reason": "Evidence requirements were not met."
+  },
+  "deferral_summary": {
+    "deferral_reason": null
+  },
+  "conflict_summary": {
+    "conflict_status": "preserved",
+    "conflicts_preserved_as_conflicts": true,
+    "conflict_resolved_as_truth": false
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "authorized_bulk_access_claimed": false
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "executable_risk": "not_exposed",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "production_suitability_claimed": false
+  },
+  "privacy_summary": {
+    "privacy_posture": "public_safe_example",
+    "personal_data_posture": "none_claimed",
+    "telemetry_enabled": false
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "queue_entry_reject_sample",
+      "contribution_pack_sample"
+    ],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false,
+    "demand_signal_used_as_object_truth": false
+  },
+  "master_index_summary": {
+    "master_index_mutation_allowed": false,
+    "accepted_public_status": false,
+    "promotion_requirements_met": false,
+    "promotion_requirements_missing": [
+      "valid evidence"
+    ],
+    "review_required": true,
+    "conflict_preservation_required": true,
+    "publication_policy": "rejected_current",
+    "hosted_moderation_enabled": false,
+    "accounts_enabled": false,
+    "write_routes_enabled": false,
+    "public_submission_runtime_enabled": false,
+    "review_runtime_enabled": false,
+    "public_truth_claimed": false
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_review_decision",
+      "view_conflicts",
+      "view_validation_summary",
+      "copy_review_id"
+    ],
+    "blocked_actions": [
+      "account_unavailable",
+      "accept_public_unavailable",
+      "download_unavailable",
+      "execute_unavailable",
+      "hosted_backend_unavailable",
+      "hosted_moderation_unavailable",
+      "install_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable",
+      "public_submission_unavailable",
+      "public_truth_unavailable",
+      "rights_clearance_unavailable",
+      "source_sync_unavailable",
+      "telemetry_unavailable",
+      "upload_unavailable",
+      "verified_installability_unavailable",
+      "write_route_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "hosted_moderation_enabled": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "public_submission_runtime_enabled": false,
+    "write_routes_enabled": false,
+    "review_runtime_enabled": false,
+    "master_index_mutation_allowed": false,
+    "accepted_public_status": false,
+    "public_truth_claimed": false
+  },
+  "actions": [
+    {
+      "action_id": "view_review_decision"
+    },
+    {
+      "action_id": "view_conflicts"
+    },
+    {
+      "action_id": "view_validation_summary"
+    },
+    {
+      "action_id": "copy_review_id"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "account_unavailable"
+    },
+    {
+      "action_id": "accept_public_unavailable"
+    },
+    {
+      "action_id": "download_unavailable"
+    },
+    {
+      "action_id": "execute_unavailable"
+    },
+    {
+      "action_id": "hosted_backend_unavailable"
+    },
+    {
+      "action_id": "hosted_moderation_unavailable"
+    },
+    {
+      "action_id": "install_unavailable"
+    },
+    {
+      "action_id": "live_probe_unavailable"
+    },
+    {
+      "action_id": "malware_safety_unavailable"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable"
+    },
+    {
+      "action_id": "public_submission_unavailable"
+    },
+    {
+      "action_id": "public_truth_unavailable"
+    },
+    {
+      "action_id": "rights_clearance_unavailable"
+    },
+    {
+      "action_id": "source_sync_unavailable"
+    },
+    {
+      "action_id": "telemetry_unavailable"
+    },
+    {
+      "action_id": "upload_unavailable"
+    },
+    {
+      "action_id": "verified_installability_unavailable"
+    },
+    {
+      "action_id": "write_route_unavailable"
+    }
+  ],
+  "limitations": [
+    "Rejected candidate remains non-public truth."
+  ],
+  "warnings": [
+    {
+      "warning_id": "rejected_not_mutation",
+      "message": "This page records rejection posture without deleting or mutating runtime state."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_review_identity_preserved",
+    "review_status_preserved",
+    "review_decision_posture_preserved",
+    "promotion_requirements_preserved",
+    "master_index_boundary_preserved",
+    "conflicts_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "no_public_truth_from_reviews",
+    "limitations_and_gaps_visible"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/master_index/review_decision.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/review_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "review_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no active hosted moderation",
+    "no accepted public truth",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Rejected ReviewPageView example for Track A-08."
+  ]
+}

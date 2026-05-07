@@ -1,0 +1,354 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "source_pack_page_v0",
+  "view_family": "PackPageView",
+  "route_family": "pack_page_future",
+  "canonical_route": "/packs/source-pack-sample",
+  "page_title": "Source Pack Sample",
+  "page_status": "contract_only",
+  "pack": {
+    "pack_id": "pack_source_sample",
+    "label": "Source pack sample"
+  },
+  "pack_identity": {
+    "pack_id": "pack_source_sample",
+    "pack_slug": "source-pack-sample",
+    "pack_type": "source_pack",
+    "canonical_route": "/packs/source-pack-sample",
+    "pack_label": "Source pack sample",
+    "pack_schema_version": "0.1.0",
+    "pack_format_version": "0.1.0",
+    "source_pack_refs": [
+      "source_pack_sample"
+    ],
+    "evidence_pack_refs": [],
+    "index_pack_refs": [],
+    "contribution_pack_refs": [],
+    "review_queue_refs": [],
+    "checksum_or_digest_refs": [
+      "digest_source_sample"
+    ],
+    "signature_status": "unsigned_example",
+    "producer_or_submitter_posture": "fixture_author",
+    "pack_confidence": "medium",
+    "pack_limitations": [
+      "Recorded source metadata is not a live connector."
+    ],
+    "notes": []
+  },
+  "pack_type": "source_pack",
+  "pack_status": "validated",
+  "pack_validation_summary": {
+    "validation_status": "pass_with_warnings",
+    "validator_refs": [
+      "scripts/validate_pack_set.py"
+    ],
+    "validation_report_refs": [
+      "validation_report_source_sample"
+    ],
+    "checksum_status": "checked_example",
+    "schema_status": "example_shape_valid",
+    "issue_count": 0,
+    "issue_summary": [],
+    "warnings": [
+      "Recorded fixture only."
+    ],
+    "notes": [
+      "Passing validation is not import or source truth."
+    ]
+  },
+  "pack_contents_summary": {
+    "contents_posture": "recorded_fixture_metadata",
+    "pack_contents_public_truth_claimed": false,
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "referenced_sources": [
+    "source_fixture_sample"
+  ],
+  "referenced_evidence": [],
+  "referenced_index_records": [],
+  "referenced_contribution_items": [],
+  "related_candidate_refs": [],
+  "related_need_refs": [],
+  "related_review_refs": [],
+  "related_object_refs": [],
+  "related_source_refs": [
+    "source_fixture_sample"
+  ],
+  "import_summary": {
+    "import_status": "validate_only",
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "local_only": true,
+    "public_search_impact": false,
+    "master_index_impact": false,
+    "upload_status": "unavailable",
+    "moderation_status": "unavailable",
+    "automatic_acceptance_status": "unavailable",
+    "automatic_acceptance_enabled": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "public_truth_claimed": false,
+    "master_index_mutation_allowed": false
+  },
+  "quarantine_summary": {
+    "quarantine_status": "not_quarantined",
+    "local_only": true
+  },
+  "review_summary": {
+    "review_required": true,
+    "review_status": "future_required",
+    "accepted_public_status": false,
+    "public_acceptance_claimed": false,
+    "master_index_mutation_allowed": false
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "authorized_bulk_access_claimed": false
+  },
+  "risk_summary": {
+    "risk_posture": "metadata_only",
+    "executable_risk": "not_exposed",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "production_suitability_claimed": false
+  },
+  "privacy_summary": {
+    "privacy_posture": "public_safe_example",
+    "personal_data_posture": "none_claimed",
+    "telemetry_enabled": false
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "source_pack_sample",
+      "source_fixture_sample"
+    ],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "contribution_items_accepted_public": false,
+    "ai_draft_marked_evidence_truth": false
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_pack_contents",
+      "view_pack_lineage",
+      "view_validation_report",
+      "copy_pack_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "account_unavailable",
+      "automatic_acceptance_unavailable",
+      "download_unavailable",
+      "execute_unavailable",
+      "hosted_backend_unavailable",
+      "import_runtime_unavailable",
+      "install_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable",
+      "moderation_runtime_unavailable",
+      "pack_import_unavailable",
+      "public_truth_unavailable",
+      "rights_clearance_unavailable",
+      "source_sync_unavailable",
+      "telemetry_unavailable",
+      "upload_unavailable",
+      "verified_installability_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "import_runtime_enabled": false,
+    "staging_runtime_enabled": false,
+    "pack_import_runtime_enabled": false,
+    "moderation_runtime_enabled": false,
+    "automatic_acceptance_enabled": false,
+    "public_search_impact": false,
+    "master_index_mutation_allowed": false,
+    "public_truth_claimed": false
+  },
+  "actions": [
+    {
+      "action_id": "view_pack_contents",
+      "status": "available"
+    },
+    {
+      "action_id": "view_pack_lineage",
+      "status": "available"
+    },
+    {
+      "action_id": "view_validation_report",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_pack_id",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "account_unavailable"
+    },
+    {
+      "action_id": "automatic_acceptance_unavailable"
+    },
+    {
+      "action_id": "download_unavailable"
+    },
+    {
+      "action_id": "execute_unavailable"
+    },
+    {
+      "action_id": "hosted_backend_unavailable"
+    },
+    {
+      "action_id": "import_runtime_unavailable"
+    },
+    {
+      "action_id": "install_unavailable"
+    },
+    {
+      "action_id": "live_probe_unavailable"
+    },
+    {
+      "action_id": "malware_safety_unavailable"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable"
+    },
+    {
+      "action_id": "moderation_runtime_unavailable"
+    },
+    {
+      "action_id": "pack_import_unavailable"
+    },
+    {
+      "action_id": "public_truth_unavailable"
+    },
+    {
+      "action_id": "rights_clearance_unavailable"
+    },
+    {
+      "action_id": "source_sync_unavailable"
+    },
+    {
+      "action_id": "telemetry_unavailable"
+    },
+    {
+      "action_id": "upload_unavailable"
+    },
+    {
+      "action_id": "verified_installability_unavailable"
+    }
+  ],
+  "limitations": [
+    "Recorded source metadata is fixture-scoped."
+  ],
+  "warnings": [
+    {
+      "warning_id": "not_live_connector",
+      "message": "This source pack does not enable source sync or live probes."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_pack_identity_preserved",
+    "pack_validation_status_preserved",
+    "pack_contents_not_truth_preserved",
+    "provenance_and_lineage_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "import_upload_acceptance_disabled",
+    "no_master_index_mutation",
+    "no_public_truth_from_packs",
+    "limitations_and_gaps_visible"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/packs/source_pack.v0.json",
+      "docs/reference/SOURCE_PACK_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/pack_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "pack_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no live connector",
+    "no source sync",
+    "no pack import"
+  ],
+  "notes": [
+    "Source PackPageView example for Track A-08."
+  ]
+}
