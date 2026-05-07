@@ -18,6 +18,7 @@ from scripts.validate_need_candidate_page_view_models import validate_need_candi
 from scripts.validate_object_page_view_model import validate_object_page_view_model
 from scripts.validate_pack_task_review_page_view_models import validate_pack_task_review_page_view_models
 from scripts.validate_representation_contracts import validate_representation_contracts
+from scripts.validate_renderer_parity_harness import validate_renderer_parity_harness
 from scripts.validate_route_view_representation_matrix import validate_route_view_representation_matrix
 from scripts.validate_search_page_view_model import validate_search_page_view_model
 from scripts.validate_semantic_renderer_parity import validate_semantic_renderer_parity
@@ -46,6 +47,7 @@ VALIDATORS: tuple[Validator, ...] = (
     ("view_model_policy_index", "View model policy index", validate_view_model_policy_index),
     ("design_tokens", "Design tokens", validate_design_tokens),
     ("temporal_minimal_search", "Temporal Minimal Search", validate_temporal_minimal_search),
+    ("renderer_parity_harness", "Renderer parity harness", validate_renderer_parity_harness),
 )
 
 

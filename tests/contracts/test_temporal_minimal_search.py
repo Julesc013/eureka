@@ -105,7 +105,7 @@ class TemporalMinimalSearchContractTest(unittest.TestCase):
         report = validate_track_a_contracts(REPO_ROOT)
 
         self.assertEqual(report["status"], "valid")
-        self.assertEqual(report["validator_count"], 12)
+        self.assertEqual(report["validator_count"], 13)
         self.assertTrue(any(group["group_id"] == "temporal_minimal_search" for group in report["groups"]))
 
 

@@ -1,0 +1,410 @@
+{
+  "schema_version": "0.1.0",
+  "parity_case_id": "search_page_static_projection_v0",
+  "label": "SearchPage static dry-run projection parity case",
+  "case_status": "current",
+  "view_family": "SearchPageView",
+  "route_family": "search",
+  "source_view_model_path": "examples/view_models/search_page/static_projection_reference_v0.json",
+  "output_bindings": [
+    {
+      "output_id": "search_standard_html",
+      "output_path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.standard.html",
+      "output_kind": "standard_static_html",
+      "representation_profile": "standard_html",
+      "design_profile": "eureka_default",
+      "exists_required": true,
+      "semantic_categories_required": [
+        "blocked_actions",
+        "compatibility_posture",
+        "evidence_posture",
+        "hosted_unavailable_posture",
+        "limitations",
+        "live_probe_unavailable_posture",
+        "query_identity",
+        "result_identity",
+        "rights_posture",
+        "risk_posture",
+        "route_identity",
+        "source_posture",
+        "view_identity"
+      ],
+      "text_markers_required": [
+        "Search",
+        "Route Identity",
+        "Query",
+        "Mode/Posture",
+        "Result Summary",
+        "Results",
+        "Source/Evidence",
+        "Risk/Rights",
+        "Compatibility",
+        "Limitations",
+        "Blocked Actions",
+        "Next Safe Actions",
+        "Static/Public Boundary"
+      ],
+      "text_markers_forbidden": [
+        "hosted backend active",
+        "live probes enabled",
+        "downloads enabled",
+        "uploads enabled",
+        "accounts enabled",
+        "telemetry enabled"
+      ],
+      "json_paths_required": [],
+      "json_claims_forbidden": [],
+      "degradation_allowed": [
+        "styling",
+        "visual_richness"
+      ],
+      "notes": [
+        "Standard HTML may be visually richer but must keep labels visible."
+      ]
+    },
+    {
+      "output_id": "search_lite_html",
+      "output_path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.lite.html",
+      "output_kind": "lite_static_html",
+      "representation_profile": "lite_html",
+      "design_profile": "classic_search_1998",
+      "exists_required": true,
+      "semantic_categories_required": [
+        "blocked_actions",
+        "compatibility_posture",
+        "evidence_posture",
+        "limitations",
+        "query_identity",
+        "result_identity",
+        "rights_posture",
+        "risk_posture",
+        "route_identity",
+        "source_posture",
+        "view_identity"
+      ],
+      "text_markers_required": [
+        "Search",
+        "Route Identity",
+        "Query",
+        "Mode/Posture",
+        "Result Summary",
+        "Results",
+        "Source/Evidence",
+        "Risk/Rights",
+        "Compatibility",
+        "Limitations",
+        "Blocked Actions",
+        "Next Safe Actions"
+      ],
+      "text_markers_forbidden": [
+        "hosted backend active",
+        "live probes enabled",
+        "downloads enabled",
+        "uploads enabled",
+        "accounts enabled",
+        "telemetry enabled"
+      ],
+      "json_paths_required": [],
+      "json_claims_forbidden": [],
+      "degradation_allowed": [
+        "css_to_plain_html",
+        "layout",
+        "styling"
+      ],
+      "notes": [
+        "Lite HTML may use a table and plain labels."
+      ]
+    },
+    {
+      "output_id": "search_text",
+      "output_path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.txt",
+      "output_kind": "text_static",
+      "representation_profile": "text",
+      "design_profile": "text_only",
+      "exists_required": true,
+      "semantic_categories_required": [
+        "blocked_actions",
+        "compatibility_posture",
+        "download_unavailable_posture",
+        "evidence_posture",
+        "hosted_unavailable_posture",
+        "limitations",
+        "live_probe_unavailable_posture",
+        "query_identity",
+        "result_identity",
+        "rights_posture",
+        "risk_posture",
+        "route_identity",
+        "source_posture",
+        "upload_account_telemetry_unavailable_posture",
+        "view_identity"
+      ],
+      "text_markers_required": [
+        "Search",
+        "Route Identity",
+        "Query",
+        "Mode/Posture",
+        "Result Summary",
+        "Results",
+        "Source/Evidence",
+        "Risk/Rights",
+        "Compatibility",
+        "Limitations",
+        "Blocked Actions",
+        "Next Safe Actions",
+        "Static/Public Boundary"
+      ],
+      "text_markers_forbidden": [
+        "hosted backend active",
+        "live probes enabled",
+        "downloads enabled",
+        "uploads enabled",
+        "accounts enabled",
+        "telemetry enabled"
+      ],
+      "json_paths_required": [],
+      "json_claims_forbidden": [],
+      "degradation_allowed": [
+        "html_to_text",
+        "icons",
+        "layout"
+      ],
+      "notes": [
+        "Text output keeps semantic labels and explicit unavailable posture."
+      ]
+    },
+    {
+      "output_id": "search_file_readme",
+      "output_path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.README.txt",
+      "output_kind": "file_tree_static",
+      "representation_profile": "file_tree",
+      "design_profile": "text_only",
+      "exists_required": true,
+      "semantic_categories_required": [
+        "blocked_actions",
+        "download_unavailable_posture",
+        "hosted_unavailable_posture",
+        "limitations",
+        "query_identity",
+        "result_identity",
+        "route_identity",
+        "view_identity"
+      ],
+      "text_markers_required": [
+        "SearchPage Static Projection Dry Run",
+        "Source SearchPageView Fixture",
+        "Route Identity",
+        "Query",
+        "Output File List",
+        "Result Summary",
+        "Limitations",
+        "Blocked Actions",
+        "Boundary Notes",
+        "No live API claim",
+        "No download or install claim",
+        "No hosted backend claim"
+      ],
+      "text_markers_forbidden": [
+        "hosted backend active",
+        "live probes enabled",
+        "downloads enabled",
+        "uploads enabled",
+        "accounts enabled",
+        "telemetry enabled"
+      ],
+      "json_paths_required": [],
+      "json_claims_forbidden": [],
+      "degradation_allowed": [
+        "html_to_text",
+        "table_to_plain_list"
+      ],
+      "notes": [
+        "File-tree README explains generated evidence without creating a file service."
+      ]
+    },
+    {
+      "output_id": "search_json_handoff",
+      "output_path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search_handoff.json",
+      "output_kind": "static_json_handoff",
+      "representation_profile": "api_json",
+      "design_profile": "eureka_default",
+      "exists_required": true,
+      "semantic_categories_required": [
+        "blocked_actions",
+        "compatibility_posture",
+        "download_unavailable_posture",
+        "evidence_posture",
+        "hosted_unavailable_posture",
+        "limitations",
+        "live_probe_unavailable_posture",
+        "query_identity",
+        "result_identity",
+        "rights_posture",
+        "risk_posture",
+        "route_identity",
+        "source_posture",
+        "upload_account_telemetry_unavailable_posture",
+        "view_identity"
+      ],
+      "text_markers_required": [],
+      "text_markers_forbidden": [],
+      "json_paths_required": [
+        "schema_version",
+        "source_view_model.view_family",
+        "route_family",
+        "representation_profile",
+        "search_mode",
+        "public_runtime_posture.hosted_backend_claimed",
+        "public_runtime_posture.live_probes_enabled",
+        "public_runtime_posture.downloads_enabled",
+        "public_runtime_posture.uploads_enabled",
+        "public_runtime_posture.accounts_enabled",
+        "public_runtime_posture.telemetry_enabled",
+        "query.raw_query",
+        "result_summary.result_count",
+        "results",
+        "limitations",
+        "blocked_actions",
+        "product_boundary.hosted_backend_claimed",
+        "product_boundary.live_probes_enabled",
+        "product_boundary.downloads_enabled",
+        "product_boundary.uploads_enabled",
+        "product_boundary.accounts_enabled",
+        "product_boundary.telemetry_enabled",
+        "generated_from"
+      ],
+      "json_claims_forbidden": [
+        "product_boundary.hosted_backend_claimed",
+        "product_boundary.live_probes_enabled",
+        "product_boundary.downloads_enabled",
+        "product_boundary.uploads_enabled",
+        "product_boundary.accounts_enabled",
+        "product_boundary.telemetry_enabled",
+        "public_runtime_posture.hosted_backend_claimed",
+        "public_runtime_posture.live_probes_enabled",
+        "public_runtime_posture.downloads_enabled",
+        "public_runtime_posture.uploads_enabled",
+        "public_runtime_posture.accounts_enabled",
+        "public_runtime_posture.telemetry_enabled"
+      ],
+      "degradation_allowed": [],
+      "notes": [
+        "JSON handoff must preserve false product-boundary booleans."
+      ]
+    }
+  ],
+  "semantic_requirements_ref": "control/inventory/publication/search_page_view_model_policy.json#required_semantic_requirements",
+  "view_model_policy_ref": "control/inventory/publication/search_page_view_model_policy.json",
+  "semantic_parity_policy_ref": "search_page_parity_v0",
+  "representation_profile_refs": [
+    "api_json",
+    "file_tree",
+    "lite_html",
+    "standard_html",
+    "text"
+  ],
+  "design_profile_refs": [
+    "classic_search_1998",
+    "eureka_default",
+    "text_only"
+  ],
+  "required_semantic_categories": [
+    "blocked_actions",
+    "compatibility_posture",
+    "download_unavailable_posture",
+    "evidence_posture",
+    "hosted_unavailable_posture",
+    "limitations",
+    "live_probe_unavailable_posture",
+    "query_identity",
+    "result_identity",
+    "rights_posture",
+    "risk_posture",
+    "route_identity",
+    "source_posture",
+    "upload_account_telemetry_unavailable_posture",
+    "view_identity"
+  ],
+  "required_text_markers": [
+    "Search",
+    "Query",
+    "Mode/Posture",
+    "Result Summary",
+    "Results",
+    "Source/Evidence",
+    "Risk/Rights",
+    "Compatibility",
+    "Limitations",
+    "Blocked Actions"
+  ],
+  "required_json_paths": [
+    "schema_version",
+    "source_view_model",
+    "route_family",
+    "representation_profile",
+    "search_mode",
+    "public_runtime_posture",
+    "query",
+    "result_summary",
+    "results",
+    "limitations",
+    "blocked_actions",
+    "product_boundary"
+  ],
+  "forbidden_text_markers": [
+    "hosted backend active",
+    "live probes enabled",
+    "downloads enabled",
+    "uploads enabled",
+    "accounts enabled",
+    "telemetry enabled",
+    "rights clearance is verified",
+    "malware safety is verified",
+    "verified installability",
+    "exhaustive global search",
+    "automatic merge is enabled",
+    "automatic promotion is enabled",
+    "affiliated with google"
+  ],
+  "forbidden_json_claims": [
+    "product_boundary.accounts_enabled",
+    "product_boundary.downloads_enabled",
+    "product_boundary.hosted_backend_claimed",
+    "product_boundary.live_probes_enabled",
+    "product_boundary.telemetry_enabled",
+    "product_boundary.uploads_enabled"
+  ],
+  "allowed_degradation_notes": [
+    "Layout, CSS, table structure, and visual grouping may vary.",
+    "Semantic labels and unavailable capability posture must remain visible."
+  ],
+  "expected_status": "pass",
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_google_affiliation": false
+  },
+  "notes": [
+    "This case checks existing TRACK-A-13 dry-run evidence only.",
+    "The case does not regenerate outputs or touch site/dist."
+  ]
+}

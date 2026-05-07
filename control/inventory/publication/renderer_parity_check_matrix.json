@@ -1,0 +1,255 @@
+{
+  "schema_version": "0.1.0",
+  "matrix_id": "renderer_parity_check_matrix_v0",
+  "label": "Renderer parity check matrix v0",
+  "description": "Deterministic matrix of current and future semantic parity cases for renderer and projection outputs.",
+  "policy_ref": "control/inventory/publication/renderer_parity_harness_policy.json",
+  "contract_ref": "contracts/representations/renderer_parity_harness.v0.json",
+  "active_case_ids": [
+    "search_page_static_projection_v0"
+  ],
+  "future_case_ids": [
+    "candidate_page_projection_future_v0",
+    "need_page_projection_future_v0",
+    "object_page_projection_future_v0",
+    "source_page_projection_future_v0"
+  ],
+  "parity_cases": [
+    {
+      "parity_case_id": "search_page_static_projection_v0",
+      "case_ref": "examples/renderer_parity/search_page_parity_case_v0.json",
+      "view_family": "SearchPageView",
+      "route_family": "search",
+      "case_status": "current",
+      "expected_status": "pass",
+      "active_outputs_required": true,
+      "notes": [
+        "Current case checks TRACK-A-13 dry-run generated SearchPage outputs."
+      ]
+    },
+    {
+      "parity_case_id": "object_page_projection_future_v0",
+      "case_ref": "examples/renderer_parity/object_page_parity_case_future_v0.json",
+      "view_family": "ObjectPageView",
+      "route_family": "object_page_future",
+      "case_status": "future",
+      "expected_status": "no_active_outputs_required",
+      "active_outputs_required": false,
+      "notes": [
+        "Future placeholder; no ObjectPage projection outputs exist yet."
+      ]
+    },
+    {
+      "parity_case_id": "source_page_projection_future_v0",
+      "case_ref": "examples/renderer_parity/source_page_parity_case_future_v0.json",
+      "view_family": "SourcePageView",
+      "route_family": "source_detail",
+      "case_status": "future",
+      "expected_status": "no_active_outputs_required",
+      "active_outputs_required": false,
+      "notes": [
+        "Future placeholder; no SourcePage projection outputs are required for this task."
+      ]
+    },
+    {
+      "parity_case_id": "need_page_projection_future_v0",
+      "case_ref": "",
+      "case_inline": {
+        "schema_version": "0.1.0",
+        "parity_case_id": "need_page_projection_future_v0",
+        "label": "NeedPage future projection parity placeholder",
+        "case_status": "future",
+        "view_family": "NeedPageView",
+        "route_family": "need_page_future",
+        "source_view_model_path": "",
+        "output_bindings": [],
+        "semantic_requirements_ref": "control/inventory/publication/need_page_view_model_policy.json#required_semantic_requirements",
+        "view_model_policy_ref": "control/inventory/publication/need_page_view_model_policy.json",
+        "semantic_parity_policy_ref": "need_page_future_parity_v0",
+        "representation_profile_refs": [
+          "api_json",
+          "lite_html",
+          "standard_html",
+          "text"
+        ],
+        "design_profile_refs": [
+          "eureka_default",
+          "text_only"
+        ],
+        "required_semantic_categories": [
+          "absence_scope",
+          "blocked_actions",
+          "limitations",
+          "need_identity",
+          "query_identity",
+          "route_identity",
+          "unresolved_gaps",
+          "view_identity"
+        ],
+        "required_text_markers": [],
+        "required_json_paths": [],
+        "forbidden_text_markers": [
+          "exhaustive global search",
+          "live probes enabled",
+          "source sync enabled"
+        ],
+        "forbidden_json_claims": [],
+        "allowed_degradation_notes": [
+          "No active outputs are required until a NeedPage dry-run exists."
+        ],
+        "expected_status": "no_active_outputs_required",
+        "product_boundary": {
+          "changed_product_behavior": false,
+          "changed_public_routes": false,
+          "changed_generated_site_artifacts": false,
+          "regenerated_site_dist": false,
+          "enabled_hosting": false,
+          "enabled_live_probes": false,
+          "enabled_source_sync": false,
+          "enabled_source_connectors": false,
+          "enabled_downloads": false,
+          "enabled_installers": false,
+          "enabled_execution": false,
+          "enabled_uploads": false,
+          "enabled_accounts": false,
+          "enabled_telemetry": false,
+          "created_native_projects": false,
+          "mutated_master_index": false,
+          "claimed_rights_clearance": false,
+          "claimed_malware_safety": false,
+          "claimed_verified_installability": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_automatic_merge_or_promotion": false,
+          "claimed_google_affiliation": false
+        },
+        "notes": [
+          "Future placeholder only; absence scope must remain scoped when rendered later."
+        ]
+      },
+      "view_family": "NeedPageView",
+      "route_family": "need_page_future",
+      "case_status": "future",
+      "expected_status": "no_active_outputs_required",
+      "active_outputs_required": false,
+      "notes": [
+        "Future placeholder; no NeedPage projection outputs exist yet."
+      ]
+    },
+    {
+      "parity_case_id": "candidate_page_projection_future_v0",
+      "case_ref": "",
+      "case_inline": {
+        "schema_version": "0.1.0",
+        "parity_case_id": "candidate_page_projection_future_v0",
+        "label": "CandidatePage future projection parity placeholder",
+        "case_status": "future",
+        "view_family": "CandidatePageView",
+        "route_family": "candidate_page_future",
+        "source_view_model_path": "",
+        "output_bindings": [],
+        "semantic_requirements_ref": "control/inventory/publication/candidate_page_view_model_policy.json#required_semantic_requirements",
+        "view_model_policy_ref": "control/inventory/publication/candidate_page_view_model_policy.json",
+        "semantic_parity_policy_ref": "candidate_page_future_parity_v0",
+        "representation_profile_refs": [
+          "api_json",
+          "lite_html",
+          "standard_html",
+          "text"
+        ],
+        "design_profile_refs": [
+          "eureka_default",
+          "text_only"
+        ],
+        "required_semantic_categories": [
+          "blocked_actions",
+          "candidate_identity",
+          "candidate_review_state",
+          "evidence_posture",
+          "limitations",
+          "master_index_boundary",
+          "rights_posture",
+          "risk_posture",
+          "route_identity",
+          "source_posture",
+          "unresolved_gaps",
+          "view_identity"
+        ],
+        "required_text_markers": [],
+        "required_json_paths": [],
+        "forbidden_text_markers": [
+          "candidate accepted truth",
+          "master index mutation",
+          "automatic promotion is enabled"
+        ],
+        "forbidden_json_claims": [],
+        "allowed_degradation_notes": [
+          "No active outputs are required until a CandidatePage dry-run exists."
+        ],
+        "expected_status": "no_active_outputs_required",
+        "product_boundary": {
+          "changed_product_behavior": false,
+          "changed_public_routes": false,
+          "changed_generated_site_artifacts": false,
+          "regenerated_site_dist": false,
+          "enabled_hosting": false,
+          "enabled_live_probes": false,
+          "enabled_source_sync": false,
+          "enabled_source_connectors": false,
+          "enabled_downloads": false,
+          "enabled_installers": false,
+          "enabled_execution": false,
+          "enabled_uploads": false,
+          "enabled_accounts": false,
+          "enabled_telemetry": false,
+          "created_native_projects": false,
+          "mutated_master_index": false,
+          "claimed_rights_clearance": false,
+          "claimed_malware_safety": false,
+          "claimed_verified_installability": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_automatic_merge_or_promotion": false,
+          "claimed_google_affiliation": false
+        },
+        "notes": [
+          "Future placeholder only; rendering candidates must not promote them."
+        ]
+      },
+      "view_family": "CandidatePageView",
+      "route_family": "candidate_page_future",
+      "case_status": "future",
+      "expected_status": "no_active_outputs_required",
+      "active_outputs_required": false,
+      "notes": [
+        "Future placeholder; no CandidatePage projection outputs exist yet."
+      ]
+    }
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_google_affiliation": false
+  },
+  "notes": [
+    "Only the SearchPage dry-run case is active in TRACK-A-16.",
+    "Future placeholders are governance records and do not require or create outputs."
+  ]
+}

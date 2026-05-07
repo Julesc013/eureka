@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-A-15 - Temporal Minimal Search design token contract
+UNSPECIFIED - TRACK-A-16 renderer parity harness
 
 ## GOAL
 
-TRACK-A-15 - Temporal Minimal Search design token contract
+TRACK-A-16 renderer parity harness
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4061
-- approx_tokens: 1016
+- chars: 4013
+- approx_tokens: 1004
 - budget_status: PASS
 - warnings:
   - none

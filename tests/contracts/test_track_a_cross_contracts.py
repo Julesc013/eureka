@@ -15,7 +15,7 @@ class TrackACrossContractsTest(unittest.TestCase):
 
         self.assertEqual(report["status"], "valid")
         self.assertEqual(report["errors"], [])
-        self.assertEqual(report["validator_count"], 12)
+        self.assertEqual(report["validator_count"], 13)
 
     def test_cross_contract_validator_fails_when_constituent_validator_fails(self) -> None:
         def broken_validator(_root: Path) -> dict:

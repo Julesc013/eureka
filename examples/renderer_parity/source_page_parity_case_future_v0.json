@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "parity_case_id": "source_page_projection_future_v0",
+  "label": "SourcePage future projection parity placeholder",
+  "case_status": "future",
+  "view_family": "SourcePageView",
+  "route_family": "source_detail",
+  "source_view_model_path": "",
+  "output_bindings": [],
+  "semantic_requirements_ref": "control/inventory/publication/source_page_view_model_policy.json#required_semantic_requirements",
+  "view_model_policy_ref": "control/inventory/publication/source_page_view_model_policy.json",
+  "semantic_parity_policy_ref": "source_page_parity_v0",
+  "representation_profile_refs": [
+    "api_json",
+    "lite_html",
+    "standard_html",
+    "text"
+  ],
+  "design_profile_refs": [
+    "eureka_default",
+    "text_only"
+  ],
+  "required_semantic_categories": [
+    "blocked_actions",
+    "evidence_posture",
+    "limitations",
+    "rights_posture",
+    "risk_posture",
+    "route_identity",
+    "source_identity",
+    "source_posture",
+    "unresolved_gaps",
+    "view_identity"
+  ],
+  "required_text_markers": [],
+  "required_json_paths": [],
+  "forbidden_text_markers": [
+    "source connector active",
+    "live probes enabled",
+    "source sync enabled"
+  ],
+  "forbidden_json_claims": [],
+  "allowed_degradation_notes": [
+    "No active outputs are required until a SourcePage dry-run exists."
+  ],
+  "expected_status": "no_active_outputs_required",
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_google_affiliation": false
+  },
+  "notes": [
+    "Future placeholder only; fixture sources are not live connectors."
+  ]
+}
