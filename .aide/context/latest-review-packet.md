@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4133 chars, 1034 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4075 chars, 1019 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,26 +36,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/views/absence_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/views/compare_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/views/download_manifest_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/views/evidence_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-09-download-evidence-absence-compare-view-models-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/absence_page_view_model_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/compare_page_view_model_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/download_manifest_view_model_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/evidence_page_view_model_policy.json` (??; does not match active task allowed paths)
-- allowed: `docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `contracts/views/view_model_policy_index.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-10-view-model-policy-index-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/view_model_policy_index.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/TRACK_A_VALIDATION.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md` (??; matches active task allowed path)
 - allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `examples/view_models/absence_page` (??; does not match active task allowed paths)
-- unknown: `examples/view_models/compare_page` (??; does not match active task allowed paths)
-- unknown: `examples/view_models/download_manifest` (??; does not match active task allowed paths)
-- unknown: `examples/view_models/evidence_page` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_download_evidence_absence_compare_view_models.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_download_evidence_absence_compare_view_models.py` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/policy_index` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_track_a_contracts.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_view_model_policy_index.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_track_a_cross_contracts.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_view_model_policy_index.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -65,8 +56,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6432
-- approx_tokens: 1608
+- chars: 5385
+- approx_tokens: 1347
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

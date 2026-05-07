@@ -36,7 +36,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1034
+- approx_tokens_if_applicable: 1019
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -45,7 +45,7 @@
 - result: PASS
 - checks_run: 32
 - passed_checks: 32
-- approx_tokens_if_applicable: 1034
+- approx_tokens_if_applicable: 1019
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-task-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json, AGENTS.md
 - notes: Checks the latest compact packet is target-specific and actionable for Eureka.
 

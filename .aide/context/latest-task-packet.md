@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-A-09 - DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model contracts
+UNSPECIFIED - TRACK-A-10 - View model policy index and cross-contract validator
 
 ## GOAL
 
-TRACK-A-09 - DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model contracts
+TRACK-A-10 - View model policy index and cross-contract validator
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4133
-- approx_tokens: 1034
+- chars: 4075
+- approx_tokens: 1019
 - budget_status: PASS
 - warnings:
   - none

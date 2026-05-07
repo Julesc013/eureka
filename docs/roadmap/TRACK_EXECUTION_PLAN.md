@@ -17,7 +17,7 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-10 - View model policy index and cross-contract validator`
+`TRACK-A-11 - Static SearchPage view-model projection audit`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
@@ -44,6 +44,8 @@ and no-public-truth review posture. Track A-09 established the canonical
 DownloadManifest, EvidencePage, AbsencePage, and ComparePage view-model
 contracts for manifest metadata without download behavior, evidence without
 truth promotion, scoped absence, and conflict-preserving comparison posture.
+Track A-10 established the governed view-model policy index and consolidated
+cross-contract validator for the Track A contract family.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

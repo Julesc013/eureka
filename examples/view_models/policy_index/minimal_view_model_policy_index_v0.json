@@ -1,0 +1,216 @@
+{
+  "schema_version": "0.1.0",
+  "index_id": "minimal_view_model_policy_index_v0",
+  "label": "Minimal Track A policy index example",
+  "description": "Compact public-safe example of indexing several Track A view-model families and validators without implying runtime behavior.",
+  "track": "A",
+  "status": "contract_only",
+  "view_model_families": [
+    {
+      "view_family": "SearchPageView",
+      "route_families": [
+        "lite_static",
+        "search"
+      ],
+      "schema_path": "contracts/views/search_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/search_page_view_model_policy.json",
+      "documentation_path": "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/search_page/minimal_search_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_search_page_view_model.py",
+      "test_path": "tests/contracts/test_search_page_view_model.py",
+      "semantic_parity_policy_ids": [
+        "search_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "standard_html",
+        "lite_html",
+        "text"
+      ],
+      "current_status": "implemented_static_and_local_contract",
+      "future_status": "hosted_public_alpha_track_e_only",
+      "required_product_boundary_fields": [
+        "changed_product_behavior",
+        "enabled_hosting",
+        "enabled_live_probes"
+      ],
+      "blocked_claims": [
+        "hosted_backend_claim",
+        "live_source_claim"
+      ],
+      "notes": [
+        "Includes one current/static route family and one local search route family."
+      ]
+    },
+    {
+      "view_family": "ObjectPageView",
+      "route_families": [
+        "object_page_future"
+      ],
+      "schema_path": "contracts/views/object_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/object_page_view_model_policy.json",
+      "documentation_path": "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/object_page/minimal_object_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_object_page_view_model.py",
+      "test_path": "tests/contracts/test_object_page_view_model.py",
+      "semantic_parity_policy_ids": [
+        "object_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "standard_html",
+        "text",
+        "native_card_future"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_read_only_object_page",
+      "required_product_boundary_fields": [
+        "enabled_downloads",
+        "claimed_rights_clearance"
+      ],
+      "blocked_claims": [
+        "download_claim",
+        "rights_clearance_claim"
+      ],
+      "notes": [
+        "Future/deferred object page binding."
+      ]
+    },
+    {
+      "view_family": "AbsencePageView",
+      "route_families": [
+        "absence_page_future"
+      ],
+      "schema_path": "contracts/views/absence_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/absence_page_view_model_policy.json",
+      "documentation_path": "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/absence_page/minimal_absence_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_download_evidence_absence_compare_view_models.py",
+      "test_path": "tests/contracts/test_download_evidence_absence_compare_view_models.py",
+      "semantic_parity_policy_ids": [
+        "absence_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "standard_html",
+        "text",
+        "terminal_future"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_scoped_absence_surface",
+      "required_product_boundary_fields": [
+        "claimed_exhaustive_global_search",
+        "enabled_node_runtime"
+      ],
+      "blocked_claims": [
+        "exhaustive_global_search_claim",
+        "node_runtime_claim"
+      ],
+      "notes": [
+        "Future/deferred absence page binding."
+      ]
+    }
+  ],
+  "policy_files": [
+    "control/inventory/publication/representation_profiles.json",
+    "control/inventory/publication/semantic_renderer_parity_policy.json",
+    "control/inventory/publication/route_view_representation_matrix.json",
+    "control/inventory/publication/search_page_view_model_policy.json",
+    "control/inventory/publication/object_page_view_model_policy.json",
+    "control/inventory/publication/absence_page_view_model_policy.json"
+  ],
+  "schema_files": [
+    "contracts/views/view_model_policy_index.v0.json",
+    "contracts/views/search_page.v0.json",
+    "contracts/views/object_page.v0.json",
+    "contracts/views/absence_page.v0.json"
+  ],
+  "documentation_files": [
+    "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",
+    "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md"
+  ],
+  "example_roots": [
+    "examples/view_models/search_page",
+    "examples/view_models/object_page",
+    "examples/view_models/absence_page"
+  ],
+  "validator_files": [
+    "scripts/validate_search_page_view_model.py",
+    "scripts/validate_object_page_view_model.py",
+    "scripts/validate_download_evidence_absence_compare_view_models.py",
+    "scripts/validate_view_model_policy_index.py"
+  ],
+  "route_matrix_ref": "control/inventory/publication/route_view_representation_matrix.json",
+  "semantic_parity_policy_ref": "control/inventory/publication/semantic_renderer_parity_policy.json",
+  "representation_profile_inventory_ref": "control/inventory/publication/representation_profiles.json",
+  "host_profile_inventory_ref": "control/inventory/publication/host_profiles.json",
+  "capability_negotiation_policy_ref": "control/inventory/publication/capability_negotiation_policy.json",
+  "validation_groups": [
+    {
+      "group_id": "minimal_policy_index",
+      "label": "Minimal policy index",
+      "validators": [
+        "scripts/validate_view_model_policy_index.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/view_model_policy_index.json"
+      ],
+      "example_roots": [
+        "examples/view_models/policy_index"
+      ],
+      "required_before": [
+        "renderer refactors"
+      ],
+      "no_goals": [
+        "no runtime behavior changes"
+      ],
+      "notes": [
+        "Compact example only."
+      ]
+    }
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_public_truth_from_candidates": false,
+    "claimed_public_truth_from_packs": false,
+    "claimed_public_truth_from_reviews": false,
+    "claimed_public_truth_from_evidence": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false
+  },
+  "no_goals": [
+    "no runtime behavior changes",
+    "no hosted backend claims",
+    "no live-source claims",
+    "no downloads or execution",
+    "no accepted-public-truth claims"
+  ],
+  "notes": [
+    "Minimal policy index example for Track A-10."
+  ]
+}

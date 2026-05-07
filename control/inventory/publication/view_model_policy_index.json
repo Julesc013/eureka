@@ -1,0 +1,1007 @@
+{
+  "schema_version": "0.1.0",
+  "index_id": "track_a_view_model_policy_index_v0",
+  "label": "Track A view model policy index v0",
+  "description": "Governed index over Track A representation, semantic parity, route/view matrix, canonical view-model policy, example, validator, and documentation artifacts.",
+  "track": "A",
+  "status": "contract_only",
+  "view_model_families": [
+    {
+      "view_family": "SearchPageView",
+      "route_families": [
+        "api_search",
+        "demo_static",
+        "files_static",
+        "lite_static",
+        "search",
+        "text_static"
+      ],
+      "schema_path": "contracts/views/search_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/search_page_view_model_policy.json",
+      "documentation_path": "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/search_page/absence_search_page_v0.json",
+        "examples/view_models/search_page/empty_search_page_v0.json",
+        "examples/view_models/search_page/minimal_search_page_v0.json",
+        "examples/view_models/search_page/result_card_search_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_search_page_view_model.py",
+      "test_path": "tests/contracts/test_search_page_view_model.py",
+      "semantic_parity_policy_ids": [
+        "search_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "implemented_local_runtime_and_static_handoff_contract",
+      "future_status": "hosted_public_alpha_track_e_only",
+      "required_product_boundary_fields": [
+        "changed_product_behavior",
+        "changed_public_routes",
+        "changed_generated_site_artifacts",
+        "enabled_hosting",
+        "enabled_live_probes",
+        "enabled_downloads",
+        "enabled_uploads",
+        "enabled_accounts",
+        "enabled_telemetry"
+      ],
+      "blocked_claims": [
+        "hosted_backend_claim",
+        "live_source_claim",
+        "telemetry_or_account_claim"
+      ],
+      "notes": [
+        "SearchPageView controls public search meaning across local/static examples without changing runtime behavior."
+      ]
+    },
+    {
+      "view_family": "ObjectPageView",
+      "route_families": [
+        "object_page_future"
+      ],
+      "schema_path": "contracts/views/object_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/object_page_view_model_policy.json",
+      "documentation_path": "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/object_page/candidate_object_page_v0.json",
+        "examples/view_models/object_page/member_object_page_v0.json",
+        "examples/view_models/object_page/minimal_object_page_v0.json",
+        "examples/view_models/object_page/software_object_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_object_page_view_model.py",
+      "test_path": "tests/contracts/test_object_page_view_model.py",
+      "semantic_parity_policy_ids": [
+        "object_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_read_only_object_page",
+      "required_product_boundary_fields": [
+        "changed_product_behavior",
+        "changed_public_routes",
+        "enabled_downloads",
+        "enabled_installers",
+        "enabled_execution",
+        "claimed_rights_clearance",
+        "claimed_malware_safety",
+        "claimed_verified_installability"
+      ],
+      "blocked_claims": [
+        "verified_truth_claim",
+        "download_or_install_claim",
+        "rights_or_malware_clearance_claim"
+      ],
+      "notes": [
+        "Object pages remain future contract surfaces."
+      ]
+    },
+    {
+      "view_family": "SourcePageView",
+      "route_families": [
+        "source_detail"
+      ],
+      "schema_path": "contracts/views/source_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/source_page_view_model_policy.json",
+      "documentation_path": "docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/source_page/minimal_source_page_v0.json",
+        "examples/view_models/source_page/placeholder_source_page_v0.json",
+        "examples/view_models/source_page/recorded_fixture_source_page_v0.json",
+        "examples/view_models/source_page/source_gap_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_source_page_view_model.py",
+      "test_path": "tests/contracts/test_source_page_view_model.py",
+      "semantic_parity_policy_ids": [
+        "source_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "local_runtime_summary_contract",
+      "future_status": "future_public_source_page",
+      "required_product_boundary_fields": [
+        "enabled_source_sync",
+        "enabled_source_connectors",
+        "enabled_live_probes",
+        "claimed_rights_clearance",
+        "claimed_malware_safety"
+      ],
+      "blocked_claims": [
+        "live_connector_claim",
+        "bulk_access_claim",
+        "source_observation_truth_claim"
+      ],
+      "notes": [
+        "SourcePageView preserves source policy and connector-disabled posture."
+      ]
+    },
+    {
+      "view_family": "NeedPageView",
+      "route_families": [
+        "need_page_future"
+      ],
+      "schema_path": "contracts/views/need_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/need_page_view_model_policy.json",
+      "documentation_path": "docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/need_page/known_absence_need_page_v0.json",
+        "examples/view_models/need_page/minimal_need_page_v0.json",
+        "examples/view_models/need_page/source_gap_need_page_v0.json",
+        "examples/view_models/need_page/work_unit_future_need_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_need_candidate_page_view_models.py",
+      "test_path": "tests/contracts/test_need_candidate_page_view_models.py",
+      "semantic_parity_policy_ids": [
+        "need_page_future_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_track_b_need_surface",
+      "required_product_boundary_fields": [
+        "enabled_live_probes",
+        "enabled_source_sync",
+        "enabled_node_runtime",
+        "enabled_telemetry",
+        "claimed_exhaustive_global_search"
+      ],
+      "blocked_claims": [
+        "raw_query_telemetry_claim",
+        "exhaustive_search_claim",
+        "demand_truth_claim"
+      ],
+      "notes": [
+        "Needs are unresolved work objects, not failed pages."
+      ]
+    },
+    {
+      "view_family": "CandidatePageView",
+      "route_families": [
+        "candidate_page_future"
+      ],
+      "schema_path": "contracts/views/candidate_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/candidate_page_view_model_policy.json",
+      "documentation_path": "docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/candidate_page/evidence_candidate_page_v0.json",
+        "examples/view_models/candidate_page/minimal_candidate_page_v0.json",
+        "examples/view_models/candidate_page/policy_blocked_candidate_page_v0.json",
+        "examples/view_models/candidate_page/source_observed_candidate_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_need_candidate_page_view_models.py",
+      "test_path": "tests/contracts/test_need_candidate_page_view_models.py",
+      "semantic_parity_policy_ids": [
+        "candidate_page_future_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_track_b_candidate_surface",
+      "required_product_boundary_fields": [
+        "mutated_master_index",
+        "claimed_public_truth_from_candidates",
+        "enabled_review_runtime"
+      ],
+      "blocked_claims": [
+        "candidate_truth_claim",
+        "review_promotion_claim",
+        "master_index_mutation_claim"
+      ],
+      "notes": [
+        "Candidates remain provisional until separate governed review accepts bounded claims."
+      ]
+    },
+    {
+      "view_family": "PackPageView",
+      "route_families": [
+        "pack_page_future"
+      ],
+      "schema_path": "contracts/views/pack_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/pack_page_view_model_policy.json",
+      "documentation_path": "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/pack_page/contribution_pack_page_v0.json",
+        "examples/view_models/pack_page/evidence_pack_page_v0.json",
+        "examples/view_models/pack_page/minimal_pack_page_v0.json",
+        "examples/view_models/pack_page/source_pack_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_pack_task_review_page_view_models.py",
+      "test_path": "tests/contracts/test_pack_task_review_page_view_models.py",
+      "semantic_parity_policy_ids": [
+        "pack_page_future_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_validate_only_pack_surface",
+      "required_product_boundary_fields": [
+        "enabled_pack_import_runtime",
+        "enabled_uploads",
+        "claimed_public_truth_from_packs",
+        "mutated_master_index"
+      ],
+      "blocked_claims": [
+        "pack_import_claim",
+        "upload_claim",
+        "pack_truth_claim"
+      ],
+      "notes": [
+        "Pack pages are portable validate-only summaries, not import surfaces."
+      ]
+    },
+    {
+      "view_family": "TaskPageView",
+      "route_families": [
+        "task_page_future"
+      ],
+      "schema_path": "contracts/views/task_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/task_page_view_model_policy.json",
+      "documentation_path": "docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/task_page/minimal_task_page_v0.json",
+        "examples/view_models/task_page/policy_blocked_task_page_v0.json",
+        "examples/view_models/task_page/search_need_task_page_future_v0.json",
+        "examples/view_models/task_page/source_lead_task_page_future_v0.json"
+      ],
+      "validator_path": "scripts/validate_pack_task_review_page_view_models.py",
+      "test_path": "tests/contracts/test_pack_task_review_page_view_models.py",
+      "semantic_parity_policy_ids": [
+        "task_page_future_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_human_operated_task_surface",
+      "required_product_boundary_fields": [
+        "enabled_node_runtime",
+        "enabled_live_probes",
+        "enabled_downloads",
+        "enabled_execution",
+        "mutated_master_index"
+      ],
+      "blocked_claims": [
+        "autonomous_runtime_claim",
+        "node_runtime_claim",
+        "model_provider_call_claim"
+      ],
+      "notes": [
+        "Tasks are bounded governed work requests, not autonomous permission."
+      ]
+    },
+    {
+      "view_family": "ReviewPageView",
+      "route_families": [
+        "review_page_future"
+      ],
+      "schema_path": "contracts/views/review_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/review_page_view_model_policy.json",
+      "documentation_path": "docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/review_page/defer_review_page_v0.json",
+        "examples/view_models/review_page/minimal_review_page_v0.json",
+        "examples/view_models/review_page/promotion_requirements_review_page_v0.json",
+        "examples/view_models/review_page/reject_review_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_pack_task_review_page_view_models.py",
+      "test_path": "tests/contracts/test_pack_task_review_page_view_models.py",
+      "semantic_parity_policy_ids": [
+        "review_page_future_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_review_governance_surface",
+      "required_product_boundary_fields": [
+        "enabled_review_runtime",
+        "enabled_accounts",
+        "claimed_public_truth_from_reviews",
+        "mutated_master_index"
+      ],
+      "blocked_claims": [
+        "hosted_moderation_claim",
+        "review_truth_claim",
+        "promotion_without_workflow_claim"
+      ],
+      "notes": [
+        "Review pages are governance evidence, not automatic promotion."
+      ]
+    },
+    {
+      "view_family": "DownloadManifestView",
+      "route_families": [
+        "download_manifest_future"
+      ],
+      "schema_path": "contracts/views/download_manifest_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/download_manifest_view_model_policy.json",
+      "documentation_path": "docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/download_manifest/blocked_download_manifest_v0.json",
+        "examples/view_models/download_manifest/minimal_download_manifest_v0.json",
+        "examples/view_models/download_manifest/native_handoff_future_manifest_v0.json"
+      ],
+      "validator_path": "scripts/validate_download_evidence_absence_compare_view_models.py",
+      "test_path": "tests/contracts/test_download_evidence_absence_compare_view_models.py",
+      "semantic_parity_policy_ids": [
+        "download_manifest_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_deferred_manifest_surface",
+      "required_product_boundary_fields": [
+        "enabled_downloads",
+        "enabled_installers",
+        "enabled_execution",
+        "created_native_projects",
+        "claimed_rights_clearance",
+        "claimed_malware_safety"
+      ],
+      "blocked_claims": [
+        "downloader_claim",
+        "installer_claim",
+        "native_handoff_runtime_claim"
+      ],
+      "notes": [
+        "A download manifest is metadata, not a downloader."
+      ]
+    },
+    {
+      "view_family": "EvidencePageView",
+      "route_families": [
+        "evidence_page_future"
+      ],
+      "schema_path": "contracts/views/evidence_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/evidence_page_view_model_policy.json",
+      "documentation_path": "docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/evidence_page/conflicting_evidence_page_v0.json",
+        "examples/view_models/evidence_page/evidence_candidate_page_v0.json",
+        "examples/view_models/evidence_page/minimal_evidence_page_v0.json",
+        "examples/view_models/evidence_page/source_observation_evidence_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_download_evidence_absence_compare_view_models.py",
+      "test_path": "tests/contracts/test_download_evidence_absence_compare_view_models.py",
+      "semantic_parity_policy_ids": [
+        "source_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_evidence_record_surface",
+      "required_product_boundary_fields": [
+        "claimed_public_truth_from_evidence",
+        "mutated_master_index",
+        "enabled_source_sync",
+        "enabled_live_probes"
+      ],
+      "blocked_claims": [
+        "evidence_truth_claim",
+        "source_observation_truth_claim",
+        "ai_draft_truth_claim"
+      ],
+      "notes": [
+        "Evidence pages inherit source/evidence parity until a dedicated policy is needed."
+      ]
+    },
+    {
+      "view_family": "AbsencePageView",
+      "route_families": [
+        "absence_page_future"
+      ],
+      "schema_path": "contracts/views/absence_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/absence_page_view_model_policy.json",
+      "documentation_path": "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/absence_page/minimal_absence_page_v0.json",
+        "examples/view_models/absence_page/near_match_absence_page_v0.json",
+        "examples/view_models/absence_page/policy_blocked_absence_page_v0.json",
+        "examples/view_models/absence_page/source_gap_absence_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_download_evidence_absence_compare_view_models.py",
+      "test_path": "tests/contracts/test_download_evidence_absence_compare_view_models.py",
+      "semantic_parity_policy_ids": [
+        "absence_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_scoped_absence_surface",
+      "required_product_boundary_fields": [
+        "claimed_exhaustive_global_search",
+        "enabled_live_probes",
+        "enabled_source_sync",
+        "enabled_node_runtime"
+      ],
+      "blocked_claims": [
+        "global_absence_claim",
+        "exhaustive_search_claim",
+        "node_task_runtime_claim"
+      ],
+      "notes": [
+        "Absence is scoped, not omniscient."
+      ]
+    },
+    {
+      "view_family": "ComparePageView",
+      "route_families": [
+        "compare_page_future"
+      ],
+      "schema_path": "contracts/views/compare_page.v0.json",
+      "policy_inventory_path": "control/inventory/publication/compare_page_view_model_policy.json",
+      "documentation_path": "docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md",
+      "example_paths": [
+        "examples/view_models/compare_page/candidate_compare_page_v0.json",
+        "examples/view_models/compare_page/minimal_compare_page_v0.json",
+        "examples/view_models/compare_page/object_version_compare_page_v0.json",
+        "examples/view_models/compare_page/source_conflict_compare_page_v0.json"
+      ],
+      "validator_path": "scripts/validate_download_evidence_absence_compare_view_models.py",
+      "test_path": "tests/contracts/test_download_evidence_absence_compare_view_models.py",
+      "semantic_parity_policy_ids": [
+        "object_page_parity_v0"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "current_status": "contract_only",
+      "future_status": "future_conflict_preserving_compare_surface",
+      "required_product_boundary_fields": [
+        "claimed_automatic_merge_or_promotion",
+        "mutated_master_index",
+        "claimed_public_truth_from_candidates"
+      ],
+      "blocked_claims": [
+        "automatic_merge_claim",
+        "automatic_dedup_claim",
+        "automatic_promotion_claim"
+      ],
+      "notes": [
+        "Comparison preserves disagreement and does not merge, deduplicate, promote, or mutate records."
+      ]
+    }
+  ],
+  "policy_files": [
+    "control/inventory/publication/host_profiles.json",
+    "control/inventory/publication/representation_profiles.json",
+    "control/inventory/publication/capability_negotiation_policy.json",
+    "control/inventory/publication/semantic_renderer_parity_policy.json",
+    "control/inventory/publication/route_view_representation_matrix.json",
+    "control/inventory/publication/search_page_view_model_policy.json",
+    "control/inventory/publication/object_page_view_model_policy.json",
+    "control/inventory/publication/source_page_view_model_policy.json",
+    "control/inventory/publication/need_page_view_model_policy.json",
+    "control/inventory/publication/candidate_page_view_model_policy.json",
+    "control/inventory/publication/pack_page_view_model_policy.json",
+    "control/inventory/publication/task_page_view_model_policy.json",
+    "control/inventory/publication/review_page_view_model_policy.json",
+    "control/inventory/publication/download_manifest_view_model_policy.json",
+    "control/inventory/publication/evidence_page_view_model_policy.json",
+    "control/inventory/publication/absence_page_view_model_policy.json",
+    "control/inventory/publication/compare_page_view_model_policy.json"
+  ],
+  "schema_files": [
+    "contracts/views/view_model_policy_index.v0.json",
+    "contracts/views/search_page.v0.json",
+    "contracts/views/object_page.v0.json",
+    "contracts/views/source_page.v0.json",
+    "contracts/views/need_page.v0.json",
+    "contracts/views/candidate_page.v0.json",
+    "contracts/views/pack_page.v0.json",
+    "contracts/views/task_page.v0.json",
+    "contracts/views/review_page.v0.json",
+    "contracts/views/download_manifest_page.v0.json",
+    "contracts/views/evidence_page.v0.json",
+    "contracts/views/absence_page.v0.json",
+    "contracts/views/compare_page.v0.json"
+  ],
+  "documentation_files": [
+    "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",
+    "docs/operations/TRACK_A_VALIDATION.md",
+    "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md",
+    "docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md"
+  ],
+  "example_roots": [
+    "examples/view_models/search_page",
+    "examples/view_models/object_page",
+    "examples/view_models/source_page",
+    "examples/view_models/need_page",
+    "examples/view_models/candidate_page",
+    "examples/view_models/pack_page",
+    "examples/view_models/task_page",
+    "examples/view_models/review_page",
+    "examples/view_models/download_manifest",
+    "examples/view_models/evidence_page",
+    "examples/view_models/absence_page",
+    "examples/view_models/compare_page",
+    "examples/view_models/policy_index"
+  ],
+  "validator_files": [
+    "scripts/validate_representation_contracts.py",
+    "scripts/validate_semantic_renderer_parity.py",
+    "scripts/validate_route_view_representation_matrix.py",
+    "scripts/validate_search_page_view_model.py",
+    "scripts/validate_object_page_view_model.py",
+    "scripts/validate_source_page_view_model.py",
+    "scripts/validate_need_candidate_page_view_models.py",
+    "scripts/validate_pack_task_review_page_view_models.py",
+    "scripts/validate_download_evidence_absence_compare_view_models.py",
+    "scripts/validate_view_model_policy_index.py",
+    "scripts/validate_track_a_contracts.py"
+  ],
+  "route_matrix_ref": "control/inventory/publication/route_view_representation_matrix.json",
+  "semantic_parity_policy_ref": "control/inventory/publication/semantic_renderer_parity_policy.json",
+  "representation_profile_inventory_ref": "control/inventory/publication/representation_profiles.json",
+  "host_profile_inventory_ref": "control/inventory/publication/host_profiles.json",
+  "capability_negotiation_policy_ref": "control/inventory/publication/capability_negotiation_policy.json",
+  "validation_groups": [
+    {
+      "group_id": "representation_contracts",
+      "label": "Representation contracts",
+      "validators": [
+        "scripts/validate_representation_contracts.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/host_profiles.json",
+        "control/inventory/publication/representation_profiles.json",
+        "control/inventory/publication/capability_negotiation_policy.json"
+      ],
+      "example_roots": [
+        "examples/representations"
+      ],
+      "required_before": [
+        "renderer implementation",
+        "host negotiation runtime"
+      ],
+      "no_goals": [
+        "no hosting",
+        "no runtime changes"
+      ],
+      "notes": [
+        "Host/profile selection remains representation selection only."
+      ]
+    },
+    {
+      "group_id": "semantic_renderer_parity",
+      "label": "Semantic renderer parity",
+      "validators": [
+        "scripts/validate_semantic_renderer_parity.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/semantic_renderer_parity_policy.json"
+      ],
+      "example_roots": [
+        "examples/representations/semantic_renderer_parity"
+      ],
+      "required_before": [
+        "renderer implementation"
+      ],
+      "no_goals": [
+        "no route identity changes"
+      ],
+      "notes": [
+        "Projection simplification cannot change source/evidence/status meaning."
+      ]
+    },
+    {
+      "group_id": "route_view_matrix",
+      "label": "Route/view/representation matrix",
+      "validators": [
+        "scripts/validate_route_view_representation_matrix.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/route_view_representation_matrix.json"
+      ],
+      "example_roots": [
+        "examples/representations/route_view_matrix"
+      ],
+      "required_before": [
+        "view-model runtime binding"
+      ],
+      "no_goals": [
+        "no public route activation"
+      ],
+      "notes": [
+        "A route has one meaning and one canonical view family."
+      ]
+    },
+    {
+      "group_id": "search_page_view_model",
+      "label": "SearchPage view model",
+      "validators": [
+        "scripts/validate_search_page_view_model.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/search_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/search_page"
+      ],
+      "required_before": [
+        "search renderer parity audit"
+      ],
+      "no_goals": [
+        "no public search semantic change"
+      ],
+      "notes": [
+        "SearchPageView preserves query, result, source, warning, and blocked-action posture."
+      ]
+    },
+    {
+      "group_id": "object_page_view_model",
+      "label": "ObjectPage view model",
+      "validators": [
+        "scripts/validate_object_page_view_model.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/object_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/object_page"
+      ],
+      "required_before": [
+        "object page renderer work"
+      ],
+      "no_goals": [
+        "no object route activation"
+      ],
+      "notes": [
+        "ObjectPageView preserves identity, source/evidence, lineage, rights, risk, and blocked actions."
+      ]
+    },
+    {
+      "group_id": "source_page_view_model",
+      "label": "SourcePage view model",
+      "validators": [
+        "scripts/validate_source_page_view_model.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/source_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/source_page"
+      ],
+      "required_before": [
+        "source connector governance"
+      ],
+      "no_goals": [
+        "no source connector runtime"
+      ],
+      "notes": [
+        "SourcePageView preserves source access, coverage, policy, cache, evidence, and connector-disabled posture."
+      ]
+    },
+    {
+      "group_id": "need_candidate_page_view_models",
+      "label": "Need and Candidate view models",
+      "validators": [
+        "scripts/validate_need_candidate_page_view_models.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/need_page_view_model_policy.json",
+        "control/inventory/publication/candidate_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/need_page",
+        "examples/view_models/candidate_page"
+      ],
+      "required_before": [
+        "Track B candidate workflow"
+      ],
+      "no_goals": [
+        "no candidate promotion",
+        "no exhaustive global search"
+      ],
+      "notes": [
+        "Need and Candidate pages protect unresolved demand and provisional discovery semantics."
+      ]
+    },
+    {
+      "group_id": "pack_task_review_page_view_models",
+      "label": "Pack, Task, and Review view models",
+      "validators": [
+        "scripts/validate_pack_task_review_page_view_models.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/pack_page_view_model_policy.json",
+        "control/inventory/publication/task_page_view_model_policy.json",
+        "control/inventory/publication/review_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/pack_page",
+        "examples/view_models/task_page",
+        "examples/view_models/review_page"
+      ],
+      "required_before": [
+        "pack import governance",
+        "node work-unit governance",
+        "review runtime governance"
+      ],
+      "no_goals": [
+        "no pack import",
+        "no node runtime",
+        "no review runtime"
+      ],
+      "notes": [
+        "Pack, Task, and Review pages protect validate-only and no-promotion boundaries."
+      ]
+    },
+    {
+      "group_id": "download_evidence_absence_compare_view_models",
+      "label": "Download, Evidence, Absence, and Compare view models",
+      "validators": [
+        "scripts/validate_download_evidence_absence_compare_view_models.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/download_manifest_view_model_policy.json",
+        "control/inventory/publication/evidence_page_view_model_policy.json",
+        "control/inventory/publication/absence_page_view_model_policy.json",
+        "control/inventory/publication/compare_page_view_model_policy.json"
+      ],
+      "example_roots": [
+        "examples/view_models/download_manifest",
+        "examples/view_models/evidence_page",
+        "examples/view_models/absence_page",
+        "examples/view_models/compare_page"
+      ],
+      "required_before": [
+        "download manifest runtime decisions",
+        "evidence ledger rendering",
+        "comparison renderer work"
+      ],
+      "no_goals": [
+        "no downloads",
+        "no evidence truth",
+        "no exhaustive global search",
+        "no automatic merge or promotion"
+      ],
+      "notes": [
+        "These models preserve manifest, evidence, scoped absence, and comparison boundaries."
+      ]
+    },
+    {
+      "group_id": "all_track_a_contracts",
+      "label": "All Track A contracts",
+      "validators": [
+        "scripts/validate_track_a_contracts.py"
+      ],
+      "policy_files": [
+        "control/inventory/publication/view_model_policy_index.json"
+      ],
+      "example_roots": [
+        "examples/view_models",
+        "examples/representations"
+      ],
+      "required_before": [
+        "renderer refactors",
+        "runtime view-model binding",
+        "snapshot relay native projections",
+        "Track B handoff"
+      ],
+      "no_goals": [
+        "no runtime behavior changes",
+        "no generated site artifact mutation"
+      ],
+      "notes": [
+        "Aggregate validation command for the Track A contract family."
+      ]
+    }
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_public_truth_from_candidates": false,
+    "claimed_public_truth_from_packs": false,
+    "claimed_public_truth_from_reviews": false,
+    "claimed_public_truth_from_evidence": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false
+  },
+  "no_goals": [
+    "no Eureka product runtime changes",
+    "no hosted backend claim",
+    "no public route activation",
+    "no live probes",
+    "no source connectors or source sync runtime",
+    "no node, autonomous, pack import, review, moderation, upload, or submission runtime",
+    "no downloads, installers, execution, uploads, accounts, or telemetry",
+    "no master-index mutation",
+    "no native project creation",
+    "no rights, malware, installability, evidence truth, exhaustive search, or automatic promotion claims",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "The index is contract/governance only.",
+    "It consolidates Track A references but does not change existing view model semantics.",
+    "Future renderer and runtime work should use this index to discover the relevant contracts, policies, examples, validators, and no-goals."
+  ]
+}

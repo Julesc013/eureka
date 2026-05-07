@@ -1,0 +1,33 @@
+schema_version: aide.task.v0
+id: TRACK-A-10
+title: View model policy index and cross-contract validator
+status: active
+source: user_prompt
+scope:
+  - contracts/views/view_model_policy_index.v0.json
+  - control/inventory/publication/view_model_policy_index.json
+  - examples/view_models/policy_index/**
+  - scripts/validate_view_model_policy_index.py
+  - scripts/validate_track_a_contracts.py
+  - tests/contracts/test_view_model_policy_index.py
+  - tests/contracts/test_track_a_cross_contracts.py
+  - docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md
+  - docs/operations/TRACK_A_VALIDATION.md
+  - control/audits/track-a-10-view-model-policy-index-v0/**
+  - docs/roadmap/TRACK_EXECUTION_PLAN.md
+non_goals:
+  - no runtime behavior changes
+  - no public route activation
+  - no generated site artifact changes
+  - no hosted backend
+  - no live probes
+  - no source sync or connectors
+  - no node runtime
+  - no pack import runtime
+  - no review runtime
+  - no downloads, installers, execution, uploads, accounts, or telemetry
+  - no model or provider calls
+  - no master-index mutation
+  - no native project creation
+  - no rights, malware, installability, evidence truth, exhaustive search, or auto-promotion claims
+next_task: TRACK-A-11 - Static SearchPage view-model projection audit

@@ -1,0 +1,97 @@
+{
+  "schema_version": "track_a_10_report.v0",
+  "status": "warn",
+  "track": "A",
+  "task": "TRACK-A-10",
+  "added_contracts": [
+    "contracts/views/view_model_policy_index.v0.json",
+    "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",
+    "docs/operations/TRACK_A_VALIDATION.md"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/view_model_policy_index.json"
+  ],
+  "added_examples": [
+    "examples/view_models/policy_index/minimal_view_model_policy_index_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_view_model_policy_index.py",
+    "scripts/validate_track_a_contracts.py",
+    "tests/contracts/test_view_model_policy_index.py",
+    "tests/contracts/test_track_a_cross_contracts.py"
+  ],
+  "updated_docs": [
+    "docs/roadmap/TRACK_EXECUTION_PLAN.md"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass_lf_crlf_warnings_only",
+    "python -m json.tool control/inventory/publication/view_model_policy_index.json": "pass",
+    "python -m json.tool control/audits/track-a-10-view-model-policy-index-v0/track_a_10_report.json": "pass",
+    "python scripts/validate_representation_contracts.py": "pass",
+    "python scripts/validate_semantic_renderer_parity.py": "pass",
+    "python scripts/validate_route_view_representation_matrix.py": "pass",
+    "python scripts/validate_search_page_view_model.py": "pass",
+    "python scripts/validate_object_page_view_model.py": "pass",
+    "python scripts/validate_source_page_view_model.py": "pass",
+    "python scripts/validate_need_candidate_page_view_models.py": "pass",
+    "python scripts/validate_pack_task_review_page_view_models.py": "pass",
+    "python scripts/validate_download_evidence_absence_compare_view_models.py": "pass",
+    "python scripts/validate_view_model_policy_index.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass_1708_tests",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass_preflight",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass_preflight_and_pass_final_warn_optional_review_refs",
+    "py -3 .aide/scripts/aide_lite.py pack --task \"TRACK-A-10 - View model policy index and cross-contract validator\"": "pass_preflight",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_zero_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass_14_tasks",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_embedded_verify_zero_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "changed_path_secret_scan": "pass_23_files",
+    "changed_path_ascii_scan": "pass_23_files",
+    "generated_site_artifact_status": "pass_no_changes"
+  },
+  "aide_evidence": [
+    ".aide/queue/TRACK-A-10/task.yaml",
+    ".aide/queue/TRACK-A-10/status.yaml",
+    ".aide/queue/TRACK-A-10/evidence/changed-files.md",
+    ".aide/queue/TRACK-A-10/evidence/validation.md",
+    ".aide/queue/TRACK-A-10/evidence/track-a-contract-result.md",
+    ".aide/queue/TRACK-A-10/evidence/remaining-risks.md"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_public_truth_from_candidates": false,
+    "claimed_public_truth_from_packs": false,
+    "claimed_public_truth_from_reviews": false,
+    "claimed_public_truth_from_evidence": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false
+  },
+  "next_task": "TRACK-A-11 \u2014 Static SearchPage view-model projection audit"
+}
