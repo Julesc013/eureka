@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1.0",
+  "example_id": "minimal_absence_page_parity_v0",
+  "parity_policy_ref": "absence_page_parity_v0",
+  "applies_to_view_family": "absence_page",
+  "applies_to_route_family": "public_static",
+  "covered_representation_profiles": [
+    "api_json",
+    "html32",
+    "lite_html",
+    "terminal_future",
+    "text"
+  ],
+  "required_semantic_fields_demonstrated": [
+    "absence_scope",
+    "allowed_actions",
+    "blocked_actions",
+    "canonical_route",
+    "confidence_or_uncertainty",
+    "evidence_summary",
+    "gaps",
+    "limitations",
+    "result_state",
+    "source_posture",
+    "title_or_label"
+  ],
+  "allowed_degradation_demo": {
+    "from": "visual badges",
+    "to": "text labels",
+    "meaning_preserved": true
+  },
+  "forbidden_omission_demo": {
+    "omission": "hiding known absence scope",
+    "why_forbidden": "A no-result projection must distinguish checked scope from not-checked scope and must not claim global absence."
+  },
+  "sample_semantic_payload": {
+    "canonical_route": "absence/example-query",
+    "title_or_label": "No local-index match for example query",
+    "result_state": "absence_scoped",
+    "source_posture": "local_index_only_summary",
+    "evidence_summary": "The local public index had no exact match. External sources were not checked.",
+    "absence_scope": {
+      "checked_scope": [
+        "controlled public index fixtures"
+      ],
+      "not_checked_scope": [
+        "live web",
+        "external archives",
+        "private collections"
+      ],
+      "near_misses_or_gaps": [
+        "manual observation batch pending"
+      ]
+    },
+    "confidence_or_uncertainty": "low coverage outside checked scope",
+    "allowed_actions": [
+      "inspect",
+      "view_absence_report"
+    ],
+    "blocked_actions": [
+      "live_probe",
+      "upload",
+      "download"
+    ],
+    "limitations": [
+      "local_index_only",
+      "no_live_probe",
+      "source_coverage_limited"
+    ],
+    "gaps": [
+      "external_baseline_pending"
+    ]
+  },
+  "no_product_runtime_behavior": true,
+  "no_hosting_enabled": true,
+  "no_live_probes_enabled": true,
+  "no_downloads_enabled": true,
+  "no_uploads_enabled": true,
+  "no_accounts_enabled": true,
+  "no_telemetry_enabled": true,
+  "no_native_project_created": true,
+  "no_master_index_mutation": true,
+  "notes": [
+    "This example is scoped absence only, not a live-source search claim."
+  ]
+}

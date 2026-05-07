@@ -1,0 +1,46 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-02
+title: Semantic renderer parity contract
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-02
+source_packet: .aide/context/latest-task-packet.md
+objective: Define semantic renderer parity before route/view/representation matrix and renderer runtime work.
+scope:
+  allowed_paths:
+    - contracts/representations/semantic_renderer_parity.v0.json
+    - docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md
+    - docs/roadmap/TRACK_EXECUTION_PLAN.md
+    - control/inventory/publication/semantic_renderer_parity_policy.json
+    - examples/representations/semantic_renderer_parity/**
+    - scripts/validate_semantic_renderer_parity.py
+    - tests/contracts/test_semantic_renderer_parity.py
+    - control/audits/track-a-02-semantic-renderer-parity-v0/**
+    - .aide/queue/TRACK-A-02/**
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - semantic renderer parity schema exists
+  - semantic renderer parity policy inventory exists
+  - examples validate
+  - validator and tests pass
+  - audit pack exists
+  - no runtime behavior is changed
+  - validation and evidence are recorded
+recommended_after: TRACK-A-01
+recommended_next: TRACK-A-03

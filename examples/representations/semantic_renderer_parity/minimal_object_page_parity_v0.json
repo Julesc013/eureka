@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1.0",
+  "example_id": "minimal_object_page_parity_v0",
+  "parity_policy_ref": "object_page_parity_v0",
+  "applies_to_view_family": "object_page",
+  "applies_to_route_family": "public_static",
+  "covered_representation_profiles": [
+    "api_json",
+    "native_card_future",
+    "print",
+    "standard_html",
+    "text"
+  ],
+  "required_semantic_fields_demonstrated": [
+    "blocked_actions",
+    "candidate_review_state",
+    "canonical_id",
+    "canonical_route",
+    "compatibility_summary",
+    "evidence_links",
+    "evidence_summary",
+    "gaps",
+    "identity",
+    "limitations",
+    "object_type",
+    "rights_posture",
+    "risk_posture",
+    "source_posture",
+    "title_or_label"
+  ],
+  "allowed_degradation_demo": {
+    "from": "rich graph",
+    "to": "edge list",
+    "meaning_preserved": true
+  },
+  "forbidden_omission_demo": {
+    "omission": "converting candidate into verified result",
+    "why_forbidden": "Object identity and review state remain provisional until later governed evidence and review work changes them."
+  },
+  "sample_semantic_payload": {
+    "identity": "example-object-002",
+    "canonical_id": "example-object-002",
+    "canonical_route": "objects/example-object-002",
+    "title_or_label": "Example archived component",
+    "object_type": "software_metadata_record",
+    "candidate_review_state": "review_required",
+    "source_posture": "fixture_summary_only",
+    "evidence_summary": "Evidence is a bounded fixture summary, not accepted truth.",
+    "evidence_links": [
+      "evidence/example-object-002-summary"
+    ],
+    "compatibility_summary": "Compatibility is unknown and requires later evidence.",
+    "rights_posture": "unknown",
+    "risk_posture": "metadata_only_not_scanned",
+    "blocked_actions": [
+      "download",
+      "mirror",
+      "execute",
+      "upload",
+      "live_probe"
+    ],
+    "limitations": [
+      "fixture_backed",
+      "compatibility_evidence_limited",
+      "no_rights_clearance",
+      "no_malware_scan"
+    ],
+    "gaps": [
+      "external_baseline_pending"
+    ]
+  },
+  "no_product_runtime_behavior": true,
+  "no_hosting_enabled": true,
+  "no_live_probes_enabled": true,
+  "no_downloads_enabled": true,
+  "no_uploads_enabled": true,
+  "no_accounts_enabled": true,
+  "no_telemetry_enabled": true,
+  "no_native_project_created": true,
+  "no_master_index_mutation": true,
+  "notes": [
+    "This example describes a future object-page view model only."
+  ]
+}

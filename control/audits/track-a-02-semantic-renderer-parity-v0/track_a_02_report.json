@@ -1,0 +1,67 @@
+{
+  "schema_version": "track_a_02_report.v0",
+  "status": "warn",
+  "track": "A",
+  "task": "TRACK-A-02",
+  "added_contracts": [
+    "contracts/representations/semantic_renderer_parity.v0.json",
+    "docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/semantic_renderer_parity_policy.json"
+  ],
+  "added_examples": [
+    "examples/representations/semantic_renderer_parity/minimal_absence_page_parity_v0.json",
+    "examples/representations/semantic_renderer_parity/minimal_object_page_parity_v0.json",
+    "examples/representations/semantic_renderer_parity/minimal_search_card_parity_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_semantic_renderer_parity.py",
+    "tests/contracts/test_semantic_renderer_parity.py"
+  ],
+  "updated_docs": [
+    "docs/roadmap/TRACK_EXECUTION_PLAN.md"
+  ],
+  "aide_evidence": [
+    ".aide/queue/TRACK-A-02/status.yaml",
+    ".aide/queue/TRACK-A-02/task.yaml",
+    ".aide/queue/TRACK-A-02/evidence/changed-files.md",
+    ".aide/queue/TRACK-A-02/evidence/remaining-risks.md",
+    ".aide/queue/TRACK-A-02/evidence/track-a-contract-result.md",
+    ".aide/queue/TRACK-A-02/evidence/validation.md"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/publication/semantic_renderer_parity_policy.json": "pass",
+    "python -m json.tool control/audits/track-a-02-semantic-renderer-parity-v0/track_a_02_report.json": "pass",
+    "python scripts/validate_representation_contracts.py": "pass",
+    "python scripts/validate_semantic_renderer_parity.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "strict secret scan over changed paths": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_0_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_verifier_0_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false
+  },
+  "next_task": "TRACK-A-03 \u2014 Route/view/representation matrix"
+}

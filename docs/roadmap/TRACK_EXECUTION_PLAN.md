@@ -17,11 +17,15 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-01 - Host/profile/representation contract bundle`
+`TRACK-A-03 - Route/view/representation matrix`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
 evidence, and action vocabulary.
+
+Track A-01 established the host/profile/representation contract bundle. Track
+A-02 established the semantic renderer parity policy that constrains those
+profiles before renderer or view-model runtime work widens.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

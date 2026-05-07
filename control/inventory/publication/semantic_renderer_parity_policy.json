@@ -1,0 +1,1649 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-publication-semantic-renderer-parity-policy",
+  "contract_ref": "contracts/representations/semantic_renderer_parity.v0.json",
+  "status": "contract_only",
+  "stability": "experimental",
+  "created_by_slice": "track_a_02_semantic_renderer_parity_v0",
+  "required_view_families": [
+    "absence_page",
+    "candidate_page_future",
+    "download_manifest_page",
+    "need_page_future",
+    "object_page",
+    "pack_page_future",
+    "review_page_future",
+    "search_page",
+    "search_result_card",
+    "source_page",
+    "task_page_future"
+  ],
+  "required_semantic_categories": [
+    "absence_scope",
+    "allowed_actions",
+    "blocked_actions",
+    "candidate_review_state",
+    "canonical_id",
+    "canonical_route",
+    "compatibility_summary",
+    "confidence_or_uncertainty",
+    "evidence_links",
+    "evidence_summary",
+    "gaps",
+    "generated_or_observed_status",
+    "identity",
+    "last_updated_or_observed_when_available",
+    "limitations",
+    "object_type",
+    "provenance_or_lineage",
+    "result_state",
+    "rights_posture",
+    "risk_posture",
+    "source_posture",
+    "title_or_label"
+  ],
+  "required_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_degradation_examples": [
+    "account watch button to unavailable/read-only notice",
+    "CSS styling to plain labels",
+    "download queue to manifest link",
+    "expandable evidence panel to evidence link list",
+    "images/icons to alt text or omitted decorative icons",
+    "inline preview to metadata and external/open action",
+    "interactive compare to numbered comparison table",
+    "modern card layout to plain table",
+    "rich graph to edge list",
+    "visual badges to text labels"
+  ],
+  "forbidden_omission_examples": [
+    "changing route identity based on profile",
+    "converting AI draft into evidence truth",
+    "converting candidate into verified result",
+    "converting source observation into accepted truth",
+    "hiding blocked actions",
+    "hiding candidate/provisional status",
+    "hiding conflicting evidence",
+    "hiding executable risk",
+    "hiding known absence scope",
+    "hiding rights uncertainty",
+    "hiding source uncertainty",
+    "hiding unresolved gaps",
+    "implying downloads/installers/uploads/accounts/telemetry where unavailable",
+    "implying hosted/live behavior where unavailable",
+    "removing canonical object/source/evidence links when the representation supports links"
+  ],
+  "policies": [
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "search_result_card_parity_v0",
+      "label": "Search result card parity",
+      "description": "Public search result cards must preserve the card's evidence, status, action, rights, risk, limitation, and gap posture across every projection.",
+      "applies_to_view_family": "search_result_card",
+      "applies_to_route_family": "public_search_static_handoff",
+      "source_contracts": [
+        "contracts/api/search_result_card.v0.json",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_state",
+        "canonical_id",
+        "canonical_route",
+        "compatibility_summary",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "identity",
+        "limitations",
+        "object_type",
+        "provenance_or_lineage",
+        "result_state",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "future_gated_actions"
+      ],
+      "required_status_fields": [
+        "candidate_review_state",
+        "generated_or_observed_status",
+        "result_state"
+      ],
+      "required_warning_fields": [
+        "gaps",
+        "limitations",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "source_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "modern card layout to plain table",
+        "visual badges to text labels"
+      ],
+      "forbidden_omissions": [
+        "hiding blocked actions",
+        "hiding candidate/provisional status",
+        "hiding executable risk",
+        "hiding rights uncertainty",
+        "hiding source uncertainty"
+      ],
+      "forbidden_transformations": [
+        "candidate result to verified result",
+        "source observation to accepted truth",
+        "route identity changes based on profile"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve machine-readable IDs, status, evidence, action, and limitation fields without inventing omitted values."
+        ],
+        "file_tree": [
+          "Preserve manifest, checksum, source, and limitation summaries without implying executable file hosting."
+        ],
+        "html32": [
+          "Preserve semantic labels in old-compatible markup without CSS-only or script-only meaning."
+        ],
+        "lite_html": [
+          "Preserve card status, evidence, warning, and action labels in simple markup."
+        ],
+        "manifest_json": [
+          "Preserve manifest scope, source posture, checksum posture, and no-download limitations."
+        ],
+        "native_card_future": [
+          "Preserve risk, rights, source, evidence, and action posture in compact native summary fields."
+        ],
+        "print": [
+          "Preserve canonical IDs, URLs, warnings, limitations, and evidence summaries in printable form."
+        ],
+        "relay_future": [
+          "Preserve public-read-only semantics and avoid relay runtime or proxy claims."
+        ],
+        "snapshot_future": [
+          "Preserve snapshot manifest, checksum, signature-placeholder, and limitation semantics."
+        ],
+        "standard_html": [
+          "Preserve all mandatory fields; richer layout is presentation only."
+        ],
+        "terminal_future": [
+          "Preserve labels without relying on color, cursor interaction, or private state."
+        ],
+        "text": [
+          "Preserve semantic labels as plain text, including canonical IDs and limitations."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Search result cards stay evidence-first across rich and constrained projections."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "search_page_parity_v0",
+      "label": "Search page parity",
+      "description": "Search pages must preserve query/result status, checked scope, warnings, actions, and absence or gap posture across projections.",
+      "applies_to_view_family": "search_page",
+      "applies_to_route_family": "public_search_static_handoff",
+      "source_contracts": [
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "result_state",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "query_action_limits"
+      ],
+      "required_status_fields": [
+        "generated_or_observed_status",
+        "query_status",
+        "result_state"
+      ],
+      "required_warning_fields": [
+        "backend_unavailable_or_static_notice",
+        "gaps",
+        "limitations"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "result_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "interactive compare to numbered comparison table",
+        "visual badges to text labels"
+      ],
+      "forbidden_omissions": [
+        "hiding blocked actions",
+        "hiding known absence scope",
+        "implying hosted/live behavior where unavailable"
+      ],
+      "forbidden_transformations": [
+        "static handoff to hosted live search",
+        "local index result to live-source result",
+        "route identity changes based on profile"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve machine-readable query status, limits, result refs, warning fields, and disabled capabilities."
+        ],
+        "file_tree": [
+          "Preserve search handoff manifest fields without implying a live API."
+        ],
+        "html32": [
+          "Preserve query, status, warnings, and result labels in simple tables or lists."
+        ],
+        "lite_html": [
+          "Preserve search status and disabled action notices without script."
+        ],
+        "manifest_json": [
+          "Preserve handoff status, generated artifact scope, and disabled live capability fields."
+        ],
+        "native_card_future": [
+          "Preserve search summary, warnings, result navigation, and read-only capability posture."
+        ],
+        "print": [
+          "Preserve query, result count, limitations, and canonical result references."
+        ],
+        "relay_future": [
+          "Preserve relay-safe read-only status without proxy or live-source claims."
+        ],
+        "snapshot_future": [
+          "Preserve snapshot query summary and checked-scope caveats."
+        ],
+        "standard_html": [
+          "Preserve all mandatory search-page fields; richer form controls are presentation only."
+        ],
+        "terminal_future": [
+          "Preserve query status and result summaries without color-only state."
+        ],
+        "text": [
+          "Preserve query, status, warnings, result refs, and limitations as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "A search page may be static, local, or future runtime, but profile selection must not change route meaning."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "object_page_parity_v0",
+      "label": "Object page parity",
+      "description": "Future object pages must preserve identity, provisional state, source/evidence/provenance, compatibility, rights, risk, limitations, and gaps across projections.",
+      "applies_to_view_family": "object_page",
+      "applies_to_route_family": "public_static",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_state",
+        "canonical_id",
+        "canonical_route",
+        "compatibility_summary",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "identity",
+        "last_updated_or_observed_when_available",
+        "limitations",
+        "object_type",
+        "provenance_or_lineage",
+        "result_state",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "review_or_future_actions"
+      ],
+      "required_status_fields": [
+        "candidate_review_state",
+        "generated_or_observed_status",
+        "identity_status",
+        "result_state"
+      ],
+      "required_warning_fields": [
+        "compatibility_caveats",
+        "gaps",
+        "limitations",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "source_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "rich graph to edge list",
+        "expandable evidence panel to evidence link list"
+      ],
+      "forbidden_omissions": [
+        "hiding candidate/provisional status",
+        "hiding conflicting evidence",
+        "hiding unresolved gaps",
+        "removing canonical object/source/evidence links when the representation supports links"
+      ],
+      "forbidden_transformations": [
+        "candidate object to verified object",
+        "source observation to accepted truth",
+        "AI draft to evidence truth"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve object IDs, status, evidence links, lineage, actions, and limitations as machine-readable fields."
+        ],
+        "file_tree": [
+          "Preserve object manifest, checksum, source, and evidence summaries without executable hosting claims."
+        ],
+        "html32": [
+          "Preserve object identity, status, lineage, and warnings in old-compatible tables or lists."
+        ],
+        "lite_html": [
+          "Preserve object identity, source, evidence, limitations, and warnings with simple markup."
+        ],
+        "manifest_json": [
+          "Preserve object manifest scope, source refs, checksum posture, and no-download caveats."
+        ],
+        "native_card_future": [
+          "Preserve identity, navigation refs, risk, rights, source, evidence, and limitations in compact fields."
+        ],
+        "print": [
+          "Preserve canonical object ID, route, source/evidence refs, caveats, and gaps."
+        ],
+        "relay_future": [
+          "Preserve object identity and read-only posture without relay service claims."
+        ],
+        "snapshot_future": [
+          "Preserve object snapshot refs, checksums, provenance, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory object fields; media and graph richness are presentation only."
+        ],
+        "terminal_future": [
+          "Preserve object labels, IDs, source/evidence posture, warnings, and action states as text."
+        ],
+        "text": [
+          "Preserve object labels, canonical IDs, evidence links, limitations, and gaps as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Object pages remain future contract surfaces until a later runtime/view-model milestone."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "source_page_parity_v0",
+      "label": "Source page parity",
+      "description": "Future source pages must preserve source identity, source posture, policy gates, evidence posture, rights, risk, limitations, and coverage gaps.",
+      "applies_to_view_family": "source_page",
+      "applies_to_route_family": "public_static",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "blocked_actions",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "identity",
+        "last_updated_or_observed_when_available",
+        "limitations",
+        "provenance_or_lineage",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "source_policy_gates"
+      ],
+      "required_status_fields": [
+        "generated_or_observed_status",
+        "source_status"
+      ],
+      "required_warning_fields": [
+        "coverage_limitations",
+        "gaps",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "source_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "visual badges to text labels",
+        "expandable evidence panel to evidence link list"
+      ],
+      "forbidden_omissions": [
+        "hiding source uncertainty",
+        "hiding rights uncertainty",
+        "hiding blocked actions",
+        "hiding unresolved gaps"
+      ],
+      "forbidden_transformations": [
+        "source policy posture to connector approval",
+        "source observation to accepted truth",
+        "source page to source API proxy"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve source IDs, source status, policy gates, evidence refs, limitations, and disabled actions."
+        ],
+        "file_tree": [
+          "Preserve source manifest and checksum summaries without mirroring or download claims."
+        ],
+        "html32": [
+          "Preserve source labels, policy gates, evidence, and warnings as simple text and tables."
+        ],
+        "lite_html": [
+          "Preserve source posture and caveats without requiring script, cookies, or credentials."
+        ],
+        "manifest_json": [
+          "Preserve source manifest scope, generation status, and checksum caveats."
+        ],
+        "native_card_future": [
+          "Preserve source posture, coverage, policy gates, warnings, and evidence refs."
+        ],
+        "print": [
+          "Preserve source ID, source status, policy gates, evidence refs, and caveats."
+        ],
+        "relay_future": [
+          "Preserve source read-only posture without relay proxy or live source behavior."
+        ],
+        "snapshot_future": [
+          "Preserve source snapshot metadata, checksums, provenance, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory source fields; badges and panels are presentation only."
+        ],
+        "terminal_future": [
+          "Preserve source posture, policy gates, evidence refs, and warnings as text labels."
+        ],
+        "text": [
+          "Preserve source posture, source ID, evidence refs, limitations, and disabled actions as text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Source pages explain source posture; they are not source connectors or live source proxies."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "absence_page_parity_v0",
+      "label": "Absence page parity",
+      "description": "Known absence pages must preserve checked scope, not-checked scope, near misses, gaps, uncertainty, and safe next actions without implying global absence.",
+      "applies_to_view_family": "absence_page",
+      "applies_to_route_family": "public_static",
+      "source_contracts": [
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "absence_scope",
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "result_state",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "safe_next_actions"
+      ],
+      "required_status_fields": [
+        "absence_status",
+        "generated_or_observed_status",
+        "result_state"
+      ],
+      "required_warning_fields": [
+        "absence_scope",
+        "gaps",
+        "limitations",
+        "source_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "near_miss_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope",
+        "checked_scope",
+        "near_misses_or_gaps",
+        "not_checked_scope"
+      ],
+      "allowed_degradations": [
+        "modern card layout to plain table",
+        "visual badges to text labels"
+      ],
+      "forbidden_omissions": [
+        "hiding known absence scope",
+        "hiding source uncertainty",
+        "hiding unresolved gaps",
+        "implying hosted/live behavior where unavailable"
+      ],
+      "forbidden_transformations": [
+        "scoped absence to global absence",
+        "not checked to checked",
+        "near miss to verified absence"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve checked scope, not-checked scope, near misses, gaps, and safe action fields."
+        ],
+        "file_tree": [
+          "Preserve absence manifest summaries without implying a live crawl or source probe."
+        ],
+        "html32": [
+          "Preserve checked and not-checked scope as visible text."
+        ],
+        "lite_html": [
+          "Preserve absence scope and safe next actions in simple markup."
+        ],
+        "manifest_json": [
+          "Preserve absence manifest scope and no-live-probe limitations."
+        ],
+        "native_card_future": [
+          "Preserve absence scope, uncertainty, gaps, and navigation refs in compact fields."
+        ],
+        "print": [
+          "Preserve checked scope, not-checked scope, uncertainty, and gaps in printable text."
+        ],
+        "relay_future": [
+          "Preserve absence scope without implying relay source checks."
+        ],
+        "snapshot_future": [
+          "Preserve snapshot checked scope and stale-or-limited coverage caveats."
+        ],
+        "standard_html": [
+          "Preserve all absence fields; richer panels are presentation only."
+        ],
+        "terminal_future": [
+          "Preserve absence scope, checked scope, and limitations as plain labels."
+        ],
+        "text": [
+          "Preserve absence scope, checked scope, not-checked scope, limitations, and gaps as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Known absence is scoped absence, never proof that external sources or the whole web were checked."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "label": "Download manifest page parity",
+      "description": "Manifest pages must preserve manifest/checksum/source summaries and blocked download/install/execute posture without making payload availability claims.",
+      "applies_to_view_family": "download_manifest_page",
+      "applies_to_route_family": "files",
+      "source_contracts": [
+        "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
+        "docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "provenance_or_lineage",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "manifest_only_actions"
+      ],
+      "required_status_fields": [
+        "generated_or_observed_status",
+        "manifest_status"
+      ],
+      "required_warning_fields": [
+        "executable_risk",
+        "limitations",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "manifest_links"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "download queue to manifest link",
+        "inline preview to metadata and external/open action"
+      ],
+      "forbidden_omissions": [
+        "hiding executable risk",
+        "hiding blocked actions",
+        "hiding rights uncertainty",
+        "implying downloads/installers/uploads/accounts/telemetry where unavailable"
+      ],
+      "forbidden_transformations": [
+        "manifest metadata to executable payload",
+        "checksum summary to payload verification guarantee",
+        "blocked download to allowed download"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve manifest IDs, checksums, source refs, risk, rights, blocked action fields, and limitations."
+        ],
+        "file_tree": [
+          "Preserve manifest/checksum/source summaries and avoid executable file hosting claims."
+        ],
+        "html32": [
+          "Preserve manifest labels, checksum caveats, and blocked action notices."
+        ],
+        "lite_html": [
+          "Preserve manifest metadata and blocked download/install/execute notices."
+        ],
+        "manifest_json": [
+          "Preserve manifest scope, checksum posture, source refs, and no payload guarantee."
+        ],
+        "native_card_future": [
+          "Preserve manifest summary, blocked action posture, risk, rights, and limitations."
+        ],
+        "print": [
+          "Preserve manifest refs, checksum caveats, source refs, and blocked actions in print."
+        ],
+        "relay_future": [
+          "Preserve relay-safe manifest metadata without relay download behavior."
+        ],
+        "snapshot_future": [
+          "Preserve snapshot manifest, checksums, and signature-placeholder caveats."
+        ],
+        "standard_html": [
+          "Preserve all mandatory manifest fields; previews are optional presentation."
+        ],
+        "terminal_future": [
+          "Preserve manifest/checksum fields and blocked action notices as text."
+        ],
+        "text": [
+          "Preserve manifest IDs, checksum caveats, source refs, limitations, and blocked actions as text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "The view family name is historical; this policy keeps manifest pages from becoming download surfaces."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "need_page_future_parity_v0",
+      "label": "Future need page parity",
+      "description": "Future need pages must preserve unresolved need scope, privacy posture, gaps, safe actions, candidate state, and source/evidence caveats.",
+      "applies_to_view_family": "need_page_future",
+      "applies_to_route_family": "nodes_future",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "absence_scope",
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_state",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "provenance_or_lineage",
+        "result_state",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "review_actions"
+      ],
+      "required_status_fields": [
+        "candidate_review_state",
+        "generated_or_observed_status",
+        "need_status"
+      ],
+      "required_warning_fields": [
+        "gaps",
+        "limitations",
+        "privacy_or_public_safety_notice"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "related_candidate_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope",
+        "checked_scope_when_available",
+        "not_checked_scope"
+      ],
+      "allowed_degradations": [
+        "account watch button to unavailable/read-only notice",
+        "modern card layout to plain table"
+      ],
+      "forbidden_omissions": [
+        "hiding known absence scope",
+        "hiding unresolved gaps",
+        "hiding blocked actions",
+        "hiding candidate/provisional status"
+      ],
+      "forbidden_transformations": [
+        "unresolved need to accepted candidate",
+        "private demand to public telemetry",
+        "review request to automatic probe"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve need ID, status, scope, safe actions, blocked actions, gaps, and privacy posture."
+        ],
+        "file_tree": [
+          "Preserve need manifest summaries without implying a task queue runtime."
+        ],
+        "html32": [
+          "Preserve need scope, status, gaps, and blocked actions as visible text."
+        ],
+        "lite_html": [
+          "Preserve need summary, scope, warnings, and safe actions in simple markup."
+        ],
+        "manifest_json": [
+          "Preserve need manifest scope and no-runtime limitations."
+        ],
+        "native_card_future": [
+          "Preserve need scope, review state, safe actions, gaps, and privacy caveats."
+        ],
+        "print": [
+          "Preserve need scope, status, gaps, and limitations in print."
+        ],
+        "relay_future": [
+          "Preserve read-only need summary without relay task execution."
+        ],
+        "snapshot_future": [
+          "Preserve need snapshot summary, checked scope, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory need fields; account-like affordances remain unavailable notices."
+        ],
+        "terminal_future": [
+          "Preserve need scope, status, gaps, and safe actions as text labels."
+        ],
+        "text": [
+          "Preserve need scope, status, limitations, gaps, and blocked actions as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Need pages are future and must not become telemetry, account, or probe surfaces by projection choice."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "candidate_page_future_parity_v0",
+      "label": "Future candidate page parity",
+      "description": "Future candidate pages must preserve provisional review state, evidence, conflicts, action gates, rights, risk, limitations, and non-promotion posture.",
+      "applies_to_view_family": "candidate_page_future",
+      "applies_to_route_family": "nodes_future",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_state",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "identity",
+        "limitations",
+        "object_type",
+        "provenance_or_lineage",
+        "result_state",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "review_actions"
+      ],
+      "required_status_fields": [
+        "candidate_review_state",
+        "generated_or_observed_status",
+        "promotion_status"
+      ],
+      "required_warning_fields": [
+        "conflicts",
+        "gaps",
+        "limitations",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "source_links_when_available"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "expandable evidence panel to evidence link list",
+        "rich graph to edge list"
+      ],
+      "forbidden_omissions": [
+        "converting candidate into verified result",
+        "hiding candidate/provisional status",
+        "hiding conflicting evidence",
+        "hiding rights uncertainty",
+        "hiding unresolved gaps"
+      ],
+      "forbidden_transformations": [
+        "candidate to accepted truth",
+        "review-required state to promoted state",
+        "conflict to resolved fact"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve candidate IDs, review state, confidence, evidence, conflicts, actions, and limitations."
+        ],
+        "file_tree": [
+          "Preserve candidate manifest summaries without staging or promotion side effects."
+        ],
+        "html32": [
+          "Preserve candidate status, evidence, conflicts, and caveats as visible labels."
+        ],
+        "lite_html": [
+          "Preserve candidate status and review caveats without script-only meaning."
+        ],
+        "manifest_json": [
+          "Preserve candidate manifest scope and non-promotion status."
+        ],
+        "native_card_future": [
+          "Preserve candidate status, confidence, review actions, risk, rights, and evidence refs."
+        ],
+        "print": [
+          "Preserve candidate status, evidence refs, confidence, conflicts, and caveats."
+        ],
+        "relay_future": [
+          "Preserve read-only candidate posture without relay mutation or promotion."
+        ],
+        "snapshot_future": [
+          "Preserve candidate snapshot status, provenance, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory candidate fields; review controls are presentation or future-gated only."
+        ],
+        "terminal_future": [
+          "Preserve candidate status, evidence refs, conflicts, and blocked actions as text."
+        ],
+        "text": [
+          "Preserve candidate status, canonical IDs, evidence refs, limitations, and conflicts as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "A candidate page is not candidate promotion or master-index mutation."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "pack_page_future_parity_v0",
+      "label": "Future pack page parity",
+      "description": "Future pack pages must preserve validation status, source/evidence/index lineage, privacy, rights, risk, limitations, and import-disabled posture.",
+      "applies_to_view_family": "pack_page_future",
+      "applies_to_route_family": "files",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "provenance_or_lineage",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "validate_only_actions"
+      ],
+      "required_status_fields": [
+        "generated_or_observed_status",
+        "pack_validation_status"
+      ],
+      "required_warning_fields": [
+        "limitations",
+        "privacy_or_redaction_notice",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "pack_manifest_links"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "download queue to manifest link",
+        "rich graph to edge list"
+      ],
+      "forbidden_omissions": [
+        "hiding rights uncertainty",
+        "hiding source uncertainty",
+        "hiding blocked actions",
+        "implying downloads/installers/uploads/accounts/telemetry where unavailable"
+      ],
+      "forbidden_transformations": [
+        "validate-only pack to imported pack",
+        "pack summary to accepted truth",
+        "manifest ref to executable payload"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve pack IDs, validation status, lineage, blocked import actions, privacy posture, and limitations."
+        ],
+        "file_tree": [
+          "Preserve pack manifest/checksum summaries without exposing private paths or payload execution."
+        ],
+        "html32": [
+          "Preserve pack status, lineage, warnings, and blocked actions in old-compatible text."
+        ],
+        "lite_html": [
+          "Preserve pack validation status and caveats without script."
+        ],
+        "manifest_json": [
+          "Preserve pack manifest scope, checksums, and validate-only posture."
+        ],
+        "native_card_future": [
+          "Preserve pack status, lineage, warnings, and disabled import posture."
+        ],
+        "print": [
+          "Preserve pack status, lineage, rights/risk caveats, and blocked actions."
+        ],
+        "relay_future": [
+          "Preserve read-only pack metadata without relay import or execution."
+        ],
+        "snapshot_future": [
+          "Preserve pack snapshot manifest, checksums, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory pack fields; upload/import controls remain unavailable notices."
+        ],
+        "terminal_future": [
+          "Preserve pack status, checksums, caveats, and blocked actions as text."
+        ],
+        "text": [
+          "Preserve pack manifest refs, validation status, limitations, and blocked actions as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Pack pages are future validate-only descriptions, not import or upload surfaces."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "task_page_future_parity_v0",
+      "label": "Future task page parity",
+      "description": "Future task pages must preserve task state, review gates, source/evidence refs, allowed and blocked actions, limitations, and no-automation posture.",
+      "applies_to_view_family": "task_page_future",
+      "applies_to_route_family": "nodes_future",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "provenance_or_lineage",
+        "result_state",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "review_actions"
+      ],
+      "required_status_fields": [
+        "generated_or_observed_status",
+        "review_gate",
+        "task_status"
+      ],
+      "required_warning_fields": [
+        "automation_disabled_notice",
+        "gaps",
+        "limitations"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "task_source_refs"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "account watch button to unavailable/read-only notice",
+        "interactive compare to numbered comparison table"
+      ],
+      "forbidden_omissions": [
+        "hiding blocked actions",
+        "hiding unresolved gaps",
+        "implying hosted/live behavior where unavailable",
+        "implying downloads/installers/uploads/accounts/telemetry where unavailable"
+      ],
+      "forbidden_transformations": [
+        "task plan to executed task",
+        "review gate to approval",
+        "manual action to automatic execution"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve task IDs, review gates, state, source/evidence refs, blocked actions, and limitations."
+        ],
+        "file_tree": [
+          "Preserve task manifest summaries without implying execution or queue runtime."
+        ],
+        "html32": [
+          "Preserve task state, review gate, warnings, and blocked actions as visible text."
+        ],
+        "lite_html": [
+          "Preserve task state, review gate, caveats, and safe actions without script."
+        ],
+        "manifest_json": [
+          "Preserve task manifest scope and no-execution posture."
+        ],
+        "native_card_future": [
+          "Preserve task state, review gate, safe actions, and blocked automation posture."
+        ],
+        "print": [
+          "Preserve task state, review gate, source/evidence refs, and limitations."
+        ],
+        "relay_future": [
+          "Preserve read-only task summary without relay automation or execution."
+        ],
+        "snapshot_future": [
+          "Preserve task snapshot state, provenance, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory task fields; workflow controls are unavailable or future-gated only."
+        ],
+        "terminal_future": [
+          "Preserve task state, review gate, warnings, and blocked actions as text."
+        ],
+        "text": [
+          "Preserve task state, review gate, source refs, limitations, and blocked actions as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Task pages remain future planning/review views, not execution surfaces."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "parity_policy_id": "review_page_future_parity_v0",
+      "label": "Future review page parity",
+      "description": "Future review pages must preserve review state, evidence, conflicts, reviewer uncertainty, blocked actions, limitations, and non-authority posture.",
+      "applies_to_view_family": "review_page_future",
+      "applies_to_route_family": "nodes_future",
+      "source_contracts": [
+        "docs/architecture/PUBLICATION_PLANE.md",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
+        "contracts/representations/representation_profile.v0.json"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "html32",
+        "lite_html",
+        "manifest_json",
+        "native_card_future",
+        "print",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "required_semantic_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_state",
+        "canonical_id",
+        "canonical_route",
+        "confidence_or_uncertainty",
+        "evidence_links",
+        "evidence_summary",
+        "gaps",
+        "generated_or_observed_status",
+        "limitations",
+        "provenance_or_lineage",
+        "result_state",
+        "rights_posture",
+        "risk_posture",
+        "source_posture",
+        "title_or_label"
+      ],
+      "required_action_fields": [
+        "allowed_actions",
+        "blocked_actions",
+        "review_actions"
+      ],
+      "required_status_fields": [
+        "candidate_review_state",
+        "generated_or_observed_status",
+        "review_status"
+      ],
+      "required_warning_fields": [
+        "conflicts",
+        "gaps",
+        "limitations",
+        "rights_posture",
+        "risk_posture"
+      ],
+      "required_link_fields": [
+        "canonical_route",
+        "evidence_links",
+        "review_subject_links"
+      ],
+      "required_absence_fields": [
+        "absence_scope_when_applicable"
+      ],
+      "allowed_degradations": [
+        "expandable evidence panel to evidence link list",
+        "interactive compare to numbered comparison table"
+      ],
+      "forbidden_omissions": [
+        "hiding candidate/provisional status",
+        "hiding conflicting evidence",
+        "hiding blocked actions",
+        "hiding rights uncertainty",
+        "hiding unresolved gaps"
+      ],
+      "forbidden_transformations": [
+        "review note to accepted truth",
+        "review-required state to approved state",
+        "conflict to resolved fact"
+      ],
+      "representation_specific_requirements": {
+        "api_json": [
+          "Preserve review IDs, state, evidence refs, conflicts, actions, warnings, and limitations."
+        ],
+        "file_tree": [
+          "Preserve review manifest summaries without creating write or approval side effects."
+        ],
+        "html32": [
+          "Preserve review state, conflicts, evidence refs, and caveats as visible labels."
+        ],
+        "lite_html": [
+          "Preserve review status, evidence, conflicts, warnings, and blocked actions without script."
+        ],
+        "manifest_json": [
+          "Preserve review manifest scope and non-authority posture."
+        ],
+        "native_card_future": [
+          "Preserve review state, evidence refs, conflicts, risk, rights, and action posture."
+        ],
+        "print": [
+          "Preserve review status, evidence refs, conflicts, caveats, and limitations."
+        ],
+        "relay_future": [
+          "Preserve read-only review posture without relay write or moderation behavior."
+        ],
+        "snapshot_future": [
+          "Preserve review snapshot state, provenance, conflicts, and limitations."
+        ],
+        "standard_html": [
+          "Preserve all mandatory review fields; workflow controls are unavailable or future-gated only."
+        ],
+        "terminal_future": [
+          "Preserve review state, evidence refs, conflicts, and blocked actions as text."
+        ],
+        "text": [
+          "Preserve review state, evidence refs, conflicts, limitations, and blocked actions as plain text."
+        ]
+      },
+      "parity_check_strategy": {
+        "reference_view_model_required": true,
+        "compare_required_fields": true,
+        "check_mode": "contract_inventory",
+        "manual_review_allowed": true
+      },
+      "review_required": true,
+      "no_product_runtime_behavior": true,
+      "no_hosting_enabled": true,
+      "no_live_probes_enabled": true,
+      "no_downloads_enabled": true,
+      "no_uploads_enabled": true,
+      "no_accounts_enabled": true,
+      "no_telemetry_enabled": true,
+      "no_native_project_created": true,
+      "no_master_index_mutation": true,
+      "notes": [
+        "Review pages are future governance views and do not approve records by being rendered."
+      ]
+    }
+  ],
+  "notes": [
+    "This policy inventory is contract/governance only.",
+    "Renderer profiles may simplify presentation but must not change source, evidence, status, rights, risk, limitation, route, absence, candidate, or action meaning.",
+    "This inventory does not change runtime behavior, public routes, hosted behavior, live probes, source connectors, downloads, uploads, accounts, telemetry, native projects, generated site artifacts, or master-index state."
+  ]
+}

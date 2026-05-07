@@ -33,23 +33,15 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/TRACK-A-01/evidence` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/TRACK-A-01/status.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/representations` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-01-representation-contracts-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/capability_negotiation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/host_profiles.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/representation_profiles.json` (??; does not match active task allowed paths)
-- allowed: `docs/reference/CAPABILITY_NEGOTIATION_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/HOST_PROFILE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/REPRESENTATION_PROFILE_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/representations` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_repository_layout.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_representation_contracts.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/TRACK-A-02` (??; does not match active task allowed paths)
+- unknown: `contracts/representations/semantic_renderer_parity.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-02-semantic-renderer-parity-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/semantic_renderer_parity_policy.json` (??; does not match active task allowed paths)
+- allowed: `docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
+- unknown: `examples/representations/semantic_renderer_parity` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_semantic_renderer_parity.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_semantic_renderer_parity.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -59,8 +51,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5644
-- approx_tokens: 1411
+- chars: 4932
+- approx_tokens: 1233
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

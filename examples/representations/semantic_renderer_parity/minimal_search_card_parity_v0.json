@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "example_id": "minimal_search_card_parity_v0",
+  "parity_policy_ref": "search_result_card_parity_v0",
+  "applies_to_view_family": "search_result_card",
+  "applies_to_route_family": "public_search_static_handoff",
+  "covered_representation_profiles": [
+    "api_json",
+    "lite_html",
+    "standard_html",
+    "text"
+  ],
+  "required_semantic_fields_demonstrated": [
+    "allowed_actions",
+    "blocked_actions",
+    "canonical_id",
+    "canonical_route",
+    "evidence_summary",
+    "limitations",
+    "result_state",
+    "rights_posture",
+    "risk_posture",
+    "source_posture",
+    "title_or_label"
+  ],
+  "allowed_degradation_demo": {
+    "from": "modern card layout",
+    "to": "plain table",
+    "meaning_preserved": true
+  },
+  "forbidden_omission_demo": {
+    "omission": "hiding blocked actions",
+    "why_forbidden": "A constrained renderer still has to show that download, install, execute, upload, and live probe actions are unavailable."
+  },
+  "sample_semantic_payload": {
+    "canonical_id": "example-object-001",
+    "canonical_route": "objects/example-object-001",
+    "title_or_label": "Example preserved utility",
+    "result_state": "candidate",
+    "source_posture": "local_index_only_summary",
+    "evidence_summary": "One public-safe fixture summary is available; no live source was checked.",
+    "rights_posture": "unknown",
+    "risk_posture": "metadata_only_not_scanned",
+    "allowed_actions": [
+      "inspect",
+      "read",
+      "view_source"
+    ],
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "upload",
+      "live_probe"
+    ],
+    "limitations": [
+      "local_index_only",
+      "no_live_probe",
+      "no_download",
+      "no_install",
+      "no_execute"
+    ]
+  },
+  "no_product_runtime_behavior": true,
+  "no_hosting_enabled": true,
+  "no_live_probes_enabled": true,
+  "no_downloads_enabled": true,
+  "no_uploads_enabled": true,
+  "no_accounts_enabled": true,
+  "no_telemetry_enabled": true,
+  "no_native_project_created": true,
+  "no_master_index_mutation": true,
+  "notes": [
+    "This compact example is public-safe and does not claim hosted search or live-source behavior."
+  ]
+}
