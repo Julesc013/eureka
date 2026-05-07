@@ -1,0 +1,29 @@
+schema_version: aide.task.v0
+task_id: TRACK-A-13
+title: Static SearchPage projection dry-run generator
+status: in_review
+track: A
+source_packet: user_prompt_2026-05-08
+scope:
+  - scripts/generate_static_searchpage_projection.py
+  - scripts/validate_static_searchpage_projection_dry_run.py
+  - scripts/validate_static_searchpage_projection_plan.py
+  - control/audits/track-a-13-static-searchpage-projection-dry-run-v0/**
+  - control/audits/track-a-12-static-searchpage-projection-plan-v0/**
+  - control/inventory/publication/search_page_static_projection_plan.json
+  - examples/view_models/search_page/static_projection_reference_v0.json
+  - tests/operations/test_static_searchpage_projection_dry_run.py
+product_boundary:
+  changed_product_behavior: false
+  changed_public_routes: false
+  changed_generated_site_artifacts: false
+  regenerated_site_dist: false
+  enabled_hosting: false
+  enabled_live_probes: false
+  enabled_downloads: false
+  enabled_uploads: false
+  enabled_accounts: false
+  enabled_telemetry: false
+notes:
+  - A12 prerequisite plan artifacts were missing locally and were restored narrowly for A13 validation.
+  - Generated projection files are audit evidence only and are not site/dist artifacts.

@@ -1,0 +1,10 @@
+schema_version: aide.task-status.v0
+task_id: TRACK-A-13
+status: pass_with_warnings
+result: dry_run_generator_added
+warnings:
+  - A11 static projection audit remains warn because current site/dist artifacts are not generated from a canonical SearchPageView fixture.
+  - AIDE verify may remain warn-only for optional imported references or diff-scope metadata.
+commit:
+  planned_subject: "contracts(view): add SearchPage projection dry-run generator"
+next_task: TRACK-A-14 - Object Source Need Candidate projection audit

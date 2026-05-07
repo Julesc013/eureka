@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-CTRL-01 - Commit changelog WorkUnit recovery documentation and source-comment standard
+UNSPECIFIED - TRACK-A-13 - Static SearchPage projection dry-run generator
 
 ## GOAL
 
-EUREKA-CTRL-01 - Commit changelog WorkUnit recovery documentation and source-comment standard
+TRACK-A-13 - Static SearchPage projection dry-run generator
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4131
-- approx_tokens: 1033
+- chars: 4063
+- approx_tokens: 1016
 - budget_status: PASS
 - warnings:
   - none

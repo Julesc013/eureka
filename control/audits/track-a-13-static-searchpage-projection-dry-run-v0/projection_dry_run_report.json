@@ -1,0 +1,154 @@
+{
+  "critical_boundary_violations": [],
+  "generated_outputs": [
+    {
+      "artifact_kind": "standard_static_html",
+      "byte_size": 3107,
+      "path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.standard.html",
+      "representation_profile": "standard_html",
+      "route_family": "search",
+      "sha256": "3ba2bc19e9b5f572a441f0c98f7378009c1901448bfab18d1fd086c252d0c866"
+    },
+    {
+      "artifact_kind": "lite_static_html",
+      "byte_size": 2034,
+      "path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.lite.html",
+      "representation_profile": "lite_html",
+      "route_family": "lite_static",
+      "sha256": "6a5449ed187102c79cd5a51a007bd804e1aa93a42edc707e27c0effe45cd616f"
+    },
+    {
+      "artifact_kind": "text_static",
+      "byte_size": 1754,
+      "path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.txt",
+      "representation_profile": "text",
+      "route_family": "text_static",
+      "sha256": "7d631eb135645f14edc2d70ecf4b2c8fa7cbad379cf2b7acf4b005a92521c7fb"
+    },
+    {
+      "artifact_kind": "file_tree_static",
+      "byte_size": 2059,
+      "path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search.README.txt",
+      "representation_profile": "file_tree",
+      "route_family": "files_static",
+      "sha256": "1494e0da84f916882859608e6c43456a87d7465b199994d36cc46d5c16e5595a"
+    },
+    {
+      "artifact_kind": "static_json_handoff",
+      "byte_size": 6788,
+      "path": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated/search_handoff.json",
+      "representation_profile": "api_json",
+      "route_family": "data_static",
+      "sha256": "754059a2f5262ab64f48bf8070d75c100763911bc77eaad59ec121c49dcd41b8"
+    }
+  ],
+  "next_task": "TRACK-A-14 - Object Source Need Candidate projection audit",
+  "product_boundary": {
+    "changed_generated_site_artifacts": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_native_projects": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "regenerated_site_dist": false
+  },
+  "schema_version": "track_a_13_projection_dry_run.v0",
+  "semantic_parity": {
+    "blocked_actions": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "compatibility_posture": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "hosted_live_download_upload_account_telemetry_non_claims": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "limitations": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "next_safe_actions": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "public_runtime_posture": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "query_identity": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "result_identity": {
+      "file_tree_static": "degraded_but_preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "risk_rights_posture": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "route_identity": {
+      "file_tree_static": "preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    },
+    "source_evidence_posture": {
+      "file_tree_static": "degraded_but_preserved",
+      "lite_static_html": "preserved",
+      "standard_static_html": "preserved",
+      "static_json_handoff": "preserved",
+      "text_static": "preserved"
+    }
+  },
+  "source_fixture": "examples/view_models/search_page/static_projection_reference_v0.json",
+  "status": "pass",
+  "task": "TRACK-A-13",
+  "track": "A",
+  "warnings": []
+}

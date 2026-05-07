@@ -1,0 +1,42 @@
+Search
+Route Identity: /search?q=sample+tool
+Query: sample tool
+Mode/Posture: static_handoff; static_handoff; hosted_backend_claimed=false; live_probes_enabled=false
+
+Result Summary
+One candidate result is represented for dry-run projection.
+
+Results
+- result_sample_tool_candidate: Sample Tool Candidate [candidate; review_required; local_index_only fixture; limited public fixture evidence]
+
+Source/Evidence: One public fixture source is represented. Evidence: Evidence is limited and candidate-grade.
+Risk/Rights: executable risk unknown; no artifact exposed; unknown rights
+Compatibility: unknown compatibility
+
+Limitations
+- Candidate only: The result is not verified truth.
+- Static handoff only: The projection does not create a hosted backend, live probe, download, upload, account, or telemetry behavior.
+
+Blocked Actions
+- live_probe_unavailable: Live probes are not enabled.
+- download_unavailable: Downloads are not enabled.
+- install_unavailable: Installers and execution are not enabled.
+- upload_unavailable: Uploads are not enabled.
+- account_unavailable: Accounts are not enabled.
+- telemetry_unavailable: Telemetry is not enabled.
+- hosted_backend_unavailable: Hosted backend remains unavailable.
+
+Next Safe Actions
+- submit_search_get: Submit search
+- view_result: View result
+- view_source: View source
+- view_evidence: View evidence
+- copy_query: Copy query
+
+Static/Public Boundary
+- Hosted backend unavailable.
+- Live probes unavailable.
+- Downloads, installers, execution, uploads, accounts, and telemetry unavailable.
+- This is dry-run audit evidence only, not an active public site or production API.
+
+Generated From: examples/view_models/search_page/static_projection_reference_v0.json

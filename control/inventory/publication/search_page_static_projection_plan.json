@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.1.0",
+  "plan_id": "search-page-static-projection-plan-v0",
+  "label": "Static SearchPage projection dry-run plan",
+  "description": "Plan for proving that one canonical SearchPageView fixture can drive standard HTML, lite HTML, text, file-tree README, and static JSON handoff previews without mutating site/dist.",
+  "track": "A",
+  "task": "TRACK-A-12",
+  "status": "ready_for_dry_run",
+  "source_view_family": "SearchPageView",
+  "source_fixture": "examples/view_models/search_page/static_projection_reference_v0.json",
+  "source_view_schema": "contracts/views/search_page.v0.json",
+  "default_output_root": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated",
+  "projection_targets": [
+    {
+      "target_id": "standard_static_html",
+      "output_filename": "search.standard.html",
+      "representation_profile": "standard_html",
+      "route_family": "search",
+      "required_semantic_categories": [
+        "route_identity",
+        "query_identity",
+        "public_runtime_posture",
+        "result_identity",
+        "source_evidence_posture",
+        "risk_rights_posture",
+        "compatibility_posture",
+        "limitations",
+        "blocked_actions",
+        "next_safe_actions"
+      ]
+    },
+    {
+      "target_id": "lite_static_html",
+      "output_filename": "search.lite.html",
+      "representation_profile": "lite_html",
+      "route_family": "lite_static",
+      "required_semantic_categories": [
+        "route_identity",
+        "query_identity",
+        "public_runtime_posture",
+        "result_identity",
+        "source_evidence_posture",
+        "risk_rights_posture",
+        "limitations",
+        "blocked_actions"
+      ]
+    },
+    {
+      "target_id": "text_static",
+      "output_filename": "search.txt",
+      "representation_profile": "text",
+      "route_family": "text_static",
+      "required_semantic_categories": [
+        "route_identity",
+        "query_identity",
+        "public_runtime_posture",
+        "result_identity",
+        "source_evidence_posture",
+        "risk_rights_posture",
+        "compatibility_posture",
+        "limitations",
+        "blocked_actions",
+        "next_safe_actions"
+      ]
+    },
+    {
+      "target_id": "file_tree_static",
+      "output_filename": "search.README.txt",
+      "representation_profile": "file_tree",
+      "route_family": "files_static",
+      "required_semantic_categories": [
+        "route_identity",
+        "query_identity",
+        "public_runtime_posture",
+        "limitations",
+        "blocked_actions"
+      ]
+    },
+    {
+      "target_id": "static_json_handoff",
+      "output_filename": "search_handoff.json",
+      "representation_profile": "api_json",
+      "route_family": "data_static",
+      "required_semantic_categories": [
+        "route_identity",
+        "query_identity",
+        "public_runtime_posture",
+        "result_identity",
+        "source_evidence_posture",
+        "risk_rights_posture",
+        "compatibility_posture",
+        "limitations",
+        "blocked_actions",
+        "next_safe_actions"
+      ]
+    }
+  ],
+  "output_root_policy": {
+    "default_output_root": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated",
+    "allowed_repo_prefixes": [
+      "control/audits",
+      ".aide/reports"
+    ],
+    "allowed_outside_repo": true,
+    "forbidden_repo_prefixes": [
+      "site/dist",
+      "site/pages",
+      "site/templates",
+      "runtime",
+      "contracts",
+      "control/inventory",
+      "surfaces",
+      "native"
+    ],
+    "notes": [
+      "Generated previews are audit/scratch evidence only.",
+      "The generator must reject site/dist and product/runtime/canonical policy roots."
+    ]
+  },
+  "required_validators": [
+    "scripts/validate_search_page_view_model.py",
+    "scripts/validate_static_searchpage_projection_plan.py",
+    "scripts/generate_static_searchpage_projection.py --check",
+    "scripts/validate_static_searchpage_projection_dry_run.py"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false
+  },
+  "deferred_work": [
+    "Renderer parity diff against existing site/dist artifacts.",
+    "Replacing current static artifacts with generated projections.",
+    "Hosted runtime and live source behavior."
+  ],
+  "notes": [
+    "This plan was restored as a narrow prerequisite for TRACK-A-13 because A13 depends on the fixture and plan validator.",
+    "The plan is governance evidence only and does not mutate generated site artifacts."
+  ]
+}

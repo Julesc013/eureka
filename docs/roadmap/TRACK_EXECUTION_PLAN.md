@@ -17,7 +17,7 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-13 - Static SearchPage projection dry-run generator`
+`TRACK-A-14 - Object Source Need Candidate projection audit`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
@@ -49,7 +49,10 @@ cross-contract validator for the Track A contract family. Track A-11 audited
 the existing static SearchPage publication artifacts against `SearchPageView`
 without regenerating or refactoring `site/dist`. EUREKA-CTRL-01 inserted
 commit, changelog, WorkUnit recovery, documentation quality, and source-comment
-standards before continuing generator work.
+standards before continuing generator work. Track A-13 added an audit-only
+dry-run generator that projects one canonical SearchPageView fixture into
+standard HTML, lite HTML, text, file-tree README, and JSON handoff previews
+under `control/audits/**` without changing `site/dist`.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

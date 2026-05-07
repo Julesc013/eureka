@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Static SearchPage projection reference</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.45; max-width: 56rem; margin: 2rem auto; padding: 0 1rem; }
+    section { border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 1rem; }
+    .label { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Search</h1>
+  <p><span class="label">Route Identity:</span> /search?q=sample+tool</p>
+  <p><span class="label">Query:</span> sample tool</p>
+  <p><span class="label">Mode/Posture:</span> static_handoff; static_handoff; hosted_backend_claimed=false; live_probes_enabled=false</p>
+  <p><span class="label">Hosted backend unavailable:</span> true. <span class="label">Live probes unavailable:</span> true. No JavaScript is required.</p>
+  <section><h2>Result Summary</h2><p>One candidate result is represented for dry-run projection.</p></section>
+  <section><h2>Results</h2><article>
+  <h3>Sample Tool Candidate</h3>
+  <p><span class="label">Result State:</span> candidate</p>
+  <p><span class="label">Source/Evidence:</span> local_index_only fixture; limited public fixture evidence</p>
+  <p><span class="label">Risk/Rights:</span> executable risk unknown; no artifact exposed; unknown rights</p>
+  <p><span class="label">Compatibility:</span> unknown compatibility</p>
+</article></section>
+  <section><h2>Source/Evidence</h2><p>One public fixture source is represented. Evidence: Evidence is limited and candidate-grade.</p></section>
+  <section><h2>Risk/Rights</h2><p>executable risk unknown; no artifact exposed; unknown rights</p></section>
+  <section><h2>Compatibility</h2><p>unknown compatibility</p></section>
+  <section><h2>Limitations</h2><ul>
+  <li>Candidate only: The result is not verified truth.</li>
+  <li>Static handoff only: The projection does not create a hosted backend, live probe, download, upload, account, or telemetry behavior.</li>
+</ul></section>
+  <section><h2>Blocked Actions</h2><ul>
+  <li>live_probe_unavailable: Live probes are not enabled.</li>
+  <li>download_unavailable: Downloads are not enabled.</li>
+  <li>install_unavailable: Installers and execution are not enabled.</li>
+  <li>upload_unavailable: Uploads are not enabled.</li>
+  <li>account_unavailable: Accounts are not enabled.</li>
+  <li>telemetry_unavailable: Telemetry is not enabled.</li>
+  <li>hosted_backend_unavailable: Hosted backend remains unavailable.</li>
+</ul></section>
+  <section><h2>Next Safe Actions</h2><ul>
+  <li>submit_search_get: Submit search</li>
+  <li>view_result: View result</li>
+  <li>view_source: View source</li>
+  <li>view_evidence: View evidence</li>
+  <li>copy_query: Copy query</li>
+</ul></section>
+  <section><h2>Static/Public Boundary</h2><p>No hosted backend, live probes, downloads, uploads, accounts, telemetry, production API, or deployment behavior is claimed.</p></section>
+  <footer><p>Generated from examples/view_models/search_page/static_projection_reference_v0.json as audit evidence only.</p></footer>
+</body>
+</html>

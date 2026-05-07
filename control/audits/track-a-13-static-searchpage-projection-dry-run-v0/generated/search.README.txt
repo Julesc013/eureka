@@ -1,0 +1,58 @@
+SearchPage Static Projection Dry Run
+
+Artifact Purpose
+- Public-safe file-tree README for generated SearchPage projection evidence.
+
+Source SearchPageView Fixture: examples/view_models/search_page/static_projection_reference_v0.json
+Route Identity: /search?q=sample+tool
+Query: sample tool
+Mode/Posture: static_handoff; static_handoff; hosted_backend_claimed=false; live_probes_enabled=false
+
+Output File List
+- search.standard.html
+- search.lite.html
+- search.txt
+- search.README.txt
+- search_handoff.json
+
+Result Summary
+- One candidate result is represented for dry-run projection.
+
+Source/Evidence
+- One public fixture source is represented. Evidence: Evidence is limited and candidate-grade.
+
+Risk/Rights
+- executable risk unknown; no artifact exposed; unknown rights
+
+Compatibility
+- unknown compatibility
+
+Limitations
+- Candidate only: The result is not verified truth.
+- Static handoff only: The projection does not create a hosted backend, live probe, download, upload, account, or telemetry behavior.
+
+Blocked Actions
+- live_probe_unavailable: Live probes are not enabled.
+- download_unavailable: Downloads are not enabled.
+- install_unavailable: Installers and execution are not enabled.
+- upload_unavailable: Uploads are not enabled.
+- account_unavailable: Accounts are not enabled.
+- telemetry_unavailable: Telemetry is not enabled.
+- hosted_backend_unavailable: Hosted backend remains unavailable.
+
+Next Safe Actions
+- submit_search_get: Submit search
+- view_result: View result
+- view_source: View source
+- view_evidence: View evidence
+- copy_query: Copy query
+
+Boundary Notes
+- No live API claim.
+- No download or install claim.
+- No hosted backend claim.
+- No upload, account, telemetry, rights-clearance, malware-safety, verified-installability, exhaustive-search, or auto-promotion claim.
+- Checksums in the dry-run report describe generated preview files only.
+
+Generated Root
+- D:\Projects\Eureka\eureka\control\audits\track-a-13-static-searchpage-projection-dry-run-v0\generated

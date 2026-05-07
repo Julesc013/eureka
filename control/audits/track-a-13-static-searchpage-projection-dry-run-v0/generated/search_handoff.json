@@ -1,0 +1,204 @@
+{
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Live probes are not enabled."
+    },
+    {
+      "action_id": "download_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Downloads are not enabled."
+    },
+    {
+      "action_id": "install_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Installers and execution are not enabled."
+    },
+    {
+      "action_id": "upload_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Uploads are not enabled."
+    },
+    {
+      "action_id": "account_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Accounts are not enabled."
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "policy": "TRACK-A no-goal",
+      "reason": "Telemetry is not enabled."
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "policy": "TRACK-E operator-gated",
+      "reason": "Hosted backend remains unavailable."
+    }
+  ],
+  "generated_from": {
+    "audit_only": true,
+    "generator": "scripts/generate_static_searchpage_projection.py",
+    "production_api_stability_claimed": false,
+    "source_fixture": "examples/view_models/search_page/static_projection_reference_v0.json"
+  },
+  "limitations": [
+    {
+      "description": "The result is not verified truth.",
+      "label": "Candidate only"
+    },
+    {
+      "description": "The projection does not create a hosted backend, live probe, download, upload, account, or telemetry behavior.",
+      "label": "Static handoff only"
+    }
+  ],
+  "notes": [
+    "Static JSON handoff preview only.",
+    "This is not a live API, production API, deployment artifact, or hosted backend claim."
+  ],
+  "product_boundary": {
+    "accounts_enabled": false,
+    "downloads_enabled": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "telemetry_enabled": false,
+    "uploads_enabled": false
+  },
+  "public_runtime_posture": {
+    "accounts_enabled": false,
+    "downloads_enabled": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "notes": [
+      "Dry-run fixture for static projection only.",
+      "No hosted backend, live source, account, upload, download, or telemetry behavior is enabled."
+    ],
+    "source_mode": "static_handoff",
+    "telemetry_enabled": false,
+    "uploads_enabled": false
+  },
+  "query": {
+    "interpreted_intent": {
+      "confidence_or_uncertainty": "Intent is a display hint and not evidence truth.",
+      "intent_status": "available",
+      "summary": "Search for a public-safe software-like object candidate."
+    },
+    "normalized_query": "sample tool",
+    "notes": [
+      "No raw user tracking, accounts, or telemetry are represented."
+    ],
+    "poisoning_guard_posture": "bounded_public_query",
+    "privacy_posture": "anonymous_no_retention",
+    "query_id_or_hash": "query-sample-tool-static-projection",
+    "query_plan_ref": "query_plan:sample-tool-static-projection",
+    "query_status": "interpreted",
+    "raw_query": "sample tool",
+    "submitted_via": "search_get"
+  },
+  "representation_profile": "api_json",
+  "result_summary": {
+    "confidence_or_uncertainty": "Candidate requires review before verified display.",
+    "result_count": 1,
+    "result_state": "candidate",
+    "summary": "One candidate result is represented for dry-run projection.",
+    "visible_result_count": 1
+  },
+  "results": [
+    {
+      "allowed_actions": [
+        "view_result",
+        "view_source",
+        "view_evidence"
+      ],
+      "blocked_actions": [
+        "download_unavailable",
+        "install_unavailable",
+        "live_probe_unavailable"
+      ],
+      "candidate_review_state": "review_required",
+      "canonical_object_id": "object_sample_tool_candidate",
+      "compatibility_posture": "unknown compatibility",
+      "confidence_or_uncertainty": "Low confidence; candidate only.",
+      "embedded_result_card": {
+        "actions": {
+          "allowed": [
+            "inspect",
+            "view_source",
+            "view_provenance"
+          ],
+          "blocked": [
+            "download",
+            "install_handoff",
+            "live_probe"
+          ]
+        },
+        "compatibility": {
+          "compatibility_posture": "unknown",
+          "summary": "Compatibility not verified."
+        },
+        "contract_id": "eureka_public_search_result_card_v0",
+        "evidence": {
+          "evidence_posture": "limited_fixture",
+          "summary": "One public-safe fixture mention."
+        },
+        "gaps": [
+          "review evidence missing"
+        ],
+        "identity": {
+          "identity_status": "candidate",
+          "public_target_ref": "sample-tool"
+        },
+        "limitations": [
+          "limited source coverage",
+          "no download",
+          "no install",
+          "no malware scan",
+          "no rights clearance"
+        ],
+        "record_kind": "software_like_object",
+        "result_id": "result_sample_tool_candidate",
+        "result_lane": "mentions_or_traces",
+        "rights": {
+          "rights_posture": "unknown"
+        },
+        "risk": {
+          "risk_posture": "executable_risk_unknown"
+        },
+        "schema_version": "0.1.0",
+        "source": {
+          "source_family": "fixture",
+          "source_id": "public_fixture_source",
+          "source_posture": "local_index_only"
+        },
+        "title": "Sample Tool Candidate",
+        "warnings": [
+          "candidate_not_verified"
+        ]
+      },
+      "evidence_posture": "limited public fixture evidence",
+      "gaps": [
+        "Needs reviewed evidence before promotion."
+      ],
+      "limitations": [
+        "Candidate is not verified.",
+        "No download, install, execution, or malware-safety claim is made."
+      ],
+      "result_card_ref": "contracts/api/search_result_card.v0.json",
+      "result_id": "result_sample_tool_candidate",
+      "result_state": "candidate",
+      "rights_posture": "unknown rights",
+      "risk_posture": "executable risk unknown; no artifact exposed",
+      "route": "/object/sample-tool-candidate",
+      "source_posture": "local_index_only fixture",
+      "title": "Sample Tool Candidate"
+    }
+  ],
+  "route_family": "search",
+  "schema_version": "track_a_13_search_handoff_preview.v0",
+  "search_mode": "static_handoff",
+  "source_view_model": {
+    "fixture_path": "examples/view_models/search_page/static_projection_reference_v0.json",
+    "view_family": "SearchPageView",
+    "view_model_id": "static_projection_reference_v0"
+  }
+}

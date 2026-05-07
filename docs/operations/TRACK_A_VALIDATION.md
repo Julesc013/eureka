@@ -46,6 +46,18 @@ python scripts/audit_static_searchpage_projection.py --check
 This read-only audit checks current static SearchPage-related publication
 artifacts against `SearchPageView` semantics without regenerating `site/dist`.
 
+## Static SearchPage Projection Dry Run
+
+```powershell
+python scripts/validate_static_searchpage_projection_plan.py
+python scripts/generate_static_searchpage_projection.py --check
+python scripts/validate_static_searchpage_projection_dry_run.py
+```
+
+These commands validate the static SearchPage projection plan, generate
+audit-only previews under `control/audits/**`, and verify that the generated
+outputs preserve SearchPageView semantics without mutating `site/dist`.
+
 ## What This Protects
 
 - Every canonical Track A view model has a schema, policy inventory, examples,
