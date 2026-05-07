@@ -509,6 +509,76 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "review-packet-evidence-only",
     "token-ledger-budget-check",
     "adapter-managed-section-determinism",
+    "repo_boundary_golden",
+    "compact_task_packet_golden",
+    "evidence_review_packet_golden",
+    "no_secret_or_local_state_golden",
+    "eureka_architecture_context_golden",
+    "generated_agent_guidance_golden",
+]
+
+EUREKA_PRODUCT_FORBIDDEN_PATTERNS = [
+    "runtime/**",
+    "contracts/**",
+    "surfaces/**",
+    "site/**",
+    "native/**",
+    "crates/**",
+    "connectors/**",
+    "packaging/**",
+    "third_party/**",
+]
+
+EUREKA_ARCHITECTURE_PATH_PREFIXES = [
+    "contracts/",
+    "control/",
+    "runtime/engine/",
+    "runtime/engine/interfaces/",
+    "runtime/gateway/",
+    "runtime/connectors/",
+    "surfaces/web/",
+    "surfaces/native/",
+    ".aide/",
+]
+
+EUREKA_AGENTS_BOUNDARY_MARKERS = [
+    "Eureka Repo Identity",
+    "High-Level Component Boundaries",
+    "Dependency Law",
+    "runtime/engine",
+    "runtime/gateway",
+    "runtime/connectors",
+    "surfaces/web",
+    "surfaces/native",
+    ".aide/` owns repo operating metadata only",
+    "AIDE does not own product semantics",
+]
+
+EUREKA_PACKET_REQUIRED_REFS = [
+    "AGENTS.md",
+    ".aide/memory/project-state.md",
+    LATEST_CONTEXT_PACKET_PATH,
+    REPO_MAP_JSON_PATH,
+    TEST_MAP_JSON_PATH,
+]
+
+EUREKA_PACKET_REQUIRED_VALIDATION = [
+    ".aide/scripts/aide_lite.py doctor",
+    ".aide/scripts/aide_lite.py validate",
+    ".aide/scripts/aide_lite.py test",
+    ".aide/scripts/aide_lite.py selftest",
+    ".aide/scripts/aide_lite.py eval run",
+    ".aide/scripts/aide_lite.py verify",
+    "scripts/check_architecture_boundaries.py",
+]
+
+EUREKA_SECRET_SCAN_PATHS = [
+    LATEST_PACKET_PATH,
+    LATEST_CONTEXT_PACKET_PATH,
+    REVIEW_PACKET_PATH,
+    TOKEN_SUMMARY_PATH,
+    "AGENTS.md",
+    GOLDEN_TASK_CATALOG_PATH,
 ]
 
 LEDGER_SURFACES = [
@@ -1819,6 +1889,18 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_token_ledger(repo_root)
     if task_id == "adapter-managed-section-determinism":
         return run_golden_adapter_determinism(repo_root)
+    if task_id == "repo_boundary_golden":
+        return run_golden_eureka_repo_boundary(repo_root)
+    if task_id == "compact_task_packet_golden":
+        return run_golden_eureka_compact_task_packet(repo_root)
+    if task_id == "evidence_review_packet_golden":
+        return run_golden_eureka_evidence_review_packet(repo_root)
+    if task_id == "no_secret_or_local_state_golden":
+        return run_golden_eureka_no_secret_or_local_state(repo_root)
+    if task_id == "eureka_architecture_context_golden":
+        return run_golden_eureka_architecture_context(repo_root)
+    if task_id == "generated_agent_guidance_golden":
+        return run_golden_eureka_generated_agent_guidance(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -1968,6 +2050,225 @@ def run_golden_adapter_determinism(repo_root: Path) -> GoldenTaskResult:
         ["AGENTS.md"],
         None,
         "Checks managed section replacement on an isolated fixture repo.",
+    )
+
+
+def repo_map_path_set(repo_root: Path) -> set[str]:
+    path = repo_root / REPO_MAP_JSON_PATH
+    if not path.exists():
+        return set()
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return set()
+    return {str(entry.get("path", "")) for entry in data.get("files", []) if isinstance(entry, dict)}
+
+
+def repo_has_path_prefix(repo_root: Path, prefix: str) -> bool:
+    normalized = normalize_rel(prefix).rstrip("/") + "/"
+    paths = repo_map_path_set(repo_root)
+    if any(path.startswith(normalized) for path in paths):
+        return True
+    return (repo_root / normalized).exists()
+
+
+def run_golden_eureka_repo_boundary(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    agents_path = repo_root / "AGENTS.md"
+    packet_path = repo_root / LATEST_PACKET_PATH
+    check_pass(checks, agents_path.exists(), "AGENTS.md exists")
+    check_pass(checks, packet_path.exists(), f"latest task packet exists: {LATEST_PACKET_PATH}")
+    if agents_path.exists():
+        agents = read_text(agents_path)
+        for marker in EUREKA_AGENTS_BOUNDARY_MARKERS:
+            check_pass(checks, marker in agents, f"AGENTS contains Eureka boundary marker: {marker}")
+    if packet_path.exists():
+        packet = read_text(packet_path)
+        allowed = markdown_section_body(packet, "ALLOWED_PATHS").lower()
+        forbidden = markdown_section_body(packet, "FORBIDDEN_PATHS").lower()
+        for pattern in EUREKA_PRODUCT_FORBIDDEN_PATTERNS:
+            check_pass(checks, pattern not in allowed, f"allowed paths avoid product boundary: {pattern}")
+            check_pass(checks, pattern in forbidden, f"forbidden paths include product boundary: {pattern}")
+        check_pass(checks, "without changing eureka product behavior" in packet.lower() or "no eureka product" in packet.lower(), "packet states no Eureka product behavior change")
+        check_pass(checks, ".aide/" in allowed, "packet allows AIDE operating metadata paths")
+    return golden_task_result(
+        "repo_boundary_golden",
+        checks,
+        ["AGENTS.md", LATEST_PACKET_PATH],
+        None,
+        "Checks Eureka product/AIDE boundaries before AIDE-only work is promoted.",
+    )
+
+
+def run_golden_eureka_compact_task_packet(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / LATEST_PACKET_PATH
+    check_pass(checks, path.exists(), f"latest task packet exists: {LATEST_PACKET_PATH}")
+    approx: int | None = None
+    if path.exists():
+        text = read_text(path)
+        stats = estimate_text(text, LATEST_PACKET_PATH)
+        approx = stats.approx_tokens
+        for section in PACKET_REQUIRED_SECTIONS:
+            check_pass(checks, contains_section(text, section), f"Eureka packet section present: {section}")
+        for ref in EUREKA_PACKET_REQUIRED_REFS:
+            check_pass(checks, ref in text, f"Eureka packet references {ref}")
+        for command in EUREKA_PACKET_REQUIRED_VALIDATION:
+            check_pass(checks, command in text, f"Eureka packet validation includes {command}")
+        check_pass(checks, ".aide/queue/" in text, "Eureka packet requires queue/evidence output")
+        check_pass(checks, "EUREKA" in text or "Eureka" in text, "Eureka packet is target-specific")
+        warnings = packet_budget_warnings(text, repo_root)[1]
+        check_pass(checks, not warnings, "Eureka packet has no forbidden prompt-pattern warnings")
+        _budget, status = ledger_budget_status(repo_root, "task_packet", stats.approx_tokens)
+        check_warn(checks, status != "over_budget", f"Eureka packet budget status: {status}")
+        lowered = text.lower()
+        check_pass(checks, "full chat history" not in lowered or "do not" in lowered, "Eureka packet avoids full chat history")
+        check_pass(checks, "full repo dump" not in lowered, "Eureka packet avoids full repo dumps")
+    return golden_task_result(
+        "compact_task_packet_golden",
+        checks,
+        [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, REPO_MAP_JSON_PATH, TEST_MAP_JSON_PATH, "AGENTS.md"],
+        approx,
+        "Checks the latest compact packet is target-specific and actionable for Eureka.",
+    )
+
+
+def run_golden_eureka_evidence_review_packet(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / REVIEW_PACKET_PATH
+    check_pass(checks, path.exists(), f"latest review packet exists: {REVIEW_PACKET_PATH}")
+    approx: int | None = None
+    if path.exists():
+        text = read_text(path)
+        stats = estimate_text(text, REVIEW_PACKET_PATH)
+        approx = stats.approx_tokens
+        for section in REVIEW_PACKET_REQUIRED_SECTIONS:
+            check_pass(checks, contains_section(text, section), f"Eureka review packet section present: {section}")
+        for ref in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH]:
+            check_pass(checks, ref in text, f"Eureka review packet references {ref}")
+        check_pass(checks, ".aide/queue/" in text or "evidence" in text.lower(), "Eureka review packet points at evidence")
+        check_pass(checks, "Decision Requested" in text, "Eureka review packet asks for a bounded decision")
+        lowered = text.lower()
+        forbidden_markers = ["raw_prompt_body", "raw_response_body", "begin private key", "openai_api_key", "anthropic_api_key", "deepseek_api_key"]
+        for marker in forbidden_markers:
+            check_pass(checks, marker not in lowered, f"Eureka review packet excludes {marker}")
+        _budget, status = ledger_budget_status(repo_root, "review_packet", stats.approx_tokens)
+        check_warn(checks, status != "over_budget", f"Eureka review packet budget status: {status}")
+    return golden_task_result(
+        "evidence_review_packet_golden",
+        checks,
+        [REVIEW_PACKET_PATH, LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH],
+        approx,
+        "Checks review packets stay compact, evidence-oriented, and secret-free.",
+    )
+
+
+def run_golden_eureka_no_secret_or_local_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ignore_lines = gitignore_lines(repo_root)
+    for pattern in [".aide.local/", ".aide.local/**", ".env"]:
+        check_pass(checks, pattern in ignore_lines, f".gitignore contains local/cache safety rule: {pattern}")
+    cache_rule_groups = [
+        ("python bytecode cache", ["__pycache__/"]),
+        ("compiled python files", ["*.pyc", "*.py[cod]"]),
+        ("pytest cache", [".pytest_cache/"]),
+        ("build or temp output", ["build/", "dist/", "tmp/"]),
+    ]
+    for label, alternatives in cache_rule_groups:
+        check_pass(checks, any(pattern in ignore_lines for pattern in alternatives), f".gitignore contains {label} ignore rule")
+    tracked_local = local_state_git_paths(repo_root)
+    check_pass(checks, not tracked_local, "no tracked or staged .aide.local paths")
+    for rel in [".env", "secrets"]:
+        ok, tracked, _error = git_ls_files(repo_root, rel)
+        if ok:
+            check_pass(checks, not tracked, f"no tracked {rel} paths")
+        else:
+            check_pass(checks, not (repo_root / rel).exists() or is_ignored(rel, load_ignore_patterns(repo_root)), f"{rel} path absent or ignored when git is unavailable")
+    secret_findings: list[VerificationFinding] = []
+    for rel in EUREKA_SECRET_SCAN_PATHS:
+        path = repo_root / rel
+        if path.exists() and path.is_file():
+            secret_findings.extend(finding for finding in scan_secret_text(read_text(path), rel) if finding.severity == "ERROR")
+    check_pass(checks, not secret_findings, "selected AIDE packets/reports/guidance contain no secret-like values")
+    for rel in [TOKEN_SUMMARY_PATH, REVIEW_PACKET_PATH]:
+        path = repo_root / rel
+        if path.exists() and path.is_file():
+            text = read_text(path).lower()
+            check_pass(checks, "raw_prompt_body" not in text, f"{rel} omits raw_prompt_body")
+            check_pass(checks, "raw_response_body" not in text, f"{rel} omits raw_response_body")
+    return golden_task_result(
+        "no_secret_or_local_state_golden",
+        checks,
+        [".gitignore", *EUREKA_SECRET_SCAN_PATHS],
+        None,
+        "Checks local state, secret, raw prompt, and raw response boundaries.",
+    )
+
+
+def run_golden_eureka_architecture_context(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    agents_path = repo_root / "AGENTS.md"
+    context_path = repo_root / LATEST_CONTEXT_PACKET_PATH
+    repo_map_path = repo_root / REPO_MAP_JSON_PATH
+    check_pass(checks, agents_path.exists(), "AGENTS.md exists for architecture doctrine")
+    if agents_path.exists():
+        agents = read_text(agents_path)
+        for marker in EUREKA_AGENTS_BOUNDARY_MARKERS:
+            check_pass(checks, marker in agents, f"architecture doctrine marker present: {marker}")
+    check_pass(checks, repo_map_path.exists(), f"repo map exists: {REPO_MAP_JSON_PATH}")
+    if repo_map_path.exists():
+        try:
+            repo_map = json.loads(read_text(repo_map_path))
+            check_pass(checks, repo_map.get("contents_inline") is False, "repo map does not inline file contents")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"repo map readable for Eureka architecture context: {exc}"))
+        for prefix in EUREKA_ARCHITECTURE_PATH_PREFIXES:
+            check_pass(checks, repo_has_path_prefix(repo_root, prefix), f"repo map surfaces architecture prefix: {prefix}")
+    check_pass(checks, context_path.exists(), f"context packet exists: {LATEST_CONTEXT_PACKET_PATH}")
+    if context_path.exists():
+        context = read_text(context_path)
+        for marker in ["## REPO_MAP", "## ROLE_COUNTS", "## TEST_MAP", "contents_inline: false"]:
+            check_pass(checks, marker in context, f"context packet contains architecture marker: {marker}")
+    for rel in ["scripts/check_architecture_boundaries.py", "control/inventory/tests/command_matrix.json", "docs/operations/TEST_AND_EVAL_LANES.md"]:
+        check_pass(checks, (repo_root / rel).exists(), f"architecture validation ref exists: {rel}")
+    return golden_task_result(
+        "eureka_architecture_context_golden",
+        checks,
+        ["AGENTS.md", LATEST_CONTEXT_PACKET_PATH, REPO_MAP_JSON_PATH, "scripts/check_architecture_boundaries.py"],
+        None,
+        "Checks AIDE context surfaces Eureka architecture and validation boundaries.",
+    )
+
+
+def run_golden_eureka_generated_agent_guidance(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / "AGENTS.md"
+    check_pass(checks, path.exists(), "AGENTS.md exists")
+    if path.exists():
+        text = read_text(path)
+        status = adapter_status(repo_root)
+        check_pass(checks, status.status == "current", f"AGENTS managed adapter section status: {status.status}")
+        check_pass(checks, "Eureka Repo Identity" in text, "manual Eureka guidance is preserved")
+        check_pass(checks, "AIDE-GENERATED:BEGIN" in text and "AIDE-GENERATED:END" in text, "AIDE managed section markers are present")
+        for marker in [
+            ".aide/context/latest-task-packet.md",
+            ".aide/context/latest-context-packet.md",
+            "Do not paste long chat history",
+            "secrets",
+            ".aide.local/",
+            "Gateway and provider surfaces as no-call",
+        ]:
+            check_pass(checks, marker in text, f"AGENTS guidance contains {marker}")
+        first = render_agents_section(repo_root)
+        second = render_agents_section(repo_root)
+        check_pass(checks, first == second, "generated AGENTS section renders deterministically")
+        check_pass(checks, estimate_text(first, "AGENTS.md").approx_tokens < 900, "generated AGENTS section remains compact")
+    return golden_task_result(
+        "generated_agent_guidance_golden",
+        checks,
+        ["AGENTS.md", ".aide/adapters/templates/AGENTS.md.template", ".aide/generated/adapters/AGENTS.md"],
+        None,
+        "Checks generated agent guidance is deterministic, compact, and aligned with Eureka AIDE rules.",
     )
 
 
@@ -3978,6 +4279,15 @@ def contains_section(text: str, section: str) -> bool:
 
 def missing_sections(text: str, sections: Iterable[str]) -> list[str]:
     return [section for section in sections if not contains_section(text, section)]
+
+
+def markdown_section_body(text: str, section: str) -> str:
+    match = re.search(
+        rf"^##\s+{re.escape(section)}\s*$\n(?P<body>.*?)(?=^##\s+|\Z)",
+        text,
+        re.MULTILINE | re.DOTALL,
+    )
+    return match.group("body") if match else ""
 
 
 def add_finding(findings: list[VerificationFinding], severity: str, check: str, message: str, path: str = "") -> None:
@@ -6146,7 +6456,7 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
@@ -6163,6 +6473,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
 - `{CACHE_KEYS_JSON_PATH}` ({'present' if (repo_root / CACHE_KEYS_JSON_PATH).exists() else 'missing; run cache report'})
 - `{CACHE_KEYS_MD_PATH}` ({'present' if (repo_root / CACHE_KEYS_MD_PATH).exists() else 'missing; run cache report'})
+- `AGENTS.md`
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 - `.aide/policies/cache.yaml`
@@ -6181,6 +6492,15 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `connectors/**`
+- `packaging/**`
+- `third_party/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
 - Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
@@ -6201,9 +6521,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 scripts/check_architecture_boundaries.py`
 - `py -3 scripts/aide validate`
 - `git diff --check`
 
@@ -6224,7 +6546,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -8664,8 +8986,46 @@ def _write_minimal_repo(root: Path) -> None:
     - .aide.local/**
 """,
     )
-    write_text(root / "AGENTS.md", "# AGENTS\n\nManual intro.\n")
+    write_text(
+        root / "AGENTS.md",
+        """# AGENTS
+
+Manual intro.
+
+## Eureka Repo Identity
+
+- Project name: Eureka
+- Canonical short namespace: `eureka`
+- Repo state: bootstrap and pre-product
+
+## High-Level Component Boundaries
+
+- `control/` holds governance and planning material, not product runtime behavior.
+- `contracts/` holds governed schemas, protocols, public API contracts, and shared UI contracts.
+- `runtime/engine` owns engine behavior plus concrete interfaces.
+- `runtime/gateway` owns gateway-facing runtime behavior.
+- `runtime/connectors` implements bounded acquisition adapters.
+- `surfaces/web` and `surfaces/native` are user-facing surfaces.
+- `.aide/` owns repo operating metadata only.
+
+## Dependency Law
+
+- Gateway may depend only on governed engine interfaces and contracts.
+- Connectors must not invent object truth or own trust semantics.
+- AIDE does not own product semantics and must not define runtime behavior.
+""",
+    )
     write_text(root / "README.md", "# README\n")
+    write_text(root / "contracts/archive/schemas/object.schema.yaml", "schema_version: eureka.fixture.object\n")
+    write_text(root / "control/inventory/tests/command_matrix.json", "{}\n")
+    write_text(root / "docs/operations/TEST_AND_EVAL_LANES.md", "# Test And Eval Lanes\n")
+    write_text(root / "scripts/check_architecture_boundaries.py", "print('architecture boundaries ok')\n")
+    write_text(root / "runtime/engine/interfaces/public/search.py", "SEARCH_BOUNDARY = 'public'\n")
+    write_text(root / "runtime/engine/interfaces/service/search_service.py", "SERVICE_BOUNDARY = 'search'\n")
+    write_text(root / "runtime/gateway/public_api/search_boundary.py", "GATEWAY_BOUNDARY = 'search'\n")
+    write_text(root / "runtime/connectors/example_adapter.py", "ADAPTER_BOUNDARY = 'metadata-only'\n")
+    write_text(root / "surfaces/web/server/workbench_server.py", "WEB_SURFACE = 'fixture'\n")
+    write_text(root / "surfaces/native/cli/main.py", "NATIVE_SURFACE = 'fixture'\n")
     write_text(
         root / ".aide/queue/Q13-evidence-review-workflow/task.yaml",
         """non_goals:
@@ -8781,7 +9141,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in context_text
         valid_ref, _message = validate_line_ref(root, "README.md#L1-L1")
         assert valid_ref
-        packet_result, packet = write_task_packet(root, "Implement Q11 Context Compiler v0")
+        packet_result, packet = write_task_packet(root, "EUREKA-AIDE-GOLDEN-01 Add Eureka-specific AIDE golden tasks")
         packet_text = read_text(packet_result.path)
         for section in ["PHASE", "GOAL", "CONTEXT_REFS", "ACCEPTANCE", "TOKEN_ESTIMATE"]:
             assert f"## {section}" in packet_text

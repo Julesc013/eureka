@@ -1,0 +1,13 @@
+schema_version: aide.golden-task.v0
+task_id: compact_task_packet_golden
+title: Eureka Compact Task Packet Golden
+status: active
+purpose: Check that the latest compact task packet is target-specific and sufficient for bounded Eureka work.
+input_refs:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-context-packet.md
+  - .aide/context/repo-map.json
+  - .aide/context/test-map.json
+  - AGENTS.md
+acceptance_ref: .aide/evals/golden-tasks/compact_task_packet_golden/acceptance.md
+expected_result: PASS

@@ -26,7 +26,7 @@ class GoldenTaskTests(unittest.TestCase):
         root = Path(temp.name)
         aide_lite._write_minimal_repo(root)
         aide_lite.run_context(root)
-        aide_lite.write_task_packet(root, "Implement Q16 Outcome Controller v0")
+        aide_lite.write_task_packet(root, "EUREKA-AIDE-GOLDEN-01 Add Eureka-specific AIDE golden tasks")
         aide_lite.adapt_agents(root)
         report = aide_lite.build_verification_report(root, task_packet_path=aide_lite.LATEST_PACKET_PATH)
         aide_lite.write_verification_report(root, aide_lite.LATEST_VERIFICATION_REPORT_PATH, report)
@@ -39,9 +39,18 @@ class GoldenTaskTests(unittest.TestCase):
     def test_catalog_loading(self) -> None:
         root = self.make_repo()
         tasks = aide_lite.parse_golden_task_catalog(root)
-        self.assertGreaterEqual(len(tasks), 5)
+        self.assertGreaterEqual(len(tasks), len(aide_lite.REQUIRED_GOLDEN_TASK_IDS))
         self.assertEqual([task.task_id for task in tasks], sorted(task.task_id for task in tasks))
         self.assertIn("compact-task-packet-required-sections", {task.task_id for task in tasks})
+        for task_id in [
+            "repo_boundary_golden",
+            "compact_task_packet_golden",
+            "evidence_review_packet_golden",
+            "no_secret_or_local_state_golden",
+            "eureka_architecture_context_golden",
+            "generated_agent_guidance_golden",
+        ]:
+            self.assertIn(task_id, {task.task_id for task in tasks})
 
     def test_eval_list_command(self) -> None:
         root = self.make_repo()
@@ -70,10 +79,27 @@ class GoldenTaskTests(unittest.TestCase):
         data = json.loads(aide_lite.read_text(root / aide_lite.GOLDEN_RUN_JSON_PATH))
         self.assertEqual(data["schema_version"], "aide.golden-tasks-run.v0")
         self.assertEqual(data["result"], "PASS")
-        self.assertEqual(data["task_count"], 6)
+        self.assertEqual(data["task_count"], len(aide_lite.REQUIRED_GOLDEN_TASK_IDS))
         markdown = aide_lite.read_text(root / aide_lite.GOLDEN_RUN_MD_PATH)
         self.assertIn("# Latest Golden Tasks", markdown)
         self.assertIn("Token reduction remains valid only if golden tasks pass.", markdown)
+        self.assertIn("repo_boundary_golden", markdown)
+
+    def test_eureka_specific_golden_tasks_pass(self) -> None:
+        root = self.make_repo()
+        for task_id in [
+            "repo_boundary_golden",
+            "compact_task_packet_golden",
+            "evidence_review_packet_golden",
+            "no_secret_or_local_state_golden",
+            "eureka_architecture_context_golden",
+            "generated_agent_guidance_golden",
+        ]:
+            with self.subTest(task_id=task_id):
+                result = aide_lite.run_golden_task(root, task_id)
+                self.assertEqual(result.result, "PASS", result)
+                self.assertGreater(result.checks_run, 0)
+                self.assertEqual(result.errors, ())
 
     def test_fail_result_rendering_from_bad_packet_fixture(self) -> None:
         root = self.make_repo()

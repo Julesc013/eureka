@@ -50,3 +50,53 @@ tasks:
     quality_dimensions:
       - deterministic_output
       - references_present
+  - id: repo_boundary_golden
+    title: Eureka Repo Boundary Golden
+    status: active
+    description: Verify AIDE-only Eureka tasks preserve product/runtime boundaries and keep product paths forbidden unless explicitly scoped.
+    quality_dimensions:
+      - eureka_boundaries
+      - allowed_forbidden_paths
+      - no_product_behavior_change
+  - id: compact_task_packet_golden
+    title: Eureka Compact Task Packet Golden
+    status: active
+    description: Verify the latest task packet is target-specific, compact, actionable, and cites Eureka context, validation, evidence, and acceptance surfaces.
+    quality_dimensions:
+      - required_sections
+      - eureka_context_refs
+      - validation_commands
+      - token_budget_status
+  - id: evidence_review_packet_golden
+    title: Eureka Evidence Review Packet Golden
+    status: active
+    description: Verify review packets stay evidence-only, compact, decision-oriented, and free of raw prompts, raw responses, provider keys, or full dumps.
+    quality_dimensions:
+      - evidence_refs
+      - required_sections
+      - forbidden_content_absent
+      - token_budget_status
+  - id: no_secret_or_local_state_golden
+    title: Eureka No Secret Or Local State Golden
+    status: active
+    description: Verify AIDE Lite keeps `.aide.local/`, `.env`, provider keys, raw prompts, raw responses, and local state out of committed artifacts.
+    quality_dimensions:
+      - local_state_boundary
+      - secret_scan
+      - forbidden_content_absent
+  - id: eureka_architecture_context_golden
+    title: Eureka Architecture Context Golden
+    status: active
+    description: Verify AIDE Lite context surfaces Eureka architecture boundaries, repo-map metadata, test/eval lanes, and AIDE non-ownership of product semantics.
+    quality_dimensions:
+      - eureka_boundaries
+      - context_refs
+      - architecture_validation_refs
+  - id: generated_agent_guidance_golden
+    title: Eureka Generated Agent Guidance Golden
+    status: active
+    description: Verify generated and maintained agent guidance is deterministic, compact, and aligned with Eureka AIDE Lite token and safety rules.
+    quality_dimensions:
+      - deterministic_output
+      - agent_guidance
+      - token_discipline

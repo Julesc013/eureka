@@ -51,7 +51,8 @@ future compact packets safer before product implementation starts.
 ## FORBIDDEN_PATHS
 
 - Eureka product source paths: `runtime/**`, `contracts/**`, `surfaces/**`,
-  `site/**`, `native/**`, `crates/**`, and non-AIDE `tests/**`
+  `site/**`, `native/**`, `crates/**`, `connectors/**`, `packaging/**`,
+  `third_party/**`, and non-AIDE `tests/**`
 - Broad optional AIDE roots: `core/**`
 - `.git/**`
 - `.env`, `.env.*`
