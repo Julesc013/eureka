@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4075 chars, 1019 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4061 chars, 1016 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,17 +36,13 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/views/view_model_policy_index.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-10-view-model-policy-index-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/view_model_policy_index.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/TRACK_A_VALIDATION.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `control/audits/track-a-11-static-searchpage-view-model-projection-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/search_page_static_projection_map.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/STATIC_SEARCHPAGE_VIEW_MODEL_PROJECTION_AUDIT.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/TRACK_A_VALIDATION.md` (M; does not match active task allowed paths)
 - allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `examples/view_models/policy_index` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_track_a_contracts.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_view_model_policy_index.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_track_a_cross_contracts.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_view_model_policy_index.py` (??; does not match active task allowed paths)
+- unknown: `scripts/audit_static_searchpage_projection.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_static_searchpage_projection_audit.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -56,8 +52,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5385
-- approx_tokens: 1347
+- chars: 5038
+- approx_tokens: 1260
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

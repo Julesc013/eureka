@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-A-10 - View model policy index and cross-contract validator
+UNSPECIFIED - TRACK-A-11 - Static SearchPage view-model projection audit
 
 ## GOAL
 
-TRACK-A-10 - View model policy index and cross-contract validator
+TRACK-A-11 - Static SearchPage view-model projection audit
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4075
-- approx_tokens: 1019
+- chars: 4061
+- approx_tokens: 1016
 - budget_status: PASS
 - warnings:
   - none

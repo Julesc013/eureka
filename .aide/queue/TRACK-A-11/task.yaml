@@ -1,0 +1,27 @@
+schema_version: aide.task.v0
+id: TRACK-A-11
+title: Static SearchPage view-model projection audit
+status: active
+source: user_prompt
+scope:
+  - control/inventory/publication/search_page_static_projection_map.json
+  - docs/operations/STATIC_SEARCHPAGE_VIEW_MODEL_PROJECTION_AUDIT.md
+  - docs/operations/TRACK_A_VALIDATION.md
+  - docs/roadmap/TRACK_EXECUTION_PLAN.md
+  - scripts/audit_static_searchpage_projection.py
+  - tests/operations/test_static_searchpage_projection_audit.py
+  - control/audits/track-a-11-static-searchpage-view-model-projection-v0/**
+non_goals:
+  - no site/dist regeneration
+  - no static site refactor
+  - no runtime behavior changes
+  - no public route activation
+  - no hosted backend
+  - no live probes
+  - no source sync or connectors
+  - no downloads, installers, execution, uploads, accounts, or telemetry
+  - no model or provider calls
+  - no master-index mutation
+  - no native project creation
+  - no rights, malware, installability, evidence truth, exhaustive search, or auto-promotion claims
+next_task: TRACK-A-12 - Static SearchPage projection fixture and generator plan

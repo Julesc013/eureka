@@ -1,0 +1,322 @@
+{
+  "schema_version": "0.1.0",
+  "map_id": "search-page-static-projection-map-v0",
+  "label": "SearchPage static projection map",
+  "description": "Read-only Track A audit map from existing static SearchPage-related publication artifacts to the canonical SearchPageView contract. This map records current alignment and gaps only; it does not regenerate or refactor site/dist.",
+  "source_view_family": "SearchPageView",
+  "source_view_schema": "contracts/views/search_page.v0.json",
+  "route_family": "search",
+  "current_artifacts": [
+    "site/dist/search.html",
+    "site/dist/lite/search.html",
+    "site/dist/text/search.txt",
+    "site/dist/files/search.README.txt",
+    "site/dist/data/search_handoff.json"
+  ],
+  "static_artifact_bindings": [
+    {
+      "artifact_path": "site/dist/search.html",
+      "artifact_kind": "standard_static_html",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "search",
+      "expected_view_family": "SearchPageView",
+      "current_status": "present",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "fields_missing": [
+        "result_or_empty_state_meaning"
+      ],
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ],
+      "refactor_needed": true,
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ]
+    },
+    {
+      "artifact_path": "site/dist/lite/search.html",
+      "artifact_kind": "lite_static_html",
+      "exists": true,
+      "expected_representation_profile": "lite_html",
+      "expected_route_family": "lite_static",
+      "expected_view_family": "SearchPageView",
+      "current_status": "present",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "fields_missing": [
+        "result_or_empty_state_meaning"
+      ],
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ],
+      "refactor_needed": true,
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ]
+    },
+    {
+      "artifact_path": "site/dist/text/search.txt",
+      "artifact_kind": "text_static",
+      "exists": true,
+      "expected_representation_profile": "text",
+      "expected_route_family": "text_static",
+      "expected_view_family": "SearchPageView",
+      "current_status": "present",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "fields_missing": [
+        "source_evidence_posture"
+      ],
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ],
+      "refactor_needed": true,
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ]
+    },
+    {
+      "artifact_path": "site/dist/files/search.README.txt",
+      "artifact_kind": "file_tree_static",
+      "exists": true,
+      "expected_representation_profile": "file_tree",
+      "expected_route_family": "files_static",
+      "expected_view_family": "SearchPageView",
+      "current_status": "present",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "fields_missing": [
+        "source_evidence_posture"
+      ],
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ],
+      "refactor_needed": true,
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ]
+    },
+    {
+      "artifact_path": "site/dist/data/search_handoff.json",
+      "artifact_kind": "static_json_handoff",
+      "exists": true,
+      "expected_representation_profile": "api_json",
+      "expected_route_family": "data_static",
+      "expected_view_family": "SearchPageView",
+      "current_status": "present",
+      "current_generation_source": "scripts/generate_public_data_summaries.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "fields_missing": [],
+      "semantic_risks": [
+        "legacy handoff profile labels need mapping to Track A representation profiles",
+        "not yet traced to canonical SearchPageView fixture"
+      ],
+      "refactor_needed": true,
+      "notes": [
+        "JSON handoff explicitly records no hosted search claim.",
+        "JSON handoff includes disabled behavior booleans.",
+        "Read-only audit; artifact content was not changed."
+      ]
+    }
+  ],
+  "semantic_field_bindings": {
+    "route_identity": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/text/search.txt",
+      "site/dist/files/search.README.txt",
+      "site/dist/data/search_handoff.json"
+    ],
+    "query_identity_or_search_handoff": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/text/search.txt",
+      "site/dist/files/search.README.txt",
+      "site/dist/data/search_handoff.json"
+    ],
+    "public_runtime_posture": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/text/search.txt",
+      "site/dist/files/search.README.txt",
+      "site/dist/data/search_handoff.json"
+    ],
+    "source_evidence_posture": [
+      "site/dist/search.html",
+      "site/dist/lite/search.html",
+      "site/dist/data/search_handoff.json"
+    ]
+  },
+  "representation_profile_bindings": [
+    {
+      "artifact_path": "site/dist/search.html",
+      "representation_profile_id": "standard_html"
+    },
+    {
+      "artifact_path": "site/dist/lite/search.html",
+      "representation_profile_id": "lite_html"
+    },
+    {
+      "artifact_path": "site/dist/text/search.txt",
+      "representation_profile_id": "text"
+    },
+    {
+      "artifact_path": "site/dist/files/search.README.txt",
+      "representation_profile_id": "file_tree"
+    },
+    {
+      "artifact_path": "site/dist/data/search_handoff.json",
+      "representation_profile_id": "api_json"
+    }
+  ],
+  "route_matrix_refs": [
+    "search",
+    "lite_static",
+    "text_static",
+    "files_static",
+    "data_static"
+  ],
+  "parity_policy_refs": [
+    "search_page_parity_v0"
+  ],
+  "known_alignment": [
+    "All expected SearchPage-related static artifact paths are present.",
+    "Artifacts preserve static handoff and hosted-unavailable posture.",
+    "Artifacts preserve disabled live-probe, download, upload, account, and telemetry posture.",
+    "search_handoff.json structurally records local_index_only and false capability booleans."
+  ],
+  "known_gaps": [
+    "Current artifacts are not generated from or traced to a canonical SearchPageView fixture.",
+    "No artifact embeds a canonical SearchPageView view_model_id.",
+    "Standard and lite HTML surfaces do not machine-verify result or empty-state meaning as strongly as the text, file-tree, and JSON surfaces.",
+    "Text and file-tree note surfaces do not machine-verify source/evidence posture as strongly as HTML and JSON surfaces.",
+    "search_handoff.json uses legacy profile labels such as standard_web and api_client that need explicit mapping to Track A representation profiles."
+  ],
+  "deferred_refactor_targets": [
+    "TRACK-A-12 - Static SearchPage projection fixture and generator plan",
+    "Create a canonical SearchPageView fixture for the current static handoff.",
+    "Project the fixture into standard HTML, lite HTML, text, file-tree note, and static JSON handoff surfaces.",
+    "Compare generated projections against current committed artifacts before any replacement.",
+    "Preserve no-JS/static behavior and avoid hosted/live/download/upload/account/telemetry claims.",
+    "Keep route identity stable; do not create profile-specific route splits."
+  ],
+  "no_goals": [
+    "no site/dist regeneration",
+    "no static site refactor",
+    "no runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no renderer refactor"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false
+  },
+  "notes": [
+    "This inventory is audit/governance only.",
+    "The audit used conservative substring and JSON field checks.",
+    "Unknown or partial semantic coverage remains a future generator/refactor concern."
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "artifact_bindings": [
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/search.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "search",
+      "expected_view_family": "SearchPageView",
+      "fields_missing": [
+        "result_or_empty_state_meaning"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "lite_static_html",
+      "artifact_path": "site/dist/lite/search.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "lite_html",
+      "expected_route_family": "lite_static",
+      "expected_view_family": "SearchPageView",
+      "fields_missing": [
+        "result_or_empty_state_meaning"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "text_static",
+      "artifact_path": "site/dist/text/search.txt",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "text",
+      "expected_route_family": "text_static",
+      "expected_view_family": "SearchPageView",
+      "fields_missing": [
+        "source_evidence_posture"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "file_tree_static",
+      "artifact_path": "site/dist/files/search.README.txt",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "file_tree",
+      "expected_route_family": "files_static",
+      "expected_view_family": "SearchPageView",
+      "fields_missing": [
+        "source_evidence_posture"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SearchPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SearchPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_json_handoff",
+      "artifact_path": "site/dist/data/search_handoff.json",
+      "current_generation_source": "scripts/generate_public_data_summaries.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_search_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "api_json",
+      "expected_route_family": "data_static",
+      "expected_view_family": "SearchPageView",
+      "fields_missing": [],
+      "fields_present": [
+        "blocked_actions",
+        "hosted_backend_unavailable_status",
+        "limitations",
+        "live_probes_unavailable_status",
+        "local_index_only_or_hosted_unavailable_posture",
+        "public_runtime_posture",
+        "query_identity_or_search_handoff",
+        "result_or_empty_state_meaning",
+        "route_identity",
+        "safe_next_action_or_handoff_instructions",
+        "source_evidence_posture",
+        "static_public_limitations",
+        "unsafe_capabilities_unavailable_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "JSON handoff explicitly records no hosted search claim.",
+        "JSON handoff includes disabled behavior booleans."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "legacy handoff profile labels need mapping to Track A representation profiles",
+        "not yet traced to canonical SearchPageView fixture"
+      ]
+    }
+  ],
+  "audited_artifacts": [
+    "site/dist/search.html",
+    "site/dist/lite/search.html",
+    "site/dist/text/search.txt",
+    "site/dist/files/search.README.txt",
+    "site/dist/data/search_handoff.json"
+  ],
+  "audited_view_family": "SearchPageView",
+  "critical_boundary_violations": [],
+  "future_refactor_targets": [
+    "TRACK-A-12 - Static SearchPage projection fixture and generator plan",
+    "Create a canonical SearchPageView fixture for the current static handoff.",
+    "Project the fixture into standard HTML, lite HTML, text, file-tree note, and static JSON handoff surfaces.",
+    "Compare generated projections against current committed artifacts before any replacement.",
+    "Preserve no-JS/static behavior and avoid hosted/live/download/upload/account/telemetry claims.",
+    "Keep route identity stable; do not create profile-specific route splits."
+  ],
+  "inputs": {
+    "representation_profiles": "control/inventory/publication/representation_profiles.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "search_page_policy": "control/inventory/publication/search_page_view_model_policy.json",
+    "semantic_parity_policy": "control/inventory/publication/semantic_renderer_parity_policy.json"
+  },
+  "known_alignment": [
+    "All required SearchPage-related static artifact paths are present.",
+    "Current artifacts visibly preserve static handoff and hosted-unavailable posture.",
+    "Current artifacts visibly preserve disabled live-probe, download, upload, account, and telemetry posture.",
+    "search_handoff.json structurally records local_index_only mode and false capability booleans."
+  ],
+  "known_gaps": [
+    "A future generator should compare standard, lite, text, file-tree, and JSON projections against one fixture.",
+    "Current static artifacts are not generated from or traced to a canonical SearchPageView fixture.",
+    "No artifact embeds a canonical SearchPageView view_model_id.",
+    "result_or_empty_state_meaning: partially_aligned across audited artifacts",
+    "site/dist/data/search_handoff.json: legacy handoff profile labels need mapping to Track A representation profiles",
+    "site/dist/data/search_handoff.json: not yet traced to canonical SearchPageView fixture",
+    "site/dist/files/search.README.txt: missing or not machine-verified fields ['source_evidence_posture']",
+    "site/dist/files/search.README.txt: not yet traced to canonical SearchPageView fixture",
+    "site/dist/files/search.README.txt: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/files/search.README.txt: some SearchPageView semantic categories are missing or not machine-verified",
+    "site/dist/lite/search.html: missing or not machine-verified fields ['result_or_empty_state_meaning']",
+    "site/dist/lite/search.html: not yet traced to canonical SearchPageView fixture",
+    "site/dist/lite/search.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/lite/search.html: some SearchPageView semantic categories are missing or not machine-verified",
+    "site/dist/search.html: missing or not machine-verified fields ['result_or_empty_state_meaning']",
+    "site/dist/search.html: not yet traced to canonical SearchPageView fixture",
+    "site/dist/search.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/search.html: some SearchPageView semantic categories are missing or not machine-verified",
+    "site/dist/text/search.txt: missing or not machine-verified fields ['source_evidence_posture']",
+    "site/dist/text/search.txt: not yet traced to canonical SearchPageView fixture",
+    "site/dist/text/search.txt: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/text/search.txt: some SearchPageView semantic categories are missing or not machine-verified",
+    "source_evidence_posture: partially_aligned across audited artifacts"
+  ],
+  "next_task": "TRACK-A-12 - Static SearchPage projection fixture and generator plan",
+  "no_goals_preserved": [
+    "no site/dist regeneration",
+    "no runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no renderer refactor"
+  ],
+  "product_boundary": {
+    "changed_generated_site_artifacts": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_native_projects": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false
+  },
+  "schema_version": "track_a_11_projection_audit.v0",
+  "semantic_alignment": {
+    "blocked_actions": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "hosted_backend_unavailable_status": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "limitations": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "live_probes_unavailable_status": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "local_index_only_or_hosted_unavailable_posture": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "public_runtime_posture": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "query_identity_or_search_handoff": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "result_or_empty_state_meaning": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "partially_aligned"
+    },
+    "route_identity": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "safe_next_action_or_handoff_instructions": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "source_evidence_posture": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/lite/search.html",
+        "site/dist/search.html"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "partially_aligned"
+    },
+    "static_public_limitations": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    },
+    "unsafe_capabilities_unavailable_status": {
+      "artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/files/search.README.txt",
+        "site/dist/lite/search.html",
+        "site/dist/search.html",
+        "site/dist/text/search.txt"
+      ],
+      "machine_verified": true,
+      "notes": [
+        "Conservative substring and JSON-field audit only; future A12 should compare against a canonical fixture."
+      ],
+      "status": "aligned"
+    }
+  },
+  "source_view_schema": "contracts/views/search_page.v0.json",
+  "status": "warn",
+  "task": "TRACK-A-11",
+  "track": "A",
+  "warnings": [
+    "site/dist/data/search_handoff.json: current handoff profile 'api_client' maps to expected Track A profile 'api_json'"
+  ]
+}

@@ -37,6 +37,15 @@ python scripts/validate_view_model_policy_index.py
 This validates `control/inventory/publication/view_model_policy_index.json`
 and the compact example index under `examples/view_models/policy_index/`.
 
+## Static SearchPage Projection Audit
+
+```powershell
+python scripts/audit_static_searchpage_projection.py --check
+```
+
+This read-only audit checks current static SearchPage-related publication
+artifacts against `SearchPageView` semantics without regenerating `site/dist`.
+
 ## What This Protects
 
 - Every canonical Track A view model has a schema, policy inventory, examples,
