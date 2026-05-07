@@ -1,0 +1,40 @@
+audit(control): record warn only verifier result
+
+## Summary
+
+- Added an example commit with documented warnings and zero errors.
+
+## Why
+
+- WARN-only AIDE verifier outcomes should be expressible without pretending the run was error-free.
+
+## Changed
+
+- Added a sample warning-oriented commit body.
+
+## Validation
+
+- WARN: py -3 .aide/scripts/aide_lite.py verify, zero errors.
+
+## Changelog
+
+- Internal:
+  - Recorded warning-only control evidence.
+- Risks:
+  - Warning remains documented and noncritical.
+
+## Risks
+
+- Warning status is acceptable only when zero errors are present.
+
+## Follow-up
+
+- None.
+
+AIDE-Task: EUREKA-CTRL-01
+AIDE-Result: PASS_WITH_WARNINGS
+AIDE-Scope: control
+AIDE-Change-Class: internal
+AIDE-Quality-Gate: warn
+AIDE-WorkUnit: idempotent
+AIDE-Risk: low

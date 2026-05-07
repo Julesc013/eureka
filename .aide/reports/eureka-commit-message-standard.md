@@ -18,8 +18,11 @@ Rules:
 - Use a concrete outcome, not a vague activity.
 - Avoid placeholders such as `update`, `misc`, `wip`, or `fix`.
 - Do not end the subject with a period.
+- Use the repo-local allowed types from `.aide/policies/commit-messages.yaml`.
 - Use `contracts` as the type for governed contract-only bundles when a task
   requires that prefix.
+- Use `aide` for AIDE/local control-standard work when a task requires that
+  prefix.
 - Prefer scopes such as `aide`, `contracts`, `runtime`, `docs`, `tests`,
   `queue`, or the task id when that is clearer.
 
@@ -43,6 +46,10 @@ Every substantive AIDE-managed commit should include these Markdown sections:
 ## Summary
 
 - One or two bullets explaining the outcome.
+
+## Why
+
+- One or two bullets explaining why the change exists.
 
 ## Changed
 

@@ -530,12 +530,13 @@ REQUIRED_GOLDEN_TASK_IDS = [
 ]
 
 COMMIT_SUBJECT_RE = re.compile(
-    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|audit|contracts|revert)"
+    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|contracts|runtime|surface|eval|audit|ops|native|site|aide|security|revert)"
     r"(\([a-z0-9][a-z0-9._/-]*\))?!?: .+"
 )
 
 COMMIT_REQUIRED_BODY_HEADINGS = [
     "## Summary",
+    "## Why",
     "## Changed",
     "## Validation",
     "## Changelog",
@@ -572,6 +573,10 @@ COMMIT_GOOD_EXAMPLE = """docs(aide): enforce structured commit changelogs
 ## Summary
 
 - Add an AIDE commit-message policy and validator.
+
+## Why
+
+- Future AIDE-managed work needs history that can be audited and summarized without replaying chat context.
 
 ## Changed
 

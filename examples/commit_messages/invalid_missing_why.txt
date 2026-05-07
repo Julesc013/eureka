@@ -1,0 +1,33 @@
+docs(control): omit why section
+
+## Summary
+
+- This sample is intentionally invalid.
+
+## Changed
+
+- Removed the required why section.
+
+## Validation
+
+- FAIL: policy validator should reject this sample.
+
+## Changelog
+
+- Tests:
+  - Demonstrated missing why failure.
+
+## Risks
+
+- None.
+
+## Follow-up
+
+- None.
+
+AIDE-Task: EUREKA-CTRL-01
+AIDE-Result: FAIL
+AIDE-Scope: control
+AIDE-Change-Class: tests
+AIDE-Quality-Gate: fail
+AIDE-WorkUnit: blocked

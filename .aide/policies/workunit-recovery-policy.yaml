@@ -1,0 +1,64 @@
+{
+  "schema_version": "eureka.workunit_recovery_policy.v0",
+  "policy_id": "eureka-workunit-recovery-policy-v0",
+  "status": "active",
+  "purpose": "Make future Eureka WorkUnits replay-safe, idempotent, and recoverable from repo evidence when prompts repeat, arrive out of order, or resume partial work.",
+  "idempotency": {
+    "safe_to_rerun": true,
+    "duplicate_behavior": {
+      "if_complete": "validate_and_record_noop",
+      "if_partial": "resume_from_missing_acceptance",
+      "if_conflicting": "classify_and_quarantine"
+    }
+  },
+  "recovery": {
+    "dirty_tree": "inspect_preserve_and_continue",
+    "missing_dependency": "repair_if_bounded_else_record_blocker",
+    "stale_status": "reconcile_from_evidence",
+    "failed_validation": "repair_if_in_scope_else_record_blocker",
+    "out_of_order_task": "inspect_queue_and_resume_valid_next",
+    "repeated_prompt": "classify_noop_resume_or_repair"
+  },
+  "stop_conditions": [
+    "destructive ambiguity",
+    "missing external credentials",
+    "legal/licensing decision",
+    "manual observation requirement",
+    "irreversible action without explicit approval",
+    "private-data exposure risk",
+    "unsafe network/source action",
+    "production deployment or hosting mutation without explicit approval"
+  ],
+  "non_stop_conditions": [
+    "duplicate prompt",
+    "repeated task",
+    "stale status file",
+    "out-of-order prompt",
+    "partial previous task",
+    "missing optional generated artifact",
+    "known WARN-only AIDE warning"
+  ],
+  "recovery_loop": [
+    "inspect repo state",
+    "classify current task state",
+    "reconcile from evidence",
+    "resume, repair, or record noop",
+    "validate",
+    "write evidence",
+    "commit if changed",
+    "stop at review gate"
+  ],
+  "evidence_requirements": [
+    "changed files",
+    "validation commands and results",
+    "noop or resume classification when repeated",
+    "blockers and stop-condition rationale",
+    "remaining risks and follow-up task"
+  ],
+  "non_goals": [
+    "no destructive reset without explicit approval",
+    "no private data exposure",
+    "no network/source action unless task explicitly enables it",
+    "no production deployment mutation"
+  ]
+}

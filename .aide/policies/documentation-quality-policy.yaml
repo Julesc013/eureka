@@ -1,0 +1,68 @@
+{
+  "schema_version": "eureka.documentation_quality_policy.v0",
+  "policy_id": "eureka-documentation-quality-policy-v0",
+  "status": "active",
+  "purpose": "Keep Eureka documentation accurate, compact, source-grounded, and explicit about status, no-goals, validation, deferred work, and product-boundary claims.",
+  "doc_surfaces": [
+    "README",
+    "docs/reference",
+    "docs/architecture",
+    "docs/operations",
+    "docs/roadmap",
+    "control/audits",
+    "examples",
+    "changelog/release-note previews",
+    "AIDE task/review packets"
+  ],
+  "required_qualities": [
+    "accurate",
+    "source-grounded",
+    "compact",
+    "non-bloated",
+    "not duplicated unnecessarily",
+    "explicit about status",
+    "explicit about no-goals",
+    "explicit about validation",
+    "explicit about deferred work",
+    "explicit about product-boundary claims"
+  ],
+  "anti_bloat_rules": [
+    "avoid repeated project-history dumps",
+    "avoid copying full chat history",
+    "avoid repeating entire README status blocks in every audit",
+    "link to canonical docs instead",
+    "summarize only task-local changes",
+    "preserve exact no-goals where risk-bearing",
+    "do not claim production/hosted/live-source behavior without evidence"
+  ],
+  "stale_claim_checks": [
+    "hosted backend active",
+    "live probes enabled",
+    "source sync enabled",
+    "source connectors active",
+    "downloads/installers/execution enabled",
+    "uploads/accounts/telemetry enabled",
+    "rights clearance",
+    "malware safety",
+    "verified installability",
+    "exhaustive global search",
+    "automatic merge/dedup/promotion",
+    "master-index mutation",
+    "native project creation"
+  ],
+  "surface_guidance": {
+    "README": "Keep project-level status compact and link to canonical operations and reference docs.",
+    "docs/reference": "Describe governed contracts and stable semantics without runtime claims.",
+    "docs/architecture": "Record accepted architecture and boundaries, not task-local chatter.",
+    "docs/operations": "Give commands, expected outputs, WARN conditions, and no-goals.",
+    "docs/roadmap": "Track sequencing and next task without repeating every audit detail.",
+    "control/audits": "Summarize task-local evidence and validation, not production readiness.",
+    "examples": "Stay public-safe, compact, and free of secrets, private paths, and production claims.",
+    "AIDE task/review packets": "Use compact repo-local evidence and never paste full chat history."
+  },
+  "non_goals": [
+    "no broad docs rewrite",
+    "no production readiness claim without evidence",
+    "no generated site artifact mutation"
+  ]
+}

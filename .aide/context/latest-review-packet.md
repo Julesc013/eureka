@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4061 chars, 1016 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4131 chars, 1033 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,16 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-a-11-static-searchpage-view-model-projection-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/search_page_static_projection_map.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/STATIC_SEARCHPAGE_VIEW_MODEL_PROJECTION_AUDIT.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/TRACK_A_VALIDATION.md` (M; does not match active task allowed paths)
-- allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `scripts/audit_static_searchpage_projection.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_static_searchpage_projection_audit.py` (??; does not match active task allowed paths)
+- none
 
 ## Validation Summary
 
@@ -52,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5038
-- approx_tokens: 1260
+- chars: 3979
+- approx_tokens: 995
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

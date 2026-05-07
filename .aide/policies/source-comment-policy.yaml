@@ -1,0 +1,41 @@
+{
+  "schema_version": "eureka.source_comment_policy.v0",
+  "policy_id": "eureka-source-comment-policy-v0",
+  "status": "advisory",
+  "purpose": "Set a why-first source comment and docstring standard for future Eureka scripts, validators, tests, runtime code, and old-toolchain code.",
+  "principle": "Comments should explain WHY, invariants, assumptions, side effects, recovery behavior, and failure modes. Code and function names should carry the obvious WHAT. Do not add comments that merely restate syntax.",
+  "required_comment_targets": [
+    "file/module docstring for nontrivial scripts",
+    "function docstring for public helpers and validators",
+    "inline comments for non-obvious policy decisions",
+    "comments for safety boundaries and forbidden behaviors",
+    "comments for idempotency/recovery behavior",
+    "comments for legacy/native/old-toolchain quirks",
+    "comments for privacy/security/rights/risk-sensitive checks"
+  ],
+  "explanation_density_bands": {
+    "complex runtime/source/evidence/review/connector-policy code": "20-30%",
+    "native/C89/Win32/Carbon/old-toolchain code": "20-35%",
+    "validators/scripts": "12-25%",
+    "tests": "8-18%",
+    "trivial glue": "no minimum",
+    "JSON/schema/docs-heavy artifacts": "rely on reference docs and examples"
+  },
+  "enforcement": {
+    "hard_fail_existing_code": false,
+    "future_validators_default": "advisory_report_only",
+    "density_is_advisory_at_this_milestone": true
+  },
+  "anti_patterns": [
+    "comments that restate syntax",
+    "large banner comments that duplicate docs",
+    "stale TODOs without owner or next step",
+    "safety-sensitive code without failure-mode notes",
+    "explaining what a well-named variable already says"
+  ],
+  "non_goals": [
+    "no forcing comments into existing source files",
+    "no hard-fail comment-density rule for existing code",
+    "no broad source rewrite"
+  ]
+}

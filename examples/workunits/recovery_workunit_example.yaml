@@ -1,0 +1,19 @@
+{
+  "schema_version": "eureka.workunit_example.v0",
+  "workunit_id": "example-recovery-workunit",
+  "recovery_loop": [
+    "inspect repo state",
+    "classify current task state",
+    "reconcile from evidence",
+    "resume, repair, or record noop",
+    "validate",
+    "write evidence",
+    "commit if changed",
+    "stop at review gate"
+  ],
+  "stop_conditions": [
+    "destructive ambiguity",
+    "private-data exposure risk",
+    "unsafe network/source action"
+  ]
+}

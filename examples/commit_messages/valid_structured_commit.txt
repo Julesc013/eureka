@@ -1,0 +1,44 @@
+docs(control): add recovery policy preview
+
+## Summary
+
+- Added a compact control example for replay-safe WorkUnit recovery.
+
+## Why
+
+- Future agents need an example of the structured commit body and trailers.
+
+## Changed
+
+- Added example control-policy documentation.
+
+## Validation
+
+- PASS: python scripts/validate_eureka_control_policy.py
+
+## Changelog
+
+- Added:
+  - Structured commit sample for control policy validation.
+- Tests:
+  - Covered valid structured commit parsing.
+- Internal:
+  - Recorded AIDE trailers for machine-readable history.
+
+## Risks
+
+- Example only; it does not change product behavior.
+
+## Follow-up
+
+- None.
+
+AIDE-Task: EUREKA-CTRL-01
+AIDE-Result: PASS
+AIDE-Scope: control
+AIDE-Change-Class: added
+AIDE-Quality-Gate: pass
+AIDE-WorkUnit: idempotent
+AIDE-Token-Impact: neutral
+AIDE-Review: not-required
+AIDE-Risk: low

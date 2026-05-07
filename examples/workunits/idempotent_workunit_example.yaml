@@ -1,0 +1,15 @@
+{
+  "schema_version": "eureka.workunit_example.v0",
+  "workunit_id": "example-idempotent-workunit",
+  "idempotency": {
+    "safe_to_rerun": true,
+    "if_complete": "validate_and_record_noop",
+    "if_partial": "resume_from_missing_acceptance"
+  },
+  "validation": [
+    "python scripts/validate_eureka_control_policy.py"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false
+  }
+}

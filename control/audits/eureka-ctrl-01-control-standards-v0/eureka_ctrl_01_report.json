@@ -1,0 +1,131 @@
+{
+  "schema_version": "eureka_ctrl_01_report.v0",
+  "status": "warn",
+  "task": "EUREKA-CTRL-01",
+  "added_policies": [
+    ".aide/policies/commit-message-standard.yaml",
+    ".aide/policies/workunit-recovery-policy.yaml",
+    ".aide/policies/documentation-quality-policy.yaml",
+    ".aide/policies/source-comment-policy.yaml"
+  ],
+  "updated_policies": [
+    ".aide/policies/commit-messages.yaml"
+  ],
+  "updated_aide_controls": [
+    ".aide/reports/eureka-commit-message-standard.md",
+    ".aide/scripts/aide_lite.py"
+  ],
+  "added_docs": [
+    "docs/operations/COMMIT_AND_CHANGELOG_STANDARD.md",
+    "docs/operations/WORKUNIT_RECOVERY_POLICY.md",
+    "docs/operations/DOCUMENTATION_QUALITY_STANDARD.md",
+    "docs/operations/SOURCE_COMMENT_STANDARD.md"
+  ],
+  "added_scripts": [
+    "scripts/validate_eureka_control_policy.py",
+    "scripts/preview_eureka_changelog.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_eureka_control_policy.py",
+    "tests/operations/test_eureka_changelog_preview.py"
+  ],
+  "added_examples": [
+    "examples/commit_messages/valid_structured_commit.txt",
+    "examples/commit_messages/invalid_missing_why.txt",
+    "examples/commit_messages/valid_warn_only_commit.txt",
+    "examples/workunits/idempotent_workunit_example.yaml",
+    "examples/workunits/recovery_workunit_example.yaml"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass_lf_crlf_warnings_only",
+    "python -m json.tool control/audits/eureka-ctrl-01-control-standards-v0/eureka_ctrl_01_report.json": "pass",
+    "python scripts/validate_eureka_control_policy.py": "pass",
+    "python scripts/preview_eureka_changelog.py --message-file examples/commit_messages/valid_structured_commit.txt": "pass",
+    "python -m unittest tests.operations.test_eureka_control_policy tests.operations.test_eureka_changelog_preview": "pass_15_tests",
+    "python -m unittest discover -s tests -t .": "pass_1731_tests",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass_preflight",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass_preflight_warn_optional_review_refs",
+    "py -3 .aide/scripts/aide_lite.py pack --task \"EUREKA-CTRL-01 - Commit changelog WorkUnit recovery documentation and source-comment standard\"": "pass_preflight",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_zero_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass_14_tasks",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_embedded_verify_zero_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "changed_path_secret_scan": "pass_34_files",
+    "changed_path_ascii_scan": "pass_34_files",
+    "generated_site_artifact_status": "pass_no_changes"
+  },
+  "aide_evidence": [
+    ".aide/queue/EUREKA-CTRL-01/task.yaml",
+    ".aide/queue/EUREKA-CTRL-01/status.yaml",
+    ".aide/queue/EUREKA-CTRL-01/evidence/changed-files.md",
+    ".aide/queue/EUREKA-CTRL-01/evidence/validation.md",
+    ".aide/queue/EUREKA-CTRL-01/evidence/control-policy-result.md",
+    ".aide/queue/EUREKA-CTRL-01/evidence/remaining-risks.md"
+  ],
+  "commit_standard": {
+    "conventional_commit_subject": true,
+    "required_markdown_sections": [
+      "## Summary",
+      "## Why",
+      "## Changed",
+      "## Validation",
+      "## Changelog",
+      "## Risks",
+      "## Follow-up"
+    ],
+    "required_trailers": [
+      "AIDE-Task",
+      "AIDE-Result",
+      "AIDE-Scope",
+      "AIDE-Change-Class",
+      "AIDE-Quality-Gate",
+      "AIDE-WorkUnit"
+    ],
+    "changelog_preview_supported": true
+  },
+  "workunit_recovery": {
+    "duplicate_prompt_policy": true,
+    "out_of_order_policy": true,
+    "partial_resume_policy": true,
+    "noop_policy": true,
+    "stop_conditions_defined": true
+  },
+  "documentation_quality": {
+    "anti_bloat_policy": true,
+    "stale_claim_policy": true,
+    "source_grounded_policy": true
+  },
+  "source_comment_policy": {
+    "why_first": true,
+    "advisory_density_bands": true,
+    "hard_fail_existing_code": false
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "created_native_projects": false,
+    "mutated_master_index": false
+  },
+  "next_task": "TRACK-A-13 - Static SearchPage projection dry-run generator"
+}

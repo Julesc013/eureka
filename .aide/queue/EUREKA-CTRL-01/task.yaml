@@ -1,0 +1,33 @@
+schema_version: aide.task.v0
+id: EUREKA-CTRL-01
+title: Commit changelog WorkUnit recovery documentation and source-comment standard
+status: active
+source: user_prompt
+scope:
+  - .aide/policies/commit-message-standard.yaml
+  - .aide/policies/workunit-recovery-policy.yaml
+  - .aide/policies/documentation-quality-policy.yaml
+  - .aide/policies/source-comment-policy.yaml
+  - docs/operations/COMMIT_AND_CHANGELOG_STANDARD.md
+  - docs/operations/WORKUNIT_RECOVERY_POLICY.md
+  - docs/operations/DOCUMENTATION_QUALITY_STANDARD.md
+  - docs/operations/SOURCE_COMMENT_STANDARD.md
+  - scripts/validate_eureka_control_policy.py
+  - scripts/preview_eureka_changelog.py
+  - tests/operations/test_eureka_control_policy.py
+  - tests/operations/test_eureka_changelog_preview.py
+  - examples/commit_messages/**
+  - examples/workunits/**
+  - control/audits/eureka-ctrl-01-control-standards-v0/**
+  - docs/roadmap/TRACK_EXECUTION_PLAN.md
+non_goals:
+  - no product runtime behavior changes
+  - no public route activation
+  - no generated site artifact mutation
+  - no hosted backend
+  - no live probes
+  - no source sync or connectors
+  - no node, pack import, review, download, upload, account, or telemetry runtime
+  - no native project creation
+  - no hard-fail comment-density rule for existing code
+next_task: TRACK-A-13 - Static SearchPage projection dry-run generator

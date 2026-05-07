@@ -1,0 +1,164 @@
+{
+  "schema_version": "eureka.commit_message_standard.v0",
+  "policy_id": "eureka-local-structured-commit-standard-v0",
+  "status": "active",
+  "purpose": "Require future Eureka commits to be understandable, changelog-ready, audit-ready, and machine-readable enough for local tooling.",
+  "subject": {
+    "format": "<type>(<scope>): <concise outcome>",
+    "max_chars": 72,
+    "allowed_types": [
+      "aide",
+      "audit",
+      "chore",
+      "contracts",
+      "docs",
+      "eval",
+      "feat",
+      "fix",
+      "native",
+      "ops",
+      "refactor",
+      "revert",
+      "runtime",
+      "security",
+      "site",
+      "surface",
+      "test"
+    ],
+    "rules": [
+      "type is lower-case",
+      "scope is present and compact",
+      "summary is concise and outcome-oriented",
+      "summary is understandable at a glance",
+      "subject has no trailing period"
+    ]
+  },
+  "body": {
+    "markdown_required": true,
+    "required_headings": [
+      "## Summary",
+      "## Why",
+      "## Changed",
+      "## Validation",
+      "## Changelog",
+      "## Risks",
+      "## Follow-up"
+    ],
+    "why_first_rule": "Explain why the change exists before listing implementation detail.",
+    "validation_tokens": [
+      "PASS",
+      "WARN",
+      "FAIL",
+      "NOT RUN"
+    ],
+    "pass_with_warnings_policy": "PASS_WITH_WARNINGS is allowed when every warning is documented and there are zero errors."
+  },
+  "changelog": {
+    "groups": [
+      "Added",
+      "Changed",
+      "Fixed",
+      "Removed",
+      "Deprecated",
+      "Security",
+      "Tests",
+      "Docs",
+      "Internal",
+      "Risks",
+      "Follow-up"
+    ],
+    "required_shape": [
+      "- Added:",
+      "  - item",
+      "- Changed:",
+      "  - item",
+      "- Fixed:",
+      "  - item",
+      "- Tests:",
+      "  - item",
+      "- Internal:",
+      "  - item"
+    ],
+    "empty_groups_may_be_omitted": true,
+    "preview_tool": "scripts/preview_eureka_changelog.py",
+    "no_automatic_changelog_mutation": true
+  },
+  "trailers": {
+    "required": {
+      "AIDE-Task": "task id",
+      "AIDE-Result": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "PARTIAL",
+        "FAIL",
+        "BLOCKED"
+      ],
+      "AIDE-Scope": [
+        "aide",
+        "docs",
+        "contracts",
+        "runtime",
+        "surface",
+        "site",
+        "eval",
+        "ops",
+        "native",
+        "tests",
+        "control",
+        "mixed"
+      ],
+      "AIDE-Change-Class": [
+        "added",
+        "changed",
+        "fixed",
+        "removed",
+        "deprecated",
+        "security",
+        "tests",
+        "docs",
+        "internal",
+        "mixed"
+      ],
+      "AIDE-Quality-Gate": [
+        "pass",
+        "warn",
+        "fail",
+        "not-run"
+      ],
+      "AIDE-WorkUnit": [
+        "idempotent",
+        "resume",
+        "noop",
+        "blocked",
+        "not-applicable"
+      ]
+    },
+    "optional": {
+      "AIDE-Token-Impact": [
+        "lower",
+        "neutral",
+        "higher",
+        "unknown"
+      ],
+      "AIDE-Follow-Up": "task id",
+      "AIDE-Review": [
+        "required",
+        "complete",
+        "not-required"
+      ],
+      "AIDE-Risk": [
+        "low",
+        "medium",
+        "high",
+        "blocked"
+      ]
+    }
+  },
+  "non_goals": [
+    "no network calls",
+    "no model or provider calls",
+    "no automatic release publishing",
+    "no CHANGELOG.md mutation by default",
+    "no rewrite of published history"
+  ]
+}

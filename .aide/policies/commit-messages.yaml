@@ -9,19 +9,23 @@ subject:
   format: "type(scope): summary"
   subject_max_chars: 72
   allowed_types:
+    - aide
+    - audit
+    - chore
+    - contracts
+    - docs
+    - eval
     - feat
     - fix
-    - docs
-    - test
+    - native
+    - ops
     - refactor
-    - perf
-    - build
-    - ci
-    - chore
-    - style
-    - audit
-    - contracts
     - revert
+    - runtime
+    - security
+    - site
+    - surface
+    - test
   summary_rule: specific outcome, imperative or present-tense, no trailing period
   forbidden_vague_summaries:
     - update
@@ -32,6 +36,7 @@ body:
   markdown_required: true
   required_body_headings:
     - "## Summary"
+    - "## Why"
     - "## Changed"
     - "## Validation"
     - "## Changelog"
@@ -52,6 +57,8 @@ body:
     - Docs
     - Tests
     - Internal
+    - Risks
+    - Follow-up
 automation:
   checker_command: "py -3 .aide/scripts/aide_lite.py commit check --message-file <path>"
   latest_commit_check: "py -3 .aide/scripts/aide_lite.py commit check --latest"
