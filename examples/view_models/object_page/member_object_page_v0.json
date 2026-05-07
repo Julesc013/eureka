@@ -1,0 +1,556 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "member_object_page_v0",
+  "view_family": "ObjectPageView",
+  "route_family": "object_page_future",
+  "canonical_route": "/objects/sample-member",
+  "page_title": "Sample Member Object",
+  "page_status": "source_observed",
+  "object": {
+    "object_id": "object_sample_member",
+    "object_type": "file_inside_container",
+    "title": "Sample Member Object",
+    "summary": "Inner/member object with visible parent container lineage.",
+    "object_status": "member_inner_object"
+  },
+  "object_identity": {
+    "object_id": "object_sample_member",
+    "object_type": "file_inside_container",
+    "identity_state": "member_inner_object",
+    "title": "Sample Member Object",
+    "subtitle": "Member inside a public-safe container summary",
+    "aliases": [
+      "Sample inner member"
+    ],
+    "canonical_route": "/objects/sample-member",
+    "stable_ids": [
+      {
+        "id_type": "eureka_public_example",
+        "value": "object_sample_member",
+        "status": "public_safe"
+      }
+    ],
+    "external_identifiers": [],
+    "source_specific_identifiers": [
+      {
+        "id_type": "member_fixture_id",
+        "value": "member_sample_inner",
+        "status": "source_observed"
+      }
+    ],
+    "identity_confidence": "source_observed",
+    "identity_limitations": [
+      "Member identity depends on parent container metadata."
+    ],
+    "notes": [
+      "Member is not detached from parent provenance."
+    ]
+  },
+  "object_state": {
+    "version": null,
+    "release_date": null,
+    "platform": null,
+    "architecture": null,
+    "format": "text member",
+    "language": "unknown",
+    "edition": null,
+    "capture_date": null,
+    "temporal_state": "unknown",
+    "state_confidence": "partial",
+    "state_limitations": [
+      "Member state is observed only through parent metadata."
+    ],
+    "notes": [
+      "No invented release or platform values."
+    ]
+  },
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "contract_only",
+    "notes": [
+      "Member page is contract-only."
+    ]
+  },
+  "representation_summary": {
+    "representations": [
+      {
+        "representation_id": "repr_sample_parent_manifest",
+        "representation_type": "container_manifest_summary",
+        "media_type": "application/json",
+        "format_label": "container manifest summary",
+        "checksums": [
+          {
+            "algorithm": "sha256",
+            "value": "1111111111111111111111111111111111111111111111111111111111111111",
+            "status": "example_placeholder"
+          }
+        ],
+        "file_size": 4096,
+        "preview_available": false,
+        "preview_limitations": [
+          "No member payload preview is exposed."
+        ],
+        "notes": [
+          "Representation summarizes container metadata only."
+        ]
+      }
+    ],
+    "manifest_refs": [
+      "manifest:sample-parent-container"
+    ],
+    "snapshot_refs_future": [
+      "future_snapshot:sample-parent-container"
+    ],
+    "notes": [
+      "Parent manifest reference preserves lineage."
+    ]
+  },
+  "file_and_member_summary": {
+    "member_records": [
+      {
+        "member_id": "member_sample_inner",
+        "member_label": "Sample inner member",
+        "parent_object_ref": "object_sample_parent_container",
+        "parent_representation_ref": "repr_sample_parent_manifest",
+        "containment_path": [
+          "container:sample-parent-container",
+          "member:sample-inner"
+        ],
+        "notes": [
+          "Containment path is public-safe and synthetic."
+        ]
+      }
+    ],
+    "parent_object_ref": "object_sample_parent_container",
+    "parent_representation_ref": "repr_sample_parent_manifest",
+    "containment_path": [
+      "container:sample-parent-container",
+      "member:sample-inner"
+    ],
+    "checksums": [
+      {
+        "algorithm": "sha256",
+        "value": "2222222222222222222222222222222222222222222222222222222222222222",
+        "status": "example_placeholder"
+      }
+    ],
+    "file_size": 512,
+    "media_type": "text/plain",
+    "format_label": "text member",
+    "preview_available": false,
+    "preview_limitations": [
+      "No raw member payload is exposed."
+    ],
+    "manifest_refs": [
+      "manifest:sample-parent-container"
+    ],
+    "snapshot_refs_future": [
+      "future_snapshot:sample-parent-container"
+    ],
+    "notes": [
+      "Smallest actionable unit remains tied to parent source and representation."
+    ]
+  },
+  "source_summary": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_posture": "source_observed_fixture",
+    "source_limitations": [
+      "Member observation is not accepted truth."
+    ],
+    "source_observation_accepted_as_truth": false,
+    "observation_status": "source_observed",
+    "reviewed_status": "not_reviewed_for_truth",
+    "generated_or_observed_status": "observed_fixture_member_summary",
+    "notes": [
+      "Source observation stays distinct from verified member identity."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_summary": "Parent manifest fixture lists a member-like entry.",
+    "evidence_links": [
+      {
+        "rel": "parent_manifest",
+        "href": "/files/manifests/sample-parent-container",
+        "label": "Sample parent manifest"
+      }
+    ],
+    "evidence_posture": "member_observation_only",
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "confidence_or_uncertainty": "Member evidence is source-observed and limited.",
+    "limitations": [
+      "No deep extraction or raw payload review is represented."
+    ],
+    "notes": [
+      "Member evidence does not become verified fact."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "public_fixture_source",
+      "object_sample_parent_container",
+      "repr_sample_parent_manifest",
+      "member_sample_inner",
+      "object_sample_member"
+    ],
+    "parent_lineage_visible": true,
+    "conflict_summary": "No conflicts represented; parent lineage remains required.",
+    "notes": [
+      "Lineage is mandatory for member objects."
+    ]
+  },
+  "compatibility_summary": {
+    "supported_platforms": [],
+    "unsupported_platforms": [],
+    "unknown_platforms": [
+      "unknown"
+    ],
+    "compatibility_claims": [],
+    "required_runtime_or_dependency": null,
+    "hardware_requirements": null,
+    "host_profile_fit": "public_read_only_summary",
+    "confidence_or_uncertainty": "Compatibility is not applicable or unknown.",
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No executable or installable member is exposed."
+    ],
+    "notes": [
+      "Member utility does not imply installability."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance is claimed for parent or member."
+    ],
+    "rights_clearance_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Parent rights uncertainty remains visible."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "payload_not_exposed",
+    "executable_risk": "unknown_member_payload",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No raw member payload or scan is represented."
+    ],
+    "blocked_actions": [
+      "execute_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "Member page is metadata-only."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_parent",
+      "view_members",
+      "view_source",
+      "view_evidence",
+      "copy_canonical_id",
+      "copy_citation_hint",
+      "open_snapshot_future"
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "install_unavailable",
+      "execute_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "authorized_downloads_claimed": false,
+    "notes": [
+      "Parent and member navigation is read-only."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_parent",
+      "status": "available",
+      "label": "View parent"
+    },
+    {
+      "action_id": "view_members",
+      "status": "available",
+      "label": "View members"
+    },
+    {
+      "action_id": "view_source",
+      "status": "available",
+      "label": "View source"
+    },
+    {
+      "action_id": "view_evidence",
+      "status": "available",
+      "label": "View evidence"
+    },
+    {
+      "action_id": "copy_canonical_id",
+      "status": "available",
+      "label": "Copy canonical ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    },
+    {
+      "action_id": "open_snapshot_future",
+      "status": "future_deferred",
+      "label": "Open snapshot"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "download_unavailable",
+      "reason": "No parent or member download is exposed.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    }
+  ],
+  "related_records": {
+    "result_card_refs": [],
+    "source_refs": [
+      "public_fixture_source"
+    ],
+    "evidence_refs": [
+      "evidence:sample-parent-container"
+    ],
+    "comparison_refs_future": [],
+    "absence_refs_future": [],
+    "notes": [
+      "Parent references are fixture-safe."
+    ]
+  },
+  "candidate_review_state": {
+    "review_status": "not_applicable",
+    "candidate_or_provisional_not_verified": false,
+    "review_limitations": [
+      "Source-observed member is not verified object truth."
+    ],
+    "notes": [
+      "Member status remains source-observed."
+    ]
+  },
+  "absence_or_gap_summary": {
+    "absence_status": "not_applicable",
+    "unresolved_gaps": [
+      "No raw member review.",
+      "No deep extraction.",
+      "No rights clearance.",
+      "No malware scan."
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "Member presence is scoped to parent fixture metadata."
+    ],
+    "notes": [
+      "Parent lineage prevents detached member claims."
+    ]
+  },
+  "limitations": [
+    {
+      "label": "Parent lineage required",
+      "description": "The member object is only meaningful with parent source and representation context."
+    },
+    {
+      "label": "No payload",
+      "description": "No member payload, download, install, or execution is exposed."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "member_not_detached",
+      "severity": "caution",
+      "message": "Member object must keep parent lineage visible."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May show parent/member hierarchy."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve parent lineage."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use nested lists."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must list containment path."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May show member tree without file hosting."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve parent refs and containment path."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May expose parent manifest summary only."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot output only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay output only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal output only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card output only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must print parent lineage."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_object_identity_preserved",
+    "object_state_version_unknowns_preserved",
+    "representation_and_member_posture_preserved",
+    "source_evidence_status_meaning_preserved",
+    "provenance_or_lineage_preserved",
+    "compatibility_posture_preserved",
+    "rights_and_risk_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "member_parent_lineage_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_result_card.v0.json",
+      "contracts/views/search_page.v0.json",
+      "contracts/pages/object_page.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/object_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "object_page_parity_v0"
+  },
+  "no_goals": [
+    "no object-page runtime",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no rights-clearance or malware-safety claim",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Member ObjectPageView example demonstrates smallest-actionable-unit lineage."
+  ]
+}

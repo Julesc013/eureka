@@ -1,0 +1,481 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "candidate_object_page_v0",
+  "view_family": "ObjectPageView",
+  "route_family": "object_page_future",
+  "canonical_route": "/objects/sample-candidate",
+  "page_title": "Sample Candidate Object",
+  "page_status": "candidate",
+  "object": {
+    "object_id": "object_sample_candidate",
+    "object_type": "software",
+    "title": "Sample Candidate Object",
+    "summary": "Provisional candidate object that requires review.",
+    "object_status": "candidate_object"
+  },
+  "object_identity": {
+    "object_id": "object_sample_candidate",
+    "object_type": "software",
+    "identity_state": "candidate_object",
+    "title": "Sample Candidate Object",
+    "subtitle": "Candidate only",
+    "aliases": [
+      "Sample candidate"
+    ],
+    "canonical_route": "/objects/sample-candidate",
+    "stable_ids": [
+      {
+        "id_type": "eureka_candidate_example",
+        "value": "object_sample_candidate",
+        "status": "candidate"
+      }
+    ],
+    "external_identifiers": [],
+    "source_specific_identifiers": [
+      {
+        "id_type": "candidate_fixture_id",
+        "value": "fixture_candidate_object",
+        "status": "source_observed"
+      }
+    ],
+    "identity_confidence": "candidate",
+    "identity_limitations": [
+      "Candidate identity is not verified truth.",
+      "Additional reviewed evidence is required."
+    ],
+    "notes": [
+      "Renderers must keep the candidate label visible."
+    ]
+  },
+  "object_state": {
+    "version": null,
+    "release_date": null,
+    "platform": null,
+    "architecture": null,
+    "format": "unknown",
+    "language": null,
+    "edition": null,
+    "capture_date": null,
+    "temporal_state": "unknown",
+    "state_confidence": "unknown",
+    "state_limitations": [
+      "State and version are unknown for this candidate."
+    ],
+    "notes": [
+      "Unknowns are not invented."
+    ]
+  },
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "contract_only",
+    "notes": [
+      "Candidate example is contract-only."
+    ]
+  },
+  "representation_summary": {
+    "representations": [],
+    "manifest_refs": [],
+    "snapshot_refs_future": [],
+    "notes": [
+      "No representation is verified for this candidate."
+    ]
+  },
+  "file_and_member_summary": {
+    "member_records": [],
+    "parent_object_ref": null,
+    "parent_representation_ref": null,
+    "containment_path": [],
+    "checksums": [],
+    "file_size": null,
+    "media_type": null,
+    "format_label": null,
+    "preview_available": false,
+    "preview_limitations": [
+      "No preview is available."
+    ],
+    "manifest_refs": [],
+    "snapshot_refs_future": [],
+    "notes": [
+      "No file/member identity is verified."
+    ]
+  },
+  "source_summary": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_posture": "candidate_source_observation",
+    "source_limitations": [
+      "Source mention is not accepted object truth."
+    ],
+    "source_observation_accepted_as_truth": false,
+    "observation_status": "source_observed_candidate",
+    "reviewed_status": "review_required",
+    "generated_or_observed_status": "observed_candidate_summary",
+    "notes": [
+      "Source observation remains provisional."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_summary": "One weak source observation suggests a possible object.",
+    "evidence_links": [],
+    "evidence_posture": "candidate_evidence",
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "confidence_or_uncertainty": "Low confidence; review required.",
+    "limitations": [
+      "No reviewed evidence, official source, compatibility evidence, or rights/risk review is represented."
+    ],
+    "notes": [
+      "Candidate evidence is not promoted."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "public_fixture_source",
+      "candidate_observation",
+      "object_sample_candidate"
+    ],
+    "parent_lineage_visible": false,
+    "conflict_summary": "Conflicts unknown; evidence is too weak for acceptance.",
+    "notes": [
+      "Candidate lineage is visible."
+    ]
+  },
+  "compatibility_summary": {
+    "supported_platforms": [],
+    "unsupported_platforms": [],
+    "unknown_platforms": [
+      "unknown"
+    ],
+    "compatibility_claims": [],
+    "required_runtime_or_dependency": null,
+    "hardware_requirements": null,
+    "host_profile_fit": "public_read_only_candidate",
+    "confidence_or_uncertainty": "Compatibility unknown.",
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No compatibility or installability evidence is available."
+    ],
+    "notes": [
+      "Candidate status cannot imply installability."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "Rights are unknown and not cleared."
+    ],
+    "rights_clearance_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights uncertainty blocks distribution claims."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown_candidate_risk",
+    "executable_risk": "unknown",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No payload, scan, or execution review exists."
+    ],
+    "blocked_actions": [
+      "execute_unavailable",
+      "install_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "Risk remains unknown."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source",
+      "view_evidence",
+      "copy_canonical_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "install_unavailable",
+      "execute_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "authorized_downloads_claimed": false,
+    "notes": [
+      "Candidate allows inspection only."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source",
+      "status": "available",
+      "label": "View source"
+    },
+    {
+      "action_id": "view_evidence",
+      "status": "available",
+      "label": "View evidence"
+    },
+    {
+      "action_id": "copy_canonical_id",
+      "status": "available",
+      "label": "Copy canonical ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "download_unavailable",
+      "reason": "Candidate has no authorized downloadable artifact.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Candidate is not verified installable.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    }
+  ],
+  "related_records": {
+    "result_card_refs": [
+      "contracts/api/search_result_card.v0.json"
+    ],
+    "source_refs": [
+      "public_fixture_source"
+    ],
+    "evidence_refs": [],
+    "comparison_refs_future": [],
+    "absence_refs_future": [
+      "future_absence:sample-candidate"
+    ],
+    "notes": [
+      "Candidate may later relate to review or absence records."
+    ]
+  },
+  "candidate_review_state": {
+    "review_status": "review_required",
+    "candidate_or_provisional_not_verified": true,
+    "review_limitations": [
+      "No human/operator review or evidence sufficiency review is represented."
+    ],
+    "notes": [
+      "Candidate must not be rendered as verified."
+    ]
+  },
+  "absence_or_gap_summary": {
+    "absence_status": "weak_evidence_only",
+    "unresolved_gaps": [
+      "Identity review missing.",
+      "Source corroboration missing.",
+      "Compatibility evidence missing.",
+      "Rights and risk review missing."
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "Weak evidence does not prove presence or absence."
+    ],
+    "notes": [
+      "Candidate can later be rejected, merged, or reviewed by a governed process."
+    ]
+  },
+  "limitations": [
+    {
+      "label": "Candidate only",
+      "description": "This object must not be represented as verified truth."
+    },
+    {
+      "label": "No unsafe action",
+      "description": "Download, install, execution, upload, account, telemetry, live probe, and hosted backend behavior are unavailable."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "candidate_not_verified",
+      "severity": "warning",
+      "message": "This object is a candidate and requires review."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must visibly label candidate state."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve candidate warning."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use plain warning rows."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must say candidate, not verified."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply file hosting."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve candidate fields."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Manifest output is future/deferred."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot output only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay output only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal output only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card output only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve candidate warning."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_object_identity_preserved",
+    "object_state_version_unknowns_preserved",
+    "representation_and_member_posture_preserved",
+    "source_evidence_status_meaning_preserved",
+    "provenance_or_lineage_preserved",
+    "compatibility_posture_preserved",
+    "rights_and_risk_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "member_parent_lineage_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_result_card.v0.json",
+      "contracts/views/search_page.v0.json",
+      "contracts/pages/object_page.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/object_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "object_page_parity_v0"
+  },
+  "no_goals": [
+    "no object-page runtime",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no rights-clearance or malware-safety claim",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Candidate ObjectPageView example demonstrates provisional state safeguards."
+  ]
+}

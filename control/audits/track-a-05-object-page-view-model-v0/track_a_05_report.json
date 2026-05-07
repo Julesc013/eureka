@@ -1,0 +1,80 @@
+{
+  "schema_version": "track_a_05_report.v0",
+  "status": "warn",
+  "track": "A",
+  "task": "TRACK-A-05",
+  "added_contracts": [
+    "contracts/views/object_page.v0.json",
+    "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/object_page_view_model_policy.json"
+  ],
+  "added_examples": [
+    "examples/view_models/object_page/candidate_object_page_v0.json",
+    "examples/view_models/object_page/member_object_page_v0.json",
+    "examples/view_models/object_page/minimal_object_page_v0.json",
+    "examples/view_models/object_page/software_object_page_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_object_page_view_model.py",
+    "tests/contracts/test_object_page_view_model.py"
+  ],
+  "updated_docs": [
+    "docs/roadmap/TRACK_EXECUTION_PLAN.md"
+  ],
+  "aide_evidence": [
+    ".aide/queue/TRACK-A-05/status.yaml",
+    ".aide/queue/TRACK-A-05/task.yaml",
+    ".aide/context/latest-review-packet.md",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/evals/runs/latest-golden-tasks.md",
+    ".aide/queue/TRACK-A-05/evidence/changed-files.md",
+    ".aide/queue/TRACK-A-05/evidence/remaining-risks.md",
+    ".aide/queue/TRACK-A-05/evidence/track-a-contract-result.md",
+    ".aide/queue/TRACK-A-05/evidence/validation.md"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/publication/object_page_view_model_policy.json": "pass",
+    "python -m json.tool control/audits/track-a-05-object-page-view-model-v0/track_a_05_report.json": "pass",
+    "python scripts/validate_representation_contracts.py": "pass",
+    "python scripts/validate_semantic_renderer_parity.py": "pass",
+    "python scripts/validate_route_view_representation_matrix.py": "pass",
+    "python scripts/validate_search_page_view_model.py": "pass",
+    "python scripts/validate_object_page_view_model.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "strict secret scan over changed paths": "pass",
+    "ASCII scan over changed paths": "pass",
+    "generated site artifact status": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_0_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_verifier_0_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false
+  },
+  "next_task": "TRACK-A-06 \u2014 SourcePage view model contract"
+}

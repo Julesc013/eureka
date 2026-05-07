@@ -1,0 +1,542 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "software_object_page_v0",
+  "view_family": "ObjectPageView",
+  "route_family": "object_page_future",
+  "canonical_route": "/objects/sample-software",
+  "page_title": "Sample Software Object",
+  "page_status": "known",
+  "object": {
+    "object_id": "object_sample_software",
+    "object_type": "software",
+    "title": "Sample Software Object",
+    "summary": "Software-like object with cautious compatibility, rights, and risk posture.",
+    "object_status": "known_object"
+  },
+  "object_identity": {
+    "object_id": "object_sample_software",
+    "object_type": "software",
+    "identity_state": "known_object",
+    "title": "Sample Software Object",
+    "subtitle": "Public-safe software-like example",
+    "aliases": [
+      "Sample Utility"
+    ],
+    "canonical_route": "/objects/sample-software",
+    "stable_ids": [
+      {
+        "id_type": "eureka_public_example",
+        "value": "object_sample_software",
+        "status": "public_safe"
+      }
+    ],
+    "external_identifiers": [],
+    "source_specific_identifiers": [
+      {
+        "id_type": "fixture_record",
+        "value": "fixture_sample_software",
+        "status": "source_observed"
+      }
+    ],
+    "identity_confidence": "known_with_limitations",
+    "identity_limitations": [
+      "Identity is based on public fixture metadata."
+    ],
+    "notes": [
+      "No official-source claim is made."
+    ]
+  },
+  "object_state": {
+    "version": "1.x",
+    "release_date": null,
+    "platform": "example desktop family",
+    "architecture": "unknown",
+    "format": "metadata record",
+    "language": "unknown",
+    "edition": null,
+    "capture_date": null,
+    "temporal_state": "partial",
+    "state_confidence": "partial",
+    "state_limitations": [
+      "Version and platform are partial fixture labels."
+    ],
+    "notes": [
+      "Partial state is not filled with invented exact values."
+    ]
+  },
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "contract_only",
+    "notes": [
+      "No hosted or live object behavior."
+    ]
+  },
+  "representation_summary": {
+    "representations": [
+      {
+        "representation_id": "repr_sample_software_metadata",
+        "representation_type": "metadata_summary",
+        "media_type": "application/json",
+        "format_label": "metadata summary",
+        "checksums": [
+          {
+            "algorithm": "sha256",
+            "value": "0000000000000000000000000000000000000000000000000000000000000000",
+            "status": "example_placeholder"
+          }
+        ],
+        "file_size": 2048,
+        "preview_available": false,
+        "preview_limitations": [
+          "No executable preview or payload is exposed."
+        ],
+        "notes": [
+          "Checksum is an example placeholder for metadata only."
+        ]
+      }
+    ],
+    "manifest_refs": [
+      "manifest:sample-software-metadata"
+    ],
+    "snapshot_refs_future": [],
+    "notes": [
+      "Representation is metadata-only."
+    ]
+  },
+  "file_and_member_summary": {
+    "member_records": [],
+    "parent_object_ref": null,
+    "parent_representation_ref": null,
+    "containment_path": [],
+    "checksums": [
+      {
+        "algorithm": "sha256",
+        "value": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "example_placeholder"
+      }
+    ],
+    "file_size": 2048,
+    "media_type": "application/json",
+    "format_label": "metadata summary",
+    "preview_available": false,
+    "preview_limitations": [
+      "Preview unavailable; no binary or executable payload is exposed."
+    ],
+    "manifest_refs": [
+      "manifest:sample-software-metadata"
+    ],
+    "snapshot_refs_future": [],
+    "notes": [
+      "File summary does not imply download hosting."
+    ]
+  },
+  "source_summary": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_posture": "local_index_only_fixture",
+    "source_limitations": [
+      "Source observation is not official truth."
+    ],
+    "source_observation_accepted_as_truth": false,
+    "observation_status": "source_observed",
+    "reviewed_status": "not_reviewed_for_truth",
+    "generated_or_observed_status": "observed_fixture_summary",
+    "notes": [
+      "Community or fixture mention is not converted into official source status."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_summary": "Limited fixture evidence indicates a software-like record.",
+    "evidence_links": [
+      {
+        "rel": "evidence",
+        "href": "/evidence/sample-software",
+        "label": "Sample evidence summary"
+      }
+    ],
+    "evidence_posture": "limited_fixture_evidence",
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "confidence_or_uncertainty": "Moderate fixture confidence, not verified public truth.",
+    "limitations": [
+      "No external baseline, live source, or operator review is represented."
+    ],
+    "notes": [
+      "Evidence does not authorize downloads or installation."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "public_fixture_source",
+      "repr_sample_software_metadata",
+      "object_sample_software"
+    ],
+    "parent_lineage_visible": false,
+    "conflict_summary": "No conflicts are represented, but absence of conflict is not proof.",
+    "notes": [
+      "Lineage stays visible as fixture provenance."
+    ]
+  },
+  "compatibility_summary": {
+    "supported_platforms": [],
+    "unsupported_platforms": [],
+    "unknown_platforms": [
+      "example desktop family",
+      "other platforms"
+    ],
+    "compatibility_claims": [
+      "A source label mentions an example desktop family."
+    ],
+    "required_runtime_or_dependency": "unknown",
+    "hardware_requirements": "unknown",
+    "host_profile_fit": "public_read_only_summary",
+    "confidence_or_uncertainty": "Compatibility is unknown and not installability.",
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No tested compatibility or installability is claimed."
+    ],
+    "notes": [
+      "Unknown compatibility remains visible."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance or redistribution permission is claimed."
+    ],
+    "rights_clearance_claimed": false,
+    "takedown_or_policy_notes": [
+      "Policy review would be required before distribution claims."
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights uncertainty must be visible in every projection."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "executable_risk_unknown",
+    "executable_risk": "possible_software_artifact_but_no_payload_exposed",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No malware scan, safe execution, or install safety claim is made."
+    ],
+    "blocked_actions": [
+      "execute_unavailable",
+      "install_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "Executable risk remains cautionary."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source",
+      "view_evidence",
+      "compare_versions",
+      "copy_canonical_id",
+      "copy_citation_hint",
+      "export_manifest_future"
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "install_unavailable",
+      "execute_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "authorized_downloads_claimed": false,
+    "notes": [
+      "Manifest export is future/deferred and not a download."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source",
+      "status": "available",
+      "label": "View source"
+    },
+    {
+      "action_id": "view_evidence",
+      "status": "available",
+      "label": "View evidence"
+    },
+    {
+      "action_id": "compare_versions",
+      "status": "future_deferred",
+      "label": "Compare versions"
+    },
+    {
+      "action_id": "copy_canonical_id",
+      "status": "available",
+      "label": "Copy canonical ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    },
+    {
+      "action_id": "export_manifest_future",
+      "status": "future_deferred",
+      "label": "Export manifest"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "download_unavailable",
+      "reason": "No authorized download is exposed.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Verified installability is not claimed.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    }
+  ],
+  "related_records": {
+    "result_card_refs": [
+      "contracts/api/search_result_card.v0.json"
+    ],
+    "source_refs": [
+      "public_fixture_source"
+    ],
+    "evidence_refs": [
+      "evidence:sample-software"
+    ],
+    "comparison_refs_future": [
+      "future_comparison:sample-software"
+    ],
+    "absence_refs_future": [],
+    "notes": [
+      "Future refs are inert contract refs."
+    ]
+  },
+  "candidate_review_state": {
+    "review_status": "not_applicable",
+    "candidate_or_provisional_not_verified": false,
+    "review_limitations": [
+      "Known fixture status is not production verification."
+    ],
+    "notes": [
+      "No candidate promotion is performed."
+    ]
+  },
+  "absence_or_gap_summary": {
+    "absence_status": "not_applicable",
+    "unresolved_gaps": [
+      "Rights clearance missing.",
+      "Malware scan missing.",
+      "Compatibility testing missing.",
+      "Live source review missing."
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "Known object metadata does not remove evidence gaps."
+    ],
+    "notes": [
+      "Gaps must remain visible."
+    ]
+  },
+  "limitations": [
+    {
+      "label": "No download",
+      "description": "The view model exposes metadata only."
+    },
+    {
+      "label": "No installability claim",
+      "description": "Compatibility labels are not verified installability."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "software_risk_unknown",
+      "severity": "warning",
+      "message": "Executable risk is unknown and no payload is exposed."
+    },
+    {
+      "warning_id": "rights_unknown",
+      "severity": "caution",
+      "message": "Rights clearance is unavailable."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use rich object panels."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve risk and rights labels."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May degrade to tables."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must keep blocked actions explicit."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply executable file hosting."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve machine-readable risk, rights, and action fields."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May expose metadata manifest only."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot output only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay output only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal output only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card output only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve caution labels in print."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_object_identity_preserved",
+    "object_state_version_unknowns_preserved",
+    "representation_and_member_posture_preserved",
+    "source_evidence_status_meaning_preserved",
+    "provenance_or_lineage_preserved",
+    "compatibility_posture_preserved",
+    "rights_and_risk_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "member_parent_lineage_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_result_card.v0.json",
+      "contracts/views/search_page.v0.json",
+      "contracts/pages/object_page.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/object_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "object_page_parity_v0"
+  },
+  "no_goals": [
+    "no object-page runtime",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no rights-clearance or malware-safety claim",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Software-like ObjectPageView example keeps unsafe claims blocked."
+  ]
+}

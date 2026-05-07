@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "object_page_view_model_policy_v0",
+  "contract_ref": "contracts/views/object_page.v0.json",
+  "label": "ObjectPage view model policy v0",
+  "description": "Policy inventory for canonical public-safe ObjectPageView records across standard, lite, text, file, API-adjacent, snapshot, relay, terminal, print, and native-card projections.",
+  "status": "contract_only",
+  "stability": "stable-draft",
+  "created_by_slice": "TRACK-A-05",
+  "canonical_view_family": "ObjectPageView",
+  "supported_route_families": [
+    "object_page_future"
+  ],
+  "required_semantic_parity_policy": "object_page_parity_v0",
+  "allowed_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_object_states": [
+    "absence_unknown_placeholder",
+    "candidate_object",
+    "known_object",
+    "member_inner_object",
+    "provisional_object",
+    "source_observed_object"
+  ],
+  "allowed_object_types": [
+    "article_or_scan_segment",
+    "collection",
+    "compatibility_evidence",
+    "documentation",
+    "driver",
+    "file_inside_container",
+    "package_metadata",
+    "software",
+    "software_version",
+    "source_code_release",
+    "source_identity",
+    "unknown",
+    "web_capture"
+  ],
+  "allowed_action_names": [
+    "compare_versions",
+    "copy_canonical_id",
+    "copy_citation_hint",
+    "export_manifest_future",
+    "open_relay_future",
+    "open_snapshot_future",
+    "open_static_demo",
+    "view_evidence",
+    "view_members",
+    "view_parent",
+    "view_source"
+  ],
+  "required_blocked_actions": [
+    "account_unavailable",
+    "download_unavailable",
+    "execute_unavailable",
+    "hosted_backend_unavailable",
+    "install_unavailable",
+    "live_probe_unavailable",
+    "malware_safety_unavailable",
+    "rights_clearance_unavailable",
+    "telemetry_unavailable",
+    "upload_unavailable"
+  ],
+  "required_product_boundary_booleans": [
+    "accounts_enabled",
+    "downloads_enabled",
+    "hosted_backend_claimed",
+    "live_probes_enabled",
+    "telemetry_enabled",
+    "uploads_enabled"
+  ],
+  "required_safety_claim_booleans": [
+    "authorized_downloads_claimed",
+    "malware_safety_claimed",
+    "rights_clearance_claimed",
+    "safe_execution_claimed",
+    "verified_installability_claimed"
+  ],
+  "required_representation_hints": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "required_semantic_requirements": [
+    "actions_and_blocked_actions_preserved",
+    "canonical_object_identity_preserved",
+    "candidate_review_state_preserved",
+    "compatibility_posture_preserved",
+    "limitations_and_gaps_visible",
+    "member_parent_lineage_preserved",
+    "object_state_version_unknowns_preserved",
+    "provenance_or_lineage_preserved",
+    "representation_and_member_posture_preserved",
+    "rights_and_risk_posture_preserved",
+    "source_evidence_status_meaning_preserved"
+  ],
+  "current_no_goals": [
+    "no product runtime behavior change",
+    "no object-page runtime activation",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads",
+    "no accounts",
+    "no telemetry",
+    "no generated site artifact mutation",
+    "no native project creation",
+    "no master-index mutation",
+    "no rights-clearance claims",
+    "no malware-safety claims",
+    "no verified-installability claims"
+  ],
+  "future_deferred_fields": [
+    "export_manifest_future",
+    "open_snapshot_future",
+    "open_relay_future",
+    "snapshot_refs_future",
+    "comparison_refs_future",
+    "absence_refs_future",
+    "native_card_future",
+    "terminal_future"
+  ],
+  "notes": [
+    "ObjectPageView is a canonical view-model contract and does not implement object page routes.",
+    "File-tree and manifest projections are summaries only and must not imply executable hosting.",
+    "Member object pages must keep parent container lineage visible."
+  ]
+}

@@ -1,0 +1,47 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-05
+title: ObjectPage view model contract
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-05
+source_packet: .aide/context/latest-task-packet.md
+objective: Define the canonical public-safe ObjectPageView model before renderer or runtime refactors.
+scope:
+  allowed_paths:
+    - contracts/views/object_page.v0.json
+    - docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md
+    - docs/roadmap/TRACK_EXECUTION_PLAN.md
+    - control/inventory/publication/object_page_view_model_policy.json
+    - examples/view_models/object_page/**
+    - scripts/validate_object_page_view_model.py
+    - tests/contracts/test_object_page_view_model.py
+    - control/audits/track-a-05-object-page-view-model-v0/**
+    - .aide/queue/TRACK-A-05/**
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - ObjectPage view model schema exists
+  - policy inventory exists and validates
+  - examples exist and validate
+  - validator and tests pass
+  - audit pack exists
+  - no runtime, route, hosted, generated site, object-page, or search semantic behavior is changed
+  - no rights-clearance, malware-safety, or verified-installability claims are added
+  - validation and evidence are recorded
+recommended_after: TRACK-A-04
+recommended_next: TRACK-A-06

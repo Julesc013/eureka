@@ -1,0 +1,471 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "minimal_object_page_v0",
+  "view_family": "ObjectPageView",
+  "route_family": "object_page_future",
+  "canonical_route": "/objects/sample-object",
+  "page_title": "Sample Object",
+  "page_status": "known",
+  "object": {
+    "object_id": "object_sample_minimal",
+    "object_type": "documentation",
+    "title": "Sample Object",
+    "summary": "Minimal public-safe object identity example.",
+    "object_status": "known_object"
+  },
+  "object_identity": {
+    "object_id": "object_sample_minimal",
+    "object_type": "documentation",
+    "identity_state": "known_object",
+    "title": "Sample Object",
+    "subtitle": null,
+    "aliases": [
+      "Sample public object"
+    ],
+    "canonical_route": "/objects/sample-object",
+    "stable_ids": [
+      {
+        "id_type": "eureka_public_example",
+        "value": "object_sample_minimal",
+        "status": "public_safe"
+      }
+    ],
+    "external_identifiers": [],
+    "source_specific_identifiers": [
+      {
+        "id_type": "source_fixture_id",
+        "value": "fixture_sample_object",
+        "status": "source_observed"
+      }
+    ],
+    "identity_confidence": "known_with_limitations",
+    "identity_limitations": [
+      "Known only within the public-safe example fixture."
+    ],
+    "notes": [
+      "No production object identity is claimed."
+    ]
+  },
+  "object_state": {
+    "version": null,
+    "release_date": null,
+    "platform": null,
+    "architecture": null,
+    "format": "metadata summary",
+    "language": null,
+    "edition": null,
+    "capture_date": null,
+    "temporal_state": "unknown",
+    "state_confidence": "unknown",
+    "state_limitations": [
+      "Version and temporal state are intentionally unknown."
+    ],
+    "notes": [
+      "Unknown fields remain unknown."
+    ]
+  },
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "contract_only",
+    "notes": [
+      "Contract-only ObjectPageView example."
+    ]
+  },
+  "representation_summary": {
+    "representations": [],
+    "manifest_refs": [],
+    "snapshot_refs_future": [],
+    "notes": [
+      "No payload or downloadable representation is exposed."
+    ]
+  },
+  "file_and_member_summary": {
+    "member_records": [],
+    "parent_object_ref": null,
+    "parent_representation_ref": null,
+    "containment_path": [],
+    "checksums": [],
+    "file_size": null,
+    "media_type": null,
+    "format_label": null,
+    "preview_available": false,
+    "preview_limitations": [
+      "No preview is represented."
+    ],
+    "manifest_refs": [],
+    "snapshot_refs_future": [],
+    "notes": [
+      "No member object is represented."
+    ]
+  },
+  "source_summary": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_posture": "source_observed_fixture",
+    "source_limitations": [
+      "Fixture source is not accepted truth."
+    ],
+    "source_observation_accepted_as_truth": false,
+    "observation_status": "source_observed",
+    "reviewed_status": "not_reviewed_for_truth",
+    "generated_or_observed_status": "observed_fixture_summary",
+    "notes": [
+      "Observation remains distinct from object truth."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_summary": "One fixture-backed public-safe source observation.",
+    "evidence_links": [],
+    "evidence_posture": "limited_fixture_evidence",
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "confidence_or_uncertainty": "Limited confidence; example fixture only.",
+    "limitations": [
+      "No live sources or external evidence were checked."
+    ],
+    "notes": [
+      "Evidence candidate is not promoted to fact."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "public_fixture_source",
+      "object_sample_minimal"
+    ],
+    "parent_lineage_visible": false,
+    "conflict_summary": "No conflicts represented in this minimal example.",
+    "notes": [
+      "Lineage is compact and public-safe."
+    ]
+  },
+  "compatibility_summary": {
+    "supported_platforms": [],
+    "unsupported_platforms": [],
+    "unknown_platforms": [
+      "unknown"
+    ],
+    "compatibility_claims": [],
+    "required_runtime_or_dependency": null,
+    "hardware_requirements": null,
+    "host_profile_fit": "public_read_only_summary",
+    "confidence_or_uncertainty": "Compatibility is unknown.",
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No compatibility coverage is claimed."
+    ],
+    "notes": [
+      "Unknown compatibility is preserved."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance is claimed."
+    ],
+    "rights_clearance_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights posture is a caution, not permission."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "executable_risk": "not_applicable_to_metadata_summary",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No malware safety or execution safety claim is made."
+    ],
+    "blocked_actions": [
+      "execute_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "No payload is exposed."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source",
+      "view_evidence",
+      "copy_canonical_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "install_unavailable",
+      "execute_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "authorized_downloads_claimed": false,
+    "notes": [
+      "Allowed actions are read-only."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source",
+      "status": "available",
+      "label": "View source"
+    },
+    {
+      "action_id": "view_evidence",
+      "status": "available",
+      "label": "View evidence"
+    },
+    {
+      "action_id": "copy_canonical_id",
+      "status": "available",
+      "label": "Copy canonical ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-05 no-goal"
+    }
+  ],
+  "related_records": {
+    "result_card_refs": [
+      "contracts/api/search_result_card.v0.json"
+    ],
+    "source_refs": [
+      "public_fixture_source"
+    ],
+    "evidence_refs": [],
+    "comparison_refs_future": [],
+    "absence_refs_future": [],
+    "notes": [
+      "References are public-safe contract or fixture refs."
+    ]
+  },
+  "candidate_review_state": {
+    "review_status": "not_applicable",
+    "candidate_or_provisional_not_verified": false,
+    "review_limitations": [],
+    "notes": [
+      "This minimal example is known only within fixture scope."
+    ]
+  },
+  "absence_or_gap_summary": {
+    "absence_status": "not_applicable",
+    "unresolved_gaps": [
+      "Version, compatibility, rights, and risk evidence are incomplete."
+    ],
+    "global_absence_claimed": false,
+    "limitations": [
+      "No exhaustive source coverage is claimed."
+    ],
+    "notes": [
+      "Gaps stay visible in all projections."
+    ]
+  },
+  "limitations": [
+    {
+      "label": "Fixture scope",
+      "description": "The object is known only inside this public-safe example."
+    },
+    {
+      "label": "No unsafe capabilities",
+      "description": "Download, install, execution, upload, account, telemetry, live probe, and hosted backend behavior are unavailable."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "rights_risk_unknown",
+      "severity": "caution",
+      "message": "Rights, risk, and compatibility are not cleared."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use full object layout."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve limitations and blocked actions."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use plain tables."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve canonical ID and no-claim posture."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply file hosting."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve machine-readable caution fields."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May summarize manifests without download enablement."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot output only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay output only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal output only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card output only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May format for print while preserving caution labels."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_object_identity_preserved",
+    "object_state_version_unknowns_preserved",
+    "representation_and_member_posture_preserved",
+    "source_evidence_status_meaning_preserved",
+    "provenance_or_lineage_preserved",
+    "compatibility_posture_preserved",
+    "rights_and_risk_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "member_parent_lineage_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_result_card.v0.json",
+      "contracts/views/search_page.v0.json",
+      "contracts/pages/object_page.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/object_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "object_page_parity_v0"
+  },
+  "no_goals": [
+    "no object-page runtime",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no rights-clearance or malware-safety claim",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Minimal ObjectPageView example for Track A-05."
+  ]
+}
