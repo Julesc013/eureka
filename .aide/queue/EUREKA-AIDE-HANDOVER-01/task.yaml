@@ -1,0 +1,40 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-HANDOVER-01
+title: Eureka AIDE Lite handover review
+status: in_progress
+target_repo: julesc013/eureka
+phase: Q26
+source_pack_id: aide-lite-pack-v0
+source_pack_path: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
+scope:
+  allowed_paths:
+    - .aide/**
+    - .gitignore
+    - AGENTS.md
+    - README.md
+    - docs/reference/aide-lite-import.md
+    - docs/reference/aide-handover.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - crates/**
+    - .aide.local/**
+    - .env
+objective: >
+  Review the Q22 Eureka AIDE Lite import, refresh or verify it against the
+  repaired Q25 source pack, regenerate target-local compact context, and produce
+  the first real bounded Eureka task packet for review.
+non_goals:
+  - Eureka product feature implementation.
+  - Provider/model/network calls.
+  - AIDE source repo mutation.
+  - Dominium import or mutation.
+acceptance:
+  - Handover evidence exists under this queue item.
+  - Q22 import evidence is reviewed or uncertainty is recorded.
+  - Q25 source pack is checked and safe refresh status is recorded.
+  - Eureka-local doctor/validate/snapshot/index/pack/review/eval results are recorded.
+  - Token-savings confirmation uses chars/4 approximation without billing claims.
+  - Next real bounded Eureka task handoff is generated and reviewed.

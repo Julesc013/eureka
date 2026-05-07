@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-HANDOVER-01
+status: in_progress
+updated: 2026-05-07
+summary: >
+  Q26 handover review is underway. The Q22 import evidence and repaired Q25
+  source pack have been located, and baseline validation is being recorded.
+known_limitations:
+  - Final token-savings confirmation is pending regenerated handoff packet size.
+  - Final quality readiness is pending post-refresh validation.
+  - Current pre-refresh `test` and `selftest` aliases fail in the imported pack
+    temp fixture and require post-refresh recheck.
+next:
+  - Refresh portable pack files if safe.
+  - Regenerate latest task packet for the first real bounded Eureka task.
+  - Move this status to `needs_review`.
