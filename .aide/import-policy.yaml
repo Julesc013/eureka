@@ -1,0 +1,31 @@
+schema_version: q22.eureka-aide-import-policy.v0
+policy_id: eureka.aide-lite-import.v0
+source_policy: q21.import-policy.v0
+status: applied_target_scoped
+source_pack: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
+target_repo: julesc013/eureka
+import_method: manual_target_scoped_after_q21_dry_run
+import_date: 2026-05-07
+allowed_target_roots:
+  - .aide/
+  - .gitignore
+  - AGENTS.md
+excluded_pack_roots:
+  - .aide.local.example/
+  - core/
+  - docs/reference/
+safety_rules:
+  no_source_repo_queue_history: true
+  no_source_repo_generated_context: true
+  no_source_repo_reports: true
+  no_source_repo_memory: true
+  no_local_state_copy: true
+  no_secrets: true
+  raw_prompt_storage_default: false
+  raw_response_storage_default: false
+  provider_calls: false
+  model_calls: false
+  network_calls: false
+notes:
+  - Existing Eureka `.aide/` repo-operating metadata was preserved.
+  - The source command dry-run reported zero conflicts, but direct application was not used because the command copies every `files/` root, including roots outside the Q22 target scope.

@@ -10,7 +10,19 @@ summary: >
 adoption:
   mode: contract-first
   execution_posture: harness-oriented-preparation
-  local_aide_runtime: not-present-in-repo
+  local_aide_runtime: aide-lite-pack-v0-imported
+  token_discipline: compact-target-local-packets
+aide_lite_import:
+  pack_id: aide-lite-pack-v0
+  source_repo: julesc013/aide
+  source_pack: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
+  imported_for: Q22-eureka-import-pilot
+  imported_on: 2026-05-07
+  import_method: manual-target-scoped-after-q21-dry-run
+  provider_or_model_calls: false
+  network_calls: false
+  target_memory: .aide/memory/
+  generated_context: .aide/context/
 bootstrap_seed:
   repo_kind: product_monorepo
   domain: software resolution, preservation, machine reconstruction
