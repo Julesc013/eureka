@@ -1,0 +1,325 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "absence_search_page_v0",
+  "view_family": "SearchPageView",
+  "route_family": "text_static",
+  "canonical_route": "/text/search-absence-example.txt",
+  "page_title": "Scoped absence for example driver",
+  "page_status": "absence_report",
+  "search_mode": "static_handoff",
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "static_summary_only",
+    "notes": [
+      "Static absence summary only."
+    ]
+  },
+  "query": {
+    "raw_query": "example driver",
+    "normalized_query": "example driver",
+    "query_id_or_hash": "query-example-driver-public-fixture",
+    "submitted_via": "static_link",
+    "query_status": "accepted",
+    "interpreted_intent": {
+      "intent_status": "uncertain",
+      "summary": "The query appears to ask for a driver-like artifact, but the example is intentionally generic.",
+      "confidence_or_uncertainty": "Uncertain intent; no source truth is inferred."
+    },
+    "query_plan_ref": null,
+    "privacy_posture": "anonymous_no_retention",
+    "poisoning_guard_posture": "fixture_reviewed",
+    "notes": [
+      "Static reviewed example; no user tracking."
+    ]
+  },
+  "interpreted_intent": {
+    "intent_status": "uncertain",
+    "summary": "Possible artifact search, represented only as a scoped absence example.",
+    "confidence_or_uncertainty": "Intent is not evidence."
+  },
+  "controls": [
+    {
+      "control_id": "refine_query",
+      "control_type": "link",
+      "allowed_action": "refine_query",
+      "status": "available",
+      "notes": [
+        "Safe refinement link only."
+      ]
+    },
+    {
+      "control_id": "view_absence",
+      "control_type": "link",
+      "allowed_action": "view_absence",
+      "status": "available",
+      "notes": [
+        "Displays bounded absence details."
+      ]
+    }
+  ],
+  "result_summary": {
+    "result_count": 0,
+    "visible_result_count": 0,
+    "result_state": "no_verified_result",
+    "summary": "No verified result is represented for the searched scope.",
+    "confidence_or_uncertainty": "This is a scoped absence, not a global absence."
+  },
+  "results": [],
+  "result_sections": {
+    "known_absence": {
+      "label": "Scoped no verified result",
+      "result_ids": [],
+      "section_state": "scoped_no_verified_result",
+      "notes": [
+        "The absence claim names unchecked sources."
+      ]
+    },
+    "near_misses": {
+      "label": "Near matches",
+      "result_ids": [],
+      "section_state": "none_in_example",
+      "notes": [
+        "No near-match result cards are included."
+      ]
+    }
+  },
+  "source_summary": {
+    "summary": "Static public summaries checked; live sources not checked.",
+    "posture": "static_summary_only",
+    "links": [],
+    "limitations": [
+      "No external archive or live source query is implied."
+    ]
+  },
+  "evidence_summary": {
+    "summary": "Evidence is limited to the declared static scope.",
+    "posture": "scoped_absence_evidence",
+    "links": [],
+    "limitations": [
+      "Conflicting or missing external evidence may exist outside this scope."
+    ]
+  },
+  "absence": {
+    "absence_status": "scoped_no_verified_result",
+    "searched_scope": "Static public summary and local index fixture scope.",
+    "sources_checked": [
+      "static public summary",
+      "public local index fixture"
+    ],
+    "sources_not_checked": [
+      "live Internet sources",
+      "package registries",
+      "private user files",
+      "operator-only caches"
+    ],
+    "near_matches": [
+      "example documentation mention without artifact evidence"
+    ],
+    "known_gaps": [
+      "No live-source probe was performed.",
+      "No external baseline was checked by this view model."
+    ],
+    "next_safe_actions": [
+      "refine_query",
+      "view_absence",
+      "view_source"
+    ],
+    "work_unit_refs_future": [
+      "future_work_unit_placeholder"
+    ],
+    "need_refs_future": [
+      "future_need_placeholder"
+    ],
+    "limitations": [
+      "Absence is scoped and reversible if later evidence is reviewed."
+    ],
+    "exhaustive_global_search": false,
+    "notes": [
+      "The example must not be rendered as proof that the object does not exist."
+    ]
+  },
+  "limitations": [
+    {
+      "label": "Scoped absence",
+      "description": "Unchecked sources remain visible."
+    },
+    {
+      "label": "No live probe",
+      "description": "The page cannot fetch or verify live sources."
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "absence_not_global",
+      "severity": "caution",
+      "message": "No verified result in this scope is not proof of global absence."
+    }
+  ],
+  "actions": [
+    {
+      "action_id": "refine_query",
+      "status": "available",
+      "label": "Refine query"
+    },
+    {
+      "action_id": "view_absence",
+      "status": "available",
+      "label": "View absence"
+    },
+    {
+      "action_id": "view_source",
+      "status": "available",
+      "label": "View source summary"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not part of this view-model contract.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "No downloadable artifact is exposed.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Install or execution handoff is not available.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Upload flows are not available.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Account state is not available.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not available.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-04 no-goal"
+    }
+  ],
+  "pagination": {
+    "limit": 0,
+    "offset": 0,
+    "next_cursor": null,
+    "pagination_status": "not_applicable"
+  },
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "current_or_local",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must show absence caveat."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "static_seed",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must show unchecked sources."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use plain lists."
+      ]
+    },
+    "text": {
+      "renderer_status": "static_seed",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve scoped absence wording."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "static_summary",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May include an absence manifest summary only."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve sources_checked and sources_not_checked."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card only."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "query_identity_preserved",
+    "canonical_route_preserved",
+    "result_state_preserved",
+    "source_evidence_status_meaning_preserved",
+    "rights_and_risk_posture_preserved",
+    "allowed_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "absence_scope_preserved",
+    "candidate_state_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_response.v0.json",
+      "contracts/api/search_result_card.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/search_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "search_page_parity_v0"
+  },
+  "no_goals": [
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Absence example demonstrates scoped no-result semantics."
+  ]
+}

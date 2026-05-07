@@ -1,0 +1,238 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "empty_search_page_v0",
+  "view_family": "SearchPageView",
+  "route_family": "search",
+  "canonical_route": "/search",
+  "page_title": "Search",
+  "page_status": "initial",
+  "search_mode": "static_handoff",
+  "public_runtime_posture": {
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "source_mode": "static_summary_only",
+    "notes": [
+      "Initial empty search page; no query has been executed."
+    ]
+  },
+  "query": {
+    "raw_query": "",
+    "normalized_query": "",
+    "query_id_or_hash": "empty-query-no-retention",
+    "submitted_via": "initial_page",
+    "query_status": "empty",
+    "interpreted_intent": null,
+    "query_plan_ref": null,
+    "privacy_posture": "anonymous_no_retention",
+    "poisoning_guard_posture": "empty_query_no_fetch",
+    "notes": [
+      "Empty query does not create telemetry or a retained user profile."
+    ]
+  },
+  "interpreted_intent": null,
+  "controls": [
+    {
+      "control_id": "submit_search",
+      "control_type": "search_form",
+      "allowed_action": "submit_search_get",
+      "status": "available",
+      "notes": [
+        "View-level GET search control."
+      ]
+    }
+  ],
+  "result_summary": {
+    "result_count": 0,
+    "visible_result_count": 0,
+    "result_state": "empty",
+    "summary": "No query has been submitted.",
+    "confidence_or_uncertainty": "No search claim has been made."
+  },
+  "results": [],
+  "result_sections": {},
+  "source_summary": {
+    "summary": "No sources checked because no query was submitted.",
+    "posture": "not_searched",
+    "links": [],
+    "limitations": [
+      "Initial page only."
+    ]
+  },
+  "evidence_summary": {
+    "summary": "No evidence requested or displayed.",
+    "posture": "not_applicable",
+    "links": [],
+    "limitations": [
+      "No result or absence claim is made."
+    ]
+  },
+  "absence": null,
+  "limitations": [
+    {
+      "label": "No query",
+      "description": "The initial page is not evidence of absence."
+    }
+  ],
+  "warnings": [],
+  "actions": [
+    {
+      "action_id": "submit_search_get",
+      "status": "available",
+      "label": "Submit search"
+    },
+    {
+      "action_id": "copy_query",
+      "status": "available",
+      "label": "Copy query"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers and execution are not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-04 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-04 no-goal"
+    }
+  ],
+  "pagination": {
+    "limit": 0,
+    "offset": 0,
+    "next_cursor": null,
+    "pagination_status": "not_applicable"
+  },
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "current_or_local",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May render a normal search form."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "static_seed",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May render a plain form."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May render a simple form/table."
+      ]
+    },
+    "text": {
+      "renderer_status": "static_seed",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must state that no query has been submitted."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "static_summary",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May summarize the empty search page manifest."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May expose the initial state as JSON-adjacent example data."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card only."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "query_identity_preserved",
+    "canonical_route_preserved",
+    "result_state_preserved",
+    "source_evidence_status_meaning_preserved",
+    "rights_and_risk_posture_preserved",
+    "allowed_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "absence_scope_preserved",
+    "candidate_state_preserved"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/api/search_response.v0.json",
+      "contracts/api/search_result_card.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/search_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "search_page_parity_v0"
+  },
+  "no_goals": [
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Initial SearchPageView example."
+  ]
+}

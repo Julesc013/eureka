@@ -33,15 +33,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/queue/TRACK-A-03` (??; does not match active task allowed paths)
-- unknown: `contracts/representations/route_view_representation_matrix.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-03-route-view-representation-matrix-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/route_view_representation_matrix.json` (??; does not match active task allowed paths)
-- allowed: `docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md` (??; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `.aide/policies/commit-messages.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/TRACK-A-04` (??; does not match active task allowed paths)
+- allowed: `.aide/reports/eureka-commit-message-standard.md` (M; matches active task allowed path)
+- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
+- unknown: `contracts/views` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-04-search-page-view-model-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/search_page_view_model_policy.json` (??; does not match active task allowed paths)
+- allowed: `docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
 - allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `examples/representations/route_view_matrix` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_route_view_representation_matrix.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_route_view_representation_matrix.py` (??; does not match active task allowed paths)
+- unknown: `examples/view_models` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_search_page_view_model.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_search_page_view_model.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -51,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4957
-- approx_tokens: 1240
+- chars: 5395
+- approx_tokens: 1349
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

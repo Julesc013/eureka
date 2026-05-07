@@ -18,6 +18,8 @@ Rules:
 - Use a concrete outcome, not a vague activity.
 - Avoid placeholders such as `update`, `misc`, `wip`, or `fix`.
 - Do not end the subject with a period.
+- Use `contracts` as the type for governed contract-only bundles when a task
+  requires that prefix.
 - Prefer scopes such as `aide`, `contracts`, `runtime`, `docs`, `tests`,
   `queue`, or the task id when that is clearer.
 

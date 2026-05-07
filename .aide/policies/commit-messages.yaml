@@ -20,6 +20,7 @@ subject:
     - chore
     - style
     - audit
+    - contracts
     - revert
   summary_rule: specific outcome, imperative or present-tense, no trailing period
   forbidden_vague_summaries:

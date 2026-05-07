@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "search_page_view_model_policy_v0",
+  "contract_ref": "contracts/views/search_page.v0.json",
+  "label": "SearchPage view model policy v0",
+  "description": "Policy inventory for canonical public-safe SearchPageView records across standard, lite, text, file, API-adjacent, snapshot, relay, terminal, and native-card projections.",
+  "status": "contract_only",
+  "stability": "stable-draft",
+  "created_by_slice": "TRACK-A-04",
+  "canonical_view_family": "SearchPageView",
+  "supported_route_families": [
+    "api_search",
+    "demo_static",
+    "files_static",
+    "lite_static",
+    "search",
+    "text_static"
+  ],
+  "required_semantic_parity_policy": "search_page_parity_v0",
+  "allowed_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "native_card_future",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_result_section_names": [
+    "known_absence",
+    "near_misses",
+    "policy_blocked",
+    "private_local_only_future",
+    "provisional_candidates",
+    "source_leads",
+    "verified_or_reviewed_results"
+  ],
+  "allowed_search_modes": [
+    "fixture_backed",
+    "future_hosted",
+    "future_live_probe_disabled",
+    "future_node_task",
+    "future_source_cache",
+    "local_index_only",
+    "static_demo",
+    "static_handoff"
+  ],
+  "allowed_action_names": [
+    "copy_query",
+    "export_manifest_future",
+    "open_local_runtime_route",
+    "open_static_demo",
+    "refine_query",
+    "submit_search_get",
+    "view_absence",
+    "view_evidence",
+    "view_result",
+    "view_source"
+  ],
+  "required_blocked_actions": [
+    "account_unavailable",
+    "download_unavailable",
+    "hosted_backend_unavailable",
+    "install_unavailable",
+    "live_probe_unavailable",
+    "telemetry_unavailable",
+    "upload_unavailable"
+  ],
+  "required_product_boundary_booleans": [
+    "accounts_enabled",
+    "downloads_enabled",
+    "hosted_backend_claimed",
+    "live_probes_enabled",
+    "telemetry_enabled",
+    "uploads_enabled"
+  ],
+  "required_semantic_requirements": [
+    "absence_scope_preserved",
+    "allowed_and_blocked_actions_preserved",
+    "canonical_route_preserved",
+    "candidate_state_preserved",
+    "limitations_and_gaps_visible",
+    "query_identity_preserved",
+    "result_state_preserved",
+    "rights_and_risk_posture_preserved",
+    "source_evidence_status_meaning_preserved"
+  ],
+  "required_representation_hints": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "native_card_future",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "current_no_goals": [
+    "no product runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no downloads/installers/execution",
+    "no uploads",
+    "no accounts",
+    "no telemetry",
+    "no generated site artifact mutation",
+    "no native project creation",
+    "no master-index mutation"
+  ],
+  "future_deferred_fields": [
+    "future_hosted",
+    "future_source_cache",
+    "future_live_probe_disabled",
+    "future_node_task",
+    "export_manifest_future",
+    "private_local_only_future",
+    "snapshot_future",
+    "relay_future",
+    "terminal_future",
+    "native_card_future"
+  ],
+  "notes": [
+    "SearchPageView is a canonical view-model contract and does not implement renderers.",
+    "API-adjacent examples remain view-model examples and do not change the public search API contract.",
+    "File-tree summaries may expose static summaries or manifests but must not imply executable hosting."
+  ]
+}

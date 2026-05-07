@@ -530,7 +530,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
 ]
 
 COMMIT_SUBJECT_RE = re.compile(
-    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|audit|revert)"
+    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|audit|contracts|revert)"
     r"(\([a-z0-9][a-z0-9._/-]*\))?!?: .+"
 )
 
@@ -6760,7 +6760,7 @@ def adapter_validation_checks(repo_root: Path, require_generated: bool = True) -
 
 def infer_phase(task_text: str) -> tuple[str, str]:
     cleaned = task_text.strip()
-    match = re.search(r"\b(Q\d{2})\b\s*[-:—]?\s*(.*)", cleaned)
+    match = re.search(r"\b(Q\d{2})\b\s*[-:\u2014]?\s*(.*)", cleaned)
     if not match:
         return "UNSPECIFIED", cleaned or "Compact task"
     phase = match.group(1)
