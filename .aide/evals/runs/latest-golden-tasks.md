@@ -25,8 +25,8 @@
 ### commit_message_standard_golden
 
 - result: PASS
-- checks_run: 21
-- passed_checks: 21
+- checks_run: 25
+- passed_checks: 25
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/hooks/commit-msg, .aide/policies/commit-messages.yaml, .aide/reports/eureka-commit-message-standard.md, AGENTS.md
 - notes: Checks AIDE enforces changelog-ready commit messages for future work.
@@ -72,7 +72,7 @@
 - result: PASS
 - checks_run: 25
 - passed_checks: 25
-- approx_tokens_if_applicable: 1411
+- approx_tokens_if_applicable: 1233
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-review-packet.md, .aide/context/latest-task-packet.md, .aide/verification/latest-verification-report.md
 - notes: Checks review packets stay compact, evidence-oriented, and secret-free.
 
@@ -108,7 +108,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1411
+- approx_tokens_if_applicable: 1233
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
