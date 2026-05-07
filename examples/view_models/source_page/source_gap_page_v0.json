@@ -1,0 +1,555 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "source_gap_page_v0",
+  "view_family": "SourcePageView",
+  "route_family": "source_detail",
+  "canonical_route": "/api/v1/source/source-gap",
+  "page_title": "Source Gap",
+  "page_status": "manual_only",
+  "source": {
+    "source_id": "source_gap",
+    "source_label": "Source gap",
+    "source_status": "manual_only_source",
+    "summary": "Manual-only source gap page showing known gaps and next safe work without runtime claims."
+  },
+  "source_identity": {
+    "source_id": "source_gap",
+    "source_label": "Source gap",
+    "source_slug": "source-gap",
+    "canonical_route": "/api/v1/source/source-gap",
+    "source_family": "manual_gap",
+    "source_kind": "manual_observation_target",
+    "source_scope": "manual observation gap",
+    "authority_class": "manual_placeholder_not_authority",
+    "source_status": "manual_only_source",
+    "source_url_or_reference": "manual:source-gap",
+    "source_url_public_safe": true,
+    "source_identifiers": [
+      {
+        "id_type": "manual_gap_id",
+        "value": "source_gap",
+        "status": "public_safe"
+      }
+    ],
+    "source_owner_or_operator": null,
+    "source_contact_policy": "manual_review_required",
+    "source_limitations": [
+      "Manual observation is pending and not complete."
+    ],
+    "notes": [
+      "Manual-only source is not a live connector."
+    ]
+  },
+  "source_type": "manual_gap_summary",
+  "source_authority_posture": "manual_gap_not_authoritative",
+  "source_policy": {
+    "source_policy_status": "manual_review_required",
+    "allowed_access_modes": [
+      "manual_observation_only"
+    ],
+    "forbidden_access_modes": [
+      "no_autonomous_access",
+      "approved_api_future",
+      "approved_metadata_probe_future",
+      "sitemap_or_rss_future",
+      "common_crawl_or_archive_future"
+    ],
+    "robots_or_terms_posture": "not_reviewed",
+    "rate_limit_posture": "not_applicable_no_live_calls",
+    "cache_policy": "no_cache_runtime",
+    "attribution_policy": "manual_notes_require_review",
+    "manual_observation_policy": "manual_only_pending",
+    "permission_required": true,
+    "review_required": true,
+    "operator_approval_required": true,
+    "notes": [
+      "Only manual observation planning is represented."
+    ]
+  },
+  "source_access_policy": {
+    "allowed_access_modes": [
+      "manual_observation_only"
+    ],
+    "forbidden_access_modes": [
+      "no_autonomous_access",
+      "approved_api_future",
+      "approved_metadata_probe_future",
+      "sitemap_or_rss_future",
+      "common_crawl_or_archive_future"
+    ],
+    "unrestricted_crawling_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "legal_mirroring_claimed": false,
+    "notes": [
+      "Manual observation does not authorize automated access."
+    ]
+  },
+  "source_capability_summary": {
+    "coverage_depth": "gap_report_only",
+    "object_families": [],
+    "supported_query_classes": [
+      "gap_review"
+    ],
+    "supported_artifact_types": [
+      "gap_summary"
+    ],
+    "supported_metadata_fields": [
+      "known_gap",
+      "next_safe_action"
+    ],
+    "member_listing_support": "unknown",
+    "compatibility_evidence_support": "unknown",
+    "full_text_or_ocr_support": "unknown",
+    "package_or_release_metadata_support": "unknown",
+    "source_cache_support": "not_runtime",
+    "evidence_generation_support": "not_runtime",
+    "current_runtime_status": "manual_gap_only",
+    "current_public_status": "public_read_only_gap_summary",
+    "limitations": [
+      "Gap report is not source coverage."
+    ],
+    "gaps": [
+      "Manual observation, policy review, and coverage assessment remain incomplete."
+    ],
+    "notes": [
+      "Gap page shows missing work without implying completion."
+    ]
+  },
+  "source_coverage_summary": {
+    "coverage_depth": "gap_report_only",
+    "coverage_not_exhaustive": true,
+    "coverage_limitations": [
+      "No source records are represented as checked."
+    ],
+    "known_gaps": [
+      "Manual observation pending",
+      "Source policy review pending",
+      "Evidence ledger review pending"
+    ],
+    "notes": [
+      "Known gaps are first-class output."
+    ]
+  },
+  "source_cache_summary": {
+    "source_cache_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "gap_only",
+    "review_queue_status": "future_review_required",
+    "last_observed_or_updated_when_available": null,
+    "source_cache_record_accepted_as_truth": false,
+    "source_observation_accepted_as_truth": false,
+    "observation_limitations": [
+      "No source cache observation exists."
+    ],
+    "evidence_limitations": [
+      "No evidence ledger candidate is accepted."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "Cache absence remains explicit."
+    ]
+  },
+  "evidence_ledger_summary": {
+    "evidence_ledger_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "gap_only",
+    "review_queue_status": "future_review_required",
+    "last_observed_or_updated_when_available": null,
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "observation_limitations": [
+      "Evidence ledger has no completed baseline."
+    ],
+    "evidence_limitations": [
+      "Manual observation placeholder is not evidence truth."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "Evidence gaps stay visible."
+    ]
+  },
+  "connector_summary": {
+    "connector_mode": "manual_observation_only",
+    "connector_status": "no_live_connector",
+    "implementation_status": "manual_gap_only",
+    "live_probe_status": "disabled",
+    "source_sync_status": "disabled",
+    "source_cache_write_status": "disabled",
+    "evidence_candidate_status": "none",
+    "health_or_quota_status": "not_applicable",
+    "circuit_breaker_status": "not_applicable",
+    "operator_gate_status": "operator_approval_required_before_future_work",
+    "hosted_backend_claimed": false,
+    "hosted_connector_enabled": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "notes": [
+      "Manual gap summary is not a source sync job."
+    ]
+  },
+  "observed_records_summary": {
+    "observed_record_count": 0,
+    "observation_status": "manual_observation_pending",
+    "source_observation_accepted_as_truth": false,
+    "manual_observation_placeholder": true,
+    "manual_observation_completed": false,
+    "completed_external_baseline_claimed": false,
+    "notes": [
+      "Manual observation placeholder remains incomplete."
+    ]
+  },
+  "example_records": [
+    {
+      "ref_id": "source_gap_record",
+      "label": "Source gap record",
+      "status": "gap_only"
+    }
+  ],
+  "related_packs": {
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "notes": [
+      "Future source and evidence packs are deferred."
+    ]
+  },
+  "related_objects": {
+    "object_refs": [],
+    "notes": [
+      "No object coverage is claimed."
+    ]
+  },
+  "known_limitations": [
+    {
+      "label": "Manual-only",
+      "description": "The gap page records manual follow-up without activating automated access."
+    }
+  ],
+  "known_gaps": [
+    {
+      "label": "Observation gap",
+      "description": "Manual observation and source policy review are pending."
+    }
+  ],
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance, mirroring permission, or bulk access permission is claimed."
+    ],
+    "rights_clearance_claimed": false,
+    "legal_mirroring_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights posture remains unknown."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "malware_or_executable_risk": "not_assessed",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No content or executable artifact is available."
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "Risk posture is unresolved."
+    ]
+  },
+  "privacy_summary": {
+    "privacy_posture": "review_required",
+    "personal_data_posture": "unknown",
+    "restricted_content_posture": "unknown",
+    "takedown_or_policy_notes": [],
+    "notes": [
+      "Privacy and restriction reviews are future work."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source_summary",
+      "view_source_policy",
+      "view_source_coverage",
+      "view_manual_observation_instructions",
+      "view_limitations",
+      "copy_source_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "arbitrary_url_fetch_unavailable",
+      "scraping_unavailable",
+      "crawling_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "rights_clearance_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "source_sync_enabled": false,
+    "authorized_downloads_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "notes": [
+      "Next safe actions are manual review and documentation only."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source_summary",
+      "status": "available",
+      "label": "View source summary"
+    },
+    {
+      "action_id": "view_source_policy",
+      "status": "available",
+      "label": "View source policy"
+    },
+    {
+      "action_id": "view_source_coverage",
+      "status": "available",
+      "label": "View source coverage"
+    },
+    {
+      "action_id": "view_manual_observation_instructions",
+      "status": "available",
+      "label": "View manual observation instructions"
+    },
+    {
+      "action_id": "view_limitations",
+      "status": "available",
+      "label": "View limitations"
+    },
+    {
+      "action_id": "copy_source_id",
+      "status": "available",
+      "label": "Copy source ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "arbitrary_url_fetch_unavailable",
+      "reason": "Arbitrary URL fetch is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "scraping_unavailable",
+      "reason": "Scraping is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "crawling_unavailable",
+      "reason": "Crawling is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    }
+  ],
+  "candidate_review_state": {
+    "review_status": "manual_review_required",
+    "candidate_or_placeholder_not_live": true,
+    "review_limitations": [
+      "Manual observation has not been completed."
+    ],
+    "notes": [
+      "The gap remains unresolved."
+    ]
+  },
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May show gap lists."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve unresolved gaps."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use numbered tables."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must list gaps and next safe actions."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply files or source cache exist."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve manual-only status."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply manifests are downloadable."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot projection only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay projection only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal projection only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card projection only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve gap and limitation labels."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_source_identity_preserved",
+    "source_policy_posture_preserved",
+    "source_access_gates_preserved",
+    "source_capability_coverage_posture_preserved",
+    "connector_status_preserved",
+    "source_cache_evidence_ledger_posture_preserved",
+    "source_observation_not_truth_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "no_live_source_or_bulk_access_claims"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/views/source_page.v0.json",
+      "docs/reference/SOURCE_PAGE_CONTRACT.md",
+      "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/source_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "source_page_parity_v0"
+  },
+  "no_goals": [
+    "no completed external baseline",
+    "no source connector",
+    "no source sync runtime",
+    "no live probes",
+    "no hosted backend claim",
+    "no bulk access or crawling claim"
+  ],
+  "notes": [
+    "Source gap SourcePageView example for Track A-06."
+  ]
+}

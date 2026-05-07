@@ -1,0 +1,545 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "minimal_source_page_v0",
+  "view_family": "SourcePageView",
+  "route_family": "source_detail",
+  "canonical_route": "/api/v1/source/public-fixture-source",
+  "page_title": "Public Fixture Source",
+  "page_status": "implemented_fixture",
+  "source": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_status": "implemented_fixture_source",
+    "summary": "Minimal public-safe source identity and policy example."
+  },
+  "source_identity": {
+    "source_id": "public_fixture_source",
+    "source_label": "Public fixture source",
+    "source_slug": "public-fixture-source",
+    "canonical_route": "/api/v1/source/public-fixture-source",
+    "source_family": "fixture",
+    "source_kind": "local_fixture",
+    "source_scope": "sample metadata only",
+    "authority_class": "fixture_only",
+    "source_status": "implemented_fixture_source",
+    "source_url_or_reference": "fixture:public-fixture-source",
+    "source_url_public_safe": true,
+    "source_identifiers": [
+      {
+        "id_type": "eureka_public_example",
+        "value": "public_fixture_source",
+        "status": "public_safe"
+      }
+    ],
+    "source_owner_or_operator": null,
+    "source_contact_policy": "not_applicable_to_fixture",
+    "source_limitations": [
+      "Fixture metadata is not an external authority."
+    ],
+    "notes": [
+      "No production source or live endpoint is claimed."
+    ]
+  },
+  "source_type": "fixture_metadata",
+  "source_authority_posture": "fixture_not_authoritative",
+  "source_policy": {
+    "source_policy_status": "fixture_policy_only",
+    "allowed_access_modes": [
+      "static_metadata_only"
+    ],
+    "forbidden_access_modes": [
+      "no_autonomous_access",
+      "permission_needed"
+    ],
+    "robots_or_terms_posture": "not_applicable_to_fixture",
+    "rate_limit_posture": "not_applicable_no_live_calls",
+    "cache_policy": "metadata_summary_only",
+    "attribution_policy": "cite_fixture_label_only",
+    "manual_observation_policy": "not_applicable",
+    "permission_required": false,
+    "review_required": true,
+    "operator_approval_required": false,
+    "notes": [
+      "Policy fields describe the fixture; they do not authorize external access."
+    ]
+  },
+  "source_access_policy": {
+    "allowed_access_modes": [
+      "static_metadata_only"
+    ],
+    "forbidden_access_modes": [
+      "no_autonomous_access"
+    ],
+    "unrestricted_crawling_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "legal_mirroring_claimed": false,
+    "notes": [
+      "No crawler, scraper, mirror, or source sync behavior is represented."
+    ]
+  },
+  "source_capability_summary": {
+    "coverage_depth": "fixture_only",
+    "object_families": [
+      "sample_record"
+    ],
+    "supported_query_classes": [
+      "source_id_lookup"
+    ],
+    "supported_artifact_types": [
+      "metadata_summary"
+    ],
+    "supported_metadata_fields": [
+      "source_id",
+      "source_label",
+      "source_status"
+    ],
+    "member_listing_support": "not_supported",
+    "compatibility_evidence_support": "not_supported",
+    "full_text_or_ocr_support": "not_supported",
+    "package_or_release_metadata_support": "not_supported",
+    "source_cache_support": "not_runtime",
+    "evidence_generation_support": "not_runtime",
+    "current_runtime_status": "local_fixture_metadata_only",
+    "current_public_status": "public_read_only_summary",
+    "limitations": [
+      "Coverage is fixture-only and not exhaustive."
+    ],
+    "gaps": [
+      "No external source coverage is claimed."
+    ],
+    "notes": [
+      "Capability posture is intentionally narrow."
+    ]
+  },
+  "source_coverage_summary": {
+    "coverage_depth": "fixture_only",
+    "coverage_not_exhaustive": true,
+    "coverage_limitations": [
+      "Only the sample fixture is represented."
+    ],
+    "known_gaps": [
+      "No live or external coverage is checked."
+    ],
+    "notes": [
+      "Coverage remains scoped."
+    ]
+  },
+  "source_cache_summary": {
+    "source_cache_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "not_applicable",
+    "review_queue_status": "not_applicable",
+    "last_observed_or_updated_when_available": null,
+    "source_cache_record_accepted_as_truth": false,
+    "source_observation_accepted_as_truth": false,
+    "observation_limitations": [
+      "No source cache runtime is active."
+    ],
+    "evidence_limitations": [
+      "No evidence ledger mutation occurs."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "Source cache posture is descriptive only."
+    ]
+  },
+  "evidence_ledger_summary": {
+    "evidence_ledger_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "fixture_summary_only",
+    "review_queue_status": "not_applicable",
+    "last_observed_or_updated_when_available": null,
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "observation_limitations": [
+      "No live observation is represented."
+    ],
+    "evidence_limitations": [
+      "Fixture summary is not verified evidence truth."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "Evidence posture remains cautious."
+    ]
+  },
+  "connector_summary": {
+    "connector_mode": "static_metadata_only",
+    "connector_status": "no_live_connector",
+    "implementation_status": "fixture_metadata_only",
+    "live_probe_status": "disabled",
+    "source_sync_status": "disabled",
+    "source_cache_write_status": "disabled",
+    "evidence_candidate_status": "not_promoted",
+    "health_or_quota_status": "not_applicable",
+    "circuit_breaker_status": "not_applicable",
+    "operator_gate_status": "not_required_for_fixture",
+    "hosted_backend_claimed": false,
+    "hosted_connector_enabled": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "notes": [
+      "No connector, source sync, live probe, or hosted behavior is enabled."
+    ]
+  },
+  "observed_records_summary": {
+    "observed_record_count": 1,
+    "observation_status": "fixture_metadata",
+    "source_observation_accepted_as_truth": false,
+    "manual_observation_placeholder": false,
+    "manual_observation_completed": false,
+    "completed_external_baseline_claimed": false,
+    "notes": [
+      "The observed record is a fixture summary."
+    ]
+  },
+  "example_records": [
+    {
+      "ref_id": "fixture_record_public_source",
+      "label": "Sample public-safe fixture record",
+      "status": "fixture_only"
+    }
+  ],
+  "related_packs": {
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "notes": [
+      "No pack runtime is referenced."
+    ]
+  },
+  "related_objects": {
+    "object_refs": [],
+    "notes": [
+      "No related object runtime is created."
+    ]
+  },
+  "known_limitations": [
+    {
+      "label": "Fixture scope",
+      "description": "The source page is limited to public-safe fixture metadata."
+    }
+  ],
+  "known_gaps": [
+    {
+      "label": "External coverage",
+      "description": "No external source was queried or checked."
+    }
+  ],
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance is claimed."
+    ],
+    "rights_clearance_claimed": false,
+    "legal_mirroring_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights posture is cautionary."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "malware_or_executable_risk": "not_applicable_to_metadata_summary",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No payload is exposed or scanned."
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "No malware safety claim is made."
+    ]
+  },
+  "privacy_summary": {
+    "privacy_posture": "public_safe_fixture_metadata",
+    "personal_data_posture": "no_personal_data_claimed",
+    "restricted_content_posture": "not_assessed",
+    "takedown_or_policy_notes": [],
+    "notes": [
+      "No account or telemetry state is represented."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source_summary",
+      "view_source_policy",
+      "view_source_coverage",
+      "view_limitations",
+      "copy_source_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "arbitrary_url_fetch_unavailable",
+      "scraping_unavailable",
+      "crawling_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "rights_clearance_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "source_sync_enabled": false,
+    "authorized_downloads_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "notes": [
+      "Allowed actions are read-only view and copy actions."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source_summary",
+      "status": "available",
+      "label": "View source summary"
+    },
+    {
+      "action_id": "view_source_policy",
+      "status": "available",
+      "label": "View source policy"
+    },
+    {
+      "action_id": "view_source_coverage",
+      "status": "available",
+      "label": "View source coverage"
+    },
+    {
+      "action_id": "view_limitations",
+      "status": "available",
+      "label": "View limitations"
+    },
+    {
+      "action_id": "copy_source_id",
+      "status": "available",
+      "label": "Copy source ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "arbitrary_url_fetch_unavailable",
+      "reason": "Arbitrary URL fetch is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "scraping_unavailable",
+      "reason": "Scraping is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "crawling_unavailable",
+      "reason": "Crawling is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    }
+  ],
+  "candidate_review_state": {
+    "review_status": "not_applicable",
+    "candidate_or_placeholder_not_live": true,
+    "review_limitations": [
+      "Fixture source is not external authority."
+    ],
+    "notes": [
+      "No candidate promotion is represented."
+    ]
+  },
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May render full source summary."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve policy gates and blocked actions."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use plain tables."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve source ID, limitations, and disabled actions."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply source mirroring or file hosting."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must keep machine-readable source posture fields."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May summarize source refs without downloads."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot projection only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay projection only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal projection only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card projection only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May format for print while preserving cautions."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_source_identity_preserved",
+    "source_policy_posture_preserved",
+    "source_access_gates_preserved",
+    "source_capability_coverage_posture_preserved",
+    "connector_status_preserved",
+    "source_cache_evidence_ledger_posture_preserved",
+    "source_observation_not_truth_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "no_live_source_or_bulk_access_claims"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/views/source_page.v0.json",
+      "docs/reference/SOURCE_PAGE_CONTRACT.md",
+      "contracts/source_registry/source_record.schema.yaml"
+    ],
+    "policy_inventory": "control/inventory/publication/source_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "source_page_parity_v0"
+  },
+  "no_goals": [
+    "no source-page runtime",
+    "no hosted backend claim",
+    "no live probes or source sync",
+    "no source connector runtime",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no rights-clearance, malware-safety, or authorized-bulk-access claim",
+    "no generated site artifact mutation"
+  ],
+  "notes": [
+    "Minimal SourcePageView example for Track A-06."
+  ]
+}

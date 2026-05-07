@@ -17,7 +17,7 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-06 - SourcePage view model contract`
+`TRACK-A-07 - NeedPage and CandidatePage view model contracts`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
@@ -31,7 +31,10 @@ profiles, and semantic parity policies. Track A-04 established the canonical
 SearchPage view-model contract that later renderer and runtime work must
 preserve. Track A-05 established the canonical ObjectPage view-model contract
 for object identity, source/evidence posture, member lineage, rights/risk
-posture, and blocked action meaning.
+posture, and blocked action meaning. Track A-06 established the canonical
+SourcePage view-model contract for source identity, policy/access posture,
+connector-disabled status, source cache/evidence ledger posture, rights/risk/
+privacy caution, and source coverage gaps.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

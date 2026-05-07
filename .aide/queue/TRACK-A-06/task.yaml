@@ -1,0 +1,47 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-06
+title: SourcePage view model contract
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-06
+source_packet: .aide/context/latest-task-packet.md
+objective: Define the canonical public-safe SourcePageView model before renderer or runtime refactors.
+scope:
+  allowed_paths:
+    - contracts/views/source_page.v0.json
+    - docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md
+    - docs/roadmap/TRACK_EXECUTION_PLAN.md
+    - control/inventory/publication/source_page_view_model_policy.json
+    - examples/view_models/source_page/**
+    - scripts/validate_source_page_view_model.py
+    - tests/contracts/test_source_page_view_model.py
+    - control/audits/track-a-06-source-page-view-model-v0/**
+    - .aide/queue/TRACK-A-06/**
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - SourcePage view model schema exists
+  - policy inventory exists and validates
+  - examples exist and validate
+  - validator and tests pass
+  - audit pack exists
+  - no runtime, route, hosted, generated site, source connector, source sync, source-page, or search semantic behavior is changed
+  - no rights-clearance, malware-safety, authorized-bulk-access, crawling, or scraping claims are added
+  - validation and evidence are recorded
+recommended_after: TRACK-A-05
+recommended_next: TRACK-A-07

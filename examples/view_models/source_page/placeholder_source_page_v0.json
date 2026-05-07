@@ -1,0 +1,533 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "placeholder_source_page_v0",
+  "view_family": "SourcePageView",
+  "route_family": "source_detail",
+  "canonical_route": "/api/v1/source/placeholder-source",
+  "page_title": "Placeholder Source",
+  "page_status": "placeholder",
+  "source": {
+    "source_id": "placeholder_source",
+    "source_label": "Placeholder source",
+    "source_status": "placeholder_source",
+    "summary": "Future source placeholder with no live connector, no source sync, and no external access."
+  },
+  "source_identity": {
+    "source_id": "placeholder_source",
+    "source_label": "Placeholder source",
+    "source_slug": "placeholder-source",
+    "canonical_route": "/api/v1/source/placeholder-source",
+    "source_family": "future_placeholder",
+    "source_kind": "placeholder",
+    "source_scope": "future source planning placeholder",
+    "authority_class": "placeholder_not_authority",
+    "source_status": "placeholder_source",
+    "source_url_or_reference": "placeholder:source-under-review",
+    "source_url_public_safe": true,
+    "source_identifiers": [
+      {
+        "id_type": "placeholder_id",
+        "value": "placeholder_source",
+        "status": "public_safe"
+      }
+    ],
+    "source_owner_or_operator": null,
+    "source_contact_policy": "future_review_required",
+    "source_limitations": [
+      "Placeholder is not a connector and not an approved source."
+    ],
+    "notes": [
+      "This page records a possible future source without activation."
+    ]
+  },
+  "source_type": "future_placeholder",
+  "source_authority_posture": "placeholder_no_authority",
+  "source_policy": {
+    "source_policy_status": "review_required",
+    "allowed_access_modes": [
+      "no_autonomous_access"
+    ],
+    "forbidden_access_modes": [
+      "approved_api_future",
+      "approved_metadata_probe_future",
+      "sitemap_or_rss_future",
+      "common_crawl_or_archive_future"
+    ],
+    "robots_or_terms_posture": "not_reviewed",
+    "rate_limit_posture": "not_reviewed",
+    "cache_policy": "no_cache_runtime",
+    "attribution_policy": "not_reviewed",
+    "manual_observation_policy": "future_manual_review_only",
+    "permission_required": true,
+    "review_required": true,
+    "operator_approval_required": true,
+    "notes": [
+      "Future source access requires review and approval before any connector planning."
+    ]
+  },
+  "source_access_policy": {
+    "allowed_access_modes": [
+      "no_autonomous_access"
+    ],
+    "forbidden_access_modes": [
+      "approved_api_future",
+      "approved_metadata_probe_future",
+      "sitemap_or_rss_future",
+      "common_crawl_or_archive_future",
+      "permission_needed"
+    ],
+    "unrestricted_crawling_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "legal_mirroring_claimed": false,
+    "notes": [
+      "No future access mode is approved by this placeholder."
+    ]
+  },
+  "source_capability_summary": {
+    "coverage_depth": "placeholder",
+    "object_families": [],
+    "supported_query_classes": [],
+    "supported_artifact_types": [],
+    "supported_metadata_fields": [],
+    "member_listing_support": "unknown",
+    "compatibility_evidence_support": "unknown",
+    "full_text_or_ocr_support": "unknown",
+    "package_or_release_metadata_support": "unknown",
+    "source_cache_support": "future_deferred",
+    "evidence_generation_support": "future_deferred",
+    "current_runtime_status": "not_implemented",
+    "current_public_status": "placeholder_only",
+    "limitations": [
+      "Capabilities are unknown until review."
+    ],
+    "gaps": [
+      "Source policy, coverage, and permission reviews remain open."
+    ],
+    "notes": [
+      "Unknown capability values stay unknown."
+    ]
+  },
+  "source_coverage_summary": {
+    "coverage_depth": "placeholder",
+    "coverage_not_exhaustive": true,
+    "coverage_limitations": [
+      "No records have been checked."
+    ],
+    "known_gaps": [
+      "Coverage, access, and policy posture are unresolved."
+    ],
+    "notes": [
+      "The placeholder does not imply coverage."
+    ]
+  },
+  "source_cache_summary": {
+    "source_cache_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "placeholder_only",
+    "review_queue_status": "future_review_required",
+    "last_observed_or_updated_when_available": null,
+    "source_cache_record_accepted_as_truth": false,
+    "source_observation_accepted_as_truth": false,
+    "observation_limitations": [
+      "No source observation has been completed."
+    ],
+    "evidence_limitations": [
+      "No evidence record exists."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "No cache record is promoted."
+    ]
+  },
+  "evidence_ledger_summary": {
+    "evidence_ledger_status": "not_runtime",
+    "accepted_public_status": "not_accepted_truth",
+    "candidate_status": "placeholder_only",
+    "review_queue_status": "future_review_required",
+    "last_observed_or_updated_when_available": null,
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "observation_limitations": [
+      "No observation is present."
+    ],
+    "evidence_limitations": [
+      "No evidence candidate is accepted."
+    ],
+    "no_truth_claims": true,
+    "notes": [
+      "Evidence ledger remains untouched."
+    ]
+  },
+  "connector_summary": {
+    "connector_mode": "disabled",
+    "connector_status": "no_live_connector",
+    "implementation_status": "not_implemented",
+    "live_probe_status": "disabled",
+    "source_sync_status": "disabled",
+    "source_cache_write_status": "disabled",
+    "evidence_candidate_status": "none",
+    "health_or_quota_status": "not_applicable",
+    "circuit_breaker_status": "not_applicable",
+    "operator_gate_status": "operator_approval_required_before_future_work",
+    "hosted_backend_claimed": false,
+    "hosted_connector_enabled": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "notes": [
+      "Placeholder is explicitly not live."
+    ]
+  },
+  "observed_records_summary": {
+    "observed_record_count": 0,
+    "observation_status": "not_observed",
+    "source_observation_accepted_as_truth": false,
+    "manual_observation_placeholder": true,
+    "manual_observation_completed": false,
+    "completed_external_baseline_claimed": false,
+    "notes": [
+      "Manual observation remains future work."
+    ]
+  },
+  "example_records": [],
+  "related_packs": {
+    "source_pack_refs": [],
+    "evidence_pack_refs": [],
+    "notes": [
+      "No packs are created."
+    ]
+  },
+  "related_objects": {
+    "object_refs": [],
+    "notes": [
+      "No object refs are claimed."
+    ]
+  },
+  "known_limitations": [
+    {
+      "label": "Placeholder only",
+      "description": "The source is not approved, implemented, or live."
+    }
+  ],
+  "known_gaps": [
+    {
+      "label": "Policy review",
+      "description": "Policy, access, permission, coverage, and attribution reviews are deferred."
+    }
+  ],
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_limitations": [
+      "No rights clearance or mirroring permission is known."
+    ],
+    "rights_clearance_claimed": false,
+    "legal_mirroring_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "takedown_or_policy_notes": [],
+    "blocked_actions": [
+      "download_unavailable",
+      "rights_clearance_unavailable"
+    ],
+    "notes": [
+      "Rights review is future work."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "malware_or_executable_risk": "unknown",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "safety_limitations": [
+      "No content has been obtained or scanned."
+    ],
+    "blocked_actions": [
+      "download_unavailable",
+      "malware_safety_unavailable"
+    ],
+    "notes": [
+      "No safety posture is cleared."
+    ]
+  },
+  "privacy_summary": {
+    "privacy_posture": "unknown",
+    "personal_data_posture": "unknown",
+    "restricted_content_posture": "unknown",
+    "takedown_or_policy_notes": [],
+    "notes": [
+      "Privacy review remains required."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_source_summary",
+      "view_source_policy",
+      "view_limitations",
+      "view_manual_observation_instructions",
+      "copy_source_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "arbitrary_url_fetch_unavailable",
+      "scraping_unavailable",
+      "crawling_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "rights_clearance_unavailable",
+      "malware_safety_unavailable",
+      "master_index_mutation_unavailable"
+    ],
+    "downloads_enabled": false,
+    "installs_enabled": false,
+    "execution_enabled": false,
+    "source_sync_enabled": false,
+    "authorized_downloads_claimed": false,
+    "authorized_bulk_access_claimed": false,
+    "notes": [
+      "Actions are limited to reading the placeholder and its limitations."
+    ]
+  },
+  "actions": [
+    {
+      "action_id": "view_source_summary",
+      "status": "available",
+      "label": "View source summary"
+    },
+    {
+      "action_id": "view_source_policy",
+      "status": "available",
+      "label": "View source policy"
+    },
+    {
+      "action_id": "view_limitations",
+      "status": "available",
+      "label": "View limitations"
+    },
+    {
+      "action_id": "view_manual_observation_instructions",
+      "status": "available",
+      "label": "View manual observation instructions"
+    },
+    {
+      "action_id": "copy_source_id",
+      "status": "available",
+      "label": "Copy source ID"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available",
+      "label": "Copy citation hint"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "arbitrary_url_fetch_unavailable",
+      "reason": "Arbitrary URL fetch is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "scraping_unavailable",
+      "reason": "Scraping is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "crawling_unavailable",
+      "reason": "Crawling is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend remains unavailable.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety claim is made.",
+      "policy": "TRACK-A-06 no-goal"
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled.",
+      "policy": "TRACK-A-06 no-goal"
+    }
+  ],
+  "candidate_review_state": {
+    "review_status": "placeholder_review_required",
+    "candidate_or_placeholder_not_live": true,
+    "review_limitations": [
+      "Placeholder has not passed policy or implementation review."
+    ],
+    "notes": [
+      "Placeholder is not a source claim."
+    ]
+  },
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May show review-needed panels."
+      ]
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must show placeholder and no-live labels."
+      ]
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "May use compact tables."
+      ]
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must include no-access limitations."
+      ]
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply files exist."
+      ]
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve placeholder status."
+      ]
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must not imply payload availability."
+      ]
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future snapshot projection only."
+      ]
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future relay projection only."
+      ]
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future terminal projection only."
+      ]
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Future native-card projection only."
+      ]
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false,
+      "notes": [
+        "Must preserve placeholder caveats."
+      ]
+    }
+  },
+  "semantic_requirements": [
+    "canonical_source_identity_preserved",
+    "source_policy_posture_preserved",
+    "source_access_gates_preserved",
+    "source_capability_coverage_posture_preserved",
+    "connector_status_preserved",
+    "source_cache_evidence_ledger_posture_preserved",
+    "source_observation_not_truth_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "candidate_review_state_preserved",
+    "no_live_source_or_bulk_access_claims"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/views/source_page.v0.json",
+      "docs/reference/SOURCE_PACK_CONTRACT.md",
+      "docs/reference/EVIDENCE_PACK_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/source_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "source_page_parity_v0"
+  },
+  "no_goals": [
+    "no source connector",
+    "no source sync",
+    "no live probes",
+    "no approved external access",
+    "no hosted backend claim",
+    "no rights-clearance, malware-safety, or bulk-access claim"
+  ],
+  "notes": [
+    "Placeholder SourcePageView example for Track A-06."
+  ]
+}
