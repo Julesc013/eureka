@@ -13,6 +13,10 @@ provenance, evals, and public-alpha safety checks to answer questions like
 See [Bootstrap Status](docs/BOOTSTRAP_STATUS.md) and
 [Roadmap](docs/ROADMAP.md).
 
+Repo-operating note: Eureka now includes a target-scoped AIDE Lite import pilot
+for compact task packets and token-discipline evidence. See
+[AIDE Lite Import](docs/reference/aide-lite-import.md).
+
 ## Why Eureka Exists
 
 Archive and software searches often return the wrong unit of work. A user asks

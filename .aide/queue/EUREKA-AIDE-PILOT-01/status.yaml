@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-PILOT-01
+status: needs_review
+updated: 2026-05-07
+summary: >
+  AIDE Lite was imported, initialized, used to generate Eureka-local context
+  packets, and measured against a local naive baseline. Review is required
+  before treating the pilot as accepted.
+blocking: false
+review_required: true
+known_warnings:
+  - AIDE verify is WARN with zero errors because optional Gateway/provider/recommendation status reports are absent.
+  - AIDE selftest/test fail in the imported pack's temp fixture; recorded as a pack limitation.

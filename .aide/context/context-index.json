@@ -1,8 +1,8 @@
 {
   "contents_inline": false,
   "counts": {
-    "repo_files": 4209,
-    "test_mappings": 2513,
+    "repo_files": 4220,
+    "test_mappings": 2524,
     "test_mappings_with_existing_candidate": 1
   },
   "creation_mode": "deterministic-local",
@@ -19,9 +19,9 @@
     "aide_contract": 40,
     "aide_policy": 31,
     "aide_prompt": 3,
-    "aide_queue": 1,
+    "aide_queue": 11,
     "config": 669,
-    "docs": 2140,
+    "docs": 2141,
     "generated": 9,
     "script": 214,
     "test": 577,
@@ -29,5 +29,5 @@
   },
   "schema_version": "aide.context-index.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "6af900ec9080780d03e3630075989cadf7affe8f62e5c8e0e39d271edff49e1c"
+  "source_snapshot_hash": "4ac07c21e17d0e21f78e609cd34127e4a849c628a8d36a160640b04e6cf8cb21"
 }

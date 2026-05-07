@@ -14,7 +14,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1807 chars, 452 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1808 chars, 452 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -32,28 +32,15 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide.local.example` (??; does not match active task allowed paths)
-- unknown: `.aide/cache/latest-cache-keys.json` (??; does not match active task allowed paths)
-- unknown: `.aide/cache/latest-cache-keys.md` (??; does not match active task allowed paths)
-- allowed: `.aide/context/context-index.json` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (??; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (??; matches active task allowed path)
-- allowed: `.aide/controller` (??; matches active task allowed path)
-- allowed: `.aide/evals/runs` (??; matches active task allowed path)
-- unknown: `.aide/generated` (??; does not match active task allowed paths)
-- unknown: `.aide/import-policy.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/models/README.md` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-baselines.yaml` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-ledger.jsonl` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (??; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.json` (??; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.md` (??; matches active task allowed path)
-- allowed: `.aide/verification/latest-verification-report.md` (??; matches active task allowed path)
+- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
+- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- unknown: `.aide/queue/EUREKA-AIDE-PILOT-01` (??; does not match active task allowed paths)
+- allowed: `README.md` (M; matches active task allowed path)
+- allowed: `docs/reference/aide-lite-import.md` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -63,8 +50,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5340
-- approx_tokens: 1335
+- chars: 4208
+- approx_tokens: 1052
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

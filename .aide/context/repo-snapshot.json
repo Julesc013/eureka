@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 4209,
+  "file_count": 4220,
   "files": [
     {
       "extension": ".md",
@@ -372,17 +372,17 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778126254,
+      "mtime": 1778126312,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
-      "sha256": "db1fb389730cc87bd2a54020f536b4074eedb2ef16d24c5887cdcd14b6127326",
+      "sha256": "e96ff1a03512e8cdc5da9a0c344e6143ee82b1cea5bd91ceb435a52469c53aba",
       "size": 3250,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778126254,
+      "mtime": 1778126312,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
-      "sha256": "adfd3b408ec9ae0f22bc21adff8aba2fd580cc69285ea393fb5c681e05e6d863",
+      "sha256": "cfb198942a2547ae6c983b61a9e4e1d01fc900516fe9e3ff96358fc00c15e125",
       "size": 2323,
       "type": "document"
     },
@@ -812,6 +812,86 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/ExecPlan.md",
+      "sha256": "e043efbb52a0d9c7b6e2127d322e4c5570e7f45cd9f1fd502cdd5f3468c6434b",
+      "size": 982,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/changed-files.md",
+      "sha256": "76b564700ca2feddef2dfc7affb2baf037c172e0a7288923519705e6ef010108",
+      "size": 996,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/import-report.md",
+      "sha256": "99cc0b87fee39690fd9f62973782d4b42935008fb2178a9424f6ea1ebf66b2d2",
+      "size": 2189,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/prompt.md",
+      "sha256": "a30e289d49c270729d1f22a629d7715587710cc40af42a7be7886c0817e97dee",
+      "size": 669,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/quality-and-limitations.md",
+      "sha256": "13e56d55ec1dfc1c9c324b5e6b956590d1e1710af47ff0b215a21681e695119f",
+      "size": 1803,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/remaining-risks.md",
+      "sha256": "f8a124b5eb6a5ce201efd18855ebec1fbedc2cb8a59451f711fa94e4a2bc37e1",
+      "size": 659,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/status.yaml",
+      "sha256": "00aee752a576bd6572d10175bf81320c8f60728b08370ba49b2a8b5707c8d46b",
+      "size": 579,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/task.yaml",
+      "sha256": "a12a849154bfa9de5e339829c7b039ff8dfea46a98ff440e71038e834de7d784",
+      "size": 1123,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/token-savings-report.md",
+      "sha256": "97446ae63f33fdd9555e8957eb97d42532329876a205394583fa8ef2f5e77de2",
+      "size": 1371,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778126543,
+      "path": ".aide/queue/EUREKA-AIDE-PILOT-01/validation.md",
+      "sha256": "a72588d31409dbb134019291233f5acee1e155ed3b560d50a266b57e58b5772d",
+      "size": 2831,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778123120,
       "path": ".aide/queue/README.template.md",
       "sha256": "c1f67af605c5b5ff5de671bbc3b92a694ee698f72606a87aa6a03f5c23216be7",
@@ -836,18 +916,18 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778126254,
+      "mtime": 1778126368,
       "path": ".aide/reports/token-ledger.jsonl",
-      "sha256": "3a8f1e89b0ccad17a37af3a6c045e4cbbd466cadf8e00d184587bc0805b15267",
-      "size": 6337,
+      "sha256": "d2920b1963e1823eea572a2dc7918182a864cd48ea09d4483e01ee60779c86f4",
+      "size": 4482,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778126254,
+      "mtime": 1778126368,
       "path": ".aide/reports/token-savings-summary.md",
-      "sha256": "daa20860cf955036c347cf990c3fc37f4cb73ccce01f669ace2e7a016e0533e0",
-      "size": 2360,
+      "sha256": "c504cf198e4a8ff17051e3ffe5c6bc9987c932943862f40a7f9332d58dff33c5",
+      "size": 2413,
       "type": "document"
     },
     {
@@ -1188,10 +1268,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1777594118,
+      "mtime": 1778126543,
       "path": "README.md",
-      "sha256": "48109e2b8bb0f60ffb5f1bb59f83797038e24c87fa62798bdc3e1560d4f9b044",
-      "size": 50290,
+      "sha256": "8c5c4f679d3393bff9ca1ac845877a08a8a36c68a31e806a8ab7ff6150ec9e56",
+      "size": 50487,
       "type": "document"
     },
     {
@@ -19388,6 +19468,14 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778126543,
+      "path": "docs/reference/aide-lite-import.md",
+      "sha256": "467ab3c990a2b6e30b7b7e59f8d05d930b8261d46449c4b5bf009da582ae2ec0",
+      "size": 1003,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778004473,
       "path": "docs/roadmap/BACKEND_ROADMAP.md",
       "sha256": "c279eace64e655a4ea5bd77d91d1bfdf7e920d093186ba553eef02e467515afe",
@@ -33723,12 +33811,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 5788705,
-    "file_count": 4209,
-    "total_size": 23154820,
+    "aggregate_approx_tokens": 5791855,
+    "file_count": 4220,
+    "total_size": 23167420,
     "type_counts": {
-      "document": 2178,
-      "source-or-config": 1826,
+      "document": 2187,
+      "source-or-config": 1828,
       "unknown": 205
     }
   }

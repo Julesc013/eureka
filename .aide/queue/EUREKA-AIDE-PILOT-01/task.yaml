@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-PILOT-01
+title: Eureka AIDE Lite import pilot
+status: needs_review
+target_repo: julesc013/eureka
+source_pack: D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0
+source_pack_id: aide-lite-pack-v0
+scope:
+  allowed_paths:
+    - .aide/**
+    - .aide.local.example/**
+    - .gitignore
+    - AGENTS.md
+    - README.md
+    - docs/reference/aide-lite-import.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - crates/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+acceptance:
+  - Import portable AIDE Lite artifacts without AIDE source queue/history or memory.
+  - Initialize Eureka-specific memory.
+  - Generate Eureka snapshot, repo maps, context packet, task packet, review packet, and estimates.
+  - Prove compact task packet is materially smaller than a local naive baseline.
+  - Record validation, quality limits, and remaining risks.
+non_goals:
+  - No Eureka product feature changes.
+  - No provider/model/network calls.
+  - No AIDE Gateway/provider runtime implementation.
+  - No raw prompt or raw response storage.

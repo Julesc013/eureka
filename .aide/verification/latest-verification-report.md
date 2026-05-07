@@ -9,47 +9,35 @@
 
 ## CHECK_COUNTS
 
-- info: 123
-- warnings: 8
+- info: 110
+- warnings: 6
 - errors: 0
 - checked_files: 67
-- changed_files: 22
+- changed_files: 12
 
 ## CHANGED_FILES
 
-- unknown: `.aide/import-policy.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide.local.example` (??; does not match active task allowed paths)
-- unknown: `.aide/cache/latest-cache-keys.json` (??; does not match active task allowed paths)
-- unknown: `.aide/cache/latest-cache-keys.md` (??; does not match active task allowed paths)
-- allowed: `.aide/context/context-index.json` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (??; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (??; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (??; matches active task allowed path)
-- allowed: `.aide/controller` (??; matches active task allowed path)
-- allowed: `.aide/evals/runs` (??; matches active task allowed path)
-- unknown: `.aide/generated` (??; does not match active task allowed paths)
-- allowed: `.aide/models/README.md` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-baselines.yaml` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-ledger.jsonl` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (??; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.json` (??; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.md` (??; matches active task allowed path)
-- allowed: `.aide/verification/latest-verification-report.md` (??; matches active task allowed path)
+- unknown: `.aide/cache/latest-cache-keys.json` (M; does not match active task allowed paths)
+- unknown: `.aide/cache/latest-cache-keys.md` (M; does not match active task allowed paths)
+- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
+- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- allowed: `README.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/EUREKA-AIDE-PILOT-01` (??; does not match active task allowed paths)
+- allowed: `docs/reference/aide-lite-import.md` (??; matches active task allowed path)
 
 ## WARNINGS
 
 - file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/controller/latest-recommendations.md`
 - file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/gateway/latest-gateway-status.json`
 - file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/providers/latest-provider-status.json`
-- diff_scope: does not match active task allowed paths `.aide/import-policy.yaml`
-- diff_scope: does not match active task allowed paths `.aide.local.example`
 - diff_scope: does not match active task allowed paths `.aide/cache/latest-cache-keys.json`
 - diff_scope: does not match active task allowed paths `.aide/cache/latest-cache-keys.md`
-- diff_scope: does not match active task allowed paths `.aide/generated`
+- diff_scope: does not match active task allowed paths `.aide/queue/EUREKA-AIDE-PILOT-01`
 
 ## ERRORS
 
