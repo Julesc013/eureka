@@ -33,15 +33,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/queue/TRACK-A-06` (??; does not match active task allowed paths)
-- unknown: `contracts/views/source_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-06-source-page-view-model-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/source_page_view_model_policy.json` (??; does not match active task allowed paths)
-- allowed: `docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `.aide/queue/TRACK-A-07` (??; does not match active task allowed paths)
+- unknown: `contracts/views/candidate_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/views/need_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-07-need-candidate-page-view-models-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/candidate_page_view_model_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/need_page_view_model_policy.json` (??; does not match active task allowed paths)
+- allowed: `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
 - allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `examples/view_models/source_page` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_source_page_view_model.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_source_page_view_model.py` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/candidate_page` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/need_page` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_need_candidate_page_view_models.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_need_candidate_page_view_models.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -51,8 +55,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4882
-- approx_tokens: 1221
+- chars: 5329
+- approx_tokens: 1333
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

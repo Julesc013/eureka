@@ -1,0 +1,370 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "source_observed_candidate_page_v0",
+  "view_family": "CandidatePageView",
+  "route_family": "candidate_page_future",
+  "canonical_route": "/candidates/source-observed-candidate",
+  "page_title": "Source Observed Candidate",
+  "page_status": "contract_only",
+  "candidate": {
+    "candidate_id": "candidate_source_observed",
+    "label": "Source observed candidate",
+    "summary": "A candidate derived from a source observation that remains unaccepted."
+  },
+  "candidate_identity": {
+    "candidate_id": "candidate_source_observed",
+    "candidate_slug": "source-observed-candidate",
+    "candidate_type": "source_lead",
+    "canonical_route": "/candidates/source-observed-candidate",
+    "proposed_title": "Observed sample source item",
+    "proposed_object_id_future": null,
+    "proposed_source_id": "recorded_fixture_source",
+    "candidate_origin": "source_observation",
+    "candidate_origin_ref": "recorded_fixture_observation",
+    "candidate_confidence": "source_observed_unreviewed",
+    "candidate_limitations": [
+      "Source observation is not accepted truth."
+    ],
+    "notes": [
+      "Observation remains provisional."
+    ]
+  },
+  "candidate_status": "observed",
+  "candidate_type": "source_lead",
+  "candidate_source": {
+    "candidate_origin": "source_observation",
+    "candidate_origin_ref": "recorded_fixture_observation",
+    "origin_public_truth_claimed": false
+  },
+  "proposed_object_summary": {
+    "proposed_title": "Observed sample source item",
+    "proposed_object_id_future": null,
+    "accepted_public_truth": false,
+    "demand_signal_used_as_object_truth": false,
+    "limitations": [
+      "Observed title is not a verified object."
+    ]
+  },
+  "proposed_state_summary": {
+    "version_or_state": "observed label only",
+    "platform_or_context": "unknown",
+    "verified_installability_claimed": false,
+    "limitations": [
+      "Version/state is source-observed only."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_posture": "source_observation_candidate",
+    "evidence_refs": [],
+    "evidence_candidates": [
+      "recorded_fixture_observation"
+    ],
+    "required_evidence": [
+      "independent reviewed evidence"
+    ],
+    "missing_evidence": [
+      "review decision"
+    ],
+    "conflicting_evidence": [],
+    "source_locator_summary": "Recorded fixture locator only.",
+    "snippet_or_claim_summary": "Observed label from fixture.",
+    "observation_status": "source_observed",
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "discussion_comment_marked_compatibility_truth": false,
+    "evidence_limitations": [
+      "Observation needs review."
+    ],
+    "notes": [
+      "Evidence candidate remains unpromoted."
+    ]
+  },
+  "source_summary": {
+    "source_id": "recorded_fixture_source",
+    "source_posture": "recorded_fixture_only",
+    "source_observation_accepted_as_truth": false,
+    "limitations": [
+      "Recorded fixture source is not live truth."
+    ]
+  },
+  "provenance_summary": {
+    "provenance_or_lineage": [
+      "recorded_fixture_source",
+      "candidate_source_observed"
+    ],
+    "source_observation_accepted_as_truth": false
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "unknown",
+    "discussion_derived_compatibility_truth_claimed": false,
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No compatibility claim is accepted."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "limitations": [
+      "No rights clearance is claimed."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "executable_risk": "unknown",
+    "malware_scan_status": "not_scanned",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No artifact is exposed."
+    ]
+  },
+  "review_summary": {
+    "review_status": "needs_human_review",
+    "review_required": true,
+    "reviewer_role_required": "source_reviewer_future",
+    "acceptance_requirements": [
+      "source review",
+      "evidence review"
+    ],
+    "rejection_reason": null,
+    "deferral_reason": null,
+    "conflict_preservation_required": true,
+    "master_index_mutation_allowed": false,
+    "accepted_public_status": false,
+    "public_acceptance_claimed": false,
+    "notes": [
+      "Source observation cannot promote itself."
+    ]
+  },
+  "conflict_summary": {
+    "conflict_status": "not_checked",
+    "conflicting_evidence": [],
+    "conflicts_resolved_as_truth": false
+  },
+  "deduplication_summary": {
+    "duplicate_status": "not_checked",
+    "duplicate_resolved_as_truth": false
+  },
+  "related_need_refs": [
+    "need_source_gap"
+  ],
+  "related_object_refs": [],
+  "related_source_refs": [
+    "recorded_fixture_source"
+  ],
+  "related_pack_refs": [],
+  "related_work_unit_refs_future": [],
+  "action_summary": {
+    "allowed_actions": [
+      "view_candidate_summary",
+      "view_evidence",
+      "view_source",
+      "view_review_requirements",
+      "copy_candidate_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "accept_public_unavailable",
+      "master_index_mutation_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "execute_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "rights_clearance_unavailable",
+      "malware_safety_unavailable",
+      "verified_installability_unavailable"
+    ],
+    "accept_public_enabled": false,
+    "master_index_mutation_allowed": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false
+  },
+  "actions": [
+    {
+      "action_id": "view_candidate_summary",
+      "status": "available"
+    },
+    {
+      "action_id": "view_evidence",
+      "status": "available"
+    },
+    {
+      "action_id": "view_source",
+      "status": "available"
+    },
+    {
+      "action_id": "view_review_requirements",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_candidate_id",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "accept_public_unavailable",
+      "reason": "Candidate is not accepted public truth."
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled."
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled."
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled."
+    },
+    {
+      "action_id": "execute_unavailable",
+      "reason": "Execution is not enabled."
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled."
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled."
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled."
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend is not enabled."
+    },
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled."
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled."
+    },
+    {
+      "action_id": "rights_clearance_unavailable",
+      "reason": "No rights clearance is claimed."
+    },
+    {
+      "action_id": "malware_safety_unavailable",
+      "reason": "No malware safety is claimed."
+    },
+    {
+      "action_id": "verified_installability_unavailable",
+      "reason": "Verified installability is not claimed."
+    }
+  ],
+  "limitations": [
+    "Source observation remains provisional."
+  ],
+  "warnings": [
+    {
+      "warning_id": "source_observation_not_truth",
+      "message": "Source observation is not accepted truth."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_candidate_identity_preserved",
+    "candidate_origin_preserved",
+    "provisional_status_preserved",
+    "candidate_review_state_preserved",
+    "evidence_posture_preserved",
+    "source_observation_not_truth_preserved",
+    "conflicts_and_deduplication_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "no_public_truth_from_candidates"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/query/candidate_index_record.v0.json",
+      "contracts/views/source_page.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/candidate_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "candidate_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no source observation truth",
+    "no live source call",
+    "no candidate promotion",
+    "no source sync",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Source-observed CandidatePageView example for Track A-07."
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "source_gap_need_page_v0",
+  "view_family": "NeedPageView",
+  "route_family": "need_page_future",
+  "canonical_route": "/needs/source-gap-need",
+  "page_title": "Source Gap Need",
+  "page_status": "contract_only",
+  "need": {
+    "need_id": "need_source_gap",
+    "label": "Source gap need",
+    "summary": "A need blocked by missing source coverage and policy review."
+  },
+  "need_identity": {
+    "need_id": "need_source_gap",
+    "need_slug": "source-gap-need",
+    "canonical_route": "/needs/source-gap-need",
+    "canonical_need_label": "Source gap need",
+    "object_family": "software",
+    "product_or_topic": "sample legacy utility",
+    "version_or_state": "unknown",
+    "platform_or_context": "legacy desktop",
+    "artifact_type": "software_metadata",
+    "desired_user_action": "identify_source",
+    "aliases": [
+      "legacy utility source gap"
+    ],
+    "related_queries": [
+      "sample legacy utility"
+    ],
+    "related_need_refs": [],
+    "identity_confidence": "partial",
+    "identity_limitations": [
+      "Need identity is based on scoped aggregate examples."
+    ],
+    "notes": [
+      "Source gap is not evidence of nonexistence."
+    ]
+  },
+  "need_status": "source_gap",
+  "need_scope": {
+    "scope_label": "source coverage gap",
+    "global_scope_claimed": false,
+    "limitations": [
+      "Known gap covers source inventory, not the whole web."
+    ]
+  },
+  "query_summary": {
+    "query_refs": [
+      "query_source_gap"
+    ],
+    "raw_queries_included": false,
+    "normalized_query": "sample legacy utility",
+    "query_runtime_changed": false
+  },
+  "interpreted_intent": {
+    "intent_label": "locate source with usable metadata",
+    "intent_confidence": "partial",
+    "limitations": [
+      "Intent remains provisional."
+    ]
+  },
+  "demand_summary": {
+    "demand_status": "aggregate_example_only",
+    "demand_score": null,
+    "demand_score_available": false,
+    "demand_score_limitations": [
+      "No demand dashboard runtime is active."
+    ],
+    "first_seen_or_recorded_when_available": null,
+    "last_seen_or_recorded_when_available": null,
+    "observation_count": 2,
+    "aggregate_only": true,
+    "raw_query_retention": "none",
+    "privacy_filtered": true,
+    "poisoning_guarded": true,
+    "raw_user_tracking_claimed": false,
+    "account_identity_used": false,
+    "public_raw_query_storage": false,
+    "telemetry_enabled": false,
+    "notes": [
+      "Aggregate count is not user tracking."
+    ]
+  },
+  "absence_summary": {
+    "absence_status": "source_gap_exists",
+    "searched_scope": "local fixture index",
+    "sources_checked": [
+      "public_fixture_source"
+    ],
+    "sources_not_checked": [
+      "future source requiring policy review"
+    ],
+    "near_matches": [
+      "same title without version evidence"
+    ],
+    "rejected_matches": [
+      "unrelated sample utility"
+    ],
+    "known_gaps": [
+      "Potential source not reviewed."
+    ],
+    "capability_gaps": [
+      "No source sync or live probe runtime."
+    ],
+    "policy_blocked_sources": [
+      "unreviewed_future_source"
+    ],
+    "next_safe_actions": [
+      "view_source_gaps",
+      "view_manual_observation_instructions"
+    ],
+    "work_unit_refs_future": [],
+    "global_absence_claimed": false,
+    "exhaustive_global_search_claimed": false,
+    "limitations": [
+      "The gap points to safe future review work only."
+    ],
+    "notes": [
+      "A source gap is not a live-source instruction."
+    ]
+  },
+  "searched_scope": {
+    "searched_scope_label": "local fixture index",
+    "global_scope_claimed": false,
+    "exhaustive_global_search_claimed": false
+  },
+  "sources_checked": [
+    {
+      "source_id": "public_fixture_source",
+      "result": "near_match_only"
+    }
+  ],
+  "sources_not_checked": [
+    {
+      "source_id": "unreviewed_future_source",
+      "reason": "Policy review required before access."
+    }
+  ],
+  "source_gap_summary": {
+    "gap_status": "source_gap_exists",
+    "gaps": [
+      "Source policy review pending",
+      "No approved connector"
+    ]
+  },
+  "near_match_summary": {
+    "near_match_status": "near_miss_exists",
+    "near_matches": [
+      {
+        "label": "Sample title near match",
+        "limitations": [
+          "No version or source evidence."
+        ]
+      }
+    ]
+  },
+  "candidate_summary": {
+    "candidate_status": "candidate_available",
+    "candidate_refs": [
+      "candidate_source_gap_lead"
+    ],
+    "candidate_public_truth_claimed": false
+  },
+  "evidence_summary": {
+    "evidence_posture": "candidate_lead_only",
+    "evidence_refs": [],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "limitations": [
+      "Candidate lead needs review."
+    ]
+  },
+  "work_unit_summary_future": {
+    "work_unit_status": "future_unavailable",
+    "work_unit_refs_future": [
+      "future_source_review_work_unit"
+    ],
+    "node_task_runtime_enabled": false
+  },
+  "contribution_summary_future": {
+    "public_submissions_enabled": false,
+    "contribution_pack_refs_future": []
+  },
+  "privacy_summary": {
+    "privacy_posture": "aggregate_no_retention",
+    "raw_query_retention": "none",
+    "user_tracking_claimed": false,
+    "account_identity_used": false
+  },
+  "poisoning_guard_summary": {
+    "poisoning_guarded": true,
+    "limitations": [
+      "Near matches are not automatically promoted."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "limitations": [
+      "No source rights review is complete."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No artifact is exposed."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_near_matches",
+      "view_candidates",
+      "view_source_gaps",
+      "view_manual_observation_instructions",
+      "copy_need_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "arbitrary_url_fetch_unavailable",
+      "scraping_unavailable",
+      "crawling_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "node_task_unavailable",
+      "public_submission_unavailable",
+      "master_index_mutation_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "node_task_runtime_enabled": false,
+    "public_submissions_enabled": false
+  },
+  "actions": [
+    {
+      "action_id": "view_near_matches",
+      "status": "available"
+    },
+    {
+      "action_id": "view_candidates",
+      "status": "available"
+    },
+    {
+      "action_id": "view_source_gaps",
+      "status": "available"
+    },
+    {
+      "action_id": "view_manual_observation_instructions",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_need_id",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled."
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled."
+    },
+    {
+      "action_id": "arbitrary_url_fetch_unavailable",
+      "reason": "Arbitrary URL fetch is not enabled."
+    },
+    {
+      "action_id": "scraping_unavailable",
+      "reason": "Scraping is not enabled."
+    },
+    {
+      "action_id": "crawling_unavailable",
+      "reason": "Crawling is not enabled."
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled."
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled."
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled."
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled."
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled."
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend is not enabled."
+    },
+    {
+      "action_id": "node_task_unavailable",
+      "reason": "Node task runtime is future-only."
+    },
+    {
+      "action_id": "public_submission_unavailable",
+      "reason": "Public submissions are not enabled."
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled."
+    }
+  ],
+  "limitations": [
+    "Source gap is bounded and policy-gated."
+  ],
+  "warnings": [
+    {
+      "warning_id": "candidate_not_truth",
+      "message": "Candidate leads are not verified results."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_need_identity_preserved",
+    "query_intent_posture_preserved",
+    "demand_privacy_posture_preserved",
+    "absence_scope_preserved",
+    "source_gap_posture_preserved",
+    "candidate_state_preserved",
+    "evidence_posture_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "no_public_truth_from_demand",
+    "no_exhaustive_global_search_claims"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/query/search_need_record.v0.json",
+      "docs/reference/CANDIDATE_INDEX_CONTRACT.md"
+    ],
+    "policy_inventory": "control/inventory/publication/need_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "need_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no source connector",
+    "no source sync",
+    "no candidate promotion",
+    "no master-index mutation",
+    "no public truth claim"
+  ],
+  "notes": [
+    "Source gap NeedPageView example for Track A-07."
+  ]
+}

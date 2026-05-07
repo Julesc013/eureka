@@ -105,7 +105,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1221,
+      "approx_tokens_if_applicable": 1333,
       "checks_run": 25,
       "errors": [],
       "notes": "Checks review packets stay compact, evidence-oriented, and secret-free.",
@@ -169,7 +169,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1221,
+      "approx_tokens_if_applicable": 1333,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",

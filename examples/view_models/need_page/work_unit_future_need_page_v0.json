@@ -1,0 +1,427 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "work_unit_future_need_page_v0",
+  "view_family": "NeedPageView",
+  "route_family": "need_page_future",
+  "canonical_route": "/needs/work-unit-future",
+  "page_title": "Future Work Unit Need",
+  "page_status": "contract_only",
+  "need": {
+    "need_id": "need_work_unit_future",
+    "label": "Future work unit need",
+    "summary": "A need that could later become a reviewed work unit, while current runtime remains disabled."
+  },
+  "need_identity": {
+    "need_id": "need_work_unit_future",
+    "need_slug": "work-unit-future",
+    "canonical_route": "/needs/work-unit-future",
+    "canonical_need_label": "Future work unit need",
+    "object_family": "compatibility_evidence",
+    "product_or_topic": "sample compatibility question",
+    "version_or_state": "unknown",
+    "platform_or_context": "legacy runtime",
+    "artifact_type": "compatibility_note",
+    "desired_user_action": "collect_evidence_future",
+    "aliases": [
+      "future evidence work"
+    ],
+    "related_queries": [
+      "sample compatibility question"
+    ],
+    "related_need_refs": [
+      "need_source_gap"
+    ],
+    "identity_confidence": "partial",
+    "identity_limitations": [
+      "Future work unit identity is not a current task."
+    ],
+    "notes": [
+      "No node task is launched."
+    ]
+  },
+  "need_status": "review_pending",
+  "need_scope": {
+    "scope_label": "future work unit candidate",
+    "global_scope_claimed": false,
+    "limitations": [
+      "Future work unit refs are placeholders only."
+    ]
+  },
+  "query_summary": {
+    "query_refs": [
+      "query_work_unit_future"
+    ],
+    "raw_queries_included": false,
+    "normalized_query": "sample compatibility question",
+    "query_runtime_changed": false
+  },
+  "interpreted_intent": {
+    "intent_label": "collect evidence for compatibility",
+    "intent_confidence": "partial",
+    "limitations": [
+      "Requires future review."
+    ]
+  },
+  "demand_summary": {
+    "demand_status": "aggregate_example_only",
+    "demand_score": null,
+    "demand_score_available": false,
+    "demand_score_limitations": [
+      "No demand dashboard score is computed."
+    ],
+    "first_seen_or_recorded_when_available": null,
+    "last_seen_or_recorded_when_available": null,
+    "observation_count": 1,
+    "aggregate_only": true,
+    "raw_query_retention": "none",
+    "privacy_filtered": true,
+    "poisoning_guarded": true,
+    "raw_user_tracking_claimed": false,
+    "account_identity_used": false,
+    "public_raw_query_storage": false,
+    "telemetry_enabled": false,
+    "notes": [
+      "Future work planning remains aggregate-only."
+    ]
+  },
+  "absence_summary": {
+    "absence_status": "capability_gap_exists",
+    "searched_scope": "local fixture compatibility notes",
+    "sources_checked": [
+      "public_fixture_source"
+    ],
+    "sources_not_checked": [
+      "manual test environment"
+    ],
+    "near_matches": [
+      "similar platform note"
+    ],
+    "rejected_matches": [],
+    "known_gaps": [
+      "Compatibility evidence missing."
+    ],
+    "capability_gaps": [
+      "No node task runtime."
+    ],
+    "policy_blocked_sources": [],
+    "next_safe_actions": [
+      "export_work_unit_future",
+      "view_absence_scope"
+    ],
+    "work_unit_refs_future": [
+      "work_unit_future_sample"
+    ],
+    "global_absence_claimed": false,
+    "exhaustive_global_search_claimed": false,
+    "limitations": [
+      "Future work unit refs do not launch runtime."
+    ],
+    "notes": [
+      "Node work remains deferred."
+    ]
+  },
+  "searched_scope": {
+    "searched_scope_label": "local fixture compatibility notes",
+    "global_scope_claimed": false,
+    "exhaustive_global_search_claimed": false
+  },
+  "sources_checked": [
+    {
+      "source_id": "public_fixture_source",
+      "result": "weak_match_only"
+    }
+  ],
+  "sources_not_checked": [
+    {
+      "source_id": "manual_test_environment",
+      "reason": "Manual or node task review is future-only."
+    }
+  ],
+  "source_gap_summary": {
+    "gap_status": "capability_gap_exists",
+    "gaps": [
+      "No compatibility test evidence."
+    ]
+  },
+  "near_match_summary": {
+    "near_match_status": "near_miss_exists",
+    "near_matches": [
+      {
+        "label": "Similar compatibility note",
+        "limitations": [
+          "Different platform context."
+        ]
+      }
+    ]
+  },
+  "candidate_summary": {
+    "candidate_status": "candidate_available",
+    "candidate_refs": [
+      "candidate_compatibility_lead"
+    ],
+    "candidate_public_truth_claimed": false
+  },
+  "evidence_summary": {
+    "evidence_posture": "evidence_needed",
+    "evidence_refs": [],
+    "source_observation_accepted_as_truth": false,
+    "evidence_candidate_accepted_as_truth": false,
+    "ai_draft_marked_evidence_truth": false,
+    "limitations": [
+      "No compatibility evidence is accepted."
+    ]
+  },
+  "work_unit_summary_future": {
+    "work_unit_status": "future_deferred",
+    "work_unit_refs_future": [
+      "work_unit_future_sample"
+    ],
+    "node_task_runtime_enabled": false,
+    "run_node_task_future_allowed_now": false
+  },
+  "contribution_summary_future": {
+    "public_submissions_enabled": false,
+    "contribution_pack_refs_future": [
+      "future_contribution_pack_ref"
+    ]
+  },
+  "privacy_summary": {
+    "privacy_posture": "aggregate_no_retention",
+    "raw_query_retention": "none",
+    "user_tracking_claimed": false,
+    "account_identity_used": false
+  },
+  "poisoning_guard_summary": {
+    "poisoning_guarded": true,
+    "limitations": [
+      "Future work refs are not automatic tasks."
+    ]
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "limitations": [
+      "No rights posture is cleared."
+    ]
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "limitations": [
+      "No executable or test environment is provided."
+    ]
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "export_work_unit_future",
+      "run_node_task_future",
+      "view_candidates",
+      "view_absence_scope",
+      "copy_need_id",
+      "copy_citation_hint"
+    ],
+    "blocked_actions": [
+      "live_probe_unavailable",
+      "source_sync_unavailable",
+      "arbitrary_url_fetch_unavailable",
+      "scraping_unavailable",
+      "crawling_unavailable",
+      "download_unavailable",
+      "install_unavailable",
+      "upload_unavailable",
+      "account_unavailable",
+      "telemetry_unavailable",
+      "hosted_backend_unavailable",
+      "node_task_unavailable",
+      "public_submission_unavailable",
+      "master_index_mutation_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "node_task_runtime_enabled": false,
+    "public_submissions_enabled": false
+  },
+  "actions": [
+    {
+      "action_id": "export_work_unit_future",
+      "status": "future_unavailable"
+    },
+    {
+      "action_id": "run_node_task_future",
+      "status": "future_unavailable"
+    },
+    {
+      "action_id": "view_candidates",
+      "status": "available"
+    },
+    {
+      "action_id": "view_absence_scope",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_need_id",
+      "status": "available"
+    },
+    {
+      "action_id": "copy_citation_hint",
+      "status": "available"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "live_probe_unavailable",
+      "reason": "Live probes are not enabled."
+    },
+    {
+      "action_id": "source_sync_unavailable",
+      "reason": "Source sync runtime is not enabled."
+    },
+    {
+      "action_id": "arbitrary_url_fetch_unavailable",
+      "reason": "Arbitrary URL fetch is not enabled."
+    },
+    {
+      "action_id": "scraping_unavailable",
+      "reason": "Scraping is not enabled."
+    },
+    {
+      "action_id": "crawling_unavailable",
+      "reason": "Crawling is not enabled."
+    },
+    {
+      "action_id": "download_unavailable",
+      "reason": "Downloads are not enabled."
+    },
+    {
+      "action_id": "install_unavailable",
+      "reason": "Installers are not enabled."
+    },
+    {
+      "action_id": "upload_unavailable",
+      "reason": "Uploads are not enabled."
+    },
+    {
+      "action_id": "account_unavailable",
+      "reason": "Accounts are not enabled."
+    },
+    {
+      "action_id": "telemetry_unavailable",
+      "reason": "Telemetry is not enabled."
+    },
+    {
+      "action_id": "hosted_backend_unavailable",
+      "reason": "Hosted backend is not enabled."
+    },
+    {
+      "action_id": "node_task_unavailable",
+      "reason": "Node task runtime is future-only."
+    },
+    {
+      "action_id": "public_submission_unavailable",
+      "reason": "Public submissions are not enabled."
+    },
+    {
+      "action_id": "master_index_mutation_unavailable",
+      "reason": "Master-index mutation is not enabled."
+    }
+  ],
+  "limitations": [
+    "Future work-unit hints do not create a node task."
+  ],
+  "warnings": [
+    {
+      "warning_id": "future_work_unit_only",
+      "message": "Work unit references are future/deferred only."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "canonical_need_identity_preserved",
+    "query_intent_posture_preserved",
+    "demand_privacy_posture_preserved",
+    "absence_scope_preserved",
+    "source_gap_posture_preserved",
+    "candidate_state_preserved",
+    "evidence_posture_preserved",
+    "rights_risk_privacy_posture_preserved",
+    "actions_and_blocked_actions_preserved",
+    "limitations_and_gaps_visible",
+    "no_public_truth_from_demand",
+    "no_exhaustive_global_search_claims"
+  ],
+  "generated_from": {
+    "source_contracts": [
+      "contracts/query/probe_queue_item.v0.json",
+      "contracts/query/search_need_lifecycle.v0.json"
+    ],
+    "policy_inventory": "control/inventory/publication/need_page_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "need_page_future_parity_v0"
+  },
+  "no_goals": [
+    "no node task runtime",
+    "no public submissions",
+    "no telemetry",
+    "no hosted backend",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Future work unit NeedPageView example for Track A-07."
+  ]
+}

@@ -1,0 +1,52 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-07
+title: NeedPage and CandidatePage view model contracts
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-07
+source_packet: .aide/context/latest-task-packet.md
+objective: Define canonical public-safe NeedPageView and CandidatePageView models before renderer or runtime refactors.
+scope:
+  allowed_paths:
+    - contracts/views/need_page.v0.json
+    - contracts/views/candidate_page.v0.json
+    - docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md
+    - docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md
+    - docs/roadmap/TRACK_EXECUTION_PLAN.md
+    - control/inventory/publication/need_page_view_model_policy.json
+    - control/inventory/publication/candidate_page_view_model_policy.json
+    - examples/view_models/need_page/**
+    - examples/view_models/candidate_page/**
+    - scripts/validate_need_candidate_page_view_models.py
+    - tests/contracts/test_need_candidate_page_view_models.py
+    - control/audits/track-a-07-need-candidate-page-view-models-v0/**
+    - .aide/queue/TRACK-A-07/**
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - NeedPage view model schema exists
+  - CandidatePage view model schema exists
+  - policy inventories exist and validate
+  - examples exist and validate
+  - validator and tests pass
+  - audit pack exists
+  - no runtime, route, hosted, generated site, source connector, source sync, query, candidate, or search semantic behavior is changed
+  - no rights-clearance, malware-safety, installability, public-truth, or exhaustive-global-search claims are added
+  - validation and evidence are recorded
+recommended_after: TRACK-A-06
+recommended_next: TRACK-A-08
