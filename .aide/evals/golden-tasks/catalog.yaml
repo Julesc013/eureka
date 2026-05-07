@@ -100,3 +100,19 @@ tasks:
       - deterministic_output
       - agent_guidance
       - token_discipline
+  - id: commit_message_standard_golden
+    title: Eureka Commit Message Standard Golden
+    status: active
+    description: Verify AIDE enforces changelog-ready Conventional Commit subjects with structured Markdown bodies.
+    quality_dimensions:
+      - deterministic_output
+      - changelog_ready_commits
+      - validation_evidence
+  - id: task_resumption_standard_golden
+    title: Eureka Task Resumption Standard Golden
+    status: active
+    description: Verify AIDE tasks can be resumed, repeated, or reconciled from repo-local queue/evidence before user escalation.
+    quality_dimensions:
+      - task_resumability
+      - queue_integrity
+      - evidence_before_escalation

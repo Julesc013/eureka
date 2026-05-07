@@ -8,9 +8,9 @@
   "current_queue_item": "TRACK-A-01",
   "completed_queue_item": "EUREKA-CONVERGE-01",
   "latest_packet_budget": {
-    "approx_tokens": 1118,
+    "approx_tokens": 1209,
     "budget_status": "within_budget",
-    "chars": 4472,
+    "chars": 4836,
     "method": "chars / 4 approximation",
     "path": ".aide/context/latest-task-packet.md"
   },
@@ -64,6 +64,11 @@
     "run_validation_before_claiming_completion": true,
     "preserve_token_discipline": true,
     "keep_aide_as_governance_not_product_truth": true
+  },
+  "governance_standards": {
+    "commit_message_standard": ".aide/reports/eureka-commit-message-standard.md",
+    "task_resumption_standard": ".aide/reports/eureka-task-resumption-standard.md",
+    "golden_task_count": 14
   },
   "risks": [
     "no exact tokenizer or provider billing proof",

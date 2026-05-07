@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 12
-- pass_count: 12
+- task_count: 14
+- pass_count: 14
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -22,12 +22,21 @@
 - related_paths: AGENTS.md
 - notes: Checks managed section replacement on an isolated fixture repo.
 
+### commit_message_standard_golden
+
+- result: PASS
+- checks_run: 21
+- passed_checks: 21
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/hooks/commit-msg, .aide/policies/commit-messages.yaml, .aide/reports/eureka-commit-message-standard.md, AGENTS.md
+- notes: Checks AIDE enforces changelog-ready commit messages for future work.
+
 ### compact-task-packet-required-sections
 
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1118
+- approx_tokens_if_applicable: 1209
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -36,7 +45,7 @@
 - result: PASS
 - checks_run: 32
 - passed_checks: 32
-- approx_tokens_if_applicable: 1118
+- approx_tokens_if_applicable: 1209
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-task-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json, AGENTS.md
 - notes: Checks the latest compact packet is target-specific and actionable for Eureka.
 
@@ -102,6 +111,15 @@
 - approx_tokens_if_applicable: 1397
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
+
+### task_resumption_standard_golden
+
+- result: PASS
+- checks_run: 28
+- passed_checks: 28
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/context/latest-task-packet.md, .aide/policies/task-resumption.yaml, .aide/queue/index.yaml, .aide/reports/eureka-task-resumption-standard.md, AGENTS.md
+- notes: Checks tasks can be resumed, repeated, or reconciled from repo-local state before asking the user.
 
 ### token-ledger-budget-check
 

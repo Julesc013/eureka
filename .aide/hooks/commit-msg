@@ -1,0 +1,4 @@
+#!/bin/sh
+# Optional local hook template. Install explicitly with an operator-reviewed
+# local hook setup; do not commit machine-local .git/config changes.
+python .aide/scripts/aide_lite.py commit check --message-file "$1"

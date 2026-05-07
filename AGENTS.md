@@ -48,6 +48,8 @@
 - Repo audits should emit structured findings under `control/audits/` and should not be treated as production-readiness claims.
 - AIDE Lite supports repo governance and context compression; it is not product truth. Product truth lives in `contracts/`, `runtime/`, and accepted architecture docs.
 - AIDE-only tasks must not modify product behavior. Write evidence under `.aide/queue/<TASK-ID>/` and do not paste full chat history when a compact task packet exists.
+- Use structured Markdown commit bodies for substantive work; run `py -3 .aide/scripts/aide_lite.py commit check --latest` after committing when practical.
+- If prompts repeat, arrive out of order, or interrupt incomplete work, resume from repo-local queue/status/evidence first. Reconcile repeated or out-of-order prompts before editing, and ask the user only after repo-local evidence is insufficient to choose a safe continuation.
 
 <!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
 ## AIDE Lite Portable Guidance

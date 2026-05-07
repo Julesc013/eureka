@@ -1,0 +1,62 @@
+schema_version: aide.commit-message-policy.v0
+policy_id: eureka-commit-message-standard-v0
+status: active
+purpose: >
+  Require changelog-ready Git commit messages for AIDE-managed Eureka work so
+  future tooling can compile release notes and task history from commit bodies.
+standard: Conventional Commits with structured Markdown body
+subject:
+  format: "type(scope): summary"
+  subject_max_chars: 72
+  allowed_types:
+    - feat
+    - fix
+    - docs
+    - test
+    - refactor
+    - perf
+    - build
+    - ci
+    - chore
+    - style
+    - audit
+    - revert
+  summary_rule: specific outcome, imperative or present-tense, no trailing period
+  forbidden_vague_summaries:
+    - update
+    - changes
+    - misc
+    - wip
+body:
+  markdown_required: true
+  required_body_headings:
+    - "## Summary"
+    - "## Changed"
+    - "## Validation"
+    - "## Changelog"
+    - "## Risks"
+    - "## Follow-up"
+  validation_result_tokens:
+    - PASS
+    - WARN
+    - FAIL
+    - NOT RUN
+  changelog_categories:
+    - Added
+    - Changed
+    - Fixed
+    - Removed
+    - Deprecated
+    - Security
+    - Docs
+    - Tests
+    - Internal
+automation:
+  checker_command: "py -3 .aide/scripts/aide_lite.py commit check --message-file <path>"
+  latest_commit_check: "py -3 .aide/scripts/aide_lite.py commit check --latest"
+  hook_template: ".aide/hooks/commit-msg"
+non_goals:
+  - no network calls
+  - no provider calls
+  - no automatic release publishing
+  - no exact semantic changelog classification

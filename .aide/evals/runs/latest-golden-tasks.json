@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 12,
+  "pass_count": 14,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 12,
+  "task_count": 14,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -25,7 +25,23 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1118,
+      "approx_tokens_if_applicable": null,
+      "checks_run": 21,
+      "errors": [],
+      "notes": "Checks AIDE enforces changelog-ready commit messages for future work.",
+      "passed_checks": 21,
+      "related_paths": [
+        ".aide/hooks/commit-msg",
+        ".aide/policies/commit-messages.yaml",
+        ".aide/reports/eureka-commit-message-standard.md",
+        "AGENTS.md"
+      ],
+      "result": "PASS",
+      "task_id": "commit_message_standard_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": 1209,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -40,7 +56,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1118,
+      "approx_tokens_if_applicable": 1209,
       "checks_run": 32,
       "errors": [],
       "notes": "Checks the latest compact packet is target-specific and actionable for Eureka.",
@@ -165,6 +181,23 @@
       ],
       "result": "PASS",
       "task_id": "review-packet-evidence-only",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 28,
+      "errors": [],
+      "notes": "Checks tasks can be resumed, repeated, or reconciled from repo-local state before asking the user.",
+      "passed_checks": 28,
+      "related_paths": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/policies/task-resumption.yaml",
+        ".aide/queue/index.yaml",
+        ".aide/reports/eureka-task-resumption-standard.md",
+        "AGENTS.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_resumption_standard_golden",
       "warnings": []
     },
     {

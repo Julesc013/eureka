@@ -38,6 +38,10 @@ search, and review loops all need a shared view-model spine.
 - `docs/ROADMAP.md`
 - `docs/architecture/COMPATIBILITY_SURFACES.md`
 - `docs/architecture/PUBLICATION_PLANE.md`
+- `.aide/policies/commit-messages.yaml`
+- `.aide/policies/task-resumption.yaml`
+- `.aide/reports/eureka-commit-message-standard.md`
+- `.aide/reports/eureka-task-resumption-standard.md`
 
 ## ALLOWED_PATHS
 
@@ -78,9 +82,11 @@ search, and review loops all need a shared view-model spine.
 - Treat existing object/source/comparison/result-card/ranking/explanation
   contracts as references, not permission for runtime implementation.
 - Record evidence under `.aide/queue/TRACK-A-01/`.
-- Use focused commits with verbose bodies.
+- Use focused commits with changelog-ready structured Markdown bodies.
 - Keep documentation and behavior claims honest, update task-local evidence, and
   refresh compact AIDE memory only when future agents need the state.
+- If a prompt repeats, arrives out of order, or interrupts incomplete work,
+  reconcile repo-local queue/status/evidence before asking for user input.
 
 ## VALIDATION
 
@@ -134,7 +140,7 @@ Return `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED`, `VALIDATION`, `RISKS`, and
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4472
-- approx_tokens: 1118
+- chars: 4836
+- approx_tokens: 1209
 - budget_status: within_budget
 - formal ledger: `.aide/reports/token-ledger.jsonl`

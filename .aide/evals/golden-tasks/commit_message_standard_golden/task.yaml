@@ -1,0 +1,12 @@
+schema_version: aide.golden-task.v0
+task_id: commit_message_standard_golden
+title: Eureka Commit Message Standard Golden
+status: active
+purpose: Check that AIDE enforces changelog-ready commit messages for future work.
+input_refs:
+  - .aide/policies/commit-messages.yaml
+  - .aide/reports/eureka-commit-message-standard.md
+  - .aide/hooks/commit-msg
+  - AGENTS.md
+acceptance_ref: .aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md
+expected_result: PASS

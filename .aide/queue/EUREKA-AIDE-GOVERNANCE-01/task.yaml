@@ -1,0 +1,34 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-GOVERNANCE-01
+title: Enforce structured commits and resumable task operation
+status: needs_review
+target_repo: julesc013/eureka
+phase: EUREKA-AIDE-GOVERNANCE-01
+source: user_requested_aide_operating_governance
+objective: Make AIDE enforce changelog-ready commit messages and reusable/resumable task behavior for future Eureka work.
+scope:
+  allowed_paths:
+    - .aide/**
+    - AGENTS.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - commit-message policy and checker exist
+  - task-resumption policy exists
+  - eval run includes golden checks for both rules
+  - AGENTS points future agents at the rules
+  - validation and evidence are recorded
+recommended_after: EUREKA-CONVERGE-01

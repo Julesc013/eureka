@@ -56,6 +56,11 @@ GOLDEN_TASK_ROOT = ".aide/evals/golden-tasks"
 GOLDEN_TASK_CATALOG_PATH = ".aide/evals/golden-tasks/catalog.yaml"
 GOLDEN_RUN_JSON_PATH = ".aide/evals/runs/latest-golden-tasks.json"
 GOLDEN_RUN_MD_PATH = ".aide/evals/runs/latest-golden-tasks.md"
+COMMIT_MESSAGE_POLICY_PATH = ".aide/policies/commit-messages.yaml"
+COMMIT_MESSAGE_STANDARD_PATH = ".aide/reports/eureka-commit-message-standard.md"
+COMMIT_MESSAGE_HOOK_TEMPLATE_PATH = ".aide/hooks/commit-msg"
+TASK_RESUMPTION_POLICY_PATH = ".aide/policies/task-resumption.yaml"
+TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/eureka-task-resumption-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
 CONTROLLER_DIR = ".aide/controller"
 OUTCOME_LEDGER_PATH = ".aide/controller/outcome-ledger.jsonl"
@@ -254,6 +259,11 @@ Q14_REQUIRED_FILES = [
 
 Q15_REQUIRED_FILES = [
     EVAL_POLICY_PATH,
+    COMMIT_MESSAGE_POLICY_PATH,
+    COMMIT_MESSAGE_STANDARD_PATH,
+    COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+    TASK_RESUMPTION_POLICY_PATH,
+    TASK_RESUMPTION_STANDARD_PATH,
     f"{GOLDEN_TASK_ROOT}/README.md",
     GOLDEN_TASK_CATALOG_PATH,
 ]
@@ -515,7 +525,75 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "no_secret_or_local_state_golden",
     "eureka_architecture_context_golden",
     "generated_agent_guidance_golden",
+    "commit_message_standard_golden",
+    "task_resumption_standard_golden",
 ]
+
+COMMIT_SUBJECT_RE = re.compile(
+    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|audit|revert)"
+    r"(\([a-z0-9][a-z0-9._/-]*\))?!?: .+"
+)
+
+COMMIT_REQUIRED_BODY_HEADINGS = [
+    "## Summary",
+    "## Changed",
+    "## Validation",
+    "## Changelog",
+    "## Risks",
+    "## Follow-up",
+]
+
+COMMIT_CHANGELOG_PREFIXES = [
+    "- Added:",
+    "- Changed:",
+    "- Fixed:",
+    "- Removed:",
+    "- Deprecated:",
+    "- Security:",
+    "- Docs:",
+    "- Tests:",
+    "- Internal:",
+]
+
+COMMIT_VAGUE_SUMMARIES = {
+    "update",
+    "updates",
+    "changes",
+    "misc",
+    "wip",
+    "stuff",
+    "fix",
+    "fixes",
+    "work",
+}
+
+COMMIT_GOOD_EXAMPLE = """docs(aide): enforce structured commit changelogs
+
+## Summary
+
+- Add an AIDE commit-message policy and validator.
+
+## Changed
+
+- Added `.aide/policies/commit-messages.yaml`.
+- Added a deterministic golden task for commit-message shape.
+
+## Validation
+
+- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.
+
+## Changelog
+
+- Added: commit-message enforcement for future AIDE-managed work.
+
+## Risks
+
+- Local Git hooks still require operator opt-in.
+
+## Follow-up
+
+- Use the validator before committing future AIDE work.
+"""
 
 EUREKA_PRODUCT_FORBIDDEN_PATTERNS = [
     "runtime/**",
@@ -1846,6 +1924,89 @@ def check_warn(checks: list[Check], condition: bool, message: str) -> None:
     checks.append(Check("PASS" if condition else "WARN", message))
 
 
+def strip_commit_message_comments(text: str) -> str:
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    stripped = [
+        line.rstrip()
+        for line in lines
+        if not (line.lstrip().startswith("#") and not line.lstrip().startswith("##"))
+    ]
+    while stripped and not stripped[-1]:
+        stripped.pop()
+    return "\n".join(stripped)
+
+
+def markdown_heading_body(text: str, heading: str) -> str:
+    lines = text.splitlines()
+    capture = False
+    body: list[str] = []
+    for line in lines:
+        if line.strip() == heading:
+            capture = True
+            continue
+        if capture and line.startswith("## ") and line.strip() != heading:
+            break
+        if capture:
+            body.append(line)
+    return "\n".join(body).strip()
+
+
+def validate_commit_message_text(text: str) -> list[Check]:
+    message = strip_commit_message_comments(text)
+    lines = message.splitlines()
+    checks: list[Check] = []
+    subject = lines[0].strip() if lines else ""
+    check_pass(checks, bool(subject), "commit subject is present")
+    if subject:
+        check_pass(checks, len(subject) <= 72, "commit subject is 72 characters or fewer")
+        check_pass(checks, bool(COMMIT_SUBJECT_RE.match(subject)), "commit subject follows type(scope): summary")
+        check_pass(checks, not subject.endswith("."), "commit subject has no trailing period")
+        summary = subject.split(": ", 1)[1].strip().lower() if ": " in subject else subject.lower()
+        check_pass(checks, summary not in COMMIT_VAGUE_SUMMARIES, "commit subject is not a vague placeholder")
+    body = "\n".join(lines[1:]).strip()
+    check_pass(checks, bool(body), "commit body is present")
+    if len(lines) > 1:
+        check_pass(checks, lines[1].strip() == "", "blank line separates subject and Markdown body")
+    for heading in COMMIT_REQUIRED_BODY_HEADINGS:
+        check_pass(checks, heading in body, f"commit body contains heading: {heading}")
+        section = markdown_heading_body(body, heading)
+        check_pass(checks, "- " in section, f"commit body heading has bullet content: {heading}")
+    validation = markdown_heading_body(body, "## Validation")
+    check_pass(
+        checks,
+        any(marker in validation for marker in ["PASS", "WARN", "FAIL", "NOT RUN"]),
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+    )
+    changelog = markdown_heading_body(body, "## Changelog")
+    check_pass(
+        checks,
+        any(prefix in changelog for prefix in COMMIT_CHANGELOG_PREFIXES),
+        "changelog section uses a machine-readable category prefix",
+    )
+    lowered = message.lower()
+    for forbidden in ["raw_prompt_body", "raw_response_body", "begin private key", "openai_api_key", "anthropic_api_key", "deepseek_api_key"]:
+        check_pass(checks, forbidden not in lowered, f"commit message excludes {forbidden}")
+    return checks
+
+
+def commit_message_result(checks: Iterable[Check]) -> str:
+    return result_from_checks(checks)
+
+
+def git_latest_commit_message(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "log", "-1", "--pretty=%B"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or "git log failed")
+    return result.stdout
+
+
 def result_from_checks(checks: Iterable[Check]) -> str:
     severities = [check.severity for check in checks]
     if any(severity == "FAIL" for severity in severities):
@@ -1901,6 +2062,10 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_eureka_architecture_context(repo_root)
     if task_id == "generated_agent_guidance_golden":
         return run_golden_eureka_generated_agent_guidance(repo_root)
+    if task_id == "commit_message_standard_golden":
+        return run_golden_commit_message_standard(repo_root)
+    if task_id == "task_resumption_standard_golden":
+        return run_golden_task_resumption_standard(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -2269,6 +2434,123 @@ def run_golden_eureka_generated_agent_guidance(repo_root: Path) -> GoldenTaskRes
         ["AGENTS.md", ".aide/adapters/templates/AGENTS.md.template", ".aide/generated/adapters/AGENTS.md"],
         None,
         "Checks generated agent guidance is deterministic, compact, and aligned with Eureka AIDE rules.",
+    )
+
+
+def run_golden_commit_message_standard(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy_path = repo_root / COMMIT_MESSAGE_POLICY_PATH
+    standard_path = repo_root / COMMIT_MESSAGE_STANDARD_PATH
+    hook_path = repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH
+    agents_path = repo_root / "AGENTS.md"
+    for rel, path in [
+        (COMMIT_MESSAGE_POLICY_PATH, policy_path),
+        (COMMIT_MESSAGE_STANDARD_PATH, standard_path),
+        (COMMIT_MESSAGE_HOOK_TEMPLATE_PATH, hook_path),
+        ("AGENTS.md", agents_path),
+    ]:
+        check_pass(checks, path.exists(), f"commit-message enforcement artifact exists: {rel}")
+    good_checks = validate_commit_message_text(COMMIT_GOOD_EXAMPLE)
+    check_pass(checks, commit_message_result(good_checks) == "PASS", "known-good structured commit message passes")
+    bad_checks = validate_commit_message_text("update\n")
+    check_pass(checks, commit_message_result(bad_checks) == "FAIL", "vague unstructured commit message fails")
+    if policy_path.exists():
+        policy = read_text(policy_path)
+        for marker in [
+            "Conventional Commits",
+            "subject_max_chars: 72",
+            "required_body_headings",
+            "changelog_categories",
+        ]:
+            check_pass(checks, marker in policy, f"commit policy contains {marker}")
+    if standard_path.exists():
+        standard = read_text(standard_path)
+        for marker in [
+            "type(scope): summary",
+            "## Summary",
+            "## Changed",
+            "## Validation",
+            "## Changelog",
+            "## Risks",
+            "## Follow-up",
+            "automated changelog",
+        ]:
+            check_pass(checks, marker in standard, f"commit standard documents {marker}")
+    if hook_path.exists():
+        hook = read_text(hook_path)
+        check_pass(checks, "commit check --message-file" in hook, "hook template calls AIDE commit checker")
+    if agents_path.exists():
+        agents = read_text(agents_path)
+        check_pass(checks, "structured Markdown commit bodies" in agents, "AGENTS requires structured Markdown commit bodies")
+        check_pass(checks, "commit check" in agents, "AGENTS references AIDE commit check")
+    return golden_task_result(
+        "commit_message_standard_golden",
+        checks,
+        [COMMIT_MESSAGE_POLICY_PATH, COMMIT_MESSAGE_STANDARD_PATH, COMMIT_MESSAGE_HOOK_TEMPLATE_PATH, "AGENTS.md"],
+        None,
+        "Checks AIDE enforces changelog-ready commit messages for future work.",
+    )
+
+
+def run_golden_task_resumption_standard(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy_path = repo_root / TASK_RESUMPTION_POLICY_PATH
+    standard_path = repo_root / TASK_RESUMPTION_STANDARD_PATH
+    agents_path = repo_root / "AGENTS.md"
+    queue_index_path = repo_root / ".aide/queue/index.yaml"
+    latest_packet_path = repo_root / LATEST_PACKET_PATH
+    for rel, path in [
+        (TASK_RESUMPTION_POLICY_PATH, policy_path),
+        (TASK_RESUMPTION_STANDARD_PATH, standard_path),
+        ("AGENTS.md", agents_path),
+        (".aide/queue/index.yaml", queue_index_path),
+        (LATEST_PACKET_PATH, latest_packet_path),
+    ]:
+        check_pass(checks, path.exists(), f"task-resumption artifact exists: {rel}")
+    if policy_path.exists():
+        policy = read_text(policy_path)
+        for marker in [
+            "stable_task_id_required: true",
+            "resume_from_repo_state_first: true",
+            "repeated_prompt_policy",
+            "out_of_order_prompt_policy",
+            "incomplete_previous_task_policy",
+            "ask_user_only_when_blocked_after_repo_reconciliation: true",
+        ]:
+            check_pass(checks, marker in policy, f"task resumption policy contains {marker}")
+    if standard_path.exists():
+        standard = read_text(standard_path)
+        for marker in [
+            "Resumption Rule",
+            "Repeated Prompt",
+            "Out-of-Order Prompt",
+            "Incomplete Previous Task",
+            "Evidence Before Escalation",
+            "Validation Gates",
+        ]:
+            check_pass(checks, marker in standard, f"task resumption standard documents {marker}")
+    if agents_path.exists():
+        agents = read_text(agents_path).lower()
+        for marker in [
+            "resume from repo-local queue",
+            "reconcile repeated or out-of-order prompts",
+            "ask the user only after repo-local evidence is insufficient",
+        ]:
+            check_pass(checks, marker in agents, f"AGENTS contains task resumption marker: {marker}")
+    if queue_index_path.exists():
+        queue_index = read_text(queue_index_path)
+        for marker in ["current_recommended_task", "status", "recommended_after"]:
+            check_pass(checks, marker in queue_index, f"queue index contains resumability marker: {marker}")
+    if latest_packet_path.exists():
+        packet = read_text(latest_packet_path)
+        for section in ["PHASE", "CONTEXT_REFS", "VALIDATION", "EVIDENCE", "ACCEPTANCE"]:
+            check_pass(checks, contains_section(packet, section), f"latest task packet contains resumability section: {section}")
+    return golden_task_result(
+        "task_resumption_standard_golden",
+        checks,
+        [TASK_RESUMPTION_POLICY_PATH, TASK_RESUMPTION_STANDARD_PATH, "AGENTS.md", ".aide/queue/index.yaml", LATEST_PACKET_PATH],
+        None,
+        "Checks tasks can be resumed, repeated, or reconciled from repo-local state before asking the user.",
     )
 
 
@@ -7390,6 +7672,32 @@ def command_eval_report(args: argparse.Namespace) -> int:
     return 1 if data.get("result") == "FAIL" else 0
 
 
+def command_commit_check(args: argparse.Namespace) -> int:
+    sources = [bool(args.message_file), bool(args.message), bool(args.latest)]
+    if sum(sources) != 1:
+        raise ValueError("use exactly one of --message-file, --message, or --latest")
+    if args.message_file:
+        message_path = safe_repo_path(args.repo_root, args.message_file)
+        text = read_text(message_path)
+        source = normalize_rel(message_path.relative_to(args.repo_root))
+    elif args.message:
+        text = str(args.message)
+        source = "inline_message"
+    else:
+        text = git_latest_commit_message(args.repo_root)
+        source = "git log -1 --pretty=%B"
+    checks = validate_commit_message_text(text)
+    result = commit_message_result(checks)
+    print("AIDE Lite commit check")
+    print(f"result: {result}")
+    print(f"source: {source}")
+    print(f"policy: {COMMIT_MESSAGE_POLICY_PATH}")
+    print(f"standard: {COMMIT_MESSAGE_STANDARD_PATH}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 1 if result == "FAIL" else 0
+
+
 def command_outcome_add(args: argparse.Namespace) -> int:
     record = make_outcome_record(
         args.repo_root,
@@ -8972,6 +9280,16 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q20-provider-adapter-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q24-existing-tool-adapter-compiler-v0/status.yaml", "status: running\n")
     write_text(
+        root / ".aide/queue/index.yaml",
+        """schema_version: aide.queue-index.v0
+current_recommended_task: Q24-existing-tool-adapter-compiler-v0
+entries:
+  - id: Q24-existing-tool-adapter-compiler-v0
+    status: running
+    recommended_after: Q20-provider-adapter-v0
+""",
+    )
+    write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
   allowed_paths:
@@ -9013,6 +9331,13 @@ Manual intro.
 - Gateway may depend only on governed engine interfaces and contracts.
 - Connectors must not invent object truth or own trust semantics.
 - AIDE does not own product semantics and must not define runtime behavior.
+
+## AIDE Operating Discipline
+
+- Use structured Markdown commit bodies and run AIDE commit check before committing.
+- When prompts repeat, arrive out of order, or follow incomplete work, resume from repo-local queue and evidence first.
+- Reconcile repeated or out-of-order prompts against `.aide/queue/index.yaml`, task status, and evidence.
+- Ask the user only after repo-local evidence is insufficient to choose a safe continuation.
 """,
     )
     write_text(root / "README.md", "# README\n")
@@ -9218,6 +9543,8 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "tasks" in eval_data
         assert "raw_prompt" not in read_text(root / GOLDEN_RUN_JSON_PATH).lower() or '"raw_prompt_storage": false' in read_text(root / GOLDEN_RUN_JSON_PATH).lower()
         assert "print('hello')" not in read_text(root / GOLDEN_RUN_MD_PATH)
+        assert commit_message_result(validate_commit_message_text(COMMIT_GOOD_EXAMPLE)) == "PASS"
+        assert commit_message_result(validate_commit_message_text("update\n")) == "FAIL"
         outcome_records = build_current_outcome_records(root)
         assert outcome_records
         outcome_write, merged_outcomes = merge_outcome_records(root, outcome_records, "q16.current")
@@ -9321,7 +9648,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit-message, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -9417,6 +9744,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     eval_run_parser.set_defaults(handler=command_eval_run)
 
     eval_subparsers.add_parser("report").set_defaults(handler=command_eval_report)
+
+    commit_parser = subparsers.add_parser("commit")
+    commit_subparsers = commit_parser.add_subparsers(dest="commit_command", required=True)
+    commit_check_parser = commit_subparsers.add_parser("check")
+    commit_check_parser.add_argument("--message-file", help="Commit message file to validate, such as .git/COMMIT_EDITMSG.")
+    commit_check_parser.add_argument("--message", help="Inline commit message text to validate.")
+    commit_check_parser.add_argument("--latest", action="store_true", help="Validate the latest Git commit message.")
+    commit_check_parser.set_defaults(handler=command_commit_check)
 
     outcome_parser = subparsers.add_parser("outcome")
     outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)

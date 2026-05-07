@@ -24,8 +24,8 @@ claiming product readiness or changing Eureka product behavior.
 | `test` | PASS | Imported AIDE Lite portable checks pass. |
 | `selftest` | PASS | Temp-fixture fallback repair remains healthy. |
 | `verify` | WARN-only | 0 errors; optional/future references may remain. |
-| `eval list` | PASS | 12 active deterministic golden tasks. |
-| `eval run` | PASS | 12/12 pass; no provider/model/network calls. |
+| `eval list` | PASS | 14 active deterministic golden tasks. |
+| `eval run` | PASS | 14/14 pass; no provider/model/network calls. |
 | `adapter validate` | PASS | Existing-tool adapter surface is current. |
 | `architecture boundaries` | PASS | 479 Python files checked; no boundary violations. |
 
@@ -33,7 +33,7 @@ claiming product readiness or changing Eureka product behavior.
 
 - Latest task packet path: `.aide/context/latest-task-packet.md`.
 - Latest review packet path: `.aide/context/latest-review-packet.md`.
-- Latest compact task packet budget state: within budget, 4,472 chars / 1,118
+- Latest compact task packet budget state: within budget, 4,836 chars / 1,209
   approximate tokens by chars/4.
 - Current task completed by convergence: `EUREKA-CONVERGE-01`.
 - Next recommended queue item: `TRACK-A-01`.
@@ -80,6 +80,9 @@ claiming product readiness or changing Eureka product behavior.
   and deferrals without claiming mature product semantics.
 - Use focused commits with verbose bodies that explain why the change exists,
   what changed, validation run, known limitations, and next step unlocked.
+- Use `.aide/reports/eureka-commit-message-standard.md` for changelog-ready
+  commit bodies and `.aide/reports/eureka-task-resumption-standard.md` when
+  prompts repeat, arrive out of order, or interrupt incomplete work.
 - Record self-management evidence under `.aide/queue/<TASK-ID>/`, including
   changed files, validation, result summary, and remaining risks.
 - Preserve token discipline: do not paste full chat histories when compact AIDE

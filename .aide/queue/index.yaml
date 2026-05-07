@@ -24,6 +24,13 @@ entries:
     allowed_scope_summary: AIDE reports/evidence/context and review docs only unless a future task explicitly broadens scope.
     gate: EUREKA-AIDE-REAL-01 reviewed; repo-health report remains current; no product behavior changes.
     recommended_after: EUREKA-AIDE-REAL-01
+  - id: EUREKA-AIDE-GOVERNANCE-01
+    title: Enforce structured commits and resumable task operation
+    status: needs_review
+    purpose: Make AIDE enforce changelog-ready commit messages and repo-local task resumption rules.
+    allowed_scope_summary: AIDE policies, reports, evals, tests, guidance, and evidence only.
+    gate: commit check, AIDE tests, eval run, and secret scan pass; no product behavior changes.
+    recommended_after: EUREKA-CONVERGE-01
   - id: TRACK-A-01
     title: Host/profile/representation contract bundle
     status: queued

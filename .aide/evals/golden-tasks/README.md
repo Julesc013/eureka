@@ -21,6 +21,8 @@ EUREKA-AIDE-GOLDEN-01 adds a target-specific task set for Eureka:
 - local-state and secret boundary checks
 - architecture context coverage for Eureka boundaries
 - generated agent guidance determinism and token discipline
+- changelog-ready commit-message standards
+- task resumption and out-of-order queue reconciliation standards
 
 Token reduction is only valid when these local quality gates pass. These tasks
 do not prove arbitrary coding quality; they prove the token-survival substrate

@@ -49,6 +49,8 @@ class GoldenTaskTests(unittest.TestCase):
             "no_secret_or_local_state_golden",
             "eureka_architecture_context_golden",
             "generated_agent_guidance_golden",
+            "commit_message_standard_golden",
+            "task_resumption_standard_golden",
         ]:
             self.assertIn(task_id, {task.task_id for task in tasks})
 
@@ -94,12 +96,50 @@ class GoldenTaskTests(unittest.TestCase):
             "no_secret_or_local_state_golden",
             "eureka_architecture_context_golden",
             "generated_agent_guidance_golden",
+            "commit_message_standard_golden",
+            "task_resumption_standard_golden",
         ]:
             with self.subTest(task_id=task_id):
                 result = aide_lite.run_golden_task(root, task_id)
                 self.assertEqual(result.result, "PASS", result)
                 self.assertGreater(result.checks_run, 0)
                 self.assertEqual(result.errors, ())
+
+    def test_commit_message_check_command(self) -> None:
+        root = self.make_repo()
+        message_path = root / "COMMIT_EDITMSG"
+        aide_lite.write_text(message_path, aide_lite.COMMIT_GOOD_EXAMPLE)
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = aide_lite.main(
+                [
+                    "--repo-root",
+                    str(root),
+                    "commit",
+                    "check",
+                    "--message-file",
+                    "COMMIT_EDITMSG",
+                ]
+            )
+        self.assertEqual(code, 0, buffer.getvalue())
+        self.assertIn("result: PASS", buffer.getvalue())
+
+    def test_commit_message_check_rejects_vague_subject(self) -> None:
+        root = self.make_repo()
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = aide_lite.main(
+                [
+                    "--repo-root",
+                    str(root),
+                    "commit",
+                    "check",
+                    "--message",
+                    "update\n",
+                ]
+            )
+        self.assertEqual(code, 1)
+        self.assertIn("result: FAIL", buffer.getvalue())
 
     def test_fail_result_rendering_from_bad_packet_fixture(self) -> None:
         root = self.make_repo()

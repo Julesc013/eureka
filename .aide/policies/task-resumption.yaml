@@ -1,0 +1,42 @@
+schema_version: aide.task-resumption-policy.v0
+policy_id: eureka-task-resumption-standard-v0
+status: active
+purpose: >
+  Make AIDE-managed tasks reusable, resumable, and order-aware so repeated or
+  out-of-order prompts can continue from repo-local queue/evidence without
+  unnecessary user escalation.
+stable_task_id_required: true
+resume_from_repo_state_first: true
+ask_user_only_when_blocked_after_repo_reconciliation: true
+required_task_surfaces:
+  - ".aide/queue/index.yaml"
+  - ".aide/queue/<TASK-ID>/task.yaml"
+  - ".aide/queue/<TASK-ID>/status.yaml"
+  - ".aide/queue/<TASK-ID>/evidence/"
+  - ".aide/context/latest-task-packet.md"
+repeated_prompt_policy:
+  if_current_task_complete: verify evidence and advance to next recommended task
+  if_current_task_incomplete: continue from status/evidence, preserving prior work
+  if_prompt_duplicates_existing_task: reconcile changed instructions before editing
+out_of_order_prompt_policy:
+  inspect_queue_index: true
+  inspect_current_and_requested_status: true
+  prefer_safe_prerequisite_completion: true
+  record_reconciliation_evidence: true
+incomplete_previous_task_policy:
+  inspect_changed_files: true
+  inspect_status_yaml: true
+  inspect_validation_evidence: true
+  continue_or_close_before_new_work_when_safe: true
+validation_gates:
+  - git status --short
+  - git diff --check
+  - aide doctor
+  - aide validate
+  - aide eval run
+  - task-specific tests
+non_goals:
+  - no autonomous product implementation without a queued task
+  - no hiding blockers
+  - no fabricating evidence
+  - no asking user before repo-local evidence is inspected
