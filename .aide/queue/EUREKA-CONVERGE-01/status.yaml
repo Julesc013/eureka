@@ -1,0 +1,6 @@
+schema_version: aide.status.v0
+id: EUREKA-CONVERGE-01
+status: queued
+result: not_started
+review_gate: pending_execution
+summary: Next queued task after the Eureka AIDE Lite repo-health report.

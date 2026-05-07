@@ -1,0 +1,41 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-CONVERGE-01
+title: Track and prompt queue convergence audit
+status: queued
+target_repo: julesc013/eureka
+phase: EUREKA-CONVERGE-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Converge the next Eureka execution spine into bounded queue tasks before product implementation.
+scope:
+  allowed_paths:
+    - .aide/queue/EUREKA-CONVERGE-01/**
+    - .aide/queue/EUREKA-AIDE-REAL-01/**
+    - .aide/reports/**
+    - .aide/context/**
+    - .aide/evals/runs/**
+    - .aide/queue/index.yaml
+    - .aide/memory/**
+    - docs/**
+    - control/audits/**
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - convergence artifact exists
+  - next execution spine is ordered and gated
+  - allowed and forbidden paths are explicit
+  - no product behavior paths are modified
+  - validation and evidence are recorded
+recommended_after: EUREKA-AIDE-REAL-01

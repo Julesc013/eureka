@@ -1,0 +1,76 @@
+{
+  "schema_version": "eureka_repo_health.v0",
+  "status": "warn",
+  "generated_at_note": "codex_generated_from_repo_local_aide_context",
+  "primary_task_packet": ".aide/context/latest-task-packet.md",
+  "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
+  "latest_review_packet": ".aide/context/latest-review-packet.md",
+  "current_queue_item": "EUREKA-CONVERGE-01",
+  "completed_queue_item": "EUREKA-AIDE-REAL-01",
+  "latest_packet_budget": {
+    "approx_tokens": 1199,
+    "budget_status": "within_budget",
+    "chars": 4796,
+    "method": "chars / 4 approximation",
+    "path": ".aide/context/latest-task-packet.md"
+  },
+  "validation": {
+    "doctor": "pass",
+    "validate": "pass",
+    "test": "pass",
+    "selftest": "pass",
+    "verify": "warn_only",
+    "eval_list": "pass",
+    "eval_run": "pass",
+    "adapter_validate": "pass",
+    "architecture_boundaries": "pass"
+  },
+  "known_warn_only_conditions": [
+    "optional AIDE controller recommendations report may be absent",
+    "optional AIDE gateway status report may be absent",
+    "optional AIDE provider status report may be absent",
+    "future queue packet references may warn until their evidence exists",
+    "pre-commit diff-scope warnings may appear while current evidence is uncommitted and the active queue points to the next task"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "aide_metadata_is_product_runtime": false
+  },
+  "next_spine": [
+    "EUREKA-CONVERGE-01",
+    "TRACK-A",
+    "MANUAL-OBSERVATION-BATCH-0",
+    "TRACK-B",
+    "TRACK-D",
+    "TRACK-C",
+    "TRACK-E"
+  ],
+  "future_agent_read_order": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/reports/eureka-aide-lite-operating-handoff.md",
+    ".aide/reports/eureka-repo-health.md",
+    "AGENTS.md"
+  ],
+  "operating_discipline": {
+    "plan_first": true,
+    "document_behavior_honestly": true,
+    "use_focused_verbose_commits": true,
+    "write_queue_evidence": true,
+    "run_validation_before_claiming_completion": true,
+    "preserve_token_discipline": true,
+    "keep_aide_as_governance_not_product_truth": true
+  },
+  "risks": [
+    "no exact tokenizer or provider billing proof",
+    "no arbitrary Eureka product-quality claim",
+    "verify WARN-only optional/future warnings may remain",
+    "future product implementation remains gated by staged evidence",
+    "AIDE Lite target repairs may need upstream synchronization before broad pack reuse"
+  ]
+}

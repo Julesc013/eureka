@@ -1,0 +1,17 @@
+schema_version: aide.status.v0
+id: EUREKA-AIDE-REAL-01
+status: needs_review
+result: pass_with_warn_only_verify
+review_gate: needs_review
+summary: Repo-health report and evidence were added without changing Eureka product behavior.
+validation_summary:
+  doctor: pass
+  validate: pass
+  test: pass
+  selftest: pass
+  verify: warn_only
+  eval_list: pass
+  eval_run: pass
+  adapter_validate: pass
+  architecture_boundaries: pass
+next_recommended_task: EUREKA-CONVERGE-01

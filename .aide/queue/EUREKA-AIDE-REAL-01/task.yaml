@@ -1,0 +1,35 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-REAL-01
+title: Add Eureka AIDE Lite repo-health report
+status: needs_review
+target_repo: julesc013/eureka
+phase: EUREKA-AIDE-REAL-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Add a compact deterministic repo-health report for future AIDE Lite and Codex work.
+scope:
+  allowed_paths:
+    - .aide/reports/**
+    - .aide/queue/EUREKA-AIDE-REAL-01/**
+    - .aide/queue/EUREKA-CONVERGE-01/**
+    - .aide/context/**
+    - .aide/evals/runs/**
+    - .aide/queue/index.yaml
+    - .aide/memory/**
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - connectors/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+acceptance:
+  - .aide/reports/eureka-repo-health.md exists
+  - .aide/reports/eureka-repo-health.json exists and is valid JSON
+  - no Eureka product behavior changes
+  - AIDE Lite checks pass except documented WARN-only verify conditions
+  - evidence is recorded under .aide/queue/EUREKA-AIDE-REAL-01/
+next_recommended_task: EUREKA-CONVERGE-01
