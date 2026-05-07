@@ -25,7 +25,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1181,
+      "approx_tokens_if_applicable": 1058,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -40,7 +40,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1181,
+      "approx_tokens_if_applicable": 1058,
       "checks_run": 32,
       "errors": [],
       "notes": "Checks the latest compact packet is target-specific and actionable for Eureka.",
@@ -89,7 +89,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1320,
+      "approx_tokens_if_applicable": 1360,
       "checks_run": 25,
       "errors": [],
       "notes": "Checks review packets stay compact, evidence-oriented, and secret-free.",
@@ -153,7 +153,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1320,
+      "approx_tokens_if_applicable": 1360,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",

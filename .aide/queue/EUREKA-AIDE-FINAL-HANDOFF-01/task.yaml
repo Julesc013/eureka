@@ -1,0 +1,33 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-FINAL-HANDOFF-01
+title: Make Eureka self-sufficient for future AIDE Lite / Codex work
+status: needs_review
+target_repo: julesc013/eureka
+phase: EUREKA-AIDE-FINAL-HANDOFF-01
+source_packet: external-final-handoff-megaprompt
+scope:
+  allowed_paths:
+    - .aide/**
+    - AGENTS.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - connectors/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+objective: >
+  Consolidate the Eureka AIDE Lite import, handover, selftest repair, golden
+  tasks, validation status, limitations, and future queue into durable
+  repo-local files for future Codex/GPT sessions.
+acceptance:
+  - Final handoff evidence exists.
+  - Operating handoff report exists.
+  - Queue index includes future staged tasks.
+  - Latest task packet points to EUREKA-AIDE-REAL-01.
+  - Standard validation remains passing, except documented verify WARN-only state.
+  - No Eureka product behavior changes.

@@ -38,6 +38,7 @@
 
 ## Working Rules for Agents
 
+- For non-trivial Eureka work, read `.aide/context/latest-task-packet.md` first and use `.aide/reports/eureka-aide-lite-operating-handoff.md` as the AIDE operating reference.
 - Keep changes narrowly scoped to the requested boundary.
 - Prefer governed contract edits over hidden coupling.
 - When a task crosses component boundaries, name the boundary crossing in the plan and in the final report.
@@ -45,6 +46,8 @@
 - If verification cannot be completed, say so plainly and list the reason.
 - If follow-up work is intentionally deferred, list it under a clear deferred or open-items heading.
 - Repo audits should emit structured findings under `control/audits/` and should not be treated as production-readiness claims.
+- AIDE Lite supports repo governance and context compression; it is not product truth. Product truth lives in `contracts/`, `runtime/`, and accepted architecture docs.
+- AIDE-only tasks must not modify product behavior. Write evidence under `.aide/queue/<TASK-ID>/` and do not paste full chat history when a compact task packet exists.
 
 <!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
 ## AIDE Lite Portable Guidance

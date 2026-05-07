@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4722 chars, 1181 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4231 chars, 1058 approximate tokens)
 
 ## Context Packet Reference
 
@@ -29,12 +29,12 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Evidence Packet References
 
 - `.aide/queue/README.template.md`
+- `.aide/queue/index.yaml`
 
 ## Changed Files Summary
 
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
@@ -44,11 +44,12 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - unknown: `.aide/memory/open-risks.md` (M; does not match active task allowed paths)
 - unknown: `.aide/memory/project-state.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-GOLDEN-01` (??; does not match active task allowed paths)
-- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/EUREKA-AIDE-FINAL-HANDOFF-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/index.yaml` (??; does not match active task allowed paths)
+- allowed: `.aide/reports/eureka-aide-lite-operating-handoff.md` (??; matches active task allowed path)
 - allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
 - allowed: `.aide/routing/latest-route-decision.md` (M; matches active task allowed path)
+- allowed: `AGENTS.md` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -58,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5277
-- approx_tokens: 1320
+- chars: 5440
+- approx_tokens: 1360
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -76,8 +77,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Route Decision Summary
 
 - route_decision: `.aide/routing/latest-route-decision.json`
-- route_class: local_strong
-- task_class: bounded_docs_update
+- route_class: frontier
+- task_class: unknown
 - hard_floor_applied: none
 - quality_gate_status: WARN
 - advisory_only: true
@@ -111,7 +112,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
 - Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
 - Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
-- First real follow-up should be one bounded docs/eval/architecture-maintenance task before connector, gateway, native, runtime, or broad product work.
+- Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
+- First real follow-up should be `EUREKA-AIDE-REAL-01`, a bounded AIDE repo-health report, before connector, gateway, native, runtime, or broad product work.
 
 ## Non-Goals / Scope Guard
 

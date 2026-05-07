@@ -24,8 +24,8 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 4265
-- source_snapshot_hash: `7b9777b63816a9cb361873987a2d445b60c22bda3ac9de9a4f0b6caf83410dcc`
+- file_count: 4274
+- source_snapshot_hash: `48f6f433dc886cefd19f51df3fd8a69178dbdfb0d926cd3533e915c36dc242c3`
 
 ## ROLE_COUNTS
 
@@ -33,10 +33,10 @@
 - aide_policy: 31
 - aide_prompt: 3
 - aide_context: 4
-- aide_queue: 23
-- aide_evidence: 20
+- aide_queue: 26
+- aide_evidence: 25
 - test: 577
-- docs: 2142
+- docs: 2143
 - script: 214
 - config: 669
 - generated: 9
@@ -45,7 +45,7 @@
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 2569
+- mapping_count: 2577
 - mappings_with_existing_candidate: 1
 - complete_coverage_claimed: false
 

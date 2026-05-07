@@ -1,0 +1,37 @@
+Changed-file groups:
+
+- AGENTS.md
+  - Added concise final handoff guidance outside generated AIDE markers.
+
+- .aide/reports/eureka-aide-lite-operating-handoff.md
+  - Added durable operating handoff for future Codex/GPT sessions.
+
+- .aide/queue/index.yaml
+  - Added staged future queue from final handoff through product-readiness review.
+
+- .aide/queue/EUREKA-AIDE-FINAL-HANDOFF-01/**
+  - Added task/status/evidence packet for final handoff review.
+
+- .aide/context/**
+  - Refreshed snapshot, repo map, test map, context index, context packet,
+    review packet, and latest task packet.
+
+- .aide/evals/runs/**
+  - Refreshed latest golden-task run reports.
+
+- .aide/reports/**
+  - Refreshed token ledger and token-savings summary.
+
+- .aide/routing/latest-route-decision.*
+  - Refreshed advisory route decision for the latest task packet.
+
+- .aide/memory/project-state.md
+- .aide/memory/open-risks.md
+  - Updated compact project state and risks for final handoff.
+
+Explicitly unchanged:
+
+- No Eureka product source files.
+- No runtime, contracts, surfaces, connectors, crates, packaging, third_party,
+  product tests, local state, secrets, raw prompts, raw responses, or provider
+  keys.

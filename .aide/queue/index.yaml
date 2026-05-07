@@ -1,0 +1,40 @@
+schema_version: aide.queue-index.v0
+updated: 2026-05-07
+repo: julesc013/eureka
+current_recommended_task: EUREKA-AIDE-REAL-01
+entries:
+  - id: EUREKA-AIDE-FINAL-HANDOFF-01
+    title: Make Eureka self-sufficient for future AIDE Lite / Codex work
+    status: needs_review
+    purpose: Consolidate import, selftest, golden-task, validation, and next-work knowledge into repo-local handoff files.
+    allowed_scope_summary: .aide handoff reports, queue evidence, context, reports, AGENTS guidance.
+    gate: review final handoff evidence; no product behavior changes.
+    recommended_after: EUREKA-AIDE-GOLDEN-01
+  - id: EUREKA-AIDE-REAL-01
+    title: Add Eureka AIDE Lite repo-health report
+    status: queued
+    purpose: First real bounded AIDE-driven maintenance task after golden tasks.
+    allowed_scope_summary: AIDE reports/evidence/context only, no product behavior.
+    gate: doctor/validate/test/selftest/eval run pass; verify WARN-only with 0 errors.
+    recommended_after: EUREKA-AIDE-FINAL-HANDOFF-01
+  - id: EUREKA-AIDE-REAL-02
+    title: Improve one deterministic Eureka eval/report/check using AIDE Lite
+    status: queued
+    purpose: Prove AIDE Lite can improve a real deterministic repo check.
+    allowed_scope_summary: AIDE eval/report/check areas only unless explicitly justified.
+    gate: EUREKA-AIDE-REAL-01 reviewed; eval run remains PASS.
+    recommended_after: EUREKA-AIDE-REAL-01
+  - id: EUREKA-AIDE-REAL-03
+    title: Perform one tiny product-adjacent maintenance task
+    status: queued
+    purpose: First low-risk task adjacent to product implementation, still no behavior change unless tightly bounded.
+    allowed_scope_summary: docs/evals/tests or architecture support only.
+    gate: EUREKA-AIDE-REAL-02 reviewed; product paths explicitly scoped if touched.
+    recommended_after: EUREKA-AIDE-REAL-02
+  - id: EUREKA-PRODUCT-READY-REVIEW-01
+    title: Decide first product implementation task after AIDE Lite evidence
+    status: queued
+    purpose: Review readiness for first product implementation task using AIDE Lite packet/evidence.
+    allowed_scope_summary: review evidence, task packet, architecture docs, and validation reports only.
+    gate: all prior real AIDE-driven tasks reviewed with no boundary regressions.
+    recommended_after: EUREKA-AIDE-REAL-03
