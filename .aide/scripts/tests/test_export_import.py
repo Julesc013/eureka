@@ -5,6 +5,7 @@ import sys
 import tempfile
 import unittest
 import importlib.util
+import json
 from pathlib import Path
 
 
@@ -119,10 +120,35 @@ class ExportImportTests(unittest.TestCase):
         pack_root = self.build_pack(source_root)
         ok, problems = aide_lite.validate_pack_checksums(pack_root)
         self.assertTrue(ok, problems)
+        checksum_data = json.loads(aide_lite.read_text(pack_root / "checksums.json"))
+        self.assertEqual(checksum_data["checksum_scope"], "payload-and-static-pack-docs")
+        self.assertIn("manifest.yaml", checksum_data["excluded_from_checksums"])
+        self.assertNotIn("manifest.yaml", checksum_data["checksums"])
+        self.assertNotIn("checksums.json", checksum_data["checksums"])
+        self.assertNotIn("export-report.md", checksum_data["checksums"])
         first = aide_lite.read_text(pack_root / "checksums.json")
         self.build_pack(source_root)
         second = aide_lite.read_text(pack_root / "checksums.json")
         self.assertEqual(first, second)
+
+    def test_pack_status_fails_for_payload_mismatch_not_manifest_metadata(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        aide_lite.write_text(pack_root / "manifest.yaml", aide_lite.read_text(pack_root / "manifest.yaml") + "# metadata note\n")
+        ok, problems = aide_lite.validate_pack_checksums(pack_root)
+        self.assertTrue(ok, problems)
+        aide_lite.write_text(pack_root / "files/.aide/scripts/aide_lite.py", "# tampered payload\n")
+        ok, problems = aide_lite.validate_pack_checksums(pack_root)
+        self.assertFalse(ok)
+        self.assertTrue(any("checksum mismatch: files/.aide/scripts/aide_lite.py" in problem for problem in problems))
+
+    def test_export_manifest_records_provenance_fields(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        manifest = aide_lite.read_text(pack_root / "manifest.yaml")
+        self.assertIn("source_commit:", manifest)
+        self.assertIn("source_dirty_state:", manifest)
+        self.assertIn("checksum_scope:", manifest)
 
     def test_import_dry_run_reports_without_writing(self) -> None:
         source_root = self.make_source_repo()
@@ -131,7 +157,10 @@ class ExportImportTests(unittest.TestCase):
         aide_lite.write_text(target / "README.md", "# Target\n")
         result = aide_lite.apply_import_pack(pack_root, target, dry_run=True)
         self.assertTrue(result["dry_run"])
+        self.assertEqual(result["mode"], "safe")
         self.assertGreater(result["operation_count"], 10)
+        self.assertTrue(result["operations"])
+        self.assertTrue(result["skipped"])
         self.assertFalse((target / ".aide").exists())
 
     def test_import_fixture_creates_templates_and_preserves_agents(self) -> None:
@@ -158,6 +187,32 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse((target / ".aide.local").exists())
         self.assertFalse((target / ".aide/queue/index.yaml").exists())
         self.assertFalse((target / aide_lite.LATEST_PACKET_PATH).exists())
+        self.assertFalse((target / "core").exists())
+        self.assertFalse((target / "docs").exists())
+
+    def test_import_safe_mode_skips_broad_source_roots(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        target = source_root.parent / "target-safe-scope"
+        aide_lite.write_text(target / "README.md", "# Target\n")
+        result = aide_lite.apply_import_pack(pack_root, target, dry_run=True)
+        skipped_sources = {item["source"] for item in result["skipped"]}
+        planned_targets = {item["target"] for item in result["operations"]}
+        self.assertTrue(any(source.startswith("core/") for source in skipped_sources), skipped_sources)
+        self.assertTrue(any(source.startswith("docs/") for source in skipped_sources), skipped_sources)
+        self.assertFalse(any(target.startswith("core/") for target in planned_targets), planned_targets)
+        self.assertFalse(any(target.startswith("docs/") for target in planned_targets), planned_targets)
+
+    def test_import_full_mode_is_explicit_for_optional_broad_roots(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        target = source_root.parent / "target-full-scope"
+        aide_lite.write_text(target / "README.md", "# Target\n")
+        result = aide_lite.apply_import_pack(pack_root, target, dry_run=True, mode="full")
+        planned_targets = {item["target"] for item in result["operations"]}
+        self.assertFalse(result["skipped"])
+        self.assertTrue(any(target.startswith("core/") for target in planned_targets), planned_targets)
+        self.assertTrue(any(target.startswith("docs/") for target in planned_targets), planned_targets)
 
     def test_imported_aide_lite_doctor_snapshot_and_pack_run(self) -> None:
         source_root = self.make_source_repo()
@@ -169,6 +224,7 @@ class ExportImportTests(unittest.TestCase):
         commands = [
             ["doctor"],
             ["snapshot"],
+            ["index"],
             ["pack", "--task", "Fixture target smoke task"],
         ]
         for command in commands:

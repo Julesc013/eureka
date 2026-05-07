@@ -57,6 +57,26 @@ validation:
   snapshot_required: true
   pack_required: true
   no_secrets_scan_required: true
+import_scope:
+  default_mode: safe
+  dry_run_required_before_target_write: true
+  safe_mode_writes:
+    - portable_aide_files
+    - target_templates
+    - local_state_example_templates
+    - agents_managed_section
+    - gitignore_local_state_rules
+  safe_mode_skips:
+    - core_root
+    - docs_root
+    - product_code_roots
+  full_mode:
+    allowed_only_for_reviewed_local_fixtures: true
+    requires_explicit_flag: true
+  conflict_policy:
+    preserve_existing_manual_agents_content: true
+    do_not_overwrite_conflicting_target_files: true
+    report_exact_planned_writes: true
 raw_prompt_storage_default: false
 raw_response_storage_default: false
 live_provider_calls: false
