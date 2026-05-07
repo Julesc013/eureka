@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1.0",
+  "token_set_id": "temporal_minimal_search_v0",
+  "label": "Temporal Minimal Search tokens",
+  "description": "Compact token set for sparse, fast, text-first Eureka search-like projections.",
+  "token_status": "contract_only",
+  "intended_profiles": [
+    "classic_search_1998",
+    "classic_search_2004",
+    "classic_search_2010",
+    "eureka_default",
+    "high_contrast",
+    "print",
+    "terminal",
+    "text_only"
+  ],
+  "color_tokens": {
+    "background": "#ffffff",
+    "text": "#111111",
+    "muted_text": "#555555",
+    "primary_link": "#0645ad",
+    "visited_link": "#551a8b",
+    "source_status": "#267326",
+    "border": "#cccccc",
+    "warning": "#7a4b00",
+    "risk": "#8a1f11",
+    "rights": "#4a4a4a"
+  },
+  "typography_tokens": {
+    "font_stack": "system_ui_or_serif_fallback",
+    "base_size_px": 16,
+    "small_size_px": 13,
+    "line_height": 1.35,
+    "custom_font_required": false
+  },
+  "spacing_tokens": {
+    "page_margin": "12px",
+    "section_gap": "12px",
+    "result_gap": "10px",
+    "inline_gap": "4px"
+  },
+  "density_tokens": {
+    "density": "compact",
+    "default_result_count": 10,
+    "metadata_lines": "compact_visible"
+  },
+  "border_tokens": {
+    "thin_border": "1px solid #cccccc",
+    "result_separator": "1px solid #e0e0e0",
+    "radius": "0"
+  },
+  "layout_tokens": {
+    "max_width": "72rem",
+    "layout": "single_column",
+    "table_safe": true,
+    "external_assets_required": false
+  },
+  "link_tokens": {
+    "primary_link_color": "#0645ad",
+    "visited_link_color": "#551a8b",
+    "underline_default": true,
+    "stable_url_visible": true
+  },
+  "form_tokens": {
+    "method": "GET",
+    "search_input_visible_label": true,
+    "javascript_required": false,
+    "cookies_required": false
+  },
+  "table_tokens": {
+    "plain_table_supported": true,
+    "header_weight": "bold",
+    "cell_padding": "2px 4px"
+  },
+  "badge_tokens": {
+    "shape": "text_label",
+    "icons_required": false,
+    "text_equivalent_required": true
+  },
+  "warning_tokens": {
+    "style": "prefix_label",
+    "label": "Warning",
+    "hide_warnings_allowed": false
+  },
+  "action_tokens": {
+    "primary_action_style": "text_link_or_get_submit",
+    "blocked_action_style": "visible_unavailable_label",
+    "route_identity_changes_allowed": false
+  },
+  "compatibility_tokens": {
+    "label": "Compatibility",
+    "caveat_style": "compact_text",
+    "hide_caveats_allowed": false
+  },
+  "risk_rights_tokens": {
+    "risk_label": "Risk",
+    "rights_label": "Rights",
+    "clearance_claim_allowed": false,
+    "malware_safety_claim_allowed": false
+  },
+  "evidence_source_tokens": {
+    "source_line_color": "#267326",
+    "evidence_label": "Evidence",
+    "source_label": "Source",
+    "hide_source_or_evidence_allowed": false
+  },
+  "accessibility_tokens": {
+    "contrast_target": "WCAG_AA_or_better",
+    "semantic_headings_required": true,
+    "keyboard_navigation_required": true,
+    "high_contrast_profile_required": true
+  },
+  "degradation_tokens": {
+    "old_clients_lose_polish_before_meaning": true,
+    "text_projection_required": true,
+    "file_tree_readme_projection_required": true,
+    "print_projection_required": true
+  },
+  "forbidden_visual_claims": [
+    "no copied search-engine logo",
+    "no exact external search-engine page identity",
+    "no deceptive official source labels",
+    "no production readiness styling claim"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "copied_google_branding": false,
+    "claimed_search_engine_affiliation": false
+  },
+  "no_goals": [
+    "no CSS implementation",
+    "no renderer implementation",
+    "no route identity split",
+    "no hosted or live-source claim"
+  ],
+  "notes": [
+    "Classic search grammar is allowed only as neutral grammar.",
+    "Semantic labels stay visible in every profile."
+  ]
+}

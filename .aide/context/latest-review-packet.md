@@ -34,11 +34,25 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-a-14-object-source-need-candidate-projection-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/object_source_need_candidate_projection_map.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/OBJECT_SOURCE_NEED_CANDIDATE_PROJECTION_AUDIT.md` (??; does not match active task allowed paths)
-- unknown: `scripts/audit_object_source_need_candidate_projection.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_object_source_need_candidate_projection_audit.py` (??; does not match active task allowed paths)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `contracts/ui/design_tokens.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/ui/temporal_minimal_search.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-15-temporal-minimal-search-design-tokens-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/design_profile_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/design_token_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/temporal_minimal_search_tokens.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/TEMPORAL_MINIMAL_SEARCH_USAGE.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/DESIGN_TOKENS_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/TEMPORAL_MINIMAL_SEARCH_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/design_tokens` (??; does not match active task allowed paths)
+- unknown: `examples/static_projections/design_notes` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_design_tokens.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_temporal_minimal_search.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_track_a_contracts.py` (M; does not match active task allowed paths)
+- unknown: `tests/contracts/test_design_tokens.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_temporal_minimal_search.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_track_a_cross_contracts.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -48,8 +62,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4701
-- approx_tokens: 1176
+- chars: 6026
+- approx_tokens: 1507
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

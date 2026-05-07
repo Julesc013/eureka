@@ -1,0 +1,181 @@
+{
+  "schema_version": "0.1.0",
+  "design_language_id": "temporal_minimal_search",
+  "label": "Temporal Minimal Search",
+  "description": "Sparse, fast, text-first design language for Eureka search-like public surfaces.",
+  "design_doctrine": [
+    "sparse",
+    "fast",
+    "text_first",
+    "link_first",
+    "no_js_baseline",
+    "old_browser_tolerant",
+    "old_clients_lose_polish_before_meaning"
+  ],
+  "visual_principles": [
+    "white_or_low_noise_background",
+    "dark_readable_body_text",
+    "blue_primary_links",
+    "visited_link_posture",
+    "green_grey_source_status_lines",
+    "compact_metadata",
+    "obvious_search_form",
+    "simple_result_lists",
+    "visible_semantic_labels",
+    "minimal_borders",
+    "high_contrast",
+    "small_page_weight",
+    "no_js_baseline",
+    "no_external_assets_baseline",
+    "no_required_custom_fonts",
+    "normal_links_get_forms",
+    "stable_urls",
+    "readable_tables",
+    "plain_text_fallback",
+    "print_output"
+  ],
+  "layout_principles": [
+    "single_column_first",
+    "compact_sections",
+    "metadata_below_primary_link",
+    "defer_decoration_before_meaning"
+  ],
+  "search_surface_principles": [
+    "visible_get_search_form",
+    "query_identity_visible",
+    "static_or_local_runtime_posture_visible",
+    "hosted_limitations_visible"
+  ],
+  "result_card_principles": [
+    "title_link_first",
+    "source_line_visible",
+    "evidence_status_visible",
+    "risk_rights_labels_visible",
+    "blocked_actions_visible"
+  ],
+  "object_page_principles": [
+    "canonical_object_identity_visible",
+    "version_state_and_member_lineage_visible",
+    "compatibility_caveats_visible"
+  ],
+  "source_page_principles": [
+    "source_identity_visible",
+    "source_policy_and_connector_posture_visible",
+    "recorded_fixture_not_live_connector"
+  ],
+  "need_candidate_principles": [
+    "absence_scope_visible",
+    "candidate_state_is_provisional",
+    "review_state_visible",
+    "no_public_truth_from_candidates"
+  ],
+  "evidence_absence_compare_principles": [
+    "evidence_is_not_truth_by_default",
+    "absence_is_scoped",
+    "comparison_preserves_disagreement"
+  ],
+  "old_client_principles": [
+    "no_js_baseline",
+    "no_required_javascript",
+    "minimal_css",
+    "table_safe_layouts",
+    "html32_profile_future",
+    "text_only_profile",
+    "file_tree_readme_profile",
+    "low_page_weight",
+    "no_external_asset_dependency_baseline",
+    "small_result_count_default",
+    "simple_get_forms"
+  ],
+  "text_file_tree_principles": [
+    "plain_labels_preserve_meaning",
+    "readme_surfaces_are_first_class",
+    "file_tree_projection_has_no_api_claim"
+  ],
+  "terminal_future_principles": [
+    "future_terminal_projection_only",
+    "no_active_terminal_runtime_claim",
+    "plain_text_semantics_first"
+  ],
+  "native_card_future_principles": [
+    "future_native_card_projection_only",
+    "no_native_project_creation",
+    "semantic_visibility_required"
+  ],
+  "print_principles": [
+    "print_removes_decoration_before_meaning",
+    "source_evidence_limitations_remain_visible"
+  ],
+  "accessibility_principles": [
+    "sufficient_contrast",
+    "readable_link_distinction",
+    "semantic_headings",
+    "labels_for_forms",
+    "keyboard_friendly_navigation",
+    "no_required_javascript",
+    "no_required_cookies_for_search",
+    "no_required_custom_fonts",
+    "text_equivalents_for_badges",
+    "plain_text_projection",
+    "print_projection",
+    "high_contrast_projection"
+  ],
+  "forbidden_branding_or_trade_dress": [
+    "no_google_logos",
+    "no_google_exact_page_identity",
+    "no_google_exact_css_html",
+    "no_google_like_branding_names",
+    "no_google_or_search_engine_affiliation_claim",
+    "no_protected_trade_dress_copy",
+    "no_deceptive_source_labels",
+    "no_misleading_official_labels_without_evidence"
+  ],
+  "forbidden_product_claims": [
+    "hosted_backend_active",
+    "live_probes_enabled",
+    "source_connectors_active",
+    "downloads_enabled",
+    "uploads_enabled",
+    "accounts_enabled",
+    "telemetry_enabled",
+    "rights_clearance",
+    "malware_safety",
+    "exhaustive_global_search",
+    "automatic_merge_or_promotion"
+  ],
+  "allowed_degradations": [
+    "color_to_text_label",
+    "badge_to_bracketed_text",
+    "multi_column_to_single_column",
+    "css_to_plain_html",
+    "html_to_text"
+  ],
+  "required_semantic_visibility": [
+    "absence_scope",
+    "blocked_actions",
+    "candidate_provisional_review_state",
+    "compatibility_caveats",
+    "evidence_posture",
+    "limitations",
+    "object_source_result_identity",
+    "public_static_hosted_limitations",
+    "rights_posture",
+    "risk_posture",
+    "source_posture",
+    "unresolved_gaps"
+  ],
+  "token_refs": [
+    "control/inventory/publication/temporal_minimal_search_tokens.json"
+  ],
+  "no_goals": [
+    "no CSS implementation",
+    "no renderer implementation",
+    "no route identity split",
+    "no hosted or live-source claim",
+    "no external search-engine branding clone"
+  ],
+  "notes": [
+    "Neutral classic search grammar is allowed; exact external search-engine identity is not.",
+    "Design profiles are presentations over the same semantics."
+  ]
+}

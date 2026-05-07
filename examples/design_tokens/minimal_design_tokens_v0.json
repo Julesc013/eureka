@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0",
+  "token_set_id": "minimal_design_tokens_v0",
+  "label": "Minimal design token example",
+  "description": "Small public-safe example proving the generic design-token contract shape.",
+  "token_status": "example",
+  "intended_profiles": [
+    "eureka_default"
+  ],
+  "color_tokens": {
+    "background": "#ffffff",
+    "text": "#111111",
+    "primary_link": "#0645ad"
+  },
+  "typography_tokens": {
+    "font_stack": "system_or_serif",
+    "custom_font_required": false
+  },
+  "spacing_tokens": {
+    "page_margin": "12px"
+  },
+  "density_tokens": {
+    "density": "compact"
+  },
+  "border_tokens": {
+    "thin_border": "1px solid #cccccc"
+  },
+  "layout_tokens": {
+    "single_column": true,
+    "external_assets_required": false
+  },
+  "link_tokens": {
+    "underline_default": true,
+    "visited_link_visible": true
+  },
+  "form_tokens": {
+    "method": "GET",
+    "javascript_required": false
+  },
+  "table_tokens": {
+    "plain_table_supported": true
+  },
+  "badge_tokens": {
+    "text_equivalent_required": true
+  },
+  "warning_tokens": {
+    "hide_warnings_allowed": false
+  },
+  "action_tokens": {
+    "blocked_action_style": "visible_unavailable_label"
+  },
+  "compatibility_tokens": {
+    "hide_caveats_allowed": false
+  },
+  "risk_rights_tokens": {
+    "clearance_claim_allowed": false,
+    "malware_safety_claim_allowed": false
+  },
+  "evidence_source_tokens": {
+    "hide_source_or_evidence_allowed": false
+  },
+  "accessibility_tokens": {
+    "contrast_target": "AA",
+    "keyboard_navigation_required": true
+  },
+  "degradation_tokens": {
+    "old_clients_lose_polish_before_meaning": true
+  },
+  "forbidden_visual_claims": [
+    "no copied external search-engine logo",
+    "no deceptive official label"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "copied_google_branding": false,
+    "claimed_search_engine_affiliation": false
+  },
+  "no_goals": [
+    "no renderer implementation",
+    "no hosted backend claim"
+  ],
+  "notes": [
+    "Minimal example only."
+  ]
+}

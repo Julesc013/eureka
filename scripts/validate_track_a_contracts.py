@@ -10,6 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.validate_design_tokens import validate_design_tokens
 from scripts.validate_download_evidence_absence_compare_view_models import (
     validate_download_evidence_absence_compare_view_models,
 )
@@ -21,6 +22,7 @@ from scripts.validate_route_view_representation_matrix import validate_route_vie
 from scripts.validate_search_page_view_model import validate_search_page_view_model
 from scripts.validate_semantic_renderer_parity import validate_semantic_renderer_parity
 from scripts.validate_source_page_view_model import validate_source_page_view_model
+from scripts.validate_temporal_minimal_search import validate_temporal_minimal_search
 from scripts.validate_view_model_policy_index import validate_view_model_policy_index
 
 
@@ -42,6 +44,8 @@ VALIDATORS: tuple[Validator, ...] = (
         validate_download_evidence_absence_compare_view_models,
     ),
     ("view_model_policy_index", "View model policy index", validate_view_model_policy_index),
+    ("design_tokens", "Design tokens", validate_design_tokens),
+    ("temporal_minimal_search", "Temporal Minimal Search", validate_temporal_minimal_search),
 )
 
 

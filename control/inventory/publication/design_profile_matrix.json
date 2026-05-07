@@ -1,0 +1,273 @@
+{
+  "schema_version": "0.1.0",
+  "matrix_id": "eureka-design-profile-matrix-v0",
+  "label": "Eureka design profile matrix",
+  "description": "Contract-only binding between Temporal Minimal Search design profiles and governed representation profiles.",
+  "token_set_ref": "control/inventory/publication/temporal_minimal_search_tokens.json",
+  "profiles": [
+    {
+      "profile_id": "eureka_default",
+      "label": "Eureka default",
+      "intended_representation_profiles": [
+        "standard_html"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "optional_small_css",
+      "javascript_dependency": "none",
+      "old_client_fit": "good",
+      "page_weight_budget_kb": 48,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "rights_posture",
+        "risk_posture",
+        "limitations",
+        "blocked_actions"
+      ],
+      "forbidden_claims": [
+        "hosted_backend_active",
+        "live_probes_enabled",
+        "copied_google_branding"
+      ],
+      "notes": [
+        "Default profile for future standard HTML renderers."
+      ]
+    },
+    {
+      "profile_id": "classic_search_1998",
+      "label": "Classic search 1998",
+      "intended_representation_profiles": [
+        "html32",
+        "lite_html"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "none_or_inline_minimal",
+      "javascript_dependency": "none",
+      "old_client_fit": "excellent",
+      "page_weight_budget_kb": 24,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "limitations",
+        "blocked_actions"
+      ],
+      "forbidden_claims": [
+        "external_search_engine_brand_affiliation",
+        "hosted_backend_active",
+        "live_probes_enabled"
+      ],
+      "notes": [
+        "Neutral classic search grammar; not a copy of any external search-engine page."
+      ]
+    },
+    {
+      "profile_id": "classic_search_2004",
+      "label": "Classic search 2004",
+      "intended_representation_profiles": [
+        "lite_html",
+        "standard_html"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "optional_small_css",
+      "javascript_dependency": "none",
+      "old_client_fit": "good",
+      "page_weight_budget_kb": 36,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "compatibility_caveats",
+        "limitations",
+        "blocked_actions"
+      ],
+      "forbidden_claims": [
+        "external_search_engine_brand_affiliation",
+        "production_readiness",
+        "live_probes_enabled"
+      ],
+      "notes": [
+        "Sparse link-first layout with compact metadata."
+      ]
+    },
+    {
+      "profile_id": "classic_search_2010",
+      "label": "Classic search 2010",
+      "intended_representation_profiles": [
+        "standard_html"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "optional_small_css",
+      "javascript_dependency": "none",
+      "old_client_fit": "moderate",
+      "page_weight_budget_kb": 64,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "candidate_provisional_review_state",
+        "rights_posture",
+        "risk_posture",
+        "limitations",
+        "blocked_actions"
+      ],
+      "forbidden_claims": [
+        "external_search_engine_brand_affiliation",
+        "hosted_backend_active",
+        "telemetry_enabled"
+      ],
+      "notes": [
+        "May use slightly richer metadata grouping while staying no-JS."
+      ]
+    },
+    {
+      "profile_id": "high_contrast",
+      "label": "High contrast",
+      "intended_representation_profiles": [
+        "lite_html",
+        "standard_html",
+        "text"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "optional_small_css",
+      "javascript_dependency": "none",
+      "old_client_fit": "good",
+      "page_weight_budget_kb": 40,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "rights_posture",
+        "risk_posture",
+        "limitations",
+        "blocked_actions",
+        "public_static_hosted_limitations"
+      ],
+      "forbidden_claims": [
+        "hosted_backend_active",
+        "rights_clearance",
+        "malware_safety"
+      ],
+      "notes": [
+        "Contrast increases must not hide caveats or blocked actions."
+      ]
+    },
+    {
+      "profile_id": "terminal",
+      "label": "Terminal",
+      "intended_representation_profiles": [
+        "terminal_future",
+        "text"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "none",
+      "javascript_dependency": "none",
+      "old_client_fit": "text_first",
+      "page_weight_budget_kb": 16,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "limitations",
+        "blocked_actions"
+      ],
+      "forbidden_claims": [
+        "terminal_runtime_active",
+        "live_probes_enabled",
+        "downloads_enabled"
+      ],
+      "notes": [
+        "Future terminal projection, not an active terminal runtime."
+      ]
+    },
+    {
+      "profile_id": "print",
+      "label": "Print",
+      "intended_representation_profiles": [
+        "print",
+        "text"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "optional_print_css",
+      "javascript_dependency": "none",
+      "old_client_fit": "good",
+      "page_weight_budget_kb": 32,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "rights_posture",
+        "risk_posture",
+        "limitations"
+      ],
+      "forbidden_claims": [
+        "production_readiness",
+        "rights_clearance",
+        "malware_safety"
+      ],
+      "notes": [
+        "Print removes decoration before meaning."
+      ]
+    },
+    {
+      "profile_id": "text_only",
+      "label": "Text only",
+      "intended_representation_profiles": [
+        "file_tree",
+        "text"
+      ],
+      "token_set_ref": "temporal_minimal_search_v0",
+      "css_dependency": "none",
+      "javascript_dependency": "none",
+      "old_client_fit": "excellent",
+      "page_weight_budget_kb": 12,
+      "semantic_visibility_requirements": [
+        "object_source_result_identity",
+        "source_posture",
+        "evidence_posture",
+        "absence_scope",
+        "limitations",
+        "blocked_actions",
+        "public_static_hosted_limitations"
+      ],
+      "forbidden_claims": [
+        "hosted_backend_active",
+        "download_enabled",
+        "telemetry_enabled"
+      ],
+      "notes": [
+        "First-class text and file-tree projections."
+      ]
+    }
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "copied_google_branding": false,
+    "claimed_search_engine_affiliation": false
+  },
+  "notes": [
+    "Design profiles are presentation profiles over the same route and view semantics.",
+    "No profile creates a separate product or route identity."
+  ]
+}

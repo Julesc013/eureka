@@ -1,0 +1,102 @@
+{
+  "schema_version": "track_a_15_report.v0",
+  "status": "pass",
+  "track": "A",
+  "task": "TRACK-A-15",
+  "added_contracts": [
+    "contracts/ui/design_tokens.v0.json",
+    "contracts/ui/temporal_minimal_search.v0.json"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/design_token_policy.json",
+    "control/inventory/publication/temporal_minimal_search_tokens.json",
+    "control/inventory/publication/design_profile_matrix.json"
+  ],
+  "added_examples": [
+    "examples/design_tokens/minimal_design_tokens_v0.json",
+    "examples/design_tokens/temporal_minimal_search_v0.json",
+    "examples/design_tokens/high_contrast_temporal_minimal_search_v0.json",
+    "examples/design_tokens/text_only_temporal_minimal_search_v0.json",
+    "examples/static_projections/design_notes/temporal_minimal_search_notes_v0.md"
+  ],
+  "added_docs": [
+    "docs/reference/DESIGN_TOKENS_CONTRACT.md",
+    "docs/reference/TEMPORAL_MINIMAL_SEARCH_CONTRACT.md",
+    "docs/operations/TEMPORAL_MINIMAL_SEARCH_USAGE.md"
+  ],
+  "added_validators": [
+    "scripts/validate_design_tokens.py",
+    "scripts/validate_temporal_minimal_search.py"
+  ],
+  "validation": {
+    "aide_lite_adapter_validate": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "warn_zero_errors",
+    "aide_lite_selftest": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "architecture_boundaries": "pass",
+    "git_diff_check": "pass",
+    "json_design_token_policy": "pass",
+    "json_temporal_minimal_search_tokens": "pass",
+    "json_design_profile_matrix": "pass",
+    "repository_layout_strict": "pass",
+    "validate_design_tokens": "pass",
+    "validate_temporal_minimal_search": "pass",
+    "validate_track_a_contracts": "pass",
+    "unittest_discover": "pass"
+  },
+  "design_profiles": [
+    "classic_search_1998",
+    "classic_search_2004",
+    "classic_search_2010",
+    "eureka_default",
+    "high_contrast",
+    "print",
+    "terminal",
+    "text_only"
+  ],
+  "semantic_visibility_categories": [
+    "absence_scope",
+    "blocked_actions",
+    "candidate_provisional_review_state",
+    "compatibility_caveats",
+    "evidence_posture",
+    "limitations",
+    "object_source_result_identity",
+    "public_static_hosted_limitations",
+    "rights_posture",
+    "risk_posture",
+    "source_posture",
+    "unresolved_gaps"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "copied_google_branding": false,
+    "claimed_search_engine_affiliation": false
+  },
+  "next_task": "TRACK-A-16 - Renderer parity harness"
+}

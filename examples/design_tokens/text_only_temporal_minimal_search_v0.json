@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0",
+  "token_set_id": "text_only_temporal_minimal_search_v0",
+  "label": "Text-only Temporal Minimal Search tokens",
+  "description": "Text and file-tree example token set for first-class non-HTML projections.",
+  "token_status": "example",
+  "intended_profiles": [
+    "text_only"
+  ],
+  "color_tokens": {
+    "background": "not_applicable",
+    "text": "plain_text",
+    "primary_link": "url_text"
+  },
+  "typography_tokens": {
+    "font_stack": "monospace_or_plain_text",
+    "custom_font_required": false
+  },
+  "spacing_tokens": {
+    "section_gap": "blank_line"
+  },
+  "density_tokens": {
+    "density": "compact_plain_text"
+  },
+  "border_tokens": {
+    "thin_border": "ascii_separator"
+  },
+  "layout_tokens": {
+    "single_column": true,
+    "external_assets_required": false
+  },
+  "link_tokens": {
+    "primary_link_visible_as_url": true
+  },
+  "form_tokens": {
+    "method": "GET",
+    "javascript_required": false
+  },
+  "table_tokens": {
+    "plain_table_supported": true
+  },
+  "badge_tokens": {
+    "text_equivalent_required": true
+  },
+  "warning_tokens": {
+    "hide_warnings_allowed": false
+  },
+  "action_tokens": {
+    "blocked_action_style": "UNAVAILABLE label"
+  },
+  "compatibility_tokens": {
+    "hide_caveats_allowed": false
+  },
+  "risk_rights_tokens": {
+    "clearance_claim_allowed": false,
+    "malware_safety_claim_allowed": false
+  },
+  "evidence_source_tokens": {
+    "hide_source_or_evidence_allowed": false
+  },
+  "accessibility_tokens": {
+    "plain_text_projection": true,
+    "keyboard_navigation_required": true
+  },
+  "degradation_tokens": {
+    "old_clients_lose_polish_before_meaning": true,
+    "file_tree_readme_projection_required": true
+  },
+  "forbidden_visual_claims": [
+    "no visual affiliation claim",
+    "no production badge"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "regenerated_site_dist": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "copied_google_branding": false,
+    "claimed_search_engine_affiliation": false
+  },
+  "no_goals": [
+    "no renderer implementation",
+    "no live API claim"
+  ],
+  "notes": [
+    "Every badge collapses to a readable text label."
+  ]
+}
