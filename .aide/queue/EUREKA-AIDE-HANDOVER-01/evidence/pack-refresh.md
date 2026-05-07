@@ -103,6 +103,13 @@ preserved; no product paths were written.
 - Any future `--mode full` import remains outside the accepted Eureka handover
   boundary unless a reviewed target task explicitly authorizes it.
 
-## Pending
+## Post-Refresh Target Validation
 
-- Post-refresh target AIDE validation and latest handoff packet generation.
+- Main target workflow validation passed or warned honestly: doctor PASS,
+  validate PASS, snapshot/index/context PASS, verify WARN with no errors,
+  review-pack PASS, ledger PASS, eval run PASS, route explain PASS, and adapter
+  validate PASS.
+- The latest handoff packet was regenerated for
+  `EUREKA-AIDE-SELFTEST-01 - Repair imported AIDE Lite selftest fixture fallback`.
+- `test` and `selftest` still fail in the imported temp-fixture path; this is
+  the selected next bounded task and is not hidden as a handover pass.

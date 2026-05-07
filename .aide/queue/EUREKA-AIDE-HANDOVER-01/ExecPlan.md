@@ -34,4 +34,9 @@ repo-operating metadata only; it does not implement Eureka product behavior.
 - Q22 evidence exists at `.aide/queue/EUREKA-AIDE-PILOT-01/`.
 - Repaired Q25 source pack exists at
   `D:/Projects/AIDE/aide/.aide/export/aide-lite-pack-v0`.
-- Initial validation and pack refresh review are in progress.
+- Source pack `pack-status` passed, and the repaired safe importer now dry-runs
+  cleanly in Eureka after refreshing three portable files.
+- Eureka-local context, review packet, ledger, eval report, and latest task
+  packet were regenerated.
+- Status is `needs_review`; the selected next task is
+  `EUREKA-AIDE-SELFTEST-01`.

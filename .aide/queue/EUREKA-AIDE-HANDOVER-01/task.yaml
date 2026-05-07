@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: EUREKA-AIDE-HANDOVER-01
 title: Eureka AIDE Lite handover review
-status: in_progress
+status: needs_review
 target_repo: julesc013/eureka
 phase: Q26
 source_pack_id: aide-lite-pack-v0

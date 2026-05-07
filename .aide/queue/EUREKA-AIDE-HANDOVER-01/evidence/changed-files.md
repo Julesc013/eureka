@@ -1,21 +1,43 @@
 # Changed Files
 
-This Q26 queue item starts from clean commit
-`dccfc9c5c97408c4c5fabd877b4caa7d92616813` on branch `main`.
+## Queue And Evidence
 
-## Planned Change Classes
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/**`
 
-- `.aide/queue/EUREKA-AIDE-HANDOVER-01/**`: handover task, status, plan, compact
-  prompt, and evidence.
-- `.aide/**`: regenerated target-local context/review/ledger artifacts and safe
-  portable AIDE Lite refresh files if the Q25 pack differs.
-- `docs/reference/aide-handover.md`: compact handover summary if useful.
-- `README.md` or existing AIDE import docs: compact links only if needed.
+## Portable Pack Refresh
 
-## Out Of Scope
+- `.aide/policies/export-import.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_export_import.py`
 
-- No Eureka product source files are changed.
-- No `.aide.local/`, `.env`, provider keys, raw prompts, or raw responses are
-  created or committed.
+## Eureka-Specific Memory
 
-Final changed-file details will be updated after validation and commits.
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+
+## Generated Eureka-Local Context And Reports
+
+- `.aide/context/repo-snapshot.json`
+- `.aide/context/repo-map.json`
+- `.aide/context/repo-map.md`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/routing/latest-route-decision.json`
+- `.aide/routing/latest-route-decision.md`
+- `.aide/reports/token-ledger.jsonl`
+- `.aide/reports/token-savings-summary.md`
+- `.aide/evals/runs/latest-golden-tasks.json`
+- `.aide/evals/runs/latest-golden-tasks.md`
+
+## Documentation
+
+- `docs/reference/aide-lite-import.md`
+- `docs/reference/aide-handover.md`
+
+## Product Source
+
+- No Eureka product source files were changed.

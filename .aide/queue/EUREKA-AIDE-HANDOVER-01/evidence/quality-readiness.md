@@ -1,25 +1,61 @@
 # Quality Readiness
 
-Quality readiness is pending post-refresh validation and regenerated handoff
-packet review.
-
-## Pre-Refresh Findings
+## Command Readiness
 
 - `doctor`: PASS.
-- `validate`: PASS with review packet path warnings from the previous packet.
-- `verify`: WARN with 3 optional status-reference warnings and 0 errors.
-- `review-pack`: generated a compact review packet with verifier WARN.
-- `eval run`: PASS, 6/6 golden tasks.
+- `validate`: PASS.
+- `snapshot`: PASS.
+- `index`: PASS.
+- `context`: PASS.
+- `verify`: WARN, 7 warnings, 0 errors during active Q26 edits.
+- `review-pack`: PASS, generated `.aide/context/latest-review-packet.md` at
+  5394 chars / 1349 approximate tokens.
+- `ledger scan/report`: PASS with one near-budget cache report warning.
+- `eval run`: PASS, 6/6 imported generic golden tasks.
 - `route explain`: PASS, advisory only, no provider/model/network calls.
 - `adapter validate`: PASS.
-- `test` and `selftest`: FAIL before refresh in the pack temp fixture.
+- `scripts/check_architecture_boundaries.py`: PASS.
+- `test` and `selftest`: FAIL after refresh with the same temp-fixture fallback
+  import error; this is the selected next bounded task.
 
-## Pending Readiness Checks
+## Packet Quality
 
-- Confirm the latest task packet includes objective, context refs, allowed and
-  forbidden paths, validation, evidence, acceptance criteria, and output schema.
-- Confirm the packet avoids full repo dumps, full chat history, secrets, raw
-  prompts, and raw responses.
-- Confirm whether Q25 refresh changes the selftest/test result.
-- Record remaining limitations without claiming arbitrary implementation
-  quality proof.
+The latest task packet contains:
+
+- objective and rationale;
+- Eureka-specific context refs;
+- allowed and forbidden paths;
+- implementation guidance;
+- validation commands;
+- evidence requirements;
+- non-goals;
+- acceptance criteria;
+- output schema;
+- token estimate.
+
+The packet avoids:
+
+- full repo dumps;
+- full chat history;
+- raw prompts;
+- raw responses;
+- secrets;
+- `.aide.local/` contents;
+- provider/model/network-call authorization.
+
+## Readiness Verdict
+
+Eureka is ready to use AIDE Lite for one controlled follow-up task:
+`EUREKA-AIDE-SELFTEST-01`. That task is intentionally a substrate reliability
+repair, not product implementation. Broader implementation work should wait
+until `test` and `selftest` pass or the failure is explicitly accepted by
+review.
+
+## Limitations
+
+- No exact tokenizer or provider billing proof.
+- No provider-backed review or LLM-as-judge.
+- No proof of arbitrary Eureka coding quality.
+- Eureka-specific golden tasks are still future work after the selftest repair.
+- Verifier remains WARN because the handoff packet references future queue
+  paths and optional status files that are intentionally not present yet.
