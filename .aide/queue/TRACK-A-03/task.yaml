@@ -1,0 +1,46 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-03
+title: Route/view/representation matrix
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-03
+source_packet: .aide/context/latest-task-packet.md
+objective: Bind canonical route families to view-model families, representation profiles, host profile defaults, and semantic parity policies.
+scope:
+  allowed_paths:
+    - contracts/representations/route_view_representation_matrix.v0.json
+    - docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md
+    - docs/roadmap/TRACK_EXECUTION_PLAN.md
+    - control/inventory/publication/route_view_representation_matrix.json
+    - examples/representations/route_view_matrix/**
+    - scripts/validate_route_view_representation_matrix.py
+    - tests/contracts/test_route_view_representation_matrix.py
+    - control/audits/track-a-03-route-view-representation-matrix-v0/**
+    - .aide/queue/TRACK-A-03/**
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - route/view/representation matrix schema exists
+  - matrix inventory exists and validates
+  - example exists and validates
+  - validator and tests pass
+  - audit pack exists
+  - no runtime or public route behavior is changed
+  - validation and evidence are recorded
+recommended_after: TRACK-A-02
+recommended_next: TRACK-A-04

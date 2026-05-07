@@ -17,7 +17,7 @@ work. It is a compact pointer to the authoritative audit:
 
 ## Next Task
 
-`TRACK-A-03 - Route/view/representation matrix`
+`TRACK-A-04 - SearchPage view model contract`
 
 Track A goes first because every later public, static, snapshot, relay, native,
 and hosted surface needs the same representation, host-profile, compatibility,
@@ -25,7 +25,9 @@ evidence, and action vocabulary.
 
 Track A-01 established the host/profile/representation contract bundle. Track
 A-02 established the semantic renderer parity policy that constrains those
-profiles before renderer or view-model runtime work widens.
+profiles before renderer or view-model runtime work widens. Track A-03 binds
+route families to canonical view families, representation profiles, host
+profiles, and semantic parity policies.
 
 Track D comes before Track C because native clients need stable snapshot and
 relay substrate before project creation.

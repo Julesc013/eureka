@@ -1,0 +1,67 @@
+{
+  "schema_version": "track_a_03_report.v0",
+  "status": "warn",
+  "track": "A",
+  "task": "TRACK-A-03",
+  "added_contracts": [
+    "contracts/representations/route_view_representation_matrix.v0.json",
+    "docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/route_view_representation_matrix.json"
+  ],
+  "added_examples": [
+    "examples/representations/route_view_matrix/minimal_route_view_matrix_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_route_view_representation_matrix.py",
+    "tests/contracts/test_route_view_representation_matrix.py"
+  ],
+  "updated_docs": [
+    "docs/roadmap/TRACK_EXECUTION_PLAN.md"
+  ],
+  "aide_evidence": [
+    ".aide/queue/TRACK-A-03/status.yaml",
+    ".aide/queue/TRACK-A-03/task.yaml",
+    ".aide/queue/TRACK-A-03/evidence/changed-files.md",
+    ".aide/queue/TRACK-A-03/evidence/remaining-risks.md",
+    ".aide/queue/TRACK-A-03/evidence/track-a-contract-result.md",
+    ".aide/queue/TRACK-A-03/evidence/validation.md"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/publication/route_view_representation_matrix.json": "pass",
+    "python -m json.tool control/audits/track-a-03-route-view-representation-matrix-v0/track_a_03_report.json": "pass",
+    "python scripts/validate_representation_contracts.py": "pass",
+    "python scripts/validate_semantic_renderer_parity.py": "pass",
+    "python scripts/validate_route_view_representation_matrix.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "strict secret scan over changed paths": "pass",
+    "ASCII scan over changed paths": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_0_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_verifier_0_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false,
+    "mutated_master_index": false
+  },
+  "next_task": "TRACK-A-04 \u2014 SearchPage view model contract"
+}

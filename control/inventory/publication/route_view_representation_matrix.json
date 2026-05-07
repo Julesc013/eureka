@@ -1,0 +1,2349 @@
+{
+  "schema_version": "0.1.0",
+  "matrix_id": "eureka-route-view-representation-matrix",
+  "label": "Eureka route/view/representation matrix",
+  "description": "Contract-only Track A matrix binding canonical route families to canonical view-model families, representation profiles, host exposure defaults, semantic parity policies, current status, and deferred behavior.",
+  "route_families": [
+    {
+      "route_family_id": "home",
+      "label": "Home",
+      "description": "Static public overview route family.",
+      "canonical_path_pattern": "/",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static HTML under site/dist.",
+      "canonical_view_family": "HomePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future"
+      ],
+      "allowed_representation_profiles": [
+        "lite_html",
+        "print",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/index.html"
+      ],
+      "future_artifacts": [],
+      "no_goals": [
+        "no dynamic hosted homepage behavior"
+      ],
+      "notes": [
+        "Uses inherited public-page parity until a HomePage-specific parity policy exists."
+      ]
+    },
+    {
+      "route_family_id": "search",
+      "label": "Search",
+      "description": "Public search route family covering static handoff and local/prototype HTML runtime search.",
+      "canonical_path_pattern": "/search and /search.html",
+      "route_status": "implemented_local_runtime",
+      "current_surface_status": "Static handoff is implemented at /search.html; local/prototype runtime is implemented at /search. Hosted search is not active.",
+      "canonical_view_family": "SearchPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "dynamic_local_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": true,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "operator_gated",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/search.html",
+        "local GET /search"
+      ],
+      "future_artifacts": [
+        "Track E hosted public alpha search, operator-gated"
+      ],
+      "no_goals": [
+        "no hosted dynamic search activation"
+      ],
+      "notes": [
+        "Representation profile choice must not create /old/search or /mobile/search route identities."
+      ]
+    },
+    {
+      "route_family_id": "api_search",
+      "label": "API search",
+      "description": "Local/prototype public-search JSON route family.",
+      "canonical_path_pattern": "/api/v1/search",
+      "route_status": "implemented_local_runtime",
+      "current_surface_status": "Implemented only for local/prototype local_index_only runtime. Not hosted and not production API.",
+      "canonical_view_family": "SearchApiView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "api_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": true,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "operator_gated",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "forbidden_host_profiles": [
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json"
+      ],
+      "default_representation_profile": "api_json",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "local GET /api/v1/search",
+        "contracts/api/search_response.v0.json"
+      ],
+      "future_artifacts": [
+        "Track E hosted backend route after operator evidence"
+      ],
+      "no_goals": [
+        "no hosted API activation"
+      ],
+      "notes": [
+        "API alias exposure is JSON-only for this matrix milestone."
+      ]
+    },
+    {
+      "route_family_id": "query_plan",
+      "label": "Query plan",
+      "description": "Local/prototype deterministic query-plan API route family.",
+      "canonical_path_pattern": "/api/v1/query-plan",
+      "route_status": "implemented_local_runtime",
+      "current_surface_status": "Implemented only for local/prototype local_index_only runtime.",
+      "canonical_view_family": "QueryPlanView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "api_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": true,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "operator_gated",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "forbidden_host_profiles": [
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "text"
+      ],
+      "default_representation_profile": "api_json",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "local GET /api/v1/query-plan"
+      ],
+      "future_artifacts": [
+        "Track E hosted backend route after operator evidence"
+      ],
+      "no_goals": [
+        "no live query fanout"
+      ],
+      "notes": [
+        "Uses search-page parity for query status, limits, and disabled capability posture."
+      ]
+    },
+    {
+      "route_family_id": "status",
+      "label": "Status",
+      "description": "Public status and capability-summary route family.",
+      "canonical_path_pattern": "/status.html and /api/v1/status",
+      "route_status": "implemented_static",
+      "current_surface_status": "Static status page exists; local/prototype API status also exists. Hosted status remains unverified.",
+      "canonical_view_family": "StatusView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "manifest_json",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "text",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/status.html",
+        "local GET /api/v1/status"
+      ],
+      "future_artifacts": [
+        "Track E hosted status only after operator evidence"
+      ],
+      "no_goals": [
+        "no private diagnostics or telemetry"
+      ],
+      "notes": [
+        "Status remains public-safe and read-only across profiles."
+      ]
+    },
+    {
+      "route_family_id": "sources",
+      "label": "Sources",
+      "description": "Public source-list summary route family.",
+      "canonical_path_pattern": "/sources.html and /api/v1/sources",
+      "route_status": "implemented_static",
+      "current_surface_status": "Static source summary exists; local/prototype API source list exists.",
+      "canonical_view_family": "SourceListView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "source_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/sources.html",
+        "local GET /api/v1/sources"
+      ],
+      "future_artifacts": [
+        "future source-list view model"
+      ],
+      "no_goals": [
+        "no source connector runtime"
+      ],
+      "notes": [
+        "Source summaries are not source trust authority."
+      ]
+    },
+    {
+      "route_family_id": "source_detail",
+      "label": "Source detail",
+      "description": "Local/prototype public-safe source detail route family.",
+      "canonical_path_pattern": "/api/v1/source/{source_id}",
+      "route_status": "implemented_local_runtime",
+      "current_surface_status": "Implemented only for local/prototype API source detail.",
+      "canonical_view_family": "SourcePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "api_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": true,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "operator_gated",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "forbidden_host_profiles": [
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "text"
+      ],
+      "default_representation_profile": "api_json",
+      "required_semantic_parity_policy": "source_page_parity_v0",
+      "current_artifacts": [
+        "local GET /api/v1/source/{source_id}"
+      ],
+      "future_artifacts": [
+        "future public source page"
+      ],
+      "no_goals": [
+        "no source proxy or live source probe"
+      ],
+      "notes": [
+        "Detailed source pages remain future outside the local API summary."
+      ]
+    },
+    {
+      "route_family_id": "object_page_future",
+      "label": "Future object page",
+      "description": "Future public object page route family.",
+      "canonical_path_pattern": "/objects/{object_id}",
+      "route_status": "planned",
+      "current_surface_status": "Contract-only future page. No runtime route exists.",
+      "canonical_view_family": "ObjectPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "object_page_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future object page view model"
+      ],
+      "no_goals": [
+        "no object route activation"
+      ],
+      "notes": [
+        "No /legacy/object or /classic/object route split is allowed."
+      ]
+    },
+    {
+      "route_family_id": "need_page_future",
+      "label": "Future need page",
+      "description": "Future unresolved need page route family.",
+      "canonical_path_pattern": "/needs/{need_id}",
+      "route_status": "future",
+      "current_surface_status": "Future Track B-adjacent contract surface only.",
+      "canonical_view_family": "NeedPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "need_page_future_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future need page view model"
+      ],
+      "no_goals": [
+        "no telemetry, account watch, or probe queue runtime"
+      ],
+      "notes": [
+        "Need pages remain future until Track B governance exists."
+      ]
+    },
+    {
+      "route_family_id": "candidate_page_future",
+      "label": "Future candidate page",
+      "description": "Future candidate review page route family.",
+      "canonical_path_pattern": "/candidates/{candidate_id}",
+      "route_status": "future",
+      "current_surface_status": "Future contract surface only.",
+      "canonical_view_family": "CandidatePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "candidate_page_future_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future candidate page view model"
+      ],
+      "no_goals": [
+        "no candidate promotion or master-index mutation"
+      ],
+      "notes": [
+        "Rendering a candidate must not convert it into accepted truth."
+      ]
+    },
+    {
+      "route_family_id": "pack_page_future",
+      "label": "Future pack page",
+      "description": "Future validate-only pack summary route family.",
+      "canonical_path_pattern": "/packs/{pack_id}",
+      "route_status": "future",
+      "current_surface_status": "Future validate-only contract surface.",
+      "canonical_view_family": "PackPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "static_manifest_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "files_static",
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "manifest_json",
+      "required_semantic_parity_policy": "pack_page_future_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future pack manifest view model"
+      ],
+      "no_goals": [
+        "no pack import, upload, or public index mutation"
+      ],
+      "notes": [
+        "Pack route remains validate-only and public-safe."
+      ]
+    },
+    {
+      "route_family_id": "task_page_future",
+      "label": "Future task page",
+      "description": "Future task/review-work route family.",
+      "canonical_path_pattern": "/tasks/{task_id}",
+      "route_status": "future",
+      "current_surface_status": "Future contract surface only.",
+      "canonical_view_family": "TaskPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "task_page_future_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future task page view model"
+      ],
+      "no_goals": [
+        "no task execution or automation"
+      ],
+      "notes": [
+        "Task pages are review/planning views, not execution surfaces."
+      ]
+    },
+    {
+      "route_family_id": "review_page_future",
+      "label": "Future review page",
+      "description": "Future review-state page route family.",
+      "canonical_path_pattern": "/reviews/{review_id}",
+      "route_status": "future",
+      "current_surface_status": "Future contract surface only.",
+      "canonical_view_family": "ReviewPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "review_page_future_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future review page view model"
+      ],
+      "no_goals": [
+        "no moderation, approval, or write runtime"
+      ],
+      "notes": [
+        "Rendering a review note must not make it accepted truth."
+      ]
+    },
+    {
+      "route_family_id": "evidence_page_future",
+      "label": "Future evidence page",
+      "description": "Future public-safe evidence summary route family.",
+      "canonical_path_pattern": "/evidence/{evidence_id}",
+      "route_status": "future",
+      "current_surface_status": "Future contract surface only.",
+      "canonical_view_family": "EvidencePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "snapshot_future",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "source_page_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future evidence page view model"
+      ],
+      "no_goals": [
+        "no evidence ledger runtime or source cache mutation"
+      ],
+      "notes": [
+        "Uses inherited source/evidence parity until a dedicated evidence-page policy exists."
+      ]
+    },
+    {
+      "route_family_id": "absence_page_future",
+      "label": "Future absence page",
+      "description": "Future known/scoped absence page route family.",
+      "canonical_path_pattern": "/absence/{absence_id}",
+      "route_status": "planned",
+      "current_surface_status": "Future contract surface; static demo examples exist only under /demo/.",
+      "canonical_view_family": "AbsencePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "absence_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/demo/absence-example.html"
+      ],
+      "future_artifacts": [
+        "future known absence route"
+      ],
+      "no_goals": [
+        "no global absence claim"
+      ],
+      "notes": [
+        "Absence is scoped to checked sources and must preserve not-checked scope."
+      ]
+    },
+    {
+      "route_family_id": "compare_page_future",
+      "label": "Future compare page",
+      "description": "Future comparison page route family.",
+      "canonical_path_pattern": "/compare/{comparison_id}",
+      "route_status": "planned",
+      "current_surface_status": "Future contract surface; static demo examples exist only under /demo/.",
+      "canonical_view_family": "ComparePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "object_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/demo/comparison-example.html"
+      ],
+      "future_artifacts": [
+        "future comparison page view model"
+      ],
+      "no_goals": [
+        "no ranking authority or hidden suppression"
+      ],
+      "notes": [
+        "Uses inherited object parity until a dedicated comparison policy exists."
+      ]
+    },
+    {
+      "route_family_id": "download_manifest_future",
+      "label": "Future download manifest page",
+      "description": "Future public-safe manifest route family that must not enable downloads.",
+      "canonical_path_pattern": "/files/manifests/{manifest_id}.json",
+      "route_status": "deferred",
+      "current_surface_status": "Future/deferred manifest page. Current file manifests are static file-tree seed artifacts only.",
+      "canonical_view_family": "DownloadManifestView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "static_manifest_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "files_static"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "localhost_relay_future",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "text"
+      ],
+      "default_representation_profile": "manifest_json",
+      "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/files/manifest.json"
+      ],
+      "future_artifacts": [
+        "future manifest route family"
+      ],
+      "no_goals": [
+        "no executable downloads or installers"
+      ],
+      "notes": [
+        "Manifest metadata is not a download grant."
+      ]
+    },
+    {
+      "route_family_id": "data_static",
+      "label": "Static data",
+      "description": "Static public data summary route family.",
+      "canonical_path_pattern": "/data/*.json",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static JSON summary artifacts.",
+      "canonical_view_family": "StaticDataView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "static_manifest_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "api_alias",
+        "files_static",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "localhost_relay_future",
+        "nodes_future"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "snapshot_future",
+        "text"
+      ],
+      "default_representation_profile": "api_json",
+      "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/data/search_handoff.json",
+        "site/dist/data/search_config.json",
+        "site/dist/data/public_index_summary.json"
+      ],
+      "future_artifacts": [
+        "future static public data summaries"
+      ],
+      "no_goals": [
+        "no live API behavior"
+      ],
+      "notes": [
+        "Static JSON data is not a live API."
+      ]
+    },
+    {
+      "route_family_id": "lite_static",
+      "label": "Lite static",
+      "description": "Old-browser static HTML route family.",
+      "canonical_path_pattern": "/lite/**",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static no-JS/no-CSS seed pages.",
+      "canonical_view_family": "LitePageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future"
+      ],
+      "allowed_representation_profiles": [
+        "html32",
+        "lite_html",
+        "text"
+      ],
+      "default_representation_profile": "lite_html",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/lite/index.html",
+        "site/dist/lite/search.html"
+      ],
+      "future_artifacts": [
+        "future lite renderer parity fixtures"
+      ],
+      "no_goals": [
+        "no script, cookies, auth, or dynamic backend requirement"
+      ],
+      "notes": [
+        "Lite is a first-class projection, not a disposable fallback."
+      ]
+    },
+    {
+      "route_family_id": "text_static",
+      "label": "Text static",
+      "description": "Plain-text static route family.",
+      "canonical_path_pattern": "/text/**",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static text seed files.",
+      "canonical_view_family": "TextPageView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "files_static",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "localhost_relay_future",
+        "nodes_future"
+      ],
+      "allowed_representation_profiles": [
+        "text"
+      ],
+      "default_representation_profile": "text",
+      "required_semantic_parity_policy": "search_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/text/index.txt",
+        "site/dist/text/search.txt"
+      ],
+      "future_artifacts": [
+        "future terminal/text parity fixtures"
+      ],
+      "no_goals": [
+        "no command execution or telemetry"
+      ],
+      "notes": [
+        "Text projection must preserve labels, warnings, limitations, and disabled actions."
+      ]
+    },
+    {
+      "route_family_id": "files_static",
+      "label": "Files static",
+      "description": "Static file-tree manifest/checksum route family.",
+      "canonical_path_pattern": "/files/**",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static file-tree seed artifacts.",
+      "canonical_view_family": "FileTreeView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "static_manifest_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "files_static",
+        "old_legacy_read_only",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "localhost_relay_future",
+        "nodes_future",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "text"
+      ],
+      "default_representation_profile": "file_tree",
+      "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+      "current_artifacts": [
+        "site/dist/files/index.html",
+        "site/dist/files/manifest.json",
+        "site/dist/files/SHA256SUMS"
+      ],
+      "future_artifacts": [
+        "future file-tree parity fixtures"
+      ],
+      "no_goals": [
+        "no dynamic search runtime, executable downloads, mirrors, or installers"
+      ],
+      "notes": [
+        "Static files host profiles expose static file/data/manifest artifacts, not dynamic search."
+      ]
+    },
+    {
+      "route_family_id": "demo_static",
+      "label": "Demo static",
+      "description": "Fixture-backed static resolver demo route family.",
+      "canonical_path_pattern": "/demo/**",
+      "route_status": "implemented_static",
+      "current_surface_status": "Implemented as committed static demo pages.",
+      "canonical_view_family": "DemoResolverView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "public_read_only",
+      "implemented_now": true,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "www_auto"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "nodes_future",
+        "status_static"
+      ],
+      "allowed_representation_profiles": [
+        "html32",
+        "lite_html",
+        "print",
+        "standard_html",
+        "text"
+      ],
+      "default_representation_profile": "standard_html",
+      "required_semantic_parity_policy": "search_result_card_parity_v0",
+      "current_artifacts": [
+        "site/dist/demo/index.html",
+        "site/dist/demo/absence-example.html",
+        "site/dist/demo/comparison-example.html"
+      ],
+      "future_artifacts": [
+        "future demo parity fixtures"
+      ],
+      "no_goals": [
+        "no live resolver or production behavior claim"
+      ],
+      "notes": [
+        "Demos are fixture-backed examples only."
+      ]
+    },
+    {
+      "route_family_id": "snapshot_future",
+      "label": "Future snapshot",
+      "description": "Future snapshot publication route family.",
+      "canonical_path_pattern": "/snapshots/**",
+      "route_status": "deferred",
+      "current_surface_status": "Snapshot format and seed example exist repo-locally; public /snapshots/ route is not implemented.",
+      "canonical_view_family": "SnapshotView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "static_manifest_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "files_static",
+        "localhost_relay_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "text"
+      ],
+      "default_representation_profile": "snapshot_future",
+      "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+      "current_artifacts": [
+        "snapshots/examples/static_snapshot_v0/"
+      ],
+      "future_artifacts": [
+        "future public /snapshots/ route after Track D"
+      ],
+      "no_goals": [
+        "no production signed snapshot or public snapshot route"
+      ],
+      "notes": [
+        "Uses manifest parity until a dedicated snapshot parity policy exists."
+      ]
+    },
+    {
+      "route_family_id": "relay_future",
+      "label": "Future relay",
+      "description": "Future local relay capability route family.",
+      "canonical_path_pattern": "local-relay://capabilities",
+      "route_status": "deferred",
+      "current_surface_status": "Relay design exists as contract/planning only. No relay runtime or listener exists.",
+      "canonical_view_family": "RelayView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "localhost_relay_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "nodes_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "file_tree",
+        "html32",
+        "manifest_json",
+        "relay_future",
+        "text"
+      ],
+      "default_representation_profile": "relay_future",
+      "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future Track D relay capability manifest"
+      ],
+      "no_goals": [
+        "no relay runtime, socket listener, proxying, or private data"
+      ],
+      "notes": [
+        "Localhost relay exposure remains deferred until Track D approval."
+      ]
+    },
+    {
+      "route_family_id": "native_card_future",
+      "label": "Future native card",
+      "description": "Future native-client compact card projection family.",
+      "canonical_path_pattern": "native-card:{canonical_id}",
+      "route_status": "deferred",
+      "current_surface_status": "Native card is contract-only. No native project exists.",
+      "canonical_view_family": "NativeCardView",
+      "route_identity_policy": "one_route_meaning_profile_negotiation_only",
+      "route_safety_class": "future_read_only",
+      "implemented_now": false,
+      "dynamic_runtime_required": false,
+      "hosted_runtime_active": false,
+      "hosted_public_alpha_status": "track_e_only",
+      "live_probes_enabled": false,
+      "downloads_enabled": false,
+      "uploads_enabled": false,
+      "accounts_enabled": false,
+      "telemetry_enabled": false,
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "forbidden_host_profiles": [
+        "api_alias",
+        "files_static",
+        "localhost_relay_future",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "allowed_representation_profiles": [
+        "api_json",
+        "native_card_future",
+        "snapshot_future",
+        "text"
+      ],
+      "default_representation_profile": "native_card_future",
+      "required_semantic_parity_policy": "object_page_parity_v0",
+      "current_artifacts": [],
+      "future_artifacts": [
+        "future Track C native card contract"
+      ],
+      "no_goals": [
+        "no native project, installer, telemetry, or execution"
+      ],
+      "notes": [
+        "Native cards consume governed semantics; they do not define separate route truth."
+      ]
+    }
+  ],
+  "view_families": [
+    {
+      "view_family_id": "HomePageView",
+      "label": "Home page view",
+      "description": "Static public overview view model.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "home"
+      ],
+      "notes": [
+        "Current view is static-public and contract-bound only."
+      ]
+    },
+    {
+      "view_family_id": "SearchPageView",
+      "label": "Search page view",
+      "description": "Search page view model for static handoff and local runtime search.",
+      "view_status": "implemented_local_runtime",
+      "canonical_route_families": [
+        "search"
+      ],
+      "notes": [
+        "Hosted search remains operator-gated."
+      ]
+    },
+    {
+      "view_family_id": "SearchApiView",
+      "label": "Search API view",
+      "description": "Machine-readable search response view family.",
+      "view_status": "implemented_local_runtime",
+      "canonical_route_families": [
+        "api_search"
+      ],
+      "notes": [
+        "Local/prototype only."
+      ]
+    },
+    {
+      "view_family_id": "QueryPlanView",
+      "label": "Query plan view",
+      "description": "Machine-readable query-plan view family.",
+      "view_status": "implemented_local_runtime",
+      "canonical_route_families": [
+        "query_plan"
+      ],
+      "notes": [
+        "Local/prototype only."
+      ]
+    },
+    {
+      "view_family_id": "StatusView",
+      "label": "Status view",
+      "description": "Public status and capability summary view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "status"
+      ],
+      "notes": [
+        "Public-safe only."
+      ]
+    },
+    {
+      "view_family_id": "SourceListView",
+      "label": "Source list view",
+      "description": "Public source-list summary view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "sources"
+      ],
+      "notes": [
+        "Source summary is not source trust authority."
+      ]
+    },
+    {
+      "view_family_id": "SourcePageView",
+      "label": "Source page view",
+      "description": "Source detail view family.",
+      "view_status": "implemented_local_runtime",
+      "canonical_route_families": [
+        "source_detail"
+      ],
+      "notes": [
+        "Public page runtime remains future beyond the local API endpoint."
+      ]
+    },
+    {
+      "view_family_id": "ObjectPageView",
+      "label": "Object page view",
+      "description": "Future object page view family.",
+      "view_status": "planned",
+      "canonical_route_families": [
+        "object_page_future"
+      ],
+      "notes": [
+        "Contract-only placeholder."
+      ]
+    },
+    {
+      "view_family_id": "NeedPageView",
+      "label": "Need page view",
+      "description": "Future unresolved need page view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "need_page_future"
+      ],
+      "notes": [
+        "Track B-adjacent placeholder."
+      ]
+    },
+    {
+      "view_family_id": "CandidatePageView",
+      "label": "Candidate page view",
+      "description": "Future candidate page view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "candidate_page_future"
+      ],
+      "notes": [
+        "No candidate promotion behavior."
+      ]
+    },
+    {
+      "view_family_id": "PackPageView",
+      "label": "Pack page view",
+      "description": "Future pack summary view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "pack_page_future"
+      ],
+      "notes": [
+        "Validate-only posture."
+      ]
+    },
+    {
+      "view_family_id": "TaskPageView",
+      "label": "Task page view",
+      "description": "Future task page view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "task_page_future"
+      ],
+      "notes": [
+        "No execution behavior."
+      ]
+    },
+    {
+      "view_family_id": "ReviewPageView",
+      "label": "Review page view",
+      "description": "Future review page view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "review_page_future"
+      ],
+      "notes": [
+        "No moderation or approval runtime."
+      ]
+    },
+    {
+      "view_family_id": "EvidencePageView",
+      "label": "Evidence page view",
+      "description": "Future evidence summary view family.",
+      "view_status": "future",
+      "canonical_route_families": [
+        "evidence_page_future"
+      ],
+      "notes": [
+        "No evidence ledger runtime."
+      ]
+    },
+    {
+      "view_family_id": "AbsencePageView",
+      "label": "Absence page view",
+      "description": "Future known/scoped absence page view family.",
+      "view_status": "planned",
+      "canonical_route_families": [
+        "absence_page_future"
+      ],
+      "notes": [
+        "Scoped absence only."
+      ]
+    },
+    {
+      "view_family_id": "ComparePageView",
+      "label": "Compare page view",
+      "description": "Future comparison page view family.",
+      "view_status": "planned",
+      "canonical_route_families": [
+        "compare_page_future"
+      ],
+      "notes": [
+        "No ranking authority."
+      ]
+    },
+    {
+      "view_family_id": "DownloadManifestView",
+      "label": "Download manifest view",
+      "description": "Future manifest view family that does not enable downloads.",
+      "view_status": "deferred",
+      "canonical_route_families": [
+        "download_manifest_future"
+      ],
+      "notes": [
+        "Manifest metadata only."
+      ]
+    },
+    {
+      "view_family_id": "StaticDataView",
+      "label": "Static data view",
+      "description": "Static JSON summary view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "data_static"
+      ],
+      "notes": [
+        "Not a live API."
+      ]
+    },
+    {
+      "view_family_id": "LitePageView",
+      "label": "Lite page view",
+      "description": "Lite HTML projection view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "lite_static"
+      ],
+      "notes": [
+        "First-class projection."
+      ]
+    },
+    {
+      "view_family_id": "TextPageView",
+      "label": "Text page view",
+      "description": "Plain-text projection view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "text_static"
+      ],
+      "notes": [
+        "First-class projection."
+      ]
+    },
+    {
+      "view_family_id": "FileTreeView",
+      "label": "File-tree view",
+      "description": "Static file-tree/manifest view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "files_static"
+      ],
+      "notes": [
+        "No executable hosting."
+      ]
+    },
+    {
+      "view_family_id": "DemoResolverView",
+      "label": "Demo resolver view",
+      "description": "Static fixture-backed demo view family.",
+      "view_status": "implemented_static",
+      "canonical_route_families": [
+        "demo_static"
+      ],
+      "notes": [
+        "No live resolver."
+      ]
+    },
+    {
+      "view_family_id": "SnapshotView",
+      "label": "Snapshot view",
+      "description": "Future snapshot view family.",
+      "view_status": "deferred",
+      "canonical_route_families": [
+        "snapshot_future"
+      ],
+      "notes": [
+        "Track D future surface."
+      ]
+    },
+    {
+      "view_family_id": "RelayView",
+      "label": "Relay view",
+      "description": "Future relay capability view family.",
+      "view_status": "deferred",
+      "canonical_route_families": [
+        "relay_future"
+      ],
+      "notes": [
+        "No relay runtime."
+      ]
+    },
+    {
+      "view_family_id": "NativeCardView",
+      "label": "Native card view",
+      "description": "Future native-card projection view family.",
+      "view_status": "deferred",
+      "canonical_route_families": [
+        "native_card_future"
+      ],
+      "notes": [
+        "No native project."
+      ]
+    }
+  ],
+  "representation_bindings": [
+    {
+      "route_family_id": "home",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "lite_html",
+        "print",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "search",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "api_search",
+      "default_representation_profile": "api_json",
+      "allowed_representation_profiles": [
+        "api_json"
+      ]
+    },
+    {
+      "route_family_id": "query_plan",
+      "default_representation_profile": "api_json",
+      "allowed_representation_profiles": [
+        "api_json",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "status",
+      "default_representation_profile": "text",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "manifest_json",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "sources",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "source_detail",
+      "default_representation_profile": "api_json",
+      "allowed_representation_profiles": [
+        "api_json",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "object_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "need_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "candidate_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "pack_page_future",
+      "default_representation_profile": "manifest_json",
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "task_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "review_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "evidence_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "snapshot_future",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "absence_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "html32",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "compare_page_future",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "download_manifest_future",
+      "default_representation_profile": "manifest_json",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "data_static",
+      "default_representation_profile": "api_json",
+      "allowed_representation_profiles": [
+        "api_json",
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "snapshot_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "lite_static",
+      "default_representation_profile": "lite_html",
+      "allowed_representation_profiles": [
+        "html32",
+        "lite_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "text_static",
+      "default_representation_profile": "text",
+      "allowed_representation_profiles": [
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "files_static",
+      "default_representation_profile": "file_tree",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "demo_static",
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "html32",
+        "lite_html",
+        "print",
+        "standard_html",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "snapshot_future",
+      "default_representation_profile": "snapshot_future",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "native_card_future",
+        "relay_future",
+        "snapshot_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "relay_future",
+      "default_representation_profile": "relay_future",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "html32",
+        "manifest_json",
+        "relay_future",
+        "text"
+      ]
+    },
+    {
+      "route_family_id": "native_card_future",
+      "default_representation_profile": "native_card_future",
+      "allowed_representation_profiles": [
+        "api_json",
+        "native_card_future",
+        "snapshot_future",
+        "text"
+      ]
+    }
+  ],
+  "host_profile_bindings": [
+    {
+      "route_family_id": "home",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "search",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "www_auto"
+      ],
+      "exposure_status": "implemented_local_runtime"
+    },
+    {
+      "route_family_id": "api_search",
+      "default_host_profile": "api_alias",
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "exposure_status": "implemented_local_runtime"
+    },
+    {
+      "route_family_id": "query_plan",
+      "default_host_profile": "api_alias",
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "exposure_status": "implemented_local_runtime"
+    },
+    {
+      "route_family_id": "status",
+      "default_host_profile": "status_static",
+      "allowed_host_profiles": [
+        "api_alias",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "sources",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "api_alias",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "source_detail",
+      "default_host_profile": "api_alias",
+      "allowed_host_profiles": [
+        "api_alias"
+      ],
+      "exposure_status": "implemented_local_runtime"
+    },
+    {
+      "route_family_id": "object_page_future",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "exposure_status": "planned"
+    },
+    {
+      "route_family_id": "need_page_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "candidate_page_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "pack_page_future",
+      "default_host_profile": "files_static",
+      "allowed_host_profiles": [
+        "files_static",
+        "nodes_future"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "task_page_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "review_page_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "evidence_page_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "exposure_status": "future"
+    },
+    {
+      "route_family_id": "absence_page_future",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "exposure_status": "planned"
+    },
+    {
+      "route_family_id": "compare_page_future",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "nodes_future",
+        "www_auto"
+      ],
+      "exposure_status": "planned"
+    },
+    {
+      "route_family_id": "download_manifest_future",
+      "default_host_profile": "files_static",
+      "allowed_host_profiles": [
+        "files_static"
+      ],
+      "exposure_status": "deferred"
+    },
+    {
+      "route_family_id": "data_static",
+      "default_host_profile": "api_alias",
+      "allowed_host_profiles": [
+        "api_alias",
+        "files_static",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "lite_static",
+      "default_host_profile": "old_legacy_read_only",
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "text_static",
+      "default_host_profile": "old_legacy_read_only",
+      "allowed_host_profiles": [
+        "files_static",
+        "old_legacy_read_only",
+        "status_static",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "files_static",
+      "default_host_profile": "files_static",
+      "allowed_host_profiles": [
+        "files_static",
+        "old_legacy_read_only",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "demo_static",
+      "default_host_profile": "www_auto",
+      "allowed_host_profiles": [
+        "old_legacy_read_only",
+        "www_auto"
+      ],
+      "exposure_status": "implemented_static"
+    },
+    {
+      "route_family_id": "snapshot_future",
+      "default_host_profile": "files_static",
+      "allowed_host_profiles": [
+        "files_static",
+        "localhost_relay_future"
+      ],
+      "exposure_status": "deferred"
+    },
+    {
+      "route_family_id": "relay_future",
+      "default_host_profile": "localhost_relay_future",
+      "allowed_host_profiles": [
+        "localhost_relay_future"
+      ],
+      "exposure_status": "deferred"
+    },
+    {
+      "route_family_id": "native_card_future",
+      "default_host_profile": "nodes_future",
+      "allowed_host_profiles": [
+        "nodes_future"
+      ],
+      "exposure_status": "deferred"
+    }
+  ],
+  "semantic_parity_policy_bindings": [
+    {
+      "route_family_id": "home",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Conservative public-page parity for status, warnings, disabled capabilities, and limitations."
+      ]
+    },
+    {
+      "route_family_id": "search",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Search page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "api_search",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Search API currently inherits search-page semantic obligations."
+      ]
+    },
+    {
+      "route_family_id": "query_plan",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Query plan inherits search status and limitation parity."
+      ]
+    },
+    {
+      "route_family_id": "status",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Status inherits disabled-capability and limitation parity."
+      ]
+    },
+    {
+      "route_family_id": "sources",
+      "parity_policy_id": "source_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Source-list view inherits source-page source posture rules."
+      ]
+    },
+    {
+      "route_family_id": "source_detail",
+      "parity_policy_id": "source_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Source detail parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "object_page_future",
+      "parity_policy_id": "object_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Object page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "need_page_future",
+      "parity_policy_id": "need_page_future_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Need page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "candidate_page_future",
+      "parity_policy_id": "candidate_page_future_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Candidate page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "pack_page_future",
+      "parity_policy_id": "pack_page_future_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Pack page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "task_page_future",
+      "parity_policy_id": "task_page_future_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Task page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "review_page_future",
+      "parity_policy_id": "review_page_future_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Review page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "evidence_page_future",
+      "parity_policy_id": "source_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Evidence pages inherit source/evidence posture until a dedicated policy exists."
+      ]
+    },
+    {
+      "route_family_id": "absence_page_future",
+      "parity_policy_id": "absence_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Absence page parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "compare_page_future",
+      "parity_policy_id": "object_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Comparison pages inherit object identity/evidence parity until a dedicated policy exists."
+      ]
+    },
+    {
+      "route_family_id": "download_manifest_future",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "Manifest parity is direct."
+      ]
+    },
+    {
+      "route_family_id": "data_static",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Static data inherits manifest/source/checksum parity."
+      ]
+    },
+    {
+      "route_family_id": "lite_static",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Lite static pages inherit public-page parity obligations."
+      ]
+    },
+    {
+      "route_family_id": "text_static",
+      "parity_policy_id": "search_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Text static pages inherit public-page parity obligations."
+      ]
+    },
+    {
+      "route_family_id": "files_static",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "binding_status": "direct",
+      "notes": [
+        "File-tree surface uses manifest parity directly."
+      ]
+    },
+    {
+      "route_family_id": "demo_static",
+      "parity_policy_id": "search_result_card_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Demo pages inherit result-card parity for fixture-backed examples."
+      ]
+    },
+    {
+      "route_family_id": "snapshot_future",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Snapshots inherit manifest parity until a dedicated snapshot parity policy exists."
+      ]
+    },
+    {
+      "route_family_id": "relay_future",
+      "parity_policy_id": "download_manifest_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Relay capability manifests inherit manifest parity until Track D."
+      ]
+    },
+    {
+      "route_family_id": "native_card_future",
+      "parity_policy_id": "object_page_parity_v0",
+      "binding_status": "inherited_until_specific_policy",
+      "notes": [
+        "Native cards inherit object parity until a dedicated native-card parity policy exists."
+      ]
+    }
+  ],
+  "status_vocabulary": [
+    "approval_gated",
+    "blocked",
+    "contract_only",
+    "deferred",
+    "future",
+    "human_operated",
+    "implemented_local_runtime",
+    "implemented_static",
+    "operator_gated",
+    "planned"
+  ],
+  "default_fallbacks": {
+    "safest_default_representation": "text",
+    "safest_default_host_profile": "www_auto",
+    "hosted_public_alpha": "track_e_operator_gated",
+    "live_probe_default": "disabled"
+  },
+  "forbidden_route_splits": [
+    "/classic/object",
+    "/desktop/search",
+    "/legacy/object",
+    "/mobile/search",
+    "/modern/search",
+    "/old/search",
+    "/retro/search"
+  ],
+  "public_alpha_policy": {
+    "early_public_alpha_shaped_work": "local/static/staging/localhost rehearsal evidence only",
+    "actual_hosted_public_alpha": "Track E only",
+    "dynamic_hosted_search_active": false,
+    "hosted_public_alpha_status": "operator_gated"
+  },
+  "no_product_runtime_behavior": true,
+  "no_public_routes_changed": true,
+  "no_hosting_enabled": true,
+  "no_live_probes_enabled": true,
+  "no_downloads_enabled": true,
+  "no_uploads_enabled": true,
+  "no_accounts_enabled": true,
+  "no_telemetry_enabled": true,
+  "no_native_project_created": true,
+  "no_master_index_mutation": true,
+  "notes": [
+    "This matrix is contract/governance only.",
+    "Host and representation profiles select projections; they do not change route identity.",
+    "Hosted public alpha remains Track E and operator-gated.",
+    "The matrix intentionally uses inherited semantic parity bindings for route/view families that Track A-02 did not specialize."
+  ]
+}
