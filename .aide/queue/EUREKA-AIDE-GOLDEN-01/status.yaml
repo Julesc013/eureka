@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-GOLDEN-01
+status: needs_review
+updated: 2026-05-07
+summary: >
+  Six deterministic Eureka-specific golden tasks were added to the existing
+  AIDE Lite eval mechanism. The catalog now has 12 active tasks and `eval run`
+  passes all 12 without provider/model/network calls.
+known_limitations:
+  - Golden tasks prove deterministic governance readiness, not arbitrary
+    product implementation quality.
+  - Exact tokenizer and provider billing proof remain out of scope.
+  - Upstream AIDE Lite should receive these target-repo learnings later.
+next:
+  - Review EUREKA-AIDE-GOLDEN-01.
+  - Run EUREKA-AIDE-REAL-01 as one bounded docs/eval/architecture-maintenance task.

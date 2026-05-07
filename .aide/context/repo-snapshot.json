@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 4242,
+  "file_count": 4265,
   "files": [
     {
       "extension": ".md",
@@ -244,10 +244,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778123120,
+      "mtime": 1778150741,
       "path": ".aide/evals/golden-tasks/README.md",
-      "sha256": "d73169783c7f8812feb1ff59864252e5a3aa67c6aaf64ae4cc475568f23a11c6",
-      "size": 737,
+      "sha256": "7dd11f6009949dccb22b268d86131e013fb69a4b52ccf98712a848247b9db4a8",
+      "size": 1171,
       "type": "document"
     },
     {
@@ -268,10 +268,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778123120,
+      "mtime": 1778150741,
       "path": ".aide/evals/golden-tasks/catalog.yaml",
-      "sha256": "990857cabbdd594d2ae7f287817aca54dcd0e80c5d55ea56eae6aeef3da13fa4",
-      "size": 2335,
+      "sha256": "ca1b868b23967343dae708c4e1c7eb8bad711dc279619d2bd4aa6a5748ad1059",
+      "size": 4575,
       "type": "source-or-config"
     },
     {
@@ -292,6 +292,22 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/acceptance.md",
+      "sha256": "4702b230e302602936ca43d525a314d3d22400165cdfd0b76dec8deee16d890a",
+      "size": 360,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/task.yaml",
+      "sha256": "3f84dac43f7f71786299071ad6b4f84a6d6a18113e907ba305d840eb64c1fcf5",
+      "size": 515,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778123120,
       "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
       "sha256": "8433cc4a9a6de6179e503f61fe0f5590ef0693abb0361180594c3c09613de1aa",
@@ -304,6 +320,86 @@
       "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
       "sha256": "a15bc995b6ffc6814eb3cc58c5fedd538325a6521b1bed243b7d406a2df2d154",
       "size": 503,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/acceptance.md",
+      "sha256": "ce554c4520f5e6627c5fc46092a78f810b5f12ae17535290536e8b5e2d3e7ec9",
+      "size": 370,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/task.yaml",
+      "sha256": "9b66041bf9c38bbc3a19f518b3b9fc380b29d458f6bd9d0604d240223ed12fcc",
+      "size": 495,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/acceptance.md",
+      "sha256": "493a99b25d562cbf30adc61682d7648450f2659b0329b5b7ab5f677286d911a1",
+      "size": 368,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/task.yaml",
+      "sha256": "926c61ebae86fc483e9cb65628db1479866eb2b97beaf6be118f05e178ffe131",
+      "size": 537,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md",
+      "sha256": "bfcb76d1c9185f77abaab8bd24f204e639729495740fb46f939b102c6eaf2315",
+      "size": 314,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/task.yaml",
+      "sha256": "6b2b775e4f0ba39ee0f71eeb50080d64a8e7e6cbd2b4295ec14a5b1599a4c4b9",
+      "size": 474,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/acceptance.md",
+      "sha256": "e7c1242527cf25f4f37d4f792744be023bf7097d1fdecb8e70a6d5db1f530f41",
+      "size": 285,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/task.yaml",
+      "sha256": "77354c4044334ac78641752cec3a6835bf22ea9d189ac3b7b445bff6b2894c7b",
+      "size": 538,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/acceptance.md",
+      "sha256": "ac132d5fe3f98c8c8136fed7ff3a0a0e0c123f8755fdbb7e7fbe1fc69eae765a",
+      "size": 300,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778150741,
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/task.yaml",
+      "sha256": "2793505ea04d59b1fff1166a88e60442320dd0f0de5fd5847d36ae104b8c2f0e",
+      "size": 386,
       "type": "source-or-config"
     },
     {
@@ -372,18 +468,18 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778146186,
+      "mtime": 1778150890,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
-      "sha256": "5d13b66a4a1b5bd5a0e04d7bb49d03458d6a2dd109fb02e31eb1698a8c1255b9",
-      "size": 3251,
+      "sha256": "527767a8f150dbf93a7f55134f966f339293aa113ca7f996c0a904c1167ca057",
+      "size": 6394,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778146186,
+      "mtime": 1778150890,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
-      "sha256": "8a3c6bcbb1b98aa0033b6037917314115abe44a8add829c0a36b7ca844b39e89",
-      "size": 2324,
+      "sha256": "6aa02a5c41c78d0de4bf371a47589277ada69c79f7e04d81578d8d85e0e886fc",
+      "size": 4469,
       "type": "document"
     },
     {
@@ -548,10 +644,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778146067,
+      "mtime": 1778151010,
       "path": ".aide/memory/open-risks.md",
-      "sha256": "55ea348a323e4732ac994434b8d643734395e1c08e25dc1f395ed5a037043010",
-      "size": 958,
+      "sha256": "2d9fe5b1a6cb856a94af33bd84f2e753a64afee872ab89f5ac626310d252794e",
+      "size": 984,
       "type": "document"
     },
     {
@@ -564,10 +660,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778146067,
+      "mtime": 1778151010,
       "path": ".aide/memory/project-state.md",
-      "sha256": "3c52dbc53f12d8de84c1a1f77266d6c4c9985551479b361326366d44bf59e41f",
-      "size": 1555,
+      "sha256": "d4821d807a4a95c6462c15ca8d9bfaa50a8c3941060413a772524896c5e38f43",
+      "size": 1695,
       "type": "document"
     },
     {
@@ -812,6 +908,94 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/ExecPlan.md",
+      "sha256": "30ab501903e3fcac7a7ca7970cbfaa6641dda239577ae078442d90dcae340446",
+      "size": 1048,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/changed-files.md",
+      "sha256": "a220bd9762497885f595e275df12a25a87dfe8d7c8b209c80736ae7268552ad5",
+      "size": 1440,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/golden-tasks.md",
+      "sha256": "fbebd912d9e6c94ee0ae0ded91269f7b7f9a6a6c9b4dc1ce9d1b88e54c3a090d",
+      "size": 1636,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/next-task.md",
+      "sha256": "9ceaa5bedc7544388bab141a27e9ef2cec445564a67040276974387e3aadcb13",
+      "size": 638,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/quality-readiness.md",
+      "sha256": "7341975c34a85d88d7cddbb066d67e60faacd0400d83a419bb44887062e2891c",
+      "size": 915,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/remaining-risks.md",
+      "sha256": "681a448f80e3b099964ae0b819e86b47ae956d4a20a8cfaf4a69dc0a16818c9a",
+      "size": 601,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/upstream-aide-lite-impact.md",
+      "sha256": "f0bfd42dc0bc0c9eec526f77b4ad71e2aeafb49bd593476df71fb723b2cffdf8",
+      "size": 607,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/validation.md",
+      "sha256": "1d24d355fc8d4700828669c5756eb683d995380cbfefc01e95952d073c64e65d",
+      "size": 1280,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/prompt.md",
+      "sha256": "9e525fd562f3c593aa87f249058c9c52ad14975eba6c650bb975d0eb9c1c1297",
+      "size": 561,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/status.yaml",
+      "sha256": "3f72dc3fbc0065ede237939da726ff34b1c0709b9414ccbe2dba379d9ac0c5dd",
+      "size": 722,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778151010,
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/task.yaml",
+      "sha256": "9579eff2f55e7a5a8d21249c521b299100c667f74a0a9b7418fc4e16e0bea677",
+      "size": 1355,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778136074,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/ExecPlan.md",
       "sha256": "73acb23a482d3f6faced5a58313f6356e09350e1e93eba040234307c286ff0d3",
@@ -1028,10 +1212,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778146291,
+      "mtime": 1778146448,
       "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/validation.md",
-      "sha256": "13a885fbd2f3d19079ec7cd9ca3675bc9d4b913430d5ed7e2c4599e6b49a698a",
-      "size": 4387,
+      "sha256": "1748854d87a2be589262f8821d59f07dd906609e1eb227b7dbc9530c0f07d945",
+      "size": 5760,
       "type": "document"
     },
     {
@@ -1188,10 +1372,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778145745,
+      "mtime": 1778150863,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "0eab58d0aeaebae5e63bcf6a478c868e4b1f2704469e796e5a9adf914d96b437",
-      "size": 395852,
+      "sha256": "e5af69c14c57227446554619368c7cf63eaed0462136bd2436df3ecc614616d9",
+      "size": 412924,
       "type": "source-or-config"
     },
     {
@@ -1236,10 +1420,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778123120,
+      "mtime": 1778150818,
       "path": ".aide/scripts/tests/test_golden_tasks.py",
-      "sha256": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
-      "size": 6062,
+      "sha256": "92ce37f6ec4f3a088df6dae828719daf64075250f313ba639476a097823abf36",
+      "size": 7275,
       "type": "source-or-config"
     },
     {
@@ -33987,12 +34171,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 5806983,
-    "file_count": 4242,
-    "total_size": 23227930,
+    "aggregate_approx_tokens": 5817866,
+    "file_count": 4265,
+    "total_size": 23271461,
     "type_counts": {
-      "document": 2205,
-      "source-or-config": 1832,
+      "document": 2220,
+      "source-or-config": 1840,
       "unknown": 205
     }
   }

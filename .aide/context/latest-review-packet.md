@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4598 chars, 1150 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4722 chars, 1181 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,16 +34,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - unknown: `.aide/memory/open-risks.md` (M; does not match active task allowed paths)
 - unknown: `.aide/memory/project-state.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-SELFTEST-01/ExecPlan.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-SELFTEST-01/status.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-SELFTEST-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-GOLDEN-01` (??; does not match active task allowed paths)
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
+- allowed: `.aide/routing/latest-route-decision.md` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -53,8 +58,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4831
-- approx_tokens: 1208
+- chars: 5277
+- approx_tokens: 1320
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -71,8 +76,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Route Decision Summary
 
 - route_decision: `.aide/routing/latest-route-decision.json`
-- route_class: frontier
-- task_class: unknown
+- route_class: local_strong
+- task_class: bounded_docs_update
 - hard_floor_applied: none
 - quality_gate_status: WARN
 - advisory_only: true
@@ -101,12 +106,12 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Risk Summary
 
 - This is the first real target-repo import; target adaptation may expose pack assumptions that were invisible inside AIDE.
-- Eureka-specific golden tasks are not yet established, so quality evidence is limited to AIDE Lite substrate checks and packet review.
+- Eureka-specific golden tasks now exist and pass, but they prove deterministic governance readiness rather than arbitrary product implementation quality.
 - No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
 - Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
 - Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
-- Eureka-local AIDE Lite `test` and `selftest` now pass after the temp-fixture fallback repair, but broad trust still needs Eureka-specific golden tasks.
-- First real follow-up should add deterministic Eureka-specific AIDE golden tasks before broader product implementation work.
+- Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
+- First real follow-up should be one bounded docs/eval/architecture-maintenance task before connector, gateway, native, runtime, or broad product work.
 
 ## Non-Goals / Scope Guard
 

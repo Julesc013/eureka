@@ -245,13 +245,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "d73169783c7f8812feb1ff59864252e5a3aa67c6aaf64ae4cc475568f23a11c6",
+      "hash": "7dd11f6009949dccb22b268d86131e013fb69a4b52ccf98712a848247b9db4a8",
       "path": ".aide/evals/golden-tasks/README.md",
       "priority": 80,
       "priority_band": "high",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 737
+      "size": 1171
     },
     {
       "classification": "manual",
@@ -281,13 +281,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "990857cabbdd594d2ae7f287817aca54dcd0e80c5d55ea56eae6aeef3da13fa4",
+      "hash": "ca1b868b23967343dae708c4e1c7eb8bad711dc279619d2bd4aa6a5748ad1059",
       "path": ".aide/evals/golden-tasks/catalog.yaml",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 2335
+      "size": 4575
     },
     {
       "classification": "manual",
@@ -317,6 +317,30 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
+      "hash": "4702b230e302602936ca43d525a314d3d22400165cdfd0b76dec8deee16d890a",
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 360
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "3f84dac43f7f71786299071ad6b4f84a6d6a18113e907ba305d840eb64c1fcf5",
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 515
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
       "hash": "8433cc4a9a6de6179e503f61fe0f5590ef0693abb0361180594c3c09613de1aa",
       "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
       "priority": 10,
@@ -336,6 +360,126 @@
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
       "size": 503
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "ce554c4520f5e6627c5fc46092a78f810b5f12ae17535290536e8b5e2d3e7ec9",
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 370
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "9b66041bf9c38bbc3a19f518b3b9fc380b29d458f6bd9d0604d240223ed12fcc",
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 495
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "493a99b25d562cbf30adc61682d7648450f2659b0329b5b7ab5f677286d911a1",
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 368
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "926c61ebae86fc483e9cb65628db1479866eb2b97beaf6be118f05e178ffe131",
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 537
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "bfcb76d1c9185f77abaab8bd24f204e639729495740fb46f939b102c6eaf2315",
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 314
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "6b2b775e4f0ba39ee0f71eeb50080d64a8e7e6cbd2b4295ec14a5b1599a4c4b9",
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 474
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "e7c1242527cf25f4f37d4f792744be023bf7097d1fdecb8e70a6d5db1f530f41",
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 285
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "77354c4044334ac78641752cec3a6835bf22ea9d189ac3b7b445bff6b2894c7b",
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 538
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "ac132d5fe3f98c8c8136fed7ff3a0a0e0c123f8755fdbb7e7fbe1fc69eae765a",
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/acceptance.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 300
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "2793505ea04d59b1fff1166a88e60442320dd0f0de5fd5847d36ae104b8c2f0e",
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_contract",
+      "role_reason": "aide contract/profile path",
+      "size": 386
     },
     {
       "classification": "manual",
@@ -437,25 +581,25 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "5d13b66a4a1b5bd5a0e04d7bb49d03458d6a2dd109fb02e31eb1698a8c1255b9",
+      "hash": "527767a8f150dbf93a7f55134f966f339293aa113ca7f996c0a904c1167ca057",
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 3251
+      "size": 6394
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "8a3c6bcbb1b98aa0033b6037917314115abe44a8add829c0a36b7ca844b39e89",
+      "hash": "6aa02a5c41c78d0de4bf371a47589277ada69c79f7e04d81578d8d85e0e886fc",
       "path": ".aide/evals/runs/latest-golden-tasks.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 2324
+      "size": 4469
     },
     {
       "classification": "manual",
@@ -528,6 +672,90 @@
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
       "size": 201
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "a220bd9762497885f595e275df12a25a87dfe8d7c8b209c80736ae7268552ad5",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/changed-files.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1440
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "fbebd912d9e6c94ee0ae0ded91269f7b7f9a6a6c9b4dc1ce9d1b88e54c3a090d",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/golden-tasks.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1636
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "9ceaa5bedc7544388bab141a27e9ef2cec445564a67040276974387e3aadcb13",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/next-task.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 638
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "7341975c34a85d88d7cddbb066d67e60faacd0400d83a419bb44887062e2891c",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/quality-readiness.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 915
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "681a448f80e3b099964ae0b819e86b47ae956d4a20a8cfaf4a69dc0a16818c9a",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/remaining-risks.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 601
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "f0bfd42dc0bc0c9eec526f77b4ad71e2aeafb49bd593476df71fb723b2cffdf8",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/upstream-aide-lite-impact.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 607
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "1d24d355fc8d4700828669c5756eb683d995380cbfefc01e95952d073c64e65d",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/evidence/validation.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1280
     },
     {
       "classification": "manual",
@@ -677,13 +905,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "13a885fbd2f3d19079ec7cd9ca3675bc9d4b913430d5ed7e2c4599e6b49a698a",
+      "hash": "1748854d87a2be589262f8821d59f07dd906609e1eb227b7dbc9530c0f07d945",
       "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/validation.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_evidence",
       "role_reason": "aide queue evidence path",
-      "size": 4387
+      "size": 5760
     },
     {
       "classification": "manual",
@@ -1092,6 +1320,54 @@
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
       "size": 3421
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "30ab501903e3fcac7a7ca7970cbfaa6641dda239577ae078442d90dcae340446",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/ExecPlan.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1048
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "9e525fd562f3c593aa87f249058c9c52ad14975eba6c650bb975d0eb9c1c1297",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/prompt.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 561
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "3f72dc3fbc0065ede237939da726ff34b1c0709b9414ccbe2dba379d9ac0c5dd",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/status.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 722
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "9579eff2f55e7a5a8d21249c521b299100c667f74a0a9b7418fc4e16e0bea677",
+      "path": ".aide/queue/EUREKA-AIDE-GOLDEN-01/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1355
     },
     {
       "classification": "manual",
@@ -9485,13 +9761,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "55ea348a323e4732ac994434b8d643734395e1c08e25dc1f395ed5a037043010",
+      "hash": "2d9fe5b1a6cb856a94af33bd84f2e753a64afee872ab89f5ac626310d252794e",
       "path": ".aide/memory/open-risks.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 958
+      "size": 984
     },
     {
       "classification": "manual",
@@ -9509,13 +9785,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "3c52dbc53f12d8de84c1a1f77266d6c4c9985551479b361326366d44bf59e41f",
+      "hash": "d4821d807a4a95c6462c15ca8d9bfaa50a8c3941060413a772524896c5e38f43",
       "path": ".aide/memory/project-state.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 1555
+      "size": 1695
     },
     {
       "classification": "manual",
@@ -35165,13 +35441,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "0eab58d0aeaebae5e63bcf6a478c868e4b1f2704469e796e5a9adf914d96b437",
+      "hash": "e5af69c14c57227446554619368c7cf63eaed0462136bd2436df3ecc614616d9",
       "path": ".aide/scripts/aide_lite.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "script",
       "role_reason": "script path",
-      "size": 395852
+      "size": 412924
     },
     {
       "classification": "manual",
@@ -37793,13 +38069,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
+      "hash": "92ce37f6ec4f3a088df6dae828719daf64075250f313ba639476a097823abf36",
       "path": ".aide/scripts/tests/test_golden_tasks.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "test",
       "role_reason": "test path/name heuristic",
-      "size": 6062
+      "size": 7275
     },
     {
       "classification": "manual",
@@ -50910,21 +51186,21 @@
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "schema_version": "aide.repo-map.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "b132bbfc1824ca714efddb69b45cfd019fa196a845c33bbbfa0d6990bd1bca90",
+  "source_snapshot_hash": "7b9777b63816a9cb361873987a2d445b60c22bda3ac9de9a4f0b6caf83410dcc",
   "summary": {
-    "file_count": 4242,
+    "file_count": 4265,
     "priority_counts": {
       "high": 411,
       "medium": 86,
-      "normal": 3745
+      "normal": 3768
     },
     "role_counts": {
       "aide_context": 4,
-      "aide_contract": 40,
-      "aide_evidence": 13,
+      "aide_contract": 52,
+      "aide_evidence": 20,
       "aide_policy": 31,
       "aide_prompt": 3,
-      "aide_queue": 19,
+      "aide_queue": 23,
       "config": 669,
       "docs": 2142,
       "generated": 9,

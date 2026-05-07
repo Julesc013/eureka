@@ -1,0 +1,41 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-GOLDEN-01
+title: Add Eureka-specific AIDE golden tasks
+status: needs_review
+target_repo: julesc013/eureka
+phase: EUREKA-AIDE-GOLDEN-01
+source_packet: .aide/context/latest-task-packet.md
+scope:
+  allowed_paths:
+    - .aide/evals/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_golden_tasks.py
+    - .aide/context/**
+    - .aide/reports/**
+    - .aide/evals/runs/**
+    - .aide/queue/EUREKA-AIDE-GOLDEN-01/**
+    - .aide/memory/project-state.md
+    - .aide/memory/open-risks.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - connectors/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+objective: >
+  Add deterministic Eureka-specific AIDE Lite golden tasks that validate
+  target repo boundaries, compact task packets, evidence review packets,
+  local-state safety, architecture context, and generated agent guidance before
+  any Eureka product implementation work starts.
+acceptance:
+  - Golden task catalog includes the six Eureka-specific tasks.
+  - `eval list` shows the Eureka-specific tasks.
+  - `eval run` passes all golden tasks.
+  - `test` and `selftest` remain PASS.
+  - No Eureka product behavior changes.
+  - No local state, secrets, raw prompts, or raw responses are committed.
