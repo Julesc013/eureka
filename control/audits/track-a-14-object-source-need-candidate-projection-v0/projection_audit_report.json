@@ -1,0 +1,1497 @@
+{
+  "artifact_bindings": [
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/result-firefox-xp.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_object_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "object_page_future",
+      "expected_view_family": "ObjectPageView",
+      "fields_missing": [],
+      "fields_present": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_posture",
+        "canonical_object_identity",
+        "compatibility_posture",
+        "evidence_posture",
+        "limitations",
+        "object_type_state_version_posture",
+        "parent_member_lineage",
+        "representation_file_member_posture",
+        "rights_risk_posture",
+        "source_posture",
+        "unresolved_gaps"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical ObjectPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/result-member-driver-inside-support-cd.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_object_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "object_page_future",
+      "expected_view_family": "ObjectPageView",
+      "fields_missing": [
+        "rights_risk_posture",
+        "unresolved_gaps"
+      ],
+      "fields_present": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_posture",
+        "canonical_object_identity",
+        "compatibility_posture",
+        "evidence_posture",
+        "limitations",
+        "object_type_state_version_posture",
+        "parent_member_lineage",
+        "representation_file_member_posture",
+        "source_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical ObjectPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some ObjectPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/result-article-scan.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_object_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "object_page_future",
+      "expected_view_family": "ObjectPageView",
+      "fields_missing": [
+        "candidate_review_posture",
+        "rights_risk_posture",
+        "unresolved_gaps"
+      ],
+      "fields_present": [
+        "allowed_actions",
+        "blocked_actions",
+        "canonical_object_identity",
+        "compatibility_posture",
+        "evidence_posture",
+        "limitations",
+        "object_type_state_version_posture",
+        "parent_member_lineage",
+        "representation_file_member_posture",
+        "source_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical ObjectPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some ObjectPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/source-example.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "source_detail",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "rights_risk_privacy_posture",
+        "source_policy_access_posture"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "evidence_ledger_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical SourcePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/sources.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "sources",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [],
+      "fields_present": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "evidence_ledger_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "rights_risk_privacy_posture",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_policy_access_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SourcePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof"
+      ]
+    },
+    {
+      "artifact_kind": "lite_static_html",
+      "artifact_path": "site/dist/lite/sources.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "lite_html",
+      "expected_route_family": "sources",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "blocked_actions",
+        "evidence_ledger_posture",
+        "rights_risk_privacy_posture",
+        "source_policy_access_posture"
+      ],
+      "fields_present": [
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SourcePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "text_static",
+      "artifact_path": "site/dist/text/sources.txt",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "text",
+      "expected_route_family": "sources",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "evidence_ledger_posture",
+        "known_limitations",
+        "rights_risk_privacy_posture",
+        "source_cache_posture",
+        "source_policy_access_posture"
+      ],
+      "fields_present": [
+        "known_gaps",
+        "placeholder_future_manual_only_status",
+        "source_authority_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SourcePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "public_data_summary",
+      "artifact_path": "site/dist/data/source_summary.json",
+      "current_generation_source": "scripts/generate_public_data_summaries.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "api_json",
+      "expected_route_family": "sources",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "canonical_source_identity"
+      ],
+      "fields_present": [
+        "blocked_actions",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "evidence_ledger_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "rights_risk_privacy_posture",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_policy_access_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Source summary records fixture and placeholder posture; recorded fixtures are not treated as live connectors.",
+        "JSON payload explicitly records no live probes.",
+        "JSON payload explicitly records no live data."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "JSON shape is audited as public data, not as a canonical view-model instance",
+        "not yet traced to canonical SourcePageView fixture",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/absence-example.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_need_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "need_page_future",
+      "expected_view_family": "NeedPageView",
+      "fields_missing": [
+        "candidate_findings"
+      ],
+      "fields_present": [
+        "absence_scope",
+        "canonical_need_identity",
+        "capability_gaps",
+        "limitations",
+        "near_matches",
+        "next_safe_work",
+        "no_exhaustive_global_search_claim",
+        "privacy_poisoning_posture",
+        "query_demand_posture",
+        "searched_scope",
+        "source_gaps",
+        "sources_checked_not_checked",
+        "unresolved_or_weakly_resolved_status"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection.",
+        "Need-like semantics are currently visible through absence/demo surfaces, not a canonical NeedPage route."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical NeedPageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some NeedPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_html",
+      "artifact_path": "site/dist/demo/comparison-example.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_candidate_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "candidate_page_future",
+      "expected_view_family": "CandidatePageView",
+      "fields_missing": [],
+      "fields_present": [
+        "accepted_public_status_false",
+        "blocked_actions",
+        "candidate_origin",
+        "candidate_type_status",
+        "canonical_candidate_identity",
+        "evidence_posture",
+        "limitations",
+        "master_index_mutation_allowed_false",
+        "no_public_truth_from_candidates",
+        "proposed_object_state_summary",
+        "review_required",
+        "rights_risk_privacy_posture",
+        "source_observation_evidence_contribution_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection.",
+        "Candidate-like semantics are currently visible through comparison/demo surfaces, not a canonical CandidatePage route."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical CandidatePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof"
+      ]
+    },
+    {
+      "artifact_kind": "static_demo_manifest",
+      "artifact_path": "site/dist/demo/data/demo_snapshots.json",
+      "current_generation_source": "scripts/generate_static_resolver_demos.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_candidate_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "api_json",
+      "expected_route_family": "candidate_page_future",
+      "expected_view_family": "CandidatePageView",
+      "fields_missing": [
+        "evidence_posture"
+      ],
+      "fields_present": [
+        "accepted_public_status_false",
+        "blocked_actions",
+        "candidate_origin",
+        "candidate_type_status",
+        "canonical_candidate_identity",
+        "limitations",
+        "master_index_mutation_allowed_false",
+        "no_public_truth_from_candidates",
+        "proposed_object_state_summary",
+        "review_required",
+        "rights_risk_privacy_posture",
+        "source_observation_evidence_contribution_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "Static demo artifact may preserve useful semantics without being a canonical page projection.",
+        "Candidate-like semantics are currently visible through comparison/demo surfaces, not a canonical CandidatePage route.",
+        "JSON payload explicitly records no live probes.",
+        "JSON payload explicitly records no live data."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "JSON shape is audited as public data, not as a canonical view-model instance",
+        "demo artifact is illustrative and not an active canonical page route",
+        "not yet traced to canonical CandidatePageView fixture",
+        "some CandidatePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "public_data_summary",
+      "artifact_path": "site/dist/data/public_index_summary.json",
+      "current_generation_source": "scripts/generate_public_data_summaries.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_object_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "api_json",
+      "expected_route_family": "object_page_future",
+      "expected_view_family": "ObjectPageView",
+      "fields_missing": [
+        "compatibility_posture",
+        "evidence_posture",
+        "rights_risk_posture",
+        "source_posture",
+        "unresolved_gaps"
+      ],
+      "fields_present": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_posture",
+        "canonical_object_identity",
+        "limitations",
+        "object_type_state_version_posture",
+        "parent_member_lineage",
+        "representation_file_member_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "JSON payload explicitly records no live data."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "JSON shape is audited as public data, not as a canonical view-model instance",
+        "not yet traced to canonical ObjectPageView fixture",
+        "some ObjectPageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "file_tree_static",
+      "artifact_path": "site/dist/files/index.txt",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "file_tree",
+      "expected_route_family": "files_static",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "coverage_capability_posture",
+        "known_limitations",
+        "source_authority_posture",
+        "source_cache_posture"
+      ],
+      "fields_present": [
+        "connector_mode_status",
+        "evidence_ledger_posture",
+        "known_gaps",
+        "placeholder_future_manual_only_status",
+        "rights_risk_privacy_posture",
+        "source_policy_access_posture",
+        "source_type_kind_family"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "not yet traced to canonical SourcePageView fixture",
+        "semantic extraction is conservative text matching, not renderer parity proof",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "static_json_data",
+      "artifact_path": "site/dist/files/manifest.json",
+      "current_generation_source": "scripts/generate_compatibility_surfaces.py",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "present",
+      "exists": true,
+      "expected_representation_profile": "manifest_json",
+      "expected_route_family": "files_static",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_type_kind_family"
+      ],
+      "fields_present": [
+        "evidence_ledger_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "rights_risk_privacy_posture",
+        "source_policy_access_posture"
+      ],
+      "notes": [
+        "Read-only audit; artifact content was not changed.",
+        "JSON payload explicitly records no live probes.",
+        "JSON payload explicitly records no live data."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": [
+        "JSON shape is audited as public data, not as a canonical view-model instance",
+        "not yet traced to canonical SourcePageView fixture",
+        "some SourcePageView semantic categories are missing or not machine-verified"
+      ]
+    },
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/objects/example-object.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_object_page_view",
+      "current_status": "missing",
+      "exists": false,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "object_page_future",
+      "expected_view_family": "ObjectPageView",
+      "fields_missing": [
+        "allowed_actions",
+        "blocked_actions",
+        "candidate_review_posture",
+        "canonical_object_identity",
+        "compatibility_posture",
+        "evidence_posture",
+        "limitations",
+        "object_type_state_version_posture",
+        "parent_member_lineage",
+        "representation_file_member_posture",
+        "rights_risk_posture",
+        "source_posture",
+        "unresolved_gaps"
+      ],
+      "fields_present": [],
+      "notes": [
+        "Artifact is missing; audit records absence and does not create it."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": []
+    },
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/sources/example-source.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_source_page_view",
+      "current_status": "missing",
+      "exists": false,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "source_detail",
+      "expected_view_family": "SourcePageView",
+      "fields_missing": [
+        "blocked_actions",
+        "canonical_source_identity",
+        "connector_mode_status",
+        "coverage_capability_posture",
+        "evidence_ledger_posture",
+        "known_gaps",
+        "known_limitations",
+        "placeholder_future_manual_only_status",
+        "rights_risk_privacy_posture",
+        "source_authority_posture",
+        "source_cache_posture",
+        "source_policy_access_posture",
+        "source_type_kind_family"
+      ],
+      "fields_present": [],
+      "notes": [
+        "Artifact is missing; audit records absence and does not create it."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": []
+    },
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/needs/example-need.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_need_page_view",
+      "current_status": "missing",
+      "exists": false,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "need_page_future",
+      "expected_view_family": "NeedPageView",
+      "fields_missing": [
+        "absence_scope",
+        "candidate_findings",
+        "canonical_need_identity",
+        "capability_gaps",
+        "limitations",
+        "near_matches",
+        "next_safe_work",
+        "no_exhaustive_global_search_claim",
+        "privacy_poisoning_posture",
+        "query_demand_posture",
+        "searched_scope",
+        "source_gaps",
+        "sources_checked_not_checked",
+        "unresolved_or_weakly_resolved_status"
+      ],
+      "fields_present": [],
+      "notes": [
+        "Artifact is missing; audit records absence and does not create it."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": []
+    },
+    {
+      "artifact_kind": "standard_static_html",
+      "artifact_path": "site/dist/candidates/example-candidate.html",
+      "current_generation_source": "not_machine_verified",
+      "current_projection_status": "static_artifact_not_traced_to_canonical_candidate_page_view",
+      "current_status": "missing",
+      "exists": false,
+      "expected_representation_profile": "standard_html",
+      "expected_route_family": "candidate_page_future",
+      "expected_view_family": "CandidatePageView",
+      "fields_missing": [
+        "accepted_public_status_false",
+        "blocked_actions",
+        "candidate_origin",
+        "candidate_type_status",
+        "canonical_candidate_identity",
+        "evidence_posture",
+        "limitations",
+        "master_index_mutation_allowed_false",
+        "no_public_truth_from_candidates",
+        "proposed_object_state_summary",
+        "review_required",
+        "rights_risk_privacy_posture",
+        "source_observation_evidence_contribution_posture"
+      ],
+      "fields_present": [],
+      "notes": [
+        "Artifact is missing; audit records absence and does not create it."
+      ],
+      "refactor_needed": true,
+      "semantic_risks": []
+    }
+  ],
+  "artifact_kind_vocabulary": [
+    "standard_static_html",
+    "lite_static_html",
+    "text_static",
+    "file_tree_static",
+    "static_json_data",
+    "static_demo_html",
+    "static_demo_manifest",
+    "public_data_summary",
+    "unknown_static_artifact"
+  ],
+  "audited_artifacts": [
+    "site/dist/demo/result-firefox-xp.html",
+    "site/dist/demo/result-member-driver-inside-support-cd.html",
+    "site/dist/demo/result-article-scan.html",
+    "site/dist/demo/source-example.html",
+    "site/dist/sources.html",
+    "site/dist/lite/sources.html",
+    "site/dist/text/sources.txt",
+    "site/dist/data/source_summary.json",
+    "site/dist/demo/absence-example.html",
+    "site/dist/demo/comparison-example.html",
+    "site/dist/demo/data/demo_snapshots.json",
+    "site/dist/data/public_index_summary.json",
+    "site/dist/files/index.txt",
+    "site/dist/files/manifest.json",
+    "site/dist/objects/example-object.html",
+    "site/dist/sources/example-source.html",
+    "site/dist/needs/example-need.html",
+    "site/dist/candidates/example-candidate.html"
+  ],
+  "audited_view_families": [
+    "ObjectPageView",
+    "SourcePageView",
+    "NeedPageView",
+    "CandidatePageView"
+  ],
+  "critical_boundary_violations": [],
+  "future_refactor_targets": [
+    "TRACK-A-15 - Temporal Minimal Search design token contract",
+    "TRACK-A-16 - Renderer parity harness",
+    "TRACK-A-17 - Track A integration audit",
+    "TRACK-A-FOLLOWUP - Object Source Need Candidate projection fixtures and dry-run plan"
+  ],
+  "inputs": {
+    "candidate_page_policy": "control/inventory/publication/candidate_page_view_model_policy.json",
+    "need_page_policy": "control/inventory/publication/need_page_view_model_policy.json",
+    "object_page_policy": "control/inventory/publication/object_page_view_model_policy.json",
+    "representation_profiles": "control/inventory/publication/representation_profiles.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "control/inventory/publication/semantic_renderer_parity_policy.json",
+    "source_page_policy": "control/inventory/publication/source_page_view_model_policy.json"
+  },
+  "known_alignment": [
+    "Audited present artifacts preserve not-live, not-production static demo posture.",
+    "Candidate-adjacent comparison/demo data preserves disagreement and avoids automatic merge or truth selection.",
+    "Object-like demo result pages preserve source/evidence, member lineage, and compatibility posture in static snapshots.",
+    "Source summary and source demo artifacts preserve fixture/placeholder separation and no-live-probe posture.",
+    "The absence demo preserves bounded absence scope and avoids exhaustive global-search claims."
+  ],
+  "known_gaps": [
+    "Future canonical object, source, need, and candidate page routes remain unimplemented or not active as public static pages.",
+    "NeedPageView.candidate_findings: missing",
+    "No audited object/source/need/candidate-adjacent artifact is generated from a canonical Track A view-model fixture.",
+    "Static/demo pages do not embed canonical view_model_id values for these view families.",
+    "site/dist/candidates/example-candidate.html: expected future/adjacent artifact is missing",
+    "site/dist/candidates/example-candidate.html: missing or not machine-verified fields ['accepted_public_status_false', 'blocked_actions', 'candidate_origin', 'candidate_type_status', 'canonical_candidate_identity', 'evidence_posture', 'limitations', 'master_index_mutation_allowed_false', 'no_public_truth_from_candidates', 'proposed_object_state_summary', 'review_required', 'rights_risk_privacy_posture', 'source_observation_evidence_contribution_posture']",
+    "site/dist/data/public_index_summary.json: JSON shape is audited as public data, not as a canonical view-model instance",
+    "site/dist/data/public_index_summary.json: missing or not machine-verified fields ['compatibility_posture', 'evidence_posture', 'rights_risk_posture', 'source_posture', 'unresolved_gaps']",
+    "site/dist/data/public_index_summary.json: not yet traced to canonical ObjectPageView fixture",
+    "site/dist/data/public_index_summary.json: some ObjectPageView semantic categories are missing or not machine-verified",
+    "site/dist/data/source_summary.json: JSON shape is audited as public data, not as a canonical view-model instance",
+    "site/dist/data/source_summary.json: missing or not machine-verified fields ['canonical_source_identity']",
+    "site/dist/data/source_summary.json: not yet traced to canonical SourcePageView fixture",
+    "site/dist/data/source_summary.json: some SourcePageView semantic categories are missing or not machine-verified",
+    "site/dist/demo/absence-example.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/absence-example.html: missing or not machine-verified fields ['candidate_findings']",
+    "site/dist/demo/absence-example.html: not yet traced to canonical NeedPageView fixture",
+    "site/dist/demo/absence-example.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/absence-example.html: some NeedPageView semantic categories are missing or not machine-verified",
+    "site/dist/demo/comparison-example.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/comparison-example.html: not yet traced to canonical CandidatePageView fixture",
+    "site/dist/demo/comparison-example.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/data/demo_snapshots.json: JSON shape is audited as public data, not as a canonical view-model instance",
+    "site/dist/demo/data/demo_snapshots.json: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/data/demo_snapshots.json: missing or not machine-verified fields ['evidence_posture']",
+    "site/dist/demo/data/demo_snapshots.json: not yet traced to canonical CandidatePageView fixture",
+    "site/dist/demo/data/demo_snapshots.json: some CandidatePageView semantic categories are missing or not machine-verified",
+    "site/dist/demo/result-article-scan.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/result-article-scan.html: missing or not machine-verified fields ['candidate_review_posture', 'rights_risk_posture', 'unresolved_gaps']",
+    "site/dist/demo/result-article-scan.html: not yet traced to canonical ObjectPageView fixture",
+    "site/dist/demo/result-article-scan.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/result-article-scan.html: some ObjectPageView semantic categories are missing or not machine-verified",
+    "site/dist/demo/result-firefox-xp.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/result-firefox-xp.html: not yet traced to canonical ObjectPageView fixture",
+    "site/dist/demo/result-firefox-xp.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: missing or not machine-verified fields ['rights_risk_posture', 'unresolved_gaps']",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: not yet traced to canonical ObjectPageView fixture",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: some ObjectPageView semantic categories are missing or not machine-verified",
+    "site/dist/demo/source-example.html: demo artifact is illustrative and not an active canonical page route",
+    "site/dist/demo/source-example.html: missing or not machine-verified fields ['rights_risk_privacy_posture', 'source_policy_access_posture']",
+    "site/dist/demo/source-example.html: not yet traced to canonical SourcePageView fixture",
+    "site/dist/demo/source-example.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/demo/source-example.html: some SourcePageView semantic categories are missing or not machine-verified",
+    "site/dist/files/index.txt: missing or not machine-verified fields ['blocked_actions', 'canonical_source_identity', 'coverage_capability_posture', 'known_limitations', 'source_authority_posture', 'source_cache_posture']",
+    "site/dist/files/index.txt: not yet traced to canonical SourcePageView fixture",
+    "site/dist/files/index.txt: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/files/index.txt: some SourcePageView semantic categories are missing or not machine-verified",
+    "site/dist/files/manifest.json: JSON shape is audited as public data, not as a canonical view-model instance",
+    "site/dist/files/manifest.json: missing or not machine-verified fields ['blocked_actions', 'canonical_source_identity', 'connector_mode_status', 'coverage_capability_posture', 'source_authority_posture', 'source_cache_posture', 'source_type_kind_family']",
+    "site/dist/files/manifest.json: not yet traced to canonical SourcePageView fixture",
+    "site/dist/files/manifest.json: some SourcePageView semantic categories are missing or not machine-verified",
+    "site/dist/lite/sources.html: missing or not machine-verified fields ['blocked_actions', 'evidence_ledger_posture', 'rights_risk_privacy_posture', 'source_policy_access_posture']",
+    "site/dist/lite/sources.html: not yet traced to canonical SourcePageView fixture",
+    "site/dist/lite/sources.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/lite/sources.html: some SourcePageView semantic categories are missing or not machine-verified",
+    "site/dist/needs/example-need.html: expected future/adjacent artifact is missing",
+    "site/dist/needs/example-need.html: missing or not machine-verified fields ['absence_scope', 'candidate_findings', 'canonical_need_identity', 'capability_gaps', 'limitations', 'near_matches', 'next_safe_work', 'no_exhaustive_global_search_claim', 'privacy_poisoning_posture', 'query_demand_posture', 'searched_scope', 'source_gaps', 'sources_checked_not_checked', 'unresolved_or_weakly_resolved_status']",
+    "site/dist/objects/example-object.html: expected future/adjacent artifact is missing",
+    "site/dist/objects/example-object.html: missing or not machine-verified fields ['allowed_actions', 'blocked_actions', 'candidate_review_posture', 'canonical_object_identity', 'compatibility_posture', 'evidence_posture', 'limitations', 'object_type_state_version_posture', 'parent_member_lineage', 'representation_file_member_posture', 'rights_risk_posture', 'source_posture', 'unresolved_gaps']",
+    "site/dist/sources.html: not yet traced to canonical SourcePageView fixture",
+    "site/dist/sources.html: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/sources/example-source.html: expected future/adjacent artifact is missing",
+    "site/dist/sources/example-source.html: missing or not machine-verified fields ['blocked_actions', 'canonical_source_identity', 'connector_mode_status', 'coverage_capability_posture', 'evidence_ledger_posture', 'known_gaps', 'known_limitations', 'placeholder_future_manual_only_status', 'rights_risk_privacy_posture', 'source_authority_posture', 'source_cache_posture', 'source_policy_access_posture', 'source_type_kind_family']",
+    "site/dist/text/sources.txt: missing or not machine-verified fields ['blocked_actions', 'canonical_source_identity', 'connector_mode_status', 'coverage_capability_posture', 'evidence_ledger_posture', 'known_limitations', 'rights_risk_privacy_posture', 'source_cache_posture', 'source_policy_access_posture']",
+    "site/dist/text/sources.txt: not yet traced to canonical SourcePageView fixture",
+    "site/dist/text/sources.txt: semantic extraction is conservative text matching, not renderer parity proof",
+    "site/dist/text/sources.txt: some SourcePageView semantic categories are missing or not machine-verified"
+  ],
+  "next_task": "TRACK-A-15 - Temporal Minimal Search design token contract",
+  "no_goals_preserved": [
+    "no site/dist regeneration",
+    "no runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no source connector or source sync runtime",
+    "no downloads/installers/execution",
+    "no uploads/accounts/telemetry",
+    "no public truth from candidates, source observations, evidence candidates, or AI drafts",
+    "no renderer implementation"
+  ],
+  "product_boundary": {
+    "changed_generated_site_artifacts": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "claimed_automatic_merge_or_promotion": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_public_truth_from_ai_drafts": false,
+    "claimed_public_truth_from_candidates": false,
+    "claimed_public_truth_from_evidence_candidates": false,
+    "claimed_public_truth_from_source_observations": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_native_projects": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_node_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "regenerated_site_dist": false
+  },
+  "schema_version": "track_a_14_projection_audit.v0",
+  "semantic_alignment": {
+    "CandidatePageView": {
+      "accepted_public_status_false": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "blocked_actions": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "candidate_origin": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "candidate_type_status": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "canonical_candidate_identity": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "evidence_posture": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "limitations": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "master_index_mutation_allowed_false": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "no_public_truth_from_candidates": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "proposed_object_state_summary": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "review_required": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "rights_risk_privacy_posture": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "source_observation_evidence_contribution_posture": {
+        "artifacts": [
+          "site/dist/demo/comparison-example.html",
+          "site/dist/demo/data/demo_snapshots.json"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      }
+    },
+    "NeedPageView": {
+      "absence_scope": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "candidate_findings": {
+        "artifacts": [],
+        "machine_verified": false,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "missing"
+      },
+      "canonical_need_identity": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "capability_gaps": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "limitations": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "near_matches": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "next_safe_work": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "no_exhaustive_global_search_claim": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "privacy_poisoning_posture": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "query_demand_posture": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "searched_scope": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "source_gaps": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "sources_checked_not_checked": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "unresolved_or_weakly_resolved_status": {
+        "artifacts": [
+          "site/dist/demo/absence-example.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      }
+    },
+    "ObjectPageView": {
+      "allowed_actions": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "blocked_actions": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "candidate_review_posture": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "canonical_object_identity": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "compatibility_posture": {
+        "artifacts": [
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "evidence_posture": {
+        "artifacts": [
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "limitations": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "object_type_state_version_posture": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "parent_member_lineage": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "representation_file_member_posture": {
+        "artifacts": [
+          "site/dist/data/public_index_summary.json",
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "rights_risk_posture": {
+        "artifacts": [
+          "site/dist/demo/result-firefox-xp.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "source_posture": {
+        "artifacts": [
+          "site/dist/demo/result-article-scan.html",
+          "site/dist/demo/result-firefox-xp.html",
+          "site/dist/demo/result-member-driver-inside-support-cd.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "unresolved_gaps": {
+        "artifacts": [
+          "site/dist/demo/result-firefox-xp.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      }
+    },
+    "SourcePageView": {
+      "blocked_actions": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "canonical_source_identity": {
+        "artifacts": [
+          "site/dist/demo/source-example.html",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "connector_mode_status": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/index.txt",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "coverage_capability_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "evidence_ledger_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/index.txt",
+          "site/dist/files/manifest.json",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "known_gaps": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/index.txt",
+          "site/dist/files/manifest.json",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html",
+          "site/dist/text/sources.txt"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "known_limitations": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/manifest.json",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "placeholder_future_manual_only_status": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/index.txt",
+          "site/dist/files/manifest.json",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html",
+          "site/dist/text/sources.txt"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "aligned"
+      },
+      "rights_risk_privacy_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/files/index.txt",
+          "site/dist/files/manifest.json",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "source_authority_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html",
+          "site/dist/text/sources.txt"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "source_cache_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "source_policy_access_posture": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/files/index.txt",
+          "site/dist/files/manifest.json",
+          "site/dist/sources.html"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      },
+      "source_type_kind_family": {
+        "artifacts": [
+          "site/dist/data/source_summary.json",
+          "site/dist/demo/source-example.html",
+          "site/dist/files/index.txt",
+          "site/dist/lite/sources.html",
+          "site/dist/sources.html",
+          "site/dist/text/sources.txt"
+        ],
+        "machine_verified": true,
+        "notes": [
+          "Conservative substring and JSON-field audit only; future projection work should use canonical fixtures."
+        ],
+        "status": "partially_aligned"
+      }
+    }
+  },
+  "source_view_schemas": {
+    "CandidatePageView": "contracts/views/candidate_page.v0.json",
+    "NeedPageView": "contracts/views/need_page.v0.json",
+    "ObjectPageView": "contracts/views/object_page.v0.json",
+    "SourcePageView": "contracts/views/source_page.v0.json"
+  },
+  "status": "warn",
+  "task": "TRACK-A-14",
+  "track": "A",
+  "warnings": [
+    "site/dist/candidates/example-candidate.html: artifact missing",
+    "site/dist/data/public_index_summary.json: public data summary is not a canonical ObjectPageView projection",
+    "site/dist/data/source_summary.json: public data summary is not a canonical SourcePageView projection",
+    "site/dist/demo/absence-example.html: demo surface is not a canonical NeedPageView projection",
+    "site/dist/demo/comparison-example.html: demo surface is not a canonical CandidatePageView projection",
+    "site/dist/demo/result-article-scan.html: demo surface is not a canonical ObjectPageView projection",
+    "site/dist/demo/result-firefox-xp.html: demo surface is not a canonical ObjectPageView projection",
+    "site/dist/demo/result-member-driver-inside-support-cd.html: demo surface is not a canonical ObjectPageView projection",
+    "site/dist/demo/source-example.html: demo surface is not a canonical SourcePageView projection",
+    "site/dist/needs/example-need.html: artifact missing",
+    "site/dist/objects/example-object.html: artifact missing",
+    "site/dist/sources/example-source.html: artifact missing"
+  ]
+}

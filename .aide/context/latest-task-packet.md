@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-A-13 - Static SearchPage projection dry-run generator
+UNSPECIFIED - TRACK-A-14 - Object Source Need Candidate projection audit
 
 ## GOAL
 
-TRACK-A-13 - Static SearchPage projection dry-run generator
+TRACK-A-14 - Object Source Need Candidate projection audit
 
 ## WHY
 
@@ -117,7 +117,7 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4063
+- chars: 4061
 - approx_tokens: 1016
 - budget_status: PASS
 - warnings:
