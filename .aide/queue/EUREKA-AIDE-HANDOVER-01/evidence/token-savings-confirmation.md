@@ -12,7 +12,7 @@
 Optional compact surfaces after Q26 regeneration:
 
 - `.aide/context/latest-context-packet.md`: 1827 chars / 457 approx tokens.
-- `.aide/context/latest-review-packet.md`: 5394 chars / 1349 approx tokens.
+- `.aide/context/latest-review-packet.md`: 4169 chars / 1043 approx tokens.
 
 Previous Q22 packet:
 
@@ -31,8 +31,8 @@ Q26 reuses the same local baseline family recorded by Q22:
 - `control/inventory/tests/README.md`
 - `.aide/memory/project-state.md`
 
-Current same-file baseline chars: 277363.
-Current same-file baseline approx tokens: 69341.
+Current same-file baseline chars: 274729.
+Current same-file baseline approx tokens: 68683.
 
 Historical Q22 baseline chars: 274587.
 Historical Q22 baseline approx tokens: 68647.
@@ -40,7 +40,7 @@ Historical Q22 baseline approx tokens: 68647.
 ## Result
 
 - Compact packet approx tokens: 1442.
-- Current same-file naive baseline approx tokens: 69341.
+- Current same-file naive baseline approx tokens: 68683.
 - Estimated reduction against current same-file baseline: 97.9%.
 - Estimated reduction against historical Q22 baseline: 97.9%.
 

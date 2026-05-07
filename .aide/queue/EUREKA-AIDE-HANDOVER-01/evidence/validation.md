@@ -30,8 +30,8 @@ Interpreter used: `py -3` with Python 3.11.
 - `py -3 .aide/scripts/aide_lite.py context`: PASS, 1827 chars / 457 approx tokens.
 - `py -3 .aide/scripts/aide_lite.py pack --task "Select the first bounded Eureka implementation task using AIDE Lite context and evidence"`: PASS, 3808 chars / 952 approx tokens; the packet was later specialized to the selected selftest repair task.
 - `py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md`: PASS, 5767 chars / 1442 approx tokens.
-- `py -3 .aide/scripts/aide_lite.py verify`: WARN, 7 warnings, 0 errors during active Q26 edits.
-- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, 5394 chars / 1349 approx tokens, verifier WARN.
+- `py -3 .aide/scripts/aide_lite.py verify`: WARN, 4 warnings, 0 errors after final sweep.
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, 4169 chars / 1043 approx tokens, verifier WARN.
 - `py -3 .aide/scripts/aide_lite.py ledger scan`: PASS, one near-budget cache-report warning.
 - `py -3 .aide/scripts/aide_lite.py ledger report`: PASS, one near-budget cache-report warning.
 - `py -3 .aide/scripts/aide_lite.py eval list`: PASS, 6 generic imported golden tasks.
@@ -53,4 +53,4 @@ Interpreter used: `py -3` with Python 3.11.
 - `py -3 scripts/check_architecture_boundaries.py`: PASS, 479 Python files checked.
 - Final broad targeted secret scan: PASS after inspection; matches were policy/example/path text such as `TOKEN_ESTIMATE`, `api_key` policy terms, and generated task-packet paths.
 - Final strict credential scan: PASS, no `sk-*`, `sk-ant-*`, provider env assignments, or private key blocks found.
-- Final pre-commit `git status --short`: only Q26 docs/evidence files pending.
+- Final pre-commit `git status --short`: only regenerated AIDE context/review/ledger/eval artifacts and updated Q26 validation/token/quality evidence pending.

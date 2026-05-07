@@ -34,23 +34,9 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/memory/decisions.md` (M; does not match active task allowed paths)
-- unknown: `.aide/memory/open-risks.md` (M; does not match active task allowed paths)
-- unknown: `.aide/memory/project-state.md` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
-- allowed: `.aide/routing/latest-route-decision.md` (M; matches active task allowed path)
-- allowed: `docs/reference/aide-handover.md` (??; matches active task allowed path)
-- allowed: `docs/reference/aide-lite-import.md` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -60,8 +46,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5394
-- approx_tokens: 1349
+- chars: 4169
+- approx_tokens: 1043
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

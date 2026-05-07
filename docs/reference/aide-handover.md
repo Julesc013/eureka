@@ -22,7 +22,7 @@ and review.
 The current Q26 handoff packet is `.aide/context/latest-task-packet.md`.
 
 - Current packet: 5767 chars / 1442 approximate tokens.
-- Current same-file baseline: 277363 chars / 69341 approximate tokens.
+- Current same-file baseline: 274729 chars / 68683 approximate tokens.
 - Historical Q22 baseline: 274587 chars / 68647 approximate tokens.
 - Estimated reduction: 97.9% using `chars / 4`.
 

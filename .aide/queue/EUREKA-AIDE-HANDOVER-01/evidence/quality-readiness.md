@@ -7,9 +7,9 @@
 - `snapshot`: PASS.
 - `index`: PASS.
 - `context`: PASS.
-- `verify`: WARN, 7 warnings, 0 errors during active Q26 edits.
+- `verify`: WARN, 4 warnings, 0 errors after the final sweep.
 - `review-pack`: PASS, generated `.aide/context/latest-review-packet.md` at
-  5394 chars / 1349 approximate tokens.
+  4169 chars / 1043 approximate tokens.
 - `ledger scan/report`: PASS with one near-budget cache report warning.
 - `eval run`: PASS, 6/6 imported generic golden tasks.
 - `route explain`: PASS, advisory only, no provider/model/network calls.

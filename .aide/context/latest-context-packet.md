@@ -25,7 +25,7 @@
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
 - file_count: 4233
-- source_snapshot_hash: `9b0ae3dd4d740b1fd4b882d10e3046f68415b542cb229c2b146c10b6c7088bf6`
+- source_snapshot_hash: `4b17506e9d533d5f5378ebd131f05548b3fb68c15fb48178a32bedde4d7c26f0`
 
 ## ROLE_COUNTS
 
