@@ -1,0 +1,6 @@
+schema_version: aide.status.v0
+id: TRACK-A-01
+status: queued
+result: not_started
+review_gate: pending_execution
+summary: Next task after the convergence audit.

@@ -13,7 +13,7 @@ claiming product readiness or changing Eureka product behavior.
 - Primary task packet: `.aide/context/latest-task-packet.md`.
 - Handoff report: `.aide/reports/eureka-aide-lite-operating-handoff.md`.
 - Latest review packet: `.aide/context/latest-review-packet.md`.
-- Current queue item after this report: `EUREKA-CONVERGE-01`.
+- Current queue item after convergence: `TRACK-A-01`.
 
 ## AIDE Lite Validation
 
@@ -33,10 +33,10 @@ claiming product readiness or changing Eureka product behavior.
 
 - Latest task packet path: `.aide/context/latest-task-packet.md`.
 - Latest review packet path: `.aide/context/latest-review-packet.md`.
-- Latest compact task packet budget state: within budget, 4,796 chars / 1,199
+- Latest compact task packet budget state: within budget, 4,472 chars / 1,118
   approximate tokens by chars/4.
-- Current task completed by this report: `EUREKA-AIDE-REAL-01`.
-- Next recommended queue item: `EUREKA-CONVERGE-01`.
+- Current task completed by convergence: `EUREKA-CONVERGE-01`.
+- Next recommended queue item: `TRACK-A-01`.
 - Known WARN-only conditions: optional AIDE controller/gateway/provider status
   reports are not present; future task/evidence references may warn until their
   queue packet exists; pre-commit verification can also warn on diff scope while
@@ -55,13 +55,12 @@ claiming product readiness or changing Eureka product behavior.
 
 ## Next Execution Spine
 
-1. `EUREKA-CONVERGE-01`
-2. Track A representation/view-model spine
-3. Manual Observation Batch 0
-4. Track B node/contribution/source/evidence loop
-5. Track D snapshot/relay
-6. Track C native clients
-7. Track E hosting/ops
+1. Track A representation/view-model spine
+2. Manual Observation Batch 0
+3. Track B node/contribution/source/evidence loop
+4. Track D snapshot/relay
+5. Track C native clients
+6. Track E hosting/ops
 
 ## Future-Agent Read Order
 

@@ -1,0 +1,37 @@
+schema_version: aide.queue-task.v0
+task_id: TRACK-A-01
+title: Host/profile/representation contract bundle
+status: queued
+target_repo: julesc013/eureka
+phase: TRACK-A-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Align host profile, representation, access-path, compatibility, evidence, and action vocabulary into one bounded Track A contract bundle.
+scope:
+  allowed_paths:
+    - control/audits/track-a-01/**
+    - docs/**
+    - contracts/**
+    - .aide/queue/TRACK-A-01/**
+    - .aide/context/**
+    - .aide/reports/**
+    - .aide/memory/**
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - connectors/**
+    - packaging/**
+    - third_party/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - host/profile/representation contract bundle exists
+  - representation/view-model vocabulary is explicit
+  - no runtime behavior is changed
+  - validation and evidence are recorded
+recommended_after: EUREKA-CONVERGE-01

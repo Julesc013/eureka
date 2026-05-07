@@ -7,4 +7,4 @@
 - Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
 - Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
 - Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
-- `EUREKA-AIDE-REAL-01` adds a bounded repo-health report; the next task should be `EUREKA-CONVERGE-01`, a queue convergence audit before connector, gateway, native, runtime, or broad product work.
+- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.

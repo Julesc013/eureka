@@ -1,0 +1,210 @@
+{
+  "schema_version": "eureka_convergence_report.v0",
+  "status": "warn",
+  "audit_id": "eureka-convergence-v0",
+  "task_id": "EUREKA-CONVERGE-01",
+  "generated_at_note": "codex_generated_from_repo_local_context",
+  "primary_sources": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/reports/eureka-aide-lite-operating-handoff.md",
+    ".aide/reports/eureka-repo-health.md",
+    ".aide/reports/eureka-repo-health.json",
+    "AGENTS.md",
+    "README.md",
+    "docs/ROADMAP.md",
+    "docs/roadmap/BACKEND_ROADMAP.md",
+    "docs/roadmap/PUBLIC_ALPHA.md",
+    "docs/roadmap/NATIVE_APPS_LATER.md",
+    "docs/architecture/COMPATIBILITY_SURFACES.md",
+    "docs/architecture/PUBLICATION_PLANE.md",
+    "control/inventory/publication/",
+    ".aide/queue/index.yaml"
+  ],
+  "current_state": {
+    "product_status": "python_reference_backend_prototype_not_production",
+    "aide_lite_status": "operational_warn_only_verify",
+    "public_static_search_status": "static_and_local_prototype_only",
+    "pack_source_evidence_index_contribution_status": "contract_validation_example_planning_or_local_dry_run_only",
+    "staging_import_status": "validate_only_private_quarantine_planning_and_read_only_inspection",
+    "ai_status": "disabled_by_default_contract_and_offline_validation_only",
+    "native_relay_snapshot_status": "contract_design_planning_seed_examples_only",
+    "hosting_status": "operator_gated_no_hosted_backend_claim"
+  },
+  "aide_state": {
+    "latest_task_packet": ".aide/context/latest-task-packet.md",
+    "latest_review_packet": ".aide/context/latest-review-packet.md",
+    "repo_health_report": ".aide/reports/eureka-repo-health.md",
+    "current_queue_item": "EUREKA-CONVERGE-01",
+    "next_queue_item": "TRACK-A-01",
+    "validation": {
+      "doctor": "pass",
+      "validate": "pass",
+      "test": "pass",
+      "selftest": "pass",
+      "verify": "warn_only",
+      "eval_list": "pass",
+      "eval_run": "pass",
+      "adapter_validate": "pass",
+      "architecture_boundaries": "pass"
+    },
+    "future_agent_read_order": [
+      ".aide/context/latest-task-packet.md",
+      ".aide/reports/eureka-aide-lite-operating-handoff.md",
+      ".aide/reports/eureka-repo-health.md",
+      "control/audits/eureka-convergence-v0/README.md",
+      "AGENTS.md"
+    ]
+  },
+  "track_order": [
+    {
+      "id": "A0",
+      "title": "convergence / preflight",
+      "classification": "already_live"
+    },
+    {
+      "id": "TRACK-A",
+      "title": "representation and view-model spine",
+      "classification": "should_execute_next"
+    },
+    {
+      "id": "MANUAL-OBSERVATION-BATCH-0",
+      "title": "manual observation batch 0",
+      "classification": "human_operated"
+    },
+    {
+      "id": "TRACK-B",
+      "title": "Eureka Node, work units, candidates, source/evidence/review loop",
+      "classification": "should_merge_into_larger_prompt"
+    },
+    {
+      "id": "TRACK-D",
+      "title": "snapshot and relay substrate",
+      "classification": "deferred_until_after_track_b"
+    },
+    {
+      "id": "TRACK-C",
+      "title": "native clients",
+      "classification": "deferred_until_after_track_d"
+    },
+    {
+      "id": "TRACK-E",
+      "title": "hosting and operations",
+      "classification": "operator_gated_last"
+    }
+  ],
+  "public_alpha_reinterpretation": {
+    "early_public_alpha_shaped_work": "local_staging_static_or_localhost_rehearsal_evidence",
+    "actual_hosted_public_alpha": "track_e_only",
+    "hosted_backend_claimed_now": false,
+    "live_probes_enabled_now": false,
+    "hosted_public_search_enabled_now": false
+  },
+  "prompt_queue_reconciliation": [
+    {
+      "item": "early_backend_source_planner_index_eval_runtime_seams",
+      "classification": "already_live",
+      "track": "baseline"
+    },
+    {
+      "item": "static_site_public_data_lite_text_files_demo_snapshots",
+      "classification": "generated_not_live",
+      "track": "TRACK-A/TRACK-E input"
+    },
+    {
+      "item": "P54_hosted_public_search_wrapper",
+      "classification": "generated_not_live",
+      "track": "TRACK-E input"
+    },
+    {
+      "item": "P59_to_P68_query_intelligence_and_candidate_contracts",
+      "classification": "should_merge_into_larger_prompt",
+      "track": "TRACK-B"
+    },
+    {
+      "item": "P69_to_P76_source_and_connector_approval_packs",
+      "classification": "approval_gated",
+      "track": "TRACK-B"
+    },
+    {
+      "item": "P77_hosted_deployment_evidence",
+      "classification": "operator_gated",
+      "track": "TRACK-E"
+    },
+    {
+      "item": "P78_external_baseline_comparison",
+      "classification": "human_operated",
+      "track": "MANUAL-OBSERVATION-BATCH-0"
+    },
+    {
+      "item": "P79_to_P85_public_object_source_comparison_identity_ranking_contracts",
+      "classification": "should_merge_into_larger_prompt",
+      "track": "TRACK-A"
+    },
+    {
+      "item": "P98_P99_source_cache_and_evidence_ledger_dry_runs",
+      "classification": "generated_not_live",
+      "track": "TRACK-B"
+    },
+    {
+      "item": "generic_AIDE_REAL_02_REAL_03_and_product_ready_review",
+      "classification": "obsolete_or_merged",
+      "track": "track_spine"
+    }
+  ],
+  "next_execution_spine": [
+    "TRACK-A-01",
+    "TRACK-A-02",
+    "TRACK-A-03",
+    "TRACK-A-04",
+    "TRACK-A-05",
+    "MANUAL-OBSERVATION-BATCH-0",
+    "TRACK-B-01",
+    "TRACK-B-02",
+    "TRACK-B-03",
+    "TRACK-B-04",
+    "TRACK-D-01",
+    "TRACK-D-02",
+    "TRACK-C-01",
+    "TRACK-E-01",
+    "TRACK-E-02"
+  ],
+  "gates": {
+    "hosted_backend_claim": false,
+    "live_probes": false,
+    "broad_crawling_or_scraping": false,
+    "downloads_installers_execution": false,
+    "uploads_accounts_telemetry": false,
+    "master_index_mutation": false,
+    "public_truth_from_candidates": false,
+    "ai_truth": false,
+    "native_project_before_track_c": false,
+    "full_hosting_before_track_e": false
+  },
+  "validation": {
+    "git_status_short": "pass_scoped_changes_before_commit",
+    "git_diff_check": "pass_line_ending_notices_only",
+    "json_tool": "pass",
+    "repo_health_json_tool": "pass",
+    "git_check_ignore_aide_local": "pass",
+    "architecture_boundaries": "pass_479_python_files_checked",
+    "aide_doctor": "pass_optional_status_warnings_only",
+    "aide_validate": "pass_latest_task_packet_4472_chars_1118_tokens",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "warn_only_16_warnings_0_errors",
+    "aide_eval_list": "pass_12_active_tasks",
+    "aide_eval_run": "pass_12_of_12",
+    "aide_review_pack": "pass_5586_chars_1397_tokens",
+    "aide_adapter_validate": "pass",
+    "aide_ledger_scan": "warn_near_budget_cache_report_only",
+    "strict_secret_scan": "pass_false_positives_only"
+  },
+  "limitations": [
+    "audit_only_no_product_behavior_change",
+    "manual_observation_batch_0_still_human_operated",
+    "hosted_public_alpha_still_track_e_operator_gated",
+    "verify_warn_only_conditions_may_remain",
+    "no_exact_tokenizer_or_provider_billing_proof"
+  ],
+  "next_task": "TRACK-A-01 - Host/profile/representation contract bundle"
+}

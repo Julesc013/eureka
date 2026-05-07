@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: EUREKA-CONVERGE-01
 title: Track and prompt queue convergence audit
-status: queued
+status: needs_review
 target_repo: julesc013/eureka
 phase: EUREKA-CONVERGE-01
 source_packet: .aide/context/latest-task-packet.md
@@ -39,3 +39,4 @@ acceptance:
   - no product behavior paths are modified
   - validation and evidence are recorded
 recommended_after: EUREKA-AIDE-REAL-01
+next_recommended_task: TRACK-A-01

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4796 chars, 1199 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4472 chars, 1118 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,16 +33,24 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - unknown: `.aide/memory/open-risks.md` (M; does not match active task allowed paths)
 - unknown: `.aide/memory/project-state.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-REAL-01` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-CONVERGE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-CONVERGE-01/evidence` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-CONVERGE-01/status.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-CONVERGE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/TRACK-A-01` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (??; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- unknown: `control/audits/eureka-convergence-v0` (??; does not match active task allowed paths)
+- unknown: `docs/decisions` (??; does not match active task allowed paths)
+- allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -52,8 +60,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4899
-- approx_tokens: 1225
+- chars: 5586
+- approx_tokens: 1397
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -106,7 +114,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
 - Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
 - Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
-- `EUREKA-AIDE-REAL-01` adds a bounded repo-health report; the next task should be `EUREKA-CONVERGE-01`, a queue convergence audit before connector, gateway, native, runtime, or broad product work.
+- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.
 
 ## Non-Goals / Scope Guard
 

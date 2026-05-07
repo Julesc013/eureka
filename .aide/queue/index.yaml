@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-07
 repo: julesc013/eureka
-current_recommended_task: EUREKA-CONVERGE-01
+current_recommended_task: TRACK-A-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -19,11 +19,116 @@ entries:
     recommended_after: EUREKA-AIDE-FINAL-HANDOFF-01
   - id: EUREKA-CONVERGE-01
     title: Track and prompt queue convergence audit
-    status: queued
+    status: needs_review
     purpose: Converge the next Eureka prompt queue before product implementation.
     allowed_scope_summary: AIDE reports/evidence/context and review docs only unless a future task explicitly broadens scope.
     gate: EUREKA-AIDE-REAL-01 reviewed; repo-health report remains current; no product behavior changes.
     recommended_after: EUREKA-AIDE-REAL-01
+  - id: TRACK-A-01
+    title: Host/profile/representation contract bundle
+    status: queued
+    purpose: Start Track A by aligning host profile, representation, access path, compatibility, evidence, and action vocabulary.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence only; no runtime behavior.
+    gate: EUREKA-CONVERGE-01 reviewed; no product runtime, public route, hosting, connector, or native changes.
+    recommended_after: EUREKA-CONVERGE-01
+  - id: TRACK-A-02
+    title: Public result view-model and card alignment
+    status: queued
+    purpose: Map result-card, representation, compatibility, action, and evidence fields into one public-safe view-model spine.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence only unless explicitly scoped.
+    gate: TRACK-A-01 reviewed.
+    recommended_after: TRACK-A-01
+  - id: TRACK-A-03
+    title: Object/source/comparison page view-model convergence
+    status: queued
+    purpose: Reconcile object, source, comparison, identity, merge/dedup, and ranking contract vocabulary for future pages.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence only unless explicitly scoped.
+    gate: TRACK-A-02 reviewed.
+    recommended_after: TRACK-A-02
+  - id: TRACK-A-04
+    title: Explanation and compatibility posture alignment
+    status: queued
+    purpose: Align search-result explanation, compatibility-aware ranking, and evidence-weighted ranking as explanation posture.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence only; no public search order changes.
+    gate: TRACK-A-03 reviewed.
+    recommended_after: TRACK-A-03
+  - id: TRACK-A-05
+    title: Static/public data projection readiness review
+    status: queued
+    purpose: Decide which Track A fields can safely project to static public data and future clients.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no generated artifact mutation unless explicitly requested.
+    gate: TRACK-A-04 reviewed.
+    recommended_after: TRACK-A-04
+  - id: MANUAL-OBSERVATION-BATCH-0
+    title: Human observation execution
+    status: human_operated
+    purpose: Fill prioritized manual observation slots without scraping or automation.
+    allowed_scope_summary: manual observation records only under a human-operated prompt.
+    gate: TRACK-A view-model spine reviewed.
+    recommended_after: TRACK-A-05
+  - id: TRACK-B-01
+    title: Work unit and search-need convergence
+    status: queued
+    purpose: Reconcile query observation, miss ledger, search need, and probe queue into bounded work units.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence unless explicitly scoped.
+    gate: Manual Observation Batch 0 posture reviewed.
+    recommended_after: MANUAL-OBSERVATION-BATCH-0
+  - id: TRACK-B-02
+    title: Candidate/source/evidence review-loop contract
+    status: queued
+    purpose: Align candidate index, source cache, evidence ledger, promotion policy, and master-index review queue.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence; no master-index mutation.
+    gate: TRACK-B-01 reviewed.
+    recommended_after: TRACK-B-01
+  - id: TRACK-B-03
+    title: Connector approval and runtime planning audit
+    status: approval_gated
+    purpose: Reconcile source connector approval packs and runtime planning without enabling live connectors.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no external calls or connector runtime.
+    gate: TRACK-B-02 reviewed and source approvals explicit.
+    recommended_after: TRACK-B-02
+  - id: TRACK-B-04
+    title: Pack import and local staging dry-run review
+    status: queued
+    purpose: Reconcile validate-only import, quarantine/staging, staged inspector, and local dry-run reports.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no import runtime or public index mutation.
+    gate: TRACK-B-03 reviewed.
+    recommended_after: TRACK-B-03
+  - id: TRACK-D-01
+    title: Snapshot manifest and public-data bundle convergence
+    status: queued
+    purpose: Prepare snapshot substrate from static/public data contracts and seed snapshot policy.
+    allowed_scope_summary: contracts/docs/control audit/AIDE evidence unless explicitly scoped.
+    gate: TRACK-B-04 reviewed.
+    recommended_after: TRACK-B-04
+  - id: TRACK-D-02
+    title: Relay static HTTP prototype readiness audit
+    status: queued
+    purpose: Review readiness for a later local static HTTP relay prototype implementation.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no socket listener or relay runtime.
+    gate: TRACK-D-01 reviewed.
+    recommended_after: TRACK-D-01
+  - id: TRACK-C-01
+    title: Native client lane approval review
+    status: approval_gated
+    purpose: Decide whether the Windows 7 WinForms read-only lane can proceed after Track D.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no native project creation.
+    gate: TRACK-D-02 reviewed and explicit human approval.
+    recommended_after: TRACK-D-02
+  - id: TRACK-E-01
+    title: Hosted public alpha readiness preflight
+    status: operator_gated
+    purpose: Collect static hosting, backend wrapper, safety, abuse, and operator-evidence requirements before hosted claims.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no deployment or hosting setting mutation.
+    gate: Track A/B/D/C readiness reviewed.
+    recommended_after: TRACK-C-01
+  - id: TRACK-E-02
+    title: Hosted evidence capture plan
+    status: operator_gated
+    purpose: Define operator-run evidence capture for static host, backend URL, DNS/TLS, rate limits, logs, rollback, and disabled live probes.
+    allowed_scope_summary: docs/control audit/AIDE evidence; no Codex-driven network/provider changes.
+    gate: TRACK-E-01 reviewed.
+    recommended_after: TRACK-E-01
   - id: EUREKA-AIDE-REAL-02
     title: Improve one deterministic Eureka eval/report/check using AIDE Lite
     status: queued

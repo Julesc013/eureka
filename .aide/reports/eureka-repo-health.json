@@ -5,12 +5,12 @@
   "primary_task_packet": ".aide/context/latest-task-packet.md",
   "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
   "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "current_queue_item": "EUREKA-CONVERGE-01",
-  "completed_queue_item": "EUREKA-AIDE-REAL-01",
+  "current_queue_item": "TRACK-A-01",
+  "completed_queue_item": "EUREKA-CONVERGE-01",
   "latest_packet_budget": {
-    "approx_tokens": 1199,
+    "approx_tokens": 1118,
     "budget_status": "within_budget",
-    "chars": 4796,
+    "chars": 4472,
     "method": "chars / 4 approximation",
     "path": ".aide/context/latest-task-packet.md"
   },
@@ -43,7 +43,6 @@
     "aide_metadata_is_product_runtime": false
   },
   "next_spine": [
-    "EUREKA-CONVERGE-01",
     "TRACK-A",
     "MANUAL-OBSERVATION-BATCH-0",
     "TRACK-B",

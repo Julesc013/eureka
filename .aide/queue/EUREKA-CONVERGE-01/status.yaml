@@ -1,6 +1,7 @@
 schema_version: aide.status.v0
 id: EUREKA-CONVERGE-01
-status: queued
-result: not_started
-review_gate: pending_execution
-summary: Next queued task after the Eureka AIDE Lite repo-health report.
+status: needs_review
+result: pass_with_warn_only_verify_expected
+review_gate: needs_review
+summary: Convergence audit added and Track A promoted as the next execution spine.
+next_recommended_task: TRACK-A-01
