@@ -8225,14 +8225,328 @@ def command_show_config(args: argparse.Namespace) -> int:
     return 0
 
 
+def selftest_gitignore_text(source_root: Path) -> str:
+    if (source_root / ".gitignore").exists():
+        lines = read_text(source_root / ".gitignore").splitlines()
+    else:
+        lines = []
+    normalized = {line.strip() for line in lines}
+    for pattern in GITIGNORE_REQUIRED_PATTERNS:
+        if pattern not in normalized:
+            lines.append(pattern)
+    return "\n".join(lines).strip() + "\n"
+
+
+SELFTEST_OPTIONAL_PY_FALLBACKS = {
+    "core/gateway/__init__.py": '''"""Selftest-only offline Gateway package fallback."""\n''',
+    "core/gateway/gateway_status.py": '''"""Selftest-only offline Gateway status fallback."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+ENDPOINTS = ["/health", "/status", "/route/explain", "/summaries", "/version"]
+
+
+def health_payload() -> dict[str, object]:
+    return {
+        "status": "ok",
+        "provider_calls_enabled": False,
+        "model_calls_enabled": False,
+        "outbound_network_enabled": False,
+    }
+
+
+def route_explain_payload() -> dict[str, object]:
+    return {
+        "route_class": "no_model_tool",
+        "quality_gate_status": "PASS",
+        "advisory_only": True,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+    }
+
+
+def status_payload(repo_root: str | Path | None = None) -> dict[str, object]:
+    return build_gateway_status(repo_root)
+
+
+def summaries_payload() -> dict[str, object]:
+    return {"summaries": [], "contents_inline": False}
+
+
+def version_payload() -> dict[str, object]:
+    return {"version": "selftest-fixture", "local_skeleton": True}
+
+
+def endpoint_payload(endpoint: str, repo_root: str | Path | None = None) -> tuple[int, dict[str, object]]:
+    if endpoint == "/health":
+        return 200, health_payload()
+    if endpoint == "/status":
+        return 200, status_payload(repo_root)
+    if endpoint == "/route/explain":
+        return 200, route_explain_payload()
+    if endpoint == "/summaries":
+        return 200, summaries_payload()
+    if endpoint == "/version":
+        return 200, version_payload()
+    return 404, {"status": "not_found"}
+
+
+def smoke_gateway(repo_root: str | Path | None = None) -> dict[str, object]:
+    endpoint_results = []
+    for endpoint in ENDPOINTS:
+        status_code, payload = endpoint_payload(endpoint, repo_root)
+        endpoint_results.append(
+            {
+                "endpoint": endpoint,
+                "status_code": status_code,
+                "status": payload.get("status", "ok"),
+            }
+        )
+    not_found_status_code, not_found = endpoint_payload("/unknown", repo_root)
+    return {
+        "result": "PASS",
+        "endpoints": endpoint_results,
+        "not_found_status_code": not_found_status_code,
+        "not_found_status": not_found.get("status", "not_found"),
+    }
+
+
+def build_gateway_status(repo_root: str | Path | None = None) -> dict[str, object]:
+    return {
+        "schema_version": "aide.gateway-status.v0",
+        "generated_by": "aide-lite selftest fixture",
+        "service": "aide-gateway-skeleton",
+        "mode": "local_skeleton_report_only",
+        "provider_calls_enabled": False,
+        "model_calls_enabled": False,
+        "outbound_network_enabled": False,
+        "raw_prompt_storage": False,
+        "raw_response_storage": False,
+        "readiness": {},
+        "signals": {
+            "verifier_status": "PASS",
+            "golden_task_status": "PASS",
+            "provider_adapters": {"present": True},
+            "route": {
+                "route_class": "no_model_tool",
+                "quality_gate_status": "PASS",
+            },
+        },
+        "summaries": {},
+    }
+
+
+def write_gateway_status_files(repo_root: str | Path) -> tuple[Path, Path, dict[str, object]]:
+    root = Path(repo_root)
+    data = build_gateway_status(root)
+    json_path = root / ".aide/gateway/latest-gateway-status.json"
+    md_path = root / ".aide/gateway/latest-gateway-status.md"
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+    json_path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\\n", encoding="utf-8", newline="\\n")
+    md_path.write_text(
+        "# Gateway Status\\n\\n"
+        "- provider_calls_enabled: false\\n"
+        "- model_calls_enabled: false\\n"
+        "- outbound_network_enabled: false\\n",
+        encoding="utf-8",
+        newline="\\n",
+    )
+    return json_path, md_path, data
+''',
+    "core/gateway/server.py": '''"""Selftest-only offline Gateway server fallback."""
+
+from __future__ import annotations
+
+
+def serve(repo_root, host: str = "127.0.0.1", port: int = 0) -> None:
+    return None
+''',
+    "core/providers/__init__.py": '''"""Selftest-only offline provider package fallback."""\n''',
+    "core/providers/contracts.py": '''"""Selftest-only offline provider contract fallback."""
+
+from __future__ import annotations
+
+
+class AdapterClass:
+    DETERMINISTIC_TOOL = "deterministic_tool"
+    HUMAN_REVIEW = "human_review"
+    LOCAL_MODEL = "local_model"
+    REMOTE_MODEL = "remote_model"
+    AGGREGATOR = "aggregator"
+''',
+    "core/providers/registry.py": '''"""Selftest-only offline provider registry fallback."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+
+
+PROVIDER_IDS = [
+    "deterministic_tools",
+    "human",
+    "local_ollama",
+    "local_lm_studio",
+    "local_llama_cpp",
+    "local_vllm",
+    "local_sglang",
+    "openai",
+    "anthropic",
+    "google_gemini",
+    "deepseek",
+    "openrouter",
+    "other_remote_provider",
+]
+
+
+@dataclass(frozen=True)
+class ProviderMetadata:
+    provider_id: str
+    adapter_class: str
+    provider_class: str
+    privacy_class: str
+    credentials_required: bool
+    status: str
+
+
+def _metadata_for(provider_id: str) -> ProviderMetadata:
+    if provider_id == "deterministic_tools":
+        return ProviderMetadata(provider_id, "deterministic_tool", "deterministic", "local", False, "active")
+    if provider_id == "human":
+        return ProviderMetadata(provider_id, "human_review", "human", "local", False, "active")
+    if provider_id.startswith("local_"):
+        return ProviderMetadata(provider_id, "local_model", "local_model", "local", False, "available")
+    if provider_id == "openrouter":
+        return ProviderMetadata(provider_id, "aggregator", "remote_model", "remote", True, "metadata_only")
+    return ProviderMetadata(provider_id, "remote_model", "remote_model", "remote", True, "metadata_only")
+
+
+def load_provider_catalog(repo_root: str | Path) -> list[ProviderMetadata]:
+    return [_metadata_for(provider_id) for provider_id in PROVIDER_IDS]
+
+
+def validate_provider_files(repo_root: str | Path) -> dict[str, object]:
+    root = Path(repo_root)
+    errors: list[str] = []
+    for rel in [
+        ".aide/providers/provider-catalog.yaml",
+        ".aide/providers/capability-matrix.yaml",
+        ".aide/providers/adapter-contract.yaml",
+        ".aide/providers/status.yaml",
+    ]:
+        path = root / rel
+        if path.exists() and "live_calls_allowed_in_q20: true" in path.read_text(encoding="utf-8"):
+            errors.append(f"live calls enabled in {rel}")
+    return {
+        "result": "FAIL" if errors else "PASS",
+        "errors": errors,
+        "warnings": [],
+        "provider_count": len(PROVIDER_IDS),
+    }
+''',
+    "core/providers/status.py": '''"""Selftest-only offline provider status fallback."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from .registry import PROVIDER_IDS, load_provider_catalog, validate_provider_files
+
+
+def build_provider_status(repo_root: str | Path) -> dict[str, object]:
+    providers = load_provider_catalog(repo_root)
+    validation = validate_provider_files(repo_root)
+    remote_count = sum(1 for provider in providers if provider.credentials_required)
+    return {
+        "schema_version": "aide.provider-status.v0",
+        "generated_by": "aide-lite selftest fixture",
+        "provider_adapter_contract": ".aide/providers/adapter-contract.yaml",
+        "live_provider_calls": False,
+        "live_model_calls": False,
+        "network_calls": False,
+        "provider_probe_calls": False,
+        "credentials_configured": False,
+        "gateway_forwarding": False,
+        "raw_prompt_storage": False,
+        "raw_response_storage": False,
+        "provider_family_count": len(providers),
+        "provider_ids": [provider.provider_id for provider in providers],
+        "provider_class_counts": {
+            "deterministic": 1,
+            "human": 1,
+            "local_model": 5,
+            "remote_model": 6,
+        },
+        "adapter_class_counts": {
+            "deterministic_tool": 1,
+            "human_review": 1,
+            "local_model": 5,
+            "remote_model": 5,
+            "aggregator": 1,
+        },
+        "privacy_class_counts": {"local": 7, "remote": 6},
+        "status_counts": {"active": 2, "available": 5, "metadata_only": 6},
+        "validation": validation,
+        "credential_required_count": remote_count,
+        "no_credentials_in_status": True,
+    }
+
+
+def write_provider_status_files(repo_root: str | Path) -> tuple[Path, Path, dict[str, object]]:
+    root = Path(repo_root)
+    data = build_provider_status(root)
+    json_path = root / ".aide/providers/latest-provider-status.json"
+    md_path = root / ".aide/providers/latest-provider-status.md"
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+    json_path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\\n", encoding="utf-8", newline="\\n")
+    md_path.write_text(
+        "# Provider Status\\n\\n"
+        "- live_provider_calls: false\\n"
+        "- live_model_calls: false\\n"
+        "- network_calls: false\\n"
+        "- credentials_configured: false\\n",
+        encoding="utf-8",
+        newline="\\n",
+    )
+    return json_path, md_path, data
+
+
+def contract_summary(repo_root: str | Path) -> dict[str, object]:
+    return {
+        "contract_path": ".aide/providers/adapter-contract.yaml",
+        "required_fields": [
+            "provider_id",
+            "adapter_class",
+            "provider_class",
+            "privacy_class",
+            "credentials_required",
+            "status",
+        ],
+    }
+
+
+def offline_probe(repo_root: str | Path) -> dict[str, object]:
+    validation = validate_provider_files(repo_root)
+    return {
+        "result": validation.get("result", "PASS"),
+        "provider_family_count": len(PROVIDER_IDS),
+        "provider_probe_calls": False,
+        "future_credentials_location": ".aide.local/",
+    }
+''',
+}
+
+
 def _write_minimal_repo(root: Path) -> None:
     for rel in REQUIRED_FILES:
         (root / rel).parent.mkdir(parents=True, exist_ok=True)
     source_root = repo_root_from_script()
-    if (source_root / ".gitignore").exists():
-        write_text(root / ".gitignore", read_text(source_root / ".gitignore"))
-    else:
-        write_text(root / ".gitignore", "\n".join(GITIGNORE_REQUIRED_PATTERNS) + "\n")
+    write_text(root / ".gitignore", selftest_gitignore_text(source_root))
     write_text(root / ".aide/policies/token-budget.yaml", read_text(source_root / ".aide/policies/token-budget.yaml"))
     write_text(root / ".aide/memory/project-state.md", "# Project\n\nCompact state.\n")
     write_text(root / ".aide/memory/decisions.md", "# Decisions\n")
@@ -8281,7 +8595,9 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, read_text(source))
     for rel in Q18_REQUIRED_FILES:
         source = source_root / rel
-        if source.exists() and source.is_file():
+        if rel == ".gitignore":
+            write_text(root / rel, selftest_gitignore_text(source_root))
+        elif source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
         elif rel.endswith(".json"):
             write_text(root / rel, stable_json_text({"schema_version": "q18.cache-keys.v0", "contents_inline": False, "raw_prompt_storage": False, "raw_response_storage": False, "keys": {}}))
@@ -8291,6 +8607,8 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+        elif rel in SELFTEST_OPTIONAL_PY_FALLBACKS:
+            write_text(root / rel, SELFTEST_OPTIONAL_PY_FALLBACKS[rel])
         elif rel.endswith(".json"):
             write_text(root / rel, stable_json_text({"schema_version": "aide.gateway-status.v0", "provider_calls_enabled": False, "model_calls_enabled": False, "outbound_network_enabled": False, "raw_prompt_storage": False, "raw_response_storage": False, "readiness": {}, "signals": {}, "summaries": {}}))
         else:
@@ -8299,6 +8617,8 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+        elif rel in SELFTEST_OPTIONAL_PY_FALLBACKS:
+            write_text(root / rel, SELFTEST_OPTIONAL_PY_FALLBACKS[rel])
         elif rel.endswith(".json"):
             write_text(root / rel, stable_json_text({"schema_version": "aide.provider-status.v0", "live_provider_calls": False, "live_model_calls": False, "network_calls": False, "provider_probe_calls": False, "credentials_configured": False, "gateway_forwarding": False, "raw_prompt_storage": False, "raw_response_storage": False, "provider_ids": []}))
         else:
