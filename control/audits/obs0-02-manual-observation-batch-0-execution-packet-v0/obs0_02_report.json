@@ -1,0 +1,69 @@
+{
+  "schema_version": "obs0_02_report.v0",
+  "status": "warn",
+  "track": "Manual Observation Batch 0",
+  "task": "OBS0-02",
+  "added_docs": [
+    "docs/operations/MANUAL_OBSERVATION_BATCH_0_EXECUTION.md",
+    "docs/operations/MANUAL_OBSERVATION_SLOT_COMPLETION_GUIDE.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_PACKET.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/SLOT_COMPLETION_GUIDE.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_STATUS.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/manual_observation_batch_0_execution.json",
+    "control/inventory/observations/manual_observation_batch_0_slot_manifest.json"
+  ],
+  "added_scripts": [
+    "scripts/prepare_manual_observation_batch0_execution.py",
+    "scripts/validate_manual_observation_batch0_execution.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_manual_observation_batch0_execution.py"
+  ],
+  "validation": {
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/observations/manual_observation_batch_0_execution.json": "pass",
+    "python -m json.tool control/inventory/observations/manual_observation_batch_0_slot_manifest.json": "pass",
+    "python -m json.tool control/audits/obs0-02-manual-observation-batch-0-execution-packet-v0/obs0_02_report.json": "pass",
+    "python scripts/prepare_manual_observation_batch0_execution.py --check": "pass",
+    "python scripts/validate_manual_observation_batch0_execution.py": "pass",
+    "python scripts/validate_manual_observation_protocol.py": "pass",
+    "python scripts/validate_external_baseline_observations.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn"
+  },
+  "batch_id": "batch_0",
+  "slot_count": 39,
+  "pending_slots": 39,
+  "observed_slots_created_by_this_task": 0,
+  "execution_ready": true,
+  "warnings": [
+    "AIDE verify reported warning-only stale reference and allowed-path scope notes with zero errors."
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "next_task": "OBS0-03 \u2014 External baseline observation recording"
+}

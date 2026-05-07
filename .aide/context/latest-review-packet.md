@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4077 chars, 1020 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4047 chars, 1012 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,17 +36,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/obs0-01-manual-observation-protocol-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations` (??; does not match active task allowed paths)
-- unknown: `docs/operations/MANUAL_OBSERVATION_ANTI_FABRICATION_CHECKLIST.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/MANUAL_OBSERVATION_FAILURE_TAXONOMY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/MANUAL_OBSERVATION_PROTOCOL.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/ANTI_FABRICATION_CHECKLIST.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/FAILURE_TAXONOMY.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/OBSERVATION_PROTOCOL.md` (??; does not match active task allowed paths)
-- unknown: `examples/manual_observations` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_manual_observation_protocol.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_manual_observation_protocol.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/obs0-02-manual-observation-batch-0-execution-packet-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/manual_observation_batch_0_execution.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/manual_observation_batch_0_slot_manifest.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MANUAL_OBSERVATION_BATCH_0_EXECUTION.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MANUAL_OBSERVATION_SLOT_COMPLETION_GUIDE.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_PACKET.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_STATUS.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/SLOT_COMPLETION_GUIDE.md` (??; does not match active task allowed paths)
+- unknown: `scripts/prepare_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -56,8 +56,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5537
-- approx_tokens: 1385
+- chars: 5654
+- approx_tokens: 1414
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

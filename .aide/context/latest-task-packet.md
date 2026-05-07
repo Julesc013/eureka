@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - OBS0-01 manual observation protocol and anti-fabrication checklist
+UNSPECIFIED - OBS0-02 manual observation Batch 0 execution packet
 
 ## GOAL
 
-OBS0-01 manual observation protocol and anti-fabrication checklist
+OBS0-02 manual observation Batch 0 execution packet
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4077
-- approx_tokens: 1020
+- chars: 4047
+- approx_tokens: 1012
 - budget_status: PASS
 - warnings:
   - none

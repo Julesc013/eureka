@@ -1,0 +1,1157 @@
+{
+  "batch_id": "batch_0",
+  "errors": [],
+  "generated_from": [
+    "evals/search_usefulness/external_baselines/batches/batch_0/batch_manifest.json",
+    "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json"
+  ],
+  "manifest_id": "manual_observation_batch_0_slot_manifest_v0",
+  "notes": [
+    "This manifest prepares human execution only.",
+    "It does not create observed result files.",
+    "It does not perform external observations."
+  ],
+  "product_boundary": {
+    "automated_external_search": false,
+    "called_external_apis": false,
+    "changed_generated_site_artifacts": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "crawled_external_systems": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "mutated_master_index": false,
+    "opened_browsers": false,
+    "performed_observations": false,
+    "scraped_external_systems": false
+  },
+  "query_ids": [
+    "windows_7_apps",
+    "windows_7_portable_apps_archive",
+    "latest_firefox_before_xp_support_ended",
+    "old_blue_ftp_client_xp",
+    "windows_98_registry_repair",
+    "driver_inf_inside_support_cd",
+    "driver_thinkpad_t42_wifi_windows_2000",
+    "pc_magazine_july_1994_ray_tracing",
+    "mac_os_9_browser",
+    "powerpc_osx_104_browser",
+    "windows_xp_software",
+    "creative_ct1740_driver_windows_98",
+    "threecom_3c905_windows_95_driver"
+  ],
+  "schema_version": "manual_observation_batch_0_slot_manifest.v0",
+  "slot_count": 39,
+  "slots": [
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 1,
+      "query_id": "windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_apps::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 2,
+      "query_id": "windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_apps::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 3,
+      "query_id": "windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_apps::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 4,
+      "query_id": "windows_7_portable_apps_archive",
+      "query_text": "Windows 7 portable apps archive",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_portable_apps_archive::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 5,
+      "query_id": "windows_7_portable_apps_archive",
+      "query_text": "Windows 7 portable apps archive",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_portable_apps_archive::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 6,
+      "query_id": "windows_7_portable_apps_archive",
+      "query_text": "Windows 7 portable apps archive",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_7_portable_apps_archive::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 7,
+      "query_id": "latest_firefox_before_xp_support_ended",
+      "query_text": "latest Firefox before XP support ended",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::latest_firefox_before_xp_support_ended::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 8,
+      "query_id": "latest_firefox_before_xp_support_ended",
+      "query_text": "latest Firefox before XP support ended",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::latest_firefox_before_xp_support_ended::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 9,
+      "query_id": "latest_firefox_before_xp_support_ended",
+      "query_text": "latest Firefox before XP support ended",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::latest_firefox_before_xp_support_ended::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 10,
+      "query_id": "old_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::old_blue_ftp_client_xp::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 11,
+      "query_id": "old_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::old_blue_ftp_client_xp::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 12,
+      "query_id": "old_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::old_blue_ftp_client_xp::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 13,
+      "query_id": "windows_98_registry_repair",
+      "query_text": "software to fix broken registry Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_98_registry_repair::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 14,
+      "query_id": "windows_98_registry_repair",
+      "query_text": "software to fix broken registry Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_98_registry_repair::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 15,
+      "query_id": "windows_98_registry_repair",
+      "query_text": "software to fix broken registry Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_98_registry_repair::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 16,
+      "query_id": "driver_inf_inside_support_cd",
+      "query_text": "driver INF inside support CD",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_inf_inside_support_cd::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 17,
+      "query_id": "driver_inf_inside_support_cd",
+      "query_text": "driver INF inside support CD",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_inf_inside_support_cd::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 18,
+      "query_id": "driver_inf_inside_support_cd",
+      "query_text": "driver INF inside support CD",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_inf_inside_support_cd::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 19,
+      "query_id": "driver_thinkpad_t42_wifi_windows_2000",
+      "query_text": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_thinkpad_t42_wifi_windows_2000::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 20,
+      "query_id": "driver_thinkpad_t42_wifi_windows_2000",
+      "query_text": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_thinkpad_t42_wifi_windows_2000::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 21,
+      "query_id": "driver_thinkpad_t42_wifi_windows_2000",
+      "query_text": "driver for ThinkPad T42 Wi-Fi Windows 2000",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::driver_thinkpad_t42_wifi_windows_2000::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 22,
+      "query_id": "pc_magazine_july_1994_ray_tracing",
+      "query_text": "PC Magazine July 1994 ray tracing",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::pc_magazine_july_1994_ray_tracing::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 23,
+      "query_id": "pc_magazine_july_1994_ray_tracing",
+      "query_text": "PC Magazine July 1994 ray tracing",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::pc_magazine_july_1994_ray_tracing::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 24,
+      "query_id": "pc_magazine_july_1994_ray_tracing",
+      "query_text": "PC Magazine July 1994 ray tracing",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::pc_magazine_july_1994_ray_tracing::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 25,
+      "query_id": "mac_os_9_browser",
+      "query_text": "Mac OS 9 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::mac_os_9_browser::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 26,
+      "query_id": "mac_os_9_browser",
+      "query_text": "Mac OS 9 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::mac_os_9_browser::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 27,
+      "query_id": "mac_os_9_browser",
+      "query_text": "Mac OS 9 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::mac_os_9_browser::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 28,
+      "query_id": "powerpc_osx_104_browser",
+      "query_text": "PowerPC Mac OS X 10.4 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::powerpc_osx_104_browser::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 29,
+      "query_id": "powerpc_osx_104_browser",
+      "query_text": "PowerPC Mac OS X 10.4 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::powerpc_osx_104_browser::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 30,
+      "query_id": "powerpc_osx_104_browser",
+      "query_text": "PowerPC Mac OS X 10.4 browser",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::powerpc_osx_104_browser::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 31,
+      "query_id": "windows_xp_software",
+      "query_text": "Windows XP software",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_xp_software::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 32,
+      "query_id": "windows_xp_software",
+      "query_text": "Windows XP software",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_xp_software::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 33,
+      "query_id": "windows_xp_software",
+      "query_text": "Windows XP software",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::windows_xp_software::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 34,
+      "query_id": "creative_ct1740_driver_windows_98",
+      "query_text": "Creative CT1740 driver Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::creative_ct1740_driver_windows_98::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 35,
+      "query_id": "creative_ct1740_driver_windows_98",
+      "query_text": "Creative CT1740 driver Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::creative_ct1740_driver_windows_98::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 36,
+      "query_id": "creative_ct1740_driver_windows_98",
+      "query_text": "Creative CT1740 driver Windows 98",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::creative_ct1740_driver_windows_98::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 37,
+      "query_id": "threecom_3c905_windows_95_driver",
+      "query_text": "3Com 3C905 Windows 95 driver",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::threecom_3c905_windows_95_driver::google_web_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "google_web_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 38,
+      "query_id": "threecom_3c905_windows_95_driver",
+      "query_text": "3Com 3C905 Windows 95 driver",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::threecom_3c905_windows_95_driver::internet_archive_metadata_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_metadata_search"
+    },
+    {
+      "assigned_to": null,
+      "notes": [
+        "Pending manual observation.",
+        "Do not mark observed unless the human observation was actually performed."
+      ],
+      "observed_file_path_if_any": null,
+      "pending_file_path": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+      "priority": 39,
+      "query_id": "threecom_3c905_windows_95_driver",
+      "query_text": "3Com 3C905 Windows 95 driver",
+      "required_fields_on_completion": [
+        "operator",
+        "observed_at",
+        "browser_or_tool",
+        "exact_query_submitted",
+        "filters_or_scope",
+        "top_results",
+        "first_useful_result_rank",
+        "usefulness_scores",
+        "evidence_limitations",
+        "staleness_notes"
+      ],
+      "required_fields_status": "pending_observation_fields_not_collected",
+      "slot_id": "batch_0::threecom_3c905_windows_95_driver::internet_archive_full_text_search",
+      "slot_status": "pending_manual_observation",
+      "system_id": "internet_archive_full_text_search"
+    }
+  ],
+  "source_batch_root": "evals/search_usefulness/external_baselines/batches/batch_0",
+  "status_counts": {
+    "pending_manual_observation": 39
+  },
+  "systems": [
+    "google_web_search",
+    "internet_archive_metadata_search",
+    "internet_archive_full_text_search"
+  ],
+  "validation_status": "ready_for_manual_execution"
+}
