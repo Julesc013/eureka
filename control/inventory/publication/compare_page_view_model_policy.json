@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "compare_page_view_model_policy_v0",
+  "contract_ref": "contracts/views/compare_page.v0.json",
+  "label": "ComparePage view model policy v0",
+  "description": "Policy inventory for public-safe ComparePageView records across standard, lite, text, file, API-adjacent, manifest, snapshot, relay, terminal, print, and native-card projections.",
+  "status": "contract_only",
+  "stability": "stable-draft",
+  "created_by_slice": "TRACK-A-09",
+  "canonical_view_family": "ComparePageView",
+  "supported_route_families": [
+    "compare_page_future"
+  ],
+  "required_semantic_parity_policy": "object_page_parity_v0",
+  "allowed_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_comparison_types": [
+    "absence_near_match_compare",
+    "candidate_compare",
+    "compatibility_compare",
+    "evidence_compare",
+    "identity_cluster_compare",
+    "object_version_compare",
+    "pack_compare",
+    "representation_compare",
+    "source_record_compare"
+  ],
+  "allowed_comparison_statuses": [
+    "candidate_only",
+    "conflict_detected",
+    "deferred",
+    "duplicate_possible",
+    "evidence_needed",
+    "identity_uncertain",
+    "informational",
+    "policy_blocked",
+    "reviewed_future"
+  ],
+  "allowed_comparison_axes": [
+    "candidate_state",
+    "compatibility",
+    "evidence",
+    "identity",
+    "representation",
+    "rights",
+    "risk",
+    "source",
+    "version"
+  ],
+  "allowed_action_names": [
+    "copy_citation_hint",
+    "copy_comparison_id",
+    "mark_duplicate_future",
+    "preserve_conflict_future",
+    "request_review_future",
+    "view_candidate",
+    "view_conflicts",
+    "view_evidence",
+    "view_review_requirements",
+    "view_source",
+    "view_subject"
+  ],
+  "required_blocked_actions": [
+    "accept_public_unavailable",
+    "account_unavailable",
+    "automatic_dedup_unavailable",
+    "automatic_merge_unavailable",
+    "download_unavailable",
+    "hosted_backend_unavailable",
+    "install_unavailable",
+    "live_probe_unavailable",
+    "master_index_mutation_unavailable",
+    "telemetry_unavailable",
+    "upload_unavailable"
+  ],
+  "required_no_auto_merge_no_auto_promotion_fields": [
+    "automatic_dedup_enabled",
+    "automatic_merge_enabled",
+    "automatic_promotion_enabled",
+    "master_index_mutation_allowed"
+  ],
+  "required_product_boundary_booleans": [
+    "accepted_public_status",
+    "accounts_enabled",
+    "automatic_dedup_enabled",
+    "automatic_merge_enabled",
+    "automatic_promotion_enabled",
+    "downloads_enabled",
+    "hosted_backend_claimed",
+    "live_probes_enabled",
+    "master_index_mutation_allowed",
+    "telemetry_enabled",
+    "uploads_enabled"
+  ],
+  "required_safety_claim_booleans": [
+    "authorized_bulk_access_claimed",
+    "authorized_download_claimed",
+    "malware_safety_claimed",
+    "production_suitability_claimed",
+    "rights_clearance_claimed",
+    "safe_execution_claimed",
+    "verified_installability_claimed"
+  ],
+  "required_representation_hints": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "required_semantic_requirements": [
+    "actions_and_blocked_actions_preserved",
+    "canonical_comparison_identity_preserved",
+    "disagreements_preserved",
+    "limitations_and_gaps_visible",
+    "no_automatic_merge_or_promotion",
+    "rights_risk_posture_preserved",
+    "source_evidence_conflict_posture_preserved",
+    "subject_relationships_preserved"
+  ],
+  "current_no_goals": [
+    "no product runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no automatic merge, deduplication, promotion, acceptance, rejection, or master-index mutation",
+    "no downloads",
+    "no uploads",
+    "no accounts",
+    "no telemetry",
+    "no hidden conflict or disagreement suppression"
+  ],
+  "future_deferred_fields": [
+    "reviewed_future",
+    "mark_duplicate_future",
+    "request_review_future",
+    "preserve_conflict_future",
+    "snapshot_future",
+    "relay_future",
+    "native_card_future"
+  ],
+  "notes": [
+    "ComparePageView preserves disagreement and uncertainty.",
+    "Comparison output does not merge, deduplicate, promote, accept, reject, or mutate records."
+  ]
+}

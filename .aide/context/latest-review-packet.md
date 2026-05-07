@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4081 chars, 1021 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4133 chars, 1034 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,23 +36,26 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/TRACK-A-08` (??; does not match active task allowed paths)
-- unknown: `contracts/views/pack_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/views/review_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/views/task_page.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-08-pack-task-review-page-view-models-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/pack_page_view_model_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/review_page_view_model_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/task_page_view_model_policy.json` (??; does not match active task allowed paths)
-- allowed: `docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `contracts/views/absence_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/views/compare_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/views/download_manifest_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/views/evidence_page.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-09-download-evidence-absence-compare-view-models-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/absence_page_view_model_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/compare_page_view_model_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/download_manifest_view_model_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/evidence_page_view_model_policy.json` (??; does not match active task allowed paths)
+- allowed: `docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md` (??; matches active task allowed path)
 - allowed: `docs/roadmap/TRACK_EXECUTION_PLAN.md` (M; matches active task allowed path)
-- unknown: `examples/view_models/pack_page` (??; does not match active task allowed paths)
-- unknown: `examples/view_models/review_page` (??; does not match active task allowed paths)
-- unknown: `examples/view_models/task_page` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_pack_task_review_page_view_models.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_pack_task_review_page_view_models.py` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/absence_page` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/compare_page` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/download_manifest` (??; does not match active task allowed paths)
+- unknown: `examples/view_models/evidence_page` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_download_evidence_absence_compare_view_models.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_download_evidence_absence_compare_view_models.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -62,8 +65,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6002
-- approx_tokens: 1501
+- chars: 6432
+- approx_tokens: 1608
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

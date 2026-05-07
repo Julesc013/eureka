@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "evidence_page_view_model_policy_v0",
+  "contract_ref": "contracts/views/evidence_page.v0.json",
+  "label": "EvidencePage view model policy v0",
+  "description": "Policy inventory for public-safe EvidencePageView records across standard, lite, text, file, API-adjacent, manifest, snapshot, relay, terminal, print, and native-card projections.",
+  "status": "contract_only",
+  "stability": "stable-draft",
+  "created_by_slice": "TRACK-A-09",
+  "canonical_view_family": "EvidencePageView",
+  "supported_route_families": [
+    "evidence_page_future"
+  ],
+  "required_semantic_parity_policy": "source_page_parity_v0",
+  "allowed_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_evidence_types": [
+    "ai_draft_future",
+    "checksum_claim",
+    "compatibility_claim",
+    "contribution_claim",
+    "discussion_derived_future",
+    "filename_or_member_claim",
+    "identity_claim",
+    "manual_observation",
+    "metadata_claim",
+    "pack_claim",
+    "snippet",
+    "source_locator",
+    "source_observation"
+  ],
+  "allowed_evidence_statuses": [
+    "accepted_public_future",
+    "candidate",
+    "conflicting",
+    "deferred",
+    "evidence_needed",
+    "needs_review",
+    "normalized",
+    "observed",
+    "policy_blocked",
+    "rejected",
+    "rights_blocked",
+    "risk_blocked",
+    "superseded"
+  ],
+  "allowed_claim_types": [
+    "checksum_claim",
+    "compatibility_claim",
+    "filename_or_member_claim",
+    "identity_claim",
+    "metadata_claim",
+    "source_locator_claim"
+  ],
+  "allowed_observation_types": [
+    "manual_observation",
+    "pack_observation",
+    "snippet_observation",
+    "source_locator",
+    "source_observation"
+  ],
+  "allowed_action_names": [
+    "copy_citation_hint",
+    "copy_evidence_id",
+    "view_candidate",
+    "view_conflicts",
+    "view_evidence",
+    "view_object",
+    "view_pack",
+    "view_review_requirements",
+    "view_source"
+  ],
+  "required_blocked_actions": [
+    "accept_public_unavailable",
+    "account_unavailable",
+    "download_unavailable",
+    "hosted_backend_unavailable",
+    "live_probe_unavailable",
+    "malware_safety_unavailable",
+    "master_index_mutation_unavailable",
+    "rights_clearance_unavailable",
+    "source_sync_unavailable",
+    "telemetry_unavailable",
+    "upload_unavailable"
+  ],
+  "required_review_truth_boundary_fields": [
+    "accepted_public_status",
+    "evidence_candidate_accepted_as_truth",
+    "master_index_mutation_allowed",
+    "review_required",
+    "source_observation_accepted_as_truth"
+  ],
+  "required_product_boundary_booleans": [
+    "accepted_public_status",
+    "accounts_enabled",
+    "downloads_enabled",
+    "hosted_backend_claimed",
+    "live_probes_enabled",
+    "master_index_mutation_allowed",
+    "public_truth_claimed",
+    "source_sync_runtime_enabled",
+    "telemetry_enabled",
+    "uploads_enabled"
+  ],
+  "required_safety_claim_booleans": [
+    "authorized_bulk_access_claimed",
+    "authorized_download_claimed",
+    "malware_safety_claimed",
+    "production_suitability_claimed",
+    "rights_clearance_claimed",
+    "safe_execution_claimed",
+    "verified_installability_claimed"
+  ],
+  "required_representation_hints": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "required_semantic_requirements": [
+    "actions_and_blocked_actions_preserved",
+    "canonical_evidence_identity_preserved",
+    "claim_observation_review_status_preserved",
+    "conflicts_preserved",
+    "evidence_candidate_not_truth",
+    "limitations_and_gaps_visible",
+    "rights_risk_privacy_posture_preserved",
+    "source_locator_and_provenance_preserved"
+  ],
+  "current_no_goals": [
+    "no product runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no source connector or source sync runtime",
+    "no evidence ledger mutation",
+    "no master-index mutation",
+    "no accepted public truth from evidence candidates, source observations, AI drafts, discussion-derived records, or contribution claims",
+    "no downloads",
+    "no uploads",
+    "no accounts",
+    "no telemetry"
+  ],
+  "future_deferred_fields": [
+    "accepted_public_future",
+    "ai_draft_future",
+    "discussion_derived_future",
+    "relay_future",
+    "snapshot_future",
+    "native_card_future"
+  ],
+  "notes": [
+    "EvidencePageView exposes claim and observation posture, not truth by default.",
+    "The A09 route matrix currently binds EvidencePageView through source/evidence parity until a later dedicated policy split is needed."
+  ]
+}

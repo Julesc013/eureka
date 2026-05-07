@@ -1,0 +1,289 @@
+{
+  "schema_version": "0.1.0",
+  "view_model_id": "native_handoff_future_manifest_v0",
+  "view_family": "DownloadManifestView",
+  "route_family": "download_manifest_future",
+  "canonical_route": "/files/manifests/native-handoff-future.json",
+  "page_title": "Future Native Handoff Manifest",
+  "page_status": "contract_only",
+  "manifest": {
+    "manifest_id": "manifest_native_future_sample",
+    "label": "Future native handoff manifest metadata"
+  },
+  "manifest_identity": {
+    "manifest_id": "manifest_native_future_sample",
+    "manifest_slug": "native-handoff-future",
+    "manifest_type": "native_handoff_manifest_future",
+    "canonical_route": "/files/manifests/native-handoff-future.json",
+    "manifest_schema_version": "0.1.0",
+    "target_object_id": "object_native_future_sample",
+    "target_representation_id": "representation_native_future_sample",
+    "target_source_id": "source_sample_fixture",
+    "target_pack_refs": [],
+    "checksum_or_digest_refs": [],
+    "signature_status": "not_signed",
+    "manifest_status": "future_deferred",
+    "manifest_limitations": [
+      "Native handoff is future/deferred and unavailable."
+    ],
+    "notes": [
+      "This is a contract example, not a native project."
+    ]
+  },
+  "target_object_summary": {
+    "object_id": "object_native_future_sample",
+    "object_status": "metadata_only"
+  },
+  "target_representation_summary": {
+    "representation_id": "representation_native_future_sample",
+    "representation_status": "future_native_card_summary_only"
+  },
+  "source_summary": {
+    "source_id": "source_sample_fixture",
+    "source_posture": "recorded_fixture_only",
+    "source_observation_accepted_as_truth": false
+  },
+  "access_path_summary": {
+    "access_status": "future_deferred",
+    "access_mode": "manifest_only",
+    "source_link_status": "reference_only",
+    "direct_download_status": "unavailable",
+    "mirror_status": "unavailable",
+    "relay_status_future": "future_deferred",
+    "snapshot_status_future": "future_deferred",
+    "native_handoff_status_future": "future_deferred",
+    "install_status": "unavailable",
+    "execution_status": "unavailable",
+    "package_manager_status": "unavailable",
+    "rights_clearance_status": "unavailable",
+    "malware_safety_status": "unavailable",
+    "notes": [
+      "No native handoff runtime is enabled."
+    ]
+  },
+  "file_summary": {
+    "file_size": "unknown",
+    "media_type": "unknown",
+    "actual_downloadable_binary_present": false
+  },
+  "checksum_summary": {
+    "checksum_status": "not_available",
+    "checksum_claim_authenticity_proof": false
+  },
+  "signature_summary": {
+    "signature_status": "not_signed",
+    "signature_verified": false
+  },
+  "rights_summary": {
+    "rights_posture": "unknown",
+    "rights_clearance_claimed": false,
+    "authorized_download_claimed": false,
+    "authorized_bulk_access_claimed": false
+  },
+  "risk_summary": {
+    "risk_posture": "unknown",
+    "executable_risk": "not_exposed",
+    "malware_safety_claimed": false,
+    "safe_execution_claimed": false,
+    "verified_installability_claimed": false,
+    "production_suitability_claimed": false
+  },
+  "privacy_summary": {
+    "privacy_posture": "public_safe_example",
+    "telemetry_enabled": false
+  },
+  "safety_summary": {
+    "malware_safety_status": "unavailable",
+    "rights_clearance_status": "unavailable",
+    "verified_installability_status": "unavailable",
+    "safe_execution_status": "unavailable"
+  },
+  "action_summary": {
+    "allowed_actions": [
+      "view_manifest",
+      "view_object",
+      "copy_manifest_id"
+    ],
+    "blocked_actions": [
+      "account_unavailable",
+      "direct_download_unavailable",
+      "download_unavailable",
+      "execute_unavailable",
+      "hosted_backend_unavailable",
+      "install_unavailable",
+      "live_probe_unavailable",
+      "malware_safety_unavailable",
+      "native_handoff_unavailable",
+      "package_manager_unavailable",
+      "relay_unavailable",
+      "rights_clearance_unavailable",
+      "source_sync_unavailable",
+      "telemetry_unavailable",
+      "upload_unavailable"
+    ],
+    "hosted_backend_claimed": false,
+    "live_probes_enabled": false,
+    "source_sync_runtime_enabled": false,
+    "downloads_enabled": false,
+    "installers_enabled": false,
+    "execution_enabled": false,
+    "uploads_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "package_manager_enabled": false,
+    "native_handoff_enabled": false,
+    "relay_enabled": false
+  },
+  "actions": [
+    {
+      "action_id": "view_manifest"
+    },
+    {
+      "action_id": "view_object"
+    },
+    {
+      "action_id": "copy_manifest_id"
+    }
+  ],
+  "blocked_actions": [
+    {
+      "action_id": "account_unavailable"
+    },
+    {
+      "action_id": "direct_download_unavailable"
+    },
+    {
+      "action_id": "download_unavailable"
+    },
+    {
+      "action_id": "execute_unavailable"
+    },
+    {
+      "action_id": "hosted_backend_unavailable"
+    },
+    {
+      "action_id": "install_unavailable"
+    },
+    {
+      "action_id": "live_probe_unavailable"
+    },
+    {
+      "action_id": "malware_safety_unavailable"
+    },
+    {
+      "action_id": "native_handoff_unavailable"
+    },
+    {
+      "action_id": "package_manager_unavailable"
+    },
+    {
+      "action_id": "relay_unavailable"
+    },
+    {
+      "action_id": "rights_clearance_unavailable"
+    },
+    {
+      "action_id": "source_sync_unavailable"
+    },
+    {
+      "action_id": "telemetry_unavailable"
+    },
+    {
+      "action_id": "upload_unavailable"
+    }
+  ],
+  "native_handoff_summary_future": {
+    "native_handoff_enabled": false,
+    "native_handoff_status_future": "future_deferred",
+    "created_native_project": false
+  },
+  "relay_handoff_summary_future": {
+    "relay_enabled": false,
+    "relay_status_future": "future_deferred"
+  },
+  "snapshot_summary_future": {
+    "snapshot_status_future": "future_deferred",
+    "snapshot_enabled": false
+  },
+  "limitations": [
+    "Native handoff remains future/deferred."
+  ],
+  "warnings": [
+    {
+      "warning_id": "future_only",
+      "message": "This manifest does not create or invoke a native client."
+    }
+  ],
+  "representation_hints": {
+    "standard_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "lite_html": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "html32": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "text": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "file_tree": {
+      "renderer_status": "manifest_summary_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "api_json": {
+      "renderer_status": "api_adjacent_contract",
+      "semantic_meaning_changes_allowed": false
+    },
+    "manifest_json": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    },
+    "snapshot_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "relay_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "terminal_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "native_card_future": {
+      "renderer_status": "future_deferred",
+      "semantic_meaning_changes_allowed": false
+    },
+    "print": {
+      "renderer_status": "contract_only",
+      "semantic_meaning_changes_allowed": false
+    }
+  },
+  "semantic_requirements": [
+    "actions_and_blocked_actions_preserved",
+    "canonical_manifest_identity_preserved",
+    "download_install_execution_disabled",
+    "limitations_and_gaps_visible",
+    "manifest_metadata_not_download_grant",
+    "rights_risk_safety_posture_preserved",
+    "source_and_target_relationships_preserved"
+  ],
+  "generated_from": {
+    "policy_inventory": "control/inventory/publication/download_manifest_view_model_policy.json",
+    "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",
+    "semantic_parity_policy": "download_manifest_page_parity_v0"
+  },
+  "no_goals": [
+    "no native project creation",
+    "no native handoff runtime",
+    "no downloads"
+  ],
+  "notes": [
+    "Future native handoff manifest example for Track A-09."
+  ]
+}

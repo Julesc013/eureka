@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "download_manifest_view_model_policy_v0",
+  "contract_ref": "contracts/views/download_manifest_page.v0.json",
+  "label": "DownloadManifest view model policy v0",
+  "description": "Policy inventory for public-safe DownloadManifestView records across standard, lite, text, file, API-adjacent, manifest, snapshot, relay, terminal, print, and native-card projections.",
+  "status": "contract_only",
+  "stability": "stable-draft",
+  "created_by_slice": "TRACK-A-09",
+  "canonical_view_family": "DownloadManifestView",
+  "supported_route_families": [
+    "download_manifest_future"
+  ],
+  "required_semantic_parity_policy": "download_manifest_page_parity_v0",
+  "allowed_representation_profiles": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "allowed_manifest_types": [
+    "acquisition_manifest",
+    "citation_manifest",
+    "download_manifest",
+    "export_manifest",
+    "install_recipe_future",
+    "native_handoff_manifest_future",
+    "relay_manifest_future",
+    "replay_recipe_future",
+    "snapshot_manifest_future"
+  ],
+  "allowed_manifest_statuses": [
+    "blocked",
+    "example_only",
+    "future_deferred",
+    "manifest_only",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "validate_only"
+  ],
+  "allowed_access_statuses": [
+    "future_deferred",
+    "metadata_only",
+    "policy_blocked",
+    "unavailable"
+  ],
+  "allowed_action_names": [
+    "copy_checksum",
+    "copy_manifest_id",
+    "export_manifest_future",
+    "open_relay_future",
+    "open_snapshot_future",
+    "view_evidence",
+    "view_manifest",
+    "view_object",
+    "view_rights_risk",
+    "view_source"
+  ],
+  "required_blocked_actions": [
+    "account_unavailable",
+    "direct_download_unavailable",
+    "download_unavailable",
+    "execute_unavailable",
+    "hosted_backend_unavailable",
+    "install_unavailable",
+    "live_probe_unavailable",
+    "malware_safety_unavailable",
+    "native_handoff_unavailable",
+    "package_manager_unavailable",
+    "relay_unavailable",
+    "rights_clearance_unavailable",
+    "source_sync_unavailable",
+    "telemetry_unavailable",
+    "upload_unavailable"
+  ],
+  "required_product_boundary_booleans": [
+    "accounts_enabled",
+    "downloads_enabled",
+    "execution_enabled",
+    "hosted_backend_claimed",
+    "installers_enabled",
+    "live_probes_enabled",
+    "native_handoff_enabled",
+    "package_manager_enabled",
+    "relay_enabled",
+    "source_sync_runtime_enabled",
+    "telemetry_enabled",
+    "uploads_enabled"
+  ],
+  "required_safety_claim_booleans": [
+    "authorized_bulk_access_claimed",
+    "authorized_download_claimed",
+    "malware_safety_claimed",
+    "production_suitability_claimed",
+    "rights_clearance_claimed",
+    "safe_execution_claimed",
+    "verified_installability_claimed"
+  ],
+  "required_representation_hints": [
+    "api_json",
+    "file_tree",
+    "html32",
+    "lite_html",
+    "manifest_json",
+    "native_card_future",
+    "print",
+    "relay_future",
+    "snapshot_future",
+    "standard_html",
+    "terminal_future",
+    "text"
+  ],
+  "required_semantic_requirements": [
+    "actions_and_blocked_actions_preserved",
+    "canonical_manifest_identity_preserved",
+    "download_install_execution_disabled",
+    "limitations_and_gaps_visible",
+    "manifest_metadata_not_download_grant",
+    "rights_risk_safety_posture_preserved",
+    "source_and_target_relationships_preserved"
+  ],
+  "current_no_goals": [
+    "no product runtime behavior change",
+    "no public route activation",
+    "no hosted backend claim",
+    "no live probes",
+    "no source connector or source sync runtime",
+    "no active download, installer, execution, package manager, native handoff, relay, or hosted file service",
+    "no uploads",
+    "no accounts",
+    "no telemetry",
+    "no rights clearance or malware safety claim"
+  ],
+  "future_deferred_fields": [
+    "native_handoff_manifest_future",
+    "relay_manifest_future",
+    "snapshot_manifest_future",
+    "install_recipe_future",
+    "replay_recipe_future",
+    "export_manifest_future",
+    "open_snapshot_future",
+    "open_relay_future"
+  ],
+  "notes": [
+    "DownloadManifestView is manifest metadata, not a downloader.",
+    "Manifest records may describe checksums and source locators without granting downloads or execution.",
+    "Future native, relay, and snapshot handoffs stay explicit future/deferred posture until governed runtime work exists."
+  ]
+}

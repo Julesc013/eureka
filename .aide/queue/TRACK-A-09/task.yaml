@@ -1,0 +1,42 @@
+schema_version: aide.task.v0
+id: TRACK-A-09
+title: DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model contracts
+status: active
+source: user_prompt
+scope:
+  - contracts/views/download_manifest_page.v0.json
+  - contracts/views/evidence_page.v0.json
+  - contracts/views/absence_page.v0.json
+  - contracts/views/compare_page.v0.json
+  - control/inventory/publication/download_manifest_view_model_policy.json
+  - control/inventory/publication/evidence_page_view_model_policy.json
+  - control/inventory/publication/absence_page_view_model_policy.json
+  - control/inventory/publication/compare_page_view_model_policy.json
+  - examples/view_models/download_manifest/**
+  - examples/view_models/evidence_page/**
+  - examples/view_models/absence_page/**
+  - examples/view_models/compare_page/**
+  - scripts/validate_download_evidence_absence_compare_view_models.py
+  - tests/contracts/test_download_evidence_absence_compare_view_models.py
+  - docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md
+  - docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md
+  - docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md
+  - docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md
+  - control/audits/track-a-09-download-evidence-absence-compare-view-models-v0/**
+  - docs/roadmap/TRACK_EXECUTION_PLAN.md
+non_goals:
+  - no runtime behavior changes
+  - no public route activation
+  - no generated site artifact changes
+  - no hosted backend
+  - no live probes
+  - no source sync or connectors
+  - no node runtime
+  - no pack import runtime
+  - no review runtime
+  - no downloads, installers, execution, uploads, accounts, or telemetry
+  - no model or provider calls
+  - no master-index mutation
+  - no native project creation
+  - no rights, malware, installability, evidence truth, exhaustive search, or auto-promotion claims
+next_task: TRACK-A-10 - View model policy index and cross-contract validator
