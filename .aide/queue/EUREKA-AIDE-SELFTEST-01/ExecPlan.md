@@ -30,4 +30,7 @@ Repair the imported AIDE Lite selftest fixture fallback so `test` and
 ## Current Status
 
 - Baseline validation reproduced the failure.
-- Root-cause diagnosis and repair are in progress.
+- The temp-fixture fallback now writes valid offline Python helpers only inside
+  the selftest temporary repo.
+- Focused tests plus AIDE Lite `test` and `selftest` pass.
+- Queue status is `needs_review`.

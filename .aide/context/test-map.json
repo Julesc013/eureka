@@ -1526,6 +1526,132 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/repair-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/root-cause.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/README.template.md",
       "source_role": "aide_queue"
     },
@@ -35517,8 +35643,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 2537,
+    "mapping_count": 2546,
     "with_existing_candidate": 1,
-    "without_existing_candidate": 2536
+    "without_existing_candidate": 2545
   }
 }

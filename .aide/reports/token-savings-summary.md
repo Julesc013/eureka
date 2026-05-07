@@ -10,31 +10,31 @@
 
 ## Latest Compact Surfaces
 
-- `.aide/context/latest-task-packet.md`: 5767 chars / 1442 approx tokens / within_budget
-- `.aide/context/latest-context-packet.md`: 1827 chars / 457 approx tokens / within_budget
-- `.aide/context/latest-review-packet.md`: 4169 chars / 1043 approx tokens / within_budget
+- `.aide/context/latest-task-packet.md`: 4598 chars / 1150 approx tokens / within_budget
+- `.aide/context/latest-context-packet.md`: 1828 chars / 457 approx tokens / within_budget
+- `.aide/context/latest-review-packet.md`: 4831 chars / 1208 approx tokens / within_budget
 - `.aide/verification/latest-verification-report.md`: 4572 chars / 1143 approx tokens / within_budget
 
 ## Named Baselines
 
-- `root_history_baseline`: 274729 chars / 68683 approx tokens
-- `review_baseline`: 21341 chars / 5336 approx tokens
-- `repo_context_baseline`: 241344 chars / 60336 approx tokens
+- `root_history_baseline`: 274614 chars / 68654 approx tokens
+- `review_baseline`: 20060 chars / 5015 approx tokens
+- `repo_context_baseline`: 241634 chars / 60409 approx tokens
 
 ## Compact-To-Baseline Comparisons
 
-- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 97.9% estimated reduction (1442 vs 68683 approx tokens)
-- `.aide/context/latest-review-packet.md` vs `review_baseline`: 80.5% estimated reduction (1043 vs 5336 approx tokens)
-- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.2% estimated reduction (457 vs 60336 approx tokens)
+- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 98.3% estimated reduction (1150 vs 68654 approx tokens)
+- `.aide/context/latest-review-packet.md` vs `review_baseline`: 75.9% estimated reduction (1208 vs 5015 approx tokens)
+- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.2% estimated reduction (457 vs 60409 approx tokens)
 
 ## Largest Ledger Surfaces
 
 - `.aide/cache/latest-cache-keys.json` (cache_report): 2008 approx tokens
 - `.aide/prompts/codex-token-mode.md` (baseline_surface): 1593 approx tokens
-- `.aide/context/latest-task-packet.md` (task_packet): 1442 approx tokens
 - `AGENTS.md` (generated_adapter): 1370 approx tokens
+- `.aide/context/latest-review-packet.md` (review_packet): 1208 approx tokens
+- `.aide/context/latest-task-packet.md` (task_packet): 1150 approx tokens
 - `.aide/verification/latest-verification-report.md` (verification_report): 1143 approx tokens
-- `.aide/context/latest-review-packet.md` (review_packet): 1043 approx tokens
 - `.aide/prompts/compact-task.md` (baseline_surface): 1000 approx tokens
 - `.aide/prompts/evidence-review.md` (baseline_surface): 856 approx tokens
 - `.aide/evals/runs/latest-golden-tasks.json` (eval_report): 813 approx tokens

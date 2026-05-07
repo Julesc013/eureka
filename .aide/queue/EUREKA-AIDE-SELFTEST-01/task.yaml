@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: EUREKA-AIDE-SELFTEST-01
 title: Repair imported AIDE Lite selftest fixture fallback
-status: in_progress
+status: needs_review
 target_repo: julesc013/eureka
 phase: EUREKA-AIDE-SELFTEST-01
 source_packet: .aide/context/latest-task-packet.md

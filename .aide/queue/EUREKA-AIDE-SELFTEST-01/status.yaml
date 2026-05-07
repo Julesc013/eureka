@@ -1,14 +1,15 @@
 schema_version: aide.queue-status.v0
 task_id: EUREKA-AIDE-SELFTEST-01
-status: in_progress
+status: needs_review
 updated: 2026-05-07
 summary: >
-  Baseline commands reproduced the imported AIDE Lite temp-fixture failure.
-  Repair and validation are in progress.
+  The imported AIDE Lite temp-fixture fallback now creates valid offline
+  optional Gateway/Provider helper modules inside the selftest temporary repo,
+  and Eureka-local `test` and `selftest` pass.
 known_limitations:
-  - Final `test`/`selftest` result is pending repair.
-  - Next task packet regeneration is pending repair validation.
+  - Broad unittest discovery still exposes unrelated export/import fixture
+    assumptions outside this task's acceptance lane.
+  - Eureka-specific golden tasks remain future work.
 next:
-  - Patch temp-fixture fallback only.
-  - Run post-repair validation.
-  - Move status to `needs_review`.
+  - Review this repair.
+  - Run `EUREKA-AIDE-GOLDEN-01` from `.aide/context/latest-task-packet.md`.

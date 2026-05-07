@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 4233,
+  "file_count": 4242,
   "files": [
     {
       "extension": ".md",
@@ -372,17 +372,17 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778135807,
+      "mtime": 1778146186,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
-      "sha256": "a6f2e013a813b87aff4f6ea0b37aeb3845db0b9a508536bb99ec92170cc4ae2a",
+      "sha256": "5d13b66a4a1b5bd5a0e04d7bb49d03458d6a2dd109fb02e31eb1698a8c1255b9",
       "size": 3251,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778135807,
+      "mtime": 1778146186,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
-      "sha256": "88befa5213691f1c23b5bed15227ff8fc234ca266c811e35e70c441568dfc7e8",
+      "sha256": "8a3c6bcbb1b98aa0033b6037917314115abe44a8add829c0a36b7ca844b39e89",
       "size": 2324,
       "type": "document"
     },
@@ -548,10 +548,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778135698,
+      "mtime": 1778146067,
       "path": ".aide/memory/open-risks.md",
-      "sha256": "0cd43011892a7e76c57e8eb364418d74fcfeda247a3db1f13fdf840e52a258da",
-      "size": 956,
+      "sha256": "55ea348a323e4732ac994434b8d643734395e1c08e25dc1f395ed5a037043010",
+      "size": 958,
       "type": "document"
     },
     {
@@ -564,10 +564,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778135698,
+      "mtime": 1778146067,
       "path": ".aide/memory/project-state.md",
-      "sha256": "27b49ed799a25d176dc15c9fb74ff36d8c29dae32211aee7933812c3577765e1",
-      "size": 1670,
+      "sha256": "3c52dbc53f12d8de84c1a1f77266d6c4c9985551479b361326366d44bf59e41f",
+      "size": 1555,
       "type": "document"
     },
     {
@@ -852,10 +852,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778135927,
+      "mtime": 1778136356,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md",
-      "sha256": "468126cb171b7014904129a0ba467e79d41ef90b0e70bea9756c75eb4184101d",
-      "size": 1912,
+      "sha256": "9f5e8b1b74dbb7724cec869fe5d380639d9751f0dca1a3bd33c35200dc8d9f50",
+      "size": 1910,
       "type": "document"
     },
     {
@@ -868,18 +868,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778135927,
+      "mtime": 1778136356,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/token-savings-confirmation.md",
-      "sha256": "5c3e8641f4ffa1bbec05655d802dd247f94c407af56329638b893ddb9f50707c",
+      "sha256": "bdd946521a02bccdea7206b3bec6bb32e636c9ad7cc82221944c0159d0f55f13",
       "size": 1773,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778136121,
+      "mtime": 1778136356,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md",
-      "sha256": "6676a192fbcf2550f04b2e12a2949897d69e37f8691c80e71e976604c6017aaf",
-      "size": 3601,
+      "sha256": "0cffa68e3b81795c4fb00798f9e014163123adaff1b14f60170d1472c36c00f9",
+      "size": 3675,
       "type": "document"
     },
     {
@@ -988,6 +988,78 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778146067,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/ExecPlan.md",
+      "sha256": "178c0b59f39399466c22160e07bec3263ddce040d2cafcc84710ce22868d57ab",
+      "size": 1376,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778146258,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/changed-files.md",
+      "sha256": "f8cbbc3ab32ab74d064c410cfa14ad51b5bfda65f1656fcbe814871242f1c549",
+      "size": 1894,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778146258,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/remaining-risks.md",
+      "sha256": "26460cdcaed80135499a76a1c084134b6ebed8c8077a8f650feabc999d26d368",
+      "size": 841,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778146258,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/repair-report.md",
+      "sha256": "6a3da1e386b14e4cd0913b913922dbc9aa2f4f270ce28ce8540bb0701c0a5331",
+      "size": 2298,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778145246,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/root-cause.md",
+      "sha256": "55973a22f845a8e7e1e38611ee8738023bb9f6d3b1513b654b8edd156d514239",
+      "size": 2733,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778146291,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/evidence/validation.md",
+      "sha256": "13a885fbd2f3d19079ec7cd9ca3675bc9d4b913430d5ed7e2c4599e6b49a698a",
+      "size": 4387,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778145246,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/prompt.md",
+      "sha256": "a78c0f207237df67e83b52b21c19cc293d4047d219e2dcef6a61daf2dff2da41",
+      "size": 589,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778146067,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/status.yaml",
+      "sha256": "7d06ff54cda9af8281b3f0a01eb1af95c64bacc1c9a828ccbff107f64f209897",
+      "size": 627,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778146067,
+      "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/task.yaml",
+      "sha256": "50070c5c8b0f4a78ac4df84c33d8fce79eed26ed99500e6216c9b4c6ee2d3b3b",
+      "size": 1477,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778123120,
       "path": ".aide/queue/README.template.md",
       "sha256": "c1f67af605c5b5ff5de671bbc3b92a694ee698f72606a87aa6a03f5c23216be7",
@@ -1012,17 +1084,17 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778135797,
+      "mtime": 1778146175,
       "path": ".aide/reports/token-ledger.jsonl",
-      "sha256": "c9b7c456adf65dddaa3af460cbabceeb2c9685a994e7afbf7dd760b726efbefa",
+      "sha256": "a187f3ad34994761aefaec8c3de496b5de2cf1826f4bb769cafb5cd5c9c3ca5e",
       "size": 4483,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778135797,
+      "mtime": 1778146175,
       "path": ".aide/reports/token-savings-summary.md",
-      "sha256": "748f514fb5ea3221a6a3978e18a962b2879a8abdc2f6705749d067c3e69d8ccf",
+      "sha256": "8a57754f5e832e1a501366bfa4b220a587d9c12177918708f1f4c6cb00893316",
       "size": 2416,
       "type": "document"
     },
@@ -1116,10 +1188,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778133493,
+      "mtime": 1778145745,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "c711061b9f555c94c75ec72a4c61f234e0f92ea55efbc97888c5fe7b9409158f",
-      "size": 385120,
+      "sha256": "0eab58d0aeaebae5e63bcf6a478c868e4b1f2704469e796e5a9adf914d96b437",
+      "size": 395852,
       "type": "source-or-config"
     },
     {
@@ -1132,10 +1204,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778123120,
+      "mtime": 1778145518,
       "path": ".aide/scripts/tests/test_aide_lite.py",
-      "sha256": "62afb63981c9148187112bf79b546654cf40fdc4fbc6a5e0f8aed35f6421bf1f",
-      "size": 9833,
+      "sha256": "0eba404bbc73be431227444effcc2a6a8dc2b7f54ffb6811db88f2f3039af9e0",
+      "size": 10911,
       "type": "source-or-config"
     },
     {
@@ -19564,9 +19636,9 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778135927,
+      "mtime": 1778136356,
       "path": "docs/reference/aide-handover.md",
-      "sha256": "20f8d0a3ed75bf08fce5fd502b500271ef7d5872f4f25aa4851521a7883b908c",
+      "sha256": "aa3e0608d3efeb8e8f4dd2dde7ef2f37d8b3e8f441ed34dc307d990bdc9edfa5",
       "size": 1621,
       "type": "document"
     },
@@ -33915,12 +33987,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 5799985,
-    "file_count": 4233,
-    "total_size": 23199939,
+    "aggregate_approx_tokens": 5806983,
+    "file_count": 4242,
+    "total_size": 23227930,
     "type_counts": {
-      "document": 2198,
-      "source-or-config": 1830,
+      "document": 2205,
+      "source-or-config": 1832,
       "unknown": 205
     }
   }
