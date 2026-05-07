@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-SELFTEST-01
+status: in_progress
+updated: 2026-05-07
+summary: >
+  Baseline commands reproduced the imported AIDE Lite temp-fixture failure.
+  Repair and validation are in progress.
+known_limitations:
+  - Final `test`/`selftest` result is pending repair.
+  - Next task packet regeneration is pending repair validation.
+next:
+  - Patch temp-fixture fallback only.
+  - Run post-repair validation.
+  - Move status to `needs_review`.

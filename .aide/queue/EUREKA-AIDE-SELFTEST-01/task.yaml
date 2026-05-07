@@ -1,0 +1,43 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-AIDE-SELFTEST-01
+title: Repair imported AIDE Lite selftest fixture fallback
+status: in_progress
+target_repo: julesc013/eureka
+phase: EUREKA-AIDE-SELFTEST-01
+source_packet: .aide/context/latest-task-packet.md
+scope:
+  allowed_paths:
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/queue/EUREKA-AIDE-SELFTEST-01/**
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/context/**
+    - .aide/reports/**
+    - .aide/evals/runs/**
+    - .aide/memory/open-risks.md
+    - .aide/memory/project-state.md
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - tests/**
+    - core/**
+    - docs/reference/**
+    - .aide.local/**
+    - .env
+    - secrets/**
+objective: >
+  Make Eureka-local AIDE Lite `test` and `selftest` pass by repairing only the
+  portable selftest temp-fixture fallback, without importing broad AIDE
+  `core/**` roots or changing Eureka product code.
+acceptance:
+  - Root cause is documented with exact failing commands and traceback summary.
+  - `py -3 .aide/scripts/aide_lite.py test` exits 0.
+  - `py -3 .aide/scripts/aide_lite.py selftest` exits 0.
+  - Doctor, validate, verify, eval, adapter validation, and architecture checks run.
+  - No Eureka product source files are changed.
+  - No `core/**`, `.aide.local/`, secrets, raw prompts, or raw responses are committed.
