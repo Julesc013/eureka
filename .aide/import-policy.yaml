@@ -8,10 +8,10 @@ import_method: manual_target_scoped_after_q21_dry_run
 import_date: 2026-05-07
 allowed_target_roots:
   - .aide/
+  - .aide.local.example/
   - .gitignore
   - AGENTS.md
 excluded_pack_roots:
-  - .aide.local.example/
   - core/
   - docs/reference/
 safety_rules:
@@ -28,4 +28,5 @@ safety_rules:
   network_calls: false
 notes:
   - Existing Eureka `.aide/` repo-operating metadata was preserved.
+  - `.aide.local.example/` is committed example documentation only; actual `.aide.local/` remains ignored and uncommitted.
   - The source command dry-run reported zero conflicts, but direct application was not used because the command copies every `files/` root, including roots outside the Q22 target scope.

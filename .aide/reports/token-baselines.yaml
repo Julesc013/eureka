@@ -1,0 +1,38 @@
+schema_version: aide.token-baselines.v0
+baseline_id: eureka-q22-token-baselines
+status: q22-local-estimate
+method: chars_divided_by_4
+all_baselines_are_estimates: true
+baselines:
+  - name: root_history_baseline
+    purpose: Approximate broad Eureka root/docs prompt bundle that the compact task packet should replace.
+    paths:
+      - README.md
+      - AGENTS.md
+      - docs/README.md
+      - docs/ROADMAP.md
+      - docs/BOOTSTRAP_STATUS.md
+      - docs/operations/TEST_AND_EVAL_LANES.md
+      - control/inventory/tests/README.md
+      - .aide/memory/project-state.md
+  - name: review_baseline
+    purpose: Approximate broad manual review bundle replaced by latest-review-packet refs.
+    paths:
+      - AGENTS.md
+      - .aide/context/latest-task-packet.md
+      - .aide/context/latest-context-packet.md
+      - .aide/verification/latest-verification-report.md
+      - .aide/memory/project-state.md
+      - .aide/memory/decisions.md
+      - .aide/memory/open-risks.md
+  - name: repo_context_baseline
+    purpose: Approximate broad repo-context prompt replaced by compact context packet refs.
+    paths:
+      - README.md
+      - AGENTS.md
+      - docs/README.md
+      - docs/ROADMAP.md
+      - docs/BOOTSTRAP_STATUS.md
+      - docs/REPO_LAYOUT.md
+      - .aide/context/repo-map.md
+      - .aide/memory/project-state.md
