@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3792 chars, 948 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5767 chars, 1442 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1808 chars, 452 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1827 chars, 457 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -23,8 +23,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - `.aide/verification/latest-verification-report.md`
 - verifier_result: WARN
-- report_chars: 5571
-- report_approx_tokens: 1393
+- report_chars: 4572
+- report_approx_tokens: 1143
 
 ## Evidence Packet References
 
@@ -34,13 +34,23 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- unknown: `.aide/queue/EUREKA-AIDE-PILOT-01` (??; does not match active task allowed paths)
-- allowed: `README.md` (M; matches active task allowed path)
-- allowed: `docs/reference/aide-lite-import.md` (??; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `.aide/memory/decisions.md` (M; does not match active task allowed paths)
+- unknown: `.aide/memory/open-risks.md` (M; does not match active task allowed paths)
+- unknown: `.aide/memory/project-state.md` (M; does not match active task allowed paths)
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
+- allowed: `.aide/routing/latest-route-decision.md` (M; matches active task allowed path)
+- allowed: `docs/reference/aide-handover.md` (??; matches active task allowed path)
+- allowed: `docs/reference/aide-lite-import.md` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -50,8 +60,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4208
-- approx_tokens: 1052
+- chars: 5394
+- approx_tokens: 1349
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -68,8 +78,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Route Decision Summary
 
 - route_decision: `.aide/routing/latest-route-decision.json`
-- route_class: local_strong
-- task_class: bounded_code_patch
+- route_class: frontier
+- task_class: unknown
 - hard_floor_applied: none
 - quality_gate_status: WARN
 - advisory_only: true
@@ -102,6 +112,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
 - Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
 - Imported pack commands may need follow-up adaptation after Q22 if direct import behavior or validation warnings are too broad for target repos.
+- Q25 safe import scope is improved, but the imported `selftest`/`test` temp-fixture path still fails and remains a recorded handover limitation.
+- First real implementation work should repair the target-local AIDE Lite `test`/`selftest` failure before broader Eureka-specific golden-task work.
 
 ## Non-Goals / Scope Guard
 

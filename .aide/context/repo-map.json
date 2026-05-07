@@ -437,25 +437,25 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "e96ff1a03512e8cdc5da9a0c344e6143ee82b1cea5bd91ceb435a52469c53aba",
+      "hash": "7a194e69356ac323a2cc277d090402c02f9f994e67418062c80034ad663b3bf5",
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 3250
+      "size": 3251
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "cfb198942a2547ae6c983b61a9e4e1d01fc900516fe9e3ff96358fc00c15e125",
+      "hash": "fb73ec30d60196d4a99616f12bcbf6387259455d65a7b6cb0c9bd4e6cfcf3dc0",
       "path": ".aide/evals/runs/latest-golden-tasks.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 2323
+      "size": 2324
     },
     {
       "classification": "manual",
@@ -528,6 +528,102 @@
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
       "size": 201
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "b3df25b6e936adadca63275f17c710a06eef8e778199ba70490a8ce4834b8a9a",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/changed-files.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 804
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "6b5564ef48109fc7399daea12dc10029d7bdf01f8fa01b22a6d275b98cc2294d",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 2298
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "599a946de321861b4aff87fd822e980117aae98991987a3eea8bea2c7bf47f80",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/next-task-handoff.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 611
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "2c98a1e8ca9f39b3627b48f0507f3dcec77485fa11474a2d6dfc37335d6e088c",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 3287
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "d45917343dc2306e9f62a6c2cc049f29c9522804d5c43bb5b9f707160ec07f8e",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1065
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "b4b40c0e080b1740ad416e0437372c9f5c8812520ea9752494e7a6f4f0202679",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/remaining-risks.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 577
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "11dfdb3187018d30c7fd63cad1116a56aa33805dfb72194ea4427cd8f141dab0",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/token-savings-confirmation.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 497
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "5b4293be5fa9ffbc9f315844959ab28201ebd75d284fe8b7c9a96114574e0818",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 2477
     },
     {
       "classification": "manual",
@@ -665,13 +761,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "3dd6a052e7c4da832061ae8b051513e5551f9c929ef65d78adf3c336a4aac7f0",
+      "hash": "71e8a509b2cc9d0951d346e0b0188a629d2f2cb385e30d1c90f9cbe5af890741",
       "path": ".aide/policies/export-import.yaml",
       "priority": 95,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "aide policy path",
-      "size": 1752
+      "size": 2332
     },
     {
       "classification": "manual",
@@ -869,25 +965,25 @@
       "classification": "generated",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "0250c0c9203c8f5d9754b20a1ff7c862957fab36bec3738cc95fda33c25e6077",
+      "hash": "521e3d02bb2c968127f3da446738a16044410ddc5741c66d10225d7ac844525a",
       "path": ".aide/routing/latest-route-decision.json",
       "priority": 94,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "AIDE advisory routing/model metadata path",
-      "size": 2013
+      "size": 2033
     },
     {
       "classification": "generated",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "9e4ed0b28fd8b03df9456b51027a41735418fe3760931fc767879d31a8aa89ac",
+      "hash": "4a54a3dda1a5842f6934c39f0fedded0c0223495fb797d28a83db298b594e273",
       "path": ".aide/routing/latest-route-decision.md",
       "priority": 94,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "AIDE advisory routing/model metadata path",
-      "size": 1742
+      "size": 1757
     },
     {
       "classification": "manual",
@@ -941,6 +1037,54 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
+      "hash": "d7f2e23e8aeddbaf465c7df5b84d3c42d77bed31546eb49c221e70dd5e650f5f",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/ExecPlan.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1581
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "b10a9afd37ba9ff5b86280bfba417737c118788cc542b97792290c6c94df5d65",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/prompt.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 671
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "6523ed890651fb5dcefde5dd1396f1aa8ddee47cacfac1bc0c9868aeb63df1ce",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/status.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 745
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "2223db14d6bccc5c8af3627781fdefcb13b81d8d8a7007536d2c1dad565d7547",
+      "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1427
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
       "hash": "e043efbb52a0d9c7b6e2127d322e4c5570e7f45cd9f1fd502cdd5f3468c6434b",
       "path": ".aide/queue/EUREKA-AIDE-PILOT-01/ExecPlan.md",
       "priority": 10,
@@ -989,7 +1133,7 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "13e56d55ec1dfc1c9c324b5e6b956590d1e1710af47ff0b215a21681e695119f",
+      "hash": "fcb03ea8809abbbca832ac01c03f3a08f89250c47236b52f26f289be0bca912f",
       "path": ".aide/queue/EUREKA-AIDE-PILOT-01/quality-and-limitations.md",
       "priority": 10,
       "priority_band": "normal",
@@ -1037,7 +1181,7 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "97446ae63f33fdd9555e8957eb97d42532329876a205394583fa8ef2f5e77de2",
+      "hash": "79ea7864e5d16f63a73af6774bc3034a3e938f3ce41fabd5a9060a0295382ff2",
       "path": ".aide/queue/EUREKA-AIDE-PILOT-01/token-savings-report.md",
       "priority": 10,
       "priority_band": "normal",
@@ -1049,13 +1193,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "a72588d31409dbb134019291233f5acee1e155ed3b560d50a266b57e58b5772d",
+      "hash": "8c9161683093f7da9df35f338c3baced18453d1d6fdfedf692ed89f13173fd36",
       "path": ".aide/queue/EUREKA-AIDE-PILOT-01/validation.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_queue",
       "role_reason": "aide queue path",
-      "size": 2831
+      "size": 3168
     },
     {
       "classification": "manual",
@@ -9209,13 +9353,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "ef8fdd43bf717e0a5d2491f05c95720face9e18f2d20bd9b5ede83016f2f2c25",
+      "hash": "c0e008a1574b7cfa259cafd56a407637078062b8a7638b5f42694bb317f3010c",
       "path": ".aide/memory/decisions.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 707
+      "size": 1070
     },
     {
       "classification": "manual",
@@ -9233,13 +9377,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "848b4822304040f6f6d48fa2cdc49cc8182a04ac676ce981ea2fac476fd385ba",
+      "hash": "0cd43011892a7e76c57e8eb364418d74fcfeda247a3db1f13fdf840e52a258da",
       "path": ".aide/memory/open-risks.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 661
+      "size": 956
     },
     {
       "classification": "manual",
@@ -9257,13 +9401,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "5475642dbc51978c626241c0823d237d0fabaeeb23b07595df538f43f7b567cc",
+      "hash": "27b49ed799a25d176dc15c9fb74ff36d8c29dae32211aee7933812c3577765e1",
       "path": ".aide/memory/project-state.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 1528
+      "size": 1670
     },
     {
       "classification": "manual",
@@ -9293,13 +9437,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "c504cf198e4a8ff17051e3ffe5c6bc9987c932943862f40a7f9332d58dff33c5",
+      "hash": "99f9da722d41ca11500a0a65392737d17e14a43a23f70515a7afb4178f7c42c6",
       "path": ".aide/reports/token-savings-summary.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2413
+      "size": 2416
     },
     {
       "classification": "manual",
@@ -9317,13 +9461,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "e02efda6c51c5387f6e1515a27f71f6a6e461a4c9747165d07aab9b3b93b8f5d",
+      "hash": "c623ebcab1fc414a2ff0194f32c989b5e3d989d10e18edaa5a97c73b65646818",
       "path": ".aide/verification/latest-verification-report.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 5571
+      "size": 4572
     },
     {
       "classification": "manual",
@@ -31997,13 +32141,25 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "467ab3c990a2b6e30b7b7e59f8d05d930b8261d46449c4b5bf009da582ae2ec0",
+      "hash": "33fb562685f62ff73509bedeee081c5489004202412b8493701bc07e062b01f7",
+      "path": "docs/reference/aide-handover.md",
+      "priority": 68,
+      "priority_band": "medium",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 1539
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "1aca3c1659724effaf92d81f26b1dfad8ec4e287a5985a88ab524b55d7f592be",
       "path": "docs/reference/aide-lite-import.md",
       "priority": 68,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 1003
+      "size": 1485
     },
     {
       "classification": "manual",
@@ -34901,13 +35057,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "2b167d5c55108c660eee6b153d5c02a8dd56d60c0b743d3b33c25f93d7470bdd",
+      "hash": "c711061b9f555c94c75ec72a4c61f234e0f92ea55efbc97888c5fe7b9409158f",
       "path": ".aide/scripts/aide_lite.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "script",
       "role_reason": "script path",
-      "size": 381737
+      "size": 385120
     },
     {
       "classification": "manual",
@@ -37505,13 +37661,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "0c745744f4bfcdf1f4d94025bf329e0255adeb859b2ef7ee90806dab761dfd39",
+      "hash": "f309ac9fa87ca5d43e533af765ebfed13cba39bde93619790546d9bc947364c8",
       "path": ".aide/scripts/tests/test_export_import.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "test",
       "role_reason": "test path/name heuristic",
-      "size": 8830
+      "size": 12362
     },
     {
       "classification": "manual",
@@ -44405,13 +44561,13 @@
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "d2920b1963e1823eea572a2dc7918182a864cd48ea09d4483e01ee60779c86f4",
+      "hash": "537cf3ec6e6cd6d71a2d9b0f7ec7d4cbe5c8e0e5d79db4f70e78324e082691af",
       "path": ".aide/reports/token-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 4482
+      "size": 4483
     },
     {
       "classification": "manual",
@@ -50646,22 +50802,23 @@
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "schema_version": "aide.repo-map.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "4ac07c21e17d0e21f78e609cd34127e4a849c628a8d36a160640b04e6cf8cb21",
+  "source_snapshot_hash": "9b0ae3dd4d740b1fd4b882d10e3046f68415b542cb229c2b146c10b6c7088bf6",
   "summary": {
-    "file_count": 4220,
+    "file_count": 4233,
     "priority_counts": {
       "high": 411,
-      "medium": 85,
-      "normal": 3724
+      "medium": 86,
+      "normal": 3736
     },
     "role_counts": {
       "aide_context": 4,
       "aide_contract": 40,
+      "aide_evidence": 8,
       "aide_policy": 31,
       "aide_prompt": 3,
-      "aide_queue": 11,
+      "aide_queue": 15,
       "config": 669,
-      "docs": 2141,
+      "docs": 2142,
       "generated": 9,
       "script": 214,
       "test": 577,

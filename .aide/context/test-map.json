@@ -1218,6 +1218,174 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/next-task-handoff.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/token-savings-confirmation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-HANDOVER-01/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/EUREKA-AIDE-PILOT-01/ExecPlan.md",
       "source_role": "aide_queue"
     },
@@ -28959,6 +29127,20 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/aide-handover.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/aide-lite-import.md",
       "source_role": "docs"
     },
@@ -35335,8 +35517,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 2524,
+    "mapping_count": 2537,
     "with_existing_candidate": 1,
-    "without_existing_candidate": 2523
+    "without_existing_candidate": 2536
   }
 }
