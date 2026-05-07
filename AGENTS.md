@@ -45,3 +45,14 @@
 - If verification cannot be completed, say so plainly and list the reason.
 - If follow-up work is intentionally deferred, list it under a clear deferred or open-items heading.
 - Repo audits should emit structured findings under `control/audits/` and should not be treated as production-readiness claims.
+
+<!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
+## AIDE Lite Portable Guidance
+
+- This repository uses a portable AIDE Lite Pack imported from AIDE.
+- Keep target-specific project state in `.aide/memory/`; do not copy source AIDE memory.
+- Do not copy source `.aide/queue/`, generated context, reports, route decisions, cache-key reports, Gateway/provider status reports, `.aide.local/`, raw prompts, raw responses, or secrets.
+- Generate target-local context with `py -3 .aide/scripts/aide_lite.py snapshot`, `index`, `context`, and `pack`.
+- Use `py -3 .aide/scripts/aide_lite.py test` for portable AIDE Lite validation.
+- Provider/model/network calls and Gateway forwarding remain forbidden unless a future reviewed target queue item enables them.
+<!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->

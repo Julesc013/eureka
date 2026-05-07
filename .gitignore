@@ -31,6 +31,8 @@ target/
 tmp/
 
 # Future Eureka local/private state (must not be committed)
+.aide.local/
+.aide.local/**
 .eureka-local/
 .eureka-cache/
 .eureka-staging/
