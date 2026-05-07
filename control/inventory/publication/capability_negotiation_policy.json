@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "eureka-representation-capability-negotiation",
+  "label": "Representation capability negotiation policy",
+  "description": "Contract-only policy for selecting a representation profile without changing route identity or resolver semantics.",
+  "contract_ref": "contracts/representations/capability_negotiation.v0.json",
+  "status": "contract_only",
+  "stability": "experimental",
+  "created_by_slice": "track_a_01_representation_contracts_v0",
+  "negotiation_order": [
+    "explicit_url_parameter",
+    "user_account_device_preference_future",
+    "native_app_relay_capability_manifest_future",
+    "host_profile",
+    "accept_header",
+    "client_hints_future_optional",
+    "conservative_user_agent_inference",
+    "safest_default"
+  ],
+  "allowed_selector_fields": [
+    "format",
+    "profile",
+    "skin",
+    "density",
+    "client",
+    "caps"
+  ],
+  "allowed_explicit_params": [
+    "format",
+    "profile",
+    "skin",
+    "density",
+    "client",
+    "caps"
+  ],
+  "host_profile_defaults": {
+    "api_alias": "api_json",
+    "files_static": "file_tree",
+    "localhost_relay_future": "relay_future",
+    "nodes_future": "standard_html",
+    "old_legacy_read_only": "html32",
+    "status_static": "text",
+    "www_auto": "standard_html"
+  },
+  "fallback_profile": "text",
+  "forbidden_downgrades": [
+    "route_identity_change",
+    "source_evidence_status_meaning_change",
+    "risk_rights_limitations_hidden",
+    "auth_on_public_read_only_legacy_host",
+    "automatic_live_source_behavior",
+    "automatic_download_installer_execution",
+    "private_data_exposure",
+    "api_token_exposure"
+  ],
+  "blocked_behaviors": [
+    "no route identity changes",
+    "no source/evidence/status meaning changes",
+    "no hiding risk/rights/limitations",
+    "no auth on public-read-only legacy hosts",
+    "no automatic live-source behavior",
+    "no automatic downloads/installers/execution",
+    "no private data exposure",
+    "no API token exposure"
+  ],
+  "private_state_policy": {
+    "status": "future_only",
+    "enabled_now": false,
+    "user_account_preferences_enabled": false,
+    "device_preferences_enabled": false,
+    "private_data_allowed": false,
+    "cookies_required": false
+  },
+  "old_client_safety_policy": {
+    "public_read_only_only": true,
+    "auth_allowed": false,
+    "cookies_allowed": false,
+    "credentials_allowed": false,
+    "account_actions_allowed": false,
+    "writes_allowed": false,
+    "private_data_allowed": false,
+    "api_tokens_allowed": false,
+    "unsafe_actions_allowed": false
+  },
+  "selector_interpretation": {
+    "format": "Representation family request such as html, text, json, files, snapshot, relay, terminal, native, or print.",
+    "profile": "Exact representation_profile_id request when allowed by the active host profile.",
+    "skin": "Presentation skin hint only; it must not alter semantics.",
+    "density": "Compact, normal, or detailed layout hint only.",
+    "client": "Declared client family hint such as browser, old_browser, terminal, native_future, or relay_future.",
+    "caps": "Compact capability tokens such as no-js, no-css, text, json, or manifest."
+  },
+  "accept_header_policy": {
+    "status": "advisory_after_host_profile",
+    "may_select": [
+      "api_json",
+      "lite_html",
+      "manifest_json",
+      "standard_html",
+      "text"
+    ],
+    "must_remain_within_host_allowed_profiles": true,
+    "must_not_change_route_identity": true
+  },
+  "client_hints_policy": {
+    "status": "future_optional",
+    "enabled_now": false,
+    "must_remain_within_host_allowed_profiles": true
+  },
+  "user_agent_inference_policy": {
+    "status": "conservative_only",
+    "allowed_inferences": [
+      "old_browser_to_lite_or_text",
+      "text_browser_to_text",
+      "automation_to_json_or_text"
+    ],
+    "must_not_override_explicit_safe_request": true,
+    "must_not_enable_auth_or_live_behavior": true
+  },
+  "no_product_runtime_behavior": true,
+  "notes": [
+    "Explicit URL parameters are selectors only; they cannot activate routes, writes, accounts, downloads, installers, live probes, source connectors, private data, or native projects.",
+    "User/account/device preferences and native/relay capability manifests are future-only and disabled now.",
+    "The safest default is plain text because it is public-read-only, no-JS, no-CSS, no-cookie, no-auth, and first-class."
+  ]
+}

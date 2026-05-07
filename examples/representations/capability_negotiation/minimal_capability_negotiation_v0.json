@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "policy_id": "example-minimal-capability-negotiation-v0",
+  "label": "Example capability negotiation policy",
+  "description": "Compact public-safe example for selecting a representation without changing route or semantic meaning.",
+  "negotiation_order": [
+    "explicit_url_parameter",
+    "user_account_device_preference_future",
+    "native_app_relay_capability_manifest_future",
+    "host_profile",
+    "accept_header",
+    "client_hints_future_optional",
+    "conservative_user_agent_inference",
+    "safest_default"
+  ],
+  "allowed_selector_fields": [
+    "format",
+    "profile",
+    "skin",
+    "density",
+    "client",
+    "caps"
+  ],
+  "allowed_explicit_params": [
+    "format",
+    "profile",
+    "skin",
+    "density",
+    "client",
+    "caps"
+  ],
+  "host_profile_defaults": {
+    "example_legacy_http_read_only": "text",
+    "example_standard_public": "standard_html"
+  },
+  "fallback_profile": "text",
+  "forbidden_downgrades": [
+    "route_identity_change",
+    "source_evidence_status_meaning_change",
+    "risk_rights_limitations_hidden",
+    "auth_on_public_read_only_legacy_host",
+    "automatic_live_source_behavior",
+    "automatic_download_installer_execution"
+  ],
+  "blocked_behaviors": [
+    "no route identity changes",
+    "no source/evidence/status meaning changes",
+    "no hiding risk/rights/limitations",
+    "no auth on public-read-only legacy hosts",
+    "no automatic live-source behavior",
+    "no automatic downloads/installers/execution"
+  ],
+  "private_state_policy": {
+    "status": "future_only",
+    "enabled_now": false,
+    "user_account_preferences_enabled": false,
+    "device_preferences_enabled": false,
+    "private_data_allowed": false,
+    "cookies_required": false
+  },
+  "old_client_safety_policy": {
+    "public_read_only_only": true,
+    "auth_allowed": false,
+    "cookies_allowed": false,
+    "credentials_allowed": false,
+    "account_actions_allowed": false,
+    "writes_allowed": false,
+    "private_data_allowed": false,
+    "api_tokens_allowed": false,
+    "unsafe_actions_allowed": false
+  },
+  "no_product_runtime_behavior": true,
+  "notes": [
+    "Example only; no user preferences, native manifests, live behavior, downloads, installs, or execution are enabled."
+  ]
+}

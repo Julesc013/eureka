@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "example-minimal-host-profiles-v0",
+  "contract_ref": "contracts/representations/host_profile.v0.json",
+  "status": "public_safe_example",
+  "profiles": [
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "example_standard_public",
+      "host_role": "canonical_web",
+      "label": "Example standard public selector",
+      "description": "Compact public-safe selector for standard, lite, text, and file-tree projections.",
+      "canonical": true,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "standard_html",
+        "lite_html",
+        "text",
+        "file_tree"
+      ],
+      "allowed_route_families": [
+        "files",
+        "lite",
+        "public_static",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "write"
+      ],
+      "https_required": true,
+      "http_allowed": false,
+      "legacy_http_compatible": false,
+      "hsts_allowed": true,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Example only; no real domain or hosting claim."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "example_legacy_http_read_only",
+      "host_role": "legacy_web",
+      "label": "Example legacy HTTP read-only selector",
+      "description": "Compact legacy selector that allows only public read-only no-auth projections.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "text",
+      "allowed_representation_profiles": [
+        "html32",
+        "text"
+      ],
+      "allowed_route_families": [
+        "public_static",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "write"
+      ],
+      "https_required": false,
+      "http_allowed": true,
+      "legacy_http_compatible": true,
+      "hsts_allowed": false,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Legacy HTTP-compatible examples remain public-read-only only."
+      ]
+    }
+  ],
+  "notes": [
+    "Public-safe synthetic example; contains no real domains, credentials, private paths, or deployment claims."
+  ]
+}

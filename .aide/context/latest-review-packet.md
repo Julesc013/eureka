@@ -33,31 +33,23 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/README.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/commit_message_standard_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_resumption_standard_golden` (??; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/hooks` (??; does not match active task allowed paths)
-- unknown: `.aide/policies/commit-messages.yaml` (??; does not match active task allowed paths)
-- allowed: `.aide/policies/evals.yaml` (M; matches active task allowed path)
-- unknown: `.aide/policies/task-resumption.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-GOVERNANCE-01` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-commit-message-standard.md` (??; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-task-resumption-standard.md` (??; matches active task allowed path)
-- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
-- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
-- allowed: `.aide/scripts/tests/test_golden_tasks.py` (M; matches active task allowed path)
-- allowed: `AGENTS.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/TRACK-A-01/evidence` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/TRACK-A-01/status.yaml` (M; does not match active task allowed paths)
 - unknown: `contracts/representations` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-a-01-representation-contracts-v0` (??; does not match active task allowed paths)
 - unknown: `control/inventory/publication/capability_negotiation_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 2; see task evidence changed-files report
+- unknown: `control/inventory/publication/host_profiles.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/publication/representation_profiles.json` (??; does not match active task allowed paths)
+- allowed: `docs/reference/CAPABILITY_NEGOTIATION_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/HOST_PROFILE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/REPRESENTATION_PROFILE_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/representations` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_repository_layout.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_representation_contracts.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6248
-- approx_tokens: 1562
+- chars: 5644
+- approx_tokens: 1411
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

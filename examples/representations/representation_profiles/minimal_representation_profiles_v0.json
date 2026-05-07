@@ -1,0 +1,229 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "example-minimal-representation-profiles-v0",
+  "contract_ref": "contracts/representations/representation_profile.v0.json",
+  "status": "public_safe_example",
+  "profiles": [
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "standard_html",
+      "representation_family": "standard_html",
+      "label": "Example standard HTML",
+      "media_type": "text/html",
+      "route_usage": [
+        "public_static"
+      ],
+      "javascript_required": false,
+      "css_required": true,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 256,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": true,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source, evidence, status, rights, risk, and limitation meaning"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Example only; no renderer claim."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "html32",
+      "representation_family": "html32",
+      "label": "Example HTML 3.2",
+      "media_type": "text/html",
+      "route_usage": [
+        "lite"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 64,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source, evidence, status, rights, risk, and limitation meaning in old markup"
+      ],
+      "forbidden_omissions": [
+        "public-read-only warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Future-only example."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "text",
+      "representation_family": "text",
+      "label": "Example plain text",
+      "media_type": "text/plain",
+      "route_usage": [
+        "text"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 64,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source, evidence, status, rights, risk, and limitation meaning as text"
+      ],
+      "forbidden_omissions": [
+        "warnings because output is plain text"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": []
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Plain text is a first-class projection."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "lite_html",
+      "representation_family": "lite_html",
+      "label": "Example lite HTML",
+      "media_type": "text/html",
+      "route_usage": [
+        "lite"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 96,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source, evidence, status, rights, risk, and limitation meaning with simple markup"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Lite HTML is a first-class projection."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "file_tree",
+      "representation_family": "file_tree",
+      "label": "Example file tree",
+      "media_type": "application/vnd.eureka.file-tree+json",
+      "route_usage": [
+        "files"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 128,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": true,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve manifest, checksum, source, evidence, status, rights, risk, and limitation meaning"
+      ],
+      "forbidden_omissions": [
+        "no-download and no-execute warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "File-tree is a first-class projection, not a download surface."
+      ]
+    }
+  ],
+  "notes": [
+    "Public-safe synthetic example; contains no real domains, credentials, private paths, or deployment claims."
+  ]
+}

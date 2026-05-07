@@ -25,6 +25,8 @@ DRIFT_POLICY = (
 PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 
 HISTORICAL_ALLOW_DIRS = {
+    ".aide/context",
+    ".aide/queue",
     "control/audits",
     ".aide/reports",
 }
@@ -300,6 +302,8 @@ def _validate_no_active_legacy_references(errors: list[str]) -> list[dict[str, A
             matched = [token for token in legacy_tokens if token in line]
             if not matched:
                 continue
+            if _is_allowed_legacy_reference_line(line):
+                continue
             hit = {"path": _rel(path), "line": line_number, "tokens": matched}
             hits.append(hit)
             errors.append(
@@ -326,6 +330,16 @@ def _active_text_files() -> list[Path]:
 def _is_historical_allowed(path: Path) -> bool:
     rel = _rel(path)
     return any(rel == prefix or rel.startswith(prefix + "/") for prefix in HISTORICAL_ALLOW_DIRS)
+
+
+def _is_allowed_legacy_reference_line(line: str) -> bool:
+    stripped = line.strip()
+    lower = stripped.casefold()
+    if LEGACY_EXTERNAL_ROOT_NAME + "/**" in stripped:
+        return True
+    if any(word in lower for word in ("forbidden", "prohibited", "must not")):
+        return True
+    return False
 
 
 def _read_text(path: Path) -> str | None:

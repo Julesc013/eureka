@@ -1,0 +1,364 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-publication-host-profiles",
+  "contract_ref": "contracts/representations/host_profile.v0.json",
+  "status": "contract_only",
+  "stability": "experimental",
+  "created_by_slice": "track_a_01_representation_contracts_v0",
+  "profiles": [
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "www_auto",
+      "host_role": "canonical_web",
+      "label": "Canonical public web host selector",
+      "description": "Default public web host/profile alias for standard public pages and static search handoff projections.",
+      "canonical": true,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "standard_html",
+        "lite_html",
+        "text",
+        "file_tree",
+        "api_json",
+        "manifest_json",
+        "print"
+      ],
+      "allowed_route_families": [
+        "public_static",
+        "public_search_static_handoff",
+        "data",
+        "demo",
+        "files",
+        "lite",
+        "status",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "relay_future",
+        "write"
+      ],
+      "https_required": true,
+      "http_allowed": false,
+      "legacy_http_compatible": false,
+      "hsts_allowed": true,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "This profile is a selector over public-safe projections, not a separate Eureka product.",
+        "It does not enable hosting, cookies, accounts, writes, downloads, live probes, or private data."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "old_legacy_read_only",
+      "host_role": "legacy_web",
+      "label": "Old-client HTTP-compatible read-only selector",
+      "description": "Legacy/old-browser selector for public-safe HTTP-compatible projections only.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "html32",
+      "allowed_representation_profiles": [
+        "html32",
+        "lite_html",
+        "text",
+        "file_tree",
+        "manifest_json"
+      ],
+      "allowed_route_families": [
+        "data",
+        "files",
+        "lite",
+        "public_static",
+        "status",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "api_local_runtime",
+        "api_reserved",
+        "download",
+        "live_probe",
+        "native_future",
+        "private_data",
+        "write"
+      ],
+      "https_required": false,
+      "http_allowed": true,
+      "legacy_http_compatible": true,
+      "hsts_allowed": false,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Old and HTTP-compatible hosts are public-read-only only.",
+        "No cookies, credentials, account actions, writes, private data, API tokens, unsafe actions, downloads, live probes, or source fanout are allowed."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "api_alias",
+      "host_role": "api_alias",
+      "label": "API-like output selector",
+      "description": "Selector for public-safe JSON and manifest projections. It is not a hosted API claim.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "api_json",
+      "allowed_representation_profiles": [
+        "api_json",
+        "manifest_json",
+        "text"
+      ],
+      "allowed_route_families": [
+        "api_local_runtime",
+        "api_reserved",
+        "data",
+        "status"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "relay_future",
+        "write"
+      ],
+      "https_required": true,
+      "http_allowed": false,
+      "legacy_http_compatible": false,
+      "hsts_allowed": true,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "API-like output keeps schema/version/status meaning visible.",
+        "Reserved API routes remain future unless separate runtime and hosted evidence exists."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "files_static",
+      "host_role": "static_files",
+      "label": "Static file-tree selector",
+      "description": "Selector for file-tree, text, and manifest projections of public-safe static data.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "file_tree",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "manifest_json",
+        "text"
+      ],
+      "allowed_route_families": [
+        "data",
+        "files",
+        "public_static",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "api_local_runtime",
+        "download",
+        "live_probe",
+        "private_data",
+        "write"
+      ],
+      "https_required": false,
+      "http_allowed": true,
+      "legacy_http_compatible": true,
+      "hsts_allowed": false,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "File-tree means static public manifests, indexes, and checksums.",
+        "It does not create mirrors, executable downloads, installers, or writable file access."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "status_static",
+      "host_role": "status",
+      "label": "Static status selector",
+      "description": "Selector for status, health-like, and limitation summaries that remain public-safe and read-only.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "text",
+      "allowed_representation_profiles": [
+        "standard_html",
+        "lite_html",
+        "text",
+        "manifest_json"
+      ],
+      "allowed_route_families": [
+        "data",
+        "public_static",
+        "status",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "write"
+      ],
+      "https_required": false,
+      "http_allowed": true,
+      "legacy_http_compatible": true,
+      "hsts_allowed": false,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "preserve_public_route_identity",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Status projections may simplify layout but must preserve limitations and disabled capability meaning.",
+        "No probes, telemetry, accounts, or private diagnostics are enabled."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "nodes_future",
+      "host_role": "nodes_or_tasks",
+      "label": "Future nodes/tasks selector",
+      "description": "Future selector for node/task-oriented public summaries after later Track B governance exists.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "standard_html",
+      "allowed_representation_profiles": [
+        "api_json",
+        "lite_html",
+        "native_card_future",
+        "standard_html",
+        "terminal_future",
+        "text"
+      ],
+      "allowed_route_families": [
+        "data",
+        "nodes_future",
+        "public_static",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "download",
+        "live_probe",
+        "private_data",
+        "write"
+      ],
+      "https_required": true,
+      "http_allowed": false,
+      "legacy_http_compatible": false,
+      "hsts_allowed": true,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "reserved_future_alias_only",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Future-only Track B-adjacent selector; it does not create node runtime, tasks, uploads, accounts, telemetry, or master-index mutation.",
+        "Candidate and work-unit semantics remain deferred to later governed tasks."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "host_profile_id": "localhost_relay_future",
+      "host_role": "local_relay_future",
+      "label": "Future localhost relay selector",
+      "description": "Future local relay selector for operator-controlled public read-only projections only.",
+      "canonical": false,
+      "public_read_only": true,
+      "auth_allowed": false,
+      "default_representation_profile": "relay_future",
+      "allowed_representation_profiles": [
+        "file_tree",
+        "html32",
+        "manifest_json",
+        "relay_future",
+        "text"
+      ],
+      "allowed_route_families": [
+        "data",
+        "files",
+        "relay_future",
+        "snapshots_future",
+        "text"
+      ],
+      "forbidden_route_families": [
+        "account",
+        "api_local_runtime",
+        "download",
+        "live_probe",
+        "native_future",
+        "private_data",
+        "write"
+      ],
+      "https_required": false,
+      "http_allowed": true,
+      "legacy_http_compatible": true,
+      "hsts_allowed": false,
+      "include_subdomains_hsts_allowed": false,
+      "cookie_allowed": false,
+      "credential_allowed": false,
+      "write_actions_allowed": false,
+      "private_data_allowed": false,
+      "api_tokens_allowed": false,
+      "unsafe_actions_allowed": false,
+      "route_identity_policy": "reserved_future_alias_only",
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Future relay remains disabled and requires later Track D approval.",
+        "HTTP-compatible relay profiles are public-read-only only and cannot carry credentials, private data, API tokens, writes, unsafe actions, downloads, or live probes."
+      ]
+    }
+  ],
+  "notes": [
+    "Host profiles are representation selectors, not separate Eureka products.",
+    "The canonical doctrine is one resolver truth, one route meaning, and many compatible projections.",
+    "This inventory does not change public routes, runtime behavior, hosted behavior, source connectors, live probes, native projects, downloads, uploads, accounts, or telemetry."
+  ]
+}

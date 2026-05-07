@@ -1,0 +1,632 @@
+{
+  "schema_version": "0.1.0",
+  "registry_id": "eureka-publication-representation-profiles",
+  "contract_ref": "contracts/representations/representation_profile.v0.json",
+  "status": "contract_only",
+  "stability": "experimental",
+  "created_by_slice": "track_a_01_representation_contracts_v0",
+  "profiles": [
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "standard_html",
+      "representation_family": "standard_html",
+      "label": "Standard HTML projection",
+      "media_type": "text/html",
+      "route_usage": [
+        "demo",
+        "public_search_static_handoff",
+        "public_static"
+      ],
+      "javascript_required": false,
+      "css_required": true,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 512,
+      "supports_forms": true,
+      "supports_tables": true,
+      "supports_images": true,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "static_seed",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve public route identity and source route meaning",
+        "preserve source, evidence, status, rights, risk, limitation, and action-gate meaning",
+        "show candidate, absence, conflict, disabled-live, and no-download limitations where present"
+      ],
+      "forbidden_omissions": [
+        "source or provenance references",
+        "evidence confidence and limitation text",
+        "rights, risk, no-download, no-install, no-execute, no-upload, and no-live-probe warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "lite_html",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Standard HTML is a projection of existing public-safe meaning, not separate truth.",
+        "Forms remain public/read-only selectors or disabled handoff UI unless later runtime tasks authorize behavior."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "lite_html",
+      "representation_family": "lite_html",
+      "label": "Lite HTML projection",
+      "media_type": "text/html",
+      "route_usage": [
+        "demo",
+        "lite",
+        "public_search_static_handoff"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 128,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "static_seed",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve resolver source/evidence/status meaning with simpler markup",
+        "preserve rights, risk, limitations, absence, conflict, and disabled-action warnings",
+        "avoid JavaScript, CSS-dependent meaning, cookies, credentials, and private state"
+      ],
+      "forbidden_omissions": [
+        "warnings that are visible in standard HTML",
+        "source/evidence/status fields required to understand a result",
+        "public-read-only and no-live-probe limitations"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "html32",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Lite HTML is a first-class projection for old and low-capability clients, not a disposable fallback.",
+        "It must not silently discard source/evidence/status meaning."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "html32",
+      "representation_family": "html32",
+      "label": "HTML 3.2-compatible projection",
+      "media_type": "text/html",
+      "route_usage": [
+        "lite",
+        "relay_future",
+        "text"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 64,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve public-safe source, evidence, status, rights, risk, and limitation text in old markup",
+        "avoid CSS-only or script-only meaning",
+        "retain no-auth, no-cookie, no-credential, no-write, no-download, and no-live-probe posture"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status summaries",
+        "disabled actions and risk/rights limitations",
+        "public-read-only warning for HTTP-compatible clients"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "HTML 3.2 compatibility is a future contract profile and does not create a new renderer or route.",
+        "It is intended for old-client HTTP-compatible read-only hosts."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "text",
+      "representation_family": "text",
+      "label": "Plain text projection",
+      "media_type": "text/plain",
+      "route_usage": [
+        "public_search_static_handoff",
+        "relay_future",
+        "snapshot_future",
+        "status",
+        "terminal_future",
+        "text"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 64,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "static_seed",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source, evidence, status, rights, risk, limitation, and action-gate meaning in plain text",
+        "make absence, conflict, candidate, unknown, and disabled-live states explicit",
+        "avoid relying on color, layout, images, JavaScript, cookies, or private state"
+      ],
+      "forbidden_omissions": [
+        "warnings because they are visually inconvenient",
+        "source/evidence references because output is text-only",
+        "route, status, risk, rights, and limitation labels"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": []
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Plain text is a first-class projection for text browsers, terminals, screen readers, and simple automation.",
+        "It is not a lossy emergency fallback."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "file_tree",
+      "representation_family": "file_tree",
+      "label": "File-tree projection",
+      "media_type": "application/vnd.eureka.file-tree+json",
+      "route_usage": [
+        "data",
+        "files",
+        "relay_future",
+        "snapshot_future"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 256,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": true,
+      "supports_interactive_preview": false,
+      "renderer_status": "static_seed",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve public-safe manifest, checksum, source, evidence, status, and limitation meaning",
+        "distinguish manifests and checksums from executable downloads or mirrors",
+        "keep private paths, credentials, tokens, writes, uploads, and live probes absent"
+      ],
+      "forbidden_omissions": [
+        "checksum or manifest limitations",
+        "no-download, no-install, and no-execute warnings",
+        "source/evidence/status labels for listed files"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text",
+          "manifest_json"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "File-tree is a first-class projection for static public data and future snapshots.",
+        "It does not enable mirrors, downloads, installers, execution, or writable file access."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "api_json",
+      "representation_family": "api_json",
+      "label": "API JSON projection",
+      "media_type": "application/json",
+      "route_usage": [
+        "api_local_runtime",
+        "api_reserved",
+        "data"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 256,
+      "supports_forms": false,
+      "supports_tables": false,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve schema_version, status, source, evidence, rights, risk, limitations, and action gates in machine-readable form",
+        "distinguish static data, local runtime outputs, and future hosted API outputs",
+        "avoid undocumented private fields, credentials, tokens, and live-source side effects"
+      ],
+      "forbidden_omissions": [
+        "schema_version",
+        "source/evidence/status fields",
+        "risk, rights, limitation, and disabled-action fields"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": false,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "manifest_json",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "API JSON is an output profile, not a hosted backend claim.",
+        "It must not imply that reserved API routes are live or production-stable."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "manifest_json",
+      "representation_family": "manifest_json",
+      "label": "Manifest JSON projection",
+      "media_type": "application/vnd.eureka.manifest+json",
+      "route_usage": [
+        "data",
+        "files",
+        "relay_future",
+        "snapshot_future"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 128,
+      "supports_forms": false,
+      "supports_tables": false,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": true,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": false,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve manifest scope, provenance, status, checksum, and limitation meaning",
+        "distinguish manifest/download metadata from executable payload availability",
+        "retain no-private-data, no-credentials, no-writes, and no-live-probe posture"
+      ],
+      "forbidden_omissions": [
+        "manifest status and checksum limitations",
+        "source/evidence provenance",
+        "no executable download and no install warnings"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": false,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Manifest JSON supports public-safe summaries and future snapshots.",
+        "It is not a download grant or rights clearance claim."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "snapshot_future",
+      "representation_family": "snapshot",
+      "label": "Future snapshot projection",
+      "media_type": "application/vnd.eureka.snapshot+json",
+      "route_usage": [
+        "snapshot_future"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 1024,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": true,
+      "supports_interactive_preview": false,
+      "renderer_status": "future_deferred",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve snapshot manifest, checksums, source, evidence, status, rights, risk, and limitation meaning",
+        "distinguish seed examples from production signed releases",
+        "avoid executable payload, private data, real signing key, and public /snapshots/ route claims"
+      ],
+      "forbidden_omissions": [
+        "signature-placeholder and checksum limitations",
+        "source/evidence/status semantics",
+        "no executable download and no production signature warning"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "file_tree",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Snapshot remains future/deferred and does not publish a public /snapshots/ route.",
+        "This profile prepares Track D without implementing snapshot runtime or production signing."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "relay_future",
+      "representation_family": "relay",
+      "label": "Future relay projection",
+      "media_type": "application/vnd.eureka.relay-capabilities+json",
+      "route_usage": [
+        "relay_future"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 128,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": true,
+      "supports_download_manifests": true,
+      "supports_interactive_preview": false,
+      "renderer_status": "future_deferred",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve public-read-only source/evidence/status meaning across relay transports",
+        "distinguish relay projection from relay runtime, proxying, sockets, or protocol servers",
+        "keep private data, credentials, API tokens, writes, downloads, live probes, and unsafe actions disabled"
+      ],
+      "forbidden_omissions": [
+        "public-read-only limitations for insecure or old clients",
+        "no private data, no credentials, no writes, and no live-probe warnings",
+        "source/evidence/status semantics"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "file_tree",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Relay is future/deferred and no network listener or protocol server exists.",
+        "This profile is a contract for later Track D relay planning only."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "terminal_future",
+      "representation_family": "terminal",
+      "label": "Future terminal projection",
+      "media_type": "text/plain",
+      "route_usage": [
+        "terminal_future",
+        "text"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 64,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": false,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "future_deferred",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve text profile semantics for terminal and CLI-oriented views",
+        "make source/evidence/status, risk, rights, limitations, and disabled actions visible without color",
+        "avoid private state, telemetry, downloads, execution, or live-source side effects"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status labels",
+        "risk, rights, limitations, and disabled-action warnings",
+        "candidate, absence, conflict, and unknown states"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Terminal projection is future/deferred and does not alter the existing CLI.",
+        "It prepares semantic parity with text output."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "native_card_future",
+      "representation_family": "native_card",
+      "label": "Future native card projection",
+      "media_type": "application/vnd.eureka.native-card+json",
+      "route_usage": [
+        "native_future",
+        "snapshot_future"
+      ],
+      "javascript_required": false,
+      "css_required": false,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 128,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": true,
+      "supports_json": true,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "future_deferred",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source/evidence/status meaning in compact native-client cards",
+        "preserve action safety, rights, risk, limitations, candidate, absence, and conflict states",
+        "avoid engine internals, private local paths, credentials, downloads, installers, execution, and telemetry"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status details needed for review",
+        "rights, risk, limitation, and disabled-action warnings",
+        "future-only native-client posture"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "api_json",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Native card is future/deferred and does not create native projects or clients.",
+        "Future native clients must consume governed contracts, not engine internals."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "representation_profile_id": "print",
+      "representation_family": "print",
+      "label": "Print projection",
+      "media_type": "text/html",
+      "route_usage": [
+        "demo",
+        "public_static",
+        "snapshot_future"
+      ],
+      "javascript_required": false,
+      "css_required": true,
+      "cookie_required": false,
+      "auth_allowed": false,
+      "public_read_only": true,
+      "max_page_weight_kb": 256,
+      "supports_forms": false,
+      "supports_tables": true,
+      "supports_images": true,
+      "supports_json": false,
+      "supports_download_manifests": false,
+      "supports_interactive_preview": false,
+      "renderer_status": "contract_only",
+      "first_class_projection": true,
+      "future_only": true,
+      "source_evidence_status_meaning_preserved": true,
+      "route_identity_changes_allowed": false,
+      "semantic_requirements": [
+        "preserve source/evidence/status, rights, risk, limitation, and action-gate meaning when printed",
+        "keep URLs, source labels, evidence summaries, and caveats visible without interactive controls",
+        "avoid hiding warnings because they are not visually compact"
+      ],
+      "forbidden_omissions": [
+        "source/evidence/status references",
+        "rights, risk, limitations, and disabled-action warnings",
+        "candidate, conflict, absence, and unknown states"
+      ],
+      "degradation_policy": {
+        "may_simplify_presentation": true,
+        "must_preserve_semantics": true,
+        "fallback_profile_ids": [
+          "standard_html",
+          "text"
+        ]
+      },
+      "no_product_runtime_behavior": true,
+      "notes": [
+        "Print is a future projection profile only.",
+        "It does not create print routes or generated artifacts."
+      ]
+    }
+  ],
+  "notes": [
+    "Plain text, lite HTML, and file-tree profiles are first-class projections, not disposable fallbacks.",
+    "Every representation profile must preserve resolver identity, route meaning, source/evidence/status semantics, rights/risk limitations, and disabled-action posture.",
+    "This inventory does not change public routes, runtime behavior, hosted behavior, source connectors, live probes, native projects, downloads, uploads, accounts, or telemetry."
+  ]
+}

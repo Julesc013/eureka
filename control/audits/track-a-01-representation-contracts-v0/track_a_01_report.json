@@ -1,0 +1,73 @@
+{
+  "schema_version": "track_a_01_report.v0",
+  "status": "warn",
+  "track": "A",
+  "task": "TRACK-A-01",
+  "added_contracts": [
+    "contracts/representations/host_profile.v0.json",
+    "contracts/representations/representation_profile.v0.json",
+    "contracts/representations/capability_negotiation.v0.json",
+    "docs/reference/HOST_PROFILE_CONTRACT.md",
+    "docs/reference/REPRESENTATION_PROFILE_CONTRACT.md",
+    "docs/reference/CAPABILITY_NEGOTIATION_CONTRACT.md"
+  ],
+  "added_inventories": [
+    "control/inventory/publication/host_profiles.json",
+    "control/inventory/publication/representation_profiles.json",
+    "control/inventory/publication/capability_negotiation_policy.json"
+  ],
+  "added_examples": [
+    "examples/representations/host_profiles/minimal_host_profiles_v0.json",
+    "examples/representations/representation_profiles/minimal_representation_profiles_v0.json",
+    "examples/representations/capability_negotiation/minimal_capability_negotiation_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_representation_contracts.py",
+    "tests/contracts/test_representation_contracts.py"
+  ],
+  "updated_validators": [
+    "scripts/validate_repository_layout.py"
+  ],
+  "aide_evidence": [
+    ".aide/queue/TRACK-A-01/status.yaml",
+    ".aide/queue/TRACK-A-01/evidence/changed-files.md",
+    ".aide/queue/TRACK-A-01/evidence/validation.md",
+    ".aide/queue/TRACK-A-01/evidence/track-a-contract-result.md",
+    ".aide/queue/TRACK-A-01/evidence/remaining-risks.md"
+  ],
+  "validation": {
+    "git status --short": "pass_expected_changes_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/publication/host_profiles.json": "pass",
+    "python -m json.tool control/inventory/publication/representation_profiles.json": "pass",
+    "python -m json.tool control/inventory/publication/capability_negotiation_policy.json": "pass",
+    "python -m json.tool control/audits/track-a-01-representation-contracts-v0/track_a_01_report.json": "pass",
+    "python scripts/validate_representation_contracts.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_repository_layout.py --json": "pass",
+    "git check-ignore .aide.local/": "pass",
+    "strict secret scan over changed paths": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn_0_errors",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn_verifier_0_errors",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "created_native_projects": false
+  },
+  "next_task": "TRACK-A-02 \u2014 Semantic renderer parity contract"
+}
