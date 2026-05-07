@@ -1,7 +1,7 @@
 schema_version: aide.status.v0
 id: EUREKA-AIDE-GOVERNANCE-01
 status: needs_review
-result: pass_with_post_commit_check_pending
+result: pass_with_published_history_warnings
 review_gate: needs_review
-summary: AIDE commit-message and task-resumption enforcement added; latest-commit check runs after the structured commit exists.
+summary: AIDE commit-message and task-resumption enforcement added; recent published noncompliant commits are now detectable by range checks.
 next_recommended_task: TRACK-A-01

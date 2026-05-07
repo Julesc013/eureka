@@ -76,9 +76,17 @@ AIDE checks this format with:
 ```text
 py -3 .aide/scripts/aide_lite.py commit check --message-file <path>
 py -3 .aide/scripts/aide_lite.py commit check --latest
+py -3 .aide/scripts/aide_lite.py commit check --range <base>..HEAD
+py -3 .aide/scripts/aide_lite.py commit install-hook
 py -3 .aide/scripts/aide_lite.py eval run --task commit_message_standard_golden
 ```
 
-The committed hook template at `.aide/hooks/commit-msg` can be copied or linked
-into a local Git hook setup by an operator. The template is not automatically
-installed because local hook paths are machine-local state.
+The committed hook at `.aide/hooks/commit-msg` is enabled locally by setting
+`core.hooksPath` to `.aide/hooks`. That setting is machine-local Git config, so
+future environments should run the install command once after checkout.
+
+## Existing History
+
+The standard is enforced for future commits. Existing published commits may be
+audited with `commit check --range`, but published history should not be
+rewritten without an explicit operator decision.

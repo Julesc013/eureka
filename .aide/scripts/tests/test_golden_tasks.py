@@ -141,6 +141,20 @@ class GoldenTaskTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("result: FAIL", buffer.getvalue())
 
+    def test_commit_message_range_check_reports_history(self) -> None:
+        root = self.make_repo()
+        subprocess = __import__("subprocess")
+        subprocess.run(["git", "init"], cwd=root, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        subprocess.run(["git", "config", "user.name", "AIDE Test"], cwd=root, check=True)
+        subprocess.run(["git", "config", "user.email", "aide@example.test"], cwd=root, check=True)
+        subprocess.run(["git", "add", "."], cwd=root, check=True)
+        subprocess.run(["git", "commit", "-m", aide_lite.COMMIT_GOOD_EXAMPLE], cwd=root, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = aide_lite.main(["--repo-root", str(root), "commit", "check", "--range", "HEAD", "--max-count", "1"])
+        self.assertEqual(code, 0, buffer.getvalue())
+        self.assertIn("commit_count: 1", buffer.getvalue())
+
     def test_fail_result_rendering_from_bad_packet_fixture(self) -> None:
         root = self.make_repo()
         aide_lite.write_text(root / aide_lite.LATEST_PACKET_PATH, "# Broken\n")

@@ -33,6 +33,7 @@
 ## Evidence
 
 - `.aide/queue/EUREKA-AIDE-GOVERNANCE-01/**`
+- `.aide/queue/EUREKA-AIDE-GOVERNANCE-01/evidence/history-compliance.md`
 
 ## Boundary Statement
 

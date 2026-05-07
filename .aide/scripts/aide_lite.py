@@ -2007,6 +2007,62 @@ def git_latest_commit_message(repo_root: Path) -> str:
     return result.stdout
 
 
+def is_git_repo(repo_root: Path) -> bool:
+    result = subprocess.run(
+        ["git", "rev-parse", "--is-inside-work-tree"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    return result.returncode == 0 and result.stdout.strip().lower() == "true"
+
+
+def git_commit_messages_for_range(repo_root: Path, revision_range: str, max_count: int | None = None) -> list[tuple[str, str, str]]:
+    command = ["git", "log", "--reverse", "--pretty=%H%x00%s%x00%B%x1e"]
+    if max_count is not None:
+        command.insert(2, f"--max-count={max_count}")
+    command.append(revision_range)
+    result = subprocess.run(
+        command,
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or f"git log failed for range {revision_range}")
+    commits: list[tuple[str, str, str]] = []
+    for record in result.stdout.split("\x1e"):
+        stripped = record.strip("\n")
+        if not stripped:
+            continue
+        parts = stripped.split("\x00", 2)
+        if len(parts) != 3:
+            continue
+        commit_hash, subject, message = parts
+        commits.append((commit_hash.strip(), subject.strip(), message.strip() + "\n"))
+    return commits
+
+
+def install_commit_hook(repo_root: Path) -> None:
+    hook_path = repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH
+    if not hook_path.exists():
+        raise ValueError(f"hook template missing: {COMMIT_MESSAGE_HOOK_TEMPLATE_PATH}")
+    result = subprocess.run(
+        ["git", "config", "core.hooksPath", ".aide/hooks"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or "failed to install core.hooksPath")
+
+
 def result_from_checks(checks: Iterable[Check]) -> str:
     severities = [check.severity for check in checks]
     if any(severity == "FAIL" for severity in severities):
@@ -2479,10 +2535,24 @@ def run_golden_commit_message_standard(repo_root: Path) -> GoldenTaskResult:
     if hook_path.exists():
         hook = read_text(hook_path)
         check_pass(checks, "commit check --message-file" in hook, "hook template calls AIDE commit checker")
+    install_checks = "commit check --range" in read_text(standard_path) if standard_path.exists() else False
+    check_pass(checks, install_checks, "commit standard documents range checking")
+    if policy_path.exists():
+        policy = read_text(policy_path)
+        check_pass(checks, "install_hook" in policy, "commit policy documents hook installation")
+        check_pass(checks, "range_check" in policy, "commit policy documents range checking")
     if agents_path.exists():
         agents = read_text(agents_path)
         check_pass(checks, "structured Markdown commit bodies" in agents, "AGENTS requires structured Markdown commit bodies")
         check_pass(checks, "commit check" in agents, "AGENTS references AIDE commit check")
+    if is_git_repo(repo_root):
+        try:
+            latest_checks = validate_commit_message_text(git_latest_commit_message(repo_root))
+            check_pass(checks, commit_message_result(latest_checks) == "PASS", "latest Git commit message passes commit standard")
+        except (OSError, ValueError) as exc:
+            checks.append(Check("WARN", f"latest Git commit message could not be checked: {exc}"))
+    else:
+        checks.append(Check("PASS", "latest Git commit check skipped for non-git fixture repo"))
     return golden_task_result(
         "commit_message_standard_golden",
         checks,
@@ -7673,9 +7743,34 @@ def command_eval_report(args: argparse.Namespace) -> int:
 
 
 def command_commit_check(args: argparse.Namespace) -> int:
-    sources = [bool(args.message_file), bool(args.message), bool(args.latest)]
+    sources = [bool(args.message_file), bool(args.message), bool(args.latest), bool(args.range)]
     if sum(sources) != 1:
-        raise ValueError("use exactly one of --message-file, --message, or --latest")
+        raise ValueError("use exactly one of --message-file, --message, --latest, or --range")
+    if args.range:
+        commits = git_commit_messages_for_range(args.repo_root, args.range, max_count=args.max_count)
+        results: list[tuple[str, str, str, list[Check]]] = []
+        any_fail = False
+        for commit_hash, subject, message in commits:
+            checks = validate_commit_message_text(message)
+            result = commit_message_result(checks)
+            if result == "FAIL":
+                any_fail = True
+            results.append((commit_hash, subject, result, checks))
+        range_result = "FAIL" if any_fail else ("PASS" if commits else "WARN")
+        print("AIDE Lite commit range check")
+        print(f"result: {range_result}")
+        print(f"range: {args.range}")
+        print(f"commit_count: {len(commits)}")
+        print(f"policy: {COMMIT_MESSAGE_POLICY_PATH}")
+        print(f"standard: {COMMIT_MESSAGE_STANDARD_PATH}")
+        for commit_hash, subject, result, checks in results:
+            print(f"- {commit_hash[:7]} {result} {subject}")
+            for check in checks:
+                if check.severity != "PASS":
+                    print(f"  - {check.severity} {check.message}")
+        if not commits:
+            return 1
+        return 1 if any_fail else 0
     if args.message_file:
         message_path = safe_repo_path(args.repo_root, args.message_file)
         text = read_text(message_path)
@@ -7696,6 +7791,16 @@ def command_commit_check(args: argparse.Namespace) -> int:
     for check in checks:
         print(f"- {check.severity} {check.message}")
     return 1 if result == "FAIL" else 0
+
+
+def command_commit_install_hook(args: argparse.Namespace) -> int:
+    install_commit_hook(args.repo_root)
+    print("AIDE Lite commit hook install")
+    print("result: PASS")
+    print("core.hooksPath: .aide/hooks")
+    print(f"hook: {COMMIT_MESSAGE_HOOK_TEMPLATE_PATH}")
+    print(f"check: py -3 .aide/scripts/aide_lite.py commit check --message-file <path>")
+    return 0
 
 
 def command_outcome_add(args: argparse.Namespace) -> int:
@@ -9751,7 +9856,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     commit_check_parser.add_argument("--message-file", help="Commit message file to validate, such as .git/COMMIT_EDITMSG.")
     commit_check_parser.add_argument("--message", help="Inline commit message text to validate.")
     commit_check_parser.add_argument("--latest", action="store_true", help="Validate the latest Git commit message.")
+    commit_check_parser.add_argument("--range", help="Validate all commits in a Git revision range, such as BASE..HEAD.")
+    commit_check_parser.add_argument("--max-count", type=int, help="Limit range validation to the latest N commits in the range.")
     commit_check_parser.set_defaults(handler=command_commit_check)
+    commit_subparsers.add_parser("install-hook").set_defaults(handler=command_commit_install_hook)
 
     outcome_parser = subparsers.add_parser("outcome")
     outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)

@@ -9,13 +9,18 @@ Final command results are recorded after implementation.
 - `git diff --check`: PASS; PowerShell/git reported expected LF-to-CRLF
   working-tree notices only.
 - `py -3 -m unittest discover -s .aide/scripts/tests -p test_golden_tasks.py`:
-  PASS; 12 tests.
+  PASS; 13 tests.
 - `py -3 .aide/scripts/aide_lite.py eval run --task commit_message_standard_golden`:
   PASS; 21/21 checks.
 - `py -3 .aide/scripts/aide_lite.py eval run --task task_resumption_standard_golden`:
   PASS; 28/28 checks.
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`: runs after the
   structured commit is created; result is reported in the final response.
+- `py -3 .aide/scripts/aide_lite.py commit check --range 88d437f..HEAD`:
+  FAIL before this remediation commit; detects noncompliant published commits
+  `78efd5c` and `b3d25ec`.
+- `py -3 .aide/scripts/aide_lite.py commit install-hook`: PASS;
+  `core.hooksPath` is set to `.aide/hooks` in local Git config.
 - `py -3 .aide/scripts/aide_lite.py doctor`: PASS; no hard failures.
 - `py -3 .aide/scripts/aide_lite.py validate`: PASS; latest task packet is
   4836 chars / 1209 approximate tokens.
