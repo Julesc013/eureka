@@ -1,0 +1,148 @@
+{
+  "schema_version": "manual_observation_failure_taxonomy.v0",
+  "taxonomy_id": "manual_observation_failure_taxonomy_v0",
+  "label": "Manual observation failure taxonomy",
+  "description": "Failure classes for human-operated external baseline observations. These classes preserve uncertainty and prevent pending or weak observations from becoming fabricated evidence.",
+  "classes": [
+    {
+      "class_id": "source_gap",
+      "label": "Source gap",
+      "meaning": "The relevant source, collection, or authority appears absent from the compared evidence surface.",
+      "when_to_use": "Use when the likely useful source is missing or not represented.",
+      "when_not_to_use": "Do not use for rank-only problems when the source is present but buried.",
+      "example_note": "Relevant archive collection was not visible in the observed top results."
+    },
+    {
+      "class_id": "capability_gap",
+      "label": "Capability gap",
+      "meaning": "The system lacks the search capability needed to express the need.",
+      "when_to_use": "Use when member-level, compatibility, date, or metadata filtering cannot be performed.",
+      "when_not_to_use": "Do not use when the query was ambiguous but the system capability was adequate.",
+      "example_note": "The observed system could not search inside container members."
+    },
+    {
+      "class_id": "ranking_gap",
+      "label": "Ranking gap",
+      "meaning": "Useful evidence appears to exist but is not ranked early enough to be helpful.",
+      "when_to_use": "Use when a good result is visible only after less useful results.",
+      "when_not_to_use": "Do not use when no useful result was visible at all.",
+      "example_note": "A useful source appeared below several generic download pages."
+    },
+    {
+      "class_id": "extraction_gap",
+      "label": "Extraction gap",
+      "meaning": "Source content exists but needed metadata, member, snippet, or text extraction is missing.",
+      "when_to_use": "Use when the observed source likely contains evidence that is not extracted or exposed.",
+      "when_not_to_use": "Do not use when the source itself is absent.",
+      "example_note": "The archive item existed but member filenames were not exposed."
+    },
+    {
+      "class_id": "compatibility_gap",
+      "label": "Compatibility gap",
+      "meaning": "Compatibility target, operating system, hardware, version, or runtime support is unclear.",
+      "when_to_use": "Use when the result does not answer the compatibility part of the need.",
+      "when_not_to_use": "Do not use for unrelated identity ambiguity.",
+      "example_note": "The result did not clarify whether it supports the requested OS version."
+    },
+    {
+      "class_id": "representation_gap",
+      "label": "Representation gap",
+      "meaning": "The result is represented at the wrong level or with insufficient structure.",
+      "when_to_use": "Use for parent-vs-member, package-vs-file, or page-vs-object mismatches.",
+      "when_not_to_use": "Do not use for source absence.",
+      "example_note": "The parent CD image was visible but the requested driver file was not."
+    },
+    {
+      "class_id": "identity_gap",
+      "label": "Identity gap",
+      "meaning": "The observed result cannot be confidently tied to the intended object or source.",
+      "when_to_use": "Use for ambiguous titles, renamed projects, duplicate objects, or unclear provenance.",
+      "when_not_to_use": "Do not use when identity is clear but rights or policy blocks access.",
+      "example_note": "Multiple similarly named utilities appeared with no clear authoritative match."
+    },
+    {
+      "class_id": "temporal_version_gap",
+      "label": "Temporal or version gap",
+      "meaning": "The relevant time window, release boundary, or version line is unclear.",
+      "when_to_use": "Use when the query depends on before/after, latest-compatible, or historical version context.",
+      "when_not_to_use": "Do not use for general ranking weakness.",
+      "example_note": "The result did not distinguish the last release before platform support ended."
+    },
+    {
+      "class_id": "rights_or_policy_block",
+      "label": "Rights or policy block",
+      "meaning": "Rights, robots, terms, account, takedown, or access policy blocks evaluation.",
+      "when_to_use": "Use when policy prevents recording or validating enough evidence.",
+      "when_not_to_use": "Do not use to imply rights clearance.",
+      "example_note": "The result required an account or blocked public inspection."
+    },
+    {
+      "class_id": "query_interpretation_gap",
+      "label": "Query interpretation gap",
+      "meaning": "The system interpreted the query differently from the intended need.",
+      "when_to_use": "Use when visible results target another meaning of the query.",
+      "when_not_to_use": "Do not use when the query itself is too ambiguous for all systems.",
+      "example_note": "The results focused on modern apps rather than old-platform-compatible software."
+    },
+    {
+      "class_id": "near_match_only",
+      "label": "Near match only",
+      "meaning": "A related result is visible but does not satisfy the need.",
+      "when_to_use": "Use when the result is useful context but not the answer.",
+      "when_not_to_use": "Do not use for a fully satisfying result.",
+      "example_note": "A similar hardware model appeared, but not the requested model."
+    },
+    {
+      "class_id": "noisy_result_list",
+      "label": "Noisy result list",
+      "meaning": "The visible result set is broad, spammy, mixed, or hard to triage.",
+      "when_to_use": "Use when noise materially increases user cost.",
+      "when_not_to_use": "Do not use for a focused list with one bad rank.",
+      "example_note": "Generic download pages dominated the observed top results."
+    },
+    {
+      "class_id": "dead_link_or_unavailable",
+      "label": "Dead link or unavailable",
+      "meaning": "A visible result points to a dead, blocked, removed, or unavailable locator.",
+      "when_to_use": "Use when the result cannot be reviewed at the visible locator.",
+      "when_not_to_use": "Do not use for a live page with weak evidence.",
+      "example_note": "The visible result linked to a page that no longer loaded."
+    },
+    {
+      "class_id": "ambiguous_need",
+      "label": "Ambiguous need",
+      "meaning": "The query or task lacks enough context for fair evaluation.",
+      "when_to_use": "Use when multiple interpretations are plausible and cannot be resolved from the slot.",
+      "when_not_to_use": "Do not use when the system clearly misinterpreted a specific need.",
+      "example_note": "The query did not identify whether software, documentation, or drivers were wanted."
+    },
+    {
+      "class_id": "external_baseline_unavailable",
+      "label": "External baseline unavailable",
+      "meaning": "The named external baseline could not be manually reached or searched.",
+      "when_to_use": "Use when the system itself was unavailable, blocked, or not safely accessible.",
+      "when_not_to_use": "Do not use for a reachable system with no useful results.",
+      "example_note": "The external system was unavailable during the manual session."
+    },
+    {
+      "class_id": "observation_incomplete",
+      "label": "Observation incomplete",
+      "meaning": "The manual session occurred but required fields are missing.",
+      "when_to_use": "Use before review when a record needs completion.",
+      "when_not_to_use": "Do not use to approve a partial observed record.",
+      "example_note": "The record has a title and rank but lacks locator and usefulness note."
+    },
+    {
+      "class_id": "not_evaluable",
+      "label": "Not evaluable",
+      "meaning": "The slot cannot be evaluated under the current protocol.",
+      "when_to_use": "Use when policy, ambiguity, unavailable systems, or missing context prevents scoring.",
+      "when_not_to_use": "Do not use merely because the result is poor.",
+      "example_note": "The slot required a credentialed account and cannot be evaluated publicly."
+    }
+  ],
+  "notes": [
+    "Failure classes are evidence labels, not automatic work orders.",
+    "No class implies exhaustive search or accepted public truth."
+  ]
+}

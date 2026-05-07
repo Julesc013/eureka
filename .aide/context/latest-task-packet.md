@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-A-16 renderer parity harness
+UNSPECIFIED - OBS0-01 manual observation protocol and anti-fabrication checklist
 
 ## GOAL
 
-TRACK-A-16 renderer parity harness
+OBS0-01 manual observation protocol and anti-fabrication checklist
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4013
-- approx_tokens: 1004
+- chars: 4077
+- approx_tokens: 1020
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,78 @@
+{
+  "schema_version": "obs0_01_report.v0",
+  "status": "pass",
+  "track": "Manual Observation Batch 0",
+  "task": "OBS0-01",
+  "added_docs": [
+    "docs/operations/MANUAL_OBSERVATION_PROTOCOL.md",
+    "docs/operations/MANUAL_OBSERVATION_ANTI_FABRICATION_CHECKLIST.md",
+    "docs/operations/MANUAL_OBSERVATION_FAILURE_TAXONOMY.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/OBSERVATION_PROTOCOL.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/ANTI_FABRICATION_CHECKLIST.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/FAILURE_TAXONOMY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/manual_observation_policy.json",
+    "control/inventory/observations/manual_observation_failure_taxonomy.json"
+  ],
+  "added_examples": [
+    "examples/manual_observations/valid_pending_slot_observation_v0.json",
+    "examples/manual_observations/valid_observed_result_v0.json",
+    "examples/manual_observations/invalid_fabricated_observation_v0.json",
+    "examples/manual_observations/valid_no_result_observation_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_manual_observation_protocol.py"
+  ],
+  "validation": {
+    "json_policy": "pass",
+    "json_taxonomy": "pass",
+    "json_report": "pass",
+    "manual_observation_protocol": "pass",
+    "tests": "pass",
+    "track_a_contracts": "pass",
+    "architecture_boundaries": "pass"
+  },
+  "failure_taxonomy_classes": [
+    "ambiguous_need",
+    "capability_gap",
+    "compatibility_gap",
+    "dead_link_or_unavailable",
+    "external_baseline_unavailable",
+    "extraction_gap",
+    "identity_gap",
+    "near_match_only",
+    "noisy_result_list",
+    "not_evaluable",
+    "observation_incomplete",
+    "query_interpretation_gap",
+    "ranking_gap",
+    "representation_gap",
+    "rights_or_policy_block",
+    "source_gap",
+    "temporal_version_gap"
+  ],
+  "anti_fabrication_rules_count": 13,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "next_task": "OBS0-02 - Manual Observation Batch 0 execution packet"
+}

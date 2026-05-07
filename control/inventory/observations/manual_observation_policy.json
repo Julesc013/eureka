@@ -1,0 +1,158 @@
+{
+  "schema_version": "manual_observation_policy.v0",
+  "policy_id": "manual_observation_policy_v0",
+  "label": "Manual observation policy",
+  "description": "Human-operated external baseline observation policy for Manual Observation Batch 0 and later reviewable observation fixtures.",
+  "batch_scope": {
+    "batch_id": "batch_0",
+    "batch_manifest": "evals/search_usefulness/external_baselines/batches/batch_0/batch_manifest.json",
+    "pending_observations": "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+    "expected_status": "pending_manual_observation",
+    "performed_by_this_task": false
+  },
+  "observation_modes": [
+    "pending_manual_observation",
+    "manual_observed_result",
+    "manual_observed_no_result",
+    "manual_near_match",
+    "manual_blocked_or_not_evaluable"
+  ],
+  "required_fields": [
+    "observation_id",
+    "observation_status",
+    "observed_at",
+    "observer_entered_system_name",
+    "query_string",
+    "result_rank_or_position",
+    "title",
+    "url_or_stable_source_locator",
+    "snippet_or_short_public_safe_summary",
+    "usefulness_note",
+    "observed_limitations",
+    "eureka_equivalent_evidence_status",
+    "failure_classes",
+    "collection_method",
+    "anti_fabrication_attestation"
+  ],
+  "optional_fields": [
+    "filters_or_scope",
+    "result_count_visible",
+    "near_match_notes",
+    "staleness_notes",
+    "privacy_notes",
+    "review_notes"
+  ],
+  "forbidden_sources_of_evidence": [
+    "memory",
+    "expected_result",
+    "model_generated_search_summary",
+    "unstored_prior_browsing",
+    "unreviewable_private_data",
+    "long_copyrighted_excerpt"
+  ],
+  "forbidden_automation": [
+    "browser_automation",
+    "automated_external_search",
+    "scraping",
+    "crawling",
+    "url_fetching_by_script",
+    "external_api_call",
+    "model_or_provider_call",
+    "live_probe_runtime",
+    "source_connector_runtime"
+  ],
+  "allowed_manual_actions": [
+    "manually_open_named_external_system",
+    "manually_enter_query",
+    "manually_copy_visible_title",
+    "manually_copy_visible_locator",
+    "manually_record_short_public_safe_snippet_or_summary",
+    "manually_record_rank",
+    "manually_record_limitations",
+    "manually_classify_failure"
+  ],
+  "result_quality_labels": [
+    "useful",
+    "partially_useful",
+    "near_match_only",
+    "not_useful",
+    "no_result",
+    "not_evaluable"
+  ],
+  "failure_taxonomy_ref": "control/inventory/observations/manual_observation_failure_taxonomy.json",
+  "anti_fabrication_rules": [
+    "no_invented_titles",
+    "no_invented_urls",
+    "no_invented_snippets",
+    "no_invented_result_ranks",
+    "no_inferred_observation_timestamps",
+    "no_copying_from_memory",
+    "no_expected_external_result_without_observation",
+    "no_observed_without_manual_session",
+    "no_automated_scraping_or_browser_automation",
+    "no_api_calls",
+    "no_model_generated_search_summaries_as_observations",
+    "no_system_marked_searched_unless_manually_searched",
+    "no_eureka_better_worse_without_comparable_evidence"
+  ],
+  "privacy_rules": [
+    "do_not_record_accounts_or_cookies",
+    "do_not_record_private_paths",
+    "do_not_record_personal_data",
+    "do_not_record_raw_browser_profile_state",
+    "record_public_safe_locator_only"
+  ],
+  "copyright_excerpt_rules": [
+    "use_short_public_safe_snippets",
+    "prefer_summary_for_long_visible_text",
+    "do_not_copy_long_copyrighted_excerpts",
+    "record_enough_context_for_review_without_republishing_source"
+  ],
+  "validation_rules": [
+    "pending_slots_must_have_empty_results",
+    "observed_records_require_manual_session_attestation",
+    "observed_records_require_timestamp_system_query_and_locator",
+    "observed_no_result_records_require_no_result_summary",
+    "failure_classes_must_match_taxonomy",
+    "invalid_fabricated_examples_must_fail_validation",
+    "batch_0_pending_file_must_remain_pending"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_generated_site_artifacts": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "no actual external observations",
+    "no browser opening",
+    "no browser automation",
+    "no scraping",
+    "no crawling",
+    "no external API calls",
+    "no model/provider calls",
+    "no fabricated baselines",
+    "no pending slot marked observed",
+    "no Eureka product behavior change",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Manual observation is evidence collection, not automated scraping.",
+    "A pending slot is not an observed baseline."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "manual_observation_record.v0",
+  "example_id": "valid_no_result_observation_v0",
+  "example_status": "valid_synthetic_example",
+  "observation_id": "example::no_result::synthetic_system",
+  "batch_id": "batch_0",
+  "observation_status": "observed",
+  "observation_kind": "no_result",
+  "observed_at": "2026-05-08T02:35:43+10:00",
+  "observer_entered_system_name": "Synthetic Manual Search",
+  "query_string": "synthetic rare driver query",
+  "collection_method": "manual",
+  "filters_or_scope": "Synthetic example scope; no external system was searched.",
+  "results": [],
+  "no_result_summary": {
+    "result_count_visible": 0,
+    "searched_scope": "Synthetic example search page.",
+    "summary": "No result was visible in the synthetic example.",
+    "limitations": [
+      "No external system was searched by this task.",
+      "No-result is scoped to the synthetic example only."
+    ]
+  },
+  "near_matches": [],
+  "observed_limitations": [
+    "No-result observation is scoped and not exhaustive."
+  ],
+  "eureka_equivalent_evidence_status": "not_compared",
+  "failure_classes": [
+    "external_baseline_unavailable"
+  ],
+  "anti_fabrication_attestation": {
+    "manual_session_completed": true,
+    "no_invented_titles": true,
+    "no_invented_urls": true,
+    "no_invented_snippets": true,
+    "no_invented_result_ranks": true,
+    "no_inferred_observation_timestamps": true,
+    "no_copying_from_memory": true,
+    "no_expected_external_result_without_observation": true,
+    "no_observed_without_manual_session": true,
+    "no_automated_scraping_or_browser_automation": true,
+    "no_api_calls": true,
+    "no_model_generated_search_summaries_as_observations": true,
+    "no_system_marked_searched_unless_manually_searched": true,
+    "no_eureka_better_worse_without_comparable_evidence": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false
+  },
+  "notes": [
+    "Synthetic valid-shape no-result example only; it is not a real baseline observation."
+  ]
+}

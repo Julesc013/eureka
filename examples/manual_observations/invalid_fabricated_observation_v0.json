@@ -1,0 +1,64 @@
+{
+  "schema_version": "manual_observation_record.v0",
+  "example_id": "invalid_fabricated_observation_v0",
+  "example_status": "invalid_expected_failure",
+  "observation_id": "example::invalid::fabricated",
+  "batch_id": "batch_0",
+  "observation_status": "observed",
+  "observation_kind": "top_result",
+  "observed_at": "inferred_from_memory",
+  "observer_entered_system_name": "Expected Search System",
+  "query_string": "synthetic old-platform utility",
+  "collection_method": "model_generated_summary",
+  "filters_or_scope": "No manual session.",
+  "results": [
+    {
+      "rank": 1,
+      "title": "Expected Top Result From Memory",
+      "url_or_stable_source_locator": "",
+      "snippet_or_short_public_safe_summary": "Model-generated summary, not manually observed.",
+      "usefulness_label": "useful",
+      "usefulness_note": "Guessed useful without comparable evidence.",
+      "observed_limitations": [],
+      "eureka_equivalent_evidence_status": "eureka_worse_without_evidence",
+      "failure_classes": [
+        "ranking_gap"
+      ]
+    }
+  ],
+  "no_result_summary": null,
+  "near_matches": [],
+  "observed_limitations": [],
+  "eureka_equivalent_evidence_status": "eureka_worse_without_evidence",
+  "failure_classes": [
+    "ranking_gap"
+  ],
+  "anti_fabrication_attestation": {
+    "manual_session_completed": false,
+    "no_invented_titles": false,
+    "no_invented_urls": false,
+    "no_invented_snippets": false,
+    "no_invented_result_ranks": false,
+    "no_inferred_observation_timestamps": false,
+    "no_copying_from_memory": false,
+    "no_expected_external_result_without_observation": false,
+    "no_observed_without_manual_session": false,
+    "no_automated_scraping_or_browser_automation": true,
+    "no_api_calls": true,
+    "no_model_generated_search_summaries_as_observations": false,
+    "no_system_marked_searched_unless_manually_searched": false,
+    "no_eureka_better_worse_without_comparable_evidence": false
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": true,
+    "marked_pending_as_observed": true
+  },
+  "notes": [
+    "This invalid example exists only to prove validator rejection."
+  ]
+}

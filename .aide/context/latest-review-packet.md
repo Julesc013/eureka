@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4013 chars, 1004 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4077 chars, 1020 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,20 +36,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/representations/renderer_parity_harness.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-a-16-renderer-parity-harness-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/renderer_parity_check_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/publication/renderer_parity_harness_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RENDERER_PARITY_HARNESS.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/RENDERER_PARITY_HARNESS_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/renderer_parity` (??; does not match active task allowed paths)
-- unknown: `scripts/run_renderer_parity_harness.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_renderer_parity_harness.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_track_a_contracts.py` (M; does not match active task allowed paths)
-- unknown: `tests/contracts/test_renderer_parity_harness.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_temporal_minimal_search.py` (M; does not match active task allowed paths)
-- unknown: `tests/contracts/test_track_a_cross_contracts.py` (M; does not match active task allowed paths)
-- unknown: `tests/operations/test_run_renderer_parity_harness.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/obs0-01-manual-observation-protocol-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MANUAL_OBSERVATION_ANTI_FABRICATION_CHECKLIST.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MANUAL_OBSERVATION_FAILURE_TAXONOMY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MANUAL_OBSERVATION_PROTOCOL.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/ANTI_FABRICATION_CHECKLIST.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/FAILURE_TAXONOMY.md` (??; does not match active task allowed paths)
+- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/OBSERVATION_PROTOCOL.md` (??; does not match active task allowed paths)
+- unknown: `examples/manual_observations` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_manual_observation_protocol.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_manual_observation_protocol.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -59,8 +56,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5751
-- approx_tokens: 1438
+- chars: 5537
+- approx_tokens: 1385
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
