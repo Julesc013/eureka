@@ -1,0 +1,423 @@
+{
+  "candidate_status_counts": {
+    "needs_human_review": 5,
+    "policy_blocked": 1
+  },
+  "description": "Deterministic repo-local source gap candidates for OBS-AGENT-02.",
+  "generated_from": [
+    "control/audits/github-releases-connector-approval-v0",
+    "control/audits/internet-archive-metadata-connector-approval-v0",
+    "control/audits/npm-metadata-connector-approval-v0",
+    "control/audits/pypi-metadata-connector-approval-v0",
+    "control/audits/wayback-cdx-memento-connector-approval-v0",
+    "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",
+    "control/inventory/observations/obs_agent_source_gap_candidate_policy.json",
+    "control/inventory/observations/obs_agent_source_gap_priority_model.json",
+    "control/inventory/observations/observation_source_access_modes.json",
+    "control/inventory/sources/github-releases-recorded-fixtures.source.json",
+    "control/inventory/sources/internet-archive-placeholder.source.json",
+    "control/inventory/sources/internet-archive-recorded-fixtures.source.json",
+    "control/inventory/sources/package-registry-recorded-fixtures.source.json",
+    "control/inventory/sources/review-description-recorded-fixtures.source.json",
+    "control/inventory/sources/wayback-memento-placeholder.source.json",
+    "control/inventory/sources/wayback-memento-recorded-fixtures.source.json",
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+    "docs/operations/OBS_AGENT_LOCAL_EVAL_FAILURE_MINING.md",
+    "docs/reference/EVIDENCE_LEDGER_CONTRACT.md",
+    "docs/reference/SOURCE_CACHE_CONTRACT.md",
+    "docs/reference/SOURCE_PACK_CONTRACT.md",
+    "docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/batch_manifest.json",
+    "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+    "evals/search_usefulness/external_baselines/systems.json",
+    "evals/search_usefulness/queries/search_usefulness_v0.json",
+    "examples/observation_candidates/source_gap_github_releases_candidate_v0.json",
+    "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json",
+    "examples/observation_candidates/source_gap_manual_only_forum_candidate_v0.json",
+    "examples/observation_candidates/source_gap_package_registry_candidate_v0.json",
+    "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json",
+    "examples/observation_candidates/source_gap_wayback_metadata_candidate_v0.json",
+    "site/dist/data/source_summary.json"
+  ],
+  "label": "OBS agent source gap candidate manifest",
+  "local_evidence_summary": {
+    "obs_agent_01_candidate_count": 5,
+    "source_inventory_count": 15,
+    "source_summary_contains_live_data": false,
+    "source_summary_contains_live_probes": false
+  },
+  "manifest_id": "obs_agent_source_gap_candidate_manifest_v0",
+  "notes": [
+    "Generated from committed repo-local materials only.",
+    "Source gap candidates are review items, not source approvals.",
+    "No live source access, browser use, API calls, scraping, crawling, downloads, model calls, or provider calls were performed.",
+    "Track B local task packet was observed at TRACK-B-06; queue/context mutation is deferred to avoid overwriting parallel Track B state."
+  ],
+  "priority_model": "control/inventory/observations/obs_agent_source_gap_priority_model.json",
+  "priority_model_summary": {
+    "advisory_only": true,
+    "model_id": "obs_agent_source_gap_priority_model_v0",
+    "score_maximum": 100,
+    "score_minimum": 0
+  },
+  "priority_score_summary": {
+    "average": 60.67,
+    "max": 82,
+    "min": 24
+  },
+  "product_boundary": {
+    "approved_source_access": false,
+    "automated_external_search": false,
+    "called_external_apis": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "crawled_external_systems": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "modified_track_b_files": false,
+    "mutated_master_index": false,
+    "opened_browsers": false,
+    "performed_observations": false,
+    "scraped_external_systems": false
+  },
+  "review_required": true,
+  "schema_version": "obs_agent_source_gap_candidate_manifest.v0",
+  "source_access_mode_counts": {
+    "approved_api_future": 2,
+    "approved_metadata_probe_future": 2,
+    "manual_human_only": 1,
+    "no_autonomous_access": 1
+  },
+  "source_family_counts": {
+    "broad_web_policy_blocked": 1,
+    "github_releases_metadata": 1,
+    "internet_archive_metadata": 1,
+    "manual_only_forum_or_community": 1,
+    "package_registry_metadata": 1,
+    "wayback_cdx_memento_metadata": 1
+  },
+  "source_gap_candidate_count": 6,
+  "source_gap_candidates": [
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "source_lead",
+      "evidence_refs": [
+        "control/inventory/sources/internet-archive-placeholder.source.json",
+        "control/inventory/sources/internet-archive-recorded-fixtures.source.json",
+        "evals/search_usefulness/external_baselines/systems.json",
+        "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Source lead is not source validation.",
+        "Future access requires policy approval, rate limits, output contracts, and review gates."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_internet_archive_metadata_v0",
+      "priority_band": "high",
+      "priority_score": 82,
+      "priority_score_rationale": [
+        "Batch 0 and local eval records contain old-platform and archive-like query classes.",
+        "Committed source inventory records show Internet Archive placeholder and recorded fixture paths but no current external access.",
+        "Metadata and item-file listing fit several local failure modes without requiring payload retrieval in this candidate."
+      ],
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "member_access_gap",
+        "compatibility_evidence_gap",
+        "representation_gap"
+      ],
+      "recommended_next_review_action": "Prepare a human source policy decision packet for metadata-only Internet Archive access before any automated request is considered.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "approved_metadata_probe_future",
+      "source_family": "internet_archive_metadata",
+      "source_gap_summary": "Repo-local source inventory and eval materials indicate that Internet Archive-style item metadata could help old-platform, archived software, file-listing, and member-discovery gaps after source policy review.",
+      "source_lead_refs": [
+        "source-lead-future:internet-archive-metadata"
+      ],
+      "source_policy_status": "future_deferred_source_policy_required",
+      "why_this_source_family": "Local source summaries already distinguish Internet Archive placeholders from recorded fixtures, and Batch 0 contains old-platform and archive-like query classes where metadata and file listings are relevant.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-internet-archive-metadata-source-policy"
+      ]
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_wayback_metadata_candidate_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "source_lead",
+      "evidence_refs": [
+        "control/inventory/sources/wayback-memento-placeholder.source.json",
+        "control/inventory/sources/wayback-memento-recorded-fixtures.source.json",
+        "docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md",
+        "evals/search_usefulness/external_baselines/systems.json"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Source lead is not source validation.",
+        "Future review must keep availability metadata separate from archived content."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_wayback_metadata_v0",
+      "priority_band": "high",
+      "priority_score": 76,
+      "priority_score_rationale": [
+        "Local source inventory names capture metadata fixtures as the next step.",
+        "Dead vendor and historical release-note query classes require temporal evidence shape review.",
+        "Policy risk remains nonzero because arbitrary URL and archived content handling must stay excluded."
+      ],
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "live_source_gap",
+        "temporal_version_gap",
+        "representation_gap"
+      ],
+      "recommended_next_review_action": "Prepare a source policy decision packet for availability and capture metadata only, including URI privacy and forbidden content retrieval constraints.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "archived_firefox_xp_release_notes"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "approved_metadata_probe_future",
+      "source_family": "wayback_cdx_memento_metadata",
+      "source_gap_summary": "Repo-local source inventory shows Wayback/Memento as a deferred metadata source family for dead vendor pages, release notes, and temporal capture gaps.",
+      "source_lead_refs": [
+        "source-lead-future:wayback-cdx-memento-metadata"
+      ],
+      "source_policy_status": "future_deferred_source_policy_required",
+      "why_this_source_family": "Local Wayback placeholder and recorded fixture records describe temporal capture metadata as useful while keeping replay, content fetch, and WARC handling out of scope.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-wayback-metadata-source-policy"
+      ]
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_github_releases_candidate_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "source_lead",
+      "evidence_refs": [
+        "control/inventory/sources/github-releases-recorded-fixtures.source.json",
+        "control/audits/github-releases-connector-approval-v0/",
+        "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Source lead is not source validation.",
+        "Future access remains deferred until source policy, identity, and output review exist."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_github_releases_v0",
+      "priority_band": "high",
+      "priority_score": 70,
+      "priority_score_rationale": [
+        "Committed GitHub Releases fixtures exist and approval-plan docs define a metadata-only future path.",
+        "Local hard queries include source release and version intent.",
+        "Policy review must keep repository identity and no-download constraints explicit."
+      ],
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "temporal_version_gap",
+        "representation_gap",
+        "identity_cluster_gap"
+      ],
+      "recommended_next_review_action": "Prepare a source policy decision packet for repository identity-reviewed release metadata only.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "github_cli_release_v2650_source"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "approved_api_future",
+      "source_family": "github_releases_metadata",
+      "source_gap_summary": "Repo-local GitHub Releases fixtures and approval packs indicate that release metadata could address version, source identity, and representation gaps after policy review.",
+      "source_lead_refs": [
+        "source-lead-future:github-releases-metadata"
+      ],
+      "source_policy_status": "future_deferred_source_policy_required",
+      "why_this_source_family": "Local fixtures already model release metadata and asset shape, while source archives, clones, raw file fetches, and downloads remain out of scope.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-github-releases-source-policy"
+      ]
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_package_registry_candidate_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "source_lead",
+      "evidence_refs": [
+        "control/inventory/sources/package-registry-recorded-fixtures.source.json",
+        "control/audits/pypi-metadata-connector-approval-v0/",
+        "control/audits/npm-metadata-connector-approval-v0/",
+        "docs/operations/NPM_METADATA_CONNECTOR_RUNTIME_PLAN.md"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Source lead is not source validation.",
+        "Future access remains deferred until source policy and package identity review exist."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_package_registry_v0",
+      "priority_band": "medium",
+      "priority_score": 66,
+      "priority_score_rationale": [
+        "Committed package registry fixtures and approval packs exist.",
+        "Local hard queries include package source and version identity classes.",
+        "Policy burden is higher because package metadata can imply dependencies, lifecycle scripts, or artifacts that must remain excluded."
+      ],
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "identity_cluster_gap",
+        "member_access_gap",
+        "temporal_version_gap"
+      ],
+      "recommended_next_review_action": "Prepare source policy decisions for metadata-only PyPI and npm-style registry access, including package identity and scoped package review.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "package_release_with_source_tarball"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "approved_api_future",
+      "source_family": "package_registry_metadata",
+      "source_gap_summary": "Repo-local package registry fixtures and approval packs indicate that package/version metadata could address package identity, source archive, and release metadata gaps after policy review.",
+      "source_lead_refs": [
+        "source-lead-future:package-registry-metadata"
+      ],
+      "source_policy_status": "future_deferred_source_policy_required",
+      "why_this_source_family": "Local package registry fixtures already represent metadata and member shape while installs, dependency resolution, package file retrieval, and lifecycle execution remain excluded.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-package-registry-source-policy"
+      ]
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_manual_only_forum_candidate_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "source_lead",
+      "evidence_refs": [
+        "control/inventory/sources/review-description-recorded-fixtures.source.json",
+        "evals/search_usefulness/queries/search_usefulness_v0.json",
+        "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manual-only lead is not source validation.",
+        "Future review must define whether paraphrased descriptions can be captured at all."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_manual_only_forum_v0",
+      "priority_band": "medium",
+      "priority_score": 46,
+      "priority_score_rationale": [
+        "Vague identity and compatibility query classes appear in committed local eval materials.",
+        "Recorded review-description fixtures show a bounded shape for subjective source notes.",
+        "Manual cost and permissions make this lower priority than metadata-only source families."
+      ],
+      "proposed_failure_modes": [
+        "identity_cluster_gap",
+        "query_interpretation_gap",
+        "compatibility_evidence_gap",
+        "rights_or_policy_block"
+      ],
+      "recommended_next_review_action": "Keep community or forum leads manual-only until a human source decision defines permissions, quoting rules, and evidence limits.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "old_ftp_client_blue_icon_windows_xp"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "manual_human_only",
+      "source_family": "manual_only_forum_or_community",
+      "source_gap_summary": "Repo-local eval and recorded review-description fixtures indicate that community descriptions may help vague identity and compatibility questions, but they remain manual-only or permission-needed review items.",
+      "source_lead_refs": [
+        "source-lead-future:manual-only-community-descriptions"
+      ],
+      "source_policy_status": "manual_human_only_permission_required",
+      "why_this_source_family": "Local source inventory supports subjective review/description fixtures but not live comments or account-backed community access.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-manual-only-community-source-policy"
+      ]
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json",
+      "candidate_status": "policy_blocked",
+      "candidate_type": "policy_blocked_candidate",
+      "evidence_refs": [
+        "evals/search_usefulness/external_baselines/systems.json",
+        "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+        "control/inventory/observations/observation_source_access_modes.json"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Policy-blocked lead is not source validation.",
+        "Future review must decide whether any approved API path exists; this task grants none."
+      ],
+      "observation_candidate_id": "obs_candidate_source_gap_policy_blocked_v0",
+      "priority_band": "low",
+      "priority_score": 24,
+      "priority_score_rationale": [
+        "Local eval records show broad web recall would be useful as a manual comparison.",
+        "Autonomous access is blocked by current source policy.",
+        "The candidate should remain a policy queue item, not a source plan."
+      ],
+      "proposed_failure_modes": [
+        "rights_or_policy_block",
+        "external_baseline_unavailable",
+        "source_coverage_gap"
+      ],
+      "recommended_next_review_action": "Keep this as a blocked policy decision item unless a future approved API and source policy packet exists.",
+      "related_batch_slots": [],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "requires_human_review": true,
+      "source_access_mode": "no_autonomous_access",
+      "source_family": "broad_web_policy_blocked",
+      "source_gap_summary": "Repo-local baseline system policy identifies broad web search as a useful recall comparison for humans, but autonomous result-page access remains blocked.",
+      "source_lead_refs": [
+        "source-lead-future:broad-web-policy-decision"
+      ],
+      "source_policy_status": "blocked_no_autonomous_access_without_review",
+      "why_this_source_family": "Local eval materials use broad web recall as a manual baseline for many hard queries, but source policy does not authorize agent access.",
+      "work_unit_refs_future": [
+        "work-unit-future:review-broad-web-source-policy"
+      ]
+    }
+  ],
+  "source_policy": "control/inventory/observations/obs_agent_source_gap_candidate_policy.json",
+  "source_roots_inspected": [
+    "control/audits/**",
+    "control/inventory/observations/**",
+    "control/inventory/sources/**",
+    "docs/operations/**",
+    "docs/reference/**",
+    "evals/search_usefulness/**",
+    "examples/**",
+    "site/dist/data/**"
+  ],
+  "source_roots_skipped": [
+    "contracts/query/**",
+    "contracts/source_registry/**",
+    "site/dist/demo/**"
+  ],
+  "truth_boundary": {
+    "candidates_are_evidence_truth": false,
+    "candidates_are_observed_baselines": false,
+    "candidates_can_mutate_master_index": false,
+    "human_review_required": true,
+    "source_access_approved": false
+  }
+}

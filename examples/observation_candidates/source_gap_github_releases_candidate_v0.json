@@ -1,0 +1,85 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_source_gap_github_releases_v0",
+  "candidate_type": "source_lead",
+  "candidate_status": "needs_human_review",
+  "origin": "committed_fixture",
+  "origin_ref": "control/inventory/sources/github-releases-recorded-fixtures.source.json",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "github_cli_release_v2650_source",
+  "related_system_id": null,
+  "query_text": "GitHub CLI release v2.65.0 source",
+  "source_family": "github_releases_metadata",
+  "source_mode": "approved_api_future",
+  "source_access_mode": "approved_api_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "source_gap_summary": "Repo-local GitHub Releases fixtures and approval packs indicate that release metadata could address version, source identity, and representation gaps after policy review.",
+  "why_this_source_family": "Local fixtures already model release metadata and asset shape, while source archives, clones, raw file fetches, and downloads remain out of scope.",
+  "recommended_next_review_action": "Prepare a source policy decision packet for repository identity-reviewed release metadata only.",
+  "candidate_summary": "GitHub Releases metadata is a review-gated source lead for release/version and source-identity gaps. It is not source approval and no external source was queried.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "source_coverage_gap",
+    "temporal_version_gap",
+    "representation_gap",
+    "identity_cluster_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "priority_score": 70,
+  "priority_band": "high",
+  "priority_score_rationale": [
+    "Committed GitHub Releases fixtures exist and approval-plan docs define a metadata-only future path.",
+    "Local hard queries include source release and version intent.",
+    "Policy review must keep repository identity and no-download constraints explicit."
+  ],
+  "evidence_refs": [
+    "control/inventory/sources/github-releases-recorded-fixtures.source.json",
+    "control/audits/github-releases-connector-approval-v0/",
+    "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:github-releases-metadata"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-github-releases-source-policy"
+  ],
+  "limitations": [
+    "Derived from committed repo-local source inventory and approval-plan materials only.",
+    "No API request, clone, asset retrieval, source archive retrieval, or repository fetch occurred.",
+    "No release metadata is accepted as evidence truth."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Source lead is not source validation.",
+    "Future access remains deferred until source policy, identity, and output review exist."
+  ]
+}

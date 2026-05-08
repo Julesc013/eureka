@@ -1,0 +1,86 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_source_gap_internet_archive_metadata_v0",
+  "candidate_type": "source_lead",
+  "candidate_status": "needs_human_review",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "control/inventory/sources/internet-archive-placeholder.source.json",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "windows_7_apps",
+  "related_system_id": "internet_archive_metadata_search",
+  "query_text": "Windows 7 apps",
+  "source_family": "internet_archive_metadata",
+  "source_mode": "approved_metadata_probe_future",
+  "source_access_mode": "approved_metadata_probe_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "source_gap_summary": "Repo-local source inventory and eval materials indicate that Internet Archive-style item metadata could help old-platform, archived software, file-listing, and member-discovery gaps after source policy review.",
+  "why_this_source_family": "Local source summaries already distinguish Internet Archive placeholders from recorded fixtures, and Batch 0 contains old-platform and archive-like query classes where metadata and file listings are relevant.",
+  "recommended_next_review_action": "Prepare a human source policy decision packet for metadata-only Internet Archive access before any automated request is considered.",
+  "candidate_summary": "Internet Archive metadata is a review-gated source lead for old-platform and archive discovery gaps. It is not source approval and no external source was queried.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "compatibility_evidence_gap",
+    "representation_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "priority_score": 82,
+  "priority_band": "high",
+  "priority_score_rationale": [
+    "Batch 0 and local eval records contain old-platform and archive-like query classes.",
+    "Committed source inventory records show Internet Archive placeholder and recorded fixture paths but no current external access.",
+    "Metadata and item-file listing fit several local failure modes without requiring payload retrieval in this candidate."
+  ],
+  "evidence_refs": [
+    "control/inventory/sources/internet-archive-placeholder.source.json",
+    "control/inventory/sources/internet-archive-recorded-fixtures.source.json",
+    "evals/search_usefulness/external_baselines/systems.json",
+    "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:internet-archive-metadata"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-internet-archive-metadata-source-policy"
+  ],
+  "limitations": [
+    "Derived from committed repo-local source inventory, eval, and audit materials only.",
+    "No live source access occurred.",
+    "No metadata record is accepted as evidence truth."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Source lead is not source validation.",
+    "Future access requires policy approval, rate limits, output contracts, and review gates."
+  ]
+}

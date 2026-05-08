@@ -1,0 +1,85 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_source_gap_manual_only_forum_v0",
+  "candidate_type": "source_lead",
+  "candidate_status": "needs_human_review",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "control/inventory/sources/review-description-recorded-fixtures.source.json",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "old_ftp_client_blue_icon_windows_xp",
+  "related_system_id": null,
+  "query_text": "old FTP client blue icon Windows XP",
+  "source_family": "manual_only_forum_or_community",
+  "source_mode": "manual_human_only",
+  "source_access_mode": "manual_human_only",
+  "source_policy_status": "manual_human_only_permission_required",
+  "source_gap_summary": "Repo-local eval and recorded review-description fixtures indicate that community descriptions may help vague identity and compatibility questions, but they remain manual-only or permission-needed review items.",
+  "why_this_source_family": "Local source inventory supports subjective review/description fixtures but not live comments or account-backed community access.",
+  "recommended_next_review_action": "Keep community or forum leads manual-only until a human source decision defines permissions, quoting rules, and evidence limits.",
+  "candidate_summary": "Community or forum-style sources are review-gated source leads for vague identity and compatibility notes. They are not approved for autonomous access and no external source was queried.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "identity_cluster_gap",
+    "query_interpretation_gap",
+    "compatibility_evidence_gap",
+    "rights_or_policy_block"
+  ],
+  "proposed_usefulness_scores": null,
+  "priority_score": 46,
+  "priority_band": "medium",
+  "priority_score_rationale": [
+    "Vague identity and compatibility query classes appear in committed local eval materials.",
+    "Recorded review-description fixtures show a bounded shape for subjective source notes.",
+    "Manual cost and permissions make this lower priority than metadata-only source families."
+  ],
+  "evidence_refs": [
+    "control/inventory/sources/review-description-recorded-fixtures.source.json",
+    "evals/search_usefulness/queries/search_usefulness_v0.json",
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:manual-only-community-descriptions"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-manual-only-community-source-policy"
+  ],
+  "limitations": [
+    "Derived from committed repo-local source inventory, eval, and source policy materials only.",
+    "No community pages, forum threads, accounts, or comments were accessed.",
+    "No subjective note is accepted as evidence truth."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Manual-only lead is not source validation.",
+    "Future review must define whether paraphrased descriptions can be captured at all."
+  ]
+}

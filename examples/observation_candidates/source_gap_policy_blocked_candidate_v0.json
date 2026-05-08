@@ -1,0 +1,84 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_source_gap_policy_blocked_v0",
+  "candidate_type": "policy_blocked_candidate",
+  "candidate_status": "policy_blocked",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "evals/search_usefulness/external_baselines/systems.json",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "windows_7_apps",
+  "related_system_id": "google_web_search",
+  "query_text": "Windows 7 apps",
+  "source_family": "broad_web_policy_blocked",
+  "source_mode": "no_autonomous_access",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "blocked_no_autonomous_access_without_review",
+  "source_gap_summary": "Repo-local baseline system policy identifies broad web search as a useful recall comparison for humans, but autonomous result-page access remains blocked.",
+  "why_this_source_family": "Local eval materials use broad web recall as a manual baseline for many hard queries, but source policy does not authorize agent access.",
+  "recommended_next_review_action": "Keep this as a blocked policy decision item unless a future approved API and source policy packet exists.",
+  "candidate_summary": "Broad web search remains a policy-blocked source lead for autonomous agents. This candidate records the gap only and no external source was queried.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "rights_or_policy_block",
+    "external_baseline_unavailable",
+    "source_coverage_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "priority_score": 24,
+  "priority_band": "low",
+  "priority_score_rationale": [
+    "Local eval records show broad web recall would be useful as a manual comparison.",
+    "Autonomous access is blocked by current source policy.",
+    "The candidate should remain a policy queue item, not a source plan."
+  ],
+  "evidence_refs": [
+    "evals/search_usefulness/external_baselines/systems.json",
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+    "control/inventory/observations/observation_source_access_modes.json"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:broad-web-policy-decision"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-broad-web-source-policy"
+  ],
+  "limitations": [
+    "Derived from committed repo-local source policy and eval materials only.",
+    "No external search, browser use, API request, page access, or result capture occurred.",
+    "No broad web source is approved."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Policy-blocked lead is not source validation.",
+    "Future review must decide whether any approved API path exists; this task grants none."
+  ]
+}

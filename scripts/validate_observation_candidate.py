@@ -21,6 +21,12 @@ CANDIDATE_EXAMPLES = (
     "examples/observation_candidates/local_eval_source_gap_candidate_v0.json",
     "examples/observation_candidates/minimal_observation_candidate_v0.json",
     "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+    "examples/observation_candidates/source_gap_github_releases_candidate_v0.json",
+    "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json",
+    "examples/observation_candidates/source_gap_manual_only_forum_candidate_v0.json",
+    "examples/observation_candidates/source_gap_package_registry_candidate_v0.json",
+    "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json",
+    "examples/observation_candidates/source_gap_wayback_metadata_candidate_v0.json",
     "examples/observation_candidates/source_lead_observation_candidate_v0.json",
 )
 REVIEW_EXAMPLES = (
