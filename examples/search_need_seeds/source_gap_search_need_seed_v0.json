@@ -1,0 +1,101 @@
+{
+  "schema_version": "search_need_seed.v0",
+  "search_need_seed_id": "search_need_seed_source_gap_archive_metadata_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "source_gap_need_seed",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [],
+  "canonical_need_label": "Archive metadata need for legacy software discovery",
+  "object_family": "software",
+  "product_or_topic": "Legacy software collections",
+  "version_or_state": "historical collection metadata",
+  "platform_or_context": "legacy desktop platforms",
+  "artifact_type": "archive_metadata_or_member_listing",
+  "desired_user_action": "Review whether archive metadata should seed a future SearchNeed for discovering legacy software collection records.",
+  "aliases": [
+    "archive metadata legacy software",
+    "software collection member listing"
+  ],
+  "source_family": "internet_archive_metadata",
+  "source_access_mode": "approved_metadata_probe_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "source_gap_summary": "OBS-02 ranked Internet Archive metadata as a local source-gap candidate for legacy software discovery.",
+  "failure_mode_summary": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "compatibility_evidence_gap",
+    "representation_gap"
+  ],
+  "evidence_or_observation_limitations": [
+    "Derived from committed OBS-02 source-gap candidate metadata.",
+    "No archive endpoint was queried.",
+    "Source policy review is still required."
+  ],
+  "proposed_priority": {
+    "score": 82,
+    "band": "high",
+    "model_ref": "control/inventory/observations/search_need_seed_priority_model.json"
+  },
+  "proposed_priority_rationale": [
+    "High local priority copied from the OBS-03 review queue.",
+    "The candidate has clear source-family fit and old-platform relevance.",
+    "The access mode remains future/deferred and does not grant access."
+  ],
+  "proposed_review_action": "approve_as_search_need_seed_future",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B SearchNeed runtime contract required before activation.",
+    "Source policy decision required before any future source interaction.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No runtime SearchNeed creation.",
+    "No source approval.",
+    "No source sync or live probe.",
+    "No observed baseline or evidence truth creation."
+  ],
+  "notes": [
+    "This seed is a source-gap-derived draft only.",
+    "It may later inform source policy or Track B SearchNeed work after review."
+  ]
+}

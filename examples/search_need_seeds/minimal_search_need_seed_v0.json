@@ -1,0 +1,99 @@
+{
+  "schema_version": "search_need_seed.v0",
+  "search_need_seed_id": "search_need_seed_minimal_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "manual_observation_need_seed",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_minimal_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_minimal_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_minimal_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [
+    "batch_0::windows_7_apps::google_web_search"
+  ],
+  "canonical_need_label": "Manual baseline need for Windows 7 application discovery",
+  "object_family": "software",
+  "product_or_topic": "Windows 7 applications",
+  "version_or_state": "legacy Windows 7 compatible",
+  "platform_or_context": "Windows 7",
+  "artifact_type": "manual_external_baseline",
+  "desired_user_action": "Review whether a manual observation slot should become a future SearchNeed after human triage.",
+  "aliases": [
+    "Windows 7 apps",
+    "Windows 7 compatible applications"
+  ],
+  "source_family": "broad_web_policy_blocked",
+  "source_access_mode": "manual_human_only",
+  "source_policy_status": "not_approved_for_agent_access",
+  "source_gap_summary": "The local review queue preserves a manual-only broad web baseline slot as a review item.",
+  "failure_mode_summary": [
+    "manual_observation_pending"
+  ],
+  "evidence_or_observation_limitations": [
+    "Derived from committed review queue metadata only.",
+    "No external source was queried.",
+    "No baseline result is created by this seed."
+  ],
+  "proposed_priority": {
+    "score": 40,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/search_need_seed_priority_model.json"
+  },
+  "proposed_priority_rationale": [
+    "Local review queue marks the source access mode as manual_human_only.",
+    "The need label is clear, but source policy and human review are still required."
+  ],
+  "proposed_review_action": "approve_for_manual_observation_future",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B SearchNeed runtime contract required before activation.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No runtime SearchNeed creation.",
+    "No observed baseline creation.",
+    "No evidence truth creation.",
+    "No source approval.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "This is a compact example seed for contract validation.",
+    "It remains a review-gated draft."
+  ]
+}

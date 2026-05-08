@@ -1,0 +1,148 @@
+{
+  "schema_version": "search_need_seed_conversion_policy.v0",
+  "policy_id": "search_need_seed_conversion_policy_v0",
+  "label": "SearchNeed seed conversion policy",
+  "description": "Policy for drafting SearchNeed seed records from ObservationCandidates and review queue entries without creating runtime needs, observed baselines, evidence truth, source approval, or master-index changes.",
+  "allowed_input_candidate_types": [
+    "local_eval_failure",
+    "source_lead",
+    "search_need_seed",
+    "work_unit_seed",
+    "manual_slot_suggestion",
+    "policy_blocked_candidate",
+    "not_evaluable_candidate"
+  ],
+  "allowed_input_review_states": [
+    "queued_for_review",
+    "needs_human_review",
+    "needs_more_evidence",
+    "policy_blocked",
+    "duplicate_possible",
+    "deferred",
+    "ready_for_human_decision"
+  ],
+  "allowed_seed_types": [
+    "manual_observation_need_seed",
+    "source_gap_need_seed",
+    "extraction_gap_need_seed",
+    "compatibility_gap_need_seed",
+    "ranking_gap_need_seed",
+    "policy_blocked_need_seed",
+    "evidence_gap_need_seed"
+  ],
+  "allowed_seed_statuses": [
+    "proposed",
+    "needs_human_review",
+    "needs_more_evidence",
+    "policy_blocked",
+    "duplicate_possible",
+    "deferred",
+    "ready_for_track_b_after_contracts_future",
+    "rejected_future",
+    "accepted_runtime_future"
+  ],
+  "allowed_failure_modes": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "compatibility_evidence_gap",
+    "representation_gap",
+    "temporal_version_gap",
+    "extraction_gap",
+    "decomposition_gap",
+    "planner_gap",
+    "ranking_gap",
+    "rights_or_policy_block",
+    "external_baseline_unavailable",
+    "manual_observation_pending",
+    "identity_cluster_gap",
+    "query_interpretation_gap",
+    "live_source_gap",
+    "compatibility_gap",
+    "source_gap",
+    "insufficient_local_evidence"
+  ],
+  "required_seed_fields": [
+    "search_need_seed_id",
+    "seed_status",
+    "seed_type",
+    "seed_origin",
+    "seed_origin_ref",
+    "related_observation_candidate_ids",
+    "related_review_queue_entry_ids",
+    "canonical_need_label",
+    "desired_user_action",
+    "proposed_priority",
+    "required_review_state",
+    "downstream_track_b_dependency",
+    "review_required"
+  ],
+  "required_false_truth_boundary_fields": [
+    "accepted_as_runtime_search_need",
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "source_access_approved",
+    "performed_external_observation"
+  ],
+  "duplicate_detection_hints": [
+    "Normalize canonical_need_label before comparing seeds.",
+    "Compare product_or_topic, platform_or_context, artifact_type, desired_user_action, and related_query_ids.",
+    "Treat source family differences as facets unless they imply different user action.",
+    "Policy-blocked seeds may duplicate non-blocked seeds but must retain their blocked state."
+  ],
+  "downstream_track_b_requirements": [
+    "Track B SearchNeed runtime contract must exist before runtime acceptance.",
+    "Human review decision must approve the seed draft before any downstream use.",
+    "Source policy review must remain separate from SearchNeed seed review.",
+    "WorkUnit conversion remains a separate future OBS task.",
+    "Accepted evidence and observed baselines require separate evidence review gates."
+  ],
+  "forbidden_conversions": [
+    "candidate_to_accepted_runtime_need",
+    "candidate_to_observed_baseline",
+    "candidate_to_evidence_truth",
+    "source_lead_to_source_approval",
+    "demand_signal_to_object_truth",
+    "ai_summary_to_need_truth",
+    "policy_blocked_candidate_to_runtime_need_without_review",
+    "master_index_mutation"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No candidate approval.",
+    "No accepted SearchNeed runtime records.",
+    "No observed baseline creation.",
+    "No evidence truth creation.",
+    "No source approval.",
+    "No live source access, browsing, scraping, crawling, API calls, model calls, downloads, uploads, accounts, or telemetry.",
+    "No master-index mutation or product behavior change."
+  ],
+  "notes": [
+    "Seed conversion is advisory and review-gated.",
+    "A seed may preserve a policy-blocked state for future review without granting any access.",
+    "Track B must define and accept runtime SearchNeed semantics before any seed can become runtime state."
+  ]
+}

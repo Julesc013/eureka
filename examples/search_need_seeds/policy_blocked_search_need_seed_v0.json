@@ -1,0 +1,100 @@
+{
+  "schema_version": "search_need_seed.v0",
+  "search_need_seed_id": "search_need_seed_policy_blocked_broad_web_v0",
+  "seed_status": "policy_blocked",
+  "seed_type": "policy_blocked_need_seed",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_source_gap_policy_blocked_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_source_gap_policy_blocked_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_source_gap_policy_blocked_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [],
+  "canonical_need_label": "Policy-blocked broad web source gap for Windows 7 applications",
+  "object_family": "software",
+  "product_or_topic": "Windows 7 applications",
+  "version_or_state": "legacy compatibility discovery",
+  "platform_or_context": "Windows 7",
+  "artifact_type": "external_source_lead",
+  "desired_user_action": "Keep this potential need blocked until source policy review decides whether it may be used later.",
+  "aliases": [
+    "policy blocked Windows 7 app search",
+    "broad web source gap"
+  ],
+  "source_family": "broad_web_policy_blocked",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "blocked_no_autonomous_access_without_review",
+  "source_gap_summary": "The OBS-03 queue records a useful-looking source gap that remains blocked by source policy.",
+  "failure_mode_summary": [
+    "rights_or_policy_block",
+    "external_baseline_unavailable",
+    "source_coverage_gap"
+  ],
+  "evidence_or_observation_limitations": [
+    "Derived from committed policy-blocked candidate metadata.",
+    "No blocked source was queried.",
+    "This seed cannot be used until review resolves the policy block."
+  ],
+  "proposed_priority": {
+    "score": 24,
+    "band": "blocked",
+    "model_ref": "control/inventory/observations/search_need_seed_priority_model.json"
+  },
+  "proposed_priority_rationale": [
+    "The local queue keeps the item blocked despite source-gap relevance.",
+    "Review should decide policy posture before any downstream use."
+  ],
+  "proposed_review_action": "mark_policy_blocked_future",
+  "required_review_state": "policy_blocked_until_human_review",
+  "downstream_track_b_dependency": [
+    "Track B SearchNeed runtime contract required before activation.",
+    "Human review decision required before conversion.",
+    "Source policy decision required before any future source interaction."
+  ],
+  "review_required": true,
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No runtime SearchNeed creation.",
+    "No source approval.",
+    "No policy bypass.",
+    "No external observation.",
+    "No evidence truth creation."
+  ],
+  "notes": [
+    "This seed demonstrates blocked-state preservation.",
+    "It remains unusable for runtime search until future review gates exist and pass."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "search_need_seed.v0",
+  "search_need_seed_id": "search_need_seed_extraction_gap_driver_inf_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "extraction_gap_need_seed",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_local_eval_extraction_gap_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_local_eval_extraction_gap_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_local_eval_extraction_gap_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "driver_inf_inside_support_cd"
+  ],
+  "related_slot_ids": [],
+  "canonical_need_label": "Need for finding driver INF files inside support media",
+  "object_family": "driver_package",
+  "product_or_topic": "Support CD driver contents",
+  "version_or_state": "unknown historical package state",
+  "platform_or_context": "legacy hardware support media",
+  "artifact_type": "archive_member_or_extracted_file",
+  "desired_user_action": "Review whether extraction-oriented source discovery should seed a future SearchNeed for nested driver files.",
+  "aliases": [
+    "driver INF inside support CD",
+    "nested driver package file"
+  ],
+  "source_family": "repo_local_candidate",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "source_gap_summary": "Local eval mining identified a need to reason about member access and extraction from support media structures.",
+  "failure_mode_summary": [
+    "decomposition_gap",
+    "member_access_gap",
+    "extraction_gap",
+    "source_coverage_gap"
+  ],
+  "evidence_or_observation_limitations": [
+    "Derived from repo-local OBS-01 and OBS-03 artifacts.",
+    "No media image or archive was downloaded.",
+    "No extraction result is accepted by this seed."
+  ],
+  "proposed_priority": {
+    "score": 55,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/search_need_seed_priority_model.json"
+  },
+  "proposed_priority_rationale": [
+    "Medium local priority copied from the OBS-03 queue.",
+    "The desired user action is clear, but concrete source policy and extraction contracts remain future work."
+  ],
+  "proposed_review_action": "approve_as_search_need_seed_future",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B SearchNeed runtime contract required before activation.",
+    "Future WorkUnit conversion must remain separate.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No runtime SearchNeed creation.",
+    "No WorkUnit creation.",
+    "No archive extraction.",
+    "No source download.",
+    "No evidence truth creation."
+  ],
+  "notes": [
+    "This seed captures a local extraction gap only.",
+    "It is not evidence that any specific support CD contains the target file."
+  ]
+}

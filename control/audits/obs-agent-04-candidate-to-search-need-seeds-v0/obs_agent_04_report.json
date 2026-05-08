@@ -1,0 +1,137 @@
+{
+  "schema_version": "obs_agent_04_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-AGENT-04",
+  "lane": "OBS side lane",
+  "parallel_track_b_state_observed": {
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_or_later_seen": true,
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07"
+  },
+  "added_contracts": [
+    "contracts/query/search_need_seed.v0.json",
+    "contracts/query/search_need_seed_conversion.v0.json"
+  ],
+  "added_docs": [
+    "docs/operations/OBS_CANDIDATE_TO_SEARCH_NEED_SEEDS.md",
+    "docs/operations/SEARCH_NEED_SEED_REVIEW_GUIDE.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/search_need_seed_conversion_policy.json",
+    "control/inventory/observations/search_need_seed_manifest.json",
+    "control/inventory/observations/search_need_seed_priority_model.json"
+  ],
+  "added_examples": [
+    "examples/search_need_seeds/minimal_search_need_seed_v0.json",
+    "examples/search_need_seeds/source_gap_search_need_seed_v0.json",
+    "examples/search_need_seeds/extraction_gap_search_need_seed_v0.json",
+    "examples/search_need_seeds/compatibility_gap_search_need_seed_v0.json",
+    "examples/search_need_seeds/policy_blocked_search_need_seed_v0.json",
+    "examples/search_need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
+    "examples/search_need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
+    "examples/search_need_seed_conversions/request_more_evidence_conversion_v0.json"
+  ],
+  "added_scripts": [
+    "scripts/build_search_need_seed_candidates.py",
+    "scripts/validate_search_need_seed_candidates.py",
+    "scripts/summarize_search_need_seed_candidates.py"
+  ],
+  "added_tests": [
+    "tests/contracts/test_search_need_seed_contracts.py",
+    "tests/operations/test_search_need_seed_conversion.py"
+  ],
+  "validation": {
+    "status": "warn",
+    "commands": {
+      "git status --short": "PASS before edits; new OBS-04 files only after edits",
+      "git diff --check": "PASS",
+      "python -m json.tool control/inventory/observations/search_need_seed_conversion_policy.json": "PASS",
+      "python -m json.tool control/inventory/observations/search_need_seed_manifest.json": "PASS",
+      "python -m json.tool control/inventory/observations/search_need_seed_priority_model.json": "PASS",
+      "python -m json.tool control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/obs_agent_04_report.json": "PASS",
+      "python scripts/validate_agent_assisted_observation_policy.py": "PASS",
+      "python scripts/validate_observation_candidate.py": "PASS",
+      "python scripts/validate_observation_candidate_review_queue.py": "PASS",
+      "python scripts/build_search_need_seed_candidates.py --list-inputs": "PASS",
+      "python scripts/build_search_need_seed_candidates.py --check": "PASS",
+      "python scripts/validate_search_need_seed_candidates.py": "PASS",
+      "python scripts/summarize_search_need_seed_candidates.py": "PASS",
+      "python scripts/summarize_observation_candidate_review_queue.py": "PASS",
+      "python -m unittest tests.contracts.test_search_need_seed_contracts tests.operations.test_search_need_seed_conversion": "PASS",
+      "python -m unittest discover -s tests -t .": "WARN pre-existing default Python 3.8 and generated-site failures",
+      "python scripts/check_architecture_boundaries.py": "PASS",
+      "python scripts/validate_track_a_contracts.py": "WARN Python 3.8 type syntax failure",
+      "python3 scripts/validate_track_a_contracts.py": "PASS",
+      "python scripts/validate_eureka_node_manifest.py": "PASS",
+      "python scripts/validate_eureka_node_policy.py": "PASS",
+      "py -3 .aide/scripts/aide_lite.py doctor": "WARN py launcher unavailable",
+      "python3 .aide/scripts/aide_lite.py doctor": "PASS",
+      "python3 .aide/scripts/aide_lite.py validate": "PASS",
+      "python3 .aide/scripts/aide_lite.py test": "WARN Python 3.9 Path.write_text newline unsupported",
+      "python3 .aide/scripts/aide_lite.py selftest": "WARN Python 3.9 Path.write_text newline unsupported",
+      "python3 .aide/scripts/aide_lite.py verify": "WARN zero errors; stale task packet diff-scope warnings",
+      "python3 .aide/scripts/aide_lite.py eval list": "PASS",
+      "python3 .aide/scripts/aide_lite.py eval run": "WARN Python 3.9 Path.write_text newline unsupported",
+      "python3 .aide/scripts/aide_lite.py review-pack": "WARN Python 3.9 Path.write_text newline unsupported",
+      "python3 .aide/scripts/aide_lite.py adapter validate": "PASS"
+    },
+    "notes": [
+      "OBS-04 targeted validators and tests passed.",
+      "Warnings are environment or stale-task-packet issues, not SearchNeed seed validator failures.",
+      "Full unittest discovery was restored back to a clean site/dist state after it deleted generated site outputs."
+    ]
+  },
+  "seed_count": 5,
+  "seed_status_counts": {
+    "needs_human_review": 3,
+    "needs_more_evidence": 1,
+    "policy_blocked": 1
+  },
+  "seed_type_counts": {
+    "compatibility_gap_need_seed": 1,
+    "extraction_gap_need_seed": 1,
+    "manual_observation_need_seed": 1,
+    "policy_blocked_need_seed": 1,
+    "source_gap_need_seed": 1
+  },
+  "priority_band_counts": {
+    "blocked": 1,
+    "high": 1,
+    "medium": 3
+  },
+  "truth_boundary": {
+    "seeds_are_runtime_search_needs": false,
+    "seeds_are_observed_baselines": false,
+    "seeds_are_evidence_truth": false,
+    "seeds_can_mutate_master_index": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "next_task": "OBS-AGENT-05 - Candidate-to-WorkUnit seed conversion"
+}

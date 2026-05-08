@@ -1,0 +1,98 @@
+{
+  "schema_version": "search_need_seed.v0",
+  "search_need_seed_id": "search_need_seed_compatibility_gap_firefox_xp_v0",
+  "seed_status": "needs_more_evidence",
+  "seed_type": "compatibility_gap_need_seed",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_local_eval_failure_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_local_eval_failure_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_local_eval_failure_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "latest_firefox_before_xp_support_ended"
+  ],
+  "related_slot_ids": [],
+  "canonical_need_label": "Compatibility timeline need for Firefox on Windows XP",
+  "object_family": "software_release",
+  "product_or_topic": "Firefox",
+  "version_or_state": "latest release before Windows XP support ended",
+  "platform_or_context": "Windows XP",
+  "artifact_type": "release_history_or_support_statement",
+  "desired_user_action": "Review whether compatibility timeline discovery should seed a future SearchNeed after more local evidence is gathered.",
+  "aliases": [
+    "Firefox XP support end",
+    "latest Firefox for Windows XP"
+  ],
+  "source_family": "local_eval",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "source_gap_summary": "Local eval materials flag a compatibility/version question that may require source review later.",
+  "failure_mode_summary": [
+    "temporal_version_gap",
+    "compatibility_gap"
+  ],
+  "evidence_or_observation_limitations": [
+    "Derived from a repo-local example candidate.",
+    "No release site or external page was queried.",
+    "The exact release answer is not asserted by this seed."
+  ],
+  "proposed_priority": {
+    "score": 45,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/search_need_seed_priority_model.json"
+  },
+  "proposed_priority_rationale": [
+    "Medium local priority copied from a request-more-evidence queue entry.",
+    "The user action is clear, but the seed needs human review and more evidence before downstream use."
+  ],
+  "proposed_review_action": "request_more_evidence_future",
+  "required_review_state": "needs_more_evidence_and_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B SearchNeed runtime contract required before activation.",
+    "Human review decision required before conversion.",
+    "Additional evidence review required before any answer claim."
+  ],
+  "review_required": true,
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "no_goals": [
+    "No runtime SearchNeed creation.",
+    "No compatibility answer claim.",
+    "No observed baseline creation.",
+    "No evidence truth creation."
+  ],
+  "notes": [
+    "This seed preserves uncertainty as needs_more_evidence.",
+    "It is a prompt for later human review, not a factual conclusion."
+  ]
+}
