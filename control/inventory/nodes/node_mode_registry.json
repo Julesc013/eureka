@@ -1,0 +1,112 @@
+{
+  "schema_version": "node_mode_registry.v0",
+  "registry_id": "eureka_node_mode_registry_v0",
+  "modes": [
+    {
+      "mode_id": "local_private",
+      "label": "Local private",
+      "meaning": "Builds private/local candidate state only; no submission or public mutation.",
+      "current_availability": "contract_only",
+      "required_approvals": [
+        "human_review_for_public_export"
+      ],
+      "boundaries": [
+        "network_disabled",
+        "no_master_index_mutation",
+        "no_public_truth"
+      ]
+    },
+    {
+      "mode_id": "local_pack_builder",
+      "label": "Local pack builder",
+      "meaning": "Prepares packs for review/export; no automatic upload or acceptance.",
+      "current_availability": "contract_only",
+      "required_approvals": [
+        "pack_review_for_export"
+      ],
+      "boundaries": [
+        "automatic_acceptance_forbidden",
+        "upload_runtime_disabled",
+        "import_runtime_disabled"
+      ]
+    },
+    {
+      "mode_id": "local_autonomous_dry_run",
+      "label": "Local autonomous dry run",
+      "meaning": "May plan and simulate allowed work locally; no live source access or mutation.",
+      "current_availability": "dry_run_only",
+      "required_approvals": [
+        "operator_review_for_any_action"
+      ],
+      "boundaries": [
+        "simulation_only",
+        "network_disabled",
+        "no_mutation"
+      ]
+    },
+    {
+      "mode_id": "community_node_future",
+      "label": "Community node future",
+      "meaning": "Future public-need worker; review-gated; not active in this milestone.",
+      "current_availability": "future_deferred",
+      "required_approvals": [
+        "community_policy_future",
+        "human_review"
+      ],
+      "boundaries": [
+        "inactive_currently",
+        "approval_gated"
+      ]
+    },
+    {
+      "mode_id": "institution_node_future",
+      "label": "Institution node future",
+      "meaning": "Future institutional collection/source namespace worker; review-gated; not active in this milestone.",
+      "current_availability": "future_deferred",
+      "required_approvals": [
+        "institution_policy_future",
+        "source_policy_review"
+      ],
+      "boundaries": [
+        "inactive_currently",
+        "approval_gated"
+      ]
+    },
+    {
+      "mode_id": "hosted_worker_future",
+      "label": "Hosted worker future",
+      "meaning": "Future official governed server-side worker; not active in this milestone.",
+      "current_availability": "future_deferred",
+      "required_approvals": [
+        "hosted_runtime_policy_future",
+        "security_review_future",
+        "operations_review_future"
+      ],
+      "boundaries": [
+        "hosted_runtime_not_enabled",
+        "inactive_currently"
+      ]
+    }
+  ],
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}

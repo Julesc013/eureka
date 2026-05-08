@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/node/eureka_node_manifest.v0.json",
+  "title": "EurekaNodeManifestV0",
+  "description": "Contract-only manifest for future Eureka Nodes. A node may discover, prepare, and propose, but it cannot directly create accepted public truth or mutate the master index.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "node_manifest_id",
+    "node_id",
+    "node_label",
+    "node_mode",
+    "node_status",
+    "node_scope",
+    "node_operator_posture",
+    "node_capabilities",
+    "node_limits",
+    "network_access",
+    "source_access_policy",
+    "allowed_inputs",
+    "allowed_outputs",
+    "forbidden_actions",
+    "local_state_policy",
+    "privacy_policy",
+    "review_policy",
+    "pack_policy",
+    "workunit_policy_future",
+    "audit_policy",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "eureka_node_manifest.v0"
+    },
+    "node_manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_mode": {
+      "type": "string",
+      "enum": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ]
+    },
+    "node_status": {
+      "type": "string",
+      "enum": [
+        "example_only",
+        "contract_only",
+        "disabled",
+        "dry_run_only",
+        "local_private_ready_future",
+        "review_required",
+        "approval_gated",
+        "operator_gated",
+        "deferred",
+        "blocked",
+        "active_future"
+      ]
+    },
+    "network_access": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "status",
+        "allowed_modes",
+        "forbidden_modes"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "allowed_outputs": {
+      "type": "object",
+      "required": [
+        "categories",
+        "can_create_observed_baseline",
+        "can_create_accepted_evidence",
+        "can_create_public_truth",
+        "can_mutate_master_index",
+        "can_claim_rights_clearance",
+        "can_claim_malware_safety",
+        "can_claim_verified_installability"
+      ],
+      "properties": {
+        "can_create_observed_baseline": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_create_accepted_evidence": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_create_public_truth": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_mutate_master_index": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_claim_rights_clearance": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_claim_malware_safety": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_claim_verified_installability": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-node-runtime-implemented": false,
+  "x-network-access-enabled": false,
+  "x-master-index-mutation-allowed": false
+}

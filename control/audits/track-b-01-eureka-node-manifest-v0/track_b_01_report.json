@@ -1,0 +1,115 @@
+{
+  "schema_version": "track_b_01_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-01",
+  "added_contracts": [
+    "contracts/node/eureka_node_manifest.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/EUREKA_NODE_MANIFEST_CONTRACT.md",
+    "docs/architecture/EUREKA_NODE.md"
+  ],
+  "added_inventories": [
+    "control/inventory/nodes/eureka_node_manifest_policy.json",
+    "control/inventory/nodes/node_mode_registry.json",
+    "control/inventory/nodes/node_capability_registry.json"
+  ],
+  "added_examples": [
+    "examples/nodes/local_private_node_v0/eureka_node_manifest.json",
+    "examples/nodes/local_pack_builder_node_v0/eureka_node_manifest.json",
+    "examples/nodes/local_autonomous_dry_run_node_v0/eureka_node_manifest.json",
+    "examples/nodes/community_node_future_v0/eureka_node_manifest.json",
+    "examples/nodes/institution_node_future_v0/eureka_node_manifest.json",
+    "examples/nodes/hosted_worker_future_v0/eureka_node_manifest.json"
+  ],
+  "added_validators": [
+    "scripts/validate_eureka_node_manifest.py"
+  ],
+  "validation": {
+    "git status --short": "pass_dirty_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/nodes/eureka_node_manifest_policy.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_mode_registry.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_capability_registry.json": "pass",
+    "python -m json.tool control/audits/track-b-01-eureka-node-manifest-v0/track_b_01_report.json": "pass",
+    "python scripts/validate_eureka_node_manifest.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "python scripts/validate_agent_assisted_observation_policy.py": "pass",
+    "python scripts/validate_observation_candidate.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py pack --task \"TRACK-B-01 Eureka Node manifest contract\"": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "warn",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "node_modes": [
+    "local_private",
+    "local_pack_builder",
+    "local_autonomous_dry_run",
+    "community_node_future",
+    "institution_node_future",
+    "hosted_worker_future"
+  ],
+  "node_capabilities": [
+    "repo_local_inspection",
+    "local_eval_analysis",
+    "search_need_analysis",
+    "observation_candidate_preparation",
+    "source_lead_preparation",
+    "workunit_candidate_preparation_future",
+    "pack_validation",
+    "pack_drafting_future",
+    "evidence_drafting_future",
+    "candidate_drafting_future",
+    "local_index_read_future",
+    "local_index_write_future",
+    "local_source_cache_read_future",
+    "local_source_cache_write_future",
+    "local_evidence_ledger_read_future",
+    "local_evidence_ledger_write_future",
+    "extraction_planning_future",
+    "extraction_runtime_future",
+    "approved_metadata_probe_future",
+    "approved_api_access_future",
+    "local_model_assist_future",
+    "hosted_worker_execution_future"
+  ],
+  "truth_boundary": {
+    "node_output_is_public_truth": false,
+    "node_output_is_accepted_evidence": false,
+    "node_can_mutate_master_index": false,
+    "node_can_mark_observations_observed": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "created_local_state": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-02 \u2014 Node policy contract"
+}

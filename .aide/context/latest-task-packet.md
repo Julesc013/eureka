@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - OBS-REPLAN-01 agent-assisted observation and approval workflow
+UNSPECIFIED - TRACK-B-01 Eureka Node manifest contract
 
 ## GOAL
 
-OBS-REPLAN-01 agent-assisted observation and approval workflow
+TRACK-B-01 Eureka Node manifest contract
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4069
-- approx_tokens: 1018
+- chars: 4025
+- approx_tokens: 1007
 - budget_status: PASS
 - warnings:
   - none

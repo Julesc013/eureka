@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4069 chars, 1018 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4025 chars, 1007 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,24 +36,14 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/query/observation_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/observation_review_decision.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/obs-replan-01-agent-assisted-observation-workflow-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/agent_assisted_observation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/obs_parallel_development_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/observation_candidate_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/observation_source_access_modes.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/AGENT_ASSISTED_OBSERVATION_WORKFLOW.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/OBSERVATION_CANDIDATE_REVIEW.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/OBS_PARALLEL_DEVELOPMENT_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `examples/observation_candidates` (??; does not match active task allowed paths)
-- unknown: `examples/observation_reviews` (??; does not match active task allowed paths)
-- unknown: `scripts/summarize_observation_candidates.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_agent_assisted_observation_policy.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_observation_candidate.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_observation_candidate_contracts.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_agent_assisted_observation_policy.py` (??; does not match active task allowed paths)
+- unknown: `contracts/node` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-01-eureka-node-manifest-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/EUREKA_NODE.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/EUREKA_NODE_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/nodes` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_eureka_node_manifest.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_eureka_node_manifest.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -63,8 +53,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6290
-- approx_tokens: 1573
+- chars: 4987
+- approx_tokens: 1247
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

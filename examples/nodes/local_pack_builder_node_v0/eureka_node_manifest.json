@@ -1,0 +1,186 @@
+{
+  "schema_version": "eureka_node_manifest.v0",
+  "node_manifest_id": "local_pack_builder_node_v0_manifest",
+  "node_id": "local_pack_builder_node_v0",
+  "node_label": "Local pack builder node example",
+  "node_mode": "local_pack_builder",
+  "node_status": "dry_run_only",
+  "node_scope": {
+    "visibility": "local",
+    "public_export_allowed": false,
+    "submission_allowed": false
+  },
+  "node_operator_posture": {
+    "operator_required": true,
+    "operator_approval_required_for_public_export": true
+  },
+  "node_capabilities": [
+    {
+      "capability_id": "repo_local_inspection",
+      "capability_status": "current_contract_allowed"
+    },
+    {
+      "capability_id": "pack_validation",
+      "capability_status": "current_contract_allowed"
+    },
+    {
+      "capability_id": "pack_drafting_future",
+      "capability_status": "future_deferred_disabled"
+    }
+  ],
+  "node_limits": {
+    "max_pack_count_future": 0,
+    "external_access_limit": "none"
+  },
+  "network_access": {
+    "enabled": false,
+    "status": "disabled",
+    "allowed_modes": [],
+    "forbidden_modes": [
+      "unapproved_live_probe",
+      "arbitrary_url_fetch",
+      "scraping",
+      "crawling",
+      "browser_automation",
+      "bulk_forum_ingestion",
+      "bulk_reddit_ingestion",
+      "download_binary",
+      "installer_execution",
+      "credentials_without_approval",
+      "api_without_approval"
+    ]
+  },
+  "source_access_policy": {
+    "mode": "repo_local_only",
+    "approval_required": true,
+    "operator_required": true,
+    "allowed_source_modes": [
+      "repo_local_only",
+      "approved_fixture_only"
+    ],
+    "forbidden_source_modes": [
+      "unapproved_live_probe",
+      "arbitrary_url_fetch",
+      "scraping",
+      "crawling",
+      "browser_automation",
+      "bulk_forum_ingestion",
+      "bulk_reddit_ingestion",
+      "download_binary",
+      "installer_execution",
+      "credentials_without_approval",
+      "api_without_approval"
+    ]
+  },
+  "allowed_inputs": [
+    "committed_pack_example",
+    "repo_local_fixture"
+  ],
+  "allowed_outputs": {
+    "categories": [
+      "node_report",
+      "dry_run_report",
+      "pack_export_future",
+      "contribution_pack_draft_future"
+    ],
+    "can_create_observed_baseline": false,
+    "can_create_accepted_evidence": false,
+    "can_create_public_truth": false,
+    "can_mutate_master_index": false,
+    "can_claim_rights_clearance": false,
+    "can_claim_malware_safety": false,
+    "can_claim_verified_installability": false
+  },
+  "forbidden_actions": [
+    "mutate_master_index",
+    "mark_candidate_accepted",
+    "mark_evidence_accepted",
+    "mark_observation_observed_without_human",
+    "enable_live_probe",
+    "scrape_external_site",
+    "crawl_external_site",
+    "call_unapproved_api",
+    "download_binary",
+    "run_installer",
+    "execute_downloaded_artifact",
+    "store_credentials",
+    "upload_to_hosted_backend",
+    "create_account_or_user_data",
+    "emit_telemetry",
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability",
+    "claim_exhaustive_global_search",
+    "claim_production_readiness"
+  ],
+  "local_state_policy": {
+    "local_state_allowed": false,
+    "local_state_root_future": null,
+    "local_state_ignored_by_git": true,
+    "local_state_export_policy": "review_required_future",
+    "local_state_delete_reset_policy": "not_applicable",
+    "private_data_policy": "no_private_data_publication",
+    "public_export_requires_review": true,
+    "no_private_data_publication": true
+  },
+  "privacy_policy": {
+    "may_store_private_data": false,
+    "raw_query_telemetry_allowed": false
+  },
+  "review_policy": {
+    "human_review_required": true,
+    "review_required_for_public_export": true,
+    "review_required_for_evidence_acceptance": true,
+    "review_required_for_candidate_promotion": true,
+    "review_required_for_source_policy": true,
+    "review_required_for_network_access": true,
+    "review_required_for_master_index_mutation": true
+  },
+  "pack_policy": {
+    "may_validate_packs": true,
+    "may_draft_packs_future": false,
+    "may_export_packs_future": false,
+    "may_submit_packs_future": false,
+    "automatic_acceptance_allowed": false,
+    "import_runtime_enabled": false,
+    "upload_runtime_enabled": false,
+    "hosted_submission_enabled": false
+  },
+  "workunit_policy_future": {
+    "may_run_workunits": false,
+    "may_prepare_workunit_candidates_future": false
+  },
+  "audit_policy": {
+    "audit_required": true,
+    "evidence_packet_required": true
+  },
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no pack import runtime",
+    "no upload runtime",
+    "no automatic acceptance"
+  ],
+  "notes": [
+    "Pack validation is local contract validation only."
+  ]
+}
