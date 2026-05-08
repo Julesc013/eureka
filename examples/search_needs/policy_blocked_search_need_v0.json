@@ -1,0 +1,41 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.policy_blocked.forum_probe.v0",
+  "search_need_status": "policy_blocked",
+  "need_intent": "policy_review",
+  "need_label": "Review blocked source behavior request",
+  "query_summary": {
+    "source_record_ref": "search_miss.policy_blocked.forum_probe.v0",
+    "input_type": "search_miss_record",
+    "query_text": "forum crawl request example",
+    "query_id_optional": "forum_crawl_example",
+    "related_search_miss_ref": "search_miss.policy_blocked.forum_probe.v0",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 0,
+      "result_quality": "blocked"
+    },
+    "miss_reason_summary": "Requested source behavior is blocked by current policy.",
+    "failure_modes": [
+      "policy_blocked"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": []
+  },
+  "object_family": "policy_request",
+  "product_or_topic": "forum crawl request example",
+  "version_or_state": "",
+  "platform_or_context": "source policy",
+  "artifact_type": "policy_review",
+  "desired_user_action": "request_policy_review",
+  "policy_block_summary": "Unapproved forum crawl behavior remains forbidden.",
+  "absence_scope": "policy_blocked_local_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Policy block is not evidence of absence."
+  ],
+  "notes": [
+    "Runtime should flag unsupported scraping or crawling requests."
+  ]
+}

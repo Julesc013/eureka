@@ -1,0 +1,45 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.minimal.old_platform_utility.v0",
+  "search_need_status": "unresolved",
+  "need_intent": "find_software",
+  "need_label": "Resolve local search need for old platform utility example",
+  "query_summary": {
+    "source_record_ref": "search_miss.empty.old_platform_utility.v0",
+    "input_type": "search_miss_record",
+    "query_text": "old platform utility example",
+    "query_id_optional": "old_platform_utility_example",
+    "related_search_miss_ref": "search_miss.empty.old_platform_utility.v0",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 0,
+      "result_quality": "empty"
+    },
+    "miss_reason_summary": "Local fixture produced no result to review.",
+    "failure_modes": [
+      "empty_result",
+      "source_gap"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": [
+      "live_web",
+      "external_archives"
+    ]
+  },
+  "object_family": "software",
+  "product_or_topic": "old platform utility example",
+  "version_or_state": "",
+  "platform_or_context": "old platform",
+  "artifact_type": "software",
+  "desired_user_action": "find_reviewable_source_or_candidate",
+  "source_gap_summary": "Local fixture did not identify a usable source.",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "SearchNeed is a local unresolved-search object only."
+  ],
+  "notes": [
+    "Synthetic committed fixture for runtime validation."
+  ]
+}

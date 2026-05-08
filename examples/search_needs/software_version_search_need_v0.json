@@ -1,0 +1,44 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.software_version.vintage_app.v0",
+  "search_need_status": "unresolved",
+  "need_intent": "find_exact_version",
+  "need_label": "Find exact version for vintage app example",
+  "query_summary": {
+    "source_record_ref": "search_miss.weak.vintage_app_version.v0",
+    "input_type": "explicit_test_fixture",
+    "query_text": "vintage app version 1.2 example",
+    "query_id_optional": "vintage_app_version_example",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 2,
+      "result_quality": "weak"
+    },
+    "miss_reason_summary": "Local fixture did not resolve the exact version.",
+    "failure_modes": [
+      "weak_result",
+      "temporal_version_gap"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": [
+      "live_web"
+    ]
+  },
+  "object_family": "software",
+  "product_or_topic": "vintage app example",
+  "version_or_state": "version 1.2",
+  "platform_or_context": "legacy desktop",
+  "artifact_type": "application",
+  "desired_user_action": "find_exact_version",
+  "temporal_version_gap_summary": "Exact version state remains unresolved in the local fixture.",
+  "ranking_gap_summary": "Weak local results need review before downstream use.",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Exact version need is a review-gated seed candidate only."
+  ],
+  "notes": [
+    "Public-safe synthetic SearchNeed example."
+  ]
+}

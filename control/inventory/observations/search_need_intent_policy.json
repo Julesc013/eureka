@@ -1,0 +1,79 @@
+{
+  "schema_version": "search_need_intent_policy.v0",
+  "policy_id": "search_need_intent_policy_v0",
+  "label": "SearchNeed intent policy",
+  "allowed_need_intents": [
+    "find_software",
+    "find_exact_version",
+    "find_compatible_version",
+    "find_driver",
+    "find_file_inside_container",
+    "find_article_inside_scan",
+    "find_manual_or_documentation",
+    "find_source_release",
+    "find_package_metadata",
+    "compare_sources",
+    "verify_identity",
+    "verify_compatibility",
+    "explain_absence",
+    "source_gap_research",
+    "policy_review",
+    "not_evaluable"
+  ],
+  "intent_meanings": {
+    "find_software": "Find reviewable software or object candidates.",
+    "find_exact_version": "Find a reviewable exact version or state.",
+    "find_compatible_version": "Find reviewable compatibility evidence candidates.",
+    "find_driver": "Find reviewable driver package or metadata candidates.",
+    "find_article_inside_scan": "Find reviewable article or member identity inside a scan/container.",
+    "policy_review": "Request review of a blocked source or action posture."
+  },
+  "required_fields_by_intent": {
+    "find_software": [
+      "product_or_topic",
+      "desired_user_action"
+    ],
+    "find_exact_version": [
+      "product_or_topic",
+      "version_or_state"
+    ],
+    "find_driver": [
+      "product_or_topic",
+      "platform_or_context"
+    ],
+    "find_article_inside_scan": [
+      "product_or_topic",
+      "artifact_type"
+    ],
+    "policy_review": [
+      "policy_block_summary"
+    ]
+  },
+  "optional_fields_by_intent": {
+    "find_software": [
+      "aliases",
+      "source_gap_summary"
+    ],
+    "find_driver": [
+      "compatibility_gap_summary",
+      "source_gap_summary"
+    ],
+    "find_article_inside_scan": [
+      "near_match_summary",
+      "extraction_gap_summary",
+      "representation_gap_summary"
+    ]
+  },
+  "invalid_intent_combinations": [
+    "policy_review_with_automatic_public_use",
+    "not_evaluable_with_downstream_seed_created",
+    "explain_absence_with_exhaustive_absence_claim"
+  ],
+  "ambiguity_rules": [
+    "Keep object/action shape without asserting exact identity.",
+    "Use not_evaluable when local input lacks enough shape."
+  ],
+  "notes": [
+    "Intent classification is deterministic and low-confidence until reviewed."
+  ]
+}

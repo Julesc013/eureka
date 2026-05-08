@@ -1,0 +1,55 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.article_member.scan_example.v0",
+  "search_need_status": "unresolved",
+  "need_intent": "find_article_inside_scan",
+  "need_label": "Find article member inside scan example",
+  "query_summary": {
+    "source_record_ref": "search_miss.near_match.article_member.v0",
+    "input_type": "search_miss_record",
+    "query_text": "magazine scan article member example",
+    "query_id_optional": "article_member_example",
+    "related_search_miss_ref": "search_miss.near_match.article_member.v0",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 2,
+      "result_quality": "mixed"
+    },
+    "miss_reason_summary": "Local fixture produced near matches but no exact reviewable member.",
+    "failure_modes": [
+      "near_match_only",
+      "identity_gap",
+      "representation_gap"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": [
+      "scan_extraction_future"
+    ]
+  },
+  "object_family": "article_or_scan_member",
+  "product_or_topic": "magazine scan article member example",
+  "version_or_state": "",
+  "platform_or_context": "scan fixture",
+  "artifact_type": "article_member",
+  "desired_user_action": "find_article_inside_scan",
+  "extraction_gap_summary": "Article-level extraction may be needed in a future reviewed task.",
+  "representation_gap_summary": "Fixture exposes issue-level data but not article-member representation.",
+  "identity_gap_summary": "Exact article member identity is unresolved.",
+  "near_match_summary": {
+    "near_matches": [
+      {
+        "ref": "fixture:issue-level-record",
+        "reason": "Issue exists in fixture but article/member identity is unresolved."
+      }
+    ]
+  },
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Near matches require review and do not create object truth."
+  ],
+  "notes": [
+    "Synthetic article/member need."
+  ]
+}

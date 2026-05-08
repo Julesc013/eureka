@@ -1,0 +1,68 @@
+{
+  "schema_version": "search_need_status_policy.v0",
+  "policy_id": "search_need_status_policy_v0",
+  "label": "SearchNeed status policy",
+  "allowed_statuses": [
+    "example_only",
+    "recorded_local",
+    "privacy_filtered",
+    "poisoning_guarded",
+    "unresolved",
+    "weakly_resolved",
+    "partially_resolved",
+    "candidate_available",
+    "evidence_needed",
+    "source_gap",
+    "capability_gap",
+    "policy_blocked",
+    "needs_review",
+    "approved_for_workunit_seed_future",
+    "approved_for_source_lead_future",
+    "approved_for_candidate_review_future",
+    "rejected",
+    "duplicate",
+    "deferred",
+    "not_evaluable"
+  ],
+  "status_meanings": {
+    "unresolved": "A local explicit input suggests unresolved search work.",
+    "weakly_resolved": "A local input has weak or near-match material but needs review.",
+    "source_gap": "A local input suggests source work may be needed.",
+    "capability_gap": "A local input suggests future capability work may be needed.",
+    "policy_blocked": "Current policy blocks downstream use.",
+    "not_evaluable": "The input is not shaped enough for useful review."
+  },
+  "allowed_transitions_future": [
+    "needs_review_to_approved_for_workunit_seed_future",
+    "needs_review_to_approved_for_source_lead_future",
+    "needs_review_to_rejected",
+    "needs_review_to_duplicate",
+    "needs_review_to_deferred"
+  ],
+  "statuses_requiring_review": [
+    "unresolved",
+    "weakly_resolved",
+    "source_gap",
+    "capability_gap",
+    "approved_for_workunit_seed_future",
+    "approved_for_source_lead_future",
+    "approved_for_candidate_review_future"
+  ],
+  "statuses_forbidden_current": [
+    "active_runtime",
+    "accepted_public_truth",
+    "accepted_evidence_truth",
+    "master_index_mutation"
+  ],
+  "no_truth_claim_rules": [
+    "SearchNeed status never means accepted public truth.",
+    "SearchNeed status never means accepted evidence truth."
+  ],
+  "no_exhaustive_absence_rules": [
+    "A local unresolved SearchNeed cannot prove source-universe absence.",
+    "Review may approve future seeds only."
+  ],
+  "notes": [
+    "Current statuses are descriptive and review-gated."
+  ]
+}

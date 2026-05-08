@@ -1,0 +1,43 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.not_evaluable.ambiguous_fixture.v0",
+  "search_need_status": "not_evaluable",
+  "need_intent": "not_evaluable",
+  "need_label": "Not evaluable local search need example",
+  "query_summary": {
+    "source_record_ref": "fixture:not-evaluable-search-need",
+    "input_type": "explicit_test_fixture",
+    "query_text": "ambiguous local fixture example",
+    "query_id_optional": "ambiguous_fixture_example",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 0,
+      "result_quality": "not_evaluable"
+    },
+    "miss_reason_summary": "Local fixture lacks enough shape for a useful SearchNeed.",
+    "failure_modes": [
+      "not_evaluable"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": []
+  },
+  "object_family": "unresolved_object",
+  "product_or_topic": "ambiguous local fixture example",
+  "version_or_state": "",
+  "platform_or_context": "local fixture",
+  "artifact_type": "unknown",
+  "desired_user_action": "request_more_context",
+  "candidate_summary": {
+    "candidate_available": false,
+    "accepted_public_status": false
+  },
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Not enough local shape to prepare a downstream seed."
+  ],
+  "notes": [
+    "Synthetic not-evaluable SearchNeed example."
+  ]
+}

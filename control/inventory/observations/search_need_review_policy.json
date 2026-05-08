@@ -1,0 +1,46 @@
+{
+  "schema_version": "search_need_review_policy.v0",
+  "policy_id": "search_need_review_policy_v0",
+  "label": "SearchNeed review policy",
+  "review_required_before_workunit_seed": true,
+  "review_required_before_source_lead": true,
+  "review_required_before_candidate_review_seed": true,
+  "review_required_before_public_surface": true,
+  "review_required_before_master_index": true,
+  "automatic_public_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "allowed_review_states": [
+    "needs_review",
+    "approved_for_workunit_seed_future",
+    "approved_for_source_lead_future",
+    "approved_for_candidate_review_future",
+    "rejected",
+    "duplicate",
+    "policy_blocked",
+    "deferred",
+    "not_evaluable"
+  ],
+  "allowed_review_decisions": [
+    "approve_as_workunit_seed_future",
+    "approve_as_source_lead_future",
+    "approve_as_candidate_review_seed_future",
+    "request_more_context",
+    "reject",
+    "mark_duplicate",
+    "policy_block",
+    "defer",
+    "not_evaluable"
+  ],
+  "forbidden_review_outcomes": [
+    "accepted_public_truth",
+    "accepted_evidence_truth",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ],
+  "notes": [
+    "Review can approve future seeds; it cannot make a SearchNeed public truth."
+  ]
+}

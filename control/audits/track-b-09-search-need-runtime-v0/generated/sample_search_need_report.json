@@ -1,0 +1,251 @@
+{
+  "input_ref": "examples/search_misses/weak_result_search_miss_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_public_telemetry": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "absence_scope": "local_explicit_input_only",
+    "aliases": [],
+    "artifact_type": "",
+    "candidate_summary": {
+      "accepted_public_status": false,
+      "candidate_available": false
+    },
+    "canonical_need_key": "search_need_key.ed6ea370870bec67.v0",
+    "capability_gap_summary": "",
+    "compatibility_gap_summary": "Driver compatibility remains unresolved in the local fixture.",
+    "demand_summary": {
+      "account_level_tracking": false,
+      "aggregate_only": true,
+      "demand_score": null,
+      "demand_score_available": false,
+      "demand_score_limitations": "No production analytics or public telemetry are used.",
+      "demand_signal_sources": [
+        "search_miss.weak.vintage_driver.v0"
+      ],
+      "demand_source_count": 1,
+      "first_seen_or_recorded_when_available": "not_recorded",
+      "last_seen_or_recorded_when_available": "not_recorded",
+      "notes": [
+        "Demand summary is a local aggregate planning hint only."
+      ],
+      "poisoning_guarded": true,
+      "privacy_filtered": false,
+      "production_analytics": false,
+      "public_telemetry_enabled": false,
+      "raw_query_retention": "synthetic_or_reviewed_input_only"
+    },
+    "desired_user_action": "find_reviewable_source_or_candidate",
+    "downstream_seed_candidates": [
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "workunit_seed_future",
+        "requires_review": true,
+        "seed_summary": "Future WorkUnit seed may inspect this review-gated SearchNeed.",
+        "source_search_need_id": "search_need.find_driver.8e1c1e048562.v0"
+      },
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "source_lead_candidate_future",
+        "requires_review": true,
+        "seed_summary": "Future source lead may be prepared after SearchNeed review.",
+        "source_search_need_id": "search_need.find_driver.8e1c1e048562.v0"
+      },
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "candidate_review_seed_future",
+        "requires_review": true,
+        "seed_summary": "Future candidate review seed may be prepared after SearchNeed review.",
+        "source_search_need_id": "search_need.find_driver.8e1c1e048562.v0"
+      }
+    ],
+    "exhaustive_absence_claimed": false,
+    "extraction_gap_summary": "",
+    "identity_gap_summary": "",
+    "interpreted_intent": {
+      "confidence": "low",
+      "limitations": [
+        "Intent is a local planning hint, not object identity truth."
+      ],
+      "source": "deterministic_keyword_classification"
+    },
+    "limitations": [
+      "Weak result does not establish absence.",
+      "SearchNeed is derived from explicit local input only.",
+      "No WorkUnit, live source, model, or public traffic action was executed."
+    ],
+    "near_match_summary": {
+      "near_matches": []
+    },
+    "need_intent": "find_driver",
+    "need_label": "Resolve local search need for vintage driver package example",
+    "notes": [
+      "Public-safe synthetic miss.",
+      "SearchNeed is a review-gated unresolved-search object only."
+    ],
+    "object_family": "driver",
+    "platform_or_context": "",
+    "poisoning_guard_posture": {
+      "decision": "no_risk_detected",
+      "notes": [
+        "Poisoning guard flags risks only; it does not make public ranking or truth decisions."
+      ],
+      "poisoning_guarded": true,
+      "public_decision_made": false,
+      "risk_count": 0,
+      "risk_flags": []
+    },
+    "policy_block_summary": "",
+    "privacy_posture": {
+      "account_identity_collected": false,
+      "accounts_required": false,
+      "browser_state_collection_allowed": false,
+      "location_collected": false,
+      "privacy_filtered": false,
+      "privacy_risks": [],
+      "private_data_allowed": false,
+      "public_telemetry_enabled": false,
+      "query_hash": "b38e92223f9029699dbbd3959e3d309ce6ec11b3d526548bdf5aadedc98204af",
+      "raw_public_query_logging_enabled": false,
+      "raw_query_allowed": true,
+      "raw_query_retained": false,
+      "redacted_query_text": "vintage driver package example"
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_public_telemetry": false,
+      "mutated_master_index": false
+    },
+    "product_or_topic": "vintage driver package example",
+    "query_summary": {
+      "failure_modes": [
+        "compatibility_gap",
+        "weak_result"
+      ],
+      "input_type": "search_miss_record",
+      "miss_reason_summary": "Local fixture produced weak results without a reviewable useful hit.",
+      "observed_result_summary": {
+        "first_useful_result_rank": null,
+        "result_count": 3,
+        "result_quality": "weak",
+        "top_result_refs": [
+          "fixture:driver-index-summary",
+          "fixture:generic-support-page"
+        ]
+      },
+      "query_id_optional": "vintage_driver_example",
+      "query_text": "vintage driver package example",
+      "related_query_observation_ref": "query_observation.weak.vintage_driver.v0",
+      "related_search_miss_ref": "search_miss.weak.vintage_driver.v0",
+      "search_mode": "local_only",
+      "source_mode": "local_only",
+      "source_record_ref": "search_miss.weak.vintage_driver.v0",
+      "sources_checked": [],
+      "sources_not_checked": [
+        "live_web",
+        "external_archives",
+        "hosted_user_traffic"
+      ]
+    },
+    "ranking_gap_summary": "Weak local results need human review before downstream use.",
+    "representation_gap_summary": "",
+    "review_gates": {
+      "candidate_review_required": true,
+      "human_review_required_for_downstream_use": true,
+      "master_index_review_required": true,
+      "source_lead_review_required": true,
+      "workunit_review_required": true
+    },
+    "schema_version": "search_need_record.v0",
+    "search_need_id": "search_need.find_driver.8e1c1e048562.v0",
+    "search_need_status": "weakly_resolved",
+    "source_gap_summary": "",
+    "temporal_version_gap_summary": "",
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "search_need_can_mutate_master_index": false,
+      "search_need_claims_source_universe_exhausted": false,
+      "search_need_is_accepted_evidence": false,
+      "search_need_is_exhaustive_global_absence": false,
+      "search_need_is_public_truth": false
+    },
+    "version_or_state": ""
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "public_telemetry_enabled": false,
+    "raw_public_query_logging_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "search_need_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "canonical_need_key": "search_need_key.ed6ea370870bec67.v0",
+    "demand_source_count": 1,
+    "exhaustive_absence_claimed": false,
+    "need_intent": "find_driver",
+    "need_label": "Resolve local search need for vintage driver package example",
+    "query_text": "vintage driver package example",
+    "review_required": true,
+    "search_need_id": "search_need.find_driver.8e1c1e048562.v0",
+    "search_need_status": "weakly_resolved",
+    "truth_boundary": {
+      "search_need_can_mutate_master_index": false,
+      "search_need_is_accepted_evidence": false,
+      "search_need_is_public_truth": false
+    }
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "search_need_can_mutate_master_index": false,
+    "search_need_is_accepted_evidence": false,
+    "search_need_is_exhaustive_global_absence": false,
+    "search_need_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}

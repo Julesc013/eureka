@@ -1,0 +1,46 @@
+{
+  "schema_version": "search_need_record.v0",
+  "search_need_id": "search_need.driver.vintage_driver.v0",
+  "search_need_status": "weakly_resolved",
+  "need_intent": "find_driver",
+  "need_label": "Find driver package for vintage hardware example",
+  "query_summary": {
+    "source_record_ref": "search_miss.weak.vintage_driver.v0",
+    "input_type": "search_miss_record",
+    "query_text": "vintage driver package example",
+    "query_id_optional": "vintage_driver_example",
+    "related_search_miss_ref": "search_miss.weak.vintage_driver.v0",
+    "source_mode": "local_only",
+    "search_mode": "local_only",
+    "observed_result_summary": {
+      "result_count": 3,
+      "result_quality": "weak"
+    },
+    "miss_reason_summary": "Local fixture produced weak results without a reviewable useful hit.",
+    "failure_modes": [
+      "weak_result",
+      "compatibility_gap"
+    ],
+    "sources_checked": [],
+    "sources_not_checked": [
+      "vendor_site_future",
+      "driver_archive_future"
+    ]
+  },
+  "object_family": "driver",
+  "product_or_topic": "vintage driver package example",
+  "version_or_state": "",
+  "platform_or_context": "legacy hardware",
+  "artifact_type": "driver",
+  "desired_user_action": "find_driver",
+  "compatibility_gap_summary": "Driver compatibility remains unresolved in the local fixture.",
+  "ranking_gap_summary": "Weak local results need human review before downstream use.",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Driver need does not imply installability or safety."
+  ],
+  "notes": [
+    "Synthetic driver need."
+  ]
+}
