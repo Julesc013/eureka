@@ -1,0 +1,72 @@
+{
+  "schema_version": "workunit_result_recovery_policy.v0",
+  "policy_id": "eureka_workunit_result_recovery_policy_v0",
+  "required_idempotency_result_fields": [
+    "safe_to_rerun",
+    "duplicate_detected",
+    "duplicate_behavior_applied",
+    "noop_recorded",
+    "resume_required",
+    "conflict_detected"
+  ],
+  "required_recovery_result_fields": [
+    "dirty_tree_handled",
+    "missing_dependency_handled",
+    "stale_status_reconciled",
+    "failed_validation_handled",
+    "out_of_order_task_handled",
+    "repeated_prompt_handled"
+  ],
+  "duplicate_behavior_values": [
+    "validate_and_record_noop",
+    "resume_from_missing_acceptance",
+    "classify_and_quarantine",
+    "not_applicable"
+  ],
+  "recovery_behavior_values": [
+    "inspect_preserve_and_continue",
+    "repair_if_bounded_else_record_blocker",
+    "reconcile_from_evidence",
+    "repair_if_in_scope_else_record_blocker",
+    "inspect_queue_and_resume_valid_next",
+    "classify_noop_resume_or_repair",
+    "not_applicable"
+  ],
+  "noop_result_fields": [
+    "noop_recorded",
+    "noop_reason",
+    "validated_without_changes"
+  ],
+  "quarantine_result_fields": [
+    "quarantined",
+    "quarantine_reason",
+    "review_required"
+  ],
+  "notes": [
+    "Recovery fields report outcome posture only; they do not perform repairs."
+  ],
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}

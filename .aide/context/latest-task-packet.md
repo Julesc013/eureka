@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-04 WorkUnit contract
+UNSPECIFIED - TRACK-B-05 WorkUnit result contract
 
 ## GOAL
 
-TRACK-B-04 WorkUnit contract
+TRACK-B-05 WorkUnit result contract
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4001
-- approx_tokens: 1001
+- chars: 4015
+- approx_tokens: 1004
 - budget_status: PASS
 - warnings:
   - none

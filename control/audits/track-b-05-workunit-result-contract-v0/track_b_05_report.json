@@ -1,0 +1,106 @@
+{
+  "schema_version": "track_b_05_report.v0",
+  "status": "pass",
+  "track": "B",
+  "task": "TRACK-B-05",
+  "added_contracts": [
+    "contracts/node/work_unit_result.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/WORKUNIT_RESULT_CONTRACT.md",
+    "docs/architecture/WORKUNIT_RESULT_MODEL.md",
+    "docs/operations/WORKUNIT_RESULT_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/nodes/workunit_result_policy.json",
+    "control/inventory/nodes/workunit_result_status_registry.json",
+    "control/inventory/nodes/workunit_result_output_policy.json",
+    "control/inventory/nodes/workunit_result_review_policy.json",
+    "control/inventory/nodes/workunit_result_recovery_policy.json"
+  ],
+  "added_examples": [
+    "examples/work_unit_results/search_need_review_pass_v0/work_unit_result.json",
+    "examples/work_unit_results/source_lead_inspection_warn_v0/work_unit_result.json",
+    "examples/work_unit_results/observation_candidate_review_partial_v0/work_unit_result.json",
+    "examples/work_unit_results/candidate_dedup_noop_v0/work_unit_result.json",
+    "examples/work_unit_results/policy_blocked_result_v0/work_unit_result.json",
+    "examples/work_unit_results/approved_metadata_probe_future_blocked_v0/work_unit_result.json"
+  ],
+  "added_validators": [
+    "scripts/validate_eureka_workunit_result.py"
+  ],
+  "validation": {
+    "validator": "pass",
+    "unit_tests": "pass"
+  },
+  "result_statuses": [
+    "pass",
+    "pass_with_warnings",
+    "warn",
+    "partial",
+    "fail",
+    "blocked",
+    "noop",
+    "skipped",
+    "deferred",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "permission_needed",
+    "operator_gated",
+    "human_operated",
+    "approval_gated",
+    "not_evaluable"
+  ],
+  "execution_modes": [
+    "contract_only",
+    "validate_only",
+    "dry_run_only",
+    "report_only",
+    "repo_local_only",
+    "human_operated",
+    "future_runtime",
+    "future_approved_source",
+    "future_local_state",
+    "future_model_assist",
+    "blocked"
+  ],
+  "idempotency_result_model": {
+    "duplicate_behavior_defined": true,
+    "recovery_behavior_defined": true,
+    "noop_result_supported": true,
+    "partial_resume_supported": true,
+    "quarantine_result_supported": true
+  },
+  "truth_boundary": {
+    "workunit_result_is_public_truth": false,
+    "workunit_result_is_accepted_evidence": false,
+    "workunit_result_can_mutate_master_index": false,
+    "human_review_required_for_truth": true
+  },
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-06 \u2014 Local foundry state contract"
+}

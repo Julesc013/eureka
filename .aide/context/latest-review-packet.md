@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4001 chars, 1001 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4015 chars, 1004 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,20 +36,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/node/work_unit.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-b-04-workunit-contract-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_action_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_idempotency_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_input_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_review_gate_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/workunit_type_registry.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/WORKUNIT_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/WORKUNIT_IDEMPOTENCY_AND_RECOVERY.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/WORKUNIT_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/work_units` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_eureka_workunit.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_eureka_workunit.py` (??; does not match active task allowed paths)
+- unknown: `contracts/node/work_unit_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-05-workunit-result-contract-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_result_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_result_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_result_recovery_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_result_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_result_status_registry.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/WORKUNIT_RESULT_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/WORKUNIT_RESULT_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/WORKUNIT_RESULT_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/work_unit_results` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_eureka_workunit_result.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_eureka_workunit_result.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -59,8 +58,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5698
-- approx_tokens: 1425
+- chars: 5647
+- approx_tokens: 1412
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

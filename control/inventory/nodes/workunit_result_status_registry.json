@@ -1,0 +1,110 @@
+{
+  "schema_version": "workunit_result_status_registry.v0",
+  "registry_id": "eureka_workunit_result_status_registry_v0",
+  "allowed_result_statuses": [
+    "pass",
+    "pass_with_warnings",
+    "warn",
+    "partial",
+    "fail",
+    "blocked",
+    "noop",
+    "skipped",
+    "deferred",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "permission_needed",
+    "operator_gated",
+    "human_operated",
+    "approval_gated",
+    "not_evaluable"
+  ],
+  "result_status_meanings": {
+    "pass": "All in-scope acceptance criteria satisfied.",
+    "pass_with_warnings": "All critical gates satisfied; warnings documented.",
+    "warn": "Noncritical warnings only; review may be needed.",
+    "partial": "Some requirements completed; resumable work remains.",
+    "fail": "Validation or acceptance failed.",
+    "blocked": "Cannot proceed due to required external decision or missing prerequisite.",
+    "noop": "Repeated or already-complete WorkUnit validated without changes.",
+    "policy_blocked": "Policy forbids the requested work."
+  },
+  "allowed_execution_modes": [
+    "contract_only",
+    "validate_only",
+    "dry_run_only",
+    "report_only",
+    "repo_local_only",
+    "human_operated",
+    "future_runtime",
+    "future_approved_source",
+    "future_local_state",
+    "future_model_assist",
+    "blocked"
+  ],
+  "current_allowed_execution_modes": [
+    "contract_only",
+    "validate_only",
+    "dry_run_only",
+    "report_only",
+    "repo_local_only",
+    "human_operated",
+    "blocked"
+  ],
+  "allowed_action_statuses": [
+    "planned",
+    "executed",
+    "skipped",
+    "blocked",
+    "forbidden_checked",
+    "not_applicable",
+    "deferred",
+    "failed"
+  ],
+  "allowed_input_statuses": [
+    "used",
+    "not_used",
+    "missing",
+    "unavailable",
+    "blocked",
+    "invalid",
+    "future",
+    "deferred"
+  ],
+  "validation_statuses": [
+    "pass",
+    "pass_with_warnings",
+    "warn",
+    "fail",
+    "not_run",
+    "not_applicable"
+  ],
+  "notes": [
+    "Statuses describe result envelopes only and do not imply runner implementation."
+  ],
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}
