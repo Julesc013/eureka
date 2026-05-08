@@ -1,0 +1,58 @@
+{
+  "schema_version": "workunit_idempotency_policy.v0",
+  "policy_id": "eureka_workunit_idempotency_policy_v0",
+  "label": "WorkUnit idempotency and recovery policy",
+  "required_idempotency": {
+    "safe_to_rerun": true,
+    "duplicate_behavior": {
+      "if_complete": "validate_and_record_noop",
+      "if_partial": "resume_from_missing_acceptance",
+      "if_conflicting": "classify_and_quarantine"
+    }
+  },
+  "required_recovery": {
+    "dirty_tree": "inspect_preserve_and_continue",
+    "missing_dependency": "repair_if_bounded_else_record_blocker",
+    "stale_status": "reconcile_from_evidence",
+    "failed_validation": "repair_if_in_scope_else_record_blocker",
+    "out_of_order_task": "inspect_queue_and_resume_valid_next",
+    "repeated_prompt": "classify_noop_resume_or_repair"
+  },
+  "required_stop_conditions": [
+    "destructive_ambiguity",
+    "missing_external_credentials",
+    "legal_or_licensing_decision",
+    "manual_observation_requirement",
+    "irreversible_action_without_approval",
+    "private_data_exposure_risk",
+    "unsafe_network_or_source_action",
+    "production_deployment_or_hosting_mutation"
+  ],
+  "notes": [
+    "Idempotency covers validation and replay posture only; it does not authorize execution."
+  ],
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}

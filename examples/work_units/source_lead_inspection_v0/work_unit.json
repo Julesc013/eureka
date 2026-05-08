@@ -1,0 +1,272 @@
+{
+  "schema_version": "work_unit.v0",
+  "workunit_id": "source_lead_inspection_v0",
+  "workunit_label": "Source lead inspection example",
+  "workunit_type": "source_lead_inspection",
+  "workunit_status": "dry_run_only",
+  "workunit_scope": "repo_local",
+  "priority": "normal",
+  "created_from": {
+    "origin": "contract_example",
+    "origin_ref": "TRACK-B-04"
+  },
+  "related_node_manifest_refs": [
+    "examples/nodes/local_autonomous_dry_run_node_v0/eureka_node_manifest.json"
+  ],
+  "required_node_modes": [
+    "local_autonomous_dry_run"
+  ],
+  "required_node_capabilities": [
+    {
+      "capability_id": "repo_local_inspection",
+      "required": true
+    },
+    {
+      "capability_id": "source_lead_preparation",
+      "required": true
+    }
+  ],
+  "required_node_policy_refs": [
+    "examples/nodes/policies/local_autonomous_dry_run_node_policy_v0.json"
+  ],
+  "source_access_requirements": {
+    "source_access_required": false,
+    "current_enabled": false,
+    "source_policy_approval_required": false,
+    "operator_approval_required": false,
+    "human_review_required": true,
+    "kill_switch_policy_required": false,
+    "rate_or_budget_policy_required": false
+  },
+  "network_requirements": {
+    "network_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false,
+    "source_policy_required": false,
+    "kill_switch_policy_required": false,
+    "rate_or_budget_policy_required": false
+  },
+  "model_provider_requirements": {
+    "model_provider_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false,
+    "budget_policy_required": false,
+    "human_review_required": true
+  },
+  "credential_requirements": {
+    "credentials_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false,
+    "human_review_required": true
+  },
+  "local_state_requirements": {
+    "local_state_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false,
+    "human_review_required": true,
+    "public_export_requires_review": true
+  },
+  "input_refs": [
+    {
+      "input_id": "local_audit_ref",
+      "input_type": "committed_audit_report",
+      "input_ref": "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
+      "input_status": "committed",
+      "input_required": true,
+      "input_public_safe": true,
+      "input_limitations": [
+        "Audit report can suggest leads but cannot validate sources."
+      ],
+      "notes": []
+    }
+  ],
+  "input_summary": {
+    "allowed_input_types": [
+      "committed_audit_report",
+      "observation_candidate",
+      "manual_pending_slot"
+    ],
+    "forbidden_input_types": [
+      "unapproved_live_source_result",
+      "scraped_search_result",
+      "scraped_forum_thread",
+      "bulk_reddit_content",
+      "private_user_file",
+      "secret_or_credential",
+      "executable_download",
+      "installer_payload",
+      "raw_browser_profile",
+      "account_session_data",
+      "telemetry_stream",
+      "unreviewed_external_api_payload"
+    ]
+  },
+  "allowed_actions": [
+    "inspect_repo_local_artifact",
+    "summarize_local_gap",
+    "prepare_source_lead",
+    "produce_dry_run_report",
+    "produce_review_packet",
+    "request_human_review"
+  ],
+  "forbidden_actions": [
+    "mutate_master_index",
+    "mark_candidate_accepted",
+    "mark_evidence_accepted",
+    "mark_observation_observed_without_human",
+    "mark_agent_output_as_truth",
+    "enable_live_probe",
+    "scrape_external_site",
+    "crawl_external_site",
+    "browser_automation",
+    "call_unapproved_api",
+    "download_binary",
+    "run_installer",
+    "execute_downloaded_artifact",
+    "store_credentials",
+    "upload_to_hosted_backend",
+    "create_account_or_user_data",
+    "emit_telemetry",
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability",
+    "claim_exhaustive_global_search",
+    "claim_production_readiness"
+  ],
+  "expected_outputs": [
+    {
+      "output_id": "source_lead_review_item",
+      "output_type": "source_lead_candidate",
+      "output_contract_ref": "contracts/query/observation_candidate.v0.json",
+      "output_status": "candidate_requires_review",
+      "output_public_safe": true,
+      "output_requires_review": true,
+      "output_truth_boundary": {
+        "accepted_public_truth": false,
+        "accepted_evidence_truth": false,
+        "master_index_mutation": false
+      },
+      "output_limitations": [
+        "Source lead is not source validation."
+      ],
+      "notes": []
+    }
+  ],
+  "forbidden_outputs": [
+    "observed_baseline_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "output_contract_refs": [
+    "contracts/query/observation_candidate.v0.json"
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true,
+    "operator_approval_required_for_network": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "legal_or_rights_decision_stop_required": true
+  },
+  "idempotency": {
+    "safe_to_rerun": true,
+    "duplicate_behavior": {
+      "if_complete": "validate_and_record_noop",
+      "if_partial": "resume_from_missing_acceptance",
+      "if_conflicting": "classify_and_quarantine"
+    }
+  },
+  "recovery_policy": {
+    "dirty_tree": "inspect_preserve_and_continue",
+    "missing_dependency": "repair_if_bounded_else_record_blocker",
+    "stale_status": "reconcile_from_evidence",
+    "failed_validation": "repair_if_in_scope_else_record_blocker",
+    "out_of_order_task": "inspect_queue_and_resume_valid_next",
+    "repeated_prompt": "classify_noop_resume_or_repair",
+    "stop_conditions": [
+      "destructive_ambiguity",
+      "missing_external_credentials",
+      "legal_or_licensing_decision",
+      "manual_observation_requirement",
+      "irreversible_action_without_approval",
+      "private_data_exposure_risk",
+      "unsafe_network_or_source_action",
+      "production_deployment_or_hosting_mutation"
+    ]
+  },
+  "duplicate_policy": {
+    "if_complete": "validate_and_record_noop",
+    "if_partial": "resume_from_missing_acceptance",
+    "if_conflicting": "classify_and_quarantine"
+  },
+  "out_of_order_policy": {
+    "behavior": "inspect_queue_and_resume_valid_next"
+  },
+  "validation_policy": {
+    "validation_required": true,
+    "validator": "scripts/validate_eureka_workunit.py",
+    "manual_review_required_after_validation": true
+  },
+  "budget_policy_future": {
+    "runtime_budget_enabled": false,
+    "provider_budget_enabled": false
+  },
+  "audit_policy": {
+    "audit_required": true,
+    "audit_report_ref": "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json"
+  },
+  "truth_boundary": {
+    "can_create_observed_baseline": false,
+    "can_create_accepted_evidence": false,
+    "can_create_public_truth": false,
+    "can_mutate_master_index": false,
+    "can_claim_rights_clearance": false,
+    "can_claim_malware_safety": false,
+    "can_claim_verified_installability": false,
+    "can_claim_exhaustive_global_search": false
+  },
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No source validation",
+    "No external source access",
+    "No accepted evidence"
+  ],
+  "notes": [
+    "This example produces a reviewable source-lead candidate only."
+  ]
+}
