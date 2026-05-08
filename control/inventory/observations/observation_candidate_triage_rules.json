@@ -1,0 +1,118 @@
+{
+  "schema_version": "observation_candidate_triage_rules.v0",
+  "rules_id": "observation_candidate_triage_rules_v0",
+  "label": "Observation candidate triage rules",
+  "description": "Deterministic advisory triage rules for ordering ObservationCandidate review queue entries.",
+  "priority_bands": {
+    "high": {
+      "minimum_score": 70,
+      "maximum_score": 100,
+      "meaning": "Early human review target if policy and downstream gates are satisfied later."
+    },
+    "medium": {
+      "minimum_score": 40,
+      "maximum_score": 69,
+      "meaning": "Useful candidate with narrower scope, more uncertainty, or higher review cost."
+    },
+    "low": {
+      "minimum_score": 1,
+      "maximum_score": 39,
+      "meaning": "Lower-priority candidate or broad policy question."
+    },
+    "blocked": {
+      "minimum_score": 0,
+      "maximum_score": 100,
+      "meaning": "Policy-blocked until a human/operator decision changes the policy posture."
+    },
+    "insufficient_local_evidence": {
+      "minimum_score": 0,
+      "maximum_score": 0,
+      "meaning": "Do not infer detail; request more evidence or defer."
+    }
+  },
+  "triage_factors": [
+    "source_family_fit",
+    "old_platform_relevance",
+    "hidden_member_discovery_relevance",
+    "metadata_likelihood",
+    "failure_mode_relevance",
+    "source_policy_risk",
+    "rights_or_malware_risk",
+    "manual_review_cost",
+    "downstream_track_b_readiness",
+    "local_evidence_strength"
+  ],
+  "recommended_action_rules": [
+    {
+      "when_candidate_type": "source_lead",
+      "recommended_review_action": "approve_as_source_lead_future"
+    },
+    {
+      "when_candidate_type": "work_unit_seed",
+      "recommended_review_action": "approve_as_workunit_seed_future"
+    },
+    {
+      "when_candidate_type": "search_need_seed",
+      "recommended_review_action": "approve_as_search_need_seed_future"
+    },
+    {
+      "when_candidate_type": "manual_slot_suggestion",
+      "recommended_review_action": "approve_for_manual_observation_future"
+    },
+    {
+      "when_candidate_type": "local_eval_failure",
+      "recommended_review_action": "request_more_evidence_future"
+    },
+    {
+      "when_candidate_type": "policy_blocked_candidate",
+      "recommended_review_action": "mark_policy_blocked_future"
+    },
+    {
+      "when_candidate_type": "not_evaluable_candidate",
+      "recommended_review_action": "request_more_evidence_future"
+    }
+  ],
+  "review_state_rules": [
+    {
+      "when_candidate_status": "policy_blocked",
+      "proposed_review_state": "policy_blocked"
+    },
+    {
+      "when_priority_band": "high",
+      "proposed_review_state": "ready_for_human_decision"
+    },
+    {
+      "when_candidate_status": "needs_human_review",
+      "proposed_review_state": "needs_human_review"
+    },
+    {
+      "default": true,
+      "proposed_review_state": "queued_for_review"
+    }
+  ],
+  "fallback_scores": {
+    "source_lead": 60,
+    "work_unit_seed": 55,
+    "search_need_seed": 50,
+    "local_eval_failure": 45,
+    "manual_slot_suggestion": 40,
+    "policy_blocked_candidate": 0,
+    "not_evaluable_candidate": 0
+  },
+  "sort_order": [
+    "priority_band_rank",
+    "priority_score_desc",
+    "recommended_review_action",
+    "observation_candidate_id"
+  ],
+  "advisory_only": true,
+  "approves_source_access": false,
+  "creates_evidence_truth": false,
+  "creates_observed_baseline": false,
+  "mutates_master_index": false,
+  "notes": [
+    "Triage factors guide review order only.",
+    "Policy-blocked candidates remain blocked even if locally important.",
+    "Missing local evidence must be represented as insufficient_local_evidence, not inferred detail."
+  ]
+}

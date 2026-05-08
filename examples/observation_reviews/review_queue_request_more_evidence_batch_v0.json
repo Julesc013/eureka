@@ -1,0 +1,142 @@
+{
+  "schema_version": "observation_candidate_review_queue.v0",
+  "review_queue_id": "review_queue_request_more_evidence_batch_v0",
+  "label": "Request-more-evidence review queue example",
+  "description": "Small review queue example for local eval candidates needing human evidence review.",
+  "queue_status": "queued_for_review",
+  "generated_from": [
+    "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
+    "examples/observation_candidates/local_eval_failure_mining_batch_0_v0.json"
+  ],
+  "candidate_sources": [
+    "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
+    "examples/observation_candidates/local_eval_failure_mining_batch_0_v0.json"
+  ],
+  "queue_entries": [
+    {
+      "review_queue_entry_id": "review_queue_entry::obs_candidate_local_eval_failure_v0",
+      "observation_candidate_id": "obs_candidate_local_eval_failure_v0",
+      "candidate_file_path": "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
+      "candidate_type": "local_eval_failure",
+      "candidate_status": "needs_human_review",
+      "candidate_origin": "local_eval",
+      "related_batch_id": "batch_0",
+      "related_query_id": "latest_firefox_before_xp_support_ended",
+      "related_slot_id": null,
+      "source_family": "local_eval",
+      "source_access_mode": "repo_local_only",
+      "source_policy_status": "not_external",
+      "proposed_failure_modes": [
+        "temporal_version_gap",
+        "compatibility_gap"
+      ],
+      "proposed_review_state": "needs_human_review",
+      "recommended_review_action": "request_more_evidence_future",
+      "priority_score": 45,
+      "priority_band": "medium",
+      "review_required": true,
+      "review_decision_ref": null,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Needs human evidence review before any downstream conversion."
+      ]
+    },
+    {
+      "review_queue_entry_id": "review_queue_entry::obs_candidate_local_eval_failure_mining_batch_0_v0",
+      "observation_candidate_id": "obs_candidate_local_eval_failure_mining_batch_0_v0",
+      "candidate_file_path": "examples/observation_candidates/local_eval_failure_mining_batch_0_v0.json",
+      "candidate_type": "local_eval_failure",
+      "candidate_status": "needs_human_review",
+      "candidate_origin": "local_eval",
+      "related_batch_id": "batch_0",
+      "related_query_id": null,
+      "related_slot_id": null,
+      "source_family": "local_eval",
+      "source_access_mode": "repo_local_only",
+      "source_policy_status": "not_external",
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "compatibility_evidence_gap",
+        "planner_gap",
+        "representation_gap",
+        "member_access_gap",
+        "ranking_gap"
+      ],
+      "proposed_review_state": "needs_human_review",
+      "recommended_review_action": "request_more_evidence_future",
+      "priority_score": 45,
+      "priority_band": "medium",
+      "review_required": true,
+      "review_decision_ref": null,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Needs human evidence review before any downstream conversion."
+      ]
+    }
+  ],
+  "status_counts": {
+    "needs_human_review": 2
+  },
+  "recommended_action_counts": {
+    "request_more_evidence_future": 2
+  },
+  "candidate_type_counts": {
+    "local_eval_failure": 2
+  },
+  "source_family_counts": {
+    "local_eval": 2
+  },
+  "priority_band_counts": {
+    "medium": 2
+  },
+  "priority_summary": {
+    "min": 45,
+    "max": 45,
+    "average": 45.0
+  },
+  "review_policy_ref": "control/inventory/observations/observation_candidate_review_queue_policy.json",
+  "triage_rules_ref": "control/inventory/observations/observation_candidate_triage_rules.json",
+  "truth_boundary": {
+    "queue_entries_are_observed_baselines": false,
+    "queue_entries_are_evidence_truth": false,
+    "queue_entries_can_mutate_master_index": false,
+    "human_review_required": true,
+    "source_access_approved": false
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "No approval.",
+    "No observation.",
+    "No evidence truth.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "Compact public-safe request-more-evidence queue example."
+  ]
+}

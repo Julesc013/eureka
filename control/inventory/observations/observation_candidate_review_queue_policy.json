@@ -1,0 +1,111 @@
+{
+  "schema_version": "observation_candidate_review_queue_policy.v0",
+  "policy_id": "observation_candidate_review_queue_policy_v0",
+  "label": "Observation candidate review queue policy",
+  "description": "Policy for queueing ObservationCandidate records for human review without approving, rejecting, observing, or converting them.",
+  "allowed_candidate_sources": [
+    "examples/observation_candidates/*.json",
+    "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",
+    "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json",
+    "control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json",
+    "control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_manifest.json"
+  ],
+  "allowed_review_states": [
+    "queued_for_review",
+    "needs_human_review",
+    "needs_more_evidence",
+    "policy_blocked",
+    "duplicate_possible",
+    "deferred",
+    "ready_for_human_decision"
+  ],
+  "allowed_recommended_actions": [
+    "approve_as_source_lead_future",
+    "approve_as_workunit_seed_future",
+    "approve_as_search_need_seed_future",
+    "approve_for_manual_observation_future",
+    "reject_future",
+    "mark_duplicate_future",
+    "mark_policy_blocked_future",
+    "request_more_evidence_future",
+    "defer_future"
+  ],
+  "allowed_priority_bands": [
+    "high",
+    "medium",
+    "low",
+    "blocked",
+    "insufficient_local_evidence"
+  ],
+  "required_false_truth_boundary_fields": [
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "source_access_approved",
+    "performed_external_observation"
+  ],
+  "required_human_review_fields": [
+    "review_required",
+    "proposed_review_state",
+    "recommended_review_action",
+    "review_decision_ref",
+    "notes"
+  ],
+  "forbidden_auto_actions": [
+    "approve_candidate_now",
+    "reject_candidate_now",
+    "convert_to_observed_baseline",
+    "convert_to_evidence_truth",
+    "convert_to_search_need_record",
+    "convert_to_workunit_record",
+    "approve_source_access",
+    "enable_source_sync",
+    "mutate_master_index",
+    "mark_pending_slot_observed"
+  ],
+  "downstream_conversion_gates": [
+    "human_review_decision_required",
+    "source_policy_required_for_source_access",
+    "track_b_contract_required_for_search_need_seed",
+    "track_b_contract_required_for_workunit_seed",
+    "manual_observation_required_for_observed_baseline",
+    "accepted_evidence_review_required_for_truth_claims"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "No candidate approval or rejection in this task.",
+    "No observed baseline creation.",
+    "No evidence truth creation.",
+    "No SearchNeed or WorkUnit record creation.",
+    "No source access approval.",
+    "No source sync, live probe, connector runtime, browser, API call, or external search.",
+    "No master-index mutation or product behavior change."
+  ],
+  "notes": [
+    "Queue entries are governance records only.",
+    "Recommended actions are recommendations only and must end in _future.",
+    "Human review is required before downstream use."
+  ]
+}
