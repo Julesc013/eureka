@@ -1,0 +1,117 @@
+{
+  "schema_version": "track_b_02_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-02",
+  "added_contracts": [
+    "contracts/node/node_policy.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/NODE_POLICY_CONTRACT.md",
+    "docs/architecture/EUREKA_NODE_POLICY.md",
+    "docs/operations/NODE_POLICY_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/nodes/node_policy_registry.json",
+    "control/inventory/nodes/node_action_policy.json",
+    "control/inventory/nodes/node_source_access_policy.json",
+    "control/inventory/nodes/node_output_policy.json",
+    "control/inventory/nodes/node_review_gate_policy.json"
+  ],
+  "added_examples": [
+    "examples/nodes/policies/local_private_node_policy_v0.json",
+    "examples/nodes/policies/local_pack_builder_node_policy_v0.json",
+    "examples/nodes/policies/local_autonomous_dry_run_node_policy_v0.json",
+    "examples/nodes/policies/community_node_future_policy_v0.json",
+    "examples/nodes/policies/institution_node_future_policy_v0.json",
+    "examples/nodes/policies/hosted_worker_future_policy_v0.json",
+    "examples/nodes/policies/policy_blocked_node_policy_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_eureka_node_policy.py"
+  ],
+  "validation": {
+    "git status --short": "pass_dirty_before_commit",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/nodes/node_policy_registry.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_action_policy.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_source_access_policy.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_output_policy.json": "pass",
+    "python -m json.tool control/inventory/nodes/node_review_gate_policy.json": "pass",
+    "python -m json.tool control/audits/track-b-02-node-policy-contract-v0/track_b_02_report.json": "pass",
+    "python scripts/validate_eureka_node_manifest.py": "pass",
+    "python scripts/validate_eureka_node_policy.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "python scripts/validate_agent_assisted_observation_policy.py": "pass",
+    "python scripts/validate_observation_candidate.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py pack --task \"TRACK-B-02 Node policy contract\"": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "warn",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "policy_statuses": [
+    "example_only",
+    "contract_only",
+    "disabled",
+    "dry_run_only",
+    "review_required",
+    "approval_gated",
+    "operator_gated",
+    "human_operated",
+    "deferred",
+    "blocked",
+    "active_future"
+  ],
+  "source_access_modes": [
+    "repo_local_only",
+    "committed_fixture_only",
+    "manual_human_only",
+    "approved_api_future",
+    "approved_metadata_probe_future",
+    "approved_static_dump_future",
+    "approved_common_crawl_or_archive_future",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "restricted_demand_signal_only",
+    "no_autonomous_access"
+  ],
+  "truth_boundary": {
+    "node_output_is_public_truth": false,
+    "node_output_is_accepted_evidence": false,
+    "node_can_mutate_master_index": false,
+    "node_can_mark_observations_observed": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-03 \u2014 Node capability contract"
+}

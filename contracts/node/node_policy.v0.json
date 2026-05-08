@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/node/node_policy.v0.json",
+  "title": "EurekaNodePolicyV0",
+  "description": "Contract-only policy envelope for future Eureka Nodes. Node policies constrain what nodes may read, write, request, and produce without enabling runtime behavior.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "node_policy_id",
+    "policy_label",
+    "policy_status",
+    "applies_to_node_modes",
+    "applies_to_node_manifest_refs",
+    "allowed_inputs",
+    "forbidden_inputs",
+    "allowed_actions",
+    "forbidden_actions",
+    "allowed_outputs",
+    "forbidden_outputs",
+    "source_access_policy",
+    "network_policy",
+    "local_state_policy",
+    "privacy_policy",
+    "rights_policy",
+    "risk_policy",
+    "review_gate_policy",
+    "pack_policy",
+    "evidence_policy",
+    "candidate_policy",
+    "observation_policy",
+    "workunit_policy_future",
+    "budget_policy_future",
+    "audit_policy",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "node_policy.v0"
+    },
+    "node_policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_status": {
+      "type": "string",
+      "enum": [
+        "example_only",
+        "contract_only",
+        "disabled",
+        "dry_run_only",
+        "review_required",
+        "approval_gated",
+        "operator_gated",
+        "human_operated",
+        "deferred",
+        "blocked",
+        "active_future"
+      ]
+    },
+    "network_policy": {
+      "type": "object",
+      "required": [
+        "network_enabled",
+        "network_status",
+        "allowed_network_modes",
+        "forbidden_network_modes",
+        "requires_operator_approval",
+        "requires_source_policy",
+        "requires_kill_switch",
+        "requires_rate_limit",
+        "notes"
+      ],
+      "properties": {
+        "network_enabled": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "local_state_policy": {
+      "type": "object",
+      "required": [
+        "local_state_enabled",
+        "local_state_status",
+        "local_state_root_future",
+        "allowed_local_state_kinds",
+        "forbidden_local_state_kinds",
+        "git_tracking_policy",
+        "export_policy",
+        "deletion_reset_policy",
+        "private_data_policy",
+        "public_export_requires_review",
+        "notes"
+      ],
+      "properties": {
+        "local_state_enabled": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "allowed_outputs": {
+      "type": "object",
+      "required": [
+        "categories",
+        "outputs_are_public_truth",
+        "outputs_are_accepted_evidence",
+        "outputs_may_mutate_master_index",
+        "outputs_may_mark_observed_baselines"
+      ],
+      "properties": {
+        "outputs_are_public_truth": {
+          "type": "boolean",
+          "const": false
+        },
+        "outputs_are_accepted_evidence": {
+          "type": "boolean",
+          "const": false
+        },
+        "outputs_may_mutate_master_index": {
+          "type": "boolean",
+          "const": false
+        },
+        "outputs_may_mark_observed_baselines": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-node-runtime-implemented": false,
+  "x-network-access-enabled": false,
+  "x-local-state-created": false,
+  "x-master-index-mutation-allowed": false
+}

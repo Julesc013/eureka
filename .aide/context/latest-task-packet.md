@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-01 Eureka Node manifest contract
+UNSPECIFIED - TRACK-B-02 Node policy contract
 
 ## GOAL
 
-TRACK-B-01 Eureka Node manifest contract
+TRACK-B-02 Node policy contract
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4025
-- approx_tokens: 1007
+- chars: 4007
+- approx_tokens: 1002
 - budget_status: PASS
 - warnings:
   - none

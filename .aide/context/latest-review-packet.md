@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4025 chars, 1007 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4007 chars, 1002 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,14 +36,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/node` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-b-01-eureka-node-manifest-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/EUREKA_NODE.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/EUREKA_NODE_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/nodes` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_eureka_node_manifest.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_eureka_node_manifest.py` (??; does not match active task allowed paths)
+- unknown: `contracts/node/node_policy.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-02-node-policy-contract-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/node_action_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/node_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/node_policy_registry.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/node_review_gate_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/node_source_access_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/EUREKA_NODE_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/NODE_POLICY_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/NODE_POLICY_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/nodes/policies` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_eureka_node_policy.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_eureka_node_policy.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -53,8 +58,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4987
-- approx_tokens: 1247
+- chars: 5578
+- approx_tokens: 1395
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

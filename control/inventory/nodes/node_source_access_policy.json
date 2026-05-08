@@ -1,0 +1,80 @@
+{
+  "schema_version": "node_source_access_policy.v0",
+  "policy_id": "eureka_node_source_access_policy_v0",
+  "source_access_modes": [
+    "repo_local_only",
+    "committed_fixture_only",
+    "manual_human_only",
+    "approved_api_future",
+    "approved_metadata_probe_future",
+    "approved_static_dump_future",
+    "approved_common_crawl_or_archive_future",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "restricted_demand_signal_only",
+    "no_autonomous_access"
+  ],
+  "current_allowed_modes": [
+    "repo_local_only",
+    "committed_fixture_only",
+    "manual_human_only",
+    "no_autonomous_access"
+  ],
+  "future_deferred_modes": [
+    "approved_api_future",
+    "approved_metadata_probe_future",
+    "approved_static_dump_future",
+    "approved_common_crawl_or_archive_future"
+  ],
+  "required_source_access_fields": [
+    "source_id",
+    "allowed_mode",
+    "operator_approval_required",
+    "human_review_required",
+    "rate_limit_policy_future",
+    "cache_ttl_policy_future",
+    "User_Agent_contact_policy_future",
+    "kill_switch_policy_future",
+    "terms_robots_posture",
+    "privacy_posture",
+    "rights_risk_posture",
+    "notes"
+  ],
+  "forbidden_authorizations": [
+    "unapproved_live_probe",
+    "arbitrary_url_fetch",
+    "external_result_page_scrape",
+    "unapproved_forum_thread_scrape",
+    "bulk_reddit_ingestion",
+    "download_binary",
+    "installer_execution",
+    "credential_use_without_approval",
+    "api_without_approval"
+  ],
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Future source access modes remain disabled until explicit source policy approval exists."
+  ]
+}

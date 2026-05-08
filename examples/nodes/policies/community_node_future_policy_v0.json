@@ -1,0 +1,284 @@
+{
+  "schema_version": "node_policy.v0",
+  "node_policy_id": "community_node_future_policy_v0",
+  "policy_label": "Community node future policy example",
+  "policy_status": "deferred",
+  "applies_to_node_modes": [
+    "community_node_future"
+  ],
+  "applies_to_node_manifest_refs": [
+    "examples/nodes/community_node_future_v0/eureka_node_manifest.json"
+  ],
+  "allowed_inputs": [
+    "repo_local_fixture",
+    "manual_pending_slot",
+    "observation_candidate",
+    "observation_review_decision",
+    "source_lead_candidate",
+    "node_manifest",
+    "node_policy"
+  ],
+  "forbidden_inputs": [
+    "unapproved_live_source_result",
+    "scraped_search_result",
+    "scraped_forum_thread",
+    "bulk_reddit_content",
+    "private_user_file",
+    "secret_or_credential",
+    "executable_download",
+    "installer_payload",
+    "raw_browser_profile",
+    "account_session_data",
+    "telemetry_stream",
+    "unreviewed_external_api_payload"
+  ],
+  "allowed_actions": [
+    "inspect_repo_local_artifact",
+    "summarize_local_gap",
+    "prepare_observation_candidate",
+    "prepare_source_lead",
+    "prepare_search_need_seed_future",
+    "prepare_workunit_seed_future",
+    "produce_review_packet",
+    "request_human_review",
+    "request_source_policy_approval_future"
+  ],
+  "forbidden_actions": [
+    "mutate_master_index",
+    "mark_candidate_accepted",
+    "mark_evidence_accepted",
+    "mark_observation_observed_without_human",
+    "mark_agent_output_as_truth",
+    "enable_live_probe",
+    "scrape_external_site",
+    "crawl_external_site",
+    "browser_automation",
+    "call_unapproved_api",
+    "download_binary",
+    "run_installer",
+    "execute_downloaded_artifact",
+    "store_credentials",
+    "upload_to_hosted_backend",
+    "create_account_or_user_data",
+    "emit_telemetry",
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability",
+    "claim_exhaustive_global_search",
+    "claim_production_readiness"
+  ],
+  "allowed_outputs": {
+    "categories": [
+      "node_report",
+      "observation_candidate",
+      "source_lead_candidate",
+      "search_need_seed_future",
+      "workunit_seed_future",
+      "review_item_future"
+    ],
+    "outputs_are_public_truth": false,
+    "outputs_are_accepted_evidence": false,
+    "outputs_may_mutate_master_index": false,
+    "outputs_may_mark_observed_baselines": false
+  },
+  "forbidden_outputs": [
+    "observed_baseline_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "source_access_policy": {
+    "source_id": "community_source_future",
+    "allowed_mode": "manual_human_only",
+    "operator_approval_required": true,
+    "human_review_required": true,
+    "rate_limit_policy_future": "required_before_activation",
+    "cache_ttl_policy_future": "required_before_activation",
+    "User_Agent_contact_policy_future": "required_before_activation",
+    "kill_switch_policy_future": "required_before_activation",
+    "terms_robots_posture": "review_required",
+    "privacy_posture": "privacy_review_required",
+    "rights_risk_posture": "rights_and_risk_review_required",
+    "notes": [
+      "Future community source access remains manual-human or approval-gated."
+    ]
+  },
+  "network_policy": {
+    "network_enabled": false,
+    "network_status": "future_deferred",
+    "allowed_network_modes": [],
+    "forbidden_network_modes": [
+      "unapproved_live_probe",
+      "arbitrary_url_fetch",
+      "scraping",
+      "crawling",
+      "browser_automation",
+      "bulk_forum_ingestion",
+      "bulk_reddit_ingestion",
+      "download_binary",
+      "installer_execution",
+      "api_without_approval"
+    ],
+    "requires_operator_approval": true,
+    "requires_source_policy": true,
+    "requires_kill_switch": true,
+    "requires_rate_limit": true,
+    "notes": [
+      "Future network use is not enabled by this example."
+    ]
+  },
+  "local_state_policy": {
+    "local_state_enabled": false,
+    "local_state_status": "future_deferred",
+    "local_state_root_future": null,
+    "allowed_local_state_kinds": [],
+    "forbidden_local_state_kinds": [
+      "private_user_file",
+      "account_session_data",
+      "raw_browser_profile",
+      "telemetry_stream"
+    ],
+    "git_tracking_policy": "no_current_local_state",
+    "export_policy": "review_required_for_future_export",
+    "deletion_reset_policy": "not_applicable",
+    "private_data_policy": "no_private_data_publication",
+    "public_export_requires_review": true,
+    "notes": [
+      "Future state policy remains deferred."
+    ]
+  },
+  "privacy_policy": {
+    "private_user_data_allowed": false,
+    "account_session_data_allowed": false,
+    "raw_query_telemetry_allowed": false,
+    "no_private_data_publication": true
+  },
+  "rights_policy": {
+    "may_claim_rights_clearance": false,
+    "rights_review_required": true
+  },
+  "risk_policy": {
+    "may_claim_malware_safety": false,
+    "may_claim_verified_installability": false,
+    "risk_review_required": true
+  },
+  "review_gate_policy": {
+    "human_review_required": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true,
+    "operator_approval_required_for_network": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "legal_or_rights_decision_stop_required": true,
+    "allowed_review_outcomes": [
+      "approve_for_local_dry_run",
+      "approve_as_source_lead",
+      "approve_as_workunit_seed",
+      "approve_for_manual_observation",
+      "request_more_evidence",
+      "reject",
+      "mark_duplicate",
+      "policy_block",
+      "rights_block",
+      "risk_block",
+      "defer",
+      "not_evaluable"
+    ],
+    "approval_is_public_truth": false
+  },
+  "pack_policy": {
+    "may_validate_packs": false,
+    "may_draft_packs_future": false,
+    "may_export_packs_future": false,
+    "may_submit_packs_future": false,
+    "automatic_acceptance_allowed": false,
+    "import_runtime_enabled": false,
+    "upload_runtime_enabled": false,
+    "hosted_submission_enabled": false,
+    "review_required_before_submission": true,
+    "notes": [
+      "Community submissions remain future review-gated work."
+    ]
+  },
+  "evidence_policy": {
+    "may_draft_evidence_candidate_future": true,
+    "evidence_truth_allowed": false,
+    "accepted_public_status_allowed": false,
+    "master_index_mutation_allowed": false,
+    "review_required": true,
+    "notes": [
+      "Evidence drafts are not accepted evidence."
+    ]
+  },
+  "candidate_policy": {
+    "may_draft_candidate_record_future": true,
+    "candidate_truth_allowed": false,
+    "accepted_public_status_allowed": false,
+    "master_index_mutation_allowed": false,
+    "review_required": true,
+    "notes": [
+      "Community candidates require review."
+    ]
+  },
+  "observation_policy": {
+    "may_prepare_observation_candidate": true,
+    "may_mark_observed_baseline": false,
+    "human_observation_required": true,
+    "accepted_observation_truth_allowed": false,
+    "notes": [
+      "Human observation remains required."
+    ]
+  },
+  "workunit_policy_future": {
+    "may_run_workunits": false,
+    "may_prepare_workunit_seed_future": true
+  },
+  "budget_policy_future": {
+    "runtime_budget_enabled": false,
+    "provider_budget_enabled": false
+  },
+  "audit_policy": {
+    "audit_required": true,
+    "validation_required": true
+  },
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no active community worker",
+    "no hosted behavior",
+    "no source access runtime"
+  ],
+  "notes": [
+    "Future community node policy placeholder."
+  ]
+}
