@@ -1,0 +1,90 @@
+{
+  "schema_version": "obs_human_review_packet_manifest.v0",
+  "manifest_id": "human_review_packet_minimal_v0",
+  "label": "Minimal OBS human review packet example",
+  "description": "Single-item packet example with no human decision filled.",
+  "generated_from": [
+    "examples/observation_candidates/minimal_observation_candidate_v0.json"
+  ],
+  "review_item_count": 1,
+  "review_items": [
+    {
+      "review_item_id": "review_item::obs_candidate_minimal_v0",
+      "review_item_type": "manual_observation_selection",
+      "source_artifact_family": "observation_candidate",
+      "source_artifact_ref": "examples/observation_candidates/minimal_observation_candidate_v0.json",
+      "source_candidate_or_seed_id": "obs_candidate_minimal_v0",
+      "label": "Minimal manual observation candidate",
+      "summary": "Synthetic public-safe packet example for a manual observation selection.",
+      "recommended_decision": "approve_for_manual_observation_future",
+      "decision_status": "decision_pending",
+      "priority_band": "medium",
+      "source_policy_status": "not_approved_for_agent_access",
+      "track_b_dependency": "human_review_queue",
+      "human_decision": null,
+      "human_review_required": true,
+      "source_access_approved": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "runtime_activation_allowed_now": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Example item only.",
+        "No real human decision is recorded."
+      ]
+    }
+  ],
+  "decision_option_counts": {
+    "approve_for_manual_observation_future": 1
+  },
+  "priority_band_counts": {
+    "medium": 1
+  },
+  "source_policy_item_count": 0,
+  "search_need_seed_item_count": 0,
+  "workunit_seed_item_count": 0,
+  "blocked_item_count": 0,
+  "track_b_dependency_item_count": 0,
+  "decision_status": "decision_pending",
+  "truth_boundary": {
+    "review_packet_makes_decisions": false,
+    "human_decisions_prefilled": false,
+    "review_items_are_observed_baselines": false,
+    "review_items_are_evidence_truth": false,
+    "review_items_create_runtime_search_needs": false,
+    "review_items_create_runtime_workunits": false,
+    "review_items_execute_workunits": false,
+    "review_items_can_mutate_master_index": false,
+    "source_access_approved": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "created_runtime_search_needs": false,
+    "created_runtime_workunits": false
+  },
+  "notes": [
+    "Compact example packet."
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "obs_agent_07_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-AGENT-07",
+  "lane": "OBS side lane",
+  "parallel_track_b_state_observed": {
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_seen": true,
+    "track_b_04_seen": true,
+    "track_b_05_seen": true,
+    "track_b_06_seen": true,
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07"
+  },
+  "obs_state_observed": {
+    "obs_replan_seen": true,
+    "obs_agent_01_seen": true,
+    "obs_agent_02_seen": true,
+    "obs_agent_03_seen": true,
+    "obs_agent_04_seen": true,
+    "obs_agent_05_seen": true,
+    "obs_agent_06_seen": true,
+    "obs_agent_07_seen": true,
+    "latest_obs_task_seen": "OBS-AGENT-07"
+  },
+  "added_docs": [
+    "docs/operations/OBS_HUMAN_REVIEW_PACKET.md",
+    "docs/operations/OBS_REVIEW_DECISION_GUIDE.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/obs_human_review_packet_policy.json",
+    "control/inventory/observations/obs_review_decision_template_policy.json",
+    "control/inventory/observations/obs_human_review_packet_manifest.json"
+  ],
+  "added_examples": [
+    "examples/observation_reviews/human_review_packet_minimal_v0.json",
+    "examples/observation_reviews/human_review_decision_approve_source_lead_v0.json",
+    "examples/observation_reviews/human_review_decision_request_more_evidence_v0.json",
+    "examples/observation_reviews/human_review_decision_mark_policy_blocked_v0.json",
+    "examples/observation_reviews/human_review_decision_defer_v0.json"
+  ],
+  "added_scripts": [
+    "scripts/build_obs_human_review_packet.py",
+    "scripts/validate_obs_human_review_packet.py",
+    "scripts/summarize_obs_human_review_packet.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_obs_human_review_packet.py"
+  ],
+  "validation": {
+    "status": "warn",
+    "passes": [
+      "git diff --check",
+      "python -m json.tool for OBS-07 policies, manifest, packet JSON, and audit report",
+      "python scripts/build_obs_human_review_packet.py --list-inputs",
+      "python scripts/build_obs_human_review_packet.py --check",
+      "python scripts/validate_obs_human_review_packet.py",
+      "python scripts/summarize_obs_human_review_packet.py",
+      "python -m unittest tests.operations.test_obs_human_review_packet",
+      "python scripts/validate_agent_assisted_observation_policy.py",
+      "python scripts/validate_observation_candidate.py",
+      "python scripts/validate_observation_candidate_review_queue.py",
+      "python scripts/validate_search_need_seed_candidates.py",
+      "python scripts/validate_workunit_seed_candidates.py",
+      "python scripts/validate_obs_track_b_synchronization.py",
+      "python scripts/check_architecture_boundaries.py",
+      "python3 scripts/validate_track_a_contracts.py",
+      "python scripts/validate_eureka_node_manifest.py",
+      "python scripts/validate_eureka_node_policy.py",
+      "python scripts/summarize_observation_candidates.py",
+      "python3 .aide/scripts/aide_lite.py doctor",
+      "python3 .aide/scripts/aide_lite.py validate",
+      "python3 .aide/scripts/aide_lite.py eval list",
+      "python3 .aide/scripts/aide_lite.py adapter validate"
+    ],
+    "warnings": [
+      "py launcher is unavailable on this machine; AIDE Lite checks were mapped to python3 where possible.",
+      "python -m unittest discover -s tests -t . timed out after 180 seconds and deleted tracked site/dist artifacts; site/dist was restored immediately afterward.",
+      "python scripts/validate_track_a_contracts.py fails under Python 3.8 because runtime annotations use tuple[...] syntax; python3 equivalent passes.",
+      "python3 .aide/scripts/aide_lite.py test, selftest, eval run, and review-pack fail because this environment's Python 3.9 pathlib.Path.write_text does not support newline=.",
+      "python3 .aide/scripts/aide_lite.py verify returns WARN with zero errors because the latest AIDE task packet still references TRACK-B-06 and marks OBS-07 paths outside stale diff scope."
+    ],
+    "notes": [
+      "Targeted OBS-07 packet generation, validation, summary, and test lanes pass.",
+      "No live source access, API calls, browser actions, provider/model calls, human decision filling, source approval, runtime SearchNeed creation, runtime WorkUnit creation, WorkUnit execution, evidence truth, observed baseline, Track B mutation, or master-index mutation occurred."
+    ]
+  },
+  "review_item_count": 35,
+  "decision_option_counts": {
+    "approve_as_search_need_seed_future": 3,
+    "approve_as_source_lead_future": 7,
+    "approve_as_workunit_seed_future": 5,
+    "approve_for_manual_observation_future": 2,
+    "mark_policy_blocked": 6,
+    "no_action": 7,
+    "request_more_evidence": 5
+  },
+  "priority_band_counts": {
+    "blocked": 9,
+    "high": 6,
+    "medium": 20
+  },
+  "source_policy_item_count": 2,
+  "search_need_seed_item_count": 5,
+  "workunit_seed_item_count": 6,
+  "blocked_item_count": 9,
+  "track_b_dependency_item_count": 7,
+  "truth_boundary": {
+    "review_packet_makes_decisions": false,
+    "review_items_are_observed_baselines": false,
+    "review_items_are_evidence_truth": false,
+    "review_items_create_runtime_search_needs": false,
+    "review_items_create_runtime_workunits": false,
+    "review_items_execute_workunits": false,
+    "review_items_can_mutate_master_index": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "created_runtime_search_needs": false,
+    "created_runtime_workunits": false
+  },
+  "next_task": "HUMAN-OBS-REVIEW-01 - Review OBS candidate packet"
+}
