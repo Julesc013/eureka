@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-10 WorkUnit dry-run runner
+UNSPECIFIED - TRACK-B-11 Node policy evaluator
 
 ## GOAL
 
-TRACK-B-10 WorkUnit dry-run runner
+TRACK-B-11 Node policy evaluator
 
 ## WHY
 
@@ -35,8 +35,24 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
+- `runtime/local_foundry/node_policy_evaluator.py`
+- `scripts/evaluate_node_policy.py`
+- `scripts/validate_node_policy_evaluator.py`
+- `docs/reference/NODE_POLICY_EVALUATOR.md`
+- `docs/architecture/NODE_POLICY_EVALUATOR_MODEL.md`
+- `docs/operations/NODE_POLICY_EVALUATION_REVIEW.md`
+- `control/inventory/nodes/node_policy_evaluator_policy.json`
+- `control/inventory/nodes/node_policy_evaluation_decision_registry.json`
+- `control/inventory/nodes/node_policy_evaluation_reason_registry.json`
+- `control/inventory/nodes/node_policy_evaluation_output_policy.json`
+- `control/inventory/nodes/node_policy_evaluation_review_policy.json`
+- `examples/node_policy_evaluations/**`
+- `tests/runtime/test_node_policy_evaluator.py`
+- `tests/operations/test_node_policy_evaluator_scripts.py`
+- `control/audits/track-b-11-node-policy-evaluator-v0/**`
 - `.aide/context/**`
+- `.aide/evals/runs/latest-golden-tasks.json`
+- `.aide/evals/runs/latest-golden-tasks.md`
 - `.aide/queue/unspecified-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
@@ -46,7 +62,7 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `runtime/**`
+- `runtime/**` except `runtime/local_foundry/node_policy_evaluator.py`
 - `contracts/**`
 - `surfaces/**`
 - `site/**`
@@ -117,8 +133,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4013
-- approx_tokens: 1004
+- chars: 4009
+- approx_tokens: 1003
 - budget_status: PASS
 - warnings:
   - none

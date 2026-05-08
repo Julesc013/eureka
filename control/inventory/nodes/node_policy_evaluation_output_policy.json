@@ -1,0 +1,51 @@
+{
+  "schema_version": "node_policy_evaluation_output_policy.v0",
+  "policy_id": "eureka_node_policy_evaluation_output_policy_v0",
+  "allowed_output_types": [
+    "node_policy_evaluation_result",
+    "node_policy_evaluation_summary",
+    "workunit_dry_run_allowance",
+    "workunit_blocker_report",
+    "review_gate_report",
+    "source_policy_approval_request_future",
+    "operator_approval_request_future"
+  ],
+  "forbidden_output_types": [
+    "workunit_execution",
+    "node_runtime_state",
+    "local_private_state",
+    "observed_baseline_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim",
+    "exhaustive_global_search_proof"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/node_policy_evaluations/**/evaluation_result.json",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "public_export_requires_review": true,
+  "automatic_public_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_workunit_execution_allowed": false,
+  "notes": [
+    "Evaluation output is committed report evidence or explicit temp-test output only.",
+    "Output may prepare a dry-run allowance but may not execute the WorkUnit."
+  ]
+}

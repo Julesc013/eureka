@@ -1,0 +1,41 @@
+{
+  "schema_version": "node_policy_evaluation_review_policy.v0",
+  "policy_id": "eureka_node_policy_evaluation_review_policy_v0",
+  "review_required_for_allowed_dry_run": true,
+  "review_required_for_future_network_access": true,
+  "review_required_for_future_model_access": true,
+  "review_required_for_future_local_state": true,
+  "review_required_for_source_policy_approval": true,
+  "review_required_for_public_export": true,
+  "review_required_for_master_index_mutation": true,
+  "allowed_review_decisions": [
+    "approve_for_dry_run_only",
+    "request_policy_change",
+    "request_capability_change",
+    "defer_future",
+    "block",
+    "reject"
+  ],
+  "forbidden_review_outcomes": [
+    "automatic_public_use",
+    "automatic_master_index_mutation",
+    "automatic_network_enable",
+    "automatic_model_enable",
+    "automatic_local_state_enable",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ],
+  "automatic_public_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_network_enable_allowed": false,
+  "automatic_model_enable_allowed": false,
+  "automatic_local_state_enable_allowed": false,
+  "notes": [
+    "Review can approve a dry-run allowance, but it cannot turn evaluation into execution.",
+    "Network, model, and local-state enablement remain future reviewed changes."
+  ]
+}

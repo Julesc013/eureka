@@ -1,0 +1,110 @@
+{
+  "schema_version": "track_b_11_report.v0",
+  "status": "pass",
+  "track": "B",
+  "task": "TRACK-B-11",
+  "added_runtime_modules": [
+    "runtime/local_foundry/node_policy_evaluator.py"
+  ],
+  "added_scripts": [
+    "scripts/evaluate_node_policy.py",
+    "scripts/validate_node_policy_evaluator.py"
+  ],
+  "added_docs": [
+    "docs/reference/NODE_POLICY_EVALUATOR.md",
+    "docs/architecture/NODE_POLICY_EVALUATOR_MODEL.md",
+    "docs/operations/NODE_POLICY_EVALUATION_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/nodes/node_policy_evaluator_policy.json",
+    "control/inventory/nodes/node_policy_evaluation_decision_registry.json",
+    "control/inventory/nodes/node_policy_evaluation_reason_registry.json",
+    "control/inventory/nodes/node_policy_evaluation_output_policy.json",
+    "control/inventory/nodes/node_policy_evaluation_review_policy.json"
+  ],
+  "added_examples": [
+    "examples/node_policy_evaluations/local_private_allowed_v0/evaluation_result.json",
+    "examples/node_policy_evaluations/source_lead_allowed_v0/evaluation_result.json",
+    "examples/node_policy_evaluations/policy_blocked_v0/evaluation_result.json",
+    "examples/node_policy_evaluations/network_required_blocked_v0/evaluation_result.json",
+    "examples/node_policy_evaluations/future_metadata_probe_gated_v0/evaluation_result.json",
+    "examples/node_policy_evaluations/noop_repeat_allowed_v0/evaluation_result.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_node_policy_evaluator.py",
+    "tests/operations/test_node_policy_evaluator_scripts.py"
+  ],
+  "validation": {
+    "status": "pass_with_warn_only_aide_verify",
+    "git_diff_check": "pass",
+    "json_policy_files": "pass",
+    "node_manifest_validator": "pass",
+    "node_policy_validator": "pass",
+    "node_capability_validator": "pass",
+    "workunit_validator": "pass",
+    "workunit_result_validator": "pass",
+    "local_foundry_state_validator": "pass",
+    "query_observation_runtime_validator": "pass",
+    "search_miss_ledger_runtime_validator": "pass",
+    "search_need_runtime_validator": "pass",
+    "workunit_dry_run_runner_validator": "pass",
+    "node_policy_evaluator_validator": "pass",
+    "node_policy_evaluator_cli_check": "pass",
+    "unit_tests": "pass",
+    "architecture_boundaries": "pass",
+    "track_a_contracts": "pass",
+    "agent_assisted_observation_policy": "pass",
+    "observation_candidate": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass_with_known_warnings",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "warn_zero_errors",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass",
+    "aide_review_pack": "warn_zero_errors",
+    "aide_adapter_validate": "pass",
+    "notes": [
+      "AIDE verify/review-pack reported zero errors with existing/generated diff-scope and missing optional AIDE status artifact warnings.",
+      "Full unittest discovery passed 2055 tests."
+    ]
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "evaluation_only": true,
+    "writes_no_files_by_default": true,
+    "executes_workunit_actions": false,
+    "implements_node_runtime": false
+  },
+  "truth_boundary": {
+    "evaluation_result_is_public_truth": false,
+    "evaluation_result_is_accepted_evidence": false,
+    "evaluation_result_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_workunit_execution": false,
+    "implemented_node_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-12 \u2014 Candidate store runtime"
+}

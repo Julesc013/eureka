@@ -1,0 +1,191 @@
+{
+  "schema_version": "node_policy_evaluation_result.v0",
+  "evaluation_result_id": "node_policy_eval_noop_repeat_allowed_v0",
+  "evaluation_status": "noop",
+  "decision": "allowed_as_noop",
+  "decision_reasons": [
+    {
+      "reason_category": "node_mode_allowed",
+      "result": "allowed",
+      "summary": "The repeated local WorkUnit stays within node mode scope."
+    },
+    {
+      "reason_category": "future_deferred",
+      "result": "allowed",
+      "summary": "The WorkUnit is treated as already satisfied for replay-safe noop reporting."
+    },
+    {
+      "reason_category": "review_required",
+      "result": "allowed",
+      "summary": "Human review remains required before downstream use."
+    },
+    {
+      "reason_category": "truth_boundary_preserved",
+      "result": "allowed",
+      "summary": "The noop report is not public truth or evidence truth."
+    },
+    {
+      "reason_category": "product_boundary_preserved",
+      "result": "allowed",
+      "summary": "The noop report does not execute work or create node state."
+    }
+  ],
+  "evaluated_node_manifest_ref": "examples/nodes/local_private_node_v0/eureka_node_manifest.json",
+  "evaluated_node_policy_ref": "examples/nodes/policies/local_private_node_policy_v0.json",
+  "evaluated_workunit_ref": "examples/work_units/search_need_review_v0/work_unit.json#already_satisfied_fixture",
+  "evaluated_capability_refs": [
+    "repo_local_inspection",
+    "search_need_analysis"
+  ],
+  "node_mode_result": {
+    "decision": "allowed_for_validation",
+    "node_mode": "local_private",
+    "node_status": "contract_only",
+    "node_policy_status": "contract_only",
+    "required_node_modes": [
+      "local_private"
+    ],
+    "reasons": [],
+    "warnings": [],
+    "errors": []
+  },
+  "capability_results": [
+    {
+      "capability_id": "repo_local_inspection",
+      "capability_status": "current_repo_local_only",
+      "declared_by_manifest": true,
+      "decision": "allowed_for_dry_run",
+      "network_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false
+    },
+    {
+      "capability_id": "search_need_analysis",
+      "capability_status": "current_dry_run_only",
+      "declared_by_manifest": false,
+      "decision": "allowed_for_dry_run",
+      "network_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false
+    }
+  ],
+  "input_policy_results": [],
+  "output_policy_results": [
+    {
+      "output_type": "node_policy_evaluation_summary",
+      "decision": "allowed_for_report_only",
+      "review_required": true
+    }
+  ],
+  "action_policy_results": [
+    {
+      "action": "request_human_review",
+      "classification": "action_allowed_for_dry_run",
+      "decision": "allowed_for_dry_run",
+      "executed": false
+    }
+  ],
+  "source_access_results": {
+    "source_access_required": false,
+    "allowed_mode": "repo_local_only",
+    "decision": "allowed_for_validation"
+  },
+  "network_policy_results": [
+    {
+      "policy": "network",
+      "required": false,
+      "enabled": false,
+      "decision": "allowed_for_validation"
+    }
+  ],
+  "model_provider_policy_results": [
+    {
+      "policy": "model_provider",
+      "required": false,
+      "enabled": false,
+      "decision": "allowed_for_validation"
+    }
+  ],
+  "credential_policy_results": [
+    {
+      "policy": "credentials",
+      "required": false,
+      "enabled": false,
+      "decision": "allowed_for_validation"
+    }
+  ],
+  "local_state_policy_results": {
+    "local_state_required": false,
+    "local_state_enabled": false,
+    "decision": "allowed_for_validation"
+  },
+  "review_gate_results": [
+    {
+      "review_gate": "human_review_required",
+      "node_policy_requires": true,
+      "workunit_requires": true,
+      "preserved": true
+    },
+    {
+      "review_gate": "master_index_review_required",
+      "node_policy_requires": true,
+      "workunit_requires": true,
+      "preserved": true
+    }
+  ],
+  "blocked_actions": [],
+  "skipped_actions": [],
+  "allowed_for_dry_run": true,
+  "allowed_for_execution": false,
+  "allowed_for_public_export": false,
+  "allowed_for_master_index_mutation": false,
+  "warnings": [
+    "Noop example is a replay-safe evaluation posture only."
+  ],
+  "errors": [],
+  "limitations": [
+    "Evaluation is report-only and does not execute WorkUnits.",
+    "Evaluation does not access live sources, networks, APIs, models, credentials, or browser state.",
+    "Evaluation does not accept evidence, accept candidates, or mutate the master index."
+  ],
+  "truth_boundary": {
+    "evaluation_result_is_public_truth": false,
+    "evaluation_result_is_accepted_evidence": false,
+    "evaluation_result_can_mutate_master_index": false,
+    "evaluation_result_claims_rights_clearance": false,
+    "evaluation_result_claims_malware_safety": false,
+    "evaluation_result_claims_verified_installability": false,
+    "evaluation_result_claims_exhaustive_global_search": false,
+    "evaluation_result_claims_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_workunit_execution": false,
+    "implemented_node_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "This example records a repeated WorkUnit as a validated noop, not as completed work."
+  ]
+}

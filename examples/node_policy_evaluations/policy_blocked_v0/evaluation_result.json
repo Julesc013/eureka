@@ -1,0 +1,296 @@
+{
+  "action_policy_results": [
+    {
+      "action": "produce_review_packet",
+      "classification": "action_allowed_for_dry_run",
+      "decision": "allowed_for_dry_run",
+      "executed": false
+    },
+    {
+      "action": "request_human_review",
+      "classification": "action_allowed_for_dry_run",
+      "decision": "allowed_for_dry_run",
+      "executed": false
+    }
+  ],
+  "allowed_for_dry_run": false,
+  "allowed_for_execution": false,
+  "allowed_for_master_index_mutation": false,
+  "allowed_for_public_export": false,
+  "blocked_actions": [],
+  "capability_results": [
+    {
+      "capability_id": "policy_blocked_capability_v0",
+      "capability_status": "policy_blocked",
+      "credentials_required": false,
+      "decision": "blocked_by_policy",
+      "declared_by_manifest": false,
+      "local_state_required": false,
+      "model_provider_required": false,
+      "network_required": false
+    }
+  ],
+  "credential_policy_results": [
+    {
+      "decision": "allowed_for_validation",
+      "enabled": false,
+      "policy": "credentials",
+      "required": false
+    }
+  ],
+  "decision": "blocked_by_policy",
+  "decision_reasons": [
+    {
+      "reason_category": "node_mode_allowed",
+      "result": "allowed",
+      "summary": "node mode local_autonomous_dry_run is in WorkUnit scope"
+    },
+    {
+      "reason_category": "node_policy_allows_scope",
+      "result": "allowed",
+      "summary": "node policy applies to local_autonomous_dry_run"
+    },
+    {
+      "reason_category": "policy_conflict",
+      "ref": "policy_blocked_capability_v0",
+      "result": "blocked",
+      "summary": "local_autonomous_dry_run is forbidden"
+    },
+    {
+      "reason_category": "future_deferred",
+      "ref": "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+      "result": "deferred",
+      "summary": "input type source_policy_future is not current"
+    },
+    {
+      "reason_category": "output_allowed",
+      "ref": "policy_block_report",
+      "result": "allowed",
+      "summary": "output type workunit_report is allowed for report/review"
+    },
+    {
+      "reason_category": "action_allowed_for_dry_run",
+      "ref": "produce_review_packet",
+      "result": "allowed",
+      "summary": "action produce_review_packet can be simulated"
+    },
+    {
+      "reason_category": "action_allowed_for_dry_run",
+      "ref": "request_human_review",
+      "result": "allowed",
+      "summary": "action request_human_review can be simulated"
+    },
+    {
+      "reason_category": "source_access_allowed_repo_local",
+      "result": "allowed",
+      "summary": "no live source access is required"
+    },
+    {
+      "reason_category": "local_state_disabled",
+      "result": "allowed",
+      "summary": "local state creation is not required"
+    },
+    {
+      "reason_category": "review_required",
+      "result": "allowed",
+      "summary": "evaluation remains review-gated"
+    },
+    {
+      "reason_category": "policy_conflict",
+      "result": "blocked",
+      "summary": "WorkUnit policy status blocks evaluation"
+    }
+  ],
+  "errors": [
+    "WorkUnit is policy-blocked",
+    "capability policy_blocked_capability_v0 forbids node mode local_autonomous_dry_run"
+  ],
+  "evaluated_capability_refs": [
+    "policy_blocked_capability_v0"
+  ],
+  "evaluated_node_manifest_ref": "examples/nodes/local_autonomous_dry_run_node_v0/eureka_node_manifest.json",
+  "evaluated_node_policy_ref": "examples/nodes/policies/local_autonomous_dry_run_node_policy_v0.json",
+  "evaluated_workunit_ref": "examples/work_units/policy_blocked_work_unit_v0/work_unit.json",
+  "evaluation_result_id": "node_policy_eval_f44138ff1d21",
+  "evaluation_status": "blocked",
+  "input_policy_results": [
+    {
+      "decision": "allowed_for_validation",
+      "input_type": "source_policy_future",
+      "ref": "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md"
+    }
+  ],
+  "limitations": [
+    "Evaluation is report-only and does not execute WorkUnits.",
+    "Evaluation does not access live sources, networks, APIs, models, credentials, or browser state.",
+    "Evaluation does not accept evidence, accept candidates, or mutate the master index."
+  ],
+  "local_state_policy_results": {
+    "decision": "allowed_for_validation",
+    "local_state_enabled": false,
+    "local_state_required": false
+  },
+  "model_provider_policy_results": [
+    {
+      "decision": "allowed_for_validation",
+      "enabled": false,
+      "policy": "model_provider",
+      "required": false
+    }
+  ],
+  "network_policy_results": [
+    {
+      "decision": "allowed_for_validation",
+      "enabled": false,
+      "policy": "network",
+      "required": false
+    }
+  ],
+  "node_mode_result": {
+    "decision": "allowed_for_validation",
+    "errors": [],
+    "node_mode": "local_autonomous_dry_run",
+    "node_policy_status": "dry_run_only",
+    "node_status": "dry_run_only",
+    "reasons": [
+      {
+        "reason_category": "node_mode_allowed",
+        "result": "allowed",
+        "summary": "node mode local_autonomous_dry_run is in WorkUnit scope"
+      },
+      {
+        "reason_category": "node_policy_allows_scope",
+        "result": "allowed",
+        "summary": "node policy applies to local_autonomous_dry_run"
+      }
+    ],
+    "required_node_modes": [
+      "local_autonomous_dry_run"
+    ],
+    "warnings": []
+  },
+  "notes": [
+    "Allowed decisions only authorize validation or dry-run simulation.",
+    "Human review is required before downstream use."
+  ],
+  "output_policy_results": [
+    {
+      "decision": "allowed_for_report_only",
+      "output_type": "workunit_report",
+      "review_required": true
+    }
+  ],
+  "product_boundary": {
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_node_runtime": false,
+    "implemented_workunit_execution": false,
+    "mutated_master_index": false
+  },
+  "review_gate_results": [
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "candidate_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "evidence_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "human_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "legal_or_rights_decision_stop_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "master_index_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "pack_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "policy_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "privacy_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "rights_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "risk_review_required",
+      "workunit_requires": true
+    },
+    {
+      "node_policy_requires": true,
+      "preserved": true,
+      "review_gate": "source_policy_review_required",
+      "workunit_requires": true
+    }
+  ],
+  "schema_version": "node_policy_evaluation_result.v0",
+  "skipped_actions": [],
+  "source_access_results": {
+    "allowed_mode": "repo_local_only",
+    "decision": "allowed_for_validation",
+    "source_access_required": false
+  },
+  "truth_boundary": {
+    "evaluation_result_can_mutate_master_index": false,
+    "evaluation_result_claims_exhaustive_global_search": false,
+    "evaluation_result_claims_malware_safety": false,
+    "evaluation_result_claims_production_readiness": false,
+    "evaluation_result_claims_rights_clearance": false,
+    "evaluation_result_claims_verified_installability": false,
+    "evaluation_result_is_accepted_evidence": false,
+    "evaluation_result_is_public_truth": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "warnings": [
+    "input type source_policy_future is future/deferred"
+  ]
+}
