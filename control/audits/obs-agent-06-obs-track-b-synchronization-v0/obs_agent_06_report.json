@@ -1,0 +1,129 @@
+{
+  "schema_version": "obs_agent_06_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-AGENT-06",
+  "lane": "OBS side lane",
+  "parallel_track_b_state_observed": {
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_or_later_seen": true,
+    "track_b_03_seen": true,
+    "track_b_04_seen": true,
+    "track_b_05_seen": true,
+    "track_b_06_seen": true,
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07"
+  },
+  "obs_state_observed": {
+    "obs_replan_seen": true,
+    "obs_agent_01_seen": true,
+    "obs_agent_02_seen": true,
+    "obs_agent_03_seen": true,
+    "obs_agent_04_seen": true,
+    "obs_agent_05_seen": true,
+    "latest_obs_task_seen": "OBS-AGENT-05"
+  },
+  "added_docs": [
+    "docs/operations/OBS_TRACK_B_SYNCHRONIZATION.md",
+    "docs/operations/OBS_TO_TRACK_B_HANDOFF_GUIDE.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/obs_track_b_sync_policy.json",
+    "control/inventory/observations/obs_track_b_sync_matrix.json",
+    "control/inventory/observations/obs_track_b_handoff_readiness.json"
+  ],
+  "added_scripts": [
+    "scripts/audit_obs_track_b_synchronization.py",
+    "scripts/validate_obs_track_b_synchronization.py",
+    "scripts/summarize_obs_track_b_handoff.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_obs_track_b_synchronization.py"
+  ],
+  "validation": {
+    "status": "warn",
+    "passes": [
+      "git diff --check",
+      "python -m json.tool for OBS-06 policy, matrix, readiness, and audit report",
+      "python scripts/audit_obs_track_b_synchronization.py --list-inputs",
+      "python scripts/audit_obs_track_b_synchronization.py --check",
+      "python scripts/validate_obs_track_b_synchronization.py",
+      "python scripts/summarize_obs_track_b_handoff.py",
+      "python -m unittest tests.operations.test_obs_track_b_synchronization",
+      "python scripts/validate_agent_assisted_observation_policy.py",
+      "python scripts/validate_observation_candidate.py",
+      "python scripts/validate_observation_candidate_review_queue.py",
+      "python scripts/validate_search_need_seed_candidates.py",
+      "python scripts/validate_workunit_seed_candidates.py",
+      "python scripts/check_architecture_boundaries.py",
+      "python3 scripts/validate_track_a_contracts.py",
+      "python scripts/validate_eureka_node_manifest.py",
+      "python scripts/validate_eureka_node_policy.py",
+      "python3 .aide/scripts/aide_lite.py doctor",
+      "python3 .aide/scripts/aide_lite.py validate",
+      "python3 .aide/scripts/aide_lite.py eval list",
+      "python3 .aide/scripts/aide_lite.py adapter validate"
+    ],
+    "warnings": [
+      "py launcher is unavailable on this machine; AIDE Lite checks were mapped to python3 where possible.",
+      "python -m unittest discover -s tests -t . timed out after 120 seconds and deleted tracked site/dist artifacts; site/dist was restored immediately afterward.",
+      "python scripts/validate_track_a_contracts.py fails under Python 3.8 because runtime annotations use tuple[...] syntax; python3 equivalent passes.",
+      "python3 .aide/scripts/aide_lite.py test, selftest, eval run, and review-pack fail because this environment's Python 3.9 pathlib.Path.write_text does not support newline=.",
+      "python3 .aide/scripts/aide_lite.py verify returns WARN with zero errors because the latest AIDE task packet still references TRACK-B-06 and marks OBS-06 paths outside stale diff scope."
+    ],
+    "notes": [
+      "Targeted OBS-06 synchronization generation, validation, summary, and test lanes pass.",
+      "No live source access, API calls, browser actions, provider/model calls, runtime SearchNeed creation, runtime WorkUnit creation, WorkUnit execution, source approval, evidence truth, observed baseline, Track B mutation, or master-index mutation occurred."
+    ]
+  },
+  "sync_mapping_count": 9,
+  "ready_item_count": 6,
+  "blocked_item_count": 3,
+  "human_review_item_count": 9,
+  "source_policy_item_count": 2,
+  "track_b_dependency_count": 7,
+  "readiness": {
+    "ready_for_parallel_continuation": true,
+    "ready_for_runtime_consumption": false,
+    "ready_for_source_policy_decision": "partial_review_required",
+    "ready_for_workunit_runtime": false,
+    "ready_for_public_index_effect": false
+  },
+  "truth_boundary": {
+    "sync_outputs_are_observed_baselines": false,
+    "sync_outputs_are_evidence_truth": false,
+    "sync_outputs_create_runtime_search_needs": false,
+    "sync_outputs_create_runtime_workunits": false,
+    "sync_outputs_execute_workunits": false,
+    "sync_outputs_can_mutate_master_index": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "created_runtime_search_needs": false,
+    "created_runtime_workunits": false
+  },
+  "next_task": "OBS-AGENT-07 - Human review packet for OBS candidates"
+}
