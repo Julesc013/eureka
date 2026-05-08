@@ -1,0 +1,67 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_local_eval_policy_blocked_v0",
+  "candidate_type": "policy_blocked_candidate",
+  "candidate_status": "policy_blocked",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "windows_7_apps",
+  "related_system_id": "google_web_search",
+  "query_text": "Windows 7 apps",
+  "source_mode": "no_autonomous_access",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "blocked_for_agent_until_source_policy_approval",
+  "candidate_summary": "Google web search result pages remain no autonomous access for agents in this lane; any useful demand signal must stay human-reviewed or wait for an approved source policy.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "rights_or_policy_block",
+    "external_baseline_unavailable"
+  ],
+  "proposed_usefulness_scores": null,
+  "evidence_refs": [
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+    "control/inventory/observations/observation_source_access_modes.json"
+  ],
+  "source_lead_refs": [],
+  "work_unit_refs_future": [
+    "work-unit-future:source-policy-review"
+  ],
+  "limitations": [
+    "Policy block only.",
+    "No search result is recorded.",
+    "No source access approval exists in this candidate."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Policy block is not evidence against the query target."
+  ]
+}
