@@ -1,0 +1,109 @@
+{
+  "schema_version": "track_b_13_report.v0",
+  "status": "pass",
+  "track": "B",
+  "task": "TRACK-B-13",
+  "added_docs": [
+    "docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md",
+    "docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md",
+    "docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md",
+    "docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/source_cache/local_source_cache_runtime_plan.json",
+    "control/inventory/source_cache/local_source_cache_runtime_policy.json",
+    "control/inventory/source_cache/local_source_cache_path_policy.json",
+    "control/inventory/source_cache/local_source_cache_source_access_policy.json",
+    "control/inventory/source_cache/local_source_cache_record_policy.json",
+    "control/inventory/source_cache/local_source_cache_review_policy.json",
+    "control/inventory/source_cache/local_source_cache_rollout_plan.json"
+  ],
+  "added_examples": [
+    "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json",
+    "examples/source_cache_plans/fixture_only_source_cache_plan_v0.json",
+    "examples/source_cache_plans/approved_metadata_probe_future_plan_v0.json",
+    "examples/source_cache_plans/policy_blocked_source_cache_plan_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_local_source_cache_runtime_plan.py",
+    "tests/operations/test_local_source_cache_runtime_plan.py"
+  ],
+  "validation": {
+    "status": "pass_with_warn_only_aide_verify",
+    "git_diff_check": "pass",
+    "json_policy_files": "pass",
+    "local_source_cache_runtime_plan_validator": "pass",
+    "focused_operations_tests": "pass",
+    "node_manifest_validator": "pass",
+    "node_policy_validator": "pass",
+    "node_capability_validator": "pass",
+    "workunit_validator": "pass",
+    "workunit_result_validator": "pass",
+    "local_foundry_state_validator": "pass",
+    "query_observation_runtime_validator": "pass",
+    "search_miss_ledger_runtime_validator": "pass",
+    "search_need_runtime_validator": "pass",
+    "workunit_dry_run_runner_validator": "pass",
+    "node_policy_evaluator_validator": "pass",
+    "candidate_store_runtime_validator": "pass",
+    "source_cache_contract_validator": "pass",
+    "source_cache_record_validator": "pass",
+    "source_cache_dry_run_report_validator": "pass",
+    "source_cache_evidence_ledger_contract_validator": "pass",
+    "track_a_contracts": "pass",
+    "agent_assisted_observation_policy": "pass",
+    "observation_candidate": "pass",
+    "unit_tests": "pass",
+    "architecture_boundaries": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass_with_known_warnings",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "warn_zero_errors",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass",
+    "aide_review_pack": "warn_zero_errors",
+    "aide_adapter_validate": "pass",
+    "notes": [
+      "AIDE verify/review-pack reported zero errors with portable diff-scope and optional status artifact warnings.",
+      "Full unittest discovery passed 2091 tests."
+    ]
+  },
+  "current_phase": "phase_0_planning_only",
+  "runtime_scope": {
+    "implemented_source_cache_runtime": false,
+    "created_local_source_cache_state": false,
+    "source_access_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "truth_boundary": {
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_source_cache_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-14 \u2014 Local evidence ledger runtime planning"
+}

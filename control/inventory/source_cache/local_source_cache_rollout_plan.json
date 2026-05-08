@@ -1,0 +1,268 @@
+{
+  "schema_version": "local_source_cache_rollout_plan.v0",
+  "plan_id": "local_source_cache_rollout_plan_v0",
+  "label": "Local source cache rollout plan",
+  "current_phase": "phase_0_planning_only",
+  "phases": [
+    {
+      "phase_id": "phase_0_planning_only",
+      "phase_status": "current",
+      "required_prerequisites": [
+        "candidate store runtime exists",
+        "source cache contract exists",
+        "path/source-access/review policies are documented"
+      ],
+      "allowed_inputs": [
+        "committed governance files",
+        "committed synthetic examples",
+        "repo-local candidate and dry-run summaries"
+      ],
+      "allowed_outputs": [
+        "runtime plan",
+        "readiness report",
+        "policy inventory",
+        "validator result"
+      ],
+      "forbidden_actions": [
+        "source cache runtime implementation",
+        "local source-cache state creation",
+        "live probe",
+        "source sync",
+        "connector runtime",
+        "network call",
+        "API call",
+        "scraping",
+        "crawling",
+        "download",
+        "upload",
+        "execution",
+        "evidence acceptance",
+        "master index mutation"
+      ],
+      "required_validators": [
+        "python scripts/validate_local_source_cache_runtime_plan.py"
+      ],
+      "required_review_gates": [
+        "planning review"
+      ],
+      "exit_criteria": [
+        "planning artifacts validate",
+        "future runtime gates are explicit",
+        "no local source-cache state exists"
+      ],
+      "product_boundary": {
+        "implemented_source_cache_runtime": false,
+        "created_local_private_state": false,
+        "enabled_network_access": false,
+        "enabled_live_probes": false,
+        "enabled_source_sync": false,
+        "enabled_source_connectors": false,
+        "enabled_downloads": false,
+        "enabled_uploads": false,
+        "enabled_telemetry": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_1_fixture_only_runtime_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "phase_0 planning accepted",
+        "fixture-only runtime task approved",
+        "private-root creation policy reviewed"
+      ],
+      "allowed_inputs": [
+        "committed fixtures",
+        "repo-local source leads"
+      ],
+      "allowed_outputs": [
+        "fixture-only source-cache draft records",
+        "source-cache summaries"
+      ],
+      "forbidden_actions": [
+        "live probe",
+        "network call",
+        "connector runtime",
+        "evidence acceptance",
+        "public index use",
+        "master index mutation"
+      ],
+      "required_validators": [
+        "future fixture-only source cache runtime validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_candidate_store_use",
+        "review_required_before_evidence_ledger_bridge"
+      ],
+      "exit_criteria": [
+        "fixture-only records remain non-authoritative",
+        "no live source access enabled"
+      ],
+      "product_boundary": {
+        "enabled_network_access": false,
+        "enabled_live_probes": false,
+        "enabled_source_sync": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_2_source_policy_evaluator_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "source policy decision schema",
+        "source access approval workflow",
+        "operator approval model"
+      ],
+      "allowed_inputs": [
+        "source policy proposals",
+        "candidate source records"
+      ],
+      "allowed_outputs": [
+        "source policy decisions",
+        "blocked/gated source access reports"
+      ],
+      "forbidden_actions": [
+        "automatic live access",
+        "connector execution",
+        "evidence acceptance",
+        "master index mutation"
+      ],
+      "required_validators": [
+        "future source policy evaluator validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_source_policy_change"
+      ],
+      "exit_criteria": [
+        "source policy decisions are explicit and reviewable"
+      ],
+      "product_boundary": {
+        "enabled_network_access": false,
+        "enabled_live_probes": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_3_approved_metadata_probe_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "explicit source policy approval",
+        "operator approval",
+        "User-Agent/contact decision",
+        "rate limit",
+        "timeout",
+        "retry policy",
+        "cache TTL",
+        "kill switch",
+        "terms/robots review",
+        "privacy/risk review"
+      ],
+      "allowed_inputs": [
+        "approved metadata probe requests"
+      ],
+      "allowed_outputs": [
+        "metadata-only source-cache draft records"
+      ],
+      "forbidden_actions": [
+        "arbitrary URL fetch",
+        "Google result page scraping",
+        "unapproved forum scraping",
+        "bulk Reddit ingestion",
+        "binary download",
+        "installer execution",
+        "evidence acceptance",
+        "master index mutation"
+      ],
+      "required_validators": [
+        "future approved metadata probe validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_live_probe",
+        "review_required_before_evidence_ledger_bridge"
+      ],
+      "exit_criteria": [
+        "probe is metadata-only",
+        "cache-first output is reviewable",
+        "no evidence acceptance occurs automatically"
+      ],
+      "product_boundary": {
+        "enabled_downloads": false,
+        "enabled_installers": false,
+        "enabled_execution": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_4_source_cache_to_evidence_bridge_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "evidence ledger contract/runtime planning",
+        "source-cache record review",
+        "evidence attribution policy"
+      ],
+      "allowed_inputs": [
+        "reviewed source-cache draft records"
+      ],
+      "allowed_outputs": [
+        "evidence candidate bridge records"
+      ],
+      "forbidden_actions": [
+        "automatic evidence acceptance",
+        "accepted public record creation",
+        "master index mutation"
+      ],
+      "required_validators": [
+        "future source-cache evidence bridge validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_evidence_ledger_bridge",
+        "review_required_before_public_index_use"
+      ],
+      "exit_criteria": [
+        "bridge records are candidates only",
+        "human review remains required"
+      ],
+      "product_boundary": {
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_5_reviewed_public_index_bridge_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "accepted evidence review",
+        "public index projection policy",
+        "master index mutation review"
+      ],
+      "allowed_inputs": [
+        "reviewed evidence candidates"
+      ],
+      "allowed_outputs": [
+        "public index bridge proposal"
+      ],
+      "forbidden_actions": [
+        "automatic public index use",
+        "automatic master index mutation",
+        "production readiness claim"
+      ],
+      "required_validators": [
+        "future reviewed public index bridge validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_public_index_use",
+        "review_required_before_pack_export"
+      ],
+      "exit_criteria": [
+        "public projection is reviewed and evidence-backed"
+      ],
+      "product_boundary": {
+        "mutated_master_index": false,
+        "claimed_production_readiness": false
+      }
+    }
+  ],
+  "notes": [
+    "Only phase_0_planning_only is current in TRACK-B-13.",
+    "All later phases are deferred and require separate reviewed tasks."
+  ]
+}

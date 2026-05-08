@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4645 chars, 1162 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5042 chars, 1261 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,21 +33,25 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-12-candidate-store-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/candidates` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/CANDIDATE_STORE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/CANDIDATE_STORE_REVIEW.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/CANDIDATE_STORE_RUNTIME.md` (??; matches active task allowed path)
-- unknown: `examples/candidates` (??; does not match active task allowed paths)
-- unknown: `runtime/local_foundry/candidate_store.py` (??; does not match active task allowed paths)
-- unknown: `scripts/record_candidate.py` (??; does not match active task allowed paths)
-- unknown: `scripts/summarize_candidate_store.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_candidate_store_runtime.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_candidate_store_runtime_scripts.py` (??; does not match active task allowed paths)
-- unknown: `tests/runtime/test_candidate_store_runtime.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-13-local-source-cache-runtime-planning-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_record_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_rollout_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_runtime_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_runtime_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_cache/local_source_cache_source_access_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md` (??; matches active task allowed path)
+- unknown: `examples/source_cache_plans` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_local_source_cache_runtime_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_local_source_cache_runtime_plan.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -57,8 +61,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5438
-- approx_tokens: 1360
+- chars: 6121
+- approx_tokens: 1531
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

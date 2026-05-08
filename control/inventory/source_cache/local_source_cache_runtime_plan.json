@@ -1,0 +1,248 @@
+{
+  "schema_version": "local_source_cache_runtime_plan.v0",
+  "plan_id": "local_source_cache_runtime_plan_v0",
+  "label": "Local source cache runtime planning layer",
+  "description": "Planning-only gate set for a future local/private source cache of reviewed source observations and normalized metadata.",
+  "plan_status": "planning_only",
+  "runtime_status": "runtime_not_implemented",
+  "source_access_status": "source_access_disabled",
+  "current_phase": "phase_0_planning_only",
+  "source_cache_purpose": [
+    "Define future local source-cache storage boundaries.",
+    "Define source-access approval gates before live metadata probes or connectors.",
+    "Prepare an evidence-ledger bridge plan without creating evidence truth."
+  ],
+  "source_cache_scope": {
+    "current_allowed_access_modes": [
+      "committed_fixture_only",
+      "repo_local_only",
+      "manual_human_only",
+      "no_autonomous_access"
+    ],
+    "future_deferred_access_modes": [
+      "approved_metadata_probe_future",
+      "approved_api_future",
+      "approved_static_dump_future",
+      "approved_common_crawl_or_archive_future"
+    ],
+    "current_outputs_are_planning_only": true,
+    "source_cache_records_are_observations_not_truth": true
+  },
+  "source_cache_non_goals": [
+    "source cache runtime implementation",
+    "local source-cache state creation",
+    "source sync runtime",
+    "live probes",
+    "source connectors",
+    "scraping",
+    "crawling",
+    "downloads",
+    "uploads",
+    "execution",
+    "accepted evidence truth",
+    "public index mutation",
+    "master index mutation"
+  ],
+  "source_cache_record_model": {
+    "record_status_policy_ref": "control/inventory/source_cache/local_source_cache_record_policy.json",
+    "record_types": [
+      "source_metadata",
+      "source_locator",
+      "source_policy_record",
+      "source_health_record",
+      "source_coverage_record",
+      "source_lead_record",
+      "connector_fixture_record"
+    ],
+    "truth_boundary": {
+      "source_cache_record_is_public_truth": false,
+      "source_cache_record_is_accepted_evidence": false,
+      "source_cache_record_can_mutate_master_index": false,
+      "source_cache_record_can_claim_rights_clearance": false,
+      "source_cache_record_can_claim_malware_safety": false,
+      "source_cache_record_can_claim_verified_installability": false,
+      "source_cache_record_can_claim_exhaustive_global_search": false,
+      "source_cache_record_can_claim_production_readiness": false,
+      "human_review_required_for_downstream_use": true
+    }
+  },
+  "source_access_modes": {
+    "policy_ref": "control/inventory/source_cache/local_source_cache_source_access_policy.json",
+    "current_source_access_modes": [
+      "committed_fixture_only",
+      "repo_local_only",
+      "manual_human_only",
+      "no_autonomous_access"
+    ],
+    "future_source_access_modes": [
+      "approved_metadata_probe_future",
+      "approved_api_future",
+      "approved_static_dump_future",
+      "approved_common_crawl_or_archive_future"
+    ],
+    "future_approval_gates": {
+      "explicit_source_policy_approval": true,
+      "operator_approval": true,
+      "user_agent_contact_decision": true,
+      "rate_limit": true,
+      "timeout": true,
+      "retry_policy": true,
+      "cache_ttl": true,
+      "kill_switch": true,
+      "terms_robots_review": true,
+      "privacy_risk_review": true,
+      "human_review_before_downstream_evidence_use": true
+    }
+  },
+  "allowed_inputs": [
+    "committed_fixture_observation",
+    "repo_local_source_lead",
+    "candidate_record",
+    "workunit_dry_run_result",
+    "node_policy_evaluation_result",
+    "manual_human_observation_future"
+  ],
+  "forbidden_inputs": [
+    "secret",
+    "credential",
+    "account_session",
+    "private_user_file",
+    "telemetry_stream",
+    "unreviewed_executable_payload",
+    "scraped_search_result",
+    "arbitrary_url_fetch_result",
+    "unapproved_api_payload",
+    "binary_download",
+    "installer_payload",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_record"
+  ],
+  "allowed_outputs": [
+    "local_source_cache_runtime_plan",
+    "local_source_cache_policy_report",
+    "local_source_cache_readiness_report",
+    "source_cache_record_draft_future",
+    "evidence_ledger_bridge_plan_future",
+    "review_item_future"
+  ],
+  "forbidden_outputs": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "storage_path_policy": {
+    "policy_ref": "control/inventory/source_cache/local_source_cache_path_policy.json",
+    "future_private_roots_documented_but_not_created": [
+      ".aide.local/eureka/source_cache/",
+      ".local/eureka/source_cache/",
+      ".cache/eureka/source_cache/"
+    ],
+    "current_allowed_output_roots": [
+      "control/audits/**/generated/source_cache/",
+      "explicit temp test directory"
+    ],
+    "forbidden_roots": [
+      "site/dist/",
+      "runtime/",
+      "contracts/",
+      "native/",
+      "snapshots/",
+      "control/inventory/publication/",
+      "master-index-related roots",
+      ".git/",
+      "secrets/",
+      "credentials/"
+    ]
+  },
+  "privacy_policy": {
+    "private_data_storage_allowed_now": false,
+    "credential_storage_allowed_now": false,
+    "account_session_storage_allowed_now": false,
+    "telemetry_stream_storage_allowed_now": false,
+    "private_user_file_storage_allowed_now": false
+  },
+  "rights_risk_policy": {
+    "rights_clearance_can_be_claimed": false,
+    "malware_safety_can_be_claimed": false,
+    "verified_installability_can_be_claimed": false,
+    "unreviewed_executable_payload_allowed": false,
+    "download_or_installer_payload_allowed": false
+  },
+  "review_gates": {
+    "policy_ref": "control/inventory/source_cache/local_source_cache_review_policy.json",
+    "review_required_before_evidence_ledger_bridge": true,
+    "review_required_before_candidate_store_use": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_pack_export": true,
+    "review_required_before_source_policy_change": true,
+    "review_required_before_live_probe": true,
+    "review_required_before_connector_runtime": true,
+    "automatic_evidence_acceptance_allowed": false,
+    "automatic_public_index_use_allowed": false,
+    "automatic_master_index_mutation_allowed": false,
+    "automatic_connector_enable_allowed": false
+  },
+  "rollout_phases": {
+    "rollout_plan_ref": "control/inventory/source_cache/local_source_cache_rollout_plan.json",
+    "current_phase": "phase_0_planning_only",
+    "future_phases": [
+      "phase_1_fixture_only_runtime_future",
+      "phase_2_source_policy_evaluator_future",
+      "phase_3_approved_metadata_probe_future",
+      "phase_4_source_cache_to_evidence_bridge_future",
+      "phase_5_reviewed_public_index_bridge_future"
+    ]
+  },
+  "validation_strategy": [
+    "Validate planning JSON syntax and required policy fields.",
+    "Validate current phase remains planning_only and runtime_not_implemented.",
+    "Validate future source-access modes carry approval gates.",
+    "Validate examples do not contain secrets, private paths, live-source claims, accepted evidence, or master-index mutation claims."
+  ],
+  "bridge_to_evidence_ledger_future": {
+    "allowed_now": false,
+    "future_bridge_status": "review_required",
+    "requires_evidence_ledger_runtime_planning": true,
+    "source_cache_outputs_are_evidence_candidates_only": true
+  },
+  "product_boundary": {
+    "implemented_source_cache_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No source cache runtime implementation.",
+    "No local source-cache state creation.",
+    "No network, API, browser, model, or provider calls.",
+    "No live probes, source sync, scraping, crawling, downloads, uploads, accounts, telemetry, or execution.",
+    "No accepted evidence truth, accepted public record, or master-index mutation."
+  ],
+  "notes": [
+    "This plan reuses the existing SOURCE_CACHE_CONTRACT contract boundary and P98 local dry-run context.",
+    "Future source-cache runtime work must be a separate reviewed task."
+  ]
+}

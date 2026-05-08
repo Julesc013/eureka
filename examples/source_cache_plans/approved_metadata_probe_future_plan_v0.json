@@ -1,0 +1,90 @@
+{
+  "schema_version": "local_source_cache_plan_example.v0",
+  "plan_id": "approved_metadata_probe_future_plan_v0",
+  "label": "Approved metadata probe future planning example",
+  "plan_status": "planning_only",
+  "runtime_status": "runtime_not_implemented",
+  "source_access_status": "source_access_disabled",
+  "current_phase": "phase_0_planning_only",
+  "current_source_access_modes": [
+    "committed_fixture_only",
+    "repo_local_only",
+    "manual_human_only",
+    "no_autonomous_access"
+  ],
+  "future_source_access_modes": [
+    "approved_metadata_probe_future",
+    "approved_api_future"
+  ],
+  "future_approval_gates": {
+    "explicit_source_policy_approval": true,
+    "operator_approval": true,
+    "user_agent_contact_decision": true,
+    "rate_limit": true,
+    "timeout": true,
+    "retry_policy": true,
+    "cache_ttl": true,
+    "kill_switch": true,
+    "terms_robots_review": true,
+    "privacy_risk_review": true,
+    "human_review_before_downstream_evidence_use": true
+  },
+  "future_probe_limits": {
+    "metadata_only": true,
+    "cache_first": true,
+    "arbitrary_url_fetch_allowed": false,
+    "downloads_allowed": false,
+    "execution_allowed": false
+  },
+  "review_gates": {
+    "review_required_before_evidence_ledger_bridge": true,
+    "review_required_before_candidate_store_use": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_pack_export": true,
+    "review_required_before_source_policy_change": true,
+    "review_required_before_live_probe": true,
+    "review_required_before_connector_runtime": true,
+    "automatic_evidence_acceptance_allowed": false,
+    "automatic_public_index_use_allowed": false,
+    "automatic_master_index_mutation_allowed": false,
+    "automatic_connector_enable_allowed": false
+  },
+  "truth_boundary": {
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_can_claim_rights_clearance": false,
+    "source_cache_record_can_claim_malware_safety": false,
+    "source_cache_record_can_claim_verified_installability": false,
+    "source_cache_record_can_claim_exhaustive_global_search": false,
+    "source_cache_record_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_source_cache_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Future probe vocabulary only.",
+    "This example does not execute probes, call APIs, or write source-cache records."
+  ]
+}

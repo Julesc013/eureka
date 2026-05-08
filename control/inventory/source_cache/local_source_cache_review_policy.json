@@ -1,0 +1,56 @@
+{
+  "schema_version": "local_source_cache_review_policy.v0",
+  "policy_id": "local_source_cache_review_policy_v0",
+  "label": "Local source cache review policy",
+  "review_required_before_evidence_ledger_bridge": true,
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_pack_export": true,
+  "review_required_before_source_policy_change": true,
+  "review_required_before_live_probe": true,
+  "review_required_before_connector_runtime": true,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_connector_enable_allowed": false,
+  "automatic_source_sync_allowed": false,
+  "allowed_review_states": [
+    "not_reviewed",
+    "needs_review",
+    "approved_for_fixture_runtime_future",
+    "approved_for_metadata_probe_future",
+    "approved_for_evidence_bridge_future",
+    "rejected",
+    "deferred",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked"
+  ],
+  "allowed_review_decisions": [
+    "approve_fixture_only_future",
+    "approve_metadata_probe_future",
+    "approve_static_dump_future",
+    "approve_evidence_bridge_future",
+    "request_changes",
+    "reject",
+    "defer",
+    "block_for_policy",
+    "block_for_rights",
+    "block_for_risk"
+  ],
+  "forbidden_review_outcomes": [
+    "automatic_evidence_acceptance",
+    "automatic_public_index_use",
+    "automatic_master_index_mutation",
+    "automatic_connector_enable",
+    "automatic_live_probe_enable",
+    "automatic_source_sync_enable",
+    "rights_clearance_claim",
+    "malware_safety_claim",
+    "verified_installability_claim"
+  ],
+  "notes": [
+    "Review gates are required before source-cache material can feed evidence ledger, candidate store, public index, pack export, source policy changes, live probes, or connector runtime.",
+    "No review decision in this policy can create accepted evidence truth or mutate the master index."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "local_source_cache_plan_example.v0",
+  "plan_id": "minimal_local_source_cache_plan_v0",
+  "label": "Minimal local source cache planning example",
+  "plan_status": "planning_only",
+  "runtime_status": "runtime_not_implemented",
+  "source_access_status": "source_access_disabled",
+  "current_phase": "phase_0_planning_only",
+  "current_source_access_modes": [
+    "committed_fixture_only",
+    "repo_local_only",
+    "no_autonomous_access"
+  ],
+  "future_source_access_modes": [],
+  "record_statuses_in_scope": [
+    "example_only",
+    "planned",
+    "needs_review"
+  ],
+  "record_types_in_scope": [
+    "source_metadata",
+    "source_policy_record"
+  ],
+  "allowed_inputs": [
+    "committed_fixture_observation",
+    "repo_local_source_lead"
+  ],
+  "forbidden_inputs": [
+    "secret",
+    "credential",
+    "account_session",
+    "private_user_file",
+    "telemetry_stream",
+    "binary_download",
+    "installer_payload",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_record"
+  ],
+  "allowed_outputs": [
+    "local_source_cache_runtime_plan",
+    "local_source_cache_readiness_report"
+  ],
+  "forbidden_outputs": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "review_gates": {
+    "review_required_before_evidence_ledger_bridge": true,
+    "review_required_before_candidate_store_use": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_pack_export": true,
+    "review_required_before_source_policy_change": true,
+    "review_required_before_live_probe": true,
+    "review_required_before_connector_runtime": true,
+    "automatic_evidence_acceptance_allowed": false,
+    "automatic_public_index_use_allowed": false,
+    "automatic_master_index_mutation_allowed": false,
+    "automatic_connector_enable_allowed": false
+  },
+  "truth_boundary": {
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_can_claim_rights_clearance": false,
+    "source_cache_record_can_claim_malware_safety": false,
+    "source_cache_record_can_claim_verified_installability": false,
+    "source_cache_record_can_claim_exhaustive_global_search": false,
+    "source_cache_record_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_source_cache_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Synthetic planning example only.",
+    "No source-cache runtime or source access is enabled."
+  ]
+}

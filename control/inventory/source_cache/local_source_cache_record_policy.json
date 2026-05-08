@@ -1,0 +1,111 @@
+{
+  "schema_version": "local_source_cache_record_policy.v0",
+  "policy_id": "local_source_cache_record_policy_v0",
+  "label": "Local source cache record policy",
+  "allowed_record_statuses": [
+    "example_only",
+    "planned",
+    "fixture_only",
+    "recorded_local",
+    "normalized",
+    "source_observation",
+    "candidate_source_record",
+    "needs_review",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "stale",
+    "superseded",
+    "deferred",
+    "future_live_probe_result",
+    "accepted_public_future"
+  ],
+  "current_allowed_record_statuses": [
+    "example_only",
+    "planned",
+    "fixture_only",
+    "recorded_local",
+    "normalized",
+    "source_observation",
+    "candidate_source_record",
+    "needs_review",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "stale",
+    "superseded",
+    "deferred"
+  ],
+  "statuses_forbidden_current": [
+    "future_live_probe_result",
+    "accepted_public_future"
+  ],
+  "record_status_meanings": {
+    "example_only": "Synthetic committed example only.",
+    "planned": "Planning record with no runtime effect.",
+    "fixture_only": "Committed fixture record only.",
+    "recorded_local": "Future local record after explicit runtime approval.",
+    "normalized": "Future normalized metadata draft, not evidence truth.",
+    "source_observation": "Future reviewed observation of a source posture.",
+    "candidate_source_record": "Candidate source record needing review.",
+    "needs_review": "Downstream use is blocked until review.",
+    "policy_blocked": "Blocked by source, privacy, rights, or product policy.",
+    "rights_blocked": "Blocked by rights-risk review.",
+    "risk_blocked": "Blocked by privacy, executable, or operational risk.",
+    "stale": "Record may be outdated and must not be promoted.",
+    "superseded": "Record is superseded but preserved for review trail.",
+    "deferred": "Deferred to a future reviewed task.",
+    "future_live_probe_result": "Future vocabulary only, not allowed now.",
+    "accepted_public_future": "Future vocabulary only, not allowed now."
+  },
+  "allowed_record_types": [
+    "source_metadata",
+    "source_locator",
+    "source_policy_record",
+    "source_health_record",
+    "source_coverage_record",
+    "source_lead_record",
+    "connector_fixture_record",
+    "approved_metadata_probe_result_future",
+    "approved_api_result_future",
+    "static_dump_record_future"
+  ],
+  "current_allowed_record_types": [
+    "source_metadata",
+    "source_locator",
+    "source_policy_record",
+    "source_health_record",
+    "source_coverage_record",
+    "source_lead_record",
+    "connector_fixture_record"
+  ],
+  "truth_boundary": {
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_can_claim_rights_clearance": false,
+    "source_cache_record_can_claim_malware_safety": false,
+    "source_cache_record_can_claim_verified_installability": false,
+    "source_cache_record_can_claim_exhaustive_global_search": false,
+    "source_cache_record_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "forbidden_record_contents": [
+    "secrets",
+    "credentials",
+    "account_sessions",
+    "private_user_files",
+    "telemetry_streams",
+    "unreviewed_executable_payloads",
+    "accepted_evidence_truth",
+    "accepted_public_records",
+    "master_index_records",
+    "rights_clearance_claims",
+    "malware_safety_claims",
+    "verified_installability_claims"
+  ],
+  "notes": [
+    "A source-cache record is an observation or draft, not public truth.",
+    "Accepted-public status is future vocabulary only and must not appear in current examples."
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "local_source_cache_source_access_policy.v0",
+  "policy_id": "local_source_cache_source_access_policy_v0",
+  "label": "Local source cache source-access policy",
+  "current_source_access_status": "source_access_disabled",
+  "source_access_modes": [
+    "committed_fixture_only",
+    "repo_local_only",
+    "manual_human_only",
+    "approved_metadata_probe_future",
+    "approved_api_future",
+    "approved_static_dump_future",
+    "approved_common_crawl_or_archive_future",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "restricted_demand_signal_only",
+    "no_autonomous_access"
+  ],
+  "current_allowed_modes": [
+    "committed_fixture_only",
+    "repo_local_only",
+    "manual_human_only",
+    "no_autonomous_access"
+  ],
+  "current_forbidden_modes": [
+    "approved_metadata_probe_future",
+    "approved_api_future",
+    "approved_static_dump_future",
+    "approved_common_crawl_or_archive_future",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "restricted_demand_signal_only"
+  ],
+  "mode_meanings": {
+    "committed_fixture_only": "Use synthetic or reviewed committed fixture records only.",
+    "repo_local_only": "Use repo-local committed metadata and governance files only.",
+    "manual_human_only": "Allow a human to describe a source posture without automated access.",
+    "approved_metadata_probe_future": "Future metadata-only probe after explicit source policy and operator approval.",
+    "approved_api_future": "Future approved API use after source policy, credentials, terms, and rate review.",
+    "approved_static_dump_future": "Future approved static dump intake after provenance and privacy review.",
+    "approved_common_crawl_or_archive_future": "Future archive/dump use after policy, robots/terms, and rate review.",
+    "permission_needed": "Access is blocked until source permission and policy review are complete.",
+    "robots_blocked": "Access is blocked by robots or automated-access review.",
+    "terms_blocked": "Access is blocked by terms or source policy review.",
+    "restricted_demand_signal_only": "Only aggregate, privacy-filtered demand signal may be retained after review.",
+    "no_autonomous_access": "No autonomous source access is allowed."
+  },
+  "future_mode_requirements": {
+    "approved_metadata_probe_future": {
+      "explicit_source_policy_approval": true,
+      "operator_approval": true,
+      "user_agent_contact_decision": true,
+      "rate_limit": true,
+      "timeout": true,
+      "retry_policy": true,
+      "cache_ttl": true,
+      "kill_switch": true,
+      "terms_robots_review": true,
+      "privacy_risk_review": true,
+      "human_review_before_downstream_evidence_use": true
+    },
+    "approved_api_future": {
+      "explicit_source_policy_approval": true,
+      "operator_approval": true,
+      "user_agent_contact_decision": true,
+      "rate_limit": true,
+      "timeout": true,
+      "retry_policy": true,
+      "cache_ttl": true,
+      "kill_switch": true,
+      "terms_robots_review": true,
+      "privacy_risk_review": true,
+      "human_review_before_downstream_evidence_use": true
+    },
+    "approved_static_dump_future": {
+      "explicit_source_policy_approval": true,
+      "operator_approval": true,
+      "user_agent_contact_decision": true,
+      "rate_limit": true,
+      "timeout": true,
+      "retry_policy": true,
+      "cache_ttl": true,
+      "kill_switch": true,
+      "terms_robots_review": true,
+      "privacy_risk_review": true,
+      "human_review_before_downstream_evidence_use": true
+    },
+    "approved_common_crawl_or_archive_future": {
+      "explicit_source_policy_approval": true,
+      "operator_approval": true,
+      "user_agent_contact_decision": true,
+      "rate_limit": true,
+      "timeout": true,
+      "retry_policy": true,
+      "cache_ttl": true,
+      "kill_switch": true,
+      "terms_robots_review": true,
+      "privacy_risk_review": true,
+      "human_review_before_downstream_evidence_use": true
+    }
+  },
+  "explicitly_forbidden_access": [
+    "google_result_page_scraping",
+    "unapproved_forum_scraping",
+    "bulk_reddit_ingestion",
+    "arbitrary_url_fetch",
+    "credentialed_access_without_approval",
+    "captcha_bypass",
+    "paywall_bypass",
+    "access_control_bypass",
+    "binary_download",
+    "installer_execution"
+  ],
+  "notes": [
+    "No current plan may enable live probes, source sync, scraping, crawling, arbitrary URL fetch, API calls, downloads, uploads, or execution.",
+    "Future modes are vocabulary only until separate reviewed tasks provide source policy and runtime implementation."
+  ]
+}

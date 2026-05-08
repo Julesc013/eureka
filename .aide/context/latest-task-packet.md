@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-12 Candidate store runtime
+UNSPECIFIED - TRACK-B-13 Local source cache runtime planning
 
 ## GOAL
 
-TRACK-B-12 Candidate store runtime
+TRACK-B-13 Local source cache runtime planning
 
 ## WHY
 
@@ -35,18 +35,21 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## ALLOWED_PATHS
 
-- `runtime/local_foundry/candidate_store.py`
-- `scripts/record_candidate.py`
-- `scripts/summarize_candidate_store.py`
-- `scripts/validate_candidate_store_runtime.py`
-- `docs/reference/CANDIDATE_STORE_RUNTIME.md`
-- `docs/architecture/CANDIDATE_STORE_MODEL.md`
-- `docs/operations/CANDIDATE_STORE_REVIEW.md`
-- `control/inventory/candidates/**`
-- `examples/candidates/**`
-- `tests/runtime/test_candidate_store_runtime.py`
-- `tests/operations/test_candidate_store_runtime_scripts.py`
-- `control/audits/track-b-12-candidate-store-runtime-v0/**`
+- `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md`
+- `docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md`
+- `docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md`
+- `docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md`
+- `control/inventory/source_cache/local_source_cache_runtime_plan.json`
+- `control/inventory/source_cache/local_source_cache_runtime_policy.json`
+- `control/inventory/source_cache/local_source_cache_path_policy.json`
+- `control/inventory/source_cache/local_source_cache_source_access_policy.json`
+- `control/inventory/source_cache/local_source_cache_record_policy.json`
+- `control/inventory/source_cache/local_source_cache_review_policy.json`
+- `control/inventory/source_cache/local_source_cache_rollout_plan.json`
+- `examples/source_cache_plans/**`
+- `scripts/validate_local_source_cache_runtime_plan.py`
+- `tests/operations/test_local_source_cache_runtime_plan.py`
+- `control/audits/track-b-13-local-source-cache-runtime-planning-v0/**`
 - `.aide/context/**`
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/evals/runs/latest-golden-tasks.md`
@@ -59,7 +62,7 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `runtime/**` except `runtime/local_foundry/candidate_store.py`
+- `runtime/**`
 - `contracts/**`
 - `surfaces/**`
 - `site/**`
@@ -130,8 +133,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4013
-- approx_tokens: 1004
+- chars: 4037
+- approx_tokens: 1010
 - budget_status: PASS
 - warnings:
   - none
