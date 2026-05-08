@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-07 Query observation runtime
+UNSPECIFIED - TRACK-B-08 Search miss ledger runtime
 
 ## GOAL
 
-TRACK-B-07 Query observation runtime
+TRACK-B-08 Search miss ledger runtime
 
 ## WHY
 
@@ -117,7 +117,7 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4017
+- chars: 4019
 - approx_tokens: 1005
 - budget_status: PASS
 - warnings:

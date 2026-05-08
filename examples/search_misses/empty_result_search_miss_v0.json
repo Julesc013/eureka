@@ -1,0 +1,44 @@
+{
+  "schema_version": "search_miss_ledger_record.v0",
+  "search_miss_id": "search_miss.empty.old_platform_utility.v0",
+  "search_miss_status": "recorded_local",
+  "search_miss_kind": "empty_result",
+  "related_query_observation_ref": "query_observation.empty.old_platform_utility.v0",
+  "query_summary": {
+    "query_text": "old platform utility example",
+    "query_id_optional": "old_platform_utility_example",
+    "query_source": "query_observation_record",
+    "search_mode": "local_only",
+    "local_index_mode": "fixture_or_report_only"
+  },
+  "observed_result_summary": {
+    "result_count": 0,
+    "result_quality": "empty",
+    "top_result_refs": [],
+    "first_useful_result_rank": null
+  },
+  "miss_reason_summary": "Local fixture produced no result to review.",
+  "failure_modes": [
+    "empty_result",
+    "source_gap"
+  ],
+  "near_matches": [],
+  "rejected_matches": [],
+  "source_gap_summary": "Local fixture did not identify a usable source.",
+  "capability_gap_summary": "",
+  "extraction_gap_summary": "",
+  "compatibility_gap_summary": "",
+  "representation_gap_summary": "",
+  "identity_gap_summary": "",
+  "temporal_version_gap_summary": "",
+  "ranking_gap_summary": "",
+  "policy_block_summary": "",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Empty local result is not universe-level absence proof."
+  ],
+  "notes": [
+    "Derived from committed query observation example."
+  ]
+}

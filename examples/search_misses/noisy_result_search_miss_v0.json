@@ -1,0 +1,52 @@
+{
+  "schema_version": "search_miss_ledger_record.v0",
+  "search_miss_id": "search_miss.noisy.old_game_patch.v0",
+  "search_miss_status": "recorded_local",
+  "search_miss_kind": "noisy_result_list",
+  "related_query_observation_ref": "query_observation.noisy.old_game_patch.v0",
+  "query_summary": {
+    "query_text": "old game patch example",
+    "query_id_optional": "old_game_patch_example",
+    "query_source": "static_demo_fixture",
+    "search_mode": "local_only",
+    "local_index_mode": "fixture_or_report_only"
+  },
+  "observed_result_summary": {
+    "result_count": 5,
+    "result_quality": "noisy",
+    "top_result_refs": [
+      "fixture:unrelated-faq",
+      "fixture:ambiguous-patch-note"
+    ],
+    "first_useful_result_rank": null
+  },
+  "miss_reason_summary": "Local fixture produced noisy results with no clearly useful hit.",
+  "failure_modes": [
+    "noisy_result_list",
+    "ranking_gap"
+  ],
+  "near_matches": [],
+  "rejected_matches": [
+    {
+      "ref": "fixture:unrelated-faq",
+      "reason": "Unrelated result in committed fixture."
+    }
+  ],
+  "source_gap_summary": "",
+  "capability_gap_summary": "",
+  "extraction_gap_summary": "",
+  "compatibility_gap_summary": "",
+  "representation_gap_summary": "",
+  "identity_gap_summary": "",
+  "temporal_version_gap_summary": "Patch state may need later reviewed temporal disambiguation.",
+  "ranking_gap_summary": "Noisy local ordering prevents reliable downstream use.",
+  "policy_block_summary": "",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Noisy results require review before any seed is promoted."
+  ],
+  "notes": [
+    "Synthetic example for noisy result classification."
+  ]
+}

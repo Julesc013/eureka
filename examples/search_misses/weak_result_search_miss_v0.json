@@ -1,0 +1,52 @@
+{
+  "schema_version": "search_miss_ledger_record.v0",
+  "search_miss_id": "search_miss.weak.vintage_driver.v0",
+  "search_miss_status": "recorded_local",
+  "search_miss_kind": "weak_result",
+  "related_query_observation_ref": "query_observation.weak.vintage_driver.v0",
+  "query_summary": {
+    "query_text": "vintage driver package example",
+    "query_id_optional": "vintage_driver_example",
+    "query_source": "query_observation_record",
+    "search_mode": "local_only",
+    "local_index_mode": "fixture_or_report_only"
+  },
+  "observed_result_summary": {
+    "result_count": 3,
+    "result_quality": "weak",
+    "top_result_refs": [
+      "fixture:driver-index-summary",
+      "fixture:generic-support-page"
+    ],
+    "first_useful_result_rank": null
+  },
+  "miss_reason_summary": "Local fixture produced weak results without a reviewable useful hit.",
+  "failure_modes": [
+    "weak_result",
+    "compatibility_gap"
+  ],
+  "near_matches": [],
+  "rejected_matches": [
+    {
+      "ref": "fixture:generic-support-page",
+      "reason": "Generic result did not identify the requested driver package."
+    }
+  ],
+  "source_gap_summary": "",
+  "capability_gap_summary": "",
+  "extraction_gap_summary": "",
+  "compatibility_gap_summary": "Driver compatibility remains unresolved in the local fixture.",
+  "representation_gap_summary": "",
+  "identity_gap_summary": "",
+  "temporal_version_gap_summary": "",
+  "ranking_gap_summary": "Weak local results need human review before downstream use.",
+  "policy_block_summary": "",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Weak result does not establish absence."
+  ],
+  "notes": [
+    "Public-safe synthetic miss."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "search_miss_ledger_record.v0",
+  "search_miss_id": "search_miss.near_match.article_member.v0",
+  "search_miss_status": "recorded_local",
+  "search_miss_kind": "near_match_only",
+  "related_query_observation_ref": "query_observation.near_match.article_member.v0",
+  "query_summary": {
+    "query_text": "magazine scan article member example",
+    "query_id_optional": "article_member_example",
+    "query_source": "explicit_test_fixture",
+    "search_mode": "local_only",
+    "local_index_mode": "fixture_or_report_only"
+  },
+  "observed_result_summary": {
+    "result_count": 2,
+    "result_quality": "mixed",
+    "top_result_refs": [
+      "fixture:issue-level-record",
+      "fixture:near-title-record"
+    ],
+    "first_useful_result_rank": null
+  },
+  "miss_reason_summary": "Local fixture produced near matches but no exact reviewable member.",
+  "failure_modes": [
+    "near_match_only",
+    "identity_gap",
+    "representation_gap"
+  ],
+  "near_matches": [
+    {
+      "ref": "fixture:issue-level-record",
+      "reason": "Issue exists in fixture but article/member identity is unresolved."
+    }
+  ],
+  "rejected_matches": [],
+  "source_gap_summary": "",
+  "capability_gap_summary": "",
+  "extraction_gap_summary": "Article-level extraction may be needed in a future reviewed task.",
+  "compatibility_gap_summary": "",
+  "representation_gap_summary": "Fixture exposes issue-level data but not article-member representation.",
+  "identity_gap_summary": "Exact article member identity is unresolved.",
+  "temporal_version_gap_summary": "",
+  "ranking_gap_summary": "",
+  "policy_block_summary": "",
+  "absence_scope": "local_explicit_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Near matches require review and do not create object truth."
+  ],
+  "notes": [
+    "Synthetic example for near-match classification."
+  ]
+}

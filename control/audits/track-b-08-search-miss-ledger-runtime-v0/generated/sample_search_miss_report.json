@@ -1,0 +1,210 @@
+{
+  "input_ref": "examples/query_observations/weak_result_query_observation_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_public_telemetry": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "absence_scope": "local_explicit_input_only",
+    "capability_gap_summary": "",
+    "compatibility_gap_summary": "",
+    "downstream_seed_candidates": [
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "search_need_seed_future",
+        "requires_review": true,
+        "seed_summary": "Local explicit input suggests a review-gated search gap.",
+        "source_search_miss_id": "search_miss.ranking_gap.1973cb00a951.v0"
+      },
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "workunit_seed_future",
+        "requires_review": true,
+        "seed_summary": "Future WorkUnit seed may inspect this review-gated search miss.",
+        "source_search_miss_id": "search_miss.ranking_gap.1973cb00a951.v0"
+      },
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "source_lead_candidate_future",
+        "requires_review": true,
+        "seed_summary": "Future source lead may be prepared after review.",
+        "source_search_miss_id": "search_miss.ranking_gap.1973cb00a951.v0"
+      }
+    ],
+    "exhaustive_absence_claimed": false,
+    "extraction_gap_summary": "",
+    "failure_modes": [
+      "compatibility_gap",
+      "ranking_gap",
+      "weak_result"
+    ],
+    "identity_gap_summary": "",
+    "interpreted_intent_optional": null,
+    "limitations": [
+      "Search miss is derived from explicit local input only.",
+      "No live source, web, archive, or public traffic search was performed."
+    ],
+    "miss_reason_summary": "Local explicit input suggests a review-gated search gap.",
+    "near_matches": [],
+    "notes": [
+      "Search miss is a review-gated gap signal only.",
+      "Weak result fixture does not change public ranking."
+    ],
+    "observed_result_summary": {
+      "first_useful_result_rank": null,
+      "result_count": 2,
+      "result_quality": "weak",
+      "top_result_refs": [
+        "fixture:public-index:near-match-1",
+        "fixture:public-index:near-match-2"
+      ]
+    },
+    "poisoning_guard_posture": {
+      "decision": "no_risk_detected",
+      "notes": [
+        "Poisoning guard flags risks only; it does not make public ranking or truth decisions."
+      ],
+      "poisoning_guarded": true,
+      "public_decision_made": false,
+      "risk_count": 0,
+      "risk_flags": []
+    },
+    "policy_block_summary": "",
+    "privacy_posture": {
+      "account_identity_collected": false,
+      "accounts_required": false,
+      "browser_state_collection_allowed": false,
+      "location_collected": false,
+      "privacy_filtered": false,
+      "privacy_risks": [],
+      "private_data_allowed": false,
+      "public_telemetry_enabled": false,
+      "query_hash": "c379f1842dbf8361e2ff3469917796a2d42ff0915c2ccf5bbc380fc08d5d7534",
+      "raw_public_query_logging_enabled": false,
+      "raw_query_allowed": true,
+      "raw_query_retained": false,
+      "redacted_query_text": "mac os 9 browser example"
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_public_telemetry": false,
+      "mutated_master_index": false
+    },
+    "query_summary": {
+      "local_index_mode": "fixture_or_report_only",
+      "query_hash": "c379f1842dbf8361e2ff3469917796a2d42ff0915c2ccf5bbc380fc08d5d7534",
+      "query_id_optional": "mac_os_9_browser_example",
+      "query_source": "query_observation_record",
+      "query_text": "mac os 9 browser example",
+      "redacted_query_text": "mac os 9 browser example",
+      "search_mode": "local_only",
+      "source_query_observation_query_source": "public_search_rehearsal_fixture"
+    },
+    "ranking_gap_summary": "",
+    "rejected_matches": [],
+    "related_query_observation_ref": "query_observation.weak.mac_os_9_browser.v0",
+    "representation_gap_summary": "",
+    "review_gates": {
+      "human_review_required_for_downstream_use": true,
+      "master_index_review_required": true,
+      "search_need_review_required": true,
+      "source_lead_review_required": true,
+      "workunit_review_required": true
+    },
+    "schema_version": "search_miss_ledger_record.v0",
+    "search_miss_id": "search_miss.ranking_gap.1973cb00a951.v0",
+    "search_miss_kind": "ranking_gap",
+    "search_miss_status": "recorded_local",
+    "source_gap_summary": "",
+    "temporal_version_gap_summary": "",
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "search_miss_can_mutate_master_index": false,
+      "search_miss_claims_source_universe_exhausted": false,
+      "search_miss_is_accepted_evidence": false,
+      "search_miss_is_exhaustive_global_absence": false,
+      "search_miss_is_public_truth": false
+    }
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "public_telemetry_enabled": false,
+    "raw_public_query_logging_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "search_miss_ledger_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "exhaustive_absence_claimed": false,
+    "failure_modes": [
+      "compatibility_gap",
+      "ranking_gap",
+      "weak_result"
+    ],
+    "near_match_count": 0,
+    "related_query_observation_ref": "query_observation.weak.mac_os_9_browser.v0",
+    "result_count": 2,
+    "result_quality": "weak",
+    "review_required": true,
+    "search_miss_id": "search_miss.ranking_gap.1973cb00a951.v0",
+    "search_miss_kind": "ranking_gap",
+    "search_miss_status": "recorded_local",
+    "truth_boundary": {
+      "search_miss_can_mutate_master_index": false,
+      "search_miss_is_accepted_evidence": false,
+      "search_miss_is_public_truth": false
+    }
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "search_miss_can_mutate_master_index": false,
+    "search_miss_is_accepted_evidence": false,
+    "search_miss_is_exhaustive_global_absence": false,
+    "search_miss_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}

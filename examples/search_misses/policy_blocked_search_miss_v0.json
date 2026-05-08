@@ -1,0 +1,43 @@
+{
+  "schema_version": "search_miss_ledger_record.v0",
+  "search_miss_id": "search_miss.policy_blocked.forum_probe.v0",
+  "search_miss_status": "policy_blocked",
+  "search_miss_kind": "policy_blocked",
+  "related_query_observation_ref": "query_observation.policy_blocked.forum_probe.v0",
+  "query_summary": {
+    "query_text": "forum crawl request example",
+    "query_id_optional": "forum_crawl_example",
+    "query_source": "explicit_test_fixture",
+    "search_mode": "local_only",
+    "local_index_mode": "fixture_or_report_only"
+  },
+  "observed_result_summary": {
+    "result_count": 0,
+    "result_quality": "blocked",
+    "top_result_refs": [],
+    "first_useful_result_rank": null
+  },
+  "miss_reason_summary": "Requested source behavior is blocked by current policy.",
+  "failure_modes": [
+    "policy_blocked"
+  ],
+  "near_matches": [],
+  "rejected_matches": [],
+  "source_gap_summary": "",
+  "capability_gap_summary": "",
+  "extraction_gap_summary": "",
+  "compatibility_gap_summary": "",
+  "representation_gap_summary": "",
+  "identity_gap_summary": "",
+  "temporal_version_gap_summary": "",
+  "ranking_gap_summary": "",
+  "policy_block_summary": "Unapproved forum crawl behavior remains forbidden.",
+  "absence_scope": "policy_blocked_local_input_only",
+  "exhaustive_absence_claimed": false,
+  "limitations": [
+    "Policy block is not evidence of absence."
+  ],
+  "notes": [
+    "Runtime should flag unsupported scraping/crawling requests."
+  ]
+}

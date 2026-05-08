@@ -1,0 +1,90 @@
+{
+  "schema_version": "search_miss_failure_mode_policy.v0",
+  "policy_id": "search_miss_failure_mode_policy_v0",
+  "label": "Search Miss failure mode policy",
+  "allowed_miss_kinds": [
+    "empty_result",
+    "weak_result",
+    "near_match_only",
+    "noisy_result_list",
+    "policy_blocked",
+    "capability_gap",
+    "source_gap",
+    "extraction_gap",
+    "compatibility_gap",
+    "representation_gap",
+    "identity_gap",
+    "temporal_version_gap",
+    "ranking_gap",
+    "query_interpretation_gap",
+    "dead_link_or_unavailable",
+    "external_baseline_unavailable",
+    "not_evaluable"
+  ],
+  "allowed_failure_modes": [
+    "none",
+    "empty_result",
+    "weak_result",
+    "near_match_only",
+    "noisy_result_list",
+    "policy_blocked",
+    "capability_gap",
+    "source_gap",
+    "extraction_gap",
+    "compatibility_gap",
+    "representation_gap",
+    "identity_gap",
+    "temporal_version_gap",
+    "ranking_gap",
+    "query_interpretation_gap",
+    "dead_link_or_unavailable",
+    "external_baseline_unavailable",
+    "not_evaluable",
+    "privacy_filtered",
+    "poisoning_risk"
+  ],
+  "mappings_from_query_observation_outcomes": {
+    "empty_result": "empty_result",
+    "weak_result": "weak_result",
+    "useful_result": "weak_result",
+    "policy_blocked": "policy_blocked",
+    "not_evaluable": "not_evaluable",
+    "unknown": "not_evaluable"
+  },
+  "mappings_from_manual_observation_failure_taxonomy": {
+    "source_gap": "source_gap",
+    "compatibility_gap": "compatibility_gap",
+    "representation_gap": "representation_gap",
+    "identity_gap": "identity_gap",
+    "temporal_version_gap": "temporal_version_gap",
+    "ranking_gap": "ranking_gap"
+  },
+  "no_result_rules": {
+    "result_count_zero_maps_to": "empty_result",
+    "review_required": true
+  },
+  "weak_result_rules": {
+    "no_useful_rank_maps_to": "weak_result",
+    "review_required": true
+  },
+  "near_match_rules": {
+    "near_matches_without_useful_rank_maps_to": "near_match_only",
+    "review_required": true
+  },
+  "policy_block_rules": {
+    "policy_blocked_maps_to": "policy_blocked",
+    "review_required": true
+  },
+  "not_evaluable_rules": {
+    "not_evaluable_maps_to": "not_evaluable",
+    "review_required": true
+  },
+  "forbidden_absence_claims": [
+    "whole_web_searched",
+    "source_universe_exhausted",
+    "object_absent_everywhere"
+  ],
+  "notes": [
+    "Search misses classify local review gaps; they do not prove absence beyond the explicit input scope."
+  ]
+}

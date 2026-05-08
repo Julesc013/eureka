@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4017 chars, 1005 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4019 chars, 1005 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,24 +36,20 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-07-query-observation-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/query_observation_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/query_observation_poisoning_guard_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/query_observation_privacy_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/query_observation_runtime_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/QUERY_OBSERVATION_RUNTIME_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/QUERY_OBSERVATION_PRIVACY_AND_POISONING.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/QUERY_OBSERVATION_RUNTIME.md` (??; matches active task allowed path)
-- unknown: `examples/query_observations/empty_result_query_observation_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/query_observations/minimal_query_observation_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/query_observations/policy_blocked_query_observation_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/query_observations/useful_result_query_observation_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/query_observations/weak_result_query_observation_v0.json` (??; does not match active task allowed paths)
-- unknown: `runtime/local_foundry` (??; does not match active task allowed paths)
-- unknown: `scripts/record_query_observation.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_query_observation_runtime.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_query_observation_runtime_scripts.py` (??; does not match active task allowed paths)
-- unknown: `tests/runtime/test_query_observation_runtime.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-08-search-miss-ledger-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/search_miss_failure_mode_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/search_miss_ledger_runtime_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/search_miss_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/search_miss_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SEARCH_MISS_LEDGER_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SEARCH_MISS_LEDGER_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/SEARCH_MISS_LEDGER_RUNTIME.md` (??; matches active task allowed path)
+- unknown: `examples/search_misses` (??; does not match active task allowed paths)
+- unknown: `runtime/local_foundry/search_miss_ledger.py` (??; does not match active task allowed paths)
+- unknown: `scripts/record_search_miss.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_search_miss_ledger_runtime.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_search_miss_ledger_runtime_scripts.py` (??; does not match active task allowed paths)
+- unknown: `tests/runtime/test_search_miss_ledger_runtime.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -63,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6353
-- approx_tokens: 1589
+- chars: 5783
+- approx_tokens: 1446
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
