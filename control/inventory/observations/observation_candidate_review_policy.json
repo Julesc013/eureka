@@ -1,0 +1,90 @@
+{
+  "schema_version": "observation_candidate_review_policy.v0",
+  "policy_id": "observation_candidate_review_policy_v0",
+  "label": "Observation candidate review policy",
+  "description": "Human review policy for observation candidates and source/work-unit seeds.",
+  "review_states": [
+    "proposed",
+    "needs_human_review",
+    "approved_for_manual_observation",
+    "approved_as_source_lead",
+    "approved_as_work_unit_seed",
+    "rejected",
+    "duplicate",
+    "policy_blocked",
+    "needs_more_evidence",
+    "deferred"
+  ],
+  "decisions": [
+    "approve_as_source_lead",
+    "approve_as_work_unit_seed",
+    "approve_for_manual_observation",
+    "reject",
+    "request_more_evidence",
+    "mark_duplicate",
+    "mark_policy_blocked",
+    "defer",
+    "not_evaluable"
+  ],
+  "allowed_next_actions": [
+    "manual_observation",
+    "source_policy_review",
+    "search_need_seed_review",
+    "work_unit_seed_review",
+    "fixture_preparation",
+    "candidate_revision"
+  ],
+  "forbidden_next_actions": [
+    "mark_observed_baseline",
+    "mark_evidence_truth",
+    "mutate_master_index",
+    "scrape_google_results",
+    "probe_live_source_without_policy",
+    "download_binary",
+    "claim_rights_clearance",
+    "claim_malware_safety"
+  ],
+  "required_false_booleans": [
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed"
+  ],
+  "review_required_fields": [
+    "review_decision_id",
+    "observation_candidate_id",
+    "reviewer",
+    "reviewed_at",
+    "decision",
+    "decision_scope",
+    "approved_next_actions",
+    "rejected_next_actions",
+    "rationale"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "no approval as observed evidence",
+    "no evidence truth conversion",
+    "no master-index mutation",
+    "no source-policy bypass"
+  ]
+}

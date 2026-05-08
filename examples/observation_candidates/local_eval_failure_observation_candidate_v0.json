@@ -1,0 +1,65 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_local_eval_failure_v0",
+  "candidate_type": "local_eval_failure",
+  "candidate_status": "needs_human_review",
+  "origin": "local_eval",
+  "origin_ref": "evals/search_usefulness/external_baselines/batches/batch_0/reports",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "latest_firefox_before_xp_support_ended",
+  "related_system_id": null,
+  "query_text": "latest Firefox before XP support ended",
+  "source_mode": "repo_local_only",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "candidate_summary": "Local audit planning flags latest-compatible-release queries as likely needing temporal version evidence and manual calibration.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "temporal_version_gap",
+    "compatibility_gap"
+  ],
+  "proposed_usefulness_scores": {
+    "evidence_quality": "unknown_until_manual_review",
+    "compatibility_clarity": "likely_high_value"
+  },
+  "evidence_refs": [],
+  "source_lead_refs": [],
+  "work_unit_refs_future": [
+    "work-unit-future:temporal-version-evidence"
+  ],
+  "limitations": [
+    "Local eval failure candidate only.",
+    "No external baseline result is claimed."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "Demand signal is not object truth."
+  ]
+}

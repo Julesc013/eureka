@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4047 chars, 1012 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4069 chars, 1018 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,17 +36,24 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/obs0-02-manual-observation-batch-0-execution-packet-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/manual_observation_batch_0_execution.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/manual_observation_batch_0_slot_manifest.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/MANUAL_OBSERVATION_BATCH_0_EXECUTION.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/MANUAL_OBSERVATION_SLOT_COMPLETION_GUIDE.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_PACKET.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/EXECUTION_STATUS.md` (??; does not match active task allowed paths)
-- unknown: `evals/search_usefulness/external_baselines/batches/batch_0/SLOT_COMPLETION_GUIDE.md` (??; does not match active task allowed paths)
-- unknown: `scripts/prepare_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_manual_observation_batch0_execution.py` (??; does not match active task allowed paths)
+- unknown: `contracts/query/observation_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/observation_review_decision.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/obs-replan-01-agent-assisted-observation-workflow-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/agent_assisted_observation_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/obs_parallel_development_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/observation_candidate_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/observation_source_access_modes.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/AGENT_ASSISTED_OBSERVATION_WORKFLOW.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/OBSERVATION_CANDIDATE_REVIEW.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/OBS_PARALLEL_DEVELOPMENT_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `examples/observation_candidates` (??; does not match active task allowed paths)
+- unknown: `examples/observation_reviews` (??; does not match active task allowed paths)
+- unknown: `scripts/summarize_observation_candidates.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_agent_assisted_observation_policy.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_observation_candidate.py` (??; does not match active task allowed paths)
+- unknown: `tests/contracts/test_observation_candidate_contracts.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_agent_assisted_observation_policy.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -56,8 +63,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5654
-- approx_tokens: 1414
+- chars: 6290
+- approx_tokens: 1573
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

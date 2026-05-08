@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - OBS0-02 manual observation Batch 0 execution packet
+UNSPECIFIED - OBS-REPLAN-01 agent-assisted observation and approval workflow
 
 ## GOAL
 
-OBS0-02 manual observation Batch 0 execution packet
+OBS-REPLAN-01 agent-assisted observation and approval workflow
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4047
-- approx_tokens: 1012
+- chars: 4069
+- approx_tokens: 1018
 - budget_status: PASS
 - warnings:
   - none

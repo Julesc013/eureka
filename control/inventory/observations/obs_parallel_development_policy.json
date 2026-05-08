@@ -1,0 +1,49 @@
+{
+  "schema_version": "obs_parallel_development_policy.v0",
+  "policy_id": "obs_parallel_development_policy_v0",
+  "label": "OBS parallel development policy",
+  "description": "Decision policy allowing main development to continue in parallel with manual and agent-assisted observation work.",
+  "decision": "continue_main_development_in_parallel_with_obs",
+  "main_track_can_continue_in_parallel": true,
+  "manual_observation_blocks_all_development": false,
+  "manual_observation_remains_gold_standard": true,
+  "agent_assisted_candidates_allowed": true,
+  "human_review_required": true,
+  "rules": [
+    "Track B may continue after Track A and OBS replan",
+    "manual observations need not block all development",
+    "agent-assisted observation candidates may run in parallel with Track B",
+    "first live connector requires explicit source approval",
+    "observations feed SearchNeed WorkUnit Candidate or EvidencePack fixtures after review",
+    "observations and candidates do not directly mutate the master index",
+    "human approval remains required for evidence-quality and source-policy decisions"
+  ],
+  "stop_conditions": [
+    "task_depends_on_completed_manual_baseline_evidence",
+    "source_policy_decision_required",
+    "legal_or_privacy_decision_required",
+    "live_connector_authorization_required",
+    "master_index_mutation_requested"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  }
+}

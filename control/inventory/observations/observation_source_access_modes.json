@@ -1,0 +1,130 @@
+{
+  "schema_version": "observation_source_access_modes.v0",
+  "policy_id": "observation_source_access_modes_v0",
+  "label": "Observation source access modes",
+  "description": "Governed source access modes for manual, agent-assisted, local, and future approved-source observation work.",
+  "modes": [
+    {
+      "mode_id": "repo_local_only",
+      "label": "Repo local only",
+      "meaning": "Agents may inspect committed fixtures, reports, tests, and eval outputs only.",
+      "current_agent_access_allowed": true,
+      "requires_source_policy": false
+    },
+    {
+      "mode_id": "manual_human_only",
+      "label": "Manual human only",
+      "meaning": "Humans may operate the source manually; agents may not automate access.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "approved_api_future",
+      "label": "Approved API future",
+      "meaning": "Future API access after explicit source policy approval.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "approved_metadata_probe_future",
+      "label": "Approved metadata probe future",
+      "meaning": "Future bounded metadata probe after explicit source policy approval.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "approved_fixture_only",
+      "label": "Approved fixture only",
+      "meaning": "Committed fixture or static export only.",
+      "current_agent_access_allowed": true,
+      "requires_source_policy": false
+    },
+    {
+      "mode_id": "approved_static_dump_future",
+      "label": "Approved static dump future",
+      "meaning": "Future approved static dump ingestion after policy review.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "permission_needed",
+      "label": "Permission needed",
+      "meaning": "Source requires permission or contact before use.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "robots_blocked",
+      "label": "Robots blocked",
+      "meaning": "Automated access is blocked by robots posture.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "terms_blocked",
+      "label": "Terms blocked",
+      "meaning": "Automated access is blocked by terms posture.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "restricted_demand_signal_only",
+      "label": "Restricted demand signal only",
+      "meaning": "Source may inform demand only, not evidence.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    },
+    {
+      "mode_id": "no_autonomous_access",
+      "label": "No autonomous access",
+      "meaning": "No agent or runtime access.",
+      "current_agent_access_allowed": false,
+      "requires_source_policy": true
+    }
+  ],
+  "source_policy_approval_requirements": [
+    "source_id",
+    "source_family",
+    "allowed_endpoint_or_path",
+    "forbidden_endpoint_or_path",
+    "rate_limit",
+    "timeout",
+    "retry_policy",
+    "cache_ttl",
+    "user_agent_contact_policy",
+    "kill_switch",
+    "terms_robots_posture",
+    "privacy_posture",
+    "rights_risk_posture",
+    "operator_approval",
+    "review_requirement"
+  ],
+  "google_web_search_posture": "manual_human_only_without_approved_api",
+  "forbidden": [
+    "scraping_google_result_pages",
+    "unapproved_live_source_access",
+    "browser_automation",
+    "external_api_call_without_policy"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "obs_replan_01_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-REPLAN-01",
+  "added_contracts": [
+    "contracts/query/observation_candidate.v0.json",
+    "contracts/query/observation_review_decision.v0.json"
+  ],
+  "added_docs": [
+    "docs/operations/AGENT_ASSISTED_OBSERVATION_WORKFLOW.md",
+    "docs/operations/OBSERVATION_CANDIDATE_REVIEW.md",
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+    "docs/operations/OBS_PARALLEL_DEVELOPMENT_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/agent_assisted_observation_policy.json",
+    "control/inventory/observations/observation_candidate_review_policy.json",
+    "control/inventory/observations/obs_parallel_development_policy.json",
+    "control/inventory/observations/observation_source_access_modes.json"
+  ],
+  "added_examples": [
+    "examples/observation_candidates/minimal_observation_candidate_v0.json",
+    "examples/observation_candidates/source_lead_observation_candidate_v0.json",
+    "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
+    "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+    "examples/observation_reviews/approve_observation_candidate_review_v0.json",
+    "examples/observation_reviews/reject_observation_candidate_review_v0.json",
+    "examples/observation_reviews/request_more_evidence_review_v0.json"
+  ],
+  "added_scripts": [
+    "scripts/validate_agent_assisted_observation_policy.py",
+    "scripts/validate_observation_candidate.py",
+    "scripts/summarize_observation_candidates.py"
+  ],
+  "added_tests": [
+    "tests/contracts/test_observation_candidate_contracts.py",
+    "tests/operations/test_agent_assisted_observation_policy.py"
+  ],
+  "validation": {
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/observations/agent_assisted_observation_policy.json": "pass",
+    "python -m json.tool control/inventory/observations/observation_candidate_review_policy.json": "pass",
+    "python -m json.tool control/inventory/observations/obs_parallel_development_policy.json": "pass",
+    "python -m json.tool control/inventory/observations/observation_source_access_modes.json": "pass",
+    "python -m json.tool control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json": "pass",
+    "python scripts/validate_agent_assisted_observation_policy.py": "pass",
+    "python scripts/validate_observation_candidate.py": "pass",
+    "python scripts/summarize_observation_candidates.py": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn"
+  },
+  "workflow_decision": {
+    "manual_observation_remains_gold_standard": true,
+    "agent_observation_candidates_allowed": true,
+    "human_review_required": true,
+    "manual_observation_blocks_all_development": false,
+    "main_track_can_continue_in_parallel": true
+  },
+  "truth_boundary": {
+    "candidate_is_observed_baseline": false,
+    "agent_summary_is_evidence_truth": false,
+    "source_lead_is_source_validation": false,
+    "review_required_before_downstream_use": true,
+    "master_index_mutation_allowed": false
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "warnings": [
+    "AIDE verify reported warning-only stale-reference and compact-packet allowed-path notes with zero errors."
+  ],
+  "next_task": "TRACK-B-01 \u2014 Eureka Node manifest contract"
+}
