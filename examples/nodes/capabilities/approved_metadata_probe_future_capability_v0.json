@@ -1,0 +1,151 @@
+{
+  "schema_version": "node_capability.v0",
+  "capability_id": "approved_metadata_probe_future",
+  "capability_label": "Approved metadata probe future",
+  "capability_status": "approval_gated",
+  "capability_family": "approved_source_future",
+  "description": "Future metadata probe capability that remains disabled until source policy, operator approval, rate policy, and kill switch decisions exist.",
+  "allowed_node_modes": [
+    "institution_node_future",
+    "hosted_worker_future"
+  ],
+  "forbidden_node_modes": [
+    "local_private",
+    "local_pack_builder",
+    "local_autonomous_dry_run",
+    "community_node_future"
+  ],
+  "required_node_policy_refs": [
+    "examples/nodes/policies/institution_node_future_policy_v0.json",
+    "examples/nodes/policies/hosted_worker_future_policy_v0.json"
+  ],
+  "required_source_policy_refs": [
+    "source_policy_future"
+  ],
+  "required_review_gates": [
+    "human_review_required",
+    "source_policy_review_required",
+    "operator_approval_required_for_network",
+    "risk_review_required"
+  ],
+  "input_categories": {
+    "allowed": [
+      "source_policy_future",
+      "workunit_future",
+      "node_policy",
+      "node_capability"
+    ],
+    "forbidden": [
+      "unapproved_live_source_result",
+      "scraped_search_result",
+      "scraped_forum_thread",
+      "bulk_reddit_content",
+      "private_user_file",
+      "secret_or_credential",
+      "executable_download",
+      "installer_payload",
+      "raw_browser_profile",
+      "account_session_data",
+      "telemetry_stream",
+      "unreviewed_external_api_payload"
+    ]
+  },
+  "output_categories": {
+    "allowed": [
+      "source_lead_candidate",
+      "review_item_future"
+    ],
+    "forbidden": [
+      "observed_baseline_truth",
+      "accepted_evidence_truth",
+      "accepted_public_record",
+      "master_index_mutation",
+      "rights_clearance",
+      "malware_safety",
+      "verified_installability",
+      "exhaustive_global_search_proof",
+      "production_readiness_claim"
+    ]
+  },
+  "side_effect_class": "network_probe_future",
+  "network_requirement": {
+    "network_required": true,
+    "current_enabled": false,
+    "operator_approval_required": true,
+    "source_policy_required": true,
+    "kill_switch_required": true,
+    "rate_or_budget_policy_required": true
+  },
+  "source_access_requirement": {
+    "source_access_required": true,
+    "current_enabled": false,
+    "source_policy_required": true,
+    "human_review_required": true
+  },
+  "local_state_requirement": {
+    "local_state_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false
+  },
+  "model_provider_requirement": {
+    "model_provider_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false,
+    "budget_policy_required": false
+  },
+  "credential_requirement": {
+    "credentials_required": false,
+    "current_enabled": false,
+    "operator_approval_required": false
+  },
+  "budget_requirement_future": {
+    "budget_required": true,
+    "current_enabled": false
+  },
+  "safety_boundary": {
+    "side_effects_limited_to": "network_probe_future",
+    "no_external_access": false,
+    "no_runtime_permission": true
+  },
+  "truth_boundary": {
+    "can_create_observed_baseline": false,
+    "can_create_accepted_evidence": false,
+    "can_create_public_truth": false,
+    "can_mutate_master_index": false,
+    "can_claim_rights_clearance": false,
+    "can_claim_malware_safety": false,
+    "can_claim_verified_installability": false,
+    "can_claim_exhaustive_global_search": false
+  },
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no active network",
+    "no source connector",
+    "no public truth"
+  ],
+  "notes": [
+    "Future metadata probe vocabulary only."
+  ]
+}

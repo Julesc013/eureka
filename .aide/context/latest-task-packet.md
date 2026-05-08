@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-02 Node policy contract
+UNSPECIFIED - TRACK-B-03 Node capability contract
 
 ## GOAL
 
-TRACK-B-02 Node policy contract
+TRACK-B-03 Node capability contract
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4007
-- approx_tokens: 1002
+- chars: 4015
+- approx_tokens: 1004
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,68 @@
+{
+  "schema_version": "node_capability_dependency_policy.v0",
+  "policy_id": "eureka_node_capability_dependency_policy_v0",
+  "allowed_dependency_types": [
+    "node_manifest",
+    "node_policy",
+    "node_capability",
+    "source_policy_future",
+    "review_gate",
+    "operator_gate",
+    "budget_policy_future",
+    "kill_switch_policy_future",
+    "rate_limit_policy_future"
+  ],
+  "forbidden_dependency_types": [
+    "unapproved_live_source",
+    "private_credential",
+    "raw_browser_profile",
+    "account_session",
+    "downloaded_binary",
+    "installer_payload",
+    "telemetry_stream",
+    "unreviewed_external_api"
+  ],
+  "source_policy_dependency_requirements": [
+    "source access capabilities must reference source_policy_future until approved",
+    "source access capabilities must require human review and operator approval",
+    "source access capabilities must preserve no truth mutation"
+  ],
+  "review_gate_dependency_requirements": [
+    "future capabilities require human review",
+    "evidence and candidate capabilities require evidence and candidate review",
+    "pack capabilities require pack review",
+    "master-index review remains required even though mutation is forbidden"
+  ],
+  "operator_gate_dependency_requirements": [
+    "network source model credential and hosted capabilities require operator approval",
+    "future runtime capabilities require kill switch and rate or budget policy"
+  ],
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no dependency grants runtime authority",
+    "no dependency grants source approval",
+    "no dependency grants public truth"
+  ]
+}

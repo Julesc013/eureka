@@ -1,0 +1,967 @@
+{
+  "schema_version": "node_capability_matrix.v0",
+  "matrix_id": "eureka_node_capability_matrix_v0",
+  "capabilities": [
+    {
+      "capability_id": "repo_local_inspection",
+      "capability_family": "repo_inspection",
+      "capability_status": "current_repo_local_only",
+      "allowed_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "read_only_repo_local",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "repo_local_fixture",
+        "committed_static_artifact",
+        "committed_audit_report",
+        "node_manifest",
+        "node_policy",
+        "node_capability"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [],
+      "dependencies": [
+        "node_manifest",
+        "node_policy"
+      ],
+      "notes": [
+        "Read-only committed repo inspection only."
+      ]
+    },
+    {
+      "capability_id": "local_eval_analysis",
+      "capability_family": "local_eval",
+      "capability_status": "current_repo_local_only",
+      "allowed_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "committed_eval_report",
+        "committed_audit_report",
+        "repo_local_fixture"
+      ],
+      "allowed_outputs": [
+        "capability_report",
+        "dry_run_report"
+      ],
+      "required_review_gates": [],
+      "dependencies": [
+        "node_policy"
+      ],
+      "notes": [
+        "Summarizes committed local eval artifacts."
+      ]
+    },
+    {
+      "capability_id": "search_need_analysis",
+      "capability_family": "search_need",
+      "capability_status": "current_dry_run_only",
+      "allowed_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "dry_run_report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "manual_pending_slot",
+        "observation_candidate",
+        "committed_audit_report"
+      ],
+      "allowed_outputs": [
+        "dry_run_report",
+        "search_need_seed_future"
+      ],
+      "required_review_gates": [
+        "human_review_required"
+      ],
+      "dependencies": [
+        "node_policy"
+      ],
+      "notes": [
+        "SearchNeed seeds remain future and review-gated."
+      ]
+    },
+    {
+      "capability_id": "observation_candidate_preparation",
+      "capability_family": "observation",
+      "capability_status": "current_dry_run_only",
+      "allowed_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "dry_run_report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "manual_pending_slot",
+        "committed_audit_report",
+        "observation_review_decision"
+      ],
+      "allowed_outputs": [
+        "observation_candidate",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required"
+      ],
+      "dependencies": [
+        "node_policy"
+      ],
+      "notes": [
+        "Candidates are not observed baselines."
+      ]
+    },
+    {
+      "capability_id": "source_lead_preparation",
+      "capability_family": "source_lead",
+      "capability_status": "current_dry_run_only",
+      "allowed_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "dry_run_report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "committed_audit_report",
+        "observation_candidate",
+        "manual_pending_slot"
+      ],
+      "allowed_outputs": [
+        "source_lead_candidate",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required"
+      ],
+      "dependencies": [
+        "node_policy"
+      ],
+      "notes": [
+        "Source leads are not source validation."
+      ]
+    },
+    {
+      "capability_id": "workunit_candidate_preparation_future",
+      "capability_family": "workunit_future",
+      "capability_status": "future",
+      "allowed_node_modes": [
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "dry_run_report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "source_lead_candidate",
+        "search_need_seed_future",
+        "node_policy"
+      ],
+      "allowed_outputs": [
+        "workunit_seed_future",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "candidate_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "review_gate"
+      ],
+      "notes": [
+        "Prepares seeds only; does not run WorkUnits."
+      ]
+    },
+    {
+      "capability_id": "pack_validation",
+      "capability_family": "pack",
+      "capability_status": "current_validate_only",
+      "allowed_node_modes": [
+        "local_pack_builder"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "validate_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "committed_pack_example",
+        "repo_local_fixture"
+      ],
+      "allowed_outputs": [
+        "validation_report",
+        "capability_report"
+      ],
+      "required_review_gates": [],
+      "dependencies": [
+        "node_policy"
+      ],
+      "notes": [
+        "Validation only; no import or acceptance runtime."
+      ]
+    },
+    {
+      "capability_id": "pack_drafting_future",
+      "capability_family": "pack",
+      "capability_status": "future",
+      "allowed_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "pack_draft_future",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "committed_pack_example",
+        "observation_candidate",
+        "source_lead_candidate"
+      ],
+      "allowed_outputs": [
+        "contribution_pack_draft_future",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "pack_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "review_gate"
+      ],
+      "notes": [
+        "Pack drafts remain future and review-gated."
+      ]
+    },
+    {
+      "capability_id": "evidence_drafting_future",
+      "capability_family": "evidence_future",
+      "capability_status": "future",
+      "allowed_node_modes": [
+        "local_private",
+        "community_node_future",
+        "institution_node_future"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "source_lead_candidate",
+        "observation_review_decision"
+      ],
+      "allowed_outputs": [
+        "evidence_draft_future",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "evidence_review_required",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "review_gate"
+      ],
+      "notes": [
+        "Evidence drafts are not accepted evidence."
+      ]
+    },
+    {
+      "capability_id": "candidate_drafting_future",
+      "capability_family": "candidate_future",
+      "capability_status": "future",
+      "allowed_node_modes": [
+        "local_private",
+        "community_node_future",
+        "institution_node_future"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "observation_candidate",
+        "source_lead_candidate"
+      ],
+      "allowed_outputs": [
+        "candidate_record_future",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "candidate_review_required",
+        "master_index_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "review_gate"
+      ],
+      "notes": [
+        "Candidate drafts are not public records."
+      ]
+    },
+    {
+      "capability_id": "local_index_read_future",
+      "capability_family": "source_cache_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "read_only_repo_local",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "local_private_state_future",
+        "node_policy"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [
+        "human_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate"
+      ],
+      "notes": [
+        "Future local state read remains deferred."
+      ]
+    },
+    {
+      "capability_id": "local_index_write_future",
+      "capability_family": "source_cache_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "local_index_write_future",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "local_private_state_future",
+        "node_policy"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "operator_approval_required_for_network"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate"
+      ],
+      "notes": [
+        "Future local index writes require a runtime task."
+      ]
+    },
+    {
+      "capability_id": "local_source_cache_read_future",
+      "capability_family": "source_cache_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "read_only_repo_local",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "local_private_state_future"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [
+        "human_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate"
+      ],
+      "notes": [
+        "Future local cache read remains deferred."
+      ]
+    },
+    {
+      "capability_id": "local_source_cache_write_future",
+      "capability_family": "source_cache_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "source_cache_write_future",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "local_private_state_future",
+        "source_policy_future"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "source_policy_future",
+        "operator_gate"
+      ],
+      "notes": [
+        "Future source cache writes require explicit runtime approval."
+      ]
+    },
+    {
+      "capability_id": "local_evidence_ledger_read_future",
+      "capability_family": "evidence_ledger_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "read_only_repo_local",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "local_private_state_future"
+      ],
+      "allowed_outputs": [
+        "capability_report"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "evidence_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate"
+      ],
+      "notes": [
+        "Future evidence ledger read remains local and deferred."
+      ]
+    },
+    {
+      "capability_id": "local_evidence_ledger_write_future",
+      "capability_family": "evidence_ledger_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "evidence_ledger_write_future",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "observation_candidate",
+        "local_private_state_future"
+      ],
+      "allowed_outputs": [
+        "capability_report",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "evidence_review_required",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate",
+        "review_gate"
+      ],
+      "notes": [
+        "Future ledger writes are local-state writes, not accepted evidence."
+      ]
+    },
+    {
+      "capability_id": "extraction_planning_future",
+      "capability_family": "extraction_future",
+      "capability_status": "future",
+      "allowed_node_modes": [
+        "local_autonomous_dry_run",
+        "institution_node_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "community_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "dry_run_report_only",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "source_policy_future",
+        "committed_audit_report"
+      ],
+      "allowed_outputs": [
+        "dry_run_report",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "source_policy_future",
+        "review_gate"
+      ],
+      "notes": [
+        "Plans extraction only; does not run extraction."
+      ]
+    },
+    {
+      "capability_id": "extraction_runtime_future",
+      "capability_family": "extraction_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future"
+      ],
+      "side_effect_class": "hosted_runtime_future",
+      "network_required": true,
+      "source_access_required": true,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "source_policy_future",
+        "workunit_future"
+      ],
+      "allowed_outputs": [
+        "evidence_draft_future",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required",
+        "operator_approval_required_for_network",
+        "operator_approval_required_for_hosted_behavior",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "source_policy_future",
+        "operator_gate",
+        "kill_switch_policy_future",
+        "rate_limit_policy_future"
+      ],
+      "notes": [
+        "Runtime extraction is vocabulary only in this milestone."
+      ]
+    },
+    {
+      "capability_id": "approved_metadata_probe_future",
+      "capability_family": "approved_source_future",
+      "capability_status": "approval_gated",
+      "allowed_node_modes": [
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future"
+      ],
+      "side_effect_class": "network_probe_future",
+      "network_required": true,
+      "source_access_required": true,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "source_policy_future",
+        "workunit_future"
+      ],
+      "allowed_outputs": [
+        "source_lead_candidate",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required",
+        "operator_approval_required_for_network",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "source_policy_future",
+        "operator_gate",
+        "kill_switch_policy_future",
+        "rate_limit_policy_future"
+      ],
+      "notes": [
+        "Approved metadata probes are future and not enabled."
+      ]
+    },
+    {
+      "capability_id": "approved_api_access_future",
+      "capability_family": "approved_source_future",
+      "capability_status": "approval_gated",
+      "allowed_node_modes": [
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future"
+      ],
+      "side_effect_class": "network_probe_future",
+      "network_required": true,
+      "source_access_required": true,
+      "model_provider_required": false,
+      "credentials_required": true,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "source_policy_future",
+        "workunit_future"
+      ],
+      "allowed_outputs": [
+        "source_lead_candidate",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required",
+        "operator_approval_required_for_network",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "source_policy_future",
+        "operator_gate",
+        "budget_policy_future",
+        "kill_switch_policy_future",
+        "rate_limit_policy_future"
+      ],
+      "notes": [
+        "Approved API access remains future and credential-gated."
+      ]
+    },
+    {
+      "capability_id": "local_model_assist_future",
+      "capability_family": "local_model_future",
+      "capability_status": "operator_gated",
+      "allowed_node_modes": [
+        "local_private",
+        "local_autonomous_dry_run"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "model_call_future",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": true,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "repo_local_fixture",
+        "node_policy",
+        "node_capability"
+      ],
+      "allowed_outputs": [
+        "dry_run_report",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "operator_approval_required_for_network",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "operator_gate",
+        "budget_policy_future"
+      ],
+      "notes": [
+        "Local model assist is future and not active."
+      ]
+    },
+    {
+      "capability_id": "hosted_worker_execution_future",
+      "capability_family": "hosted_worker_future",
+      "capability_status": "deferred",
+      "allowed_node_modes": [
+        "hosted_worker_future"
+      ],
+      "forbidden_node_modes": [
+        "local_private",
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future"
+      ],
+      "side_effect_class": "hosted_runtime_future",
+      "network_required": true,
+      "source_access_required": true,
+      "model_provider_required": false,
+      "credentials_required": true,
+      "local_state_required": true,
+      "allowed_inputs": [
+        "workunit_future",
+        "source_policy_future",
+        "node_policy"
+      ],
+      "allowed_outputs": [
+        "dry_run_report",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "source_policy_review_required",
+        "operator_approval_required_for_network",
+        "operator_approval_required_for_hosted_behavior",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "source_policy_future",
+        "operator_gate",
+        "budget_policy_future",
+        "kill_switch_policy_future",
+        "rate_limit_policy_future"
+      ],
+      "notes": [
+        "Hosted worker execution is not implemented."
+      ]
+    },
+    {
+      "capability_id": "policy_blocked_capability_v0",
+      "capability_family": "review_future",
+      "capability_status": "policy_blocked",
+      "allowed_node_modes": [
+        "local_private"
+      ],
+      "forbidden_node_modes": [
+        "local_pack_builder",
+        "local_autonomous_dry_run",
+        "community_node_future",
+        "institution_node_future",
+        "hosted_worker_future"
+      ],
+      "side_effect_class": "blocked",
+      "network_required": false,
+      "source_access_required": false,
+      "model_provider_required": false,
+      "credentials_required": false,
+      "local_state_required": false,
+      "allowed_inputs": [
+        "node_manifest",
+        "node_policy",
+        "node_capability"
+      ],
+      "allowed_outputs": [
+        "capability_report",
+        "review_item_future"
+      ],
+      "required_review_gates": [
+        "human_review_required",
+        "legal_or_rights_decision_stop_required",
+        "risk_review_required"
+      ],
+      "dependencies": [
+        "node_policy",
+        "review_gate"
+      ],
+      "notes": [
+        "Blocked capability example for review and validation."
+      ]
+    }
+  ],
+  "product_boundary": {
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}
