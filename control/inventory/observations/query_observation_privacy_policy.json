@@ -1,0 +1,85 @@
+{
+  "schema_version": "query_observation_privacy_policy.v0",
+  "policy_id": "query_observation_privacy_policy_v0",
+  "label": "Query Observation privacy policy",
+  "raw_query_allowed": {
+    "synthetic_or_committed_fixture": true,
+    "public_traffic": false,
+    "hosted_users": false
+  },
+  "raw_query_retention": {
+    "default": "none",
+    "synthetic_examples_only": true,
+    "raw_public_query_logging_enabled": false
+  },
+  "query_hashing_policy": {
+    "algorithm": "sha256",
+    "normalized_basis": "casefolded_whitespace_collapsed_query_text",
+    "reversible": false,
+    "salt_policy": "unsalted_deterministic_for_local_validation"
+  },
+  "private_data_filtering": {
+    "private_data_allowed": false,
+    "credential_like_content_allowed": false,
+    "private_path_allowed": false,
+    "private_url_allowed": false
+  },
+  "account_identity_policy": {
+    "accounts_required": false,
+    "account_identity_collection_allowed": false,
+    "account_ids_allowed": false
+  },
+  "location_policy": {
+    "location_collection_allowed": false,
+    "ip_address_collection_allowed": false
+  },
+  "browser_state_policy": {
+    "browser_state_collection_allowed": false,
+    "cookie_collection_allowed": false,
+    "history_collection_allowed": false
+  },
+  "telemetry_policy": {
+    "public_telemetry_enabled": false,
+    "raw_public_query_logging_enabled": false,
+    "hosted_query_capture_enabled": false
+  },
+  "aggregate_threshold_future": {
+    "enabled": false,
+    "minimum_count_future": 0,
+    "notes": "Future aggregate thresholds require explicit review before public use."
+  },
+  "opt_in_required_future": true,
+  "deletion_reset_policy_future": {
+    "resettable": true,
+    "deletable": true,
+    "runtime_not_implemented": true
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Committed examples may contain synthetic query text.",
+    "Public or hosted user query logging remains disabled."
+  ]
+}

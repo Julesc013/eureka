@@ -1,0 +1,85 @@
+{
+  "schema_version": "track_b_07_report.v0",
+  "status": "pass",
+  "track": "B",
+  "task": "TRACK-B-07",
+  "added_runtime_modules": [
+    "runtime/local_foundry/query_observation.py"
+  ],
+  "added_scripts": [
+    "scripts/record_query_observation.py",
+    "scripts/validate_query_observation_runtime.py"
+  ],
+  "added_docs": [
+    "docs/reference/QUERY_OBSERVATION_RUNTIME.md",
+    "docs/architecture/QUERY_OBSERVATION_RUNTIME_MODEL.md",
+    "docs/operations/QUERY_OBSERVATION_PRIVACY_AND_POISONING.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/query_observation_runtime_policy.json",
+    "control/inventory/observations/query_observation_privacy_policy.json",
+    "control/inventory/observations/query_observation_poisoning_guard_policy.json",
+    "control/inventory/observations/query_observation_output_policy.json"
+  ],
+  "added_examples": [
+    "examples/query_observations/minimal_query_observation_v0.json",
+    "examples/query_observations/empty_result_query_observation_v0.json",
+    "examples/query_observations/weak_result_query_observation_v0.json",
+    "examples/query_observations/useful_result_query_observation_v0.json",
+    "examples/query_observations/policy_blocked_query_observation_v0.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_query_observation_runtime.py",
+    "tests/operations/test_query_observation_runtime_scripts.py"
+  ],
+  "validation": {
+    "status": "pass_with_warn_only_aide_verify",
+    "json_syntax": "pass",
+    "track_b_validators": "pass",
+    "track_a_validator": "pass",
+    "obs_validators": "pass",
+    "query_observation_runtime_validator": "pass",
+    "record_query_observation_check": "pass",
+    "tests": "pass",
+    "architecture_boundaries": "pass",
+    "aide_lite": "pass_with_verify_warnings_zero_errors"
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "writes_no_files_by_default": true,
+    "public_telemetry_enabled": false,
+    "raw_public_query_logging_enabled": false
+  },
+  "truth_boundary": {
+    "query_observation_is_public_truth": false,
+    "query_observation_is_accepted_evidence": false,
+    "query_observation_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-08 - Search miss ledger runtime"
+}

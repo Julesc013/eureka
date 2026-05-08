@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-06 Local foundry state contract
+UNSPECIFIED - TRACK-B-07 Query observation runtime
 
 ## GOAL
 
-TRACK-B-06 Local foundry state contract
+TRACK-B-07 Query observation runtime
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4023
-- approx_tokens: 1006
+- chars: 4017
+- approx_tokens: 1005
 - budget_status: PASS
 - warnings:
   - none

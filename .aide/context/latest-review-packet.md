@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4023 chars, 1006 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4017 chars, 1005 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,21 +36,24 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `contracts/node/local_foundry_state.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/track-b-06-local-foundry-state-contract-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_export_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_privacy_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_reset_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_state_kind_registry.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_state/local_foundry_state_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/LOCAL_FOUNDRY_STATE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_FOUNDRY_RESET_AND_EXPORT.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_FOUNDRY_STATE_POLICY.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/LOCAL_FOUNDRY_STATE_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/local_foundry_state` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_local_foundry_state.py` (??; does not match active task allowed paths)
-- unknown: `tests/contracts/test_local_foundry_state.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-07-query-observation-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/query_observation_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/query_observation_poisoning_guard_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/query_observation_privacy_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/observations/query_observation_runtime_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/QUERY_OBSERVATION_RUNTIME_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/QUERY_OBSERVATION_PRIVACY_AND_POISONING.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/QUERY_OBSERVATION_RUNTIME.md` (??; matches active task allowed path)
+- unknown: `examples/query_observations/empty_result_query_observation_v0.json` (??; does not match active task allowed paths)
+- unknown: `examples/query_observations/minimal_query_observation_v0.json` (??; does not match active task allowed paths)
+- unknown: `examples/query_observations/policy_blocked_query_observation_v0.json` (??; does not match active task allowed paths)
+- unknown: `examples/query_observations/useful_result_query_observation_v0.json` (??; does not match active task allowed paths)
+- unknown: `examples/query_observations/weak_result_query_observation_v0.json` (??; does not match active task allowed paths)
+- unknown: `runtime/local_foundry` (??; does not match active task allowed paths)
+- unknown: `scripts/record_query_observation.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_query_observation_runtime.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_query_observation_runtime_scripts.py` (??; does not match active task allowed paths)
+- unknown: `tests/runtime/test_query_observation_runtime.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -60,8 +63,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5921
-- approx_tokens: 1481
+- chars: 6353
+- approx_tokens: 1589
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

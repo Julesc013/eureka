@@ -1,0 +1,166 @@
+{
+  "input_ref": "examples/query_observations/minimal_query_observation_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_public_telemetry": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "base_contract_ref": "contracts/query/query_observation.v0.json",
+    "failure_modes": [
+      "weak_result"
+    ],
+    "first_useful_result_rank": null,
+    "limitations": [
+      "Synthetic local fixture only.",
+      "No external search or public telemetry was performed."
+    ],
+    "local_index_mode": "fixture_or_report_only",
+    "notes": [
+      "Example is local-only and safe to ignore."
+    ],
+    "observation_status": "example_only",
+    "outcome_classification": "weak_result",
+    "output_candidates": [
+      {
+        "created": false,
+        "output_status": "review_gated_future",
+        "output_type": "miss_ledger_seed_future",
+        "requires_review": true
+      }
+    ],
+    "poisoning_guard_posture": {
+      "decision": "no_risk_detected",
+      "notes": [
+        "Poisoning guard flags risks only; it does not make public ranking or truth decisions."
+      ],
+      "poisoning_guarded": true,
+      "public_decision_made": false,
+      "risk_count": 0,
+      "risk_flags": []
+    },
+    "privacy_posture": {
+      "account_identity_collected": false,
+      "accounts_required": false,
+      "browser_state_collection_allowed": false,
+      "location_collected": false,
+      "privacy_filtered": false,
+      "privacy_risks": [],
+      "private_data_allowed": false,
+      "public_telemetry_enabled": false,
+      "query_hash": "e2c6c7318b1705d3053bc3563ba2e89fdca7f2931854a07bd5900d31fe9ddd98",
+      "raw_public_query_logging_enabled": false,
+      "raw_query_allowed": true,
+      "raw_query_retained": false,
+      "redacted_query_text": "windows 7 apps"
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_public_telemetry": false,
+      "mutated_master_index": false
+    },
+    "query_context": "synthetic committed fixture",
+    "query_id_optional": "windows_7_apps",
+    "query_observation_id": "query_observation.minimal.windows_7_apps.v0",
+    "query_source": "explicit_test_fixture",
+    "query_text": "windows 7 apps",
+    "result_count": 3,
+    "result_quality": "mixed",
+    "review_gates": {
+      "human_review_required_for_downstream_use": true,
+      "master_index_review_required": true,
+      "miss_ledger_review_required": true,
+      "search_need_review_required": true,
+      "workunit_review_required": true
+    },
+    "schema_version": "query_observation_runtime.v0",
+    "search_mode": "local_only",
+    "submitted_via": "explicit_json_input",
+    "top_result_refs": [
+      "fixture:public-index:example-1"
+    ],
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "query_observation_can_mutate_master_index": false,
+      "query_observation_claims_global_absence": false,
+      "query_observation_is_accepted_evidence": false,
+      "query_observation_is_observed_external_baseline": false,
+      "query_observation_is_public_truth": false
+    }
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "public_telemetry_enabled": false,
+    "raw_public_query_logging_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "query_observation_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "failure_modes": [
+      "weak_result"
+    ],
+    "first_useful_result_rank": null,
+    "observation_status": "example_only",
+    "outcome_classification": "weak_result",
+    "poisoning_risks": [],
+    "privacy_risks": [],
+    "query_observation_id": "query_observation.minimal.windows_7_apps.v0",
+    "query_source": "explicit_test_fixture",
+    "result_count": 3,
+    "result_quality": "mixed",
+    "review_required": true,
+    "truth_boundary": {
+      "query_observation_can_mutate_master_index": false,
+      "query_observation_is_accepted_evidence": false,
+      "query_observation_is_public_truth": false
+    }
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "query_observation_can_mutate_master_index": false,
+    "query_observation_is_accepted_evidence": false,
+    "query_observation_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "query_observation_runtime.v0",
+  "query_observation_id": "query_observation.weak.mac_os_9_browser.v0",
+  "base_contract_ref": "contracts/query/query_observation.v0.json",
+  "observation_status": "poisoning_guarded",
+  "query_text": "mac os 9 browser example",
+  "query_id_optional": "mac_os_9_browser_example",
+  "query_source": "public_search_rehearsal_fixture",
+  "query_context": "synthetic weak local result",
+  "submitted_via": "explicit_json_input",
+  "search_mode": "local_only",
+  "local_index_mode": "fixture_or_report_only",
+  "result_count": 2,
+  "top_result_refs": [
+    "fixture:public-index:near-match-1",
+    "fixture:public-index:near-match-2"
+  ],
+  "result_quality": "weak",
+  "first_useful_result_rank": null,
+  "failure_modes": [
+    "weak_result",
+    "ranking_gap",
+    "compatibility_gap"
+  ],
+  "limitations": [
+    "Weak local results need review before downstream use."
+  ],
+  "privacy_posture": {
+    "raw_query_allowed": true,
+    "raw_query_retained": false,
+    "public_telemetry_enabled": false,
+    "accounts_required": false,
+    "raw_public_query_logging_enabled": false,
+    "private_data_allowed": false,
+    "browser_state_collection_allowed": false,
+    "account_identity_collected": false,
+    "location_collected": false,
+    "privacy_filtered": false,
+    "privacy_risks": []
+  },
+  "poisoning_guard_posture": {
+    "poisoning_guarded": true,
+    "risk_flags": [],
+    "risk_count": 0,
+    "decision": "no_risk_detected",
+    "public_decision_made": false
+  },
+  "output_candidates": [
+    {
+      "output_type": "miss_ledger_seed_future",
+      "output_status": "review_gated_future",
+      "requires_review": true,
+      "created": false
+    }
+  ],
+  "review_gates": {
+    "human_review_required_for_downstream_use": true,
+    "miss_ledger_review_required": true,
+    "search_need_review_required": true,
+    "workunit_review_required": true,
+    "master_index_review_required": true
+  },
+  "truth_boundary": {
+    "query_observation_is_public_truth": false,
+    "query_observation_is_accepted_evidence": false,
+    "query_observation_can_mutate_master_index": false,
+    "query_observation_is_observed_external_baseline": false,
+    "query_observation_claims_global_absence": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Weak result fixture does not change public ranking."
+  ]
+}

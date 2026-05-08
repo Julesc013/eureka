@@ -1,0 +1,139 @@
+{
+  "schema_version": "query_observation_runtime_policy.v0",
+  "policy_id": "query_observation_runtime_policy_v0",
+  "label": "Query Observation runtime policy",
+  "description": "Bounds the explicit-input, local-only Query Observation runtime.",
+  "allowed_input_sources": [
+    "explicit_test_fixture",
+    "local_eval",
+    "manual_observation_candidate",
+    "public_search_rehearsal_fixture",
+    "static_demo_fixture",
+    "agent_assisted_candidate",
+    "future_public_search_with_privacy_filter",
+    "future_node_workunit"
+  ],
+  "current_allowed_input_sources": [
+    "explicit_test_fixture",
+    "local_eval",
+    "manual_observation_candidate",
+    "public_search_rehearsal_fixture",
+    "static_demo_fixture",
+    "agent_assisted_candidate"
+  ],
+  "allowed_statuses": [
+    "example_only",
+    "recorded_local",
+    "privacy_filtered",
+    "poisoning_guarded",
+    "needs_review",
+    "approved_for_miss_ledger_future",
+    "approved_for_search_need_seed_future",
+    "rejected",
+    "duplicate",
+    "policy_blocked",
+    "deferred",
+    "not_evaluable"
+  ],
+  "current_allowed_statuses": [
+    "example_only",
+    "recorded_local",
+    "privacy_filtered",
+    "poisoning_guarded",
+    "needs_review",
+    "policy_blocked",
+    "not_evaluable"
+  ],
+  "allowed_failure_modes": [
+    "none",
+    "empty_result",
+    "weak_result",
+    "ranking_gap",
+    "source_gap",
+    "extraction_gap",
+    "compatibility_gap",
+    "representation_gap",
+    "identity_gap",
+    "temporal_version_gap",
+    "policy_blocked",
+    "privacy_filtered",
+    "poisoning_risk",
+    "not_evaluable"
+  ],
+  "allowed_output_types": [
+    "query_observation_record",
+    "query_observation_summary",
+    "miss_ledger_seed_future",
+    "search_need_seed_future",
+    "workunit_seed_future",
+    "observation_candidate_future",
+    "review_item_future"
+  ],
+  "forbidden_output_types": [
+    "observed_external_baseline_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "privacy_policy_ref": "control/inventory/observations/query_observation_privacy_policy.json",
+  "poisoning_guard_policy_ref": "control/inventory/observations/query_observation_poisoning_guard_policy.json",
+  "output_policy_ref": "control/inventory/observations/query_observation_output_policy.json",
+  "base_contract_ref": "contracts/query/query_observation.v0.json",
+  "review_required_before_downstream_use": true,
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "explicitly_provided_temp_directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no public telemetry",
+    "no hosted query capture",
+    "no automatic public query logging",
+    "no network calls",
+    "no model calls",
+    "no master-index mutation",
+    "no evidence truth"
+  ],
+  "notes": [
+    "Runtime accepts explicit local input only.",
+    "Writes are disabled by default and require an explicit allowed output path."
+  ]
+}

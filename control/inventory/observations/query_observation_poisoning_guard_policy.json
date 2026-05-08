@@ -1,0 +1,70 @@
+{
+  "schema_version": "query_observation_poisoning_guard_policy.v0",
+  "policy_id": "query_observation_poisoning_guard_policy_v0",
+  "label": "Query Observation poisoning guard policy",
+  "risk_checks": [
+    "repeated_spam_query",
+    "suspiciously_long_query",
+    "url_injection",
+    "local_path_injection",
+    "credential_like_content",
+    "private_data_content",
+    "binary_download_request",
+    "executable_install_request",
+    "unsupported_live_probe_request",
+    "unsupported_scraping_request",
+    "unsupported_account_upload_request",
+    "source_manipulation_attempt",
+    "result_rank_manipulation_attempt",
+    "automated_bulk_pattern_future"
+  ],
+  "risk_meanings": {
+    "repeated_spam_query": "Repeated tokens may represent synthetic demand stuffing.",
+    "suspiciously_long_query": "Very long query text requires review before reuse.",
+    "url_injection": "Raw URL-like content is not a source observation.",
+    "local_path_injection": "Local path text must not be retained as public-safe query data.",
+    "credential_like_content": "Credential-like markers require privacy filtering.",
+    "private_data_content": "Private contact-like data requires privacy filtering.",
+    "binary_download_request": "Download intent is not execution permission.",
+    "executable_install_request": "Install or execute intent remains blocked.",
+    "unsupported_live_probe_request": "Live probing is not enabled by query observation.",
+    "unsupported_scraping_request": "Scraping and crawling remain forbidden.",
+    "unsupported_account_upload_request": "Account, upload, cookie, or session material is forbidden.",
+    "source_manipulation_attempt": "Requests to bypass source policy are review risks.",
+    "result_rank_manipulation_attempt": "Ranking manipulation requests are review risks.",
+    "automated_bulk_pattern_future": "Bulk patterns are future policy items and not current demand truth."
+  },
+  "runtime_behavior": {
+    "flags_risks": true,
+    "makes_public_decisions": false,
+    "mutates_ranking": false,
+    "mutates_master_index": false
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Risk flags do not create public ranking or truth decisions."
+  ]
+}
