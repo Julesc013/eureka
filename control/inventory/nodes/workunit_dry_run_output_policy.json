@@ -1,0 +1,81 @@
+{
+  "schema_version": "workunit_dry_run_output_policy.v0",
+  "policy_id": "eureka_workunit_dry_run_output_policy_v0",
+  "label": "Eureka WorkUnit dry-run output policy",
+  "allowed_output_types": [
+    "candidate_record_future",
+    "contribution_pack_draft_future",
+    "dry_run_report",
+    "evidence_draft_future",
+    "observation_candidate",
+    "observation_candidate_summary",
+    "pack_export_future",
+    "review_item_future",
+    "search_need_seed_future",
+    "source_lead_candidate",
+    "validation_report",
+    "workunit_report",
+    "workunit_seed_future"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "malware_safety",
+    "master_index_mutation",
+    "observed_baseline_truth",
+    "production_readiness_claim",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/workunit_dry_runs/**",
+    "explicit temporary directory in tests"
+  ],
+  "forbidden_output_roots": [
+    ".aide.local/",
+    ".cache/eureka/",
+    ".local/eureka/",
+    "contracts/",
+    "control/inventory/publication/",
+    "master-index-related roots",
+    "runtime/",
+    "site/dist/"
+  ],
+  "output_rules": {
+    "writes_no_files_by_default": true,
+    "explicit_output_path_required": true,
+    "review_required_before_downstream_use": true,
+    "automatic_public_use_allowed": false,
+    "automatic_master_index_mutation_allowed": false,
+    "automatic_evidence_acceptance_allowed": false
+  },
+  "product_boundary": {
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_node_runtime": false,
+    "implemented_workunit_runtime": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "Dry-run outputs are WorkUnitResult reports and review-gated proposals only."
+  ]
+}

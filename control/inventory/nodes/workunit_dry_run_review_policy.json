@@ -1,0 +1,64 @@
+{
+  "schema_version": "workunit_dry_run_review_policy.v0",
+  "policy_id": "eureka_workunit_dry_run_review_policy_v0",
+  "label": "Eureka WorkUnit dry-run review policy",
+  "required_review_gates": [
+    "candidate_review_required",
+    "evidence_review_required",
+    "human_review_required",
+    "legal_or_rights_decision_stop_required",
+    "master_index_review_required",
+    "operator_approval_required_for_hosted_behavior",
+    "operator_approval_required_for_network",
+    "pack_review_required",
+    "privacy_review_required",
+    "rights_review_required",
+    "risk_review_required",
+    "source_policy_review_required"
+  ],
+  "human_review_required_before_downstream_use": true,
+  "source_policy_review_required_for_source_work": true,
+  "master_index_review_required_before_mutation": true,
+  "automatic_public_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "allowed_review_states": [
+    "needs_review",
+    "blocked",
+    "noop_validated",
+    "deferred",
+    "not_evaluable"
+  ],
+  "forbidden_review_outcomes": [
+    "auto_accept_candidate",
+    "auto_accept_evidence",
+    "auto_mutate_master_index",
+    "auto_enable_live_source_access"
+  ],
+  "product_boundary": {
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_node_runtime": false,
+    "implemented_workunit_runtime": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "Dry-run review can classify, defer, block, or record noop, but it cannot accept truth."
+  ]
+}

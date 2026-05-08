@@ -1,0 +1,112 @@
+{
+  "schema_version": "workunit_dry_run_policy.v0",
+  "policy_id": "eureka_workunit_dry_run_policy_v0",
+  "label": "Eureka WorkUnit dry-run policy",
+  "description": "Defines the bounded simulator posture for explicit WorkUnit JSON inputs. Dry-run validates and classifies only; it does not execute WorkUnits.",
+  "allowed_workunit_statuses_for_dry_run": [
+    "approval_gated",
+    "blocked",
+    "completed_future",
+    "contract_only",
+    "deferred",
+    "dry_run_only",
+    "example_only",
+    "human_operated",
+    "operator_gated",
+    "permission_needed",
+    "planned",
+    "policy_blocked",
+    "ready_for_manual_review",
+    "ready_for_validation",
+    "rejected_future",
+    "superseded_future"
+  ],
+  "allowed_workunit_types_for_dry_run": [
+    "ai_assisted_drafting_future",
+    "approved_metadata_probe_future",
+    "approved_metadata_sync_future",
+    "candidate_dedup",
+    "compatibility_evidence_review",
+    "container_deepening_future",
+    "contribution_pack_drafting_future",
+    "discussion_to_evidence_future",
+    "evidence_pack_drafting_future",
+    "hash_verification_future",
+    "local_eval_failure_review",
+    "observation_candidate_review",
+    "policy_blocked_work_unit",
+    "search_need_review",
+    "source_lead_inspection",
+    "source_pack_drafting_future",
+    "wayback_metadata_trace_future"
+  ],
+  "allowed_node_modes_for_dry_run": [
+    "community_node_future",
+    "hosted_worker_future",
+    "institution_node_future",
+    "local_autonomous_dry_run",
+    "local_pack_builder",
+    "local_private"
+  ],
+  "current_dry_run_node_modes": [
+    "local_autonomous_dry_run",
+    "local_pack_builder",
+    "local_private"
+  ],
+  "dry_run_only": true,
+  "explicit_workunit_input_only": true,
+  "writes_no_files_by_default": true,
+  "executes_workunit_actions": false,
+  "side_effect_policy": {
+    "network_calls_allowed": false,
+    "api_calls_allowed": false,
+    "model_provider_calls_allowed": false,
+    "source_access_allowed": false,
+    "browser_automation_allowed": false,
+    "downloads_allowed": false,
+    "uploads_allowed": false,
+    "telemetry_allowed": false,
+    "master_index_mutation_allowed": false,
+    "private_local_state_creation_allowed": false
+  },
+  "truth_boundary": {
+    "dry_run_result_is_public_truth": false,
+    "dry_run_result_is_accepted_evidence": false,
+    "dry_run_result_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_node_runtime": false,
+    "implemented_workunit_runtime": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "No real WorkUnit execution",
+    "No node runtime implementation",
+    "No source access or network calls",
+    "No accepted evidence or public truth",
+    "No master-index mutation"
+  ],
+  "notes": [
+    "This policy constrains a simulator used for dry-run evidence only."
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "work_unit_result.v0",
+  "workunit_result_id": "search_need_review_dry_run_v0",
+  "workunit_result_label": "SearchNeed review dry-run result",
+  "workunit_id": "search_need_review_v0",
+  "workunit_type": "search_need_review",
+  "workunit_result_status": "pass",
+  "result_scope": "manual_observation_support",
+  "produced_by": {
+    "producer_type": "local_foundry_workunit_dry_run",
+    "node_id": "local_private_node_v0",
+    "human_review_required": true
+  },
+  "produced_at_note": "Synthetic dry-run example; no WorkUnit action was executed.",
+  "source_workunit_ref": "examples/work_units/search_need_review_v0/work_unit.json",
+  "node_manifest_ref": "examples/nodes/local_private_node_v0/eureka_node_manifest.json",
+  "node_policy_ref": "examples/nodes/policies/local_private_node_policy_v0.json",
+  "node_capability_refs": [
+    "repo_local_inspection",
+    "search_need_analysis"
+  ],
+  "execution_mode": "dry_run_only",
+  "execution_summary": {
+    "workunit_executed": false,
+    "runtime_used": false,
+    "network_used": false,
+    "model_provider_used": false,
+    "local_state_created": false,
+    "summary": "Dry-run simulated allowed review planning only."
+  },
+  "validation_summary": {
+    "validation_status": "pass",
+    "commands_run": [
+      "python scripts/run_workunit_dry_run.py --workunit examples/work_units/search_need_review_v0/work_unit.json --check"
+    ],
+    "validators_run": [
+      "validate_workunit_dry_run_runner"
+    ],
+    "tests_run": [],
+    "warnings_count": 0,
+    "errors_count": 0,
+    "warn_only": false,
+    "validation_artifacts": [
+      "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+    ],
+    "validation_limitations": [
+      "Example dry-run result only; no WorkUnit execution."
+    ],
+    "notes": []
+  },
+  "planned_actions": [
+    {
+      "action_id": "dry_run_plan_search_need_review",
+      "action_type": "prepare_search_need_seed_future",
+      "action_status": "deferred",
+      "action_scope": "future_planning",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "reason": "Future seed planning remains review-gated.",
+      "output_refs": [
+        "search_need_seed_review_item"
+      ],
+      "validation_refs": [
+        "workunit_dry_run"
+      ],
+      "notes": []
+    }
+  ],
+  "executed_actions": [],
+  "skipped_actions": [],
+  "blocked_actions": [],
+  "forbidden_actions_checked": [
+    {
+      "action_id": "check_master_index_mutation_forbidden",
+      "action_type": "mutate_master_index",
+      "action_status": "forbidden_checked",
+      "action_scope": "truth_boundary",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "reason": "Dry-run cannot mutate the master index.",
+      "output_refs": [],
+      "validation_refs": [
+        "workunit_dry_run"
+      ],
+      "notes": []
+    }
+  ],
+  "inputs_observed": [
+    {
+      "input_id": "manual_pending_slot_example",
+      "input_type": "manual_pending_slot",
+      "input_ref": "examples/manual_observations/valid_pending_slot_observation_v0.json",
+      "input_status": "used",
+      "input_public_safe": true,
+      "input_used": true,
+      "input_limitations": [
+        "Input is pending review and not observed baseline truth."
+      ],
+      "notes": []
+    }
+  ],
+  "outputs_proposed": [
+    {
+      "output_id": "search_need_seed_review_item",
+      "output_type": "search_need_seed_future",
+      "output_status": "needs_review",
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_ref": null,
+      "output_summary": "Review-gated future SearchNeed seed proposal.",
+      "output_public_safe": true,
+      "output_requires_review": true,
+      "output_truth_boundary": {
+        "accepted_public_truth": false,
+        "accepted_evidence_truth": false,
+        "master_index_mutation": false
+      },
+      "output_limitations": [
+        "Dry-run output is not accepted truth."
+      ],
+      "notes": []
+    }
+  ],
+  "outputs_rejected": [],
+  "output_contract_refs": [
+    "contracts/node/work_unit_result.v0.json"
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true,
+    "operator_approval_required_for_network": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "legal_or_rights_decision_stop_required": true
+  },
+  "idempotency_result": {
+    "safe_to_rerun": true,
+    "duplicate_detected": false,
+    "duplicate_behavior_applied": "not_applicable",
+    "noop_recorded": false,
+    "resume_required": false,
+    "conflict_detected": false
+  },
+  "recovery_result": {
+    "dirty_tree_handled": "not_applicable",
+    "missing_dependency_handled": "not_applicable",
+    "stale_status_reconciled": "not_applicable",
+    "failed_validation_handled": "not_applicable",
+    "out_of_order_task_handled": "not_applicable",
+    "repeated_prompt_handled": "not_applicable"
+  },
+  "duplicate_result": {
+    "duplicate_detected": false,
+    "behavior_applied": "not_applicable",
+    "notes": []
+  },
+  "out_of_order_result": {
+    "out_of_order_detected": false,
+    "behavior_applied": "not_applicable"
+  },
+  "noop_result": {
+    "noop_recorded": false,
+    "noop_reason": "not_applicable",
+    "validated_without_changes": false
+  },
+  "quarantine_result": {
+    "quarantined": false,
+    "quarantine_reason": "not_applicable",
+    "review_required": false
+  },
+  "warnings": [],
+  "errors": [],
+  "limitations": [
+    "Dry-run result does not execute the WorkUnit."
+  ],
+  "audit_refs": [
+    "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+  ],
+  "truth_boundary": {
+    "result_is_observed_baseline": false,
+    "result_is_accepted_evidence": false,
+    "result_is_public_truth": false,
+    "result_mutates_master_index": false,
+    "result_claims_rights_clearance": false,
+    "result_claims_malware_safety": false,
+    "result_claims_verified_installability": false,
+    "result_claims_exhaustive_global_search": false,
+    "result_claims_production_readiness": false
+  },
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No real WorkUnit execution",
+    "No accepted SearchNeed",
+    "No master-index mutation"
+  ],
+  "notes": []
+}

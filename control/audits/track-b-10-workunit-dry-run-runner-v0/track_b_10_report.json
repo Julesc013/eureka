@@ -1,0 +1,102 @@
+{
+  "schema_version": "track_b_10_report.v0",
+  "status": "pass",
+  "track": "B",
+  "task": "TRACK-B-10",
+  "added_runtime_modules": [
+    "runtime/local_foundry/workunit_dry_run.py"
+  ],
+  "added_scripts": [
+    "scripts/run_workunit_dry_run.py",
+    "scripts/validate_workunit_dry_run_runner.py"
+  ],
+  "added_docs": [
+    "docs/reference/WORKUNIT_DRY_RUN_RUNNER.md",
+    "docs/architecture/WORKUNIT_DRY_RUN_MODEL.md",
+    "docs/operations/WORKUNIT_DRY_RUN_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/nodes/workunit_dry_run_policy.json",
+    "control/inventory/nodes/workunit_dry_run_action_matrix.json",
+    "control/inventory/nodes/workunit_dry_run_output_policy.json",
+    "control/inventory/nodes/workunit_dry_run_review_policy.json"
+  ],
+  "added_examples": [
+    "examples/workunit_dry_runs/search_need_review_dry_run_v0/work_unit_result.json",
+    "examples/workunit_dry_runs/source_lead_inspection_dry_run_v0/work_unit_result.json",
+    "examples/workunit_dry_runs/policy_blocked_dry_run_v0/work_unit_result.json",
+    "examples/workunit_dry_runs/noop_dry_run_v0/work_unit_result.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_workunit_dry_run.py",
+    "tests/operations/test_workunit_dry_run_scripts.py"
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "json_syntax": "pass",
+    "node_manifest_validator": "pass",
+    "node_policy_validator": "pass",
+    "node_capability_validator": "pass",
+    "workunit_validator": "pass",
+    "workunit_result_validator": "pass",
+    "local_foundry_state_validator": "pass",
+    "query_observation_runtime_validator": "pass",
+    "search_miss_ledger_runtime_validator": "pass",
+    "search_need_runtime_validator": "pass",
+    "workunit_dry_run_runner_validator": "pass",
+    "workunit_dry_run_check": "pass",
+    "track_a_validator": "pass",
+    "agent_assisted_observation_policy_validator": "pass",
+    "observation_candidate_validator": "pass",
+    "unittest_discovery": "pass",
+    "architecture_boundaries": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "warn_zero_errors",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass",
+    "aide_review_pack": "warn_inherited_verify_zero_errors",
+    "aide_adapter_validate": "pass",
+    "private_root_checks": "pass"
+  },
+  "runtime_scope": {
+    "explicit_workunit_input_only": true,
+    "dry_run_only": true,
+    "writes_no_files_by_default": true,
+    "executes_workunit_actions": false,
+    "public_telemetry_enabled": false
+  },
+  "truth_boundary": {
+    "dry_run_result_is_public_truth": false,
+    "dry_run_result_is_accepted_evidence": false,
+    "dry_run_result_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_workunit_execution": false,
+    "implemented_node_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-11 \u2014 Node policy evaluator"
+}

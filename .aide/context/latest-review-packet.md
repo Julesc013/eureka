@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4003 chars, 1001 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4013 chars, 1004 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,26 +36,20 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-09-search-need-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/search_need_intent_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/search_need_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/search_need_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/search_need_runtime_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/observations/search_need_status_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/SEARCH_NEED_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SEARCH_NEED_REVIEW.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/SEARCH_NEED_RUNTIME.md` (??; matches active task allowed path)
-- unknown: `examples/search_needs/article_member_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/search_needs/driver_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/search_needs/minimal_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/search_needs/not_evaluable_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/search_needs/policy_blocked_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `examples/search_needs/software_version_search_need_v0.json` (??; does not match active task allowed paths)
-- unknown: `runtime/local_foundry/search_need.py` (??; does not match active task allowed paths)
-- unknown: `scripts/record_search_need.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_search_need_runtime.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_search_need_runtime_scripts.py` (??; does not match active task allowed paths)
-- unknown: `tests/runtime/test_search_need_runtime.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-10-workunit-dry-run-runner-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_dry_run_action_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_dry_run_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_dry_run_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/nodes/workunit_dry_run_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/WORKUNIT_DRY_RUN_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/WORKUNIT_DRY_RUN_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/WORKUNIT_DRY_RUN_RUNNER.md` (??; matches active task allowed path)
+- unknown: `examples/workunit_dry_runs` (??; does not match active task allowed paths)
+- unknown: `runtime/local_foundry/workunit_dry_run.py` (??; does not match active task allowed paths)
+- unknown: `scripts/run_workunit_dry_run.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_workunit_dry_run_runner.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_workunit_dry_run_scripts.py` (??; does not match active task allowed paths)
+- unknown: `tests/runtime/test_workunit_dry_run.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -65,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6441
-- approx_tokens: 1611
+- chars: 5725
+- approx_tokens: 1432
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

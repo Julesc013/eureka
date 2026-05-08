@@ -1,0 +1,753 @@
+{
+  "audit_refs": [
+    "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+  ],
+  "blocked_actions": [],
+  "duplicate_result": {
+    "behavior_applied": "not_applicable",
+    "duplicate_detected": false,
+    "notes": []
+  },
+  "errors": [],
+  "executed_actions": [],
+  "execution_mode": "dry_run_only",
+  "execution_summary": {
+    "local_state_created": false,
+    "model_provider_used": false,
+    "network_used": false,
+    "runtime_used": false,
+    "summary": "Dry-run simulated allowed actions and produced a review-gated result envelope.",
+    "workunit_executed": false
+  },
+  "forbidden_actions_checked": [
+    {
+      "action_id": "forbidden_check_001_mutate_master_index",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "mutate_master_index",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_002_mark_candidate_accepted",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "mark_candidate_accepted",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_003_mark_evidence_accepted",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "mark_evidence_accepted",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_004_mark_observation_observed_without_human",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "mark_observation_observed_without_human",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_005_mark_agent_output_as_truth",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "mark_agent_output_as_truth",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_006_enable_live_probe",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "enable_live_probe",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_007_scrape_external_site",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "scrape_external_site",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_008_crawl_external_site",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "crawl_external_site",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_009_browser_automation",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "browser_automation",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_010_call_unapproved_api",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "call_unapproved_api",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_011_download_binary",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "download_binary",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_012_run_installer",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "run_installer",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_013_execute_downloaded_artifact",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "execute_downloaded_artifact",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_014_store_credentials",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "store_credentials",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_015_upload_to_hosted_backend",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "upload_to_hosted_backend",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_016_create_account_or_user_data",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "create_account_or_user_data",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_017_emit_telemetry",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "emit_telemetry",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_018_claim_rights_clearance",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "claim_rights_clearance",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_019_claim_malware_safety",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "claim_malware_safety",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_020_claim_verified_installability",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "claim_verified_installability",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_021_claim_exhaustive_global_search",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "claim_exhaustive_global_search",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "forbidden_check_022_claim_production_readiness",
+      "action_scope": "dry_run_forbidden_action_model",
+      "action_status": "forbidden_checked",
+      "action_type": "claim_production_readiness",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Forbidden action remains blocked and was not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    }
+  ],
+  "idempotency_result": {
+    "conflict_detected": false,
+    "duplicate_behavior_applied": "not_applicable",
+    "duplicate_detected": false,
+    "noop_recorded": false,
+    "resume_required": false,
+    "safe_to_rerun": true
+  },
+  "inputs_observed": [
+    {
+      "input_id": "manual_pending_slot_example",
+      "input_limitations": [
+        "Pending slot is not observed baseline evidence."
+      ],
+      "input_public_safe": true,
+      "input_ref": "examples/manual_observations/valid_pending_slot_observation_v0.json",
+      "input_status": "used",
+      "input_type": "manual_pending_slot",
+      "input_used": true,
+      "notes": []
+    }
+  ],
+  "limitations": [
+    "Dry-run simulates policy decisions only.",
+    "Dry-run results are review-gated and not public truth.",
+    "No WorkUnit action, source access, model call, or network call occurred."
+  ],
+  "no_goals": [
+    "No real WorkUnit execution",
+    "No node runtime implementation",
+    "No source access, network, API, or model call",
+    "No accepted evidence, public truth, or master-index mutation"
+  ],
+  "node_capability_refs": [
+    "repo_local_inspection",
+    "search_need_analysis"
+  ],
+  "node_manifest_ref": "examples/nodes/local_private_node_v0/eureka_node_manifest.json",
+  "node_policy_ref": "examples/nodes/policies/local_private_node_policy_v0.json",
+  "noop_result": {
+    "noop_reason": "not_applicable",
+    "noop_recorded": false,
+    "validated_without_changes": false
+  },
+  "notes": [],
+  "out_of_order_result": {
+    "behavior_applied": "not_applicable",
+    "out_of_order_detected": false
+  },
+  "output_contract_refs": [
+    "contracts/node/work_unit.v0.json",
+    "contracts/node/work_unit_result.v0.json"
+  ],
+  "outputs_proposed": [
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit.v0.json",
+      "output_id": "search_need_seed_review_item",
+      "output_limitations": [
+        "A seed is not an accepted SearchNeed.",
+        "Dry-run output is not accepted truth."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "needs_review",
+      "output_summary": "Dry-run proposed search_need_seed_future; no artifact was created.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "search_need_seed_future"
+    }
+  ],
+  "outputs_rejected": [
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_observed_baseline_truth",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output observed_baseline_truth was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_accepted_evidence_truth",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output accepted_evidence_truth was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_accepted_public_record",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output accepted_public_record was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_master_index_mutation",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output master_index_mutation was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_rights_clearance",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output rights_clearance was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_malware_safety",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output malware_safety was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_verified_installability",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output verified_installability was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_exhaustive_global_search_proof",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output exhaustive_global_search_proof was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    },
+    {
+      "notes": [],
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_id": "reject_production_readiness_claim",
+      "output_limitations": [
+        "Rejected output was not created."
+      ],
+      "output_public_safe": true,
+      "output_ref": null,
+      "output_requires_review": true,
+      "output_status": "rejected",
+      "output_summary": "Forbidden output production_readiness_claim was rejected by dry-run policy.",
+      "output_truth_boundary": {
+        "accepted_evidence_truth": false,
+        "accepted_public_truth": false,
+        "master_index_mutation": false
+      },
+      "output_type": "workunit_report"
+    }
+  ],
+  "planned_actions": [
+    {
+      "action_id": "dry_run_action_001_inspect_repo_local_artifact",
+      "action_scope": "dry_run_simulation",
+      "action_status": "planned",
+      "action_type": "inspect_repo_local_artifact",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Action was simulated only; no side effect occurred.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "dry_run_action_002_summarize_local_gap",
+      "action_scope": "dry_run_simulation",
+      "action_status": "planned",
+      "action_type": "summarize_local_gap",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Action was simulated only; no side effect occurred.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "dry_run_action_004_produce_review_packet",
+      "action_scope": "dry_run_simulation",
+      "action_status": "planned",
+      "action_type": "produce_review_packet",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Action was simulated only; no side effect occurred.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    },
+    {
+      "action_id": "dry_run_action_005_request_human_review",
+      "action_scope": "dry_run_simulation",
+      "action_status": "planned",
+      "action_type": "request_human_review",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Action was simulated only; no side effect occurred.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    }
+  ],
+  "produced_at_note": "Deterministic dry-run result; no WorkUnit action was executed.",
+  "produced_by": {
+    "human_review_required": true,
+    "node_id": "local_private_node_v0",
+    "producer_type": "local_foundry_workunit_dry_run"
+  },
+  "product_boundary": {
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_node_runtime": false,
+    "implemented_workunit_runtime": false,
+    "mutated_master_index": false
+  },
+  "quarantine_result": {
+    "quarantine_reason": "not_applicable",
+    "quarantined": false,
+    "review_required": false
+  },
+  "recovery_result": {
+    "dirty_tree_handled": "not_applicable",
+    "failed_validation_handled": "not_applicable",
+    "missing_dependency_handled": "not_applicable",
+    "out_of_order_task_handled": "not_applicable",
+    "repeated_prompt_handled": "not_applicable",
+    "stale_status_reconciled": "not_applicable"
+  },
+  "result_scope": "manual_observation_support",
+  "review_gates": {
+    "candidate_review_required": true,
+    "evidence_review_required": true,
+    "human_review_required": true,
+    "legal_or_rights_decision_stop_required": true,
+    "master_index_review_required": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "operator_approval_required_for_network": true,
+    "pack_review_required": true,
+    "privacy_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "source_policy_review_required": true
+  },
+  "schema_version": "work_unit_result.v0",
+  "skipped_actions": [
+    {
+      "action_id": "dry_run_action_003_prepare_search_need_seed_future",
+      "action_scope": "future_planning",
+      "action_status": "deferred",
+      "action_type": "prepare_search_need_seed_future",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "notes": [],
+      "output_refs": [],
+      "reason": "Future action was deferred and not executed.",
+      "validation_refs": [
+        "workunit_dry_run"
+      ]
+    }
+  ],
+  "source_workunit_ref": "examples/work_units/search_need_review_v0/work_unit.json",
+  "truth_boundary": {
+    "result_claims_exhaustive_global_search": false,
+    "result_claims_malware_safety": false,
+    "result_claims_production_readiness": false,
+    "result_claims_rights_clearance": false,
+    "result_claims_verified_installability": false,
+    "result_is_accepted_evidence": false,
+    "result_is_observed_baseline": false,
+    "result_is_public_truth": false,
+    "result_mutates_master_index": false
+  },
+  "validation_summary": {
+    "commands_run": [
+      "python scripts/run_workunit_dry_run.py --workunit <explicit-workunit> --check"
+    ],
+    "errors_count": 0,
+    "notes": [],
+    "tests_run": [],
+    "validation_artifacts": [
+      "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+    ],
+    "validation_limitations": [
+      "Dry-run validation does not execute WorkUnit actions."
+    ],
+    "validation_status": "pass",
+    "validators_run": [
+      "workunit_dry_run.validate_workunit_for_dry_run"
+    ],
+    "warn_only": true,
+    "warnings_count": 1
+  },
+  "warnings": [
+    "Future actions were deferred and not executed."
+  ],
+  "workunit_id": "search_need_review_v0",
+  "workunit_result_id": "search_need_review_v0_dry_run_v0",
+  "workunit_result_label": "Dry-run result for SearchNeed review seed example",
+  "workunit_result_status": "pass",
+  "workunit_type": "search_need_review"
+}

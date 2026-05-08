@@ -1,0 +1,241 @@
+{
+  "schema_version": "work_unit_result.v0",
+  "workunit_result_id": "policy_blocked_dry_run_v0",
+  "workunit_result_label": "Policy-blocked WorkUnit dry-run result",
+  "workunit_id": "policy_blocked_work_unit_v0",
+  "workunit_type": "policy_blocked_work_unit",
+  "workunit_result_status": "policy_blocked",
+  "result_scope": "source_policy_review",
+  "produced_by": {
+    "producer_type": "local_foundry_workunit_dry_run",
+    "node_id": "local_autonomous_dry_run_node_v0",
+    "human_review_required": true
+  },
+  "produced_at_note": "Synthetic dry-run example; the blocked work was not performed.",
+  "source_workunit_ref": "examples/work_units/policy_blocked_work_unit_v0/work_unit.json",
+  "node_manifest_ref": "examples/nodes/local_autonomous_dry_run_node_v0/eureka_node_manifest.json",
+  "node_policy_ref": "examples/nodes/policies/policy_blocked_node_policy_v0.json",
+  "node_capability_refs": [
+    "policy_blocked_capability_v0"
+  ],
+  "execution_mode": "blocked",
+  "execution_summary": {
+    "workunit_executed": false,
+    "runtime_used": false,
+    "network_used": false,
+    "model_provider_used": false,
+    "local_state_created": false,
+    "summary": "Dry-run stopped at policy boundary."
+  },
+  "validation_summary": {
+    "validation_status": "pass",
+    "commands_run": [
+      "python scripts/run_workunit_dry_run.py --workunit examples/work_units/policy_blocked_work_unit_v0/work_unit.json --check"
+    ],
+    "validators_run": [
+      "validate_workunit_dry_run_runner"
+    ],
+    "tests_run": [],
+    "warnings_count": 1,
+    "errors_count": 0,
+    "warn_only": true,
+    "validation_artifacts": [
+      "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+    ],
+    "validation_limitations": [
+      "Policy-blocked posture is reported only."
+    ],
+    "notes": []
+  },
+  "planned_actions": [
+    {
+      "action_id": "dry_run_plan_policy_review",
+      "action_type": "produce_review_packet",
+      "action_status": "planned",
+      "action_scope": "policy_review",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "reason": "Review packet is allowed while blocked work remains forbidden.",
+      "output_refs": [
+        "policy_block_report"
+      ],
+      "validation_refs": [
+        "workunit_dry_run"
+      ],
+      "notes": []
+    }
+  ],
+  "executed_actions": [],
+  "skipped_actions": [],
+  "blocked_actions": [
+    {
+      "action_id": "blocked_source_policy_work",
+      "action_type": "request_source_policy_approval_future",
+      "action_status": "blocked",
+      "action_scope": "source_policy",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "reason": "Source policy capability is policy-blocked.",
+      "output_refs": [],
+      "validation_refs": [
+        "workunit_dry_run"
+      ],
+      "notes": []
+    }
+  ],
+  "forbidden_actions_checked": [
+    {
+      "action_id": "check_unapproved_api_forbidden",
+      "action_type": "call_unapproved_api",
+      "action_status": "forbidden_checked",
+      "action_scope": "source_boundary",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "reason": "Dry-run cannot call unapproved APIs.",
+      "output_refs": [],
+      "validation_refs": [
+        "workunit_dry_run"
+      ],
+      "notes": []
+    }
+  ],
+  "inputs_observed": [
+    {
+      "input_id": "blocked_source_policy_note",
+      "input_type": "source_policy_future",
+      "input_ref": "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+      "input_status": "blocked",
+      "input_public_safe": true,
+      "input_used": true,
+      "input_limitations": [
+        "The source/action is blocked until explicit policy changes."
+      ],
+      "notes": []
+    }
+  ],
+  "outputs_proposed": [],
+  "outputs_rejected": [
+    {
+      "output_id": "policy_block_report",
+      "output_type": "workunit_report",
+      "output_status": "blocked",
+      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_ref": null,
+      "output_summary": "Blocked report only; it cannot authorize the blocked work.",
+      "output_public_safe": true,
+      "output_requires_review": true,
+      "output_truth_boundary": {
+        "accepted_public_truth": false,
+        "accepted_evidence_truth": false,
+        "master_index_mutation": false
+      },
+      "output_limitations": [
+        "Blocked report is not runtime permission."
+      ],
+      "notes": []
+    }
+  ],
+  "output_contract_refs": [
+    "contracts/node/work_unit_result.v0.json"
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true,
+    "operator_approval_required_for_network": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "legal_or_rights_decision_stop_required": true
+  },
+  "idempotency_result": {
+    "safe_to_rerun": true,
+    "duplicate_detected": false,
+    "duplicate_behavior_applied": "not_applicable",
+    "noop_recorded": false,
+    "resume_required": false,
+    "conflict_detected": false
+  },
+  "recovery_result": {
+    "dirty_tree_handled": "not_applicable",
+    "missing_dependency_handled": "not_applicable",
+    "stale_status_reconciled": "not_applicable",
+    "failed_validation_handled": "repair_if_bounded_else_record_blocker",
+    "out_of_order_task_handled": "not_applicable",
+    "repeated_prompt_handled": "not_applicable"
+  },
+  "duplicate_result": {
+    "duplicate_detected": false,
+    "behavior_applied": "not_applicable",
+    "notes": []
+  },
+  "out_of_order_result": {
+    "out_of_order_detected": false,
+    "behavior_applied": "not_applicable"
+  },
+  "noop_result": {
+    "noop_recorded": false,
+    "noop_reason": "not_applicable",
+    "validated_without_changes": false
+  },
+  "quarantine_result": {
+    "quarantined": false,
+    "quarantine_reason": "not_applicable",
+    "review_required": false
+  },
+  "warnings": [
+    "Policy-blocked capability was preserved as a blocker."
+  ],
+  "errors": [],
+  "limitations": [
+    "Dry-run result cannot authorize blocked source work."
+  ],
+  "audit_refs": [
+    "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+  ],
+  "truth_boundary": {
+    "result_is_observed_baseline": false,
+    "result_is_accepted_evidence": false,
+    "result_is_public_truth": false,
+    "result_mutates_master_index": false,
+    "result_claims_rights_clearance": false,
+    "result_claims_malware_safety": false,
+    "result_claims_verified_installability": false,
+    "result_claims_exhaustive_global_search": false,
+    "result_claims_production_readiness": false
+  },
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No policy bypass",
+    "No source access",
+    "No runtime permission"
+  ],
+  "notes": []
+}
