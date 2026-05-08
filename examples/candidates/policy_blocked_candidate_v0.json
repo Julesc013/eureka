@@ -1,0 +1,85 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "candidate.policy_blocked.v0",
+  "candidate_status": "policy_blocked",
+  "candidate_type": "policy_blocked_candidate",
+  "candidate_origin": "node_policy_evaluation",
+  "candidate_label": "Policy blocked candidate example",
+  "canonical_candidate_key": "candidate:policy-blocked-example",
+  "proposed_object_summary": {},
+  "proposed_source_summary": {},
+  "proposed_evidence_summary": {},
+  "proposed_representation_summary": {},
+  "proposed_compatibility_summary": {},
+  "proposed_state_summary": "Node policy evaluation blocked this candidate posture.",
+  "related_query_observation_refs": [],
+  "related_search_miss_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_workunit_result_refs": [],
+  "related_node_policy_evaluation_refs": [
+    "node_policy_eval_network_required_blocked_v0"
+  ],
+  "related_observation_candidate_refs": [],
+  "source_lead_refs": [],
+  "evidence_refs_future": [],
+  "pack_refs_future": [],
+  "review_refs_future": [],
+  "confidence_or_uncertainty": "blocked_by_policy",
+  "conflict_summary": "",
+  "deduplication_summary": {
+    "duplicate_possible": false,
+    "automatic_merge_allowed": false
+  },
+  "limitations": [
+    "Policy blocked candidate is not eligible for downstream use."
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "candidate_review_required": true,
+    "evidence_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true
+  },
+  "truth_boundary": {
+    "candidate_store_is_master_index": false,
+    "candidate_is_public_truth": false,
+    "candidate_is_accepted_evidence": false,
+    "candidate_can_mutate_master_index": false,
+    "candidate_can_claim_rights_clearance": false,
+    "candidate_can_claim_malware_safety": false,
+    "candidate_can_claim_verified_installability": false,
+    "candidate_can_claim_exhaustive_global_search": false,
+    "candidate_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Synthetic policy-blocked candidate."
+  ]
+}

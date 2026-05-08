@@ -1,0 +1,61 @@
+{
+  "schema_version": "candidate_type_policy.v0",
+  "policy_id": "eureka_candidate_type_policy_v0",
+  "allowed_candidate_types": [
+    "object_candidate",
+    "source_candidate",
+    "evidence_candidate",
+    "compatibility_candidate",
+    "identity_candidate",
+    "representation_candidate",
+    "member_candidate",
+    "version_or_state_candidate",
+    "source_lead_candidate",
+    "search_need_candidate",
+    "workunit_seed_candidate",
+    "pack_candidate_future",
+    "extraction_candidate_future",
+    "review_item_candidate_future",
+    "policy_blocked_candidate",
+    "not_evaluable_candidate"
+  ],
+  "required_fields_by_type": {
+    "object_candidate": [
+      "proposed_object_summary"
+    ],
+    "source_lead_candidate": [
+      "proposed_source_summary",
+      "source_lead_refs"
+    ],
+    "search_need_candidate": [
+      "related_search_need_refs"
+    ],
+    "workunit_seed_candidate": [
+      "related_workunit_result_refs"
+    ]
+  },
+  "optional_fields_by_type": {
+    "evidence_candidate": [
+      "proposed_evidence_summary",
+      "evidence_refs_future"
+    ],
+    "compatibility_candidate": [
+      "proposed_compatibility_summary"
+    ],
+    "representation_candidate": [
+      "proposed_representation_summary"
+    ]
+  },
+  "invalid_type_combinations": [
+    "policy_blocked_candidate with accepted_public_future",
+    "evidence_candidate with candidate_is_accepted_evidence true",
+    "source_candidate with source lead treated as validated source"
+  ],
+  "ambiguity_rules": [
+    "ambiguous records remain candidates and require human review",
+    "type classification can be replayed from explicit input only"
+  ],
+  "notes": [
+    "Candidate types describe provisional review shape, not verified object classes."
+  ]
+}

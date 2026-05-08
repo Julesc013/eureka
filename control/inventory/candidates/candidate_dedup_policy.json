@@ -1,0 +1,27 @@
+{
+  "schema_version": "candidate_dedup_policy.v0",
+  "policy_id": "eureka_candidate_dedup_policy_v0",
+  "deduplication_mode": "exact_key_report_only",
+  "allowed_dedup_keys": [
+    "canonical_candidate_key",
+    "candidate_label",
+    "candidate_origin",
+    "candidate_type"
+  ],
+  "exact_key_fields": [
+    "canonical_candidate_key"
+  ],
+  "fuzzy_dedup_future": "deferred",
+  "conflict_preservation_required": true,
+  "duplicate_status_rules": [
+    "duplicates may be reported as duplicate_possible",
+    "duplicates must not be merged automatically",
+    "duplicates must not be deleted automatically",
+    "conflicts must be preserved for review"
+  ],
+  "merge_allowed": false,
+  "automatic_merge_allowed": false,
+  "notes": [
+    "Deduplication is a dry-run/report-only classification in this milestone."
+  ]
+}

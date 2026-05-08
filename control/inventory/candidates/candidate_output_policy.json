@@ -1,0 +1,45 @@
+{
+  "schema_version": "candidate_output_policy.v0",
+  "policy_id": "eureka_candidate_output_policy_v0",
+  "allowed_output_types": [
+    "candidate_record",
+    "candidate_summary",
+    "candidate_store_snapshot",
+    "candidate_dedup_report",
+    "review_item_future",
+    "workunit_seed_future",
+    "evidence_draft_future",
+    "contribution_pack_draft_future"
+  ],
+  "forbidden_output_types": [
+    "accepted_public_record",
+    "accepted_evidence_truth",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "automatic_public_export_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "notes": [
+    "Candidate outputs are review artifacts only."
+  ]
+}

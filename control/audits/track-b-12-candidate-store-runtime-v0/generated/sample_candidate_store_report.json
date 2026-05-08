@@ -1,0 +1,766 @@
+{
+  "schema_version": "candidate_store_runtime_report.v0",
+  "snapshot": {
+    "candidate_count": 7,
+    "candidate_store_snapshot_id": "candidate_store_snapshot.e8226f5c7c58.v0",
+    "candidates": [
+      {
+        "_source_identity": "candidate.duplicate_possible.vintage_app.v0",
+        "candidate_id": "candidate.duplicate_possible.vintage_app.v0",
+        "candidate_label": "Vintage app exact version duplicate-possible candidate",
+        "candidate_origin": "search_need",
+        "candidate_status": "duplicate_possible",
+        "candidate_type": "version_or_state_candidate",
+        "canonical_candidate_key": "candidate:vintage-app-version-1-2",
+        "confidence_or_uncertainty": "duplicate_review_required",
+        "conflict_summary": "Potential duplicate of candidate.search_need.software_version.v0.",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": true
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "Duplicate report does not merge records."
+        ],
+        "notes": [
+          "Duplicate marker is report-only."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {
+          "object_family": "software",
+          "product_or_topic": "vintage app example",
+          "version_or_state": "version 1.2"
+        },
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "Shares an exact dedup key with another candidate.",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [],
+        "related_search_need_refs": [
+          "search_need.software_version.vintage_app.v0"
+        ],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.evidence_needed.vintage_driver.v0",
+        "candidate_id": "candidate.evidence_needed.vintage_driver.v0",
+        "candidate_label": "Vintage driver evidence-needed candidate",
+        "candidate_origin": "search_need",
+        "candidate_status": "evidence_needed",
+        "candidate_type": "evidence_candidate",
+        "canonical_candidate_key": "candidate:vintage-driver-evidence-needed",
+        "confidence_or_uncertainty": "evidence_missing",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "No evidence has been accepted."
+        ],
+        "notes": [
+          "Synthetic evidence-needed candidate."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {
+          "compatibility_status": "unresolved"
+        },
+        "proposed_evidence_summary": {
+          "evidence_review_required": true,
+          "evidence_status": "needed"
+        },
+        "proposed_object_summary": {
+          "object_family": "driver",
+          "product_or_topic": "vintage driver package example"
+        },
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "Evidence is needed before any downstream use.",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [
+          "search_miss.weak.vintage_driver.v0"
+        ],
+        "related_search_need_refs": [
+          "search_need.driver.vintage_driver.v0"
+        ],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.minimal.v0",
+        "candidate_id": "candidate.minimal.v0",
+        "candidate_label": "Minimal provisional candidate example",
+        "candidate_origin": "static_demo",
+        "candidate_status": "example_only",
+        "candidate_type": "object_candidate",
+        "canonical_candidate_key": "candidate:minimal-example",
+        "confidence_or_uncertainty": "low_confidence_review_required",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "Example candidate only."
+        ],
+        "notes": [
+          "Synthetic public-safe candidate example."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {
+          "object_family": "software",
+          "product_or_topic": "minimal public-safe example"
+        },
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [],
+        "related_search_need_refs": [],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.policy_blocked.v0",
+        "candidate_id": "candidate.policy_blocked.v0",
+        "candidate_label": "Policy blocked candidate example",
+        "candidate_origin": "node_policy_evaluation",
+        "candidate_status": "policy_blocked",
+        "candidate_type": "policy_blocked_candidate",
+        "canonical_candidate_key": "candidate:policy-blocked-example",
+        "confidence_or_uncertainty": "blocked_by_policy",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "Policy blocked candidate is not eligible for downstream use."
+        ],
+        "notes": [
+          "Synthetic policy-blocked candidate."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {},
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "Node policy evaluation blocked this candidate posture.",
+        "related_node_policy_evaluation_refs": [
+          "node_policy_eval_network_required_blocked_v0"
+        ],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [],
+        "related_search_need_refs": [],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.search_need.software_version.v0",
+        "candidate_id": "candidate.search_need.software_version.v0",
+        "candidate_label": "Vintage app exact version candidate",
+        "candidate_origin": "search_need",
+        "candidate_status": "candidate",
+        "candidate_type": "version_or_state_candidate",
+        "canonical_candidate_key": "candidate:vintage-app-version-1-2",
+        "confidence_or_uncertainty": "low_confidence_review_required",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "Derived from a synthetic SearchNeed and requires review."
+        ],
+        "notes": [
+          "Candidate remains provisional."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {
+          "artifact_type": "application",
+          "desired_user_action": "find_exact_version",
+          "object_family": "software",
+          "platform_or_context": "legacy desktop",
+          "product_or_topic": "vintage app example",
+          "version_or_state": "version 1.2"
+        },
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "SearchNeed suggests a reviewable version candidate.",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [
+          "search_miss.weak.vintage_app_version.v0"
+        ],
+        "related_search_need_refs": [
+          "search_need.software_version.vintage_app.v0"
+        ],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.source_lead.vintage_archive.v0",
+        "candidate_id": "candidate.source_lead.vintage_archive.v0",
+        "candidate_label": "Vintage archive source lead candidate",
+        "candidate_origin": "source_lead",
+        "candidate_status": "needs_review",
+        "candidate_type": "source_lead_candidate",
+        "canonical_candidate_key": "candidate:vintage-archive-source-lead",
+        "confidence_or_uncertainty": "source_not_validated",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "Source lead is not source validation."
+        ],
+        "notes": [
+          "Review may reject, defer, or request more evidence."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {},
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {
+          "source_label": "Vintage archive public-safe fixture",
+          "source_mode": "source_lead_only",
+          "source_validation_status": "not_validated"
+        },
+        "proposed_state_summary": "Possible source lead for later review.",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [],
+        "related_search_need_refs": [],
+        "related_workunit_refs": [],
+        "related_workunit_result_refs": [],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [
+          "source_lead.synthetic.vintage_archive.v0"
+        ],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      },
+      {
+        "_source_identity": "candidate.workunit_result.search_need_review.v0",
+        "candidate_id": "candidate.workunit_result.search_need_review.v0",
+        "candidate_label": "SearchNeed review WorkUnit result candidate",
+        "candidate_origin": "workunit_result",
+        "candidate_status": "needs_review",
+        "candidate_type": "workunit_seed_candidate",
+        "canonical_candidate_key": "candidate:workunit-result-search-need-review",
+        "confidence_or_uncertainty": "workunit_result_requires_review",
+        "conflict_summary": "",
+        "deduplication_summary": {
+          "automatic_merge_allowed": false,
+          "duplicate_possible": false
+        },
+        "evidence_refs_future": [],
+        "limitations": [
+          "WorkUnitResult proposal is not executed work."
+        ],
+        "notes": [
+          "Candidate remains a review item."
+        ],
+        "pack_refs_future": [],
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_public_telemetry": false,
+          "mutated_master_index": false
+        },
+        "proposed_compatibility_summary": {},
+        "proposed_evidence_summary": {},
+        "proposed_object_summary": {},
+        "proposed_representation_summary": {},
+        "proposed_source_summary": {},
+        "proposed_state_summary": "WorkUnitResult proposed a SearchNeed seed for review.",
+        "related_node_policy_evaluation_refs": [],
+        "related_observation_candidate_refs": [],
+        "related_query_observation_refs": [],
+        "related_search_miss_refs": [],
+        "related_search_need_refs": [],
+        "related_workunit_refs": [
+          "search_need_review_v0"
+        ],
+        "related_workunit_result_refs": [
+          "search_need_review_pass_v0"
+        ],
+        "review_gates": {
+          "candidate_review_required": true,
+          "evidence_review_required": true,
+          "human_review_required": true,
+          "master_index_review_required": true,
+          "privacy_review_required": true,
+          "rights_review_required": true,
+          "risk_review_required": true
+        },
+        "review_refs_future": [],
+        "schema_version": "candidate_record.v0",
+        "source_lead_refs": [],
+        "truth_boundary": {
+          "candidate_can_claim_exhaustive_global_search": false,
+          "candidate_can_claim_malware_safety": false,
+          "candidate_can_claim_production_readiness": false,
+          "candidate_can_claim_rights_clearance": false,
+          "candidate_can_claim_verified_installability": false,
+          "candidate_can_mutate_master_index": false,
+          "candidate_is_accepted_evidence": false,
+          "candidate_is_public_truth": false,
+          "candidate_store_is_master_index": false,
+          "human_review_required_for_downstream_use": true
+        }
+      }
+    ],
+    "deduplication_summary": {
+      "automatic_merge_allowed": false,
+      "candidate_count": 7,
+      "conflict_preservation_required": true,
+      "deduplication_mode": "exact_key_report_only",
+      "deleted_candidate_ids": [],
+      "duplicate_group_count": 1,
+      "duplicate_groups": [
+        {
+          "candidate_ids": [
+            "candidate.duplicate_possible.vintage_app.v0",
+            "candidate.search_need.software_version.v0"
+          ],
+          "canonical_candidate_key": "candidate:vintage-app-version-1-2",
+          "duplicate_count": 2
+        }
+      ],
+      "duplicate_possible_candidate_ids": [
+        "candidate.duplicate_possible.vintage_app.v0",
+        "candidate.search_need.software_version.v0"
+      ],
+      "merge_allowed": false,
+      "merged_candidate_ids": []
+    },
+    "generated_from": "explicit_input_only",
+    "notes": [
+      "Snapshot is local audit evidence, not a public index or master index.",
+      "No candidate is accepted as truth or accepted evidence."
+    ],
+    "origin_counts": {
+      "node_policy_evaluation": 1,
+      "search_need": 3,
+      "source_lead": 1,
+      "static_demo": 1,
+      "workunit_result": 1
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_public_telemetry": false,
+      "mutated_master_index": false
+    },
+    "review_required_count": 7,
+    "schema_version": "candidate_store_snapshot.v0",
+    "snapshot_status": "review_required",
+    "status_counts": {
+      "candidate": 1,
+      "duplicate_possible": 1,
+      "evidence_needed": 1,
+      "example_only": 1,
+      "needs_review": 2,
+      "policy_blocked": 1
+    },
+    "truth_boundary": {
+      "candidate_can_claim_exhaustive_global_search": false,
+      "candidate_can_claim_malware_safety": false,
+      "candidate_can_claim_production_readiness": false,
+      "candidate_can_claim_rights_clearance": false,
+      "candidate_can_claim_verified_installability": false,
+      "candidate_can_mutate_master_index": false,
+      "candidate_is_accepted_evidence": false,
+      "candidate_is_public_truth": false,
+      "candidate_store_is_master_index": false,
+      "human_review_required_for_downstream_use": true
+    },
+    "type_counts": {
+      "evidence_candidate": 1,
+      "object_candidate": 1,
+      "policy_blocked_candidate": 1,
+      "source_lead_candidate": 1,
+      "version_or_state_candidate": 2,
+      "workunit_seed_candidate": 1
+    },
+    "warnings": [
+      "duplicate_possible candidates were reported without merge or deletion"
+    ]
+  },
+  "status": "pass",
+  "summary": {
+    "candidate_count": 7,
+    "candidate_store_is_master_index": false,
+    "duplicate_group_count": 1,
+    "origin_counts": {
+      "node_policy_evaluation": 1,
+      "search_need": 3,
+      "source_lead": 1,
+      "static_demo": 1,
+      "workunit_result": 1
+    },
+    "review_required_count": 7,
+    "status_counts": {
+      "candidate": 1,
+      "duplicate_possible": 1,
+      "evidence_needed": 1,
+      "example_only": 1,
+      "needs_review": 2,
+      "policy_blocked": 1
+    },
+    "type_counts": {
+      "evidence_candidate": 1,
+      "object_candidate": 1,
+      "policy_blocked_candidate": 1,
+      "source_lead_candidate": 1,
+      "version_or_state_candidate": 2,
+      "workunit_seed_candidate": 1
+    }
+  },
+  "validation_errors": []
+}

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-11 Node policy evaluator
+UNSPECIFIED - TRACK-B-12 Candidate store runtime
 
 ## GOAL
 
-TRACK-B-11 Node policy evaluator
+TRACK-B-12 Candidate store runtime
 
 ## WHY
 
@@ -35,21 +35,18 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## ALLOWED_PATHS
 
-- `runtime/local_foundry/node_policy_evaluator.py`
-- `scripts/evaluate_node_policy.py`
-- `scripts/validate_node_policy_evaluator.py`
-- `docs/reference/NODE_POLICY_EVALUATOR.md`
-- `docs/architecture/NODE_POLICY_EVALUATOR_MODEL.md`
-- `docs/operations/NODE_POLICY_EVALUATION_REVIEW.md`
-- `control/inventory/nodes/node_policy_evaluator_policy.json`
-- `control/inventory/nodes/node_policy_evaluation_decision_registry.json`
-- `control/inventory/nodes/node_policy_evaluation_reason_registry.json`
-- `control/inventory/nodes/node_policy_evaluation_output_policy.json`
-- `control/inventory/nodes/node_policy_evaluation_review_policy.json`
-- `examples/node_policy_evaluations/**`
-- `tests/runtime/test_node_policy_evaluator.py`
-- `tests/operations/test_node_policy_evaluator_scripts.py`
-- `control/audits/track-b-11-node-policy-evaluator-v0/**`
+- `runtime/local_foundry/candidate_store.py`
+- `scripts/record_candidate.py`
+- `scripts/summarize_candidate_store.py`
+- `scripts/validate_candidate_store_runtime.py`
+- `docs/reference/CANDIDATE_STORE_RUNTIME.md`
+- `docs/architecture/CANDIDATE_STORE_MODEL.md`
+- `docs/operations/CANDIDATE_STORE_REVIEW.md`
+- `control/inventory/candidates/**`
+- `examples/candidates/**`
+- `tests/runtime/test_candidate_store_runtime.py`
+- `tests/operations/test_candidate_store_runtime_scripts.py`
+- `control/audits/track-b-12-candidate-store-runtime-v0/**`
 - `.aide/context/**`
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/evals/runs/latest-golden-tasks.md`
@@ -62,7 +59,7 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `runtime/**` except `runtime/local_foundry/node_policy_evaluator.py`
+- `runtime/**` except `runtime/local_foundry/candidate_store.py`
 - `contracts/**`
 - `surfaces/**`
 - `site/**`
@@ -133,8 +130,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4009
-- approx_tokens: 1003
+- chars: 4013
+- approx_tokens: 1004
 - budget_status: PASS
 - warnings:
   - none

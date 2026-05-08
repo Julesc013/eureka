@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4944 chars, 1236 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4645 chars, 1162 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,25 +33,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-11-node-policy-evaluator-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/node_policy_evaluation_decision_registry.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/node_policy_evaluation_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/node_policy_evaluation_reason_registry.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/node_policy_evaluation_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/nodes/node_policy_evaluator_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/NODE_POLICY_EVALUATOR_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/NODE_POLICY_EVALUATION_REVIEW.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/NODE_POLICY_EVALUATOR.md` (??; matches active task allowed path)
-- unknown: `examples/node_policy_evaluations` (??; does not match active task allowed paths)
-- unknown: `runtime/local_foundry/node_policy_evaluator.py` (??; does not match active task allowed paths)
-- unknown: `scripts/evaluate_node_policy.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_node_policy_evaluator.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_node_policy_evaluator_scripts.py` (??; does not match active task allowed paths)
-- unknown: `tests/runtime/test_node_policy_evaluator.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-12-candidate-store-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/candidates` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/CANDIDATE_STORE_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/CANDIDATE_STORE_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/CANDIDATE_STORE_RUNTIME.md` (??; matches active task allowed path)
+- unknown: `examples/candidates` (??; does not match active task allowed paths)
+- unknown: `runtime/local_foundry/candidate_store.py` (??; does not match active task allowed paths)
+- unknown: `scripts/record_candidate.py` (??; does not match active task allowed paths)
+- unknown: `scripts/summarize_candidate_store.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_candidate_store_runtime.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_candidate_store_runtime_scripts.py` (??; does not match active task allowed paths)
+- unknown: `tests/runtime/test_candidate_store_runtime.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -61,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5995
-- approx_tokens: 1499
+- chars: 5438
+- approx_tokens: 1360
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

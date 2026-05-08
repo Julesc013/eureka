@@ -1,0 +1,89 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "candidate.source_lead.vintage_archive.v0",
+  "candidate_status": "needs_review",
+  "candidate_type": "source_lead_candidate",
+  "candidate_origin": "source_lead",
+  "candidate_label": "Vintage archive source lead candidate",
+  "canonical_candidate_key": "candidate:vintage-archive-source-lead",
+  "proposed_object_summary": {},
+  "proposed_source_summary": {
+    "source_label": "Vintage archive public-safe fixture",
+    "source_mode": "source_lead_only",
+    "source_validation_status": "not_validated"
+  },
+  "proposed_evidence_summary": {},
+  "proposed_representation_summary": {},
+  "proposed_compatibility_summary": {},
+  "proposed_state_summary": "Possible source lead for later review.",
+  "related_query_observation_refs": [],
+  "related_search_miss_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_workunit_result_refs": [],
+  "related_node_policy_evaluation_refs": [],
+  "related_observation_candidate_refs": [],
+  "source_lead_refs": [
+    "source_lead.synthetic.vintage_archive.v0"
+  ],
+  "evidence_refs_future": [],
+  "pack_refs_future": [],
+  "review_refs_future": [],
+  "confidence_or_uncertainty": "source_not_validated",
+  "conflict_summary": "",
+  "deduplication_summary": {
+    "duplicate_possible": false,
+    "automatic_merge_allowed": false
+  },
+  "limitations": [
+    "Source lead is not source validation."
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "candidate_review_required": true,
+    "evidence_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true
+  },
+  "truth_boundary": {
+    "candidate_store_is_master_index": false,
+    "candidate_is_public_truth": false,
+    "candidate_is_accepted_evidence": false,
+    "candidate_can_mutate_master_index": false,
+    "candidate_can_claim_rights_clearance": false,
+    "candidate_can_claim_malware_safety": false,
+    "candidate_can_claim_verified_installability": false,
+    "candidate_can_claim_exhaustive_global_search": false,
+    "candidate_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_public_telemetry": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Review may reject, defer, or request more evidence."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "candidate_origin_policy.v0",
+  "policy_id": "eureka_candidate_origin_policy_v0",
+  "allowed_origins": [
+    "search_need",
+    "search_miss",
+    "query_observation",
+    "observation_candidate",
+    "manual_observation_future",
+    "agent_assisted_candidate",
+    "local_eval",
+    "static_demo",
+    "source_lead",
+    "workunit_result",
+    "node_policy_evaluation",
+    "source_cache_record_future",
+    "evidence_ledger_record_future",
+    "evidence_pack_future",
+    "contribution_pack_future",
+    "index_pack_future",
+    "deep_extraction_future",
+    "discussion_to_evidence_future",
+    "ai_draft_future"
+  ],
+  "origin_meanings": {
+    "ai_draft_future": "Future AI draft source that cannot be treated as evidence truth.",
+    "evidence_ledger_record_future": "Future reviewed evidence-ledger draft source, not accepted evidence.",
+    "node_policy_evaluation": "Policy decision report that may suggest a review item.",
+    "search_need": "Reviewable unresolved-search object.",
+    "source_lead": "Possible source lead that is not a validated source.",
+    "workunit_result": "WorkUnitResult proposal envelope, not execution truth."
+  },
+  "origins_requiring_review": [
+    "search_need",
+    "search_miss",
+    "query_observation",
+    "observation_candidate",
+    "manual_observation_future",
+    "agent_assisted_candidate",
+    "local_eval",
+    "static_demo",
+    "source_lead",
+    "workunit_result",
+    "node_policy_evaluation",
+    "source_cache_record_future",
+    "evidence_ledger_record_future",
+    "evidence_pack_future",
+    "contribution_pack_future",
+    "index_pack_future",
+    "deep_extraction_future",
+    "discussion_to_evidence_future",
+    "ai_draft_future"
+  ],
+  "future_origins": [
+    "manual_observation_future",
+    "source_cache_record_future",
+    "evidence_ledger_record_future",
+    "evidence_pack_future",
+    "contribution_pack_future",
+    "index_pack_future",
+    "deep_extraction_future",
+    "discussion_to_evidence_future",
+    "ai_draft_future"
+  ],
+  "forbidden_truth_conversions": [
+    "AI drafts as evidence truth",
+    "source observations as accepted truth",
+    "evidence candidates as verified fact",
+    "contribution items as accepted public records",
+    "demand signals as object truth",
+    "source leads as validated sources"
+  ],
+  "notes": [
+    "Origin records explain where a provisional candidate came from; they do not confer trust."
+  ]
+}

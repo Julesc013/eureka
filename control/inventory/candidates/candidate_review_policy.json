@@ -1,0 +1,42 @@
+{
+  "schema_version": "candidate_review_policy.v0",
+  "policy_id": "eureka_candidate_review_policy_v0",
+  "review_required_before_public_use": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_master_index": true,
+  "review_required_before_pack_export": true,
+  "allowed_review_states": [
+    "unreviewed",
+    "needs_review",
+    "in_review_future",
+    "blocked",
+    "deferred",
+    "rejected",
+    "accepted_future_after_review"
+  ],
+  "allowed_review_decisions": [
+    "accept_future_after_review",
+    "reject",
+    "defer",
+    "mark_duplicate_possible",
+    "request_more_evidence",
+    "block_by_policy",
+    "block_by_rights",
+    "block_by_risk"
+  ],
+  "forbidden_review_outcomes": [
+    "automatic_public_use",
+    "automatic_evidence_acceptance",
+    "automatic_master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "automatic_public_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "notes": [
+    "Review can decide what to do next; this runtime cannot accept truth."
+  ]
+}

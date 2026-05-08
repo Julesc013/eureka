@@ -1,0 +1,67 @@
+{
+  "schema_version": "candidate_status_policy.v0",
+  "policy_id": "eureka_candidate_status_policy_v0",
+  "allowed_statuses": [
+    "example_only",
+    "proposed",
+    "recorded_local",
+    "normalized",
+    "candidate",
+    "needs_review",
+    "evidence_needed",
+    "duplicate_possible",
+    "conflict_detected",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "rejected",
+    "deferred",
+    "superseded",
+    "accepted_public_future"
+  ],
+  "current_allowed_statuses": [
+    "example_only",
+    "proposed",
+    "recorded_local",
+    "candidate",
+    "needs_review",
+    "evidence_needed",
+    "duplicate_possible",
+    "conflict_detected",
+    "policy_blocked",
+    "rejected",
+    "deferred"
+  ],
+  "statuses_requiring_review": [
+    "proposed",
+    "recorded_local",
+    "normalized",
+    "candidate",
+    "needs_review",
+    "evidence_needed",
+    "duplicate_possible",
+    "conflict_detected",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "deferred",
+    "superseded",
+    "accepted_public_future"
+  ],
+  "statuses_forbidden_current": [
+    "accepted_public_future"
+  ],
+  "transition_rules_future": [
+    "review may accept, reject, defer, supersede, or request evidence in a future reviewed workflow",
+    "automatic promotion to public truth is forbidden",
+    "automatic master-index mutation is forbidden"
+  ],
+  "no_truth_claim_rules": [
+    "candidate status is not public truth",
+    "candidate status is not accepted evidence",
+    "candidate status cannot claim rights, safety, installability, exhaustive search, or production readiness"
+  ],
+  "notes": [
+    "accepted_public_future is vocabulary only for this milestone and must not be used by current examples."
+  ]
+}
