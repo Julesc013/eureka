@@ -1,0 +1,126 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_extraction_gap_driver_inf_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "container_deepening_planning_future",
+  "seed_origin": "search_need_seed_manifest",
+  "seed_origin_ref": "control/inventory/observations/search_need_seed_manifest.json#search_need_seed_extraction_gap_driver_inf_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_local_eval_extraction_gap_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_local_eval_extraction_gap_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_extraction_gap_driver_inf_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "driver_inf_inside_support_cd"
+  ],
+  "related_slot_ids": [],
+  "proposed_workunit_label": "Plan container deepening for driver INF discovery",
+  "proposed_workunit_type": "container_deepening_planning_future",
+  "proposed_inputs": {
+    "candidate_refs": [
+      "examples/observation_candidates/local_eval_extraction_gap_candidate_v0.json"
+    ],
+    "search_need_seed_refs": [
+      "examples/search_need_seeds/extraction_gap_search_need_seed_v0.json"
+    ],
+    "object_family": "driver_package"
+  },
+  "allowed_actions": [
+    "draft_container_member_requirements",
+    "draft_extraction_safety_questions",
+    "list_future_output_contract_needs"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "download_file",
+    "extract_archive",
+    "claim_installability",
+    "claim_safety",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_container_deepening_plan_packet",
+  "proposed_review_requirement": "human_review_required_before_track_b_use",
+  "source_policy_requirements": [
+    "No external source access is needed for the current draft.",
+    "Any future source download or extraction requires separate review."
+  ],
+  "node_capability_requirements_future": [
+    "future_container_listing_capability",
+    "future_safe_extraction_policy_capability"
+  ],
+  "local_state_requirements_future": [
+    "future replay-safe extraction planning state",
+    "future quarantine policy if extraction ever becomes executable"
+  ],
+  "idempotency_policy": "Planning should preserve the same input refs and member-path requirements.",
+  "recovery_policy": "If required source or extraction policy is missing, keep the seed deferred.",
+  "budget_or_scope_limit": "Plan member discovery only; no download, extraction, or execution.",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Future extraction capability and safety policy required before execution.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "repo_local_candidate",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "failure_mode_summary": [
+    "decomposition_gap",
+    "member_access_gap",
+    "extraction_gap",
+    "source_coverage_gap"
+  ],
+  "proposed_priority": {
+    "score": 55,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "approve_as_workunit_seed_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No archive extraction.",
+    "No download.",
+    "No installability or safety claim.",
+    "No accepted evidence."
+  ],
+  "notes": [
+    "This seed captures a bounded extraction planning task.",
+    "It is not a claim that any source contains the target file."
+  ]
+}

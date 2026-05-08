@@ -1,0 +1,127 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_source_policy_review_archive_metadata_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "source_policy_review",
+  "seed_origin": "observation_candidate_review_queue",
+  "seed_origin_ref": "control/inventory/observations/observation_candidate_review_queue.json#review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_source_gap_archive_metadata_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [],
+  "proposed_workunit_label": "Review archive metadata source policy",
+  "proposed_workunit_type": "source_policy_review",
+  "proposed_inputs": {
+    "candidate_refs": [
+      "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json"
+    ],
+    "search_need_seed_refs": [
+      "examples/search_need_seeds/source_gap_search_need_seed_v0.json"
+    ],
+    "policy_refs": [
+      "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md"
+    ]
+  },
+  "allowed_actions": [
+    "review_source_family_policy",
+    "draft_policy_questions",
+    "record_missing_policy_inputs"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "call_api",
+    "open_browser",
+    "probe_source",
+    "approve_source",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_source_policy_review_packet",
+  "proposed_review_requirement": "human_source_policy_review_required",
+  "source_policy_requirements": [
+    "Review source family terms, robots, rate, scope, and allowed metadata fields in a future human/operator packet.",
+    "No source interaction is allowed by this seed."
+  ],
+  "node_capability_requirements_future": [
+    "future_policy_review_node_capability"
+  ],
+  "local_state_requirements_future": [
+    "none_for_current_seed",
+    "future policy decisions must be stored by a reviewed Track B or OBS governance task"
+  ],
+  "idempotency_policy": "Repeated policy review should preserve the same candidate refs and open questions.",
+  "recovery_policy": "If source policy is unresolved, keep this WorkUnit seed in needs_human_review or policy_blocked state.",
+  "budget_or_scope_limit": "Review policy questions only; no source calls.",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Source policy decision required before any future source interaction.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "internet_archive_metadata",
+  "source_access_mode": "approved_metadata_probe_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "failure_mode_summary": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "compatibility_evidence_gap",
+    "representation_gap"
+  ],
+  "proposed_priority": {
+    "score": 82,
+    "band": "high",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "approve_as_workunit_seed_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No source approval.",
+    "No source probe.",
+    "No evidence truth creation.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "This seed is a policy review planning item only.",
+    "It does not change source access posture."
+  ]
+}

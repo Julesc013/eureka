@@ -1,0 +1,127 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_metadata_probe_planning_archive_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "approved_metadata_probe_planning_future",
+  "seed_origin": "search_need_seed_manifest",
+  "seed_origin_ref": "control/inventory/observations/search_need_seed_manifest.json#search_need_seed_source_gap_archive_metadata_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_source_gap_archive_metadata_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [],
+  "proposed_workunit_label": "Plan archive metadata probe shape",
+  "proposed_workunit_type": "approved_metadata_probe_planning_future",
+  "proposed_inputs": {
+    "search_need_seed_refs": [
+      "examples/search_need_seeds/source_gap_search_need_seed_v0.json"
+    ],
+    "source_family": "internet_archive_metadata",
+    "planned_contract_refs": [
+      "contracts/query/workunit_seed.v0.json"
+    ]
+  },
+  "allowed_actions": [
+    "draft_probe_input_shape",
+    "draft_expected_metadata_fields",
+    "list_policy_preconditions"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "call_api",
+    "open_browser",
+    "probe_source",
+    "download_file",
+    "approve_source",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_metadata_probe_plan_packet",
+  "proposed_review_requirement": "human_review_and_source_policy_required_before_any_probe",
+  "source_policy_requirements": [
+    "Future metadata probe planning cannot run until source policy review allows a bounded probe.",
+    "This seed may only draft planned inputs and limitations."
+  ],
+  "node_capability_requirements_future": [
+    "future_metadata_probe_capability",
+    "future_rate_limit_policy_capability"
+  ],
+  "local_state_requirements_future": [
+    "future replay-safe WorkUnit state",
+    "future audit packet location"
+  ],
+  "idempotency_policy": "Planning output should be deterministic for the same source family and seed refs.",
+  "recovery_policy": "If policy approval is missing, keep planned probe work deferred.",
+  "budget_or_scope_limit": "Draft metadata fields and review gates only; no source interaction.",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Source policy decision required before any future source interaction.",
+    "Node capability model must support bounded metadata probes before execution."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "internet_archive_metadata",
+  "source_access_mode": "approved_metadata_probe_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "failure_mode_summary": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "compatibility_evidence_gap",
+    "representation_gap"
+  ],
+  "proposed_priority": {
+    "score": 72,
+    "band": "high",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "approve_as_workunit_seed_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No metadata probe.",
+    "No source approval.",
+    "No source sync.",
+    "No accepted evidence."
+  ],
+  "notes": [
+    "This seed plans future metadata probe shape only.",
+    "It is not permission to perform a probe."
+  ]
+}

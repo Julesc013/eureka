@@ -1,0 +1,379 @@
+{
+  "description": "Review-gated non-executable WorkUnit seed records generated from repo-local OBS candidates, review queue entries, and SearchNeed seed drafts.",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Human review decision required before downstream use.",
+    "Source policy decisions remain separate from WorkUnit seed review.",
+    "Node capability and local state requirements remain future/deferred."
+  ],
+  "generated_from": [
+    "contracts/node/work_unit.v0.json",
+    "contracts/node/work_unit_result.v0.json",
+    "contracts/query/workunit_seed.v0.json",
+    "contracts/query/workunit_seed_conversion.v0.json",
+    "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",
+    "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",
+    "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json",
+    "control/inventory/observations/observation_candidate_review_queue.json",
+    "control/inventory/observations/search_need_seed_manifest.json",
+    "control/inventory/observations/workunit_seed_conversion_policy.json",
+    "control/inventory/observations/workunit_seed_priority_model.json",
+    "examples/workunit_seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/request_more_evidence_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
+    "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
+    "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
+    "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
+    "examples/workunit_seeds/minimal_workunit_seed_v0.json",
+    "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+    "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json"
+  ],
+  "label": "WorkUnit seed draft manifest",
+  "manifest_id": "workunit_seed_manifest_v0",
+  "notes": [
+    "WorkUnit seeds are draft task proposals only.",
+    "No runtime WorkUnit, WorkUnit execution, source approval, observed baseline, evidence truth, or master-index mutation is created.",
+    "Track B local task packet was observed at TRACK-B-06; queue/context mutation is deferred to avoid overwriting parallel Track B state."
+  ],
+  "priority_band_counts": {
+    "blocked": 1,
+    "high": 2,
+    "medium": 3
+  },
+  "priority_score_summary": {
+    "average": 53.0,
+    "max": 82,
+    "min": 24
+  },
+  "product_boundary": {
+    "accepted_runtime_workunit": false,
+    "approved_source_access": false,
+    "automated_external_search": false,
+    "called_external_apis": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "crawled_external_systems": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "executed_workunits": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "modified_track_b_files": false,
+    "mutated_master_index": false,
+    "opened_browsers": false,
+    "performed_observations": false,
+    "scraped_external_systems": false
+  },
+  "related_candidate_counts": {
+    "obs_candidate_local_eval_extraction_gap_v0": 1,
+    "obs_candidate_local_eval_failure_v0": 1,
+    "obs_candidate_minimal_v0": 1,
+    "obs_candidate_source_gap_internet_archive_metadata_v0": 2,
+    "obs_candidate_source_gap_policy_blocked_v0": 1
+  },
+  "related_search_need_seed_counts": {
+    "search_need_seed_compatibility_gap_firefox_xp_v0": 1,
+    "search_need_seed_extraction_gap_driver_inf_v0": 1,
+    "search_need_seed_minimal_v0": 1,
+    "search_need_seed_policy_blocked_broad_web_v0": 1,
+    "search_need_seed_source_gap_archive_metadata_v0": 2
+  },
+  "review_required": true,
+  "schema_version": "workunit_seed_manifest.v0",
+  "seed_count": 6,
+  "seed_records": [
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "source_coverage_gap",
+        "member_access_gap",
+        "compatibility_evidence_gap",
+        "representation_gap"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "high",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 82
+      },
+      "proposed_review_action": "approve_as_workunit_seed_future",
+      "proposed_workunit_label": "Review archive metadata source policy",
+      "proposed_workunit_type": "source_policy_review",
+      "related_observation_candidate_ids": [
+        "obs_candidate_source_gap_internet_archive_metadata_v0"
+      ],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_source_gap_archive_metadata_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json",
+      "seed_status": "needs_human_review",
+      "seed_type": "source_policy_review",
+      "source_access_mode": "approved_metadata_probe_future",
+      "source_family": "internet_archive_metadata",
+      "source_policy_status": "future_deferred_source_policy_required",
+      "workunit_seed_id": "workunit_seed_source_policy_review_archive_metadata_v0"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "source_coverage_gap",
+        "member_access_gap",
+        "compatibility_evidence_gap",
+        "representation_gap"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "high",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 72
+      },
+      "proposed_review_action": "approve_as_workunit_seed_future",
+      "proposed_workunit_label": "Plan archive metadata probe shape",
+      "proposed_workunit_type": "approved_metadata_probe_planning_future",
+      "related_observation_candidate_ids": [
+        "obs_candidate_source_gap_internet_archive_metadata_v0"
+      ],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_source_gap_archive_metadata_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
+      "seed_status": "needs_human_review",
+      "seed_type": "approved_metadata_probe_planning_future",
+      "source_access_mode": "approved_metadata_probe_future",
+      "source_family": "internet_archive_metadata",
+      "source_policy_status": "future_deferred_source_policy_required",
+      "workunit_seed_id": "workunit_seed_metadata_probe_planning_archive_v0"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "decomposition_gap",
+        "member_access_gap",
+        "extraction_gap",
+        "source_coverage_gap"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "medium",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 55
+      },
+      "proposed_review_action": "approve_as_workunit_seed_future",
+      "proposed_workunit_label": "Plan container deepening for driver INF discovery",
+      "proposed_workunit_type": "container_deepening_planning_future",
+      "related_observation_candidate_ids": [
+        "obs_candidate_local_eval_extraction_gap_v0"
+      ],
+      "related_query_ids": [
+        "driver_inf_inside_support_cd"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_local_eval_extraction_gap_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_extraction_gap_driver_inf_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
+      "seed_status": "needs_human_review",
+      "seed_type": "container_deepening_planning_future",
+      "source_access_mode": "repo_local_only",
+      "source_family": "repo_local_candidate",
+      "source_policy_status": "not_external",
+      "workunit_seed_id": "workunit_seed_extraction_gap_driver_inf_v0"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "temporal_version_gap",
+        "compatibility_gap"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "medium",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 45
+      },
+      "proposed_review_action": "request_more_evidence_future",
+      "proposed_workunit_label": "Review compatibility evidence needed for Firefox XP timeline",
+      "proposed_workunit_type": "compatibility_evidence_review",
+      "related_observation_candidate_ids": [
+        "obs_candidate_local_eval_failure_v0"
+      ],
+      "related_query_ids": [
+        "latest_firefox_before_xp_support_ended"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_local_eval_failure_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_compatibility_gap_firefox_xp_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
+      "seed_status": "needs_more_evidence",
+      "seed_type": "compatibility_evidence_review",
+      "source_access_mode": "repo_local_only",
+      "source_family": "local_eval",
+      "source_policy_status": "not_external",
+      "workunit_seed_id": "workunit_seed_compatibility_review_firefox_xp_v0"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "manual_observation_pending"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "medium",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 40
+      },
+      "proposed_review_action": "approve_as_workunit_seed_future",
+      "proposed_workunit_label": "Review manual baseline SearchNeed seed",
+      "proposed_workunit_type": "search_need_review",
+      "related_observation_candidate_ids": [
+        "obs_candidate_minimal_v0"
+      ],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_minimal_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_minimal_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/minimal_workunit_seed_v0.json",
+      "seed_status": "needs_human_review",
+      "seed_type": "search_need_review",
+      "source_access_mode": "manual_human_only",
+      "source_family": "broad_web_policy_blocked",
+      "source_policy_status": "not_approved_for_agent_access",
+      "workunit_seed_id": "workunit_seed_minimal_v0"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_runtime_workunit": false,
+      "execution_allowed_now": false,
+      "failure_mode_summary": [
+        "rights_or_policy_block",
+        "external_baseline_unavailable",
+        "source_coverage_gap"
+      ],
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Manifest record references a non-executable draft WorkUnit seed file.",
+        "Human review is required before downstream use."
+      ],
+      "proposed_priority": {
+        "band": "blocked",
+        "model_ref": "control/inventory/observations/workunit_seed_priority_model.json",
+        "score": 24
+      },
+      "proposed_review_action": "mark_policy_blocked_future",
+      "proposed_workunit_label": "Keep broad web WorkUnit idea blocked for policy review",
+      "proposed_workunit_type": "policy_blocked_review",
+      "related_observation_candidate_ids": [
+        "obs_candidate_source_gap_policy_blocked_v0"
+      ],
+      "related_query_ids": [
+        "windows_7_apps"
+      ],
+      "related_review_queue_entry_ids": [
+        "review_queue_entry::obs_candidate_source_gap_policy_blocked_v0"
+      ],
+      "related_search_need_seed_ids": [
+        "search_need_seed_policy_blocked_broad_web_v0"
+      ],
+      "review_required": true,
+      "seed_file_path": "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+      "seed_status": "policy_blocked",
+      "seed_type": "policy_blocked_review",
+      "source_access_mode": "no_autonomous_access",
+      "source_family": "broad_web_policy_blocked",
+      "source_policy_status": "blocked_no_autonomous_access_without_review",
+      "workunit_seed_id": "workunit_seed_policy_blocked_broad_web_v0"
+    }
+  ],
+  "seed_status_counts": {
+    "needs_human_review": 4,
+    "needs_more_evidence": 1,
+    "policy_blocked": 1
+  },
+  "seed_type_counts": {
+    "approved_metadata_probe_planning_future": 1,
+    "compatibility_evidence_review": 1,
+    "container_deepening_planning_future": 1,
+    "policy_blocked_review": 1,
+    "search_need_review": 1,
+    "source_policy_review": 1
+  },
+  "truth_boundary": {
+    "human_review_required": true,
+    "seeds_are_evidence_truth": false,
+    "seeds_are_executable_workunits": false,
+    "seeds_are_observed_baselines": false,
+    "seeds_are_runtime_workunits": false,
+    "seeds_can_mutate_master_index": false,
+    "source_access_approved": false
+  }
+}

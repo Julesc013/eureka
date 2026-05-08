@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/workunit_seed.v0.json",
+  "title": "EurekaWorkUnitSeedV0",
+  "description": "Draft WorkUnit seed derived from an ObservationCandidate, review queue entry, or SearchNeed seed. A seed is a bounded work proposal only and is not executable work, runtime WorkUnit state, observed baseline evidence, evidence truth, source approval, or a master-index mutation.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "workunit_seed_id",
+    "seed_status",
+    "seed_type",
+    "seed_origin",
+    "seed_origin_ref",
+    "related_observation_candidate_ids",
+    "related_review_queue_entry_ids",
+    "related_search_need_seed_ids",
+    "related_batch_id",
+    "related_query_ids",
+    "related_slot_ids",
+    "proposed_workunit_label",
+    "proposed_workunit_type",
+    "proposed_inputs",
+    "allowed_actions",
+    "forbidden_actions",
+    "proposed_output_contract",
+    "proposed_review_requirement",
+    "source_policy_requirements",
+    "node_capability_requirements_future",
+    "local_state_requirements_future",
+    "idempotency_policy",
+    "recovery_policy",
+    "budget_or_scope_limit",
+    "required_review_state",
+    "downstream_track_b_dependency",
+    "review_required",
+    "execution_allowed_now",
+    "accepted_as_runtime_workunit",
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workunit_seed.v0"
+    },
+    "seed_status": {
+      "enum": [
+        "proposed",
+        "needs_human_review",
+        "needs_more_evidence",
+        "policy_blocked",
+        "duplicate_possible",
+        "deferred",
+        "ready_for_track_b_after_contracts_future",
+        "rejected_future",
+        "accepted_runtime_future"
+      ]
+    },
+    "seed_type": {
+      "enum": [
+        "search_need_review",
+        "source_policy_review",
+        "source_lead_inspection",
+        "approved_metadata_probe_planning_future",
+        "metadata_fixture_normalization_future",
+        "wayback_metadata_trace_planning_future",
+        "container_deepening_planning_future",
+        "compatibility_evidence_review",
+        "hash_verification_planning_future",
+        "candidate_dedup",
+        "evidence_pack_drafting",
+        "contribution_pack_drafting",
+        "discussion_to_evidence_planning_future",
+        "ai_assisted_drafting_planning_future",
+        "policy_blocked_review",
+        "not_evaluable_review"
+      ]
+    },
+    "related_observation_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_review_queue_entry_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_search_need_seed_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_query_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_slot_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proposed_inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proposed_priority": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "score",
+        "band",
+        "model_ref"
+      ],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "band": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "blocked",
+            "insufficient_local_evidence"
+          ]
+        }
+      }
+    },
+    "review_required": {
+      "const": true
+    },
+    "execution_allowed_now": {
+      "const": false
+    },
+    "accepted_as_runtime_workunit": {
+      "const": false
+    },
+    "accepted_as_observed_baseline": {
+      "const": false
+    },
+    "accepted_as_evidence_truth": {
+      "const": false
+    },
+    "master_index_mutation_allowed": {
+      "const": false
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-workunit-seed-is-executable": false,
+  "x-runtime-workunit-created": false,
+  "x-workunit-runtime-implemented": false,
+  "x-observed-baseline-created": false,
+  "x-evidence-truth-created": false,
+  "x-source-access-approved": false,
+  "x-master-index-mutation-allowed": false
+}

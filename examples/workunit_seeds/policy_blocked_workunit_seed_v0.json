@@ -1,0 +1,123 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_policy_blocked_broad_web_v0",
+  "seed_status": "policy_blocked",
+  "seed_type": "policy_blocked_review",
+  "seed_origin": "search_need_seed_manifest",
+  "seed_origin_ref": "control/inventory/observations/search_need_seed_manifest.json#search_need_seed_policy_blocked_broad_web_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_source_gap_policy_blocked_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_source_gap_policy_blocked_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_policy_blocked_broad_web_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [],
+  "proposed_workunit_label": "Keep broad web WorkUnit idea blocked for policy review",
+  "proposed_workunit_type": "policy_blocked_review",
+  "proposed_inputs": {
+    "candidate_refs": [
+      "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json"
+    ],
+    "search_need_seed_refs": [
+      "examples/search_need_seeds/policy_blocked_search_need_seed_v0.json"
+    ],
+    "blocked_reason": "no_autonomous_access"
+  },
+  "allowed_actions": [
+    "record_blocked_state",
+    "draft_review_questions",
+    "defer_downstream_use"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "call_api",
+    "open_browser",
+    "probe_source",
+    "approve_source",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_policy_blocked_review_packet",
+  "proposed_review_requirement": "policy_blocked_until_human_review",
+  "source_policy_requirements": [
+    "Source policy block must remain in force.",
+    "No future work may run until policy review changes the posture."
+  ],
+  "node_capability_requirements_future": [
+    "future_policy_review_node_capability"
+  ],
+  "local_state_requirements_future": [
+    "future blocked-state review record if Track B accepts this seed"
+  ],
+  "idempotency_policy": "Repeated review should preserve blocked state until a reviewed policy decision changes it.",
+  "recovery_policy": "If policy remains blocked, keep the seed policy_blocked.",
+  "budget_or_scope_limit": "Record policy-blocked review state only; no source access.",
+  "required_review_state": "policy_blocked_until_human_review",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Human review decision required before conversion.",
+    "Source policy decision required before any future source interaction."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "broad_web_policy_blocked",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "blocked_no_autonomous_access_without_review",
+  "failure_mode_summary": [
+    "rights_or_policy_block",
+    "external_baseline_unavailable",
+    "source_coverage_gap"
+  ],
+  "proposed_priority": {
+    "score": 24,
+    "band": "blocked",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "mark_policy_blocked_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No source approval.",
+    "No policy bypass.",
+    "No observed baseline or accepted evidence.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "This seed demonstrates blocked-state preservation.",
+    "It remains unusable for runtime work until future review gates exist and pass."
+  ]
+}

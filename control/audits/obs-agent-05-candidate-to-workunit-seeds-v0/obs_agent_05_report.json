@@ -1,0 +1,138 @@
+{
+  "schema_version": "obs_agent_05_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-AGENT-05",
+  "lane": "OBS side lane",
+  "parallel_track_b_state_observed": {
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_or_later_seen": true,
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07"
+  },
+  "added_contracts": [
+    "contracts/query/workunit_seed.v0.json",
+    "contracts/query/workunit_seed_conversion.v0.json"
+  ],
+  "added_docs": [
+    "docs/operations/OBS_CANDIDATE_TO_WORKUNIT_SEEDS.md",
+    "docs/operations/WORKUNIT_SEED_REVIEW_GUIDE.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/workunit_seed_conversion_policy.json",
+    "control/inventory/observations/workunit_seed_manifest.json",
+    "control/inventory/observations/workunit_seed_priority_model.json"
+  ],
+  "added_examples": [
+    "examples/workunit_seeds/minimal_workunit_seed_v0.json",
+    "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json",
+    "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
+    "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
+    "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
+    "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+    "examples/workunit_seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
+    "examples/workunit_seed_conversions/request_more_evidence_workunit_conversion_v0.json"
+  ],
+  "added_scripts": [
+    "scripts/build_workunit_seed_candidates.py",
+    "scripts/validate_workunit_seed_candidates.py",
+    "scripts/summarize_workunit_seed_candidates.py"
+  ],
+  "added_tests": [
+    "tests/contracts/test_workunit_seed_contracts.py",
+    "tests/operations/test_workunit_seed_conversion.py"
+  ],
+  "validation": {
+    "status": "warn",
+    "passes": [
+      "git diff --check",
+      "python -m json.tool for OBS-05 policy, model, manifest, and audit report",
+      "python scripts/validate_agent_assisted_observation_policy.py",
+      "python scripts/validate_observation_candidate.py",
+      "python scripts/validate_observation_candidate_review_queue.py",
+      "python scripts/validate_search_need_seed_candidates.py",
+      "python scripts/build_workunit_seed_candidates.py --list-inputs",
+      "python scripts/build_workunit_seed_candidates.py --check",
+      "python scripts/validate_workunit_seed_candidates.py",
+      "python scripts/summarize_workunit_seed_candidates.py",
+      "python scripts/summarize_search_need_seed_candidates.py",
+      "python scripts/summarize_observation_candidate_review_queue.py",
+      "python -m unittest tests.contracts.test_workunit_seed_contracts tests.operations.test_workunit_seed_conversion",
+      "python scripts/check_architecture_boundaries.py",
+      "python3 scripts/validate_track_a_contracts.py",
+      "python scripts/validate_eureka_node_manifest.py",
+      "python scripts/validate_eureka_node_policy.py",
+      "python3 .aide/scripts/aide_lite.py doctor",
+      "python3 .aide/scripts/aide_lite.py validate",
+      "python3 .aide/scripts/aide_lite.py adapter validate",
+      "python3 .aide/scripts/aide_lite.py eval list"
+    ],
+    "warnings": [
+      "py launcher is unavailable on this machine; AIDE Lite checks were mapped to python3 where possible.",
+      "python -m unittest discover -s tests -t . fails in pre-existing full-repo tests unrelated to OBS-05, including Python 3.8 incompatibilities and generated site/dist expectations.",
+      "python scripts/validate_track_a_contracts.py fails under Python 3.8 because runtime annotations use tuple[...] syntax; python3 equivalent passes.",
+      "python3 .aide/scripts/aide_lite.py test, selftest, eval run, and review-pack fail because this environment's Python 3.9 pathlib.Path.write_text does not support newline=.",
+      "python3 .aide/scripts/aide_lite.py verify returns WARN with zero errors because the latest AIDE task packet still references TRACK-B-06 and marks OBS-05 paths outside stale diff scope."
+    ],
+    "notes": [
+      "Targeted OBS-05 contract, generation, validation, summary, and test lanes pass.",
+      "No live source access, API calls, browser actions, provider/model calls, WorkUnit execution, source approval, evidence truth, observed baseline, or master-index mutation occurred."
+    ]
+  },
+  "seed_count": 6,
+  "seed_status_counts": {
+    "needs_human_review": 4,
+    "needs_more_evidence": 1,
+    "policy_blocked": 1
+  },
+  "seed_type_counts": {
+    "approved_metadata_probe_planning_future": 1,
+    "compatibility_evidence_review": 1,
+    "container_deepening_planning_future": 1,
+    "policy_blocked_review": 1,
+    "search_need_review": 1,
+    "source_policy_review": 1
+  },
+  "priority_band_counts": {
+    "blocked": 1,
+    "high": 2,
+    "medium": 3
+  },
+  "truth_boundary": {
+    "seeds_are_executable_workunits": false,
+    "seeds_are_runtime_workunits": false,
+    "seeds_are_observed_baselines": false,
+    "seeds_are_evidence_truth": false,
+    "seeds_can_mutate_master_index": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "next_task": "OBS-AGENT-06 - OBS and Track B synchronization audit"
+}

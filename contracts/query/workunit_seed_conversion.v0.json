@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/workunit_seed_conversion.v0.json",
+  "title": "EurekaWorkUnitSeedConversionV0",
+  "description": "Draft conversion record that maps an ObservationCandidate, review queue item, or SearchNeed seed into a WorkUnit seed proposal. The conversion is not permission to run work and does not create runtime WorkUnits or evidence truth.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "conversion_id",
+    "conversion_status",
+    "conversion_type",
+    "source_candidate_ref",
+    "source_review_queue_entry_ref",
+    "source_search_need_seed_ref",
+    "produced_workunit_seed_ref",
+    "conversion_rules_applied",
+    "fields_mapped",
+    "fields_unmapped",
+    "missing_evidence",
+    "missing_policy_approval",
+    "review_required",
+    "conversion_limitations",
+    "rejected_conversion_reason",
+    "downstream_dependencies",
+    "execution_allowed_now",
+    "accepted_as_runtime_workunit",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workunit_seed_conversion.v0"
+    },
+    "conversion_status": {
+      "enum": [
+        "proposed",
+        "needs_human_review",
+        "needs_more_evidence",
+        "policy_blocked",
+        "deferred",
+        "rejected_future",
+        "accepted_runtime_future"
+      ]
+    },
+    "conversion_type": {
+      "enum": [
+        "observation_candidate_to_workunit_seed_draft",
+        "review_queue_entry_to_workunit_seed_draft",
+        "search_need_seed_to_workunit_seed_draft",
+        "source_gap_candidate_to_workunit_seed_draft",
+        "request_more_evidence_only",
+        "policy_blocked_candidate_to_workunit_seed_draft"
+      ]
+    },
+    "conversion_rules_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fields_mapped": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "fields_unmapped": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_policy_approval": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_required": {
+      "const": true
+    },
+    "execution_allowed_now": {
+      "const": false
+    },
+    "accepted_as_runtime_workunit": {
+      "const": false
+    },
+    "accepted_as_evidence_truth": {
+      "const": false
+    },
+    "master_index_mutation_allowed": {
+      "const": false
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-workunit-seed-is-executable": false,
+  "x-runtime-workunit-created": false,
+  "x-evidence-truth-created": false,
+  "x-source-access-approved": false,
+  "x-master-index-mutation-allowed": false
+}
