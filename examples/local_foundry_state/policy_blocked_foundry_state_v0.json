@@ -1,0 +1,168 @@
+{
+  "schema_version": "local_foundry_state.v0",
+  "local_foundry_state_id": "policy-blocked-foundry-state-v0",
+  "state_label": "Policy Blocked Foundry State Example",
+  "state_status": "blocked",
+  "state_scope": "local_private",
+  "state_owner_posture": {
+    "owner_type": "local_operator_future",
+    "private_by_default": true,
+    "hosted_state": false,
+    "public_state": false
+  },
+  "state_root_policy": {
+    "policy_ref": "control/inventory/local_state/local_foundry_path_policy.json",
+    "root_status": "policy_reference_only",
+    "state_root_created": false,
+    "state_files_created": false,
+    "future_root_refs": [
+      ".aide.local/eureka/policy-blocked/"
+    ]
+  },
+  "state_kinds": [
+    "node_report",
+    "validation_report"
+  ],
+  "allowed_paths": [
+    ".aide.local/eureka/policy-blocked/"
+  ],
+  "forbidden_paths": [
+    "site/dist/",
+    "contracts/",
+    "runtime/",
+    "surfaces/",
+    "snapshots/",
+    "native/",
+    "crates/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "control/inventory/observations/accepted/",
+    "evals/search_usefulness/external_baselines/batches/*/observations/observed*",
+    ".git/"
+  ],
+  "git_tracking_policy": {
+    "private_state_tracked_by_git": false,
+    "local_state_roots_must_be_ignored": true,
+    "audit_reports_may_be_committed": true,
+    "exported_packs_may_be_committed_after_review": true,
+    "private_cache_must_not_be_committed": true,
+    "secrets_must_not_be_committed": true,
+    "gitignore_refs": [
+      ".gitignore"
+    ]
+  },
+  "privacy_policy": {
+    "no_private_data_publication": true,
+    "no_credentials": true,
+    "no_account_sessions": true,
+    "no_raw_browser_profiles": true,
+    "no_telemetry_streams": true,
+    "opt_in_export_only": true,
+    "review_required_before_public_export": true,
+    "reset_delete_available": true
+  },
+  "data_classification": {
+    "current_classification": "public_safe",
+    "future_private_default": "local_private_policy_only",
+    "secret_or_prohibited_allowed": false
+  },
+  "source_access_posture": {
+    "source_access_enabled": false,
+    "live_probe_enabled": false,
+    "source_sync_enabled": false,
+    "source_connectors_enabled": false
+  },
+  "network_posture": {
+    "network_access_enabled": false,
+    "model_provider_calls_enabled": false
+  },
+  "node_refs": [],
+  "workunit_refs": [],
+  "workunit_result_refs": [],
+  "observation_candidate_refs": [],
+  "source_lead_refs": [],
+  "search_need_seed_refs": [],
+  "candidate_draft_refs": [],
+  "evidence_draft_refs": [],
+  "source_cache_draft_refs": [],
+  "evidence_ledger_draft_refs": [],
+  "review_queue_refs": [],
+  "pack_builder_refs": [],
+  "export_policy": {
+    "export_mode": "no_export",
+    "public_export_requires_review": true,
+    "automatic_public_export_allowed": false,
+    "automatic_master_index_import_allowed": false,
+    "automatic_evidence_acceptance_allowed": false
+  },
+  "reset_delete_policy": {
+    "reset_allowed": true,
+    "delete_allowed": true,
+    "actual_state_created": false,
+    "deletion_required_now": false
+  },
+  "retention_policy": {
+    "retention_default": "none_created",
+    "retention_limitations": [
+      "Blocked examples produce no private state."
+    ]
+  },
+  "review_gates": {
+    "human_review_required_for_public_export": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "privacy_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "operator_approval_required_for_network": true,
+    "legal_or_rights_decision_stop_required": true
+  },
+  "truth_boundary": {
+    "local_state_is_public_truth": false,
+    "local_state_is_accepted_evidence": false,
+    "local_state_is_master_index": false,
+    "local_state_can_mutate_master_index": false,
+    "local_state_can_mark_observed_baseline": false,
+    "local_state_can_claim_rights_clearance": false,
+    "local_state_can_claim_malware_safety": false,
+    "local_state_can_claim_verified_installability": false,
+    "local_state_can_claim_exhaustive_global_search": false,
+    "local_state_can_claim_production_readiness": false
+  },
+  "product_boundary": {
+    "implemented_local_foundry_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_workunit_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No blocked state is created.",
+    "No blocked action is converted into product behavior.",
+    "No policy exception is granted."
+  ],
+  "notes": [
+    "This example exists so validators can preserve a blocked posture."
+  ]
+}

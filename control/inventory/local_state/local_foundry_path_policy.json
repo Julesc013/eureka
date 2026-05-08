@@ -1,0 +1,75 @@
+{
+  "schema_version": "local_foundry_path_policy.v0",
+  "policy_id": "eureka_local_foundry_path_policy_v0",
+  "allowed_future_roots": [
+    ".aide.local/eureka/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    ".tmp/eureka/",
+    "control/audits/**/generated/",
+    "control/audits/**/reports/"
+  ],
+  "committed_audit_evidence_roots": [
+    "control/audits/**/generated/",
+    "control/audits/**/reports/"
+  ],
+  "future_ignored_private_roots": [
+    ".aide.local/eureka/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    ".tmp/eureka/"
+  ],
+  "future_explicit_export_roots": [
+    "control/audits/**/reports/"
+  ],
+  "forbidden_roots": [
+    "site/dist/",
+    "contracts/",
+    "runtime/",
+    "surfaces/",
+    "snapshots/",
+    "native/",
+    "crates/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "control/inventory/observations/accepted/",
+    "evals/search_usefulness/external_baselines/batches/*/observations/observed*",
+    ".git/"
+  ],
+  "forbidden_path_markers": [
+    "secret",
+    "credential",
+    "account_session",
+    "private_user_file"
+  ],
+  "root_creation_allowed_by_this_task": false,
+  "notes": [
+    "Future roots are policy references only. This inventory creates no private local-state directories.",
+    "Existing Local Staging Path Policy remains the staging-specific companion policy."
+  ],
+  "product_boundary": {
+    "implemented_local_foundry_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_workunit_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}

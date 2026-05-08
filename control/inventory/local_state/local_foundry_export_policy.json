@@ -1,0 +1,63 @@
+{
+  "schema_version": "local_foundry_export_policy.v0",
+  "policy_id": "eureka_local_foundry_export_policy_v0",
+  "export_modes": [
+    "no_export",
+    "audit_report_export",
+    "pack_draft_export_future",
+    "contribution_pack_export_future",
+    "source_pack_export_future",
+    "evidence_pack_export_future",
+    "index_pack_export_future",
+    "snapshot_export_future",
+    "review_required_export_future"
+  ],
+  "export_rules": {
+    "public_export_requires_review": true,
+    "automatic_public_export_allowed": false,
+    "automatic_master_index_import_allowed": false,
+    "automatic_evidence_acceptance_allowed": false,
+    "private_export_default": "no_export"
+  },
+  "exportable_state_kinds_require_review": [
+    "observation_candidate",
+    "source_lead_candidate",
+    "search_need_seed",
+    "workunit_seed",
+    "candidate_draft",
+    "evidence_draft",
+    "source_cache_draft",
+    "evidence_ledger_draft",
+    "review_queue_draft",
+    "pack_builder_draft",
+    "pack_export_draft",
+    "local_index_preview",
+    "snapshot_preview",
+    "relay_preview"
+  ],
+  "product_boundary": {
+    "implemented_local_foundry_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_node_runtime": false,
+    "enabled_workunit_runtime": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  }
+}
