@@ -1,0 +1,104 @@
+{
+  "schema_version": "source_cache_to_evidence_bridge_plan.v0",
+  "plan_id": "source_cache_to_evidence_bridge_plan_v0",
+  "label": "Source-cache-to-evidence ledger bridge planning",
+  "bridge_status": "source_cache_bridge_not_implemented",
+  "current_phase": "bridge_phase_0_planning_only",
+  "bridge_phases": [
+    {
+      "phase_id": "bridge_phase_0_planning_only",
+      "phase_status": "current",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    },
+    {
+      "phase_id": "bridge_phase_1_fixture_mapping_future",
+      "phase_status": "future_deferred",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    },
+    {
+      "phase_id": "bridge_phase_2_source_cache_record_to_evidence_candidate_future",
+      "phase_status": "future_deferred",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    },
+    {
+      "phase_id": "bridge_phase_3_review_queue_integration_future",
+      "phase_status": "future_deferred",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    },
+    {
+      "phase_id": "bridge_phase_4_evidence_pack_export_future",
+      "phase_status": "future_deferred",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    },
+    {
+      "phase_id": "bridge_phase_5_reviewed_public_index_bridge_future",
+      "phase_status": "future_deferred",
+      "review_required_before_bridge": true,
+      "runtime_implemented": false
+    }
+  ],
+  "allowed_source_cache_record_statuses": [
+    "example_only",
+    "planned",
+    "fixture_only",
+    "recorded_local",
+    "normalized",
+    "source_observation",
+    "candidate_source_record",
+    "needs_review",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "stale",
+    "superseded",
+    "deferred"
+  ],
+  "required_source_cache_fields": [
+    "source_cache_record_id_or_ref",
+    "source_locator_or_ref",
+    "source_policy_posture",
+    "provenance_summary",
+    "privacy_posture",
+    "rights_risk_posture",
+    "limitations",
+    "review_status"
+  ],
+  "evidence_candidate_output_types": [
+    "source_observation",
+    "source_cache_derived_claim",
+    "metadata_claim",
+    "identity_claim",
+    "compatibility_claim",
+    "checksum_claim",
+    "filename_or_member_claim",
+    "source_locator",
+    "provenance_link",
+    "conflict_record"
+  ],
+  "forbidden_conversions": [
+    "source_cache_record_to_accepted_evidence",
+    "source_observation_to_accepted_truth",
+    "evidence_candidate_to_verified_fact",
+    "ai_draft_to_evidence_truth",
+    "contribution_claim_to_accepted_public_record",
+    "metadata_claim_to_rights_clearance",
+    "checksum_claim_to_authenticity_proof_without_evidence",
+    "compatibility_claim_to_verified_compatibility_without_review"
+  ],
+  "review_required_before_bridge": true,
+  "conflict_preservation_required": true,
+  "no_truth_conversion": true,
+  "no_master_index_mutation": true,
+  "automatic_bridge_runtime_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "notes": [
+    "The bridge is a future planning object only.",
+    "Bridge outputs must be evidence candidates and provenance links until a future review accepts them under separate policy."
+  ]
+}

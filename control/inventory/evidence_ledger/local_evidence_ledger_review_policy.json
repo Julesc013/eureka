@@ -1,0 +1,63 @@
+{
+  "schema_version": "local_evidence_ledger_review_policy.v0",
+  "policy_id": "local_evidence_ledger_review_policy_v0",
+  "label": "Local evidence ledger review policy",
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_pack_export": true,
+  "review_required_before_master_index": true,
+  "review_required_before_rights_claim": true,
+  "review_required_before_malware_safety_claim": true,
+  "review_required_before_installability_claim": true,
+  "review_required_before_source_cache_bridge": true,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "allowed_review_states": [
+    "not_reviewed",
+    "needs_review",
+    "approved_for_fixture_runtime_future",
+    "approved_for_source_cache_bridge_future",
+    "approved_for_evidence_candidate_runtime_future",
+    "approved_for_pack_export_future",
+    "approved_for_review_queue_future",
+    "rejected",
+    "deferred",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "conflict_detected"
+  ],
+  "allowed_review_decisions": [
+    "approve_fixture_only_future",
+    "approve_source_cache_bridge_future",
+    "approve_evidence_candidate_runtime_future",
+    "approve_pack_export_future",
+    "approve_review_queue_future",
+    "request_changes",
+    "reject",
+    "defer",
+    "block_for_policy",
+    "block_for_rights",
+    "block_for_risk",
+    "preserve_conflict"
+  ],
+  "forbidden_review_outcomes": [
+    "automatic_evidence_acceptance",
+    "automatic_public_index_use",
+    "automatic_master_index_mutation",
+    "automatic_rights_clearance",
+    "automatic_malware_safety",
+    "automatic_installability_verification",
+    "automatic_source_cache_bridge_enable",
+    "automatic_pack_export",
+    "truth_conversion_without_review"
+  ],
+  "notes": [
+    "Review gates are required before evidence-ledger material can feed candidate store, public index, pack export, or master-index review.",
+    "No review decision in this policy can create accepted evidence truth or mutate the master index."
+  ]
+}

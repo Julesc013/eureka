@@ -1,0 +1,97 @@
+{
+  "schema_version": "local_evidence_ledger_plan_example.v0",
+  "plan_id": "fixture_only_evidence_ledger_plan_v0",
+  "label": "Fixture-only evidence ledger future planning example",
+  "plan_status": "planning_only",
+  "runtime_status": "runtime_not_implemented",
+  "source_cache_bridge_status": "source_cache_bridge_not_implemented",
+  "evidence_acceptance_status": "evidence_acceptance_disabled",
+  "current_phase": "phase_0_planning_only",
+  "record_statuses_in_scope": [
+    "example_only",
+    "planned",
+    "fixture_only",
+    "source_observation_candidate",
+    "metadata_claim_candidate",
+    "needs_review"
+  ],
+  "record_types_in_scope": [
+    "source_observation",
+    "metadata_claim",
+    "source_locator",
+    "provenance_link"
+  ],
+  "storage_posture": {
+    "future_private_roots_documented_but_not_created": true,
+    "current_allowed_output_roots": [
+      "control/audits/**/generated/evidence_ledger/",
+      "explicit temp test directory"
+    ]
+  },
+  "append_semantics": {
+    "append_only_intent": true,
+    "append_runtime_implemented": false,
+    "append_storage_created": false,
+    "conflict_preservation_required": true,
+    "provenance_required": true,
+    "review_status_required": true,
+    "no_silent_overwrite": true,
+    "no_unreviewed_promotion": true,
+    "no_master_index_mutation": true
+  },
+  "review_gates": {
+    "review_required_before_candidate_store_use": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_pack_export": true,
+    "review_required_before_master_index": true,
+    "review_required_before_rights_claim": true,
+    "review_required_before_malware_safety_claim": true,
+    "review_required_before_installability_claim": true,
+    "review_required_before_source_cache_bridge": true,
+    "automatic_evidence_acceptance_allowed": false,
+    "automatic_public_index_use_allowed": false,
+    "automatic_master_index_mutation_allowed": false,
+    "automatic_rights_clearance_allowed": false,
+    "automatic_malware_safety_allowed": false,
+    "automatic_installability_verification_allowed": false
+  },
+  "truth_boundary": {
+    "evidence_record_is_public_truth": false,
+    "evidence_record_is_accepted_evidence": false,
+    "evidence_record_can_mutate_master_index": false,
+    "evidence_record_can_claim_rights_clearance": false,
+    "evidence_record_can_claim_malware_safety": false,
+    "evidence_record_can_claim_verified_installability": false,
+    "evidence_record_can_claim_exhaustive_global_search": false,
+    "evidence_record_can_claim_production_readiness": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_evidence_ledger_runtime": false,
+    "implemented_source_cache_bridge": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Fixture-only future plan; no ledger runtime is implemented by this example.",
+    "Fixture outputs would remain evidence candidates and provenance links until review."
+  ]
+}

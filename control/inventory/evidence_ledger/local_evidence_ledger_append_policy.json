@@ -1,0 +1,37 @@
+{
+  "schema_version": "local_evidence_ledger_append_policy.v0",
+  "policy_id": "local_evidence_ledger_append_policy_v0",
+  "label": "Local evidence ledger append-style planning policy",
+  "append_only_intent": true,
+  "append_runtime_implemented": false,
+  "append_storage_created": false,
+  "deletion_policy_future": {
+    "status": "future_required",
+    "hard_delete_allowed_without_review": false,
+    "tombstone_or_redaction_record_required_future": true,
+    "privacy_reset_policy_required_future": true
+  },
+  "correction_policy_future": {
+    "status": "future_required",
+    "corrections_append_new_records": true,
+    "original_record_silent_overwrite_allowed": false,
+    "correction_reason_required": true
+  },
+  "supersession_policy_future": {
+    "status": "future_required",
+    "supersession_append_new_records": true,
+    "superseded_records_preserved": true,
+    "supersession_reason_required": true
+  },
+  "conflict_preservation_required": true,
+  "provenance_required": true,
+  "source_locator_required_when_available": true,
+  "review_status_required": true,
+  "no_silent_overwrite": true,
+  "no_unreviewed_promotion": true,
+  "no_master_index_mutation": true,
+  "notes": [
+    "B-14 defines append-style intent only; no append storage or runtime is implemented.",
+    "Future deletion, correction, and supersession semantics must preserve provenance, review status, and conflict history."
+  ]
+}

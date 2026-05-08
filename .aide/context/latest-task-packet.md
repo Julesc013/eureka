@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - TRACK-B-13 Local source cache runtime planning
+UNSPECIFIED - TRACK-B-14 Local evidence ledger runtime planning
 
 ## GOAL
 
-TRACK-B-13 Local source cache runtime planning
+TRACK-B-14 Local evidence ledger runtime planning
 
 ## WHY
 
@@ -35,21 +35,23 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## ALLOWED_PATHS
 
-- `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md`
-- `docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md`
-- `docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md`
-- `docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md`
-- `control/inventory/source_cache/local_source_cache_runtime_plan.json`
-- `control/inventory/source_cache/local_source_cache_runtime_policy.json`
-- `control/inventory/source_cache/local_source_cache_path_policy.json`
-- `control/inventory/source_cache/local_source_cache_source_access_policy.json`
-- `control/inventory/source_cache/local_source_cache_record_policy.json`
-- `control/inventory/source_cache/local_source_cache_review_policy.json`
-- `control/inventory/source_cache/local_source_cache_rollout_plan.json`
-- `examples/source_cache_plans/**`
-- `scripts/validate_local_source_cache_runtime_plan.py`
-- `tests/operations/test_local_source_cache_runtime_plan.py`
-- `control/audits/track-b-13-local-source-cache-runtime-planning-v0/**`
+- `docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME_PLAN.md`
+- `docs/architecture/LOCAL_EVIDENCE_LEDGER_MODEL.md`
+- `docs/operations/LOCAL_EVIDENCE_LEDGER_APPROVAL_GATES.md`
+- `docs/operations/LOCAL_EVIDENCE_LEDGER_PRIVACY_RISK_POLICY.md`
+- `docs/operations/SOURCE_CACHE_TO_EVIDENCE_LEDGER_BRIDGE_PLAN.md`
+- `control/inventory/evidence_ledger/local_evidence_ledger_runtime_plan.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_runtime_policy.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_path_policy.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_record_policy.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_review_policy.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_append_policy.json`
+- `control/inventory/evidence_ledger/source_cache_to_evidence_bridge_plan.json`
+- `control/inventory/evidence_ledger/local_evidence_ledger_rollout_plan.json`
+- `examples/evidence_ledger_plans/**`
+- `scripts/validate_local_evidence_ledger_runtime_plan.py`
+- `tests/operations/test_local_evidence_ledger_runtime_plan.py`
+- `control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0/**`
 - `.aide/context/**`
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/evals/runs/latest-golden-tasks.md`
@@ -133,8 +135,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4037
-- approx_tokens: 1010
+- chars: 4043
+- approx_tokens: 1011
 - budget_status: PASS
 - warnings:
   - none

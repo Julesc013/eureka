@@ -1,0 +1,47 @@
+{
+  "schema_version": "local_evidence_ledger_path_policy.v0",
+  "policy_id": "local_evidence_ledger_path_policy_v0",
+  "label": "Local evidence ledger path policy",
+  "task_creates_future_private_roots": false,
+  "allowed_future_roots": [
+    ".aide.local/eureka/evidence_ledger/",
+    ".local/eureka/evidence_ledger/",
+    ".cache/eureka/evidence_ledger/",
+    "control/audits/**/generated/evidence_ledger/",
+    "explicit temp test directory"
+  ],
+  "allowed_current_output_roots": [
+    "control/audits/**/generated/evidence_ledger/",
+    "explicit temp test directory"
+  ],
+  "forbidden_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "native/",
+    "snapshots/",
+    "control/inventory/publication/",
+    "master-index-related roots",
+    "evals/search_usefulness/external_baselines/batches/*/observations/observed*",
+    ".git/",
+    "secrets/",
+    "credentials/",
+    "account/",
+    "private-user-file paths"
+  ],
+  "private_roots_documented_but_not_created_now": [
+    ".aide.local/eureka/evidence_ledger/",
+    ".local/eureka/evidence_ledger/",
+    ".cache/eureka/evidence_ledger/"
+  ],
+  "path_review_rules": [
+    "Future private roots require a reviewed runtime task before creation.",
+    "Generated audit evidence may use control/audits/**/generated/evidence_ledger/ only when an explicit output path is provided.",
+    "Contracts, runtime modules, generated site assets, publication inventory, and master-index-related roots are forbidden output roots.",
+    "Private user-file paths, credential paths, account-session paths, and secret paths are forbidden."
+  ],
+  "notes": [
+    "This policy records future roots but does not create them.",
+    "B-14 creates no local evidence-ledger state."
+  ]
+}

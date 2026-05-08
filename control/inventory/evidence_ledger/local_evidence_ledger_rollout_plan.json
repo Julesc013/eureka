@@ -1,0 +1,285 @@
+{
+  "schema_version": "local_evidence_ledger_rollout_plan.v0",
+  "plan_id": "local_evidence_ledger_rollout_plan_v0",
+  "label": "Local evidence ledger rollout plan",
+  "current_phase": "phase_0_planning_only",
+  "phases": [
+    {
+      "phase_id": "phase_0_planning_only",
+      "phase_status": "current",
+      "required_prerequisites": [
+        "source cache runtime planning exists",
+        "evidence ledger contract exists",
+        "path/record/review/append/bridge policies are documented"
+      ],
+      "allowed_inputs": [
+        "committed governance files",
+        "committed synthetic examples",
+        "repo-local source-cache plan summaries"
+      ],
+      "allowed_outputs": [
+        "runtime plan",
+        "readiness report",
+        "policy inventory",
+        "validator result"
+      ],
+      "forbidden_actions": [
+        "evidence ledger runtime implementation",
+        "source-cache-to-evidence bridge runtime",
+        "local evidence-ledger state creation",
+        "evidence record write",
+        "evidence acceptance",
+        "live probe",
+        "source sync",
+        "connector runtime",
+        "network call",
+        "API call",
+        "scraping",
+        "crawling",
+        "download",
+        "upload",
+        "execution",
+        "public index use",
+        "master-index mutation"
+      ],
+      "required_validators": [
+        "python scripts/validate_local_evidence_ledger_runtime_plan.py"
+      ],
+      "required_review_gates": [
+        "planning review"
+      ],
+      "exit_criteria": [
+        "planning artifacts validate",
+        "future bridge gates are explicit",
+        "no local evidence-ledger state exists"
+      ],
+      "product_boundary": {
+        "implemented_evidence_ledger_runtime": false,
+        "implemented_source_cache_bridge": false,
+        "created_local_private_state": false,
+        "enabled_network_access": false,
+        "enabled_live_probes": false,
+        "enabled_source_sync": false,
+        "enabled_source_connectors": false,
+        "enabled_downloads": false,
+        "enabled_uploads": false,
+        "enabled_telemetry": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_1_fixture_only_runtime_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "phase_0 planning accepted",
+        "fixture-only runtime task approved",
+        "private-root creation policy reviewed"
+      ],
+      "allowed_inputs": [
+        "committed fixtures",
+        "repo-local source observation candidates"
+      ],
+      "allowed_outputs": [
+        "fixture-only evidence candidate drafts",
+        "provenance links"
+      ],
+      "forbidden_actions": [
+        "source-cache bridge runtime",
+        "evidence acceptance",
+        "public index use",
+        "master-index mutation"
+      ],
+      "required_validators": [
+        "future fixture-only evidence ledger runtime validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_candidate_store_use",
+        "review_required_before_pack_export"
+      ],
+      "exit_criteria": [
+        "fixture-only records remain candidates",
+        "append semantics preserve provenance"
+      ],
+      "product_boundary": {
+        "enabled_network_access": false,
+        "enabled_live_probes": false,
+        "enabled_source_sync": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_2_source_cache_bridge_fixture_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "source-cache fixture runtime accepted",
+        "source-cache-to-evidence bridge plan accepted",
+        "bridge review gate approved"
+      ],
+      "allowed_inputs": [
+        "reviewed source-cache fixture records"
+      ],
+      "allowed_outputs": [
+        "source-cache-derived evidence candidates",
+        "conflict records",
+        "provenance links"
+      ],
+      "forbidden_actions": [
+        "accepted evidence creation",
+        "accepted public record creation",
+        "master-index mutation"
+      ],
+      "required_validators": [
+        "future source-cache bridge validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_source_cache_bridge",
+        "review_required_before_candidate_store_use"
+      ],
+      "exit_criteria": [
+        "bridge outputs are candidates only",
+        "conflicts are preserved"
+      ],
+      "product_boundary": {
+        "enabled_network_access": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_3_evidence_candidate_runtime_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "append policy accepted",
+        "privacy reset policy accepted",
+        "review status model accepted"
+      ],
+      "allowed_inputs": [
+        "reviewed local candidates",
+        "reviewed source-cache-derived candidates"
+      ],
+      "allowed_outputs": [
+        "local evidence candidate records",
+        "review status records",
+        "provenance links"
+      ],
+      "forbidden_actions": [
+        "evidence acceptance",
+        "public index use",
+        "master-index mutation"
+      ],
+      "required_validators": [
+        "future evidence candidate runtime validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_public_index_use",
+        "review_required_before_master_index"
+      ],
+      "exit_criteria": [
+        "ledger writes are append-style",
+        "no silent overwrite occurs"
+      ],
+      "product_boundary": {
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_4_review_queue_integration_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "review queue contract accepted",
+        "evidence candidate runtime accepted"
+      ],
+      "allowed_inputs": [
+        "evidence candidates needing review"
+      ],
+      "allowed_outputs": [
+        "review queue proposals"
+      ],
+      "forbidden_actions": [
+        "automatic public use",
+        "automatic master-index mutation"
+      ],
+      "required_validators": [
+        "future evidence review queue validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_master_index"
+      ],
+      "exit_criteria": [
+        "review queue proposals are non-mutating"
+      ],
+      "product_boundary": {
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_5_evidence_pack_export_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "evidence pack export policy accepted",
+        "pack privacy review accepted"
+      ],
+      "allowed_inputs": [
+        "reviewed evidence candidates"
+      ],
+      "allowed_outputs": [
+        "evidence pack draft exports"
+      ],
+      "forbidden_actions": [
+        "automatic publication",
+        "upload",
+        "master-index mutation"
+      ],
+      "required_validators": [
+        "future evidence pack export validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_pack_export"
+      ],
+      "exit_criteria": [
+        "pack drafts are public-safe or local-private as labeled"
+      ],
+      "product_boundary": {
+        "enabled_uploads": false,
+        "mutated_master_index": false
+      }
+    },
+    {
+      "phase_id": "phase_6_reviewed_public_index_bridge_future",
+      "phase_status": "future_deferred",
+      "required_prerequisites": [
+        "public index projection policy accepted",
+        "master-index review gate accepted"
+      ],
+      "allowed_inputs": [
+        "reviewed accepted evidence candidates"
+      ],
+      "allowed_outputs": [
+        "public index bridge proposal",
+        "master-index review request"
+      ],
+      "forbidden_actions": [
+        "automatic public index use",
+        "automatic master-index mutation",
+        "production readiness claim"
+      ],
+      "required_validators": [
+        "future reviewed public index bridge validator"
+      ],
+      "required_review_gates": [
+        "review_required_before_public_index_use",
+        "review_required_before_master_index"
+      ],
+      "exit_criteria": [
+        "public projection is reviewed and evidence-backed"
+      ],
+      "product_boundary": {
+        "mutated_master_index": false,
+        "claimed_production_readiness": false
+      }
+    }
+  ],
+  "notes": [
+    "Only phase_0_planning_only is current in TRACK-B-14.",
+    "All later phases are deferred and require separate reviewed tasks."
+  ]
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5042 chars, 1261 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5254 chars, 1314 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,21 +37,23 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-13-local-source-cache-runtime-planning-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_record_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_rollout_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_runtime_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_runtime_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_cache/local_source_cache_source_access_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md` (??; matches active task allowed path)
-- unknown: `examples/source_cache_plans` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_local_source_cache_runtime_plan.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_local_source_cache_runtime_plan.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_append_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_record_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_rollout_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_runtime_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_runtime_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/evidence_ledger/source_cache_to_evidence_bridge_plan.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/LOCAL_EVIDENCE_LEDGER_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/LOCAL_EVIDENCE_LEDGER_APPROVAL_GATES.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/LOCAL_EVIDENCE_LEDGER_PRIVACY_RISK_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SOURCE_CACHE_TO_EVIDENCE_LEDGER_BRIDGE_PLAN.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME_PLAN.md` (??; matches active task allowed path)
+- unknown: `examples/evidence_ledger_plans` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_local_evidence_ledger_runtime_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_local_evidence_ledger_runtime_plan.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -61,8 +63,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6121
-- approx_tokens: 1531
+- chars: 6439
+- approx_tokens: 1610
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
