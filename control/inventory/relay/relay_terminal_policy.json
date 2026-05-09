@@ -1,0 +1,10 @@
+{
+  "schema_version": "relay_terminal_policy.v0",
+  "line_mode_navigation": true,
+  "numbered_menus": true,
+  "no_ansi_required": true,
+  "no_mouse_required": true,
+  "no_unicode_dependency_beyond_safe_fallback": true,
+  "no_terminal_escape_required_by_default": true
+}
+

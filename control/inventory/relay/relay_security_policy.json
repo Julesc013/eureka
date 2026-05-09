@@ -1,0 +1,22 @@
+{
+  "schema_version": "relay_security_policy.v0",
+  "relay_security_policy_id": "relay_security_policy_v0",
+  "bind_localhost_only": true,
+  "forbidden_hosts": [
+    "0.0.0.0",
+    "::",
+    "*",
+    "public interface wildcard"
+  ],
+  "no_secrets": true,
+  "no_cookies": true,
+  "no_credentials": true,
+  "no_account_sessions": true,
+  "no_cors_public_write": true,
+  "no_telemetry": true,
+  "public_bind_allowed": false,
+  "write_enabled": false,
+  "upload_enabled": false,
+  "download_enabled": false
+}
+

@@ -1,0 +1,12 @@
+Eureka Relay Search
+===================
+Fixture results only. No public ranking or live source fanout.
+
+1. Demo Driver Search Result
+   Identity: fixture:search-result:drivers-demo
+   Source posture: fixture_or_local_ref_only
+   Evidence posture: preview_or_reviewed_ref_only
+   Rights posture: unknown_not_cleared
+   Risk posture: unknown_not_scanned
+   Action posture: safe_action_manifest_only
+

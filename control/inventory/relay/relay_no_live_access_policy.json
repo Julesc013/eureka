@@ -1,0 +1,17 @@
+{
+  "schema_version": "relay_no_live_access_policy.v0",
+  "no_network_outbound": true,
+  "no_source_sync": true,
+  "no_live_probes": true,
+  "no_external_resource_fetch": true,
+  "no_download_mirror_install_execute": true,
+  "source_sync_enabled": false,
+  "live_access_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "action_execution_enabled": false,
+  "accounts_enabled": false,
+  "telemetry_enabled": false,
+  "outbound_network_allowed": false
+}
+

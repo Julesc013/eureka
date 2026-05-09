@@ -1,0 +1,29 @@
+{
+  "schema_version": "relay_status.v0",
+  "relay_status_id": "relay_status_example_v0",
+  "relay_mode": "localhost_readonly",
+  "localhost_only": true,
+  "read_only": true,
+  "live_access_enabled": false,
+  "source_sync_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "accounts_enabled": false,
+  "telemetry_enabled": false,
+  "action_execution_enabled": false,
+  "snapshot_loaded": true,
+  "snapshot_ref": "snapshot_manifest:example",
+  "limitations": [
+    "Example status only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false,
+    "relay_mutates_public_index": false,
+    "relay_mutates_master_index": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false,
+    "enabled_hosting": false
+  }
+}
+

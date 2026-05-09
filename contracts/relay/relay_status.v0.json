@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_status.v0.json",
+  "title": "Relay Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relay_status_id",
+    "relay_mode",
+    "localhost_only",
+    "read_only",
+    "live_access_enabled",
+    "source_sync_enabled",
+    "downloads_enabled",
+    "uploads_enabled",
+    "accounts_enabled",
+    "telemetry_enabled",
+    "action_execution_enabled",
+    "snapshot_loaded",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_status.v0" },
+    "relay_status_id": { "type": "string" },
+    "relay_mode": { "type": "string" },
+    "localhost_only": { "const": true },
+    "read_only": { "const": true },
+    "live_access_enabled": { "const": false },
+    "source_sync_enabled": { "const": false },
+    "downloads_enabled": { "const": false },
+    "uploads_enabled": { "const": false },
+    "accounts_enabled": { "const": false },
+    "telemetry_enabled": { "const": false },
+    "action_execution_enabled": { "const": false },
+    "snapshot_loaded": { "type": "boolean" },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,20 @@
+{
+  "schema_version": "terminal_profile.v0",
+  "terminal_profile_id": "terminal_text_profile_v0",
+  "line_width": 80,
+  "menu_model": "numbered_line_mode",
+  "numbered_results": true,
+  "pagination_model": "future_optional_manual_pages",
+  "required_semantic_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "no_color_required": true,
+  "no_terminal_escape_required_by_default": true
+}
+

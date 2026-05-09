@@ -1,0 +1,49 @@
+{
+  "schema_version": "relay_manifest.v0",
+  "relay_manifest_id": "relay_manifest_example_v0",
+  "relay_mode": "localhost_readonly",
+  "routes": [
+    "/status",
+    "/search",
+    "/manifest",
+    "/terminal"
+  ],
+  "profiles": [
+    "text",
+    "lite_html",
+    "json_manifest",
+    "terminal",
+    "native_fixture_json"
+  ],
+  "snapshot_refs": [
+    "snapshot_manifest:example"
+  ],
+  "no_goals": [
+    "no public relay",
+    "no downloads",
+    "no execution"
+  ],
+  "blocked_actions": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "upload",
+    "download",
+    "execute",
+    "public_bind"
+  ],
+  "limitations": [
+    "Example manifest response only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false,
+    "relay_mutates_public_index": false,
+    "relay_mutates_master_index": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false,
+    "enabled_hosting": false
+  }
+}
+

@@ -1,0 +1,37 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_object_v0",
+  "route_path": "/object/{id}",
+  "route_status": "fixture_only",
+  "route_kind": "object",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "lite_html",
+  "required_snapshot_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "download",
+    "install",
+    "execute"
+  ],
+  "limitations": [
+    "Object route is a read-only snapshot projection."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false,
+    "enabled_execution": false
+  }
+}
+

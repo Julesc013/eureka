@@ -1,0 +1,23 @@
+{
+  "schema_version": "old_browser_profile.v0",
+  "old_browser_profile_id": "old_browser_html32_profile_v0",
+  "html_version_target": "html32_safe_subset",
+  "css_dependency": "none_or_basic",
+  "javascript_required": false,
+  "forms_allowed": true,
+  "tables_allowed": true,
+  "image_dependency": "none",
+  "charset": "utf-8",
+  "max_page_weight_hint": "small_fixture_pages",
+  "modern_browser_features_required": false,
+  "required_semantic_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ]
+}
+

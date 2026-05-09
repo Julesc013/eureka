@@ -1,0 +1,3 @@
+Blocked by relay policy: public bind, write routes, uploads, downloads, execution, and live source access are disabled.
+No relay response accepts truth or mutates public/master indexes.
+

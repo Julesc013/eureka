@@ -1,0 +1,32 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_terminal_v0",
+  "route_path": "/terminal",
+  "route_status": "fixture_only",
+  "route_kind": "terminal",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "terminal",
+  "required_snapshot_fields": [
+    "identity",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "write",
+    "upload",
+    "download",
+    "execute"
+  ],
+  "limitations": [
+    "Terminal route is text-only and read-only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_execution": false
+  }
+}
+

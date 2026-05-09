@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_profile.v0.json",
+  "title": "Relay Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relay_profile_id",
+    "relay_profile_status",
+    "relay_mode",
+    "bind_policy",
+    "host",
+    "port_policy",
+    "allowed_routes",
+    "allowed_methods",
+    "allowed_render_profiles",
+    "snapshot_input_policy",
+    "authentication_policy",
+    "write_policy",
+    "upload_policy",
+    "download_policy",
+    "action_execution_policy",
+    "live_access_policy",
+    "security_policy_ref",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_profile.v0" },
+    "relay_profile_id": { "type": "string" },
+    "relay_profile_status": {
+      "enum": ["example_only", "fixture_only", "localhost_readonly", "old_browser_preview", "terminal_preview", "native_fixture_preview", "policy_blocked", "not_evaluable"]
+    },
+    "relay_mode": {
+      "enum": ["fixture_only", "localhost_readonly", "old_browser_preview", "terminal_preview", "native_fixture_preview", "policy_blocked"]
+    },
+    "bind_policy": { "type": "object" },
+    "host": { "type": "string" },
+    "port_policy": { "type": "object" },
+    "allowed_routes": { "type": "array", "items": { "type": "string" } },
+    "allowed_methods": { "type": "array", "items": { "enum": ["GET"] } },
+    "allowed_render_profiles": { "type": "array", "items": { "enum": ["text", "lite_html", "file_tree", "json_manifest", "terminal", "native_fixture_json"] } },
+    "snapshot_input_policy": { "type": "object" },
+    "authentication_policy": { "type": "object" },
+    "write_policy": { "type": "object" },
+    "upload_policy": { "type": "object" },
+    "download_policy": { "type": "object" },
+    "action_execution_policy": { "type": "object" },
+    "live_access_policy": { "type": "object" },
+    "security_policy_ref": { "type": "string" },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "bind_public_interfaces_allowed": { "const": false },
+        "write_allowed": { "const": false },
+        "upload_allowed": { "const": false },
+        "download_allowed": { "const": false },
+        "action_execution_allowed": { "const": false },
+        "live_source_access_allowed": { "const": false },
+        "account_auth_allowed": { "const": false },
+        "telemetry_allowed": { "const": false }
+      }
+    },
+    "product_boundary": { "type": "object" },
+    "no_goals": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
+

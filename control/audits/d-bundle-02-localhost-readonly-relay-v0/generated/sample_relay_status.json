@@ -1,0 +1,51 @@
+{
+  "accounts_enabled": false,
+  "action_execution_enabled": false,
+  "downloads_enabled": false,
+  "host": "127.0.0.1",
+  "limitations": [
+    "Fixture-only relay status. No server is public or hosted by default."
+  ],
+  "live_access_enabled": false,
+  "localhost_only": true,
+  "port": 0,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_access": false,
+    "enabled_public_relay": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "read_only": true,
+  "relay_mode": "localhost_readonly",
+  "relay_status_id": "relay_status:0ab04270b8c35816",
+  "schema_version": "relay_status.v0",
+  "server_starts_by_default": false,
+  "snapshot_loaded": true,
+  "snapshot_ref": "snapshot_manifest.a6ddb9c25557.v0",
+  "source_sync_enabled": false,
+  "telemetry_enabled": false,
+  "truth_boundary": {
+    "live_source_access_enabled": false,
+    "malware_safety_claimed": false,
+    "public_bind_allowed": false,
+    "relay_accepts_candidate": false,
+    "relay_accepts_evidence": false,
+    "relay_downloads_files": false,
+    "relay_executes_actions": false,
+    "relay_mutates_master_index": false,
+    "relay_mutates_public_index": false,
+    "relay_response_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "uploads_enabled": false
+}

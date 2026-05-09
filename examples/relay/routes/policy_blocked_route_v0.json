@@ -1,0 +1,29 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_policy_blocked_v0",
+  "route_path": "/blocked-action",
+  "route_status": "blocked_by_policy",
+  "route_kind": "unknown",
+  "allowed_methods": [],
+  "input_source": "none",
+  "output_profile": "text",
+  "required_snapshot_fields": [],
+  "blocked_actions": [
+    "public_bind",
+    "write",
+    "upload",
+    "download",
+    "execute",
+    "live_source_access"
+  ],
+  "limitations": [
+    "Blocked routes remain non-operational."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false
+  }
+}
+

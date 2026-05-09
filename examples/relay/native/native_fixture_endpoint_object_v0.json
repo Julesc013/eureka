@@ -1,0 +1,23 @@
+{
+  "schema_version": "native_fixture_endpoint.v0",
+  "native_fixture_endpoint_id": "native_fixture_endpoint_object_v0",
+  "endpoint_kind": "object",
+  "endpoint_path": "/object/{id}",
+  "method": "GET",
+  "response_profile": "native_fixture_json",
+  "read_only": true,
+  "write_allowed": false,
+  "download_allowed": false,
+  "action_execution_allowed": false,
+  "limitations": [
+    "Object endpoint is a fixture snapshot projection."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false,
+    "enabled_execution": false
+  }
+}
+

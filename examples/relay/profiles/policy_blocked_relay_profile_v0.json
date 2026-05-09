@@ -1,0 +1,79 @@
+{
+  "schema_version": "relay_profile.v0",
+  "relay_profile_id": "policy_blocked_relay_profile_v0",
+  "relay_profile_status": "policy_blocked",
+  "relay_mode": "policy_blocked",
+  "bind_policy": {
+    "bind_localhost_only": true,
+    "bind_public_interfaces_allowed": false,
+    "blocked_reason": "Public relay and hosted relay are not enabled."
+  },
+  "host": "127.0.0.1",
+  "port_policy": {
+    "server_start_blocked": true
+  },
+  "allowed_routes": [
+    "/status"
+  ],
+  "allowed_methods": [
+    "GET"
+  ],
+  "allowed_render_profiles": [
+    "text"
+  ],
+  "snapshot_input_policy": {
+    "explicit_fixture_snapshot_only": true,
+    "live_source_access_allowed": false
+  },
+  "authentication_policy": {
+    "account_auth_allowed": false
+  },
+  "write_policy": {
+    "write_allowed": false
+  },
+  "upload_policy": {
+    "upload_allowed": false
+  },
+  "download_policy": {
+    "download_allowed": false
+  },
+  "action_execution_policy": {
+    "action_execution_allowed": false
+  },
+  "live_access_policy": {
+    "live_source_access_allowed": false
+  },
+  "security_policy_ref": "control/inventory/relay/relay_security_policy.json",
+  "limitations": [
+    "Blocked profile preserves relay no-goals."
+  ],
+  "truth_boundary": {
+    "bind_public_interfaces_allowed": false,
+    "write_allowed": false,
+    "upload_allowed": false,
+    "download_allowed": false,
+    "action_execution_allowed": false,
+    "live_source_access_allowed": false,
+    "account_auth_allowed": false,
+    "telemetry_allowed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  },
+  "no_goals": [
+    "no public relay",
+    "no hosted relay"
+  ],
+  "notes": [
+    "Policy-blocked example."
+  ]
+}
+

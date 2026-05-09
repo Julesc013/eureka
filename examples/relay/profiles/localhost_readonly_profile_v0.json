@@ -1,0 +1,108 @@
+{
+  "schema_version": "relay_profile.v0",
+  "relay_profile_id": "localhost_readonly_profile_v0",
+  "relay_profile_status": "localhost_readonly",
+  "relay_mode": "localhost_readonly",
+  "bind_policy": {
+    "bind_localhost_only": true,
+    "bind_public_interfaces_allowed": false,
+    "allowed_hosts": [
+      "127.0.0.1",
+      "localhost"
+    ]
+  },
+  "host": "127.0.0.1",
+  "port_policy": {
+    "ephemeral_ports_allowed_for_tests": true,
+    "fixed_public_port_required": false
+  },
+  "allowed_routes": [
+    "/status",
+    "/snapshot",
+    "/search",
+    "/object/{id}",
+    "/source/{id}",
+    "/need/{id}",
+    "/action/{id}",
+    "/manifest",
+    "/files",
+    "/text/search",
+    "/text/object/{id}",
+    "/terminal"
+  ],
+  "allowed_methods": [
+    "GET"
+  ],
+  "allowed_render_profiles": [
+    "text",
+    "lite_html",
+    "file_tree",
+    "json_manifest",
+    "terminal",
+    "native_fixture_json"
+  ],
+  "snapshot_input_policy": {
+    "explicit_fixture_snapshot_only": true,
+    "live_source_access_allowed": false
+  },
+  "authentication_policy": {
+    "account_auth_allowed": false,
+    "cookies_allowed": false,
+    "credentials_allowed": false
+  },
+  "write_policy": {
+    "write_allowed": false
+  },
+  "upload_policy": {
+    "upload_allowed": false
+  },
+  "download_policy": {
+    "download_allowed": false
+  },
+  "action_execution_policy": {
+    "action_execution_allowed": false
+  },
+  "live_access_policy": {
+    "live_source_access_allowed": false,
+    "source_sync_enabled": false
+  },
+  "security_policy_ref": "control/inventory/relay/relay_security_policy.json",
+  "limitations": [
+    "Fixture-only relay profile.",
+    "Server start requires an explicit --serve flag."
+  ],
+  "truth_boundary": {
+    "bind_public_interfaces_allowed": false,
+    "write_allowed": false,
+    "upload_allowed": false,
+    "download_allowed": false,
+    "action_execution_allowed": false,
+    "live_source_access_allowed": false,
+    "account_auth_allowed": false,
+    "telemetry_allowed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  },
+  "no_goals": [
+    "no public relay",
+    "no writes",
+    "no uploads",
+    "no downloads",
+    "no action execution",
+    "no accounts",
+    "no telemetry"
+  ],
+  "notes": [
+    "Localhost-only read-only fixture profile for D-BUNDLE-02."
+  ]
+}
+

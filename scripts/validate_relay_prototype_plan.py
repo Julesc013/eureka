@@ -84,6 +84,11 @@ RELAY_RUNTIME_NAME_PATTERNS = (
     re.compile(r"(^|[_-])relay[_-]proxy\.py$", re.IGNORECASE),
 )
 
+GOVERNED_D_BUNDLE_02_RELAY_HELPERS = {
+    "scripts/validate_relay_runtime.py",
+    "scripts/summarize_relay_runtime.py",
+}
+
 IMPLEMENTED_RELAY_CLAIMS = (
     re.compile(r"\brelay runtime (is )?(implemented|available|enabled|running)\b", re.IGNORECASE),
     re.compile(r"\brelay server (is )?(implemented|available|enabled|running)\b", re.IGNORECASE),
@@ -323,9 +328,12 @@ def _find_relay_runtime_files(repo_root: Path) -> list[str]:
     for path in repo_root.rglob("*.py"):
         if any(part in ignored_parts for part in path.parts):
             continue
+        display_path = _display_path(path, repo_root)
+        if display_path in GOVERNED_D_BUNDLE_02_RELAY_HELPERS:
+            continue
         name = path.name.casefold()
         if name in RELAY_RUNTIME_FILENAMES or any(pattern.search(name) for pattern in RELAY_RUNTIME_NAME_PATTERNS):
-            offenders.append(_display_path(path, repo_root))
+            offenders.append(display_path)
     return sorted(offenders)
 
 

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/old_browser_profile.v0.json",
+  "title": "Old Browser Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "old_browser_profile_id",
+    "html_version_target",
+    "css_dependency",
+    "javascript_required",
+    "forms_allowed",
+    "tables_allowed",
+    "image_dependency",
+    "charset",
+    "max_page_weight_hint",
+    "required_semantic_fields"
+  ],
+  "properties": {
+    "schema_version": { "const": "old_browser_profile.v0" },
+    "old_browser_profile_id": { "type": "string" },
+    "html_version_target": { "type": "string" },
+    "css_dependency": { "enum": ["none", "basic", "none_or_basic"] },
+    "javascript_required": { "const": false },
+    "forms_allowed": { "type": "boolean" },
+    "tables_allowed": { "type": "boolean" },
+    "image_dependency": { "type": "string" },
+    "charset": { "type": "string" },
+    "max_page_weight_hint": { "type": "string" },
+    "modern_browser_features_required": { "const": false },
+    "required_semantic_fields": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
+

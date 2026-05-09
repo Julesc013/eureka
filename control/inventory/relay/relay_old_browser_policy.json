@@ -1,0 +1,12 @@
+{
+  "schema_version": "relay_old_browser_policy.v0",
+  "no_js_required": true,
+  "no_modern_css_required": true,
+  "no_fetch_xhr_required": true,
+  "no_cookie_required": true,
+  "no_login_required": true,
+  "get_forms_only": true,
+  "javascript_required": false,
+  "modern_browser_features_required": false
+}
+

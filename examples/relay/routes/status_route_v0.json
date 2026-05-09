@@ -1,0 +1,38 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_status_v0",
+  "route_path": "/status",
+  "route_status": "fixture_only",
+  "route_kind": "status",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "json_manifest",
+  "required_snapshot_fields": [
+    "identity",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "upload",
+    "download",
+    "execute"
+  ],
+  "limitations": [
+    "Status route is read-only and fixture-only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false,
+    "relay_mutates_public_index": false,
+    "relay_mutates_master_index": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false,
+    "enabled_hosting": false
+  }
+}
+

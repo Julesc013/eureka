@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4538 chars, 1135 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4403 chars, 1101 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/D-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/D-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/C-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/D-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/snapshots` (??; does not match active task allowed paths)
-- unknown: `control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/snapshots` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/SNAPSHOT_RENDERING_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/SNAPSHOT_SUBSTRATE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SNAPSHOT_FIXTURE_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SNAPSHOT_NO_LIVE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SNAPSHOT_RENDERER_SEMANTIC_PARITY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SNAPSHOT_TO_RELAY_HANDOFF.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SNAPSHOT_VERIFICATION_POLICY.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/SNAPSHOT_ENVELOPE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SNAPSHOT_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SNAPSHOT_RECORD_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SNAPSHOT_RENDER_RESULT_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SNAPSHOT_VERIFICATION_REPORT_CONTRACT.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 10; see task evidence changed-files report
+- unknown: `contracts/relay` (??; does not match active task allowed paths)
+- unknown: `control/audits/d-bundle-02-localhost-readonly-relay-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/relay` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/LOCALHOST_RELAY_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/RELAY_RENDERING_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/RELAY_NATIVE_FIXTURE_ENDPOINTS.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/RELAY_NO_LIVE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/RELAY_OLD_BROWSER_COMPATIBILITY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/RELAY_READ_ONLY_SECURITY_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/RELAY_TERMINAL_TEXT_MODE.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/OLD_BROWSER_PROFILE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/RELAY_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/RELAY_PROFILE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/RELAY_RESPONSE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/RELAY_ROUTE_CONTRACT.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 12; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6412
-- approx_tokens: 1603
+- chars: 6362
+- approx_tokens: 1591
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,36 +1,38 @@
 # Eureka AIDE Lite Repo Health
 
-This compact repo-local health note reflects the D lane after D-BUNDLE-01.
+This compact repo-local health note reflects the D lane after D-BUNDLE-02.
 
 ## Status
 
 - Overall status: WARN.
-- Current completed queue item: `D-BUNDLE-01`.
-- Next recommended queue item: `D-BUNDLE-02`.
+- Current completed queue item: `D-BUNDLE-02`.
+- Next recommended queue item: `C-BUNDLE-01`.
 - Side-lanes: `HUMAN-OBS-REVIEW-01` remains parallel, and operator approval lanes remain gated unless a future reviewed prompt enables them.
 
-## Snapshot State
+## Relay State
 
-- D-BUNDLE-01 added fixture-only snapshot envelopes, manifests, records, fixity reports, unsigned/placeholder signature-envelope handling, verification reports, consumer reports, and text/lite HTML/file-tree renderers.
-- Snapshot examples live under `examples/snapshots/`.
-- Snapshot policies live under `control/inventory/snapshots/`.
-- Snapshot contracts live under `contracts/snapshots/`.
-- Snapshot runtime helpers live under `runtime/snapshots/`.
+- D-BUNDLE-02 added fixture-only localhost read-only relay profiles, routes, request/response models, status/manifest contracts, old-browser and terminal profiles, native fixture endpoint contracts, scripts, examples, tests, and audit evidence.
+- Relay examples live under `examples/relay/`.
+- Relay policies live under `control/inventory/relay/`.
+- Relay contracts live under `contracts/relay/`.
+- Relay runtime helpers live under `runtime/relay/`.
 
 ## Product Boundary
 
 - Public search behavior changed: no.
-- Relay or hosting enabled: no.
+- Public relay or hosting enabled: no.
+- Public bind enabled: no.
 - Site/dist mutated: no.
 - Downloads/uploads/accounts/telemetry enabled: no.
+- Action execution enabled: no.
 - Public index mutated: no.
 - Master index mutated: no.
-- Evidence, candidates, packs, source records, actions, snapshots, or public truth accepted: no.
+- Evidence, candidates, packs, source records, actions, snapshots, relay responses, or public truth accepted: no.
 
 ## Validation Note
 
-D-BUNDLE-01 focused validator and tests passed. Full unittest discovery passed with 2808 tests, architecture boundaries passed, existing J/I/G/F/H/core validators passed, AIDE golden evals passed 14/14, and AIDE verify is WARN-only with zero errors. Final command results are recorded in the D-BUNDLE-01 audit pack and task response.
+D-BUNDLE-02 focused validator and relay tests passed. Broader command results are recorded in the D-BUNDLE-02 audit pack and task response. AIDE verify may remain WARN-only for existing advisory lanes with zero task-blocking relay errors.
 
 ## Next
 
-Proceed to `D-BUNDLE-02 - Localhost read-only relay and old-browser harness`. Do not enable public hosting, deployment, live access, downloads, execution, public routes, or site/dist regeneration unless a reviewed D-BUNDLE-02 prompt explicitly scopes and validates that work.
+Proceed to `C-BUNDLE-01 - Native skeleton, matrix, C89 library, and WinForms proof`. Do not enable public hosting, deployment, live access, downloads, execution, public routes, public bind, telemetry, or site/dist regeneration unless a reviewed C-BUNDLE-01 prompt explicitly scopes and validates that work.

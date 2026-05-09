@@ -1,0 +1,37 @@
+task_id: C-BUNDLE-01
+title: Native skeleton, matrix, C89 library, and WinForms proof
+status: queued
+phase: C-BUNDLE-01
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/queue/index.yaml
+  - .aide/queue/C-BUNDLE-01/**
+  - contracts/**
+  - runtime/**
+  - control/inventory/**
+  - examples/**
+  - docs/**
+  - scripts/**
+  - tests/**
+  - control/audits/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no public hosting, no deployment, no public route activation, no live source access, no downloads, no mirroring, no installs, no execution, no emulation, no source/evidence/candidate/public truth acceptance, no public/master index mutation, no network/API/model/provider calls by default, no telemetry, no site/dist regeneration, and no local private-state roots
+validation:
+  - python scripts/validate_relay_runtime.py
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: C-BUNDLE-01

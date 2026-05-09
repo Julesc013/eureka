@@ -1,0 +1,14 @@
+Eureka Relay Terminal
+=====================
+Mode: fixture-only localhost read-only
+No live access, downloads, uploads, execution, accounts, or telemetry.
+
+1. Search fixture snapshot
+2. View manifest
+3. Browse files index
+
+Records:
+1. search_result - Demo Driver Search Result
+2. known_absence - No Reviewed Result In Fixture Scope
+
+Blocked actions: write, upload, download, execute, live source access, public bind

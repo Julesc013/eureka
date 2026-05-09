@@ -1,0 +1,16 @@
+{
+  "schema_version": "relay_truth_policy.v0",
+  "relay_response_is_public_truth": false,
+  "relay_accepts_evidence": false,
+  "relay_accepts_candidate": false,
+  "relay_mutates_public_index": false,
+  "relay_mutates_master_index": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "download_allowed": false,
+  "action_execution_allowed": false,
+  "live_source_access_allowed": false,
+  "public_bind_allowed": false
+}
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_need_v0",
+  "route_path": "/need/{id}",
+  "route_status": "fixture_only",
+  "route_kind": "need",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "lite_html",
+  "required_snapshot_fields": [
+    "identity",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "public_search_mutation",
+    "live_source_fanout"
+  ],
+  "limitations": [
+    "Need route is a fixture projection only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_source_v0",
+  "route_path": "/source/{id}",
+  "route_status": "fixture_only",
+  "route_kind": "source",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "lite_html",
+  "required_snapshot_fields": [
+    "identity",
+    "source posture",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "source_sync",
+    "live_probe",
+    "download"
+  ],
+  "limitations": [
+    "Source route does not fetch or sync."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_live_access": false
+  }
+}
+

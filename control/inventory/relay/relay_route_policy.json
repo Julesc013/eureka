@@ -1,0 +1,39 @@
+{
+  "schema_version": "relay_route_policy.v0",
+  "allowed_routes": [
+    "/status",
+    "/snapshot",
+    "/search",
+    "/object/{id}",
+    "/source/{id}",
+    "/need/{id}",
+    "/action/{id}",
+    "/manifest",
+    "/files",
+    "/text/search",
+    "/text/object/{id}",
+    "/terminal"
+  ],
+  "blocked_routes": [
+    "/admin",
+    "/upload",
+    "/download",
+    "/execute",
+    "/install",
+    "/mirror",
+    "/write"
+  ],
+  "allowed_methods": [
+    "GET"
+  ],
+  "forbidden_methods": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "no_admin_routes": true,
+  "no_upload_routes": true,
+  "no_download_execution_routes": true
+}
+

@@ -1,0 +1,31 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_files_v0",
+  "route_path": "/files",
+  "route_status": "fixture_only",
+  "route_kind": "files",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "file_tree",
+  "required_snapshot_fields": [
+    "identity",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "file_download",
+    "mirror",
+    "execute"
+  ],
+  "limitations": [
+    "File tree is descriptive and does not provide downloads."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false
+  }
+}
+

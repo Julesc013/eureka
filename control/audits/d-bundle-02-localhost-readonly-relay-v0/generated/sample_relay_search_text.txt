@@ -1,0 +1,25 @@
+Eureka Relay
+============
+Status: 200
+Summary: Fixture search projection; no public ranking or live fanout.
+No live access, downloads, uploads, execution, accounts, telemetry, or index mutation.
+
+Record: fixture:search-result:drivers-demo
+Title: Demo Driver Search Result
+Summary: Fixture search result carried into an offline snapshot.
+Source posture: fixture_or_local_ref_only
+Evidence posture: preview_or_reviewed_ref_only
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: safe_descriptive_actions_only
+Limitations/no-claims: no public truth; no download; no execution; no index mutation
+
+Record: fixture:absence:no-reviewed-driver-result
+Title: No Reviewed Result In Fixture Scope
+Summary: Known absence scoped to local fixture records only.
+Source posture: limited_fixture_scope
+Evidence posture: no_reviewed_evidence_in_fixture_scope
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: safe_descriptive_actions_only
+Limitations/no-claims: no public truth; no download; no execution; no index mutation

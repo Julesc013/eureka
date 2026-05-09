@@ -1,0 +1,22 @@
+{
+  "schema_version": "native_fixture_endpoint.v0",
+  "native_fixture_endpoint_id": "native_fixture_endpoint_status_v0",
+  "endpoint_kind": "status",
+  "endpoint_path": "/status",
+  "method": "GET",
+  "response_profile": "native_fixture_json",
+  "read_only": true,
+  "write_allowed": false,
+  "download_allowed": false,
+  "action_execution_allowed": false,
+  "limitations": [
+    "Native fixture endpoint is read-only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false
+  }
+}
+

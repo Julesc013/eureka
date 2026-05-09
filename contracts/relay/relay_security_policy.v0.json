@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_security_policy.v0.json",
+  "title": "Relay Security Policy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relay_security_policy_id",
+    "bind_localhost_only",
+    "forbidden_hosts",
+    "no_secrets",
+    "no_cookies",
+    "no_credentials",
+    "no_account_sessions",
+    "no_cors_public_write",
+    "no_telemetry"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_security_policy.v0" },
+    "relay_security_policy_id": { "type": "string" },
+    "bind_localhost_only": { "const": true },
+    "forbidden_hosts": { "type": "array", "items": { "type": "string" } },
+    "no_secrets": { "const": true },
+    "no_cookies": { "const": true },
+    "no_credentials": { "const": true },
+    "no_account_sessions": { "const": true },
+    "no_cors_public_write": { "const": true },
+    "no_telemetry": { "const": true }
+  },
+  "additionalProperties": true
+}
+

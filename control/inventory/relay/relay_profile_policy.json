@@ -1,0 +1,31 @@
+{
+  "schema_version": "relay_profile_policy.v0",
+  "fixture_only_current": true,
+  "localhost_readonly_current": true,
+  "public_relay_enabled": false,
+  "hosted_relay_enabled": false,
+  "auth_enabled": false,
+  "write_enabled": false,
+  "upload_enabled": false,
+  "download_enabled": false,
+  "action_execution_enabled": false,
+  "allowed_relay_modes": [
+    "fixture_only",
+    "localhost_readonly",
+    "old_browser_preview",
+    "terminal_preview",
+    "native_fixture_preview",
+    "policy_blocked"
+  ],
+  "required_current_false": [
+    "bind_public_interfaces_allowed",
+    "write_allowed",
+    "upload_allowed",
+    "download_allowed",
+    "action_execution_allowed",
+    "live_source_access_allowed",
+    "account_auth_allowed",
+    "telemetry_allowed"
+  ]
+}
+

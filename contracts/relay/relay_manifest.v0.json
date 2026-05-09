@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_manifest.v0.json",
+  "title": "Relay Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relay_manifest_id",
+    "relay_mode",
+    "routes",
+    "profiles",
+    "snapshot_refs",
+    "no_goals",
+    "blocked_actions",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_manifest.v0" },
+    "relay_manifest_id": { "type": "string" },
+    "relay_mode": { "type": "string" },
+    "routes": { "type": "array", "items": { "type": "string" } },
+    "profiles": { "type": "array", "items": { "type": "string" } },
+    "snapshot_refs": { "type": "array", "items": { "type": "string" } },
+    "no_goals": { "type": "array", "items": { "type": "string" } },
+    "blocked_actions": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "truth_boundary": { "type": "object" },
+    "product_boundary": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

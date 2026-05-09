@@ -1,0 +1,41 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_search_v0",
+  "route_path": "/search",
+  "route_status": "fixture_only",
+  "route_kind": "search",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "lite_html",
+  "required_snapshot_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "live_source_fanout",
+    "public_ranking_change",
+    "upload",
+    "download",
+    "execute"
+  ],
+  "limitations": [
+    "Search route renders fixture records only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false,
+    "relay_accepts_evidence": false,
+    "relay_accepts_candidate": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_access": false
+  }
+}
+

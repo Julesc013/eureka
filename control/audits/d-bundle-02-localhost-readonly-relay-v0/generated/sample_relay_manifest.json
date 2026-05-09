@@ -1,0 +1,79 @@
+{
+  "blocked_actions": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "upload",
+    "download",
+    "execute",
+    "public_bind"
+  ],
+  "limitations": [
+    "Read-only fixture manifest; not a hosted/public route activation."
+  ],
+  "no_goals": [
+    "no public relay",
+    "no live source access",
+    "no writes",
+    "no downloads",
+    "no execution"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_access": false,
+    "enabled_public_relay": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "profiles": [
+    "text",
+    "lite_html",
+    "file_tree",
+    "json_manifest",
+    "terminal",
+    "native_fixture_json"
+  ],
+  "relay_manifest_id": "relay_manifest:0ab04270b8c35816",
+  "relay_mode": "localhost_readonly",
+  "routes": [
+    "/status",
+    "/snapshot",
+    "/search",
+    "/object/{id}",
+    "/source/{id}",
+    "/need/{id}",
+    "/action/{id}",
+    "/manifest",
+    "/files",
+    "/text/search",
+    "/text/object/{id}",
+    "/terminal"
+  ],
+  "schema_version": "relay_manifest.v0",
+  "snapshot_refs": [
+    "snapshot_manifest.a6ddb9c25557.v0"
+  ],
+  "truth_boundary": {
+    "live_source_access_enabled": false,
+    "malware_safety_claimed": false,
+    "public_bind_allowed": false,
+    "relay_accepts_candidate": false,
+    "relay_accepts_evidence": false,
+    "relay_downloads_files": false,
+    "relay_executes_actions": false,
+    "relay_mutates_master_index": false,
+    "relay_mutates_public_index": false,
+    "relay_response_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

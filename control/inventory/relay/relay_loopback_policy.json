@@ -1,0 +1,19 @@
+{
+  "schema_version": "relay_loopback_policy.v0",
+  "allowed_bind_hosts": [
+    "127.0.0.1",
+    "localhost"
+  ],
+  "future_optional_bind_hosts": [
+    "::1"
+  ],
+  "forbidden_bind_hosts": [
+    "0.0.0.0",
+    "::",
+    "*",
+    ""
+  ],
+  "public_bind_denied": true,
+  "bind_public_interfaces_allowed": false
+}
+

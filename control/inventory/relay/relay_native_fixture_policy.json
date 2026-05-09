@@ -1,0 +1,18 @@
+{
+  "schema_version": "relay_native_fixture_policy.v0",
+  "read_only_endpoints_only": true,
+  "stable_json_fixture_envelopes": true,
+  "no_internal_python_runtime_exposure": true,
+  "allowed_endpoint_kinds": [
+    "status",
+    "search",
+    "object",
+    "source",
+    "action_manifest",
+    "snapshot_manifest"
+  ],
+  "write_allowed": false,
+  "download_allowed": false,
+  "action_execution_allowed": false
+}
+

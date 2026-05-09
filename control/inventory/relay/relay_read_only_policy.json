@@ -1,0 +1,20 @@
+{
+  "schema_version": "relay_read_only_policy.v0",
+  "read_only": true,
+  "state_mutation_allowed": false,
+  "file_write_allowed_only_for_explicit_audit_outputs": true,
+  "allowed_methods": [
+    "GET"
+  ],
+  "forbidden_methods": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "write_allowed": false,
+  "upload_allowed": false,
+  "download_allowed": false,
+  "action_execution_allowed": false
+}
+

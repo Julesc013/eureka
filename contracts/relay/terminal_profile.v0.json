@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/terminal_profile.v0.json",
+  "title": "Terminal Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "terminal_profile_id",
+    "line_width",
+    "menu_model",
+    "numbered_results",
+    "pagination_model",
+    "required_semantic_fields",
+    "no_color_required",
+    "no_terminal_escape_required_by_default"
+  ],
+  "properties": {
+    "schema_version": { "const": "terminal_profile.v0" },
+    "terminal_profile_id": { "type": "string" },
+    "line_width": { "type": "integer", "minimum": 1 },
+    "menu_model": { "type": "string" },
+    "numbered_results": { "type": "boolean" },
+    "pagination_model": { "type": "string" },
+    "required_semantic_fields": { "type": "array", "items": { "type": "string" } },
+    "no_color_required": { "type": "boolean" },
+    "no_terminal_escape_required_by_default": { "const": true }
+  },
+  "additionalProperties": true
+}
+

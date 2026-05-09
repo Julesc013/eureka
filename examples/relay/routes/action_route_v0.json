@@ -1,0 +1,34 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_action_v0",
+  "route_path": "/action/{id}",
+  "route_status": "fixture_only",
+  "route_kind": "action",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "lite_html",
+  "required_snapshot_fields": [
+    "identity",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "download",
+    "install",
+    "execute",
+    "emulate"
+  ],
+  "limitations": [
+    "Action route exposes manifests only and does not execute actions."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false,
+    "enabled_execution": false
+  }
+}
+

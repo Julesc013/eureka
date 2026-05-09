@@ -1,0 +1,84 @@
+{
+  "schema_version": "relay_profile.v0",
+  "relay_profile_id": "native_fixture_profile_v0",
+  "relay_profile_status": "native_fixture_preview",
+  "relay_mode": "native_fixture_preview",
+  "bind_policy": {
+    "bind_localhost_only": true,
+    "bind_public_interfaces_allowed": false
+  },
+  "host": "127.0.0.1",
+  "port_policy": {
+    "ephemeral_ports_allowed_for_tests": true
+  },
+  "allowed_routes": [
+    "/status",
+    "/search",
+    "/object/{id}",
+    "/source/{id}",
+    "/action/{id}",
+    "/manifest"
+  ],
+  "allowed_methods": [
+    "GET"
+  ],
+  "allowed_render_profiles": [
+    "native_fixture_json",
+    "json_manifest",
+    "text"
+  ],
+  "snapshot_input_policy": {
+    "explicit_fixture_snapshot_only": true,
+    "live_source_access_allowed": false
+  },
+  "authentication_policy": {
+    "account_auth_allowed": false
+  },
+  "write_policy": {
+    "write_allowed": false
+  },
+  "upload_policy": {
+    "upload_allowed": false
+  },
+  "download_policy": {
+    "download_allowed": false
+  },
+  "action_execution_policy": {
+    "action_execution_allowed": false
+  },
+  "live_access_policy": {
+    "live_source_access_allowed": false
+  },
+  "security_policy_ref": "control/inventory/relay/relay_security_policy.json",
+  "limitations": [
+    "Read-only fixture endpoints for future native clients."
+  ],
+  "truth_boundary": {
+    "bind_public_interfaces_allowed": false,
+    "write_allowed": false,
+    "upload_allowed": false,
+    "download_allowed": false,
+    "action_execution_allowed": false,
+    "live_source_access_allowed": false,
+    "account_auth_allowed": false,
+    "telemetry_allowed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  },
+  "no_goals": [
+    "no native write/admin/download/install endpoints"
+  ],
+  "notes": [
+    "Preview profile only."
+  ]
+}
+

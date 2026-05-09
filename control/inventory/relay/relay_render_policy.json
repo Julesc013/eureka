@@ -1,0 +1,25 @@
+{
+  "schema_version": "relay_render_policy.v0",
+  "allowed_render_profiles": [
+    "text",
+    "lite_html",
+    "file_tree",
+    "json_manifest",
+    "terminal",
+    "native_fixture_json"
+  ],
+  "required_semantic_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "no_public_route_activation": true,
+  "live_access_enabled": false,
+  "downloads_enabled": false,
+  "action_execution_enabled": false
+}
+

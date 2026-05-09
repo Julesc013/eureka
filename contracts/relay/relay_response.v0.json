@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_response.v0.json",
+  "title": "Relay Response",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "response_id",
+    "status_code",
+    "content_type",
+    "render_profile",
+    "body_summary",
+    "headers",
+    "semantic_fields_present",
+    "blocked_actions",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_response.v0" },
+    "response_id": { "type": "string" },
+    "status_code": { "type": "integer" },
+    "content_type": { "type": "string" },
+    "render_profile": { "enum": ["text", "lite_html", "file_tree", "json_manifest", "terminal", "native_fixture_json"] },
+    "body_summary": { "type": "string" },
+    "headers": { "type": "object" },
+    "semantic_fields_present": { "type": "array", "items": { "type": "string" } },
+    "blocked_actions": { "type": "array", "items": { "type": "string" } },
+    "no_claims": { "type": "array", "items": { "type": "string" } },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "relay_response_is_public_truth": { "const": false },
+        "relay_accepts_evidence": { "const": false },
+        "relay_accepts_candidate": { "const": false },
+        "relay_mutates_public_index": { "const": false },
+        "relay_mutates_master_index": { "const": false },
+        "rights_clearance_claimed": { "const": false },
+        "malware_safety_claimed": { "const": false },
+        "verified_installability_claimed": { "const": false }
+      }
+    },
+    "product_boundary": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

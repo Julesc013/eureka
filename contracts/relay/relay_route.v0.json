@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/relay/relay_route.v0.json",
+  "title": "Relay Route",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "route_id",
+    "route_path",
+    "route_status",
+    "route_kind",
+    "allowed_methods",
+    "input_source",
+    "output_profile",
+    "required_snapshot_fields",
+    "blocked_actions",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "relay_route.v0" },
+    "route_id": { "type": "string" },
+    "route_path": { "type": "string" },
+    "route_status": { "enum": ["example_only", "fixture_only", "localhost_readonly", "blocked_by_policy", "not_evaluable"] },
+    "route_kind": { "enum": ["status", "snapshot", "search", "object", "source", "need", "action", "manifest", "files", "terminal", "unknown"] },
+    "allowed_methods": { "type": "array", "items": { "enum": ["GET", "HEAD_future"] } },
+    "input_source": { "type": "string" },
+    "output_profile": { "enum": ["text", "lite_html", "file_tree", "json_manifest", "terminal", "native_fixture_json"] },
+    "required_snapshot_fields": { "type": "array", "items": { "type": "string" } },
+    "blocked_actions": { "type": "array", "items": { "type": "string" } },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "truth_boundary": { "type": "object" },
+    "product_boundary": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

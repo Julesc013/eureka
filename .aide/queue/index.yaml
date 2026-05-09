@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: D-BUNDLE-02
+current_recommended_task: C-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -254,12 +254,20 @@ entries:
     recommended_after: J0-BUNDLE-01
   - id: D-BUNDLE-02
     title: Localhost read-only relay and old-browser harness
-    status: queued
+    status: needs_review
     purpose: Build a separately reviewed localhost read-only relay harness from verified fixture snapshots without enabling hosting, deployment, live access, downloads, execution, or public index mutation by default.
     allowed_scope_summary: D relay harness contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
     gate: D-BUNDLE-01 passes; no public hosting, deployment, public routes, live source access, downloads, mirroring, execution, public/master index mutation, or truth acceptance by default.
     task: .aide/queue/D-BUNDLE-02/task.yaml
     recommended_after: D-BUNDLE-01
+  - id: C-BUNDLE-01
+    title: Native skeleton, matrix, C89 library, and WinForms proof
+    status: queued
+    purpose: Start the native-client track using the D-BUNDLE-02 read-only fixture relay and snapshot projections without enabling downloads, execution, public hosting, live access, telemetry, or public/master index mutation.
+    allowed_scope_summary: C native skeleton contracts, docs, examples, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
+    gate: D-BUNDLE-02 passes; relay remains localhost-only and read-only, no public bind, no live source access, no downloads, no installs, no execution, no uploads/accounts/telemetry, and no truth acceptance by default.
+    task: .aide/queue/C-BUNDLE-01/task.yaml
+    recommended_after: D-BUNDLE-02
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

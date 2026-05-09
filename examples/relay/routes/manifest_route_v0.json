@@ -1,0 +1,32 @@
+{
+  "schema_version": "relay_route.v0",
+  "route_id": "relay_route_manifest_v0",
+  "route_path": "/manifest",
+  "route_status": "fixture_only",
+  "route_kind": "manifest",
+  "allowed_methods": [
+    "GET"
+  ],
+  "input_source": "verified_fixture_snapshot",
+  "output_profile": "json_manifest",
+  "required_snapshot_fields": [
+    "identity",
+    "limitations/no-claims"
+  ],
+  "blocked_actions": [
+    "write",
+    "upload",
+    "download",
+    "execute"
+  ],
+  "limitations": [
+    "Manifest route is read-only."
+  ],
+  "truth_boundary": {
+    "relay_response_is_public_truth": false
+  },
+  "product_boundary": {
+    "enabled_public_relay": false
+  }
+}
+
