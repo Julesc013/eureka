@@ -1,0 +1,27 @@
+{
+  "schema_version": "snapshot_input.v0",
+  "snapshot_input_id": "policy_blocked_snapshot_input_v0",
+  "snapshot_kind": "policy_blocked",
+  "snapshot_label": "Policy Blocked Snapshot Fixture",
+  "snapshot_scope": "fixture_only",
+  "records": [
+    {
+      "record_type": "policy_blocked_record",
+      "canonical_ref": "fixture:blocked:snapshot-live-access",
+      "title": "Live Access Blocked",
+      "summary": "Policy-blocked record showing that live access is unavailable in snapshots.",
+      "source_posture": "blocked_by_policy",
+      "evidence_posture": "not_accepted_evidence",
+      "action_status": "blocked_by_policy",
+      "blocked_actions": [
+        "relay",
+        "hosting",
+        "download",
+        "execute"
+      ],
+      "limitations": [
+        "Live access, relay, hosting, downloads, and execution are blocked."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_signature_envelope.v0",
+  "title": "Snapshot Signature Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "signature_envelope_id",
+    "snapshot_ref",
+    "signature_status",
+    "signature_kind",
+    "signer_ref",
+    "public_key_ref_future",
+    "signature_value_ref_future",
+    "verification_method",
+    "verification_status",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_signature_envelope.v0" },
+    "signature_status": {
+      "enum": [
+        "unsigned",
+        "placeholder_only",
+        "malformed",
+        "verification_not_available",
+        "verified_future"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

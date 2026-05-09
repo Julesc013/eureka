@@ -1,0 +1,8 @@
+{
+  "schema_version": "snapshot_consumer_policy.v0",
+  "local_fixture_consumer_only": true,
+  "network_allowed": false,
+  "relay_allowed": false,
+  "source_sync_allowed": false,
+  "action_execution_allowed": false
+}

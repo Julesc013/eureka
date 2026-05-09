@@ -1,0 +1,15 @@
+{
+  "schema_version": "snapshot_semantic_parity_policy.v0",
+  "renderers_must_preserve": [
+    "identity",
+    "title/summary",
+    "source posture",
+    "evidence posture",
+    "compatibility posture where present",
+    "rights posture",
+    "risk posture",
+    "allowed and blocked actions",
+    "limitations/no-claims",
+    "known absence scope where present"
+  ]
+}

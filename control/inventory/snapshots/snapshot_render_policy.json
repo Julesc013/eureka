@@ -1,0 +1,19 @@
+{
+  "schema_version": "snapshot_render_policy.v0",
+  "allowed_profiles": [
+    "text",
+    "lite_html",
+    "file_tree",
+    "json_manifest"
+  ],
+  "required_semantic_fields": [
+    "identity",
+    "source posture",
+    "evidence posture",
+    "rights posture",
+    "risk posture",
+    "action posture",
+    "limitations/no-claims"
+  ],
+  "public_route_activation_allowed": false
+}

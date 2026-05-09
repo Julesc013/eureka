@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: D-BUNDLE-01
+current_recommended_task: D-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -246,12 +246,20 @@ entries:
     recommended_after: I-BUNDLE-01
   - id: D-BUNDLE-01
     title: Snapshot envelope, consumer, verification, static/text renderers
-    status: queued
+    status: needs_review
     purpose: Build the next fixture/static snapshot envelope and read-only consumers after J0 safe action manifests without enabling downloads, execution, hosting, or public-index mutation by default.
     allowed_scope_summary: D snapshot contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until separately scoped.
     gate: J0-BUNDLE-01 passes; no downloads, mirroring, installation, execution, emulation, public/master index mutation, truth acceptance, live calls, telemetry, or model/provider calls by default.
     task: .aide/queue/D-BUNDLE-01/task.yaml
     recommended_after: J0-BUNDLE-01
+  - id: D-BUNDLE-02
+    title: Localhost read-only relay and old-browser harness
+    status: queued
+    purpose: Build a separately reviewed localhost read-only relay harness from verified fixture snapshots without enabling hosting, deployment, live access, downloads, execution, or public index mutation by default.
+    allowed_scope_summary: D relay harness contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
+    gate: D-BUNDLE-01 passes; no public hosting, deployment, public routes, live source access, downloads, mirroring, execution, public/master index mutation, or truth acceptance by default.
+    task: .aide/queue/D-BUNDLE-02/task.yaml
+    recommended_after: D-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

@@ -1,0 +1,34 @@
+{
+  "schema_version": "snapshot_record_policy.v0",
+  "allowed_record_types": [
+    "search_result",
+    "object_record",
+    "source_record",
+    "need_record",
+    "candidate_record",
+    "evidence_summary",
+    "known_absence",
+    "action_manifest",
+    "acquisition_manifest",
+    "citation_bundle",
+    "export_manifest",
+    "preservation_manifest",
+    "blocked_action",
+    "policy_blocked_record"
+  ],
+  "required_posture_fields": [
+    "source",
+    "evidence",
+    "rights",
+    "risk",
+    "actions",
+    "limitations"
+  ],
+  "forbidden_claims": [
+    "accepted_public_truth",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "downloaded_or_mirrored_file"
+  ]
+}

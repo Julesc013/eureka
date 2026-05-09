@@ -1,0 +1,10 @@
+{
+  "schema_version": "snapshot_no_live_access_policy.v0",
+  "network_allowed": false,
+  "api_calls_allowed": false,
+  "source_sync_allowed": false,
+  "live_probes_allowed": false,
+  "relay_allowed": false,
+  "hosting_allowed": false,
+  "external_resources_allowed": false
+}

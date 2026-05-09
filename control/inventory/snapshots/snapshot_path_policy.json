@@ -1,0 +1,22 @@
+{
+  "schema_version": "snapshot_path_policy.v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/snapshots/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "master_index/",
+    "data/master_index/",
+    "relay/",
+    "hosted/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ]
+}

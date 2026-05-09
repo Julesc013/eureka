@@ -1,0 +1,17 @@
+Eureka Snapshot
+================
+
+Manifest: snapshot_manifest.0ca152638600.v0
+No live access, hosting, downloads, mirroring, execution, or truth acceptance.
+
+Record: fixture:blocked:snapshot-live-access
+Identity: fixture:blocked:snapshot-live-access
+Title: Live Access Blocked
+Summary: Policy-blocked record showing that live access is unavailable in snapshots.
+Source posture: blocked_by_policy
+Evidence posture: not_accepted_evidence
+Compatibility posture: unknown_or_fixture_only
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: blocked_action_preserved
+Limitations/no-claims: Live access, relay, hosting, downloads, and execution are blocked.; no accepted public truth; no rights clearance; no malware safety; no verified installability; no compatibility certification; no exhaustive source coverage; no downloads or mirrors; no execution or installation; no hosting or relay activation

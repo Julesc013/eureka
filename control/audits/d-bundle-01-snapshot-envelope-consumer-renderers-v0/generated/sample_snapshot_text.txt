@@ -1,0 +1,29 @@
+Eureka Snapshot
+================
+
+Manifest: snapshot_manifest.a6ddb9c25557.v0
+No live access, hosting, downloads, mirroring, execution, or truth acceptance.
+
+Record: fixture:search-result:drivers-demo
+Identity: fixture:search-result:drivers-demo
+Title: Demo Driver Search Result
+Summary: Fixture search result carried into an offline snapshot.
+Source posture: fixture_or_local_ref_only
+Evidence posture: preview_or_reviewed_ref_only
+Compatibility posture: compatibility_unknown_fixture_only
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: safe_descriptive_actions_only
+Limitations/no-claims: Fixture search result only.; No public truth is accepted.; no accepted public truth; no rights clearance; no malware safety; no verified installability; no compatibility certification; no exhaustive source coverage; no downloads or mirrors; no execution or installation; no hosting or relay activation
+
+Record: fixture:absence:no-reviewed-driver-result
+Identity: fixture:absence:no-reviewed-driver-result
+Title: No Reviewed Result In Fixture Scope
+Summary: Known absence scoped to local fixture records only.
+Source posture: limited_fixture_scope
+Evidence posture: no_reviewed_evidence_in_fixture_scope
+Compatibility posture: unknown_or_fixture_only
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: safe_descriptive_actions_only
+Limitations/no-claims: Known absence is not a global absence claim.; no accepted public truth; no rights clearance; no malware safety; no verified installability; no compatibility certification; no exhaustive source coverage; no downloads or mirrors; no execution or installation; no hosting or relay activation

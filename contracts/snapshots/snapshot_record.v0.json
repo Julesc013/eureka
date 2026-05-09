@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_record.v0",
+  "title": "Snapshot Record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_record_id",
+    "record_type",
+    "record_status",
+    "canonical_ref",
+    "source_ref",
+    "title",
+    "summary",
+    "source_posture",
+    "evidence_posture",
+    "compatibility_posture",
+    "rights_posture",
+    "risk_posture",
+    "action_posture",
+    "limitations",
+    "render_fields",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_record.v0" },
+    "record_type": {
+      "enum": [
+        "search_result",
+        "object_record",
+        "source_record",
+        "need_record",
+        "candidate_record",
+        "evidence_summary",
+        "known_absence",
+        "action_manifest",
+        "acquisition_manifest",
+        "citation_bundle",
+        "export_manifest",
+        "preservation_manifest",
+        "blocked_action",
+        "policy_blocked_record"
+      ]
+    },
+    "render_fields": { "type": "object" }
+  },
+  "additionalProperties": true
+}

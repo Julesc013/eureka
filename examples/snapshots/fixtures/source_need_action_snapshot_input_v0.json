@@ -1,0 +1,48 @@
+{
+  "schema_version": "snapshot_input.v0",
+  "snapshot_input_id": "source_need_action_snapshot_input_v0",
+  "snapshot_kind": "source_need_action_snapshot",
+  "snapshot_label": "Source Need Action Snapshot Fixture",
+  "snapshot_scope": "fixture_only",
+  "records": [
+    {
+      "record_type": "source_record",
+      "canonical_ref": "fixture:source:local-example-index",
+      "title": "Local Example Source",
+      "summary": "Fixture source summary included for offline context.",
+      "source_refs": [
+        "fixture:source:local-example-index"
+      ],
+      "blocked_actions": [
+        "source_sync"
+      ]
+    },
+    {
+      "record_type": "need_record",
+      "canonical_ref": "fixture:need:driver-search",
+      "title": "Driver Search Need",
+      "summary": "Fixture SearchNeed summary for snapshot rendering.",
+      "compatibility_posture": "requested_but_unverified",
+      "blocked_actions": [
+        "live_probe"
+      ]
+    },
+    {
+      "record_type": "action_manifest",
+      "canonical_ref": "fixture:action:view-demo-utility",
+      "title": "View Demo Utility",
+      "summary": "Safe descriptive action manifest represented in a snapshot.",
+      "source_refs": [
+        "fixture:source:local-example-index"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute"
+      ],
+      "limitations": [
+        "Action manifest does not execute an action."
+      ]
+    }
+  ]
+}

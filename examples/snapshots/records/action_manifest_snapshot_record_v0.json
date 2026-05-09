@@ -1,0 +1,84 @@
+{
+  "schema_version": "snapshot_record.v0",
+  "snapshot_record_id": "snapshot_record.action_manifest_fixture.v0",
+  "record_type": "action_manifest",
+  "record_status": "fixture_only",
+  "canonical_ref": "fixture:action:view-demo-utility",
+  "source_ref": "fixture:source:local-example-index",
+  "title": "View Demo Utility",
+  "summary": "Safe descriptive action manifest represented in a snapshot.",
+  "source_posture": "fixture_source_ref_only",
+  "evidence_posture": "not_accepted_evidence",
+  "compatibility_posture": "not_verified",
+  "rights_posture": "unknown_not_cleared",
+  "risk_posture": "unknown_not_scanned",
+  "action_posture": "descriptive_action_manifest_only",
+  "limitations": [
+    "Action manifest does not execute an action."
+  ],
+  "render_fields": {
+    "identity": "fixture:action:view-demo-utility",
+    "title": "View Demo Utility",
+    "summary": "Safe descriptive action manifest represented in a snapshot.",
+    "source_posture": "fixture_source_ref_only",
+    "evidence_posture": "not_accepted_evidence",
+    "compatibility_posture": "not_verified",
+    "rights_posture": "unknown_not_cleared",
+    "risk_posture": "unknown_not_scanned",
+    "action_posture": "descriptive_action_manifest_only",
+    "limitations": [
+      "Action manifest does not execute an action."
+    ],
+    "no_claims": [
+      "no downloads",
+      "no execution",
+      "no public index mutation"
+    ],
+    "source_refs": [
+      "fixture:source:local-example-index"
+    ],
+    "evidence_refs": [],
+    "allowed_actions": [
+      "view"
+    ],
+    "blocked_actions": [
+      "download",
+      "install",
+      "execute"
+    ]
+  },
+  "truth_boundary": {
+    "snapshot_is_public_truth": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_mutates_public_index": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_downloads_files": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_executes_actions": false,
+    "fixity_implies_authenticity": false,
+    "signature_placeholder_implies_trust": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "compatibility_certification_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

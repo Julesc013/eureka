@@ -1,0 +1,8 @@
+{
+  "schema_version": "snapshot_fixity_policy.v0",
+  "allowed_hash_algorithms": [
+    "sha256"
+  ],
+  "deterministic_json_required": true,
+  "fixity_does_not_mean_authenticity": true
+}

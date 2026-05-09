@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_file_tree_index.v0",
+  "title": "Snapshot File Tree Index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "file_tree_index_id",
+    "snapshot_ref",
+    "entries",
+    "readme_summary",
+    "manifest_refs",
+    "record_refs",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_file_tree_index.v0" }
+  },
+  "additionalProperties": true
+}

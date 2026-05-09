@@ -1,0 +1,35 @@
+{
+  "schema_version": "snapshot_input.v0",
+  "snapshot_input_id": "minimal_snapshot_input_v0",
+  "snapshot_kind": "fixture_bundle",
+  "snapshot_label": "Minimal Snapshot Fixture",
+  "snapshot_scope": "fixture_only",
+  "records": [
+    {
+      "record_type": "object_record",
+      "canonical_ref": "fixture:object:minimal",
+      "title": "Minimal Fixture Object",
+      "summary": "Smallest fixture object used to build a deterministic snapshot.",
+      "source_refs": [
+        "fixture:source:minimal"
+      ],
+      "rights_posture": "unknown_not_cleared",
+      "risk_posture": "unknown_not_scanned",
+      "allowed_current_actions": [
+        "view",
+        "cite"
+      ],
+      "limitations": [
+        "Minimal fixture only."
+      ]
+    }
+  ],
+  "limitations": [
+    "Fixture input only."
+  ],
+  "no_claims": [
+    "no accepted public truth",
+    "no hosting",
+    "no downloads"
+  ]
+}

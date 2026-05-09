@@ -1,6 +1,6 @@
 task_id: D-BUNDLE-01
 title: Snapshot envelope, consumer, verification, static/text renderers
-status: queued
+status: needs_review
 phase: D-BUNDLE-01
 allowed_paths:
   - .aide/context/latest-task-packet.md
@@ -36,4 +36,4 @@ validation:
   - py -3 .aide/scripts/aide_lite.py test
   - py -3 .aide/scripts/aide_lite.py selftest
   - py -3 .aide/scripts/aide_lite.py eval run
-next_recommended_task: D-BUNDLE-01
+next_recommended_task: D-BUNDLE-02

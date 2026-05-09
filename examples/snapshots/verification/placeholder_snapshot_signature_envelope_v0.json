@@ -1,0 +1,49 @@
+{
+  "schema_version": "snapshot_signature_envelope.v0",
+  "signature_envelope_id": "snapshot_signature_envelope.placeholder.v0",
+  "snapshot_ref": "snapshot_envelope.placeholder.v0",
+  "signature_status": "placeholder_only",
+  "signature_kind": "placeholder_documentation_only",
+  "signer_ref": "",
+  "public_key_ref_future": "",
+  "signature_value_ref_future": "",
+  "verification_method": "placeholder_not_cryptographic",
+  "verification_status": "verification_not_available",
+  "limitations": [
+    "Placeholder signature envelope is documentation only and does not imply trust."
+  ],
+  "truth_boundary": {
+    "snapshot_is_public_truth": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_mutates_public_index": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_downloads_files": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_executes_actions": false,
+    "fixity_implies_authenticity": false,
+    "signature_placeholder_implies_trust": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "compatibility_certification_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

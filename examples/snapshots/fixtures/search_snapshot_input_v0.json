@@ -1,0 +1,59 @@
+{
+  "schema_version": "snapshot_input.v0",
+  "snapshot_input_id": "search_snapshot_input_v0",
+  "snapshot_kind": "search_results_snapshot",
+  "snapshot_label": "Search Snapshot Fixture",
+  "snapshot_scope": "fixture_only",
+  "records": [
+    {
+      "record_type": "search_result",
+      "canonical_ref": "fixture:search-result:drivers-demo",
+      "title": "Demo Driver Search Result",
+      "summary": "Fixture search result carried into an offline snapshot.",
+      "source_refs": [
+        "fixture:source:local-example-index"
+      ],
+      "evidence_refs": [
+        "fixture:evidence-preview:drivers-demo"
+      ],
+      "compatibility_posture": "compatibility_unknown_fixture_only",
+      "rights_posture": "unknown_not_cleared",
+      "risk_posture": "unknown_not_scanned",
+      "allowed_current_actions": [
+        "view",
+        "inspect",
+        "cite",
+        "export_manifest"
+      ],
+      "blocked_actions": [
+        "download",
+        "execute"
+      ],
+      "limitations": [
+        "Fixture search result only.",
+        "No public truth is accepted."
+      ]
+    },
+    {
+      "record_type": "known_absence",
+      "canonical_ref": "fixture:absence:no-reviewed-driver-result",
+      "title": "No Reviewed Result In Fixture Scope",
+      "summary": "Known absence scoped to local fixture records only.",
+      "source_posture": "limited_fixture_scope",
+      "evidence_posture": "no_reviewed_evidence_in_fixture_scope",
+      "blocked_actions": [
+        "live_source_fanout"
+      ],
+      "limitations": [
+        "Known absence is not a global absence claim."
+      ]
+    }
+  ],
+  "limitations": [
+    "Search snapshot is fixture-only."
+  ],
+  "no_claims": [
+    "no public ranking change",
+    "no public search behavior change"
+  ]
+}

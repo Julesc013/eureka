@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_fixity_report.v0",
+  "title": "Snapshot Fixity Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "fixity_report_id",
+    "snapshot_ref",
+    "canonical_serialization_policy",
+    "hash_algorithm",
+    "record_hashes",
+    "manifest_hash",
+    "envelope_hash",
+    "deterministic",
+    "verification_status",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_fixity_report.v0" },
+    "hash_algorithm": { "const": "sha256" },
+    "deterministic": { "const": true }
+  },
+  "additionalProperties": true
+}

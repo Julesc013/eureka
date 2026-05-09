@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_render_result.v0",
+  "title": "Snapshot Render Result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "render_result_id",
+    "render_request_ref",
+    "render_profile",
+    "output_summary",
+    "output_path_ref",
+    "required_semantic_fields_present",
+    "omitted_fields",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_render_result.v0" },
+    "render_profile": { "enum": ["text", "lite_html", "json_manifest"] }
+  },
+  "additionalProperties": true
+}

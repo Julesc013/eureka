@@ -1,0 +1,54 @@
+{
+  "blockers": [],
+  "fixity_valid": true,
+  "limitations": [
+    "Verification is local/offline and does not create public truth or source authenticity."
+  ],
+  "manifest_valid": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_access": false,
+    "enabled_relay": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "records_valid": true,
+  "render_outputs_valid": true,
+  "schema_version": "snapshot_verification_report.v0",
+  "semantic_parity_checked": true,
+  "signature_envelope_valid": true,
+  "signature_verification_ref": "snapshot_signature_verification_report.cdd0e0719418.v0",
+  "snapshot_ref": "snapshot_envelope.5f97226c9057.v0",
+  "truth_boundary": {
+    "compatibility_certification_claimed": false,
+    "fixity_implies_authenticity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_downloads_files": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_executes_actions": false,
+    "snapshot_is_public_truth": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_mutates_public_index": false,
+    "verified_installability_claimed": false
+  },
+  "verification_report_id": "snapshot_verification_report.90fb6bdb4818.v0",
+  "verification_status": "verified_local",
+  "warnings": [
+    "Unsigned or placeholder signatures do not imply trust."
+  ]
+}

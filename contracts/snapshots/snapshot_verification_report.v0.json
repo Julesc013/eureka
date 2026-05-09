@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_verification_report.v0",
+  "title": "Snapshot Verification Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "verification_report_id",
+    "snapshot_ref",
+    "manifest_valid",
+    "records_valid",
+    "fixity_valid",
+    "signature_envelope_valid",
+    "render_outputs_valid",
+    "semantic_parity_checked",
+    "verification_status",
+    "warnings",
+    "blockers",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_verification_report.v0" }
+  },
+  "additionalProperties": true
+}

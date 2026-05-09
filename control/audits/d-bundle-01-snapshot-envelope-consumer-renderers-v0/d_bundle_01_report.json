@@ -1,0 +1,127 @@
+{
+  "schema_version": "d_bundle_01_report.v0",
+  "status": "pass",
+  "task": "D-BUNDLE-01",
+  "track": "D",
+  "purpose": "snapshot_envelope_consumer_verification_static_text_renderers",
+  "added_contracts": [
+    "contracts/snapshots/snapshot_envelope.v0.json",
+    "contracts/snapshots/snapshot_manifest.v0.json",
+    "contracts/snapshots/snapshot_record.v0.json",
+    "contracts/snapshots/snapshot_fixity_report.v0.json",
+    "contracts/snapshots/snapshot_signature_envelope.v0.json",
+    "contracts/snapshots/snapshot_verification_report.v0.json",
+    "contracts/snapshots/snapshot_consumer_report.v0.json",
+    "contracts/snapshots/snapshot_render_request.v0.json",
+    "contracts/snapshots/snapshot_render_result.v0.json",
+    "contracts/snapshots/snapshot_file_tree_index.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/snapshots/envelope.py",
+    "runtime/snapshots/manifest.py",
+    "runtime/snapshots/fixity.py",
+    "runtime/snapshots/signature.py",
+    "runtime/snapshots/verify.py",
+    "runtime/snapshots/consumer.py",
+    "runtime/snapshots/render_text.py",
+    "runtime/snapshots/render_lite_html.py",
+    "runtime/snapshots/render_file_tree.py",
+    "runtime/snapshots/summaries.py"
+  ],
+  "added_scripts": [
+    "scripts/build_snapshot_fixture.py",
+    "scripts/verify_snapshot_fixture.py",
+    "scripts/render_snapshot_fixture.py",
+    "scripts/summarize_snapshot_fixture.py",
+    "scripts/validate_snapshot_runtime.py"
+  ],
+  "added_docs": [
+    "docs/reference/SNAPSHOT_ENVELOPE_CONTRACT.md",
+    "docs/reference/SNAPSHOT_MANIFEST_CONTRACT.md",
+    "docs/reference/SNAPSHOT_RECORD_CONTRACT.md",
+    "docs/reference/SNAPSHOT_VERIFICATION_REPORT_CONTRACT.md",
+    "docs/reference/SNAPSHOT_RENDER_RESULT_CONTRACT.md",
+    "docs/architecture/SNAPSHOT_SUBSTRATE_MODEL.md",
+    "docs/architecture/SNAPSHOT_RENDERING_MODEL.md",
+    "docs/operations/SNAPSHOT_FIXTURE_POLICY.md",
+    "docs/operations/SNAPSHOT_VERIFICATION_POLICY.md",
+    "docs/operations/SNAPSHOT_NO_LIVE_ACCESS_POLICY.md",
+    "docs/operations/SNAPSHOT_RENDERER_SEMANTIC_PARITY.md",
+    "docs/operations/SNAPSHOT_TO_RELAY_HANDOFF.md"
+  ],
+  "added_inventories": [
+    "control/inventory/snapshots/snapshot_envelope_policy.json",
+    "control/inventory/snapshots/snapshot_manifest_policy.json",
+    "control/inventory/snapshots/snapshot_record_policy.json",
+    "control/inventory/snapshots/snapshot_fixity_policy.json",
+    "control/inventory/snapshots/snapshot_signature_policy.json",
+    "control/inventory/snapshots/snapshot_consumer_policy.json",
+    "control/inventory/snapshots/snapshot_render_policy.json",
+    "control/inventory/snapshots/snapshot_path_policy.json",
+    "control/inventory/snapshots/snapshot_truth_policy.json",
+    "control/inventory/snapshots/snapshot_no_live_access_policy.json",
+    "control/inventory/snapshots/snapshot_semantic_parity_policy.json"
+  ],
+  "added_examples": [
+    "examples/snapshots/"
+  ],
+  "added_tests": [
+    "tests/snapshots/test_snapshot_envelope_manifest.py",
+    "tests/snapshots/test_snapshot_fixity_verification.py",
+    "tests/snapshots/test_snapshot_renderers.py",
+    "tests/snapshots/test_snapshot_consumer.py",
+    "tests/operations/test_snapshot_scripts.py"
+  ],
+  "validation": {
+    "status": "pass",
+    "primary_validator": "python scripts/validate_snapshot_runtime.py",
+    "focused_tests": [
+      "python -m unittest tests.snapshots.test_snapshot_envelope_manifest",
+      "python -m unittest tests.snapshots.test_snapshot_fixity_verification",
+      "python -m unittest tests.snapshots.test_snapshot_renderers",
+      "python -m unittest tests.snapshots.test_snapshot_consumer",
+      "python -m unittest tests.operations.test_snapshot_scripts"
+    ]
+  },
+  "snapshot_scope": {
+    "fixture_only": true,
+    "snapshot_manifest_enabled": true,
+    "snapshot_consumer_enabled": true,
+    "snapshot_verification_enabled": true,
+    "text_renderer_enabled": true,
+    "lite_html_renderer_enabled": true,
+    "file_tree_renderer_enabled": true,
+    "json_manifest_renderer_enabled": true,
+    "relay_enabled": false,
+    "hosting_enabled": false,
+    "site_dist_mutated": false
+  },
+  "truth_boundary": {
+    "snapshot_is_public_truth": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_accepts_candidate": false,
+    "fixity_implies_authenticity": false,
+    "signature_placeholder_implies_trust": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "D-BUNDLE-02 \u2014 Localhost read-only relay and old-browser harness"
+}

@@ -2,52 +2,69 @@
 
 ## PHASE
 
-D-BUNDLE-01 - Snapshot envelope, consumer, verification, static/text renderers
+D-BUNDLE-02 - Localhost read-only relay and old-browser harness
 
 ## GOAL
 
-Continue after J0-BUNDLE-01 by building the next fixture/static snapshot envelope and read-only consumer scaffolding without changing public search behavior or enabling action execution.
+Continue after D-BUNDLE-01 by preparing the next reviewed D-lane task: a localhost read-only relay and old-browser harness built from verified fixture snapshots.
 
-D-BUNDLE-01 must remain review-gated. It must not download files, mirror files, install artifacts, execute files, emulate anything, mutate public/master indexes, accept evidence/candidates/source/public truth, call networks, enable hosting, or call models/providers by default.
+D-BUNDLE-02 remains review-gated. It must not enable public hosting, deployment, public route activation, live source access, downloads, mirroring, installs, execution, emulation, public/master index mutation, source/evidence/candidate/public truth acceptance, telemetry, or model/provider calls by default.
+
+HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+
+This next task should use the D-BUNDLE-01 snapshot substrate without changing Eureka product behavior in public search, hosted, deployment, or index surfaces.
 
 ## WHY
 
-J0-BUNDLE-01 added safe descriptive action manifests, citation bundles, export manifests, acquisition manifests, preservation manifests, and blocked action reports. D-BUNDLE-01 can consume those reviewed manifest boundaries for snapshot packaging and static/text rendering while keeping risky actions blocked.
+D-BUNDLE-01 added fixture snapshot envelopes, deterministic manifests, local fixity, unsigned/placeholder signature-envelope handling, local verification, consumer reports, and text/lite HTML/file-tree renderers. D-BUNDLE-02 can consume those reviewed outputs to design a read-only localhost harness while keeping hosting and public-route behavior disabled until separately approved.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
+- `.aide/memory/project-state.md`
 - `.aide/context/latest-context-packet.md`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/J0-BUNDLE-01/task.yaml`
 - `.aide/queue/D-BUNDLE-01/task.yaml`
-- `control/audits/j0-bundle-01-safe-actions-manifests-v0/`
-- `contracts/actions/`
-- `runtime/actions/`
-- `examples/actions/`
-- `docs/reference/ACTION_MANIFEST_CONTRACT.md`
-- `docs/operations/FUTURE_RISKY_ACTIONS_POLICY.md`
+- `.aide/queue/D-BUNDLE-02/task.yaml`
+- `control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/`
+- `contracts/snapshots/`
+- `runtime/snapshots/`
+- `examples/snapshots/`
+- `docs/reference/SNAPSHOT_ENVELOPE_CONTRACT.md`
+- `docs/operations/SNAPSHOT_TO_RELAY_HANDOFF.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- Product path edits are to be defined by the D-BUNDLE-01 prompt.
-- J0 artifacts are read-only context unless the next task explicitly scopes updates.
+- Product path edits are to be defined by the D-BUNDLE-02 prompt.
+- D-BUNDLE-01 snapshot artifacts are read-only context unless the next task explicitly scopes updates.
 
 ## IMPLEMENTATION
 
-- Use J0 action manifests and blocked-action boundaries as input context only.
-- Preserve no-download, no-mirror, no-install, no-execution, no-emulation, no-truth-acceptance, no-index-mutation, no-public-search-change, and no-hosting boundaries.
-- Keep snapshot/static/text outputs review-gated until a reviewed task packet allows broader behavior.
+- Use D-BUNDLE-01 snapshot envelopes, manifests, consumer reports, and render outputs as input context only.
+- Preserve no-hosting, no-deployment, no-live-access, no-download, no-mirror, no-install, no-execution, no-emulation, no-truth-acceptance, no-index-mutation, and no-public-search-change boundaries.
+- Keep any relay harness local, read-only, review-gated, and off by default until a reviewed D-BUNDLE-02 prompt explicitly scopes implementation.
 
 ## ACCEPTANCE
 
-- D-BUNDLE-01 acceptance criteria will be defined by its task prompt.
-- The handoff is acceptable only if J0-BUNDLE-01 audit artifacts validate and no public search mutation, network, download, source sync, index mutation, truth acceptance, or product behavior change is introduced.
+- D-BUNDLE-02 acceptance criteria will be defined by its task prompt.
+- The handoff is acceptable only if D-BUNDLE-01 audit artifacts validate and no public route activation, hosting, network access, download, source sync, index mutation, truth acceptance, or product behavior change is introduced.
 
 ## FORBIDDEN_PATHS
 
+- Product paths are forbidden by default unless explicitly scoped by the D-BUNDLE-02 prompt and preserved by validation.
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
 - `site/**`
+- `native/**`
+- `crates/**`
+- `connectors/**`
+- `packaging/**`
+- `third_party/**`
 - `data/public_index/**`
 - `data/master_index/**`
 - `master_index/**`
@@ -58,7 +75,7 @@ J0-BUNDLE-01 added safe descriptive action manifests, citation bundles, export m
 
 ## VALIDATION
 
-- `python scripts/validate_safe_actions_runtime.py`
+- `python scripts/validate_snapshot_runtime.py`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -66,20 +83,22 @@ J0-BUNDLE-01 added safe descriptive action manifests, citation bundles, export m
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py eval run`
-- D-BUNDLE-01-specific validators and tests once defined.
+- D-BUNDLE-02-specific validators and tests once defined.
 
 ## EVIDENCE
 
-- J0-BUNDLE-01 audit pack: `control/audits/j0-bundle-01-safe-actions-manifests-v0/`
+- D-BUNDLE-01 audit pack: `control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/`
 
 ## NON_GOALS
 
-- No public search behavior change, ranking behavior change, public/master index mutation, candidate/evidence/review store mutation, evidence/candidate/source/public truth acceptance, downloads, mirroring, installation, execution, emulation, live calls, network/API/model/provider calls, hosting, uploads/accounts/telemetry, rights-clearance claims, malware-safety claims, verified-installability claims, production-readiness claims, site/dist regeneration, or local private-state roots.
+- No public search behavior change, ranking behavior change, public/master index mutation, candidate/evidence/review store mutation, evidence/candidate/source/public truth acceptance, downloads, mirroring, installation, execution, emulation, live source access, public hosting, deployment, public route activation, network/API/model/provider calls, uploads/accounts/telemetry, rights-clearance claims, malware-safety claims, verified-installability claims, production-readiness claims, site/dist regeneration, or local private-state roots.
 
 ## OUTPUT_SCHEMA
 
-Return the schema requested by the next task prompt.
+- Next reviewed D-BUNDLE-02 task prompt plus audit evidence.
+- No raw prompts, raw responses, secrets, provider keys, or local private state.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 850
+- approx_tokens: 1030
+- budget_status: within_budget

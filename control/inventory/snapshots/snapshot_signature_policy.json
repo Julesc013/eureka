@@ -1,0 +1,8 @@
+{
+  "schema_version": "snapshot_signature_policy.v0",
+  "private_keys_allowed": false,
+  "real_signing_allowed": false,
+  "placeholder_signature_allowed": true,
+  "real_signature_verification_future": true,
+  "signature_placeholder_implies_trust": false
+}

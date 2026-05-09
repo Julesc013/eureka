@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3538 chars, 885 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4538 chars, 1135 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/D-BUNDLE-01` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/J0-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/D-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/D-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/actions` (??; does not match active task allowed paths)
-- unknown: `control/audits/j0-bundle-01-safe-actions-manifests-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/actions` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/ACTION_POLICY_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/SAFE_ACTION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/ACQUISITION_MANIFEST_NO_DOWNLOAD_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/CITATION_AND_EXPORT_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/FUTURE_RISKY_ACTIONS_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SAFE_ACTION_REVIEW.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/ACQUISITION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/ACTION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/ACTION_TAXONOMY_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/BLOCKED_ACTION_REPORT_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/CITATION_BUNDLE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/EXPORT_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/PRESERVATION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- unknown: `examples/actions` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- unknown: `contracts/snapshots` (??; does not match active task allowed paths)
+- unknown: `control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/snapshots` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SNAPSHOT_RENDERING_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SNAPSHOT_SUBSTRATE_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SNAPSHOT_FIXTURE_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SNAPSHOT_NO_LIVE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SNAPSHOT_RENDERER_SEMANTIC_PARITY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SNAPSHOT_TO_RELAY_HANDOFF.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SNAPSHOT_VERIFICATION_POLICY.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/SNAPSHOT_ENVELOPE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SNAPSHOT_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SNAPSHOT_RECORD_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SNAPSHOT_RENDER_RESULT_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SNAPSHOT_VERIFICATION_REPORT_CONTRACT.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 10; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6357
-- approx_tokens: 1590
+- chars: 6412
+- approx_tokens: 1603
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

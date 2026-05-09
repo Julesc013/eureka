@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_consumer_report.v0",
+  "title": "Snapshot Consumer Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "consumer_report_id",
+    "snapshot_ref",
+    "consumer_mode",
+    "records_loaded",
+    "manifest_verified",
+    "fixity_verified",
+    "signature_status",
+    "render_targets_available",
+    "blocked_actions",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_consumer_report.v0" },
+    "consumer_mode": { "enum": ["local_fixture_offline", "not_evaluable"] }
+  },
+  "additionalProperties": true
+}

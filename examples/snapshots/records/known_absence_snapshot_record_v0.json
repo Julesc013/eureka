@@ -1,0 +1,79 @@
+{
+  "schema_version": "snapshot_record.v0",
+  "snapshot_record_id": "snapshot_record.known_absence_fixture.v0",
+  "record_type": "known_absence",
+  "record_status": "fixture_only",
+  "canonical_ref": "fixture:absence:no-reviewed-driver-result",
+  "source_ref": "",
+  "title": "No Reviewed Result In Fixture Scope",
+  "summary": "Known absence scoped to local fixture records only.",
+  "source_posture": "limited_fixture_scope",
+  "evidence_posture": "no_reviewed_evidence_in_fixture_scope",
+  "compatibility_posture": "not_evaluable",
+  "rights_posture": "unknown_not_cleared",
+  "risk_posture": "unknown_not_scanned",
+  "action_posture": "safe_descriptive_actions_only",
+  "limitations": [
+    "Known absence is not a global absence claim."
+  ],
+  "render_fields": {
+    "identity": "fixture:absence:no-reviewed-driver-result",
+    "title": "No Reviewed Result In Fixture Scope",
+    "summary": "Known absence scoped to local fixture records only.",
+    "source_posture": "limited_fixture_scope",
+    "evidence_posture": "no_reviewed_evidence_in_fixture_scope",
+    "compatibility_posture": "not_evaluable",
+    "rights_posture": "unknown_not_cleared",
+    "risk_posture": "unknown_not_scanned",
+    "action_posture": "safe_descriptive_actions_only",
+    "limitations": [
+      "Known absence is not a global absence claim."
+    ],
+    "no_claims": [
+      "no exhaustive web absence",
+      "no accepted public truth"
+    ],
+    "source_refs": [],
+    "evidence_refs": [],
+    "allowed_actions": [
+      "view"
+    ],
+    "blocked_actions": [
+      "live_source_fanout"
+    ]
+  },
+  "truth_boundary": {
+    "snapshot_is_public_truth": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_mutates_public_index": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_downloads_files": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_executes_actions": false,
+    "fixity_implies_authenticity": false,
+    "signature_placeholder_implies_trust": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "compatibility_certification_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

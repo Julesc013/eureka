@@ -1,0 +1,17 @@
+Eureka Snapshot
+================
+
+Manifest: snapshot_manifest.37865ef11466.v0
+No live access, hosting, downloads, mirroring, execution, or truth acceptance.
+
+Record: fixture:object:demo-utility
+Identity: fixture:object:demo-utility
+Title: Demo Utility Object
+Summary: Fixture object record represented in an offline snapshot.
+Source posture: fixture_or_local_ref_only
+Evidence posture: preview_or_reviewed_ref_only
+Compatibility posture: unknown_or_fixture_only
+Rights posture: unknown_not_cleared
+Risk posture: unknown_not_scanned
+Action posture: safe_descriptive_actions_only
+Limitations/no-claims: Fixture object only.; no accepted public truth; no rights clearance; no malware safety; no verified installability; no compatibility certification; no exhaustive source coverage; no downloads or mirrors; no execution or installation; no hosting or relay activation

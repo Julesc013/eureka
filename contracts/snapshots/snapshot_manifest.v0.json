@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.snapshots.snapshot_manifest.v0",
+  "title": "Snapshot Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_manifest_id",
+    "manifest_status",
+    "generated_from",
+    "records",
+    "record_count",
+    "record_type_counts",
+    "source_summary",
+    "evidence_summary",
+    "action_summary",
+    "render_targets",
+    "fixity_entries",
+    "signature_summary",
+    "limitations",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "snapshot_manifest.v0" },
+    "records": { "type": "array" },
+    "record_count": { "type": "integer", "minimum": 0 },
+    "render_targets": {
+      "type": "array",
+      "items": { "enum": ["text", "lite_html", "file_tree", "json_manifest"] }
+    }
+  },
+  "additionalProperties": true
+}

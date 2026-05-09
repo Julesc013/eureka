@@ -1,0 +1,6 @@
+snapshot/
+|-- README.txt
+|-- manifest.json
+`-- records/
+    |-- search_result-snapshot_record.json # identity/source posture/evidence posture/rights posture/risk posture/action posture/limitations-no-claims
+    |-- known_absence-snapshot_record.json # identity/source posture/evidence posture/rights posture/risk posture/action posture/limitations-no-claims

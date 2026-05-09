@@ -1,0 +1,55 @@
+{
+  "canonical_serialization_policy": "json_sort_keys_compact_utf8",
+  "deterministic": true,
+  "envelope_hash": "1283fe6caf6dd780cfb7aae9c2edee277fa1d13f70798428ff60413f29a8a813",
+  "fixity_report_id": "snapshot_fixity_report.57d947174d9b.v0",
+  "hash_algorithm": "sha256",
+  "limitations": [
+    "Fixity means local snapshot identity, not source authenticity or trust."
+  ],
+  "manifest_hash": "323315b17f757de258c252efb1764a9e3710be0e98be84a4c85f39599b517702",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_access": false,
+    "enabled_relay": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "record_hashes": [
+    {
+      "hash_algorithm": "sha256",
+      "hash_value": "b2860d6f3773ae3568ca8cb8c1287a696148a3a1c4d8b7768a53d730421a29d7",
+      "record_ref": "snapshot_record.cba36cd94383.v0"
+    }
+  ],
+  "schema_version": "snapshot_fixity_report.v0",
+  "snapshot_ref": "snapshot_envelope.5f97226c9057.v0",
+  "truth_boundary": {
+    "compatibility_certification_claimed": false,
+    "fixity_implies_authenticity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_downloads_files": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_executes_actions": false,
+    "snapshot_is_public_truth": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_mutates_public_index": false,
+    "verified_installability_claimed": false
+  },
+  "verification_status": "local_fixity_recorded"
+}

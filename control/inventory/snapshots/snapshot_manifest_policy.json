@@ -1,0 +1,13 @@
+{
+  "schema_version": "snapshot_manifest_policy.v0",
+  "deterministic_serialization_required": true,
+  "public_safe_records_only": true,
+  "private_records_allowed": false,
+  "accepted_truth_creation_allowed": false,
+  "allowed_render_targets": [
+    "text",
+    "lite_html",
+    "file_tree",
+    "json_manifest"
+  ]
+}

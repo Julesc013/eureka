@@ -1,0 +1,60 @@
+{
+  "canonical_serialization_policy": "json_sort_keys_compact_utf8",
+  "deterministic": true,
+  "envelope_hash": "d8b0dbab9d917084e7bbb94e052868af8e6f2f819ee0d723a539a34aa052ce94",
+  "fixity_report_id": "snapshot_fixity_report.f8321ac19874.v0",
+  "hash_algorithm": "sha256",
+  "limitations": [
+    "Fixity means local snapshot identity, not source authenticity or trust."
+  ],
+  "manifest_hash": "01b0bfe1304555ba4efa861a78b3b51018e4e427a72d0314f62849b236ffd1f5",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_access": false,
+    "enabled_relay": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "record_hashes": [
+    {
+      "hash_algorithm": "sha256",
+      "hash_value": "4c3c54fdb2545c9716cfa26fe5f65e6f5ea297b28388fec30acd5b62017b36d2",
+      "record_ref": "snapshot_record.2edaf05e6b47.v0"
+    },
+    {
+      "hash_algorithm": "sha256",
+      "hash_value": "fa50ca8cf545fa28b02448e04c2fde9fe4b7ed3da69a599b15f23c8d9af58aa7",
+      "record_ref": "snapshot_record.27928d8261b7.v0"
+    }
+  ],
+  "schema_version": "snapshot_fixity_report.v0",
+  "snapshot_ref": "snapshot_envelope.0ab04270b8c3.v0",
+  "truth_boundary": {
+    "compatibility_certification_claimed": false,
+    "fixity_implies_authenticity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "snapshot_accepts_candidate": false,
+    "snapshot_accepts_evidence": false,
+    "snapshot_downloads_files": false,
+    "snapshot_enables_live_access": false,
+    "snapshot_executes_actions": false,
+    "snapshot_is_public_truth": false,
+    "snapshot_mirrors_files": false,
+    "snapshot_mutates_master_index": false,
+    "snapshot_mutates_public_index": false,
+    "verified_installability_claimed": false
+  },
+  "verification_status": "local_fixity_recorded"
+}

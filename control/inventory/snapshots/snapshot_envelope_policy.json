@@ -1,0 +1,22 @@
+{
+  "schema_version": "snapshot_envelope_policy.v0",
+  "fixture_only_current": true,
+  "public_snapshot_publication_enabled": false,
+  "hosted_snapshot_enabled": false,
+  "relay_enabled": false,
+  "live_access_enabled": false,
+  "allowed_snapshot_kinds": [
+    "fixture_bundle",
+    "search_results_snapshot",
+    "object_snapshot",
+    "source_need_action_snapshot",
+    "policy_blocked"
+  ],
+  "required_no_claims": [
+    "no accepted public truth",
+    "no rights clearance",
+    "no malware safety",
+    "no verified installability",
+    "no hosting or relay activation"
+  ]
+}

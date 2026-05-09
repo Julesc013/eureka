@@ -1,0 +1,30 @@
+{
+  "schema_version": "snapshot_input.v0",
+  "snapshot_input_id": "object_snapshot_input_v0",
+  "snapshot_kind": "object_snapshot",
+  "snapshot_label": "Object Snapshot Fixture",
+  "snapshot_scope": "fixture_only",
+  "records": [
+    {
+      "record_type": "object_record",
+      "canonical_ref": "fixture:object:demo-utility",
+      "title": "Demo Utility Object",
+      "summary": "Fixture object record represented in an offline snapshot.",
+      "source_refs": [
+        "fixture:source:local-example-index"
+      ],
+      "allowed_current_actions": [
+        "view",
+        "inspect",
+        "compare"
+      ],
+      "blocked_actions": [
+        "install",
+        "execute"
+      ],
+      "limitations": [
+        "Fixture object only."
+      ]
+    }
+  ]
+}
