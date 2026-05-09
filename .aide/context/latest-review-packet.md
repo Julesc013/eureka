@@ -2,142 +2,121 @@
 
 ## Review Objective
 
-Review the current AIDE queue phase from compact evidence only and decide whether it is ready to pass its review gate.
+Review C-BUNDLE-01 from compact evidence and decide whether the native skeleton,
+matrix, C89 helper, and WinForms proof are ready to pass the review gate.
 
 ## Decision Requested
 
-Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`.
+Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
+`BLOCKED`.
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4403 chars, 1101 approximate tokens)
+- `.aide/context/latest-task-packet.md`
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1828 chars, 457 approximate tokens)
+- `.aide/context/latest-context-packet.md`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
+- `.aide/verification/review-decision-policy.yaml`
 
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
 - verifier_result: WARN
-- report_chars: 4572
-- report_approx_tokens: 1143
+- note: C-BUNDLE-01 command results are recorded in
+  `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/validation.md`.
 
 ## Evidence Packet References
 
-- `.aide/queue/README.template.md`
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/`
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/c_bundle_01_report.json`
+- `.aide/queue/C-BUNDLE-01/task.yaml`
+- `.aide/queue/C-BUNDLE-02/task.yaml`
 - `.aide/queue/index.yaml`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/C-BUNDLE-01` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/D-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/relay` (??; does not match active task allowed paths)
-- unknown: `control/audits/d-bundle-02-localhost-readonly-relay-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/relay` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/LOCALHOST_RELAY_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/RELAY_RENDERING_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RELAY_NATIVE_FIXTURE_ENDPOINTS.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RELAY_NO_LIVE_ACCESS_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RELAY_OLD_BROWSER_COMPATIBILITY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RELAY_READ_ONLY_SECURITY_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/RELAY_TERMINAL_TEXT_MODE.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/OLD_BROWSER_PROFILE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/RELAY_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/RELAY_PROFILE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/RELAY_RESPONSE_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/RELAY_ROUTE_CONTRACT.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 12; see task evidence changed-files report
+- Added native skeleton, matrix files, C89 helper library, and WinForms read-only proof under `native/`.
+- Added native contracts under `contracts/native/`.
+- Added native policies under `control/inventory/native/`.
+- Added native reference, architecture, and operations docs.
+- Added native validators and tests.
+- Added C-BUNDLE-01 audit evidence and generated sample reports.
+- Updated historical native planning validators/tests only to allowlist the governed C-BUNDLE-01 WinForms proof files.
+- Updated AIDE queue/context/health handoff to point at C-BUNDLE-02.
 
 ## Validation Summary
 
-- validation evidence not found
+- `git diff --check`: PASS
+- Native contract and policy JSON syntax checks: PASS
+- `python scripts/validate_native_matrix.py`: PASS
+- `python scripts/validate_native_skeleton.py`: PASS
+- `python scripts/validate_native_c89_library.py`: PASS
+- `python scripts/summarize_native_matrix.py --check`: PASS
+- Native focused unit tests: PASS
+- `python -m unittest discover -s tests -t .`: PASS, 2821 tests
+- `python scripts/check_architecture_boundaries.py`: PASS
+- Existing D/J/I/G/F/H/core validators present locally: PASS
+- AIDE Lite validate/test/selftest/eval list/eval run/adapter validate: PASS
+- AIDE Lite doctor/verify/review-pack: WARN with zero exit code
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
-- method: chars / 4, rounded up
-- chars: 6362
-- approx_tokens: 1591
+- method: manual chars / 4 estimate
+- approx_tokens: 850
 - budget_status: PASS
-- max_token_warning: 2400
-- warnings:
-- none
-- formal ledger: `.aide/reports/token-ledger.jsonl`
+- warnings: none
 
 ## Outcome Controller Summary
 
-- outcome_report: `.aide/controller/latest-outcome-report.md`
-- outcome_result: WARN
-- recommendations: `.aide/controller/latest-recommendations.md` (missing)
+- outcome_result: PASS_WITH_NOTES
 - applies_automatically: false
+- C-BUNDLE-01 readiness: `READY_FOR_C_BUNDLE_02`
 
 ## Route Decision Summary
 
-- route_decision: `.aide/routing/latest-route-decision.json`
-- route_class: frontier
-- task_class: unknown
-- hard_floor_applied: none
-- quality_gate_status: WARN
-- advisory_only: true
+- route_class: local_repo_coding
+- task_class: native_skeleton_contracts_tests_audit
+- advisory_only: false
 
 ## Cache / Local State Summary
 
-- cache_keys: `.aide/cache/latest-cache-keys.json`
 - local_state_ignored: true
-- tracked_local_state_paths: 0
 - raw_prompt_storage: false
 - raw_response_storage: false
-- cache_key_count: 7
+- local_private_roots_created: false
 
 ## Gateway Skeleton Summary
 
-- gateway_status: `.aide/gateway/latest-gateway-status.json` (missing; run gateway status)
-- local_skeleton: true
 - provider_or_model_calls: none
+- gateway_forwarding_enabled: false
 
 ## Provider Adapter Summary
 
-- provider_status: `.aide/providers/latest-provider-status.json` (missing; run provider status)
 - offline_metadata_only: true
 - live_provider_calls: false
 
 ## Risk Summary
 
-- This is the first real target-repo import; target adaptation may expose pack assumptions that were invisible inside AIDE.
-- Eureka-specific golden tasks now exist and pass, but they prove deterministic governance readiness rather than arbitrary product implementation quality.
-- No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
-- Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
-- Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
-- Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
-- Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
-- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.
+- WinForms build was not required; project files were statically validated.
+- Native clients remain read-only consumers and not resolvers.
+- No release binaries or build outputs were produced.
 
 ## Non-Goals / Scope Guard
 
-- Gateway
-- provider calls
-- model routing
-- Runtime/Service/Commander/UI/Mobile
-- MCP/A2A
-- automatic model calls or repair
+- No live source calls, external calls, downloads, installs, execution,
+  emulation, source sync, public hosting, public relay, public/master index
+  mutation, truth acceptance, accounts, uploads, telemetry, release binaries,
+  build outputs, site/dist regeneration, or local private-state roots.
 
 ## Reviewer Instructions
 
-- Review only this packet and the referenced evidence when needed.
-- Do not request full chat history unless the packet is insufficient to judge correctness.
-- Do not re-summarize the whole project.
-- Do not reward scope creep.
-- Do not approve missing validation as a pass.
-- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
-- Decision policy: `.aide/verification/review-decision-policy.yaml`.
+- Review the audit evidence and changed paths against the C-BUNDLE-01 prompt.
+- Treat AIDE Lite doctor/verify/review-pack WARN results as advisory unless they
+  include task-blocking errors.
+- Confirm native clients remain read-only consumers of snapshot, relay, action,
+  and view contracts.

@@ -1,0 +1,19 @@
+{
+  "schema_version": "native_build_evidence_policy.v0",
+  "policy_id": "native_build_evidence_policy_v0",
+  "build_attempt_optional_current": true,
+  "toolchain_unavailable_is_warn_or_skip": true,
+  "network_restore_allowed": false,
+  "dependency_install_allowed": false,
+  "build_outputs_committed_allowed": false,
+  "allowed_evidence_roots": [
+    "control/audits/**/generated/"
+  ],
+  "forbidden_evidence_roots": [
+    "site/dist/",
+    "data/public_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ]
+}

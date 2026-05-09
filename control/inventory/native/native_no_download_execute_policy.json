@@ -1,0 +1,30 @@
+{
+  "schema_version": "native_no_download_execute_policy.v0",
+  "policy_id": "native_no_download_execute_policy_v0",
+  "blocked_capability_families": [
+    "download_artifact",
+    "mirror_artifact",
+    "install_artifact",
+    "execute_artifact",
+    "emulate_artifact",
+    "run_installer",
+    "open_untrusted_payload",
+    "fetch_remote_url",
+    "source_probe",
+    "source_sync"
+  ],
+  "download_artifact_allowed": false,
+  "mirror_artifact_allowed": false,
+  "install_artifact_allowed": false,
+  "execute_artifact_allowed": false,
+  "emulate_artifact_allowed": false,
+  "source_probe_allowed": false,
+  "source_sync_allowed": false,
+  "safe_alternatives": [
+    "show local snapshot fixture",
+    "show relay fixture envelope",
+    "show action manifest",
+    "show blocked action report",
+    "show limitations and no-claims"
+  ]
+}

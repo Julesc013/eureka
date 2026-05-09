@@ -1,0 +1,87 @@
+[artifact.mac.carbon.app_future]
+lane_id = "mac.carbon"
+artifact_kind = "application_bundle_future"
+artifact_name_pattern = "EurekaCarbon-<version>.sit"
+architecture = "ppc32"
+target_systems = ["Mac OS 8.6-9.2.2", "Mac OS X 10.0-10.5"]
+build_host_ref = "host.codewarrior9_future"
+produced_current = false
+production_release_current = false
+limitations = ["No release binary is produced in C-BUNDLE-01."]
+
+[artifact.mac.appkit.app_future]
+lane_id = "mac.appkit"
+artifact_kind = "application_bundle_future"
+artifact_name_pattern = "EurekaAppKit-<version>.zip"
+architecture = "i386_x86_64"
+target_systems = ["Mac OS X 10.6-10.14"]
+build_host_ref = "host.xcode9_future"
+produced_current = false
+production_release_current = false
+limitations = ["No release binary is produced in C-BUNDLE-01."]
+
+[artifact.mac.swiftui.app_future]
+lane_id = "mac.swiftui"
+artifact_kind = "application_bundle_future"
+artifact_name_pattern = "EurekaSwiftUI-<version>.zip"
+architecture = "future"
+target_systems = ["macOS future"]
+build_host_ref = "host.swiftui_future"
+produced_current = false
+production_release_current = false
+limitations = ["Future lane only."]
+
+[artifact.win.win16.exe_future]
+lane_id = "win.win16"
+artifact_kind = "executable_future"
+artifact_name_pattern = "EUREKA16.EXE"
+architecture = "x86_16"
+target_systems = ["Windows 3.1 future"]
+build_host_ref = "host.win16_future"
+produced_current = false
+production_release_current = false
+limitations = ["Future lane only."]
+
+[artifact.win.win32.exe_future]
+lane_id = "win.win32"
+artifact_kind = "executable_future"
+artifact_name_pattern = "EUREKA32.EXE"
+architecture = "x86"
+target_systems = ["Windows 95/98/Me", "Windows NT 4.0-present by compatibility/WOW64"]
+build_host_ref = "host.vs6_future"
+produced_current = false
+production_release_current = false
+limitations = ["No release binary is produced in C-BUNDLE-01."]
+
+[artifact.win.winforms.exe_future]
+lane_id = "win.winforms"
+artifact_kind = "winforms_executable_future"
+artifact_name_pattern = "Eureka.exe"
+architecture = "x86_x64_anycpu_future"
+target_systems = ["Windows 7 SP1-present"]
+build_host_ref = "host.vs2022"
+produced_current = false
+production_release_current = false
+limitations = ["Project files exist, but no binary or release artifact is committed."]
+
+[artifact.win.winui.app_future]
+lane_id = "win.winui"
+artifact_kind = "application_future"
+artifact_name_pattern = "EurekaWinUI-<version>.msix"
+architecture = "future"
+target_systems = ["Windows future"]
+build_host_ref = "host.winui_future"
+produced_current = false
+production_release_current = false
+limitations = ["Future lane only."]
+
+[artifact.lib.c89.future]
+lane_id = "lib.c89"
+artifact_kind = "static_library_future"
+artifact_name_pattern = "libeureka_c89.a"
+architecture = "portable"
+target_systems = ["caller supplied"]
+build_host_ref = "host.any_c89"
+produced_current = false
+production_release_current = false
+limitations = ["Source helper exists; no release library is produced."]

@@ -2,30 +2,34 @@
 
 ## PHASE
 
-C-BUNDLE-01 - Native skeleton, matrix, C89 library, and WinForms proof
+C-BUNDLE-02 - Win32 AppKit Carbon read-only skeletons
 
 ## GOAL
 
-Continue after D-BUNDLE-02 by preparing the next reviewed Eureka C-lane task: a native
-skeleton and compatibility proof that can consume fixture snapshot/relay
-projections without enabling risky actions.
+Continue after C-BUNDLE-01 by preparing the next reviewed Eureka C-lane task:
+read-only Win32, AppKit, and Carbon skeletons over the native matrix, C89
+contract helper, snapshot contracts, relay fixture envelopes, and safe action
+manifests.
 
-C-BUNDLE-01 remains review-gated. It must not enable public hosting, deployment,
-public route activation, live source access, downloads, mirroring, installs,
-execution, emulation, public/master index mutation, source/evidence/candidate/
-public truth acceptance, telemetry, uploads/accounts, or model/provider calls by
-default.
+C-BUNDLE-02 remains review-gated. It must not enable live source access,
+downloads, mirroring, installs, execution, emulation, public hosting, public
+relay, public search behavior changes, public/master index mutation,
+source/evidence/candidate/public truth acceptance, accounts, uploads,
+telemetry, or release artifacts by default.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
-This packet is a handoff only and proceeds without changing Eureka product behavior.
+This packet is a handoff only and proceeds with no Eureka product behavior
+change.
 
 ## WHY
 
-D-BUNDLE-02 added a localhost-only, read-only, fixture-only relay with text,
-lite HTML, terminal, and native fixture JSON projections. C-BUNDLE-01 can use
-that bounded local compatibility target while keeping public hosting, live
-access, unsafe actions, and product behavior changes disabled.
+C-BUNDLE-01 added the governed `native/` skeleton, native matrix contracts and
+policies, a bounded C89 contract helper library, validators, tests, and a
+fixture-oriented WinForms proof. C-BUNDLE-02 can extend the same consumer-only
+model to Win32, AppKit, and Carbon skeletons while preserving the no-download,
+no-execute, no-live-access, no-truth-acceptance, and no-index-mutation
+boundaries.
 
 ## CONTEXT_REFS
 
@@ -36,43 +40,90 @@ access, unsafe actions, and product behavior changes disabled.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/D-BUNDLE-02/task.yaml`
 - `.aide/queue/C-BUNDLE-01/task.yaml`
-- `control/audits/d-bundle-02-localhost-readonly-relay-v0/`
-- `contracts/relay/`
-- `runtime/relay/`
-- `examples/relay/`
-- `docs/architecture/LOCALHOST_RELAY_MODEL.md`
-- `docs/operations/RELAY_READ_ONLY_SECURITY_POLICY.md`
+- `.aide/queue/C-BUNDLE-02/task.yaml`
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/`
+- `native/`
+- `contracts/native/`
+- `control/inventory/native/`
+- `docs/architecture/NATIVE_CLIENT_FAMILY_MODEL.md`
+- `docs/architecture/NATIVE_SNAPSHOT_RELAY_CONSUMPTION_MODEL.md`
+- `docs/operations/NATIVE_READONLY_CLIENT_POLICY.md`
+- `docs/operations/NATIVE_NO_DOWNLOAD_EXECUTE_POLICY.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- Product path edits are to be defined by the C-BUNDLE-01 prompt.
-- D-BUNDLE-02 relay artifacts are read-only context unless the next task
+- Product path edits are to be defined by the C-BUNDLE-02 prompt.
+- C-BUNDLE-01 native artifacts are read-only context unless the next task
   explicitly scopes updates.
 
 ## IMPLEMENTATION
 
-- Use D-BUNDLE-02 relay outputs and D-BUNDLE-01 snapshot artifacts as bounded
-  fixture context only.
-- Preserve no-hosting, no-deployment, no-live-access, no-download, no-mirror,
-  no-install, no-execution, no-emulation, no-truth-acceptance, no-index-mutation,
-  and no-public-search-change boundaries.
-- Keep any native skeleton local, review-gated, and non-executing until a
-  reviewed C-BUNDLE-01 prompt explicitly scopes implementation.
+- Use C-BUNDLE-01 native matrix and C89 helper outputs as bounded fixture
+  context only.
+- Preserve the native directory doctrine: API/toolchain names in paths; support
+  state in matrix files.
+- Keep Win32, AppKit, and Carbon skeletons read-only and contract-facing.
+- Do not introduce source connector calls, Python runtime internals, downloads,
+  installs, execution, release artifacts, or public index writes.
 
 ## ACCEPTANCE
 
-- C-BUNDLE-01 acceptance criteria will be defined by its task prompt.
-- The handoff is acceptable only if D-BUNDLE-02 audit artifacts validate and no
-  public bind, hosting, network access, download, source sync, index mutation,
-  truth acceptance, or product behavior change is introduced.
+- C-BUNDLE-02 acceptance criteria will be defined by its task prompt.
+- The handoff is acceptable only if C-BUNDLE-01 audit artifacts validate and no
+  live access, download, source sync, execution, public/master index mutation,
+  truth acceptance, product behavior change, or build-output commit is
+  introduced.
+
+## VALIDATION
+
+- `python scripts/validate_native_matrix.py`
+- `python scripts/validate_native_skeleton.py`
+- `python scripts/validate_native_c89_library.py`
+- `python scripts/check_architecture_boundaries.py`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+
+## EVIDENCE
+
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/`
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/c_bundle_01_report.json`
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/validation.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/reports/eureka-repo-health.md`
+
+## NON_GOALS
+
+- No live source calls.
+- No external/API/model/provider calls.
+- No downloads, mirroring, installs, execution, or emulation.
+- No source sync or public query fanout.
+- No public search behavior change.
+- No public index or master index mutation.
+- No source, evidence, candidate, pack, action, or public truth acceptance.
+- No hosting, public relay, uploads, accounts, telemetry, release binaries,
+  build-output commits, site/dist regeneration, or local private-state roots.
+
+## OUTPUT_SCHEMA
+
+Future C-BUNDLE-02 task responses should preserve the repo task final schema:
+status, summary, commits, changed paths, validation, native scope, readiness,
+risks, and next task.
+
+## TOKEN_ESTIMATE
+
+- method: manual chars / 4 estimate
+- approx_tokens: 950
+- budget_status: within_budget
 
 ## FORBIDDEN_PATHS
 
-- Product paths are forbidden by default unless explicitly scoped by the
-  C-BUNDLE-01 prompt and preserved by validation.
+- `site/**`
 - `runtime/**`
 - `contracts/**`
 - `surfaces/**`
@@ -81,7 +132,6 @@ access, unsafe actions, and product behavior changes disabled.
 - `connectors/**`
 - `packaging/**`
 - `third_party/**`
-- `site/**`
 - `data/public_index/**`
 - `data/master_index/**`
 - `master_index/**`
@@ -89,40 +139,3 @@ access, unsafe actions, and product behavior changes disabled.
 - `.aide.local/**`
 - `.local/eureka/**`
 - `.cache/eureka/**`
-
-## VALIDATION
-
-- `python scripts/validate_relay_runtime.py`
-- `python scripts/check_architecture_boundaries.py`
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- C-BUNDLE-01-specific validators and tests once defined.
-
-## EVIDENCE
-
-- D-BUNDLE-02 audit pack: `control/audits/d-bundle-02-localhost-readonly-relay-v0/`
-
-## NON_GOALS
-
-- No public search behavior change, ranking behavior change, public/master index
-  mutation, candidate/evidence/review store mutation, evidence/candidate/source/
-  public truth acceptance, downloads, mirroring, installation, execution,
-  emulation, live source access, public hosting, deployment, public route
-  activation, network/API/model/provider calls, uploads/accounts/telemetry,
-  rights-clearance claims, malware-safety claims, verified-installability
-  claims, production-readiness claims, site/dist regeneration, or local
-  private-state roots.
-
-## OUTPUT_SCHEMA
-
-- Next reviewed C-BUNDLE-01 task prompt plus audit evidence.
-- No raw prompts, raw responses, secrets, provider keys, or local private state.
-
-## TOKEN_ESTIMATE
-
-- approx_tokens: 1050
-- budget_status: within_budget

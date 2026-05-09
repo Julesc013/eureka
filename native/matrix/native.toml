@@ -1,0 +1,151 @@
+[mac.carbon]
+path = "native/mac/carbon"
+api = "Carbon"
+toolchain = "CodeWarrior Pro 8/9"
+languages = ["C89", "C++98"]
+arches = ["ppc32"]
+systems = ["Mac OS 8.6-9.2.2", "Mac OS X 10.0-10.5"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "skeleton"
+support_tier = "future_lab"
+build_host_ref = "host.codewarrior9_future"
+artifact_refs = ["artifact.mac.carbon.app_future"]
+limitations = ["No project file is added in C-BUNDLE-01."]
+
+[mac.appkit]
+path = "native/mac/appkit"
+api = "AppKit"
+toolchain = "Xcode 9.x"
+languages = ["Objective-C"]
+arches = ["i386", "x86_64"]
+systems = ["Mac OS X 10.6-10.14"]
+notes = ["10.15+ may run x86_64 slice only; i386 runtime ends at 10.14"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "skeleton"
+support_tier = "first_wave_skeleton"
+build_host_ref = "host.xcode9_future"
+artifact_refs = ["artifact.mac.appkit.app_future"]
+limitations = ["No Xcode project is added in C-BUNDLE-01."]
+
+[mac.swiftui]
+path = "native/mac/swiftui"
+api = "SwiftUI"
+toolchain = "Xcode future"
+languages = ["Swift"]
+arches = ["arm64", "x86_64"]
+systems = ["macOS future"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "future"
+support_tier = "future"
+build_host_ref = "host.swiftui_future"
+artifact_refs = ["artifact.mac.swiftui.app_future"]
+limitations = ["Future lane only."]
+
+[win.win16]
+path = "native/win/win16"
+api = "Win16"
+toolchain = "Visual C++ future"
+languages = ["C89"]
+arches = ["x86_16"]
+systems = ["Windows 3.1 future"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "future"
+support_tier = "future_lab"
+build_host_ref = "host.win16_future"
+artifact_refs = ["artifact.win.win16.exe_future"]
+limitations = ["Future lane only."]
+
+[win.win32]
+path = "native/win/win32"
+api = "Win32 ANSI"
+toolchain = "Visual C++ 6.0"
+languages = ["C89"]
+arches = ["x86"]
+systems = ["Windows 95/98/Me", "Windows NT 4.0-present by compatibility/WOW64"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "skeleton"
+support_tier = "first_wave_skeleton"
+build_host_ref = "host.vs6_future"
+artifact_refs = ["artifact.win.win32.exe_future"]
+limitations = ["No Visual C++ project is added in C-BUNDLE-01."]
+
+[win.winforms]
+path = "native/win/winforms"
+api = "WinForms"
+framework = ".NET Framework 4.8"
+toolchain = "Visual Studio 2022"
+languages = ["C#"]
+arches = ["x86", "x64"]
+systems = ["Windows 7 SP1-present"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "fixture_readonly_proof"
+support_tier = "first_wave_proof"
+build_host_ref = "host.vs2022"
+artifact_refs = ["artifact.win.winforms.exe_future"]
+limitations = ["Read-only proof project; no release binary is produced."]
+
+[win.winui]
+path = "native/win/winui"
+api = "WinUI"
+toolchain = "Visual Studio future"
+languages = ["C#"]
+arches = ["x64", "arm64"]
+systems = ["Windows future"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "future"
+support_tier = "future"
+build_host_ref = "host.winui_future"
+artifact_refs = ["artifact.win.winui.app_future"]
+limitations = ["Future lane only."]
+
+[lib.c89]
+path = "native/lib/c89"
+api = "C89"
+toolchain = "portable_c"
+languages = ["C89"]
+arches = ["portable"]
+systems = ["caller supplied"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "contract_helper"
+support_tier = "shared_library"
+build_host_ref = "host.any_c89"
+artifact_refs = ["artifact.lib.c89.future"]
+limitations = ["Contract token helpers only; not a full parser."]
+
+[lib.objc]
+path = "native/lib/objc"
+api = "Objective-C"
+toolchain = "future"
+languages = ["Objective-C"]
+arches = ["future"]
+systems = ["future"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "placeholder"
+support_tier = "future"
+build_host_ref = "host.appkit_future"
+artifact_refs = []
+limitations = ["Future wrapper lane only."]
+
+[lib.dotnet]
+path = "native/lib/dotnet"
+api = ".NET"
+toolchain = "future"
+languages = ["C#"]
+arches = ["future"]
+systems = ["future"]
+consumes = ["snapshot", "relay", "action_manifest"]
+must_not_consume = ["python_runtime", "source_connector", "live_source"]
+current_status = "placeholder"
+support_tier = "future"
+build_host_ref = "host.vs2022"
+artifact_refs = []
+limitations = ["Future shared .NET helper lane only."]

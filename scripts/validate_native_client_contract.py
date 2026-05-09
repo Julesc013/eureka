@@ -67,6 +67,10 @@ PROJECT_SUFFIXES = {
     ".xcworkspace",
     ".pbxproj",
 }
+GOVERNED_C_BUNDLE_01_PROJECT_FILES = {
+    "native/win/winforms/project/Eureka.sln",
+    "native/win/winforms/src/Eureka/Eureka.csproj",
+}
 REQUIRED_DOC_PHRASES = {
     "docs/reference/NATIVE_CLIENT_CONTRACT.md": [
         "does not create a Visual Studio project",
@@ -381,7 +385,10 @@ def _validate_no_native_project_files(repo_root: Path, errors: list[str]) -> lis
         if ".git" in path.parts:
             continue
         if path.suffix.casefold() in PROJECT_SUFFIXES:
-            offenders.append(_rel(path, repo_root))
+            relative = _rel(path, repo_root)
+            if relative in GOVERNED_C_BUNDLE_01_PROJECT_FILES:
+                continue
+            offenders.append(relative)
     for offender in offenders:
         errors.append(f"{offender}: native project file/directory is not allowed by Native Client Contract v0.")
     return offenders

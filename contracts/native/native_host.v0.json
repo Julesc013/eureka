@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_host.v0.json",
+  "title": "Eureka Native Host v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "host_id",
+    "host_label",
+    "host_status",
+    "supported_lanes",
+    "operating_system",
+    "toolchain",
+    "automation_level",
+    "build_command",
+    "manual_steps",
+    "evidence_required",
+    "limitations",
+    "no_goals"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_host.v0"
+    },
+    "host_id": {
+      "type": "string"
+    },
+    "host_label": {
+      "type": "string"
+    },
+    "host_status": {
+      "enum": [
+        "optional_local",
+        "future",
+        "manual_future",
+        "not_available",
+        "not_evaluable"
+      ]
+    },
+    "supported_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operating_system": {
+      "type": "string"
+    },
+    "toolchain": {
+      "type": "string"
+    },
+    "automation_level": {
+      "type": "string"
+    },
+    "build_command": {
+      "type": "string"
+    },
+    "manual_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

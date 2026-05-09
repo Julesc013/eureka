@@ -1,0 +1,21 @@
+{
+  "schema_version": "native_winforms_policy.v0",
+  "policy_id": "native_winforms_policy_v0",
+  "framework": ".NET Framework 4.8",
+  "project_scope": "fixture_readonly_proof",
+  "reads_local_fixtures": true,
+  "calls_live_sources": false,
+  "calls_public_backend": false,
+  "requires_internet": false,
+  "downloads_files": false,
+  "installs_files": false,
+  "executes_artifacts": false,
+  "collects_telemetry": false,
+  "authenticates_accounts": false,
+  "writes_persistent_user_state": false,
+  "mutates_repo_files": false,
+  "mutates_public_index": false,
+  "mutates_master_index": false,
+  "build_required_current": false,
+  "build_validation_current": "project_file_static_validation"
+}

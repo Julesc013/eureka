@@ -1,0 +1,52 @@
+{
+  "schema_version": "native_contract_library_report.v0",
+  "library_id": "lib.c89",
+  "status": "pass",
+  "headers": [
+    "native/lib/c89/include/eu_status.h",
+    "native/lib/c89/include/eu_snapshot.h",
+    "native/lib/c89/include/eu_relay.h",
+    "native/lib/c89/include/eu_action.h",
+    "native/lib/c89/include/eu_string.h"
+  ],
+  "source_files": [
+    "native/lib/c89/src/eu_status.c",
+    "native/lib/c89/src/eu_snapshot.c",
+    "native/lib/c89/src/eu_relay.c",
+    "native/lib/c89/src/eu_action.c",
+    "native/lib/c89/src/eu_string.c"
+  ],
+  "current_scope": "bounded contract token helpers",
+  "forbidden_effects": [
+    "network",
+    "download",
+    "install",
+    "execute",
+    "file_io",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "limitations": [
+    "Not a full JSON parser.",
+    "Caller supplies all buffers."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  }
+}

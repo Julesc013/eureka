@@ -101,12 +101,17 @@ class NativeProjectReadinessReviewTestCase(unittest.TestCase):
             ".xcworkspace",
             ".pbxproj",
         }
+        governed_c_bundle_files = {
+            "native/win/winforms/project/Eureka.sln",
+            "native/win/winforms/src/Eureka/Eureka.csproj",
+        }
         offenders = [
             str(path.relative_to(REPO_ROOT))
             for path in REPO_ROOT.rglob("*")
             if ".git" not in path.parts
             and "__pycache__" not in path.parts
             and path.suffix.casefold() in forbidden_suffixes
+            and str(path.relative_to(REPO_ROOT)).replace("\\", "/") not in governed_c_bundle_files
         ]
 
         self.assertEqual(offenders, [])

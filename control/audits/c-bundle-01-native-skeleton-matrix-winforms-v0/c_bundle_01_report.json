@@ -1,0 +1,129 @@
+{
+  "schema_version": "c_bundle_01_report.v0",
+  "status": "pass",
+  "task": "C-BUNDLE-01",
+  "track": "C",
+  "purpose": "native_skeleton_matrix_c89_winforms_proof",
+  "added_contracts": [
+    "contracts/native/native_matrix.v0.json",
+    "contracts/native/native_artifact.v0.json",
+    "contracts/native/native_host.v0.json",
+    "contracts/native/native_client_capability.v0.json",
+    "contracts/native/native_smoke_report.v0.json",
+    "contracts/native/native_contract_library.v0.json",
+    "contracts/native/native_readonly_client.v0.json"
+  ],
+  "added_native_paths": [
+    "native/README.md",
+    "native/mac/carbon/",
+    "native/mac/appkit/",
+    "native/mac/swiftui/",
+    "native/win/win16/",
+    "native/win/win32/",
+    "native/win/winforms/",
+    "native/win/winui/",
+    "native/lib/c89/",
+    "native/lib/objc/",
+    "native/lib/dotnet/",
+    "native/matrix/"
+  ],
+  "added_runtime_or_library_paths": [
+    "native/lib/c89/include/",
+    "native/lib/c89/src/",
+    "native/lib/c89/test/",
+    "native/win/winforms/src/Eureka/"
+  ],
+  "added_scripts": [
+    "scripts/validate_native_matrix.py",
+    "scripts/validate_native_skeleton.py",
+    "scripts/validate_native_c89_library.py",
+    "scripts/summarize_native_matrix.py"
+  ],
+  "added_docs": [
+    "docs/reference/NATIVE_MATRIX_CONTRACT.md",
+    "docs/reference/NATIVE_ARTIFACT_CONTRACT.md",
+    "docs/reference/NATIVE_HOST_CONTRACT.md",
+    "docs/reference/NATIVE_CONTRACT_LIBRARY.md",
+    "docs/reference/NATIVE_READONLY_CLIENT_CONTRACT.md",
+    "docs/architecture/NATIVE_CLIENT_FAMILY_MODEL.md",
+    "docs/architecture/NATIVE_SNAPSHOT_RELAY_CONSUMPTION_MODEL.md",
+    "docs/operations/NATIVE_DIRECTORY_POLICY.md",
+    "docs/operations/NATIVE_BUILD_EVIDENCE_POLICY.md",
+    "docs/operations/NATIVE_READONLY_CLIENT_POLICY.md",
+    "docs/operations/NATIVE_NO_DOWNLOAD_EXECUTE_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/native/native_directory_policy.json",
+    "control/inventory/native/native_matrix_policy.json",
+    "control/inventory/native/native_artifact_policy.json",
+    "control/inventory/native/native_host_policy.json",
+    "control/inventory/native/native_readonly_client_policy.json",
+    "control/inventory/native/native_c89_library_policy.json",
+    "control/inventory/native/native_winforms_policy.json",
+    "control/inventory/native/native_build_evidence_policy.json",
+    "control/inventory/native/native_truth_policy.json",
+    "control/inventory/native/native_no_download_execute_policy.json"
+  ],
+  "added_tests": [
+    "tests/native/test_native_matrix.py",
+    "tests/native/test_native_skeleton.py",
+    "tests/native/test_native_c89_library.py",
+    "tests/operations/test_native_scripts.py"
+  ],
+  "validation": {
+    "python scripts/validate_native_matrix.py": "pass",
+    "python scripts/validate_native_skeleton.py": "pass",
+    "python scripts/validate_native_c89_library.py": "pass",
+    "python scripts/summarize_native_matrix.py --check": "pass",
+    "python -m unittest tests.native.test_native_matrix": "pass",
+    "python -m unittest tests.native.test_native_skeleton": "pass",
+    "python -m unittest tests.native.test_native_c89_library": "pass",
+    "python -m unittest tests.operations.test_native_scripts": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "existing D/J/I/G/F/H/core validators": "pass",
+    "AIDE Lite doctor/verify/review-pack": "warn_zero_exit",
+    "AIDE Lite validate/test/selftest/eval list/eval run/adapter validate": "pass"
+  },
+  "native_scope": {
+    "native_skeleton_added": true,
+    "native_matrix_added": true,
+    "c89_library_added": true,
+    "winforms_readonly_proof_added": true,
+    "win32_project_added": false,
+    "appkit_project_added": false,
+    "carbon_project_added": false,
+    "live_source_access_enabled": false,
+    "downloads_enabled": false,
+    "install_enabled": false,
+    "execute_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false
+  },
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "C-BUNDLE-02 \u2014 Win32 AppKit Carbon read-only skeletons"
+}

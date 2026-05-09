@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_artifact.v0.json",
+  "title": "Eureka Native Artifact v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "lane_id",
+    "artifact_kind",
+    "artifact_name_pattern",
+    "architecture",
+    "target_systems",
+    "build_host_ref",
+    "produced_current",
+    "production_release_current",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_artifact.v0"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "artifact_kind": {
+      "type": "string"
+    },
+    "artifact_name_pattern": {
+      "type": "string"
+    },
+    "architecture": {
+      "type": "string"
+    },
+    "target_systems": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_host_ref": {
+      "type": "string"
+    },
+    "produced_current": {
+      "const": false
+    },
+    "production_release_current": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

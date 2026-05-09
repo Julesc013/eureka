@@ -1,0 +1,63 @@
+{
+  "schema_version": "native_directory_policy.v0",
+  "policy_id": "native_directory_policy_v0",
+  "required_directories": [
+    "native/mac/carbon",
+    "native/mac/appkit",
+    "native/mac/swiftui",
+    "native/win/win16",
+    "native/win/win32",
+    "native/win/winforms",
+    "native/win/winui",
+    "native/lib/c89",
+    "native/lib/objc",
+    "native/lib/dotnet",
+    "native/matrix"
+  ],
+  "required_readmes": [
+    "native/README.md",
+    "native/mac/carbon/README.md",
+    "native/mac/appkit/README.md",
+    "native/mac/swiftui/README.md",
+    "native/win/win16/README.md",
+    "native/win/win32/README.md",
+    "native/win/winforms/README.md",
+    "native/win/winui/README.md",
+    "native/lib/c89/README.md",
+    "native/lib/objc/README.md",
+    "native/lib/dotnet/README.md"
+  ],
+  "directory_names_identify": [
+    "api",
+    "toolchain",
+    "language_family"
+  ],
+  "support_state_belongs_in": [
+    "native/matrix/native.toml",
+    "native/matrix/artifacts.toml",
+    "native/matrix/hosts.toml"
+  ],
+  "forbidden_directory_names": [
+    "legacy",
+    "modern",
+    "classic",
+    "old",
+    "new",
+    "universal",
+    "desktop",
+    "lite",
+    "historical",
+    "retro-client",
+    "experimental_as_primary_name"
+  ],
+  "allowed_project_files_current": [
+    "native/win/winforms/project/Eureka.sln",
+    "native/win/winforms/src/Eureka/Eureka.csproj"
+  ],
+  "forbidden_outputs_current": [
+    "native build binaries",
+    "release packages",
+    "installer payloads",
+    "site/dist output"
+  ]
+}

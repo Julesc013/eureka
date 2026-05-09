@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_contract_library.v0.json",
+  "title": "Eureka Native Contract Library v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "library_id",
+    "language",
+    "standard",
+    "headers",
+    "source_files",
+    "consumes_contracts",
+    "supported_lanes",
+    "current_scope",
+    "forbidden_effects",
+    "test_policy",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_contract_library.v0"
+    },
+    "library_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "standard": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consumes_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_scope": {
+      "type": "string"
+    },
+    "forbidden_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_policy": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

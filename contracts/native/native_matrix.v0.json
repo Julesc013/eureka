@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_matrix.v0.json",
+  "title": "Eureka Native Matrix v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "matrix_id",
+    "matrix_status",
+    "native_lanes",
+    "first_wave_lanes",
+    "future_lanes",
+    "native_library_lanes",
+    "host_refs",
+    "artifact_refs",
+    "support_state",
+    "build_evidence_policy_ref",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_matrix.v0"
+    },
+    "matrix_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "matrix_status": {
+      "enum": [
+        "example_only",
+        "fixture_readonly",
+        "skeleton",
+        "partial",
+        "policy_blocked",
+        "not_evaluable"
+      ]
+    },
+    "native_lanes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lane"
+      }
+    },
+    "first_wave_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "future_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "native_library_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "host_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "support_state": {
+      "type": "object"
+    },
+    "build_evidence_policy_ref": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "$ref": "#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "#/$defs/product_boundary"
+    },
+    "no_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "lane": {
+      "type": "object",
+      "required": [
+        "lane_id",
+        "path",
+        "platform_family",
+        "api_family",
+        "toolchain",
+        "languages",
+        "architectures",
+        "systems",
+        "consumes",
+        "must_not_consume",
+        "current_status",
+        "support_tier",
+        "build_host_ref",
+        "artifact_refs",
+        "limitations"
+      ],
+      "properties": {
+        "lane_id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "platform_family": {
+          "type": "string"
+        },
+        "api_family": {
+          "type": "string"
+        },
+        "toolchain": {
+          "type": "string"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "architectures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "systems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "consumes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_not_consume": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "current_status": {
+          "type": "string"
+        },
+        "support_tier": {
+          "type": "string"
+        },
+        "build_host_ref": {
+          "type": "string"
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "native_client_accepts_evidence": {
+          "const": false
+        },
+        "native_client_accepts_candidate": {
+          "const": false
+        },
+        "native_client_accepts_public_truth": {
+          "const": false
+        },
+        "native_client_mutates_public_index": {
+          "const": false
+        },
+        "native_client_mutates_master_index": {
+          "const": false
+        },
+        "rights_clearance_claimed": {
+          "const": false
+        },
+        "malware_safety_claimed": {
+          "const": false
+        },
+        "verified_installability_claimed": {
+          "const": false
+        }
+      }
+    },
+    "product_boundary": {
+      "type": "object",
+      "properties": {
+        "changed_public_search_behavior": {
+          "const": false
+        },
+        "enabled_live_access": {
+          "const": false
+        },
+        "enabled_downloads": {
+          "const": false
+        },
+        "enabled_installers": {
+          "const": false
+        },
+        "enabled_execution": {
+          "const": false
+        },
+        "enabled_accounts": {
+          "const": false
+        },
+        "enabled_telemetry": {
+          "const": false
+        }
+      }
+    }
+  }
+}

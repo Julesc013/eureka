@@ -1,0 +1,55 @@
+{
+  "schema_version": "native_smoke_report.v0",
+  "smoke_report_id": "sample_native_smoke_report_v0",
+  "lane_id": "win.winforms",
+  "smoke_status": "pass_with_warnings",
+  "checks": [
+    {
+      "check_id": "project_files_present",
+      "status": "pass"
+    },
+    {
+      "check_id": "fixture_readonly_scope",
+      "status": "pass"
+    },
+    {
+      "check_id": "msbuild_optional",
+      "status": "skip",
+      "reason": "build not required by C-BUNDLE-01 policy"
+    }
+  ],
+  "build_attempted": false,
+  "build_passed": false,
+  "launch_attempted": false,
+  "launch_passed": false,
+  "fixture_loaded": true,
+  "snapshot_loaded": true,
+  "relay_fixture_loaded": true,
+  "blocked_actions_displayed": true,
+  "warnings": [
+    "WinForms build is optional and not required for this fixture-only proof."
+  ],
+  "limitations": [
+    "Read-only proof only.",
+    "No live source access, downloads, installs, execution, accounts, or telemetry."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  }
+}

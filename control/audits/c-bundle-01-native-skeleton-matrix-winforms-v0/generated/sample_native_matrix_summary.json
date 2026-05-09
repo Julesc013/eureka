@@ -1,0 +1,175 @@
+{
+  "artifacts": [
+    "artifact.lib.c89.future",
+    "artifact.mac.appkit.app_future",
+    "artifact.mac.carbon.app_future",
+    "artifact.mac.swiftui.app_future",
+    "artifact.win.win16.exe_future",
+    "artifact.win.win32.exe_future",
+    "artifact.win.winforms.exe_future",
+    "artifact.win.winui.app_future"
+  ],
+  "hosts": [
+    "host.any_c89",
+    "host.appkit_future",
+    "host.carbon_future",
+    "host.codewarrior9_future",
+    "host.swiftui_future",
+    "host.vs2022",
+    "host.vs6_future",
+    "host.win16_future",
+    "host.winui_future",
+    "host.xcode9_future"
+  ],
+  "lanes": [
+    {
+      "api": "C89",
+      "current_status": "contract_helper",
+      "lane_id": "lib.c89",
+      "path": "native/lib/c89",
+      "support_tier": "shared_library",
+      "systems": [
+        "caller supplied"
+      ],
+      "toolchain": "portable_c"
+    },
+    {
+      "api": ".NET",
+      "current_status": "placeholder",
+      "lane_id": "lib.dotnet",
+      "path": "native/lib/dotnet",
+      "support_tier": "future",
+      "systems": [
+        "future"
+      ],
+      "toolchain": "future"
+    },
+    {
+      "api": "Objective-C",
+      "current_status": "placeholder",
+      "lane_id": "lib.objc",
+      "path": "native/lib/objc",
+      "support_tier": "future",
+      "systems": [
+        "future"
+      ],
+      "toolchain": "future"
+    },
+    {
+      "api": "AppKit",
+      "current_status": "skeleton",
+      "lane_id": "mac.appkit",
+      "path": "native/mac/appkit",
+      "support_tier": "first_wave_skeleton",
+      "systems": [
+        "Mac OS X 10.6-10.14"
+      ],
+      "toolchain": "Xcode 9.x"
+    },
+    {
+      "api": "Carbon",
+      "current_status": "skeleton",
+      "lane_id": "mac.carbon",
+      "path": "native/mac/carbon",
+      "support_tier": "future_lab",
+      "systems": [
+        "Mac OS 8.6-9.2.2",
+        "Mac OS X 10.0-10.5"
+      ],
+      "toolchain": "CodeWarrior Pro 8/9"
+    },
+    {
+      "api": "SwiftUI",
+      "current_status": "future",
+      "lane_id": "mac.swiftui",
+      "path": "native/mac/swiftui",
+      "support_tier": "future",
+      "systems": [
+        "macOS future"
+      ],
+      "toolchain": "Xcode future"
+    },
+    {
+      "api": "Win16",
+      "current_status": "future",
+      "lane_id": "win.win16",
+      "path": "native/win/win16",
+      "support_tier": "future_lab",
+      "systems": [
+        "Windows 3.1 future"
+      ],
+      "toolchain": "Visual C++ future"
+    },
+    {
+      "api": "Win32 ANSI",
+      "current_status": "skeleton",
+      "lane_id": "win.win32",
+      "path": "native/win/win32",
+      "support_tier": "first_wave_skeleton",
+      "systems": [
+        "Windows 95/98/Me",
+        "Windows NT 4.0-present by compatibility/WOW64"
+      ],
+      "toolchain": "Visual C++ 6.0"
+    },
+    {
+      "api": "WinForms",
+      "current_status": "fixture_readonly_proof",
+      "lane_id": "win.winforms",
+      "path": "native/win/winforms",
+      "support_tier": "first_wave_proof",
+      "systems": [
+        "Windows 7 SP1-present"
+      ],
+      "toolchain": "Visual Studio 2022"
+    },
+    {
+      "api": "WinUI",
+      "current_status": "future",
+      "lane_id": "win.winui",
+      "path": "native/win/winui",
+      "support_tier": "future",
+      "systems": [
+        "Windows future"
+      ],
+      "toolchain": "Visual Studio future"
+    }
+  ],
+  "schema_version": "native_matrix_summary.v0",
+  "scope": {
+    "c89_library": "enabled",
+    "downloads": false,
+    "execute": false,
+    "install": false,
+    "matrix": "enabled",
+    "skeleton": "enabled",
+    "telemetry": false,
+    "winforms_readonly_proof": "enabled"
+  },
+  "status": "pass",
+  "validation": {
+    "artifact_count": 8,
+    "errors": [],
+    "first_wave_lanes": [
+      "mac.appkit",
+      "mac.carbon",
+      "win.win32",
+      "win.winforms"
+    ],
+    "future_lanes": [
+      "mac.swiftui",
+      "win.win16",
+      "win.winui"
+    ],
+    "host_count": 10,
+    "lane_count": 10,
+    "native_library_lanes": [
+      "lib.c89",
+      "lib.dotnet",
+      "lib.objc"
+    ],
+    "schema_version": "native_matrix_validation.v0",
+    "status": "pass",
+    "warnings": []
+  }
+}

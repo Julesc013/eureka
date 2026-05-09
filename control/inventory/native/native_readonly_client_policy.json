@@ -1,0 +1,30 @@
+{
+  "schema_version": "native_readonly_client_policy.v0",
+  "policy_id": "native_readonly_client_policy_v0",
+  "read_only": true,
+  "snapshot_input_allowed": true,
+  "relay_fixture_input_allowed": true,
+  "action_manifest_input_allowed": true,
+  "view_contract_input_allowed": true,
+  "live_source_access_allowed": false,
+  "download_allowed": false,
+  "mirror_allowed": false,
+  "install_allowed": false,
+  "execute_allowed": false,
+  "emulate_allowed": false,
+  "upload_allowed": false,
+  "account_auth_allowed": false,
+  "telemetry_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "persistent_user_state_allowed": false,
+  "python_runtime_internal_dependency_allowed": false,
+  "required_visible_postures": [
+    "source",
+    "evidence",
+    "rights",
+    "risk",
+    "actions",
+    "limitations"
+  ]
+}

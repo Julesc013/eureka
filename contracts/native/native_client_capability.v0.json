@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_client_capability.v0.json",
+  "title": "Eureka Native Client Capability v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "capability_id",
+    "capability_family",
+    "current_allowed",
+    "future_allowed",
+    "consumes_contracts",
+    "forbidden_effects",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_client_capability.v0"
+    },
+    "capability_id": {
+      "type": "string"
+    },
+    "capability_family": {
+      "enum": [
+        "read_snapshot_fixture",
+        "read_relay_fixture",
+        "display_search_results",
+        "display_object_summary",
+        "display_source_summary",
+        "display_action_manifest",
+        "display_blocked_action",
+        "display_diagnostics",
+        "download_artifact",
+        "mirror_artifact",
+        "install_artifact",
+        "execute_artifact",
+        "emulate_artifact",
+        "upload_contribution",
+        "account_login",
+        "telemetry",
+        "source_probe",
+        "source_sync",
+        "public_index_mutation",
+        "master_index_mutation"
+      ]
+    },
+    "current_allowed": {
+      "type": "boolean"
+    },
+    "future_allowed": {
+      "type": "boolean"
+    },
+    "consumes_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

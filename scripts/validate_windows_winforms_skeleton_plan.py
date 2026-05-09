@@ -46,6 +46,10 @@ PROJECT_SUFFIXES = {
     ".xcworkspace",
     ".pbxproj",
 }
+C_BUNDLE_01_GOVERNED_WINFORMS_PREFIXES = (
+    "native/win/winforms/project/",
+    "native/win/winforms/src/Eureka/",
+)
 
 REQUIRED_PROHIBITIONS = {
     "downloads",
@@ -282,7 +286,10 @@ def _find_native_project_files(repo_root: Path) -> list[str]:
             continue
         suffix = path.suffix.casefold()
         if suffix in PROJECT_SUFFIXES:
-            offenders.append(_display_path(path, repo_root))
+            relative = _display_path(path, repo_root)
+            if any(relative.startswith(prefix) for prefix in C_BUNDLE_01_GOVERNED_WINFORMS_PREFIXES):
+                continue
+            offenders.append(relative)
     return sorted(offenders)
 
 
@@ -336,4 +343,3 @@ def _display_path(path: Path, repo_root: Path) -> str:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

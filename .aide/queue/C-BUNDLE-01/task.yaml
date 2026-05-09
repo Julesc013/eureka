@@ -1,6 +1,6 @@
 task_id: C-BUNDLE-01
 title: Native skeleton, matrix, C89 library, and WinForms proof
-status: queued
+status: needs_review
 phase: C-BUNDLE-01
 allowed_paths:
   - .aide/context/latest-task-packet.md
@@ -34,4 +34,4 @@ validation:
   - py -3 .aide/scripts/aide_lite.py test
   - py -3 .aide/scripts/aide_lite.py selftest
   - py -3 .aide/scripts/aide_lite.py eval run
-next_recommended_task: C-BUNDLE-01
+next_recommended_task: C-BUNDLE-02

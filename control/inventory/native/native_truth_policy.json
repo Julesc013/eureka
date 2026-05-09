@@ -1,0 +1,17 @@
+{
+  "schema_version": "native_truth_policy.v0",
+  "policy_id": "native_truth_policy_v0",
+  "native_client_accepts_evidence": false,
+  "native_client_accepts_candidate": false,
+  "native_client_accepts_pack": false,
+  "native_client_accepts_source": false,
+  "native_client_accepts_action": false,
+  "native_client_accepts_public_truth": false,
+  "native_client_mutates_public_index": false,
+  "native_client_mutates_master_index": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "compatibility_certification_claimed": false,
+  "production_readiness_claimed": false
+}

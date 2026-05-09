@@ -1,0 +1,27 @@
+{
+  "schema_version": "native_c89_library_policy.v0",
+  "policy_id": "native_c89_library_policy_v0",
+  "standard": "C89",
+  "no_c99_required": true,
+  "dynamic_allocation_allowed": false,
+  "network_allowed": false,
+  "file_io_allowed": false,
+  "execution_allowed": false,
+  "bounded_buffers_required": true,
+  "explicit_status_returns_required": true,
+  "scope": [
+    "status helpers",
+    "bounded strings",
+    "snapshot manifest token helpers",
+    "relay status token helpers",
+    "action manifest token helpers"
+  ],
+  "not_scope": [
+    "full JSON parser",
+    "network client",
+    "file downloader",
+    "installer",
+    "executor",
+    "GUI"
+  ]
+}

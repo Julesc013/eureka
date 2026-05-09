@@ -114,12 +114,17 @@ class WindowsWinFormsSkeletonPlanningTestCase(unittest.TestCase):
             ".xcworkspace",
             ".pbxproj",
         }
+        governed_c_bundle_prefixes = (
+            "native/win/winforms/project/",
+            "native/win/winforms/src/Eureka/",
+        )
         offenders = [
             str(path.relative_to(REPO_ROOT))
             for path in REPO_ROOT.rglob("*")
             if ".git" not in path.parts
             and "__pycache__" not in path.parts
             and path.suffix.casefold() in forbidden_suffixes
+            and not any(str(path.relative_to(REPO_ROOT)).replace("\\", "/").startswith(prefix) for prefix in governed_c_bundle_prefixes)
         ]
 
         self.assertEqual(offenders, [])
@@ -153,4 +158,3 @@ def _load_json(path: Path) -> dict[str, object]:
 
 if __name__ == "__main__":
     unittest.main()
-

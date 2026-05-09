@@ -1,0 +1,19 @@
+{
+  "schema_version": "native_artifact_policy.v0",
+  "policy_id": "native_artifact_policy_v0",
+  "release_binaries_produced_current": false,
+  "production_release_current": false,
+  "allowed_artifact_kinds_current": [
+    "project_skeleton",
+    "source_helper",
+    "future_artifact_pattern"
+  ],
+  "forbidden_artifact_outputs_current": [
+    "binary",
+    "installer",
+    "downloaded_payload",
+    "release_package",
+    "signed_release"
+  ],
+  "artifact_records_are_plans_not_outputs": true
+}

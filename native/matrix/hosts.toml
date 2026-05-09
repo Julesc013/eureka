@@ -1,0 +1,129 @@
+[host.vs2022]
+host_id = "host.vs2022"
+host_label = "Visual Studio 2022"
+host_status = "optional_local"
+supported_lanes = ["win.winforms", "lib.dotnet"]
+operating_system = "Windows"
+toolchain = "Visual Studio 2022 / MSBuild"
+automation_level = "project_file_validation_current_build_future"
+build_command = "msbuild native/win/winforms/project/Eureka.sln /p:Configuration=Debug"
+manual_steps = ["Open the solution locally if VS2022 is available."]
+evidence_required = ["Project file validation", "Future build log under explicit audit output"]
+limitations = ["No package restore, installer, download, telemetry, or release build is required."]
+
+[host.vs6_future]
+host_id = "host.vs6_future"
+host_label = "Visual C++ 6.0"
+host_status = "future"
+supported_lanes = ["win.win32"]
+operating_system = "Windows"
+toolchain = "Visual C++ 6.0"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["No VS6 project files are added in C-BUNDLE-01."]
+
+[host.xcode9_future]
+host_id = "host.xcode9_future"
+host_label = "Xcode 9"
+host_status = "future"
+supported_lanes = ["mac.appkit"]
+operating_system = "macOS"
+toolchain = "Xcode 9.x"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["No Xcode project files are added in C-BUNDLE-01."]
+
+[host.codewarrior9_future]
+host_id = "host.codewarrior9_future"
+host_label = "CodeWarrior Pro 8/9"
+host_status = "future"
+supported_lanes = ["mac.carbon"]
+operating_system = "Classic Mac OS / Mac OS X"
+toolchain = "CodeWarrior Pro 8/9"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["No CodeWarrior project files are added in C-BUNDLE-01."]
+
+[host.appkit_future]
+host_id = "host.appkit_future"
+host_label = "AppKit Objective-C future host"
+host_status = "future"
+supported_lanes = ["lib.objc"]
+operating_system = "macOS"
+toolchain = "future"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["Placeholder only."]
+
+[host.carbon_future]
+host_id = "host.carbon_future"
+host_label = "Carbon future host"
+host_status = "future"
+supported_lanes = ["mac.carbon"]
+operating_system = "Classic Mac OS / Mac OS X"
+toolchain = "future"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["Placeholder only."]
+
+[host.swiftui_future]
+host_id = "host.swiftui_future"
+host_label = "SwiftUI future host"
+host_status = "future"
+supported_lanes = ["mac.swiftui"]
+operating_system = "macOS"
+toolchain = "future Xcode"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["Placeholder only."]
+
+[host.win16_future]
+host_id = "host.win16_future"
+host_label = "Win16 future host"
+host_status = "future"
+supported_lanes = ["win.win16"]
+operating_system = "Windows future"
+toolchain = "future"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["Placeholder only."]
+
+[host.winui_future]
+host_id = "host.winui_future"
+host_label = "WinUI future host"
+host_status = "future"
+supported_lanes = ["win.winui"]
+operating_system = "Windows future"
+toolchain = "Visual Studio future"
+automation_level = "manual_future"
+build_command = ""
+manual_steps = ["Future host only."]
+evidence_required = ["Future reviewed build evidence"]
+limitations = ["Placeholder only."]
+
+[host.any_c89]
+host_id = "host.any_c89"
+host_label = "Any C89-capable compiler"
+host_status = "optional_local"
+supported_lanes = ["lib.c89"]
+operating_system = "caller supplied"
+toolchain = "C89 compiler"
+automation_level = "static_checks_current_compile_if_available"
+build_command = "cc -std=c89 native/lib/c89/src/*.c native/lib/c89/test/test_eu_c89_contracts.c"
+manual_steps = ["Compile locally if a C89-capable compiler is available."]
+evidence_required = ["Static validation current", "Optional compile output future"]
+limitations = ["No binary artifacts are committed."]

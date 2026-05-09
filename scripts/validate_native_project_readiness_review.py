@@ -40,6 +40,10 @@ PROJECT_SUFFIXES = {
     ".xcworkspace",
     ".pbxproj",
 }
+GOVERNED_C_BUNDLE_01_PROJECT_FILES = {
+    "native/win/winforms/project/Eureka.sln",
+    "native/win/winforms/src/Eureka/Eureka.csproj",
+}
 
 REQUIRED_REPORT_FIELDS = {
     "report_id",
@@ -264,7 +268,10 @@ def _find_project_files(repo_root: Path) -> list[str]:
         if any(part in ignored_parts for part in path.parts):
             continue
         if path.suffix.casefold() in PROJECT_SUFFIXES:
-            offenders.append(_display_path(path, repo_root))
+            relative = _display_path(path, repo_root)
+            if relative in GOVERNED_C_BUNDLE_01_PROJECT_FILES:
+                continue
+            offenders.append(relative)
     return sorted(offenders)
 
 
@@ -323,4 +330,3 @@ def _display_path(path: Path, repo_root: Path) -> str:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

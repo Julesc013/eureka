@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: C-BUNDLE-01
+current_recommended_task: C-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -262,12 +262,20 @@ entries:
     recommended_after: D-BUNDLE-01
   - id: C-BUNDLE-01
     title: Native skeleton, matrix, C89 library, and WinForms proof
-    status: queued
+    status: needs_review
     purpose: Start the native-client track using the D-BUNDLE-02 read-only fixture relay and snapshot projections without enabling downloads, execution, public hosting, live access, telemetry, or public/master index mutation.
     allowed_scope_summary: C native skeleton contracts, docs, examples, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
     gate: D-BUNDLE-02 passes; relay remains localhost-only and read-only, no public bind, no live source access, no downloads, no installs, no execution, no uploads/accounts/telemetry, and no truth acceptance by default.
     task: .aide/queue/C-BUNDLE-01/task.yaml
     recommended_after: D-BUNDLE-02
+  - id: C-BUNDLE-02
+    title: Win32 AppKit Carbon read-only skeletons
+    status: queued
+    purpose: Extend the native-client track with Win32, AppKit, and Carbon read-only skeletons over the C-BUNDLE-01 matrix and contract helper without enabling downloads, execution, live access, telemetry, or public/master index mutation.
+    allowed_scope_summary: C native skeleton source/docs/tests/audit evidence and AIDE queue/context metadata only until explicitly scoped.
+    gate: C-BUNDLE-01 passes; native clients remain read-only consumers of snapshot, relay, action, and view contracts with no Python runtime internals and no release artifacts.
+    task: .aide/queue/C-BUNDLE-02/task.yaml
+    recommended_after: C-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

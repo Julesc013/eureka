@@ -1,0 +1,39 @@
+{
+  "schema_version": "native_matrix_policy.v0",
+  "policy_id": "native_matrix_policy_v0",
+  "first_wave_lanes": [
+    "mac.carbon",
+    "mac.appkit",
+    "win.win32",
+    "win.winforms"
+  ],
+  "future_lanes": [
+    "mac.swiftui",
+    "win.win16",
+    "win.winui"
+  ],
+  "shared_native_libraries": [
+    "lib.c89",
+    "lib.objc",
+    "lib.dotnet"
+  ],
+  "allowed_consumes": [
+    "snapshot",
+    "relay",
+    "action_manifest",
+    "view_contracts",
+    "citation_bundle",
+    "export_manifest",
+    "acquisition_manifest"
+  ],
+  "forbidden_consumes": [
+    "python_runtime",
+    "runtime_python_internals",
+    "source_connector",
+    "live_source",
+    "public_index_writer",
+    "master_index_writer"
+  ],
+  "release_artifacts_allowed_current": false,
+  "build_outputs_committed_allowed": false
+}

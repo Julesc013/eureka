@@ -1,30 +1,35 @@
 {
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
-  "generated_at_note": "codex_updated_after_d_bundle_02",
+  "generated_at_note": "codex_updated_after_c_bundle_01",
   "primary_task_packet": ".aide/context/latest-task-packet.md",
   "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
   "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "current_queue_item": "D-BUNDLE-02",
-  "completed_queue_item": "D-BUNDLE-02",
-  "next_recommended_queue_item": "C-BUNDLE-01",
+  "current_queue_item": "C-BUNDLE-01",
+  "completed_queue_item": "C-BUNDLE-01",
+  "next_recommended_queue_item": "C-BUNDLE-02",
   "side_lanes": {
     "human_obs_review": "parallel_side_lane"
   },
   "latest_packet_budget": {
-    "approx_tokens": 1050,
+    "approx_tokens": 900,
     "budget_status": "within_budget",
-    "method": "manual estimate after D-BUNDLE-02",
+    "method": "manual estimate after C-BUNDLE-01",
     "path": ".aide/context/latest-task-packet.md"
   },
   "validation": {
-    "relay_runtime_validator": "pass",
-    "focused_relay_tests": "pass",
-    "broader_validation": "recorded_in_task_response"
+    "native_matrix_validator": "pass",
+    "native_skeleton_validator": "pass",
+    "native_c89_validator": "pass",
+    "focused_native_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "architecture_boundaries": "pass",
+    "existing_validators": "pass",
+    "aide_lite": "pass_with_advisory_warnings"
   },
   "known_warn_only_conditions": [
-    "AIDE verify may remain WARN-only for advisory lanes",
-    "C-BUNDLE-01 native work is future work and remains disabled by default"
+    "AIDE doctor/verify/review-pack may remain WARN-only for advisory lanes",
+    "C-BUNDLE-02 native skeleton work is future work and must remain read-only by default"
   ],
   "product_boundary": {
     "changed_product_behavior": false,
@@ -43,8 +48,16 @@
     "master_index_mutated": false,
     "aide_metadata_is_product_runtime": false
   },
+  "native_scope": {
+    "skeleton": "enabled",
+    "matrix": "enabled",
+    "c89_library": "enabled",
+    "winforms_readonly_proof": "enabled",
+    "release_binaries": false,
+    "build_outputs_committed": false
+  },
   "next_spine": [
-    "C-BUNDLE-01 native skeleton",
+    "C-BUNDLE-02 read-only native skeletons",
     "E hosting/ops",
     "C native clients"
   ],
@@ -64,7 +77,7 @@
     "keep_aide_as_governance_not_product_truth": true
   },
   "risks": [
-    "C-BUNDLE-01 native behavior is not implemented in D-BUNDLE-02",
-    "Relay responses are fixture/offline representations and not accepted public truth"
+    "WinForms build was not required and no release binary was produced",
+    "Native clients remain fixture/read-only consumers and not resolvers"
   ]
 }

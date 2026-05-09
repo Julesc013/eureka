@@ -1,0 +1,17 @@
+{
+  "schema_version": "native_host_policy.v0",
+  "policy_id": "native_host_policy_v0",
+  "host_records_are_build_evidence_requirements": true,
+  "toolchain_install_allowed": false,
+  "network_restore_allowed": false,
+  "package_install_allowed": false,
+  "optional_local_build_allowed": true,
+  "required_hosts_current": [
+    "host.vs2022",
+    "host.vs6_future",
+    "host.xcode9_future",
+    "host.codewarrior9_future",
+    "host.appkit_future",
+    "host.carbon_future"
+  ]
+}
