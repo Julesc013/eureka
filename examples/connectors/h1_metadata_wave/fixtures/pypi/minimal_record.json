@@ -1,0 +1,62 @@
+{
+  "connector_family": "package_registry",
+  "expected_normalized_ref": "examples/connectors/h1_metadata_wave/normalized/pypi_normalized.json",
+  "external_api_used": false,
+  "fixture_id": "h1.fixture.pypi.minimal.v0",
+  "fixture_kind": "minimal",
+  "fixture_payload": {
+    "native_id": "sample-widget-1.0.0",
+    "source_locator": "fixture:h1:pypi:minimal",
+    "source_metadata": {
+      "fixture_shape": "minimal",
+      "source_label": "PyPI Metadata"
+    },
+    "title": "sample-widget 1.0.0"
+  },
+  "fixture_public_safe": true,
+  "fixture_status": "committed_fixture",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only parsing evidence"
+  ],
+  "live_call_used": false,
+  "network_used": false,
+  "notes": [
+    "No live source access, API call, download, scrape, or crawl occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "schema_version": "h1_metadata_fixture.v0",
+  "source_id": "pypi",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "fixture_replay_can_claim_malware_safety": false,
+    "fixture_replay_can_claim_rights_clearance": false,
+    "fixture_replay_can_claim_verified_installability": false,
+    "fixture_replay_can_mutate_master_index": false,
+    "fixture_replay_can_mutate_public_index": false,
+    "fixture_replay_result_is_source_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "accepted_source_truth": false,
+  "candidate_id": "h1.source_cache_candidate.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+  "connector_family": "warc_cdx",
+  "mapping_status": "preview_only_fixture",
+  "notes": [
+    "Source-cache preview only; no source-cache runtime write occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "schema_version": "h1_metadata_source_cache_candidate_preview.v0",
+  "source_cache_runtime_mutated": false,
+  "source_cache_write_enabled": false,
+  "source_id": "wayback_cdx_memento",
+  "source_limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only parsing evidence",
+    "optional field absent or unknown: vulnerability_or_advisory_summary"
+  ],
+  "source_locator": "fixture:h1:wayback_cdx_memento:typical",
+  "source_metadata_summary": {
+    "artifact_type": "web_archive_capture_metadata",
+    "date_or_timestamp": "1999-12-31T23:59:59Z",
+    "object_family": "web_archive_trace",
+    "package_or_project_name": "example.org/download",
+    "release_or_snapshot_id": "19991231235959",
+    "title": "Example.org archived download page capture",
+    "version_or_state": "captured"
+  },
+  "source_native_id": "capture-19991231235959-example-org-download",
+  "truth_boundary": {
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "title_match_is_verified_identity": false,
+    "verified_installability_claimed": false,
+    "version_field_is_accepted_release_truth": false
+  }
+}

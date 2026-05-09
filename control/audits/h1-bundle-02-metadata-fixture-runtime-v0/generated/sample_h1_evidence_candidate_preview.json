@@ -1,0 +1,90 @@
+{
+  "accepted_evidence": false,
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "title_candidate",
+      "claim_value": "Example.org archived download page capture",
+      "limitations": [
+        "Title is a source observation, not verified identity.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "version_or_state_candidate",
+      "claim_value": "captured",
+      "limitations": [
+        "Version/state is not accepted release truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "source_locator_candidate",
+      "claim_value": "fixture:h1:wayback_cdx_memento:typical",
+      "limitations": [
+        "Source locator is not rights clearance.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "artifact_type_candidate",
+      "claim_value": "web_archive_capture_metadata",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use."
+      ]
+    }
+  ],
+  "connector_family": "warc_cdx",
+  "evidence_ledger_runtime_mutated": false,
+  "evidence_ledger_write_enabled": false,
+  "evidence_preview_id": "h1.evidence_candidate_preview.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+  "notes": [
+    "Evidence preview only; no evidence ledger runtime write occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "schema_version": "h1_metadata_evidence_candidate_preview.v0",
+  "source_id": "wayback_cdx_memento",
+  "source_locator": "fixture:h1:wayback_cdx_memento:typical",
+  "source_native_id": "capture-19991231235959-example-org-download",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "security_conclusion_without_review": false,
+    "title_match_is_verified_identity": false,
+    "verified_installability_claimed": false,
+    "version_field_is_accepted_release_truth": false
+  }
+}

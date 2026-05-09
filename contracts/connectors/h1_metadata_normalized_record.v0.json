@@ -1,0 +1,35 @@
+{
+  "$id": "https://eureka.local/contracts/connectors/h1_metadata_normalized_record.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "h1_metadata_normalized_record.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "normalized_record_id",
+    "source_id",
+    "connector_family",
+    "source_native_id",
+    "source_locator",
+    "title",
+    "description_summary",
+    "version_or_state",
+    "artifact_type",
+    "object_family",
+    "platform_or_context",
+    "identity_refs",
+    "source_metadata",
+    "source_limitations",
+    "access_path_candidates",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "title": "Eureka H1 Metadata Normalized Record v0",
+  "type": "object"
+}

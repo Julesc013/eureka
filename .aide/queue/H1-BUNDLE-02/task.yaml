@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+task_id: H1-BUNDLE-02
+title: First metadata wave fixture runtimes and normalizers
+status: active
+target_repo: julesc013/eureka
+phase: H1-BUNDLE-02
+source_packet: .aide/context/latest-task-packet.md
+objective: Add fixture-only H1 metadata-wave normalizers, committed fixtures, normalized records, replay results, source-cache/evidence previews, docs, validator, scripts, tests, and audit evidence without enabling live source access.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/H1-BUNDLE-02/**
+    - .aide/reports/eureka-repo-health.md
+    - .aide/reports/eureka-repo-health.json
+    - contracts/connectors/h1_metadata_fixture.v0.json
+    - contracts/connectors/h1_metadata_normalized_record.v0.json
+    - contracts/connectors/h1_metadata_fixture_replay_result.v0.json
+    - control/inventory/connectors/h1_metadata_*_policy.json
+    - control/audits/h1-bundle-02-metadata-fixture-runtime-v0/**
+    - runtime/connectors/h1_metadata_wave/**
+    - scripts/normalize_h1_metadata_fixture.py
+    - scripts/replay_h1_metadata_fixtures.py
+    - scripts/validate_h1_metadata_fixture_runtime.py
+    - docs/reference/H1_METADATA_FIXTURE_RUNTIME.md
+    - docs/reference/H1_METADATA_NORMALIZED_RECORD.md
+    - docs/architecture/H1_METADATA_NORMALIZER_MODEL.md
+    - docs/operations/H1_METADATA_FIXTURE_REPLAY.md
+    - docs/operations/H1_METADATA_FIXTURE_NO_LIVE_CALL_POLICY.md
+    - examples/connectors/h1_metadata_wave/fixtures/**
+    - examples/connectors/h1_metadata_wave/normalized/**
+    - examples/connectors/h1_metadata_wave/replay_results/**
+    - tests/connectors/test_h1_metadata_fixture_runtime.py
+    - tests/operations/test_h1_metadata_fixture_scripts.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - control/inventory/sources/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - H1 fixture, normalized record, and fixture replay result contracts exist
+  - all seven H1 sources have minimal, typical, and policy-blocked fixtures
+  - all seven H1 sources have fixture-only normalizers and normalized/replay examples
+  - CLI normalizer, replay script, validator, tests, docs, and audit evidence exist
+  - no live source access, source sync, network/API/model/provider calls, downloads, scraping, public/master index mutation, truth acceptance, or product behavior change occurs
+recommended_after: H1-BUNDLE-01
+next_recommended_task: H1-BUNDLE-03

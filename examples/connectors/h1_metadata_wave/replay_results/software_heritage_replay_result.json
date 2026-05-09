@@ -1,0 +1,488 @@
+{
+  "connector_family": "api_json",
+  "connector_output_envelope": {
+    "connector_id": "software_heritage_fixture_normalizer",
+    "evidence_candidate_preview": {
+      "accepted_evidence": false,
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "title_candidate",
+          "claim_value": "Example source snapshot abc123",
+          "limitations": [
+            "Title is a source observation, not verified identity.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "version_or_state_candidate",
+          "claim_value": "snapshot",
+          "limitations": [
+            "Version/state is not accepted release truth.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "source_locator_candidate",
+          "claim_value": "fixture:h1:software_heritage:typical",
+          "limitations": [
+            "Source locator is not rights clearance.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "artifact_type_candidate",
+          "claim_value": "software_preservation_metadata",
+          "limitations": [
+            "Artifact type is descriptive only.",
+            "Requires human review before downstream use."
+          ]
+        }
+      ],
+      "connector_family": "api_json",
+      "evidence_ledger_runtime_mutated": false,
+      "evidence_ledger_write_enabled": false,
+      "evidence_preview_id": "h1.evidence_candidate_preview.software_heritage.swh_snapshot_abc123.v0",
+      "notes": [
+        "Evidence preview only; no evidence ledger runtime write occurred."
+      ],
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "scraping_made": false
+      },
+      "schema_version": "h1_metadata_evidence_candidate_preview.v0",
+      "source_id": "software_heritage",
+      "source_locator": "fixture:h1:software_heritage:typical",
+      "source_native_id": "swh-snapshot-abc123",
+      "truth_boundary": {
+        "evidence_preview_is_accepted_evidence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "security_conclusion_without_review": false,
+        "title_match_is_verified_identity": false,
+        "verified_installability_claimed": false,
+        "version_field_is_accepted_release_truth": false
+      }
+    },
+    "limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only parsing evidence",
+      "optional field absent or unknown: vulnerability_or_advisory_summary"
+    ],
+    "normalized_record": {
+      "access_path_candidates": [
+        {
+          "access_path_kind": "fixture_metadata_reference",
+          "access_path_ref": "fixture:h1:software_heritage:swh_snapshot_abc123",
+          "download_approved": false,
+          "file_fetch_approved": false,
+          "live_access_approved": false,
+          "metadata_only": true,
+          "package_download_approved": false,
+          "release_asset_download_approved": false,
+          "source_archive_download_approved": false
+        }
+      ],
+      "artifact_type": "software_preservation_metadata",
+      "connector_family": "api_json",
+      "date_or_timestamp": "2023-11-20T10:00:00Z",
+      "dependency_or_relationship_summary": {
+        "origin_ref": "fixture:swh-origin:example-preserved-project",
+        "revision_refs": [
+          "fixture:swh-revision:def456"
+        ]
+      },
+      "description_summary": "Synthetic Software Heritage origin/snapshot metadata without source archive payloads.",
+      "evidence_candidate_preview": {
+        "accepted_evidence": false,
+        "candidate_count": 4,
+        "candidates": [
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "title_candidate",
+            "claim_value": "Example source snapshot abc123",
+            "limitations": [
+              "Title is a source observation, not verified identity.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "version_or_state_candidate",
+            "claim_value": "snapshot",
+            "limitations": [
+              "Version/state is not accepted release truth.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "source_locator_candidate",
+            "claim_value": "fixture:h1:software_heritage:typical",
+            "limitations": [
+              "Source locator is not rights clearance.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "artifact_type_candidate",
+            "claim_value": "software_preservation_metadata",
+            "limitations": [
+              "Artifact type is descriptive only.",
+              "Requires human review before downstream use."
+            ]
+          }
+        ],
+        "connector_family": "api_json",
+        "evidence_ledger_runtime_mutated": false,
+        "evidence_ledger_write_enabled": false,
+        "evidence_preview_id": "h1.evidence_candidate_preview.software_heritage.swh_snapshot_abc123.v0",
+        "notes": [
+          "Evidence preview only; no evidence ledger runtime write occurred."
+        ],
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_hosting": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "scraping_made": false
+        },
+        "schema_version": "h1_metadata_evidence_candidate_preview.v0",
+        "source_id": "software_heritage",
+        "source_locator": "fixture:h1:software_heritage:typical",
+        "source_native_id": "swh-snapshot-abc123",
+        "truth_boundary": {
+          "evidence_preview_is_accepted_evidence": false,
+          "malware_safety_claimed": false,
+          "master_index_mutated": false,
+          "normalized_record_is_public_truth": false,
+          "public_index_mutated": false,
+          "rights_clearance_claimed": false,
+          "security_conclusion_without_review": false,
+          "title_match_is_verified_identity": false,
+          "verified_installability_claimed": false,
+          "version_field_is_accepted_release_truth": false
+        }
+      },
+      "file_or_asset_summary": {
+        "object_ids_present": true,
+        "source_archive_downloaded": false
+      },
+      "identity_refs": [
+        "fixture:swh:snapshot:abc123"
+      ],
+      "normalized_record_id": "h1.normalized.software_heritage.swh_snapshot_abc123.v0",
+      "notes": [
+        "Normalized from a committed H1 public-safe fixture.",
+        "Fixture runtime proves parsing only and grants no live access."
+      ],
+      "object_family": "source_snapshot",
+      "package_or_project_name": "example-preserved-project",
+      "platform_or_context": "software preservation archive",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "scraping_made": false
+      },
+      "release_or_snapshot_id": "swh:1:snp:abc123fixture",
+      "schema_version": "h1_metadata_normalized_record.v0",
+      "source_cache_candidate_preview": {
+        "accepted_source_truth": false,
+        "candidate_id": "h1.source_cache_candidate.software_heritage.swh_snapshot_abc123.v0",
+        "connector_family": "api_json",
+        "mapping_status": "preview_only_fixture",
+        "notes": [
+          "Source-cache preview only; no source-cache runtime write occurred."
+        ],
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_hosting": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "scraping_made": false
+        },
+        "schema_version": "h1_metadata_source_cache_candidate_preview.v0",
+        "source_cache_runtime_mutated": false,
+        "source_cache_write_enabled": false,
+        "source_id": "software_heritage",
+        "source_limitations": [
+          "synthetic public-safe fixture",
+          "fixture-only parsing evidence",
+          "optional field absent or unknown: vulnerability_or_advisory_summary"
+        ],
+        "source_locator": "fixture:h1:software_heritage:typical",
+        "source_metadata_summary": {
+          "artifact_type": "software_preservation_metadata",
+          "date_or_timestamp": "2023-11-20T10:00:00Z",
+          "object_family": "source_snapshot",
+          "package_or_project_name": "example-preserved-project",
+          "release_or_snapshot_id": "swh:1:snp:abc123fixture",
+          "title": "Example source snapshot abc123",
+          "version_or_state": "snapshot"
+        },
+        "source_native_id": "swh-snapshot-abc123",
+        "truth_boundary": {
+          "malware_safety_claimed": false,
+          "master_index_mutated": false,
+          "normalized_record_is_public_truth": false,
+          "public_index_mutated": false,
+          "rights_clearance_claimed": false,
+          "source_cache_preview_is_accepted_source": false,
+          "title_match_is_verified_identity": false,
+          "verified_installability_claimed": false,
+          "version_field_is_accepted_release_truth": false
+        }
+      },
+      "source_id": "software_heritage",
+      "source_limitations": [
+        "synthetic public-safe fixture",
+        "fixture-only parsing evidence",
+        "optional field absent or unknown: vulnerability_or_advisory_summary"
+      ],
+      "source_locator": "fixture:h1:software_heritage:typical",
+      "source_metadata": {
+        "fixture_shape": "typical",
+        "source_label": "Software Heritage Metadata"
+      },
+      "source_native_id": "swh-snapshot-abc123",
+      "title": "Example source snapshot abc123",
+      "truth_boundary": {
+        "evidence_preview_is_accepted_evidence": false,
+        "file_listing_is_local_availability_proof": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "package_metadata_is_installability_verification": false,
+        "public_index_mutated": false,
+        "release_asset_entry_is_download_permission": false,
+        "rights_clearance_claimed": false,
+        "source_cache_preview_is_accepted_source": false,
+        "source_locator_is_rights_clearance": false,
+        "title_match_is_verified_identity": false,
+        "verified_installability_claimed": false,
+        "version_field_is_accepted_release_truth": false,
+        "vulnerability_record_is_security_conclusion": false
+      },
+      "version_or_state": "snapshot",
+      "vulnerability_or_advisory_summary": {}
+    },
+    "notes": [
+      "Output envelope is candidate-only and review-gated."
+    ],
+    "output_envelope_id": "h1.output_envelope.software_heritage.swh_snapshot_abc123.v0",
+    "output_status": "candidate_preview",
+    "output_type": "normalized_source_record",
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_hosting": false,
+      "enabled_live_probes": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false
+    },
+    "review_queue_seed_preview": null,
+    "schema_version": "source_connector_output_envelope.v0",
+    "source_cache_candidate": {
+      "accepted_source_truth": false,
+      "candidate_id": "h1.source_cache_candidate.software_heritage.swh_snapshot_abc123.v0",
+      "connector_family": "api_json",
+      "mapping_status": "preview_only_fixture",
+      "notes": [
+        "Source-cache preview only; no source-cache runtime write occurred."
+      ],
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "scraping_made": false
+      },
+      "schema_version": "h1_metadata_source_cache_candidate_preview.v0",
+      "source_cache_runtime_mutated": false,
+      "source_cache_write_enabled": false,
+      "source_id": "software_heritage",
+      "source_limitations": [
+        "synthetic public-safe fixture",
+        "fixture-only parsing evidence",
+        "optional field absent or unknown: vulnerability_or_advisory_summary"
+      ],
+      "source_locator": "fixture:h1:software_heritage:typical",
+      "source_metadata_summary": {
+        "artifact_type": "software_preservation_metadata",
+        "date_or_timestamp": "2023-11-20T10:00:00Z",
+        "object_family": "source_snapshot",
+        "package_or_project_name": "example-preserved-project",
+        "release_or_snapshot_id": "swh:1:snp:abc123fixture",
+        "title": "Example source snapshot abc123",
+        "version_or_state": "snapshot"
+      },
+      "source_native_id": "swh-snapshot-abc123",
+      "truth_boundary": {
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_preview_is_accepted_source": false,
+        "title_match_is_verified_identity": false,
+        "verified_installability_claimed": false,
+        "version_field_is_accepted_release_truth": false
+      }
+    },
+    "source_id": "software_heritage",
+    "source_native_id": "swh-snapshot-abc123",
+    "truth_boundary": {
+      "accepted_candidate_truth": false,
+      "accepted_evidence_truth": false,
+      "accepted_public_truth": false,
+      "accepted_source_truth": false,
+      "connector_output_is_accepted_evidence": false,
+      "connector_output_is_public_truth": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "warnings": []
+  },
+  "evidence_candidate_preview_ref": "h1.evidence_candidate_preview.software_heritage.swh_snapshot_abc123.v0",
+  "fixture_id": "h1.fixture.software_heritage.typical.v0",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only parsing evidence",
+    "optional field absent or unknown: vulnerability_or_advisory_summary"
+  ],
+  "no_live_source_used": true,
+  "no_network_used": true,
+  "normalized_record_ref": "examples/connectors/h1_metadata_wave/normalized/software_heritage_normalized.json",
+  "notes": [
+    "Fixture replay proves parsing only; it grants no source access."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "replay_result_id": "h1.fixture_replay.software_heritage.swh_snapshot_abc123.v0",
+  "replay_status": "pass",
+  "schema_version": "h1_metadata_fixture_replay_result.v0",
+  "source_cache_candidate_ref": "h1.source_cache_candidate.software_heritage.swh_snapshot_abc123.v0",
+  "source_id": "software_heritage",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "fixture_replay_can_claim_malware_safety": false,
+    "fixture_replay_can_claim_rights_clearance": false,
+    "fixture_replay_can_claim_verified_installability": false,
+    "fixture_replay_can_mutate_master_index": false,
+    "fixture_replay_can_mutate_public_index": false,
+    "fixture_replay_result_is_source_truth": false,
+    "normalized_record_is_public_truth": false,
+    "source_cache_preview_is_accepted_source": false
+  },
+  "validation_summary": {
+    "evidence_ledger_write_enabled": false,
+    "fixture_only": true,
+    "no_live_source_used": true,
+    "no_network_used": true,
+    "normalization_succeeded": true,
+    "source_cache_write_enabled": false,
+    "status": "pass"
+  },
+  "warnings": []
+}

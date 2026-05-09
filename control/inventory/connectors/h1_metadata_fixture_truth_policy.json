@@ -1,0 +1,13 @@
+{
+  "evidence_preview_is_accepted_evidence": false,
+  "fixture_replay_can_claim_malware_safety": false,
+  "fixture_replay_can_claim_rights_clearance": false,
+  "fixture_replay_can_claim_verified_installability": false,
+  "fixture_replay_can_mutate_master_index": false,
+  "fixture_replay_can_mutate_public_index": false,
+  "fixture_replay_result_is_source_truth": false,
+  "normalized_record_is_public_truth": false,
+  "policy_id": "h1_metadata_fixture_truth_policy",
+  "schema_version": "h1_metadata_fixture_truth_policy.v0",
+  "source_cache_preview_is_accepted_source": false
+}

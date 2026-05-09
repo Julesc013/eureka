@@ -1,0 +1,293 @@
+{
+  "policy_id": "h1_metadata_normalization_policy",
+  "schema_version": "h1_metadata_normalization_policy.v0",
+  "sources": {
+    "github_releases": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "npm_registry": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "osv": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "pypi": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "repology": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "software_heritage": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    },
+    "wayback_cdx_memento": {
+      "date_or_version_fields": [
+        "version_or_state",
+        "date_or_timestamp",
+        "release_or_snapshot_id"
+      ],
+      "evidence_candidate_fields": [
+        "title",
+        "version_or_state",
+        "source_locator",
+        "artifact_type"
+      ],
+      "identity_fields": [
+        "native_id",
+        "identity_refs",
+        "package_or_project_name"
+      ],
+      "limitation_rules": [
+        "missing optional fields must become limitations",
+        "do not fabricate absent metadata"
+      ],
+      "optional_fields": [
+        "description_summary",
+        "version_or_state",
+        "date_or_timestamp",
+        "file_or_asset_summary",
+        "dependency_or_relationship_summary",
+        "vulnerability_or_advisory_summary"
+      ],
+      "relationship_fields": [
+        "dependency_or_relationship_summary"
+      ],
+      "required_minimal_fields": [
+        "native_id",
+        "source_locator",
+        "title"
+      ],
+      "source_locator_fields": [
+        "source_locator"
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H1-BUNDLE-01
+current_recommended_task: H1-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -159,12 +159,20 @@ entries:
     recommended_after: H0-BUNDLE-02
   - id: H1-BUNDLE-01
     title: First metadata wave source policy packs
-    status: active
+    status: needs_review
     purpose: Add policy-pack-only H1 metadata-wave source records, connector-family mappings, approval gates, coverage previews, scorecard previews, source-pack manifests, docs, validators, tests, and audit evidence.
     allowed_scope_summary: H1 source-pack policies, source records, connector policy packs, coverage/scorecard previews, docs, scripts, tests, audit pack, and AIDE queue/context metadata only.
     gate: H0-BUNDLE-03 passes with H1 readiness; no live source calls, source sync, connector runtime, downloads, public/master index mutation, source/evidence/candidate truth acceptance, or source-pack import/submission.
     task: .aide/queue/H1-BUNDLE-01/task.yaml
     recommended_after: H0-BUNDLE-03
+  - id: H1-BUNDLE-02
+    title: First metadata wave fixture runtimes and normalizers
+    status: active
+    purpose: Add fixture-only normalizers, replay reports, normalized records, source-cache/evidence previews, docs, validators, tests, and audit evidence for the first H1 metadata wave.
+    allowed_scope_summary: H1 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+    gate: H1-BUNDLE-01 passes; no live source calls, source sync, live connector runtime, downloads, scraping, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
+    task: .aide/queue/H1-BUNDLE-02/task.yaml
+    recommended_after: H1-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

@@ -1,0 +1,239 @@
+{
+  "access_path_candidates": [
+    {
+      "access_path_kind": "fixture_metadata_reference",
+      "access_path_ref": "fixture:h1:npm_registry:sample_package_2_4_0",
+      "download_approved": false,
+      "file_fetch_approved": false,
+      "live_access_approved": false,
+      "metadata_only": true,
+      "package_download_approved": false,
+      "release_asset_download_approved": false,
+      "source_archive_download_approved": false
+    }
+  ],
+  "artifact_type": "package_metadata",
+  "connector_family": "package_registry",
+  "date_or_timestamp": "2024-03-05T09:30:00Z",
+  "dependency_or_relationship_summary": {
+    "declared_dependencies": {
+      "sample-helper": "^1.0.0"
+    }
+  },
+  "description_summary": "Synthetic npm package metadata fixture with tarball metadata but no tarball payload.",
+  "evidence_candidate_preview": {
+    "accepted_evidence": false,
+    "candidate_count": 4,
+    "candidates": [
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "title_candidate",
+        "claim_value": "sample-package 2.4.0",
+        "limitations": [
+          "Title is a source observation, not verified identity.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "version_or_state_candidate",
+        "claim_value": "2.4.0",
+        "limitations": [
+          "Version/state is not accepted release truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "source_locator_candidate",
+        "claim_value": "fixture:h1:npm_registry:typical",
+        "limitations": [
+          "Source locator is not rights clearance.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "artifact_type_candidate",
+        "claim_value": "package_metadata",
+        "limitations": [
+          "Artifact type is descriptive only.",
+          "Requires human review before downstream use."
+        ]
+      }
+    ],
+    "connector_family": "package_registry",
+    "evidence_ledger_runtime_mutated": false,
+    "evidence_ledger_write_enabled": false,
+    "evidence_preview_id": "h1.evidence_candidate_preview.npm_registry.sample_package_2_4_0.v0",
+    "notes": [
+      "Evidence preview only; no evidence ledger runtime write occurred."
+    ],
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_hosting": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "scraping_made": false
+    },
+    "schema_version": "h1_metadata_evidence_candidate_preview.v0",
+    "source_id": "npm_registry",
+    "source_locator": "fixture:h1:npm_registry:typical",
+    "source_native_id": "sample-package-2.4.0",
+    "truth_boundary": {
+      "evidence_preview_is_accepted_evidence": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "security_conclusion_without_review": false,
+      "title_match_is_verified_identity": false,
+      "verified_installability_claimed": false,
+      "version_field_is_accepted_release_truth": false
+    }
+  },
+  "file_or_asset_summary": {
+    "integrity_present": true,
+    "tarball_downloaded": false,
+    "tarball_name": "sample-package-2.4.0.tgz"
+  },
+  "identity_refs": [
+    "fixture:npm:sample-package",
+    "fixture:npm-version:2.4.0"
+  ],
+  "normalized_record_id": "h1.normalized.npm_registry.sample_package_2_4_0.v0",
+  "notes": [
+    "Normalized from a committed H1 public-safe fixture.",
+    "Fixture runtime proves parsing only and grants no live access."
+  ],
+  "object_family": "javascript_package",
+  "package_or_project_name": "sample-package",
+  "platform_or_context": "npm package registry",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "release_or_snapshot_id": "2.4.0",
+  "schema_version": "h1_metadata_normalized_record.v0",
+  "source_cache_candidate_preview": {
+    "accepted_source_truth": false,
+    "candidate_id": "h1.source_cache_candidate.npm_registry.sample_package_2_4_0.v0",
+    "connector_family": "package_registry",
+    "mapping_status": "preview_only_fixture",
+    "notes": [
+      "Source-cache preview only; no source-cache runtime write occurred."
+    ],
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_hosting": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "scraping_made": false
+    },
+    "schema_version": "h1_metadata_source_cache_candidate_preview.v0",
+    "source_cache_runtime_mutated": false,
+    "source_cache_write_enabled": false,
+    "source_id": "npm_registry",
+    "source_limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only parsing evidence",
+      "optional field absent or unknown: vulnerability_or_advisory_summary"
+    ],
+    "source_locator": "fixture:h1:npm_registry:typical",
+    "source_metadata_summary": {
+      "artifact_type": "package_metadata",
+      "date_or_timestamp": "2024-03-05T09:30:00Z",
+      "object_family": "javascript_package",
+      "package_or_project_name": "sample-package",
+      "release_or_snapshot_id": "2.4.0",
+      "title": "sample-package 2.4.0",
+      "version_or_state": "2.4.0"
+    },
+    "source_native_id": "sample-package-2.4.0",
+    "truth_boundary": {
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "source_cache_preview_is_accepted_source": false,
+      "title_match_is_verified_identity": false,
+      "verified_installability_claimed": false,
+      "version_field_is_accepted_release_truth": false
+    }
+  },
+  "source_id": "npm_registry",
+  "source_limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only parsing evidence",
+    "optional field absent or unknown: vulnerability_or_advisory_summary"
+  ],
+  "source_locator": "fixture:h1:npm_registry:typical",
+  "source_metadata": {
+    "fixture_shape": "typical",
+    "source_label": "npm Registry Metadata"
+  },
+  "source_native_id": "sample-package-2.4.0",
+  "title": "sample-package 2.4.0",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "file_listing_is_local_availability_proof": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_metadata_is_installability_verification": false,
+    "public_index_mutated": false,
+    "release_asset_entry_is_download_permission": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "source_locator_is_rights_clearance": false,
+    "title_match_is_verified_identity": false,
+    "verified_installability_claimed": false,
+    "version_field_is_accepted_release_truth": false,
+    "vulnerability_record_is_security_conclusion": false
+  },
+  "version_or_state": "2.4.0",
+  "vulnerability_or_advisory_summary": {}
+}
