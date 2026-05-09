@@ -1,0 +1,43 @@
+{
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_F_BUNDLE_01",
+    "READY_FOR_H2_POLICY_PACKS",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "no_goals": [
+    "no live source calls by default",
+    "no public or master index mutation",
+    "no source, evidence, candidate, or public truth acceptance",
+    "no production-readiness or external-superiority claims"
+  ],
+  "policy_id": "h1_integration_audit_policy.v0",
+  "preferred_next_phase_if_sufficient": "READY_FOR_F_BUNDLE_01",
+  "required_artifacts": [
+    "review_integration_result",
+    "quality_delta_report",
+    "connector_wave_postmortem",
+    "h1_exit_gate_decision",
+    "next_phase_recommendation"
+  ],
+  "required_product_boundaries": {
+    "changed_public_search_behavior": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "required_validators": [
+    "validate_h1_review_quality_audit.py",
+    "audit_h1_metadata_wave.py"
+  ],
+  "schema_version": "h1_integration_audit_policy.v0",
+  "wave_id": "H1"
+}

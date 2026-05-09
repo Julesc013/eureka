@@ -1,0 +1,41 @@
+{
+  "contract_id": "h1_integration_audit.v0",
+  "schema_version": "h1_integration_audit.v0",
+  "required_fields": [
+    "schema_version",
+    "audit_id",
+    "wave_id",
+    "audited_sources",
+    "audited_tasks",
+    "artifact_inventory",
+    "validation_summary",
+    "source_policy_summary",
+    "fixture_runtime_summary",
+    "live_probe_summary",
+    "review_integration_summary",
+    "quality_delta_summary",
+    "postmortem_summary",
+    "blockers",
+    "warnings",
+    "h1_exit_gate",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_F_BUNDLE_01",
+    "READY_FOR_H2_POLICY_PACKS",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "description": "H1 integration audit closes the metadata wave and routes to extraction or remediation without accepting truth."
+}

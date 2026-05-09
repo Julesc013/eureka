@@ -1,0 +1,58 @@
+{
+  "auto_approves_future_connectors": false,
+  "connector_scorecard_update_id": "h1.scorecard_update.github_releases.25dc4875e7.v0",
+  "fixture_replay_status": "passed",
+  "limitations": [
+    "Scorecard update is not production readiness."
+  ],
+  "live_probe_status": "blocked_or_not_used",
+  "metrics": {
+    "blocker_count": 0,
+    "evidence_candidate_count": 1,
+    "fixture_replay_pass_count": 1,
+    "policy_block_count": 0,
+    "review_entry_count": 2,
+    "source_cache_candidate_count": 1,
+    "warning_count": 0
+  },
+  "notes": [
+    "Scorecard update summarizes review previews only."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enables_hosting": false,
+    "enables_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "production_ready": false,
+  "quality_delta_status": "planned",
+  "review_integration_status": "preview_created",
+  "schema_version": "h1_connector_scorecard_update.v0",
+  "scorecard_update_status": "fixture_review_integrated",
+  "source_id": "github_releases",
+  "truth_boundary": {
+    "accepts_candidate_truth": false,
+    "accepts_evidence_truth": false,
+    "accepts_source_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  }
+}

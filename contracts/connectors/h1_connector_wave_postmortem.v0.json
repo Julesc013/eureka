@@ -1,0 +1,32 @@
+{
+  "contract_id": "h1_connector_wave_postmortem.v0",
+  "schema_version": "h1_connector_wave_postmortem.v0",
+  "required_fields": [
+    "schema_version",
+    "postmortem_id",
+    "wave_id",
+    "what_worked",
+    "what_failed",
+    "policy_gaps",
+    "fixture_gaps",
+    "normalizer_gaps",
+    "live_probe_gaps",
+    "source_cache_mapping_gaps",
+    "evidence_mapping_gaps",
+    "review_gaps",
+    "quality_delta_summary",
+    "scorecard_summary",
+    "safety_boundary_assessment",
+    "next_phase_recommendation",
+    "h2_or_extraction_recommendation",
+    "do_not_repeat_risks",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "required_invariants": {
+    "auto_approves_future_connectors": false,
+    "production_readiness_claimed": false
+  },
+  "description": "H1 connector wave postmortem records lessons and next-phase recommendation without approving future connectors."
+}

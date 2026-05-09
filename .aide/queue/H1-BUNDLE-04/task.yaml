@@ -1,0 +1,63 @@
+task_id: H1-BUNDLE-04
+title: First metadata wave review integration and quality delta
+status: active
+phase: H1-BUNDLE-04
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/queue/index.yaml
+  - .aide/queue/H1-BUNDLE-04/**
+  - contracts/connectors/h1_review_integration_result.v0.json
+  - contracts/connectors/h1_quality_delta_report.v0.json
+  - contracts/connectors/h1_connector_wave_postmortem.v0.json
+  - contracts/connectors/h1_integration_audit.v0.json
+  - control/inventory/connectors/h1_review_integration_policy.json
+  - control/inventory/connectors/h1_review_output_policy.json
+  - control/inventory/connectors/h1_review_path_policy.json
+  - control/inventory/connectors/h1_review_truth_policy.json
+  - control/inventory/connectors/h1_quality_delta_policy.json
+  - control/inventory/connectors/h1_connector_wave_postmortem_policy.json
+  - control/inventory/connectors/h1_integration_audit_policy.json
+  - control/audits/h1-bundle-04-review-quality-audit-v0/**
+  - runtime/connectors/h1_metadata_wave/review_integration.py
+  - runtime/connectors/h1_metadata_wave/quality_delta.py
+  - runtime/connectors/h1_metadata_wave/wave_postmortem.py
+  - scripts/integrate_h1_metadata_review.py
+  - scripts/summarize_h1_quality_delta.py
+  - scripts/audit_h1_metadata_wave.py
+  - scripts/validate_h1_review_quality_audit.py
+  - docs/reference/H1_METADATA_REVIEW_INTEGRATION.md
+  - docs/reference/H1_METADATA_QUALITY_DELTA_REPORT.md
+  - docs/reference/H1_CONNECTOR_WAVE_POSTMORTEM.md
+  - docs/architecture/H1_REVIEW_INTEGRATION_MODEL.md
+  - docs/operations/H1_METADATA_WAVE_POSTMORTEM.md
+  - docs/operations/H1_METADATA_WAVE_QUALITY_DELTA.md
+  - docs/operations/H1_TO_EXTRACTION_HANDOFF.md
+  - examples/connectors/h1_metadata_wave/review_integration/**
+  - tests/connectors/test_h1_review_integration_quality.py
+  - tests/operations/test_h1_review_quality_scripts.py
+  - tests/operations/test_h1_integration_audit.py
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - control/inventory/sources/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no new live source calls by default
+  - no broad search, scraping, crawling, downloads, source sync, index mutation, truth acceptance, production-readiness claims, or external superiority claims
+validation:
+  - python scripts/validate_h1_review_quality_audit.py
+  - python scripts/integrate_h1_metadata_review.py --input-dir examples/connectors/h1_metadata_wave/replay_results --check
+  - python scripts/summarize_h1_quality_delta.py --input-dir examples/connectors/h1_metadata_wave/review_integration --check
+  - python scripts/audit_h1_metadata_wave.py --check
+  - python -m unittest tests.connectors.test_h1_review_integration_quality
+  - python -m unittest tests.operations.test_h1_review_quality_scripts
+  - python -m unittest tests.operations.test_h1_integration_audit
+next_recommended_task: F-BUNDLE-01

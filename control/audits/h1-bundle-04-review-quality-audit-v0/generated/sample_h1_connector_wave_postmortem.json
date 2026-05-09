@@ -1,0 +1,99 @@
+{
+  "auto_approves_future_connectors": false,
+  "do_not_repeat_risks": [
+    "Do not treat metadata observations as public truth.",
+    "Do not use fixture replay as live access approval.",
+    "Do not widen exact request manifests into broad source search."
+  ],
+  "evidence_mapping_gaps": [
+    "evidence candidates remain previews only"
+  ],
+  "fixture_gaps": [
+    "fixtures are synthetic/public-safe and do not prove live endpoint compatibility"
+  ],
+  "h2_or_extraction_recommendation": "proceed_to_f_bundle_01_before_h2_live_expansion",
+  "live_probe_gaps": [
+    "blocked live probes provide gate evidence but no completed metadata response"
+  ],
+  "next_phase_recommendation": "READY_FOR_F_BUNDLE_01",
+  "normalizer_gaps": [
+    "normalizers cover metadata fixture shapes, not downloaded artifacts or extraction payloads"
+  ],
+  "notes": [
+    "Postmortem recommends fixture extraction planning, not production readiness."
+  ],
+  "policy_gaps": [
+    "source-specific live probe approvals remain absent"
+  ],
+  "postmortem_id": "h1.connector_wave_postmortem.214a160aff44.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_summary": {
+    "blocked_sources_count": 7,
+    "blocker_count": 7,
+    "claims_external_superiority": false,
+    "claims_production_readiness": false,
+    "fixture_sources_count": 7,
+    "known_gap_count": 1,
+    "live_probe_sources_count": 0,
+    "overclaim_errors": [],
+    "quality_delta_id": "h1.quality_delta.d69215c79284.v0",
+    "review_seed_count": 14,
+    "schema_version": "h1_quality_delta_summary.v0",
+    "source_count": 7,
+    "status": "pass"
+  },
+  "review_gaps": [
+    "review seeds are not human review decisions and are not persisted"
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "boundary_result": "preserved",
+    "downloads_made": false,
+    "master_index_mutated": false,
+    "network_calls_made": false,
+    "public_index_mutated": false,
+    "source_sync_enabled": false
+  },
+  "schema_version": "h1_connector_wave_postmortem.v0",
+  "scorecard_summary": {
+    "auto_approves_future_connectors": false,
+    "production_ready": false,
+    "scorecard_update_count": 7
+  },
+  "source_cache_mapping_gaps": [
+    "source-cache candidates remain previews only"
+  ],
+  "truth_boundary": {
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "h1_postmortem_enables_future_connectors_automatically": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "wave_id": "H1",
+  "what_failed": [
+    "No H1 source has committed operator approval for a live metadata probe."
+  ],
+  "what_worked": [
+    "Seven H1 metadata sources have policy packs, fixtures, normalizers, replay outputs, and review previews.",
+    "Source OS contracts handled fixture replay, coverage, scorecards, and source-pack previews without special one-off source truth.",
+    "Live-probe outputs failed closed when committed approvals were missing."
+  ]
+}

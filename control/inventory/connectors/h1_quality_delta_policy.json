@@ -1,0 +1,30 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "beats_google",
+    "beats_internet_archive",
+    "exhaustive_global_coverage",
+    "production_search_quality",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "future_connector_auto_approval"
+  ],
+  "policy_id": "h1_quality_delta_policy.v0",
+  "schema_version": "h1_quality_delta_policy.v0",
+  "wave_id": "H1"
+}

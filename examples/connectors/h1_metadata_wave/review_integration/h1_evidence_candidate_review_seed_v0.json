@@ -1,0 +1,56 @@
+{
+  "accepted_evidence": false,
+  "blocked_reasons": [],
+  "candidate_count": 4,
+  "evidence_ledger_runtime_mutated": false,
+  "input_basis": "normalized_record",
+  "limitations": [
+    "Artifact type is descriptive only.",
+    "Requires human review before downstream use.",
+    "Source locator is not rights clearance.",
+    "Title is a source observation, not verified identity.",
+    "Version/state is not accepted release truth.",
+    "Evidence seed is not evidence acceptance."
+  ],
+  "notes": [
+    "H1 evidence candidate review seed is a local review preview only."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enables_hosting": false,
+    "enables_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_required": true,
+  "review_seed_id": "h1.evidence_review_seed.github_releases.owner_example_project_v1_2_3.v0",
+  "review_seed_status": "needs_review",
+  "review_subject_ref": "h1.evidence_candidate_preview.github_releases.owner_example_project_v1_2_3.v0",
+  "review_subject_type": "evidence_candidate_preview",
+  "schema_version": "h1_evidence_candidate_review_seed.v0",
+  "source_id": "github_releases",
+  "truth_boundary": {
+    "accepts_candidate_truth": false,
+    "accepts_evidence_truth": false,
+    "accepts_source_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  }
+}

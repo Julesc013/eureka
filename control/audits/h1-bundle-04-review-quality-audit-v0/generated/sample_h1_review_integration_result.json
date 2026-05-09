@@ -1,0 +1,1877 @@
+{
+  "blocked_sources": [
+    "github_releases",
+    "npm_registry",
+    "osv",
+    "pypi",
+    "repology",
+    "software_heritage",
+    "wayback_cdx_memento"
+  ],
+  "candidate_promotion_previews": [
+    {
+      "accepted_candidate_truth": false,
+      "allowed_next_actions": [
+        "human_review",
+        "fixture_extraction_planning"
+      ],
+      "blocked_reasons": [
+        "User-Agent/contact posture is not approved or documented as not required",
+        "allowed_requests.github_releases.live_access_approved must be true",
+        "allowed_requests.github_releases.live_access_approved must be true; allowed_requests.github_releases.metadata_probe_approved must be true; request key is not approved for live use: example_release_metadata; endpoint class is not currently allowlisted: release_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.github_releases.metadata_probe_approved must be true",
+        "allowed_requests.npm_registry.live_access_approved must be true",
+        "allowed_requests.npm_registry.live_access_approved must be true; allowed_requests.npm_registry.metadata_probe_approved must be true; request key is not approved for live use: example_package_metadata; endpoint class is not currently allowlisted: package_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.npm_registry.metadata_probe_approved must be true",
+        "allowed_requests.osv.live_access_approved must be true",
+        "allowed_requests.osv.live_access_approved must be true; allowed_requests.osv.metadata_probe_approved must be true; request key is not approved for live use: example_vulnerability_metadata; endpoint class is not currently allowlisted: vulnerability_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.osv.metadata_probe_approved must be true",
+        "allowed_requests.pypi.live_access_approved must be true",
+        "allowed_requests.pypi.live_access_approved must be true; allowed_requests.pypi.metadata_probe_approved must be true; request key is not approved for live use: example_project_metadata; endpoint class is not currently allowlisted: project_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.pypi.metadata_probe_approved must be true",
+        "allowed_requests.repology.live_access_approved must be true",
+        "allowed_requests.repology.live_access_approved must be true; allowed_requests.repology.metadata_probe_approved must be true; request key is not approved for live use: example_project_metadata; endpoint class is not currently allowlisted: project_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.repology.metadata_probe_approved must be true",
+        "allowed_requests.software_heritage.live_access_approved must be true",
+        "allowed_requests.software_heritage.live_access_approved must be true; allowed_requests.software_heritage.metadata_probe_approved must be true; request key is not approved for live use: example_swhid_metadata; endpoint class is not currently allowlisted: swhid_resolution_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.software_heritage.metadata_probe_approved must be true",
+        "allowed_requests.wayback_cdx_memento.live_access_approved must be true",
+        "allowed_requests.wayback_cdx_memento.live_access_approved must be true; allowed_requests.wayback_cdx_memento.metadata_probe_approved must be true; request key is not approved for live use: example_cdx_metadata; endpoint class is not currently allowlisted: cdx_metadata_lookup_future; rate_limit_policy decision is not approved; User-Agent/contact posture is not approved or documented as not required; cache policy decision is not approved; cache TTL or no-cache decision must be approved; kill switch blocks live call",
+        "allowed_requests.wayback_cdx_memento.metadata_probe_approved must be true",
+        "cache TTL or no-cache decision must be approved",
+        "cache policy decision is not approved",
+        "endpoint class is not currently allowlisted: cdx_metadata_lookup_future",
+        "endpoint class is not currently allowlisted: package_metadata_lookup_future",
+        "endpoint class is not currently allowlisted: project_metadata_lookup_future",
+        "endpoint class is not currently allowlisted: release_metadata_lookup_future",
+        "endpoint class is not currently allowlisted: swhid_resolution_future",
+        "endpoint class is not currently allowlisted: vulnerability_metadata_lookup_future",
+        "kill switch blocks live call",
+        "rate_limit_policy decision is not approved",
+        "request key is not approved for live use: example_cdx_metadata",
+        "request key is not approved for live use: example_package_metadata",
+        "request key is not approved for live use: example_project_metadata",
+        "request key is not approved for live use: example_release_metadata",
+        "request key is not approved for live use: example_swhid_metadata",
+        "request key is not approved for live use: example_vulnerability_metadata"
+      ],
+      "candidate_promotion_preview_id": "h1.candidate_promotion_preview.813d93fd8061.v0",
+      "candidate_promotion_preview_promotes_candidate": false,
+      "evidence_candidate_review_seed_count": 7,
+      "forbidden_next_actions": [
+        "accept_candidate",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "limitations": [
+        "Promotion preview does not promote or accept a candidate."
+      ],
+      "master_index_mutated": false,
+      "notes": [
+        "H1 promotion preview is a rehearsal artifact only."
+      ],
+      "preview_status": "not_ready_review_required",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "public_index_mutated": false,
+      "review_required": true,
+      "schema_version": "h1_candidate_promotion_preview.v0",
+      "source_cache_review_seed_count": 7,
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      },
+      "wave_id": "H1"
+    }
+  ],
+  "coverage_update_previews": [
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.github_releases.1a5d4caef6.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "github_releases",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.npm_registry.8a9218ef3d.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "npm_registry",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.osv.9bf70b44e8.v0",
+      "limitations": [
+        "Advisory metadata is not a security conclusion without review.",
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "osv",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.pypi.e3317e6409.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "pypi",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.repology.8dada1f10b.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "repology",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.software_heritage.8c631a9aa9.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "software_heritage",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "coverage_basis": "fixture_only",
+      "coverage_depth_current": "D2_metadata_indexed",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "coverage_update_preview_id": "h1.coverage_update.wayback_cdx_memento.ad1d0dd8af.v0",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Coverage update preview is bounded and not exhaustive."
+      ],
+      "notes": [
+        "Coverage preview does not mutate coverage ledgers or indexes."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "records_normalized": 1,
+      "records_seen": 1,
+      "review_required": true,
+      "schema_version": "h1_source_coverage_update_preview.v0",
+      "source_id": "wayback_cdx_memento",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "evidence_candidate_review_seeds": [
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.github_releases.owner_example_project_v1_2_3.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.github_releases.owner_example_project_v1_2_3.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "github_releases",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.npm_registry.sample_package_2_4_0.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.npm_registry.sample_package_2_4_0.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "npm_registry",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 5,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Advisory metadata is not a security conclusion without review.",
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.osv.osv_fixture_2024_0001.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.osv.osv_fixture_2024_0001.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "osv",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.pypi.sample_widget_1_0_0.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.pypi.sample_widget_1_0_0.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "pypi",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.repology.repology_sampletool.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.repology.repology_sampletool.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "repology",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.software_heritage.swh_snapshot_abc123.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.software_heritage.swh_snapshot_abc123.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "software_heritage",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_evidence": false,
+      "blocked_reasons": [],
+      "candidate_count": 4,
+      "evidence_ledger_runtime_mutated": false,
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Evidence seed is not evidence acceptance."
+      ],
+      "notes": [
+        "H1 evidence candidate review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.evidence_review_seed.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.evidence_candidate_preview.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+      "review_subject_type": "evidence_candidate_preview",
+      "schema_version": "h1_evidence_candidate_review_seed.v0",
+      "source_id": "wayback_cdx_memento",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "input_refs": [
+    "examples/connectors/h1_metadata_wave/replay_results/github_releases_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/npm_registry_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/osv_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/pypi_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/repology_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/software_heritage_replay_result.json",
+    "examples/connectors/h1_metadata_wave/replay_results/wayback_cdx_memento_replay_result.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/blocked_live_probe_result_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/github_releases_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/npm_registry_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/osv_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/pypi_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/repology_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/software_heritage_live_probe_result_example_v0.json",
+    "examples/connectors/h1_metadata_wave/live_probe_results/wayback_cdx_memento_live_probe_result_example_v0.json"
+  ],
+  "limitations": [
+    "Review integration uses explicit committed outputs only.",
+    "Review seeds are not review decisions.",
+    "Fixture-equivalent H1 outputs are sufficient for extraction sandbox planning, not public truth."
+  ],
+  "notes": [
+    "H1 review integration does not mutate source cache, evidence ledger, review queue, public index, or master index."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enables_hosting": false,
+    "enables_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_integration_result_id": "h1.review_integration.359d11d24a00.v0",
+  "schema_version": "h1_review_integration_result.v0",
+  "scorecard_updates": [
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.github_releases.25dc4875e7.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "github_releases",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.npm_registry.8414bea907.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "npm_registry",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.osv.e361f01741.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "osv",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.pypi.5b1c7e0e97.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "pypi",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.repology.2c0c6ac413.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "repology",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.software_heritage.a4e8f1fc1f.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "software_heritage",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "auto_approves_future_connectors": false,
+      "connector_scorecard_update_id": "h1.scorecard_update.wayback_cdx_memento.117c97d1a8.v0",
+      "fixture_replay_status": "passed",
+      "limitations": [
+        "Scorecard update is not production readiness."
+      ],
+      "live_probe_status": "blocked_or_not_used",
+      "metrics": {
+        "blocker_count": 0,
+        "evidence_candidate_count": 1,
+        "fixture_replay_pass_count": 1,
+        "policy_block_count": 0,
+        "review_entry_count": 2,
+        "source_cache_candidate_count": 1,
+        "warning_count": 0
+      },
+      "notes": [
+        "Scorecard update summarizes review previews only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "production_ready": false,
+      "quality_delta_status": "planned",
+      "review_integration_status": "preview_created",
+      "schema_version": "h1_connector_scorecard_update.v0",
+      "scorecard_update_status": "fixture_review_integrated",
+      "source_id": "wayback_cdx_memento",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "source_cache_review_seeds": [
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.github_releases.owner_example_project_v1_2_3.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.github_releases.owner_example_project_v1_2_3.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "github_releases",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.npm_registry.sample_package_2_4_0.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.npm_registry.sample_package_2_4_0.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "npm_registry",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Advisory metadata is not a security conclusion without review.",
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.osv.osv_fixture_2024_0001.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.osv.osv_fixture_2024_0001.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "osv",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.pypi.sample_widget_1_0_0.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.pypi.sample_widget_1_0_0.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "pypi",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.repology.repology_sampletool.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.repology.repology_sampletool.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "repology",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.software_heritage.swh_snapshot_abc123.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.software_heritage.swh_snapshot_abc123.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "software_heritage",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "accepted_source_truth": false,
+      "blocked_reasons": [],
+      "input_basis": "normalized_record",
+      "limitations": [
+        "Artifact type is descriptive only.",
+        "Requires human review before downstream use.",
+        "Source locator is not rights clearance.",
+        "Title is a source observation, not verified identity.",
+        "Version/state is not accepted release truth.",
+        "Review seed is not source-cache persistence."
+      ],
+      "notes": [
+        "H1 source-cache review seed is a local review preview only."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "review_seed_id": "h1.source_cache_review_seed.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+      "review_seed_status": "needs_review",
+      "review_subject_ref": "h1.source_cache_candidate.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+      "review_subject_type": "source_cache_candidate_preview",
+      "schema_version": "h1_source_cache_review_seed.v0",
+      "source_cache_runtime_mutated": false,
+      "source_id": "wayback_cdx_memento",
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "source_pack_update_previews": [
+    {
+      "limitations": [
+        "Source pack update remains a preview and is not imported or submitted."
+      ],
+      "notes": [
+        "Source pack update preview is portable planning evidence only."
+      ],
+      "pack_update_status": "draft_update_preview",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "enables_hosting": false,
+        "enables_source_sync": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_required": true,
+      "schema_version": "h1_source_pack_update_preview.v0",
+      "source_pack_accepted": false,
+      "source_pack_imported": false,
+      "source_pack_preview_is_imported_or_submitted": false,
+      "source_pack_submitted": false,
+      "source_pack_update_preview_id": "h1.source_pack_update.72b4bf7a2dd9.v0",
+      "sources": [
+        "github_releases",
+        "npm_registry",
+        "osv",
+        "pypi",
+        "repology",
+        "software_heritage",
+        "wayback_cdx_memento"
+      ],
+      "truth_boundary": {
+        "accepts_candidate_truth": false,
+        "accepts_evidence_truth": false,
+        "accepts_source_truth": false,
+        "candidate_promotion_preview_promotes_candidate": false,
+        "evidence_review_seed_accepts_evidence": false,
+        "external_superiority_claimed": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "mutates_master_index": false,
+        "mutates_public_index": false,
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "source_cache_review_seed_accepts_source": false,
+        "source_pack_preview_is_imported_or_submitted": false,
+        "verified_installability_claimed": false
+      },
+      "wave_id": "H1"
+    }
+  ],
+  "sources": [
+    "github_releases",
+    "npm_registry",
+    "osv",
+    "pypi",
+    "repology",
+    "software_heritage",
+    "wayback_cdx_memento"
+  ],
+  "truth_boundary": {
+    "accepts_candidate_truth": false,
+    "accepts_evidence_truth": false,
+    "accepts_source_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "used_fixture_outputs": [
+    {
+      "ref": "h1.fixture_replay.github_releases.owner_example_project_v1_2_3.v0",
+      "source_id": "github_releases"
+    },
+    {
+      "ref": "h1.fixture_replay.npm_registry.sample_package_2_4_0.v0",
+      "source_id": "npm_registry"
+    },
+    {
+      "ref": "h1.fixture_replay.osv.osv_fixture_2024_0001.v0",
+      "source_id": "osv"
+    },
+    {
+      "ref": "h1.fixture_replay.pypi.sample_widget_1_0_0.v0",
+      "source_id": "pypi"
+    },
+    {
+      "ref": "h1.fixture_replay.repology.repology_sampletool.v0",
+      "source_id": "repology"
+    },
+    {
+      "ref": "h1.fixture_replay.software_heritage.swh_snapshot_abc123.v0",
+      "source_id": "software_heritage"
+    },
+    {
+      "ref": "h1.fixture_replay.wayback_cdx_memento.capture_19991231235959_example_org_download.v0",
+      "source_id": "wayback_cdx_memento"
+    }
+  ],
+  "used_live_probe_outputs": [
+    {
+      "ref": "h1.live_probe_result.pypi.example_project_metadata.blocked.v0",
+      "source_id": "pypi",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.github_releases.example_release_metadata.blocked.v0",
+      "source_id": "github_releases",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.npm_registry.example_package_metadata.blocked.v0",
+      "source_id": "npm_registry",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.osv.example_vulnerability_metadata.blocked.v0",
+      "source_id": "osv",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.pypi.example_project_metadata.blocked.v0",
+      "source_id": "pypi",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.repology.example_project_metadata.blocked.v0",
+      "source_id": "repology",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.software_heritage.example_swhid_metadata.blocked.v0",
+      "source_id": "software_heritage",
+      "status": "blocked_by_missing_approval"
+    },
+    {
+      "ref": "h1.live_probe_result.wayback_cdx_memento.example_cdx_metadata.blocked.v0",
+      "source_id": "wayback_cdx_memento",
+      "status": "blocked_by_missing_approval"
+    }
+  ],
+  "warnings": [],
+  "wave_id": "H1"
+}
