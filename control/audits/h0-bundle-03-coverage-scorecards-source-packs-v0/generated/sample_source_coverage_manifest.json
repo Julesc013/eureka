@@ -1,0 +1,49 @@
+{
+  "blocked_source_count": 0,
+  "connector_family_counts": {
+    "api_json": 1,
+    "internet_archive_metadata_connector": 1
+  },
+  "coverage_manifest_id": "coverage_manifest.source_os_h0.v0",
+  "coverage_records": [
+    {
+      "coverage_record_id": "coverage.internet_archive.metadata.v0"
+    }
+  ],
+  "index_depth_counts": {
+    "D3_representation_indexed": 1
+  },
+  "limitations": [
+    "Coverage manifest is a local H0 rollup, not exhaustive global coverage."
+  ],
+  "manifest_status": "local_dry_run",
+  "notes": [
+    "Manifest is review evidence only."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "reviewed_source_count_future": 0,
+  "schema_version": "source_coverage_manifest.v0",
+  "source_family_counts": {
+    "archive_metadata": 1
+  },
+  "trust_lane_counts": {
+    "unknown": 1
+  },
+  "truth_boundary": {
+    "coverage_manifest_can_mutate_master_index": false,
+    "coverage_manifest_can_mutate_public_index": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_manifest_is_public_truth": false
+  },
+  "unknown_source_count": 0
+}

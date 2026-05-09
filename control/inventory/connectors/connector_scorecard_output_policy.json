@@ -1,0 +1,47 @@
+{
+  "schema_version": "connector_scorecard_output_policy.v0",
+  "policy_id": "connector_scorecard_output_policy",
+  "allowed_output_types": [
+    "connector_scorecard",
+    "connector_quality_delta",
+    "connector_scorecard_summary",
+    "h0_integration_report"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim",
+    "automatic_future_connector_approval"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/core/scorecards/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "master-index roots",
+    "local private roots"
+  ],
+  "truth_boundary": {
+    "scorecard_output_is_public_truth": false,
+    "scorecard_output_can_mutate_public_index": false,
+    "scorecard_output_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

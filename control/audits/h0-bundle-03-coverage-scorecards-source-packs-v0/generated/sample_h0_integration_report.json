@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "connector_interface_exists": true,
+    "connector_scorecard_exists": true,
+    "coverage_ledger_exists": true,
+    "live_access_enabled": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "source_pack_exists": true,
+    "source_registry_exists": true,
+    "source_sync_enabled": false
+  },
+  "errors": [],
+  "h0_exit_gate": "PASS",
+  "h1_readiness": "READY_FOR_H1_POLICY_PACKS",
+  "next_task": "H1-BUNDLE-01 - First metadata wave source policy packs",
+  "schema_version": "h0_integration_audit.v0",
+  "status": "pass",
+  "warnings": []
+}

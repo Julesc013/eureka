@@ -1,0 +1,44 @@
+{
+  "schema_version": "source_pack_manifest.v0",
+  "source_pack_manifest_id": "source_pack.h1_metadata_wave.preview.v0",
+  "pack_status": "draft_only",
+  "source_records": [
+    {"source_record_ref": "examples/sources/source_records/internet_archive_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/github_releases_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/pypi_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/npm_source_v2.json"}
+  ],
+  "source_families": ["archive_metadata", "code_source_release_host", "package_registry"],
+  "source_capabilities": ["source_known", "catalog_indexed", "metadata_indexed"],
+  "source_policy_refs": ["control/inventory/sources/source_expansion_no_live_call_policy.json"],
+  "connector_family_refs": ["api_json", "package_registry"],
+  "coverage_records": [
+    {"coverage_record_ref": "examples/source_coverage/h1_metadata_wave_coverage_preview_v0.json"}
+  ],
+  "connector_scorecards": [
+    {"connector_scorecard_ref": "examples/connectors/core/scorecards/api_json_family_scorecard_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/core/scorecards/package_registry_family_scorecard_v0.json"}
+  ],
+  "limitations": ["H1 planning preview only", "source policy packs not yet created"],
+  "review_posture": {"h1_policy_pack_review_required": true, "review_required_before_import_or_submission": true},
+  "no_live_access_posture": {"live_access_enabled": false, "source_sync_enabled": false},
+  "truth_boundary": {
+    "source_pack_is_accepted_truth": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_submitted": false,
+    "source_pack_can_mutate_public_index": false,
+    "source_pack_can_mutate_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": ["Preview tells H1 where to write policies; it does not approve live use."]
+}

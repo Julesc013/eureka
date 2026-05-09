@@ -1,0 +1,29 @@
+{
+  "schema_version": "source_coverage_truth_policy.v0",
+  "policy_id": "source_coverage_truth_policy",
+  "coverage_record_is_public_truth": false,
+  "coverage_manifest_is_exhaustive_global_coverage": false,
+  "coverage_record_can_mutate_public_index": false,
+  "coverage_record_can_mutate_master_index": false,
+  "coverage_record_can_claim_rights_clearance": false,
+  "coverage_record_can_claim_malware_safety": false,
+  "coverage_record_can_claim_verified_installability": false,
+  "human_review_required_for_public_claims": true,
+  "truth_boundary": {
+    "coverage_record_is_public_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "source_coverage_depth_policy.v0",
+  "policy_id": "source_coverage_depth_policy",
+  "depths": [
+    {
+      "depth_id": "D0_source_known",
+      "meaning": "Source is known and policy-described.",
+      "allowed_basis": ["example_only", "audit_only"],
+      "forbidden_claims": ["metadata_indexed", "content_indexed", "action_indexed"]
+    },
+    {
+      "depth_id": "D1_catalog_indexed",
+      "meaning": "Catalog-level source shape is described.",
+      "allowed_basis": ["example_only", "fixture_only", "audit_only", "local_dry_run"],
+      "forbidden_claims": ["content_indexed", "action_indexed"]
+    },
+    {
+      "depth_id": "D2_metadata_indexed",
+      "meaning": "Metadata record shape is normalized in fixtures or approved dry runs.",
+      "allowed_basis": ["fixture_only", "audit_only", "local_dry_run"],
+      "forbidden_claims": ["download_permission", "install_permission", "rights_clearance"]
+    },
+    {
+      "depth_id": "D3_representation_indexed",
+      "meaning": "Representation/file-member metadata is summarized without fetching payloads.",
+      "allowed_basis": ["fixture_only", "audit_only", "local_dry_run"],
+      "forbidden_claims": ["downloaded_file", "verified_installability"]
+    },
+    {
+      "depth_id": "D4_content_indexed",
+      "meaning": "Future explicit extraction-policy depth; not approved by H0-BUNDLE-03.",
+      "allowed_basis": ["reviewed_live_probe_future"],
+      "forbidden_claims": ["default_current_approval"]
+    },
+    {
+      "depth_id": "D5_action_indexed",
+      "meaning": "Future explicit action-policy depth; never implies execute/install permission by default.",
+      "allowed_basis": ["reviewed_live_probe_future"],
+      "forbidden_claims": ["default_current_approval", "execute_downloaded_artifact"]
+    }
+  ],
+  "current_h0_bundle_03_max_depth": "D3_representation_indexed",
+  "truth_boundary": {
+    "coverage_depth_grants_permission": false,
+    "coverage_depth_claims_exhaustive_global_coverage": false
+  },
+  "product_boundary": {
+    "enabled_live_probes": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

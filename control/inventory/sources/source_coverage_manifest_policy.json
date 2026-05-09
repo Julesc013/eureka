@@ -1,0 +1,31 @@
+{
+  "schema_version": "source_coverage_manifest_policy.v0",
+  "policy_id": "source_coverage_manifest_policy",
+  "current_status": "local_policy_only",
+  "allowed_manifest_statuses": [
+    "example_only",
+    "fixture_only",
+    "audit_only",
+    "local_dry_run",
+    "ready_for_review",
+    "blocked_by_policy",
+    "not_evaluable"
+  ],
+  "manifest_is_rollup_only": true,
+  "manifest_must_not_claim_exhaustive_global_coverage": true,
+  "review_required_for_public_claims": true,
+  "truth_boundary": {
+    "coverage_manifest_is_public_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_manifest_can_mutate_public_index": false,
+    "coverage_manifest_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": "Coverage manifests summarize local H0 evidence only."
+}
