@@ -22,12 +22,12 @@
     "tests/operations/test_sync_guard_policy.py"
   ],
   "validation": {
-    "git_status_short": "pending_clean_after_commit",
+    "git_status_short": "pass_clean_after_commit",
     "git_diff_check": "pass",
     "json_policy_files": "pass",
     "json_audit_report": "pass",
-    "check_git_task_state_start_task": "warn_expected_no_upstream_after_commit",
-    "check_git_task_state_start_task_json": "warn_expected_no_upstream_after_commit",
+    "check_git_task_state_start_task": "pass_after_task_branch_push",
+    "check_git_task_state_start_task_json": "pass_after_task_branch_push",
     "validate_sync_guard_policy": "pass",
     "targeted_unittest": "pass",
     "architecture_boundaries": "pass",
