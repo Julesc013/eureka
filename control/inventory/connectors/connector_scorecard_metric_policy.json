@@ -1,0 +1,36 @@
+{
+  "schema_version": "connector_scorecard_metric_policy.v0",
+  "policy_id": "connector_scorecard_metric_policy",
+  "allowed_metrics": [
+    "fixture_replay_pass_count",
+    "fixture_replay_fail_count",
+    "policy_block_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_count",
+    "review_entry_count",
+    "quality_delta_available",
+    "postmortem_available",
+    "warning_count",
+    "blocker_count"
+  ],
+  "forbidden_metrics": [
+    "production_ready",
+    "external_superiority",
+    "exhaustive_coverage",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "automatic_future_connector_approval"
+  ],
+  "metric_limitations_required": true,
+  "truth_boundary": {
+    "scorecard_metrics_are_public_truth": false,
+    "scorecard_metrics_claim_production_readiness": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

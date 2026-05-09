@@ -1,0 +1,59 @@
+{
+  "blockers": [],
+  "connector_family": "api_json",
+  "connector_id": "internet_archive_metadata_connector",
+  "connector_scorecard_id": "scorecard.internet_archive_metadata_connector.v0",
+  "coverage_ledger_status": "local_dry_run",
+  "evidence_mapping_status": "preview_only",
+  "fixture_replay_status": "pass",
+  "live_probe_envelope_status": "blocked_by_policy",
+  "live_probe_result_status": "blocked",
+  "metrics": {
+    "blocker_count": 0,
+    "evidence_candidate_count": 1,
+    "fixture_replay_fail_count": 0,
+    "fixture_replay_pass_count": 5,
+    "policy_block_count": 1,
+    "postmortem_available": true,
+    "quality_delta_available": true,
+    "review_entry_count": 2,
+    "source_cache_candidate_count": 1,
+    "warning_count": 1
+  },
+  "next_recommended_action": "use IA pattern for H1 policy packs",
+  "notes": [
+    "IA connector remains metadata-only and review-gated."
+  ],
+  "pack_export_status": "draft_only",
+  "policy_evaluation_status": "pass",
+  "postmortem_status": "available",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_status": "fixture_only",
+  "review_integration_status": "dry_run_only",
+  "schema_version": "connector_scorecard.v0",
+  "scorecard_status": "ready_for_policy_review",
+  "source_cache_mapping_status": "preview_only",
+  "source_family": "archive_metadata",
+  "source_id": "internet_archive",
+  "truth_boundary": {
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_is_public_truth": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": [
+    "live IA probe remains approval-gated"
+  ]
+}

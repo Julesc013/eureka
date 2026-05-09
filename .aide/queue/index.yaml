@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-09
+updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H0-BUNDLE-02
+current_recommended_task: H0-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -143,12 +143,20 @@ entries:
     recommended_after: H0-BUNDLE-01
   - id: H0-BUNDLE-02
     title: Connector interface, fixture replay, and live-probe envelope
-    status: active
+    status: needs_review
     purpose: Add the reusable connector-family interface, fixture/replay harness, live-probe envelope, policy evaluator, and no-live-default contract around Source OS.
     allowed_scope_summary: H0 connector-interface policies, docs, contracts, fixtures, validators, tests, and audit evidence only until separately scoped.
     gate: H0-BUNDLE-01 passes; no new live probes, source sync, downloads, public/master index mutation, or source truth acceptance.
     task: .aide/queue/H0-BUNDLE-02/task.yaml
     recommended_after: H0-BUNDLE-01
+  - id: H0-BUNDLE-03
+    title: Coverage ledger, source packs, and connector scorecards
+    status: active
+    purpose: Close the H0 Source OS foundation with coverage ledgers, connector scorecards, source packs, no-live scorecard/export helpers, H0 integration audit, and H1 readiness evidence.
+    allowed_scope_summary: H0 coverage, scorecard, source-pack contracts, policies, docs, examples, runtime helpers, scripts, tests, audit pack, and AIDE queue/context metadata only.
+    gate: H0-BUNDLE-02 passes; no live source calls, source sync, downloads, public/master index mutation, source/evidence/candidate truth acceptance, or source-pack import/submission.
+    task: .aide/queue/H0-BUNDLE-03/task.yaml
+    recommended_after: H0-BUNDLE-02
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

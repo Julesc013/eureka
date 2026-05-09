@@ -1,0 +1,31 @@
+{
+  "schema_version": "source_pack_manifest_policy.v0",
+  "policy_id": "source_pack_manifest_policy",
+  "current_status": "local_policy_only",
+  "allowed_pack_statuses": [
+    "example_only",
+    "fixture_only",
+    "audit_only",
+    "draft_only",
+    "export_preview_only",
+    "blocked_by_policy",
+    "not_evaluable"
+  ],
+  "source_pack_is_portable_intelligence_only": true,
+  "source_pack_import_allowed_current": false,
+  "source_pack_submission_allowed_current": false,
+  "truth_boundary": {
+    "source_pack_is_accepted_truth": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_submitted": false,
+    "source_pack_can_mutate_public_index": false,
+    "source_pack_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": "Source packs are drafts or export previews until future reviewed import/submission work."
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "source_pack_input_policy.v0",
+  "policy_id": "source_pack_input_policy",
+  "allowed_input_types": [
+    "source_record",
+    "source_family",
+    "source_capability",
+    "source_policy_ref",
+    "connector_family_ref",
+    "source_coverage_record",
+    "connector_scorecard"
+  ],
+  "forbidden_input_types": [
+    "downloaded_file",
+    "item_file_payload",
+    "accepted_public_record",
+    "private_credentials",
+    "cookies",
+    "account_tokens"
+  ],
+  "truth_boundary": {
+    "source_pack_inputs_are_accepted_truth": false,
+    "source_pack_inputs_grant_live_access": false
+  },
+  "product_boundary": {
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false
+  }
+}

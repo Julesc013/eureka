@@ -2,21 +2,22 @@
 
 ## PHASE
 
-H0-BUNDLE-02 - Connector interface, fixture replay, and live-probe envelope
+H0-BUNDLE-03 - Coverage ledger, source packs, and connector scorecards
 
 ## GOAL
 
-Add the reusable Source OS connector-interface layer: generic connector
-contracts, connector family registry, fixture replay harness, output envelopes,
-live-probe envelopes, policy evaluation, docs, examples, tests, and audit
-evidence. This task must not enable live source access.
+Close the H0 Source OS foundation by adding source coverage ledgers, coverage
+manifests, connector scorecards, connector quality deltas, source pack
+manifests/exports, no-network helper scripts, tests, docs, and audit evidence.
+This task must not enable live source access or accept source truth.
 
 ## WHY
 
-H0-BUNDLE-01 created source registry v2, source families, capabilities, trust
-lanes, access modes, operation policy, and approval gates. H0-BUNDLE-02 turns
-that source vocabulary into a repeatable connector framework so future H1/H2
-connectors are policy-governed instead of one-off site integrations.
+H0-BUNDLE-01 defined source governance. H0-BUNDLE-02 defined the reusable
+connector interface and fixture replay layer. H0-BUNDLE-03 makes that
+foundation measurable and portable so H1 metadata-wave work can start from
+reviewed coverage, scorecard, and source-pack artifacts instead of ad hoc
+connector notes.
 
 ## CONTEXT_REFS
 
@@ -26,46 +27,61 @@ connectors are policy-governed instead of one-off site integrations.
 - `.aide/context/context-index.json`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
-- `.aide/queue/H0-BUNDLE-02/task.yaml`
+- `.aide/queue/H0-BUNDLE-03/task.yaml`
 - `control/audits/h0-bundle-01-source-os-foundation-v0/`
-- `control/audits/ia-bundle-03-review-integration-quality-delta-v0/`
-- `contracts/sources/source_record.v2.json`
-- `control/inventory/sources/source_family_registry.json`
-- `control/inventory/sources/source_operation_policy.json`
+- `control/audits/h0-bundle-02-connector-interface-replay-v0/`
+- `contracts/sources/`
+- `contracts/connectors/`
+- `contracts/packs/`
+- `runtime/connectors/core/`
+- `control/inventory/sources/`
+- `control/inventory/connectors/`
+- `control/inventory/packs/`
+- `HUMAN-OBS-REVIEW-01` is a parallel side-lane; it remains human-operated and is
+  not modified by H0-BUNDLE-03.
 
 ## ALLOWED_PATHS
 
 - `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/H0-BUNDLE-02/**`
-- `control/audits/h0-bundle-02-connector-interface-replay-v0/**`
-- `control/inventory/connectors/connector_*_policy.json`
-- `control/inventory/connectors/connector_family_registry.json`
-- `control/inventory/connectors/live_probe_envelope_policy.json`
-- `contracts/connectors/source_connector_interface.v0.json`
-- `contracts/connectors/source_connector_capability.v0.json`
-- `contracts/connectors/source_connector_fixture_replay.v0.json`
-- `contracts/connectors/source_connector_output_envelope.v0.json`
-- `contracts/connectors/live_probe_request.v0.json`
-- `contracts/connectors/live_probe_result.v0.json`
-- `contracts/connectors/connector_policy_evaluation.v0.json`
-- `contracts/connectors/connector_family.v0.json`
-- `runtime/connectors/core/**`
-- `examples/connectors/core/**`
-- `scripts/run_connector_fixture_replay.py`
-- `scripts/evaluate_connector_policy.py`
-- `scripts/summarize_connector_families.py`
-- `scripts/validate_connector_interface_foundation.py`
-- `tests/connectors/test_connector_interface_foundation.py`
-- `tests/operations/test_connector_interface_foundation_scripts.py`
-- `docs/reference/SOURCE_CONNECTOR_INTERFACE.md`
-- `docs/reference/CONNECTOR_FIXTURE_REPLAY_CONTRACT.md`
-- `docs/reference/LIVE_PROBE_ENVELOPE_CONTRACT.md`
-- `docs/reference/CONNECTOR_POLICY_EVALUATION_CONTRACT.md`
-- `docs/architecture/CONNECTOR_INTERFACE_MODEL.md`
-- `docs/architecture/CONNECTOR_FIXTURE_REPLAY_MODEL.md`
-- `docs/operations/CONNECTOR_POLICY_EVALUATION.md`
-- `docs/operations/CONNECTOR_NO_LIVE_CALL_POLICY.md`
+- `.aide/queue/H0-BUNDLE-03/**`
+- `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/**`
+- `control/inventory/sources/source_coverage_*_policy.json`
+- `control/inventory/connectors/connector_scorecard_*policy.json`
+- `control/inventory/connectors/connector_scorecard_policy.json`
+- `control/inventory/packs/source_pack_*_policy.json`
+- `contracts/sources/source_coverage_ledger.v0.json`
+- `contracts/sources/source_coverage_manifest.v0.json`
+- `contracts/connectors/connector_scorecard.v0.json`
+- `contracts/connectors/connector_quality_delta.v0.json`
+- `contracts/packs/source_pack_manifest.v0.json`
+- `contracts/packs/source_pack_export.v0.json`
+- `runtime/connectors/core/coverage_ledger.py`
+- `runtime/connectors/core/connector_scorecard.py`
+- `runtime/connectors/core/source_pack.py`
+- `examples/source_coverage/**`
+- `examples/connectors/core/scorecards/**`
+- `examples/source_packs/**`
+- `scripts/record_source_coverage.py`
+- `scripts/build_source_pack.py`
+- `scripts/score_connector.py`
+- `scripts/validate_source_os_coverage_scorecards.py`
+- `scripts/audit_h0_integration.py`
+- `tests/connectors/test_source_os_coverage_scorecards.py`
+- `tests/operations/test_source_os_coverage_scorecard_scripts.py`
+- `tests/operations/test_h0_integration_audit.py`
+- `docs/reference/SOURCE_COVERAGE_LEDGER.md`
+- `docs/reference/SOURCE_COVERAGE_MANIFEST.md`
+- `docs/reference/CONNECTOR_SCORECARD_CONTRACT.md`
+- `docs/reference/SOURCE_PACK_MANIFEST_CONTRACT.md`
+- `docs/architecture/SOURCE_COVERAGE_MODEL.md`
+- `docs/architecture/CONNECTOR_SCORECARD_MODEL.md`
+- `docs/architecture/SOURCE_PACK_MODEL.md`
+- `docs/operations/SOURCE_COVERAGE_REVIEW.md`
+- `docs/operations/CONNECTOR_SCORECARD_REVIEW.md`
+- `docs/operations/SOURCE_PACK_EXPORT_REVIEW.md`
+- `docs/operations/H0_SOURCE_OS_INTEGRATION_AUDIT.md`
 
 ## FORBIDDEN_PATHS
 
@@ -88,26 +104,30 @@ connectors are policy-governed instead of one-off site integrations.
 - `secrets/**`
 - `.aide.local/**`
 
-The active queue task narrows the H0-BUNDLE-02 exceptions above. Work proceeds
+The active queue task narrows the H0-BUNDLE-03 exceptions above. Work proceeds
 without changing Eureka product behavior.
 
 ## IMPLEMENTATION
 
-- Define connector interface, capability, family, fixture replay, output
-  envelope, live-probe, and policy-evaluation contracts.
-- Add no-network helper modules under `runtime/connectors/core/**`.
-- Add CLIs for fixture replay, policy evaluation, family summaries, and
-  validation.
-- Add examples and generated audit evidence for offline replay and blocked live
-  probes.
+- Define coverage ledger/manifest, connector scorecard/quality delta, and
+  source pack manifest/export contracts.
+- Add no-network runtime helpers under `runtime/connectors/core/`.
+- Add CLIs for source coverage recording, connector scoring, source-pack
+  building, H0 integration audit, and validation.
+- Add examples and generated audit evidence for H0 exit and H1 readiness.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- `python scripts/validate_connector_interface_foundation.py`
-- `python -m unittest tests.connectors.test_connector_interface_foundation`
-- `python -m unittest tests.operations.test_connector_interface_foundation_scripts`
+- `python scripts/validate_source_os_coverage_scorecards.py`
+- `python scripts/record_source_coverage.py --input examples/source_coverage/internet_archive_coverage_record_v0.json --check`
+- `python scripts/score_connector.py --input examples/connectors/core/scorecards/internet_archive_scorecard_v0.json --check`
+- `python scripts/build_source_pack.py --input examples/source_packs/internet_archive_source_pack_manifest_v0.json --check`
+- `python scripts/audit_h0_integration.py --check`
+- `python -m unittest tests.connectors.test_source_os_coverage_scorecards`
+- `python -m unittest tests.operations.test_source_os_coverage_scorecard_scripts`
+- `python -m unittest tests.operations.test_h0_integration_audit`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
@@ -119,28 +139,33 @@ without changing Eureka product behavior.
 
 ## EVIDENCE
 
-- Audit pack: `control/audits/h0-bundle-02-connector-interface-replay-v0/`
-- Queue task: `.aide/queue/H0-BUNDLE-02/task.yaml`
-- Generated samples under the audit pack plus `examples/connectors/core/**`
+- Audit pack: `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/`
+- Queue task: `.aide/queue/H0-BUNDLE-03/task.yaml`
+- Generated samples under the audit pack plus `examples/source_coverage/**`,
+  `examples/connectors/core/scorecards/**`, and `examples/source_packs/**`
 
 ## NON_GOALS
 
 - No live source calls, API calls, source sync, downloads, scraping, crawling,
   public query fanout, model calls, public/master index mutation, evidence or
-  candidate acceptance, rights clearance, malware safety, installability, or
+  candidate acceptance, source-pack import/submission, rights clearance,
+  malware safety, installability, exhaustive-coverage, external-superiority, or
   production-readiness claims.
+- No changes to `HUMAN-OBS-REVIEW-01`; that remains a parallel human
+  observation side-lane.
 
 ## ACCEPTANCE
 
 - Contracts, policies, runtime helpers, scripts, examples, docs, tests, and
   audit evidence exist and validate offline.
+- H0 integration audit and H1 readiness recommendation exist.
 - No new live source access or product behavior change is enabled.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED`, `VALIDATION`, `RISKS`, and
-`NEXT TASK`.
+Return `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED`, `VALIDATION`, `H0_EXIT`,
+`H1_READINESS`, `RISKS`, and `NEXT TASK`.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1500
+approx_tokens: 1700

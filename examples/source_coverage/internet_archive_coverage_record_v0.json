@@ -1,0 +1,49 @@
+{
+  "schema_version": "source_coverage_ledger.v0",
+  "coverage_record_id": "coverage.internet_archive.metadata.v0",
+  "source_id": "internet_archive",
+  "source_family": "archive_metadata",
+  "source_record_ref": "examples/sources/source_records/internet_archive_source_v2.json",
+  "connector_family_refs": ["api_json", "internet_archive_metadata_connector"],
+  "coverage_status": "local_dry_run",
+  "coverage_depth_current": "D3_representation_indexed",
+  "coverage_depth_target_future": "D3_representation_indexed",
+  "coverage_scope": "IA fixture metadata and blocked live-probe review outputs",
+  "coverage_basis": "local_dry_run",
+  "records_seen": 5,
+  "records_normalized": 5,
+  "records_indexed_future": 0,
+  "source_cache_candidates": 1,
+  "evidence_candidates": 1,
+  "review_queue_entries": 1,
+  "blocked_operations": ["new_live_probe", "download_binary", "fetch_item_file_payload", "scrape_html_without_policy", "mutate_public_index", "mutate_master_index"],
+  "known_gaps": ["Live IA metadata probe remains policy-gated.", "Fixture coverage is not global coverage."],
+  "limitations": ["metadata only", "fixture and audit outputs only", "not rights clearance", "not malware safety", "not installability"],
+  "freshness_summary": {"basis": "committed_audit_outputs", "as_of": "2026-05-10"},
+  "review_gates": {
+    "source_cache_persistence_requires_review": true,
+    "evidence_acceptance_requires_review": true,
+    "public_index_use_requires_review": true
+  },
+  "truth_boundary": {
+    "coverage_record_is_public_truth": false,
+    "coverage_claims_exhaustive_global_coverage": false,
+    "coverage_record_can_mutate_public_index": false,
+    "coverage_record_can_mutate_master_index": false,
+    "coverage_record_can_claim_rights_clearance": false,
+    "coverage_record_can_claim_malware_safety": false,
+    "coverage_record_can_claim_verified_installability": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": ["Internet Archive is the reference pattern for H1 source governance."]
+}

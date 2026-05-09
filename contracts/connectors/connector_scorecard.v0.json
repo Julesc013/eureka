@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/connector_scorecard.v0.json",
+  "title": "Eureka Connector Scorecard v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "connector_scorecard_id",
+    "connector_id",
+    "source_id",
+    "connector_family",
+    "source_family",
+    "scorecard_status",
+    "fixture_replay_status",
+    "policy_evaluation_status",
+    "live_probe_envelope_status",
+    "live_probe_result_status",
+    "source_cache_mapping_status",
+    "evidence_mapping_status",
+    "review_integration_status",
+    "quality_delta_status",
+    "postmortem_status",
+    "coverage_ledger_status",
+    "pack_export_status",
+    "warnings",
+    "blockers",
+    "metrics",
+    "next_recommended_action",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "connector_scorecard.v0"},
+    "connector_scorecard_id": {"type": "string", "minLength": 1},
+    "scorecard_status": {
+      "enum": [
+        "example_only",
+        "fixture_only",
+        "dry_run_only",
+        "ready_for_policy_review",
+        "ready_for_approved_live_probe_future",
+        "blocked_by_policy",
+        "blocked_by_missing_fixture",
+        "blocked_by_missing_review",
+        "warning",
+        "not_evaluable"
+      ]
+    },
+    "truth_boundary": {
+      "type": "object",
+      "required": [
+        "scorecard_is_public_truth",
+        "scorecard_claims_production_readiness",
+        "scorecard_auto_approves_future_connectors",
+        "public_index_mutated",
+        "master_index_mutated",
+        "rights_clearance_claimed",
+        "malware_safety_claimed",
+        "verified_installability_claimed"
+      ]
+    },
+    "product_boundary": {"type": "object"}
+  }
+}

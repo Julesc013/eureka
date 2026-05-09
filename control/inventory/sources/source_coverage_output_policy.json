@@ -1,0 +1,48 @@
+{
+  "schema_version": "source_coverage_output_policy.v0",
+  "policy_id": "source_coverage_output_policy",
+  "allowed_output_types": [
+    "source_coverage_record",
+    "source_coverage_manifest",
+    "source_coverage_summary",
+    "h0_integration_report",
+    "h1_readiness_recommendation"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "downloaded_file",
+    "production_readiness_claim",
+    "exhaustive_global_coverage"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/source_coverage/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "master-index roots",
+    "local private roots"
+  ],
+  "truth_boundary": {
+    "coverage_output_is_public_truth": false,
+    "coverage_output_can_mutate_public_index": false,
+    "coverage_output_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

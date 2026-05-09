@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/connector_quality_delta.v0.json",
+  "title": "Eureka Connector Quality Delta v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "quality_delta_id",
+    "connector_id",
+    "source_id",
+    "comparison_scope",
+    "before_state",
+    "after_state",
+    "metrics",
+    "limitations",
+    "blocked_claims",
+    "review_gates",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "connector_quality_delta.v0"},
+    "quality_delta_id": {"type": "string", "minLength": 1},
+    "blocked_claims": {"type": "array"},
+    "truth_boundary": {"type": "object"},
+    "product_boundary": {"type": "object"}
+  }
+}

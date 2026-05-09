@@ -1,0 +1,55 @@
+{
+  "schema_version": "source_coverage_ledger_policy.v0",
+  "policy_id": "source_coverage_ledger_policy",
+  "current_status": "local_policy_only",
+  "allowed_coverage_basis_current": [
+    "example_only",
+    "fixture_only",
+    "audit_only",
+    "local_dry_run"
+  ],
+  "future_coverage_basis_approval_gated": [
+    "approved_live_probe_future",
+    "reviewed_live_probe_future",
+    "source_pack_future"
+  ],
+  "required_fields": [
+    "source_id",
+    "source_family",
+    "coverage_depth_current",
+    "coverage_basis",
+    "blocked_operations",
+    "known_gaps",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "forbidden_claims": [
+    "exhaustive_global_coverage",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "public_index_mutation",
+    "master_index_mutation",
+    "accepted_source_truth"
+  ],
+  "review_required_for_public_claims": true,
+  "truth_boundary": {
+    "coverage_record_is_public_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_record_can_mutate_public_index": false,
+    "coverage_record_can_mutate_master_index": false,
+    "coverage_record_can_claim_rights_clearance": false,
+    "coverage_record_can_claim_malware_safety": false,
+    "coverage_record_can_claim_verified_installability": false,
+    "human_review_required_for_public_claims": true
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": "Coverage records are bounded operational statements, not source truth."
+}
