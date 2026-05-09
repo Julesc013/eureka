@@ -1,0 +1,60 @@
+schema_version: aide.queue-task.v0
+task_id: IA-BUNDLE-02
+title: Internet Archive bounded metadata live probe
+status: active
+target_repo: julesc013/eureka
+phase: IA-BUNDLE-02
+source_packet: .aide/context/latest-task-packet.md
+objective: Add the fail-closed bounded IA metadata live-probe runtime and blocked audit evidence without performing a live call unless committed policy approves it.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/IA-BUNDLE-02/**
+    - control/audits/ia-bundle-02-bounded-metadata-live-probe-v0/**
+    - control/inventory/connectors/internet_archive_live_probe_policy.json
+    - control/inventory/connectors/internet_archive_live_probe_allowed_identifiers.json
+    - control/inventory/connectors/internet_archive_live_probe_output_policy.json
+    - control/inventory/connectors/internet_archive_live_probe_path_policy.json
+    - control/inventory/connectors/internet_archive_live_probe_review_policy.json
+    - control/inventory/connectors/internet_archive_live_probe_truth_policy.json
+    - docs/architecture/IA_METADATA_LIVE_PROBE_MODEL.md
+    - docs/operations/IA_METADATA_LIVE_PROBE_REVIEW.md
+    - docs/reference/IA_METADATA_LIVE_PROBE.md
+    - docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md
+    - examples/connectors/internet_archive/live_probe/**
+    - runtime/connectors/README.md
+    - runtime/connectors/internet_archive/__init__.py
+    - runtime/connectors/internet_archive/live_metadata_probe.py
+    - scripts/run_ia_metadata_live_probe.py
+    - scripts/validate_ia_metadata_live_probe.py
+    - tests/connectors/test_internet_archive_live_probe.py
+    - tests/operations/test_ia_metadata_live_probe_scripts.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - control/inventory/sources/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - live probe runtime, CLI, validator, policies, docs, examples, tests, and audit pack exist
+  - default validator and CLI preflight are offline
+  - committed policy blocks live call with request_count 0
+  - mocked tests cover approved one-request path without external calls
+  - no downloads, item file fetches, scraping, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or product behavior changes occur
+recommended_after: IA-BUNDLE-01
+next_recommended_task: IA-APPROVAL-01

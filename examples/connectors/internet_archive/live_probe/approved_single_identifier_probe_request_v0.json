@@ -1,0 +1,33 @@
+{
+  "schema_version": "internet_archive_live_probe_request.v0",
+  "request_id": "ia_live_probe_request.approved_shape.fixture.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "identifier": "eureka-software-fixture",
+  "mode": "example_only",
+  "live_requested": true,
+  "operator_approval_required": true,
+  "example_policy_state": "would_require_explicit_future_approval",
+  "max_identifiers": 1,
+  "allowed_endpoint": "https://archive.org/metadata/{identifier}",
+  "forbidden_actions": [
+    "advancedsearch",
+    "downloads",
+    "item_file_fetch",
+    "scraping",
+    "public_query_fanout"
+  ],
+  "truth_boundary": {
+    "accepted_evidence": false,
+    "accepted_public_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "enabled_live_public_fanout": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "internet_archive_live_probe_policy.v0",
+  "policy_id": "internet_archive.live_probe.single_identifier_metadata_read.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "current_status": "pending_operator_approval",
+  "live_probe_scope": "single_identifier_metadata_read",
+  "live_probe_enabled": false,
+  "approval_status": "pending_operator_approval",
+  "required_approvals": [
+    "source_policy.live_access_approved",
+    "source_policy.metadata_probe_approved",
+    "non_placeholder_user_agent_or_explicit_omission_approval",
+    "timeout_seconds",
+    "request_budget",
+    "cache_ttl_or_approved_no_cache_decision",
+    "kill_switch_allows_one_probe",
+    "exact_identifier_approval"
+  ],
+  "allowed_endpoint_templates": [
+    "https://archive.org/metadata/{identifier}"
+  ],
+  "forbidden_endpoint_templates": [
+    "https://archive.org/advancedsearch.php",
+    "https://archive.org/download/{identifier}/{file}",
+    "https://archive.org/details/{identifier}",
+    "arbitrary_url"
+  ],
+  "allowed_http_methods": [
+    "GET"
+  ],
+  "forbidden_actions": [
+    "advancedsearch",
+    "file_download",
+    "item_file_fetch",
+    "html_scraping",
+    "crawler",
+    "public_query_fanout",
+    "account_or_login_access",
+    "source_sync",
+    "public_index_mutation",
+    "master_index_mutation",
+    "evidence_acceptance",
+    "candidate_acceptance"
+  ],
+  "user_agent_policy_ref": "control/inventory/connectors/internet_archive_rate_limit_policy.json",
+  "rate_limit_policy_ref": "control/inventory/connectors/internet_archive_rate_limit_policy.json",
+  "cache_policy_ref": "control/inventory/connectors/internet_archive_cache_policy.json",
+  "kill_switch_policy_ref": "control/inventory/connectors/internet_archive_kill_switch_policy.json",
+  "allowed_identifier_policy_ref": "control/inventory/connectors/internet_archive_live_probe_allowed_identifiers.json",
+  "output_policy_ref": "control/inventory/connectors/internet_archive_live_probe_output_policy.json",
+  "review_policy_ref": "control/inventory/connectors/internet_archive_live_probe_review_policy.json",
+  "truth_policy_ref": "control/inventory/connectors/internet_archive_live_probe_truth_policy.json",
+  "user_agent_contact_omission_approved": false,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_hosting": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "no broad Internet Archive search",
+    "no advancedsearch",
+    "no file downloads",
+    "no item file fetches",
+    "no scraping or crawling",
+    "no public query fanout",
+    "no source sync",
+    "no public-index mutation",
+    "no master-index mutation",
+    "no evidence or candidate acceptance"
+  ],
+  "notes": [
+    "Current committed policy is intentionally blocked until operator approval records are updated.",
+    "Future approval must still limit the run to one metadata endpoint read for one approved identifier."
+  ]
+}

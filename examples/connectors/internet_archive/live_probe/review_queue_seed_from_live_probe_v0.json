@@ -1,0 +1,37 @@
+{
+  "schema_version": "internet_archive_live_probe_review_queue_seed_preview.v0",
+  "seed_id": "review_seed.internet_archive.14ce74d488a1.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "identifier": "eureka-software-fixture",
+  "review_subject_type": "internet_archive_metadata_live_probe",
+  "review_subject_ref": "ia_live_probe.14ce74d488a1.v0",
+  "review_required": true,
+  "review_queue_runtime_mutated": false,
+  "review_seed_is_review_decision": false,
+  "source_cache_candidate_ref": "source_cache_candidate.internet_archive.eureka-software-fixture.v0",
+  "evidence_preview_ref": "evidence_candidate_preview.internet_archive.eureka-software-fixture.v0",
+  "required_reviews": {
+    "source_cache_persistence": true,
+    "evidence_acceptance": true,
+    "candidate_acceptance": true,
+    "public_index_use": true,
+    "master_index": true
+  },
+  "truth_boundary": {
+    "review_queue_seed_is_review_decision": false,
+    "live_probe_result_is_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

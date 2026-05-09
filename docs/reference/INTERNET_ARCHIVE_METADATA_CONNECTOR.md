@@ -32,7 +32,15 @@ It must not become accepted evidence, public truth, rights clearance, malware
 safety, verified installability, public-index mutation, or master-index
 mutation.
 
+## IA-BUNDLE-02
+
+IA-BUNDLE-02 adds the bounded live-probe envelope for one metadata endpoint
+read, but current committed policy keeps it blocked. The CLI returns a blocked
+preflight report with `request_count: 0` until operator approval records are
+committed.
+
 ## Validation
 
 - `python scripts/validate_ia_metadata_connector_foundation.py`
 - `python scripts/normalize_ia_metadata_fixture.py --input examples/connectors/internet_archive/fixtures/software_item_metadata.json --check`
+- `python scripts/validate_ia_metadata_live_probe.py`

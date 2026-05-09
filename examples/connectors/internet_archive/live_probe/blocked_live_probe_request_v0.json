@@ -1,0 +1,25 @@
+{
+  "schema_version": "internet_archive_live_probe_request.v0",
+  "request_id": "ia_live_probe_request.blocked.fixture.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "identifier": "eureka-software-fixture",
+  "mode": "check",
+  "live_requested": false,
+  "expected_result": "blocked",
+  "reason": "Committed IA-BUNDLE-02 policy is pending operator approval.",
+  "network_expected": false,
+  "truth_boundary": {
+    "accepted_evidence": false,
+    "accepted_public_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "product_boundary": {
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "enabled_live_public_fanout": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

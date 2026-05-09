@@ -1,0 +1,27 @@
+{
+  "schema_version": "internet_archive_live_probe_source_cache_candidate_preview.v0",
+  "candidate_id": "source_cache_candidate.internet_archive.eureka-software-fixture.v0",
+  "source_id": "internet_archive",
+  "source_native_id": "eureka-software-fixture",
+  "source_locator": "ia:item:eureka-software-fixture",
+  "mapping_status": "live_probe_preview_only",
+  "source_observation_origin": "ia_bundle_02_live_probe_example",
+  "source_cache_runtime_mutated": false,
+  "accepted_source_truth": false,
+  "truth_boundary": {
+    "source_cache_candidate_is_accepted_source": false,
+    "live_probe_result_is_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

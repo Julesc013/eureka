@@ -1,0 +1,29 @@
+{
+  "schema_version": "internet_archive_live_probe_allowed_identifiers.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "approval_status": "pending_operator_approval",
+  "approved_identifiers": [],
+  "candidate_identifiers": [
+    {
+      "identifier": "eureka-software-fixture",
+      "source": "examples/connectors/internet_archive/fixtures/software_item_metadata.json",
+      "approval_status": "not_approved",
+      "notes": "Committed fixture identifier is safe for dry preflight examples but is not an operator-approved live IA identifier."
+    }
+  ],
+  "approval_reason": "pending",
+  "max_identifiers_per_run": 1,
+  "max_identifiers_current": 1,
+  "identifier_validation_rules": {
+    "allowed_characters": "ASCII letters, digits, period, underscore, hyphen",
+    "must_match_exact_approved_identifier": true,
+    "no_private_or_sensitive_identifier": true,
+    "no_search_terms": true,
+    "no_url_input": true
+  },
+  "notes": [
+    "The allowlist is empty because IA-BUNDLE-02 has not received operator live-probe approval.",
+    "Dry preflight may use the fixture identifier to demonstrate blocked behavior without a network call."
+  ]
+}
