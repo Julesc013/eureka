@@ -1,0 +1,334 @@
+{
+  "policy_id": "h1_metadata_live_probe_allowed_requests",
+  "schema_version": "h1_metadata_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "wayback_cdx_memento",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_cdx_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_cdx_metadata": {
+          "endpoint_class": "cdx_metadata_lookup_future",
+          "identifier_or_query": {
+            "timestamp": "20240101000000",
+            "url_key": "example.org/software"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_cdx_metadata",
+          "request_shape": {
+            "identifier": {
+              "timestamp": "20240101000000",
+              "url_key": "example.org/software"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "wayback_cdx_memento",
+      "source_label": "Wayback / CDX / Memento",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "github_releases",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_release_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_release_metadata": {
+          "endpoint_class": "release_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner": "example",
+            "repo": "sample-project",
+            "tag": "v1.0.0"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_release_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner": "example",
+              "repo": "sample-project",
+              "tag": "v1.0.0"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "github_releases",
+      "source_label": "GitHub Releases",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "pypi",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_project_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_project_metadata": {
+          "endpoint_class": "project_metadata_lookup_future",
+          "identifier_or_query": {
+            "project": "sample-widget"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_project_metadata",
+          "request_shape": {
+            "identifier": {
+              "project": "sample-widget"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "pypi",
+      "source_label": "PyPI",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "npm_registry",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "package": "sample-widget-js"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "package": "sample-widget-js"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "npm_registry",
+      "source_label": "npm Registry",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "software_heritage",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_swhid_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_swhid_metadata": {
+          "endpoint_class": "swhid_resolution_future",
+          "identifier_or_query": {
+            "swhid": "swh:1:rev:0123456789abcdef0123456789abcdef01234567"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_swhid_metadata",
+          "request_shape": {
+            "identifier": {
+              "swhid": "swh:1:rev:0123456789abcdef0123456789abcdef01234567"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "software_heritage",
+      "source_label": "Software Heritage",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "repology",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_project_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_project_metadata": {
+          "endpoint_class": "project_metadata_lookup_future",
+          "identifier_or_query": {
+            "project": "sample-widget"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_project_metadata",
+          "request_shape": {
+            "identifier": {
+              "project": "sample-widget"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "repology",
+      "source_label": "Repology",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "osv",
+      "crawling_approved": false,
+      "file_download_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_vulnerability_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_approved": false,
+      "requests": {
+        "example_vulnerability_metadata": {
+          "endpoint_class": "vulnerability_metadata_lookup_future",
+          "identifier_or_query": {
+            "vuln_id": "OSV-EXAMPLE-0001"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_vulnerability_metadata",
+          "request_shape": {
+            "identifier": {
+              "vuln_id": "OSV-EXAMPLE-0001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "osv",
+      "source_label": "OSV",
+      "source_sync_approved": false
+    }
+  ]
+}

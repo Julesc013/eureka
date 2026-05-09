@@ -1,0 +1,73 @@
+{
+  "approval_refs": [
+    "control/inventory/connectors/h1_metadata_live_probe_allowed_requests.json"
+  ],
+  "approved_request_key": "example_package_metadata",
+  "connector_family": "package_registry",
+  "dry_run_only": true,
+  "endpoint_class": "package_metadata_lookup_future",
+  "limitations": [
+    "Request envelope does not grant live access."
+  ],
+  "live_probe_request_id": "h1.live_probe_request.npm_registry.example_package_metadata.v0",
+  "live_requested": false,
+  "notes": [
+    "H1 live probes fail closed unless committed source policy approves this exact request.",
+    "File name says approved request because the request shape is prepared for approval review; committed policy does not approve live access."
+  ],
+  "operation_scope": "metadata_only",
+  "output_policy_ref": "control/inventory/connectors/h1_metadata_live_probe_output_policy.json",
+  "policy_refs": [
+    "control/inventory/connectors/h1_metadata_live_probe_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_allowed_requests.json",
+    "control/inventory/connectors/h1_metadata_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_rate_limit_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_cache_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_kill_switch_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_output_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_path_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_review_policy.json",
+    "control/inventory/connectors/h1_metadata_live_probe_truth_policy.json"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_public_query_fanout": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "request_shape": {
+    "identifier": {
+      "package": "sample-widget-js"
+    },
+    "kind": "bounded_metadata_lookup"
+  },
+  "review_policy_ref": "control/inventory/connectors/h1_metadata_live_probe_review_policy.json",
+  "schema_version": "h1_live_probe_request.v0",
+  "source_id": "npm_registry",
+  "truth_boundary": {
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_can_claim_malware_safety": false,
+    "live_probe_can_claim_rights_clearance": false,
+    "live_probe_can_claim_verified_installability": false,
+    "live_probe_can_mutate_master_index": false,
+    "live_probe_can_mutate_public_index": false,
+    "live_probe_result_is_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "review_queue_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "truth_policy_ref": "control/inventory/connectors/h1_metadata_live_probe_truth_policy.json"
+}

@@ -1,0 +1,55 @@
+{
+  "policy_id": "h1_metadata_live_probe_kill_switch_policy",
+  "schema_version": "h1_metadata_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_wayback_cdx_memento",
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_github_releases",
+      "source_id": "github_releases"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_pypi",
+      "source_id": "pypi"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_npm_registry",
+      "source_id": "npm_registry"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_software_heritage",
+      "source_id": "software_heritage"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_repology",
+      "source_id": "repology"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h1_live_probe_osv",
+      "source_id": "osv"
+    }
+  ]
+}

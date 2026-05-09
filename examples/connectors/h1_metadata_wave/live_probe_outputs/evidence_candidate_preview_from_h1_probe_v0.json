@@ -1,0 +1,53 @@
+{
+  "accepted_evidence": false,
+  "accepted_source_truth": false,
+  "blocked_reasons": [
+    "allowed_requests.pypi.live_access_approved must be true",
+    "allowed_requests.pypi.metadata_probe_approved must be true",
+    "request key is not approved for live use: example_project_metadata",
+    "endpoint class is not currently allowlisted: project_metadata_lookup_future",
+    "rate_limit_policy decision is not approved",
+    "User-Agent/contact posture is not approved or documented as not required",
+    "cache policy decision is not approved",
+    "cache TTL or no-cache decision must be approved",
+    "kill switch blocks live call"
+  ],
+  "kind": "evidence_candidate_preview",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_public_query_fanout": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "request_key": "example_project_metadata",
+  "review_seed_is_review_decision": false,
+  "runtime_mutated": false,
+  "schema_version": "h1_live_probe_evidence_candidate_preview.not_created.v0",
+  "source_id": "pypi",
+  "status": "not_created_blocked_by_policy",
+  "truth_boundary": {
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_can_claim_malware_safety": false,
+    "live_probe_can_claim_rights_clearance": false,
+    "live_probe_can_claim_verified_installability": false,
+    "live_probe_can_mutate_master_index": false,
+    "live_probe_can_mutate_public_index": false,
+    "live_probe_result_is_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "review_queue_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

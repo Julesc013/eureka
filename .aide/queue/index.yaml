@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H1-BUNDLE-02
+current_recommended_task: H1-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -167,12 +167,27 @@ entries:
     recommended_after: H0-BUNDLE-03
   - id: H1-BUNDLE-02
     title: First metadata wave fixture runtimes and normalizers
-    status: active
+    status: needs_review
     purpose: Add fixture-only normalizers, replay reports, normalized records, source-cache/evidence previews, docs, validators, tests, and audit evidence for the first H1 metadata wave.
     allowed_scope_summary: H1 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
     gate: H1-BUNDLE-01 passes; no live source calls, source sync, live connector runtime, downloads, scraping, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
     task: .aide/queue/H1-BUNDLE-02/task.yaml
     recommended_after: H1-BUNDLE-01
+  - id: H1-BUNDLE-03
+    title: First metadata wave approved live probes
+    status: active
+    purpose: Add fail-closed bounded H1 metadata live-probe policies, exact request manifests, source wrappers, blocked outputs, validators, tests, docs, and audit evidence.
+    allowed_scope_summary: H1 live-probe contracts, connector policies, runtime wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+    gate: H1-BUNDLE-02 passes; no live call unless committed source policy approves exact metadata-only request; no downloads, scraping, source sync, index mutation, or truth acceptance.
+    task: .aide/queue/H1-BUNDLE-03/task.yaml
+    recommended_after: H1-BUNDLE-02
+  - id: H1-APPROVAL-01
+    title: Operator approval for first H1 metadata probes
+    status: operator_gated
+    purpose: Decide whether any H1 source receives one exact metadata-only live probe approval with endpoint, request key, User-Agent/contact, rate, cache, timeout, retry, kill-switch, and output path gates.
+    allowed_scope_summary: H1 live-probe approval policy decision records and audit evidence only; no live call by default.
+    gate: H1-BUNDLE-03 blocked only by missing source-specific approval; downloads, scraping, source sync, public fanout, and index mutation remain disabled.
+    recommended_after: H1-BUNDLE-03
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued
