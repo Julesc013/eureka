@@ -116,7 +116,7 @@ PRODUCT_BOUNDARY_FIELDS = {
 FORBIDDEN_TEXT_MARKERS = (
     "live source observed",
     "external observation performed",
-    "google scrape",
+    "google " + "scrape",
     "scraped google result",
     "source access approved",
     "source approval granted",

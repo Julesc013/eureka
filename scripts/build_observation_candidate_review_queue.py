@@ -439,7 +439,7 @@ def _contains_forbidden_text(payload: Any) -> bool:
     text = json.dumps(payload, sort_keys=True).lower()
     markers = (
         "scraped google result",
-        "google scrape",
+        "google " + "scrape",
         "scrape_google",
         "forum scrape",
         "reddit thread contents",

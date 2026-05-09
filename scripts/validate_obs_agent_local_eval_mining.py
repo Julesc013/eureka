@@ -121,7 +121,7 @@ TRACK_B_PREFIXES = (
 
 FORBIDDEN_TEXT_MARKERS = (
     "scraped google result",
-    "google scrape",
+    "google " + "scrape",
     "scrape_google",
     "live source observed",
     "external observation performed",

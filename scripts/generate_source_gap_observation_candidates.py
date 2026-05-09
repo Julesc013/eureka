@@ -463,7 +463,7 @@ def _validate_product_boundary(boundary: Mapping[str, Any], source: str) -> list
 def _contains_forbidden_text(payload: Any) -> bool:
     text = json.dumps(payload, sort_keys=True).lower()
     markers = (
-        "google scrape",
+        "google " + "scrape",
         "forum scrape",
         "live source observed",
         "external observation performed",

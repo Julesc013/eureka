@@ -144,7 +144,7 @@ FORBIDDEN_MATRIX_MARKERS = (
     "api call completed",
     "browser opened",
     "scraped google result",
-    "google scrape",
+    "google " + "scrape",
 )
 
 

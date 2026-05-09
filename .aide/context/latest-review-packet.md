@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6086 chars, 1522 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5621 chars, 1406 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,22 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (MM; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (MM; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (MM; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (MM; matches active task allowed path)
-- unknown: `contracts/master_index/reviewed_public_index_rebuild.v0.json` (A; does not match active task allowed paths)
-- unknown: `contracts/master_index/reviewed_public_record_proposal.v0.json` (A; does not match active task allowed paths)
-- unknown: `contracts/query/observation_candidate_review_queue.v0.json` (A; does not match active task allowed paths)
-- allowed: `control/audits/obs-agent-01-local-eval-failure-mining-v0/README.md` (A; matches active task allowed path)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/candidate_review_queue_preview.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_summary.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/obs_agent_01_report.json` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/source_gap_candidates.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/validation.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/workunit_seed_candidates_future.md` (A; does not match active task allowed paths)
-- allowed: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/README.md` (A; matches active task allowed path)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/connector_pattern_candidates_future.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/obs_agent_02_report.json` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/search_need_seed_candidates_future.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_manifest.json` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_summary.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_policy_decision_queue_preview.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/validation.md` (A; does not match active task allowed paths)
-- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/workunit_seed_candidates_future.md` (A; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 284; see task evidence changed-files report
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `control/audits/repo-merge-01-unified-main-v0` (??; does not match active task allowed paths)
+- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/COMMIT_AND_ARTIFACTS.md` (M; does not match active task allowed paths)
+- allowed: `docs/operations/public_alpha_rehearsal_evidence_v0/README.md` (M; matches active task allowed path)
+- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/SIGNOFF_TEMPLATE.md` (M; does not match active task allowed paths)
+- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/rehearsal_evidence_manifest.json` (M; does not match active task allowed paths)
+- unknown: `scripts/build_observation_candidate_review_queue.py` (M; does not match active task allowed paths)
+- unknown: `scripts/generate_source_gap_observation_candidates.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_obs_agent_local_eval_mining.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_obs_human_review_packet.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_obs_track_b_synchronization.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_observation_candidate_review_queue.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_search_need_seed_candidates.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_source_gap_observation_candidates.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_workunit_seed_candidates.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +58,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7285
-- approx_tokens: 1822
+- chars: 5752
+- approx_tokens: 1438
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

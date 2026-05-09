@@ -1,8 +1,8 @@
 # Commit And Artifacts
 
 - repository: `Julesc013/eureka`
-- branch: `main`
-- recorded commit sha: `ee8a526450334ef351f674057a532565350c63e0`
+- branch: `sync/preserve-dirty-work-20260509`
+- recorded commit sha: `ab9918071ae4d7ba6e076f50c9bdd85d579c7185`
 - recorded at: `2026-04-27 static rehearsal evidence snapshot`
 
 ## Referenced Artifacts
