@@ -1,0 +1,26 @@
+{
+  "schema_version": "connector_output_envelope_policy.v0",
+  "policy_id": "connector_output_envelope_policy",
+  "allowed_output_types": [
+    "normalized_source_record",
+    "source_cache_candidate",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary",
+    "policy_blocked_output"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "downloaded_file",
+    "executed_artifact"
+  ],
+  "review_required_before_use": true
+}

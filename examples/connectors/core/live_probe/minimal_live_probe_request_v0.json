@@ -1,0 +1,20 @@
+{
+  "schema_version": "live_probe_request.v0",
+  "live_probe_request_id": "live_probe_request.minimal.v0",
+  "connector_id": "generic_fixture_connector",
+  "source_id": "generic_fixture_source",
+  "requested_operation": "metadata_identifier_lookup_future",
+  "requested_endpoint_class": "metadata_endpoint_future",
+  "requested_identifier_or_query": "fixture-only-id",
+  "approval_refs": [],
+  "source_policy_refs": [],
+  "rate_limit_policy_refs": [],
+  "cache_policy_refs": [],
+  "kill_switch_policy_refs": [],
+  "output_policy_refs": [],
+  "live_call_allowed": false,
+  "dry_run_only": true,
+  "truth_boundary": {"live_probe_envelope_grants_permission": false, "public_index_mutated": false, "master_index_mutated": false},
+  "product_boundary": {"enabled_live_probes": false, "enabled_source_sync": false, "mutated_public_index": false, "mutated_master_index": false},
+  "notes": ["Dry-run envelope only."]
+}

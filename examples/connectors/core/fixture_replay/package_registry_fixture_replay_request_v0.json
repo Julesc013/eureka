@@ -1,0 +1,13 @@
+{
+  "schema_version": "source_connector_fixture_replay_request.v0",
+  "fixture_replay_id": "fixture_replay.package_registry.v0",
+  "connector_id": "package_registry_metadata_connector",
+  "source_id": "pypi",
+  "connector_family": "package_registry",
+  "fixture_ref": "examples/sources/source_records/pypi_source_v2.json",
+  "normalizer_id": "identity_json",
+  "expected_output_refs": [],
+  "policy_blocked": false,
+  "live_call_allowed": false,
+  "dry_run_only": true
+}

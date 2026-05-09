@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "iiif",
+  "source_families_supported": ["library_cultural_research", "media_music_image_video_map"],
+  "typical_input_shapes": ["iiif_manifest_fixture"],
+  "typical_output_shapes": ["representation_metadata_preview"],
+  "current_default_access": "committed_fixture_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["source_policy_approval", "rights_posture", "review_gates"],
+  "forbidden_default_operations": ["download_binary", "fetch_item_file_payload", "rights_clearance"],
+  "no_goals": ["no image download", "no rights clearance"]
+}

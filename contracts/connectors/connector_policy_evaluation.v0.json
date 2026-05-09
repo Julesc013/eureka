@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/connector_policy_evaluation.v0.json",
+  "title": "Eureka Connector Policy Evaluation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "policy_evaluation_id",
+    "connector_id",
+    "source_id",
+    "source_policy_refs",
+    "connector_capability_refs",
+    "requested_operation",
+    "decision",
+    "reasons",
+    "required_approvals",
+    "missing_approvals",
+    "allowed_for_fixture_replay",
+    "allowed_for_live_probe",
+    "allowed_for_source_cache_write",
+    "allowed_for_evidence_candidate_generation",
+    "allowed_for_public_index_mutation",
+    "allowed_for_master_index_mutation",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "connector_policy_evaluation.v0"},
+    "decision": {
+      "enum": [
+        "allowed_fixture_replay",
+        "allowed_dry_run_only",
+        "blocked_missing_source_policy",
+        "blocked_missing_approval",
+        "blocked_by_forbidden_operation",
+        "blocked_by_endpoint_policy",
+        "blocked_by_rate_limit_policy",
+        "blocked_by_kill_switch",
+        "blocked_by_rights_policy",
+        "blocked_by_risk_policy",
+        "deferred_future",
+        "not_evaluable"
+      ]
+    }
+  }
+}

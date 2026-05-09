@@ -1,0 +1,12 @@
+{
+  "schema_version": "connector_fixture_replay_policy.v0",
+  "policy_id": "connector_fixture_replay_policy",
+  "fixture_replay_required": true,
+  "allowed_inputs": ["committed_fixture", "public_safe_fixture", "synthetic_fixture"],
+  "forbidden_inputs": ["live_call_evidence", "downloaded_binary", "credentials", "cookies", "private_files"],
+  "no_network_used_required": true,
+  "no_live_source_used_required": true,
+  "allowed_outputs": ["fixture_replay_result", "normalized_source_record", "connector_output_envelope"],
+  "forbidden_outputs": ["accepted_source_truth", "accepted_evidence_truth", "public_index_mutation", "master_index_mutation"],
+  "notes": ["Fixture replay is deterministic and offline."]
+}

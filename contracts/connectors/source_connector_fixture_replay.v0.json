@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/source_connector_fixture_replay.v0.json",
+  "title": "Eureka Source Connector Fixture Replay v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "fixture_replay_id",
+    "connector_id",
+    "source_id",
+    "fixture_refs",
+    "fixture_status",
+    "replay_mode",
+    "replay_inputs",
+    "replay_outputs",
+    "expected_output_refs",
+    "validation_summary",
+    "no_network_used",
+    "no_live_source_used",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "source_connector_fixture_replay.v0"},
+    "no_network_used": {"const": true},
+    "no_live_source_used": {"const": true}
+  }
+}

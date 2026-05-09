@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "local_source",
+  "source_families_supported": ["local_private_user_supplied"],
+  "typical_input_shapes": ["local_manifest_fixture"],
+  "typical_output_shapes": ["local_manifest_preview"],
+  "current_default_access": "local_user_supplied",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["privacy_review", "local_policy"],
+  "forbidden_default_operations": ["upload_to_hosted_backend", "enabled_telemetry", "mutate_public_index"],
+  "no_goals": ["no upload", "no telemetry"]
+}

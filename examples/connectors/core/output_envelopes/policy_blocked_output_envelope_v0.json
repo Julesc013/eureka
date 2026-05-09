@@ -1,0 +1,18 @@
+{
+  "schema_version": "source_connector_output_envelope.v0",
+  "output_envelope_id": "connector_output.policy_blocked.v0",
+  "connector_id": "policy_blocked_connector",
+  "source_id": "policy_blocked_source",
+  "output_status": "blocked",
+  "output_type": "policy_blocked_output",
+  "source_native_id": null,
+  "normalized_record": null,
+  "source_cache_candidate": null,
+  "evidence_candidate_preview": null,
+  "review_queue_seed_preview": null,
+  "limitations": ["blocked by connector policy"],
+  "warnings": ["no live access approved"],
+  "truth_boundary": {"connector_output_is_public_truth": false, "connector_output_is_accepted_evidence": false, "public_index_mutated": false, "master_index_mutated": false},
+  "product_boundary": {"enabled_live_probes": false, "enabled_source_sync": false, "mutated_public_index": false, "mutated_master_index": false},
+  "notes": ["Blocked output envelope."]
+}

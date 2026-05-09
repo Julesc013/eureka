@@ -135,7 +135,7 @@ entries:
     recommended_after: IA-BUNDLE-03
   - id: AIDE-MERGE-MAIN-SYNC-01
     title: Generalize AIDE merge-to-integration workflow
-    status: active
+    status: needs_review
     purpose: Keep origin/main canonical after local branch merges while supporting local-only, shared, nested, and future durable branch roles.
     allowed_scope_summary: AIDE prompts, Git workflow policies, docs, sync guard scripts, merge helper, focused tests, and queue metadata only.
     gate: no product behavior changes; no force push, history rewrite, unsafe branch deletion, or destructive cleanup.
@@ -143,10 +143,11 @@ entries:
     recommended_after: H0-BUNDLE-01
   - id: H0-BUNDLE-02
     title: Connector interface, fixture replay, and live-probe envelope
-    status: queued
+    status: active
     purpose: Add the reusable connector-family interface, fixture/replay harness, live-probe envelope, policy evaluator, and no-live-default contract around Source OS.
     allowed_scope_summary: H0 connector-interface policies, docs, contracts, fixtures, validators, tests, and audit evidence only until separately scoped.
     gate: H0-BUNDLE-01 passes; no new live probes, source sync, downloads, public/master index mutation, or source truth acceptance.
+    task: .aide/queue/H0-BUNDLE-02/task.yaml
     recommended_after: H0-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review

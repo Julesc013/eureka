@@ -1,0 +1,13 @@
+{
+  "schema_version": "source_connector_fixture_replay_request.v0",
+  "fixture_replay_id": "fixture_replay.minimal.v0",
+  "connector_id": "generic_fixture_connector",
+  "source_id": "generic_fixture_source",
+  "connector_family": "api_json",
+  "fixture_ref": "examples/connectors/internet_archive/fixtures/minimal_item_metadata.json",
+  "normalizer_id": "identity_json",
+  "expected_output_refs": [],
+  "policy_blocked": false,
+  "live_call_allowed": false,
+  "dry_run_only": true
+}

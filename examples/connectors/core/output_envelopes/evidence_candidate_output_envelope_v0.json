@@ -1,0 +1,18 @@
+{
+  "schema_version": "source_connector_output_envelope.v0",
+  "output_envelope_id": "connector_output.evidence_candidate.v0",
+  "connector_id": "generic_fixture_connector",
+  "source_id": "generic_fixture_source",
+  "output_status": "candidate_preview",
+  "output_type": "evidence_candidate_preview",
+  "source_native_id": "fixture-only-id",
+  "normalized_record": null,
+  "source_cache_candidate": null,
+  "evidence_candidate_preview": {"accepted_evidence": false, "evidence_ledger_runtime_mutated": false},
+  "review_queue_seed_preview": null,
+  "limitations": ["review required before evidence acceptance"],
+  "warnings": [],
+  "truth_boundary": {"connector_output_is_public_truth": false, "connector_output_is_accepted_evidence": false, "accepted_evidence_truth": false, "public_index_mutated": false, "master_index_mutated": false},
+  "product_boundary": {"enabled_live_probes": false, "enabled_source_sync": false, "mutated_public_index": false, "mutated_master_index": false},
+  "notes": ["Candidate only."]
+}

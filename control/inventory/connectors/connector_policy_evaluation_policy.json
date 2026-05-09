@@ -1,0 +1,38 @@
+{
+  "schema_version": "connector_policy_evaluation_policy.v0",
+  "policy_id": "connector_policy_evaluation_policy",
+  "evaluation_is_advisory": true,
+  "evaluation_executes_connector": false,
+  "required_live_approval_gates": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "user_agent_contact_decision",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl",
+    "kill_switch",
+    "output_path_policy",
+    "privacy_risk_review",
+    "rights_posture",
+    "review_gates",
+    "fixture_replay",
+    "dry_run_preflight",
+    "post_run_audit"
+  ],
+  "allowed_decisions": [
+    "allowed_fixture_replay",
+    "allowed_dry_run_only",
+    "blocked_missing_source_policy",
+    "blocked_missing_approval",
+    "blocked_by_forbidden_operation",
+    "blocked_by_endpoint_policy",
+    "blocked_by_rate_limit_policy",
+    "blocked_by_kill_switch",
+    "blocked_by_rights_policy",
+    "blocked_by_risk_policy",
+    "deferred_future",
+    "not_evaluable"
+  ],
+  "live_access_enabled": false
+}

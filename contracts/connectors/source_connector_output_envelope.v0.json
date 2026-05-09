@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/source_connector_output_envelope.v0.json",
+  "title": "Eureka Source Connector Output Envelope v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "output_envelope_id",
+    "connector_id",
+    "source_id",
+    "output_status",
+    "output_type",
+    "source_native_id",
+    "normalized_record",
+    "source_cache_candidate",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "limitations",
+    "warnings",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "source_connector_output_envelope.v0"},
+    "output_type": {
+      "enum": [
+        "normalized_source_record",
+        "source_cache_candidate",
+        "evidence_candidate_preview",
+        "review_queue_seed_preview",
+        "connector_health_summary",
+        "policy_blocked_output"
+      ]
+    }
+  }
+}

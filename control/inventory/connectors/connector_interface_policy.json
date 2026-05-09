@@ -1,0 +1,15 @@
+{
+  "schema_version": "connector_interface_policy.v0",
+  "policy_id": "connector_interface_policy",
+  "supported_operation_declarations_grant_permission": false,
+  "current_allowed_modes": ["committed_fixture_only", "dry_run_policy_evaluation"],
+  "future_allowed_modes_policy_gated": ["approved_metadata_probe", "approved_identifier_lookup", "approved_api_search"],
+  "required_boundaries": ["truth_boundary", "product_boundary", "review_gate"],
+  "product_boundary": {
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false
+  },
+  "notes": ["Connector interfaces describe shape and possible operations only."]
+}

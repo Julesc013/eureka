@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/source_connector_capability.v0.json",
+  "title": "Eureka Source Connector Capability v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "connector_id",
+    "connector_family",
+    "source_family",
+    "descriptive_capabilities",
+    "live_capabilities_future",
+    "fixture_capabilities",
+    "output_capabilities",
+    "required_policy_gates",
+    "capability_is_permission",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "source_connector_capability.v0"},
+    "capability_is_permission": {"const": false}
+  }
+}
