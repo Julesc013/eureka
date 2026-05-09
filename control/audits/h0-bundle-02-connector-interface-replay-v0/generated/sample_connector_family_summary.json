@@ -1,0 +1,68 @@
+{
+  "default_access_counts": {
+    "committed_fixture_only": 6,
+    "local_user_supplied": 1,
+    "restricted_manifest_only": 1
+  },
+  "family_count": 8,
+  "family_ids": [
+    "api_json",
+    "html_catalog",
+    "iiif",
+    "local_source",
+    "oai_pmh",
+    "package_registry",
+    "restricted_manifest_only",
+    "warc_cdx"
+  ],
+  "forbidden_operation_counts": {
+    "accept_public_truth": 1,
+    "arbitrary_url_fetch": 2,
+    "broad_crawl": 3,
+    "bulk_metadata_sync_future": 1,
+    "bypass_access_controls": 2,
+    "download_binary": 4,
+    "enabled_telemetry": 1,
+    "execute_downloaded_artifact": 1,
+    "fetch_item_file_payload": 1,
+    "mutate_master_index": 1,
+    "mutate_public_index": 3,
+    "public_query_live_fanout": 1,
+    "rights_clearance": 1,
+    "run_installer": 1,
+    "scrape_html_without_policy": 2,
+    "unbounded_search": 1,
+    "upload_to_hosted_backend": 1
+  },
+  "live_access_enabled_count": 0,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "schema_version": "connector_family_summary.v0",
+  "source_family_counts": {
+    "archive_metadata": 1,
+    "code_source_release_host": 1,
+    "library_cultural_research": 2,
+    "local_private_user_supplied": 1,
+    "manuals_docs_standards": 2,
+    "media_music_image_video_map": 1,
+    "os_package_archive": 1,
+    "package_registry": 2,
+    "restricted_source_manifest_only": 1,
+    "retro_community_archive": 1,
+    "storefront_app_store": 1,
+    "web_archive": 1
+  },
+  "status": "pass",
+  "truth_boundary": {
+    "connector_capability_grants_permission": false,
+    "connector_family_summary_is_public_truth": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  }
+}

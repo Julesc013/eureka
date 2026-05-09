@@ -1,0 +1,13 @@
+{
+  "schema_version": "source_connector_fixture_replay_request.v0",
+  "fixture_replay_id": "fixture_replay.internet_archive.v0",
+  "connector_id": "internet_archive_metadata_connector",
+  "source_id": "internet_archive",
+  "connector_family": "api_json",
+  "fixture_ref": "examples/connectors/internet_archive/fixtures/software_item_metadata.json",
+  "normalizer_id": "internet_archive_metadata_normalizer",
+  "expected_output_refs": ["examples/connectors/internet_archive/normalized/software_item_normalized.json"],
+  "policy_blocked": false,
+  "live_call_allowed": false,
+  "dry_run_only": true
+}

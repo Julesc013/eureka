@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "package_registry",
+  "source_families_supported": ["package_registry", "os_package_archive"],
+  "typical_input_shapes": ["package_metadata_fixture"],
+  "typical_output_shapes": ["normalized_source_record", "source_cache_candidate", "evidence_candidate_preview"],
+  "current_default_access": "committed_fixture_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["source_policy_approval", "risk_review", "review_gates"],
+  "forbidden_default_operations": ["download_binary", "run_installer", "execute_downloaded_artifact", "accept_public_truth"],
+  "no_goals": ["no install", "no malware safety claim"]
+}

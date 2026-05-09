@@ -1,0 +1,22 @@
+{
+  "schema_version": "live_probe_envelope_policy.v0",
+  "policy_id": "live_probe_envelope_policy",
+  "live_probe_envelope_grants_permission": false,
+  "current_status": "dry_run_or_blocked_only",
+  "current_live_access_enabled": false,
+  "current_network_calls_allowed": false,
+  "required_for_future_live_probe": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "User-Agent/contact decision",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl",
+    "kill_switch",
+    "output_path_policy",
+    "review_gates",
+    "post_run_audit"
+  ],
+  "default_result_without_approval": "blocked_missing_approval"
+}

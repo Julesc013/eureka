@@ -1,0 +1,16 @@
+{
+  "schema_version": "connector_no_live_call_policy.v0",
+  "policy_id": "connector_no_live_call_policy",
+  "h0_bundle_02_enables_live_source_calls": false,
+  "h0_bundle_02_enables_live_probes": false,
+  "h0_bundle_02_enables_source_sync": false,
+  "connector_interface_grants_permission": false,
+  "fixture_replay_grants_permission": false,
+  "live_probe_envelope_grants_permission": false,
+  "policy_evaluation_executes_connector": false,
+  "network_calls_made": false,
+  "notes": [
+    "H0-BUNDLE-02 defines connector framework contracts and offline helpers only.",
+    "Future live connector work must pass explicit source and connector approval gates."
+  ]
+}

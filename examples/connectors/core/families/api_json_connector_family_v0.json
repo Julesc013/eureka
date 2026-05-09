@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "api_json",
+  "source_families_supported": ["archive_metadata", "code_source_release_host", "package_registry"],
+  "typical_input_shapes": ["committed_json_fixture", "metadata_endpoint_response_future"],
+  "typical_output_shapes": ["normalized_source_record", "source_cache_candidate", "evidence_candidate_preview"],
+  "current_default_access": "committed_fixture_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["source_policy_approval", "endpoint_allowlist", "rate_limit", "kill_switch", "review_gates"],
+  "forbidden_default_operations": ["arbitrary_url_fetch", "unbounded_search", "download_binary", "mutate_public_index", "mutate_master_index"],
+  "no_goals": ["no live call by default", "no truth acceptance"]
+}

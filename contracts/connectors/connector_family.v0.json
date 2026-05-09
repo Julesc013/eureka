@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/connector_family.v0.json",
+  "title": "Eureka Connector Family v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "family_id",
+    "source_families_supported",
+    "typical_input_shapes",
+    "typical_output_shapes",
+    "current_default_access",
+    "live_access_default",
+    "fixture_replay_required",
+    "policy_gates_required",
+    "forbidden_default_operations",
+    "no_goals"
+  ],
+  "properties": {
+    "schema_version": {"const": "connector_family.v0"},
+    "family_id": {"type": "string", "minLength": 1},
+    "live_access_default": {"const": false},
+    "fixture_replay_required": {"const": true}
+  }
+}

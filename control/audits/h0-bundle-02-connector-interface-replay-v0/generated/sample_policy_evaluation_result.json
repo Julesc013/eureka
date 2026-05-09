@@ -1,0 +1,59 @@
+{
+  "allowed_for_evidence_candidate_generation": false,
+  "allowed_for_fixture_replay": false,
+  "allowed_for_live_probe": false,
+  "allowed_for_master_index_mutation": false,
+  "allowed_for_public_index_mutation": false,
+  "allowed_for_source_cache_write": false,
+  "connector_capability_refs": [],
+  "connector_id": "policy_blocked_connector",
+  "decision": "allowed_dry_run_only",
+  "missing_approvals": [],
+  "notes": [
+    "Policy evaluation is advisory and does not execute connector operations."
+  ],
+  "policy_evaluation_id": "connector_policy_evaluation.generic.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "reasons": [
+    "future operation can be represented as dry-run policy, not executed"
+  ],
+  "requested_operation": "metadata_identifier_lookup_future",
+  "required_approvals": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "user_agent_contact_decision",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl",
+    "kill_switch",
+    "output_path_policy",
+    "privacy_risk_review",
+    "rights_posture",
+    "review_gates",
+    "fixture_replay",
+    "dry_run_preflight",
+    "post_run_audit"
+  ],
+  "schema_version": "connector_policy_evaluation.v0",
+  "source_id": "policy_blocked_source",
+  "source_policy_refs": [
+    "control/inventory/connectors/connector_no_live_call_policy.json"
+  ],
+  "truth_boundary": {
+    "connector_capability_grants_permission": false,
+    "connector_policy_evaluation_is_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

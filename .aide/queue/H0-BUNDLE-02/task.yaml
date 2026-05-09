@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+task_id: H0-BUNDLE-02
+title: Connector interface, fixture replay, and live-probe envelope
+status: active
+target_repo: julesc013/eureka
+phase: H0-BUNDLE-02
+source_packet: .aide/context/latest-task-packet.md
+objective: Add generic connector interface contracts, fixture replay, output envelopes, live-probe envelopes, policy evaluation, no-network helpers, scripts, examples, tests, docs, and audit evidence without enabling live source access.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/H0-BUNDLE-02/**
+    - .aide/reports/eureka-repo-health.md
+    - .aide/reports/eureka-repo-health.json
+    - control/audits/h0-bundle-02-connector-interface-replay-v0/**
+    - control/inventory/connectors/connector_family_registry.json
+    - control/inventory/connectors/connector_interface_policy.json
+    - control/inventory/connectors/connector_capability_policy.json
+    - control/inventory/connectors/connector_fixture_replay_policy.json
+    - control/inventory/connectors/connector_output_envelope_policy.json
+    - control/inventory/connectors/live_probe_envelope_policy.json
+    - control/inventory/connectors/connector_policy_evaluation_policy.json
+    - control/inventory/connectors/connector_no_live_call_policy.json
+    - contracts/connectors/source_connector_interface.v0.json
+    - contracts/connectors/source_connector_capability.v0.json
+    - contracts/connectors/source_connector_fixture_replay.v0.json
+    - contracts/connectors/source_connector_output_envelope.v0.json
+    - contracts/connectors/live_probe_request.v0.json
+    - contracts/connectors/live_probe_result.v0.json
+    - contracts/connectors/connector_policy_evaluation.v0.json
+    - contracts/connectors/connector_family.v0.json
+    - docs/reference/SOURCE_CONNECTOR_INTERFACE.md
+    - docs/reference/CONNECTOR_FIXTURE_REPLAY_CONTRACT.md
+    - docs/reference/LIVE_PROBE_ENVELOPE_CONTRACT.md
+    - docs/reference/CONNECTOR_POLICY_EVALUATION_CONTRACT.md
+    - docs/architecture/CONNECTOR_INTERFACE_MODEL.md
+    - docs/architecture/CONNECTOR_FIXTURE_REPLAY_MODEL.md
+    - docs/operations/CONNECTOR_POLICY_EVALUATION.md
+    - docs/operations/CONNECTOR_NO_LIVE_CALL_POLICY.md
+    - examples/connectors/core/**
+    - runtime/connectors/core/**
+    - scripts/run_connector_fixture_replay.py
+    - scripts/evaluate_connector_policy.py
+    - scripts/validate_connector_interface_foundation.py
+    - scripts/summarize_connector_families.py
+    - tests/connectors/test_connector_interface_foundation.py
+    - tests/operations/test_connector_interface_foundation_scripts.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - Generic source connector interface, capability, fixture replay, output envelope, live-probe, policy evaluation, and connector family contracts exist
+  - Connector family registry and no-live connector policies exist
+  - Core connector helpers, fixture replay script, policy evaluator script, family summary script, validator, and tests exist and run offline
+  - Examples and generated audit outputs exist and validate
+  - no new live source access, source sync, download, scrape, public/master index mutation, truth acceptance, or product behavior change occurs
+recommended_after: H0-BUNDLE-01
+next_recommended_task: H0-BUNDLE-03

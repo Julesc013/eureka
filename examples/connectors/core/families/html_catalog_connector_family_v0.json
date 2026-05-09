@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "html_catalog",
+  "source_families_supported": ["retro_community_archive", "manuals_docs_standards", "storefront_app_store"],
+  "typical_input_shapes": ["committed_catalog_fixture"],
+  "typical_output_shapes": ["catalog_record_preview"],
+  "current_default_access": "committed_fixture_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["source_policy_approval", "terms_review", "scraping_policy"],
+  "forbidden_default_operations": ["scrape_html_without_policy", "broad_crawl", "bypass_access_controls"],
+  "no_goals": ["no scraping by default"]
+}

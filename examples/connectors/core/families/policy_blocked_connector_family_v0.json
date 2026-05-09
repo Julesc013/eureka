@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "restricted_manifest_only",
+  "source_families_supported": ["restricted_source_manifest_only"],
+  "typical_input_shapes": ["restricted_manifest_fixture"],
+  "typical_output_shapes": ["manifest_only_preview"],
+  "current_default_access": "restricted_manifest_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["restricted_access_review", "source_policy_approval"],
+  "forbidden_default_operations": ["arbitrary_url_fetch", "bypass_access_controls", "download_binary"],
+  "no_goals": ["no access attempt"]
+}

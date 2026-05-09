@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6679 chars, 1670 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5237 chars, 1310 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/H0-BUNDLE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/H0-BUNDLE-02` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/sources` (??; matches active task allowed path)
-- allowed: `control/audits/h0-bundle-01-source-os-foundation-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_access_mode_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_approval_gate_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_capability_ladder.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_expansion_no_live_call_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_family_registry.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_index_depth_registry.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_operation_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_registry_v2_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_trust_lane_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/SOURCE_FAMILY_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/architecture/SOURCE_OPERATING_SYSTEM.md` (??; matches active task allowed path)
-- allowed: `docs/operations/SOURCE_EXPANSION_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
-- allowed: `docs/operations/SOURCE_POLICY_GATES.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SOURCE_CAPABILITY_CONTRACT.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 10; see task evidence changed-files report
+- allowed: `contracts/connectors/connector_family.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/connector_policy_evaluation.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/live_probe_request.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/live_probe_result.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/source_connector_capability.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/source_connector_fixture_replay.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/source_connector_interface.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/source_connector_output_envelope.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/h0-bundle-02-connector-interface-replay-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_capability_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_family_registry.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_fixture_replay_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_interface_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_no_live_call_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_output_envelope_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/connector_policy_evaluation_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/live_probe_envelope_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/CONNECTOR_FIXTURE_REPLAY_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/architecture/CONNECTOR_INTERFACE_MODEL.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 14; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6408
-- approx_tokens: 1602
+- chars: 6583
+- approx_tokens: 1646
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

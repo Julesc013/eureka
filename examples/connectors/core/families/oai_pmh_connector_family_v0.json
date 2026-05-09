@@ -1,0 +1,13 @@
+{
+  "schema_version": "connector_family.v0",
+  "family_id": "oai_pmh",
+  "source_families_supported": ["library_cultural_research", "manuals_docs_standards"],
+  "typical_input_shapes": ["oai_pmh_fixture"],
+  "typical_output_shapes": ["normalized_source_record", "source_cache_candidate"],
+  "current_default_access": "committed_fixture_only",
+  "live_access_default": false,
+  "fixture_replay_required": true,
+  "policy_gates_required": ["source_policy_approval", "endpoint_allowlist", "rate_limit", "cache_ttl"],
+  "forbidden_default_operations": ["bulk_metadata_sync_future", "broad_crawl", "mutate_public_index"],
+  "no_goals": ["no bulk harvest by default"]
+}
