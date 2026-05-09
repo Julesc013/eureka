@@ -1,0 +1,10 @@
+{
+  "schema_version": "extraction_review_seed_policy.v0",
+  "policy_id": "f_bundle_02_extraction_review_seed_policy",
+  "review_seed_is_review_decision": false,
+  "automatic_review_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_candidate_acceptance_allowed": false,
+  "review_queue_mutation_allowed": false,
+  "review_required_before_downstream_use": true
+}

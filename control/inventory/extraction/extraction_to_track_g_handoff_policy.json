@@ -1,0 +1,18 @@
+{
+  "schema_version": "extraction_to_track_g_handoff_policy.v0",
+  "policy_id": "f_bundle_02_extraction_to_track_g_handoff_policy",
+  "track_g_can_consume_fixture_previews": true,
+  "track_g_can_consume_accepted_truth": false,
+  "ready_values": ["READY_FOR_G_BUNDLE_01", "READY_WITH_WARNINGS", "NEEDS_REMEDIATION", "NOT_READY"],
+  "ready_when": [
+    "search gaps exist",
+    "review seeds exist",
+    "workunit seeds exist",
+    "truth and product boundaries remain false"
+  ],
+  "no_goals": [
+    "no public search behavior change",
+    "no ranking production claim",
+    "no explanation production claim"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_usefulness_report.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_count": {"type": "integer"},
+    "extraction_result_count": {"type": "integer"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "manifest_candidate_count": {"type": "integer"},
+    "member_candidate_count": {"type": "integer"},
+    "next_phase_recommendation": {"type": "string"},
+    "product_boundary": {"type": "object"},
+    "quality_delta_preview": {"type": "object"},
+    "review_seed_count": {"type": "integer"},
+    "schema_version": {"const": "extraction_usefulness_report.v0"},
+    "search_gap_count": {"type": "integer"},
+    "truth_boundary": {"type": "object"},
+    "useful_query_classes": {"items": {"type": "string"}, "type": "array"},
+    "usefulness_report_id": {"type": "string"},
+    "workunit_seed_count": {"type": "integer"}
+  },
+  "required": [
+    "schema_version",
+    "usefulness_report_id",
+    "extraction_result_count",
+    "member_candidate_count",
+    "manifest_candidate_count",
+    "search_gap_count",
+    "review_seed_count",
+    "workunit_seed_count",
+    "blocked_count",
+    "useful_query_classes",
+    "limitations",
+    "quality_delta_preview",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Usefulness Report v0",
+  "type": "object"
+}

@@ -1,0 +1,60 @@
+task_id: F-BUNDLE-02
+title: Extraction candidate effects and search integration
+status: needs_review
+phase: F-BUNDLE-02
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/queue/index.yaml
+  - .aide/queue/F-BUNDLE-02/**
+  - .aide/queue/G-BUNDLE-01/**
+  - contracts/extraction/**
+  - runtime/extraction/**
+  - scripts/integrate_extraction_candidates.py
+  - scripts/summarize_extraction_search_gaps.py
+  - scripts/validate_extraction_search_integration.py
+  - control/inventory/extraction/**
+  - docs/reference/EXTRACTION_SEARCH_INTEGRATION_CONTRACT.md
+  - docs/reference/EXTRACTION_SEARCH_GAP_CONTRACT.md
+  - docs/reference/EXTRACTION_REVIEW_SEED_CONTRACT.md
+  - docs/reference/EXTRACTION_WORKUNIT_SEED_CONTRACT.md
+  - docs/architecture/EXTRACTION_SEARCH_INTEGRATION_MODEL.md
+  - docs/architecture/EXTRACTION_CANDIDATE_EFFECT_MODEL.md
+  - docs/operations/EXTRACTION_CANDIDATE_EFFECTS.md
+  - docs/operations/EXTRACTION_TO_REVIEW_QUEUE.md
+  - docs/operations/EXTRACTION_TO_SEARCH_GAPS.md
+  - docs/operations/EXTRACTION_TO_TRACK_G_HANDOFF.md
+  - examples/extraction/search_integration/**
+  - examples/extraction/review_seeds/**
+  - examples/extraction/workunit_seeds/**
+  - examples/extraction/usefulness/**
+  - tests/extraction/test_extraction_search_integration.py
+  - tests/extraction/test_extraction_review_bridge.py
+  - tests/extraction/test_extraction_workunit_seeds.py
+  - tests/operations/test_extraction_search_integration_scripts.py
+  - control/audits/f-bundle-02-extraction-candidate-search-integration-v0/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - control/inventory/sources/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no public search behavior change, public search runtime mutation, public/master index mutation, candidate/evidence/review store mutation, truth acceptance, private file inspection, downloads, execution, source sync, live calls, network/API/model/provider calls, rights clearance, malware safety, verified installability, or production-readiness claims
+validation:
+  - python scripts/validate_extraction_search_integration.py
+  - python scripts/integrate_extraction_candidates.py --input examples/extraction/results --check
+  - python scripts/summarize_extraction_search_gaps.py --input examples/extraction/search_integration --check
+  - python -m unittest tests.extraction.test_extraction_search_integration
+  - python -m unittest tests.extraction.test_extraction_review_bridge
+  - python -m unittest tests.extraction.test_extraction_workunit_seeds
+  - python -m unittest tests.operations.test_extraction_search_integration_scripts
+  - python -m unittest discover -s tests -t .
+  - python scripts/check_architecture_boundaries.py
+next_recommended_task: G-BUNDLE-01

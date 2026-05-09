@@ -1,0 +1,50 @@
+{
+  "candidate_resolution_path": "human_review_then_future_search_gap_resolution",
+  "extraction_result_ref": "extraction.result.9b5ffda7ca70.v0",
+  "gap_summary": "manifest_not_indexed from extraction.target.zip_manifest.v0",
+  "gap_type": "manifest_not_indexed",
+  "limitations": [
+    "Search gap is a fixture-only preview.",
+    "No exhaustive absence or public search quality claim is made."
+  ],
+  "manifest_refs": [
+    "extraction.manifest_candidate.740b0f9c29b4.v0"
+  ],
+  "member_refs": [],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "recommended_next_action": "request_human_review",
+  "related_query_observation_refs": [],
+  "related_search_miss_refs": [],
+  "related_search_need_refs": [
+    "search_need.extraction_visibility.fixture.v0"
+  ],
+  "schema_version": "extraction_search_gap.v0",
+  "search_gap_id": "extraction.search_gap.98660a95c647.v0",
+  "search_gap_status": "fixture_preview",
+  "truth_boundary": {
+    "candidate_preview_is_accepted_candidate": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "extraction_search_gap_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "public_search_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false,
+    "workunit_seed_executes_work": false
+  },
+  "why_extraction_matters": "Manifest-like fixture metadata can seed reviewable search gaps."
+}

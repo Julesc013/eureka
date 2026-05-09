@@ -1,0 +1,43 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_search_integration.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "candidate_effect_refs": {"items": {"type": "string"}, "type": "array"},
+    "evidence_candidate_previews": {"items": {"type": "object"}, "type": "array"},
+    "extraction_result_refs": {"items": {"type": "string"}, "type": "array"},
+    "integration_id": {"type": "string"},
+    "integration_status": {"enum": ["example_only", "fixture_only", "local_dry_run", "blocked_by_policy", "partial", "not_evaluable"], "type": "string"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "local_search_preview": {"type": "object"},
+    "notes": {"items": {"type": "string"}, "type": "array"},
+    "product_boundary": {"type": "object"},
+    "review_gates": {"type": "object"},
+    "review_seed_refs": {"items": {"type": "string"}, "type": "array"},
+    "schema_version": {"const": "extraction_search_integration.v0"},
+    "search_gap_refs": {"items": {"type": "string"}, "type": "array"},
+    "source_cache_candidate_previews": {"items": {"type": "object"}, "type": "array"},
+    "truth_boundary": {"type": "object"},
+    "workunit_seed_refs": {"items": {"type": "string"}, "type": "array"}
+  },
+  "required": [
+    "schema_version",
+    "integration_id",
+    "integration_status",
+    "extraction_result_refs",
+    "candidate_effect_refs",
+    "search_gap_refs",
+    "review_seed_refs",
+    "workunit_seed_refs",
+    "source_cache_candidate_previews",
+    "evidence_candidate_previews",
+    "local_search_preview",
+    "limitations",
+    "review_gates",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "title": "Eureka Extraction Search Integration v0",
+  "type": "object"
+}

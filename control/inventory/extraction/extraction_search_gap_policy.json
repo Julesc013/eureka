@@ -1,0 +1,32 @@
+{
+  "schema_version": "extraction_search_gap_policy.v0",
+  "policy_id": "f_bundle_02_extraction_search_gap_policy",
+  "allowed_gap_types": [
+    "hidden_member_not_indexed",
+    "manifest_not_indexed",
+    "archive_outer_metadata_insufficient",
+    "member_name_matches_need",
+    "member_path_matches_need",
+    "manifest_field_matches_need",
+    "source_has_container_but_no_member_visibility",
+    "policy_blocked_extraction_gap",
+    "future_deep_extraction_needed",
+    "not_evaluable"
+  ],
+  "required_fields_by_gap_type": {
+    "hidden_member_not_indexed": ["member_refs", "why_extraction_matters"],
+    "manifest_not_indexed": ["manifest_refs", "why_extraction_matters"],
+    "policy_blocked_extraction_gap": ["recommended_next_action", "limitations"]
+  },
+  "forbidden_claims": [
+    "exhaustive_absence",
+    "production_quality",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "no_exhaustive_absence_claims": true,
+  "no_production_quality_claims": true
+}

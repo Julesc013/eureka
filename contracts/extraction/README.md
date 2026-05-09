@@ -4,6 +4,8 @@ Deep Extraction Contract v0 defines contract-only request, result summary, polic
 
 F-BUNDLE-01 adds fixture-only extraction sandbox contracts for Tier 0 outer metadata, Tier 1 member listing, and Tier 2 manifest-candidate extraction over tiny synthetic repo-local ZIP/TAR fixtures.
 
+F-BUNDLE-02 adds fixture-only search integration contracts for reviewable search gaps, review seeds, WorkUnit seeds, and usefulness reports derived from explicit extraction results.
+
 This directory does not implement extraction runtime, archive unpacking, OCR, transcription, source fetching, payload execution, source-cache writes, evidence-ledger writes, candidate promotion, or index mutation.
 
 Primary files:
@@ -18,3 +20,8 @@ Primary files:
 - `extraction_manifest_candidate.v0.json`
 - `extraction_candidate_effect.v0.json`
 - `extraction_safety_report.v0.json`
+- `extraction_search_integration.v0.json`
+- `extraction_search_gap.v0.json`
+- `extraction_review_seed.v0.json`
+- `extraction_workunit_seed.v0.json`
+- `extraction_usefulness_report.v0.json`

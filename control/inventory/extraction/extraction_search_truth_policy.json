@@ -1,0 +1,16 @@
+{
+  "schema_version": "extraction_search_truth_policy.v0",
+  "policy_id": "f_bundle_02_extraction_search_truth_policy",
+  "extraction_search_gap_is_public_truth": false,
+  "review_seed_is_review_decision": false,
+  "workunit_seed_executes_work": false,
+  "evidence_preview_is_accepted_evidence": false,
+  "candidate_preview_is_accepted_candidate": false,
+  "public_search_mutated": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "production_quality_claimed": false
+}

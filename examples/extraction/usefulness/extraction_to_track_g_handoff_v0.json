@@ -1,0 +1,40 @@
+{
+  "basis": {
+    "review_seed_count": 2,
+    "search_gap_count": 2,
+    "workunit_seed_count": 3
+  },
+  "handoff_id": "extraction.track_g_handoff.9372b34a00c7.v0",
+  "limitations": [
+    "Track G handoff consumes fixture previews only."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "recommended_next_task": "G-BUNDLE-01 - Result explanations, near misses, and known absence",
+  "schema_version": "extraction_to_track_g_handoff.v0",
+  "track_g_readiness": "READY_FOR_G_BUNDLE_01",
+  "truth_boundary": {
+    "candidate_preview_is_accepted_candidate": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "extraction_search_gap_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "public_search_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false,
+    "workunit_seed_executes_work": false
+  }
+}

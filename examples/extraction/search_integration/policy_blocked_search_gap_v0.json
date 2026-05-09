@@ -1,0 +1,50 @@
+{
+  "candidate_resolution_path": "human_review_then_future_search_gap_resolution",
+  "extraction_result_ref": "extraction.result.4ab364a2148b.v0",
+  "gap_summary": "policy_blocked_extraction_gap from extraction.target.path_traversal_blocked.v0",
+  "gap_type": "policy_blocked_extraction_gap",
+  "limitations": [
+    "Search gap is a fixture-only preview.",
+    "No exhaustive absence or public search quality claim is made."
+  ],
+  "manifest_refs": [],
+  "member_refs": [
+    "escape.txt"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "recommended_next_action": "policy_review_future",
+  "related_query_observation_refs": [],
+  "related_search_miss_refs": [],
+  "related_search_need_refs": [
+    "search_need.extraction_visibility.fixture.v0"
+  ],
+  "schema_version": "extraction_search_gap.v0",
+  "search_gap_id": "extraction.search_gap.611d36b86472.v0",
+  "search_gap_status": "policy_blocked",
+  "truth_boundary": {
+    "candidate_preview_is_accepted_candidate": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "extraction_search_gap_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "public_search_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false,
+    "workunit_seed_executes_work": false
+  },
+  "why_extraction_matters": "Policy blocked extraction details; review policy before deeper work."
+}

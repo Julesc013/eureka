@@ -1,0 +1,54 @@
+{
+  "schema_version": "extraction_search_integration_policy.v0",
+  "policy_id": "f_bundle_02_extraction_search_integration_policy",
+  "fixture_only_current": true,
+  "public_search_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "candidate_store_mutation_allowed": false,
+  "evidence_ledger_mutation_allowed": false,
+  "review_queue_mutation_allowed": false,
+  "allowed_inputs": ["extraction_result", "extraction_candidate_effect", "explicit temp test directory"],
+  "allowed_input_roots": ["examples/extraction/results/", "examples/extraction/candidate_effects/", "explicit temp test directory"],
+  "allowed_outputs": [
+    "extraction_search_integration",
+    "extraction_search_gap",
+    "extraction_review_seed",
+    "extraction_workunit_seed",
+    "extraction_usefulness_report",
+    "local_search_preview",
+    "quality_delta_preview",
+    "track_g_handoff"
+  ],
+  "allowed_output_roots": [
+    "examples/extraction/search_integration/",
+    "examples/extraction/review_seeds/",
+    "examples/extraction/workunit_seeds/",
+    "examples/extraction/usefulness/",
+    "control/audits/**/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "data/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "forbidden_outputs": [
+    "public_search_runtime_change",
+    "public_index_mutation",
+    "master_index_mutation",
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record"
+  ],
+  "review_required_before_downstream_use": true,
+  "notes": ["F-BUNDLE-02 transforms fixture extraction results into previews only."]
+}

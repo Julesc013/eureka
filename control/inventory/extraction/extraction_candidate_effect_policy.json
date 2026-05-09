@@ -1,0 +1,17 @@
+{
+  "schema_version": "extraction_candidate_effect_policy.v0",
+  "policy_id": "f_bundle_02_extraction_candidate_effect_policy",
+  "candidate_effect_is_accepted_candidate": false,
+  "candidate_store_mutation_allowed": false,
+  "evidence_preview_is_accepted_evidence": false,
+  "source_cache_preview_is_accepted_source": false,
+  "review_required_before_candidate_store_use": true,
+  "allowed_effect_types": [
+    "member_candidate",
+    "manifest_candidate",
+    "compatibility_hint_candidate",
+    "source_locator_candidate",
+    "extraction_gap_candidate",
+    "review_seed_candidate"
+  ]
+}

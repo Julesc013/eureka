@@ -1,0 +1,40 @@
+task_id: G-BUNDLE-01
+title: Result explanations, near misses, and known absence
+status: queued
+phase: G-BUNDLE-01
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/queue/index.yaml
+  - .aide/queue/G-BUNDLE-01/**
+  - contracts/**
+  - runtime/**
+  - control/inventory/**
+  - examples/**
+  - docs/**
+  - scripts/**
+  - tests/**
+  - control/audits/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no public search behavior change, public/master index mutation, evidence/candidate/source/public truth acceptance, private file inspection, downloads, execution, source sync, live calls, network/API/model/provider calls, rights clearance, malware safety, verified installability, production-readiness claims, site/dist regeneration, or local private-state roots
+validation:
+  - python scripts/validate_extraction_search_integration.py
+  - python scripts/validate_extraction_sandbox.py
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: G-BUNDLE-01

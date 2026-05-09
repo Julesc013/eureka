@@ -1,0 +1,17 @@
+{
+  "schema_version": "extraction_workunit_seed_policy.v0",
+  "policy_id": "f_bundle_02_extraction_workunit_seed_policy",
+  "workunit_seed_executes_work": false,
+  "workunit_seed_requires_review": true,
+  "automatic_workunit_execution_allowed": false,
+  "allowed_proposed_workunit_types": [
+    "deepen_container_future",
+    "verify_manifest_candidate_future",
+    "check_member_relevance_future",
+    "inspect_member_text_future",
+    "source_locator_followup_future",
+    "compatibility_evidence_followup_future",
+    "policy_review_future",
+    "not_evaluable"
+  ]
+}

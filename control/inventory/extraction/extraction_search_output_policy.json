@@ -1,0 +1,26 @@
+{
+  "schema_version": "extraction_search_output_policy.v0",
+  "policy_id": "f_bundle_02_extraction_search_output_policy",
+  "allowed_outputs": [
+    "extraction_search_integration",
+    "extraction_search_gap",
+    "extraction_review_seed",
+    "extraction_workunit_seed",
+    "extraction_usefulness_report",
+    "local_search_preview",
+    "quality_delta_preview",
+    "track_g_handoff"
+  ],
+  "forbidden_outputs": [
+    "public_search_runtime_change",
+    "public_index_mutation",
+    "master_index_mutation",
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record",
+    "malware_safety",
+    "rights_clearance",
+    "verified_installability",
+    "production_quality_claim"
+  ]
+}

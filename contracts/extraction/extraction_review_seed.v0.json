@@ -1,0 +1,39 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_review_seed.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "blockers": {"items": {"type": "string"}, "type": "array"},
+    "evidence_candidate_preview": {"type": "object"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "missing_evidence": {"items": {"type": "string"}, "type": "array"},
+    "product_boundary": {"type": "object"},
+    "proposed_review_subject": {"type": "object"},
+    "review_reason": {"type": "string"},
+    "review_seed_id": {"type": "string"},
+    "review_seed_status": {"type": "string"},
+    "schema_version": {"const": "extraction_review_seed.v0"},
+    "source_cache_candidate_preview": {"type": "object"},
+    "subject_ref": {"type": "string"},
+    "subject_type": {"type": "string"},
+    "truth_boundary": {"type": "object"}
+  },
+  "required": [
+    "schema_version",
+    "review_seed_id",
+    "review_seed_status",
+    "subject_type",
+    "subject_ref",
+    "review_reason",
+    "proposed_review_subject",
+    "evidence_candidate_preview",
+    "source_cache_candidate_preview",
+    "missing_evidence",
+    "blockers",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Review Seed v0",
+  "type": "object"
+}

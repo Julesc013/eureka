@@ -1,0 +1,55 @@
+{
+  "allowed_actions_future": [
+    "request_human_review",
+    "prepare_future_fixture_deepening",
+    "prepare_future_relevance_check"
+  ],
+  "forbidden_actions": [
+    "execute_workunit_current",
+    "download_file",
+    "execute_file",
+    "mutate_public_index",
+    "mutate_master_index",
+    "accept_evidence",
+    "accept_candidate"
+  ],
+  "limitations": [
+    "WorkUnit seed is a future planning preview only and does not execute work."
+  ],
+  "policy_required": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "proposed_workunit_type": "deepen_container_future",
+  "related_extraction_result_ref": "extraction.result.3bf3b68d7601.v0",
+  "related_manifest_refs": [],
+  "related_member_refs": [],
+  "review_required": true,
+  "schema_version": "extraction_workunit_seed.v0",
+  "truth_boundary": {
+    "candidate_preview_is_accepted_candidate": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "extraction_search_gap_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "public_search_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false,
+    "workunit_seed_executes_work": false
+  },
+  "workunit_seed_executes_work": false,
+  "workunit_seed_id": "extraction.workunit_seed.9bd32baed766.v0",
+  "workunit_seed_status": "fixture_preview"
+}

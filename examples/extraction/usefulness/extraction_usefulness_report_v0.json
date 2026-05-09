@@ -1,0 +1,86 @@
+{
+  "blocked_count": 0,
+  "extraction_result_count": 1,
+  "limitations": [
+    "Usefulness report does not claim production search quality or exhaustive coverage."
+  ],
+  "manifest_candidate_count": 1,
+  "member_candidate_count": 2,
+  "next_phase_recommendation": "READY_FOR_G_BUNDLE_01",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_preview": {
+    "after_state": "member_and_manifest_gap_previews",
+    "before_state": "outer_metadata_only",
+    "claims_production_quality": false,
+    "comparison_scope": "fixture_search_gap_visibility_only",
+    "limitations": [
+      "Quality delta is a fixture preview and not production search quality proof."
+    ],
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false
+    },
+    "quality_delta_preview_id": "extraction.quality_delta_preview.d80f6bd417f1.v0",
+    "review_seed_count": 2,
+    "schema_version": "extraction_quality_delta_preview.v0",
+    "search_gap_count": 2,
+    "truth_boundary": {
+      "candidate_preview_is_accepted_candidate": false,
+      "evidence_preview_is_accepted_evidence": false,
+      "extraction_search_gap_is_public_truth": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "production_quality_claimed": false,
+      "public_index_mutated": false,
+      "public_search_mutated": false,
+      "review_seed_is_review_decision": false,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false,
+      "workunit_seed_executes_work": false
+    },
+    "workunit_seed_count": 3
+  },
+  "review_seed_count": 2,
+  "schema_version": "extraction_usefulness_report.v0",
+  "search_gap_count": 2,
+  "truth_boundary": {
+    "candidate_preview_is_accepted_candidate": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "extraction_search_gap_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "public_search_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false,
+    "workunit_seed_executes_work": false
+  },
+  "useful_query_classes": [
+    "hidden_member_lookup",
+    "manifest_metadata_lookup",
+    "future_deepening_decision"
+  ],
+  "usefulness_report_id": "extraction.usefulness_report.d80f6bd417f1.v0",
+  "workunit_seed_count": 3
+}

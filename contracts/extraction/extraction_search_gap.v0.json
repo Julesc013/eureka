@@ -1,0 +1,59 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_search_gap.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "candidate_resolution_path": {"type": "string"},
+    "extraction_result_ref": {"type": "string"},
+    "gap_summary": {"type": "string"},
+    "gap_type": {
+      "enum": [
+        "hidden_member_not_indexed",
+        "manifest_not_indexed",
+        "archive_outer_metadata_insufficient",
+        "member_name_matches_need",
+        "member_path_matches_need",
+        "manifest_field_matches_need",
+        "source_has_container_but_no_member_visibility",
+        "policy_blocked_extraction_gap",
+        "future_deep_extraction_needed",
+        "not_evaluable"
+      ],
+      "type": "string"
+    },
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "manifest_refs": {"items": {"type": "string"}, "type": "array"},
+    "member_refs": {"items": {"type": "string"}, "type": "array"},
+    "product_boundary": {"type": "object"},
+    "recommended_next_action": {"type": "string"},
+    "related_query_observation_refs": {"items": {"type": "string"}, "type": "array"},
+    "related_search_miss_refs": {"items": {"type": "string"}, "type": "array"},
+    "related_search_need_refs": {"items": {"type": "string"}, "type": "array"},
+    "schema_version": {"const": "extraction_search_gap.v0"},
+    "search_gap_id": {"type": "string"},
+    "search_gap_status": {"type": "string"},
+    "truth_boundary": {"type": "object"},
+    "why_extraction_matters": {"type": "string"}
+  },
+  "required": [
+    "schema_version",
+    "search_gap_id",
+    "search_gap_status",
+    "related_search_need_refs",
+    "related_query_observation_refs",
+    "related_search_miss_refs",
+    "extraction_result_ref",
+    "member_refs",
+    "manifest_refs",
+    "gap_type",
+    "gap_summary",
+    "why_extraction_matters",
+    "candidate_resolution_path",
+    "recommended_next_action",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Search Gap v0",
+  "type": "object"
+}

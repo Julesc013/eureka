@@ -1,0 +1,51 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_workunit_seed.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "allowed_actions_future": {"items": {"type": "string"}, "type": "array"},
+    "forbidden_actions": {"items": {"type": "string"}, "type": "array"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "policy_required": {"type": "boolean"},
+    "product_boundary": {"type": "object"},
+    "proposed_workunit_type": {
+      "enum": [
+        "deepen_container_future",
+        "verify_manifest_candidate_future",
+        "check_member_relevance_future",
+        "inspect_member_text_future",
+        "source_locator_followup_future",
+        "compatibility_evidence_followup_future",
+        "policy_review_future",
+        "not_evaluable"
+      ],
+      "type": "string"
+    },
+    "related_extraction_result_ref": {"type": "string"},
+    "related_manifest_refs": {"items": {"type": "string"}, "type": "array"},
+    "related_member_refs": {"items": {"type": "string"}, "type": "array"},
+    "review_required": {"type": "boolean"},
+    "schema_version": {"const": "extraction_workunit_seed.v0"},
+    "truth_boundary": {"type": "object"},
+    "workunit_seed_id": {"type": "string"},
+    "workunit_seed_status": {"type": "string"}
+  },
+  "required": [
+    "schema_version",
+    "workunit_seed_id",
+    "workunit_seed_status",
+    "proposed_workunit_type",
+    "related_extraction_result_ref",
+    "related_member_refs",
+    "related_manifest_refs",
+    "allowed_actions_future",
+    "forbidden_actions",
+    "review_required",
+    "policy_required",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction WorkUnit Seed v0",
+  "type": "object"
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "f_bundle_02_report.v0",
+  "status": "pass",
+  "task": "F-BUNDLE-02",
+  "track": "F",
+  "purpose": "extraction_candidate_effects_search_integration",
+  "added_contracts": [
+    "contracts/extraction/extraction_search_integration.v0.json",
+    "contracts/extraction/extraction_search_gap.v0.json",
+    "contracts/extraction/extraction_review_seed.v0.json",
+    "contracts/extraction/extraction_workunit_seed.v0.json",
+    "contracts/extraction/extraction_usefulness_report.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/extraction/search_integration.py",
+    "runtime/extraction/review_bridge.py",
+    "runtime/extraction/workunit_seeds.py",
+    "runtime/extraction/usefulness.py"
+  ],
+  "added_scripts": [
+    "scripts/integrate_extraction_candidates.py",
+    "scripts/summarize_extraction_search_gaps.py",
+    "scripts/validate_extraction_search_integration.py"
+  ],
+  "added_docs": [
+    "docs/reference/EXTRACTION_SEARCH_INTEGRATION_CONTRACT.md",
+    "docs/reference/EXTRACTION_SEARCH_GAP_CONTRACT.md",
+    "docs/reference/EXTRACTION_REVIEW_SEED_CONTRACT.md",
+    "docs/reference/EXTRACTION_WORKUNIT_SEED_CONTRACT.md",
+    "docs/architecture/EXTRACTION_SEARCH_INTEGRATION_MODEL.md",
+    "docs/architecture/EXTRACTION_CANDIDATE_EFFECT_MODEL.md",
+    "docs/operations/EXTRACTION_TO_REVIEW_QUEUE.md",
+    "docs/operations/EXTRACTION_TO_SEARCH_GAPS.md",
+    "docs/operations/EXTRACTION_TO_TRACK_G_HANDOFF.md"
+  ],
+  "added_inventories": [
+    "control/inventory/extraction/extraction_search_integration_policy.json",
+    "control/inventory/extraction/extraction_search_gap_policy.json",
+    "control/inventory/extraction/extraction_review_seed_policy.json",
+    "control/inventory/extraction/extraction_workunit_seed_policy.json",
+    "control/inventory/extraction/extraction_candidate_effect_policy.json",
+    "control/inventory/extraction/extraction_search_output_policy.json",
+    "control/inventory/extraction/extraction_search_truth_policy.json",
+    "control/inventory/extraction/extraction_to_track_g_handoff_policy.json"
+  ],
+  "added_examples": [
+    "examples/extraction/search_integration/",
+    "examples/extraction/review_seeds/",
+    "examples/extraction/workunit_seeds/",
+    "examples/extraction/usefulness/"
+  ],
+  "added_tests": [
+    "tests/extraction/test_extraction_search_integration.py",
+    "tests/extraction/test_extraction_review_bridge.py",
+    "tests/extraction/test_extraction_workunit_seeds.py",
+    "tests/operations/test_extraction_search_integration_scripts.py"
+  ],
+  "validation": {
+    "json_contracts_and_policies": "pass",
+    "validate_extraction_search_integration": "pass",
+    "integrate_extraction_candidates_check": "pass",
+    "summarize_extraction_search_gaps_check": "pass",
+    "extraction_search_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_f_h_core_validators": "pass_with_existing_h1_audit_warnings",
+    "aide_lite": "pass_with_verify_warnings"
+  },
+  "integration_scope": {
+    "fixture_only": true,
+    "search_gap_generation_enabled": true,
+    "review_seed_generation_enabled": true,
+    "workunit_seed_generation_enabled": true,
+    "local_search_preview_enabled": true,
+    "public_search_mutation_enabled": false,
+    "candidate_store_mutation_enabled": false,
+    "evidence_ledger_mutation_enabled": false,
+    "review_queue_mutation_enabled": false
+  },
+  "truth_boundary": {
+    "extraction_search_gap_is_public_truth": false,
+    "review_seed_is_review_decision": false,
+    "workunit_seed_executes_work": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "candidate_preview_is_accepted_candidate": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "production_quality_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "track_g_readiness": "READY_FOR_G_BUNDLE_01",
+  "next_task": "G-BUNDLE-01 - Result explanations, near misses, and known absence"
+}
