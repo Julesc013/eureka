@@ -1,6 +1,6 @@
 {
-  "branch": "sync/preserve-dirty-work-20260509",
-  "commit_sha": "ab9918071ae4d7ba6e076f50c9bdd85d579c7185",
+  "branch": "main",
+  "commit_sha": "7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe",
   "created_by_slice": "public_alpha_rehearsal_evidence_v0",
   "eval_audit": {
     "archive_eval_status": {

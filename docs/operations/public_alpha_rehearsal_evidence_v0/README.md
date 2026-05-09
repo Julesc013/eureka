@@ -37,8 +37,8 @@ Static Resolver Demo Snapshots v0 now adds static fixture-backed examples under 
 
 ## Current Summary
 
-- branch: `sync/preserve-dirty-work-20260509`
-- recorded commit sha: `ab9918071ae4d7ba6e076f50c9bdd85d579c7185`
+- branch: `main`
+- recorded commit sha: `7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe`
 - static site validation: `valid`
 - public-alpha smoke: `passed`
 - signoff status: `unsigned`

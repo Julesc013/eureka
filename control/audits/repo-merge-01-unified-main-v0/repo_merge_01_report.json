@@ -1,6 +1,6 @@
 {
   "schema_version": "repo_merge_01_report.v0",
-  "status": "warn",
+  "status": "pass",
   "task": "REPO-MERGE-01",
   "operation": "merge_obs_and_track_b_lanes",
   "safety_branch": "sync/preserve-dirty-work-20260509",
@@ -35,9 +35,11 @@
     "aide_lite_review_pack": "pass",
     "aide_lite_adapter_validate": "pass"
   },
-  "local_main_updated": false,
-  "pushed_main": false,
-  "push_result": "pending_main_update",
+  "local_main_updated": true,
+  "pushed_main": true,
+  "push_result": "pushed_normally",
+  "origin_main_after_first_push": "7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe",
+  "final_push_result_recorded_in_followup_commit": true,
   "product_boundary": {
     "approved_source_access": false,
     "created_runtime_search_needs_from_obs": false,

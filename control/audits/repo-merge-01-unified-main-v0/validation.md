@@ -8,6 +8,8 @@
 - `git diff --check` - PASS.
 - `git grep -n -E "^(<<<<<<<|>>>>>>>)"` - PASS, no opening or closing conflict markers.
 - `python scripts/check_architecture_boundaries.py` - PASS, 493 Python files checked and no architecture-boundary violations found.
+- local `main` fast-forward to unified branch - PASS.
+- first normal `git push origin main` - PASS, `f83b005..7a3d112`.
 
 ## Targeted Validators
 
@@ -46,6 +48,7 @@
 ## Generated Artifact and Tests
 
 - `python scripts/generate_public_alpha_rehearsal_evidence.py --check` - PASS after refresh.
+- `python scripts/generate_public_alpha_rehearsal_evidence.py --update` - PASS after switching to local `main` to refresh branch metadata.
 - `python scripts/check_generated_artifact_drift.py --json` - PASS.
 - `python -m unittest tests.hardening.test_external_baseline_guards.ExternalBaselineGuardsTest.test_scripts_and_docs_do_not_claim_google_or_archive_scraping` - PASS after sentinel rewrite.
 - `python -m unittest discover -s tests -t .` - PASS, 2494 tests.
