@@ -1,0 +1,40 @@
+{
+  "schema_version": "h1_metadata_wave_source_pack_policy.v0",
+  "policy_id": "h1_metadata_wave_source_pack_policy",
+  "wave_id": "H1",
+  "wave_label": "First metadata wave source policy packs",
+  "current_status": "policy_pack_only",
+  "live_access_enabled": false,
+  "source_sync_enabled": false,
+  "connector_runtime_enabled": false,
+  "approved_live_probe_enabled": false,
+  "source_pack_export_only": true,
+  "source_pack_import_enabled": false,
+  "review_required_before_live_access": true,
+  "review_required_before_source_cache_write": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "sources": [
+    "wayback_cdx_memento",
+    "github_releases",
+    "pypi",
+    "npm_registry",
+    "software_heritage",
+    "repology",
+    "osv"
+  ],
+  "no_goals": [
+    "no live source calls",
+    "no source sync",
+    "no downloads",
+    "no scraping",
+    "no source cache writes",
+    "no evidence acceptance",
+    "no public or master index mutation"
+  ],
+  "notes": [
+    "A source policy pack is not source access approval.",
+    "H1-BUNDLE-01 prepares fixture-runtime work only."
+  ]
+}

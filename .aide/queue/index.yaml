@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H0-BUNDLE-03
+current_recommended_task: H1-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -151,12 +151,20 @@ entries:
     recommended_after: H0-BUNDLE-01
   - id: H0-BUNDLE-03
     title: Coverage ledger, source packs, and connector scorecards
-    status: active
+    status: needs_review
     purpose: Close the H0 Source OS foundation with coverage ledgers, connector scorecards, source packs, no-live scorecard/export helpers, H0 integration audit, and H1 readiness evidence.
     allowed_scope_summary: H0 coverage, scorecard, source-pack contracts, policies, docs, examples, runtime helpers, scripts, tests, audit pack, and AIDE queue/context metadata only.
     gate: H0-BUNDLE-02 passes; no live source calls, source sync, downloads, public/master index mutation, source/evidence/candidate truth acceptance, or source-pack import/submission.
     task: .aide/queue/H0-BUNDLE-03/task.yaml
     recommended_after: H0-BUNDLE-02
+  - id: H1-BUNDLE-01
+    title: First metadata wave source policy packs
+    status: active
+    purpose: Add policy-pack-only H1 metadata-wave source records, connector-family mappings, approval gates, coverage previews, scorecard previews, source-pack manifests, docs, validators, tests, and audit evidence.
+    allowed_scope_summary: H1 source-pack policies, source records, connector policy packs, coverage/scorecard previews, docs, scripts, tests, audit pack, and AIDE queue/context metadata only.
+    gate: H0-BUNDLE-03 passes with H1 readiness; no live source calls, source sync, connector runtime, downloads, public/master index mutation, source/evidence/candidate truth acceptance, or source-pack import/submission.
+    task: .aide/queue/H1-BUNDLE-01/task.yaml
+    recommended_after: H0-BUNDLE-03
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

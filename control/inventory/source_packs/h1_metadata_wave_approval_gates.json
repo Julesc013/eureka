@@ -1,0 +1,34 @@
+{
+  "schema_version": "h1_metadata_wave_approval_gates.v0",
+  "wave_id": "H1",
+  "approval_state_current": "not_approved_for_live_access",
+  "required_gates": [
+    "source policy approval",
+    "endpoint allowlist",
+    "User-Agent/contact posture",
+    "rate limit",
+    "timeout",
+    "retry budget",
+    "cache TTL",
+    "kill switch",
+    "fixture replay",
+    "dry-run policy evaluation",
+    "output path policy",
+    "privacy/risk review",
+    "rights posture",
+    "review queue gate",
+    "post-run audit",
+    "connector scorecard"
+  ],
+  "source_approval_states": {
+    "wayback_cdx_memento": "not_approved_for_live_access",
+    "github_releases": "not_approved_for_live_access",
+    "pypi": "not_approved_for_live_access",
+    "npm_registry": "not_approved_for_live_access",
+    "software_heritage": "not_approved_for_live_access",
+    "repology": "not_approved_for_live_access",
+    "osv": "not_approved_for_live_access"
+  },
+  "live_access_enabled": false,
+  "notes": ["Every source remains blocked until a future reviewed task approves fixture or live behavior."]
+}

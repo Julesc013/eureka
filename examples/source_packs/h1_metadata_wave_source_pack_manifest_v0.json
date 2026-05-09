@@ -1,0 +1,105 @@
+{
+  "schema_version": "source_pack_manifest.v0",
+  "source_pack_manifest_id": "source_pack.h1_metadata_wave.policy_pack.v0",
+  "pack_status": "draft_only",
+  "wave_id": "H1",
+  "wave_label": "First metadata wave source policy packs",
+  "source_records": [
+    {"source_record_ref": "examples/sources/source_records/wayback_cdx_memento_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/github_releases_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/pypi_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/npm_registry_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/software_heritage_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/repology_source_v2.json"},
+    {"source_record_ref": "examples/sources/source_records/osv_source_v2.json"}
+  ],
+  "source_families": [
+    "web_archive",
+    "code_source_release_host",
+    "package_registry"
+  ],
+  "source_capabilities": [
+    "source_known",
+    "catalog_indexed",
+    "supports_identifier_lookup",
+    "supports_metadata_record_fetch",
+    "supports_hashes",
+    "supports_cdx"
+  ],
+  "source_policy_refs": [
+    "control/inventory/source_packs/h1_metadata_wave_source_pack_policy.json",
+    "control/inventory/source_packs/h1_metadata_wave_approval_gates.json",
+    "control/inventory/source_packs/h1_metadata_wave_output_policy.json",
+    "control/inventory/source_packs/h1_metadata_wave_truth_policy.json",
+    "control/inventory/source_packs/h1_metadata_wave_no_live_call_policy.json"
+  ],
+  "connector_family_refs": [
+    "warc_cdx",
+    "api_json",
+    "package_registry"
+  ],
+  "coverage_records": [
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/wayback_cdx_memento_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/github_releases_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/pypi_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/npm_registry_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/software_heritage_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/repology_coverage_preview_v0.json"},
+    {"coverage_record_ref": "examples/connectors/h1_metadata_wave/coverage/osv_coverage_preview_v0.json"}
+  ],
+  "connector_scorecards": [
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/wayback_cdx_memento_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/github_releases_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/pypi_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/npm_registry_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/software_heritage_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/repology_scorecard_preview_v0.json"},
+    {"connector_scorecard_ref": "examples/connectors/h1_metadata_wave/scorecards/osv_scorecard_preview_v0.json"}
+  ],
+  "limitations": [
+    "H1-BUNDLE-01 is policy-pack-only.",
+    "The pack is an export preview and is not imported, submitted, or accepted.",
+    "Coverage previews are bounded planning records, not exhaustive source coverage."
+  ],
+  "review_posture": {
+    "review_required_before_live_access": true,
+    "review_required_before_source_cache_write": true,
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_master_index": true,
+    "review_required_before_import_or_submission": true
+  },
+  "no_live_access_posture": {
+    "live_access_enabled": false,
+    "source_sync_enabled": false,
+    "connector_runtime_enabled": false,
+    "approved_live_probe_enabled": false,
+    "network_calls_made": false
+  },
+  "truth_boundary": {
+    "source_pack_is_accepted_truth": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_submitted": false,
+    "source_pack_can_mutate_public_index": false,
+    "source_pack_can_mutate_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "This source pack prepares H1 fixture work; it grants no source access."
+  ]
+}

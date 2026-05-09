@@ -1,0 +1,16 @@
+{
+  "schema_version": "h1_metadata_wave_connector_families.v0",
+  "wave_id": "H1",
+  "mappings": [
+    {"source_id": "wayback_cdx_memento", "preferred_connector_family": "warc_cdx", "alternate_connector_family": "api_json", "ambiguity_note": "CDX and Memento shapes differ but remain metadata-only."},
+    {"source_id": "github_releases", "preferred_connector_family": "api_json", "alternate_connector_family": null},
+    {"source_id": "pypi", "preferred_connector_family": "package_registry", "alternate_connector_family": "api_json"},
+    {"source_id": "npm_registry", "preferred_connector_family": "package_registry", "alternate_connector_family": "api_json"},
+    {"source_id": "software_heritage", "preferred_connector_family": "api_json", "alternate_connector_family": null},
+    {"source_id": "repology", "preferred_connector_family": "api_json", "alternate_connector_family": "package_registry", "ambiguity_note": "Repology is package metadata across many repositories."},
+    {"source_id": "osv", "preferred_connector_family": "api_json", "alternate_connector_family": "package_registry", "ambiguity_note": "OSV advisories are package-related metadata, not package downloads."}
+  ],
+  "current_status": "policy_pack_only",
+  "live_access_enabled": false,
+  "connector_runtime_enabled": false
+}

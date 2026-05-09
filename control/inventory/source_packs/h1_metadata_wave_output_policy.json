@@ -1,0 +1,34 @@
+{
+  "schema_version": "h1_metadata_wave_output_policy.v0",
+  "policy_id": "h1_metadata_wave_output_policy",
+  "allowed_outputs_current": [
+    "source_record",
+    "source_policy_pack",
+    "source_pack_manifest",
+    "coverage_preview",
+    "scorecard_preview",
+    "fixture_plan",
+    "readiness_summary"
+  ],
+  "forbidden_outputs_current": [
+    "live_probe_result",
+    "source_cache_write",
+    "evidence_candidate_write",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "downloaded_file",
+    "item_file_payload",
+    "package_download",
+    "source_archive_download",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ],
+  "allowed_output_roots": ["control/audits/**/generated/", "examples/", "explicit temp test directory"],
+  "forbidden_output_roots": ["site/dist/", "data/public_index/", "runtime/", "contracts/", "master-index roots", "local private roots"]
+}

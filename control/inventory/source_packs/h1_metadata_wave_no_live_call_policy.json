@@ -1,0 +1,26 @@
+{
+  "schema_version": "h1_metadata_wave_no_live_call_policy.v0",
+  "policy_id": "h1_metadata_wave_no_live_call_policy",
+  "current_status": "no_live_calls",
+  "network_calls_allowed": false,
+  "api_calls_allowed": false,
+  "endpoint_probing_allowed": false,
+  "downloads_allowed": false,
+  "scraping_allowed": false,
+  "source_sync_allowed": false,
+  "live_connector_runtime_allowed": false,
+  "public_query_fanout_allowed": false,
+  "hosted_behavior_allowed": false,
+  "no_goals": [
+    "no network calls",
+    "no API calls",
+    "no endpoint probing",
+    "no downloads",
+    "no scraping",
+    "no source sync",
+    "no live connector runtime",
+    "no public-query fanout",
+    "no hosted behavior"
+  ],
+  "notes": ["H1-BUNDLE-01 is policy and pack structure only."]
+}
