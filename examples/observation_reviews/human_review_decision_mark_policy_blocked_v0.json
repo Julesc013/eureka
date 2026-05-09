@@ -1,0 +1,36 @@
+{
+  "schema_version": "obs_human_review_decision_template.v0",
+  "synthetic_example": true,
+  "review_item_id": "synthetic_review_item::policy_blocked",
+  "source_artifact_ref": "synthetic/policy_blocked_candidate.json",
+  "proposed_decision": "mark_policy_blocked",
+  "human_decision": "mark_policy_blocked",
+  "decision_rationale": "Synthetic example: policy review is required before this item can proceed.",
+  "confidence": "high",
+  "approve_next_action": [],
+  "reject_reason": "",
+  "request_more_evidence_fields": [
+    "policy decision packet"
+  ],
+  "policy_notes": [
+    "Keep item blocked until separate policy review."
+  ],
+  "source_policy_decision_required": true,
+  "track_b_dependency": "node_policy",
+  "do_not_treat_as_observed_baseline": true,
+  "do_not_treat_as_evidence_truth": true,
+  "do_not_mutate_master_index": true,
+  "source_access_approved": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "runtime_activation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "creates_runtime_search_need": false,
+  "creates_runtime_workunit": false,
+  "executes_workunit": false,
+  "reviewer": "synthetic-reviewer",
+  "reviewed_at": "2026-05-08T00:00:00Z",
+  "notes": [
+    "Synthetic example only; not a real candidate decision."
+  ]
+}

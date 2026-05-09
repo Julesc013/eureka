@@ -1,0 +1,36 @@
+{
+  "schema_version": "obs_human_review_decision_template.v0",
+  "synthetic_example": true,
+  "review_item_id": "synthetic_review_item::source_lead",
+  "source_artifact_ref": "synthetic/source_lead_candidate.json",
+  "proposed_decision": "approve_as_source_lead_future",
+  "human_decision": "approve_as_source_lead_future",
+  "decision_rationale": "Synthetic example: the item is useful as a future source lead only.",
+  "confidence": "medium",
+  "approve_next_action": [
+    "prepare_future_source_policy_packet"
+  ],
+  "reject_reason": "",
+  "request_more_evidence_fields": [],
+  "policy_notes": [
+    "No current source permission is granted by this example."
+  ],
+  "source_policy_decision_required": true,
+  "track_b_dependency": "future_candidate_store",
+  "do_not_treat_as_observed_baseline": true,
+  "do_not_treat_as_evidence_truth": true,
+  "do_not_mutate_master_index": true,
+  "source_access_approved": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "runtime_activation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "creates_runtime_search_need": false,
+  "creates_runtime_workunit": false,
+  "executes_workunit": false,
+  "reviewer": "synthetic-reviewer",
+  "reviewed_at": "2026-05-08T00:00:00Z",
+  "notes": [
+    "Synthetic example only; not a real candidate decision."
+  ]
+}

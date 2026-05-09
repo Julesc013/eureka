@@ -1,0 +1,58 @@
+{
+  "schema_version": "obs_track_b_handoff_readiness.v0",
+  "readiness_id": "obs_track_b_handoff_readiness_v0",
+  "label": "OBS to Track B handoff readiness",
+  "obs_lane_status": "OBS-AGENT-05 complete locally; OBS-AGENT-06 read-only synchronization audit in progress.",
+  "track_b_lane_status": "Track B contracts through TRACK-B-06 are present locally; TRACK-B-07 is the next expected Track B task.",
+  "ready_for_parallel_continuation": true,
+  "ready_for_runtime_consumption": false,
+  "ready_for_source_policy_decision": "partial_review_required",
+  "ready_for_workunit_runtime": false,
+  "ready_for_public_index_effect": false,
+  "blockers": [
+    "OBS candidates, SearchNeed seeds, and WorkUnit seeds still require human review before downstream use.",
+    "Source gap and source lead items require explicit source policy decisions before any live source access.",
+    "SearchNeed seeds are not runtime SearchNeeds.",
+    "WorkUnit seeds are not executable WorkUnits.",
+    "Track B runtime acceptance and execution flow remain future tasks.",
+    ".aide/context/latest-task-packet.md is stale relative to the OBS side-lane task sequence."
+  ],
+  "warnings": [
+    "This readiness inventory is an audit summary, not an approval record.",
+    "Presence of Track B contracts does not permit runtime activation.",
+    "No source policy decision is made by this audit.",
+    "AIDE queue/context updates are deferred to avoid overwriting parallel Track B state."
+  ],
+  "recommended_next_obs_task": "OBS-AGENT-07 - Human review packet for OBS candidates",
+  "recommended_next_track_b_task": "TRACK-B-07 - Query observation runtime",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "created_runtime_search_needs": false,
+    "created_runtime_workunits": false
+  },
+  "notes": [
+    "Parallel continuation is ready because OBS artifacts remain draft, review-gated, and non-runtime.",
+    "Runtime consumption, WorkUnit execution, public index effects, and source access are not ready."
+  ]
+}

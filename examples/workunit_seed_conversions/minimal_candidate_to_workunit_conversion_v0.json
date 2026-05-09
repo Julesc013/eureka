@@ -1,0 +1,96 @@
+{
+  "schema_version": "workunit_seed_conversion.v0",
+  "conversion_id": "workunit_seed_conversion_minimal_candidate_v0",
+  "conversion_status": "needs_human_review",
+  "conversion_type": "review_queue_entry_to_workunit_seed_draft",
+  "source_candidate_ref": {
+    "observation_candidate_id": "obs_candidate_minimal_v0",
+    "candidate_file_path": "examples/observation_candidates/minimal_observation_candidate_v0.json"
+  },
+  "source_review_queue_entry_ref": {
+    "review_queue_entry_id": "review_queue_entry::obs_candidate_minimal_v0",
+    "queue_file_path": "control/inventory/observations/observation_candidate_review_queue.json"
+  },
+  "source_search_need_seed_ref": {
+    "search_need_seed_id": "search_need_seed_minimal_v0",
+    "seed_file_path": "examples/search_need_seeds/minimal_search_need_seed_v0.json"
+  },
+  "produced_workunit_seed_ref": {
+    "workunit_seed_id": "workunit_seed_minimal_v0",
+    "seed_file_path": "examples/workunit_seeds/minimal_workunit_seed_v0.json"
+  },
+  "conversion_rules_applied": [
+    "copy_candidate_queue_and_search_need_seed_ids",
+    "preserve_review_required",
+    "preserve_false_execution_and_truth_boundaries",
+    "map_manual_slot_to_search_need_review_workunit_seed"
+  ],
+  "fields_mapped": {
+    "proposed_workunit_label": "Review manual baseline SearchNeed seed",
+    "seed_type": "search_need_review",
+    "seed_status": "needs_human_review",
+    "related_query_ids": [
+      "windows_7_apps"
+    ],
+    "proposed_priority": {
+      "score": 40,
+      "band": "medium"
+    }
+  },
+  "fields_unmapped": [
+    "runtime_workunit_id",
+    "workunit_result_ref",
+    "accepted_evidence_ref",
+    "observed_baseline_ref"
+  ],
+  "missing_evidence": [
+    "Human review decision is not present.",
+    "Track B runtime execution state is not present."
+  ],
+  "missing_policy_approval": [
+    "manual_observation_policy_decision"
+  ],
+  "review_required": true,
+  "conversion_limitations": [
+    "The conversion is a draft mapping only.",
+    "The produced seed cannot run."
+  ],
+  "rejected_conversion_reason": null,
+  "downstream_dependencies": [
+    "human_review_decision_required",
+    "track_b_workunit_runtime_required"
+  ],
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "notes": [
+    "This example keeps the WorkUnit seed in review-gated draft form.",
+    "It records no review decision and no execution."
+  ]
+}

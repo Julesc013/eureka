@@ -1,0 +1,90 @@
+{
+  "schema_version": "search_need_seed_conversion.v0",
+  "conversion_id": "search_need_seed_conversion_source_gap_archive_metadata_v0",
+  "conversion_status": "needs_human_review",
+  "conversion_type": "source_gap_candidate_to_search_need_seed_draft",
+  "source_candidate_ref": {
+    "observation_candidate_id": "obs_candidate_source_gap_internet_archive_metadata_v0",
+    "candidate_file_path": "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json"
+  },
+  "source_review_queue_entry_ref": {
+    "review_queue_entry_id": "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0",
+    "queue_file_path": "control/inventory/observations/observation_candidate_review_queue.json"
+  },
+  "produced_seed_ref": {
+    "search_need_seed_id": "search_need_seed_source_gap_archive_metadata_v0",
+    "seed_file_path": "examples/search_need_seeds/source_gap_search_need_seed_v0.json"
+  },
+  "conversion_rules_applied": [
+    "copy_candidate_and_queue_ids",
+    "preserve_source_policy_status",
+    "preserve_false_truth_boundaries",
+    "map_source_lead_to_source_gap_need_seed",
+    "copy_queue_priority_as_advisory_seed_priority"
+  ],
+  "fields_mapped": {
+    "canonical_need_label": "Archive metadata need for legacy software discovery",
+    "seed_type": "source_gap_need_seed",
+    "seed_status": "needs_human_review",
+    "source_family": "internet_archive_metadata",
+    "related_query_ids": [
+      "windows_7_apps"
+    ],
+    "proposed_priority": {
+      "score": 82,
+      "band": "high"
+    }
+  },
+  "fields_unmapped": [
+    "source_policy_decision_id",
+    "runtime_search_need_id",
+    "accepted_evidence_ref"
+  ],
+  "missing_evidence": [
+    "Human review decision is not present.",
+    "Source policy decision is not present.",
+    "Runtime SearchNeed contract is not present."
+  ],
+  "review_required": true,
+  "conversion_limitations": [
+    "The source family is a review lead only.",
+    "The conversion does not permit any future source interaction by itself."
+  ],
+  "rejected_conversion_reason": null,
+  "downstream_dependencies": [
+    "human_review_decision_required",
+    "source_policy_decision_required",
+    "track_b_search_need_runtime_required"
+  ],
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_search_need": false
+  },
+  "notes": [
+    "This example maps a source gap into a draft need without source approval.",
+    "It records no accepted evidence."
+  ]
+}

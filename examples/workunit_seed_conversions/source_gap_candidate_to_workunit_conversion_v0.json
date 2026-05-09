@@ -1,0 +1,94 @@
+{
+  "schema_version": "workunit_seed_conversion.v0",
+  "conversion_id": "workunit_seed_conversion_source_gap_to_policy_review_v0",
+  "conversion_status": "needs_human_review",
+  "conversion_type": "source_gap_candidate_to_workunit_seed_draft",
+  "source_candidate_ref": {
+    "observation_candidate_id": "obs_candidate_source_gap_internet_archive_metadata_v0",
+    "candidate_file_path": "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json"
+  },
+  "source_review_queue_entry_ref": {
+    "review_queue_entry_id": "review_queue_entry::obs_candidate_source_gap_internet_archive_metadata_v0",
+    "queue_file_path": "control/inventory/observations/observation_candidate_review_queue.json"
+  },
+  "source_search_need_seed_ref": {
+    "search_need_seed_id": "search_need_seed_source_gap_archive_metadata_v0",
+    "seed_file_path": "examples/search_need_seeds/source_gap_search_need_seed_v0.json"
+  },
+  "produced_workunit_seed_ref": {
+    "workunit_seed_id": "workunit_seed_source_policy_review_archive_metadata_v0",
+    "seed_file_path": "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json"
+  },
+  "conversion_rules_applied": [
+    "copy_candidate_and_queue_ids",
+    "preserve_source_policy_status",
+    "preserve_false_execution_and_truth_boundaries",
+    "map_source_lead_to_source_policy_review_workunit_seed"
+  ],
+  "fields_mapped": {
+    "proposed_workunit_label": "Review archive metadata source policy",
+    "seed_type": "source_policy_review",
+    "seed_status": "needs_human_review",
+    "source_family": "internet_archive_metadata",
+    "proposed_priority": {
+      "score": 82,
+      "band": "high"
+    }
+  },
+  "fields_unmapped": [
+    "runtime_workunit_id",
+    "source_policy_decision_id",
+    "accepted_evidence_ref"
+  ],
+  "missing_evidence": [
+    "Human review decision is not present.",
+    "Source policy decision is not present."
+  ],
+  "missing_policy_approval": [
+    "source_policy_decision_required_before_any_future_source_interaction"
+  ],
+  "review_required": true,
+  "conversion_limitations": [
+    "The source family is a review lead only.",
+    "The conversion does not approve any source."
+  ],
+  "rejected_conversion_reason": null,
+  "downstream_dependencies": [
+    "human_review_decision_required",
+    "source_policy_decision_required",
+    "track_b_workunit_runtime_required"
+  ],
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "notes": [
+    "This example maps a source gap into a source policy review seed.",
+    "It records no accepted evidence."
+  ]
+}

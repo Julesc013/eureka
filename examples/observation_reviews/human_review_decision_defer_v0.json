@@ -1,0 +1,34 @@
+{
+  "schema_version": "obs_human_review_decision_template.v0",
+  "synthetic_example": true,
+  "review_item_id": "synthetic_review_item::defer",
+  "source_artifact_ref": "synthetic/deferred_candidate.json",
+  "proposed_decision": "defer",
+  "human_decision": "defer",
+  "decision_rationale": "Synthetic example: useful but not ready for the current review window.",
+  "confidence": "low",
+  "approve_next_action": [],
+  "reject_reason": "",
+  "request_more_evidence_fields": [],
+  "policy_notes": [
+    "Revisit after Track B dependency is available."
+  ],
+  "source_policy_decision_required": false,
+  "track_b_dependency": "future_track_b_runtime",
+  "do_not_treat_as_observed_baseline": true,
+  "do_not_treat_as_evidence_truth": true,
+  "do_not_mutate_master_index": true,
+  "source_access_approved": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "runtime_activation_allowed_now": false,
+  "master_index_mutation_allowed": false,
+  "creates_runtime_search_need": false,
+  "creates_runtime_workunit": false,
+  "executes_workunit": false,
+  "reviewer": "synthetic-reviewer",
+  "reviewed_at": "2026-05-08T00:00:00Z",
+  "notes": [
+    "Synthetic example only; not a real candidate decision."
+  ]
+}

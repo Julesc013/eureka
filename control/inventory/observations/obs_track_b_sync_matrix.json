@@ -1,0 +1,419 @@
+{
+  "blocked_items": [
+    "manual_pending_slots_to_future_observed_records",
+    "policy_blocked_items_to_node_policy",
+    "source_gaps_to_source_policy_decisions"
+  ],
+  "description": "Read-only alignment of OBS side-lane draft artifacts with current local Track B contracts and audit reports.",
+  "generated_from": [
+    "contracts/node/eureka_node_manifest.v0.json",
+    "contracts/node/local_foundry_state.v0.json",
+    "contracts/node/node_capability.v0.json",
+    "contracts/node/node_policy.v0.json",
+    "contracts/node/work_unit.v0.json",
+    "contracts/node/work_unit_result.v0.json",
+    "control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json",
+    "control/audits/obs-agent-01-local-eval-failure-mining-v0/obs_agent_01_report.json",
+    "control/audits/obs-agent-02-source-gap-candidate-generation-v0/obs_agent_02_report.json",
+    "control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_manifest.json",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/obs_agent_03_report.json",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/observation_candidate_review_queue.json",
+    "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/obs_agent_04_report.json",
+    "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",
+    "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/obs_agent_05_report.json",
+    "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
+    "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
+    "control/audits/track-b-01-eureka-node-manifest-v0/track_b_01_report.json",
+    "control/audits/track-b-02-node-policy-contract-v0/track_b_02_report.json",
+    "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json",
+    "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json",
+    "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json",
+    "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json",
+    "control/inventory/nodes/eureka_node_manifest_policy.json",
+    "control/inventory/nodes/node_capability_registry.json",
+    "control/inventory/nodes/node_policy_registry.json",
+    "control/inventory/nodes/node_source_access_policy.json",
+    "control/inventory/nodes/workunit_policy.json",
+    "control/inventory/nodes/workunit_result_policy.json",
+    "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",
+    "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json",
+    "control/inventory/observations/obs_track_b_handoff_readiness.json",
+    "control/inventory/observations/obs_track_b_sync_policy.json",
+    "control/inventory/observations/observation_candidate_review_queue.json",
+    "control/inventory/observations/search_need_seed_manifest.json",
+    "control/inventory/observations/workunit_seed_manifest.json",
+    "docs/reference/EUREKA_NODE_MANIFEST_CONTRACT.md",
+    "docs/reference/LOCAL_FOUNDRY_STATE_CONTRACT.md",
+    "docs/reference/NODE_CAPABILITY_CONTRACT.md",
+    "docs/reference/NODE_POLICY_CONTRACT.md",
+    "scripts/validate_eureka_node_capability.py",
+    "scripts/validate_eureka_node_manifest.py",
+    "scripts/validate_eureka_node_policy.py",
+    "scripts/validate_local_foundry_state.py"
+  ],
+  "human_review_items": [
+    "manual_pending_slots_to_future_observed_records",
+    "obs_candidates_to_human_review",
+    "policy_blocked_items_to_node_policy",
+    "review_queue_to_track_b_candidate_store",
+    "search_need_seeds_to_track_b_future",
+    "source_gaps_to_source_policy_decisions",
+    "workunit_seeds_to_local_foundry_state",
+    "workunit_seeds_to_workunit_contract",
+    "workunit_seeds_to_workunit_result_contract"
+  ],
+  "label": "OBS to Track B synchronization matrix",
+  "mappings": [
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "blocked_until_manual_observation",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "manual_pending_slots_to_future_observed_records",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "No pending slot is marked observed by this audit."
+      ],
+      "obs_artifact_family": "manual_observation_pending_slot",
+      "obs_artifact_ref": "control/inventory/observations/manual_observation_batch_0_slot_manifest.json",
+      "readiness_state": "manual_observation_required",
+      "required_next_action": "Manual pending slots must stay pending until an approved human observation is performed.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "evidence_ledger_future",
+      "track_b_dependency_ref": "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_human_review",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "obs_candidates_to_human_review",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "OBS candidates are review items, not observed baselines or evidence truth."
+      ],
+      "obs_artifact_family": "observation_candidate",
+      "obs_artifact_ref": "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",
+      "readiness_state": "ready_for_human_review",
+      "required_next_action": "Human review should triage local eval and candidate records before any downstream use.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "review_queue_future",
+      "track_b_dependency_ref": "control/inventory/observations/observation_candidate_review_queue.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "blocked_by_policy",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "policy_blocked_items_to_node_policy",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Policy-blocked items are not source approvals."
+      ],
+      "obs_artifact_family": "source_gap_candidate",
+      "obs_artifact_ref": "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json",
+      "readiness_state": "blocked_by_policy",
+      "required_next_action": "Keep broad web, forum, and live-source ideas blocked until explicit source policy review.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": true,
+      "track_b_artifact_family": "node_policy",
+      "track_b_dependency_ref": "contracts/node/node_policy.v0.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_human_review",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "review_queue_to_track_b_candidate_store",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "The OBS queue records recommended actions but no approval decisions."
+      ],
+      "obs_artifact_family": "observation_review_queue",
+      "obs_artifact_ref": "control/inventory/observations/observation_candidate_review_queue.json",
+      "readiness_state": "ready_for_human_review",
+      "required_next_action": "Use the OBS queue as a human review packet only until Track B defines a candidate store.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "candidate_store_future",
+      "track_b_dependency_ref": "control/inventory/observations/observation_candidate_review_queue.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_track_b_after_contracts",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "search_need_seeds_to_track_b_future",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "SearchNeed seeds are not runtime SearchNeeds."
+      ],
+      "obs_artifact_family": "search_need_seed",
+      "obs_artifact_ref": "control/inventory/observations/search_need_seed_manifest.json",
+      "readiness_state": "ready_for_track_b_after_contracts",
+      "required_next_action": "Keep SearchNeed seeds as drafts until Track B defines acceptance and runtime semantics.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "candidate_store_future",
+      "track_b_dependency_ref": "contracts/query/search_need_seed.v0.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "blocked_until_source_policy_approval",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "source_gaps_to_source_policy_decisions",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Source leads remain blocked until reviewed source policy decisions exist."
+      ],
+      "obs_artifact_family": "source_gap_candidate",
+      "obs_artifact_ref": "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json",
+      "readiness_state": "source_policy_review_required",
+      "required_next_action": "Prepare human source policy decision items; do not approve source access from OBS sync.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": true,
+      "track_b_artifact_family": "node_policy",
+      "track_b_dependency_ref": "control/inventory/nodes/node_source_access_policy.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_track_b_after_contracts",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "workunit_seeds_to_local_foundry_state",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Local foundry state remains contract-only for this handoff."
+      ],
+      "obs_artifact_family": "workunit_seed",
+      "obs_artifact_ref": "control/inventory/observations/workunit_seed_manifest.json",
+      "readiness_state": "track_b_dependency_present_read_only",
+      "required_next_action": "Local foundry state contract can later host private draft state, but this audit writes no runtime state.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "local_foundry_state_future",
+      "track_b_dependency_ref": "contracts/node/local_foundry_state.v0.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_track_b_after_contracts",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "workunit_seeds_to_workunit_contract",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Contract presence is not WorkUnit execution permission."
+      ],
+      "obs_artifact_family": "workunit_seed",
+      "obs_artifact_ref": "control/inventory/observations/workunit_seed_manifest.json",
+      "readiness_state": "track_b_dependency_present_read_only",
+      "required_next_action": "Track B WorkUnit contract is present; OBS WorkUnit seeds still require review and future runtime acceptance.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "workunit_contract_future",
+      "track_b_dependency_ref": "contracts/node/work_unit.v0.json"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "creates_runtime_search_need": false,
+      "creates_runtime_workunit": false,
+      "current_handoff_state": "ready_for_track_b_after_contracts",
+      "executes_workunit": false,
+      "human_review_required": true,
+      "mapping_id": "workunit_seeds_to_workunit_result_contract",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "WorkUnit result contracts do not create accepted evidence."
+      ],
+      "obs_artifact_family": "workunit_seed",
+      "obs_artifact_ref": "control/inventory/observations/workunit_seed_manifest.json",
+      "readiness_state": "track_b_dependency_present_read_only",
+      "required_next_action": "Track B WorkUnit result contract is present; OBS seeds still cannot create results.",
+      "runtime_activation_allowed_now": false,
+      "source_policy_approval_required": false,
+      "track_b_artifact_family": "workunit_result_contract_future",
+      "track_b_dependency_ref": "contracts/node/work_unit_result.v0.json"
+    }
+  ],
+  "matrix_id": "obs_track_b_sync_matrix_v0",
+  "next_actions": [
+    "Continue OBS and Track B in parallel without mutating Track B files from the OBS lane.",
+    "Route OBS candidates, SearchNeed seeds, and WorkUnit seeds into human review before any downstream conversion.",
+    "Treat source policy items as decision packets only; do not approve live source access from this sync audit.",
+    "Let Track B proceed to TRACK-B-07 before any runtime consumption decision.",
+    "Keep AIDE queue/context updates deferred while the local latest task packet is stale relative to the OBS side lane."
+  ],
+  "notes": [
+    "Synchronization is audit evidence only.",
+    "Track B contracts through TRACK-B-06 are present locally, but OBS outputs remain draft inputs.",
+    "Runtime consumption, public index effects, source approval, and evidence acceptance remain blocked."
+  ],
+  "observed_obs_state": {
+    "audit_reports_seen": [
+      "control/audits/obs-agent-01-local-eval-failure-mining-v0/obs_agent_01_report.json",
+      "control/audits/obs-agent-02-source-gap-candidate-generation-v0/obs_agent_02_report.json",
+      "control/audits/obs-agent-03-observation-candidate-review-queue-v0/obs_agent_03_report.json",
+      "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/obs_agent_04_report.json",
+      "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/obs_agent_05_report.json",
+      "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json"
+    ],
+    "latest_obs_task_seen": "OBS-AGENT-05",
+    "local_eval_candidate_count": 5,
+    "notes": [
+      "OBS outputs are draft or queued records only.",
+      "Human review remains required before downstream use."
+    ],
+    "obs_agent_01_seen": true,
+    "obs_agent_02_seen": true,
+    "obs_agent_03_seen": true,
+    "obs_agent_04_seen": true,
+    "obs_agent_05_seen": true,
+    "obs_replan_seen": true,
+    "review_queue_entry_count": 15,
+    "runtime_consumption_enabled": false,
+    "search_need_seed_count": 5,
+    "source_gap_candidate_count": 6,
+    "workunit_seed_count": 6
+  },
+  "observed_track_b_state": {
+    "audit_reports_seen": [
+      "control/audits/track-b-01-eureka-node-manifest-v0/track_b_01_report.json",
+      "control/audits/track-b-02-node-policy-contract-v0/track_b_02_report.json",
+      "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json",
+      "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json",
+      "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json",
+      "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json"
+    ],
+    "contracts_present": {
+      "local_foundry_state_contract": true,
+      "node_capability": true,
+      "node_manifest": true,
+      "node_policy": true,
+      "workunit_contract": true,
+      "workunit_result_contract": true
+    },
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07",
+    "notes": [
+      "Track B state is inferred from local audit directories and contracts only.",
+      "Presence of a Track B contract is not runtime activation."
+    ],
+    "runtime_consumption_enabled": false,
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_or_later_seen": true,
+    "track_b_03_seen": true,
+    "track_b_04_seen": true,
+    "track_b_05_seen": true,
+    "track_b_06_seen": true
+  },
+  "product_boundary": {
+    "approved_source_access": false,
+    "automated_external_search": false,
+    "called_external_apis": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "crawled_external_systems": false,
+    "created_runtime_search_needs": false,
+    "created_runtime_workunits": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "executed_workunits": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "modified_track_b_files": false,
+    "mutated_master_index": false,
+    "opened_browsers": false,
+    "performed_observations": false,
+    "scraped_external_systems": false
+  },
+  "ready_items": [
+    "obs_candidates_to_human_review",
+    "review_queue_to_track_b_candidate_store",
+    "search_need_seeds_to_track_b_future",
+    "workunit_seeds_to_local_foundry_state",
+    "workunit_seeds_to_workunit_contract",
+    "workunit_seeds_to_workunit_result_contract"
+  ],
+  "schema_version": "obs_track_b_sync_matrix.v0",
+  "source_policy_items": [
+    "policy_blocked_items_to_node_policy",
+    "source_gaps_to_source_policy_decisions"
+  ],
+  "track_b_dependency_items": [
+    {
+      "mapping_count": 2,
+      "track_b_artifact_family": "candidate_store_future"
+    },
+    {
+      "mapping_count": 1,
+      "track_b_artifact_family": "evidence_ledger_future"
+    },
+    {
+      "mapping_count": 1,
+      "track_b_artifact_family": "local_foundry_state_future"
+    },
+    {
+      "mapping_count": 2,
+      "track_b_artifact_family": "node_policy"
+    },
+    {
+      "mapping_count": 1,
+      "track_b_artifact_family": "review_queue_future"
+    },
+    {
+      "mapping_count": 1,
+      "track_b_artifact_family": "workunit_contract_future"
+    },
+    {
+      "mapping_count": 1,
+      "track_b_artifact_family": "workunit_result_contract_future"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_as_evidence_truth": false,
+    "accepted_as_observed_baseline": false,
+    "creates_runtime_search_need": false,
+    "creates_runtime_workunit": false,
+    "executes_workunit": false,
+    "human_review_required": true,
+    "master_index_mutation_allowed": false,
+    "read_only": true,
+    "runtime_activation_allowed_now": false,
+    "source_access_approved": false
+  }
+}

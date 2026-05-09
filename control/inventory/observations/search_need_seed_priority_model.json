@@ -1,0 +1,93 @@
+{
+  "schema_version": "search_need_seed_priority_model.v0",
+  "model_id": "search_need_seed_priority_model_v0",
+  "label": "SearchNeed seed priority model",
+  "description": "Bounded advisory priority model for ordering draft SearchNeed seeds during human review.",
+  "score_fields": {
+    "minimum": 0,
+    "maximum": 100,
+    "band_thresholds": {
+      "high": {
+        "minimum": 70,
+        "maximum": 100
+      },
+      "medium": {
+        "minimum": 40,
+        "maximum": 69
+      },
+      "low": {
+        "minimum": 1,
+        "maximum": 39
+      },
+      "blocked": {
+        "minimum": 0,
+        "maximum": 100
+      },
+      "insufficient_local_evidence": {
+        "minimum": 0,
+        "maximum": 0
+      }
+    }
+  },
+  "positive_factors": [
+    "repeated_query_family",
+    "old_platform_relevance",
+    "hidden_member_discovery_relevance",
+    "source_gap_relevance",
+    "extraction_gap_relevance",
+    "compatibility_gap_relevance",
+    "user_action_clarity",
+    "object_family_clarity",
+    "source_policy_low_risk",
+    "Track_B_readiness"
+  ],
+  "negative_factors": [
+    "ambiguous_need",
+    "insufficient_local_evidence",
+    "high_policy_risk",
+    "rights_or_malware_risk",
+    "source_access_blocked",
+    "requires_manual_observation",
+    "requires_live_probe_approval",
+    "duplicate_possible"
+  ],
+  "required_review_notes": [
+    "Explain why the need is a user-action draft rather than object truth.",
+    "Record missing local evidence rather than inferring it.",
+    "Preserve policy-blocked state when source access is not permitted.",
+    "Name Track B dependencies before any runtime use."
+  ],
+  "forbidden_inputs": [
+    "live web",
+    "browser sessions",
+    "API calls",
+    "downloaded binary archives",
+    "private local caches",
+    ".aide.local/**",
+    "secrets/**",
+    ".git/**",
+    "untracked external data",
+    "model or provider outputs not committed as repo-local material"
+  ],
+  "output_interpretation": {
+    "advisory_only": true,
+    "approves_or_accepts_seeds": false,
+    "creates_runtime_search_needs": false,
+    "creates_observed_baselines": false,
+    "creates_evidence_truth": false,
+    "approves_source_access": false,
+    "mutates_master_index": false
+  },
+  "no_goals": [
+    "No automatic approval.",
+    "No runtime SearchNeed creation.",
+    "No evidence truth or observed baseline conversion.",
+    "No source access approval.",
+    "No live source access."
+  ],
+  "notes": [
+    "Scores copy local review queue priority where a seed is directly derived from a queue entry.",
+    "Blocked seeds keep their blocked band even when the local review signal is otherwise useful.",
+    "A high score means earlier review, not acceptance."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "workunit_seed_conversion.v0",
+  "conversion_id": "workunit_seed_conversion_request_more_evidence_firefox_xp_v0",
+  "conversion_status": "needs_more_evidence",
+  "conversion_type": "request_more_evidence_only",
+  "source_candidate_ref": {
+    "observation_candidate_id": "obs_candidate_local_eval_failure_v0",
+    "candidate_file_path": "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json"
+  },
+  "source_review_queue_entry_ref": {
+    "review_queue_entry_id": "review_queue_entry::obs_candidate_local_eval_failure_v0",
+    "queue_file_path": "control/inventory/observations/observation_candidate_review_queue.json"
+  },
+  "source_search_need_seed_ref": {
+    "search_need_seed_id": "search_need_seed_compatibility_gap_firefox_xp_v0",
+    "seed_file_path": "examples/search_need_seeds/compatibility_gap_search_need_seed_v0.json"
+  },
+  "produced_workunit_seed_ref": {
+    "workunit_seed_id": "workunit_seed_compatibility_review_firefox_xp_v0",
+    "seed_file_path": "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json"
+  },
+  "conversion_rules_applied": [
+    "copy_candidate_queue_and_search_need_seed_ids",
+    "preserve_request_more_evidence_state",
+    "preserve_false_execution_and_truth_boundaries",
+    "map_compatibility_gap_to_evidence_review_seed"
+  ],
+  "fields_mapped": {
+    "proposed_workunit_label": "Review compatibility evidence needed for Firefox XP timeline",
+    "seed_type": "compatibility_evidence_review",
+    "seed_status": "needs_more_evidence",
+    "related_query_ids": [
+      "latest_firefox_before_xp_support_ended"
+    ],
+    "proposed_priority": {
+      "score": 45,
+      "band": "medium"
+    }
+  },
+  "fields_unmapped": [
+    "runtime_workunit_id",
+    "accepted_evidence_ref",
+    "observed_baseline_ref"
+  ],
+  "missing_evidence": [
+    "Human review decision is not present.",
+    "More local evidence is required before downstream use.",
+    "Track B runtime execution state is not present."
+  ],
+  "missing_policy_approval": [
+    "future_external_evidence_policy_if_needed"
+  ],
+  "review_required": true,
+  "conversion_limitations": [
+    "The conversion preserves uncertainty.",
+    "The exact compatibility answer is not asserted."
+  ],
+  "rejected_conversion_reason": null,
+  "downstream_dependencies": [
+    "human_review_decision_required",
+    "additional_local_evidence_required",
+    "track_b_workunit_runtime_required"
+  ],
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "notes": [
+    "This example converts only into a request-more-evidence WorkUnit seed.",
+    "It records no factual compatibility conclusion."
+  ]
+}
