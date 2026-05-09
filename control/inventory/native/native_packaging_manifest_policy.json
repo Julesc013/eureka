@@ -1,0 +1,9 @@
+{
+  "schema_version": "native_packaging_manifest_policy.v0",
+  "policy_id": "native_packaging_manifest_policy_v0",
+  "manifest_only_current": true,
+  "binaries_allowed_current": false,
+  "release_artifacts_allowed_current": false,
+  "build_outputs_allowed_in_repo": false,
+  "manual_build_evidence_required": true
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": "native_manual_build_packet_policy.v0",
+  "policy_id": "native_manual_build_packet_policy_v0",
+  "manual_build_packets_allowed": true,
+  "manual_builds_not_required_on_current_machine": true
+}

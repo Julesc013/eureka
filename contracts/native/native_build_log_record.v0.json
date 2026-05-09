@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_build_log_record.v0.json",
+  "title": "Eureka Native Build Log Record v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "build_log_record_id",
+    "lane_id",
+    "build_host_ref",
+    "build_attempted",
+    "build_status",
+    "toolchain_available",
+    "build_command",
+    "manual_steps",
+    "log_summary",
+    "log_path_refs",
+    "produced_artifact_refs",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_build_log_record.v0"
+    },
+    "build_log_record_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "build_host_ref": {
+      "type": "string"
+    },
+    "build_attempted": {
+      "type": "boolean"
+    },
+    "build_status": {
+      "enum": [
+        "not_attempted",
+        "skipped_toolchain_unavailable",
+        "attempted_pass",
+        "attempted_fail",
+        "manual_required",
+        "not_evaluable"
+      ]
+    },
+    "toolchain_available": {
+      "type": "boolean"
+    },
+    "build_command": {
+      "type": "string"
+    },
+    "manual_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "log_summary": {
+      "type": "string"
+    },
+    "log_path_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "produced_artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

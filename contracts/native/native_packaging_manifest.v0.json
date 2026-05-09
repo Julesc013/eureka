@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_packaging_manifest.v0.json",
+  "title": "Eureka Native Packaging Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "packaging_manifest_id",
+    "lane_id",
+    "packaging_status",
+    "packaging_scope",
+    "source_project_refs",
+    "expected_artifact_refs",
+    "artifact_name_patterns",
+    "build_host_refs",
+    "required_inputs",
+    "forbidden_inputs",
+    "required_smoke_evidence_refs",
+    "no_binary_outputs_current",
+    "production_release_current",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_packaging_manifest.v0"
+    },
+    "packaging_manifest_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "packaging_status": {
+      "enum": [
+        "example_only",
+        "manifest_only",
+        "build_unverified",
+        "manual_build_required",
+        "packaging_blocked",
+        "not_evaluable"
+      ]
+    },
+    "packaging_scope": {
+      "type": "string"
+    },
+    "source_project_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_name_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_host_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_smoke_evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_binary_outputs_current": {
+      "const": true
+    },
+    "production_release_current": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

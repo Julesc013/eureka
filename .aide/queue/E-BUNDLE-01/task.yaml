@@ -1,0 +1,33 @@
+task_id: E-BUNDLE-01
+title: Hosting and operations readiness
+status: queued
+phase: E-BUNDLE-01
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/queue/index.yaml
+  - .aide/queue/E-BUNDLE-01/**
+  - control/audits/**
+  - control/inventory/**
+  - contracts/**
+  - docs/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - site/dist/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, no public hosting enablement, no public relay, no live source access, no downloads, no installs, no execution, no telemetry, no accounts, no uploads, no public/master index mutation, no truth acceptance, no production-readiness claim, no site/dist regeneration, and no local private-state roots
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: E-BUNDLE-01

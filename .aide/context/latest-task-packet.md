@@ -2,32 +2,29 @@
 
 ## PHASE
 
-C-BUNDLE-03 - Native smoke evidence and packaging manifests
+E-BUNDLE-01 - Hosting and operations readiness
 
 ## GOAL
 
-Continue after C-BUNDLE-02 by preparing the next reviewed Eureka C-lane task:
-native smoke evidence and packaging manifests for the WinForms, Win32, AppKit,
-and Carbon read-only native skeletons.
+Continue after C-BUNDLE-03 by preparing the next reviewed Eureka E-lane task:
+hosting and operations readiness.
 
-C-BUNDLE-03 remains review-gated. It must not enable live source access,
-downloads, mirroring, installs, execution, emulation, public hosting, public
-relay, public search behavior changes, public/master index mutation,
-source/evidence/candidate/public truth acceptance, accounts, uploads,
-telemetry, release artifacts, or committed build outputs by default.
-
-HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+This handoff does not enable hosting. E-BUNDLE-01 must remain review-gated and
+must not deploy, regenerate generated site distribution output, bind a public relay, call live sources,
+download files, install artifacts, execute artifacts, enable uploads, accounts,
+telemetry, public index mutation, master index mutation, or source/evidence/
+candidate/public truth acceptance by default.
 
 This packet is a handoff only and proceeds with no Eureka product behavior
 change.
 
 ## WHY
 
-C-BUNDLE-02 added read-only Win32, AppKit, and Carbon skeletons over the
-snapshot, relay, action, blocked-action, and public-safe native contract
-surfaces. C-BUNDLE-03 can add packaging-manifest and manual smoke-evidence
-governance around those skeletons while preserving the no-download, no-execute,
-no-live-access, no-truth-acceptance, and no-index-mutation boundaries.
+C-BUNDLE-03 closed the first-wave native readiness track with smoke evidence
+packets, packaging manifests, artifact manifests, release-candidate previews,
+and a Track C integration audit. The next safe lane is E-BUNDLE-01, which should
+turn those reviewed snapshot, relay, action, and native artifacts into hosting
+and operations readiness evidence without enabling public hosting behavior.
 
 ## CONTEXT_REFS
 
@@ -38,52 +35,49 @@ no-live-access, no-truth-acceptance, and no-index-mutation boundaries.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/C-BUNDLE-02/task.yaml`
 - `.aide/queue/C-BUNDLE-03/task.yaml`
+- `.aide/queue/E-BUNDLE-01/task.yaml`
 - `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/`
 - `control/audits/c-bundle-02-native-first-wave-skeletons-v0/`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/`
+- `control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/`
+- `control/audits/d-bundle-02-localhost-readonly-relay-v0/`
 - `native/`
 - `contracts/native/`
-- `control/inventory/native/`
-- `docs/architecture/NATIVE_CLIENT_FAMILY_MODEL.md`
-- `docs/architecture/NATIVE_SNAPSHOT_RELAY_CONSUMPTION_MODEL.md`
-- `docs/operations/NATIVE_READONLY_CLIENT_POLICY.md`
-- `docs/operations/NATIVE_NO_DOWNLOAD_EXECUTE_POLICY.md`
-- `docs/operations/NATIVE_BUILD_EVIDENCE_POLICY.md`
+- `contracts/relay/`
+- `contracts/snapshots/`
+- `contracts/actions/`
+- `docs/operations/NATIVE_TO_HOSTING_HANDOFF.md`
+- `docs/architecture/NATIVE_FIRST_WAVE_INTEGRATION_MODEL.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- Product path edits are to be defined by the C-BUNDLE-03 prompt.
-- C-BUNDLE-01 and C-BUNDLE-02 native artifacts are read-only context unless
-  the next task explicitly scopes updates.
+- Product path edits are to be defined by the E-BUNDLE-01 prompt.
+- C/D/J/I artifacts are read-only context unless the next task explicitly
+  scopes updates.
 
 ## IMPLEMENTATION
 
-- Use C-BUNDLE-01 and C-BUNDLE-02 native matrix, project, and audit outputs as
-  bounded fixture context only.
-- Keep native evidence descriptive unless an explicit host build is reviewed and
-  produces allowed audit evidence.
-- Do not commit build outputs, release binaries, installer payloads, downloaded
-  artifacts, or generated IDE caches.
-- Do not introduce source connector calls, Python runtime internals, downloads,
-  installs, execution, release artifacts, telemetry, or public index writes.
+- Use C-BUNDLE-03 audit evidence as the Track C exit gate context.
+- Keep hosting and operations material as readiness evidence until a future
+  reviewed task explicitly enables deployment behavior.
+- Do not create hosted runtime state, deployment outputs, public route
+  activation, provider calls, credentials, telemetry, accounts, uploads, or
+  public search behavior changes.
 
 ## ACCEPTANCE
 
-- C-BUNDLE-03 acceptance criteria will be defined by its task prompt.
-- The handoff is acceptable only if C-BUNDLE-02 audit artifacts validate and no
-  live access, download, source sync, execution, public/master index mutation,
-  truth acceptance, product behavior change, release artifact, or build-output
-  commit is introduced.
+- E-BUNDLE-01 acceptance criteria will be defined by its task prompt.
+- This handoff is acceptable only if C-BUNDLE-03 validation remains PASS and no
+  release binary, build output, hosted behavior, public relay, live access,
+  public/master index mutation, truth acceptance, product behavior change, or
+  production-readiness claim is introduced.
 
 ## VALIDATION
 
-- `python scripts/validate_native_matrix.py`
-- `python scripts/validate_native_skeleton.py`
-- `python scripts/validate_native_c89_library.py`
-- `python scripts/validate_native_first_wave_skeletons.py`
-- `python scripts/validate_native_project_boundaries.py`
+- `python scripts/validate_native_packaging_manifests.py`
+- `python scripts/audit_track_c_integration.py --check`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -94,52 +88,56 @@ no-live-access, no-truth-acceptance, and no-index-mutation boundaries.
 
 ## EVIDENCE
 
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/`
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/c_bundle_02_report.json`
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/validation.md`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/c_bundle_03_report.json`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/validation.md`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/track_c_exit_gate_decision.md`
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/e_bundle_01_readiness_recommendation.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.md`
 
 ## NON_GOALS
 
-- No live source calls.
-- No external/API/model/provider calls.
+- No deployment or hosting enablement.
+- No public relay or public bind.
+- No live source calls, external/API/model/provider calls, or source sync.
 - No downloads, mirroring, installs, execution, or emulation.
-- No source sync or public query fanout.
+- No uploads, accounts, telemetry, or credentials.
 - No public search behavior change.
 - No public index or master index mutation.
 - No source, evidence, candidate, pack, action, snapshot, relay, native fixture,
   or public truth acceptance.
-- No hosting, public relay, uploads, accounts, telemetry, release binaries,
-  build-output commits, site/dist regeneration, or local private-state roots.
+- No release binaries, build-output commits, generated site output regeneration, local
+  private-state roots, rights-clearance claims, malware-safety claims, verified
+  installability claims, or production-readiness claims.
 
 ## OUTPUT_SCHEMA
 
-Future C-BUNDLE-03 task responses should preserve the repo task final schema:
-status, summary, commits, changed paths, validation, native scope, readiness,
-risks, and next task.
+Future E-BUNDLE-01 task responses should preserve the repo task final schema:
+status, summary, commits, changed paths, validation, hosting/ops scope,
+readiness, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1080
+- approx_tokens: 1120
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS
 
-- `site/**`
 - `contracts/**`
 - `runtime/**`
 - `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
 - `connectors/**`
 - `packaging/**`
 - `third_party/**`
+- generated site distribution output
 - `data/public_index/**`
 - `data/master_index/**`
 - `master_index/**`
-- `control/inventory/publication/**`
 - `.aide.local/**`
 - `.local/eureka/**`
 - `.cache/eureka/**`

@@ -1,0 +1,8 @@
+{
+  "schema_version": "native_smoke_evidence_policy.v0",
+  "policy_id": "native_smoke_evidence_policy_v0",
+  "smoke_evidence_allowed": true,
+  "smoke_execution_required_current": false,
+  "manual_smoke_future": true,
+  "no_download_install_execute_required": true
+}

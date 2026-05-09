@@ -1,0 +1,8 @@
+{
+  "schema_version": "native_build_log_policy.v0",
+  "policy_id": "native_build_log_policy_v0",
+  "build_log_records_allowed": true,
+  "build_outputs_allowed": false,
+  "binary_artifacts_allowed": false,
+  "unavailable_toolchains_may_skip": true
+}

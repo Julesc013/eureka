@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_manual_build_packet.v0.json",
+  "title": "Eureka Native Manual Build Packet v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "manual_build_packet_id",
+    "lane_id",
+    "build_host_ref",
+    "required_toolchain",
+    "setup_notes",
+    "build_steps",
+    "smoke_steps",
+    "evidence_to_collect",
+    "expected_outputs",
+    "forbidden_actions",
+    "limitations",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_manual_build_packet.v0"
+    },
+    "manual_build_packet_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "build_host_ref": {
+      "type": "string"
+    },
+    "required_toolchain": {
+      "type": "string"
+    },
+    "setup_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "smoke_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_to_collect": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

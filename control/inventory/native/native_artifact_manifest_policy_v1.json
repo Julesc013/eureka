@@ -1,0 +1,7 @@
+{
+  "schema_version": "native_artifact_manifest_policy.v1",
+  "policy_id": "native_artifact_manifest_policy_v1",
+  "artifact_manifest_allowed": true,
+  "produced_current_false_required_unless_verified": true,
+  "production_release_current_false_required": true
+}

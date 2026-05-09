@@ -1,0 +1,16 @@
+{
+  "schema_version": "native_track_c_exit_policy.v0",
+  "policy_id": "native_track_c_exit_policy_v0",
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_E_BUNDLE_01",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ]
+}

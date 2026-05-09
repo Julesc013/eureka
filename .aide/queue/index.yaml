@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: C-BUNDLE-03
+current_recommended_task: E-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -278,12 +278,20 @@ entries:
     recommended_after: C-BUNDLE-01
   - id: C-BUNDLE-03
     title: Native smoke evidence and packaging manifests
-    status: queued
+    status: needs_review
     purpose: Add native smoke-evidence plans and packaging manifests after the first-wave native skeletons without committing build outputs, release binaries, downloads, installs, execution, telemetry, or public/master index mutation.
     allowed_scope_summary: C native smoke evidence contracts, packaging manifest contracts, docs, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
     gate: C-BUNDLE-02 passes; first-wave native clients remain read-only consumers and old-toolchain builds remain manual/reviewed unless an explicit safe host validation is available.
     task: .aide/queue/C-BUNDLE-03/task.yaml
     recommended_after: C-BUNDLE-02
+  - id: E-BUNDLE-01
+    title: Hosting and operations readiness
+    status: queued
+    purpose: Prepare reviewed hosting and operations readiness after Track C exit without enabling hosting, deployment, live access, public relay, downloads, execution, telemetry, accounts, or index mutation by default.
+    allowed_scope_summary: E hosting/ops contracts, docs, policies, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
+    gate: C-BUNDLE-03 passes with Track C exit gate PASS and next phase READY_FOR_E_BUNDLE_01; no production release, build output, hosted behavior, public relay, truth acceptance, or public/master index mutation.
+    task: .aide/queue/E-BUNDLE-01/task.yaml
+    recommended_after: C-BUNDLE-03
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

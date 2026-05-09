@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_smoke_evidence_packet.v0.json",
+  "title": "Eureka Native Smoke Evidence Packet v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "smoke_evidence_packet_id",
+    "lane_id",
+    "smoke_status",
+    "build_evidence_ref",
+    "checklist_ref",
+    "checks",
+    "fixture_inputs",
+    "snapshot_fixture_loaded",
+    "relay_fixture_loaded",
+    "action_manifest_displayed",
+    "blocked_actions_displayed",
+    "no_download_install_execute_verified",
+    "diagnostics_displayed",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_smoke_evidence_packet.v0"
+    },
+    "smoke_evidence_packet_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "smoke_status": {
+      "enum": [
+        "example_only",
+        "checklist_only",
+        "not_run",
+        "run_pass_future",
+        "run_fail_future",
+        "manual_required",
+        "not_evaluable"
+      ]
+    },
+    "build_evidence_ref": {
+      "type": "string"
+    },
+    "checklist_ref": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "fixture_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "snapshot_fixture_loaded": {
+      "type": "boolean"
+    },
+    "relay_fixture_loaded": {
+      "type": "boolean"
+    },
+    "action_manifest_displayed": {
+      "type": "boolean"
+    },
+    "blocked_actions_displayed": {
+      "type": "boolean"
+    },
+    "no_download_install_execute_verified": {
+      "type": "boolean"
+    },
+    "diagnostics_displayed": {
+      "type": "boolean"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "native_first_wave_integration_policy.v0",
+  "policy_id": "native_first_wave_integration_policy_v0",
+  "required_lanes": [
+    "win.winforms",
+    "win.win32",
+    "mac.appkit",
+    "mac.carbon"
+  ],
+  "required_boundary_checks": [
+    "no_release_binaries",
+    "no_build_outputs",
+    "no_downloads",
+    "no_installs",
+    "no_execution",
+    "no_public_index_mutation",
+    "no_master_index_mutation",
+    "no_truth_acceptance"
+  ],
+  "required_no_goals": [
+    "no live source calls",
+    "no hosted services",
+    "no production release claim"
+  ]
+}

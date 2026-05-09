@@ -1,0 +1,56 @@
+{
+  "schema_version": "native_first_wave_integration_audit.v0",
+  "audit_id": "track_c.first_wave.integration.v0",
+  "audited_lanes": [
+    "win.winforms",
+    "win.win32",
+    "mac.appkit",
+    "mac.carbon"
+  ],
+  "skeleton_status": "pass",
+  "matrix_status": "pass",
+  "c89_library_status": "pass",
+  "winforms_status": "fixture_readonly_proof",
+  "win32_status": "skeleton_readonly",
+  "appkit_status": "skeleton_readonly",
+  "carbon_status": "skeleton_readonly",
+  "packaging_manifest_status": "pass_manifest_only",
+  "smoke_evidence_status": "pass_checklist_only",
+  "build_evidence_status": "manual_required",
+  "boundary_status": "pass",
+  "blockers": [],
+  "warnings": [
+    "Old-toolchain builds remain manual/future.",
+    "No production release is claimed."
+  ],
+  "track_c_exit_gate": "PASS",
+  "next_phase_recommendation": "READY_FOR_E_BUNDLE_01",
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "native_smoke_evidence_accepts_truth": false,
+    "release_candidate_is_production_release": false,
+    "artifact_manifest_claims_unverified_binary": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

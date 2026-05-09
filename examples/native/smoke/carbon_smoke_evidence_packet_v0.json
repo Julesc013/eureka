@@ -1,0 +1,93 @@
+{
+  "schema_version": "native_smoke_evidence_packet.v0",
+  "smoke_evidence_packet_id": "native_smoke.carbon.v0",
+  "lane_id": "mac.carbon",
+  "smoke_status": "checklist_only",
+  "build_evidence_ref": "native_build_log.carbon.v0",
+  "checklist_ref": "native_manual_smoke_checklist.carbon.v0",
+  "checks": [
+    {
+      "check_id": "project_opens",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "project_builds",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "app_launches",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "snapshot_fixture_loads",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "relay_fixture_status_displays",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "search_list_displays",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "object_summary_displays",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "blocked_actions_display",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "no_download_install_execute_behavior",
+      "check_status": "manual_future"
+    },
+    {
+      "check_id": "about_diagnostics_display",
+      "check_status": "manual_future"
+    }
+  ],
+  "fixture_inputs": [
+    "examples/snapshots/fixtures/search_snapshot_input_v0.json",
+    "examples/relay/responses/status_response_v0.json",
+    "examples/actions/blocked/download_blocked_report_v0.json"
+  ],
+  "snapshot_fixture_loaded": false,
+  "relay_fixture_loaded": false,
+  "action_manifest_displayed": false,
+  "blocked_actions_displayed": false,
+  "no_download_install_execute_verified": true,
+  "diagnostics_displayed": false,
+  "warnings": [
+    "Smoke evidence is checklist-only; no native app was launched."
+  ],
+  "limitations": [
+    "Manual toolchain smoke evidence is future work.",
+    "This packet is not a release claim."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

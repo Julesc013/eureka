@@ -1,0 +1,8 @@
+{
+  "schema_version": "native_no_release_binary_policy.v0",
+  "policy_id": "native_no_release_binary_policy_v0",
+  "committed_binaries_allowed": false,
+  "build_outputs_allowed": false,
+  "dist_release_payloads_allowed": false,
+  "readme_placeholders_allowed_in_dist": true
+}

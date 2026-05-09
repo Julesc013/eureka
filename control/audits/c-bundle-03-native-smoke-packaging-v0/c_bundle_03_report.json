@@ -1,0 +1,124 @@
+{
+  "schema_version": "c_bundle_03_report.v0",
+  "status": "pass",
+  "task": "C-BUNDLE-03",
+  "track": "C",
+  "purpose": "native_smoke_evidence_packaging_track_c_audit",
+  "added_contracts": [
+    "contracts/native/native_packaging_manifest.v0.json",
+    "contracts/native/native_release_candidate_preview.v0.json",
+    "contracts/native/native_build_log_record.v0.json",
+    "contracts/native/native_smoke_evidence_packet.v0.json",
+    "contracts/native/native_first_wave_integration_audit.v0.json",
+    "contracts/native/native_manual_build_packet.v0.json",
+    "contracts/native/native_artifact_manifest.v1.json"
+  ],
+  "added_native_paths": [],
+  "added_scripts": [
+    "scripts/collect_native_smoke_evidence.py",
+    "scripts/build_native_packaging_manifest.py",
+    "scripts/validate_native_packaging_manifests.py",
+    "scripts/audit_track_c_integration.py",
+    "scripts/summarize_native_smoke_evidence.py"
+  ],
+  "added_docs": [
+    "docs/reference/NATIVE_PACKAGING_MANIFEST_CONTRACT.md",
+    "docs/reference/NATIVE_RELEASE_CANDIDATE_PREVIEW_CONTRACT.md",
+    "docs/reference/NATIVE_SMOKE_EVIDENCE_PACKET_CONTRACT.md",
+    "docs/reference/NATIVE_ARTIFACT_MANIFEST_CONTRACT.md",
+    "docs/reference/NATIVE_FIRST_WAVE_INTEGRATION_AUDIT_CONTRACT.md",
+    "docs/architecture/NATIVE_PACKAGING_MODEL.md",
+    "docs/architecture/NATIVE_FIRST_WAVE_INTEGRATION_MODEL.md",
+    "docs/operations/NATIVE_MANUAL_BUILD_PACKETS.md",
+    "docs/operations/NATIVE_SMOKE_EVIDENCE_REVIEW.md",
+    "docs/operations/NATIVE_PACKAGING_NO_BINARY_POLICY.md",
+    "docs/operations/TRACK_C_INTEGRATION_AUDIT.md",
+    "docs/operations/NATIVE_TO_HOSTING_HANDOFF.md"
+  ],
+  "added_inventories": [
+    "control/inventory/native/native_packaging_manifest_policy.json",
+    "control/inventory/native/native_release_candidate_policy.json",
+    "control/inventory/native/native_build_log_policy.json",
+    "control/inventory/native/native_smoke_evidence_policy.json",
+    "control/inventory/native/native_manual_build_packet_policy.json",
+    "control/inventory/native/native_first_wave_integration_policy.json",
+    "control/inventory/native/native_artifact_manifest_policy_v1.json",
+    "control/inventory/native/native_no_release_binary_policy.json",
+    "control/inventory/native/native_track_c_exit_policy.json"
+  ],
+  "added_examples": [
+    "examples/native/"
+  ],
+  "added_tests": [
+    "tests/native/test_native_packaging_manifests.py",
+    "tests/native/test_native_smoke_evidence.py",
+    "tests/native/test_native_track_c_integration.py",
+    "tests/operations/test_native_packaging_scripts.py"
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "contract_json": "pass",
+    "policy_json": "pass",
+    "audit_report_json": "pass",
+    "native_packaging_validator": "pass",
+    "collect_native_smoke_evidence_check": "pass",
+    "build_native_packaging_manifest_check": "pass",
+    "summarize_native_smoke_evidence_check": "pass",
+    "track_c_integration_audit_check": "pass",
+    "focused_native_packaging_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "architecture_boundaries": "pass",
+    "existing_c_d_j_i_g_f_h_core_validators": "pass",
+    "aide_lite_doctor_validate_test_selftest_eval_adapter": "pass",
+    "aide_lite_verify_review_pack": "warn_zero_errors",
+    "known_warnings": [
+      "H1 metadata wave audit remains PASS_WITH_WARNINGS as pre-existing advisory readiness posture.",
+      "AIDE Lite verify/review-pack remains WARN-only because the active handoff packet points at E-BUNDLE-01 after C-BUNDLE-03."
+    ]
+  },
+  "native_scope": {
+    "smoke_evidence_packets_added": true,
+    "packaging_manifests_added": true,
+    "artifact_manifests_added": true,
+    "release_candidate_previews_added": true,
+    "track_c_integration_audit_added": true,
+    "build_outputs_committed": false,
+    "release_binaries_committed": false,
+    "production_release_claimed": false,
+    "downloads_enabled": false,
+    "install_enabled": false,
+    "execute_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false
+  },
+  "truth_boundary": {
+    "native_smoke_evidence_accepts_truth": false,
+    "release_candidate_is_production_release": false,
+    "artifact_manifest_claims_unverified_binary": false,
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "track_c_exit_gate": "PASS",
+  "next_phase_recommendation": "READY_FOR_E_BUNDLE_01",
+  "next_task": "E-BUNDLE-01 - Hosting and operations readiness"
+}

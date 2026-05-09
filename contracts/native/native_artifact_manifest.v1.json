@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_artifact_manifest.v1.json",
+  "title": "Eureka Native Artifact Manifest v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "artifact_manifest_id",
+    "lane_id",
+    "artifact_status",
+    "artifact_name",
+    "artifact_kind",
+    "target_architecture",
+    "target_systems",
+    "build_host_ref",
+    "build_evidence_ref",
+    "fixity_future",
+    "produced_current",
+    "production_release_current",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_artifact_manifest.v1"
+    },
+    "artifact_manifest_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "artifact_status": {
+      "type": "string"
+    },
+    "artifact_name": {
+      "type": "string"
+    },
+    "artifact_kind": {
+      "type": "string"
+    },
+    "target_architecture": {
+      "type": "string"
+    },
+    "target_systems": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_host_ref": {
+      "type": "string"
+    },
+    "build_evidence_ref": {
+      "type": "string"
+    },
+    "fixity_future": {
+      "type": "object"
+    },
+    "produced_current": {
+      "const": false
+    },
+    "production_release_current": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

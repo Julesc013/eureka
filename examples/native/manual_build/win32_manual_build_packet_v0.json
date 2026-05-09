@@ -1,0 +1,47 @@
+{
+  "schema_version": "native_manual_build_packet.v0",
+  "manual_build_packet_id": "native_manual_build.win32.v0",
+  "lane_id": "win.win32",
+  "build_host_ref": "host.vs6_future",
+  "required_toolchain": "Visual C++ 6.0",
+  "setup_notes": [
+    "Use a reviewed host with the named toolchain already installed.",
+    "Do not install dependencies as part of this packet."
+  ],
+  "build_steps": [
+    "Open the lane project or documented placeholder.",
+    "Build locally without network restore.",
+    "Capture logs as audit evidence only."
+  ],
+  "smoke_steps": [
+    "Open local fixture inputs.",
+    "Confirm read-only search/object/source/action displays.",
+    "Confirm blocked actions are visible."
+  ],
+  "evidence_to_collect": [
+    "host/toolchain note",
+    "build log",
+    "smoke checklist",
+    "no binary commit confirmation"
+  ],
+  "expected_outputs": [
+    "manual build log record",
+    "smoke evidence packet",
+    "review note"
+  ],
+  "forbidden_actions": [
+    "download",
+    "install",
+    "execute retrieved artifact",
+    "upload",
+    "telemetry",
+    "public index mutation",
+    "master index mutation"
+  ],
+  "limitations": [
+    "Manual build packet is not a build pass."
+  ],
+  "notes": [
+    "Build evidence remains future until a reviewer records it."
+  ]
+}

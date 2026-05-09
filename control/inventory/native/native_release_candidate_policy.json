@@ -1,0 +1,7 @@
+{
+  "schema_version": "native_release_candidate_policy.v0",
+  "policy_id": "native_release_candidate_policy_v0",
+  "production_release_allowed_current": false,
+  "release_candidate_preview_only": true,
+  "review_required_before_release": true
+}

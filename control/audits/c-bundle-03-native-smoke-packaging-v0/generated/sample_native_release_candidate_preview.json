@@ -1,0 +1,55 @@
+{
+  "schema_version": "native_release_candidate_preview.v0",
+  "release_candidate_preview_id": "native_release_candidate.winforms.v0",
+  "lane_id": "win.winforms",
+  "preview_status": "preview_only",
+  "packaging_manifest_ref": "native_packaging.winforms.v0",
+  "build_evidence_refs": [
+    "native_build_log.winforms.v0"
+  ],
+  "smoke_evidence_refs": [
+    "native_smoke.winforms.v0"
+  ],
+  "artifact_manifest_refs": [
+    "native_artifact_manifest.winforms.v1"
+  ],
+  "release_readiness": "manual_build_required",
+  "blockers": [
+    "manual build evidence required",
+    "manual smoke evidence required",
+    "no release binary produced"
+  ],
+  "warnings": [
+    "Preview is not a production release."
+  ],
+  "limitations": [
+    "Release review is future work."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "release_candidate_is_production_release": false,
+    "artifact_manifest_claims_unverified_binary": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

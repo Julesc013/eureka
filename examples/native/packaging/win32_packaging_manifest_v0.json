@@ -1,0 +1,70 @@
+{
+  "schema_version": "native_packaging_manifest.v0",
+  "packaging_manifest_id": "native_packaging.win32.v0",
+  "lane_id": "win.win32",
+  "packaging_status": "manifest_only",
+  "packaging_scope": "manifest_only_no_binary_output",
+  "source_project_refs": [
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp"
+  ],
+  "expected_artifact_refs": [
+    "artifact.win.win32.exe_future"
+  ],
+  "artifact_name_patterns": [
+    "Eureka.Win32Ansi.exe.future"
+  ],
+  "build_host_refs": [
+    "host.vs6_future"
+  ],
+  "required_inputs": [
+    "snapshot fixture",
+    "relay fixture envelope",
+    "action manifest",
+    "blocked action report"
+  ],
+  "forbidden_inputs": [
+    "downloaded dependency",
+    "installer payload",
+    "credential",
+    "private user file",
+    "live source response"
+  ],
+  "required_smoke_evidence_refs": [
+    "native_smoke.win32.v0"
+  ],
+  "no_binary_outputs_current": true,
+  "production_release_current": false,
+  "limitations": [
+    "Packaging is a manifest preview only.",
+    "No release binary is produced."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "Win32 ANSI skeleton remains read-only and fixture-oriented."
+  ]
+}

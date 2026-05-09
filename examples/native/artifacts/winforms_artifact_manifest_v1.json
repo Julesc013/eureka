@@ -1,0 +1,49 @@
+{
+  "schema_version": "native_artifact_manifest.v1",
+  "artifact_manifest_id": "native_artifact_manifest.winforms.v1",
+  "lane_id": "win.winforms",
+  "artifact_status": "not_produced",
+  "artifact_name": "Eureka.WinForms.ReadOnlyProof.exe.future",
+  "artifact_kind": "windows_gui_executable_future",
+  "target_architecture": "x86_x64",
+  "target_systems": [
+    "Windows 7 SP1-present"
+  ],
+  "build_host_ref": "host.vs2022",
+  "build_evidence_ref": "native_build_log.winforms.v0",
+  "fixity_future": {
+    "available_current": false,
+    "reason": "no artifact produced"
+  },
+  "produced_current": false,
+  "production_release_current": false,
+  "limitations": [
+    "Manifest names a future artifact only.",
+    "No binary exists in this bundle."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}
