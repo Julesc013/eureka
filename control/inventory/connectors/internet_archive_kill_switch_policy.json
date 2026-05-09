@@ -1,0 +1,13 @@
+{
+  "schema_version": "internet_archive_kill_switch_policy.v0",
+  "source_id": "internet_archive",
+  "decision_status": "pending_operator_approval",
+  "kill_switch_name": "IA_METADATA_CONNECTOR_ENABLED",
+  "default_enabled": false,
+  "failure_mode": "fail_closed",
+  "live_access_approved": false,
+  "live_probe_enabled": false,
+  "source_sync_enabled": false,
+  "connector_runtime_enabled": false,
+  "operator_approval_required": true
+}

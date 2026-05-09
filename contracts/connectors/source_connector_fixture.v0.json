@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/source_connector_fixture.v0.json",
+  "title": "Eureka Source Connector Fixture v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "fixture_contract",
+  "x-live_call_allowed": false,
+  "x-network_allowed": false,
+  "x-external_api_allowed": false,
+  "required": [
+    "fixture_id",
+    "source_id",
+    "connector_id",
+    "fixture_kind",
+    "fixture_status",
+    "input_shape",
+    "expected_normalized_output_ref",
+    "public_safe",
+    "live_call_used",
+    "network_used",
+    "external_api_used",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "public_safe": {
+      "const": true
+    },
+    "live_call_used": {
+      "const": false
+    },
+    "network_used": {
+      "const": false
+    },
+    "external_api_used": {
+      "const": false
+    }
+  }
+}

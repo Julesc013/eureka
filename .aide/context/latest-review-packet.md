@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3912 chars, 978 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6679 chars, 1670 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,14 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `control/audits/sync-baseline-01-canonical-main-v0/README.md` (M; matches active task allowed path)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_inventory.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/generated_artifact_drift_report.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/guard_status.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/merge_actions.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/sync_baseline_01_report.json` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/H0-BUNDLE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `contracts/sources` (??; matches active task allowed path)
+- allowed: `control/audits/h0-bundle-01-source-os-foundation-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_access_mode_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_approval_gate_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_capability_ladder.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_expansion_no_live_call_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_family_registry.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_index_depth_registry.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_operation_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_registry_v2_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_trust_lane_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/SOURCE_FAMILY_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/architecture/SOURCE_OPERATING_SYSTEM.md` (??; matches active task allowed path)
+- allowed: `docs/operations/SOURCE_EXPANSION_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/SOURCE_POLICY_GATES.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SOURCE_CAPABILITY_CONTRACT.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 10; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -50,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5024
-- approx_tokens: 1256
+- chars: 6408
+- approx_tokens: 1602
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

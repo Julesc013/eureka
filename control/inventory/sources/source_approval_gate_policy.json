@@ -1,0 +1,39 @@
+{
+  "schema_version": "source_approval_gate_policy.v0",
+  "policy_id": "source_approval_gate_policy",
+  "current_h0_bundle_approves_live_access": false,
+  "required_for_future_live_access": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "user_agent_contact_decision",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl",
+    "kill_switch",
+    "output_path_policy",
+    "privacy_risk_review",
+    "rights_posture",
+    "review_gates",
+    "fixture_replay",
+    "dry_run_preflight",
+    "post_run_audit"
+  ],
+  "gates": [
+    {"schema_version": "source_approval_gate.v0", "gate_id": "source_policy_approval", "label": "Source Policy Approval", "required_for_live_access": true, "required_evidence": ["source policy decision"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "endpoint_allowlist", "label": "Endpoint Allowlist", "required_for_live_access": true, "required_evidence": ["allowed endpoint list", "forbidden endpoint list"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "user_agent_contact_decision", "label": "User-Agent Contact Decision", "required_for_live_access": true, "required_evidence": ["user agent", "contact or omission approval"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "rate_limit", "label": "Rate Limit", "required_for_live_access": true, "required_evidence": ["request budget"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "timeout", "label": "Timeout", "required_for_live_access": true, "required_evidence": ["timeout seconds"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "retry_budget", "label": "Retry Budget", "required_for_live_access": true, "required_evidence": ["retry policy"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "cache_ttl", "label": "Cache TTL", "required_for_live_access": true, "required_evidence": ["cache ttl or no-cache decision"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "kill_switch", "label": "Kill Switch", "required_for_live_access": true, "required_evidence": ["fail-closed kill switch"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "output_path_policy", "label": "Output Path Policy", "required_for_live_access": true, "required_evidence": ["allowed output roots"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "privacy_risk_review", "label": "Privacy Risk Review", "required_for_live_access": true, "required_evidence": ["privacy and risk posture"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "rights_posture", "label": "Rights Posture", "required_for_live_access": true, "required_evidence": ["rights posture"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "review_gates", "label": "Review Gates", "required_for_live_access": true, "required_evidence": ["human review requirements"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "fixture_replay", "label": "Fixture Replay", "required_for_live_access": true, "required_evidence": ["fixture replay results"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "dry_run_preflight", "label": "Dry Run Preflight", "required_for_live_access": true, "required_evidence": ["offline preflight"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []},
+    {"schema_version": "source_approval_gate.v0", "gate_id": "post_run_audit", "label": "Post Run Audit", "required_for_live_access": true, "required_evidence": ["post-run audit plan"], "approval_status": "not_approved_current", "default_blocks_live_access": true, "notes": []}
+  ]
+}

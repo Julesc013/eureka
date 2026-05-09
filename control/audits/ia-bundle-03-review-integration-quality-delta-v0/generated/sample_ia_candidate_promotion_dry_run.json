@@ -1,0 +1,212 @@
+{
+  "accepted_candidate_truth": false,
+  "accepted_evidence_truth": false,
+  "allowed_next_actions": [
+    "request_operator_policy_decision",
+    "request_h0_source_os_review"
+  ],
+  "blocked_reasons": [
+    "allowed identifier policy is not approved",
+    "cache_policy.cache_ttl or no-cache decision must be approved",
+    "endpoint_policy current behavior does not approve metadata read only",
+    "endpoint_policy.current_network_calls_allowed must be true",
+    "identifier is not approved: eureka-software-fixture",
+    "kill_switch_policy does not allow this one probe",
+    "live_probe_policy.approval_status is not approved",
+    "live_probe_policy.live_probe_enabled must be true",
+    "rate_limit_policy.contact_email is pending",
+    "rate_limit_policy.max_requests_per_minute must be a positive number",
+    "rate_limit_policy.proposed_user_agent is pending",
+    "rate_limit_policy.retry_policy is pending",
+    "rate_limit_policy.timeout_seconds must be a positive number",
+    "source_policy.live_access_approved must be true",
+    "source_policy.metadata_probe_approved must be true"
+  ],
+  "blockers": [
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.1.v0",
+      "blocker_summary": "allowed identifier policy is not approved"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.2.v0",
+      "blocker_summary": "cache_policy.cache_ttl or no-cache decision must be approved"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.3.v0",
+      "blocker_summary": "endpoint_policy current behavior does not approve metadata read only"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.4.v0",
+      "blocker_summary": "endpoint_policy.current_network_calls_allowed must be true"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.5.v0",
+      "blocker_summary": "identifier is not approved: eureka-software-fixture"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.6.v0",
+      "blocker_summary": "kill_switch_policy does not allow this one probe"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.7.v0",
+      "blocker_summary": "live_probe_policy.approval_status is not approved"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.8.v0",
+      "blocker_summary": "live_probe_policy.live_probe_enabled must be true"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.9.v0",
+      "blocker_summary": "rate_limit_policy.contact_email is pending"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.10.v0",
+      "blocker_summary": "rate_limit_policy.max_requests_per_minute must be a positive number"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.11.v0",
+      "blocker_summary": "rate_limit_policy.proposed_user_agent is pending"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.12.v0",
+      "blocker_summary": "rate_limit_policy.retry_policy is pending"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.13.v0",
+      "blocker_summary": "rate_limit_policy.timeout_seconds must be a positive number"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.14.v0",
+      "blocker_summary": "source_policy.live_access_approved must be true"
+    },
+    {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_resolution_allowed": false,
+      "blocker_category": "policy_block",
+      "blocker_id": "ia_review_blocker.15.v0",
+      "blocker_summary": "source_policy.metadata_probe_approved must be true"
+    }
+  ],
+  "candidate_promotion_dry_run_accepts_candidate": false,
+  "candidate_ref": "ia_metadata_review_candidate_preview",
+  "candidate_summary": "IA metadata review candidate dry-run only.",
+  "connector_id": "internet_archive_metadata_connector",
+  "evidence_review_entry_ref": "ia_evidence_review.8290dcb5b1fb.v0",
+  "forbidden_next_actions": [
+    "accept_candidate",
+    "accept_evidence",
+    "mutate_public_index",
+    "mutate_master_index",
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability"
+  ],
+  "limitations": [
+    "Promotion dry-run does not promote or accept a candidate.",
+    "Blocked IA-BUNDLE-02 outputs cannot support downstream promotion readiness."
+  ],
+  "master_index_mutated": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "model_provider_calls_made": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_used": false,
+    "review_queue_runtime_mutated": false,
+    "source_cache_runtime_mutated": false
+  },
+  "promotion_dry_run_id": "ia_candidate_promotion_dry_run.9b8b1fe49325.v0",
+  "promotion_dry_run_status": "policy_blocked",
+  "promotion_readiness": "not_ready_policy_blocked",
+  "public_index_mutated": false,
+  "review_required": true,
+  "schema_version": "internet_archive_candidate_promotion_dry_run.v0",
+  "source_cache_review_entry_ref": "ia_source_cache_review.59a3707e51e2.v0",
+  "source_id": "internet_archive",
+  "truth_boundary": {
+    "human_review_required_before_downstream_use": true,
+    "ia_candidate_promotion_dry_run_accepts_candidate": false,
+    "ia_evidence_review_entry_accepts_evidence": false,
+    "ia_pack_draft_is_accepted_pack": false,
+    "ia_postmortem_enables_future_connectors_automatically": false,
+    "ia_quality_delta_is_production_claim": false,
+    "ia_review_can_claim_malware_safety": false,
+    "ia_review_can_claim_rights_clearance": false,
+    "ia_review_can_claim_verified_installability": false,
+    "ia_review_can_mutate_master_index": false,
+    "ia_review_can_mutate_public_index": false,
+    "ia_review_output_is_public_truth": false,
+    "ia_source_cache_review_entry_accepts_source": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

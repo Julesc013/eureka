@@ -178,6 +178,26 @@ class GitTaskStateGuardTest(unittest.TestCase):
         self.assertIn("no_forbidden_private_paths", failed_checks)
         self.assertIn("no_untracked_secret_like_paths", failed_checks)
 
+    def test_merge_task_fails_when_main_has_unpushed_work(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            base = Path(temp_dir)
+            remote = base / "origin.git"
+            repo = base / "repo"
+            repo.mkdir()
+            self.assertEqual(subprocess.run(["git", "init", "--bare", str(remote)], text=True, capture_output=True).returncode, 0)
+            self.init_repo(repo)
+            self.attach_remote_and_push(repo, remote)
+            (repo / "main-only.txt").write_text("local main\n", encoding="utf-8")
+            self.assertEqual(self.git(repo, "add", "main-only.txt").returncode, 0)
+            self.assertEqual(self.git(repo, "commit", "-m", "local main work").returncode, 0)
+
+            result = self.run_guard(repo, "--mode", "merge-task", "--task-id", "SYNC-GUARD-01", "--allow-main", "--json")
+
+        payload = json.loads(result.stdout)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(payload["status"], "FAIL")
+        self.assertIn("no_unpushed_main_work", {check["check"] for check in payload["checks"] if check["status"] == "FAIL"})
+
 
 if __name__ == "__main__":
     unittest.main()

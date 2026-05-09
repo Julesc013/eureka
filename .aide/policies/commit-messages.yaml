@@ -12,6 +12,7 @@ subject:
     - aide
     - audit
     - chore
+    - connectors
     - contracts
     - docs
     - eval

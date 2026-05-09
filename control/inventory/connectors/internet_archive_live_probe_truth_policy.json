@@ -1,0 +1,19 @@
+{
+  "schema_version": "internet_archive_live_probe_truth_policy.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "live_probe_result_is_truth": false,
+  "live_probe_result_is_accepted_evidence": false,
+  "source_cache_candidate_is_accepted_source": false,
+  "evidence_candidate_preview_is_accepted_evidence": false,
+  "review_queue_seed_is_review_decision": false,
+  "live_probe_can_mutate_public_index": false,
+  "live_probe_can_mutate_master_index": false,
+  "live_probe_can_claim_rights_clearance": false,
+  "live_probe_can_claim_malware_safety": false,
+  "live_probe_can_claim_verified_installability": false,
+  "notes": [
+    "A live IA metadata response is a source observation only.",
+    "Truth acceptance remains review-gated and outside IA-BUNDLE-02."
+  ]
+}

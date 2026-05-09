@@ -1,0 +1,41 @@
+{
+  "schema_version": "source_capability_ladder.v0",
+  "policy_id": "source_capability_ladder",
+  "capability_grants_permission": false,
+  "ladder": [
+    "source_known",
+    "catalog_indexed",
+    "metadata_indexed",
+    "representation_indexed",
+    "content_indexed",
+    "action_indexed"
+  ],
+  "capabilities": [
+    {"schema_version": "source_capability.v0", "capability_id": "source_known", "label": "Source Known", "capability_kind": "ladder", "description": "A source is represented by reviewed registry metadata.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "catalog_indexed", "label": "Catalog Indexed", "capability_kind": "ladder", "description": "A catalog or list of source records can be represented.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "metadata_indexed", "label": "Metadata Indexed", "capability_kind": "ladder", "description": "Metadata records can be represented.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "representation_indexed", "label": "Representation Indexed", "capability_kind": "ladder", "description": "Representation/member metadata can be represented.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "content_indexed", "label": "Content Indexed", "capability_kind": "ladder", "description": "Content/text/OCR/manifest information can be represented after extraction policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "action_indexed", "label": "Action Indexed", "capability_kind": "ladder", "description": "Safe actions can be represented after action policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "has_documented_api", "label": "Has Documented API", "capability_kind": "descriptive", "description": "Source documents an API or endpoint contract.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_identifier_lookup", "label": "Supports Identifier Lookup", "capability_kind": "descriptive", "description": "Source can look up a known identifier under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_search", "label": "Supports Search", "capability_kind": "descriptive", "description": "Source exposes a search mechanism under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_pagination", "label": "Supports Pagination", "capability_kind": "descriptive", "description": "Source search/listing supports pages.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_bulk_dump", "label": "Supports Bulk Dump", "capability_kind": "descriptive", "description": "Source offers a metadata dump or bulk export under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_metadata_record_fetch", "label": "Supports Metadata Record Fetch", "capability_kind": "descriptive", "description": "Source can provide a metadata record for a known id.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_file_listing", "label": "Supports File Listing", "capability_kind": "descriptive", "description": "Source metadata may list files without granting download permission.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_member_listing", "label": "Supports Member Listing", "capability_kind": "descriptive", "description": "Source metadata may list members or representations.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_hashes", "label": "Supports Hashes", "capability_kind": "descriptive", "description": "Source metadata may include hashes.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_release_assets", "label": "Supports Release Assets", "capability_kind": "descriptive", "description": "Source metadata may describe release assets.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_reviews_or_notes", "label": "Supports Reviews Or Notes", "capability_kind": "descriptive", "description": "Source metadata may include user or maintainer notes.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_compatibility_notes", "label": "Supports Compatibility Notes", "capability_kind": "descriptive", "description": "Source may include compatibility notes.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_oai_pmh", "label": "Supports OAI-PMH", "capability_kind": "descriptive", "description": "Source may support OAI-PMH metadata harvesting under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_iiif", "label": "Supports IIIF", "capability_kind": "descriptive", "description": "Source may support IIIF manifests under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_cdx", "label": "Supports CDX", "capability_kind": "descriptive", "description": "Source may support CDX capture metadata under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_rss_atom_sitemap", "label": "Supports RSS Atom Sitemap", "capability_kind": "descriptive", "description": "Source may expose RSS, Atom, or sitemap metadata under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_directory_listing", "label": "Supports Directory Listing", "capability_kind": "descriptive", "description": "Source may expose directory listings under policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_auth_required_access_future", "label": "Supports Auth Required Access Future", "capability_kind": "future_descriptive", "description": "Source may require authenticated access in a future reviewed lane.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_local_only_import", "label": "Supports Local Only Import", "capability_kind": "descriptive", "description": "Source can be represented from local user-supplied data under privacy policy.", "permission_granted": false, "requires_policy_gate": true, "notes": []},
+    {"schema_version": "source_capability.v0", "capability_id": "supports_restricted_manifest_only", "label": "Supports Restricted Manifest Only", "capability_kind": "descriptive", "description": "Restricted source is represented only by manifest metadata.", "permission_granted": false, "requires_policy_gate": true, "notes": []}
+  ]
+}

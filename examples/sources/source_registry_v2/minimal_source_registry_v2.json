@@ -1,0 +1,76 @@
+{
+  "schema_version": "source_registry.v2",
+  "registry_id": "source_registry.eureka.h0.example.v2",
+  "registry_label": "Eureka H0 Source Registry Example",
+  "registry_status": "no_live_source_access",
+  "registry_scope": "H0 policy and planning registry only",
+  "source_records": [
+    {"source_id": "internet_archive", "source_record_ref": "examples/sources/source_records/internet_archive_source_v2.json"},
+    {"source_id": "wayback_cdx_memento", "source_record_ref": "examples/sources/source_records/wayback_source_v2.json"},
+    {"source_id": "github_releases", "source_record_ref": "examples/sources/source_records/github_releases_source_v2.json"},
+    {"source_id": "pypi", "source_record_ref": "examples/sources/source_records/pypi_source_v2.json"},
+    {"source_id": "npm", "source_record_ref": "examples/sources/source_records/npm_source_v2.json"},
+    {"source_id": "software_heritage", "source_record_ref": "examples/sources/source_records/software_heritage_source_v2.json"},
+    {"source_id": "retro_community_example", "source_record_ref": "examples/sources/source_records/retro_community_source_example_v2.json"},
+    {"source_id": "policy_blocked_source_example", "source_record_ref": "examples/sources/source_records/policy_blocked_source_example_v2.json"}
+  ],
+  "source_families": [
+    "archive_metadata",
+    "web_archive",
+    "package_registry",
+    "code_source_release_host",
+    "retro_community_archive",
+    "source_discovery_scorecard"
+  ],
+  "source_capability_refs": [
+    "source_known",
+    "catalog_indexed",
+    "metadata_indexed",
+    "supports_identifier_lookup",
+    "supports_search",
+    "supports_metadata_record_fetch"
+  ],
+  "source_policy_refs": [
+    "control/inventory/sources/source_registry_v2_policy.json",
+    "control/inventory/sources/source_expansion_no_live_call_policy.json"
+  ],
+  "index_depth_policy_ref": "control/inventory/sources/source_index_depth_registry.json",
+  "trust_lane_policy_ref": "control/inventory/sources/source_trust_lane_policy.json",
+  "approval_gate_policy_ref": "control/inventory/sources/source_approval_gate_policy.json",
+  "source_operation_policy_ref": "control/inventory/sources/source_operation_policy.json",
+  "source_expansion_policy_ref": "control/inventory/sources/source_expansion_no_live_call_policy.json",
+  "limitations": [
+    "Example registry only.",
+    "No source sync or live source access is enabled."
+  ],
+  "truth_boundary": {
+    "source_registry_is_public_truth": false,
+    "source_registry_accepts_evidence": false,
+    "source_registry_grants_live_access": false,
+    "source_registry_can_mutate_public_index": false,
+    "source_registry_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_hosting": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "no live source calls",
+    "no source sync",
+    "no connector runtime",
+    "no public or master index mutation",
+    "no truth acceptance"
+  ],
+  "notes": [
+    "H0 registry v2 is descriptive and policy-gated."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "source_expansion_no_live_call_policy.v0",
+  "policy_id": "source_expansion_no_live_call_policy",
+  "h0_bundle_01_enables_live_source_calls": false,
+  "source_registry_entries_are_descriptive": true,
+  "new_source_records_grant_permission": false,
+  "future_tasks_must_explicitly_approve_fixture_or_live_behavior": true,
+  "forbidden_current": [
+    "live_source_calls",
+    "external_api_calls",
+    "network_calls",
+    "live_probes",
+    "source_sync",
+    "downloads",
+    "scraping",
+    "crawling",
+    "public_query_fanout",
+    "public_index_mutation",
+    "master_index_mutation",
+    "truth_acceptance"
+  ],
+  "notes": [
+    "H0-BUNDLE-01 is registry, contract, and policy foundation only.",
+    "Future H0-BUNDLE-02 or H1 tasks must explicitly approve any fixture/live behavior."
+  ]
+}

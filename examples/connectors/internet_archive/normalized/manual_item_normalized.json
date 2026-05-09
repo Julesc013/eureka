@@ -1,0 +1,129 @@
+{
+  "access_path_candidates": [
+    {
+      "access_path_kind": "internet_archive_item_metadata_future",
+      "access_path_ref": "ia:item:eureka-manual-fixture",
+      "download_approved": false,
+      "file_fetch_approved": false,
+      "live_access_approved": false,
+      "metadata_only": true
+    }
+  ],
+  "collection": [
+    "manuals",
+    "eureka-synthetic-fixtures"
+  ],
+  "connector_id": "internet_archive_metadata_connector",
+  "creator": [
+    "Eureka Fixture Documentation Team"
+  ],
+  "date": "2001",
+  "description_summary": "Synthetic manual item metadata for testing IA metadata normalization.",
+  "file_candidates": [
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "Text PDF",
+      "metadata_only": true,
+      "name": "eureka-manual-fixture.pdf",
+      "size": 8192,
+      "source_member_ref": "ia:file:eureka-manual-fixture.pdf",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "file_count": 1,
+  "file_summary": {
+    "download_approved": false,
+    "file_count": 1,
+    "formats": [
+      "Text PDF"
+    ],
+    "member_names": [
+      "eureka-manual-fixture.pdf"
+    ],
+    "metadata_only": true,
+    "total_size_bytes": 8192
+  },
+  "item_identifier": "eureka-manual-fixture",
+  "limitations": [
+    "synthetic manual metadata fixture",
+    "text item metadata only",
+    "not rights clearance"
+  ],
+  "mediatype": "texts",
+  "metadata_fields": {
+    "language": [
+      "eng"
+    ]
+  },
+  "notes": [
+    "Normalized from a committed public-safe fixture.",
+    "No Internet Archive source access, API call, file fetch, download, or scraping occurred."
+  ],
+  "policy": {
+    "blocked_current": false,
+    "blocked_reasons": [],
+    "download_approved": false,
+    "file_fetch_approved": false,
+    "live_access_approved": false,
+    "metadata_probe_approved": false,
+    "public_query_fanout_approved": false,
+    "scraping_approved": false
+  },
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "live_connector_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "source_cache_runtime_mutated": false
+  },
+  "publicdate": "2026-05-09",
+  "rights_risk_posture": {
+    "download_or_file_fetch_approved": false,
+    "malware_safety_claimed": false,
+    "metadata_only": true,
+    "review_required": true,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "schema_version": "internet_archive_metadata_normalized_record.v0",
+  "source_id": "internet_archive",
+  "source_locator": "ia:item:eureka-manual-fixture",
+  "source_native_id": "eureka-manual-fixture",
+  "title": "Eureka Synthetic Manual Fixture",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_truth": false,
+    "claimed_exhaustive_search": false,
+    "ia_metadata_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_observation_only": true,
+    "verified_installability_claimed": false
+  }
+}

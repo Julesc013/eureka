@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_family.v0",
+  "title": "Eureka Source Family",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "family_id",
+    "label",
+    "description",
+    "preferred_adapter_families",
+    "allowed_default_depth",
+    "typical_trust_lane",
+    "typical_risk_posture",
+    "default_live_access_posture",
+    "default_download_posture",
+    "default_review_requirements",
+    "no_goals"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_family.v0"
+    },
+    "family_id": {
+      "type": "string"
+    },
+    "allowed_default_depth": {
+      "type": "string"
+    },
+    "default_live_access_posture": {
+      "type": "string"
+    },
+    "default_download_posture": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

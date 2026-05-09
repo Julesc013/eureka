@@ -1,0 +1,76 @@
+{
+  "blocked_reasons": [
+    "allowed identifier policy is not approved",
+    "cache_policy.cache_ttl or no-cache decision must be approved",
+    "endpoint_policy current behavior does not approve metadata read only",
+    "endpoint_policy.current_network_calls_allowed must be true",
+    "identifier is not approved: eureka-software-fixture",
+    "kill_switch_policy does not allow this one probe",
+    "live_probe_policy.approval_status is not approved",
+    "live_probe_policy.live_probe_enabled must be true",
+    "rate_limit_policy.contact_email is pending",
+    "rate_limit_policy.max_requests_per_minute must be a positive number",
+    "rate_limit_policy.proposed_user_agent is pending",
+    "rate_limit_policy.retry_policy is pending",
+    "rate_limit_policy.timeout_seconds must be a positive number",
+    "source_policy.live_access_approved must be true",
+    "source_policy.metadata_probe_approved must be true"
+  ],
+  "claims_external_superiority": false,
+  "claims_production_readiness": false,
+  "connector_id": "internet_archive_metadata_connector",
+  "delta_status": "blocked_dry_run",
+  "known_gaps": [
+    "approved_identifier_policy_pending",
+    "cache_policy_pending",
+    "ia_live_probe_operator_approval_missing",
+    "user_agent_contact_policy_pending"
+  ],
+  "limitations": [
+    "Quality delta is local audit evidence only.",
+    "Blocked IA live approval means no completed live metadata response was measured.",
+    "No external superiority or production search quality claim is made."
+  ],
+  "metric_scope": "local_fixture_or_blocked_probe_only",
+  "metrics": {
+    "blocked_reason_count": 15,
+    "candidate_count_delta": 1,
+    "connector_error_count": 0,
+    "evidence_candidate_count_delta": 1,
+    "known_gap_delta": 4,
+    "near_match_delta_fixture_only": 0,
+    "pack_draft_preview_count": 1,
+    "result_presence_delta_fixture_only": "blocked_probe_output_present",
+    "review_entry_count_delta": 2,
+    "source_cache_record_count_delta": 1
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "ia_quality_delta.e8618a2f1941.v0",
+  "schema_version": "internet_archive_quality_delta_report.v0",
+  "source_id": "internet_archive",
+  "truth_boundary": {
+    "ia_candidate_promotion_dry_run_accepts_candidate": false,
+    "ia_evidence_review_entry_accepts_evidence": false,
+    "ia_pack_draft_is_accepted_pack": false,
+    "ia_postmortem_enables_future_connectors_automatically": false,
+    "ia_quality_delta_is_production_claim": false,
+    "ia_review_output_is_public_truth": false,
+    "ia_source_cache_review_entry_accepts_source": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

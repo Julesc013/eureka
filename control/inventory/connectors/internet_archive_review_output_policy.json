@@ -1,0 +1,37 @@
+{
+  "schema_version": "internet_archive_review_output_policy.v0",
+  "policy_id": "internet_archive_review_output_policy",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "allowed_output_types": [
+    "ia_source_cache_review_entry",
+    "ia_evidence_candidate_review_entry",
+    "ia_candidate_promotion_dry_run",
+    "ia_pack_draft_preview",
+    "ia_pack_export_preview",
+    "ia_quality_delta_report",
+    "ia_connector_postmortem",
+    "h0_readiness_recommendation"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim",
+    "downloaded_file",
+    "item_file_payload"
+  ],
+  "review_output_is_candidate_only": true,
+  "pack_draft_is_preview_only": true,
+  "quality_delta_is_local_measurement_only": true,
+  "postmortem_is_recommendation_only": true,
+  "notes": [
+    "Outputs are audit and review material, not accepted product records."
+  ]
+}

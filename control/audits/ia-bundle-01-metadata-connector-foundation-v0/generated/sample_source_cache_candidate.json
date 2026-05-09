@@ -1,0 +1,75 @@
+{
+  "accepted_source_truth": false,
+  "candidate_id": "source_cache_candidate.internet_archive.eureka-software-fixture.v0",
+  "mapping_status": "preview_only_fixture",
+  "notes": [
+    "Preview shape only; no source cache runtime write occurred.",
+    "No direct truth conversion is allowed."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "live_connector_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "source_cache_runtime_mutated": false
+  },
+  "schema_version": "internet_archive_source_cache_candidate_preview.v0",
+  "source_cache_runtime_mutated": false,
+  "source_cache_write_enabled": false,
+  "source_coverage_summary": {
+    "file_count": 2,
+    "file_names": [
+      "eureka-software-fixture_meta.xml",
+      "eureka-software-fixture.zip"
+    ],
+    "formats": [
+      "Metadata",
+      "ZIP"
+    ]
+  },
+  "source_id": "internet_archive",
+  "source_limitations": [
+    "synthetic software metadata fixture",
+    "file list is metadata only",
+    "not a download or installability claim"
+  ],
+  "source_locator": "ia:item:eureka-software-fixture",
+  "source_metadata_summary": {
+    "collection": [
+      "software",
+      "eureka-synthetic-fixtures"
+    ],
+    "creator": [
+      "Eureka Fixture Lab"
+    ],
+    "date": "1999",
+    "description_summary": "Synthetic software item metadata with a small file listing for normalizer tests.",
+    "mediatype": "software",
+    "publicdate": "2026-05-09",
+    "title": "Eureka Synthetic Software Fixture"
+  },
+  "source_native_id": "eureka-software-fixture",
+  "truth_boundary": {
+    "accepted_evidence_truth": false,
+    "ia_metadata_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

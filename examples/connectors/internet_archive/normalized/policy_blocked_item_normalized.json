@@ -1,0 +1,126 @@
+{
+  "access_path_candidates": [
+    {
+      "access_path_kind": "internet_archive_item_metadata_future",
+      "access_path_ref": "ia:item:eureka-policy-blocked-fixture",
+      "download_approved": false,
+      "file_fetch_approved": false,
+      "live_access_approved": false,
+      "metadata_only": true
+    }
+  ],
+  "collection": [
+    "eureka-synthetic-fixtures"
+  ],
+  "connector_id": "internet_archive_metadata_connector",
+  "creator": [],
+  "date": null,
+  "description_summary": "Synthetic fixture used to prove policy-blocked records remain blocked in IA-BUNDLE-01.",
+  "file_candidates": [
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "Metadata",
+      "metadata_only": true,
+      "name": "policy-blocked-item_meta.xml",
+      "size": 1024,
+      "source_member_ref": "ia:file:policy-blocked-item_meta.xml",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "file_count": 1,
+  "file_summary": {
+    "download_approved": false,
+    "file_count": 1,
+    "formats": [
+      "Metadata"
+    ],
+    "member_names": [
+      "policy-blocked-item_meta.xml"
+    ],
+    "metadata_only": true,
+    "total_size_bytes": 1024
+  },
+  "item_identifier": "eureka-policy-blocked-fixture",
+  "limitations": [
+    "synthetic policy-blocked metadata fixture",
+    "represents a record that should not proceed to live probing",
+    "not a rights, safety, or access decision",
+    "blocked by fixture policy"
+  ],
+  "mediatype": "texts",
+  "metadata_fields": {},
+  "notes": [
+    "Normalized from a committed public-safe fixture.",
+    "No Internet Archive source access, API call, file fetch, download, or scraping occurred."
+  ],
+  "policy": {
+    "blocked_current": true,
+    "blocked_reasons": [
+      "operator approval missing",
+      "source policy pending"
+    ],
+    "download_approved": false,
+    "file_fetch_approved": false,
+    "live_access_approved": false,
+    "metadata_probe_approved": false,
+    "public_query_fanout_approved": false,
+    "scraping_approved": false
+  },
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "live_connector_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "source_cache_runtime_mutated": false
+  },
+  "publicdate": "2026-05-09",
+  "rights_risk_posture": {
+    "download_or_file_fetch_approved": false,
+    "malware_safety_claimed": false,
+    "metadata_only": true,
+    "review_required": true,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "schema_version": "internet_archive_metadata_normalized_record.v0",
+  "source_id": "internet_archive",
+  "source_locator": "ia:item:eureka-policy-blocked-fixture",
+  "source_native_id": "eureka-policy-blocked-fixture",
+  "title": "Eureka Policy Blocked Fixture",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_truth": false,
+    "claimed_exhaustive_search": false,
+    "ia_metadata_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_observation_only": true,
+    "verified_installability_claimed": false
+  }
+}

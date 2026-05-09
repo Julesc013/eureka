@@ -1,0 +1,47 @@
+{
+  "schema_version": "source_access_mode_policy.v0",
+  "policy_id": "source_access_mode_policy",
+  "current_default_access_mode": "committed_fixture_only",
+  "access_modes": [
+    "no_autonomous_access",
+    "committed_fixture_only",
+    "manual_human_only",
+    "approved_metadata_probe",
+    "approved_identifier_lookup",
+    "approved_api_search",
+    "approved_bulk_metadata",
+    "approved_static_dump",
+    "approved_common_crawl_or_archive_trace",
+    "approved_directory_listing",
+    "local_user_supplied",
+    "authenticated_user_supplied_future",
+    "restricted_manifest_only",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "rights_blocked",
+    "risk_blocked"
+  ],
+  "access_modes_approved_current": [
+    "no_autonomous_access",
+    "committed_fixture_only",
+    "manual_human_only",
+    "local_user_supplied",
+    "restricted_manifest_only",
+    "permission_needed",
+    "robots_blocked",
+    "terms_blocked",
+    "rights_blocked",
+    "risk_blocked"
+  ],
+  "live_access_modes_require_future_gate": [
+    "approved_metadata_probe",
+    "approved_identifier_lookup",
+    "approved_api_search",
+    "approved_bulk_metadata",
+    "approved_static_dump",
+    "approved_common_crawl_or_archive_trace",
+    "approved_directory_listing",
+    "authenticated_user_supplied_future"
+  ]
+}

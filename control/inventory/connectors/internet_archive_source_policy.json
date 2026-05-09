@@ -1,0 +1,31 @@
+{
+  "schema_version": "internet_archive_source_policy.v0",
+  "source_id": "internet_archive",
+  "source_family": "archive_metadata",
+  "source_classification": "preservation_source_metadata_provider_not_canonical_truth",
+  "connector_scope": "metadata_only_foundation",
+  "current_status": "fixture_only",
+  "live_access_approved": false,
+  "metadata_probe_approved": false,
+  "file_download_approved": false,
+  "item_file_fetch_approved": false,
+  "scraping_approved": false,
+  "public_query_fanout_approved": false,
+  "source_cache_write_approved_current": "fixture_only",
+  "evidence_candidate_generation_approved_current": "fixture_only",
+  "human_review_required": true,
+  "operator_approval_required_for_live_access": true,
+  "ia_metadata_is_truth": false,
+  "no_goals": [
+    "no live Internet Archive access",
+    "no downloads",
+    "no item file fetches",
+    "no scraping or crawling",
+    "no public-query fanout",
+    "no rights clearance",
+    "no malware safety claim",
+    "no verified installability",
+    "no public-index mutation",
+    "no master-index mutation"
+  ]
+}

@@ -52,7 +52,8 @@
     "current branch is main for normal task work",
     "unpushed commits on main",
     "secret-like paths staged or untracked",
-    "branch behind upstream"
+    "branch behind upstream",
+    "local main has merge commits that have not been pushed to origin/main"
   ],
   "allowed_overrides": [
     "--allow-main for explicit integration, rescue, or repo sync guard work",
@@ -75,6 +76,7 @@
     "rewrite shared history"
   ],
   "branch_naming_policy_ref": "control/inventory/git/task_branch_policy.json",
+  "branch_role_policy_ref": "control/inventory/git/branch_role_policy.json",
   "workflow_command_refs": [
     "AIDE-SYNC-01",
     "AIDE-MERGE-01",
@@ -96,7 +98,7 @@
     "no automatic fetch",
     "no automatic merge",
     "no automatic branch creation",
-    "no automatic push",
+    "no guard-side-effect push",
     "no conflict resolution",
     "no product runtime behavior change"
   ],

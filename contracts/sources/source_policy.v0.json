@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_policy.v0",
+  "title": "Eureka Source Policy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "source_id",
+    "policy_state",
+    "access_modes",
+    "approval_gate_refs",
+    "live_access_approved",
+    "source_sync_enabled",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_policy.v0"
+    },
+    "live_access_approved": {
+      "const": false
+    },
+    "source_sync_enabled": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

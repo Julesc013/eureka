@@ -1,0 +1,22 @@
+{
+  "schema_version": "internet_archive_review_truth_policy.v0",
+  "policy_id": "internet_archive_review_truth_policy",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "ia_review_output_is_truth": false,
+  "ia_source_cache_review_entry_accepts_source": false,
+  "ia_evidence_review_entry_accepts_evidence": false,
+  "ia_candidate_promotion_dry_run_accepts_candidate": false,
+  "ia_pack_draft_is_accepted_pack": false,
+  "ia_quality_delta_is_production_claim": false,
+  "ia_postmortem_enables_future_connectors_automatically": false,
+  "ia_review_can_mutate_public_index": false,
+  "ia_review_can_mutate_master_index": false,
+  "ia_review_can_claim_rights_clearance": false,
+  "ia_review_can_claim_malware_safety": false,
+  "ia_review_can_claim_verified_installability": false,
+  "human_review_required_before_downstream_use": true,
+  "notes": [
+    "IA review outputs remain review material. They do not accept truth or approve future connectors."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "internet_archive_live_probe_result.v0",
+  "probe_id": "ia_live_probe.14ce74d488a1.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "identifier": "eureka-software-fixture",
+  "endpoint": "https://archive.org/metadata/eureka-software-fixture",
+  "result_status": "completed_mock_example",
+  "attempted": true,
+  "blocked_by_policy": false,
+  "blocked_reasons": [],
+  "request_count": 1,
+  "network_used": true,
+  "http_method": "GET",
+  "response_metadata": {
+    "status": 200,
+    "content_type": "application/json",
+    "final_url": "https://archive.org/metadata/eureka-software-fixture",
+    "response_sha256": "example-only-not-live-evidence"
+  },
+  "response_payload": {
+    "metadata": {
+      "identifier": "eureka-software-fixture",
+      "title": "Eureka Software Fixture",
+      "description": "Small public-safe metadata example for IA live-probe tests.",
+      "mediatype": "software",
+      "collection": [
+        "opensource"
+      ],
+      "creator": [
+        "Eureka Fixture Maintainers"
+      ],
+      "date": "1999",
+      "publicdate": "2026-01-01 00:00:00"
+    },
+    "files": [
+      {
+        "name": "README.txt",
+        "format": "Text",
+        "size": "128"
+      }
+    ]
+  },
+  "source_observation_only": true,
+  "truth_boundary": {
+    "live_probe_result_is_truth": false,
+    "live_probe_result_is_accepted_evidence": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "review_queue_seed_is_review_decision": false,
+    "live_probe_can_mutate_public_index": false,
+    "live_probe_can_mutate_master_index": false,
+    "live_probe_can_claim_rights_clearance": false,
+    "live_probe_can_claim_malware_safety": false,
+    "live_probe_can_claim_verified_installability": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "metadata_endpoint_only": true,
+    "single_identifier_only": true,
+    "network_allowed_for_this_probe": true
+  },
+  "notes": [
+    "Committed example uses mock metadata and is not evidence of a real IA live call."
+  ]
+}

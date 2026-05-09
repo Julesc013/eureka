@@ -1,54 +1,70 @@
 {
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
-  "generated_at_note": "codex_generated_from_repo_local_aide_context",
+  "generated_at_note": "codex_updated_after_h0_bundle_01",
   "primary_task_packet": ".aide/context/latest-task-packet.md",
   "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
   "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "current_queue_item": "TRACK-A-01",
-  "completed_queue_item": "EUREKA-CONVERGE-01",
+  "current_queue_item": "H0-BUNDLE-01",
+  "completed_queue_item": "H0-BUNDLE-01",
+  "next_recommended_queue_item": "H0-BUNDLE-02",
+  "side_lanes": {
+    "human_obs_review": "parallel_side_lane",
+    "ia_approval_01": "operator_gated_side_lane"
+  },
   "latest_packet_budget": {
-    "approx_tokens": 1209,
+    "approx_tokens": 1670,
     "budget_status": "within_budget",
-    "chars": 4836,
-    "method": "chars / 4 approximation",
+    "method": "aide_lite_validate estimate",
     "path": ".aide/context/latest-task-packet.md"
   },
   "validation": {
-    "doctor": "pass",
-    "validate": "pass",
-    "test": "pass",
-    "selftest": "pass",
-    "verify": "warn_only",
-    "eval_list": "pass",
-    "eval_run": "pass",
-    "adapter_validate": "pass",
-    "architecture_boundaries": "pass"
+    "source_os_foundation_validator": "pass",
+    "source_registry_summary_check": "pass",
+    "focused_source_os_tests": "pass_19_tests",
+    "full_unittest_discovery": "pass_2603_tests",
+    "architecture_boundaries": "pass",
+    "ia_readiness_polish_validator": "pass",
+    "ia_metadata_connector_foundation_validator": "pass",
+    "ia_metadata_live_probe_validator": "pass",
+    "ia_review_integration_validator": "pass",
+    "local_foundry_validators": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass_with_existing_optional_reference_warnings",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_eval_run": "pass_14_golden_tasks",
+    "aide_verify": "warn_zero_errors",
+    "aide_review_pack": "pass",
+    "aide_adapter_validate": "pass"
   },
   "known_warn_only_conditions": [
-    "optional AIDE controller recommendations report may be absent",
-    "optional AIDE gateway status report may be absent",
-    "optional AIDE provider status report may be absent",
-    "future queue packet references may warn until their evidence exists",
-    "pre-commit diff-scope warnings may appear while current evidence is uncommitted and the active queue points to the next task"
+    "IA live probe remains blocked until IA-APPROVAL-01 makes an explicit operator decision",
+    "AIDE verify remains WARN-only for future H0-BUNDLE-02 placeholder references and optional AIDE status files"
   ],
   "product_boundary": {
     "changed_product_behavior": false,
     "hosted_backend_claimed": false,
     "live_probes_enabled": false,
+    "source_sync_enabled": false,
     "downloads_enabled": false,
     "uploads_enabled": false,
     "accounts_enabled": false,
     "telemetry_enabled": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
     "aide_metadata_is_product_runtime": false
   },
   "next_spine": [
-    "TRACK-A",
-    "MANUAL-OBSERVATION-BATCH-0",
-    "TRACK-B",
-    "TRACK-D",
-    "TRACK-C",
-    "TRACK-E"
+    "H0 connector interface and replay envelope",
+    "H1 first metadata connector wave",
+    "F extraction",
+    "G ranking/explanation/search quality",
+    "I packs/federation hardening",
+    "J0 safe actions/manifests",
+    "D snapshot/relay",
+    "E hosting/ops",
+    "C native clients"
   ],
   "future_agent_read_order": [
     ".aide/context/latest-task-packet.md",
@@ -65,16 +81,9 @@
     "preserve_token_discipline": true,
     "keep_aide_as_governance_not_product_truth": true
   },
-  "governance_standards": {
-    "commit_message_standard": ".aide/reports/eureka-commit-message-standard.md",
-    "task_resumption_standard": ".aide/reports/eureka-task-resumption-standard.md",
-    "golden_task_count": 14
-  },
   "risks": [
-    "no exact tokenizer or provider billing proof",
-    "no arbitrary Eureka product-quality claim",
-    "verify WARN-only optional/future warnings may remain",
-    "future product implementation remains gated by staged evidence",
-    "AIDE Lite target repairs may need upstream synchronization before broad pack reuse"
+    "H0-BUNDLE-02 connector-interface details are still future work",
+    "operator live-probe approval remains pending",
+    "Source OS records are examples and policy vocabulary only, not active source coverage"
   ]
 }

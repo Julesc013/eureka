@@ -1,0 +1,17 @@
+{
+  "schema_version": "source_index_depth_registry.v0",
+  "policy_id": "source_index_depth_registry",
+  "rules": [
+    "A source can be known at D0 or D1 without being deeply indexed.",
+    "D4 and D5 require explicit extraction or action policies.",
+    "Action-indexed does not imply download, install, or execute permission by default."
+  ],
+  "depths": [
+    {"schema_version": "source_index_depth.v0", "depth_id": "D0_source_known", "order": 0, "meaning": "Source identity and policy posture are known.", "allowed_record_types": ["source_record"], "required_policy_gates": ["source_policy"], "required_review_gates": ["source_record_review"], "forbidden_claims": ["coverage", "metadata_completeness", "truth"], "example_outputs": ["source record"], "limitations": ["No catalog or metadata depth implied."]},
+    {"schema_version": "source_index_depth.v0", "depth_id": "D1_catalog_indexed", "order": 1, "meaning": "Catalog-level source listing is represented.", "allowed_record_types": ["source_record", "catalog_summary"], "required_policy_gates": ["source_policy", "catalog_policy"], "required_review_gates": ["source_record_review", "catalog_review"], "forbidden_claims": ["deep_metadata", "content", "exhaustive_coverage"], "example_outputs": ["catalog summary"], "limitations": ["Catalog may be partial."]},
+    {"schema_version": "source_index_depth.v0", "depth_id": "D2_metadata_indexed", "order": 2, "meaning": "Metadata records are represented.", "allowed_record_types": ["source_record", "metadata_record", "source_cache_candidate"], "required_policy_gates": ["source_policy", "metadata_policy"], "required_review_gates": ["metadata_review", "source_cache_review"], "forbidden_claims": ["accepted_evidence", "rights_clearance", "malware_safety"], "example_outputs": ["metadata candidate"], "limitations": ["Metadata is source observation only."]},
+    {"schema_version": "source_index_depth.v0", "depth_id": "D3_representation_indexed", "order": 3, "meaning": "Representation/member metadata can be represented.", "allowed_record_types": ["representation_candidate", "member_listing"], "required_policy_gates": ["source_policy", "member_listing_policy"], "required_review_gates": ["representation_review"], "forbidden_claims": ["download_availability_proof", "installability"], "example_outputs": ["member listing candidate"], "limitations": ["Member listing is not file access permission."]},
+    {"schema_version": "source_index_depth.v0", "depth_id": "D4_content_indexed", "order": 4, "meaning": "Content, text, OCR, manifest, or extracted member information can be represented.", "allowed_record_types": ["content_summary", "extraction_summary"], "required_policy_gates": ["source_policy", "extraction_policy"], "required_review_gates": ["content_review", "rights_review"], "forbidden_claims": ["rights_clearance", "malware_safety", "exhaustive_content"], "example_outputs": ["content summary candidate"], "limitations": ["Extraction policy is required."]},
+    {"schema_version": "source_index_depth.v0", "depth_id": "D5_action_indexed", "order": 5, "meaning": "Safe action descriptors can be represented.", "allowed_record_types": ["action_manifest", "acquisition_manifest"], "required_policy_gates": ["source_policy", "action_policy"], "required_review_gates": ["action_review", "rights_review", "risk_review"], "forbidden_claims": ["download_permission", "install_permission", "execution_permission"], "example_outputs": ["action manifest draft"], "limitations": ["Actions are manifests only by default."]}
+  ]
+}

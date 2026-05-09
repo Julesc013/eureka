@@ -1,0 +1,19 @@
+{
+  "schema_version": "internet_archive_live_probe_review_policy.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "review_required_before_source_cache_persistence": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "review_seed_is_decision": false,
+  "notes": [
+    "Live probe output can seed review only.",
+    "No review queue runtime write is enabled by IA-BUNDLE-02."
+  ]
+}

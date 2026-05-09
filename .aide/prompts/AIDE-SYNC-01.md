@@ -14,6 +14,13 @@ Validate, commit, and push the current task branch. Do not merge to `main`.
 4. Commit with the structured commit standard.
 5. Push the current branch normally with upstream if needed.
 
+If the branch is ready to become shared canonical work, continue with
+`AIDE-MERGE-01` on the integration machine. Quick single-machine branches can
+stay local until merge. Shared branches can be published with `--publish-branch`
+and pruned after merge with safe ancestor checks. In both cases the merge
+workflow fast-forwards local `main`, merges, validates, pushes `main`, and
+verifies local `main` has no unpushed commits.
+
 ## Stop Conditions
 
 - Dirty paths outside the task scope.

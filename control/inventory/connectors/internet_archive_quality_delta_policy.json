@@ -1,0 +1,59 @@
+{
+  "schema_version": "internet_archive_quality_delta_policy.v0",
+  "policy_id": "internet_archive_quality_delta_policy",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "allowed_input_sources": [
+    "ia_bundle_02_generated_outputs",
+    "committed_ia_fixtures",
+    "ia_bundle_03_review_integration_outputs"
+  ],
+  "query_set_policy": {
+    "current_scope": "fixture_only_or_blocked_probe_output",
+    "external_query_set_required_for_public_claims": true,
+    "human_review_required_for_public_claims": true
+  },
+  "metric_policy": {
+    "local_audit_metrics_only": true,
+    "external_superiority_claims_allowed": false,
+    "production_quality_claims_allowed": false
+  },
+  "allowed_metrics": [
+    "candidate_count_delta",
+    "source_cache_record_count_delta",
+    "evidence_candidate_count_delta",
+    "review_entry_count_delta",
+    "result_presence_delta_fixture_only",
+    "near_match_delta_fixture_only",
+    "known_gap_delta",
+    "blocked_reason_count",
+    "connector_error_count"
+  ],
+  "forbidden_metrics": [
+    "beats_google",
+    "beats_internet_archive",
+    "exhaustive_global_coverage",
+    "production_search_quality",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability"
+  ],
+  "before_after_comparison_scope": "local_track_b_review_rehearsal_only",
+  "no_claim_requirements": [
+    "do not claim production search quality",
+    "do not claim external superiority",
+    "do not claim exhaustive coverage",
+    "do not claim rights clearance",
+    "do not claim malware safety",
+    "do not claim verified installability"
+  ],
+  "limitations_required": true,
+  "human_review_required_for_public_claims": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "enabled_hosting": false,
+    "enabled_telemetry": false
+  }
+}

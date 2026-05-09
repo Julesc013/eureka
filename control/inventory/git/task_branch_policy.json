@@ -41,8 +41,9 @@
   "required_finish_state": [
     "task branch committed",
     "validation recorded",
-    "task branch pushed normally",
-    "main not updated by the task machine unless it is the integration machine"
+    "task branch pushed normally when shared across machines",
+    "main not updated by the task machine unless it is the integration machine",
+    "every integration merge into main is pushed to origin/main before more task work starts"
   ],
   "forbidden_normal_operations": [
     "parallel task work directly on main",
@@ -53,6 +54,9 @@
   ],
   "notes": [
     "Branch naming mismatches are advisory unless the operator selects strict mode.",
-    "Integration merges happen on one machine only."
+    "Integration merges happen on one machine only.",
+    "Quick task branches can remain local until merged.",
+    "Shared task branches should be pruned after their tip is contained in pushed main.",
+    "After integration, other machines resync with git fetch, git switch main, and git pull --ff-only origin main."
   ]
 }

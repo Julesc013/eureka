@@ -1,0 +1,28 @@
+{
+  "schema_version": "internet_archive_evidence_mapping_policy.v0",
+  "source_id": "internet_archive",
+  "current_mode": "fixture_only_preview",
+  "evidence_candidate_preview_kinds": [
+    "title_claim_candidate",
+    "mediatype_claim_candidate",
+    "file_list_member_claim_candidate",
+    "creator_date_claim_candidate",
+    "source_locator_claim_candidate",
+    "collection_membership_claim_candidate"
+  ],
+  "forbidden_conversions": {
+    "metadata_claim_to_accepted_evidence": true,
+    "file_list_claim_to_downloaded_file_availability_proof": true,
+    "source_locator_to_rights_clearance": true,
+    "mediatype_to_malware_safety": true,
+    "title_match_to_identity_proof_without_review": true,
+    "ia_metadata_to_canonical_truth": true,
+    "any_claim_to_master_index_mutation": true
+  },
+  "accepted_evidence": false,
+  "accepted_public_truth": false,
+  "evidence_ledger_runtime_write_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "review_required": true
+}

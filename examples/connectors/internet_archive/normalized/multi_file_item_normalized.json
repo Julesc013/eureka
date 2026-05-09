@@ -1,0 +1,188 @@
+{
+  "access_path_candidates": [
+    {
+      "access_path_kind": "internet_archive_item_metadata_future",
+      "access_path_ref": "ia:item:eureka-multi-file-fixture",
+      "download_approved": false,
+      "file_fetch_approved": false,
+      "live_access_approved": false,
+      "metadata_only": true
+    }
+  ],
+  "collection": [
+    "software",
+    "support-media",
+    "eureka-synthetic-fixtures"
+  ],
+  "connector_id": "internet_archive_metadata_connector",
+  "creator": [
+    "Eureka Fixture Lab"
+  ],
+  "date": "1998",
+  "description_summary": "Synthetic IA item with multiple file metadata entries for member discovery tests.",
+  "file_candidates": [
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "Item Tile",
+      "metadata_only": true,
+      "name": "__ia_thumb.jpg",
+      "size": 1024,
+      "source_member_ref": "ia:file:__ia_thumb.jpg",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "ZIP",
+      "metadata_only": true,
+      "name": "disc-one.zip",
+      "size": 50000,
+      "source_member_ref": "ia:file:disc-one.zip",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "ZIP",
+      "metadata_only": true,
+      "name": "disc-two.zip",
+      "size": 61000,
+      "source_member_ref": "ia:file:disc-two.zip",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "download_approved": false,
+      "downloadable_now": false,
+      "file_fetch_approved": false,
+      "format": "Metadata",
+      "metadata_only": true,
+      "name": "eureka-multi-file-fixture_files.xml",
+      "size": 4096,
+      "source_member_ref": "ia:file:eureka-multi-file-fixture_files.xml",
+      "truth_boundary": {
+        "accepted_evidence_truth": false,
+        "file_download_availability_proven": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "file_count": 4,
+  "file_summary": {
+    "download_approved": false,
+    "file_count": 4,
+    "formats": [
+      "Item Tile",
+      "Metadata",
+      "ZIP"
+    ],
+    "member_names": [
+      "__ia_thumb.jpg",
+      "disc-one.zip",
+      "disc-two.zip",
+      "eureka-multi-file-fixture_files.xml"
+    ],
+    "metadata_only": true,
+    "total_size_bytes": 116120
+  },
+  "item_identifier": "eureka-multi-file-fixture",
+  "limitations": [
+    "synthetic multi-file metadata fixture",
+    "member names are metadata candidates only",
+    "no file fetch or download proof"
+  ],
+  "mediatype": "software",
+  "metadata_fields": {},
+  "notes": [
+    "Normalized from a committed public-safe fixture.",
+    "No Internet Archive source access, API call, file fetch, download, or scraping occurred."
+  ],
+  "policy": {
+    "blocked_current": false,
+    "blocked_reasons": [],
+    "download_approved": false,
+    "file_fetch_approved": false,
+    "live_access_approved": false,
+    "metadata_probe_approved": false,
+    "public_query_fanout_approved": false,
+    "scraping_approved": false
+  },
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "live_connector_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "source_cache_runtime_mutated": false
+  },
+  "publicdate": "2026-05-09",
+  "rights_risk_posture": {
+    "download_or_file_fetch_approved": false,
+    "malware_safety_claimed": false,
+    "metadata_only": true,
+    "review_required": true,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "schema_version": "internet_archive_metadata_normalized_record.v0",
+  "source_id": "internet_archive",
+  "source_locator": "ia:item:eureka-multi-file-fixture",
+  "source_native_id": "eureka-multi-file-fixture",
+  "title": "Eureka Multi File Fixture",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_truth": false,
+    "claimed_exhaustive_search": false,
+    "ia_metadata_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_observation_only": true,
+    "verified_installability_claimed": false
+  }
+}

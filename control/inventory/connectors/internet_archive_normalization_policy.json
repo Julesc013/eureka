@@ -1,0 +1,37 @@
+{
+  "schema_version": "internet_archive_normalization_policy.v0",
+  "source_id": "internet_archive",
+  "normalized_fields": [
+    "source_id",
+    "source_native_id",
+    "item_identifier",
+    "title",
+    "description_summary",
+    "mediatype",
+    "collection",
+    "creator",
+    "date",
+    "publicdate",
+    "metadata_fields",
+    "file_summary",
+    "file_count",
+    "file_candidates",
+    "source_locator",
+    "access_path_candidates",
+    "rights_risk_posture",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "must_preserve": {
+    "source_observation_only": true,
+    "not_accepted_evidence": true,
+    "not_public_truth": true,
+    "not_rights_cleared": true,
+    "not_malware_safe": true,
+    "not_installability_verified": true,
+    "no_public_index_mutation": true,
+    "no_master_index_mutation": true
+  },
+  "current_mode": "fixture_only"
+}

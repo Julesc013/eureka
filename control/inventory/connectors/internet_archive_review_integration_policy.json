@@ -1,0 +1,73 @@
+{
+  "schema_version": "internet_archive_review_integration_policy.v0",
+  "policy_id": "internet_archive_review_integration_policy",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "current_status": "dry_run_review_integration",
+  "allowed_input_types": [
+    "ia_bundle_02_live_probe_result",
+    "ia_live_probe_source_cache_candidate_preview",
+    "ia_live_probe_evidence_candidate_preview",
+    "ia_live_probe_review_queue_seed_preview",
+    "ia_bundle_02_blocked_fixture_equivalent_output"
+  ],
+  "forbidden_input_types": [
+    "downloaded_file",
+    "item_file_payload",
+    "scraped_html",
+    "advancedsearch_result",
+    "unbounded_search_result",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "private_user_file",
+    "credential_or_account_session"
+  ],
+  "allowed_output_types": [
+    "ia_source_cache_review_entry",
+    "ia_evidence_candidate_review_entry",
+    "ia_candidate_promotion_dry_run",
+    "ia_pack_draft_preview",
+    "ia_pack_export_preview",
+    "ia_quality_delta_report",
+    "ia_connector_postmortem",
+    "h0_readiness_recommendation"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim",
+    "downloaded_file",
+    "item_file_payload"
+  ],
+  "review_required_before_source_cache_persistence": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "pack_draft_allowed": true,
+  "pack_export_preview_allowed": true,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "live_call_allowed_by_default": false,
+  "no_goals": [
+    "no new IA live calls",
+    "no broad IA search",
+    "no downloads or item file fetches",
+    "no evidence acceptance",
+    "no candidate acceptance",
+    "no public or master index mutation"
+  ],
+  "notes": [
+    "IA-BUNDLE-03 integrates IA-BUNDLE-02 outputs into Track B review rehearsals only.",
+    "Policy-blocked IA-BUNDLE-02 outputs may be reviewed as blocked fixture-equivalent inputs."
+  ]
+}

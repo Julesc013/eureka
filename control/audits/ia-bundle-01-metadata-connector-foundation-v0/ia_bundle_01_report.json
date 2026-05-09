@@ -1,0 +1,136 @@
+{
+  "schema_version": "ia_bundle_01_report.v0",
+  "status": "pass_with_warnings",
+  "task": "IA-BUNDLE-01",
+  "track": "IA",
+  "purpose": "metadata_connector_foundation",
+  "added_contracts": [
+    "contracts/connectors/internet_archive_metadata_connector.v0.json",
+    "contracts/connectors/source_connector_fixture.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/connectors/internet_archive/__init__.py",
+    "runtime/connectors/internet_archive/fixture_loader.py",
+    "runtime/connectors/internet_archive/metadata_normalizer.py"
+  ],
+  "added_scripts": [
+    "scripts/normalize_ia_metadata_fixture.py",
+    "scripts/validate_ia_metadata_connector_foundation.py"
+  ],
+  "added_docs": [
+    "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md",
+    "docs/architecture/IA_METADATA_CONNECTOR_MODEL.md",
+    "docs/operations/IA_METADATA_SOURCE_POLICY.md",
+    "docs/operations/IA_METADATA_FIXTURE_REPLAY.md",
+    "docs/operations/IA_METADATA_NO_LIVE_CALL_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/connectors/internet_archive_source_policy.json",
+    "control/inventory/connectors/internet_archive_endpoint_policy.json",
+    "control/inventory/connectors/internet_archive_rate_limit_policy.json",
+    "control/inventory/connectors/internet_archive_cache_policy.json",
+    "control/inventory/connectors/internet_archive_kill_switch_policy.json",
+    "control/inventory/connectors/internet_archive_fixture_policy.json",
+    "control/inventory/connectors/internet_archive_normalization_policy.json",
+    "control/inventory/connectors/internet_archive_source_cache_mapping_policy.json",
+    "control/inventory/connectors/internet_archive_evidence_mapping_policy.json"
+  ],
+  "added_examples": [
+    "examples/connectors/internet_archive/fixtures/minimal_item_metadata.json",
+    "examples/connectors/internet_archive/fixtures/software_item_metadata.json",
+    "examples/connectors/internet_archive/fixtures/manual_item_metadata.json",
+    "examples/connectors/internet_archive/fixtures/multi_file_item_metadata.json",
+    "examples/connectors/internet_archive/fixtures/policy_blocked_item_metadata.json",
+    "examples/connectors/internet_archive/normalized/minimal_item_normalized.json",
+    "examples/connectors/internet_archive/normalized/software_item_normalized.json",
+    "examples/connectors/internet_archive/normalized/manual_item_normalized.json",
+    "examples/connectors/internet_archive/normalized/multi_file_item_normalized.json",
+    "examples/connectors/internet_archive/normalized/policy_blocked_item_normalized.json"
+  ],
+  "added_tests": [
+    "tests/connectors/test_internet_archive_metadata_foundation.py",
+    "tests/operations/test_ia_metadata_connector_foundation.py"
+  ],
+  "aide_metadata_updates": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/context/latest-review-packet.md",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/evals/runs/latest-golden-tasks.md",
+    ".aide/policies/commit-messages.yaml",
+    ".aide/queue/IA-BUNDLE-01/task.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/scripts/aide_lite.py"
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "json_syntax": "pass_required_ia_json_files",
+    "ia_metadata_connector_foundation_validator": "pass",
+    "fixture_cli_check": "pass",
+    "focused_connector_tests": "pass_14_tests",
+    "focused_operations_tests": "pass_6_tests",
+    "full_unittest_discovery": "pass_2539_tests",
+    "architecture_boundaries": "pass",
+    "ia_readiness_polish_validator": "pass",
+    "local_source_cache_runtime_validator": "pass",
+    "local_evidence_ledger_runtime_validator": "pass",
+    "source_cache_to_evidence_bridge_validator": "pass",
+    "local_review_queue_runtime_validator": "pass",
+    "candidate_promotion_dry_run_validator": "pass",
+    "pack_builder_runtime_validator": "pass",
+    "pack_export_runtime_validator": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass_with_existing_optional_review_packet_warnings",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "warn_zero_errors",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass_14_golden_tasks",
+    "aide_review_pack": "pass",
+    "aide_adapter_validate": "pass",
+    "aide_commit_message_check": "pass_requested_connectors_subject"
+  },
+  "source_policy": {
+    "source_id": "internet_archive",
+    "current_status": "fixture_only",
+    "live_access_approved": false,
+    "metadata_probe_approved": false,
+    "file_download_approved": false,
+    "scraping_approved": false,
+    "public_query_fanout_approved": false
+  },
+  "runtime_scope": {
+    "fixture_only": true,
+    "metadata_normalizer_added": true,
+    "live_connector_enabled": false,
+    "network_calls_made": false,
+    "api_calls_made": false,
+    "downloads_made": false,
+    "source_cache_runtime_mutated": false,
+    "evidence_ledger_runtime_mutated": false
+  },
+  "truth_boundary": {
+    "ia_metadata_is_public_truth": false,
+    "source_cache_preview_is_accepted_source": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "candidate_truth_accepted": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "IA-BUNDLE-02 - IA bounded metadata live probe"
+}

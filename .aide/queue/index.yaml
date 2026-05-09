@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-07
+updated: 2026-05-09
 repo: julesc013/eureka
-current_recommended_task: TRACK-A-01
+current_recommended_task: H0-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -94,6 +94,60 @@ entries:
     allowed_scope_summary: docs/control audit/AIDE evidence; no external calls or connector runtime.
     gate: TRACK-B-02 reviewed and source approvals explicit.
     recommended_after: TRACK-B-02
+  - id: IA-BUNDLE-01
+    title: Internet Archive metadata connector foundation
+    status: needs_review
+    purpose: Add fixture-only IA metadata source policy, endpoint posture, normalizer, fixture replay, preview mappings, validators, and audit evidence.
+    allowed_scope_summary: IA connector foundation policies, docs, contracts, fixture runtime, examples, tests, audit pack, and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-00 passed; no live IA calls, downloads, scraping, source sync, public/master index mutation, or evidence acceptance.
+    task: .aide/queue/IA-BUNDLE-01/task.yaml
+    recommended_after: IA-BUNDLE-00
+  - id: IA-BUNDLE-02
+    title: Internet Archive bounded metadata live probe
+    status: needs_review
+    purpose: Add fail-closed IA metadata live-probe runtime, CLI, validator, policies, examples, tests, and blocked audit evidence.
+    allowed_scope_summary: IA live-probe policy/docs/runtime/scripts/tests/examples/audit pack and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-01 passed; live call must remain blocked unless committed policy approves one exact identifier metadata read.
+    task: .aide/queue/IA-BUNDLE-02/task.yaml
+    recommended_after: IA-BUNDLE-01
+  - id: IA-BUNDLE-03
+    title: Internet Archive review integration and quality delta
+    status: needs_review
+    purpose: Integrate IA-BUNDLE-02 blocked or fixture-equivalent outputs into Track B review dry-runs and produce quality-delta, postmortem, and H0 readiness evidence.
+    allowed_scope_summary: IA review integration policy/docs/runtime/scripts/tests/examples/audit pack and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-02 output is blocked or fixture-equivalent; no new live calls, downloads, source sync, truth acceptance, public/master index mutation, or product behavior changes.
+    task: .aide/queue/IA-BUNDLE-03/task.yaml
+    recommended_after: IA-BUNDLE-02
+  - id: IA-APPROVAL-01
+    title: Operator IA live probe approval decision
+    status: operator_gated
+    purpose: Decide whether to approve one IA metadata endpoint read for one exact identifier with User-Agent/contact, rate, cache, timeout, retry, and kill-switch settings.
+    allowed_scope_summary: connector policy decision records and approval audit evidence only; no live call by default.
+    gate: IA-BUNDLE-02 blocked only by missing approval; operator must keep downloads, scraping, public fanout, source sync, and index mutation disabled.
+    recommended_after: IA-BUNDLE-02
+  - id: H0-BUNDLE-01
+    title: Source OS registry and policy foundation
+    status: needs_review
+    purpose: Add Source OS registry v2, family taxonomy, capability ladder, index-depth model, trust lanes, access/operation policy, approval gates, examples, validators, tests, and audit evidence.
+    allowed_scope_summary: H0 source operating system contracts, inventories, docs, examples, scripts, tests, audit pack, and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-03 recommended H0 using fixture-equivalent outputs; no live source calls, source sync, connector runtime, public/master index mutation, or truth acceptance.
+    task: .aide/queue/H0-BUNDLE-01/task.yaml
+    recommended_after: IA-BUNDLE-03
+  - id: AIDE-MERGE-MAIN-SYNC-01
+    title: Generalize AIDE merge-to-integration workflow
+    status: active
+    purpose: Keep origin/main canonical after local branch merges while supporting local-only, shared, nested, and future durable branch roles.
+    allowed_scope_summary: AIDE prompts, Git workflow policies, docs, sync guard scripts, merge helper, focused tests, and queue metadata only.
+    gate: no product behavior changes; no force push, history rewrite, unsafe branch deletion, or destructive cleanup.
+    task: .aide/queue/AIDE-MERGE-MAIN-SYNC-01/task.yaml
+    recommended_after: H0-BUNDLE-01
+  - id: H0-BUNDLE-02
+    title: Connector interface, fixture replay, and live-probe envelope
+    status: queued
+    purpose: Add the reusable connector-family interface, fixture/replay harness, live-probe envelope, policy evaluator, and no-live-default contract around Source OS.
+    allowed_scope_summary: H0 connector-interface policies, docs, contracts, fixtures, validators, tests, and audit evidence only until separately scoped.
+    gate: H0-BUNDLE-01 passes; no new live probes, source sync, downloads, public/master index mutation, or source truth acceptance.
+    recommended_after: H0-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

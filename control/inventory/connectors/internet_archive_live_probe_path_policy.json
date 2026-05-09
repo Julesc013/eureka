@@ -1,0 +1,29 @@
+{
+  "schema_version": "internet_archive_live_probe_path_policy.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/internet_archive/live_probe/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "data/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "output_must_be_explicit": true,
+  "default_writes": false,
+  "notes": [
+    "The CLI may write only explicit output paths.",
+    "Tests may use temporary directories outside repo-controlled product roots."
+  ]
+}

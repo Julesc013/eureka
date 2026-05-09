@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_index_depth.v0",
+  "title": "Eureka Source Index Depth",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "depth_id",
+    "order",
+    "meaning",
+    "allowed_record_types",
+    "required_policy_gates",
+    "required_review_gates",
+    "forbidden_claims",
+    "example_outputs",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_index_depth.v0"
+    },
+    "depth_id": {
+      "enum": [
+        "D0_source_known",
+        "D1_catalog_indexed",
+        "D2_metadata_indexed",
+        "D3_representation_indexed",
+        "D4_content_indexed",
+        "D5_action_indexed"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
