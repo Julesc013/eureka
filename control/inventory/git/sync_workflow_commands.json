@@ -1,0 +1,129 @@
+{
+  "schema_version": "sync_workflow_commands.v0",
+  "inventory_id": "sync_workflow_commands_v0",
+  "label": "AIDE sync workflow command recipes",
+  "commands": [
+    {
+      "command_id": "AIDE-SYNC-01",
+      "purpose": "Finish the current task, validate it, commit it, and push the current task branch without merging to main.",
+      "allowed_commands": [
+        "git status --short",
+        "git diff --check",
+        "python scripts/check_git_task_state.py --mode finish-task --task-id <task-id>",
+        "git add <task files>",
+        "git commit",
+        "git push -u origin <current-task-branch>"
+      ],
+      "forbidden_commands": [
+        "git push --force",
+        "git reset --hard",
+        "git clean -fd",
+        "git stash pop",
+        "git rebase",
+        "git merge origin/main",
+        "branch deletion"
+      ],
+      "preflight": [
+        "working tree contains only the current task changes",
+        "no merge/rebase/cherry-pick/revert state exists",
+        "branch is not main unless explicitly allowed"
+      ],
+      "expected_result": "task branch is committed and pushed normally; main is unchanged",
+      "stop_conditions": [
+        "dirty files outside the task scope",
+        "active merge or rebase metadata",
+        "secret-like paths",
+        "validation failure"
+      ],
+      "output_required": [
+        "commit SHA",
+        "validation results",
+        "push result"
+      ]
+    },
+    {
+      "command_id": "AIDE-MERGE-01",
+      "purpose": "On the integration machine, merge a named task branch into main and push main normally after validation.",
+      "allowed_commands": [
+        "git status --short",
+        "git fetch origin",
+        "git switch main",
+        "git pull --ff-only origin main",
+        "git merge --no-ff origin/<task-branch>",
+        "git diff --check",
+        "python scripts/check_git_task_state.py --mode merge-task --task-id <task-id> --allow-main",
+        "git push origin main"
+      ],
+      "forbidden_commands": [
+        "git push --force",
+        "git reset --hard",
+        "git clean -fd",
+        "git stash pop",
+        "git rebase",
+        "branch deletion",
+        "history rewrite"
+      ],
+      "preflight": [
+        "integration machine only",
+        "clean working tree",
+        "local main fast-forwards from origin/main",
+        "named task branch exists on origin"
+      ],
+      "expected_result": "main contains the reviewed task branch and is pushed normally",
+      "stop_conditions": [
+        "origin/main advanced during merge",
+        "unresolved conflict",
+        "validation failure",
+        "secret-like paths"
+      ],
+      "output_required": [
+        "merged task branch",
+        "merge commit or fast-forward result",
+        "validation results",
+        "remote HEAD after push"
+      ]
+    },
+    {
+      "command_id": "AIDE-RESCUE-01",
+      "purpose": "Preserve a dirty or interrupted worktree safely and stop feature work before any merge or pull.",
+      "allowed_commands": [
+        "git status --short",
+        "git rev-parse -q --verify MERGE_HEAD",
+        "git ls-files -u",
+        "git switch -c rescue/<task-id>",
+        "git add -A",
+        "git commit"
+      ],
+      "forbidden_commands": [
+        "git push --force",
+        "git reset --hard",
+        "git clean -fd",
+        "git stash pop",
+        "git merge --continue",
+        "git merge --abort unless explicitly directed",
+        "git pull",
+        "git rebase",
+        "branch deletion"
+      ],
+      "preflight": [
+        "inspect dirty paths",
+        "inspect merge/rebase/cherry-pick/revert metadata",
+        "screen for secret-like paths",
+        "do not merge remote history"
+      ],
+      "expected_result": "dirty local work is preserved or the task stops with a clear risk report",
+      "stop_conditions": [
+        "unmerged conflict entries",
+        "secret-like paths",
+        "private local roots",
+        "unclear destructive operation request"
+      ],
+      "output_required": [
+        "rescue branch name if created",
+        "preservation commit if created",
+        "remaining dirty state",
+        "next safe sync step"
+      ]
+    }
+  ]
+}

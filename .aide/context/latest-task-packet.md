@@ -2,148 +2,152 @@
 
 ## PHASE
 
-REPO-MERGE-01 - Merge OBS side lane and Track B lane into unified main
+SYNC-GUARD-01 - Multi-machine Git discipline and AIDE sync guard
 
 ## GOAL
 
-Unify the preserved local Track B safety branch with the remote OBS side lane,
-then update and push main normally if validation passes.
+Add a compact Git/AIDE sync guard that prevents future Codex/AIDE work from
+starting in dirty, stale, interrupted, or direct-main task states.
 
 ## WHY
 
-REPO-SYNC-03 preserved a dirty merge-rescued worktree on the safety branch.
-REPO-SYNC-04 confirmed that origin/main contained OBS-AGENT-01 through
-OBS-AGENT-07 while the safety branch contained local Track B runtime and control
-work. The current task intentionally merges the lanes while preserving safety
-boundaries.
+The OBS and Track B merge recovery succeeded, but it exposed a workflow hazard:
+parallel machine work, stale local `main`, active merge metadata, and unpushed
+local-only task work can make normal convergence far too difficult. The remedy
+is a small guard and three simple workflow prompts, not more nested sync audits.
 
 ## CONTEXT_REFS
 
+- `AGENTS.md`
+- `.aide/memory/project-state.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
+- `.aide/context/latest-context-packet.md`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `.aide/reports/eureka-repo-health.md`
-- `control/audits/repo-sync-03-active-merge-rescue-v0/`
-- `control/audits/repo-sync-04-clean-convergence-audit-v0/`
-- `control/audits/obs-agent-07-human-review-packet-v0/`
-- `control/audits/track-b-23-integration-audit-v0/`
-- `contracts/`
-- `control/inventory/`
-- `scripts/`
-- `tests/`
-- `docs/`
-- `AGENTS.md`
+- `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md`
+- `docs/operations/AIDE_SYNC_GUARD.md`
+- `docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md`
+- `control/inventory/git/sync_guard_policy.json`
+- `control/inventory/git/task_branch_policy.json`
+- `control/inventory/git/sync_workflow_commands.json`
+- `scripts/check_git_task_state.py`
+- `scripts/validate_sync_guard_policy.py`
+- `tests/operations/test_git_task_state_guard.py`
+- `tests/operations/test_sync_guard_policy.py`
 
 ## IMPLEMENTATION
 
-- Merge origin/main into the preserved safety branch.
-- Preserve OBS seed/review artifacts and local Track B runtime/control artifacts.
-- Fix merged hardening wording without weakening forbidden-input detection.
-- Refresh stale public-alpha rehearsal evidence using its generator.
-- Add REPO-MERGE-01 audit evidence.
-- Update local main from the unified branch and push normally if validation passes.
+- Add Git sync guard policies under `control/inventory/git/`.
+- Add non-mutating guard and validator scripts under `scripts/`.
+- Add AIDE prompt templates for sync, merge, and rescue workflows.
+- Add multi-machine workflow and recovery docs.
+- Add temp-repo tests for guard behavior.
+- Add a SYNC-GUARD-01 audit pack.
+- Add a compact AGENTS.md rule requiring the guard before normal task work.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- precise conflict-marker scan
+- `python -m json.tool control/inventory/git/sync_guard_policy.json`
+- `python -m json.tool control/inventory/git/task_branch_policy.json`
+- `python -m json.tool control/inventory/git/sync_workflow_commands.json`
+- `python -m json.tool control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json`
+- `python scripts/check_git_task_state.py --mode start-task --task-id SYNC-GUARD-01 --allow-main`
+- `python scripts/check_git_task_state.py --mode start-task --task-id SYNC-GUARD-01 --allow-main --json`
+- `python scripts/validate_sync_guard_policy.py`
+- `python -m unittest tests.operations.test_git_task_state_guard tests.operations.test_sync_guard_policy`
 - `python scripts/check_architecture_boundaries.py`
-- OBS validators
-- Track B validators
-- `python -m unittest discover -s tests -t .`
-- AIDE Lite doctor, validate, test, selftest, verify, eval, review-pack, and adapter checks
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py verify`
 
 ## EVIDENCE
 
-- `control/audits/repo-merge-01-unified-main-v0/README.md`
-- `control/audits/repo-merge-01-unified-main-v0/repo_merge_01_report.json`
-- `control/audits/repo-merge-01-unified-main-v0/merge_conflict_resolution.md`
-- `control/audits/repo-merge-01-unified-main-v0/merged_commit_inventory.md`
-- `control/audits/repo-merge-01-unified-main-v0/validation.md`
-- `control/audits/repo-merge-01-unified-main-v0/push_result.md`
-- `control/audits/repo-merge-01-unified-main-v0/next_steps.md`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/README.md`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/validation.md`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/workflow_summary.md`
+- `.aide/queue/` is not used for task evidence; SYNC-GUARD-01 evidence lives under `control/audits/`.
 
 ## ALLOWED_PATHS
 
+- `AGENTS.md`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `control/audits/repo-merge-01-unified-main-v0/README.md`
-- `control/audits/repo-merge-01-unified-main-v0/repo_merge_01_report.json`
-- `control/audits/repo-merge-01-unified-main-v0/merge_conflict_resolution.md`
-- `control/audits/repo-merge-01-unified-main-v0/merged_commit_inventory.md`
-- `control/audits/repo-merge-01-unified-main-v0/validation.md`
-- `control/audits/repo-merge-01-unified-main-v0/push_result.md`
-- `control/audits/repo-merge-01-unified-main-v0/next_steps.md`
-- `control/audits/repo-merge-01-unified-main-v0/stale_aide_resolution.md`
-- `control/audits/repo-merge-01-unified-main-v0/obs_track_b_unified_state.md`
-- `control/audits/repo-merge-01-unified-main-v0/post_merge_validator_matrix.md`
-- `docs/operations/public_alpha_rehearsal_evidence_v0/COMMIT_AND_ARTIFACTS.md`
-- `docs/operations/public_alpha_rehearsal_evidence_v0/README.md`
-- `docs/operations/public_alpha_rehearsal_evidence_v0/SIGNOFF_TEMPLATE.md`
-- `docs/operations/public_alpha_rehearsal_evidence_v0/rehearsal_evidence_manifest.json`
-- `scripts/build_observation_candidate_review_queue.py`
-- `scripts/generate_source_gap_observation_candidates.py`
-- `scripts/validate_obs_agent_local_eval_mining.py`
-- `scripts/validate_obs_human_review_packet.py`
-- `scripts/validate_obs_track_b_synchronization.py`
-- `scripts/validate_observation_candidate_review_queue.py`
-- `scripts/validate_search_need_seed_candidates.py`
-- `scripts/validate_source_gap_observation_candidates.py`
-- `scripts/validate_workunit_seed_candidates.py`
+- `.aide/prompts/AIDE-SYNC-01.md`
+- `.aide/prompts/AIDE-MERGE-01.md`
+- `.aide/prompts/AIDE-RESCUE-01.md`
+- `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md`
+- `docs/operations/AIDE_SYNC_GUARD.md`
+- `docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md`
+- `control/inventory/git/sync_guard_policy.json`
+- `control/inventory/git/task_branch_policy.json`
+- `control/inventory/git/sync_workflow_commands.json`
+- `scripts/check_git_task_state.py`
+- `scripts/validate_sync_guard_policy.py`
+- `tests/operations/test_git_task_state_guard.py`
+- `tests/operations/test_sync_guard_policy.py`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/**`
 
 ## FORBIDDEN_PATHS
 
-- environment files
-- secret or credential directories
-- ignored local AIDE/private-state roots
-- ignored cache roots
-- destructive Git history edits
-- branch deletion
-- force push
-- master-index mutation
-- public-index mutation
-- source access approval
-- WorkUnit execution
-- live source, network, browser, provider, upload, download, account, or telemetry activation
+- product runtime behavior paths unless required for tests
+- runtime/**
+- contracts/**
+- surfaces/**
+- site/**
+- native/**
+- crates/**
+- connectors/**
+- packaging/**
+- third_party/**
+- public route behavior
+- source/evidence/master-index records
+- generated static artifacts
+- ignored private local roots
+- secrets or credential paths
 
 ## NON_GOALS
 
-- Do not force push.
-- Do not delete branches.
-- Do not rebase or rewrite history.
-- Do not approve source access.
-- Do not execute WorkUnits.
-- Do not create public truth.
-- Do not mutate the public index or master index.
-- Do not enable live source, connector, hosted, upload, download, account, telemetry, browser, model, or provider behavior.
+- Do not change Eureka product behavior.
+- Do not enable hosting, live probes, source connectors, downloads, uploads,
+  accounts, telemetry, WorkUnit execution, source approval, evidence truth, or
+  master-index mutation.
+- Do not create/delete Git branches from the guard script.
+- Do not fetch, merge, push, reset, clean, stash, or rebase from the guard.
+
+## NEXT
+
+HUMAN-OBS-REVIEW-01 - Review OBS candidate packet
 
 ## ACCEPTANCE
 
-- OBS-AGENT-01 through OBS-AGENT-07 artifacts remain present.
-- Local Track B artifacts remain present.
-- No conflict markers remain.
-- Targeted validators pass.
-- Full unittest suite passes.
-- AIDE checks have zero errors, with documented WARN-only findings allowed.
-- Local main is updated to the unified branch.
-- Main is pushed normally without force.
+- Sync guard policy, branch policy, and workflow command inventory exist.
+- Guard and policy validator scripts exist and run.
+- AIDE-SYNC-01, AIDE-MERGE-01, and AIDE-RESCUE-01 prompts exist.
+- Multi-machine workflow docs exist.
+- Guard tests and policy tests pass.
+- No Eureka product behavior changes.
+- Working tree is clean after commit.
 
 ## OUTPUT_SCHEMA
 
-Final response reports status, summary, commits, branches, merge result,
-validation, push result, risks, and next task.
+Return the final response with:
+
+- `STATUS`
+- `SUMMARY`
+- `COMMITS`
+- `CHANGED`
+- `VALIDATION`
+- `GUARD`
+- `RISKS`
+- `NEXT`
 
 ## TOKEN_ESTIMATE
 
-- latest task packet: under 2400 tokens
-- latest review packet: under 2400 tokens
-
-## NEXT_REVIEW_GATE
-
-- HUMAN-OBS-REVIEW-01 - Review OBS candidate packet.
-- Continue Track B from the next task after the latest merged Track B state, without enabling live source behavior.
+approx_tokens: 1400
