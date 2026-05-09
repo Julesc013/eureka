@@ -1,0 +1,54 @@
+{
+  "blocked_sources": [
+    "github_releases",
+    "npm_registry",
+    "osv",
+    "pypi",
+    "repology",
+    "software_heritage",
+    "wayback_cdx_memento"
+  ],
+  "evidence_ledger_runtime_mutated": false,
+  "limitations": [
+    "Blocked live probes are recorded as policy evidence only."
+  ],
+  "notes": [
+    "Blocked review integration is not a review decision."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enables_hosting": false,
+    "enables_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_integration_status": "fixture_review_integrated_with_live_probe_blocks",
+  "review_queue_runtime_mutated": false,
+  "schema_version": "h1_blocked_review_integration.v0",
+  "source_cache_runtime_mutated": false,
+  "truth_boundary": {
+    "accepts_candidate_truth": false,
+    "accepts_evidence_truth": false,
+    "accepts_source_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "wave_id": "H1"
+}

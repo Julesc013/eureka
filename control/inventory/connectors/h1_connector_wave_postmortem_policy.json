@@ -1,0 +1,22 @@
+{
+  "policy_id": "h1_connector_wave_postmortem_policy.v0",
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "extraction_handoff_recommendation",
+    "h2_defer_or_continue_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h1_connector_wave_postmortem_policy.v0",
+  "wave_id": "H1"
+}

@@ -1,0 +1,53 @@
+{
+  "coverage_basis": "fixture_only",
+  "coverage_depth_current": "D2_metadata_indexed",
+  "coverage_manifest_is_exhaustive_global_coverage": false,
+  "coverage_update_preview_id": "h1.coverage_update.github_releases.1a5d4caef6.v0",
+  "limitations": [
+    "Artifact type is descriptive only.",
+    "Requires human review before downstream use.",
+    "Source locator is not rights clearance.",
+    "Title is a source observation, not verified identity.",
+    "Version/state is not accepted release truth.",
+    "Coverage update preview is bounded and not exhaustive."
+  ],
+  "notes": [
+    "Coverage preview does not mutate coverage ledgers or indexes."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enables_hosting": false,
+    "enables_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "records_normalized": 1,
+  "records_seen": 1,
+  "review_required": true,
+  "schema_version": "h1_source_coverage_update_preview.v0",
+  "source_id": "github_releases",
+  "truth_boundary": {
+    "accepts_candidate_truth": false,
+    "accepts_evidence_truth": false,
+    "accepts_source_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  }
+}

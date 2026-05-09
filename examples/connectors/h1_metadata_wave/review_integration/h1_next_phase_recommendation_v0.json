@@ -1,0 +1,39 @@
+{
+  "auto_approves_future_connectors": false,
+  "h1_exit_gate": "PASS_WITH_WARNINGS",
+  "h2_defer_or_continue_recommendation": "defer_h2_policy_packs_until_f_bundle_01_fixture_extraction_boundary_exists",
+  "next_phase_recommendation": "READY_FOR_F_BUNDLE_01",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "rationale": [
+    "H1 has enough fixture-equivalent metadata outputs for offline extraction sandbox planning.",
+    "Live metadata probes are still operator-gated and can proceed separately when approved."
+  ],
+  "recommendation_id": "h1.next_phase.4968fdd51553.v0",
+  "recommended_next_task": "F-BUNDLE-01 - Extraction sandbox and Tier 0-2 fixture extraction",
+  "schema_version": "h1_next_phase_recommendation.v0",
+  "truth_boundary": {
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "h1_postmortem_enables_future_connectors_automatically": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "wave_id": "H1"
+}

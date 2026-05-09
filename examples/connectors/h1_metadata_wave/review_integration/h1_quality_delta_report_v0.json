@@ -1,0 +1,133 @@
+{
+  "blocked_sources_count": 7,
+  "blocker_count": 7,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 7,
+  "evidence_candidate_preview_count": 7,
+  "fixture_sources_count": 7,
+  "forbidden_claims": [
+    "beats_google",
+    "beats_internet_archive",
+    "exhaustive_global_coverage",
+    "production_search_quality",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 1,
+  "limitations": [
+    "Quality delta measures H1 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "No production search quality or external superiority claim is made."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 7,
+  "notes": [
+    "H1 quality delta is operational evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "github_releases"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "npm_registry"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "osv"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "pypi"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "repology"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "software_heritage"
+    },
+    {
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "review_seed_preview_created": true,
+      "source_id": "wayback_cdx_memento"
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h1.quality_delta.d69215c79284.v0",
+  "review_seed_count": 14,
+  "schema_version": "h1_quality_delta_report.v0",
+  "scorecard_update_count": 7,
+  "source_cache_candidate_count": 7,
+  "source_count": 7,
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "claims_external_superiority": false,
+    "claims_production_readiness": false,
+    "external_superiority_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "warning_count": 0,
+  "wave_id": "H1"
+}

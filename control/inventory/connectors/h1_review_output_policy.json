@@ -1,0 +1,28 @@
+{
+  "allowed_output_types": [
+    "review_integration_result",
+    "source_cache_review_seed",
+    "evidence_candidate_review_seed",
+    "candidate_promotion_preview",
+    "coverage_update_preview",
+    "scorecard_update",
+    "source_pack_update_preview",
+    "blocked_review_integration_report"
+  ],
+  "forbidden_output_types": [
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "source_sync_enablement",
+    "production_readiness_claim",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability"
+  ],
+  "policy_id": "h1_review_output_policy.v0",
+  "schema_version": "h1_review_output_policy.v0",
+  "wave_id": "H1"
+}

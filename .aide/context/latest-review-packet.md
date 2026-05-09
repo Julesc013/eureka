@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5902 chars, 1476 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6715 chars, 1679 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/H1-BUNDLE-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/H1-BUNDLE-04` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/connectors/h1_live_probe_output_bundle.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/connectors/h1_live_probe_request.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/connectors/h1_live_probe_result.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/h1-bundle-03-metadata-live-probes-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_allowed_requests.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_cache_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_endpoint_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_kill_switch_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_output_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_path_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_rate_limit_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_review_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/h1_metadata_live_probe_truth_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/H1_METADATA_LIVE_PROBE_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_LIVE_PROBE_APPROVAL_GATES.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_LIVE_PROBE_BLOCKED_MODE.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_LIVE_PROBE_REVIEW.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 20; see task evidence changed-files report
+- allowed: `contracts/connectors/h1_connector_wave_postmortem.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/h1_integration_audit.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/h1_quality_delta_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/h1_review_integration_result.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/h1-bundle-04-review-quality-audit-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_connector_wave_postmortem_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_integration_audit_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_quality_delta_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_review_integration_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_review_output_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_review_path_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_review_truth_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/H1_REVIEW_INTEGRATION_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_WAVE_POSTMORTEM.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_WAVE_QUALITY_DELTA.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_TO_EXTRACTION_HANDOFF.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_CONNECTOR_WAVE_POSTMORTEM.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_METADATA_QUALITY_DELTA_REPORT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_METADATA_REVIEW_INTEGRATION.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 11; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6653
-- approx_tokens: 1664
+- chars: 6514
+- approx_tokens: 1629
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

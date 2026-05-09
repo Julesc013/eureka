@@ -1,0 +1,16 @@
+{
+  "candidate_promotion_preview_promotes_candidate": false,
+  "evidence_review_seed_accepts_evidence": false,
+  "h1_review_output_is_public_truth": false,
+  "h1_review_output_is_truth": false,
+  "master_index_mutation_allowed": false,
+  "policy_id": "h1_review_truth_policy.v0",
+  "public_index_mutation_allowed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "schema_version": "h1_review_truth_policy.v0",
+  "source_cache_review_seed_accepts_source": false,
+  "source_pack_preview_is_imported_or_submitted": false,
+  "verified_installability_claimed": false,
+  "wave_id": "H1"
+}

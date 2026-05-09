@@ -2,17 +2,17 @@
 
 ## PHASE
 
-H1-BUNDLE-03 - First metadata wave approved live probes
+H1-BUNDLE-04 - First metadata wave review integration and quality delta
 
 ## GOAL
 
-Add the first H1 metadata-wave bounded live-probe framework for Wayback/CDX/Memento, GitHub Releases, PyPI, npm, Software Heritage, Repology, and OSV.
+Close the first H1 metadata wave by integrating explicit fixture replay outputs and blocked live-probe evidence into offline review previews, quality delta, source-pack update previews, connector-wave postmortem, and H1 exit-gate audit evidence.
 
-The current committed posture is blocked-by-default: no source has operator approval for live access, so default execution is offline preflight and `--live` emits blocked results before network.
+H1-BUNDLE-04 does not perform live calls. It routes the repo toward F-BUNDLE-01 when fixture-equivalent H1 outputs are sufficient.
 
 ## WHY
 
-H1-BUNDLE-01 added policy packs and H1-BUNDLE-02 added fixture normalizers. H1-BUNDLE-03 adds the live-boundary envelope so future operator-approved metadata probes can be one-request, metadata-only, review-gated, and safe to audit.
+H1-BUNDLE-01 added policy packs, H1-BUNDLE-02 added fixture normalizers and replay outputs, and H1-BUNDLE-03 added fail-closed live-probe envelopes. H1-BUNDLE-04 turns those artifacts into review and quality evidence without accepting truth or mutating runtime state.
 
 ## CONTEXT_REFS
 
@@ -22,12 +22,13 @@ H1-BUNDLE-01 added policy packs and H1-BUNDLE-02 added fixture normalizers. H1-B
 - `.aide/context/context-index.json`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
-- `.aide/queue/H1-BUNDLE-03/task.yaml`
+- `.aide/queue/H1-BUNDLE-04/task.yaml`
 - `control/audits/h1-bundle-01-metadata-wave-policy-packs-v0/`
 - `control/audits/h1-bundle-02-metadata-fixture-runtime-v0/`
+- `control/audits/h1-bundle-03-metadata-live-probes-v0/`
 - `runtime/connectors/h1_metadata_wave/`
 - `examples/connectors/h1_metadata_wave/`
-- `HUMAN-OBS-REVIEW-01` is a parallel side-lane; it remains human-operated and is not modified by H1-BUNDLE-03.
+- `HUMAN-OBS-REVIEW-01` is a parallel side-lane and is not modified by H1-BUNDLE-04.
 
 ## ALLOWED_PATHS
 
@@ -36,29 +37,37 @@ H1-BUNDLE-01 added policy packs and H1-BUNDLE-02 added fixture normalizers. H1-B
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/evals/runs/latest-golden-tasks.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/H1-BUNDLE-03/**`
-- `contracts/connectors/h1_live_probe_request.v0.json`
-- `contracts/connectors/h1_live_probe_result.v0.json`
-- `contracts/connectors/h1_live_probe_output_bundle.v0.json`
-- `control/inventory/connectors/h1_metadata_live_probe_*.json`
-- `control/audits/h1-bundle-03-metadata-live-probes-v0/**`
-- `runtime/connectors/h1_metadata_wave/live_probe_*.py`
-- `scripts/run_h1_metadata_live_probe.py`
-- `scripts/validate_h1_metadata_live_probe.py`
-- `scripts/summarize_h1_live_probe_outputs.py`
-- `scripts/validate_ia_readiness_polish.py`
-- `docs/reference/H1_METADATA_LIVE_PROBE.md`
-- `docs/reference/H1_METADATA_LIVE_PROBE_RESULT.md`
-- `docs/architecture/H1_METADATA_LIVE_PROBE_MODEL.md`
-- `docs/operations/H1_METADATA_LIVE_PROBE_REVIEW.md`
-- `docs/operations/H1_METADATA_LIVE_PROBE_APPROVAL_GATES.md`
-- `docs/operations/H1_METADATA_LIVE_PROBE_BLOCKED_MODE.md`
-- `examples/connectors/h1_metadata_wave/live_probe/**`
-- `examples/connectors/h1_metadata_wave/live_probe_results/**`
-- `examples/connectors/h1_metadata_wave/live_probe_outputs/**`
-- `tests/connectors/test_h1_metadata_live_probe.py`
-- `tests/operations/test_h1_metadata_live_probe_scripts.py`
-- `tests/operations/test_ia_readiness_polish.py`
+- `.aide/queue/H1-BUNDLE-04/**`
+- `contracts/connectors/h1_review_integration_result.v0.json`
+- `contracts/connectors/h1_quality_delta_report.v0.json`
+- `contracts/connectors/h1_connector_wave_postmortem.v0.json`
+- `contracts/connectors/h1_integration_audit.v0.json`
+- `control/inventory/connectors/h1_review_integration_policy.json`
+- `control/inventory/connectors/h1_review_output_policy.json`
+- `control/inventory/connectors/h1_review_path_policy.json`
+- `control/inventory/connectors/h1_review_truth_policy.json`
+- `control/inventory/connectors/h1_quality_delta_policy.json`
+- `control/inventory/connectors/h1_connector_wave_postmortem_policy.json`
+- `control/inventory/connectors/h1_integration_audit_policy.json`
+- `control/audits/h1-bundle-04-review-quality-audit-v0/**`
+- `runtime/connectors/h1_metadata_wave/review_integration.py`
+- `runtime/connectors/h1_metadata_wave/quality_delta.py`
+- `runtime/connectors/h1_metadata_wave/wave_postmortem.py`
+- `scripts/integrate_h1_metadata_review.py`
+- `scripts/summarize_h1_quality_delta.py`
+- `scripts/audit_h1_metadata_wave.py`
+- `scripts/validate_h1_review_quality_audit.py`
+- `docs/reference/H1_METADATA_REVIEW_INTEGRATION.md`
+- `docs/reference/H1_METADATA_QUALITY_DELTA_REPORT.md`
+- `docs/reference/H1_CONNECTOR_WAVE_POSTMORTEM.md`
+- `docs/architecture/H1_REVIEW_INTEGRATION_MODEL.md`
+- `docs/operations/H1_METADATA_WAVE_POSTMORTEM.md`
+- `docs/operations/H1_METADATA_WAVE_QUALITY_DELTA.md`
+- `docs/operations/H1_TO_EXTRACTION_HANDOFF.md`
+- `examples/connectors/h1_metadata_wave/review_integration/**`
+- `tests/connectors/test_h1_review_integration_quality.py`
+- `tests/operations/test_h1_review_quality_scripts.py`
+- `tests/operations/test_h1_integration_audit.py`
 
 ## FORBIDDEN_PATHS
 
@@ -82,28 +91,30 @@ H1-BUNDLE-01 added policy packs and H1-BUNDLE-02 added fixture normalizers. H1-B
 - `secrets/**`
 - `.aide.local/**`
 
-The active queue task narrows H1-BUNDLE-03 exceptions above to the explicit live-probe framework paths listed under allowed paths. Work proceeds without changing Eureka product behavior.
+The active queue task narrows H1-BUNDLE-04 exceptions above to the explicit review, quality, and audit paths listed under allowed paths. Work proceeds without changing Eureka product behavior.
 
 ## IMPLEMENTATION
 
-- Add H1 live-probe request/result/output-bundle contracts.
-- Add fail-closed H1 live-probe policies, request manifests, endpoint/rate/cache/kill/output/path/review/truth policies.
-- Add source-specific metadata-only wrappers and a shared live-probe common module.
-- Add blocked examples, preview outputs, docs, scripts, tests, and audit evidence.
-- Update the IA readiness validator narrowly so its historical current-task check accepts legitimate H1 progression while still rejecting stale IA-BUNDLE-00 or sync-baseline packets.
+- Add H1 review integration, quality delta, connector-wave postmortem, and integration-audit contracts.
+- Add H1 review output, path, truth, quality-delta, postmortem, and audit policies.
+- Add pure offline H1 review integration, quality delta, and postmortem helpers.
+- Add CLIs, validator, examples, audit pack, docs, and tests.
+- Recommend F-BUNDLE-01 if H1 fixture-equivalent outputs are sufficient.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- `python scripts/validate_h1_metadata_live_probe.py`
-- `python scripts/run_h1_metadata_live_probe.py --source-id pypi --request-key example_project_metadata --check`
-- `python scripts/summarize_h1_live_probe_outputs.py --input examples/connectors/h1_metadata_wave/live_probe_results --check`
-- `python -m unittest tests.connectors.test_h1_metadata_live_probe`
-- `python -m unittest tests.operations.test_h1_metadata_live_probe_scripts`
+- `python scripts/validate_h1_review_quality_audit.py`
+- `python scripts/integrate_h1_metadata_review.py --input-dir examples/connectors/h1_metadata_wave/replay_results --check`
+- `python scripts/summarize_h1_quality_delta.py --input-dir examples/connectors/h1_metadata_wave/review_integration --check`
+- `python scripts/audit_h1_metadata_wave.py --check`
+- `python -m unittest tests.connectors.test_h1_review_integration_quality`
+- `python -m unittest tests.operations.test_h1_review_quality_scripts`
+- `python -m unittest tests.operations.test_h1_integration_audit`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
-- Existing H0/H1/IA/core validators listed in the task prompt
+- Existing H1/H0/IA/core validators listed in the task prompt
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -116,24 +127,25 @@ The active queue task narrows H1-BUNDLE-03 exceptions above to the explicit live
 
 ## EVIDENCE
 
-- Audit pack: `control/audits/h1-bundle-03-metadata-live-probes-v0/`
-- Queue task: `.aide/queue/H1-BUNDLE-03/task.yaml`
-- Blocked examples under `examples/connectors/h1_metadata_wave/live_probe*`
+- Audit pack: `control/audits/h1-bundle-04-review-quality-audit-v0/`
+- Queue task: `.aide/queue/H1-BUNDLE-04/task.yaml`
+- Examples under `examples/connectors/h1_metadata_wave/review_integration/`
 
 ## NON_GOALS
 
-- No broad source search, unbounded API use, source sync, public query fanout, scraping, crawling, downloads, arbitrary URL fetch, model/provider calls, browser automation, public/master index mutation, evidence/candidate/source/public truth acceptance, source-pack import/submission, rights clearance, malware safety, installability, production-readiness claims, or changes to `HUMAN-OBS-REVIEW-01`.
+- No new live source calls by default, broad source search, unbounded API use, source sync, public query fanout, scraping, crawling, package/release/source/archive/WARC/exploit downloads, arbitrary URL fetch, model/provider calls, browser automation, public/master index mutation, evidence/candidate/source/public truth acceptance, source-pack import/submission/acceptance, hosting, telemetry, production-readiness claims, external superiority claims, automatic future connector approval, or local private-state roots.
 
 ## ACCEPTANCE
 
-- H1 live-probe framework exists and validates offline.
-- Live probes fail closed unless committed source-specific approval exists.
-- Current outputs are blocked because no source has committed live approval.
+- H1 review integration, quality delta, postmortem, and audit artifacts exist and validate offline.
+- H1 exit gate is explicit.
+- Next phase recommendation is explicit.
+- No public/master index mutation, truth acceptance, product behavior change, live call, or download occurs.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `COMMITS`, `LIVE_PROBES`, `CHANGED`, `VALIDATION`, `RISKS`, and `NEXT TASK`.
+Return `STATUS`, `SUMMARY`, `COMMITS`, `H1_EXIT`, `NEXT_PHASE`, `CHANGED`, `VALIDATION`, `RISKS`, and `NEXT TASK`.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1800
+approx_tokens: 1900

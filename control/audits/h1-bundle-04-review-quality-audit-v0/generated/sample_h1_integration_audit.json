@@ -1,0 +1,131 @@
+{
+  "artifact_inventory": {
+    "connector_wave_postmortem": true,
+    "fixture_outputs_integrated": 7,
+    "live_probe_outputs_integrated": 8,
+    "quality_delta_report": true,
+    "review_integration_result": true
+  },
+  "audit_id": "h1.integration_audit.7d1f250f2259.v0",
+  "audited_sources": [
+    "github_releases",
+    "npm_registry",
+    "osv",
+    "pypi",
+    "repology",
+    "software_heritage",
+    "wayback_cdx_memento"
+  ],
+  "audited_tasks": [
+    "H1-BUNDLE-01",
+    "H1-BUNDLE-02",
+    "H1-BUNDLE-03",
+    "H1-BUNDLE-04"
+  ],
+  "blockers": [],
+  "fixture_runtime_summary": {
+    "fixture_outputs_integrated": 7
+  },
+  "h1_exit_gate": "PASS_WITH_WARNINGS",
+  "live_probe_summary": {
+    "blocked_sources": [
+      "github_releases",
+      "npm_registry",
+      "osv",
+      "pypi",
+      "repology",
+      "software_heritage",
+      "wayback_cdx_memento"
+    ],
+    "completed_sources": [],
+    "network_used": false
+  },
+  "next_phase_recommendation": "READY_FOR_F_BUNDLE_01",
+  "notes": [
+    "H1 passes with warnings for offline extraction sandbox planning."
+  ],
+  "postmortem_summary": {
+    "auto_approves_future_connectors": false,
+    "errors": [],
+    "h2_or_extraction_recommendation": "proceed_to_f_bundle_01_before_h2_live_expansion",
+    "next_phase_recommendation": "READY_FOR_F_BUNDLE_01",
+    "postmortem_id": "h1.connector_wave_postmortem.214a160aff44.v0",
+    "schema_version": "h1_connector_wave_postmortem_summary.v0",
+    "status": "pass"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_summary": {
+    "blocked_sources_count": 7,
+    "blocker_count": 7,
+    "claims_external_superiority": false,
+    "claims_production_readiness": false,
+    "fixture_sources_count": 7,
+    "known_gap_count": 1,
+    "live_probe_sources_count": 0,
+    "overclaim_errors": [],
+    "quality_delta_id": "h1.quality_delta.d69215c79284.v0",
+    "review_seed_count": 14,
+    "schema_version": "h1_quality_delta_summary.v0",
+    "source_count": 7,
+    "status": "pass"
+  },
+  "review_integration_summary": {
+    "blocked_sources": [
+      "github_releases",
+      "npm_registry",
+      "osv",
+      "pypi",
+      "repology",
+      "software_heritage",
+      "wayback_cdx_memento"
+    ],
+    "candidate_promotion_preview_count": 1,
+    "coverage_update_preview_count": 7,
+    "evidence_candidate_review_seed_count": 7,
+    "schema_version": "h1_review_integration_summary.v0",
+    "scorecard_update_count": 7,
+    "source_cache_review_seed_count": 7,
+    "source_count": 7,
+    "source_pack_update_preview_count": 1,
+    "status": "pass",
+    "truth_boundary_violations": [],
+    "wave_id": "H1"
+  },
+  "schema_version": "h1_integration_audit.v0",
+  "source_policy_summary": {
+    "live_access_default": false,
+    "policy_packs_present": true
+  },
+  "truth_boundary": {
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "external_superiority_claimed": false,
+    "h1_postmortem_enables_future_connectors_automatically": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "validation_summary": {
+    "offline_default": true,
+    "status": "pass"
+  },
+  "warnings": [
+    "H1 live probes remain blocked pending operator approval"
+  ],
+  "wave_id": "H1"
+}
