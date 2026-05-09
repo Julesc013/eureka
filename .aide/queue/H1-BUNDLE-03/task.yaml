@@ -1,0 +1,54 @@
+task_id: H1-BUNDLE-03
+title: First metadata wave approved live probes
+status: active
+phase: H1-BUNDLE-03
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/queue/index.yaml
+  - .aide/queue/H1-BUNDLE-03/**
+  - contracts/connectors/h1_live_probe_request.v0.json
+  - contracts/connectors/h1_live_probe_result.v0.json
+  - contracts/connectors/h1_live_probe_output_bundle.v0.json
+  - control/inventory/connectors/h1_metadata_live_probe_*.json
+  - control/audits/h1-bundle-03-metadata-live-probes-v0/**
+  - runtime/connectors/h1_metadata_wave/live_probe_*.py
+  - scripts/run_h1_metadata_live_probe.py
+  - scripts/validate_h1_metadata_live_probe.py
+  - scripts/summarize_h1_live_probe_outputs.py
+  - scripts/validate_ia_readiness_polish.py
+  - docs/reference/H1_METADATA_LIVE_PROBE.md
+  - docs/reference/H1_METADATA_LIVE_PROBE_RESULT.md
+  - docs/architecture/H1_METADATA_LIVE_PROBE_MODEL.md
+  - docs/operations/H1_METADATA_LIVE_PROBE_REVIEW.md
+  - docs/operations/H1_METADATA_LIVE_PROBE_APPROVAL_GATES.md
+  - docs/operations/H1_METADATA_LIVE_PROBE_BLOCKED_MODE.md
+  - examples/connectors/h1_metadata_wave/live_probe/**
+  - examples/connectors/h1_metadata_wave/live_probe_results/**
+  - examples/connectors/h1_metadata_wave/live_probe_outputs/**
+  - tests/connectors/test_h1_metadata_live_probe.py
+  - tests/operations/test_h1_metadata_live_probe_scripts.py
+  - tests/operations/test_ia_readiness_polish.py
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - control/inventory/sources/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no default live source calls
+  - no broad search or public query fanout
+  - no downloads, scraping, crawling, source sync, index mutation, or truth acceptance
+validation:
+  - python scripts/validate_h1_metadata_live_probe.py
+  - python scripts/run_h1_metadata_live_probe.py --source-id pypi --request-key example_project_metadata --check
+  - python scripts/summarize_h1_live_probe_outputs.py --input examples/connectors/h1_metadata_wave/live_probe_results --check
+  - python -m unittest tests.connectors.test_h1_metadata_live_probe
+  - python -m unittest tests.operations.test_h1_metadata_live_probe_scripts
+next_recommended_task: H1-APPROVAL-01

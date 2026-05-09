@@ -1,0 +1,48 @@
+{
+  "policy_id": "h1_metadata_live_probe_cache_policy",
+  "schema_version": "h1_metadata_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "github_releases"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "pypi"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "npm_registry"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "software_heritage"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "repology"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "pending_operator_approval",
+      "source_id": "osv"
+    }
+  ]
+}

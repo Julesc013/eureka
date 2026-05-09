@@ -1,0 +1,53 @@
+{
+  "allowed_operation_scope": "metadata_only",
+  "current_status": "blocked_pending_operator_approval",
+  "forbidden_operations": [
+    "unbounded_search",
+    "public_query_fanout",
+    "scrape_html",
+    "crawl",
+    "download_binary",
+    "package_download",
+    "release_asset_download",
+    "source_archive_download",
+    "warc_payload_download",
+    "exploit_payload_download",
+    "source_sync",
+    "mutate_public_index",
+    "mutate_master_index",
+    "accept_evidence_truth",
+    "accept_public_truth"
+  ],
+  "live_probe_default_enabled": false,
+  "max_requests_per_source_per_run": 1,
+  "max_sources_per_run": 1,
+  "max_total_requests_per_run": 1,
+  "no_goals": [
+    "no broad search",
+    "no downloads",
+    "no scraping",
+    "no source sync",
+    "no truth acceptance"
+  ],
+  "policy_id": "h1_metadata_live_probe_policy",
+  "public_query_fanout_enabled": false,
+  "required_approvals": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "request_key_approval",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl_or_no_cache",
+    "kill_switch",
+    "output_path_policy"
+  ],
+  "required_output_boundaries": [
+    "preview_only",
+    "review_required",
+    "no_index_mutation",
+    "no_downloads"
+  ],
+  "schema_version": "h1_metadata_live_probe_policy.v0",
+  "source_sync_enabled": false
+}

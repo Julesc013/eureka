@@ -1,0 +1,97 @@
+{
+  "policy_id": "h1_metadata_live_probe_rate_limit_policy",
+  "schema_version": "h1_metadata_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "wayback_cdx_memento",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "github_releases",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "pypi",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "npm_registry",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "software_heritage",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "repology",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0,
+        "retry_on_statuses": []
+      },
+      "source_id": "osv",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "pending_operator_approval"
+    }
+  ]
+}

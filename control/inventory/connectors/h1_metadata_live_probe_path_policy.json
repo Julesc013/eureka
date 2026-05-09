@@ -1,0 +1,23 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h1_metadata_wave/live_probe_results/",
+    "examples/connectors/h1_metadata_wave/live_probe_outputs/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "data/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "policy_id": "h1_metadata_live_probe_path_policy",
+  "schema_version": "h1_metadata_live_probe_path_policy.v0"
+}

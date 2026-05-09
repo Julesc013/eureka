@@ -1,0 +1,118 @@
+{
+  "added_contracts": [
+    "contracts/connectors/h1_live_probe_request.v0.json",
+    "contracts/connectors/h1_live_probe_result.v0.json",
+    "contracts/connectors/h1_live_probe_output_bundle.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/H1_METADATA_LIVE_PROBE.md",
+    "docs/reference/H1_METADATA_LIVE_PROBE_RESULT.md",
+    "docs/architecture/H1_METADATA_LIVE_PROBE_MODEL.md",
+    "docs/operations/H1_METADATA_LIVE_PROBE_REVIEW.md",
+    "docs/operations/H1_METADATA_LIVE_PROBE_APPROVAL_GATES.md",
+    "docs/operations/H1_METADATA_LIVE_PROBE_BLOCKED_MODE.md"
+  ],
+  "added_examples": [
+    "examples/connectors/h1_metadata_wave/live_probe",
+    "examples/connectors/h1_metadata_wave/live_probe_results",
+    "examples/connectors/h1_metadata_wave/live_probe_outputs"
+  ],
+  "added_inventories": [
+    "control/inventory/connectors/h1_metadata_live_probe_*.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/connectors/h1_metadata_wave/live_probe_common.py",
+    "runtime/connectors/h1_metadata_wave/live_probe_*.py"
+  ],
+  "added_scripts": [
+    "scripts/run_h1_metadata_live_probe.py",
+    "scripts/validate_h1_metadata_live_probe.py",
+    "scripts/summarize_h1_live_probe_outputs.py"
+  ],
+  "added_tests": [
+    "tests/connectors/test_h1_metadata_live_probe.py",
+    "tests/operations/test_h1_metadata_live_probe_scripts.py"
+  ],
+  "live_probe_results": {
+    "attempted_sources": [],
+    "blocked_sources": [
+      "wayback_cdx_memento",
+      "github_releases",
+      "pypi",
+      "npm_registry",
+      "software_heritage",
+      "repology",
+      "osv"
+    ],
+    "completed_sources": [],
+    "network_used": false,
+    "request_count_total": 0
+  },
+  "live_probe_scope": {
+    "bounded_metadata_only": true,
+    "default_offline_preflight": true,
+    "live_call_requires_committed_approval": true,
+    "live_call_requires_explicit_flag": true,
+    "public_query_fanout_enabled": false,
+    "source_sync_enabled": false
+  },
+  "next_task": "H1-APPROVAL-01 \u2014 Operator approval for first H1 metadata probes",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "first_metadata_wave_bounded_live_probes",
+  "schema_version": "h1_bundle_03_report.v0",
+  "sources": [
+    "wayback_cdx_memento",
+    "github_releases",
+    "pypi",
+    "npm_registry",
+    "software_heritage",
+    "repology",
+    "osv"
+  ],
+  "status": "blocked",
+  "task": "H1-BUNDLE-03",
+  "track": "H1",
+  "truth_boundary": {
+    "evidence_candidate_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "git_diff_check": "pass",
+    "json_contracts_and_policies": "pass",
+    "h1_metadata_live_probe_validator": "pass",
+    "h1_metadata_live_probe_cli_check": "pass",
+    "h1_live_probe_summary_check": "pass",
+    "h1_metadata_live_probe_tests": "pass",
+    "h1_metadata_live_probe_script_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_h0_h1_ia_core_validators": "pass",
+    "ia_readiness_polish_validator": "pass_after_h1_progression_compatibility_update",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_optional_missing_review_refs",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_adapter_validate": "pass"
+  }
+}

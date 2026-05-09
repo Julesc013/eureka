@@ -1,0 +1,113 @@
+{
+  "policy_id": "h1_metadata_live_probe_endpoint_policy",
+  "schema_version": "h1_metadata_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "raw_warc_payload_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "cdx_metadata_lookup_future",
+        "memento_timegate_metadata_future",
+        "raw_warc_payload_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "release_asset_download_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "release_metadata_lookup_future",
+        "release_asset_metadata_future",
+        "release_asset_download_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "github_releases"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "distribution_file_download_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "project_metadata_lookup_future",
+        "release_metadata_lookup_future",
+        "distribution_file_download_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "pypi"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "tarball_download_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "package_metadata_lookup_future",
+        "tarball_download_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "npm_registry"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "source_archive_download_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "swhid_resolution_future",
+        "origin_metadata_lookup_future",
+        "source_archive_download_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "software_heritage"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [],
+      "metadata_endpoint_classes_planned": [
+        "project_metadata_lookup_future",
+        "package_status_metadata_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "repology"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "exploit_payload_forbidden_current"
+      ],
+      "metadata_endpoint_classes_planned": [
+        "vulnerability_metadata_lookup_future",
+        "exploit_payload_forbidden_current"
+      ],
+      "scraping_allowed": false,
+      "source_id": "osv"
+    }
+  ]
+}
