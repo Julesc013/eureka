@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H1-BUNDLE-04
+current_recommended_task: F-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -183,7 +183,7 @@ entries:
     recommended_after: H1-BUNDLE-02
   - id: H1-BUNDLE-04
     title: First metadata wave review integration and quality delta
-    status: active
+    status: needs_review
     purpose: Integrate H1 fixture and blocked live-probe outputs into review previews, quality delta, source-pack update previews, postmortem, H1 audit, and F extraction handoff evidence.
     allowed_scope_summary: H1 review/quality/audit contracts, connector policies, runtime helpers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
     gate: H1-BUNDLE-03 is PASS/PASS_WITH_WARNINGS/BLOCKED with sufficient fixture-equivalent outputs; no new live calls by default, downloads, scraping, source sync, index mutation, truth acceptance, production claims, or external superiority claims.
@@ -198,11 +198,19 @@ entries:
     recommended_after: H1-BUNDLE-03
   - id: F-BUNDLE-01
     title: Extraction sandbox and Tier 0-2 fixture extraction
-    status: queued
+    status: needs_review
     purpose: Define the offline extraction sandbox and Tier 0-2 fixture extraction path using H1 fixture-equivalent metadata outputs without enabling live access or downloads by default.
     allowed_scope_summary: F extraction contracts, fixture sandbox policies, runtime fixture helpers, examples, docs, tests, and audit evidence only until separately scoped.
     gate: H1-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_F_BUNDLE_01; no live source calls, downloads, source sync, public/master index mutation, or truth acceptance by default.
+    task: .aide/queue/F-BUNDLE-01/task.yaml
     recommended_after: H1-BUNDLE-04
+  - id: F-BUNDLE-02
+    title: Extraction candidate effects and search integration
+    status: queued
+    purpose: Refine extraction candidate effects and search integration previews from F-BUNDLE-01 fixture-only outputs without accepting evidence or mutating public/master indexes.
+    allowed_scope_summary: F extraction candidate-effect policies, docs, examples, scripts, tests, and audit evidence only until separately scoped.
+    gate: F-BUNDLE-01 passes; no private file access, downloads, execution, source sync, public/master index mutation, or truth acceptance by default.
+    recommended_after: F-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

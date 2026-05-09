@@ -1,0 +1,47 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_candidate_effect.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "candidate_effect_id": {"type": "string"},
+    "candidate_summary": {"type": "string"},
+    "candidate_type": {"type": "string"},
+    "effect_type": {
+      "enum": [
+        "member_candidate",
+        "manifest_candidate",
+        "compatibility_hint_candidate",
+        "source_locator_candidate",
+        "extraction_gap_candidate",
+        "review_seed_candidate"
+      ],
+      "type": "string"
+    },
+    "evidence_candidate_preview": {"type": "object"},
+    "extraction_result_ref": {"type": "string"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "product_boundary": {"type": "object"},
+    "related_manifest_refs": {"items": {"type": "string"}, "type": "array"},
+    "related_member_refs": {"items": {"type": "string"}, "type": "array"},
+    "review_seed_preview": {"type": "object"},
+    "source_cache_candidate_preview": {"type": "object"},
+    "truth_boundary": {"type": "object"}
+  },
+  "required": [
+    "candidate_effect_id",
+    "extraction_result_ref",
+    "effect_type",
+    "candidate_type",
+    "candidate_summary",
+    "related_member_refs",
+    "related_manifest_refs",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_seed_preview",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Candidate Effect v0",
+  "type": "object"
+}

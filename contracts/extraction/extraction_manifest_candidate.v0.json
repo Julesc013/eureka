@@ -1,0 +1,35 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_manifest_candidate.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "evidence_candidate_preview": {"type": "object"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "manifest_candidate_id": {"type": "string"},
+    "manifest_kind": {"type": "string"},
+    "manifest_name": {"type": "string"},
+    "manifest_preview": {"type": "string"},
+    "manifest_size": {"type": "integer"},
+    "member_ref": {"type": "string"},
+    "parsed_fields": {"type": "object"},
+    "parser_confidence": {"type": "string"},
+    "product_boundary": {"type": "object"},
+    "truth_boundary": {"type": "object"}
+  },
+  "required": [
+    "manifest_candidate_id",
+    "member_ref",
+    "manifest_kind",
+    "manifest_name",
+    "manifest_size",
+    "manifest_preview",
+    "parsed_fields",
+    "parser_confidence",
+    "limitations",
+    "evidence_candidate_preview",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Manifest Candidate v0",
+  "type": "object"
+}

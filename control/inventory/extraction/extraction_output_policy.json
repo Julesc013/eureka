@@ -1,0 +1,27 @@
+{
+  "schema_version": "extraction_output_policy.v0",
+  "policy_id": "f_bundle_01_extraction_outputs",
+  "allowed_output_types": [
+    "extraction_result",
+    "member_listing",
+    "manifest_candidate",
+    "candidate_effect_preview",
+    "evidence_candidate_preview",
+    "review_seed_preview",
+    "safety_report"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "downloaded_file",
+    "executed_file",
+    "installer_result",
+    "malware_safety",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "notes": ["Outputs are previews and reports only."]
+}

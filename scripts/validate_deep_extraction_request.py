@@ -205,7 +205,11 @@ def validate_checksums(root: Path) -> None:
 def example_roots() -> list[Path]:
     if not EXAMPLES_ROOT.exists():
         return []
-    return sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir())
+    return sorted(
+        path
+        for path in EXAMPLES_ROOT.iterdir()
+        if path.is_dir() and (path / "DEEP_EXTRACTION_REQUEST.json").is_file()
+    )
 
 
 def emit(ok: bool, checked: list[str], errors: list[str], json_mode: bool) -> int:

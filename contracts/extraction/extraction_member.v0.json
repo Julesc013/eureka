@@ -1,13 +1,29 @@
 {
   "$id": "eureka.contracts.extraction.extraction_member.v0",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "limitations": {
       "items": {
         "type": "string"
       },
       "type": "array"
+    },
+    "block_reason": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "detected_extension": {
+      "type": "string"
+    },
+    "extracted_payload_stored": {
+      "const": false,
+      "type": "boolean"
+    },
+    "manifest_like": {
+      "type": "boolean"
     },
     "member_checksum_refs": {
       "items": {
@@ -16,6 +32,9 @@
       "type": "array"
     },
     "member_id": {
+      "type": "string"
+    },
+    "member_path": {
       "type": "string"
     },
     "member_kind": {
@@ -66,15 +85,36 @@
       "const": false,
       "type": "boolean"
     },
+    "path_safe": {
+      "type": "boolean"
+    },
+    "preview_allowed": {
+      "type": "boolean"
+    },
     "private_path_detected": {
       "const": false,
       "type": "boolean"
+    },
+    "product_boundary": {
+      "type": "object"
     },
     "risk_labels": {
       "items": {
         "type": "string"
       },
       "type": "array"
+    },
+    "size_compressed": {
+      "type": ["integer", "null"]
+    },
+    "size_uncompressed": {
+      "type": ["integer", "null"]
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "normalized_member_path": {
+      "type": "string"
     }
   },
   "required": [
@@ -88,6 +128,6 @@
     "private_path_detected",
     "limitations"
   ],
-  "title": "Eureka Extraction Member Summary v0",
+  "title": "Eureka Extraction Member v0",
   "type": "object"
 }

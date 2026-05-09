@@ -1,0 +1,8 @@
+{
+  "schema_version": "extraction_container_type_policy.v0",
+  "policy_id": "f_bundle_01_extraction_container_types",
+  "allowed_current": ["zip", "tar"],
+  "unsupported_future": ["7z", "rar", "iso", "dmg", "cab", "msi", "warc", "wacz", "pdf"],
+  "forbidden_current": ["executable", "installer", "unknown_binary"],
+  "notes": ["Only zipfile and tarfile fixture containers are enabled."]
+}

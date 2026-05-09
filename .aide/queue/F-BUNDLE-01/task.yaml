@@ -1,0 +1,54 @@
+task_id: F-BUNDLE-01
+title: Extraction sandbox and Tier 0-2 fixture extraction
+status: needs_review
+phase: F-BUNDLE-01
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/queue/index.yaml
+  - .aide/queue/F-BUNDLE-01/**
+  - contracts/extraction/**
+  - runtime/extraction/**
+  - scripts/run_fixture_extraction.py
+  - scripts/summarize_extraction_results.py
+  - scripts/validate_extraction_sandbox.py
+  - control/inventory/extraction/**
+  - docs/reference/EXTRACTION_SANDBOX_CONTRACT.md
+  - docs/reference/EXTRACTION_RESULT_CONTRACT.md
+  - docs/reference/EXTRACTION_MEMBER_CONTRACT.md
+  - docs/reference/EXTRACTION_MANIFEST_CANDIDATE_CONTRACT.md
+  - docs/architecture/EXTRACTION_SANDBOX_MODEL.md
+  - docs/architecture/EXTRACTION_TIER_MODEL.md
+  - docs/operations/EXTRACTION_FIXTURE_POLICY.md
+  - docs/operations/EXTRACTION_SAFETY_GUARDS.md
+  - docs/operations/EXTRACTION_CANDIDATE_EFFECTS.md
+  - examples/extraction/fixtures/**
+  - examples/extraction/targets/**
+  - examples/extraction/results/**
+  - examples/extraction/candidate_effects/**
+  - tests/extraction/**
+  - tests/operations/test_extraction_scripts.py
+  - control/audits/f-bundle-01-extraction-sandbox-tier0-2-v0/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - control/inventory/sources/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no private file inspection, downloads, live calls, network calls, execution, installer runs, recursive deep extraction, source sync, index mutation, truth acceptance, rights clearance, malware safety, or verified installability claims
+validation:
+  - python scripts/validate_extraction_sandbox.py
+  - python scripts/run_fixture_extraction.py --target examples/extraction/targets/zip_manifest_target_v0.json --tiers 0,1,2 --check
+  - python scripts/summarize_extraction_results.py --input examples/extraction/results --check
+  - python -m unittest tests.extraction.test_extraction_sandbox
+  - python -m unittest tests.extraction.test_extraction_tiers
+  - python -m unittest tests.extraction.test_extraction_guards
+  - python -m unittest tests.operations.test_extraction_scripts
+next_recommended_task: F-BUNDLE-02

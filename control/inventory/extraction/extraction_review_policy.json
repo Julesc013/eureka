@@ -1,0 +1,10 @@
+{
+  "schema_version": "extraction_review_policy.v0",
+  "policy_id": "f_bundle_01_extraction_review_policy",
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "automatic_acceptance_allowed": false,
+  "notes": ["Human review is required before any downstream acceptance."]
+}

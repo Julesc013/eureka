@@ -1,0 +1,38 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_target.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "declared_container_type": {"type": "string"},
+    "expected_result_refs": {"items": {"type": "string"}, "type": "array"},
+    "fixture_public_safe": {"type": "boolean"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "product_boundary": {"type": "object"},
+    "requested_tiers": {"items": {"type": "string"}, "type": "array"},
+    "target_id": {"type": "string"},
+    "target_kind": {"type": "string"},
+    "target_path": {"type": "string"},
+    "target_path_policy": {"type": "string"},
+    "target_status": {
+      "enum": ["example_only", "fixture_only", "repo_local_fixture", "policy_blocked", "not_evaluable"],
+      "type": "string"
+    },
+    "truth_boundary": {"type": "object"}
+  },
+  "required": [
+    "target_id",
+    "target_status",
+    "target_kind",
+    "target_path",
+    "target_path_policy",
+    "declared_container_type",
+    "requested_tiers",
+    "fixture_public_safe",
+    "expected_result_refs",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Extraction Target v0",
+  "type": "object"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "extraction_tier_policy.v0",
+  "policy_id": "f_bundle_01_extraction_tiers",
+  "allowed_current_tiers": ["0", "1", "2"],
+  "tier0_outer_metadata_current": true,
+  "tier1_member_listing_current": true,
+  "tier2_manifest_extraction_current": true,
+  "tier3_selective_text_future": true,
+  "tier4_recursive_deep_future": true,
+  "tier5_on_demand_deepening_future": true,
+  "recursive_deep_extraction_enabled": false,
+  "notes": ["Tier 3 and deeper remain future-only."]
+}

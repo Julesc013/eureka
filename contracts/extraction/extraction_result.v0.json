@@ -1,0 +1,58 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_result.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_members": {"items": {"type": "object"}, "type": "array"},
+    "candidate_effect_refs": {"items": {"type": "string"}, "type": "array"},
+    "container_type": {"type": "string"},
+    "extraction_result_id": {"type": "string"},
+    "extraction_status": {
+      "enum": [
+        "example_only",
+        "completed_fixture",
+        "partial_fixture",
+        "blocked_by_policy",
+        "blocked_path_traversal",
+        "blocked_archive_bomb_risk",
+        "blocked_resource_limit",
+        "unsupported_container",
+        "not_evaluable"
+      ],
+      "type": "string"
+    },
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "manifest_candidates": {"items": {"type": "object"}, "type": "array"},
+    "member_listing": {"items": {"type": "object"}, "type": "array"},
+    "notes": {"items": {"type": "string"}, "type": "array"},
+    "outer_metadata": {"type": "object"},
+    "product_boundary": {"type": "object"},
+    "safety_report_ref": {"type": ["string", "null"]},
+    "target_ref": {"type": "string"},
+    "tiers_attempted": {"items": {"type": "string"}, "type": "array"},
+    "tiers_completed": {"items": {"type": "string"}, "type": "array"},
+    "truth_boundary": {"type": "object"},
+    "warnings": {"items": {"type": "string"}, "type": "array"}
+  },
+  "required": [
+    "extraction_result_id",
+    "target_ref",
+    "extraction_status",
+    "tiers_attempted",
+    "tiers_completed",
+    "container_type",
+    "outer_metadata",
+    "member_listing",
+    "manifest_candidates",
+    "blocked_members",
+    "warnings",
+    "limitations",
+    "safety_report_ref",
+    "candidate_effect_refs",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "title": "Eureka Extraction Result v0",
+  "type": "object"
+}

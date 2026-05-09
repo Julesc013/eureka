@@ -1,7 +1,7 @@
 {
   "$id": "eureka.contracts.extraction.extraction_policy.v0",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "allowed_tiers": {
       "items": {
@@ -20,6 +20,18 @@
       },
       "type": "array"
     },
+    "allowed_container_types": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "allowed_manifest_names": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
     "arbitrary_path_access_allowed": {
       "const": false,
       "type": "boolean"
@@ -27,6 +39,12 @@
     "arbitrary_url_fetch_allowed": {
       "const": false,
       "type": "boolean"
+    },
+    "archive_bomb_policy": {
+      "type": "object"
+    },
+    "binary_payload_policy": {
+      "type": "object"
     },
     "candidate_index_mutation_allowed_now": {
       "const": false,
@@ -53,6 +71,12 @@
       },
       "type": "array"
     },
+    "forbidden_member_patterns": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
     "installer_execution_allowed": {
       "const": false,
       "type": "boolean"
@@ -60,6 +84,24 @@
     "master_index_mutation_allowed_now": {
       "const": false,
       "type": "boolean"
+    },
+    "max_input_bytes": {
+      "type": "integer"
+    },
+    "max_manifest_bytes": {
+      "type": "integer"
+    },
+    "max_member_count": {
+      "type": "integer"
+    },
+    "max_member_name_length": {
+      "type": "integer"
+    },
+    "max_recursion_depth": {
+      "type": "integer"
+    },
+    "max_total_uncompressed_bytes": {
+      "type": "integer"
     },
     "mutation_policy": {
       "type": "object"
@@ -76,6 +118,9 @@
     "package_manager_invocation_allowed": {
       "const": false,
       "type": "boolean"
+    },
+    "path_traversal_policy": {
+      "type": "object"
     },
     "payload_execution_allowed": {
       "const": false,
@@ -103,6 +148,15 @@
     "source_cache_mutation_allowed_now": {
       "const": false,
       "type": "boolean"
+    },
+    "special_file_policy": {
+      "type": "object"
+    },
+    "symlink_policy": {
+      "type": "object"
+    },
+    "text_preview_policy": {
+      "type": "object"
     },
     "status": {
       "enum": [
@@ -140,6 +194,6 @@
     "candidate_index_mutation_allowed_now",
     "master_index_mutation_allowed_now"
   ],
-  "title": "Eureka Deep Extraction Policy v0",
+  "title": "Eureka Extraction Policy v0",
   "type": "object"
 }

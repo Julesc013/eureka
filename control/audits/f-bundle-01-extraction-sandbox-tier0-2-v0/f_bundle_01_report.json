@@ -1,0 +1,128 @@
+{
+  "schema_version": "f_bundle_01_report.v0",
+  "status": "pass",
+  "task": "F-BUNDLE-01",
+  "track": "F",
+  "purpose": "extraction_sandbox_tier0_2_fixture_extraction",
+  "added_contracts": [
+    "contracts/extraction/extraction_sandbox.v0.json",
+    "contracts/extraction/extraction_target.v0.json",
+    "contracts/extraction/extraction_policy.v0.json",
+    "contracts/extraction/extraction_result.v0.json",
+    "contracts/extraction/extraction_member.v0.json",
+    "contracts/extraction/extraction_manifest_candidate.v0.json",
+    "contracts/extraction/extraction_candidate_effect.v0.json",
+    "contracts/extraction/extraction_safety_report.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/extraction/__init__.py",
+    "runtime/extraction/sandbox.py",
+    "runtime/extraction/container_detect.py",
+    "runtime/extraction/tier0_outer_metadata.py",
+    "runtime/extraction/tier1_member_listing.py",
+    "runtime/extraction/tier2_manifest_extract.py",
+    "runtime/extraction/guards.py",
+    "runtime/extraction/candidate_effects.py",
+    "runtime/extraction/summaries.py"
+  ],
+  "added_scripts": [
+    "scripts/run_fixture_extraction.py",
+    "scripts/summarize_extraction_results.py",
+    "scripts/validate_extraction_sandbox.py"
+  ],
+  "added_docs": [
+    "docs/reference/EXTRACTION_SANDBOX_CONTRACT.md",
+    "docs/reference/EXTRACTION_RESULT_CONTRACT.md",
+    "docs/reference/EXTRACTION_MEMBER_CONTRACT.md",
+    "docs/reference/EXTRACTION_MANIFEST_CANDIDATE_CONTRACT.md",
+    "docs/architecture/EXTRACTION_SANDBOX_MODEL.md",
+    "docs/architecture/EXTRACTION_TIER_MODEL.md",
+    "docs/operations/EXTRACTION_FIXTURE_POLICY.md",
+    "docs/operations/EXTRACTION_SAFETY_GUARDS.md",
+    "docs/operations/EXTRACTION_CANDIDATE_EFFECTS.md"
+  ],
+  "added_inventories": [
+    "control/inventory/extraction/extraction_sandbox_policy.json",
+    "control/inventory/extraction/extraction_resource_limit_policy.json",
+    "control/inventory/extraction/extraction_container_type_policy.json",
+    "control/inventory/extraction/extraction_path_safety_policy.json",
+    "control/inventory/extraction/extraction_archive_bomb_policy.json",
+    "control/inventory/extraction/extraction_tier_policy.json",
+    "control/inventory/extraction/extraction_output_policy.json",
+    "control/inventory/extraction/extraction_truth_policy.json",
+    "control/inventory/extraction/extraction_review_policy.json"
+  ],
+  "added_examples": [
+    "examples/extraction/fixtures/",
+    "examples/extraction/targets/",
+    "examples/extraction/results/",
+    "examples/extraction/candidate_effects/"
+  ],
+  "added_tests": [
+    "tests/extraction/test_extraction_sandbox.py",
+    "tests/extraction/test_extraction_tiers.py",
+    "tests/extraction/test_extraction_guards.py",
+    "tests/operations/test_extraction_scripts.py"
+  ],
+  "validation": {
+    "json_contracts_and_policies": "pass",
+    "validate_extraction_sandbox": "pass",
+    "run_fixture_extraction_check": "pass",
+    "summarize_extraction_results_check": "pass",
+    "extraction_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_h1_h0_ia_core_validators": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "warn",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "extraction_scope": {
+    "fixture_only": true,
+    "tier0_outer_metadata_enabled": true,
+    "tier1_member_listing_enabled": true,
+    "tier2_manifest_extraction_enabled": true,
+    "tier3_selective_text_enabled": false,
+    "recursive_deep_extraction_enabled": false,
+    "network_access_enabled": false,
+    "execution_enabled": false,
+    "private_file_access_enabled": false
+  },
+  "safety": {
+    "path_traversal_guard_enabled": true,
+    "archive_bomb_guard_enabled": true,
+    "resource_limits_enabled": true,
+    "symlink_guard_enabled": true,
+    "unsupported_container_guard_enabled": true
+  },
+  "truth_boundary": {
+    "extraction_result_is_public_truth": false,
+    "member_listing_is_accepted_evidence": false,
+    "manifest_candidate_is_accepted_evidence": false,
+    "candidate_effect_is_accepted_candidate": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "F-BUNDLE-02 - Extraction candidate effects and search integration"
+}

@@ -1,0 +1,37 @@
+{
+  "declared_container_type": "tar",
+  "expected_result_refs": [
+    "examples/extraction/results/tar_basic_tier1_result_v0.json"
+  ],
+  "fixture_public_safe": true,
+  "limitations": [
+    "Synthetic fixture target only."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "requested_tiers": [
+    "0",
+    "1"
+  ],
+  "schema_version": "extraction_target.v0",
+  "target_id": "extraction.target.tar_basic.v0",
+  "target_kind": "fixture_container",
+  "target_path": "examples/extraction/fixtures/tar_basic/tar_basic.tar",
+  "target_path_policy": "repo_fixture_only",
+  "target_status": "repo_local_fixture",
+  "truth_boundary": {
+    "candidate_effect_is_accepted_candidate": false,
+    "manifest_candidate_is_accepted_evidence": false,
+    "member_listing_is_accepted_evidence": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

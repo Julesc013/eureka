@@ -1,0 +1,39 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_safety_report.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "archive_bomb_checked": {"type": "boolean"},
+    "blocked_members": {"items": {"type": "object"}, "type": "array"},
+    "execution_prevented": {"type": "boolean"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "network_prevented": {"type": "boolean"},
+    "notes": {"items": {"type": "string"}, "type": "array"},
+    "path_traversal_checked": {"type": "boolean"},
+    "resource_limits_checked": {"type": "boolean"},
+    "result": {"type": "string"},
+    "safety_report_id": {"type": "string"},
+    "special_file_checked": {"type": "boolean"},
+    "symlink_checked": {"type": "boolean"},
+    "target_ref": {"type": "string"},
+    "warnings": {"items": {"type": "string"}, "type": "array"}
+  },
+  "required": [
+    "safety_report_id",
+    "target_ref",
+    "path_traversal_checked",
+    "archive_bomb_checked",
+    "resource_limits_checked",
+    "symlink_checked",
+    "special_file_checked",
+    "execution_prevented",
+    "network_prevented",
+    "blocked_members",
+    "warnings",
+    "limitations",
+    "result",
+    "notes"
+  ],
+  "title": "Eureka Extraction Safety Report v0",
+  "type": "object"
+}

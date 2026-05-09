@@ -1,0 +1,10 @@
+{
+  "schema_version": "extraction_path_safety_policy.v0",
+  "policy_id": "f_bundle_01_extraction_path_safety",
+  "block_absolute_paths": true,
+  "block_parent_traversal": true,
+  "block_drive_prefixes": true,
+  "block_null_bytes": true,
+  "block_symlinks_current": true,
+  "notes": ["Unsafe members are listed as blocked and never extracted."]
+}

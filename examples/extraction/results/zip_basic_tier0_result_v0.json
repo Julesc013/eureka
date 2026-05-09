@@ -1,0 +1,90 @@
+{
+  "blocked_members": [],
+  "candidate_effect_refs": [],
+  "candidate_effects": [],
+  "container_type": "zip",
+  "extraction_result_id": "extraction.result.3bf3b68d7601.v0",
+  "extraction_status": "completed_fixture",
+  "limitations": [
+    "Fixture-only extraction result.",
+    "No payload was executed or extracted to persistent storage.",
+    "Candidates and evidence previews require review before downstream use."
+  ],
+  "manifest_candidates": [],
+  "member_listing": [],
+  "notes": [
+    "Extraction creates candidate previews only, not truth."
+  ],
+  "outer_metadata": {
+    "container_type": "zip",
+    "input_size_bytes": 323,
+    "limitations": [
+      "Outer metadata is collected from a repo-local fixture only."
+    ],
+    "metadata_collected_at": "2026-05-09T17:13:27.511316+00:00",
+    "payload_executed": false,
+    "payload_extracted_to_disk": false,
+    "schema_version": "extraction_tier0_outer_metadata.v0",
+    "sha256": "6e68f6e0603828e6ca3cdac52cf1f5004c7a69d86268183f2d67416c426804cd",
+    "suffixes": [
+      ".zip"
+    ],
+    "target_path_public_safe": "examples/extraction/fixtures/zip_basic/zip_basic.zip",
+    "tier": "0"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "safety_report": {
+    "archive_bomb_checked": false,
+    "blocked_members": [],
+    "execution_prevented": true,
+    "limitations": [
+      "Safety report is a fixture sandbox guard report, not malware safety."
+    ],
+    "network_prevented": true,
+    "notes": [
+      "No execution, network, downloads, source sync, or index mutation occurred."
+    ],
+    "path_traversal_checked": true,
+    "resource_limits_checked": true,
+    "result": "completed_fixture",
+    "safety_report_id": "extraction.safety_report.05484a7e30c4.v0",
+    "schema_version": "extraction_safety_report.v0",
+    "special_file_checked": true,
+    "symlink_checked": true,
+    "target_ref": "extraction.target.zip_basic.v0",
+    "warnings": []
+  },
+  "safety_report_ref": "extraction.safety_report.05484a7e30c4.v0",
+  "schema_version": "extraction_result.v0",
+  "target_ref": "extraction.target.zip_basic.v0",
+  "tiers_attempted": [
+    "0",
+    "1"
+  ],
+  "tiers_completed": [
+    "0"
+  ],
+  "truth_boundary": {
+    "candidate_effect_is_accepted_candidate": false,
+    "extraction_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "manifest_candidate_is_accepted_evidence": false,
+    "master_index_mutated": false,
+    "member_listing_is_accepted_evidence": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": []
+}

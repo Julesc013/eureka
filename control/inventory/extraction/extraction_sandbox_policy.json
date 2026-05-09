@@ -1,0 +1,54 @@
+{
+  "schema_version": "extraction_sandbox_policy.v0",
+  "policy_id": "f_bundle_01_fixture_extraction_sandbox_policy",
+  "fixture_only_current": true,
+  "private_file_access_allowed": false,
+  "arbitrary_path_access_allowed": false,
+  "network_allowed": false,
+  "execution_allowed": false,
+  "installer_execution_allowed": false,
+  "live_source_access_allowed": false,
+  "allowed_input_roots": [
+    "examples/extraction/fixtures/",
+    "examples/extraction/targets/",
+    "examples/extraction/results/",
+    "explicit temp test directory"
+  ],
+  "forbidden_input_roots": [
+    "C:/Users/",
+    "/Users/",
+    "/home/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    "secrets/"
+  ],
+  "allowed_output_roots": [
+    "examples/extraction/results/",
+    "examples/extraction/candidate_effects/",
+    "control/audits/**/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "data/master_index/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "allowed_container_types": ["zip", "tar"],
+  "forbidden_container_types": ["executable", "installer", "unknown_binary"],
+  "no_goals": [
+    "no private file inspection",
+    "no payload execution",
+    "no network calls",
+    "no persistent payload extraction"
+  ],
+  "notes": ["F-BUNDLE-01 is fixture-only and review-preview only."]
+}

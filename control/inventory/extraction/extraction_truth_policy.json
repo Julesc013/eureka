@@ -1,0 +1,14 @@
+{
+  "schema_version": "extraction_truth_policy.v0",
+  "policy_id": "f_bundle_01_extraction_truth_boundary",
+  "extraction_result_is_truth": false,
+  "member_listing_is_accepted_evidence": false,
+  "manifest_candidate_is_accepted_evidence": false,
+  "candidate_effect_is_accepted_candidate": false,
+  "extraction_can_mutate_public_index": false,
+  "extraction_can_mutate_master_index": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "notes": ["Extraction records observations and candidates only."]
+}

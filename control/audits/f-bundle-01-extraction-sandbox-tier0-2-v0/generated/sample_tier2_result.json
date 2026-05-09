@@ -1,0 +1,338 @@
+{
+  "blocked_members": [],
+  "candidate_effect_refs": [
+    "extraction.candidate_effect.f5b32552bacd.v0",
+    "extraction.candidate_effect.3d76fa293752.v0"
+  ],
+  "candidate_effects": [
+    {
+      "candidate_effect_id": "extraction.candidate_effect.f5b32552bacd.v0",
+      "candidate_summary": "member_candidate preview for extraction.target.zip_manifest.v0",
+      "candidate_type": "container_member_listing",
+      "effect_type": "member_candidate",
+      "evidence_candidate_preview": {
+        "accepted_evidence": false,
+        "evidence_ledger_mutated": false,
+        "evidence_preview_id": "extraction.evidence_preview.227ba35fac61.v0"
+      },
+      "extraction_result_ref": "extraction.result.9b5ffda7ca70.v0",
+      "limitations": [
+        "Candidate effect is a preview only and does not accept a candidate."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "related_manifest_refs": [],
+      "related_member_refs": [
+        "README.txt",
+        "package.json"
+      ],
+      "review_seed_preview": {
+        "review_decision": false,
+        "review_queue_mutated": false,
+        "review_required": true,
+        "review_seed_id": "extraction.review_seed.227ba35fac61.v0"
+      },
+      "schema_version": "extraction_candidate_effect.v0",
+      "source_cache_candidate_preview": {
+        "accepted_source_truth": false,
+        "candidate_id": "extraction.source_cache_preview.227ba35fac61.v0",
+        "source_cache_mutated": false
+      },
+      "truth_boundary": {
+        "candidate_effect_is_accepted_candidate": false,
+        "extraction_result_is_public_truth": false,
+        "malware_safety_claimed": false,
+        "manifest_candidate_is_accepted_evidence": false,
+        "master_index_mutated": false,
+        "member_listing_is_accepted_evidence": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "candidate_effect_id": "extraction.candidate_effect.3d76fa293752.v0",
+      "candidate_summary": "manifest_candidate preview for extraction.target.zip_manifest.v0",
+      "candidate_type": "manifest_metadata",
+      "effect_type": "manifest_candidate",
+      "evidence_candidate_preview": {
+        "accepted_evidence": false,
+        "evidence_ledger_mutated": false,
+        "evidence_preview_id": "extraction.evidence_preview.712ec6503063.v0"
+      },
+      "extraction_result_ref": "extraction.result.9b5ffda7ca70.v0",
+      "limitations": [
+        "Candidate effect is a preview only and does not accept a candidate."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "related_manifest_refs": [
+        "extraction.manifest_candidate.740b0f9c29b4.v0"
+      ],
+      "related_member_refs": [],
+      "review_seed_preview": {
+        "review_decision": false,
+        "review_queue_mutated": false,
+        "review_required": true,
+        "review_seed_id": "extraction.review_seed.712ec6503063.v0"
+      },
+      "schema_version": "extraction_candidate_effect.v0",
+      "source_cache_candidate_preview": {
+        "accepted_source_truth": false,
+        "candidate_id": "extraction.source_cache_preview.712ec6503063.v0",
+        "source_cache_mutated": false
+      },
+      "truth_boundary": {
+        "candidate_effect_is_accepted_candidate": false,
+        "extraction_result_is_public_truth": false,
+        "malware_safety_claimed": false,
+        "manifest_candidate_is_accepted_evidence": false,
+        "master_index_mutated": false,
+        "member_listing_is_accepted_evidence": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "container_type": "zip",
+  "extraction_result_id": "extraction.result.9b5ffda7ca70.v0",
+  "extraction_status": "completed_fixture",
+  "limitations": [
+    "Fixture-only extraction result.",
+    "No payload was executed or extracted to persistent storage.",
+    "Candidates and evidence previews require review before downstream use."
+  ],
+  "manifest_candidates": [
+    {
+      "evidence_candidate_preview": {
+        "accepted_evidence": false,
+        "evidence_preview_id": "extraction.evidence_preview.84621b4eca41.v0",
+        "review_required": true,
+        "summary": "Fixture manifest candidate package.json"
+      },
+      "limitations": [
+        "Manifest candidate is parsed from a committed fixture only.",
+        "Manifest candidate is not accepted evidence."
+      ],
+      "manifest_candidate_id": "extraction.manifest_candidate.740b0f9c29b4.v0",
+      "manifest_kind": "package_json",
+      "manifest_name": "package.json",
+      "manifest_preview": "{\n  \"description\": \"Fixture manifest for extraction candidate previews.\",\n  \"files\": [\n    \"README.txt\",\n    \"package.json\"\n  ],\n  \"name\": \"synthetic-eureka-fixture\",\n  \"version\": \"0.0.1\"\n}\n",
+      "manifest_size": 190,
+      "member_ref": "package.json",
+      "parsed_fields": {
+        "description": "Fixture manifest for extraction candidate previews.",
+        "files": [
+          "README.txt",
+          "package.json"
+        ],
+        "name": "synthetic-eureka-fixture",
+        "version": "0.0.1"
+      },
+      "parser_confidence": "medium",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "schema_version": "extraction_manifest_candidate.v0",
+      "truth_boundary": {
+        "candidate_effect_is_accepted_candidate": false,
+        "extraction_result_is_public_truth": false,
+        "malware_safety_claimed": false,
+        "manifest_candidate_is_accepted_evidence": false,
+        "master_index_mutated": false,
+        "member_listing_is_accepted_evidence": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "member_listing": [
+    {
+      "block_reason": "",
+      "blocked": false,
+      "detected_extension": ".txt",
+      "extracted_payload_stored": false,
+      "manifest_like": false,
+      "member_id": "extraction.member.0cdef468118a.v0",
+      "member_kind": "file",
+      "member_path": "README.txt",
+      "normalized_member_path": "README.txt",
+      "path_safe": true,
+      "preview_allowed": true,
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "schema_version": "extraction_member.v0",
+      "size_compressed": 49,
+      "size_uncompressed": 47,
+      "truth_boundary": {
+        "candidate_effect_is_accepted_candidate": false,
+        "extraction_result_is_public_truth": false,
+        "malware_safety_claimed": false,
+        "manifest_candidate_is_accepted_evidence": false,
+        "master_index_mutated": false,
+        "member_listing_is_accepted_evidence": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "block_reason": "",
+      "blocked": false,
+      "detected_extension": ".json",
+      "extracted_payload_stored": false,
+      "manifest_like": true,
+      "member_id": "extraction.member.17ff9edbadcc.v0",
+      "member_kind": "manifest",
+      "member_path": "package.json",
+      "normalized_member_path": "package.json",
+      "path_safe": true,
+      "preview_allowed": true,
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "schema_version": "extraction_member.v0",
+      "size_compressed": 146,
+      "size_uncompressed": 190,
+      "truth_boundary": {
+        "candidate_effect_is_accepted_candidate": false,
+        "extraction_result_is_public_truth": false,
+        "malware_safety_claimed": false,
+        "manifest_candidate_is_accepted_evidence": false,
+        "master_index_mutated": false,
+        "member_listing_is_accepted_evidence": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "notes": [
+    "Extraction creates candidate previews only, not truth."
+  ],
+  "outer_metadata": {
+    "container_type": "zip",
+    "input_size_bytes": 413,
+    "limitations": [
+      "Outer metadata is collected from a repo-local fixture only."
+    ],
+    "metadata_collected_at": "2026-05-09T17:13:27.511816+00:00",
+    "payload_executed": false,
+    "payload_extracted_to_disk": false,
+    "schema_version": "extraction_tier0_outer_metadata.v0",
+    "sha256": "65a981eb260063f5ee78c666ed6949c7ae051a5b9b908f05075d2ea0bfe76112",
+    "suffixes": [
+      ".zip"
+    ],
+    "target_path_public_safe": "examples/extraction/fixtures/zip_manifest/zip_manifest.zip",
+    "tier": "0"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "safety_report": {
+    "archive_bomb_checked": true,
+    "blocked_members": [],
+    "execution_prevented": true,
+    "limitations": [
+      "Safety report is a fixture sandbox guard report, not malware safety."
+    ],
+    "network_prevented": true,
+    "notes": [
+      "No execution, network, downloads, source sync, or index mutation occurred."
+    ],
+    "path_traversal_checked": true,
+    "resource_limits_checked": true,
+    "result": "completed_fixture",
+    "safety_report_id": "extraction.safety_report.eb8f60ec50b4.v0",
+    "schema_version": "extraction_safety_report.v0",
+    "special_file_checked": true,
+    "symlink_checked": true,
+    "target_ref": "extraction.target.zip_manifest.v0",
+    "warnings": []
+  },
+  "safety_report_ref": "extraction.safety_report.eb8f60ec50b4.v0",
+  "schema_version": "extraction_result.v0",
+  "target_ref": "extraction.target.zip_manifest.v0",
+  "tiers_attempted": [
+    "0",
+    "1",
+    "2"
+  ],
+  "tiers_completed": [
+    "0",
+    "1",
+    "2"
+  ],
+  "truth_boundary": {
+    "candidate_effect_is_accepted_candidate": false,
+    "extraction_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "manifest_candidate_is_accepted_evidence": false,
+    "master_index_mutated": false,
+    "member_listing_is_accepted_evidence": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": []
+}

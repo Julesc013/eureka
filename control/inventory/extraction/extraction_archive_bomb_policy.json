@@ -1,0 +1,9 @@
+{
+  "schema_version": "extraction_archive_bomb_policy.v0",
+  "policy_id": "f_bundle_01_extraction_archive_bomb_guard",
+  "max_compression_ratio": 20,
+  "max_total_uncompressed_bytes": 262144,
+  "max_nested_depth": 0,
+  "block_if_missing_size_metadata": true,
+  "notes": ["Archive-bomb fixtures are synthetic and small; risk is triggered by ratio metadata."]
+}
