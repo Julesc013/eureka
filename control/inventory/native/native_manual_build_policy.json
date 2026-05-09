@@ -1,0 +1,15 @@
+{
+  "schema_version": "native_manual_build_policy.v0",
+  "policy_id": "native_manual_build_policy_v0",
+  "manual_builds_current": true,
+  "automated_old_toolchain_build_required": false,
+  "toolchain_install_allowed": false,
+  "network_restore_allowed": false,
+  "build_logs_allowed_only_under_audit_generated": true,
+  "old_toolchain_unavailable_is_skip_or_warn": true,
+  "lanes": [
+    "win.win32",
+    "mac.appkit",
+    "mac.carbon"
+  ]
+}

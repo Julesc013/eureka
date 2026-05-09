@@ -106,6 +106,8 @@ class WindowsWinFormsSkeletonPlanningTestCase(unittest.TestCase):
     def test_no_native_project_files_were_added(self) -> None:
         forbidden_suffixes = {
             ".sln",
+            ".dsw",
+            ".dsp",
             ".csproj",
             ".cs",
             ".resx",
@@ -117,6 +119,8 @@ class WindowsWinFormsSkeletonPlanningTestCase(unittest.TestCase):
         governed_c_bundle_prefixes = (
             "native/win/winforms/project/",
             "native/win/winforms/src/Eureka/",
+            "native/win/win32/project/",
+            "native/mac/appkit/project/Eureka.xcodeproj",
         )
         offenders = [
             str(path.relative_to(REPO_ROOT))

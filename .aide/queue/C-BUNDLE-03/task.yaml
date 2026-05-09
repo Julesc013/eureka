@@ -1,0 +1,40 @@
+task_id: C-BUNDLE-03
+title: Native smoke evidence and packaging manifests
+status: queued
+phase: C-BUNDLE-03
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/queue/index.yaml
+  - .aide/queue/C-BUNDLE-03/**
+  - native/**
+  - contracts/native/**
+  - control/inventory/native/**
+  - docs/**
+  - scripts/**
+  - tests/**
+  - control/audits/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - control/inventory/publication/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no live source calls, no external calls, no downloads, no mirroring, no installs, no execution, no emulation, no source sync, no public query fanout, no model/provider calls, no public search behavior change, no public/master index mutation, no evidence/candidate/public truth acceptance, no hosting/public relay, no uploads/accounts/telemetry, no release binaries, no build outputs committed, no site/dist regeneration, and no local private-state roots
+validation:
+  - python scripts/validate_native_matrix.py
+  - python scripts/validate_native_skeleton.py
+  - python scripts/validate_native_c89_library.py
+  - python scripts/validate_native_first_wave_skeletons.py
+  - python scripts/validate_native_project_boundaries.py
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: C-BUNDLE-03

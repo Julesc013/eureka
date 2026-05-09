@@ -1,6 +1,6 @@
 task_id: C-BUNDLE-02
 title: Win32 AppKit Carbon read-only skeletons
-status: queued
+status: needs_review
 phase: C-BUNDLE-02
 allowed_paths:
   - .aide/context/latest-task-packet.md
@@ -35,4 +35,4 @@ validation:
   - py -3 .aide/scripts/aide_lite.py test
   - py -3 .aide/scripts/aide_lite.py selftest
   - py -3 .aide/scripts/aide_lite.py eval run
-next_recommended_task: C-BUNDLE-02
+next_recommended_task: C-BUNDLE-03

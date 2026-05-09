@@ -1,0 +1,19 @@
+{
+  "schema_version": "native_project_skeleton_policy.v0",
+  "policy_id": "native_project_skeleton_policy_v0",
+  "allowed_current_project_files": [
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp",
+    "native/mac/appkit/project/Eureka.xcodeproj/README.md",
+    "native/mac/carbon/project/Eureka.mcp.README.md"
+  ],
+  "placeholder_project_roots": [
+    "native/mac/appkit/project/Eureka.xcodeproj"
+  ],
+  "binary_project_files_allowed": false,
+  "release_artifacts_allowed": false,
+  "build_outputs_committed_allowed": false,
+  "swiftui_project_allowed_current": false,
+  "win16_project_allowed_current": false,
+  "winui_project_allowed_current": false
+}

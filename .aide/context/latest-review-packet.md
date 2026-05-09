@@ -2,8 +2,8 @@
 
 ## Review Objective
 
-Review C-BUNDLE-01 from compact evidence and decide whether the native skeleton,
-matrix, C89 helper, and WinForms proof are ready to pass the review gate.
+Review C-BUNDLE-02 from compact repo-local evidence and decide whether it is
+ready to pass its review gate.
 
 ## Decision Requested
 
@@ -12,7 +12,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-task-packet.md` now points the main lane to
+  `C-BUNDLE-03` after C-BUNDLE-02 implementation.
+- C-BUNDLE-02 task evidence is under
+  `control/audits/c-bundle-02-native-first-wave-skeletons-v0/`.
 
 ## Context Packet Reference
 
@@ -20,103 +23,99 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
-- `.aide/verification/review-decision-policy.yaml`
 
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
+- `.aide/verification/review-decision-policy.yaml`
 - verifier_result: WARN
-- note: C-BUNDLE-01 command results are recorded in
-  `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/validation.md`.
+- note: WARN is advisory diff-scope noise with zero errors for prompt-scoped
+  product paths.
 
 ## Evidence Packet References
 
-- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/`
-- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/c_bundle_01_report.json`
-- `.aide/queue/C-BUNDLE-01/task.yaml`
-- `.aide/queue/C-BUNDLE-02/task.yaml`
-- `.aide/queue/index.yaml`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/c_bundle_02_report.json`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/validation.md`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_first_wave_boundary_report.md`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_manual_build_evidence_plan.md`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_no_download_execute_report.md`
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/c_bundle_03_readiness_recommendation.md`
+- `.aide/reports/eureka-repo-health.md`
 
 ## Changed Files Summary
 
-- Added native skeleton, matrix files, C89 helper library, and WinForms read-only proof under `native/`.
-- Added native contracts under `contracts/native/`.
-- Added native policies under `control/inventory/native/`.
-- Added native reference, architecture, and operations docs.
-- Added native validators and tests.
-- Added C-BUNDLE-01 audit evidence and generated sample reports.
-- Updated historical native planning validators/tests only to allowlist the governed C-BUNDLE-01 WinForms proof files.
-- Updated AIDE queue/context/health handoff to point at C-BUNDLE-02.
+- Added Win32 ANSI VS6-style read-only skeleton files under `native/win/win32/`.
+- Added AppKit Objective-C read-only source skeleton and documented Xcode
+  project placeholder under `native/mac/appkit/`.
+- Added Carbon C read-only source skeleton and documented CodeWarrior project
+  placeholder under `native/mac/carbon/`.
+- Added native project skeleton, build evidence, smoke checklist, and read-only
+  surface contracts under `contracts/native/`.
+- Added first-wave native policies, documentation, validators, tests, and audit
+  evidence.
+- Updated native project allowlists and IA readiness progression validation to
+  recognize governed Track C follow-on work.
 
 ## Validation Summary
 
 - `git diff --check`: PASS
-- Native contract and policy JSON syntax checks: PASS
-- `python scripts/validate_native_matrix.py`: PASS
-- `python scripts/validate_native_skeleton.py`: PASS
-- `python scripts/validate_native_c89_library.py`: PASS
-- `python scripts/summarize_native_matrix.py --check`: PASS
-- Native focused unit tests: PASS
-- `python -m unittest discover -s tests -t .`: PASS, 2821 tests
+- C-BUNDLE-02 contract and policy JSON syntax checks: PASS
+- `python scripts/validate_native_first_wave_skeletons.py`: PASS
+- `python scripts/validate_native_project_boundaries.py`: PASS
+- `python scripts/summarize_native_first_wave.py --check`: PASS
+- C-BUNDLE-02 focused tests: PASS
+- `python -m unittest discover -s tests -t .`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
-- Existing D/J/I/G/F/H/core validators present locally: PASS
-- AIDE Lite validate/test/selftest/eval list/eval run/adapter validate: PASS
-- AIDE Lite doctor/verify/review-pack: WARN with zero exit code
+- Existing C/D/J/I/G/F/H/core validators requested by the task: PASS
+- AIDE Lite doctor/validate/test/selftest/eval/review-pack/adapter checks:
+  PASS or WARN with zero errors.
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
-- method: manual chars / 4 estimate
-- approx_tokens: 850
+- method: chars / 4, rounded up
 - budget_status: PASS
-- warnings: none
+- formal ledger: `.aide/reports/token-ledger.jsonl`
 
-## Outcome Controller Summary
+## Boundary Summary
 
-- outcome_result: PASS_WITH_NOTES
-- applies_automatically: false
-- C-BUNDLE-01 readiness: `READY_FOR_C_BUNDLE_02`
-
-## Route Decision Summary
-
-- route_class: local_repo_coding
-- task_class: native_skeleton_contracts_tests_audit
-- advisory_only: false
-
-## Cache / Local State Summary
-
-- local_state_ignored: true
-- raw_prompt_storage: false
-- raw_response_storage: false
-- local_private_roots_created: false
-
-## Gateway Skeleton Summary
-
-- provider_or_model_calls: none
-- gateway_forwarding_enabled: false
-
-## Provider Adapter Summary
-
-- offline_metadata_only: true
-- live_provider_calls: false
+- Native skeletons remain read-only consumers of snapshot, relay, action, and
+  blocked-action contracts.
+- No SwiftUI, Win16, or WinUI project files were added.
+- No build outputs, release binaries, downloads, installs, execution,
+  emulation, telemetry, account flows, public relay, live access,
+  public/master index mutation, or truth acceptance were enabled.
+- AppKit and Carbon project files are documented placeholders rather than
+  fabricated build-verified IDE projects.
 
 ## Risk Summary
 
-- WinForms build was not required; project files were statically validated.
-- Native clients remain read-only consumers and not resolvers.
-- No release binaries or build outputs were produced.
+- VS6, Xcode 9.x, and CodeWarrior builds remain manual/future and were not
+  attempted on this host.
+- The native source skeletons are intentionally display placeholders over
+  stable contracts, not full native applications.
+- AIDE Lite `verify` remained WARN-only because its handoff diff-scope model is
+  advisory and conservative for prompt-scoped product paths.
 
 ## Non-Goals / Scope Guard
 
-- No live source calls, external calls, downloads, installs, execution,
-  emulation, source sync, public hosting, public relay, public/master index
-  mutation, truth acceptance, accounts, uploads, telemetry, release binaries,
-  build outputs, site/dist regeneration, or local private-state roots.
+- No live source calls.
+- No external/API/model/provider calls.
+- No downloads, mirroring, installs, execution, or emulation.
+- No source sync or public query fanout.
+- No public search behavior change.
+- No public index or master index mutation.
+- No evidence, candidate, source, action, native fixture, or public truth
+  acceptance.
+- No hosting, public relay, uploads, accounts, telemetry, release binaries,
+  build-output commits, site/dist regeneration, or local private-state roots.
 
 ## Reviewer Instructions
 
-- Review the audit evidence and changed paths against the C-BUNDLE-01 prompt.
-- Treat AIDE Lite doctor/verify/review-pack WARN results as advisory unless they
-  include task-blocking errors.
-- Confirm native clients remain read-only consumers of snapshot, relay, action,
-  and view contracts.
+- Review only this packet and the referenced evidence when needed.
+- Do not request full chat history unless the packet is insufficient to judge
+  correctness.
+- Do not reward scope creep.
+- Do not approve missing validation as a pass.
+- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`,
+  `OPTIONAL_NOTES`, `NEXT_PHASE`.

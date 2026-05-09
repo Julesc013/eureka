@@ -95,6 +95,8 @@ class NativeProjectReadinessReviewTestCase(unittest.TestCase):
     def test_no_native_project_files_exist(self) -> None:
         forbidden_suffixes = {
             ".sln",
+            ".dsw",
+            ".dsp",
             ".vcxproj",
             ".csproj",
             ".xcodeproj",
@@ -104,6 +106,9 @@ class NativeProjectReadinessReviewTestCase(unittest.TestCase):
         governed_c_bundle_files = {
             "native/win/winforms/project/Eureka.sln",
             "native/win/winforms/src/Eureka/Eureka.csproj",
+            "native/win/win32/project/Eureka.dsw",
+            "native/win/win32/project/Eureka.dsp",
+            "native/mac/appkit/project/Eureka.xcodeproj",
         }
         offenders = [
             str(path.relative_to(REPO_ROOT))

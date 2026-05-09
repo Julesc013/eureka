@@ -1,0 +1,45 @@
+{
+  "schema_version": "native_build_evidence.v0",
+  "build_evidence_id": "sample_native_build_evidence_plan_v0",
+  "lane_id": "first_wave_native",
+  "build_host_ref": "manual_future_host",
+  "build_attempted": false,
+  "build_status": "manual_build_required",
+  "build_command_or_manual_steps": [
+    "Open the project on the intended old-toolchain host.",
+    "Build without network restore or dependency installation.",
+    "Record launch and fixture-display smoke evidence under audit output."
+  ],
+  "build_log_refs": [],
+  "artifact_refs": [],
+  "screenshot_refs_future": [],
+  "smoke_report_refs": [
+    "sample_native_smoke_checklist_v0"
+  ],
+  "warnings": [
+    "No C-BUNDLE-02 build was attempted."
+  ],
+  "limitations": [
+    "Build evidence is future/manual.",
+    "No release artifact is produced."
+  ],
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false
+  }
+}

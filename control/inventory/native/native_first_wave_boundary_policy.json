@@ -1,0 +1,21 @@
+{
+  "schema_version": "native_first_wave_boundary_policy.v0",
+  "policy_id": "native_first_wave_boundary_policy_v0",
+  "win32_readonly": true,
+  "appkit_readonly": true,
+  "carbon_readonly": true,
+  "live_source_access_allowed": false,
+  "download_allowed": false,
+  "install_allowed": false,
+  "execute_allowed": false,
+  "emulate_allowed": false,
+  "account_auth_allowed": false,
+  "telemetry_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "python_runtime_internal_dependency_allowed": false,
+  "connector_runtime_dependency_allowed": false,
+  "accepted_truth_creation_allowed": false,
+  "release_binaries_allowed": false,
+  "build_outputs_committed_allowed": false
+}

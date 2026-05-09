@@ -1,0 +1,32 @@
+{
+  "schema_version": "native_win32_policy.v0",
+  "policy_id": "native_win32_policy_v0",
+  "lane_id": "win.win32",
+  "api_family": "Win32 ANSI",
+  "toolchain": "Visual C++ 6.0",
+  "readonly": true,
+  "build_status_current": "build_unverified",
+  "manual_build_required": true,
+  "allowed_inputs": [
+    "snapshot_manifest",
+    "snapshot_record",
+    "relay_response",
+    "relay_status",
+    "action_manifest",
+    "blocked_action_report"
+  ],
+  "forbidden_dependencies": [
+    "python_runtime",
+    "runtime/engine",
+    "runtime/connectors",
+    "runtime/local_foundry",
+    "runtime/search_quality"
+  ],
+  "download_allowed": false,
+  "install_allowed": false,
+  "execute_allowed": false,
+  "network_allowed": false,
+  "telemetry_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false
+}

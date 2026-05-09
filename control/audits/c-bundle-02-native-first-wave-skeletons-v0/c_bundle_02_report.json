@@ -1,0 +1,117 @@
+{
+  "schema_version": "c_bundle_02_report.v0",
+  "status": "pass",
+  "task": "C-BUNDLE-02",
+  "track": "C",
+  "purpose": "win32_appkit_carbon_readonly_skeletons",
+  "added_contracts": [
+    "contracts/native/native_project_skeleton.v0.json",
+    "contracts/native/native_build_evidence.v0.json",
+    "contracts/native/native_manual_smoke_checklist.v0.json",
+    "contracts/native/native_readonly_surface.v0.json"
+  ],
+  "added_native_paths": [
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp",
+    "native/win/win32/src/",
+    "native/win/win32/res/",
+    "native/mac/appkit/project/Eureka.xcodeproj/README.md",
+    "native/mac/appkit/src/",
+    "native/mac/appkit/res/",
+    "native/mac/carbon/project/Eureka.mcp.README.md",
+    "native/mac/carbon/src/",
+    "native/mac/carbon/rsrc/"
+  ],
+  "added_scripts": [
+    "scripts/validate_native_first_wave_skeletons.py",
+    "scripts/validate_native_project_boundaries.py",
+    "scripts/summarize_native_first_wave.py"
+  ],
+  "added_docs": [
+    "docs/reference/NATIVE_PROJECT_SKELETON_CONTRACT.md",
+    "docs/reference/NATIVE_BUILD_EVIDENCE_CONTRACT.md",
+    "docs/reference/NATIVE_MANUAL_SMOKE_CHECKLIST_CONTRACT.md",
+    "docs/reference/NATIVE_READONLY_SURFACE_CONTRACT.md",
+    "docs/architecture/WIN32_NATIVE_CLIENT_MODEL.md",
+    "docs/architecture/APPKIT_NATIVE_CLIENT_MODEL.md",
+    "docs/architecture/CARBON_NATIVE_CLIENT_MODEL.md",
+    "docs/operations/WIN32_VS6_BUILD_EVIDENCE.md",
+    "docs/operations/APPKIT_XCODE9_BUILD_EVIDENCE.md",
+    "docs/operations/CARBON_CODEWARRIOR_BUILD_EVIDENCE.md",
+    "docs/operations/NATIVE_FIRST_WAVE_SMOKE_TESTS.md"
+  ],
+  "added_inventories": [
+    "control/inventory/native/native_win32_policy.json",
+    "control/inventory/native/native_appkit_policy.json",
+    "control/inventory/native/native_carbon_policy.json",
+    "control/inventory/native/native_project_skeleton_policy.json",
+    "control/inventory/native/native_manual_build_policy.json",
+    "control/inventory/native/native_smoke_checklist_policy.json",
+    "control/inventory/native/native_first_wave_boundary_policy.json"
+  ],
+  "added_tests": [
+    "tests/native/test_native_first_wave_skeletons.py",
+    "tests/native/test_native_project_boundaries.py",
+    "tests/native/test_native_readonly_surface.py",
+    "tests/operations/test_native_first_wave_scripts.py"
+  ],
+  "validation": {
+    "git diff --check": "pass",
+    "json_syntax_checks": "pass",
+    "python scripts/validate_native_first_wave_skeletons.py": "pass",
+    "python scripts/validate_native_project_boundaries.py": "pass",
+    "python scripts/summarize_native_first_wave.py --check": "pass",
+    "python -m unittest tests.native.test_native_first_wave_skeletons": "pass",
+    "python -m unittest tests.native.test_native_project_boundaries": "pass",
+    "python -m unittest tests.native.test_native_readonly_surface": "pass",
+    "python -m unittest tests.operations.test_native_first_wave_scripts": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_native_skeleton.py": "pass",
+    "python scripts/validate_native_matrix.py": "pass",
+    "python scripts/validate_native_c89_library.py": "pass",
+    "existing_validators": "pass",
+    "aide_lite": "pass_with_advisory_verify_warnings"
+  },
+  "native_scope": {
+    "win32_skeleton_added": true,
+    "appkit_skeleton_added": true,
+    "carbon_skeleton_added": true,
+    "swiftui_project_added": false,
+    "win16_project_added": false,
+    "winui_project_added": false,
+    "live_source_access_enabled": false,
+    "downloads_enabled": false,
+    "install_enabled": false,
+    "execute_enabled": false,
+    "accounts_enabled": false,
+    "telemetry_enabled": false,
+    "build_outputs_committed": false
+  },
+  "truth_boundary": {
+    "native_client_accepts_evidence": false,
+    "native_client_accepts_candidate": false,
+    "native_client_accepts_public_truth": false,
+    "native_client_mutates_public_index": false,
+    "native_client_mutates_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_public_relay": false,
+    "enabled_live_access": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "C-BUNDLE-03 \u2014 Native smoke evidence and packaging manifests"
+}

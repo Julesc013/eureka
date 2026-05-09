@@ -1,0 +1,18 @@
+{
+  "schema_version": "native_smoke_checklist_policy.v0",
+  "policy_id": "native_smoke_checklist_policy_v0",
+  "required_checks": [
+    "project_opens",
+    "project_builds",
+    "app_launches",
+    "snapshot_fixture_loads",
+    "relay_fixture_status_displays",
+    "search_list_displays",
+    "object_summary_displays",
+    "blocked_actions_display",
+    "no_download_install_execute_behavior",
+    "about_diagnostics_display"
+  ],
+  "manual_evidence_required_before_build_verified": true,
+  "smoke_check_is_not_truth_acceptance": true
+}

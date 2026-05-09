@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: C-BUNDLE-02
+current_recommended_task: C-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -270,12 +270,20 @@ entries:
     recommended_after: D-BUNDLE-02
   - id: C-BUNDLE-02
     title: Win32 AppKit Carbon read-only skeletons
-    status: queued
+    status: needs_review
     purpose: Extend the native-client track with Win32, AppKit, and Carbon read-only skeletons over the C-BUNDLE-01 matrix and contract helper without enabling downloads, execution, live access, telemetry, or public/master index mutation.
     allowed_scope_summary: C native skeleton source/docs/tests/audit evidence and AIDE queue/context metadata only until explicitly scoped.
     gate: C-BUNDLE-01 passes; native clients remain read-only consumers of snapshot, relay, action, and view contracts with no Python runtime internals and no release artifacts.
     task: .aide/queue/C-BUNDLE-02/task.yaml
     recommended_after: C-BUNDLE-01
+  - id: C-BUNDLE-03
+    title: Native smoke evidence and packaging manifests
+    status: queued
+    purpose: Add native smoke-evidence plans and packaging manifests after the first-wave native skeletons without committing build outputs, release binaries, downloads, installs, execution, telemetry, or public/master index mutation.
+    allowed_scope_summary: C native smoke evidence contracts, packaging manifest contracts, docs, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
+    gate: C-BUNDLE-02 passes; first-wave native clients remain read-only consumers and old-toolchain builds remain manual/reviewed unless an explicit safe host validation is available.
+    task: .aide/queue/C-BUNDLE-03/task.yaml
+    recommended_after: C-BUNDLE-02
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

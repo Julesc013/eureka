@@ -1,0 +1,32 @@
+{
+  "schema_version": "native_appkit_policy.v0",
+  "policy_id": "native_appkit_policy_v0",
+  "lane_id": "mac.appkit",
+  "api_family": "AppKit",
+  "toolchain": "Xcode 9.x",
+  "readonly": true,
+  "build_status_current": "manual_build_required",
+  "xcode_project_placeholder_only": true,
+  "allowed_inputs": [
+    "snapshot_manifest",
+    "snapshot_record",
+    "relay_response",
+    "relay_status",
+    "action_manifest",
+    "blocked_action_report"
+  ],
+  "forbidden_dependencies": [
+    "python_runtime",
+    "runtime/engine",
+    "runtime/connectors",
+    "runtime/local_foundry",
+    "runtime/search_quality"
+  ],
+  "download_allowed": false,
+  "install_allowed": false,
+  "execute_allowed": false,
+  "network_allowed": false,
+  "telemetry_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_project_skeleton.v0.json",
+  "title": "Eureka Native Project Skeleton v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "skeleton_id",
+    "lane_id",
+    "lane_path",
+    "api_family",
+    "toolchain",
+    "project_files",
+    "source_files",
+    "resource_files",
+    "build_status",
+    "build_evidence_status",
+    "readonly_surface",
+    "consumed_contracts",
+    "forbidden_dependencies",
+    "forbidden_effects",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_project_skeleton.v0"
+    },
+    "skeleton_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "lane_path": {
+      "type": "string"
+    },
+    "api_family": {
+      "type": "string"
+    },
+    "toolchain": {
+      "type": "string"
+    },
+    "project_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resource_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_status": {
+      "enum": [
+        "skeleton_only",
+        "build_unverified",
+        "build_verified_future",
+        "manual_build_required",
+        "unsupported_on_current_host",
+        "not_evaluable"
+      ]
+    },
+    "build_evidence_status": {
+      "type": "string"
+    },
+    "readonly_surface": {
+      "type": "object"
+    },
+    "consumed_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

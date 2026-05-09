@@ -1,0 +1,44 @@
+{
+  "audit_ref": "control/audits/c-bundle-02-native-first-wave-skeletons-v0/",
+  "lanes": [
+    {
+      "api": "Win32 ANSI",
+      "build_evidence_status": "manual_build_required",
+      "lane_id": "win.win32",
+      "path": "native/win/win32",
+      "readonly": true,
+      "toolchain": "Visual C++ 6.0"
+    },
+    {
+      "api": "AppKit",
+      "build_evidence_status": "manual_build_required",
+      "lane_id": "mac.appkit",
+      "path": "native/mac/appkit",
+      "readonly": true,
+      "toolchain": "Xcode 9.x"
+    },
+    {
+      "api": "Carbon",
+      "build_evidence_status": "manual_build_required",
+      "lane_id": "mac.carbon",
+      "path": "native/mac/carbon",
+      "readonly": true,
+      "toolchain": "CodeWarrior Pro 8/9"
+    }
+  ],
+  "schema_version": "native_first_wave_summary.v0",
+  "scope": {
+    "appkit_skeleton": "enabled",
+    "build_outputs_committed": false,
+    "carbon_skeleton": "enabled",
+    "downloads": false,
+    "execute": false,
+    "install": false,
+    "swiftui_project": false,
+    "telemetry": false,
+    "win16_project": false,
+    "win32_skeleton": "enabled",
+    "winui_project": false
+  },
+  "status": "pass"
+}

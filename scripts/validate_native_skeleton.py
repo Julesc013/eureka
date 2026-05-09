@@ -14,8 +14,11 @@ POLICY_PATH = REPO_ROOT / "control" / "inventory" / "native" / "native_directory
 PROJECT_ALLOWLIST = {
     "native/win/winforms/project/Eureka.sln",
     "native/win/winforms/src/Eureka/Eureka.csproj",
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp",
+    "native/mac/appkit/project/Eureka.xcodeproj",
 }
-PROJECT_SUFFIXES = {".sln", ".vcxproj", ".csproj", ".xcodeproj", ".xcworkspace", ".pbxproj"}
+PROJECT_SUFFIXES = {".sln", ".dsw", ".dsp", ".vcxproj", ".csproj", ".xcodeproj", ".xcworkspace", ".pbxproj"}
 BINARY_SUFFIXES = {".exe", ".dll", ".pdb", ".obj", ".o", ".a", ".lib", ".dylib", ".so", ".app", ".msi"}
 FORBIDDEN_API_TOKENS = {
     "System.Net",
@@ -57,8 +60,12 @@ def validate_native_skeleton(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
             errors.append(f"{relative}: required README is missing.")
 
     for relative in sorted(PROJECT_ALLOWLIST):
-        if not (repo_root / relative).is_file():
-            errors.append(f"{relative}: governed WinForms proof project file is missing.")
+        path = repo_root / relative
+        if relative.endswith(".xcodeproj"):
+            if not path.is_dir():
+                errors.append(f"{relative}: governed AppKit project placeholder directory is missing.")
+        elif not path.is_file():
+            errors.append(f"{relative}: governed native project file is missing.")
 
     _validate_project_files(repo_root, errors)
     _validate_no_build_outputs(repo_root, errors)
@@ -82,7 +89,7 @@ def _validate_project_files(repo_root: Path, errors: list[str]) -> None:
         if path.suffix.casefold() in PROJECT_SUFFIXES:
             relative = path.relative_to(repo_root).as_posix()
             if relative not in PROJECT_ALLOWLIST:
-                errors.append(f"{relative}: native project file is outside the C-BUNDLE-01 allowlist.")
+                errors.append(f"{relative}: native project file is outside the governed native project allowlist.")
 
 
 def _validate_no_build_outputs(repo_root: Path, errors: list[str]) -> None:

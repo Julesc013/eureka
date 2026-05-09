@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_build_evidence.v0.json",
+  "title": "Eureka Native Build Evidence v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "build_evidence_id",
+    "lane_id",
+    "build_host_ref",
+    "build_attempted",
+    "build_status",
+    "build_command_or_manual_steps",
+    "build_log_refs",
+    "artifact_refs",
+    "screenshot_refs_future",
+    "smoke_report_refs",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_build_evidence.v0"
+    },
+    "build_evidence_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "build_host_ref": {
+      "type": "string"
+    },
+    "build_attempted": {
+      "type": "boolean"
+    },
+    "build_status": {
+      "enum": [
+        "not_attempted",
+        "manual_build_required",
+        "unsupported_on_current_host",
+        "build_unverified",
+        "build_verified_future",
+        "not_evaluable"
+      ]
+    },
+    "build_command_or_manual_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "build_log_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "screenshot_refs_future": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "smoke_report_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

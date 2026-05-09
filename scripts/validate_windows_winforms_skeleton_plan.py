@@ -38,6 +38,8 @@ REQUIRED_FILES = {
 
 PROJECT_SUFFIXES = {
     ".sln",
+    ".dsw",
+    ".dsp",
     ".csproj",
     ".cs",
     ".resx",
@@ -49,6 +51,8 @@ PROJECT_SUFFIXES = {
 C_BUNDLE_01_GOVERNED_WINFORMS_PREFIXES = (
     "native/win/winforms/project/",
     "native/win/winforms/src/Eureka/",
+    "native/win/win32/project/",
+    "native/mac/appkit/project/Eureka.xcodeproj",
 )
 
 REQUIRED_PROHIBITIONS = {

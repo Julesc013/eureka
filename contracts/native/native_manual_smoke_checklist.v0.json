@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_manual_smoke_checklist.v0.json",
+  "title": "Eureka Native Manual Smoke Checklist v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "checklist_id",
+    "lane_id",
+    "checks",
+    "required_evidence",
+    "pass_fail_unknown",
+    "limitations",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_manual_smoke_checklist.v0"
+    },
+    "checklist_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "check_id",
+          "check_label"
+        ],
+        "properties": {
+          "check_id": {
+            "type": "string"
+          },
+          "check_label": {
+            "type": "string"
+          },
+          "expected_status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pass_fail_unknown": {
+      "enum": [
+        "pass",
+        "fail",
+        "unknown",
+        "manual_future",
+        "not_evaluable"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

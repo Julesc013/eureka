@@ -34,6 +34,8 @@ ALLOWED_DECISIONS = {
 
 PROJECT_SUFFIXES = {
     ".sln",
+    ".dsw",
+    ".dsp",
     ".vcxproj",
     ".csproj",
     ".xcodeproj",
@@ -43,6 +45,9 @@ PROJECT_SUFFIXES = {
 GOVERNED_C_BUNDLE_01_PROJECT_FILES = {
     "native/win/winforms/project/Eureka.sln",
     "native/win/winforms/src/Eureka/Eureka.csproj",
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp",
+    "native/mac/appkit/project/Eureka.xcodeproj",
 }
 
 REQUIRED_REPORT_FIELDS = {

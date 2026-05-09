@@ -61,6 +61,8 @@ REQUIRED_LANE_IDS = {
 FUTURE_LANE_STATUSES = {"future", "future_deferred", "deferred", "lab_verify", "research", "design_only"}
 PROJECT_SUFFIXES = {
     ".sln",
+    ".dsw",
+    ".dsp",
     ".vcxproj",
     ".csproj",
     ".xcodeproj",
@@ -70,6 +72,9 @@ PROJECT_SUFFIXES = {
 GOVERNED_C_BUNDLE_01_PROJECT_FILES = {
     "native/win/winforms/project/Eureka.sln",
     "native/win/winforms/src/Eureka/Eureka.csproj",
+    "native/win/win32/project/Eureka.dsw",
+    "native/win/win32/project/Eureka.dsp",
+    "native/mac/appkit/project/Eureka.xcodeproj",
 }
 REQUIRED_DOC_PHRASES = {
     "docs/reference/NATIVE_CLIENT_CONTRACT.md": [

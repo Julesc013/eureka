@@ -1,0 +1,72 @@
+{
+  "schema_version": "native_manual_smoke_checklist.v0",
+  "checklist_id": "sample_native_smoke_checklist_v0",
+  "lane_id": "first_wave_native",
+  "checks": [
+    {
+      "check_id": "project_opens",
+      "check_label": "Project opens",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "project_builds",
+      "check_label": "Project builds",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "app_launches",
+      "check_label": "App launches",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "snapshot_fixture_loads",
+      "check_label": "Snapshot fixture loads",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "relay_fixture_status_displays",
+      "check_label": "Relay fixture status displays",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "search_list_displays",
+      "check_label": "Search list displays",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "object_summary_displays",
+      "check_label": "Object summary displays",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "blocked_actions_display",
+      "check_label": "Blocked actions display",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "no_download_install_execute_behavior",
+      "check_label": "No download/install/execute behavior",
+      "expected_status": "manual_future"
+    },
+    {
+      "check_id": "about_diagnostics_display",
+      "check_label": "About and diagnostics display",
+      "expected_status": "manual_future"
+    }
+  ],
+  "required_evidence": [
+    "host/toolchain note",
+    "build or skip note",
+    "launch note",
+    "fixture display note",
+    "blocked action note"
+  ],
+  "pass_fail_unknown": "manual_future",
+  "limitations": [
+    "Checklist is not a review decision.",
+    "Checklist is not truth acceptance."
+  ],
+  "notes": [
+    "No build output or binary is committed by this sample."
+  ]
+}

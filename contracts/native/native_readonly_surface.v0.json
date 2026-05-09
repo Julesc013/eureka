@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/native/native_readonly_surface.v0.json",
+  "title": "Eureka Native Read-Only Surface v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "surface_id",
+    "lane_id",
+    "supported_views",
+    "supported_inputs",
+    "supported_blocked_actions",
+    "unsupported_current_features",
+    "no_goals",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "native_readonly_surface.v0"
+    },
+    "surface_id": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "supported_views": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "search_results",
+          "object_summary",
+          "source_summary",
+          "relay_status",
+          "action_manifest",
+          "blocked_action",
+          "diagnostics"
+        ]
+      }
+    },
+    "supported_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_blocked_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unsupported_current_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "native_matrix.v0.json#/$defs/product_boundary"
+    }
+  }
+}

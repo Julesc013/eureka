@@ -11,7 +11,7 @@ current_status = "skeleton"
 support_tier = "future_lab"
 build_host_ref = "host.codewarrior9_future"
 artifact_refs = ["artifact.mac.carbon.app_future"]
-limitations = ["No project file is added in C-BUNDLE-01."]
+limitations = ["C-BUNDLE-02 adds source and project documentation only; CodeWarrior build evidence is manual future."]
 
 [mac.appkit]
 path = "native/mac/appkit"
@@ -27,7 +27,7 @@ current_status = "skeleton"
 support_tier = "first_wave_skeleton"
 build_host_ref = "host.xcode9_future"
 artifact_refs = ["artifact.mac.appkit.app_future"]
-limitations = ["No Xcode project is added in C-BUNDLE-01."]
+limitations = ["C-BUNDLE-02 adds source and a documented Xcode placeholder only; build evidence is manual future."]
 
 [mac.swiftui]
 path = "native/mac/swiftui"
@@ -72,7 +72,7 @@ current_status = "skeleton"
 support_tier = "first_wave_skeleton"
 build_host_ref = "host.vs6_future"
 artifact_refs = ["artifact.win.win32.exe_future"]
-limitations = ["No Visual C++ project is added in C-BUNDLE-01."]
+limitations = ["C-BUNDLE-02 adds VS6-style project skeleton files; build evidence is manual future."]
 
 [win.winforms]
 path = "native/win/winforms"
