@@ -2,19 +2,18 @@
 
 ## PHASE
 
-SYNC-GUARD-01 - Multi-machine Git discipline and AIDE sync guard
+SYNC-BASELINE-01 - Canonical branch baseline
 
 ## GOAL
 
-Add a compact Git/AIDE sync guard that prevents future Codex/AIDE work from
-starting in dirty, stale, interrupted, or direct-main task states.
+Create a canonical local/remote `main` baseline after OBS, Track B, repo sync
+recovery, and SYNC-GUARD-01.
 
 ## WHY
 
-The OBS and Track B merge recovery succeeded, but it exposed a workflow hazard:
-parallel machine work, stale local `main`, active merge metadata, and unpushed
-local-only task work can make normal convergence far too difficult. The remedy
-is a small guard and three simple workflow prompts, not more nested sync audits.
+The repo now has the guard rails needed for multi-machine work. This baseline
+records that the current branches have been merged or classified, full tests
+pass on `main`, and every other checkout has a simple resync path.
 
 ## CONTEXT_REFS
 
@@ -25,40 +24,31 @@ is a small guard and three simple workflow prompts, not more nested sync audits.
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/`
+- `control/audits/sync-guard-01-multi-machine-git-guard-v0/`
 - `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md`
-- `docs/operations/AIDE_SYNC_GUARD.md`
-- `docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md`
-- `control/inventory/git/sync_guard_policy.json`
-- `control/inventory/git/task_branch_policy.json`
-- `control/inventory/git/sync_workflow_commands.json`
 - `scripts/check_git_task_state.py`
-- `scripts/validate_sync_guard_policy.py`
-- `tests/operations/test_git_task_state_guard.py`
-- `tests/operations/test_sync_guard_policy.py`
 
 ## IMPLEMENTATION
 
-- Add Git sync guard policies under `control/inventory/git/`.
-- Add non-mutating guard and validator scripts under `scripts/`.
-- Add AIDE prompt templates for sync, merge, and rescue workflows.
-- Add multi-machine workflow and recovery docs.
-- Add temp-repo tests for guard behavior.
-- Add a SYNC-GUARD-01 audit pack.
-- Add a compact AGENTS.md rule requiring the guard before normal task work.
+- Merge `origin/task/sync-guard-01` into `main`.
+- Inventory local and remote branches.
+- Run generated artifact drift checks, architecture checks, guard tests, full
+  unittest discovery, and AIDE Lite checks.
+- Add canonical baseline audit evidence.
+- Push `main` normally.
+- Provide resync instructions for all other machines and checkouts.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- `python -m json.tool control/inventory/git/sync_guard_policy.json`
-- `python -m json.tool control/inventory/git/task_branch_policy.json`
-- `python -m json.tool control/inventory/git/sync_workflow_commands.json`
-- `python -m json.tool control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json`
-- `python scripts/check_git_task_state.py --mode start-task --task-id SYNC-GUARD-01 --allow-main`
-- `python scripts/check_git_task_state.py --mode start-task --task-id SYNC-GUARD-01 --allow-main --json`
+- conflict marker scan
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_drift.py --json`
 - `python scripts/validate_sync_guard_policy.py`
 - `python -m unittest tests.operations.test_git_task_state_guard tests.operations.test_sync_guard_policy`
-- `python scripts/check_architecture_boundaries.py`
+- `python -m unittest discover -s tests -t .`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -68,35 +58,25 @@ is a small guard and three simple workflow prompts, not more nested sync audits.
 
 ## EVIDENCE
 
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/README.md`
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json`
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/validation.md`
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/workflow_summary.md`
-- `.aide/queue/` is not used for task evidence; SYNC-GUARD-01 evidence lives under `control/audits/`.
+- `control/audits/sync-baseline-01-canonical-main-v0/README.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/baseline_report.json`
+- `control/audits/sync-baseline-01-canonical-main-v0/branch_inventory.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/merged_branch_report.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/validation_matrix.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/test_report.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/aide_state_report.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/resync_instructions.md`
+- `control/audits/sync-baseline-01-canonical-main-v0/next_steps.md`
+- `.aide/queue/` is not used for task evidence; SYNC-BASELINE-01 evidence lives under `control/audits/`.
 
 ## ALLOWED_PATHS
 
-- `AGENTS.md`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `.aide/prompts/AIDE-SYNC-01.md`
-- `.aide/prompts/AIDE-MERGE-01.md`
-- `.aide/prompts/AIDE-RESCUE-01.md`
-- `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md`
-- `docs/operations/AIDE_SYNC_GUARD.md`
-- `docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md`
-- `control/inventory/git/sync_guard_policy.json`
-- `control/inventory/git/task_branch_policy.json`
-- `control/inventory/git/sync_workflow_commands.json`
-- `scripts/check_git_task_state.py`
-- `scripts/validate_sync_guard_policy.py`
-- `tests/operations/test_git_task_state_guard.py`
-- `tests/operations/test_sync_guard_policy.py`
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/**`
+- `control/audits/sync-baseline-01-canonical-main-v0/**`
 
 ## FORBIDDEN_PATHS
 
-- product runtime behavior paths unless required for tests
 - runtime/**
 - contracts/**
 - surfaces/**
@@ -106,7 +86,6 @@ is a small guard and three simple workflow prompts, not more nested sync audits.
 - connectors/**
 - packaging/**
 - third_party/**
-- public route behavior
 - source/evidence/master-index records
 - generated static artifacts
 - ignored private local roots
@@ -114,26 +93,21 @@ is a small guard and three simple workflow prompts, not more nested sync audits.
 
 ## NON_GOALS
 
-- Do not change Eureka product behavior.
-- Do not enable hosting, live probes, source connectors, downloads, uploads,
-  accounts, telemetry, WorkUnit execution, source approval, evidence truth, or
-  master-index mutation.
-- Do not create/delete Git branches from the guard script.
-- Do not fetch, merge, push, reset, clean, stash, or rebase from the guard.
-
-## NEXT
-
-HUMAN-OBS-REVIEW-01 - Review OBS candidate packet
+- Do not force push.
+- Do not delete branches.
+- Do not rewrite history.
+- Complete this baseline without changing Eureka product behavior.
+- Do not approve source access, execute WorkUnits, create public truth, enable
+  connectors, or mutate the master index.
 
 ## ACCEPTANCE
 
-- Sync guard policy, branch policy, and workflow command inventory exist.
-- Guard and policy validator scripts exist and run.
-- AIDE-SYNC-01, AIDE-MERGE-01, and AIDE-RESCUE-01 prompts exist.
-- Multi-machine workflow docs exist.
-- Guard tests and policy tests pass.
-- No Eureka product behavior changes.
-- Working tree is clean after commit.
+- `main` contains OBS, Track B, repo sync evidence, and SYNC-GUARD-01.
+- Full tests pass on `main`.
+- AIDE Lite checks pass or warn with zero errors.
+- Baseline audit pack exists.
+- `origin/main` receives the final baseline commit by normal push.
+- Resync instructions exist for all machines.
 
 ## OUTPUT_SCHEMA
 
@@ -142,12 +116,13 @@ Return the final response with:
 - `STATUS`
 - `SUMMARY`
 - `COMMITS`
-- `CHANGED`
+- `BRANCHES`
 - `VALIDATION`
-- `GUARD`
+- `PUSH`
+- `RESYNC`
 - `RISKS`
 - `NEXT`
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1400
+approx_tokens: 1200
