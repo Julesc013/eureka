@@ -270,9 +270,13 @@ def _local_main_checks(
             )
         )
     if ahead:
-        status = "WARN" if mode in ("merge-task", "rescue") else "FAIL"
+        status = "WARN" if mode == "rescue" else "FAIL"
         checks.append(
-            _check("no_unpushed_main_work", status, f"main has {ahead} local-only commit(s)")
+            _check(
+                "no_unpushed_main_work",
+                status,
+                f"main has {ahead} local-only commit(s); push origin main before continuing",
+            )
         )
     else:
         checks.append(_check("no_unpushed_main_work", "PASS", "main has no local-only commits"))

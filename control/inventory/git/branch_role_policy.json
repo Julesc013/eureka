@@ -1,0 +1,147 @@
+{
+  "schema_version": "branch_role_policy.v0",
+  "policy_id": "branch_role_policy_v0",
+  "label": "Branch role and lifecycle policy",
+  "description": "Defines durable, shared, local, and nested branch roles for Eureka Git work.",
+  "current_canonical_branch": "main",
+  "current_default_integration_target": "main",
+  "branch_policy_extension_points": {
+    "new_durable_channel": "add a durable_branch_roles entry with promotion, retention, rollback, and validation rules",
+    "new_temporary_pattern": "add a temporary_branch_roles or nested_branch_policy entry with merge target and cleanup rules",
+    "new_integration_target": "set an explicit target branch in the merge workflow and document whether it promotes to main",
+    "new_release_flow": "add source branch, destination branch, tagging, validation, and rollback requirements before first use"
+  },
+  "generic_branch_dimensions": [
+    "role",
+    "pattern",
+    "owner_or_lane",
+    "parent_branch",
+    "integration_target",
+    "remote_required",
+    "retention",
+    "promotion_rule",
+    "validation_gate",
+    "cleanup_rule"
+  ],
+  "durable_branch_roles": [
+    {
+      "role": "canonical",
+      "example_patterns": [
+        "main"
+      ],
+      "purpose": "remote canonical state that every clone can fast-forward from",
+      "remote_allowed": true,
+      "delete_when_merged": false,
+      "requires_explicit_policy": false,
+      "promotion_rule": "validated task or shared branch merges here before work is considered canonical"
+    },
+    {
+      "role": "development_channel_future",
+      "example_patterns": [
+        "dev",
+        "develop",
+        "integration/dev"
+      ],
+      "purpose": "future shared integration channel before promotion to main",
+      "remote_allowed": true,
+      "delete_when_merged": false,
+      "requires_explicit_policy": true,
+      "promotion_rule": "future policy must define validation and promotion from dev to main"
+    },
+    {
+      "role": "release_channel_future",
+      "example_patterns": [
+        "alpha",
+        "beta",
+        "nightly",
+        "stable",
+        "release/*"
+      ],
+      "purpose": "future release or distribution channel",
+      "remote_allowed": true,
+      "delete_when_merged": false,
+      "requires_explicit_policy": true,
+      "promotion_rule": "future policy must define source branch, validation, rollback, and retention"
+    },
+    {
+      "role": "long_running_refactor_future",
+      "example_patterns": [
+        "refactor/*",
+        "integration/*"
+      ],
+      "purpose": "future long-lived workstream that cannot safely fit one small task branch",
+      "remote_allowed": true,
+      "delete_when_merged": "after_review",
+      "requires_explicit_policy": true,
+      "promotion_rule": "must periodically merge or rebase by explicit policy and must not replace main as canonical truth"
+    }
+  ],
+  "temporary_branch_roles": [
+    {
+      "role": "local_task_branch",
+      "example_patterns": [
+        "task/<task-id>",
+        "obs/<task-id>",
+        "hotfix/<short-name>"
+      ],
+      "purpose": "quick single-machine work",
+      "remote_allowed": false,
+      "remote_required": false,
+      "delete_when_merged": true,
+      "promotion_rule": "merge locally into the integration target, validate, push the integration target"
+    },
+    {
+      "role": "shared_task_branch",
+      "example_patterns": [
+        "task/<task-id>",
+        "obs/<task-id>",
+        "subtask/<parent>/<child>",
+        "agent/<task-id>/<agent-id>"
+      ],
+      "purpose": "cross-machine, human, or multi-agent collaboration",
+      "remote_allowed": true,
+      "remote_required": "only_when_shared",
+      "delete_when_merged": true,
+      "promotion_rule": "publish branch, merge after validation, push integration target, then prune only when contained in the pushed target"
+    }
+  ],
+  "nested_branch_policy": {
+    "allowed_future_patterns": [
+      "subtask/<parent-task>/<subtask-id>",
+      "agent/<parent-task>/<agent-id>",
+      "experiment/<parent-task>/<short-name>"
+    ],
+    "remote_allowed": true,
+    "remote_required": false,
+    "merge_order": "subtask branches merge into their parent task branch or selected integration target only after validation",
+    "cleanup_rule": "delete nested branches only after their tip is contained in the pushed parent or integration branch"
+  },
+  "promotion_target_policy": {
+    "default_target": "main",
+    "helper_flag": "--target-branch <branch>",
+    "target_must_fast_forward_from_remote": true,
+    "target_must_be_pushed_after_merge": true,
+    "post_push_guard_required": true,
+    "unpublished_target_commits_are_failures": true
+  },
+  "safe_pruning_rules": {
+    "local_delete_command": "git branch -d <branch>",
+    "remote_delete_command": "git push origin --delete <branch>",
+    "force_delete_allowed": false,
+    "required_ancestor_check": "branch tip must be contained in the pushed integration target",
+    "prune_remote_tracking_after_delete": true
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "Main is the only canonical branch today.",
+    "Future durable branches such as dev, nightly, alpha, beta, stable, or refactor branches require an explicit branch-role policy update before becoming workflow targets.",
+    "Temporary remote task branches are collaboration tools, not permanent records."
+  ]
+}

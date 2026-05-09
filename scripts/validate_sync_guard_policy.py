@@ -14,6 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 POLICY_FILES = [
     "control/inventory/git/sync_guard_policy.json",
     "control/inventory/git/task_branch_policy.json",
+    "control/inventory/git/branch_role_policy.json",
     "control/inventory/git/sync_workflow_commands.json",
 ]
 
@@ -34,6 +35,12 @@ AUDIT_FILES = [
     "control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json",
     "control/audits/sync-guard-01-multi-machine-git-guard-v0/validation.md",
     "control/audits/sync-guard-01-multi-machine-git-guard-v0/workflow_summary.md",
+]
+
+SCRIPT_FILES = [
+    "scripts/check_git_task_state.py",
+    "scripts/aide_merge_task_branch_to_main.py",
+    "scripts/validate_sync_guard_policy.py",
 ]
 
 REQUIRED_CHECKS = [
@@ -93,11 +100,10 @@ DESTRUCTIVE_DOC_COMMANDS = [
 
 def main() -> int:
     errors: list[str] = []
-    errors.extend(_validate_required_files(POLICY_FILES + DOC_FILES + PROMPT_FILES + AUDIT_FILES))
+    errors.extend(_validate_required_files(POLICY_FILES + DOC_FILES + PROMPT_FILES + AUDIT_FILES + SCRIPT_FILES))
     errors.extend(_validate_json_files(POLICY_FILES + ["control/audits/sync-guard-01-multi-machine-git-guard-v0/sync_guard_01_report.json"]))
     if not errors:
         errors.extend(_validate_policy_contents())
-    errors.extend(_validate_script_exists())
     errors.extend(_validate_docs_do_not_advise_destructive_commands())
 
     if errors:
@@ -129,6 +135,7 @@ def _validate_policy_contents() -> list[str]:
     errors: list[str] = []
     sync_policy = _load_json("control/inventory/git/sync_guard_policy.json")
     branch_policy = _load_json("control/inventory/git/task_branch_policy.json")
+    branch_role_policy = _load_json("control/inventory/git/branch_role_policy.json")
     workflow = _load_json("control/inventory/git/sync_workflow_commands.json")
 
     for required in REQUIRED_CHECKS:
@@ -164,18 +171,26 @@ def _validate_policy_contents() -> list[str]:
         for required in ("git push --force", "git reset --hard", "git clean -fd", "git stash pop"):
             if required not in forbidden:
                 errors.append(f"{command.get('command_id')} missing forbidden command: {required}")
+    if branch_role_policy.get("current_canonical_branch") != "main":
+        errors.append("branch role policy must keep main as current canonical branch")
+    durable_roles = {entry.get("role") for entry in branch_role_policy.get("durable_branch_roles", [])}
+    for required in ("canonical", "development_channel_future", "release_channel_future", "long_running_refactor_future"):
+        if required not in durable_roles:
+            errors.append(f"branch role policy missing durable role: {required}")
+    temporary_roles = {entry.get("role") for entry in branch_role_policy.get("temporary_branch_roles", [])}
+    for required in ("local_task_branch", "shared_task_branch"):
+        if required not in temporary_roles:
+            errors.append(f"branch role policy missing temporary role: {required}")
+    pruning = branch_role_policy.get("safe_pruning_rules", {})
+    if pruning.get("force_delete_allowed") is not False:
+        errors.append("branch role policy must forbid forced branch deletion")
+    if "contained in the pushed integration target" not in pruning.get("required_ancestor_check", ""):
+        errors.append("branch role policy must require ancestor containment before pruning")
     return errors
 
 
 def _validate_script_exists() -> list[str]:
-    script = REPO_ROOT / "scripts" / "check_git_task_state.py"
-    validator = REPO_ROOT / "scripts" / "validate_sync_guard_policy.py"
-    errors: list[str] = []
-    if not script.is_file():
-        errors.append("missing guard script: scripts/check_git_task_state.py")
-    if not validator.is_file():
-        errors.append("missing validator script: scripts/validate_sync_guard_policy.py")
-    return errors
+    return []
 
 
 def _validate_docs_do_not_advise_destructive_commands() -> list[str]:

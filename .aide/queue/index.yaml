@@ -127,12 +127,20 @@ entries:
     recommended_after: IA-BUNDLE-02
   - id: H0-BUNDLE-01
     title: Source OS registry and policy foundation
-    status: active
+    status: needs_review
     purpose: Add Source OS registry v2, family taxonomy, capability ladder, index-depth model, trust lanes, access/operation policy, approval gates, examples, validators, tests, and audit evidence.
     allowed_scope_summary: H0 source operating system contracts, inventories, docs, examples, scripts, tests, audit pack, and AIDE queue/context metadata only.
     gate: IA-BUNDLE-03 recommended H0 using fixture-equivalent outputs; no live source calls, source sync, connector runtime, public/master index mutation, or truth acceptance.
     task: .aide/queue/H0-BUNDLE-01/task.yaml
     recommended_after: IA-BUNDLE-03
+  - id: AIDE-MERGE-MAIN-SYNC-01
+    title: Generalize AIDE merge-to-integration workflow
+    status: active
+    purpose: Keep origin/main canonical after local branch merges while supporting local-only, shared, nested, and future durable branch roles.
+    allowed_scope_summary: AIDE prompts, Git workflow policies, docs, sync guard scripts, merge helper, focused tests, and queue metadata only.
+    gate: no product behavior changes; no force push, history rewrite, unsafe branch deletion, or destructive cleanup.
+    task: .aide/queue/AIDE-MERGE-MAIN-SYNC-01/task.yaml
+    recommended_after: H0-BUNDLE-01
   - id: H0-BUNDLE-02
     title: Connector interface, fixture replay, and live-probe envelope
     status: queued

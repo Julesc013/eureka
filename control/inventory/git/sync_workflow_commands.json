@@ -49,10 +49,18 @@
         "git fetch origin",
         "git switch main",
         "git pull --ff-only origin main",
-        "git merge --no-ff origin/<task-branch>",
+        "python scripts/check_git_task_state.py --mode merge-task --task-id <task-id> --allow-main --fail-on-warn",
+        "git merge --no-ff <task-branch>",
         "git diff --check",
-        "python scripts/check_git_task_state.py --mode merge-task --task-id <task-id> --allow-main",
-        "git push origin main"
+        "git push origin main",
+        "git fetch origin",
+        "python scripts/check_git_task_state.py --mode merge-task --task-id <task-id> --allow-main --fail-on-warn",
+        "python scripts/aide_merge_task_branch_to_main.py --task-id <task-id> --branch <task-branch> --execute",
+        "python scripts/aide_merge_task_branch_to_main.py --task-id <task-id> --branch <task-branch> --execute --publish-branch --delete-merged-branch --delete-remote-branch",
+        "git push -u origin <task-branch>",
+        "git merge --no-ff origin/<task-branch>",
+        "git branch -d <task-branch>",
+        "git push origin --delete <task-branch>"
       ],
       "forbidden_commands": [
         "git push --force",
@@ -60,16 +68,17 @@
         "git clean -fd",
         "git stash pop",
         "git rebase",
-        "branch deletion",
+        "forced branch deletion",
         "history rewrite"
       ],
       "preflight": [
         "integration machine only",
         "clean working tree",
         "local main fast-forwards from origin/main",
-        "named task branch exists on origin"
+        "named task branch exists locally",
+        "named task branch exists on origin only when cross-machine collaboration or handoff requires it"
       ],
-      "expected_result": "main contains the reviewed task branch and is pushed normally",
+      "expected_result": "main contains the reviewed task branch, origin/main is updated, every machine can fast-forward local main from origin/main, and temporary task branches can be safely pruned after containment",
       "stop_conditions": [
         "origin/main advanced during merge",
         "unresolved conflict",
@@ -80,7 +89,8 @@
         "merged task branch",
         "merge commit or fast-forward result",
         "validation results",
-        "remote HEAD after push"
+        "remote HEAD after push",
+        "post-push guard result with no unpushed main work"
       ]
     },
     {

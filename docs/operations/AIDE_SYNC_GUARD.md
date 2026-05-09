@@ -32,7 +32,9 @@ The guard does not fetch, merge, push, create branches, clean files, reset histo
 ```powershell
 python scripts/check_git_task_state.py --mode start-task --task-id SYNC-GUARD-01
 python scripts/check_git_task_state.py --mode finish-task --task-id SYNC-GUARD-01 --json
-python scripts/check_git_task_state.py --mode merge-task --task-id SYNC-GUARD-01 --allow-main
+python scripts/check_git_task_state.py --mode merge-task --task-id SYNC-GUARD-01 --allow-main --fail-on-warn
+python scripts/aide_merge_task_branch_to_main.py --task-id SYNC-GUARD-01 --branch task/sync-guard-01 --execute
+python scripts/aide_merge_task_branch_to_main.py --task-id SYNC-GUARD-01 --branch task/sync-guard-01 --execute --publish-branch --delete-merged-branch --delete-remote-branch
 ```
 
 Use `--allow-main` only for explicit integration, rescue, or guard exceptions. Use `--allow-no-upstream` for a new task branch before its first push. Use `--expected-origin-main <sha>` to warn if the remote-tracking branch differs from the task packet.
@@ -46,3 +48,9 @@ AIDE should refuse normal task starts on dirty trees, active merge/rebase/cherry
 - `AIDE-RESCUE-01` to preserve dirty work and stop.
 
 WARN-only results are acceptable when documented. FAIL results are stop signs.
+In `merge-task` mode, local-only commits on `main` are a FAIL condition: push
+`main` to `origin/main` or stop before starting more task work.
+
+Quick task branches may remain local until merged. Shared task branches should
+be published only when another machine needs them, then safely pruned after
+their tip is contained in pushed `origin/main`.

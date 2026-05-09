@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+task_id: AIDE-MERGE-MAIN-SYNC-01
+title: Generalize AIDE merge-to-integration workflow
+status: active
+target_repo: julesc013/eureka
+phase: AIDE-MERGE-MAIN-SYNC-01
+source_packet: user-requested sync workflow hardening
+objective: Make the AIDE Git workflow keep origin/main canonical after local branch merges while supporting local-only, shared, nested, and future durable branch roles.
+scope:
+  allowed_paths:
+    - .aide/prompts/AIDE-MERGE-01.md
+    - .aide/prompts/AIDE-SYNC-01.md
+    - .aide/queue/AIDE-MERGE-MAIN-SYNC-01/**
+    - .aide/queue/index.yaml
+    - control/inventory/git/**
+    - docs/operations/AIDE_SYNC_GUARD.md
+    - docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md
+    - scripts/check_git_task_state.py
+    - scripts/aide_merge_task_branch_to_main.py
+    - scripts/validate_sync_guard_policy.py
+    - tests/operations/test_aide_merge_task_branch_to_main.py
+    - tests/operations/test_git_task_state_guard.py
+    - tests/operations/test_sync_guard_policy.py
+  forbidden_paths:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - merge helper can merge a quick local branch into main and push origin/main without publishing the task branch
+  - merge helper can optionally publish and safely prune shared branches after containment
+  - branch role policy defines canonical, future durable, temporary, shared, and nested branch roles
+  - merge-task guard fails if main has local-only commits after integration
+  - docs and prompts explain resync, integration target, and safe pruning behavior
+recommended_after: H0-BUNDLE-01
+next_recommended_task: H0-BUNDLE-02
