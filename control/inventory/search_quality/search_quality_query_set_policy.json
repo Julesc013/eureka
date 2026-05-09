@@ -1,0 +1,10 @@
+{
+  "schema_version": "search_quality_query_set_policy.v0",
+  "policy_id": "search_quality_query_set_policy.g_bundle_02.v0",
+  "fixture_query_sets_current": true,
+  "human_observed_query_sets_future": true,
+  "source_scope_required": true,
+  "fixture_scope_required": true,
+  "production_quality_claim_allowed": false,
+  "global_absence_claim_allowed": false
+}

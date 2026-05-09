@@ -59,6 +59,15 @@ Current contracts:
   misses, scoped absence, and extraction-derived gaps without changing ranking,
   mutating public search, accepting evidence/candidates, or creating public
   truth.
+- `ranking_shadow_result.v0.json`, `ranking_factor.v0.json`,
+  `ranking_input_bundle.v0.json`, `ranking_output_bundle.v0.json`,
+  `identity_merge_shadow.v0.json`, `dedup_shadow_result.v0.json`,
+  `search_quality_query_set.v0.json`,
+  `search_quality_regression_report.v0.json`, and
+  `public_ranking_gate.v0.json`: fixture-only Track G shadow-ranking and
+  regression contracts. They score local proposals without changing public
+  ranking/search behavior, merging identities, deleting duplicates, accepting
+  truth, or opening the public ranking gate.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative

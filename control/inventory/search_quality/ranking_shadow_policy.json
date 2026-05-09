@@ -1,0 +1,47 @@
+{
+  "schema_version": "ranking_shadow_policy.v0",
+  "policy_id": "ranking_shadow_policy.g_bundle_02.v0",
+  "shadow_only_current": true,
+  "fixture_only_current": true,
+  "public_ranking_mutation_allowed": false,
+  "public_search_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "accepted_truth_creation_allowed": false,
+  "allowed_factor_families": [
+    "exact_identifier_match",
+    "title_or_name_match",
+    "version_match",
+    "platform_or_compatibility_match",
+    "source_trust_lane",
+    "evidence_support",
+    "review_status",
+    "extraction_member_match",
+    "manifest_match",
+    "near_miss_penalty",
+    "known_absence_signal",
+    "rights_risk_penalty",
+    "policy_block_penalty",
+    "recency_or_temporal_fit",
+    "completeness_signal"
+  ],
+  "allowed_inputs": [
+    "ranking_input_bundle",
+    "explanation_output_bundle",
+    "near_miss_explanation",
+    "known_absence_record",
+    "search_gap_explanation"
+  ],
+  "allowed_outputs": [
+    "ranking_shadow_result",
+    "ranking_output_bundle",
+    "factor_result",
+    "identity_merge_shadow",
+    "dedup_shadow_result"
+  ],
+  "no_goals": [
+    "no public ranking change",
+    "no public search runtime change",
+    "no accepted truth"
+  ]
+}

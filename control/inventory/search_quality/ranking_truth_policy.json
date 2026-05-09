@@ -1,0 +1,21 @@
+{
+  "schema_version": "ranking_truth_policy.v0",
+  "policy_id": "ranking_truth_policy.g_bundle_02.v0",
+  "ranking_shadow_accepts_result_as_truth": false,
+  "ranking_shadow_accepts_evidence": false,
+  "ranking_shadow_accepts_candidate": false,
+  "ranking_shadow_accepts_candidates": false,
+  "ranking_shadow_mutates_public_ranking": false,
+  "ranking_shadow_mutates_public_search": false,
+  "ranking_shadow_mutates_public_index": false,
+  "ranking_shadow_mutates_master_index": false,
+  "identity_shadow_creates_canonical_identity": false,
+  "dedup_shadow_merges_or_deletes": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "production_quality_claimed": false,
+  "external_superiority_claimed": false
+}

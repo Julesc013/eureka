@@ -1,0 +1,28 @@
+{
+  "schema_version": "search_quality_regression_policy.v0",
+  "policy_id": "search_quality_regression_policy.g_bundle_02.v0",
+  "allowed_metrics": [
+    "exact_expected_present",
+    "exact_expected_missing",
+    "near_miss_identified",
+    "absence_record_present",
+    "explanation_present",
+    "extraction_gap_explained",
+    "policy_block_explained",
+    "duplicate_preserved",
+    "conflict_preserved",
+    "ranking_shadow_changed_count",
+    "warning_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "beats_google",
+    "beats_internet_archive",
+    "exhaustive_global_coverage",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability"
+  ],
+  "regression_threshold_policy": "fixture_warning_only_current",
+  "warning_blocker_handling": "review_required_before_public_use"
+}

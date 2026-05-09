@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4106 chars, 1027 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3937 chars, 985 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/G-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/G-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/G-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/I-BUNDLE-01` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `contracts/query/README.md` (M; matches active task allowed path)
-- unknown: `contracts/query/explanation_input_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/explanation_output_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/known_absence_record.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/near_miss_explanation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/search_gap_explanation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/search_result_explanation.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/g-bundle-01-result-explanations-absence-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/KNOWN_ABSENCE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/SEARCH_EXPLANATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/NEAR_MISS_AND_ABSENCE_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SEARCH_EXPLANATION_NO_RANKING_CHANGE_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SEARCH_EXPLANATION_REVIEW.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/KNOWN_ABSENCE_RECORD_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/NEAR_MISS_EXPLANATION_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SEARCH_GAP_EXPLANATION_CONTRACT.md` (??; matches active task allowed path)
-- allowed: `docs/reference/SEARCH_RESULT_EXPLANATION_CONTRACT.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 8; see task evidence changed-files report
+- unknown: `contracts/query/dedup_shadow_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/identity_merge_shadow.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/public_ranking_gate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/ranking_factor.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/ranking_input_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/ranking_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/ranking_shadow_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/search_quality_query_set.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/search_quality_regression_report.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/g-bundle-02-ranking-shadow-quality-harness-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/dedup_shadow_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/identity_merge_shadow_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/public_ranking_gate_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/ranking_factor_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/ranking_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/ranking_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality/ranking_shadow_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 35; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6486
-- approx_tokens: 1622
+- chars: 6603
+- approx_tokens: 1651
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

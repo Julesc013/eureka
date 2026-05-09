@@ -1,0 +1,118 @@
+{
+  "schema_version": "g_bundle_02_report.v0",
+  "status": "pass",
+  "task": "G-BUNDLE-02",
+  "track": "G",
+  "purpose": "ranking_shadow_search_quality_harness",
+  "added_contracts": [
+    "contracts/query/ranking_shadow_result.v0.json",
+    "contracts/query/ranking_factor.v0.json",
+    "contracts/query/ranking_input_bundle.v0.json",
+    "contracts/query/ranking_output_bundle.v0.json",
+    "contracts/query/identity_merge_shadow.v0.json",
+    "contracts/query/dedup_shadow_result.v0.json",
+    "contracts/query/search_quality_query_set.v0.json",
+    "contracts/query/search_quality_regression_report.v0.json",
+    "contracts/query/public_ranking_gate.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/search_quality/ranking_shadow.py",
+    "runtime/search_quality/ranking_factors.py",
+    "runtime/search_quality/identity_shadow.py",
+    "runtime/search_quality/dedup_shadow.py",
+    "runtime/search_quality/quality_harness.py",
+    "runtime/search_quality/public_ranking_gate.py"
+  ],
+  "added_scripts": [
+    "scripts/run_ranking_shadow.py",
+    "scripts/run_search_quality_regression.py",
+    "scripts/summarize_ranking_shadow.py",
+    "scripts/validate_ranking_shadow_runtime.py"
+  ],
+  "added_docs": [
+    "docs/reference/RANKING_SHADOW_RESULT_CONTRACT.md",
+    "docs/reference/RANKING_FACTOR_CONTRACT.md",
+    "docs/reference/SEARCH_QUALITY_QUERY_SET_CONTRACT.md",
+    "docs/reference/SEARCH_QUALITY_REGRESSION_REPORT_CONTRACT.md",
+    "docs/reference/PUBLIC_RANKING_GATE_CONTRACT.md",
+    "docs/architecture/RANKING_SHADOW_MODEL.md",
+    "docs/architecture/SEARCH_QUALITY_HARNESS_MODEL.md",
+    "docs/operations/RANKING_SHADOW_REVIEW.md",
+    "docs/operations/SEARCH_QUALITY_REGRESSION_REVIEW.md",
+    "docs/operations/PUBLIC_RANKING_GATE_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/search_quality/ranking_shadow_policy.json",
+    "control/inventory/search_quality/ranking_factor_policy.json",
+    "control/inventory/search_quality/identity_merge_shadow_policy.json",
+    "control/inventory/search_quality/dedup_shadow_policy.json",
+    "control/inventory/search_quality/search_quality_query_set_policy.json",
+    "control/inventory/search_quality/search_quality_regression_policy.json",
+    "control/inventory/search_quality/public_ranking_gate_policy.json",
+    "control/inventory/search_quality/ranking_output_policy.json",
+    "control/inventory/search_quality/ranking_path_policy.json",
+    "control/inventory/search_quality/ranking_truth_policy.json"
+  ],
+  "added_examples": [
+    "examples/search_quality/ranking/",
+    "examples/search_quality/identity/",
+    "examples/search_quality/query_sets/",
+    "examples/search_quality/regression/",
+    "examples/search_quality/public_ranking_gate/"
+  ],
+  "added_tests": [
+    "tests/search_quality/test_ranking_shadow_runtime.py",
+    "tests/search_quality/test_identity_and_dedup_shadow.py",
+    "tests/search_quality/test_search_quality_harness.py",
+    "tests/operations/test_ranking_shadow_scripts.py"
+  ],
+  "validation": {
+    "json_contracts_and_policies": "pass",
+    "validate_ranking_shadow_runtime": "pass",
+    "run_ranking_shadow_check": "pass",
+    "run_search_quality_regression_check": "pass",
+    "summarize_ranking_shadow_check": "pass",
+    "ranking_shadow_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_g_f_h_core_validators": "pass_with_existing_h1_audit_warnings",
+    "aide_lite": "pass_with_verify_warnings"
+  },
+  "ranking_scope": {
+    "fixture_only": true,
+    "ranking_shadow_enabled": true,
+    "search_quality_harness_enabled": true,
+    "identity_merge_shadow_enabled": true,
+    "dedup_shadow_enabled": true,
+    "public_ranking_mutation_enabled": false,
+    "public_search_mutation_enabled": false
+  },
+  "truth_boundary": {
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_candidate": false,
+    "identity_shadow_creates_canonical_identity": false,
+    "dedup_shadow_merges_or_deletes": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "production_quality_claimed": false,
+    "external_superiority_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "public_ranking_gate": "BLOCKED_CURRENT",
+  "next_task": "I-BUNDLE-01 - Pack quarantine, signed verification, and contribution review"
+}

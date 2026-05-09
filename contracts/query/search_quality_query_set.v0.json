@@ -1,0 +1,27 @@
+{
+  "schema_version": "search_quality_query_set.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "query_set_id",
+    "query_set_status",
+    "query_cases",
+    "expected_result_refs",
+    "expected_near_miss_refs",
+    "expected_absence_refs",
+    "quality_objectives",
+    "source_scope",
+    "fixture_scope",
+    "limitations",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "status_values": [
+    "example_only",
+    "fixture_only",
+    "local_regression",
+    "human_observed_future",
+    "blocked",
+    "not_evaluable"
+  ]
+}

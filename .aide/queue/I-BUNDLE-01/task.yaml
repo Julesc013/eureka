@@ -1,14 +1,14 @@
-task_id: G-BUNDLE-02
-title: Ranking shadow runtime and search-quality harness
-status: needs_review
-phase: G-BUNDLE-02
+task_id: I-BUNDLE-01
+title: Pack quarantine, signed verification, and contribution review
+status: queued
+phase: I-BUNDLE-01
 allowed_paths:
   - .aide/context/latest-task-packet.md
   - .aide/context/latest-review-packet.md
   - .aide/evals/runs/latest-golden-tasks.json
   - .aide/evals/runs/latest-golden-tasks.md
   - .aide/queue/index.yaml
-  - .aide/queue/G-BUNDLE-02/**
+  - .aide/queue/I-BUNDLE-01/**
   - contracts/**
   - runtime/**
   - control/inventory/**
@@ -27,10 +27,10 @@ forbidden_paths:
   - .local/eureka/**
   - .cache/eureka/**
 non_goals:
-  - no public search behavior change, no public ranking behavior change, no public/master index mutation, no evidence/candidate/source/public truth acceptance, no downloads, no live calls, no source sync, no network/API/model/provider calls, no telemetry, no site/dist regeneration, and no local private-state roots
+  - no public ranking/search behavior change, no pack acceptance, no source/evidence/candidate/public truth acceptance, no public/master index mutation, no downloads, no live calls, no source sync, no network/API/model/provider calls, no telemetry, no site/dist regeneration, and no local private-state roots
 validation:
+  - python scripts/validate_ranking_shadow_runtime.py
   - python scripts/validate_search_explanation_runtime.py
-  - python scripts/validate_extraction_search_integration.py
   - python scripts/check_architecture_boundaries.py
   - py -3 .aide/scripts/aide_lite.py doctor
   - py -3 .aide/scripts/aide_lite.py validate

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: G-BUNDLE-02
+current_recommended_task: I-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -222,12 +222,20 @@ entries:
     recommended_after: F-BUNDLE-02
   - id: G-BUNDLE-02
     title: Ranking shadow runtime and search-quality harness
-    status: queued
+    status: needs_review
     purpose: Build a fixture-only shadow ranking and search-quality harness from G-BUNDLE-01 explanations without changing public ranking or search behavior.
     allowed_scope_summary: G shadow-ranking contracts, policies, docs, examples, scripts, tests, and audit evidence only until separately scoped.
     gate: G-BUNDLE-01 passes; no public ranking/search mutation, index mutation, truth acceptance, live calls, downloads, telemetry, or model/provider calls by default.
     task: .aide/queue/G-BUNDLE-02/task.yaml
     recommended_after: G-BUNDLE-01
+  - id: I-BUNDLE-01
+    title: Pack quarantine, signed verification, and contribution review
+    status: queued
+    purpose: Add pack quarantine, signed verification, and contribution review safeguards after the G shadow-ranking harness, without enabling public ranking or pack acceptance by default.
+    allowed_scope_summary: I-track pack quarantine/review contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until separately scoped.
+    gate: G-BUNDLE-02 passes; no public ranking/search mutation, pack acceptance, index mutation, truth acceptance, live calls, downloads, telemetry, or model/provider calls by default.
+    task: .aide/queue/I-BUNDLE-01/task.yaml
+    recommended_after: G-BUNDLE-02
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

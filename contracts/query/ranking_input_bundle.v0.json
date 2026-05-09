@@ -1,0 +1,31 @@
+{
+  "schema_version": "ranking_input_bundle.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "ranking_input_bundle_id",
+    "bundle_status",
+    "query_ref",
+    "query_context",
+    "items",
+    "explanation_refs",
+    "near_miss_refs",
+    "known_absence_refs",
+    "extraction_gap_refs",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "allowed_inputs": [
+    "query_observation_refs",
+    "SearchNeed refs",
+    "candidate refs",
+    "source-cache refs",
+    "evidence refs",
+    "review refs",
+    "explanation refs",
+    "near-miss refs",
+    "known absence refs",
+    "extraction gap refs",
+    "source and coverage refs"
+  ]
+}

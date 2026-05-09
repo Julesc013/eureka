@@ -1,0 +1,82 @@
+{
+  "schema_version": "ranking_input_bundle.v0",
+  "ranking_input_bundle_id": "ranking.input.extraction_gap.v0",
+  "bundle_status": "fixture_only",
+  "ranking_shadow_status": "blocked_by_policy",
+  "query_ref": "search_need.extraction_visibility.fixture.v0",
+  "query_context": {
+    "query_text": "container manifest hidden member",
+    "query_terms": [
+      "container",
+      "manifest",
+      "hidden",
+      "member"
+    ],
+    "identifiers": [],
+    "platform": "fixture"
+  },
+  "items": [
+    {
+      "item_ref": "candidate.extraction.member.v0",
+      "item_kind": "extraction_search_gap",
+      "title": "Hidden manifest member",
+      "platform": "fixture",
+      "source_trust_lane": "source_cache_preview",
+      "evidence_support_level": "metadata_fixture",
+      "review_status": "review_seeded",
+      "extraction_member_match": true,
+      "manifest_match": true,
+      "extraction_gap_refs": [
+        "extraction.search_gap.98660a95c647.v0"
+      ],
+      "completeness_fields": [
+        "title",
+        "manifest",
+        "member"
+      ]
+    },
+    {
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "item_kind": "policy_blocked_gap",
+      "title": "Blocked path traversal member",
+      "platform": "fixture",
+      "policy_blocked": true,
+      "source_trust_lane": "policy_blocked",
+      "evidence_support_level": "none",
+      "review_status": "blocked",
+      "known_absence": true,
+      "known_absence_refs": [
+        "search.known_absence.policy_blocked.v0"
+      ],
+      "extraction_gap_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "completeness_fields": []
+    }
+  ],
+  "explanation_refs": [
+    "search.explanation.extraction_member.v0"
+  ],
+  "near_miss_refs": [
+    "search.near_miss.extraction_gap.v0"
+  ],
+  "known_absence_refs": [
+    "search.known_absence.policy_blocked.v0"
+  ],
+  "extraction_gap_refs": [
+    "extraction.search_gap.98660a95c647.v0",
+    "extraction.search_gap.policy_blocked.fixture.v0"
+  ],
+  "limitations": [
+    "Synthetic extraction-gap ranking input."
+  ],
+  "truth_boundary": {
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_candidate": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false
+  }
+}

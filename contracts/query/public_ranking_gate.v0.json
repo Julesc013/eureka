@@ -1,0 +1,25 @@
+{
+  "schema_version": "public_ranking_gate.v0",
+  "contract_status": "fixture_shadow_contract",
+  "status_values": [
+    "blocked_current",
+    "not_ready",
+    "ready_for_review_future",
+    "ready_for_public_alpha_future",
+    "policy_blocked",
+    "not_evaluable"
+  ],
+  "current_expected_gate_status": "blocked_current",
+  "required_fields": [
+    "public_ranking_gate_id",
+    "gate_status",
+    "required_inputs",
+    "regression_report_refs",
+    "review_refs",
+    "blockers",
+    "allowed_next_actions",
+    "forbidden_next_actions",
+    "truth_boundary",
+    "product_boundary"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "dedup_shadow_result.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "dedup_shadow_id",
+    "dedup_shadow_status",
+    "candidate_refs",
+    "duplicate_groups_proposed",
+    "duplicate_reasons",
+    "conflicts_preserved",
+    "merge_allowed_current",
+    "delete_allowed_current",
+    "automatic_dedup_allowed",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "required_current_values": {
+    "merge_allowed_current": false,
+    "delete_allowed_current": false,
+    "automatic_dedup_allowed": false
+  }
+}

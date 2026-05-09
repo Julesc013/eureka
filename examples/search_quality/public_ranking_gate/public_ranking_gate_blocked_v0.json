@@ -1,0 +1,62 @@
+{
+  "allowed_next_actions": [
+    "review_shadow_results_future",
+    "expand_fixture_query_sets_future"
+  ],
+  "blockers": [
+    "public_ranking_blocked_current"
+  ],
+  "forbidden_next_actions": [
+    "public_ranking_change",
+    "public_search_runtime_change",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "gate_status": "blocked_current",
+  "limitations": [
+    "Public ranking remains blocked in G-BUNDLE-02."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_ranking_gate_id": "public_ranking.gate.fc6de9d9c5fd.v0",
+  "regression_report_refs": [
+    "search_quality.regression.ccedc221d3b8.v0"
+  ],
+  "required_inputs": [
+    "reviewed_regression_report",
+    "human_ranking_review",
+    "public_search_change_approval"
+  ],
+  "review_refs": [],
+  "schema_version": "public_ranking_gate.v0",
+  "truth_boundary": {
+    "dedup_shadow_merges_or_deletes": false,
+    "external_superiority_claimed": false,
+    "identity_shadow_creates_canonical_identity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "ranking_shadow_accepts_candidate": false,
+    "ranking_shadow_accepts_candidates": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_mutates_master_index": false,
+    "ranking_shadow_mutates_public_index": false,
+    "ranking_shadow_mutates_public_ranking": false,
+    "ranking_shadow_mutates_public_search": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

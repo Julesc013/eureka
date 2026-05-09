@@ -1,0 +1,76 @@
+{
+  "blockers": [],
+  "explanation_refs": [],
+  "forbidden_claims": [
+    "production_search_quality",
+    "beats_google",
+    "beats_internet_archive",
+    "exhaustive_global_coverage",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability"
+  ],
+  "improvements": [
+    "Fixture query set can be evaluated by shadow ranking."
+  ],
+  "limitations": [
+    "Regression report is fixture-only and not production search quality proof."
+  ],
+  "metrics": {
+    "absence_record_present": 0,
+    "conflict_preserved": 1,
+    "duplicate_preserved": 1,
+    "exact_expected_missing": 0,
+    "exact_expected_present": 1,
+    "explanation_present": 1,
+    "extraction_gap_explained": 1,
+    "near_miss_identified": 1,
+    "policy_block_explained": 0,
+    "ranking_shadow_changed_count": 0,
+    "warning_count": 0
+  },
+  "pass_fail_summary": {
+    "production_quality_claimed": false,
+    "public_ranking_changed": false,
+    "status": "pass"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_set_ref": "query_set.software_compatibility.v0",
+  "ranking_shadow_refs": [
+    "ranking.shadow.2d8a33078558.v0"
+  ],
+  "regression_report_id": "search_quality.regression.7bbd6406f96b.v0",
+  "regressions": [],
+  "schema_version": "search_quality_regression_report.v0",
+  "truth_boundary": {
+    "dedup_shadow_merges_or_deletes": false,
+    "external_superiority_claimed": false,
+    "identity_shadow_creates_canonical_identity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "ranking_shadow_accepts_candidate": false,
+    "ranking_shadow_accepts_candidates": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_mutates_master_index": false,
+    "ranking_shadow_mutates_public_index": false,
+    "ranking_shadow_mutates_public_ranking": false,
+    "ranking_shadow_mutates_public_search": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

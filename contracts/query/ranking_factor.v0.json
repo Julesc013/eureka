@@ -1,0 +1,35 @@
+{
+  "schema_version": "ranking_factor.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "factor_id",
+    "factor_family",
+    "factor_label",
+    "factor_description",
+    "input_fields",
+    "output_score_shape",
+    "score_range",
+    "deterministic",
+    "review_required_before_public_use",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "factor_families": [
+    "exact_identifier_match",
+    "title_or_name_match",
+    "version_match",
+    "platform_or_compatibility_match",
+    "source_trust_lane",
+    "evidence_support",
+    "review_status",
+    "extraction_member_match",
+    "manifest_match",
+    "near_miss_penalty",
+    "known_absence_signal",
+    "rights_risk_penalty",
+    "policy_block_penalty",
+    "recency_or_temporal_fit",
+    "completeness_signal"
+  ],
+  "doctrine": "Ranking factors are deterministic heuristics, not truth."
+}

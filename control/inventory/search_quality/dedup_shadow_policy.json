@@ -1,0 +1,9 @@
+{
+  "schema_version": "dedup_shadow_policy.v0",
+  "policy_id": "dedup_shadow_policy.g_bundle_02.v0",
+  "automatic_dedup_allowed": false,
+  "deletion_allowed_current": false,
+  "merge_allowed_current": false,
+  "duplicate_grouping_shadow_only": true,
+  "conflict_preservation_required": true
+}

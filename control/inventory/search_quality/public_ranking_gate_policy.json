@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_ranking_gate_policy.v0",
+  "policy_id": "public_ranking_gate_policy.g_bundle_02.v0",
+  "public_ranking_blocked_current": true,
+  "review_required_before_public_use": true,
+  "regression_report_required": true,
+  "public_alpha_gate_future": true,
+  "allowed_gate_status_current": [
+    "blocked_current",
+    "ready_for_review_future"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "ranking_factor_policy.v0",
+  "policy_id": "ranking_factor_policy.g_bundle_02.v0",
+  "enabled_factor_families": [
+    "exact_identifier_match",
+    "title_or_name_match",
+    "version_match",
+    "platform_or_compatibility_match",
+    "source_trust_lane",
+    "evidence_support",
+    "review_status",
+    "extraction_member_match",
+    "manifest_match",
+    "near_miss_penalty",
+    "known_absence_signal",
+    "rights_risk_penalty",
+    "policy_block_penalty",
+    "recency_or_temporal_fit",
+    "completeness_signal"
+  ],
+  "factor_weights": {
+    "exact_identifier_match": 3.0,
+    "title_or_name_match": 1.2,
+    "version_match": 1.0,
+    "platform_or_compatibility_match": 0.8,
+    "source_trust_lane": 0.6,
+    "evidence_support": 0.8,
+    "review_status": 0.5,
+    "extraction_member_match": 0.4,
+    "manifest_match": 0.5,
+    "near_miss_penalty": 1.0,
+    "known_absence_signal": 0.5,
+    "rights_risk_penalty": 1.0,
+    "policy_block_penalty": 1.0,
+    "recency_or_temporal_fit": 0.2,
+    "completeness_signal": 0.3
+  },
+  "deterministic_scoring_required": true,
+  "missing_field_behavior": "score_zero_and_record_limitation",
+  "ai_or_semantic_factors_enabled_current": false,
+  "public_use_without_review_allowed": false
+}

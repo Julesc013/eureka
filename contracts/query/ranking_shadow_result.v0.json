@@ -1,0 +1,31 @@
+{
+  "schema_version": "ranking_shadow_result.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "schema_version",
+    "ranking_shadow_id",
+    "ranking_shadow_status",
+    "input_bundle_ref",
+    "query_ref",
+    "ranked_items",
+    "factor_results",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "status_values": [
+    "example_only",
+    "fixture_only",
+    "local_shadow",
+    "blocked_by_policy",
+    "partial",
+    "not_evaluable"
+  ],
+  "boundary_requirements": {
+    "ranking_shadow_mutates_public_ranking": false,
+    "ranking_shadow_mutates_public_search": false,
+    "ranking_shadow_mutates_public_index": false,
+    "ranking_shadow_mutates_master_index": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_candidates": false
+  }
+}

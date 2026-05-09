@@ -1,0 +1,9 @@
+{
+  "schema_version": "identity_merge_shadow_policy.v0",
+  "policy_id": "identity_merge_shadow_policy.g_bundle_02.v0",
+  "identity_clustering_shadow_only": true,
+  "merge_allowed_current": false,
+  "automatic_merge_allowed": false,
+  "automatic_canonicalization_allowed": false,
+  "conflict_preservation_required": true
+}

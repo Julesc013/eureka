@@ -1,0 +1,25 @@
+{
+  "schema_version": "ranking_output_bundle.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "ranking_output_bundle_id",
+    "output_status",
+    "input_bundle_ref",
+    "ranking_shadow_result",
+    "factor_results",
+    "identity_merge_shadows",
+    "dedup_shadow_results",
+    "quality_regression_refs",
+    "public_ranking_gate_refs",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "no_claims_required": {
+    "public_ranking_changed": false,
+    "public_search_changed": false,
+    "evidence_accepted": false,
+    "candidate_accepted": false,
+    "production_quality_claimed": false
+  }
+}

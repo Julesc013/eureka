@@ -1,0 +1,455 @@
+{
+  "dedup_shadow_refs": [],
+  "explanation_refs": [
+    "search.explanation.extraction_member.v0"
+  ],
+  "extraction_gap_refs": [
+    "extraction.search_gap.98660a95c647.v0",
+    "extraction.search_gap.policy_blocked.fixture.v0"
+  ],
+  "factor_results": [
+    {
+      "deterministic": true,
+      "factor_family": "exact_identifier_match",
+      "factor_result_id": "ranking.factor_result.2b5f23fec34d.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 3.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "title_or_name_match",
+      "factor_result_id": "ranking.factor_result.5f46ee50d50d.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.2,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "version_match",
+      "factor_result_id": "ranking.factor_result.0333ebd27f2d.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "platform_or_compatibility_match",
+      "factor_result_id": "ranking.factor_result.041bc5d6fbd9.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 1.0,
+      "weight": 0.8,
+      "weighted_score": 0.8
+    },
+    {
+      "deterministic": true,
+      "factor_family": "source_trust_lane",
+      "factor_result_id": "ranking.factor_result.ef69ee812229.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.5,
+      "weight": 0.6,
+      "weighted_score": 0.3
+    },
+    {
+      "deterministic": true,
+      "factor_family": "evidence_support",
+      "factor_result_id": "ranking.factor_result.9629d1a786bb.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.55,
+      "weight": 0.8,
+      "weighted_score": 0.44
+    },
+    {
+      "deterministic": true,
+      "factor_family": "review_status",
+      "factor_result_id": "ranking.factor_result.58d4bef0eab4.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.35,
+      "weight": 0.5,
+      "weighted_score": 0.175
+    },
+    {
+      "deterministic": true,
+      "factor_family": "extraction_member_match",
+      "factor_result_id": "ranking.factor_result.43abea9bb462.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.35,
+      "weight": 0.4,
+      "weighted_score": 0.14
+    },
+    {
+      "deterministic": true,
+      "factor_family": "manifest_match",
+      "factor_result_id": "ranking.factor_result.48d3fec35556.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.4,
+      "weight": 0.5,
+      "weighted_score": 0.2
+    },
+    {
+      "deterministic": true,
+      "factor_family": "near_miss_penalty",
+      "factor_result_id": "ranking.factor_result.2435937e0bf2.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "known_absence_signal",
+      "factor_result_id": "ranking.factor_result.711d483c5bc1.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.5,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "rights_risk_penalty",
+      "factor_result_id": "ranking.factor_result.cdd63edae102.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": -0.0,
+      "weight": 1.0,
+      "weighted_score": -0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "policy_block_penalty",
+      "factor_result_id": "ranking.factor_result.c71fe6929590.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "recency_or_temporal_fit",
+      "factor_result_id": "ranking.factor_result.9ba29134fdba.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.2,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "completeness_signal",
+      "factor_result_id": "ranking.factor_result.60debcbe29b5.v0",
+      "item_ref": "candidate.extraction.member.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.3,
+      "weight": 0.3,
+      "weighted_score": 0.09
+    },
+    {
+      "deterministic": true,
+      "factor_family": "exact_identifier_match",
+      "factor_result_id": "ranking.factor_result.71f166e1ad7b.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 3.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "title_or_name_match",
+      "factor_result_id": "ranking.factor_result.62faf468a8fa.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.2,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "version_match",
+      "factor_result_id": "ranking.factor_result.590f81b1c64b.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "platform_or_compatibility_match",
+      "factor_result_id": "ranking.factor_result.3f515a10713e.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 1.0,
+      "weight": 0.8,
+      "weighted_score": 0.8
+    },
+    {
+      "deterministic": true,
+      "factor_family": "source_trust_lane",
+      "factor_result_id": "ranking.factor_result.f09c3dd4a694.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.6,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "evidence_support",
+      "factor_result_id": "ranking.factor_result.3cabc69c2162.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.8,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "review_status",
+      "factor_result_id": "ranking.factor_result.dffc9557ca09.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": -0.4,
+      "weight": 0.5,
+      "weighted_score": -0.2
+    },
+    {
+      "deterministic": true,
+      "factor_family": "extraction_member_match",
+      "factor_result_id": "ranking.factor_result.4a88d8c6c376.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.4,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "manifest_match",
+      "factor_result_id": "ranking.factor_result.a4673559215d.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.5,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "near_miss_penalty",
+      "factor_result_id": "ranking.factor_result.e4c6e2bcde09.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 1.0,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "known_absence_signal",
+      "factor_result_id": "ranking.factor_result.b7a278a99e0e.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": -0.2,
+      "weight": 0.5,
+      "weighted_score": -0.1
+    },
+    {
+      "deterministic": true,
+      "factor_family": "rights_risk_penalty",
+      "factor_result_id": "ranking.factor_result.2497fb5041b2.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": -0.0,
+      "weight": 1.0,
+      "weighted_score": -0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "policy_block_penalty",
+      "factor_result_id": "ranking.factor_result.09c99567c0bb.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": -1.0,
+      "weight": 1.0,
+      "weighted_score": -1.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "recency_or_temporal_fit",
+      "factor_result_id": "ranking.factor_result.98350790f935.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.2,
+      "weighted_score": 0.0
+    },
+    {
+      "deterministic": true,
+      "factor_family": "completeness_signal",
+      "factor_result_id": "ranking.factor_result.c1d76102de1b.v0",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "review_required_before_public_use": true,
+      "schema_version": "ranking_factor_result.v0",
+      "score": 0.0,
+      "weight": 0.3,
+      "weighted_score": 0.0
+    }
+  ],
+  "identity_shadow_refs": [],
+  "input_bundle_ref": "ranking.input.extraction_gap.v0",
+  "known_absence_refs": [
+    "search.known_absence.policy_blocked.v0"
+  ],
+  "limitations": [
+    "Ranking is shadow-only and does not publish or mutate order."
+  ],
+  "near_miss_refs": [
+    "search.near_miss.extraction_gap.v0"
+  ],
+  "notes": [
+    "Shadow score is a deterministic fixture proposal, not authority."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_ref": "search_need.extraction_visibility.fixture.v0",
+  "ranked_items": [
+    {
+      "explanation_refs": [],
+      "factor_result_refs": [
+        "ranking.factor_result.2b5f23fec34d.v0",
+        "ranking.factor_result.5f46ee50d50d.v0",
+        "ranking.factor_result.0333ebd27f2d.v0",
+        "ranking.factor_result.041bc5d6fbd9.v0",
+        "ranking.factor_result.ef69ee812229.v0",
+        "ranking.factor_result.9629d1a786bb.v0",
+        "ranking.factor_result.58d4bef0eab4.v0",
+        "ranking.factor_result.43abea9bb462.v0",
+        "ranking.factor_result.48d3fec35556.v0",
+        "ranking.factor_result.2435937e0bf2.v0",
+        "ranking.factor_result.711d483c5bc1.v0",
+        "ranking.factor_result.cdd63edae102.v0",
+        "ranking.factor_result.c71fe6929590.v0",
+        "ranking.factor_result.9ba29134fdba.v0",
+        "ranking.factor_result.60debcbe29b5.v0"
+      ],
+      "item_kind": "extraction_search_gap",
+      "item_ref": "candidate.extraction.member.v0",
+      "known_absence_refs": [],
+      "near_miss_refs": [],
+      "review_required_before_public_use": true,
+      "shadow_rank": 1,
+      "shadow_score": 2.145
+    },
+    {
+      "explanation_refs": [],
+      "factor_result_refs": [
+        "ranking.factor_result.71f166e1ad7b.v0",
+        "ranking.factor_result.62faf468a8fa.v0",
+        "ranking.factor_result.590f81b1c64b.v0",
+        "ranking.factor_result.3f515a10713e.v0",
+        "ranking.factor_result.f09c3dd4a694.v0",
+        "ranking.factor_result.3cabc69c2162.v0",
+        "ranking.factor_result.dffc9557ca09.v0",
+        "ranking.factor_result.4a88d8c6c376.v0",
+        "ranking.factor_result.a4673559215d.v0",
+        "ranking.factor_result.e4c6e2bcde09.v0",
+        "ranking.factor_result.b7a278a99e0e.v0",
+        "ranking.factor_result.2497fb5041b2.v0",
+        "ranking.factor_result.09c99567c0bb.v0",
+        "ranking.factor_result.98350790f935.v0",
+        "ranking.factor_result.c1d76102de1b.v0"
+      ],
+      "item_kind": "policy_blocked_gap",
+      "item_ref": "candidate.policy_blocked.extraction.v0",
+      "known_absence_refs": [
+        "search.known_absence.policy_blocked.v0"
+      ],
+      "near_miss_refs": [],
+      "review_required_before_public_use": true,
+      "shadow_rank": 2,
+      "shadow_score": -0.5
+    }
+  ],
+  "ranking_shadow_id": "ranking.shadow.6b1424cec740.v0",
+  "ranking_shadow_status": "blocked_by_policy",
+  "review_gates": {
+    "automatic_acceptance_allowed": false,
+    "public_ranking_mutation_allowed": false,
+    "review_required_before_public_ranking_use": true
+  },
+  "schema_version": "ranking_shadow_result.v0",
+  "truth_boundary": {
+    "dedup_shadow_merges_or_deletes": false,
+    "external_superiority_claimed": false,
+    "identity_shadow_creates_canonical_identity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "ranking_shadow_accepts_candidate": false,
+    "ranking_shadow_accepts_candidates": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_mutates_master_index": false,
+    "ranking_shadow_mutates_public_index": false,
+    "ranking_shadow_mutates_public_ranking": false,
+    "ranking_shadow_mutates_public_search": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

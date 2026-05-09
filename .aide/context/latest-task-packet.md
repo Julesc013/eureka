@@ -2,19 +2,19 @@
 
 ## PHASE
 
-G-BUNDLE-02 - Ranking shadow runtime and search-quality harness
+I-BUNDLE-01 - Pack quarantine, signed verification, and contribution review
 
 ## GOAL
 
-Continue after G-BUNDLE-01 by using fixture-only Eureka result explanations, near misses, known absence records, and search-gap explanations as inputs to a shadow ranking and search-quality harness.
+Continue after G-BUNDLE-02 by adding governed pack quarantine, signed verification, and contribution review safeguards for Eureka without changing Eureka product behavior.
 
-G-BUNDLE-02 should remain shadow-only. It must not change public search behavior, change public ranking behavior, mutate public/master indexes, accept evidence/candidate/source/public truth, call networks, download files, execute payloads, inspect private files, or call models/providers by default.
+I-BUNDLE-01 must remain review-gated. It must not accept packs, mutate public/master indexes, accept evidence/candidate/source/public truth, call networks, download files, execute payloads, inspect private files, enable public ranking, or call models/providers by default.
 
-HUMAN-OBS-REVIEW-01 remains preserved as a parallel side-lane and is not modified by this G-track handoff.
+HUMAN-OBS-REVIEW-01 remains preserved as a parallel side-lane and is not modified by this I-track handoff.
 
 ## WHY
 
-G-BUNDLE-01 made explanations and known absence reviewable without making them authoritative. The next task can measure ranking and explanation quality in a fixture-only harness while keeping public ranking untouched.
+G-BUNDLE-02 made local shadow ranking measurable without public ranking changes. The next task can add pack quarantine and verification gates before any contribution can influence search, evidence, or index state.
 
 ## CONTEXT_REFS
 
@@ -24,40 +24,39 @@ G-BUNDLE-01 made explanations and known absence reviewable without making them a
 - `.aide/context/context-index.json`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
-- `.aide/queue/G-BUNDLE-01/task.yaml`
 - `.aide/queue/G-BUNDLE-02/task.yaml`
-- `control/audits/g-bundle-01-result-explanations-absence-v0/`
+- `.aide/queue/I-BUNDLE-01/task.yaml`
+- `control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/`
 - `contracts/query/`
 - `runtime/search_quality/`
 - `examples/search_quality/`
-- `docs/architecture/SEARCH_EXPLANATION_MODEL.md`
-- `docs/operations/SEARCH_EXPLANATION_NO_RANKING_CHANGE_POLICY.md`
+- `docs/architecture/RANKING_SHADOW_MODEL.md`
+- `docs/operations/PUBLIC_RANKING_GATE_POLICY.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- Product path edits are to be defined by the G-BUNDLE-02 prompt.
-- G-BUNDLE-01 artifacts are read-only context unless the next task explicitly scopes updates.
+- Product path edits are to be defined by the I-BUNDLE-01 prompt.
+- G-BUNDLE-02 artifacts are read-only context unless the next task explicitly scopes updates.
 
 ## IMPLEMENTATION
 
-- Use G-BUNDLE-01 output bundles, explanations, near misses, known absence records, and search-gap explanations as explicit inputs.
-- Keep G-BUNDLE-02 fixture-only and shadow-only until a reviewed task packet allows broader behavior.
-- Preserve no-ranking-change and no-public-search-mutation boundaries.
-- Preserve review gates; shadow-ranking outputs must not become accepted evidence, candidates, public truth, or master-index truth.
+- Use G-BUNDLE-02 shadow-ranking outputs and public gate evidence as input context only.
+- Keep I-BUNDLE-01 quarantine/review-gated until a reviewed task packet allows broader behavior.
+- Preserve no-pack-acceptance, no-index-mutation, no-truth-acceptance, and no-public-ranking-change boundaries.
 - Preserve this handoff without changing Eureka product behavior.
 
 ## ACCEPTANCE
 
-- G-BUNDLE-02 acceptance criteria will be defined by its task prompt.
-- The handoff is acceptable only if G-BUNDLE-01 audit artifacts validate and no public search mutation, ranking mutation, network, download, source sync, index mutation, truth acceptance, or Eureka product behavior change is introduced.
+- I-BUNDLE-01 acceptance criteria will be defined by its task prompt.
+- The handoff is acceptable only if G-BUNDLE-02 audit artifacts validate and no public ranking/search mutation, network, download, source sync, index mutation, pack acceptance, truth acceptance, or Eureka product behavior change is introduced.
 
 ## FORBIDDEN_PATHS
 
+- `site/**`
 - `runtime/**`
 - `contracts/**`
 - `surfaces/**`
-- `site/**`
 - `native/**`
 - `crates/**`
 - `connectors/**`
@@ -66,15 +65,16 @@ G-BUNDLE-01 made explanations and known absence reviewable without making them a
 - `data/public_index/**`
 - `data/master_index/**`
 - `master_index/**`
+- `control/inventory/publication/**`
 - `.aide.local/**`
 - `.local/eureka/**`
 - `.cache/eureka/**`
 
 ## VALIDATION
 
+- `python scripts/validate_ranking_shadow_runtime.py`
 - `python scripts/validate_search_explanation_runtime.py`
-- `python scripts/validate_extraction_search_integration.py`
-- G-BUNDLE-02-specific validators and tests once defined.
+- I-BUNDLE-01-specific validators and tests once defined.
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -85,11 +85,11 @@ G-BUNDLE-01 made explanations and known absence reviewable without making them a
 
 ## EVIDENCE
 
-- G-BUNDLE-01 audit pack: `control/audits/g-bundle-01-result-explanations-absence-v0/`
+- G-BUNDLE-02 audit pack: `control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/`
 
 ## NON_GOALS
 
-- No public search behavior change, ranking behavior change, public search runtime mutation, public/master index mutation, candidate/evidence/review store mutation, evidence/candidate/source/public truth acceptance, downloads, live calls, network/API/model/provider calls, file execution, installer runs, source sync, public query fanout, scraping/crawling, rights-clearance claims, malware-safety claims, verified-installability claims, production-readiness claims, global absence claims, site/dist regeneration, or local private-state roots.
+- No public search behavior change, ranking behavior change, public search runtime mutation, public/master index mutation, candidate/evidence/review store mutation, pack acceptance, evidence/candidate/source/public truth acceptance, downloads, live calls, network/API/model/provider calls, file execution, installer runs, source sync, public query fanout, scraping/crawling, rights-clearance claims, malware-safety claims, verified-installability claims, production-readiness claims, site/dist regeneration, or local private-state roots.
 
 ## OUTPUT_SCHEMA
 
@@ -97,4 +97,4 @@ Return the schema requested by the next task prompt.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 780
+approx_tokens: 820

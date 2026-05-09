@@ -1,0 +1,22 @@
+{
+  "schema_version": "identity_merge_shadow.v0",
+  "contract_status": "fixture_shadow_contract",
+  "required_fields": [
+    "identity_shadow_id",
+    "identity_shadow_status",
+    "subject_refs",
+    "proposed_identity_cluster",
+    "identity_evidence_summary",
+    "conflict_summary",
+    "duplicate_summary",
+    "merge_allowed_current",
+    "automatic_merge_allowed",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "required_current_values": {
+    "merge_allowed_current": false,
+    "automatic_merge_allowed": false,
+    "identity_cluster_is_public_truth": false
+  }
+}

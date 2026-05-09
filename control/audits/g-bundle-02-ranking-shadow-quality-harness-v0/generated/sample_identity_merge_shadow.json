@@ -1,0 +1,77 @@
+{
+  "automatic_merge_allowed": false,
+  "conflict_summary": {
+    "conflict_count": 1,
+    "conflict_preservation_required": true,
+    "conflicts": [
+      {
+        "conflict_preserved": true,
+        "title_key": "vintage app",
+        "version_values": [
+          "1.1",
+          "1.2"
+        ]
+      }
+    ]
+  },
+  "duplicate_summary": {
+    "duplicate_cluster_count": 1
+  },
+  "identity_evidence_summary": "Identity grouping is based on deterministic fixture title/version/platform keys.",
+  "identity_shadow_id": "identity.shadow.be8ccc3bb3a0.v0",
+  "identity_shadow_status": "local_shadow",
+  "limitations": [
+    "Identity shadow does not canonicalize or merge records."
+  ],
+  "merge_allowed_current": false,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "proposed_identity_cluster": [
+    {
+      "cluster_key": "vintage app|1.2|legacy desktop",
+      "merge_allowed_current": false,
+      "subject_refs": [
+        "candidate.duplicate.exact.v0",
+        "candidate.search_need.software_version.v0"
+      ]
+    }
+  ],
+  "schema_version": "identity_merge_shadow.v0",
+  "subject_refs": [
+    "candidate.search_need.software_version.v0",
+    "candidate.near_miss.wrong_version.v0",
+    "candidate.source_only.v0",
+    "candidate.duplicate.exact.v0"
+  ],
+  "truth_boundary": {
+    "dedup_shadow_merges_or_deletes": false,
+    "external_superiority_claimed": false,
+    "identity_cluster_is_public_truth": false,
+    "identity_shadow_creates_canonical_identity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "ranking_shadow_accepts_candidate": false,
+    "ranking_shadow_accepts_candidates": false,
+    "ranking_shadow_accepts_evidence": false,
+    "ranking_shadow_accepts_result_as_truth": false,
+    "ranking_shadow_mutates_master_index": false,
+    "ranking_shadow_mutates_public_index": false,
+    "ranking_shadow_mutates_public_ranking": false,
+    "ranking_shadow_mutates_public_search": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}
