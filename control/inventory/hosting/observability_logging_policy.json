@@ -1,0 +1,8 @@
+{
+  "schema_version": "observability_logging_policy.v0",
+  "raw_secret_logging_allowed": false,
+  "credential_logging_allowed": false,
+  "full_private_query_history_logging_allowed": false,
+  "account_session_logging_allowed": false,
+  "private_file_path_logging_allowed": false
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "incident_response_plan.v0",
+  "limitations": [
+    "Plan is required readiness evidence only."
+  ],
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "incident_response_plan_id": "incident_response.public_alpha.v0",
+  "incident_classes": [
+    {
+      "class": "hosted readiness incident",
+      "severity": "review_required",
+      "trigger": "operator report or automated future alert",
+      "immediate_action": "disable affected future route or connector",
+      "owner_operator_role": "designated operator future",
+      "evidence_to_collect": [
+        "commit sha",
+        "config snapshot",
+        "request summary"
+      ],
+      "rollback_steps": [
+        "revert to last reviewed static/readiness state"
+      ],
+      "kill_switches": [
+        "global hosted traffic disabled future",
+        "per connector disabled future"
+      ],
+      "communication_non_claims": [
+        "readiness is not launch",
+        "no safety or rights clearance claim"
+      ],
+      "follow_up_audit": "required before re-enable"
+    }
+  ],
+  "rollback_steps": [
+    "disable future hosted wrapper",
+    "serve last reviewed static state future"
+  ],
+  "kill_switches": [
+    "global connector kill switch future",
+    "per source family kill switch future"
+  ]
+}

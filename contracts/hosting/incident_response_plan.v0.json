@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Incident Response Plan Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "incident_response_plan_id",
+    "incident_classes",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "incident_response_plan.v0"
+    },
+    "incident_response_plan_id": {
+      "type": "string"
+    },
+    "incident_classes": {
+      "type": "array"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "immediate_action": {
+      "type": "string"
+    },
+    "owner_operator_role": {
+      "type": "string"
+    },
+    "evidence_to_collect": {
+      "type": "array"
+    },
+    "rollback_steps": {
+      "type": "array"
+    },
+    "kill_switches": {
+      "type": "array"
+    },
+    "communication_non_claims": {
+      "type": "array"
+    },
+    "follow_up_audit": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

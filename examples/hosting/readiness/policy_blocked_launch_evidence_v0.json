@@ -1,0 +1,59 @@
+{
+  "schema_version": "public_launch_evidence.v0",
+  "launch_evidence_id": "public_launch_evidence.policy_blocked.v0",
+  "launch_evidence_status": "policy_blocked",
+  "commit_sha_required": true,
+  "static_site_url_if_applicable": "",
+  "backend_url_if_applicable": "",
+  "status_endpoint_output_required": true,
+  "health_check_output_required": true,
+  "safe_query_output_required": true,
+  "blocked_request_output_required": true,
+  "rate_limit_evidence_required": true,
+  "non_claims_page_evidence_required": true,
+  "secrets_check_evidence_required": true,
+  "rollback_evidence_required": true,
+  "incident_process_evidence_required": true,
+  "required_evidence": [
+    "commit SHA",
+    "status endpoint output if backend exists",
+    "safe query output",
+    "blocked request output",
+    "rate-limit evidence",
+    "non-claims evidence",
+    "secrets check evidence",
+    "rollback evidence",
+    "incident contact/process evidence",
+    "operator signoff"
+  ],
+  "known_limitations": [
+    "No launch evidence has been collected by E-BUNDLE-01."
+  ],
+  "operator_signoff_required": true,
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "blockers": [
+    "Launch claim blocked until operator evidence exists."
+  ]
+}

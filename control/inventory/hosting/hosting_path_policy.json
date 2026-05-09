@@ -1,0 +1,16 @@
+{
+  "schema_version": "hosting_path_policy.v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/hosting/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "generated site distribution output",
+    "data/public_index/",
+    "data/master_index/",
+    "master_index/",
+    "local private roots",
+    "provider secret roots"
+  ]
+}

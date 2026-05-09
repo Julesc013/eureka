@@ -1,0 +1,17 @@
+{
+  "schema_version": "rate_limit_abuse_policy.v0",
+  "route_classes": [
+    "static",
+    "search",
+    "api_status",
+    "api_search",
+    "api_object",
+    "api_source",
+    "api_pack_validate_future",
+    "connector_live_probe_future",
+    "upload_future",
+    "account_future"
+  ],
+  "upload_account_connector_live_disabled_current": true,
+  "abuse_action_required": true
+}

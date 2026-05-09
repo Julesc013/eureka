@@ -1,0 +1,4 @@
+{
+  "schema_version": "incident_response_policy.v0",
+  "incident_response_required_before_launch": true
+}

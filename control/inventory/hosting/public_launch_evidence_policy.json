@@ -1,0 +1,5 @@
+{
+  "schema_version": "public_launch_evidence_policy.v0",
+  "launch_evidence_required_before_public_claim": true,
+  "operator_signoff_required": true
+}

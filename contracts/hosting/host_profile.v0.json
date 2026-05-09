@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Host Profile Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "host_profile_id",
+    "host_role",
+    "current_status",
+    "allowed_services",
+    "forbidden_services",
+    "public_claim_status",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "host_profile.v0"
+    },
+    "host_profile_id": {
+      "type": "string"
+    },
+    "host_role": {
+      "type": "string",
+      "enum": [
+        "static_site",
+        "hosted_backend_rehearsal",
+        "hosted_public_alpha_future",
+        "static_files",
+        "status_page",
+        "api_alias_future",
+        "old_browser_alias_future",
+        "policy_blocked_host"
+      ]
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "planning_only",
+        "operator_gated",
+        "policy_blocked",
+        "not_evaluable"
+      ]
+    },
+    "allowed_services": {
+      "type": "array"
+    },
+    "forbidden_services": {
+      "type": "array"
+    },
+    "public_claim_status": {
+      "type": "string"
+    },
+    "auth_policy": {
+      "type": "object"
+    },
+    "telemetry_policy": {
+      "type": "object"
+    },
+    "live_source_policy": {
+      "type": "object"
+    },
+    "upload_policy": {
+      "type": "object"
+    },
+    "download_policy": {
+      "type": "object"
+    },
+    "rate_limit_policy_ref": {
+      "type": "string"
+    },
+    "secret_policy_ref": {
+      "type": "string"
+    },
+    "incident_policy_ref": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Runtime Config Boundary Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "config_boundary_id",
+    "config_boundaries",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "runtime_config_boundary.v0"
+    },
+    "config_boundary_id": {
+      "type": "string"
+    },
+    "config_key": {
+      "type": "string"
+    },
+    "config_status": {
+      "type": "string"
+    },
+    "required_for": {
+      "type": "array"
+    },
+    "safe_default": {
+      "type": "string"
+    },
+    "fail_closed_default": {
+      "type": "boolean"
+    },
+    "secret": {
+      "type": "boolean"
+    },
+    "public_safe": {
+      "type": "boolean"
+    },
+    "allowed_values": {
+      "type": "array"
+    },
+    "forbidden_values": {
+      "type": "array"
+    },
+    "config_boundaries": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

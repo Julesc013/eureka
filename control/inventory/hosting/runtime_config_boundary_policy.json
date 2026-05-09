@@ -1,0 +1,19 @@
+{
+  "schema_version": "runtime_config_boundary_policy.v0",
+  "required_config_keys": [
+    "PUBLIC_SEARCH_ENABLED",
+    "LIVE_PROBES_ENABLED",
+    "SOURCE_SYNC_ENABLED",
+    "CONNECTOR_IA_ENABLED",
+    "CONNECTOR_H1_ENABLED",
+    "DOWNLOADS_ENABLED",
+    "UPLOADS_ENABLED",
+    "ACCOUNTS_ENABLED",
+    "TELEMETRY_ENABLED",
+    "PUBLIC_INDEX_WRITE_ENABLED",
+    "MASTER_INDEX_WRITE_ENABLED",
+    "RELAY_PUBLIC_BIND_ENABLED"
+  ],
+  "risky_config_default": "disabled",
+  "fail_closed_required": true
+}

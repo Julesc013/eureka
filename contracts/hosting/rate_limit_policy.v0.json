@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rate Limit Policy Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rate_limit_policy_id",
+    "route_policies"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "rate_limit_policy.v0"
+    },
+    "rate_limit_policy_id": {
+      "type": "string"
+    },
+    "route_class": {
+      "type": "string"
+    },
+    "request_budget": {
+      "type": "object"
+    },
+    "burst_policy": {
+      "type": "object"
+    },
+    "abuse_action": {
+      "type": "string"
+    },
+    "blocked_inputs": {
+      "type": "array"
+    },
+    "logging_policy": {
+      "type": "object"
+    },
+    "privacy_policy": {
+      "type": "object"
+    },
+    "route_policies": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

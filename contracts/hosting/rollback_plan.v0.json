@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rollback Plan Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rollback_plan_id",
+    "rollback_steps",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "rollback_plan.v0"
+    },
+    "rollback_plan_id": {
+      "type": "string"
+    },
+    "rollback_steps": {
+      "type": "array"
+    },
+    "incident_classes": {
+      "type": "array"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "immediate_action": {
+      "type": "string"
+    },
+    "owner_operator_role": {
+      "type": "string"
+    },
+    "evidence_to_collect": {
+      "type": "array"
+    },
+    "kill_switches": {
+      "type": "array"
+    },
+    "communication_non_claims": {
+      "type": "array"
+    },
+    "follow_up_audit": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "deployment_environment.v0",
+  "environment_id": "environment.local_rehearsal.v0",
+  "environment_kind": "local_rehearsal",
+  "current_status": "planning_only",
+  "provider_class": "local_only",
+  "required_services": [
+    "explicit fixtures"
+  ],
+  "forbidden_services": [
+    "deployed_backend_current",
+    "public_alpha_live_current",
+    "provider_api_call",
+    "dns_change",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "live_source_fanout",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "config_refs": [
+    "runtime_config_boundary.public_alpha.v0"
+  ],
+  "secret_refs_policy_only": [
+    "secrets_policy.public_alpha.v0"
+  ],
+  "database_policy": {
+    "database_required_current": false
+  },
+  "object_storage_policy": {
+    "object_storage_required_current": false
+  },
+  "queue_policy": {
+    "queue_required_current": false
+  },
+  "cache_policy": {
+    "cache_required_current": false
+  },
+  "log_policy": {
+    "private_data_logging_allowed": false
+  },
+  "backup_policy": {
+    "backup_required_future": true
+  },
+  "rollback_policy_ref": "rollback.public_alpha.v0",
+  "limitations": [
+    "Environment is readiness planning only."
+  ],
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

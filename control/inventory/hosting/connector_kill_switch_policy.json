@@ -1,0 +1,5 @@
+{
+  "schema_version": "connector_kill_switch_policy.v0",
+  "global_kill_switch_required": true,
+  "per_connector_kill_switch_required": true
+}

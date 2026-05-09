@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observability Policy Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "observability_policy_id",
+    "log_classes"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "observability_policy.v0"
+    },
+    "observability_policy_id": {
+      "type": "string"
+    },
+    "log_class": {
+      "type": "string"
+    },
+    "allowed_fields": {
+      "type": "array"
+    },
+    "forbidden_fields": {
+      "type": "array"
+    },
+    "retention_policy": {
+      "type": "string"
+    },
+    "privacy_policy": {
+      "type": "string"
+    },
+    "redaction_policy": {
+      "type": "string"
+    },
+    "alert_policy": {
+      "type": "string"
+    },
+    "dashboard_policy": {
+      "type": "string"
+    },
+    "log_classes": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

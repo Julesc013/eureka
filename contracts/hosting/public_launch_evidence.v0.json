@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Launch Evidence Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "launch_evidence_id",
+    "launch_evidence_status",
+    "required_evidence",
+    "operator_signoff_required",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_launch_evidence.v0"
+    },
+    "launch_evidence_id": {
+      "type": "string"
+    },
+    "launch_evidence_status": {
+      "type": "string"
+    },
+    "commit_sha_required": {
+      "type": "boolean"
+    },
+    "static_site_url_if_applicable": {
+      "type": "string"
+    },
+    "backend_url_if_applicable": {
+      "type": "string"
+    },
+    "status_endpoint_output_required": {
+      "type": "boolean"
+    },
+    "health_check_output_required": {
+      "type": "boolean"
+    },
+    "safe_query_output_required": {
+      "type": "boolean"
+    },
+    "blocked_request_output_required": {
+      "type": "boolean"
+    },
+    "rate_limit_evidence_required": {
+      "type": "boolean"
+    },
+    "non_claims_page_evidence_required": {
+      "type": "boolean"
+    },
+    "secrets_check_evidence_required": {
+      "type": "boolean"
+    },
+    "rollback_evidence_required": {
+      "type": "boolean"
+    },
+    "incident_process_evidence_required": {
+      "type": "boolean"
+    },
+    "known_limitations": {
+      "type": "array"
+    },
+    "operator_signoff_required": {
+      "type": "boolean"
+    },
+    "required_evidence": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

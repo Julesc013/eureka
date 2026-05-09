@@ -1,0 +1,20 @@
+{
+  "schema_version": "host_profile_policy.v0",
+  "allowed_host_roles": [
+    "static_site",
+    "hosted_backend_rehearsal",
+    "hosted_public_alpha_future",
+    "static_files",
+    "status_page",
+    "api_alias_future",
+    "old_browser_alias_future",
+    "policy_blocked_host"
+  ],
+  "current_status_allowed": [
+    "planning_only",
+    "operator_gated",
+    "policy_blocked",
+    "not_evaluable"
+  ],
+  "deployed_current_allowed": false
+}

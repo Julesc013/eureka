@@ -1,0 +1,67 @@
+{
+  "schema_version": "host_profile.v0",
+  "host_profile_id": "host_profile.static_pages.v0",
+  "host_role": "static_site",
+  "current_status": "planning_only",
+  "allowed_services": [
+    "static public-safe files future"
+  ],
+  "forbidden_services": [
+    "deployed_backend_current",
+    "public_alpha_live_current",
+    "provider_api_call",
+    "dns_change",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "live_source_fanout",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "public_claim_status": "not_live",
+  "auth_policy": {
+    "account_auth_allowed": false
+  },
+  "telemetry_policy": {
+    "telemetry_allowed": false
+  },
+  "live_source_policy": {
+    "live_source_fanout_allowed": false
+  },
+  "upload_policy": {
+    "upload_allowed": false
+  },
+  "download_policy": {
+    "download_allowed": false
+  },
+  "rate_limit_policy_ref": "rate_limit_policy.public_alpha.v0",
+  "secret_policy_ref": "secrets_policy.public_alpha.v0",
+  "incident_policy_ref": "incident_response.public_alpha.v0",
+  "limitations": [
+    "Planning profile only; no deployment evidence is claimed."
+  ],
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

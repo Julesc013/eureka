@@ -1,0 +1,11 @@
+{
+  "schema_version": "hosting_truth_policy.v0",
+  "hosting_readiness_is_not_launch": true,
+  "public_alpha_live_claimed": false,
+  "production_claimed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false
+}

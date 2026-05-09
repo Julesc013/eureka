@@ -72,6 +72,17 @@ This rule applies to `old_legacy_read_only`, `files_static`, `status_static`,
 `localhost_relay_future`, and any later profile with `http_allowed: true` or
 `legacy_http_compatible: true`.
 
+## E-BUNDLE-01 Hosting Readiness
+
+`contracts/hosting/host_profile.v0.json` adds a separate operations-readiness
+host profile for future public-alpha planning. Those profiles are
+planning-only or operator-gated, and they do not prove deployment, public alpha
+launch, production service, provider changes, live source fanout, uploads,
+accounts, telemetry, or index mutation.
+
+Validate the E-BUNDLE-01 hosting-readiness layer with
+`python scripts/validate_hosting_readiness.py`.
+
 ## No-Goals
 
 This contract does not change runtime behavior, hosted behavior, public routes,

@@ -1,0 +1,13 @@
+{
+  "schema_version": "takedown_rights_safety_policy.v0",
+  "covered_cases": [
+    "rights complaint",
+    "malware report",
+    "unsafe action report",
+    "incorrect source/evidence claim",
+    "privacy leak",
+    "abusive contribution",
+    "connector policy violation"
+  ],
+  "review_required": true
+}

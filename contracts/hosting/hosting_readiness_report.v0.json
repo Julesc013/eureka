@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hosting Readiness Report Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "readiness_report_id",
+    "readiness_status",
+    "checked_profiles",
+    "checked_environments",
+    "non_claims_status",
+    "runtime_config_status",
+    "secrets_status",
+    "rate_limit_status",
+    "observability_status",
+    "incident_status",
+    "rollback_status",
+    "takedown_status",
+    "connector_kill_switch_status",
+    "launch_evidence_status",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "hosting_readiness_report.v0"
+    },
+    "readiness_report_id": {
+      "type": "string"
+    },
+    "readiness_status": {
+      "type": "string",
+      "enum": [
+        "planning_only",
+        "not_ready",
+        "ready_for_rehearsal_future",
+        "ready_for_operator_review_future",
+        "ready_for_public_launch_future",
+        "blocked",
+        "not_evaluable"
+      ]
+    },
+    "checked_profiles": {
+      "type": "array"
+    },
+    "checked_environments": {
+      "type": "array"
+    },
+    "non_claims_status": {
+      "type": "string"
+    },
+    "runtime_config_status": {
+      "type": "string"
+    },
+    "secrets_status": {
+      "type": "string"
+    },
+    "rate_limit_status": {
+      "type": "string"
+    },
+    "observability_status": {
+      "type": "string"
+    },
+    "incident_status": {
+      "type": "string"
+    },
+    "rollback_status": {
+      "type": "string"
+    },
+    "takedown_status": {
+      "type": "string"
+    },
+    "connector_kill_switch_status": {
+      "type": "string"
+    },
+    "launch_evidence_status": {
+      "type": "string"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "next_recommended_action": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

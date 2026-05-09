@@ -1,0 +1,126 @@
+{
+  "schema_version": "e_bundle_01_report.v0",
+  "status": "pass",
+  "task": "E-BUNDLE-01",
+  "track": "E",
+  "purpose": "hosting_operations_readiness_no_deploy",
+  "added_contracts": [
+    "contracts/hosting/public_alpha_non_claims.v0.json",
+    "contracts/hosting/host_profile.v0.json",
+    "contracts/hosting/deployment_environment.v0.json",
+    "contracts/hosting/hosting_readiness_report.v0.json",
+    "contracts/hosting/runtime_config_boundary.v0.json",
+    "contracts/hosting/rate_limit_policy.v0.json",
+    "contracts/hosting/secrets_policy.v0.json",
+    "contracts/hosting/observability_policy.v0.json",
+    "contracts/hosting/incident_response_plan.v0.json",
+    "contracts/hosting/rollback_plan.v0.json",
+    "contracts/hosting/takedown_rights_safety_plan.v0.json",
+    "contracts/hosting/connector_kill_switch_plan.v0.json",
+    "contracts/hosting/public_launch_evidence.v0.json"
+  ],
+  "added_scripts": [
+    "scripts/validate_hosting_readiness.py",
+    "scripts/summarize_hosting_readiness.py",
+    "scripts/check_public_alpha_non_claims.py",
+    "scripts/check_hosting_boundaries.py"
+  ],
+  "added_docs": [
+    "docs/reference/PUBLIC_ALPHA_NON_CLAIMS_CONTRACT.md",
+    "docs/reference/HOST_PROFILE_CONTRACT.md",
+    "docs/reference/DEPLOYMENT_ENVIRONMENT_CONTRACT.md",
+    "docs/reference/HOSTING_READINESS_REPORT_CONTRACT.md",
+    "docs/reference/RUNTIME_CONFIG_BOUNDARY_CONTRACT.md",
+    "docs/reference/PUBLIC_LAUNCH_EVIDENCE_CONTRACT.md",
+    "docs/architecture/HOSTING_OPERATIONS_MODEL.md",
+    "docs/architecture/PUBLIC_ALPHA_RUNTIME_BOUNDARY.md",
+    "docs/operations/PUBLIC_ALPHA_NON_CLAIMS.md",
+    "docs/operations/HOSTING_READINESS_CHECKLIST.md",
+    "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
+    "docs/operations/RATE_LIMIT_AND_ABUSE_POLICY.md",
+    "docs/operations/OBSERVABILITY_AND_LOGGING_POLICY.md",
+    "docs/operations/INCIDENT_RESPONSE_AND_ROLLBACK.md",
+    "docs/operations/TAKEDOWN_RIGHTS_SAFETY_OPERATIONS.md",
+    "docs/operations/CONNECTOR_KILL_SWITCH_OPERATIONS.md",
+    "docs/operations/NO_DEPLOYMENT_IN_E_BUNDLE_01.md"
+  ],
+  "added_inventories": [
+    "control/inventory/hosting/"
+  ],
+  "added_examples": [
+    "examples/hosting/"
+  ],
+  "added_tests": [
+    "tests/hosting/test_hosting_contracts.py",
+    "tests/hosting/test_hosting_policies.py",
+    "tests/hosting/test_public_alpha_non_claims.py",
+    "tests/operations/test_hosting_readiness_scripts.py"
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "contract_json": "pass",
+    "policy_json": "pass",
+    "audit_report_json": "pass",
+    "hosting_readiness_validator": "pass",
+    "public_alpha_non_claims_check": "pass",
+    "hosting_boundaries_check": "pass",
+    "hosting_summary_check": "pass",
+    "focused_hosting_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "architecture_boundaries": "pass",
+    "existing_c_d_j_i_g_f_h_core_validators": "pass",
+    "aide_lite_doctor_validate_test_selftest_eval_adapter": "pass",
+    "aide_lite_verify_review_pack": "warn_zero_errors",
+    "known_warnings": [
+      "H1 metadata wave audit remains PASS_WITH_WARNINGS as pre-existing advisory readiness posture.",
+      "AIDE Lite verify/review-pack remains WARN-only because the active handoff packet points at E-BUNDLE-02 after E-BUNDLE-01."
+    ]
+  },
+  "hosting_scope": {
+    "readiness_only": true,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false
+  },
+  "operations_scope": {
+    "public_alpha_non_claims_defined": true,
+    "host_profiles_defined": true,
+    "runtime_config_boundaries_defined": true,
+    "rate_limit_policy_defined": true,
+    "secrets_policy_defined": true,
+    "observability_policy_defined": true,
+    "incident_response_defined": true,
+    "rollback_policy_defined": true,
+    "takedown_policy_defined": true,
+    "connector_kill_switch_policy_defined": true,
+    "launch_evidence_requirements_defined": true
+  },
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "E-BUNDLE-02 - Hosted wrapper rehearsal and public launch evidence"
+}

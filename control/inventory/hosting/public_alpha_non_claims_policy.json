@@ -1,0 +1,26 @@
+{
+  "schema_version": "public_alpha_non_claims_policy.v0",
+  "required_non_claims": [
+    "not_production",
+    "not_exhaustive",
+    "not_rights_cleared",
+    "not_malware_safe",
+    "not_installability_verified",
+    "not_download_service",
+    "not_app_store",
+    "not_upload_service",
+    "not_account_service",
+    "not_telemetry_claim",
+    "not_live_source_fanout_unless_explicit",
+    "not_replacement_for_source_projects"
+  ],
+  "source_evidence_review_limitations_required": true,
+  "visible_before_public_alpha": true,
+  "forbidden_claims": [
+    "production",
+    "exhaustive",
+    "rights cleared",
+    "malware safe",
+    "installability verified"
+  ]
+}

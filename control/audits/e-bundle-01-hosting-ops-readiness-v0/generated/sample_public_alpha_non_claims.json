@@ -1,0 +1,46 @@
+{
+  "schema_version": "public_alpha_non_claims.v0",
+  "non_claims_id": "public_alpha_non_claims.standard.v0",
+  "non_claim_status": "required_before_public_alpha",
+  "not_production": true,
+  "not_exhaustive": true,
+  "not_rights_cleared": true,
+  "not_malware_safe": true,
+  "not_installability_verified": true,
+  "not_download_service": true,
+  "not_app_store": true,
+  "not_upload_service": true,
+  "not_account_service": true,
+  "not_telemetry_claim": true,
+  "not_live_source_fanout_unless_explicit": true,
+  "not_replacement_for_source_projects": true,
+  "source_limitations_required": true,
+  "evidence_limitations_required": true,
+  "review_limitations_required": true,
+  "limitations": [
+    "Public alpha non-claims are required before any launch claim."
+  ],
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

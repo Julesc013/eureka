@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deployment Environment Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "environment_id",
+    "environment_kind",
+    "current_status",
+    "provider_class",
+    "required_services",
+    "forbidden_services",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "deployment_environment.v0"
+    },
+    "environment_id": {
+      "type": "string"
+    },
+    "environment_kind": {
+      "type": "string",
+      "enum": [
+        "local_rehearsal",
+        "static_only",
+        "hosted_backend_rehearsal_future",
+        "public_alpha_future",
+        "production_future",
+        "policy_blocked"
+      ]
+    },
+    "current_status": {
+      "type": "string"
+    },
+    "provider_class": {
+      "type": "string"
+    },
+    "required_services": {
+      "type": "array"
+    },
+    "forbidden_services": {
+      "type": "array"
+    },
+    "config_refs": {
+      "type": "array"
+    },
+    "secret_refs_policy_only": {
+      "type": "array"
+    },
+    "database_policy": {
+      "type": "object"
+    },
+    "object_storage_policy": {
+      "type": "object"
+    },
+    "queue_policy": {
+      "type": "object"
+    },
+    "cache_policy": {
+      "type": "object"
+    },
+    "log_policy": {
+      "type": "object"
+    },
+    "backup_policy": {
+      "type": "object"
+    },
+    "rollback_policy_ref": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

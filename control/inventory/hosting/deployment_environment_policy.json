@@ -1,0 +1,13 @@
+{
+  "schema_version": "deployment_environment_policy.v0",
+  "allowed_environment_kinds": [
+    "local_rehearsal",
+    "static_only",
+    "hosted_backend_rehearsal_future",
+    "public_alpha_future",
+    "production_future",
+    "policy_blocked"
+  ],
+  "deployment_allowed_current": false,
+  "production_environment_allowed_current": false
+}

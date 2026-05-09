@@ -1,0 +1,5 @@
+{
+  "schema_version": "rollback_policy.v0",
+  "rollback_plan_required_before_launch": true,
+  "rollback_test_evidence_required_future": true
+}

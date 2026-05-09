@@ -1,0 +1,30 @@
+{
+  "schema_version": "observability_policy.v0",
+  "observability_policy_id": "observability.public_alpha.v0",
+  "log_classes": [
+    {
+      "log_class": "request_summary",
+      "allowed_fields": [
+        "route class",
+        "status code",
+        "coarse timestamp",
+        "request id"
+      ],
+      "forbidden_fields": [
+        "raw secrets",
+        "credentials",
+        "full private query history",
+        "account sessions",
+        "private file paths"
+      ],
+      "retention_policy": "short_reviewed_future",
+      "privacy_policy": "minimize_and_redact",
+      "redaction_policy": "redact credential-like values",
+      "alert_policy": "operator_review_future",
+      "dashboard_policy": "aggregate_only_future"
+    }
+  ],
+  "limitations": [
+    "Observability policy only; no telemetry sink is enabled."
+  ]
+}

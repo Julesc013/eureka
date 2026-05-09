@@ -1,0 +1,269 @@
+{
+  "schema_version": "rate_limit_policy.v0",
+  "rate_limit_policy_id": "rate_limit_policy.public_alpha.v0",
+  "route_policies": [
+    {
+      "route_class": "static",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 60
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "search",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 60
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "api_status",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "api_search",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "api_object",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "api_source",
+      "current_status": "planning_only",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "api_pack_validate_future",
+      "current_status": "disabled_current",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "connector_live_probe_future",
+      "current_status": "disabled_current",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "upload_future",
+      "current_status": "disabled_current",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    },
+    {
+      "route_class": "account_future",
+      "current_status": "disabled_current",
+      "request_budget": {
+        "per_minute_future": 20
+      },
+      "burst_policy": {
+        "burst_future": 10,
+        "burst_allowed_current": false
+      },
+      "abuse_action": "block_or_degrade_future",
+      "blocked_inputs": [
+        "credential-like values",
+        "private file paths",
+        "upload payloads"
+      ],
+      "logging_policy": {
+        "private_data_logging_allowed": false
+      },
+      "privacy_policy": {
+        "raw_query_history_retained_current": false
+      },
+      "limitations": [
+        "Route budget is planning evidence only."
+      ]
+    }
+  ],
+  "limitations": [
+    "Rate limits are defined for future operator review; no hosted route is enabled."
+  ]
+}

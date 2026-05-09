@@ -1,0 +1,57 @@
+{
+  "schema_version": "hosting_readiness_report.v0",
+  "readiness_report_id": "hosting_readiness.public_alpha.v0",
+  "readiness_status": "ready_for_rehearsal_future",
+  "checked_profiles": [
+    "host_profile.static_pages.v0",
+    "host_profile.hosted_backend_rehearsal.v0"
+  ],
+  "checked_environments": [
+    "environment.local_rehearsal.v0",
+    "environment.static_only.v0"
+  ],
+  "non_claims_status": "defined",
+  "runtime_config_status": "safe_defaults_defined",
+  "secrets_status": "policy_defined_no_secrets_present",
+  "rate_limit_status": "policy_defined",
+  "observability_status": "policy_defined",
+  "incident_status": "plan_defined",
+  "rollback_status": "plan_defined",
+  "takedown_status": "plan_defined",
+  "connector_kill_switch_status": "plan_defined",
+  "launch_evidence_status": "requirements_defined_not_collected",
+  "blockers": [
+    "operator launch evidence not collected",
+    "no deployment performed"
+  ],
+  "warnings": [
+    "Readiness is not launch."
+  ],
+  "limitations": [
+    "Future hosted wrapper rehearsal requires separate operator review."
+  ],
+  "next_recommended_action": "E-BUNDLE-02 - Hosted wrapper rehearsal and public launch evidence",
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

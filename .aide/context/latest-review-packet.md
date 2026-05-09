@@ -2,7 +2,7 @@
 
 ## Review Objective
 
-Review C-BUNDLE-03 from compact repo-local evidence and decide whether it is
+Review E-BUNDLE-01 from compact repo-local evidence and decide whether it is
 ready to pass its review gate.
 
 ## Decision Requested
@@ -13,9 +13,9 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 ## Task Packet Reference
 
 - `.aide/context/latest-task-packet.md` now points the main lane to
-  `E-BUNDLE-01` after C-BUNDLE-03 implementation.
-- C-BUNDLE-03 task evidence is under
-  `control/audits/c-bundle-03-native-smoke-packaging-v0/`.
+  `E-BUNDLE-02` after E-BUNDLE-01 implementation.
+- E-BUNDLE-01 task evidence is under
+  `control/audits/e-bundle-01-hosting-ops-readiness-v0/`.
 
 ## Context Packet Reference
 
@@ -30,47 +30,43 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 - `.aide/verification/review-decision-policy.yaml`
 - verifier_result: WARN
 - note: WARN is advisory diff-scope noise with zero errors after the active
-  task packet advanced to E-BUNDLE-01.
+  task packet advanced to E-BUNDLE-02.
 
 ## Evidence Packet References
 
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/c_bundle_03_report.json`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/validation.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_smoke_evidence_summary.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_packaging_manifest_summary.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_artifact_manifest_summary.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_release_candidate_preview_summary.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_first_wave_integration_audit.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/track_c_exit_gate_decision.md`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/e_bundle_01_readiness_recommendation.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_01_report.json`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/validation.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/public_alpha_non_claims_summary.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/runtime_config_boundary_report.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/rate_limit_abuse_report.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/incident_rollback_report.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/no_deployment_report.md`
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_02_readiness_recommendation.md`
 - `.aide/reports/eureka-repo-health.md`
 
 ## Changed Files Summary
 
-- Added native packaging, release-candidate preview, build-log, smoke evidence,
-  manual build packet, artifact manifest, and Track C integration audit
-  contracts.
-- Added native smoke/build/packaging/release/artifact examples and manifest-only
-  generated audit samples.
-- Added C-BUNDLE-03 scripts for collecting smoke evidence previews, building
-  packaging manifests, validating native packaging artifacts, auditing Track C,
-  and summarizing native smoke evidence.
-- Added tests for native packaging manifests, smoke evidence, Track C audit, and
-  operations scripts.
-- Added reference, architecture, and operations documentation for packaging,
-  smoke evidence review, no-binary policy, Track C integration, and the
-  native-to-hosting handoff.
+- Added hosting readiness contracts under `contracts/hosting/`.
+- Added public alpha non-claims, host profile, environment, runtime config,
+  rate-limit, secrets, observability, incident, rollback, takedown,
+  connector-kill-switch, launch-evidence, truth, path, and no-deploy policies.
+- Added examples under `examples/hosting/`.
+- Added hosting readiness validators, non-claims checker, boundary checker, and
+  summary script.
+- Added hosting-focused tests and E-BUNDLE-01 audit evidence.
+- Updated the existing host profile reference doc only to cross-reference the
+  new hosting-readiness profile contract.
 
 ## Validation Summary
 
 - `git diff --check`: PASS
-- C-BUNDLE-03 contract and policy JSON syntax checks: PASS
-- `python scripts/validate_native_packaging_manifests.py`: PASS
-- `python scripts/collect_native_smoke_evidence.py --lane win.winforms --check`: PASS
-- `python scripts/build_native_packaging_manifest.py --lane win.winforms --check`: PASS
-- `python scripts/summarize_native_smoke_evidence.py --input examples/native --check`: PASS
-- `python scripts/audit_track_c_integration.py --check`: PASS
-- C-BUNDLE-03 focused tests: PASS
+- E-BUNDLE-01 contract and policy JSON syntax checks: PASS
+- `python scripts/validate_hosting_readiness.py`: PASS
+- `python scripts/check_public_alpha_non_claims.py`: PASS
+- `python scripts/check_hosting_boundaries.py`: PASS
+- `python scripts/summarize_hosting_readiness.py --input examples/hosting --check`: PASS
+- E-BUNDLE-01 focused tests: PASS
 - `python -m unittest discover -s tests -t .`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
 - Existing C/D/J/I/G/F/H/core validators requested by the task: PASS, with the
@@ -88,35 +84,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 
 ## Boundary Summary
 
-- Native smoke packets are checklist/evidence previews, not release claims.
-- Packaging manifests are manifest-only and set no binary outputs current.
-- Artifact manifests do not claim produced artifacts or production releases.
-- Release-candidate previews remain manual-build-required and review-gated.
-- No release binaries, build outputs, downloads, installs, execution, live
-  access, telemetry, accounts, hosting behavior, public relay, public/master
-  index mutation, or truth acceptance were enabled.
+- E-BUNDLE-01 is readiness-only.
+- No deployment, provider call, DNS change, provider credential, generated site
+  output mutation, hosted backend, public alpha live claim, production claim,
+  live source fanout, downloads, uploads, accounts, telemetry, public relay,
+  public/master index mutation, or truth acceptance was introduced.
 
 ## Risk Summary
 
-- VS2022, VS6, Xcode 9.x, and CodeWarrior builds remain manual or future unless
-  separately run on reviewed hosts.
-- Smoke evidence is checklist-only for old-toolchain lanes and is intentionally
-  not production-readiness evidence.
-- E-BUNDLE-01 must keep hosting/ops readiness separate from actual deployment.
+- E-BUNDLE-02 remains operator-gated and must keep rehearsal evidence separate
+  from actual deployment.
+- Launch evidence requirements are defined, but no real launch evidence is
+  collected in E-BUNDLE-01.
+- AIDE Lite verify may remain WARN-only after the active packet advances to
+  E-BUNDLE-02.
 
 ## Non-Goals / Scope Guard
 
-- No live source calls.
-- No external/API/model/provider calls.
-- No downloads, mirroring, installs, execution, or emulation.
-- No source sync or public query fanout.
-- No public search behavior change.
-- No public index or master index mutation.
-- No evidence, candidate, source, action, native fixture, release, or public
+- No deployment, provider calls, DNS changes, custom domain claims, credentials,
+  secrets, or generated site output regeneration.
+- No public alpha live claim or production claim.
+- No live source fanout, source sync, downloads, uploads, accounts, telemetry,
+  public relay, public search behavior change, public/master index mutation, or
   truth acceptance.
-- No hosting, public relay, uploads, accounts, telemetry, release binaries,
-  build-output commits, generated site output regeneration, or local
-  private-state roots.
 
 ## Reviewer Instructions
 

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Non-Claims Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "non_claims_id",
+    "non_claim_status",
+    "not_production",
+    "not_exhaustive",
+    "not_rights_cleared",
+    "not_malware_safe",
+    "not_installability_verified",
+    "not_download_service",
+    "not_app_store",
+    "not_upload_service",
+    "not_account_service",
+    "not_telemetry_claim",
+    "not_live_source_fanout_unless_explicit",
+    "not_replacement_for_source_projects",
+    "source_limitations_required",
+    "evidence_limitations_required",
+    "review_limitations_required",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_alpha_non_claims.v0"
+    },
+    "non_claims_id": {
+      "type": "string"
+    },
+    "non_claim_status": {
+      "type": "string"
+    },
+    "not_production": {
+      "type": "boolean"
+    },
+    "not_exhaustive": {
+      "type": "boolean"
+    },
+    "not_rights_cleared": {
+      "type": "boolean"
+    },
+    "not_malware_safe": {
+      "type": "boolean"
+    },
+    "not_installability_verified": {
+      "type": "boolean"
+    },
+    "not_download_service": {
+      "type": "boolean"
+    },
+    "not_app_store": {
+      "type": "boolean"
+    },
+    "not_upload_service": {
+      "type": "boolean"
+    },
+    "not_account_service": {
+      "type": "boolean"
+    },
+    "not_telemetry_claim": {
+      "type": "boolean"
+    },
+    "not_live_source_fanout_unless_explicit": {
+      "type": "boolean"
+    },
+    "not_replacement_for_source_projects": {
+      "type": "boolean"
+    },
+    "source_limitations_required": {
+      "type": "boolean"
+    },
+    "evidence_limitations_required": {
+      "type": "boolean"
+    },
+    "review_limitations_required": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

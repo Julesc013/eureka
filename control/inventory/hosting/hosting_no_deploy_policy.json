@@ -1,0 +1,10 @@
+{
+  "schema_version": "hosting_no_deploy_policy.v0",
+  "no_provider_api_calls": true,
+  "no_dns_changes": true,
+  "no_deployment": true,
+  "no_generated_site_distribution_regeneration": true,
+  "no_public_backend_enablement": true,
+  "no_hosted_connector_enablement": true,
+  "no_secrets_created": true
+}

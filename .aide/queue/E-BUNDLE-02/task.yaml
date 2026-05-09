@@ -1,0 +1,35 @@
+task_id: E-BUNDLE-02
+title: Hosted wrapper rehearsal and public launch evidence
+status: queued
+phase: E-BUNDLE-02
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/queue/index.yaml
+  - .aide/queue/E-BUNDLE-02/**
+  - control/audits/**
+  - control/inventory/hosting/**
+  - contracts/hosting/**
+  - docs/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - site/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, no hosting provider calls, no DNS changes, no provider credentials, no secrets, no generated site output regeneration, no public alpha live claim, no production claim, no public search behavior change, no live source fanout, no source sync, no public relay, no downloads, no uploads, no accounts, no telemetry, no public/master index mutation, no evidence/candidate/public truth acceptance, and no local private-state roots
+validation:
+  - python scripts/validate_hosting_readiness.py
+  - python scripts/check_hosting_boundaries.py
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: E-BUNDLE-02

@@ -1,0 +1,296 @@
+{
+  "schema_version": "runtime_config_boundary.v0",
+  "config_boundary_id": "runtime_config_boundary.public_alpha.v0",
+  "config_boundaries": [
+    {
+      "config_key": "PUBLIC_SEARCH_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "static_or_reviewed_only",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": true,
+      "allowed_values": [
+        "static_or_reviewed_only",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "LIVE_PROBES_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "SOURCE_SYNC_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "CONNECTOR_IA_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "CONNECTOR_H1_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "DOWNLOADS_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "UPLOADS_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "ACCOUNTS_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "TELEMETRY_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "PUBLIC_INDEX_WRITE_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "MASTER_INDEX_WRITE_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    },
+    {
+      "config_key": "RELAY_PUBLIC_BIND_ENABLED",
+      "config_status": "defined_safe_default",
+      "required_for": [
+        "future public alpha operator review"
+      ],
+      "safe_default": "false",
+      "fail_closed_default": true,
+      "secret": false,
+      "public_safe": false,
+      "allowed_values": [
+        "false",
+        "operator_reviewed_true_future"
+      ],
+      "forbidden_values": [
+        "true_by_default",
+        "implicit_enabled"
+      ],
+      "notes": [
+        "Risky behavior is disabled unless a future reviewed operator action enables it."
+      ]
+    }
+  ],
+  "limitations": [
+    "Defines config boundaries only; does not create runtime configuration."
+  ],
+  "truth_boundary": {
+    "hosting_readiness_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}
