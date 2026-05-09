@@ -4,7 +4,7 @@ The full Python unittest suite was run from `main` after merging SYNC-GUARD-01.
 
 ```text
 python -m unittest discover -s tests -t .
-Ran 2508 tests in 188.453s
+Ran 2508 tests in 196.444s
 OK
 ```
 

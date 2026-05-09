@@ -4,8 +4,9 @@
 
 - `git status --short` - PASS before audit files.
 - `git diff --check` - PASS.
-- conflict marker scan with `git grep -n -E "^(<<<<<<<|>>>>>>>)"` - PASS.
-- live remote check with `git ls-remote origin refs/heads/main` - PASS, observed `52cad7c` before audit commit.
+- precise conflict marker scan with `git grep -n -E "^(<<<<<<<|>>>>>>>)"` - PASS.
+- broad conflict marker scan with `git grep -n -E "^(<<<<<<<|=======|>>>>>>>)"` - WARN-only false positives from underline rows in static text artifacts; no opening/closing conflict markers remain.
+- live remote check with `git rev-parse origin/main` - PASS, observed `8d03a2f` before this audit completion commit.
 
 ## Guard And Generated Artifacts
 
@@ -13,6 +14,7 @@
 - `python scripts/check_generated_artifact_drift.py --json` - PASS, 12 artifact groups passed.
 - `python scripts/validate_sync_guard_policy.py` - PASS.
 - `python -m unittest tests.operations.test_git_task_state_guard tests.operations.test_sync_guard_policy` - PASS, 14 tests.
+- `python scripts/check_git_task_state.py --mode start-task --task-id SYNC-BASELINE-01 --allow-main` - WARN after commit expected because `main` is allowed by explicit integration override.
 
 ## Full Tests
 

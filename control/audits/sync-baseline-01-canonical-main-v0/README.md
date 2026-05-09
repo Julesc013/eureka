@@ -18,10 +18,17 @@ This is a control baseline. It did not add product runtime behavior, approve sou
 ## Files
 
 - `baseline_report.json`
+- `sync_baseline_01_report.json`
 - `branch_inventory.md`
+- `branch_inventory.json`
+- `branch_classification.md`
+- `branch_classification.json`
+- `merge_actions.md`
 - `merged_branch_report.md`
 - `validation_matrix.md`
 - `test_report.md`
+- `generated_artifact_drift_report.md`
 - `aide_state_report.md`
+- `guard_status.md`
 - `resync_instructions.md`
 - `next_steps.md`

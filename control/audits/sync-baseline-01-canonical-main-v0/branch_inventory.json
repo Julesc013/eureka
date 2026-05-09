@@ -1,0 +1,64 @@
+{
+  "schema_version": "sync_baseline_branch_inventory.v0",
+  "task": "SYNC-BASELINE-01",
+  "current_branch": "main",
+  "head": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+  "origin_main": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+  "branches": [
+    {
+      "name": "main",
+      "kind": "local",
+      "sha": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+      "upstream": "origin/main",
+      "ahead": 0,
+      "behind": 0,
+      "classification": "canonical_main",
+      "status": "current_with_origin_main"
+    },
+    {
+      "name": "task/sync-guard-01",
+      "kind": "local",
+      "sha": "ad716815ba87980164d25e4b0deb2f4411c55292",
+      "upstream": "origin/task/sync-guard-01",
+      "ahead": 0,
+      "behind": 2,
+      "classification": "merged_task_branch",
+      "status": "merged_to_main_and_retained"
+    },
+    {
+      "name": "sync/preserve-dirty-work-20260509",
+      "kind": "local",
+      "sha": "7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe",
+      "upstream": null,
+      "ahead": 0,
+      "behind": 5,
+      "classification": "sync_or_rescue_branch",
+      "status": "merged_or_superseded_and_retained"
+    },
+    {
+      "name": "origin/main",
+      "kind": "remote",
+      "sha": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+      "upstream": null,
+      "ahead": 0,
+      "behind": 0,
+      "classification": "canonical_main",
+      "status": "canonical_remote"
+    },
+    {
+      "name": "origin/task/sync-guard-01",
+      "kind": "remote",
+      "sha": "ad716815ba87980164d25e4b0deb2f4411c55292",
+      "upstream": null,
+      "ahead": 0,
+      "behind": 2,
+      "classification": "merged_task_branch",
+      "status": "merged_to_main_and_retained"
+    }
+  ],
+  "notes": [
+    "No branch deletion was performed.",
+    "No force push was performed.",
+    "No unclassified relevant task branch remains."
+  ]
+}

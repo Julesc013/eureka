@@ -1,0 +1,42 @@
+{
+  "schema_version": "sync_baseline_branch_classification.v0",
+  "task": "SYNC-BASELINE-01",
+  "classifications": [
+    {
+      "branch": "main",
+      "classification": "canonical_main",
+      "status": "merged",
+      "rationale": "Local main equals origin/main at the canonical baseline commit."
+    },
+    {
+      "branch": "origin/main",
+      "classification": "canonical_main",
+      "status": "merged",
+      "rationale": "Remote main is canonical truth after normal push."
+    },
+    {
+      "branch": "task/sync-guard-01",
+      "classification": "merged_task_branch",
+      "status": "merged",
+      "rationale": "SYNC-GUARD-01 commits are contained in main through merge commit 52cad7c."
+    },
+    {
+      "branch": "origin/task/sync-guard-01",
+      "classification": "merged_task_branch",
+      "status": "merged",
+      "rationale": "Remote task branch is contained in main and retained for review/history."
+    },
+    {
+      "branch": "sync/preserve-dirty-work-20260509",
+      "classification": "sync_or_rescue_branch",
+      "status": "merged_or_superseded",
+      "rationale": "Historical preservation branch is represented in main by repo sync and merge commits."
+    }
+  ],
+  "relevant_unmerged_blockers": [],
+  "unknown_needs_review": [],
+  "notes": [
+    "Branches were classified, not deleted.",
+    "Historical branches can be cleaned only by a future explicit branch-cleanup task."
+  ]
+}

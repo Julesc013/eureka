@@ -33,11 +33,14 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0` (??; does not match active task allowed paths)
+- allowed: `control/audits/sync-baseline-01-canonical-main-v0/README.md` (M; matches active task allowed path)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.md` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_inventory.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/generated_artifact_drift_report.md` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/guard_status.md` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/merge_actions.md` (??; does not match active task allowed paths)
+- unknown: `control/audits/sync-baseline-01-canonical-main-v0/sync_baseline_01_report.json` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -47,8 +50,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4442
-- approx_tokens: 1111
+- chars: 5024
+- approx_tokens: 1256
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

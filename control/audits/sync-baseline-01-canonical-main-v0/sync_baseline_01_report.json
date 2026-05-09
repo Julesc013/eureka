@@ -1,0 +1,79 @@
+{
+  "schema_version": "sync_baseline_01_report.v0",
+  "status": "pass",
+  "task": "SYNC-BASELINE-01",
+  "operation": "canonical_main_baseline",
+  "origin_main_before": "df5239ac1fba9aadebb2771c5cb1933142c3f9ec",
+  "origin_main_after_fetch": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+  "origin_main_after_push": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+  "local_main_before": "df5239ac1fba9aadebb2771c5cb1933142c3f9ec",
+  "local_main_after": "8d03a2f2bdb48df98ca13e51376c72273ca34ddc",
+  "branches_inspected": [
+    "main",
+    "origin/main",
+    "task/sync-guard-01",
+    "origin/task/sync-guard-01",
+    "sync/preserve-dirty-work-20260509"
+  ],
+  "branches_merged": [
+    {
+      "branch": "origin/task/sync-guard-01",
+      "merge_commit": "52cad7cb7adfeaf32b0eda93e5d644a6fba205dd",
+      "message": "chore(sync): bring sync guard to main"
+    }
+  ],
+  "branches_classified_merged_or_superseded": [
+    "sync/preserve-dirty-work-20260509"
+  ],
+  "branches_parked": [
+    "task/sync-guard-01",
+    "origin/task/sync-guard-01",
+    "sync/preserve-dirty-work-20260509"
+  ],
+  "conflicts": [],
+  "validation": {
+    "git_status_short": "pass",
+    "git_diff_check": "pass",
+    "conflict_marker_scan": "pass_precise_scan_warn_broad_equals_underlines",
+    "architecture_boundaries": "pass",
+    "sync_guard_start_task": "warn_main_allowed_by_explicit_override_after_audit_commit",
+    "sync_guard_start_task_json": "warn_main_allowed_by_explicit_override_after_audit_commit",
+    "sync_guard_policy_validator": "pass",
+    "generated_artifact_drift": "pass",
+    "public_alpha_rehearsal_evidence": "pass",
+    "track_a_contracts": "pass",
+    "obs_validators": "pass",
+    "track_b_validators": "pass",
+    "later_track_b_validators": "pass_available_equivalents",
+    "full_unittest_discover": "pass_2508_tests",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "full_test_result": "pass_2508_tests",
+  "guard_result": "warn_start_task_main_override_pass_merge_task",
+  "product_boundary": {
+    "approved_source_access": false,
+    "created_runtime_search_needs_from_obs": false,
+    "created_executable_workunits_from_obs": false,
+    "executed_workunits": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "force_pushed": false,
+    "deleted_branches": false,
+    "rewrote_history": false
+  },
+  "next_task": "HUMAN-OBS-REVIEW-01 \u2014 Review OBS candidate packet"
+}
