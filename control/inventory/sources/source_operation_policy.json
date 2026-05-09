@@ -1,0 +1,50 @@
+{
+  "schema_version": "source_operation_policy.v0",
+  "policy_id": "source_operation_policy",
+  "allowed_operations_current": [
+    "inspect_fixture",
+    "normalize_fixture",
+    "record_source_metadata",
+    "record_source_policy"
+  ],
+  "future_operations_policy_gated": [
+    "metadata_identifier_lookup_future",
+    "metadata_search_future",
+    "metadata_page_fetch_future",
+    "bulk_metadata_sync_future",
+    "source_cache_write_future",
+    "evidence_candidate_generation_future",
+    "review_queue_seed_future",
+    "coverage_ledger_write_future",
+    "scorecard_update_future"
+  ],
+  "forbidden_by_default_operations": [
+    "arbitrary_url_fetch",
+    "unbounded_search",
+    "broad_crawl",
+    "scrape_html_without_policy",
+    "bypass_access_controls",
+    "bypass_captcha",
+    "use_credentials_without_policy",
+    "download_binary",
+    "fetch_item_file_payload",
+    "run_installer",
+    "execute_downloaded_artifact",
+    "upload_to_hosted_backend",
+    "mutate_public_index",
+    "mutate_master_index",
+    "accept_evidence_truth",
+    "accept_public_truth"
+  ],
+  "truth_boundary": {
+    "source_operation_policy_accepts_truth": false,
+    "source_operation_policy_mutates_public_index": false,
+    "source_operation_policy_mutates_master_index": false
+  },
+  "product_boundary": {
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false
+  }
+}

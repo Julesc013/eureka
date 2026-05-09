@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_approval_gate.v0",
+  "title": "Eureka Source Approval Gate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate_id",
+    "label",
+    "required_for_live_access",
+    "required_evidence",
+    "approval_status",
+    "default_blocks_live_access",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_approval_gate.v0"
+    },
+    "required_for_live_access": {
+      "const": true
+    },
+    "default_blocks_live_access": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

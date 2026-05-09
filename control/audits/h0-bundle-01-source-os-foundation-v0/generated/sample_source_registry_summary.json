@@ -1,0 +1,81 @@
+{
+  "access_mode_counts": {
+    "committed_fixture_only": 7,
+    "manual_human_only": 1,
+    "no_autonomous_access": 8,
+    "risk_blocked": 1,
+    "terms_blocked": 1
+  },
+  "capability_counts": {
+    "catalog_indexed": 1,
+    "metadata_indexed": 6,
+    "source_known": 8,
+    "supports_cdx": 1,
+    "supports_file_listing": 1,
+    "supports_hashes": 3,
+    "supports_identifier_lookup": 6,
+    "supports_metadata_record_fetch": 5,
+    "supports_release_assets": 1,
+    "supports_restricted_manifest_only": 1
+  },
+  "family_counts": {
+    "archive_metadata": 1,
+    "code_source_release_host": 2,
+    "package_registry": 2,
+    "retro_community_archive": 1,
+    "source_discovery_scorecard": 1,
+    "web_archive": 1
+  },
+  "index_depth_counts": {
+    "D0_source_known": 1,
+    "D1_catalog_indexed": 6,
+    "D2_metadata_indexed": 1
+  },
+  "live_access_enabled_count": 0,
+  "master_index_mutation_count": 0,
+  "policy_state_counts": {
+    "fixture_only": 1,
+    "manual_review_required": 1,
+    "planning_only": 5,
+    "policy_blocked": 1
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_index_mutation_count": 0,
+  "schema_version": "source_registry_v2_summary.v0",
+  "source_count": 8,
+  "source_ids": [
+    "github_releases",
+    "internet_archive",
+    "npm",
+    "policy_blocked_source_example",
+    "pypi",
+    "retro_community_example",
+    "software_heritage",
+    "wayback_cdx_memento"
+  ],
+  "source_sync_enabled_count": 0,
+  "status": "pass",
+  "trust_lane_counts": {
+    "community": 1,
+    "official": 1,
+    "package_registry": 2,
+    "policy_blocked": 1,
+    "preservation": 2,
+    "web_archive_trace": 1
+  },
+  "truth_boundary": {
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "source_capabilities_grant_permission": false,
+    "source_records_accept_evidence": false,
+    "source_records_are_public_truth": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_trust_lane.v0",
+  "title": "Eureka Source Trust Lane",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "trust_lane",
+    "label",
+    "description",
+    "ranking_explanation_use_future",
+    "overrides_evidence_review",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_trust_lane.v0"
+    },
+    "overrides_evidence_review": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

@@ -154,6 +154,7 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
         "IA-BUNDLE-02",
         "IA-BUNDLE-03",
         "H0-BUNDLE-01",
+        "H0-BUNDLE-02",
     }
     if not any(marker in text for marker in allowed_progression_markers):
         errors.append("latest task packet must point the main development lane to IA-BUNDLE-01 or a later IA/H0 task")

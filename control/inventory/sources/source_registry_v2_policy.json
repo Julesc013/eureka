@@ -1,0 +1,43 @@
+{
+  "schema_version": "source_registry_v2_policy.v0",
+  "policy_id": "source_registry_v2_policy",
+  "registry_status_values_current": [
+    "example_only",
+    "planning_only",
+    "local_policy_only",
+    "fixture_only",
+    "no_live_source_access"
+  ],
+  "default_registry_status": "no_live_source_access",
+  "source_record_contract_ref": "contracts/sources/source_record.v2.json",
+  "source_family_registry_ref": "control/inventory/sources/source_family_registry.json",
+  "source_capability_ladder_ref": "control/inventory/sources/source_capability_ladder.json",
+  "source_index_depth_registry_ref": "control/inventory/sources/source_index_depth_registry.json",
+  "source_trust_lane_policy_ref": "control/inventory/sources/source_trust_lane_policy.json",
+  "source_operation_policy_ref": "control/inventory/sources/source_operation_policy.json",
+  "source_approval_gate_policy_ref": "control/inventory/sources/source_approval_gate_policy.json",
+  "source_expansion_policy_ref": "control/inventory/sources/source_expansion_no_live_call_policy.json",
+  "registry_does_not_enable": [
+    "live_source_access",
+    "source_sync",
+    "downloads",
+    "scraping",
+    "public_index_mutation",
+    "master_index_mutation",
+    "truth_acceptance"
+  ],
+  "truth_boundary": {
+    "source_registry_is_public_truth": false,
+    "source_registry_accepts_evidence": false,
+    "source_registry_grants_live_access": false,
+    "source_registry_can_mutate_public_index": false,
+    "source_registry_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

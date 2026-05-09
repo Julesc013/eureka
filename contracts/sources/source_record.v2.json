@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_record.v2",
+  "title": "Eureka Source Record v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "source_label",
+    "source_family",
+    "source_kind",
+    "trust_lane",
+    "default_policy_state",
+    "legal_or_rights_posture",
+    "risk_posture",
+    "homepage_or_locator",
+    "documented_api_posture",
+    "discovery_modes",
+    "access_modes",
+    "supports_search",
+    "supports_record_fetch",
+    "supports_bulk",
+    "supports_member_listing",
+    "supports_hashes",
+    "supports_reviews_or_notes",
+    "auth_required",
+    "rate_limit_policy_ref",
+    "cache_policy_ref",
+    "kill_switch_policy_ref",
+    "index_depth_current",
+    "index_depth_target_future",
+    "connector_family_refs",
+    "policy_refs",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_record.v2"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "type": "string"
+    },
+    "source_kind": {
+      "type": "string"
+    },
+    "trust_lane": {
+      "type": "string"
+    },
+    "default_policy_state": {
+      "type": "string"
+    },
+    "legal_or_rights_posture": {
+      "type": "string"
+    },
+    "risk_posture": {
+      "type": "string"
+    },
+    "homepage_or_locator": {
+      "type": "string"
+    },
+    "documented_api_posture": {
+      "type": "string"
+    },
+    "discovery_modes": {
+      "type": "array"
+    },
+    "access_modes": {
+      "type": "array"
+    },
+    "connector_family_refs": {
+      "type": "array"
+    },
+    "policy_refs": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object",
+      "required": [
+        "source_record_is_public_truth",
+        "source_record_is_accepted_evidence",
+        "source_record_grants_live_access",
+        "source_record_can_mutate_public_index",
+        "source_record_can_mutate_master_index",
+        "source_record_can_claim_rights_clearance",
+        "source_record_can_claim_malware_safety",
+        "source_record_can_claim_verified_installability"
+      ]
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,70 @@
+schema_version: aide.queue-task.v0
+task_id: H0-BUNDLE-01
+title: Source OS registry and policy foundation
+status: active
+target_repo: julesc013/eureka
+phase: H0-BUNDLE-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Add the reusable Source Operating System registry, family taxonomy, capability ladder, policy model, approval gates, examples, validators, tests, and audit evidence without live source access.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/H0-BUNDLE-01/**
+    - .aide/reports/eureka-repo-health.md
+    - .aide/reports/eureka-repo-health.json
+    - control/audits/h0-bundle-01-source-os-foundation-v0/**
+    - control/inventory/sources/source_registry_v2_policy.json
+    - control/inventory/sources/source_family_registry.json
+    - control/inventory/sources/source_capability_ladder.json
+    - control/inventory/sources/source_index_depth_registry.json
+    - control/inventory/sources/source_trust_lane_policy.json
+    - control/inventory/sources/source_access_mode_policy.json
+    - control/inventory/sources/source_operation_policy.json
+    - control/inventory/sources/source_approval_gate_policy.json
+    - control/inventory/sources/source_expansion_no_live_call_policy.json
+    - contracts/sources/**
+    - docs/reference/SOURCE_REGISTRY_V2.md
+    - docs/reference/SOURCE_RECORD_CONTRACT.md
+    - docs/reference/SOURCE_CAPABILITY_CONTRACT.md
+    - docs/reference/SOURCE_POLICY_CONTRACT.md
+    - docs/reference/SOURCE_INDEX_DEPTH_MODEL.md
+    - docs/architecture/SOURCE_OPERATING_SYSTEM.md
+    - docs/architecture/SOURCE_FAMILY_MODEL.md
+    - docs/operations/SOURCE_POLICY_GATES.md
+    - docs/operations/SOURCE_EXPANSION_NO_LIVE_CALL_POLICY.md
+    - examples/sources/**
+    - scripts/validate_source_os_foundation.py
+    - scripts/summarize_source_registry_v2.py
+    - scripts/validate_ia_readiness_polish.py
+    - tests/contracts/test_source_os_foundation_contracts.py
+    - tests/operations/test_source_os_foundation_scripts.py
+    - tests/operations/test_ia_readiness_polish.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - runtime/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - Source registry v2, source record v2, source family, capability, policy, operation, index-depth, trust-lane, and approval-gate contracts exist
+  - Source family registry, capability ladder, D0-D5 index-depth registry, trust/access/operation/approval policies, and no-live-call policy exist
+  - Source examples validate and remain descriptive, not source truth
+  - validator, summary script, focused tests, audit pack, and generated source-registry summaries exist
+  - no live source access, source sync, connector runtime, public/master index mutation, evidence acceptance, candidate acceptance, source truth acceptance, or product behavior change occurs
+recommended_after: IA-BUNDLE-03
+next_recommended_task: H0-BUNDLE-02

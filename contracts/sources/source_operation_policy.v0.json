@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_operation_policy.v0",
+  "title": "Eureka Source Operation Policy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "policy_id",
+    "allowed_operations_current",
+    "future_operations_policy_gated",
+    "forbidden_by_default_operations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_operation_policy.v0"
+    },
+    "allowed_operations_current": {
+      "type": "array"
+    },
+    "forbidden_by_default_operations": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

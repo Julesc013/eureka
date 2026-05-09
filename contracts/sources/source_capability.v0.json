@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_capability.v0",
+  "title": "Eureka Source Capability",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "capability_id",
+    "label",
+    "capability_kind",
+    "description",
+    "permission_granted",
+    "requires_policy_gate",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_capability.v0"
+    },
+    "permission_granted": {
+      "const": false
+    },
+    "requires_policy_gate": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "source_trust_lane_policy.v0",
+  "policy_id": "source_trust_lane_policy",
+  "trust_lane_does_not_override_evidence_review": true,
+  "trust_lanes": [
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "official", "label": "Official", "description": "Official project, vendor, institution, or maintainer source.", "ranking_explanation_use_future": "may explain source posture", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "preservation", "label": "Preservation", "description": "Preservation institution or archive metadata.", "ranking_explanation_use_future": "may explain preservation context", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "community", "label": "Community", "description": "Community-maintained source metadata.", "ranking_explanation_use_future": "may explain review need", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "package_registry", "label": "Package Registry", "description": "Package registry metadata lane.", "ranking_explanation_use_future": "may explain package ecosystem context", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "research_library", "label": "Research Library", "description": "Library, cultural, or research catalog lane.", "ranking_explanation_use_future": "may explain citation posture", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "web_archive_trace", "label": "Web Archive Trace", "description": "Archived web capture metadata lane.", "ranking_explanation_use_future": "may explain capture limitations", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "local_private", "label": "Local Private", "description": "User-supplied local/private lane.", "ranking_explanation_use_future": "not public by default", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "restricted_manifest_only", "label": "Restricted Manifest Only", "description": "Restricted source manifest metadata only.", "ranking_explanation_use_future": "may explain access restriction", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "unknown", "label": "Unknown", "description": "Unknown or not-yet-classified source posture.", "ranking_explanation_use_future": "may explain uncertainty", "overrides_evidence_review": false, "notes": []},
+    {"schema_version": "source_trust_lane.v0", "trust_lane": "policy_blocked", "label": "Policy Blocked", "description": "Source blocked by policy.", "ranking_explanation_use_future": "may explain blocked state", "overrides_evidence_review": false, "notes": []}
+  ]
+}

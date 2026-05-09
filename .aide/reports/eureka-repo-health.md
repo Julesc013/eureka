@@ -1,24 +1,29 @@
 # Eureka AIDE Lite Repo Health
 
-This compact repo-local health note reflects the IA connector lane after
-IA-BUNDLE-03.
+This compact repo-local health note reflects the Source OS lane after
+H0-BUNDLE-01.
 
 ## Status
 
 - Overall status: WARN.
-- Current completed queue item: `IA-BUNDLE-03`.
-- Next recommended queue item: `H0-BUNDLE-01`.
+- Current completed queue item: `H0-BUNDLE-01`.
+- Next recommended queue item: `H0-BUNDLE-02`.
 - Side-lanes: `HUMAN-OBS-REVIEW-01` remains parallel, and `IA-APPROVAL-01`
   remains operator-gated for one possible IA metadata live probe.
 
-## IA Connector State
+## Source OS State
 
-- IA-BUNDLE-00: readiness polish completed.
-- IA-BUNDLE-01: fixture-only metadata connector foundation completed.
-- IA-BUNDLE-02: bounded live-probe envelope completed but blocked by missing
-  operator approval.
-- IA-BUNDLE-03: review integration, quality delta, postmortem, and H0 readiness
-  evidence completed from blocked fixture-equivalent outputs.
+- H0-BUNDLE-01 added Source OS registry v2, source record v2, source family,
+  capability, policy, operation, index-depth, trust-lane, and approval-gate
+  contracts.
+- Source family registry, capability ladder, D0-D5 index-depth registry,
+  trust/access/operation/approval policies, and no-live-call policy exist under
+  `control/inventory/sources/`.
+- Source examples cover Internet Archive, Wayback, GitHub Releases, PyPI, npm,
+  Software Heritage, retro/community, and policy-blocked records.
+- Source records remain descriptive only. They do not grant live access,
+  evidence acceptance, rights clearance, malware safety, verified
+  installability, source sync, or index mutation.
 
 ## Product Boundary
 
@@ -28,17 +33,18 @@ IA-BUNDLE-03.
 - Downloads/uploads/accounts/telemetry/hosting enabled: no.
 - Public index mutated: no.
 - Master index mutated: no.
-- Evidence, candidates, packs, or public truth accepted: no.
+- Evidence, candidates, packs, source records, or public truth accepted: no.
 
 ## Validation Note
 
-Focused IA-BUNDLE-03 validator and tests passed. Full unittest discovery passed
-with 2584 tests, architecture boundaries passed, AIDE golden evals passed 14/14,
-and AIDE verify is WARN-only with zero errors. Final command results are also
-recorded in the IA-BUNDLE-03 audit pack.
+Focused H0 validator and tests passed. Full unittest discovery passed with 2603
+tests, architecture boundaries passed, existing IA/local-foundry validators
+passed, AIDE golden evals passed 14/14, and AIDE verify is WARN-only with zero
+errors. Final command results are recorded in the H0-BUNDLE-01 audit pack.
 
 ## Next
 
-Proceed to `H0-BUNDLE-01 - Source OS registry and policy foundation`. Do not
-start H1 connector expansion until H0 defines the shared source-family,
-capability, policy, replay, live envelope, coverage ledger, and scorecard model.
+Proceed to `H0-BUNDLE-02 - Connector interface, fixture replay, and live-probe
+envelope`. Do not start H1 connector expansion until H0-BUNDLE-02 defines the
+shared connector interface, replay harness, policy evaluator, and fail-closed
+live-probe envelope.

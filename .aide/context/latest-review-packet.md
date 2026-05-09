@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5294 chars, 1324 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6679 chars, 1670 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-BUNDLE-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/H0-BUNDLE-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-bundle-03-review-integration-quality-delta-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_postmortem_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_quality_delta_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_review_integration_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_review_output_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_review_path_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_review_truth_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/IA_METADATA_REVIEW_INTEGRATION_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_CONNECTOR_POSTMORTEM.md` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_QUALITY_DELTA.md` (??; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_REVIEW_INTEGRATION.md` (??; matches active task allowed path)
-- allowed: `examples/connectors/internet_archive/review_integration` (??; matches active task allowed path)
-- allowed: `runtime/connectors/internet_archive/__init__.py` (M; matches active task allowed path)
-- allowed: `runtime/connectors/internet_archive/quality_delta.py` (??; matches active task allowed path)
-- allowed: `runtime/connectors/internet_archive/review_integration.py` (??; matches active task allowed path)
-- allowed: `scripts/integrate_ia_metadata_review.py` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 6; see task evidence changed-files report
+- allowed: `contracts/sources` (??; matches active task allowed path)
+- allowed: `control/audits/h0-bundle-01-source-os-foundation-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_access_mode_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_approval_gate_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_capability_ladder.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_expansion_no_live_call_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_family_registry.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_index_depth_registry.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_operation_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_registry_v2_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/sources/source_trust_lane_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/SOURCE_FAMILY_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/architecture/SOURCE_OPERATING_SYSTEM.md` (??; matches active task allowed path)
+- allowed: `docs/operations/SOURCE_EXPANSION_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/SOURCE_POLICY_GATES.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SOURCE_CAPABILITY_CONTRACT.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 10; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6543
-- approx_tokens: 1636
+- chars: 6408
+- approx_tokens: 1602
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

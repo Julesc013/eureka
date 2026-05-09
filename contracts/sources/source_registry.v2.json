@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.sources.source_registry.v2",
+  "title": "Eureka Source Registry v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_id",
+    "registry_label",
+    "registry_status",
+    "registry_scope",
+    "source_records",
+    "source_families",
+    "source_capability_refs",
+    "source_policy_refs",
+    "index_depth_policy_ref",
+    "trust_lane_policy_ref",
+    "approval_gate_policy_ref",
+    "source_operation_policy_ref",
+    "source_expansion_policy_ref",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "source_registry.v2"
+    },
+    "registry_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "registry_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "registry_status": {
+      "enum": [
+        "example_only",
+        "planning_only",
+        "local_policy_only",
+        "fixture_only",
+        "no_live_source_access"
+      ]
+    },
+    "registry_scope": {
+      "type": "string"
+    },
+    "source_records": {
+      "type": "array"
+    },
+    "source_families": {
+      "type": "array"
+    },
+    "source_capability_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_policy_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "index_depth_policy_ref": {
+      "type": "string"
+    },
+    "trust_lane_policy_ref": {
+      "type": "string"
+    },
+    "approval_gate_policy_ref": {
+      "type": "string"
+    },
+    "source_operation_policy_ref": {
+      "type": "string"
+    },
+    "source_expansion_policy_ref": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "no_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

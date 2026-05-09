@@ -2,23 +2,28 @@
 
 ## PHASE
 
-H0-BUNDLE-01 - Source OS registry and policy foundation
+H0-BUNDLE-02 - Connector interface, fixture replay, and live-probe envelope
 
 ## GOAL
 
-Lift the repeatable IA connector pattern into a shared Source Operating System
-foundation before broad H1 connector expansion.
+Build on H0-BUNDLE-01 by defining the reusable Eureka connector-family
+interface, fixture/replay harness, policy evaluator, and live-probe envelope
+that future H1 metadata sources can share.
 
 ## WHY
 
-IA-BUNDLE-03 produced review integration, quality-delta, connector postmortem,
-and H0 readiness evidence from committed IA-BUNDLE-02 blocked outputs. No new
-IA live call was made. The live IA approval decision remains an operator-gated
-side-lane, while the main development lane can proceed to H0.
+H0-BUNDLE-01 added Source OS registry v2, source records, family taxonomy,
+capability ladder, D0-D5 index-depth vocabulary, trust lanes, access modes,
+operation policy, approval gates, no-live-call policy, source examples,
+validators, tests, and audit evidence.
+
+The IA connector lane remains the reference pattern. IA-BUNDLE-02 stayed
+blocked by policy for live access, and IA-BUNDLE-03 used fixture-equivalent
+blocked outputs for review integration and quality-delta rehearsal.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane. IA-APPROVAL-01 remains an
-operator side-lane for the one approved IA metadata probe. Neither side-lane
-unblocks broad source fanout or source sync.
+operator-gated side-lane for one possible IA metadata live probe. Neither
+side-lane authorizes broad H-wave source fanout.
 
 ## CONTEXT_REFS
 
@@ -36,34 +41,48 @@ unblocks broad source fanout or source sync.
 - `control/audits/ia-bundle-01-metadata-connector-foundation-v0/`
 - `control/audits/ia-bundle-02-bounded-metadata-live-probe-v0/`
 - `control/audits/ia-bundle-03-review-integration-quality-delta-v0/`
-- `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md`
-- `docs/architecture/IA_METADATA_LIVE_PROBE_MODEL.md`
-- `docs/architecture/IA_METADATA_REVIEW_INTEGRATION_MODEL.md`
-- `docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md`
-- `docs/reference/IA_METADATA_LIVE_PROBE.md`
-- `docs/reference/IA_METADATA_REVIEW_INTEGRATION.md`
-- `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME.md`
-- `docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME.md`
-- `docs/reference/LOCAL_REVIEW_QUEUE_RUNTIME.md`
+- `control/audits/h0-bundle-01-source-os-foundation-v0/`
+- `contracts/sources/source_registry.v2.json`
+- `contracts/sources/source_record.v2.json`
+- `contracts/sources/source_policy.v0.json`
+- `contracts/sources/source_operation_policy.v0.json`
+- `contracts/sources/source_index_depth.v0.json`
+- `control/inventory/sources/source_family_registry.json`
+- `control/inventory/sources/source_capability_ladder.json`
+- `control/inventory/sources/source_operation_policy.json`
+- `control/inventory/sources/source_approval_gate_policy.json`
+- `docs/architecture/SOURCE_OPERATING_SYSTEM.md`
+- `docs/operations/SOURCE_POLICY_GATES.md`
+- `docs/operations/SOURCE_EXPANSION_NO_LIVE_CALL_POLICY.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/H0-BUNDLE-01/**`
-- `control/audits/h0-bundle-01-source-os-registry-policy-foundation-v0/**`
-- `control/inventory/source_os/**`
-- `docs/architecture/SOURCE_OS_MODEL.md`
-- `docs/operations/SOURCE_OS_POLICY.md`
-- `docs/reference/SOURCE_OS_REGISTRY.md`
-- `tests/operations/test_h0_source_os_foundation.py`
-- `scripts/validate_h0_source_os_foundation.py`
+- `.aide/queue/H0-BUNDLE-02/**`
+- `.aide/reports/eureka-repo-health.md`
+- `.aide/reports/eureka-repo-health.json`
+- `control/audits/h0-bundle-02-connector-interface-fixture-replay-v0/**`
+- `control/inventory/connectors/source_connector_interface_policy.json`
+- `control/inventory/connectors/source_fixture_replay_policy.json`
+- `control/inventory/connectors/source_live_probe_envelope_policy.json`
+- `control/inventory/connectors/source_policy_evaluator_policy.json`
+- `contracts/connectors/source_connector_interface.v0.json`
+- `contracts/connectors/source_fixture_replay.v0.json`
+- `contracts/connectors/source_live_probe_envelope.v0.json`
+- `docs/architecture/SOURCE_CONNECTOR_INTERFACE_MODEL.md`
+- `docs/operations/SOURCE_FIXTURE_REPLAY_POLICY.md`
+- `docs/operations/SOURCE_LIVE_PROBE_ENVELOPE.md`
+- `docs/reference/SOURCE_CONNECTOR_INTERFACE.md`
+- `examples/connectors/source_os_fixture_replay/**`
+- `scripts/validate_source_connector_interface_foundation.py`
+- `tests/contracts/test_source_connector_interface_foundation.py`
+- `tests/operations/test_source_connector_interface_scripts.py`
 
-This next packet is a planning handoff only. It does not authorize broad live
-source probes, downloads, hosted source sync, public fanout, public-index
-mutation, or master-index mutation.
-It must proceed without changing Eureka product behavior.
+If H0-BUNDLE-02 needs a narrow runtime helper, create or update the queue task
+with exact file paths before editing. Do not use broad runtime scopes.
+Proceed without changing Eureka product behavior.
 
 ## FORBIDDEN_PATHS
 
@@ -77,8 +96,8 @@ It must proceed without changing Eureka product behavior.
 - `native/**`
 - `runtime/**`
 - `contracts/**`
-- `crates/**`
 - `connectors/**`
+- `crates/**`
 - `packaging/**`
 - `third_party/**`
 - `data/public_index/**`
@@ -90,18 +109,20 @@ It must proceed without changing Eureka product behavior.
 
 ## IMPLEMENTATION
 
-- Define source family registry and capability ladder vocabulary.
-- Define source policy gate and fixture/replay harness requirements.
-- Define live-probe envelope requirements without enabling live probes.
-- Define future coverage ledger and connector scorecard foundations.
-- Preserve IA as the reference connector pattern, not a one-off site adapter.
+- Define the connector-family interface around Source OS source records and
+  policy gates.
+- Define fixture replay inputs, outputs, and deterministic validation.
+- Define live-probe envelope requirements while keeping live calls disabled by
+  default.
+- Define a policy evaluator that can fail closed before network access.
+- Reuse IA as a reference pattern, not as a special one-off connector.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
 - `python scripts/check_architecture_boundaries.py`
-- H0-specific validators and tests added by the future task
+- H0-BUNDLE-02-specific validators and tests added by the future task
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -111,16 +132,18 @@ It must proceed without changing Eureka product behavior.
 
 ## EVIDENCE
 
+- H0-BUNDLE-01 evidence lives under
+  `control/audits/h0-bundle-01-source-os-foundation-v0/`.
 - IA-BUNDLE-03 evidence lives under
   `control/audits/ia-bundle-03-review-integration-quality-delta-v0/`.
-- IA-BUNDLE-02 remains blocked unless IA-APPROVAL-01 makes an explicit operator
-  policy decision.
+- IA-BUNDLE-02 remains blocked unless IA-APPROVAL-01 makes an explicit
+  operator policy decision.
 - Do not paste long chat history when compact packets and audit packs are
   sufficient.
 
 ## NON_GOALS
 
-- Do not perform new IA live calls.
+- Do not perform new IA live calls or any other live source calls.
 - Do not broad-search Internet Archive or any other source.
 - Do not fetch item files, download files, scrape HTML, crawl, or follow
   arbitrary URLs.
@@ -133,11 +156,12 @@ It must proceed without changing Eureka product behavior.
 
 ## ACCEPTANCE
 
-- H0 source registry, capability ladder, policy gate, replay harness, live
-  envelope, coverage ledger, connector scorecard, tests, validator, and audit
-  evidence exist.
-- No source connector expansion or live probe is enabled by H0-BUNDLE-01.
-- IA-APPROVAL-01 and HUMAN-OBS-REVIEW-01 remain documented side-lanes.
+- Connector-family interface contracts and policies exist.
+- Fixture replay policy and examples exist.
+- Live-probe envelope is defined and fails closed by default.
+- Policy evaluator requirements are documented and tested.
+- No live source access, source sync, downloads, public/master index mutation,
+  truth acceptance, or product behavior change is enabled.
 
 ## OUTPUT_SCHEMA
 
@@ -153,4 +177,4 @@ Return the final response with:
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1100
+approx_tokens: 1500
