@@ -1,0 +1,23 @@
+{
+  "schema_version": "h1_metadata_wave_policy_pack.v0",
+  "policy_pack_id": "h1.policy_pack.npm_registry.v0",
+  "source_id": "npm_registry",
+  "connector_family": "package_registry",
+  "alternate_connector_family": "api_json",
+  "current_status": "policy_pack_only",
+  "policy_pack_grants_live_access": false,
+  "endpoint_classes_planned": ["package_metadata_lookup_future"],
+  "endpoint_classes_forbidden_current": ["package_download", "installer_execution", "arbitrary_url_fetch"],
+  "fixture_requirements": ["minimal metadata record", "typical result record", "policy-blocked record", "malformed/partial record"],
+  "live_probe_requirements_future": ["explicit package identifier", "endpoint allowlist", "one request budget", "post-run audit"],
+  "allowed_current_operations": ["inspect_fixture", "normalize_fixture", "record_source_policy", "record_source_metadata_preview", "create_coverage_preview", "create_scorecard_preview"],
+  "forbidden_current_operations": ["package_download", "install_package", "execute_downloaded_artifact", "mutate_public_index", "mutate_master_index"],
+  "source_cache_mapping_future": "package metadata candidate only",
+  "evidence_mapping_future": "package name/version/source locator candidate only",
+  "review_requirements": ["package identity review", "rights posture", "risk review"],
+  "scorecard_requirements": ["fixture replay", "policy evaluation", "blocked live-probe envelope"],
+  "coverage_requirements": ["D1 preview only", "not exhaustive"],
+  "truth_boundary": {"policy_pack_grants_live_access": false, "accepted_public_truth": false, "public_index_mutated": false, "master_index_mutated": false},
+  "product_boundary": {"enabled_live_probes": false, "enabled_source_sync": false, "enabled_downloads": false, "changed_public_search_behavior": false},
+  "no_goals": ["no package download", "no malware safety claim", "no installability claim"]
+}

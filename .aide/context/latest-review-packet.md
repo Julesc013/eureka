@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6531 chars, 1633 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5472 chars, 1368 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/H0-BUNDLE-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/H1-BUNDLE-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/connectors/connector_quality_delta.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/connectors/connector_scorecard.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/packs/source_pack_export.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/packs/source_pack_manifest.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/sources/source_coverage_ledger.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/sources/source_coverage_manifest.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/connector_scorecard_metric_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/connector_scorecard_output_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/connector_scorecard_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/connector_scorecard_truth_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/packs/source_pack_export_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/packs/source_pack_input_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/packs/source_pack_manifest_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/packs/source_pack_output_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/packs/source_pack_truth_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_coverage_depth_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_coverage_ledger_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/sources/source_coverage_manifest_policy.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 30; see task evidence changed-files report
+- allowed: `control/audits/h1-bundle-01-metadata-wave-policy-packs-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/source_packs` (??; matches active task allowed path)
+- allowed: `docs/architecture/H1_METADATA_WAVE_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_WAVE_FIXTURE_PLAN.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_WAVE_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_WAVE_POLICY_GATES.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_METADATA_WAVE_SOURCE_PACKS.md` (??; matches active task allowed path)
+- allowed: `examples/connectors/h1_metadata_wave` (??; matches active task allowed path)
+- allowed: `examples/source_packs/h1_metadata_wave_policy_pack_v0.json` (??; matches active task allowed path)
+- allowed: `examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json` (??; matches active task allowed path)
+- allowed: `examples/sources/source_records/github_releases_source_v2.json` (M; matches active task allowed path)
+- allowed: `examples/sources/source_records/npm_registry_source_v2.json` (??; matches active task allowed path)
+- allowed: `examples/sources/source_records/osv_source_v2.json` (??; matches active task allowed path)
+- allowed: `examples/sources/source_records/pypi_source_v2.json` (M; matches active task allowed path)
+- allowed: `examples/sources/source_records/repology_source_v2.json` (??; matches active task allowed path)
+- allowed: `examples/sources/source_records/software_heritage_source_v2.json` (M; matches active task allowed path)
+- allowed: `examples/sources/source_records/wayback_cdx_memento_source_v2.json` (??; matches active task allowed path)
+- allowed: `scripts/summarize_h1_metadata_wave_sources.py` (??; matches active task allowed path)
+- allowed: `scripts/validate_h1_metadata_wave_policy_packs.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 2; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6559
-- approx_tokens: 1640
+- chars: 6487
+- approx_tokens: 1622
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

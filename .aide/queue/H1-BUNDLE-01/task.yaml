@@ -1,0 +1,64 @@
+schema_version: aide.queue-task.v0
+task_id: H1-BUNDLE-01
+title: First metadata wave source policy packs
+status: active
+target_repo: julesc013/eureka
+phase: H1-BUNDLE-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Add policy-pack-only H1 metadata-wave source records, connector family mappings, approval gates, output/truth/no-live policies, policy packs, coverage previews, scorecard previews, source-pack manifests, docs, validators, tests, and audit evidence without enabling live source access.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/H1-BUNDLE-01/**
+    - .aide/reports/eureka-repo-health.md
+    - .aide/reports/eureka-repo-health.json
+    - control/inventory/source_packs/**
+    - control/audits/h1-bundle-01-metadata-wave-policy-packs-v0/**
+    - examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json
+    - examples/source_packs/h1_metadata_wave_policy_pack_v0.json
+    - examples/source_packs/h1_metadata_wave_source_pack_preview_v0.json
+    - examples/sources/source_records/wayback_cdx_memento_source_v2.json
+    - examples/sources/source_records/github_releases_source_v2.json
+    - examples/sources/source_records/pypi_source_v2.json
+    - examples/sources/source_records/npm_registry_source_v2.json
+    - examples/sources/source_records/software_heritage_source_v2.json
+    - examples/sources/source_records/repology_source_v2.json
+    - examples/sources/source_records/osv_source_v2.json
+    - examples/connectors/h1_metadata_wave/**
+    - docs/reference/H1_METADATA_WAVE_SOURCE_PACKS.md
+    - docs/architecture/H1_METADATA_WAVE_MODEL.md
+    - docs/operations/H1_METADATA_WAVE_POLICY_GATES.md
+    - docs/operations/H1_METADATA_WAVE_NO_LIVE_CALL_POLICY.md
+    - docs/operations/H1_METADATA_WAVE_FIXTURE_PLAN.md
+    - scripts/validate_h1_metadata_wave_policy_packs.py
+    - scripts/summarize_h1_metadata_wave_sources.py
+    - tests/operations/test_h1_metadata_wave_policy_packs.py
+    - tests/operations/test_h1_metadata_wave_summary.py
+  forbidden_paths:
+    - runtime/**
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - H1 metadata wave source pack policies, inventories, approval gates, output/truth/no-live policies exist
+  - all seven H1 source records, policy packs, coverage previews, and scorecard previews exist and validate
+  - fixture plan, docs, summary script, validator, tests, generated audit evidence, and readiness report exist
+  - no live source access, source sync, connector runtime, downloads, scraping, public/master index mutation, truth acceptance, source-pack import/submission, or product behavior change occurs
+recommended_after: H0-BUNDLE-03
+next_recommended_task: H1-BUNDLE-02

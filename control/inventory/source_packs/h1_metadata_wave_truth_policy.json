@@ -1,0 +1,24 @@
+{
+  "schema_version": "h1_metadata_wave_truth_policy.v0",
+  "policy_id": "h1_metadata_wave_truth_policy",
+  "source_pack_is_truth": false,
+  "source_pack_is_accepted_evidence": false,
+  "source_pack_is_imported_state": false,
+  "policy_pack_grants_live_access": false,
+  "capability_grants_permission": false,
+  "coverage_preview_is_exhaustive": false,
+  "scorecard_preview_is_production_ready": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "truth_boundary": {
+    "accepted_source_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_public_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  }
+}
