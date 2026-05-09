@@ -1,0 +1,108 @@
+{
+  "schema_version": "sync_guard_policy.v0",
+  "policy_id": "sync_guard_policy_v0",
+  "label": "Multi-machine Git task-state guard",
+  "description": "Defines the non-mutating checks required before starting, finishing, rescuing, or merging Codex/AIDE task work across machines.",
+  "guard_modes": [
+    "start-task",
+    "finish-task",
+    "merge-task",
+    "rescue"
+  ],
+  "checks": [
+    "clean_working_tree",
+    "no_merge_state",
+    "no_rebase_state",
+    "no_cherry_pick_state",
+    "no_revert_state",
+    "current_branch_not_main_for_task_work",
+    "local_main_fast_forwardable_or_current_with_origin_main",
+    "task_branch_upstream_status",
+    "task_branch_not_behind_upstream",
+    "no_unpushed_main_work",
+    "origin_main_not_unexpectedly_advanced",
+    "no_forbidden_private_paths",
+    "no_untracked_secret_like_paths"
+  ],
+  "pass_conditions": [
+    "working tree is clean for start-task, finish-task, and merge-task modes",
+    "no active merge, rebase, cherry-pick, or revert metadata exists",
+    "normal task work runs on a named non-main task branch",
+    "local main is current with origin/main or can fast-forward from it before task work begins",
+    "task branch is not behind its upstream",
+    "main has no local-only commits",
+    "no staged or untracked secret-like or private local paths are present"
+  ],
+  "warn_conditions": [
+    "task branch has no upstream before first push",
+    "branch name does not include the task ID",
+    "AIDE queue stale relative to git log",
+    "AIDE context appears stale relative to git log",
+    "origin/main advanced since task packet generation",
+    "task branch has local commits that still need a normal push",
+    "origin/main is unavailable in a local-only test repository"
+  ],
+  "fail_conditions": [
+    "dirty working tree",
+    "active merge",
+    "active rebase",
+    "active cherry-pick",
+    "active revert",
+    "local main behind origin/main when starting task work",
+    "current branch is main for normal task work",
+    "unpushed commits on main",
+    "secret-like paths staged or untracked",
+    "branch behind upstream"
+  ],
+  "allowed_overrides": [
+    "--allow-main for explicit integration, rescue, or repo sync guard work",
+    "--allow-no-upstream for a new branch before its first push",
+    "--expected-origin-main to warn when remote-tracking state differs from packet context",
+    "--fail-on-warn for CI or strict operator gates"
+  ],
+  "forbidden_operations": [
+    "git push --force",
+    "git push --mirror",
+    "git reset --hard",
+    "git clean -fd",
+    "git clean -fdx",
+    "git stash pop",
+    "git branch -D",
+    "git remote prune",
+    "git rebase shared branches",
+    "delete local branches",
+    "delete remote branches",
+    "rewrite shared history"
+  ],
+  "branch_naming_policy_ref": "control/inventory/git/task_branch_policy.json",
+  "workflow_command_refs": [
+    "AIDE-SYNC-01",
+    "AIDE-MERGE-01",
+    "AIDE-RESCUE-01"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "no_goals": [
+    "no automatic fetch",
+    "no automatic merge",
+    "no automatic branch creation",
+    "no automatic push",
+    "no conflict resolution",
+    "no product runtime behavior change"
+  ],
+  "notes": [
+    "The guard inspects local Git state only by default.",
+    "Fetching is an explicit workflow step, not a guard side effect.",
+    "WARN means the operator can proceed only after acknowledging the listed condition."
+  ]
+}

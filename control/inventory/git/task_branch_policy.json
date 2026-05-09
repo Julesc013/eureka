@@ -1,0 +1,58 @@
+{
+  "schema_version": "task_branch_policy.v0",
+  "policy_id": "task_branch_policy_v0",
+  "label": "Task branch naming and main-use policy",
+  "description": "Defines the boring Git branch model for multi-machine Eureka work.",
+  "allowed_branch_patterns": [
+    "task/<task-id>",
+    "obs/<task-id>",
+    "track-b/<task-id>",
+    "sync/<sync-task-id>",
+    "hotfix/<short-name>"
+  ],
+  "normal_task_work_on_main_allowed": false,
+  "main_exceptions": [
+    "explicit integration merge task",
+    "emergency rescue task",
+    "repo sync guard task with clean tree",
+    "user-approved exception"
+  ],
+  "required_standard_workflows": [
+    "start_task",
+    "finish_task",
+    "push_task_branch",
+    "merge_task_branch",
+    "rescue_dirty_tree"
+  ],
+  "branch_rules": {
+    "main": "integration only",
+    "task": "one task per branch",
+    "obs": "observation side-lane task branch",
+    "track-b": "Track B task branch",
+    "sync": "sync, merge, rescue, or guard control branch",
+    "hotfix": "small urgent repair branch"
+  },
+  "required_start_state": [
+    "clean working tree",
+    "no merge, rebase, cherry-pick, or revert state",
+    "local main current with origin/main",
+    "new task branch created from current main"
+  ],
+  "required_finish_state": [
+    "task branch committed",
+    "validation recorded",
+    "task branch pushed normally",
+    "main not updated by the task machine unless it is the integration machine"
+  ],
+  "forbidden_normal_operations": [
+    "parallel task work directly on main",
+    "leaving dirty work overnight",
+    "leaving merge metadata active",
+    "starting from stale local main",
+    "hiding local-only branch piles across machines"
+  ],
+  "notes": [
+    "Branch naming mismatches are advisory unless the operator selects strict mode.",
+    "Integration merges happen on one machine only."
+  ]
+}

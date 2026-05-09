@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5621 chars, 1406 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5296 chars, 1324 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,20 +35,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `control/audits/repo-merge-01-unified-main-v0` (??; does not match active task allowed paths)
-- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/COMMIT_AND_ARTIFACTS.md` (M; does not match active task allowed paths)
-- allowed: `docs/operations/public_alpha_rehearsal_evidence_v0/README.md` (M; matches active task allowed path)
-- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/SIGNOFF_TEMPLATE.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/public_alpha_rehearsal_evidence_v0/rehearsal_evidence_manifest.json` (M; does not match active task allowed paths)
-- unknown: `scripts/build_observation_candidate_review_queue.py` (M; does not match active task allowed paths)
-- unknown: `scripts/generate_source_gap_observation_candidates.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_obs_agent_local_eval_mining.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_obs_human_review_packet.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_obs_track_b_synchronization.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_observation_candidate_review_queue.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_search_need_seed_candidates.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_source_gap_observation_candidates.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_workunit_seed_candidates.py` (M; does not match active task allowed paths)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `.aide/prompts/AIDE-MERGE-01.md` (??; does not match active task allowed paths)
+- unknown: `.aide/prompts/AIDE-RESCUE-01.md` (??; does not match active task allowed paths)
+- unknown: `.aide/prompts/AIDE-SYNC-01.md` (??; does not match active task allowed paths)
+- allowed: `AGENTS.md` (M; matches active task allowed path)
+- unknown: `control/audits/sync-guard-01-multi-machine-git-guard-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/git` (??; does not match active task allowed paths)
+- unknown: `docs/operations/AIDE_SYNC_GUARD.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md` (??; does not match active task allowed paths)
+- unknown: `scripts/check_git_task_state.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_sync_guard_policy.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_git_task_state_guard.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_sync_guard_policy.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -58,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5752
-- approx_tokens: 1438
+- chars: 5572
+- approx_tokens: 1393
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

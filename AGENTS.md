@@ -38,6 +38,11 @@
 
 ## Working Rules for Agents
 
+- Before starting normal Codex/AIDE task work, run the Git task-state guard:
+  `python scripts/check_git_task_state.py --mode start-task --task-id <task-id>`.
+  Do not start normal work on a dirty tree, active merge/rebase/cherry-pick,
+  stale `main`, or direct `main`. Use `AIDE-SYNC-01`, `AIDE-MERGE-01`, or
+  `AIDE-RESCUE-01` for multi-machine sync, integration, and rescue workflows.
 - For non-trivial Eureka work, read `.aide/context/latest-task-packet.md` first and use `.aide/reports/eureka-aide-lite-operating-handoff.md` as the AIDE operating reference.
 - Keep changes narrowly scoped to the requested boundary.
 - Prefer governed contract edits over hidden coupling.

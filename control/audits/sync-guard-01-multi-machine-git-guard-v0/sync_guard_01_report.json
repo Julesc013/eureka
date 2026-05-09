@@ -1,0 +1,78 @@
+{
+  "schema_version": "sync_guard_01_report.v0",
+  "status": "pass",
+  "task": "SYNC-GUARD-01",
+  "operation": "multi_machine_git_guard",
+  "added_docs": [
+    "docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md",
+    "docs/operations/AIDE_SYNC_GUARD.md",
+    "docs/operations/AIDE_SYNC_RECOVERY_COMMANDS.md"
+  ],
+  "added_inventories": [
+    "control/inventory/git/sync_guard_policy.json",
+    "control/inventory/git/task_branch_policy.json",
+    "control/inventory/git/sync_workflow_commands.json"
+  ],
+  "added_scripts": [
+    "scripts/check_git_task_state.py",
+    "scripts/validate_sync_guard_policy.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_git_task_state_guard.py",
+    "tests/operations/test_sync_guard_policy.py"
+  ],
+  "validation": {
+    "git_status_short": "pass_clean_after_commit",
+    "git_diff_check": "pass",
+    "json_policy_files": "pass",
+    "json_audit_report": "pass",
+    "check_git_task_state_start_task": "pass_after_task_branch_push",
+    "check_git_task_state_start_task_json": "pass_after_task_branch_push",
+    "validate_sync_guard_policy": "pass",
+    "targeted_unittest": "pass",
+    "architecture_boundaries": "pass",
+    "full_unittest_discover": "warn_branch_sensitive_public_alpha_evidence_on_task_branch",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "guard_checks": [
+    "clean_working_tree",
+    "no_merge_state",
+    "no_rebase_state",
+    "no_cherry_pick_state",
+    "no_revert_state",
+    "current_branch_not_main_for_task_work",
+    "local_main_fast_forwardable_or_current_with_origin_main",
+    "task_branch_upstream_status",
+    "task_branch_not_behind_upstream",
+    "no_unpushed_main_work",
+    "origin_main_not_unexpectedly_advanced",
+    "no_forbidden_private_paths",
+    "no_untracked_secret_like_paths"
+  ],
+  "workflow_prompts": [
+    "AIDE-SYNC-01",
+    "AIDE-MERGE-01",
+    "AIDE-RESCUE-01"
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false
+  },
+  "next_task": "HUMAN-OBS-REVIEW-01 \u2014 Review OBS candidate packet"
+}
