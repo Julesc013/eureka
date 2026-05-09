@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/evidence_contract_index.v0.json",
+  "schema_version": "evidence_contract_index.v0",
+  "title": "Eureka Evidence Contract Index v0",
+  "status": "pointer_index_only",
+  "created_by_task": "IA-BUNDLE-00",
+  "purpose": "Locate current governed evidence contract material without duplicating the existing evidence ledger schemas.",
+  "canonical_schema_refs": [
+    "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "contracts/evidence_ledger/evidence_ledger_manifest.v0.json"
+  ],
+  "policy_inventory_refs": [
+    "control/inventory/evidence_ledger/evidence_ledger_policy.json",
+    "control/inventory/evidence_ledger/local_evidence_ledger_runtime_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_bridge_runtime_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_output_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_review_policy.json"
+  ],
+  "boundary": {
+    "schema_pointer_only": true,
+    "evidence_runtime_implemented": false,
+    "source_cache_write_enabled": false,
+    "evidence_ledger_write_enabled": false,
+    "candidate_acceptance_enabled": false,
+    "evidence_truth_acceptance_enabled": false,
+    "public_truth_acceptance_enabled": false,
+    "public_index_mutation_allowed": false,
+    "master_index_mutation_allowed": false,
+    "live_source_access_allowed": false,
+    "telemetry_enabled": false,
+    "credentials_configured": false
+  },
+  "notes": [
+    "contracts/evidence_ledger remains the canonical schema family for current evidence ledger records and manifests.",
+    "Future H0 work may decide whether this pointer namespace becomes a broader evidence contract family."
+  ]
+}

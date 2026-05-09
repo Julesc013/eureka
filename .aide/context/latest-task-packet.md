@@ -2,53 +2,103 @@
 
 ## PHASE
 
-SYNC-BASELINE-01 - Canonical branch baseline
+IA-BUNDLE-01 - IA metadata connector foundation
 
 ## GOAL
 
-Create a canonical local/remote `main` baseline after OBS, Track B, repo sync
-recovery, and SYNC-GUARD-01.
+Prepare the first Internet Archive metadata connector foundation bundle after
+IA-BUNDLE-00 readiness polish. The main development lane proceeds to IA source
+policy, operator gate decisions, fixture metadata normalization, and connector
+pattern groundwork without live IA calls unless a later explicit approval
+subgate permits them.
 
 ## WHY
 
-The repo now has the guard rails needed for multi-machine work. This baseline
-records that the current branches have been merged or classified, full tests
-pass on `main`, and every other checkout has a simple resync path.
+Track B is complete enough for first connector approval and the canonical sync
+baseline supersedes the older active-merge and full-test warnings. The active
+development lane now needs IA connector foundation work, while
+HUMAN-OBS-REVIEW-01 continues as a parallel side-lane. OBS review remains
+review-gated and does not block IA preflight or foundation work.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/memory/project-state.md`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-context-packet.md`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
+- `.aide/reports/eureka-repo-health.md`
 - `control/audits/sync-baseline-01-canonical-main-v0/`
-- `control/audits/sync-guard-01-multi-machine-git-guard-v0/`
-- `docs/operations/MULTI_MACHINE_GIT_WORKFLOW.md`
-- `scripts/check_git_task_state.py`
+- `control/audits/track-b-23-integration-audit-v0/`
+- `control/audits/ia-bundle-00-readiness-polish-v0/`
+- `docs/roadmap/TRACK_EXECUTION_PLAN.md`
+- `docs/decisions/ADR-eureka-track-order.md`
+- `docs/reference/LOCAL_SOURCE_CACHE_RUNTIME.md`
+- `docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME.md`
+- `docs/reference/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_RUNTIME.md`
+- `docs/reference/LOCAL_REVIEW_QUEUE_RUNTIME.md`
+- `docs/reference/CANDIDATE_PROMOTION_DRY_RUN.md`
+- `docs/reference/REVIEWED_PUBLIC_INDEX_REBUILD_CONTRACT.md`
+- `contracts/evidence/`
+- `contracts/evidence_ledger/`
+- `control/inventory/evidence_ledger/`
+
+## ALLOWED_PATHS
+
+- `.aide/context/latest-task-packet.md`
+- `.aide/queue/IA-BUNDLE-01/**`
+- `control/audits/ia-bundle-01-*/**`
+- `docs/operations/**`
+- `scripts/validate_ia_readiness_polish.py`
+- `tests/operations/test_ia_readiness_polish.py`
+
+IA-BUNDLE-01 may need a reviewed task prompt that explicitly opens contract or
+connector paths. This compact packet by itself does not authorize broad product
+edits.
+
+## FORBIDDEN_PATHS
+
+- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `connectors/**`
+- `packaging/**`
+- `third_party/**`
+- source/evidence/master-index records
+- generated static artifacts
+- local private-state roots
+- raw prompt logs, credentials, provider keys, or cache contents
 
 ## IMPLEMENTATION
 
-- Merge `origin/task/sync-guard-01` into `main`.
-- Inventory local and remote branches.
-- Run generated artifact drift checks, architecture checks, guard tests, full
-  unittest discovery, and AIDE Lite checks.
-- Add canonical baseline audit evidence.
-- Push `main` normally.
-- Provide resync instructions for all other machines and checkouts.
+- Start from a fresh task branch after the Git task-state guard passes.
+- Treat `control/audits/ia-bundle-00-readiness-polish-v0/` as the IA readiness
+  handoff.
+- Draft source policy, User-Agent/contact, rate-limit, timeout, retry, cache
+  TTL, and kill-switch decisions.
+- Add fixture-only IA metadata normalization and validators if approved by the
+  IA-BUNDLE-01 task.
+- Preserve the source operating system pattern: source family, policy gate,
+  fixture/replay harness, live-probe envelope, source cache, evidence
+  candidate bridge, review queue, future coverage ledger, and future connector
+  scorecard.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- conflict marker scan
-- `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_drift.py --json`
-- `python scripts/validate_sync_guard_policy.py`
-- `python -m unittest tests.operations.test_git_task_state_guard tests.operations.test_sync_guard_policy`
-- `python -m unittest discover -s tests -t .`
+- `python scripts/validate_ia_readiness_polish.py`
+- IA-BUNDLE-01 task-specific validators and tests
+- `python scripts/check_architecture_boundaries.py` if Python layering changes
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -58,56 +108,36 @@ pass on `main`, and every other checkout has a simple resync path.
 
 ## EVIDENCE
 
-- `control/audits/sync-baseline-01-canonical-main-v0/README.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/baseline_report.json`
-- `control/audits/sync-baseline-01-canonical-main-v0/branch_inventory.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/merged_branch_report.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/validation_matrix.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/test_report.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/aide_state_report.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/resync_instructions.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/next_steps.md`
-- `.aide/queue/` is not used for task evidence; SYNC-BASELINE-01 evidence lives under `control/audits/`.
-
-## ALLOWED_PATHS
-
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `control/audits/sync-baseline-01-canonical-main-v0/**`
-
-## FORBIDDEN_PATHS
-
-- runtime/**
-- contracts/**
-- surfaces/**
-- site/**
-- native/**
-- crates/**
-- connectors/**
-- packaging/**
-- third_party/**
-- source/evidence/master-index records
-- generated static artifacts
-- ignored private local roots
-- secrets or credential paths
+- IA-BUNDLE-00 evidence remains under
+  `control/audits/ia-bundle-00-readiness-polish-v0/`.
+- Preserve sync baseline evidence under
+  `control/audits/sync-baseline-01-canonical-main-v0/`.
+- Preserve Track B evidence under
+  `control/audits/track-b-23-integration-audit-v0/`.
+- Do not paste long chat history when these compact packets and audit packs are
+  sufficient.
 
 ## NON_GOALS
 
-- Do not force push.
-- Do not delete branches.
-- Do not rewrite history.
-- Complete this baseline without changing Eureka product behavior.
-- Do not approve source access, execute WorkUnits, create public truth, enable
-  connectors, or mutate the master index.
+- Do not call the Internet Archive.
+- Do not perform live probes, source sync, broad crawling, downloads, uploads,
+  accounts, telemetry, hosting, pack import, or hosted review.
+- Do not enable a connector runtime.
+- Do not mutate the public index or master index.
+- Do not accept evidence, candidates, or public truth.
+- Do not implement H0 in IA-BUNDLE-01 unless a later reviewed task explicitly
+  expands scope.
+- No Eureka product behavior change is authorized by this compact packet alone;
+  any product contract edit requires the reviewed IA-BUNDLE-01 task scope.
 
 ## ACCEPTANCE
 
-- `main` contains OBS, Track B, repo sync evidence, and SYNC-GUARD-01.
-- Full tests pass on `main`.
-- AIDE Lite checks pass or warn with zero errors.
-- Baseline audit pack exists.
-- `origin/main` receives the final baseline commit by normal push.
-- Resync instructions exist for all machines.
+- Main development lane points to IA-BUNDLE-01.
+- HUMAN-OBS-REVIEW-01 remains documented as a parallel side-lane.
+- IA-BUNDLE-00 audit pack is available as readiness evidence.
+- No IA source access, connector runtime, live probe, source sync, or
+  index/master-index mutation is approved by this packet.
+- Validation is run and recorded for the actual IA-BUNDLE-01 scope.
 
 ## OUTPUT_SCHEMA
 
@@ -116,13 +146,11 @@ Return the final response with:
 - `STATUS`
 - `SUMMARY`
 - `COMMITS`
-- `BRANCHES`
+- `CHANGED`
 - `VALIDATION`
-- `PUSH`
-- `RESYNC`
 - `RISKS`
-- `NEXT`
+- `NEXT TASK`
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1200
+approx_tokens: 1100

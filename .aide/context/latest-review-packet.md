@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3912 chars, 978 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5227 chars, 1307 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,14 +33,16 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `control/audits/sync-baseline-01-canonical-main-v0/README.md` (M; matches active task allowed path)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_classification.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/branch_inventory.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/generated_artifact_drift_report.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/guard_status.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/merge_actions.md` (??; does not match active task allowed paths)
-- unknown: `control/audits/sync-baseline-01-canonical-main-v0/sync_baseline_01_report.json` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `contracts/README.md` (M; matches active task allowed path)
+- unknown: `contracts/evidence` (??; does not match active task allowed paths)
+- unknown: `control/audits/ia-bundle-00-readiness-polish-v0` (??; does not match active task allowed paths)
+- unknown: `scripts/generate_public_alpha_rehearsal_evidence.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_ia_readiness_polish.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_ia_readiness_polish.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -50,8 +52,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5024
-- approx_tokens: 1256
+- chars: 4907
+- approx_tokens: 1227
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

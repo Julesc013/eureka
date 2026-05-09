@@ -1,0 +1,121 @@
+{
+  "schema_version": "ia_bundle_00_report.v0",
+  "status": "pass",
+  "task": "IA-BUNDLE-00",
+  "track": "IA",
+  "purpose": "readiness_polish",
+  "track_b_status": "pass_with_warnings",
+  "first_connector_readiness_before": "READY_WITH_WARNINGS",
+  "first_connector_readiness_after": "READY_FOR_IA_BUNDLE_01",
+  "side_lanes": {
+    "human_obs_review": "parallel_side_lane"
+  },
+  "warnings_closed_or_classified": [
+    {
+      "warning": "evidence_contract_location_ambiguous",
+      "classification": "closed_by_pointer_contract_namespace",
+      "evidence": [
+        "contracts/evidence/README.md",
+        "contracts/evidence/evidence_contract_index.v0.json",
+        "contracts/evidence_ledger/"
+      ]
+    },
+    {
+      "warning": "historical_active_merge_b22",
+      "classification": "superseded_by_sync_baseline",
+      "evidence": [
+        "control/audits/sync-baseline-01-canonical-main-v0/baseline_report.json"
+      ]
+    },
+    {
+      "warning": "historical_obs_hardening_full_test",
+      "classification": "superseded_by_sync_baseline_full_unittest_pass",
+      "evidence": [
+        "control/audits/sync-baseline-01-canonical-main-v0/baseline_report.json"
+      ]
+    },
+    {
+      "warning": "ia_connector_prerequisites_pending",
+      "classification": "deferred_to_ia_bundle_01_and_later",
+      "evidence": [
+        "control/audits/ia-bundle-00-readiness-polish-v0/ia_connector_readiness_checklist.md",
+        "control/audits/ia-bundle-00-readiness-polish-v0/ia_bundle_sequence.md"
+      ]
+    }
+  ],
+  "evidence_contract_location": {
+    "decision": "created_contracts_evidence",
+    "notes": [
+      "contracts/evidence/ is a pointer and index namespace only.",
+      "Canonical evidence ledger schemas remain in contracts/evidence_ledger/.",
+      "Evidence-ledger runtime and source-cache bridge policies remain under control/inventory/evidence_ledger/.",
+      "No evidence runtime, write path, source access, candidate acceptance, or truth acceptance is enabled."
+    ]
+  },
+  "ia_gates": {
+    "source_policy_approved": false,
+    "user_agent_contact_decided": false,
+    "allowed_endpoints_decided": false,
+    "forbidden_endpoints_decided": false,
+    "rate_limit_decided": false,
+    "timeout_retry_decided": false,
+    "cache_ttl_decided": false,
+    "kill_switch_decided": false,
+    "fixture_normalizer_implemented": false,
+    "metadata_only_live_probe_approved": false,
+    "live_probe_enabled": false,
+    "connector_runtime_enabled": false
+  },
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "called_external_source": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_hosting": false,
+    "enabled_pack_import": false,
+    "enabled_hosted_review": false,
+    "mutated_source_cache": false,
+    "mutated_evidence_ledger": false,
+    "mutated_candidate_index": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "truth_boundary": {
+    "accepted_evidence_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_public_truth": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_search": false,
+    "claimed_production_readiness": false
+  },
+  "validation": {
+    "task_state_guard": "warn_no_upstream_only",
+    "aide_lite_doctor_before_edits": "pass",
+    "aide_lite_validate_before_edits": "pass",
+    "git_diff_check": "pass_with_line_ending_notices",
+    "json_report_parse": "pass",
+    "ia_readiness_validator": "pass",
+    "ia_readiness_unit_tests": "pass_11_tests",
+    "generated_artifact_drift_guard": "pass",
+    "public_alpha_rehearsal_evidence_check": "pass_after_branch_recording_fix",
+    "full_unittest_discovery": "pass_2519_tests",
+    "architecture_boundaries": "pass_493_python_files",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass_14_tasks",
+    "aide_lite_eval_run": "pass_14_of_14",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "next_task": "IA-BUNDLE-01 - IA metadata connector foundation"
+}

@@ -204,6 +204,7 @@ def build_rehearsal_summary() -> dict[str, Any]:
 def build_manifest(
     summary: Mapping[str, Any],
     *,
+    branch: str | None = None,
     commit_sha: str | None = None,
     generated_or_recorded_at: str = NORMALIZED_RECORDED_AT,
 ) -> dict[str, Any]:
@@ -214,7 +215,7 @@ def build_manifest(
         "evidence_pack_id": "public_alpha_rehearsal_evidence_v0",
         "created_by_slice": CREATED_BY_SLICE,
         "repository": summary["repository"],
-        "branch": summary["branch"],
+        "branch": branch or summary["branch"],
         "commit_sha": commit_sha or summary["commit_sha"],
         "generated_or_recorded_at": generated_or_recorded_at,
         "no_deployment_performed": True,
@@ -262,12 +263,14 @@ def check_pack(summary: Mapping[str, Any]) -> dict[str, Any]:
             errors.append(f"missing required evidence file: {relative}")
     manifest_path = PACK_DIR / MANIFEST_NAME
     committed_manifest = _load_json(manifest_path) if manifest_path.exists() else {}
+    branch = str(committed_manifest.get("branch", summary["branch"]))
     commit_sha = str(committed_manifest.get("commit_sha", summary["commit_sha"]))
     recorded_at = str(
         committed_manifest.get("generated_or_recorded_at", NORMALIZED_RECORDED_AT)
     )
     expected_manifest = build_manifest(
         summary,
+        branch=branch,
         commit_sha=commit_sha,
         generated_or_recorded_at=recorded_at,
     )

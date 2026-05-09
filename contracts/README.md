@@ -21,3 +21,9 @@ validation only; it does not implement model calls, runtime provider loading,
 API keys, credential storage, telemetry, embeddings, vector search, LLM
 reranking, AI in public search, AI-generated evidence acceptance, or
 master-index mutation.
+
+`contracts/evidence/` is a pointer namespace for current evidence contract
+material. The canonical evidence ledger schemas remain under
+`contracts/evidence_ledger/`; the pointer namespace adds no runtime, write
+path, source access, evidence acceptance, candidate acceptance, public-index
+mutation, or master-index mutation.
