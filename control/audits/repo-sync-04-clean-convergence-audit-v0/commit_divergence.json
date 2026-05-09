@@ -1,0 +1,161 @@
+{
+  "schema_version": "repo_sync_04_commit_divergence.v0",
+  "task": "REPO-SYNC-04",
+  "merge_base": "103012082a0d6df98dd9dfc227c61b34218afa22",
+  "ahead_count": 10,
+  "behind_count": 7,
+  "local_only_commits": [
+    {
+      "sha": "8a091f64eb1a1a61d808e6be557d291a015e7a4d",
+      "subject": "audit(sync): record active merge rescue",
+      "classification": [
+        "repo_sync_audit_commit"
+      ]
+    },
+    {
+      "sha": "03355592851ae643c33ec8d29ff3ca5b6b61b984",
+      "subject": "chore(sync): preserve merge-rescued local work",
+      "classification": [
+        "preservation_commit",
+        "mixed_unreviewed_local_work"
+      ]
+    },
+    {
+      "sha": "2f63e190964d19bd7f7d6c9130e716ecbd61b6ac",
+      "subject": "ops(evidence): plan local evidence ledger runtime",
+      "classification": [
+        "track_b_runtime_or_contract",
+        "track_b_later_than_b06"
+      ]
+    },
+    {
+      "sha": "0906bb43bae0e9930b120f36ec6acafeee5bc9f6",
+      "subject": "ops(source-cache): plan local source cache runtime",
+      "classification": [
+        "track_b_runtime_or_contract",
+        "track_b_later_than_b06"
+      ]
+    },
+    {
+      "sha": "bdbc36a019ccdf9671113f39ff982390b24499a4",
+      "subject": "runtime(candidate): add local candidate store runtime",
+      "classification": [
+        "track_b_runtime_or_contract",
+        "track_b_later_than_b06"
+      ]
+    },
+    {
+      "sha": "3df313df0efead256bb1338e00b25c4995a18370",
+      "subject": "runtime(node): add policy evaluator",
+      "classification": [
+        "track_b_runtime_or_contract"
+      ]
+    },
+    {
+      "sha": "2468da62b0581208d37927a8d163fb2169352468",
+      "subject": "runtime(workunit): add dry-run WorkUnit runner",
+      "classification": [
+        "track_b_runtime_or_contract"
+      ]
+    },
+    {
+      "sha": "dea4c6783ec3ca714c168e66b8a2b08d4d39ef27",
+      "subject": "runtime(observation): add local SearchNeed runtime",
+      "classification": [
+        "track_b_runtime_or_contract"
+      ]
+    },
+    {
+      "sha": "bf8e89daff8230c8d666e4ec1d900d8713b543ce",
+      "subject": "runtime(observation): add local search miss ledger runtime",
+      "classification": [
+        "track_b_runtime_or_contract"
+      ]
+    },
+    {
+      "sha": "aa3fb7f2d26cd403e6be1f8a7aded64ba1e3317e",
+      "subject": "runtime(observation): add local query observation runtime",
+      "classification": [
+        "track_b_runtime_or_contract"
+      ]
+    }
+  ],
+  "remote_only_commits": [
+    {
+      "sha": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+      "subject": "ops(observation): prepare human candidate review packet",
+      "classification": [
+        "obs_agent_07",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "660777a176087de601e4d02d9533ade696c3a450",
+      "subject": "audit(observation): synchronize obs candidates with track b",
+      "classification": [
+        "obs_agent_06",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "3adf773c9ab4b746d5d5587b74849d0f23b8fed7",
+      "subject": "ops(observation): draft workunit seed candidates",
+      "classification": [
+        "obs_agent_05",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "1cb3124a7254af7a783252a7c6502013bc46cec8",
+      "subject": "ops(observation): draft search need seed candidates",
+      "classification": [
+        "obs_agent_04",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "6c852097ec812ddd2c8584dbff5b847bdebd94c5",
+      "subject": "ops(observation): add candidate review queue",
+      "classification": [
+        "obs_agent_03",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "fe96586fa87df36c7770ba8c3c6c80e56b7f5308",
+      "subject": "ops(observation): generate source gap candidates",
+      "classification": [
+        "obs_agent_02",
+        "remote_only"
+      ]
+    },
+    {
+      "sha": "5273eb37256077ec2055e23fe16ef3ff5542b683",
+      "subject": "ops(observation): mine local eval failure candidates",
+      "classification": [
+        "obs_agent_01",
+        "remote_only"
+      ]
+    }
+  ],
+  "classification": {
+    "local_only": [
+      "preservation_commit",
+      "repo_sync_audit_commit",
+      "track_b_runtime_or_contract",
+      "track_b_later_than_b06",
+      "aide_context_or_eval",
+      "runtime_or_tests",
+      "docs_or_ops"
+    ],
+    "remote_only": [
+      "obs_agent_01_to_07",
+      "control_or_aide"
+    ]
+  },
+  "notes": [
+    "The safety branch is ahead by local preservation, REPO-SYNC audit work, and Track B local runtime/contract work.",
+    "The remote branch is behind the safety branch for local Track B work but ahead for OBS-AGENT-01 through OBS-AGENT-07.",
+    "No cherry-pick or merge was performed by this audit."
+  ]
+}

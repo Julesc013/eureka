@@ -1,0 +1,57 @@
+{
+  "schema_version": "repo_sync_04_report.v0",
+  "status": "partial",
+  "task": "REPO-SYNC-04",
+  "operation": "clean_convergence_audit",
+  "current_branch": "sync/preserve-dirty-work-20260509",
+  "local_head": "8a091f64eb1a1a61d808e6be557d291a015e7a4d",
+  "origin_main": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+  "origin_main_changed_since_live_check": false,
+  "merge_base": "103012082a0d6df98dd9dfc227c61b34218afa22",
+  "ahead_behind": {
+    "ahead": 10,
+    "behind": 7
+  },
+  "convergence_branch": null,
+  "merge_attempted": false,
+  "merge_succeeded": false,
+  "conflict_risk": "high",
+  "conflicts": [],
+  "overlap": {
+    "local_changed_paths_since_base": 515,
+    "remote_changed_paths_since_base": 176,
+    "overlapping_paths": 68,
+    "mechanical_merge_markers_from_merge_tree": 0
+  },
+  "validation": {
+    "git status --short": "pass",
+    "git rev-parse -q --verify MERGE_HEAD": "pass_absent",
+    "git fetch --all --tags": "pass",
+    "git rev-list --left-right --count HEAD...origin/main": "pass",
+    "git merge-tree <base> HEAD origin/main": "warn_no_markers_but_semantic_overlap",
+    "git diff --check": "pass",
+    "json_tool_branch_inventory": "pass",
+    "json_tool_commit_divergence": "pass",
+    "json_tool_report": "pass",
+    "check_architecture_boundaries": "pass",
+    "targeted_available_validators": "pass",
+    "targeted_remote_only_validators_on_safety_branch": "warn_missing"
+  },
+  "product_boundary": {
+    "changed_product_behavior_by_this_task": false,
+    "changed_public_routes_by_this_task": false,
+    "enabled_hosting_by_this_task": false,
+    "enabled_live_probes_by_this_task": false,
+    "enabled_source_connectors_by_this_task": false,
+    "enabled_downloads_by_this_task": false,
+    "enabled_uploads_by_this_task": false,
+    "enabled_accounts_by_this_task": false,
+    "enabled_telemetry_by_this_task": false,
+    "mutated_master_index_by_this_task": false,
+    "force_pushed": false,
+    "deleted_branches": false,
+    "discarded_uncommitted_work": false,
+    "rewrote_history": false
+  },
+  "next_task": "Manual conflict review before REPO-SYNC-05 — Apply reviewed convergence branch"
+}

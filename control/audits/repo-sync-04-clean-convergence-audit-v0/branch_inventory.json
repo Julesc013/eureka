@@ -1,0 +1,72 @@
+{
+  "schema_version": "repo_sync_04_branch_inventory.v0",
+  "task": "REPO-SYNC-04",
+  "current_branch": "sync/preserve-dirty-work-20260509",
+  "local_head": "8a091f64eb1a1a61d808e6be557d291a015e7a4d",
+  "origin_main": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+  "origin_main_subject": "ops(observation): prepare human candidate review packet",
+  "origin_main_changed_since_live_check": false,
+  "merge_base": "103012082a0d6df98dd9dfc227c61b34218afa22",
+  "branches": [
+    {
+      "name": "main",
+      "sha": "2f63e190964d19bd7f7d6c9130e716ecbd61b6ac",
+      "upstream": "origin/main",
+      "ahead": 8,
+      "behind": 7,
+      "classification": [
+        "local_mainline",
+        "track_b_lane",
+        "diverged"
+      ],
+      "notes": [
+        "Local main is not current.",
+        "Contains Track B local work through local evidence ledger planning."
+      ]
+    },
+    {
+      "name": "sync/preserve-dirty-work-20260509",
+      "sha": "8a091f64eb1a1a61d808e6be557d291a015e7a4d",
+      "upstream": null,
+      "ahead": 10,
+      "behind": 7,
+      "classification": [
+        "current_branch",
+        "safety_branch",
+        "preserved_dirty_work"
+      ],
+      "notes": [
+        "Contains REPO-SYNC-03 preservation commit and audit commit.",
+        "Working tree was clean before fetch."
+      ]
+    }
+  ],
+  "remote_branches": [
+    {
+      "name": "origin/HEAD",
+      "target": "origin/main",
+      "classification": [
+        "remote_head"
+      ]
+    },
+    {
+      "name": "origin/main",
+      "sha": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+      "classification": [
+        "mainline",
+        "remote_only_obs_lane"
+      ],
+      "notes": [
+        "Includes OBS-AGENT-01 through OBS-AGENT-07 visible from the fetched remote graph.",
+        "No remote sync branch was observed."
+      ]
+    }
+  ],
+  "merge_head_present": false,
+  "working_tree_clean": true,
+  "fetch_performed": true,
+  "notes": [
+    "Remote refs were fetched after clean and merge-free preflight.",
+    ".aide/context/latest-task-packet.md on the safety branch still points at TRACK-B-23 and is stale relative to this sync task."
+  ]
+}
