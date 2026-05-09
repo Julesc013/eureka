@@ -1,0 +1,27 @@
+{
+  "schema_version": "internet_archive_postmortem_policy.v0",
+  "policy_id": "internet_archive_postmortem_policy",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "policy_gaps",
+    "data_shape_gaps",
+    "source_cache_mapping_gaps",
+    "evidence_mapping_gaps",
+    "review_gaps",
+    "quality_delta_summary",
+    "safety_boundary_assessment",
+    "H0_implications",
+    "H1_reuse_recommendations",
+    "next_connector_recommendation",
+    "do_not_repeat_risks"
+  ],
+  "auto_approval_allowed": false,
+  "future_connector_approval_allowed": false,
+  "human_review_required_for_next_connector_wave": true,
+  "notes": [
+    "Postmortem recommendations inform H0/H1 planning but do not approve live connectors."
+  ]
+}

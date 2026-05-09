@@ -1,0 +1,65 @@
+schema_version: aide.queue-task.v0
+task_id: IA-BUNDLE-03
+title: Internet Archive review integration and quality delta
+status: active
+target_repo: julesc013/eureka
+phase: IA-BUNDLE-03
+source_packet: .aide/context/latest-task-packet.md
+objective: Integrate IA-BUNDLE-02 blocked or fixture-equivalent outputs into Track B review dry-runs and produce quality-delta, postmortem, and H0 readiness evidence without new live calls.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/queue/index.yaml
+    - .aide/queue/IA-BUNDLE-03/**
+    - .aide/reports/eureka-repo-health.md
+    - .aide/reports/eureka-repo-health.json
+    - control/audits/ia-bundle-03-review-integration-quality-delta-v0/**
+    - control/inventory/connectors/internet_archive_review_integration_policy.json
+    - control/inventory/connectors/internet_archive_quality_delta_policy.json
+    - control/inventory/connectors/internet_archive_postmortem_policy.json
+    - control/inventory/connectors/internet_archive_review_output_policy.json
+    - control/inventory/connectors/internet_archive_review_path_policy.json
+    - control/inventory/connectors/internet_archive_review_truth_policy.json
+    - docs/reference/IA_METADATA_REVIEW_INTEGRATION.md
+    - docs/architecture/IA_METADATA_REVIEW_INTEGRATION_MODEL.md
+    - docs/operations/IA_METADATA_CONNECTOR_POSTMORTEM.md
+    - docs/operations/IA_METADATA_QUALITY_DELTA.md
+    - examples/connectors/internet_archive/review_integration/**
+    - runtime/connectors/internet_archive/__init__.py
+    - runtime/connectors/internet_archive/review_integration.py
+    - runtime/connectors/internet_archive/quality_delta.py
+    - scripts/integrate_ia_metadata_review.py
+    - scripts/summarize_ia_connector_quality_delta.py
+    - scripts/validate_ia_review_integration.py
+    - scripts/validate_ia_readiness_polish.py
+    - tests/connectors/test_internet_archive_review_integration.py
+    - tests/operations/test_ia_review_integration_scripts.py
+    - tests/operations/test_ia_readiness_polish.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - control/inventory/publication/**
+    - control/inventory/sources/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - review integration runtime, quality delta runtime, CLIs, validator, policies, examples, docs, tests, and audit pack exist
+  - IA-BUNDLE-02 blocked outputs are used as fixture-equivalent review inputs
+  - no new IA live call, broad search, download, item file fetch, scraping, source sync, public fanout, public/master index mutation, evidence acceptance, candidate acceptance, pack acceptance, or product behavior change occurs
+  - quality delta avoids external-superiority and production-readiness claims
+  - postmortem recommends H0 without auto-approving future connectors
+recommended_after: IA-BUNDLE-02
+next_recommended_task: H0-BUNDLE-01

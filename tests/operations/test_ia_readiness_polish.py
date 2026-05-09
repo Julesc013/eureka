@@ -185,6 +185,25 @@ class IAReadinessPolishTest(unittest.TestCase):
             self.assertEqual(result["status"], "invalid")
             self.assertTrue(any("IA-BUNDLE-01" in error or "SYNC-BASELINE-01" in error for error in result["errors"]))
 
+    def test_latest_task_packet_h0_progression_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.make_fixture(root)
+            write_text(
+                root / ".aide/context/latest-task-packet.md",
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "## PHASE",
+                        "H0-BUNDLE-01 - Source OS registry and policy foundation",
+                        "## GOAL",
+                        "Main development lane proceeds to H0-BUNDLE-01 after IA-BUNDLE-03; HUMAN-OBS-REVIEW-01 is a parallel side-lane.",
+                    ]
+                ),
+            )
+            result = validator.validate_repo(root)
+            self.assertEqual(result["status"], "valid", result["errors"])
+
     def assert_report_claim_fails(self, path_parts, value=True):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

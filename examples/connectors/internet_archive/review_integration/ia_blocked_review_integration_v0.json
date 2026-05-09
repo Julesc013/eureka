@@ -1,0 +1,47 @@
+{
+  "schema_version": "internet_archive_blocked_review_integration.v0",
+  "source_id": "internet_archive",
+  "connector_id": "internet_archive_metadata_connector",
+  "integration_status": "blocked_dry_run",
+  "used_live_probe_output": false,
+  "used_fixture_equivalent_output": true,
+  "blocked_reason": "IA-BUNDLE-02 did not have operator approval for live source access.",
+  "review_rehearsal_outputs": [
+    "ia_source_cache_review_entry",
+    "ia_evidence_candidate_review_entry",
+    "ia_candidate_promotion_dry_run",
+    "ia_pack_draft_preview",
+    "ia_quality_delta_report",
+    "ia_connector_postmortem"
+  ],
+  "truth_boundary": {
+    "ia_review_output_is_public_truth": false,
+    "ia_source_cache_review_entry_accepts_source": false,
+    "ia_evidence_review_entry_accepts_evidence": false,
+    "ia_candidate_promotion_dry_run_accepts_candidate": false,
+    "ia_pack_draft_is_accepted_pack": false,
+    "ia_quality_delta_is_production_claim": false,
+    "ia_postmortem_enables_future_connectors_automatically": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "This example preserves a blocked live-probe path without inventing live evidence.",
+    "Review integration is audit material only."
+  ]
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7175 chars, 1794 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5294 chars, 1324 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-BUNDLE-02` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-BUNDLE-03` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/ia-bundle-02-bounded-metadata-live-probe-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_allowed_identifiers.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_output_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_path_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_review_policy.json` (??; matches active task allowed path)
-- allowed: `control/inventory/connectors/internet_archive_live_probe_truth_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/IA_METADATA_LIVE_PROBE_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_LIVE_PROBE_REVIEW.md` (??; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_LIVE_PROBE.md` (??; matches active task allowed path)
-- allowed: `docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md` (M; matches active task allowed path)
-- allowed: `examples/connectors/internet_archive/live_probe` (??; matches active task allowed path)
-- allowed: `runtime/connectors/README.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-03-review-integration-quality-delta-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_postmortem_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_quality_delta_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_review_integration_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_review_output_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_review_path_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_review_truth_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/IA_METADATA_REVIEW_INTEGRATION_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/operations/IA_METADATA_CONNECTOR_POSTMORTEM.md` (??; matches active task allowed path)
+- allowed: `docs/operations/IA_METADATA_QUALITY_DELTA.md` (??; matches active task allowed path)
+- allowed: `docs/reference/IA_METADATA_REVIEW_INTEGRATION.md` (??; matches active task allowed path)
+- allowed: `examples/connectors/internet_archive/review_integration` (??; matches active task allowed path)
 - allowed: `runtime/connectors/internet_archive/__init__.py` (M; matches active task allowed path)
-- allowed: `runtime/connectors/internet_archive/live_metadata_probe.py` (??; matches active task allowed path)
-- allowed: `scripts/run_ia_metadata_live_probe.py` (??; matches active task allowed path)
-- allowed: `scripts/validate_ia_metadata_live_probe.py` (??; matches active task allowed path)
-- allowed: `tests/connectors/test_internet_archive_live_probe.py` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
+- allowed: `runtime/connectors/internet_archive/quality_delta.py` (??; matches active task allowed path)
+- allowed: `runtime/connectors/internet_archive/review_integration.py` (??; matches active task allowed path)
+- allowed: `scripts/integrate_ia_metadata_review.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 6; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6538
-- approx_tokens: 1635
+- chars: 6543
+- approx_tokens: 1636
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

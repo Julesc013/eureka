@@ -1,0 +1,89 @@
+{
+  "schema_version": "ia_bundle_03_report.v0",
+  "status": "pass_with_warnings",
+  "task": "IA-BUNDLE-03",
+  "track": "IA",
+  "purpose": "review_integration_quality_delta_postmortem",
+  "inputs": {
+    "ia_bundle_02_outputs_available": true,
+    "used_live_probe_output": false,
+    "used_fixture_equivalent_output": true,
+    "blocked_reason_if_any": "IA-BUNDLE-02 live probe remains blocked by missing operator approval."
+  },
+  "review_integration": {
+    "source_cache_review_entry_created": true,
+    "evidence_candidate_review_entry_created": true,
+    "candidate_promotion_dry_run_created": true,
+    "pack_draft_preview_created": true,
+    "accepted_source_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_candidate_truth": false
+  },
+  "quality_delta": {
+    "report_created": true,
+    "claims_external_superiority": false,
+    "claims_production_readiness": false,
+    "limitations_documented": true
+  },
+  "postmortem": {
+    "created": true,
+    "recommends_h0": true,
+    "auto_approves_future_connectors": false
+  },
+  "truth_boundary": {
+    "ia_review_output_is_public_truth": false,
+    "source_cache_review_entry_accepts_source": false,
+    "evidence_review_entry_accepts_evidence": false,
+    "candidate_promotion_dry_run_accepts_candidate": false,
+    "pack_draft_is_accepted_pack": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "validation": {
+    "git_diff_check": "pass_with_line_ending_warnings",
+    "json_syntax": "pass_required_ia_bundle_03_json_files",
+    "ia_metadata_connector_foundation_validator": "pass",
+    "ia_metadata_live_probe_validator": "pass",
+    "ia_review_integration_validator": "pass",
+    "ia_review_integration_cli_check": "pass_blocked_dry_run",
+    "ia_quality_delta_cli_check": "pass_blocked_dry_run",
+    "focused_connector_tests": "pass_14_tests",
+    "focused_operations_tests": "pass_7_tests",
+    "ia_readiness_polish_validator": "pass_after_forward_progression_update",
+    "ia_readiness_polish_tests": "pass_12_tests",
+    "full_unittest_discovery": "pass_2584_tests",
+    "architecture_boundaries": "pass",
+    "local_source_cache_runtime_validator": "pass",
+    "local_evidence_ledger_runtime_validator": "pass",
+    "source_cache_to_evidence_bridge_validator": "pass",
+    "local_review_queue_runtime_validator": "pass",
+    "candidate_promotion_dry_run_validator": "pass",
+    "pack_builder_runtime_validator": "pass",
+    "pack_export_runtime_validator": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass_with_existing_optional_review_packet_warnings",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass_14_golden_tasks",
+    "aide_verify": "warn_zero_errors",
+    "aide_review_pack": "pass",
+    "aide_adapter_validate": "pass"
+  },
+  "next_task": "H0-BUNDLE-01 - Source OS registry and policy foundation"
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-09
 repo: julesc013/eureka
-current_recommended_task: IA-APPROVAL-01
+current_recommended_task: H0-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -104,12 +104,20 @@ entries:
     recommended_after: IA-BUNDLE-00
   - id: IA-BUNDLE-02
     title: Internet Archive bounded metadata live probe
-    status: active
+    status: needs_review
     purpose: Add fail-closed IA metadata live-probe runtime, CLI, validator, policies, examples, tests, and blocked audit evidence.
     allowed_scope_summary: IA live-probe policy/docs/runtime/scripts/tests/examples/audit pack and AIDE queue/context metadata only.
     gate: IA-BUNDLE-01 passed; live call must remain blocked unless committed policy approves one exact identifier metadata read.
     task: .aide/queue/IA-BUNDLE-02/task.yaml
     recommended_after: IA-BUNDLE-01
+  - id: IA-BUNDLE-03
+    title: Internet Archive review integration and quality delta
+    status: active
+    purpose: Integrate IA-BUNDLE-02 blocked or fixture-equivalent outputs into Track B review dry-runs and produce quality-delta, postmortem, and H0 readiness evidence.
+    allowed_scope_summary: IA review integration policy/docs/runtime/scripts/tests/examples/audit pack and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-02 output is blocked or fixture-equivalent; no new live calls, downloads, source sync, truth acceptance, public/master index mutation, or product behavior changes.
+    task: .aide/queue/IA-BUNDLE-03/task.yaml
+    recommended_after: IA-BUNDLE-02
   - id: IA-APPROVAL-01
     title: Operator IA live probe approval decision
     status: operator_gated
@@ -117,6 +125,13 @@ entries:
     allowed_scope_summary: connector policy decision records and approval audit evidence only; no live call by default.
     gate: IA-BUNDLE-02 blocked only by missing approval; operator must keep downloads, scraping, public fanout, source sync, and index mutation disabled.
     recommended_after: IA-BUNDLE-02
+  - id: H0-BUNDLE-01
+    title: Source OS registry and policy foundation
+    status: queued
+    purpose: Lift the IA connector pattern into shared source-family registry, capability ladder, policy gate, fixture/replay harness, live envelope, coverage ledger, and connector scorecard foundations.
+    allowed_scope_summary: H0 source operating system policies, docs, contracts, validators, fixtures, and audit evidence only until separately scoped.
+    gate: IA-BUNDLE-03 pass/pass-with-warnings; no broad source probes or live connector expansion.
+    recommended_after: IA-BUNDLE-03
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

@@ -1,0 +1,116 @@
+{
+  "H0_implications": [
+    "Promote IA connector decisions into a source-family registry pattern.",
+    "Add coverage ledger and connector scorecard concepts before widening H1 sources.",
+    "Keep live-probe envelopes fail-closed and identifier-scoped."
+  ],
+  "H1_reuse_recommendations": [
+    "Reuse source policy, endpoint posture, fixture replay, review output policy, and quality delta templates.",
+    "Require each source family to classify allowed metadata endpoints and forbidden acquisition actions."
+  ],
+  "auto_approves_future_connectors": false,
+  "connector_id": "internet_archive_metadata_connector",
+  "data_shape_gaps": [
+    "Completed live metadata response shape still needs one approved IA-BUNDLE-02 run.",
+    "Coverage ledger and connector scorecard fields should be formalized in H0."
+  ],
+  "do_not_repeat_risks": [
+    "Do not treat source metadata as accepted truth.",
+    "Do not widen from one approved identifier to broad search without a new gate.",
+    "Do not add downloads, item fetches, or scraping under metadata connector language."
+  ],
+  "evidence_mapping_gaps": [
+    "Evidence previews remain unaccepted and require review policy before downstream use."
+  ],
+  "next_connector_recommendation": "Proceed to H0 Source OS foundation before broad H1 connector expansion.",
+  "policy_gaps": [
+    "allowed identifier policy is not approved",
+    "cache_policy.cache_ttl or no-cache decision must be approved",
+    "endpoint_policy current behavior does not approve metadata read only",
+    "endpoint_policy.current_network_calls_allowed must be true",
+    "identifier is not approved: eureka-software-fixture",
+    "kill_switch_policy does not allow this one probe",
+    "live_probe_policy.approval_status is not approved",
+    "live_probe_policy.live_probe_enabled must be true",
+    "rate_limit_policy.contact_email is pending",
+    "rate_limit_policy.max_requests_per_minute must be a positive number",
+    "rate_limit_policy.proposed_user_agent is pending",
+    "rate_limit_policy.retry_policy is pending",
+    "rate_limit_policy.timeout_seconds must be a positive number",
+    "source_policy.live_access_approved must be true",
+    "source_policy.metadata_probe_approved must be true"
+  ],
+  "postmortem_id": "ia_connector_postmortem.c1463effdeea.v0",
+  "postmortem_status": "blocked_dry_run_complete",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_public_fanout": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_summary": {
+    "blocked_reason_count": 15,
+    "candidate_count_delta": 1,
+    "claims_external_superiority": false,
+    "claims_production_readiness": false,
+    "delta_status": "blocked_dry_run",
+    "evidence_candidate_count_delta": 1,
+    "limitations": [
+      "Quality delta is local audit evidence only.",
+      "Blocked IA live approval means no completed live metadata response was measured.",
+      "No external superiority or production search quality claim is made."
+    ],
+    "quality_delta_id": "ia_quality_delta.e8618a2f1941.v0",
+    "review_entry_count_delta": 2,
+    "schema_version": "internet_archive_quality_delta_summary.v0",
+    "source_cache_record_count_delta": 1
+  },
+  "recommends_h0": true,
+  "review_gaps": [
+    "No human review decision was made in IA-BUNDLE-03.",
+    "Review queue persistence remains a future reviewed step."
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "boundary_result": "preserved",
+    "downloads_made": false,
+    "master_index_mutated": false,
+    "new_live_call_made": false,
+    "public_index_mutated": false,
+    "source_sync_enabled": false
+  },
+  "schema_version": "internet_archive_connector_postmortem.v0",
+  "source_cache_mapping_gaps": [
+    "Blocked output creates no persisted source-cache record.",
+    "H0 should define canonical candidate identity and coverage-depth fields."
+  ],
+  "source_id": "internet_archive",
+  "truth_boundary": {
+    "ia_candidate_promotion_dry_run_accepts_candidate": false,
+    "ia_evidence_review_entry_accepts_evidence": false,
+    "ia_pack_draft_is_accepted_pack": false,
+    "ia_postmortem_enables_future_connectors_automatically": false,
+    "ia_quality_delta_is_production_claim": false,
+    "ia_review_output_is_public_truth": false,
+    "ia_source_cache_review_entry_accepts_source": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "what_failed": [
+    "The live metadata probe did not run because operator approval is still missing."
+  ],
+  "what_worked": [
+    "Fixture-only normalizer output can enter source-cache and evidence review previews.",
+    "Blocked IA-BUNDLE-02 artifacts can preserve policy gate failures without live evidence.",
+    "Review, promotion dry-run, pack preview, and quality-delta artifacts remain non-promotional."
+  ]
+}
