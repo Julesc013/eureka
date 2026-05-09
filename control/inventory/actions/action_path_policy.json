@@ -1,0 +1,27 @@
+{
+  "schema_version": "action_path_policy.v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/actions/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "master_index/",
+    "data/master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    "downloads/",
+    "download/",
+    "cache/",
+    "staging/",
+    "hosted_upload/"
+  ],
+  "private_state_roots_forbidden": true,
+  "download_cache_staging_roots_forbidden": true
+}

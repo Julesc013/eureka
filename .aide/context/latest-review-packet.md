@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4144 chars, 1036 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3538 chars, 885 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/I-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/J0-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/D-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/J0-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/packs/contribution_review_seed.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_fixity_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_import_preview.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_quarantine_request.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_quarantine_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_signature_envelope.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_signature_verification_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/packs/pack_trust_revocation_preview.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/i-bundle-01-pack-quarantine-contribution-review-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/contribution_review_seed_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_fixity_verification_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_import_preview_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_quarantine_input_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_quarantine_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_quarantine_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_quarantine_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_quarantine_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/packs/pack_signature_verification_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 25; see task evidence changed-files report
+- unknown: `contracts/actions` (??; does not match active task allowed paths)
+- unknown: `control/audits/j0-bundle-01-safe-actions-manifests-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/actions` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/ACTION_POLICY_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SAFE_ACTION_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/ACQUISITION_MANIFEST_NO_DOWNLOAD_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/CITATION_AND_EXPORT_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/FUTURE_RISKY_ACTIONS_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SAFE_ACTION_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/ACQUISITION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/ACTION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/ACTION_TAXONOMY_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/BLOCKED_ACTION_REPORT_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/CITATION_BUNDLE_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/EXPORT_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/PRESERVATION_MANIFEST_CONTRACT.md` (??; matches active task allowed path)
+- unknown: `examples/actions` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6667
-- approx_tokens: 1667
+- chars: 6357
+- approx_tokens: 1590
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

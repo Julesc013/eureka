@@ -1,0 +1,8 @@
+{
+  "schema_version": "blocked_action_policy.v0",
+  "blocked_action_requires_reason": true,
+  "safe_alternative_required": true,
+  "blocked_report_does_not_execute": true,
+  "blocked_report_does_not_download": true,
+  "blocked_report_does_not_install": true
+}

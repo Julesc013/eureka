@@ -1,0 +1,8 @@
+{
+  "schema_version": "preservation_manifest_policy.v0",
+  "preservation_manifest_only_current": true,
+  "mirroring_disabled_current": true,
+  "capture_disabled_current": true,
+  "download_disabled_current": true,
+  "storage_or_cas_future_only": true
+}

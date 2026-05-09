@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: J0-BUNDLE-01
+current_recommended_task: D-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -238,12 +238,20 @@ entries:
     recommended_after: G-BUNDLE-02
   - id: J0-BUNDLE-01
     title: Safe actions, manifests, citation, and export
-    status: queued
+    status: needs_review
     purpose: Add reviewed safe-action, manifest, citation, and export scaffolding after pack quarantine without enabling execution, uploads, public truth, or index mutation by default.
     allowed_scope_summary: J0 safe-action/export contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until separately scoped.
     gate: I-BUNDLE-01 passes; no pack import/submission/publication/acceptance, private signing keys, public/master index mutation, truth acceptance, live calls, downloads, telemetry, or model/provider calls by default.
     task: .aide/queue/J0-BUNDLE-01/task.yaml
     recommended_after: I-BUNDLE-01
+  - id: D-BUNDLE-01
+    title: Snapshot envelope, consumer, verification, static/text renderers
+    status: queued
+    purpose: Build the next fixture/static snapshot envelope and read-only consumers after J0 safe action manifests without enabling downloads, execution, hosting, or public-index mutation by default.
+    allowed_scope_summary: D snapshot contracts, policies, docs, examples, scripts, tests, audit evidence, and AIDE queue/context metadata only until separately scoped.
+    gate: J0-BUNDLE-01 passes; no downloads, mirroring, installation, execution, emulation, public/master index mutation, truth acceptance, live calls, telemetry, or model/provider calls by default.
+    task: .aide/queue/D-BUNDLE-01/task.yaml
+    recommended_after: J0-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

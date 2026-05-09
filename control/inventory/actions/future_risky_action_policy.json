@@ -1,0 +1,22 @@
+{
+  "schema_version": "future_risky_action_policy.v0",
+  "download_disabled_current": true,
+  "mirror_disabled_current": true,
+  "install_disabled_current": true,
+  "execute_disabled_current": true,
+  "emulate_disabled_current": true,
+  "submit_disabled_current": true,
+  "import_disabled_current": true,
+  "future_gates_required": [
+    "rights_review",
+    "risk_review",
+    "malware_policy",
+    "user_confirmation",
+    "action_audit",
+    "rollback_or_incident_policy",
+    "no_auto_run"
+  ],
+  "automatic_execution_allowed": false,
+  "automatic_download_allowed": false,
+  "automatic_install_allowed": false
+}

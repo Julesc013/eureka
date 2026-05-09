@@ -1,0 +1,8 @@
+{
+  "schema_version": "export_manifest_policy.v0",
+  "export_does_not_import_or_submit": true,
+  "export_does_not_mutate_public_index": true,
+  "export_does_not_mutate_master_index": true,
+  "export_does_not_accept_truth": true,
+  "review_required": true
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "acquisition_manifest_policy.v0",
+  "descriptive_only": true,
+  "download_allowed_current": false,
+  "mirror_allowed_current": false,
+  "source_fetch_allowed_current": false,
+  "install_allowed_current": false,
+  "execute_allowed_current": false,
+  "user_initiated_download_future": true,
+  "rights_review_required_before_future_download": true,
+  "risk_review_required_before_future_execution": true
+}

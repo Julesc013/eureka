@@ -1,0 +1,8 @@
+{
+  "schema_version": "citation_bundle_policy.v0",
+  "citation_does_not_accept_truth": true,
+  "citation_must_preserve_limitations": true,
+  "citation_clears_rights": false,
+  "citation_claims_malware_safety": false,
+  "citation_verifies_installability": false
+}

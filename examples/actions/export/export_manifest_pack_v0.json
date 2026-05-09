@@ -1,0 +1,16 @@
+{
+  "schema_version": "export_manifest.v0",
+  "export_manifest_id": "export_manifest.pack.example.v0",
+  "export_status": "manifest_only",
+  "export_subject_type": "pack_quarantine_result",
+  "export_subject_refs": ["pack.quarantine.preview.v0"],
+  "exported_record_summaries": [{"record_ref": "pack.quarantine.preview.v0", "record_type": "pack_quarantine_result", "exported_record_is_truth": false, "accepted": false}],
+  "included_refs": ["pack.quarantine.preview.v0"],
+  "excluded_refs": ["accepted_pack_store"],
+  "export_format": "json_manifest_preview",
+  "fixity_summary": {"fixity_available": false, "fixity_note": "Export manifest does not create an accepted pack."},
+  "limitations": ["Pack export manifest remains separate from import/submission."],
+  "review_required": true,
+  "truth_boundary": {"export_manifest_imports_or_submits": false, "public_index_mutated": false, "master_index_mutated": false, "accepted_evidence": false, "accepted_candidate": false, "accepted_public_record": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false}
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "blocked_action_report.v0",
+  "blocked_action_report_id": "blocked_action.emulate.example.v0",
+  "blocked_action_family": "emulate",
+  "subject_ref": "candidate.example.software.v0",
+  "blocked_reason": "emulate is disabled in J0",
+  "required_policy": ["risk_review", "malware_policy", "user_confirmation", "action_audit", "no_auto_run_policy"],
+  "required_review": true,
+  "future_gate": "J1_or_later_risky_action_review",
+  "safe_alternative_actions": ["view", "inspect", "compare", "blocked_action"],
+  "limitations": ["Report does not launch an emulator or create an emulator config."],
+  "truth_boundary": {"action_manifest_executes_action": false, "action_manifest_runs_artifact": false, "public_index_mutated": false, "master_index_mutated": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_emulation": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false}
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "acquisition_manifest.v0",
+  "acquisition_manifest_id": "acquisition_manifest.metadata_only.example.v0",
+  "acquisition_status": "metadata_only",
+  "subject_ref": "candidate.example.software.v0",
+  "source_refs": ["source.example.registry.v0"],
+  "access_path_candidates": [{"access_path_ref": "metadata_locator.example.v0", "access_path_status": "described_not_fetched", "download_allowed_current": false, "mirror_allowed_current": false, "source_fetch_allowed_current": false}],
+  "source_locator_summaries": [{"source_locator": "metadata_locator.example.v0", "locator_role": "candidate_access_path", "executed_or_fetched": false}],
+  "hash_or_fixity_refs": ["fixity.example.sha256.v0"],
+  "rights_posture": "unknown_not_cleared",
+  "risk_posture": "unknown_not_scanned",
+  "compatibility_posture": "unknown_not_verified",
+  "required_reviews": ["rights_review_before_future_access", "risk_review_before_future_execution"],
+  "blocked_actions": ["download", "mirror", "install", "execute", "emulate"],
+  "allowed_current_actions": ["view", "inspect", "cite", "export"],
+  "forbidden_current_actions": ["download", "mirror", "install", "execute", "emulate", "source_fetch"],
+  "limitations": ["Metadata-only acquisition manifest; no access is performed."],
+  "truth_boundary": {"acquisition_manifest_downloads_file": false, "acquisition_manifest_mirrors_file": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false, "compatibility_certification_claimed": false, "public_index_mutated": false, "master_index_mutated": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false},
+  "notes": ["Generated audit sample."]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "action_output_policy.v0",
+  "allowed_outputs": [
+    "action_manifest",
+    "action_result_preview",
+    "acquisition_manifest",
+    "citation_bundle",
+    "export_manifest",
+    "preservation_manifest",
+    "blocked_action_report",
+    "compare_action_manifest",
+    "action_summary"
+  ],
+  "forbidden_outputs": [
+    "downloaded_file",
+    "mirrored_file",
+    "installed_artifact",
+    "executed_artifact",
+    "emulator_launch",
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "writes_action_outputs_only_to_allowed_roots": true,
+  "writes_no_files_by_default": true
+}

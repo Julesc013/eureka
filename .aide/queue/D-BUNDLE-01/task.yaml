@@ -1,14 +1,14 @@
-task_id: J0-BUNDLE-01
-title: Safe actions, manifests, citation, and export
-status: needs_review
-phase: J0-BUNDLE-01
+task_id: D-BUNDLE-01
+title: Snapshot envelope, consumer, verification, static/text renderers
+status: queued
+phase: D-BUNDLE-01
 allowed_paths:
   - .aide/context/latest-task-packet.md
   - .aide/context/latest-review-packet.md
   - .aide/evals/runs/latest-golden-tasks.json
   - .aide/evals/runs/latest-golden-tasks.md
   - .aide/queue/index.yaml
-  - .aide/queue/J0-BUNDLE-01/**
+  - .aide/queue/D-BUNDLE-01/**
   - contracts/**
   - runtime/**
   - control/inventory/**
@@ -27,11 +27,9 @@ forbidden_paths:
   - .local/eureka/**
   - .cache/eureka/**
 non_goals:
-  - no public search/ranking behavior change, no pack import/submission/publication/acceptance, no private signing keys, no source/evidence/candidate/public truth acceptance, no public/master index mutation, no downloads, no live calls, no source sync, no network/API/model/provider calls, no telemetry, no site/dist regeneration, and no local private-state roots
+  - no public search behavior change, no hosting enablement, no downloads, no mirroring, no installs, no execution, no emulation, no source/evidence/candidate/public truth acceptance, no public/master index mutation, no live calls, no source sync, no network/API/model/provider calls, no telemetry, no site/dist regeneration, and no local private-state roots
 validation:
-  - python scripts/validate_pack_quarantine_runtime.py
-  - python scripts/validate_pack_export_runtime.py
-  - python scripts/validate_pack_builder_runtime.py
+  - python scripts/validate_safe_actions_runtime.py
   - python scripts/check_architecture_boundaries.py
   - py -3 .aide/scripts/aide_lite.py doctor
   - py -3 .aide/scripts/aide_lite.py validate

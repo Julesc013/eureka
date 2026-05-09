@@ -1,0 +1,32 @@
+{
+  "schema_version": "safe_action_policy.v0",
+  "fixture_or_local_record_current": true,
+  "safe_actions_current": [
+    "view",
+    "inspect",
+    "compare",
+    "cite",
+    "export",
+    "preserve_manifest",
+    "acquisition_manifest",
+    "blocked_action"
+  ],
+  "risky_actions_future": [
+    "download",
+    "mirror",
+    "install",
+    "execute",
+    "emulate",
+    "submit",
+    "import"
+  ],
+  "download_enabled": false,
+  "mirror_enabled": false,
+  "install_enabled": false,
+  "execute_enabled": false,
+  "emulate_enabled": false,
+  "submit_enabled": false,
+  "import_enabled": false,
+  "all_risky_actions_disabled_current": true,
+  "review_required_before_public_use": true
+}

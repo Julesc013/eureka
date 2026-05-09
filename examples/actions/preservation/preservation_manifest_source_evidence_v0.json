@@ -1,0 +1,16 @@
+{
+  "schema_version": "preservation_manifest.v0",
+  "preservation_manifest_id": "preservation_manifest.source_evidence.example.v0",
+  "preservation_status": "metadata_manifest_only",
+  "subject_refs": ["source.example.registry.v0", "evidence.example.record.v0"],
+  "source_refs": ["source.example.registry.v0"],
+  "evidence_refs": ["evidence.example.record.v0"],
+  "fixity_refs": [],
+  "preservation_actions_current": ["describe_metadata", "export_manifest_preview", "cite"],
+  "preservation_actions_future": ["mirror_future", "capture_future", "storage_or_cas_future"],
+  "blocked_actions": ["mirror", "download", "capture", "install", "execute", "emulate"],
+  "storage_or_cas_refs_future": [],
+  "limitations": ["Source and evidence refs are described; records are not accepted."],
+  "truth_boundary": {"preservation_manifest_mirrors_file": false, "preservation_manifest_captures_file": false, "public_index_mutated": false, "master_index_mutated": false, "accepted_evidence": false, "accepted_candidate": false, "accepted_public_record": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false}
+}

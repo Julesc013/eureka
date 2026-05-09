@@ -1,0 +1,14 @@
+{
+  "schema_version": "blocked_action_report.v0",
+  "blocked_action_report_id": "blocked_action.rights.example.v0",
+  "blocked_action_family": "download",
+  "subject_ref": "source.locator.example.v0",
+  "blocked_reason": "future download requires rights review; rights are not cleared",
+  "required_policy": ["rights_review", "access_policy", "user_confirmation", "action_audit"],
+  "required_review": true,
+  "future_gate": "rights_review_before_future_access",
+  "safe_alternative_actions": ["view", "inspect", "cite", "acquisition_manifest"],
+  "limitations": ["Rights blocker report is not rights clearance."],
+  "truth_boundary": {"action_manifest_downloads_file": false, "action_manifest_executes_action": false, "public_index_mutated": false, "master_index_mutated": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false}
+}

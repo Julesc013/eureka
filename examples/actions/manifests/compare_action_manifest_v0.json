@@ -1,0 +1,28 @@
+{
+  "schema_version": "compare_action_manifest.v0",
+  "compare_action_manifest_id": "compare_action_manifest.example.v0",
+  "comparison_subject_refs": ["candidate.example.software.v0", "candidate.example.near_miss.v0"],
+  "comparison_basis": "explicit_subject_refs",
+  "comparison_fields": ["title_or_label", "source_refs", "evidence_refs", "limitations", "policy_posture"],
+  "comparison_limitations": ["Comparison preserves conflicts and does not merge identity."],
+  "conflicts_preserved": true,
+  "merge_allowed_current": false,
+  "truth_boundary": {
+    "action_manifest_executes_action": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "accepted_evidence": false,
+    "accepted_candidate": false,
+    "accepted_public_record": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  }
+}

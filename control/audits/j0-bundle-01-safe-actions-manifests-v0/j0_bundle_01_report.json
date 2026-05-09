@@ -1,0 +1,129 @@
+{
+  "schema_version": "j0_bundle_01_report.v0",
+  "status": "pass",
+  "task": "J0-BUNDLE-01",
+  "track": "J0",
+  "purpose": "safe_actions_manifests_citation_export",
+  "added_contracts": [
+    "contracts/actions/action_taxonomy.v0.json",
+    "contracts/actions/action_policy.v0.json",
+    "contracts/actions/action_manifest.v0.json",
+    "contracts/actions/action_result_preview.v0.json",
+    "contracts/actions/acquisition_manifest.v0.json",
+    "contracts/actions/citation_bundle.v0.json",
+    "contracts/actions/export_manifest.v0.json",
+    "contracts/actions/preservation_manifest.v0.json",
+    "contracts/actions/blocked_action_report.v0.json",
+    "contracts/actions/compare_action_manifest.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/actions/__init__.py",
+    "runtime/actions/action_policy.py",
+    "runtime/actions/action_manifest.py",
+    "runtime/actions/acquisition_manifest.py",
+    "runtime/actions/citation_bundle.py",
+    "runtime/actions/export_manifest.py",
+    "runtime/actions/preservation_manifest.py",
+    "runtime/actions/compare_manifest.py",
+    "runtime/actions/blocked_action.py",
+    "runtime/actions/summaries.py"
+  ],
+  "added_scripts": [
+    "scripts/build_action_manifest.py",
+    "scripts/build_citation_bundle.py",
+    "scripts/build_export_manifest.py",
+    "scripts/build_acquisition_manifest.py",
+    "scripts/validate_safe_actions_runtime.py",
+    "scripts/summarize_action_manifests.py"
+  ],
+  "added_docs": [
+    "docs/reference/ACTION_TAXONOMY_CONTRACT.md",
+    "docs/reference/ACTION_MANIFEST_CONTRACT.md",
+    "docs/reference/ACQUISITION_MANIFEST_CONTRACT.md",
+    "docs/reference/CITATION_BUNDLE_CONTRACT.md",
+    "docs/reference/EXPORT_MANIFEST_CONTRACT.md",
+    "docs/reference/PRESERVATION_MANIFEST_CONTRACT.md",
+    "docs/reference/BLOCKED_ACTION_REPORT_CONTRACT.md",
+    "docs/architecture/SAFE_ACTION_MODEL.md",
+    "docs/architecture/ACTION_POLICY_MODEL.md",
+    "docs/operations/SAFE_ACTION_REVIEW.md",
+    "docs/operations/ACQUISITION_MANIFEST_NO_DOWNLOAD_POLICY.md",
+    "docs/operations/CITATION_AND_EXPORT_POLICY.md",
+    "docs/operations/FUTURE_RISKY_ACTIONS_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/actions/action_taxonomy_policy.json",
+    "control/inventory/actions/safe_action_policy.json",
+    "control/inventory/actions/action_output_policy.json",
+    "control/inventory/actions/action_path_policy.json",
+    "control/inventory/actions/action_truth_policy.json",
+    "control/inventory/actions/acquisition_manifest_policy.json",
+    "control/inventory/actions/citation_bundle_policy.json",
+    "control/inventory/actions/export_manifest_policy.json",
+    "control/inventory/actions/preservation_manifest_policy.json",
+    "control/inventory/actions/blocked_action_policy.json",
+    "control/inventory/actions/future_risky_action_policy.json"
+  ],
+  "added_examples": [
+    "examples/actions/"
+  ],
+  "added_tests": [
+    "tests/actions/test_safe_action_manifests.py",
+    "tests/actions/test_acquisition_manifest.py",
+    "tests/actions/test_citation_export_preservation.py",
+    "tests/operations/test_safe_action_scripts.py"
+  ],
+  "validation": {
+    "python scripts/validate_safe_actions_runtime.py": "pass",
+    "python scripts/build_action_manifest.py --action view --subject examples/actions/manifests/view_action_manifest_v0.json --check": "pass",
+    "python scripts/build_acquisition_manifest.py --subject examples/actions/acquisition/acquisition_manifest_metadata_only_v0.json --check": "pass",
+    "python scripts/build_citation_bundle.py --subject examples/actions/citation/citation_bundle_object_v0.json --check": "pass",
+    "python scripts/build_export_manifest.py --subject examples/actions/export/export_manifest_object_v0.json --check": "pass",
+    "python scripts/summarize_action_manifests.py --input examples/actions --check": "pass",
+    "python -m unittest tests.actions.test_safe_action_manifests": "pass",
+    "python -m unittest tests.actions.test_acquisition_manifest": "pass",
+    "python -m unittest tests.actions.test_citation_export_preservation": "pass",
+    "python -m unittest tests.operations.test_safe_action_scripts": "pass"
+  },
+  "action_scope": {
+    "safe_action_manifests_enabled": true,
+    "view_enabled": true,
+    "inspect_enabled": true,
+    "compare_enabled": true,
+    "cite_enabled": true,
+    "export_manifest_enabled": true,
+    "acquisition_manifest_enabled": true,
+    "preservation_manifest_enabled": true,
+    "download_enabled": false,
+    "mirror_enabled": false,
+    "install_enabled": false,
+    "execute_enabled": false,
+    "emulate_enabled": false
+  },
+  "truth_boundary": {
+    "action_manifest_executes_action": false,
+    "acquisition_manifest_downloads_file": false,
+    "preservation_manifest_mirrors_file": false,
+    "citation_bundle_accepts_truth": false,
+    "export_manifest_imports_or_submits": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_emulation": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "next_task": "D-BUNDLE-01 \u2014 Snapshot envelope, consumer, verification, static/text renderers"
+}

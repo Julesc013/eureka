@@ -1,0 +1,14 @@
+{
+  "schema_version": "blocked_action_report.v0",
+  "blocked_action_report_id": "blocked_action.risk.example.v0",
+  "blocked_action_family": "execute",
+  "subject_ref": "candidate.example.software.v0",
+  "blocked_reason": "future execution requires risk and malware policy; safety is not established",
+  "required_policy": ["risk_review", "malware_policy", "user_confirmation", "action_audit", "no_auto_run_policy"],
+  "required_review": true,
+  "future_gate": "risk_review_before_future_execution",
+  "safe_alternative_actions": ["view", "inspect", "cite", "blocked_action"],
+  "limitations": ["Risk blocker report is not malware safety."],
+  "truth_boundary": {"action_manifest_executes_action": false, "action_manifest_runs_artifact": false, "public_index_mutated": false, "master_index_mutated": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false}
+}

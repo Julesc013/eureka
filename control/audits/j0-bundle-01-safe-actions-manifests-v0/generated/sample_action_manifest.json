@@ -1,0 +1,19 @@
+{
+  "schema_version": "action_manifest.v0",
+  "action_manifest_id": "action_manifest.view.example.v0",
+  "action_family": "view",
+  "action_status": "manifest_only",
+  "subject_ref": "candidate.example.software.v0",
+  "subject_type": "candidate_preview",
+  "action_label": "View Metadata",
+  "action_summary": "Describe metadata for a fixture/local candidate without opening external resources.",
+  "allowed_effects": ["metadata_view_preview"],
+  "forbidden_effects": ["downloaded_file", "mirrored_file", "installed_artifact", "executed_artifact", "emulator_launch", "accepted_evidence", "accepted_candidate", "public_index_mutation", "master_index_mutation"],
+  "required_review_gates": ["review_before_public_display", "review_before_downstream_action"],
+  "generated_outputs": ["action_result_preview"],
+  "blocked_reason": "",
+  "limitations": ["View is descriptive and does not accept truth."],
+  "truth_boundary": {"action_manifest_executes_action": false, "action_manifest_downloads_file": false, "action_manifest_installs_artifact": false, "action_manifest_runs_artifact": false, "action_manifest_mutates_public_index": false, "action_manifest_mutates_master_index": false, "public_index_mutated": false, "master_index_mutated": false, "accepted_evidence": false, "accepted_candidate": false, "accepted_public_record": false, "rights_clearance_claimed": false, "malware_safety_claimed": false, "verified_installability_claimed": false},
+  "product_boundary": {"changed_public_search_behavior": false, "enabled_downloads": false, "enabled_execution": false, "mutated_public_index": false, "mutated_master_index": false},
+  "notes": ["Generated audit sample."]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "action_taxonomy_policy.v0",
+  "taxonomy_id": "eureka_j0_action_taxonomy",
+  "action_families": [
+    "view",
+    "inspect",
+    "compare",
+    "cite",
+    "export",
+    "preserve_manifest",
+    "acquisition_manifest",
+    "blocked_action",
+    "download_future",
+    "mirror_future",
+    "install_future",
+    "execute_future",
+    "emulate_future",
+    "submit_future",
+    "import_future"
+  ],
+  "current_enabled_families": [
+    "view",
+    "inspect",
+    "compare",
+    "cite",
+    "export",
+    "preserve_manifest",
+    "acquisition_manifest",
+    "blocked_action"
+  ],
+  "future_deferred_families": [
+    "download_future",
+    "mirror_future",
+    "install_future",
+    "execute_future",
+    "emulate_future",
+    "submit_future",
+    "import_future"
+  ],
+  "future_families_are_disabled_current": true,
+  "notes": [
+    "J0 defines safe descriptive action manifests only."
+  ]
+}
