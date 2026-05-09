@@ -1,0 +1,29 @@
+{
+  "schema_version": "internet_archive_fixture_policy.v0",
+  "source_id": "internet_archive",
+  "fixture_status": "committed_fixture_only",
+  "requirements": {
+    "committed": true,
+    "synthetic_or_public_safe": true,
+    "no_secrets": true,
+    "no_credentials": true,
+    "no_live_call_evidence": true,
+    "no_downloaded_binaries": true,
+    "no_rights_claims": true,
+    "no_malware_claims": true,
+    "no_installability_claims": true,
+    "stable_for_tests": true,
+    "normalizable_without_network": true
+  },
+  "forbidden_fixture_content": [
+    "secrets",
+    "credentials",
+    "cookies",
+    "private local paths",
+    "downloaded binary payloads",
+    "live-call transcripts",
+    "rights clearance claims",
+    "malware safety claims",
+    "verified installability claims"
+  ]
+}

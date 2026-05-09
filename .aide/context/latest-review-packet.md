@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5227 chars, 1307 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6499 chars, 1625 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,15 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (MM; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (MM; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (MM; matches active task allowed path)
+- allowed: `.aide/policies/commit-messages.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/IA-BUNDLE-01/task.yaml` (AM; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
 - allowed: `contracts/README.md` (M; matches active task allowed path)
-- unknown: `contracts/evidence` (??; does not match active task allowed paths)
-- unknown: `control/audits/ia-bundle-00-readiness-polish-v0` (??; does not match active task allowed paths)
-- unknown: `scripts/generate_public_alpha_rehearsal_evidence.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_ia_readiness_polish.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_ia_readiness_polish.py` (??; does not match active task allowed paths)
+- allowed: `contracts/connectors/internet_archive_metadata_connector.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/connectors/source_connector_fixture.v0.json` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/README.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/evidence_mapping_report.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/fixture_normalization_report.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/generated/sample_evidence_candidate_preview.json` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/generated/sample_normalized_ia_metadata.json` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/generated/sample_source_cache_candidate.json` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/ia_bundle_01_report.json` (AM; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/live_call_block_report.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/source_cache_mapping_report.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/source_policy_decision_packet.md` (A; matches active task allowed path)
+- allowed: `control/audits/ia-bundle-01-metadata-connector-foundation-v0/validation.md` (AM; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_cache_policy.json` (A; matches active task allowed path)
+- allowed: `control/inventory/connectors/internet_archive_endpoint_policy.json` (A; matches active task allowed path)
+- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -52,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4907
-- approx_tokens: 1227
+- chars: 6857
+- approx_tokens: 1715
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

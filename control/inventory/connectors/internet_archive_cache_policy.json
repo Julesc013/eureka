@@ -1,0 +1,13 @@
+{
+  "schema_version": "internet_archive_cache_policy.v0",
+  "source_id": "internet_archive",
+  "decision_status": "pending_operator_approval",
+  "cache_ttl": "pending",
+  "cache_destination": "pending",
+  "source_cache_write_approved_current": "fixture_only",
+  "live_response_cache_write_approved": false,
+  "public_search_reads_live_source": false,
+  "cache_required_before_public_use": true,
+  "raw_payload_retention_approved": false,
+  "failure_mode": "fail_closed"
+}

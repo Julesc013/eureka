@@ -27,3 +27,13 @@ material. The canonical evidence ledger schemas remain under
 `contracts/evidence_ledger/`; the pointer namespace adds no runtime, write
 path, source access, evidence acceptance, candidate acceptance, public-index
 mutation, or master-index mutation.
+
+`contracts/connectors/internet_archive_metadata_connector.v0.json` defines the
+fixture-only Internet Archive metadata connector foundation. It records policy
+references, allowed fixture modes, forbidden current modes, and boundary
+booleans only; it does not approve live source access, downloads, scraping,
+public-index mutation, master-index mutation, or evidence acceptance.
+
+`contracts/connectors/source_connector_fixture.v0.json` defines the shared
+fixture manifest shape for connector tests. It requires committed public-safe
+fixtures and false live-call, network, and external API flags.

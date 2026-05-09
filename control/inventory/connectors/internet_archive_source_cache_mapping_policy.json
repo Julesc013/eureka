@@ -1,0 +1,32 @@
+{
+  "schema_version": "internet_archive_source_cache_mapping_policy.v0",
+  "source_id": "internet_archive",
+  "current_mode": "fixture_only_preview",
+  "mappings": [
+    {
+      "from": "item_identifier",
+      "to": "source_native_id"
+    },
+    {
+      "from": "source_locator",
+      "to": "source_locator"
+    },
+    {
+      "from": "title_description_mediatype_date",
+      "to": "source_metadata_summary"
+    },
+    {
+      "from": "file_summary",
+      "to": "source_coverage_summary"
+    },
+    {
+      "from": "limitations",
+      "to": "source_limitations"
+    }
+  ],
+  "no_direct_truth_conversion": true,
+  "source_cache_runtime_write_allowed": false,
+  "accepted_source_truth": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false
+}

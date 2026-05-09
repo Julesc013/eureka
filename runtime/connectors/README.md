@@ -12,6 +12,11 @@ Current bootstrap slice:
 
 - `synthetic_software/` is a local-only connector-shaped adapter over governed synthetic software fixtures
 - `github_releases/` is the first bounded real-source connector family, using small recorded GitHub Releases fixtures for deterministic tests
+- `internet_archive/` is the fixture-only Internet Archive metadata connector
+  foundation. It normalizes committed IA-shaped metadata fixtures and produces
+  source-cache/evidence preview shapes only; it performs no live IA calls,
+  endpoint access, downloads, scraping, source sync, public-index mutation, or
+  master-index mutation
 - `internet_archive_recorded/` loads tiny committed Internet Archive-like metadata and item-file fixtures only, now expanded with old-platform browser, utility, registry-repair, and driver/support-media evidence; it performs no live API calls, scraping, crawling, or external lookups
 - `local_bundle_fixtures/` loads tiny committed ZIP bundle fixtures only, now expanded with Windows 98 registry repair, Windows XP browser/tool, and legacy driver-support members; it does not add arbitrary local filesystem ingestion or public-alpha local path access
 - `article_scan_recorded/` loads one tiny committed article/scan-style fixture

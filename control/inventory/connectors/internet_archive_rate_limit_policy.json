@@ -1,0 +1,19 @@
+{
+  "schema_version": "internet_archive_rate_limit_policy.v0",
+  "source_id": "internet_archive",
+  "decision_status": "pending_operator_approval",
+  "proposed_user_agent": "pending",
+  "contact_email": "pending",
+  "max_requests_per_minute": "pending",
+  "timeout_seconds": "pending",
+  "retry_policy": "pending",
+  "cache_ttl": "pending",
+  "kill_switch_name": "IA_METADATA_CONNECTOR_ENABLED",
+  "default_enabled": false,
+  "failure_mode": "fail_closed",
+  "live_access_approved": false,
+  "notes": [
+    "No contact email is configured by IA-BUNDLE-01.",
+    "Rate and retry decisions remain pending until operator approval."
+  ]
+}

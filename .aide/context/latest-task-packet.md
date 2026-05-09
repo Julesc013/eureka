@@ -48,15 +48,34 @@ review-gated and does not block IA preflight or foundation work.
 ## ALLOWED_PATHS
 
 - `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/evals/runs/latest-golden-tasks.json`
+- `.aide/evals/runs/latest-golden-tasks.md`
+- `.aide/policies/commit-messages.yaml`
 - `.aide/queue/IA-BUNDLE-01/**`
-- `control/audits/ia-bundle-01-*/**`
-- `docs/operations/**`
-- `scripts/validate_ia_readiness_polish.py`
-- `tests/operations/test_ia_readiness_polish.py`
+- `.aide/scripts/aide_lite.py`
+- `contracts/README.md`
+- `contracts/connectors/internet_archive_metadata_connector.v0.json`
+- `contracts/connectors/source_connector_fixture.v0.json`
+- `control/audits/ia-bundle-01-metadata-connector-foundation-v0/**`
+- `control/inventory/connectors/internet_archive_*_policy.json`
+- `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md`
+- `docs/operations/IA_METADATA_FIXTURE_REPLAY.md`
+- `docs/operations/IA_METADATA_NO_LIVE_CALL_POLICY.md`
+- `docs/operations/IA_METADATA_SOURCE_POLICY.md`
+- `docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md`
+- `examples/connectors/internet_archive/**`
+- `runtime/connectors/README.md`
+- `runtime/connectors/internet_archive/**`
+- `scripts/normalize_ia_metadata_fixture.py`
+- `scripts/validate_ia_metadata_connector_foundation.py`
+- `tests/connectors/test_internet_archive_metadata_foundation.py`
+- `tests/operations/test_ia_metadata_connector_foundation.py`
 
-IA-BUNDLE-01 may need a reviewed task prompt that explicitly opens contract or
-connector paths. This compact packet by itself does not authorize broad product
-edits.
+The reviewed IA-BUNDLE-01 task prompt explicitly opens the specific connector,
+contract, fixture, policy, audit, validator, and test paths above. This packet
+does not authorize broad runtime or product behavior edits outside those
+fixture-only foundation paths.
 
 ## FORBIDDEN_PATHS
 
@@ -78,15 +97,19 @@ edits.
 - local private-state roots
 - raw prompt logs, credentials, provider keys, or cache contents
 
+Specific IA-BUNDLE-01 files listed in `ALLOWED_PATHS` are the only exceptions
+to the broad `runtime/**` and `contracts/**` guards for this task.
+
 ## IMPLEMENTATION
 
 - Start from a fresh task branch after the Git task-state guard passes.
 - Treat `control/audits/ia-bundle-00-readiness-polish-v0/` as the IA readiness
   handoff.
-- Draft source policy, User-Agent/contact, rate-limit, timeout, retry, cache
-  TTL, and kill-switch decisions.
-- Add fixture-only IA metadata normalization and validators if approved by the
-  IA-BUNDLE-01 task.
+- Draft source policy, endpoint posture, User-Agent/contact, rate-limit,
+  timeout, retry, cache TTL, and kill-switch decisions.
+- Add fixture-only IA metadata normalization, fixture replay examples, source
+  cache preview mapping, evidence candidate preview mapping, validators, and
+  tests.
 - Preserve the source operating system pattern: source family, policy gate,
   fixture/replay harness, live-probe envelope, source cache, evidence
   candidate bridge, review queue, future coverage ledger, and future connector

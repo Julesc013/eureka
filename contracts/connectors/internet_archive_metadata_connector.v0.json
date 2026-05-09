@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/connectors/internet_archive_metadata_connector.v0.json",
+  "title": "Eureka Internet Archive Metadata Connector Foundation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "x-status": "fixture_only_foundation",
+  "x-live_access_approved": false,
+  "x-live_connector_enabled": false,
+  "x-network_calls_allowed": false,
+  "x-downloads_allowed": false,
+  "x-public_index_mutation_allowed": false,
+  "x-master_index_mutation_allowed": false,
+  "required": [
+    "schema_version",
+    "connector_id",
+    "connector_family",
+    "connector_status",
+    "source_id",
+    "source_policy_ref",
+    "endpoint_policy_ref",
+    "rate_limit_policy_ref",
+    "cache_policy_ref",
+    "kill_switch_policy_ref",
+    "fixture_policy_ref",
+    "normalization_policy_ref",
+    "source_cache_mapping_policy_ref",
+    "evidence_mapping_policy_ref",
+    "supported_fixture_shapes",
+    "current_allowed_modes",
+    "future_allowed_modes",
+    "forbidden_current_modes",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "internet_archive_metadata_connector.v0"
+    },
+    "connector_id": {
+      "const": "internet_archive_metadata_connector"
+    },
+    "connector_family": {
+      "const": "internet_archive_metadata"
+    },
+    "connector_status": {
+      "const": "fixture_only_foundation"
+    },
+    "source_id": {
+      "const": "internet_archive"
+    }
+  }
+}

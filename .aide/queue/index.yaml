@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-07
+updated: 2026-05-09
 repo: julesc013/eureka
-current_recommended_task: TRACK-A-01
+current_recommended_task: IA-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -94,6 +94,14 @@ entries:
     allowed_scope_summary: docs/control audit/AIDE evidence; no external calls or connector runtime.
     gate: TRACK-B-02 reviewed and source approvals explicit.
     recommended_after: TRACK-B-02
+  - id: IA-BUNDLE-01
+    title: Internet Archive metadata connector foundation
+    status: active
+    purpose: Add fixture-only IA metadata source policy, endpoint posture, normalizer, fixture replay, preview mappings, validators, and audit evidence.
+    allowed_scope_summary: IA connector foundation policies, docs, contracts, fixture runtime, examples, tests, audit pack, and AIDE queue/context metadata only.
+    gate: IA-BUNDLE-00 passed; no live IA calls, downloads, scraping, source sync, public/master index mutation, or evidence acceptance.
+    task: .aide/queue/IA-BUNDLE-01/task.yaml
+    recommended_after: IA-BUNDLE-00
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

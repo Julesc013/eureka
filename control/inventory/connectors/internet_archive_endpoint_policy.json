@@ -1,0 +1,32 @@
+{
+  "schema_version": "internet_archive_endpoint_policy.v0",
+  "source_id": "internet_archive",
+  "current_allowed_endpoint_behavior": "committed_fixture_only",
+  "future_allowed_endpoint_behavior": "approval_gated",
+  "endpoint_classes": {
+    "metadata_endpoint_future": "approval_gated_future",
+    "advancedsearch_metadata_future": "approval_gated_future",
+    "file_listing_from_metadata_future": "approval_gated_future",
+    "direct_file_download_forbidden_current": "forbidden_current",
+    "item_file_fetch_forbidden_current": "forbidden_current",
+    "scraping_html_forbidden_current": "forbidden_current",
+    "login_or_account_forbidden_current": "forbidden_current",
+    "arbitrary_url_fetch_forbidden_current": "forbidden_current"
+  },
+  "forbidden_current": {
+    "downloads": true,
+    "file_fetches": true,
+    "item_file_downloads": true,
+    "unbounded_search": true,
+    "account_access": true,
+    "login_session_use": true,
+    "scraping": true,
+    "crawling": true,
+    "public_query_live_fanout": true,
+    "malware_safety_claims": true,
+    "rights_claims": true,
+    "installability_claims": true
+  },
+  "current_live_access_approved": false,
+  "current_network_calls_allowed": false
+}

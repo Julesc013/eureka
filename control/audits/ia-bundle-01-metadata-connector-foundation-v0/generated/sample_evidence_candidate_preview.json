@@ -1,0 +1,158 @@
+{
+  "accepted_evidence": false,
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.title_claim_candidate.v0",
+      "claim_kind": "title_claim_candidate",
+      "claim_value": "Eureka Synthetic Software Fixture",
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    },
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.mediatype_claim_candidate.v0",
+      "claim_kind": "mediatype_claim_candidate",
+      "claim_value": "software",
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    },
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.file_list_member_claim_candidate.v0",
+      "claim_kind": "file_list_member_claim_candidate",
+      "claim_value": {
+        "download_approved": false,
+        "file_count": 2,
+        "formats": [
+          "Metadata",
+          "ZIP"
+        ],
+        "member_names": [
+          "eureka-software-fixture_meta.xml",
+          "eureka-software-fixture.zip"
+        ],
+        "metadata_only": true,
+        "total_size_bytes": 43008
+      },
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    },
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.creator_date_claim_candidate.v0",
+      "claim_kind": "creator_date_claim_candidate",
+      "claim_value": {
+        "creator": [
+          "Eureka Fixture Lab"
+        ],
+        "date": "1999"
+      },
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    },
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.source_locator_claim_candidate.v0",
+      "claim_kind": "source_locator_claim_candidate",
+      "claim_value": "ia:item:eureka-software-fixture",
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    },
+    {
+      "accepted_evidence": false,
+      "accepted_public_truth": false,
+      "candidate_id": "evidence_candidate.internet_archive.eureka-software-fixture.collection_membership_claim_candidate.v0",
+      "claim_kind": "collection_membership_claim_candidate",
+      "claim_value": [
+        "software",
+        "eureka-synthetic-fixtures"
+      ],
+      "limitations": [
+        "candidate preview only",
+        "Internet Archive metadata does not become canonical truth without review"
+      ],
+      "master_index_mutation_allowed": false,
+      "public_index_mutation_allowed": false,
+      "review_required": true,
+      "source_ref": "ia:item:eureka-software-fixture"
+    }
+  ],
+  "evidence_ledger_runtime_mutated": false,
+  "evidence_preview_id": "evidence_candidate_preview.internet_archive.eureka-software-fixture.v0",
+  "notes": [
+    "Evidence candidates require later review before downstream use.",
+    "No evidence ledger runtime write or evidence acceptance occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "evidence_ledger_runtime_mutated": false,
+    "live_connector_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "source_cache_runtime_mutated": false
+  },
+  "schema_version": "internet_archive_evidence_candidate_preview.v0",
+  "source_id": "internet_archive",
+  "source_locator": "ia:item:eureka-software-fixture",
+  "source_native_id": "eureka-software-fixture",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "file_download_availability_proven": false,
+    "ia_metadata_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "title_match_is_identity_proof": false,
+    "verified_installability_claimed": false
+  }
+}

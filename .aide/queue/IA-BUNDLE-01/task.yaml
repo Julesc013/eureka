@@ -1,0 +1,66 @@
+schema_version: aide.queue-task.v0
+task_id: IA-BUNDLE-01
+title: Internet Archive metadata connector foundation
+status: active
+target_repo: julesc013/eureka
+phase: IA-BUNDLE-01
+source_packet: .aide/context/latest-task-packet.md
+objective: Add the fixture-only Internet Archive metadata connector foundation without live source access or product behavior changes.
+scope:
+  allowed_paths:
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/evals/runs/latest-golden-tasks.json
+    - .aide/evals/runs/latest-golden-tasks.md
+    - .aide/policies/commit-messages.yaml
+    - .aide/queue/index.yaml
+    - .aide/queue/IA-BUNDLE-01/**
+    - .aide/scripts/aide_lite.py
+    - contracts/README.md
+    - contracts/connectors/internet_archive_metadata_connector.v0.json
+    - contracts/connectors/source_connector_fixture.v0.json
+    - control/audits/ia-bundle-01-metadata-connector-foundation-v0/**
+    - control/inventory/connectors/internet_archive_cache_policy.json
+    - control/inventory/connectors/internet_archive_endpoint_policy.json
+    - control/inventory/connectors/internet_archive_evidence_mapping_policy.json
+    - control/inventory/connectors/internet_archive_fixture_policy.json
+    - control/inventory/connectors/internet_archive_kill_switch_policy.json
+    - control/inventory/connectors/internet_archive_normalization_policy.json
+    - control/inventory/connectors/internet_archive_rate_limit_policy.json
+    - control/inventory/connectors/internet_archive_source_cache_mapping_policy.json
+    - control/inventory/connectors/internet_archive_source_policy.json
+    - docs/architecture/IA_METADATA_CONNECTOR_MODEL.md
+    - docs/operations/IA_METADATA_FIXTURE_REPLAY.md
+    - docs/operations/IA_METADATA_NO_LIVE_CALL_POLICY.md
+    - docs/operations/IA_METADATA_SOURCE_POLICY.md
+    - docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR.md
+    - examples/connectors/internet_archive/**
+    - runtime/connectors/README.md
+    - runtime/connectors/internet_archive/**
+    - scripts/normalize_ia_metadata_fixture.py
+    - scripts/validate_ia_metadata_connector_foundation.py
+    - tests/connectors/**
+    - tests/operations/test_ia_metadata_connector_foundation.py
+  forbidden_paths:
+    - surfaces/**
+    - site/**
+    - native/**
+    - crates/**
+    - packaging/**
+    - third_party/**
+    - data/public_index/**
+    - data/master_index/**
+    - master_index/**
+    - .git/**
+    - .env
+    - .env.*
+    - secrets/**
+    - .aide.local/**
+acceptance:
+  - IA connector source policy exists and keeps live access disabled
+  - endpoint, rate, cache, kill-switch, fixture, normalization, source-cache, and evidence policies exist
+  - fixture-only normalizer, CLI, examples, generated previews, validator, tests, docs, and audit pack exist
+  - no IA live calls, downloads, scraping, source sync, public-index mutation, master-index mutation, or evidence acceptance occur
+  - validation and evidence are recorded
+recommended_after: IA-BUNDLE-00
+next_recommended_task: IA-BUNDLE-02

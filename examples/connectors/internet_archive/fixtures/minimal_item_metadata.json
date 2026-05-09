@@ -1,0 +1,49 @@
+{
+  "connector_id": "internet_archive_metadata_connector",
+  "external_api_used": false,
+  "fixture_id": "ia_fixture_minimal_item_metadata_v0",
+  "fixture_kind": "ia_item_metadata",
+  "fixture_status": "committed_fixture",
+  "input_shape": "metadata_endpoint_like_fixture",
+  "limitations": [
+    "synthetic fixture",
+    "minimal metadata coverage",
+    "not evidence acceptance"
+  ],
+  "live_call_used": false,
+  "network_used": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false
+  },
+  "public_safe": true,
+  "raw_metadata": {
+    "files": [],
+    "metadata": {
+      "collection": [
+        "eureka-synthetic-fixtures"
+      ],
+      "description": "Synthetic minimal Internet Archive-style item metadata used for fixture replay.",
+      "identifier": "eureka-minimal-fixture",
+      "mediatype": "texts",
+      "title": "Eureka Minimal Fixture"
+    }
+  },
+  "source_id": "internet_archive",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_truth": false,
+    "claimed_malware_safety": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  }
+}

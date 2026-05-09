@@ -530,7 +530,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
 ]
 
 COMMIT_SUBJECT_RE = re.compile(
-    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|contracts|runtime|surface|eval|audit|ops|native|site|aide|security|revert)"
+    r"^(feat|fix|docs|test|refactor|perf|build|ci|chore|style|connectors|contracts|runtime|surface|eval|audit|ops|native|site|aide|security|revert)"
     r"(\([a-z0-9][a-z0-9._/-]*\))?!?: .+"
 )
 
