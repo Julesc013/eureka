@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5472 chars, 1368 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5848 chars, 1462 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/H1-BUNDLE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/H1-BUNDLE-02` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/h1-bundle-01-metadata-wave-policy-packs-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/source_packs` (??; matches active task allowed path)
-- allowed: `docs/architecture/H1_METADATA_WAVE_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_WAVE_FIXTURE_PLAN.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_WAVE_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
-- allowed: `docs/operations/H1_METADATA_WAVE_POLICY_GATES.md` (??; matches active task allowed path)
-- allowed: `docs/reference/H1_METADATA_WAVE_SOURCE_PACKS.md` (??; matches active task allowed path)
-- allowed: `examples/connectors/h1_metadata_wave` (??; matches active task allowed path)
-- allowed: `examples/source_packs/h1_metadata_wave_policy_pack_v0.json` (??; matches active task allowed path)
-- allowed: `examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json` (??; matches active task allowed path)
-- allowed: `examples/sources/source_records/github_releases_source_v2.json` (M; matches active task allowed path)
-- allowed: `examples/sources/source_records/npm_registry_source_v2.json` (??; matches active task allowed path)
-- allowed: `examples/sources/source_records/osv_source_v2.json` (??; matches active task allowed path)
-- allowed: `examples/sources/source_records/pypi_source_v2.json` (M; matches active task allowed path)
-- allowed: `examples/sources/source_records/repology_source_v2.json` (??; matches active task allowed path)
-- allowed: `examples/sources/source_records/software_heritage_source_v2.json` (M; matches active task allowed path)
-- allowed: `examples/sources/source_records/wayback_cdx_memento_source_v2.json` (??; matches active task allowed path)
-- allowed: `scripts/summarize_h1_metadata_wave_sources.py` (??; matches active task allowed path)
-- allowed: `scripts/validate_h1_metadata_wave_policy_packs.py` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 2; see task evidence changed-files report
+- allowed: `contracts/connectors/h1_metadata_fixture.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/h1_metadata_fixture_replay_result.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/connectors/h1_metadata_normalized_record.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/h1-bundle-02-metadata-fixture-runtime-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_evidence_mapping_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_fixture_output_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_fixture_path_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_fixture_runtime_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_fixture_truth_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_normalization_policy.json` (??; matches active task allowed path)
+- allowed: `control/inventory/connectors/h1_metadata_source_cache_mapping_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/H1_METADATA_NORMALIZER_MODEL.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_FIXTURE_NO_LIVE_CALL_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/H1_METADATA_FIXTURE_REPLAY.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_METADATA_FIXTURE_RUNTIME.md` (??; matches active task allowed path)
+- allowed: `docs/reference/H1_METADATA_NORMALIZED_RECORD.md` (??; matches active task allowed path)
+- allowed: `examples/connectors/h1_metadata_wave/fixtures` (??; matches active task allowed path)
+- allowed: `examples/connectors/h1_metadata_wave/normalized` (??; matches active task allowed path)
+- allowed: `examples/connectors/h1_metadata_wave/replay_results` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 6; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6487
-- approx_tokens: 1622
+- chars: 6584
+- approx_tokens: 1646
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

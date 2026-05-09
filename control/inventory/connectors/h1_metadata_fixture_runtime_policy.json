@@ -1,0 +1,29 @@
+{
+  "allowed_inputs": [
+    "committed_h1_metadata_fixture"
+  ],
+  "allowed_outputs": [
+    "normalized_metadata_record",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "fixture_replay_result",
+    "connector_output_envelope"
+  ],
+  "connector_runtime_enabled_for_live": false,
+  "fixture_runtime_only": true,
+  "forbidden_outputs": [
+    "accepted_truth",
+    "public_index_mutation",
+    "master_index_mutation",
+    "downloaded_file"
+  ],
+  "live_access_enabled": false,
+  "no_goals": [
+    "no live source calls",
+    "no downloads",
+    "no truth acceptance"
+  ],
+  "policy_id": "h1_metadata_fixture_runtime_policy",
+  "schema_version": "h1_metadata_fixture_runtime_policy.v0",
+  "source_sync_enabled": false
+}

@@ -1,0 +1,89 @@
+{
+  "connector_family": "package_registry",
+  "expected_normalized_ref": "examples/connectors/h1_metadata_wave/normalized/pypi_normalized.json",
+  "external_api_used": false,
+  "fixture_id": "h1.fixture.pypi.typical.v0",
+  "fixture_kind": "typical",
+  "fixture_payload": {
+    "artifact_type": "package_metadata",
+    "date_or_timestamp": "2024-02-10T08:00:00Z",
+    "dependency_or_relationship_summary": {
+      "declared_dependencies": [
+        "example-core>=1"
+      ],
+      "requires_python": ">=3.9"
+    },
+    "description_summary": "Synthetic PyPI package metadata fixture with distribution filenames only.",
+    "file_or_asset_summary": {
+      "distribution_filenames": [
+        "sample_widget-1.0.0.tar.gz",
+        "sample_widget-1.0.0-py3-none-any.whl"
+      ],
+      "hashes_present": true,
+      "payloads_downloaded": false
+    },
+    "identity_refs": [
+      "fixture:pypi:sample-widget",
+      "fixture:pypi-version:1.0.0"
+    ],
+    "native_id": "sample-widget-1.0.0",
+    "object_family": "python_package",
+    "package_or_project_name": "sample-widget",
+    "platform_or_context": "python package registry",
+    "release_or_snapshot_id": "1.0.0",
+    "source_locator": "fixture:h1:pypi:typical",
+    "source_metadata": {
+      "fixture_shape": "typical",
+      "source_label": "PyPI Metadata"
+    },
+    "title": "sample-widget 1.0.0",
+    "version_or_state": "1.0.0",
+    "vulnerability_or_advisory_summary": {}
+  },
+  "fixture_public_safe": true,
+  "fixture_status": "committed_fixture",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only parsing evidence"
+  ],
+  "live_call_used": false,
+  "network_used": false,
+  "notes": [
+    "No live source access, API call, download, scrape, or crawl occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "scraping_made": false
+  },
+  "schema_version": "h1_metadata_fixture.v0",
+  "source_id": "pypi",
+  "truth_boundary": {
+    "evidence_preview_is_accepted_evidence": false,
+    "fixture_replay_can_claim_malware_safety": false,
+    "fixture_replay_can_claim_rights_clearance": false,
+    "fixture_replay_can_claim_verified_installability": false,
+    "fixture_replay_can_mutate_master_index": false,
+    "fixture_replay_can_mutate_public_index": false,
+    "fixture_replay_result_is_source_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

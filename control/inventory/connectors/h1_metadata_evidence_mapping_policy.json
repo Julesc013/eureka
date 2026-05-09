@@ -1,0 +1,16 @@
+{
+  "evidence_ledger_write_current": false,
+  "forbidden_mappings": [
+    "title match -> verified identity",
+    "version field -> accepted release truth",
+    "package metadata -> installability verification",
+    "vulnerability record -> security conclusion without review",
+    "source locator -> rights clearance",
+    "release asset entry -> download permission",
+    "file listing -> local availability proof",
+    "any normalized field -> master-index mutation"
+  ],
+  "mapping_scope": "normalized_records_to_evidence_candidate_previews_only",
+  "policy_id": "h1_metadata_evidence_mapping_policy",
+  "schema_version": "h1_metadata_evidence_mapping_policy.v0"
+}

@@ -1,0 +1,133 @@
+{
+  "added_contracts": [
+    "contracts/connectors/h1_metadata_fixture.v0.json",
+    "contracts/connectors/h1_metadata_normalized_record.v0.json",
+    "contracts/connectors/h1_metadata_fixture_replay_result.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/H1_METADATA_FIXTURE_RUNTIME.md",
+    "docs/reference/H1_METADATA_NORMALIZED_RECORD.md",
+    "docs/architecture/H1_METADATA_NORMALIZER_MODEL.md",
+    "docs/operations/H1_METADATA_FIXTURE_REPLAY.md",
+    "docs/operations/H1_METADATA_FIXTURE_NO_LIVE_CALL_POLICY.md"
+  ],
+  "added_examples": [
+    "examples/connectors/h1_metadata_wave/fixtures",
+    "examples/connectors/h1_metadata_wave/normalized",
+    "examples/connectors/h1_metadata_wave/replay_results"
+  ],
+  "added_inventories": [
+    "control/inventory/connectors/h1_metadata_fixture_runtime_policy.json",
+    "control/inventory/connectors/h1_metadata_normalization_policy.json",
+    "control/inventory/connectors/h1_metadata_fixture_output_policy.json",
+    "control/inventory/connectors/h1_metadata_fixture_path_policy.json",
+    "control/inventory/connectors/h1_metadata_fixture_truth_policy.json",
+    "control/inventory/connectors/h1_metadata_source_cache_mapping_policy.json",
+    "control/inventory/connectors/h1_metadata_evidence_mapping_policy.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/connectors/h1_metadata_wave/"
+  ],
+  "added_scripts": [
+    "scripts/normalize_h1_metadata_fixture.py",
+    "scripts/replay_h1_metadata_fixtures.py",
+    "scripts/validate_h1_metadata_fixture_runtime.py"
+  ],
+  "added_tests": [
+    "tests/connectors/test_h1_metadata_fixture_runtime.py",
+    "tests/operations/test_h1_metadata_fixture_scripts.py"
+  ],
+  "fixture_runtime_scope": {
+    "fixture_only": true,
+    "fixture_replay_added": true,
+    "live_access_enabled": false,
+    "network_calls_made": false,
+    "normalizers_added": true,
+    "source_sync_enabled": false
+  },
+  "next_task": "H1-BUNDLE-03 \u2014 First metadata wave approved live probes",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "first_metadata_wave_fixture_runtimes_normalizers",
+  "schema_version": "h1_bundle_02_report.v0",
+  "sources": [
+    "wayback_cdx_memento",
+    "github_releases",
+    "pypi",
+    "npm_registry",
+    "software_heritage",
+    "repology",
+    "osv"
+  ],
+  "status": "pass",
+  "task": "H1-BUNDLE-02",
+  "track": "H1",
+  "truth_boundary": {
+    "coverage_preview_claims_exhaustive_coverage": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "git diff --check": "pass",
+    "python -m json.tool contracts/connectors/h1_metadata_fixture.v0.json": "pass",
+    "python -m json.tool contracts/connectors/h1_metadata_normalized_record.v0.json": "pass",
+    "python -m json.tool contracts/connectors/h1_metadata_fixture_replay_result.v0.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_fixture_runtime_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_normalization_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_fixture_output_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_fixture_path_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_fixture_truth_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_source_cache_mapping_policy.json": "pass",
+    "python -m json.tool control/inventory/connectors/h1_metadata_evidence_mapping_policy.json": "pass",
+    "python -m json.tool control/audits/h1-bundle-02-metadata-fixture-runtime-v0/h1_bundle_02_report.json": "pass",
+    "python scripts/validate_h1_metadata_fixture_runtime.py": "pass",
+    "python scripts/normalize_h1_metadata_fixture.py --source-id pypi --input examples/connectors/h1_metadata_wave/fixtures/pypi/typical_record.json --check": "pass",
+    "python scripts/replay_h1_metadata_fixtures.py --check": "pass",
+    "python -m unittest tests.connectors.test_h1_metadata_fixture_runtime": "pass",
+    "python -m unittest tests.operations.test_h1_metadata_fixture_scripts": "pass",
+    "python -m unittest discover -s tests -t .": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python scripts/validate_h1_metadata_wave_policy_packs.py": "pass",
+    "python scripts/validate_source_os_foundation.py": "pass",
+    "python scripts/validate_connector_interface_foundation.py": "pass",
+    "python scripts/validate_source_os_coverage_scorecards.py": "pass",
+    "python scripts/audit_h0_integration.py --check": "pass",
+    "python scripts/validate_ia_readiness_polish.py": "pass",
+    "python scripts/validate_ia_metadata_connector_foundation.py": "pass",
+    "python scripts/validate_ia_metadata_live_probe.py": "pass",
+    "python scripts/validate_ia_review_integration.py": "pass",
+    "python scripts/validate_local_source_cache_runtime.py": "pass",
+    "python scripts/validate_local_evidence_ledger_runtime.py": "pass",
+    "python scripts/validate_source_cache_to_evidence_bridge.py": "pass",
+    "python scripts/validate_local_review_queue_runtime.py": "pass",
+    "python scripts/validate_candidate_promotion_dry_run.py": "pass",
+    "python scripts/validate_pack_builder_runtime.py": "pass",
+    "python scripts/validate_pack_export_runtime.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass_with_warnings",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "pass_with_warnings",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn"
+  }
+}
