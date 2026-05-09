@@ -1,0 +1,1172 @@
+{
+  "schema_version": "track_b_completion_matrix.v0",
+  "matrix_id": "track_b_completion_matrix.local_foundry_spine.v0",
+  "label": "Track B local foundry completion matrix",
+  "description": "Inventory of Track B artifacts from governed node contracts through local pack export.",
+  "track": "B",
+  "track_status": "complete_enough_for_first_connector_approval_with_warnings",
+  "tasks": [
+    {
+      "task_id": "TRACK-B-01",
+      "label": "Eureka Node manifest contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/EUREKA_NODE_MANIFEST_CONTRACT.md",
+        "docs/architecture/EUREKA_NODE.md",
+        "control/audits/track-b-01-eureka-node-manifest-v0/README.md",
+        "control/audits/track-b-01-eureka-node-manifest-v0/track_b_01_report.json",
+        "control/audits/track-b-01-eureka-node-manifest-v0/validation.md"
+      ],
+      "contract_paths": [
+        "contracts/node/eureka_node_manifest.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/eureka_node_manifest_policy.json",
+        "control/inventory/nodes/node_mode_registry.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_eureka_node_manifest.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_eureka_node_manifest.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_eureka_node_manifest.py"
+      ],
+      "example_paths": [
+        "examples/nodes/local_pack_builder_node_v0/eureka_node_manifest.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-01-eureka-node-manifest-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Node identity is contract-governed and local-only."
+    },
+    {
+      "task_id": "TRACK-B-02",
+      "label": "Node policy contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/NODE_POLICY_CONTRACT.md",
+        "docs/architecture/EUREKA_NODE_POLICY.md",
+        "docs/operations/NODE_POLICY_REVIEW.md",
+        "control/audits/track-b-02-node-policy-contract-v0/track_b_02_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/node_policy.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/node_policy_registry.json",
+        "control/inventory/nodes/node_source_access_policy.json",
+        "control/inventory/nodes/node_review_gate_policy.json",
+        "control/inventory/nodes/node_output_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_eureka_node_policy.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_eureka_node_policy.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_eureka_node_policy.py"
+      ],
+      "example_paths": [
+        "examples/nodes/policies/local_pack_builder_node_policy_v0.json",
+        "examples/nodes/policies/policy_blocked_node_policy_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-02-node-policy-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Policy records preserve review gates and source-access constraints."
+    },
+    {
+      "task_id": "TRACK-B-03",
+      "label": "Node capability contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/NODE_CAPABILITY_CONTRACT.md",
+        "docs/architecture/EUREKA_NODE_CAPABILITIES.md",
+        "docs/operations/NODE_CAPABILITY_REVIEW.md",
+        "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/node_capability.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/node_capability_registry.json",
+        "control/inventory/nodes/node_capability_policy.json",
+        "control/inventory/nodes/node_capability_matrix.json",
+        "control/inventory/nodes/node_capability_side_effect_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_eureka_node_capability.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_eureka_node_capability.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_eureka_node_capability.py"
+      ],
+      "example_paths": [
+        "examples/nodes/local_pack_builder_node_v0/eureka_node_manifest.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-03-node-capability-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Capabilities describe allowed local abilities without granting live execution."
+    },
+    {
+      "task_id": "TRACK-B-04",
+      "label": "WorkUnit contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/WORKUNIT_CONTRACT.md",
+        "docs/architecture/WORKUNIT_MODEL.md",
+        "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/work_unit.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/workunit_policy.json",
+        "control/inventory/nodes/workunit_action_policy.json",
+        "control/inventory/nodes/workunit_type_registry.json",
+        "control/inventory/nodes/workunit_review_gate_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_eureka_workunit.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_eureka_workunit.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_eureka_workunit.py"
+      ],
+      "example_paths": [
+        "examples/work_units/search_need_review_v0/work_unit.json",
+        "examples/work_units/policy_blocked_work_unit_v0/work_unit.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-04-workunit-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "WorkUnits are governed task records, not executed runtime work."
+    },
+    {
+      "task_id": "TRACK-B-05",
+      "label": "WorkUnit result contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/WORKUNIT_RESULT_CONTRACT.md",
+        "docs/architecture/WORKUNIT_RESULT_MODEL.md",
+        "docs/operations/WORKUNIT_RESULT_REVIEW.md",
+        "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/work_unit_result.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/workunit_result_policy.json",
+        "control/inventory/nodes/workunit_result_output_policy.json",
+        "control/inventory/nodes/workunit_result_status_registry.json",
+        "control/inventory/nodes/workunit_result_review_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_eureka_workunit_result.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_eureka_workunit_result.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_eureka_workunit_result.py"
+      ],
+      "example_paths": [
+        "examples/work_unit_results/search_need_review_pass_v0/work_unit_result.json",
+        "examples/work_unit_results/policy_blocked_result_v0/work_unit_result.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-05-workunit-result-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Results remain local dry-run or review records."
+    },
+    {
+      "task_id": "TRACK-B-06",
+      "label": "Local Foundry State contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_FOUNDRY_STATE_CONTRACT.md",
+        "docs/architecture/LOCAL_FOUNDRY_STATE_MODEL.md",
+        "docs/operations/LOCAL_FOUNDRY_STATE_POLICY.md",
+        "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/local_foundry_state.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/local_state/local_foundry_state_policy.json",
+        "control/inventory/local_state/local_foundry_state_kind_registry.json",
+        "control/inventory/local_state/local_state_path_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_local_foundry_state.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_foundry_state.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_local_foundry_state.py"
+      ],
+      "example_paths": [
+        "examples/local_foundry_state/local_pack_builder_foundry_state_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-06-local-foundry-state-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "State contract remains policy-bound and does not create private roots."
+    },
+    {
+      "task_id": "TRACK-B-07",
+      "label": "Query Observation runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/QUERY_OBSERVATION_RUNTIME.md",
+        "docs/architecture/QUERY_OBSERVATION_RUNTIME_MODEL.md",
+        "docs/operations/QUERY_OBSERVATION_PRIVACY_AND_POISONING.md",
+        "control/audits/track-b-07-query-observation-runtime-v0/track_b_07_report.json"
+      ],
+      "contract_paths": [
+        "contracts/query/query_observation.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/observations/query_observation_runtime_policy.json",
+        "control/inventory/observations/query_observation_output_policy.json",
+        "control/inventory/observations/query_observation_privacy_policy.json",
+        "control/inventory/observations/query_observation_poisoning_guard_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/query_observation.py"
+      ],
+      "script_paths": [
+        "scripts/record_query_observation.py",
+        "scripts/validate_query_observation_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_query_observation_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_query_observation_runtime.py",
+        "tests/operations/test_query_observation_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/query_observations/minimal_query_observation_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-07-query-observation-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Query observations are local signals, not accepted observation truth."
+    },
+    {
+      "task_id": "TRACK-B-08",
+      "label": "Search Miss Ledger runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/SEARCH_MISS_LEDGER_RUNTIME.md",
+        "docs/architecture/SEARCH_MISS_LEDGER_MODEL.md",
+        "docs/operations/SEARCH_MISS_LEDGER_REVIEW.md",
+        "control/audits/track-b-08-search-miss-ledger-runtime-v0/track_b_08_report.json"
+      ],
+      "contract_paths": [
+        "contracts/query/search_miss_ledger_entry.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/observations/search_miss_ledger_runtime_policy.json",
+        "control/inventory/observations/search_miss_output_policy.json",
+        "control/inventory/observations/search_miss_review_policy.json",
+        "control/inventory/observations/search_miss_failure_mode_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/search_miss_ledger.py"
+      ],
+      "script_paths": [
+        "scripts/record_search_miss.py",
+        "scripts/validate_search_miss_ledger_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_search_miss_ledger_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_search_miss_ledger_runtime.py",
+        "tests/operations/test_search_miss_ledger_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/search_misses/minimal_search_miss_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-08-search-miss-ledger-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Search misses are local demand signals and do not mutate public search."
+    },
+    {
+      "task_id": "TRACK-B-09",
+      "label": "SearchNeed runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/SEARCH_NEED_RUNTIME.md",
+        "docs/architecture/SEARCH_NEED_MODEL.md",
+        "docs/operations/SEARCH_NEED_REVIEW.md",
+        "control/audits/track-b-09-search-need-runtime-v0/track_b_09_report.json"
+      ],
+      "contract_paths": [
+        "contracts/query/search_need_record.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/observations/search_need_runtime_policy.json",
+        "control/inventory/observations/search_need_output_policy.json",
+        "control/inventory/observations/search_need_review_policy.json",
+        "control/inventory/observations/search_need_status_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/search_need.py"
+      ],
+      "script_paths": [
+        "scripts/record_search_need.py",
+        "scripts/validate_search_need_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_search_need_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_search_need_runtime.py",
+        "tests/operations/test_search_need_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/search_needs/minimal_search_need_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-09-search-need-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "SearchNeeds remain reviewable local requests for more evidence."
+    },
+    {
+      "task_id": "TRACK-B-10",
+      "label": "WorkUnit dry-run runner",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/WORKUNIT_DRY_RUN_RUNNER.md",
+        "docs/architecture/WORKUNIT_DRY_RUN_MODEL.md",
+        "docs/operations/WORKUNIT_DRY_RUN_REVIEW.md",
+        "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/work_unit.v0.json",
+        "contracts/node/work_unit_result.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/workunit_dry_run_policy.json",
+        "control/inventory/nodes/workunit_dry_run_action_matrix.json",
+        "control/inventory/nodes/workunit_dry_run_output_policy.json",
+        "control/inventory/nodes/workunit_dry_run_review_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/workunit_dry_run.py"
+      ],
+      "script_paths": [
+        "scripts/run_workunit_dry_run.py",
+        "scripts/validate_workunit_dry_run_runner.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_workunit_dry_run_runner.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_workunit_dry_run.py",
+        "tests/operations/test_workunit_dry_run_scripts.py"
+      ],
+      "example_paths": [
+        "examples/work_units/search_need_review_v0/work_unit.json",
+        "examples/work_unit_results/search_need_review_pass_v0/work_unit_result.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-10-workunit-dry-run-runner-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Dry-run runner evaluates explicit fixtures without executing WorkUnits."
+    },
+    {
+      "task_id": "TRACK-B-11",
+      "label": "Node Policy Evaluator",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/NODE_POLICY_EVALUATOR.md",
+        "docs/architecture/NODE_POLICY_EVALUATOR_MODEL.md",
+        "docs/operations/NODE_POLICY_EVALUATION_REVIEW.md",
+        "control/audits/track-b-11-node-policy-evaluator-v0/track_b_11_report.json"
+      ],
+      "contract_paths": [
+        "contracts/node/node_policy.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/nodes/node_policy_evaluator_policy.json",
+        "control/inventory/nodes/node_policy_evaluation_output_policy.json",
+        "control/inventory/nodes/node_policy_evaluation_review_policy.json",
+        "control/inventory/nodes/node_policy_evaluation_decision_registry.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/node_policy_evaluator.py"
+      ],
+      "script_paths": [
+        "scripts/evaluate_node_policy.py",
+        "scripts/validate_node_policy_evaluator.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_node_policy_evaluator.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_node_policy_evaluator.py",
+        "tests/operations/test_node_policy_evaluator_scripts.py"
+      ],
+      "example_paths": [
+        "examples/node_policy_evaluations/source_lead_allowed_v0/evaluation_result.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-11-node-policy-evaluator-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Policy evaluator is local and report-only."
+    },
+    {
+      "task_id": "TRACK-B-12",
+      "label": "Candidate Store runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/CANDIDATE_STORE_RUNTIME.md",
+        "docs/architecture/CANDIDATE_STORE_MODEL.md",
+        "docs/operations/CANDIDATE_STORE_REVIEW.md",
+        "control/audits/track-b-12-candidate-store-runtime-v0/track_b_12_report.json"
+      ],
+      "contract_paths": [
+        "contracts/query/candidate_index_record.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/candidates/candidate_store_runtime_policy.json",
+        "control/inventory/candidates/candidate_status_policy.json",
+        "control/inventory/candidates/candidate_review_policy.json",
+        "control/inventory/candidates/candidate_output_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/candidate_store.py"
+      ],
+      "script_paths": [
+        "scripts/summarize_candidate_store.py",
+        "scripts/validate_candidate_store_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_candidate_store_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_candidate_store_runtime.py",
+        "tests/operations/test_candidate_store_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/candidates/minimal_candidate_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-12-candidate-store-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Candidate records remain provisional and review-gated."
+    },
+    {
+      "task_id": "TRACK-B-13",
+      "label": "Local Source Cache runtime planning",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_SOURCE_CACHE_RUNTIME_PLAN.md",
+        "docs/architecture/LOCAL_SOURCE_CACHE_MODEL.md",
+        "docs/operations/LOCAL_SOURCE_CACHE_APPROVAL_GATES.md",
+        "control/audits/track-b-13-local-source-cache-runtime-planning-v0/track_b_13_report.json",
+        "control/audits/track-b-13-local-source-cache-runtime-planning-v0/source_cache_runtime_readiness.md"
+      ],
+      "contract_paths": [
+        "contracts/source_cache/source_cache_record.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/source_cache/local_source_cache_runtime_plan.json",
+        "control/inventory/source_cache/local_source_cache_rollout_plan.json",
+        "control/inventory/source_cache/local_source_cache_source_access_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_local_source_cache_runtime_plan.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_source_cache_runtime_plan.py"
+      ],
+      "test_paths": [
+        "tests/operations/test_local_source_cache_runtime_plan.py"
+      ],
+      "example_paths": [
+        "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-13-local-source-cache-runtime-planning-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Planning allowed future runtime but did not enable live source access."
+    },
+    {
+      "task_id": "TRACK-B-14",
+      "label": "Local Evidence Ledger runtime planning",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME_PLAN.md",
+        "docs/architecture/LOCAL_EVIDENCE_LEDGER_MODEL.md",
+        "docs/operations/LOCAL_EVIDENCE_LEDGER_APPROVAL_GATES.md",
+        "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0/track_b_14_report.json",
+        "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0/evidence_ledger_runtime_readiness.md"
+      ],
+      "contract_paths": [
+        "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+      ],
+      "policy_paths": [
+        "control/inventory/evidence_ledger/local_evidence_ledger_runtime_plan.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_rollout_plan.json",
+        "control/inventory/evidence_ledger/source_cache_to_evidence_bridge_plan.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_local_evidence_ledger_runtime_plan.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_evidence_ledger_runtime_plan.py"
+      ],
+      "test_paths": [
+        "tests/operations/test_local_evidence_ledger_runtime_plan.py"
+      ],
+      "example_paths": [
+        "examples/evidence_ledger_plans/minimal_local_evidence_ledger_plan_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [
+        "Evidence ledger contract remains documented in reference docs rather than contracts/evidence."
+      ],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Planning keeps evidence candidate semantics separate from truth."
+    },
+    {
+      "task_id": "TRACK-B-15",
+      "label": "Fixture-only Source Cache runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_SOURCE_CACHE_RUNTIME.md",
+        "docs/architecture/LOCAL_SOURCE_CACHE_RUNTIME_MODEL.md",
+        "docs/operations/LOCAL_SOURCE_CACHE_REVIEW.md",
+        "control/audits/track-b-15-local-source-cache-runtime-v0/track_b_15_report.json"
+      ],
+      "contract_paths": [
+        "contracts/source_cache/source_cache_record.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/source_cache/local_source_cache_record_runtime_policy.json",
+        "control/inventory/source_cache/local_source_cache_record_status_policy.json",
+        "control/inventory/source_cache/local_source_cache_record_type_policy.json",
+        "control/inventory/source_cache/local_source_cache_input_output_policy.json",
+        "control/inventory/source_cache/local_source_cache_runtime_path_policy.json",
+        "control/inventory/source_cache/local_source_cache_runtime_review_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/source_cache.py"
+      ],
+      "script_paths": [
+        "scripts/record_source_cache.py",
+        "scripts/summarize_source_cache.py",
+        "scripts/validate_local_source_cache_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_source_cache_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_local_source_cache_runtime.py",
+        "tests/operations/test_local_source_cache_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/source_cache_records/minimal_source_cache_record_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-15-local-source-cache-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Source cache records are local observations, not evidence truth."
+    },
+    {
+      "task_id": "TRACK-B-16",
+      "label": "Fixture-only Evidence Ledger runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME.md",
+        "docs/architecture/LOCAL_EVIDENCE_LEDGER_RUNTIME_MODEL.md",
+        "docs/operations/LOCAL_EVIDENCE_LEDGER_REVIEW.md",
+        "control/audits/track-b-16-local-evidence-ledger-runtime-v0/track_b_16_report.json"
+      ],
+      "contract_paths": [
+        "docs/reference/EVIDENCE_LEDGER_CONTRACT.md",
+        "docs/reference/EVIDENCE_PACK_CONTRACT.md"
+      ],
+      "policy_paths": [
+        "control/inventory/evidence_ledger/local_evidence_ledger_record_runtime_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_record_status_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_record_type_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_input_output_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_runtime_path_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_runtime_review_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_conflict_policy.json",
+        "control/inventory/evidence_ledger/local_evidence_ledger_provenance_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/evidence_ledger.py"
+      ],
+      "script_paths": [
+        "scripts/record_evidence_ledger.py",
+        "scripts/summarize_evidence_ledger.py",
+        "scripts/validate_local_evidence_ledger_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_evidence_ledger_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_local_evidence_ledger_runtime.py",
+        "tests/operations/test_local_evidence_ledger_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/evidence_ledger_records/minimal_evidence_record_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-16-local-evidence-ledger-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [
+        "No contracts/evidence directory exists; active evidence contracts are reference docs and policy inventories."
+      ],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Evidence ledger records are evidence candidates and provenance events only."
+    },
+    {
+      "task_id": "TRACK-B-17",
+      "label": "Source Cache to Evidence Ledger bridge",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_RUNTIME.md",
+        "docs/architecture/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_MODEL.md",
+        "docs/operations/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_REVIEW.md",
+        "control/audits/track-b-17-source-cache-to-evidence-bridge-v0/track_b_17_report.json"
+      ],
+      "contract_paths": [
+        "contracts/source_cache/source_cache_record.v0.json",
+        "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+      ],
+      "policy_paths": [
+        "control/inventory/evidence_ledger/source_cache_to_evidence_bridge_runtime_policy.json",
+        "control/inventory/evidence_ledger/source_cache_to_evidence_mapping_policy.json",
+        "control/inventory/evidence_ledger/source_cache_to_evidence_output_policy.json",
+        "control/inventory/evidence_ledger/source_cache_to_evidence_review_policy.json",
+        "control/inventory/evidence_ledger/source_cache_to_evidence_path_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/source_cache_to_evidence.py"
+      ],
+      "script_paths": [
+        "scripts/bridge_source_cache_to_evidence.py",
+        "scripts/validate_source_cache_to_evidence_bridge.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_source_cache_to_evidence_bridge.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_source_cache_to_evidence_bridge.py",
+        "tests/operations/test_source_cache_to_evidence_bridge_scripts.py"
+      ],
+      "example_paths": [
+        "examples/source_cache_to_evidence/minimal_bridge_case_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-17-source-cache-to-evidence-bridge-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Bridge converts observations to candidates without accepting truth."
+    },
+    {
+      "task_id": "TRACK-B-18",
+      "label": "Local Review Queue runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/LOCAL_REVIEW_QUEUE_RUNTIME.md",
+        "docs/architecture/LOCAL_REVIEW_QUEUE_MODEL.md",
+        "docs/operations/LOCAL_REVIEW_QUEUE_REVIEW.md",
+        "control/audits/track-b-18-local-review-queue-runtime-v0/track_b_18_report.json"
+      ],
+      "contract_paths": [
+        "contracts/master_index/review_queue_entry.v0.json",
+        "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md"
+      ],
+      "policy_paths": [
+        "control/inventory/review/local_review_queue_runtime_policy.json",
+        "control/inventory/review/local_review_queue_entry_status_policy.json",
+        "control/inventory/review/local_review_queue_subject_policy.json",
+        "control/inventory/review/local_review_queue_decision_policy.json",
+        "control/inventory/review/local_review_queue_output_policy.json",
+        "control/inventory/review/local_review_queue_path_policy.json",
+        "control/inventory/review/local_review_queue_truth_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/review_queue.py"
+      ],
+      "script_paths": [
+        "scripts/record_review_queue.py",
+        "scripts/summarize_review_queue.py",
+        "scripts/validate_local_review_queue_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_local_review_queue_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_local_review_queue_runtime.py",
+        "tests/operations/test_local_review_queue_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/review_queue_entries/minimal_review_queue_entry_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-18-local-review-queue-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Review queue is local governance, not hosted moderation or promotion."
+    },
+    {
+      "task_id": "TRACK-B-19",
+      "label": "Candidate Promotion dry-run",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/CANDIDATE_PROMOTION_DRY_RUN.md",
+        "docs/architecture/CANDIDATE_PROMOTION_DRY_RUN_MODEL.md",
+        "docs/operations/CANDIDATE_PROMOTION_DRY_RUN_REVIEW.md",
+        "control/audits/track-b-19-candidate-promotion-dry-run-v0/track_b_19_report.json"
+      ],
+      "contract_paths": [
+        "contracts/query/candidate_index_record.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/review/candidate_promotion_dry_run_policy.json",
+        "control/inventory/review/candidate_promotion_readiness_policy.json",
+        "control/inventory/review/candidate_promotion_blocker_policy.json",
+        "control/inventory/review/candidate_promotion_output_policy.json",
+        "control/inventory/review/candidate_promotion_path_policy.json",
+        "control/inventory/review/candidate_promotion_truth_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/candidate_promotion_dry_run.py"
+      ],
+      "script_paths": [
+        "scripts/run_candidate_promotion_dry_run.py",
+        "scripts/validate_candidate_promotion_dry_run.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_candidate_promotion_dry_run.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_candidate_promotion_dry_run.py",
+        "tests/operations/test_candidate_promotion_dry_run_scripts.py"
+      ],
+      "example_paths": [
+        "examples/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-19-candidate-promotion-dry-run-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Promotion dry-run rehearses readiness and does not promote."
+    },
+    {
+      "task_id": "TRACK-B-20",
+      "label": "Reviewed Public Index Rebuild contract",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/REVIEWED_PUBLIC_INDEX_REBUILD_CONTRACT.md",
+        "docs/reference/REVIEWED_PUBLIC_RECORD_PROPOSAL_CONTRACT.md",
+        "docs/architecture/REVIEWED_PUBLIC_INDEX_REBUILD_MODEL.md",
+        "docs/operations/REVIEWED_PUBLIC_INDEX_REBUILD_REVIEW.md",
+        "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/track_b_20_report.json"
+      ],
+      "contract_paths": [
+        "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+        "contracts/master_index/reviewed_public_record_proposal.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/review/reviewed_public_index_rebuild_policy.json",
+        "control/inventory/review/reviewed_public_index_input_policy.json",
+        "control/inventory/review/reviewed_public_index_output_policy.json",
+        "control/inventory/review/reviewed_public_index_record_policy.json",
+        "control/inventory/review/reviewed_public_index_path_policy.json",
+        "control/inventory/review/reviewed_public_index_truth_policy.json"
+      ],
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_reviewed_public_index_rebuild_contract.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_reviewed_public_index_rebuild_contract.py"
+      ],
+      "test_paths": [
+        "tests/contracts/test_reviewed_public_index_rebuild_contract.py"
+      ],
+      "example_paths": [
+        "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+        "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Rebuild work is contract-only and cannot mutate public or master indexes."
+    },
+    {
+      "task_id": "TRACK-B-21",
+      "label": "Pack Builder runtime",
+      "expected_status": "complete",
+      "artifact_paths": [
+        "docs/reference/PACK_BUILDER_RUNTIME.md",
+        "docs/architecture/PACK_BUILDER_MODEL.md",
+        "docs/operations/PACK_BUILDER_REVIEW.md",
+        "control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json"
+      ],
+      "contract_paths": [
+        "contracts/packs/source_pack.v0.json",
+        "contracts/packs/evidence_pack.v0.json",
+        "contracts/packs/index_pack.v0.json",
+        "contracts/packs/contribution_pack.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/packs/pack_builder_runtime_policy.json",
+        "control/inventory/packs/pack_builder_input_policy.json",
+        "control/inventory/packs/pack_builder_output_policy.json",
+        "control/inventory/packs/pack_builder_type_policy.json",
+        "control/inventory/packs/pack_builder_path_policy.json",
+        "control/inventory/packs/pack_builder_review_policy.json",
+        "control/inventory/packs/pack_builder_truth_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/pack_builder.py"
+      ],
+      "script_paths": [
+        "scripts/build_local_pack.py",
+        "scripts/summarize_local_pack.py",
+        "scripts/validate_pack_builder_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_pack_builder_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_pack_builder_runtime.py",
+        "tests/operations/test_pack_builder_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/pack_builder/evidence_pack_draft_case_v0.json",
+        "examples/pack_drafts/evidence_pack_draft_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-21-pack-builder-runtime-v0"
+      ],
+      "pass_fail_unknown": "pass",
+      "known_warnings": [],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Pack builder creates drafts only; no import, submission, or acceptance."
+    },
+    {
+      "task_id": "TRACK-B-22",
+      "label": "Pack Export runtime",
+      "expected_status": "complete_with_warnings",
+      "artifact_paths": [
+        "docs/reference/PACK_EXPORT_RUNTIME.md",
+        "docs/architecture/PACK_EXPORT_MODEL.md",
+        "docs/operations/PACK_EXPORT_REVIEW.md",
+        "control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json"
+      ],
+      "contract_paths": [
+        "contracts/packs/source_pack.v0.json",
+        "contracts/packs/evidence_pack.v0.json",
+        "contracts/packs/index_pack.v0.json",
+        "contracts/packs/contribution_pack.v0.json"
+      ],
+      "policy_paths": [
+        "control/inventory/packs/pack_export_runtime_policy.json",
+        "control/inventory/packs/pack_export_input_policy.json",
+        "control/inventory/packs/pack_export_output_policy.json",
+        "control/inventory/packs/pack_export_format_policy.json",
+        "control/inventory/packs/pack_export_path_policy.json",
+        "control/inventory/packs/pack_export_review_policy.json",
+        "control/inventory/packs/pack_export_truth_policy.json",
+        "control/inventory/packs/pack_export_fixity_policy.json"
+      ],
+      "runtime_paths": [
+        "runtime/local_foundry/pack_export.py"
+      ],
+      "script_paths": [
+        "scripts/export_local_pack.py",
+        "scripts/validate_pack_export_runtime.py"
+      ],
+      "validator_paths": [
+        "scripts/validate_pack_export_runtime.py"
+      ],
+      "test_paths": [
+        "tests/runtime/test_pack_export_runtime.py",
+        "tests/operations/test_pack_export_runtime_scripts.py"
+      ],
+      "example_paths": [
+        "examples/pack_exports/evidence_pack_export_v0.json"
+      ],
+      "audit_paths": [
+        "control/audits/track-b-22-pack-export-runtime-v0"
+      ],
+      "pass_fail_unknown": "warn",
+      "known_warnings": [
+        "B22 commit was blocked by the existing active merge.",
+        "Repo-wide unittest has an unrelated OBS hardening failure outside B22 scope."
+      ],
+      "product_boundary_preserved": true,
+      "truth_boundary_preserved": true,
+      "notes": "Pack export creates local exported drafts with SHA-256 fixity and no real signing."
+    }
+  ],
+  "contract_families": [
+    "contracts/node",
+    "contracts/query",
+    "contracts/source_cache",
+    "contracts/packs",
+    "contracts/master_index",
+    "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+  ],
+  "runtime_families": [
+    "runtime/local_foundry/query_observation.py",
+    "runtime/local_foundry/search_miss_ledger.py",
+    "runtime/local_foundry/search_need.py",
+    "runtime/local_foundry/workunit_dry_run.py",
+    "runtime/local_foundry/node_policy_evaluator.py",
+    "runtime/local_foundry/candidate_store.py",
+    "runtime/local_foundry/source_cache.py",
+    "runtime/local_foundry/evidence_ledger.py",
+    "runtime/local_foundry/source_cache_to_evidence.py",
+    "runtime/local_foundry/review_queue.py",
+    "runtime/local_foundry/candidate_promotion_dry_run.py",
+    "runtime/local_foundry/pack_builder.py",
+    "runtime/local_foundry/pack_export.py"
+  ],
+  "validator_families": [
+    "scripts/validate_eureka_node_manifest.py",
+    "scripts/validate_eureka_node_policy.py",
+    "scripts/validate_eureka_node_capability.py",
+    "scripts/validate_eureka_workunit.py",
+    "scripts/validate_eureka_workunit_result.py",
+    "scripts/validate_local_foundry_state.py",
+    "scripts/validate_query_observation_runtime.py",
+    "scripts/validate_search_miss_ledger_runtime.py",
+    "scripts/validate_search_need_runtime.py",
+    "scripts/validate_workunit_dry_run_runner.py",
+    "scripts/validate_node_policy_evaluator.py",
+    "scripts/validate_candidate_store_runtime.py",
+    "scripts/validate_local_source_cache_runtime_plan.py",
+    "scripts/validate_local_evidence_ledger_runtime_plan.py",
+    "scripts/validate_local_source_cache_runtime.py",
+    "scripts/validate_local_evidence_ledger_runtime.py",
+    "scripts/validate_source_cache_to_evidence_bridge.py",
+    "scripts/validate_local_review_queue_runtime.py",
+    "scripts/validate_candidate_promotion_dry_run.py",
+    "scripts/validate_reviewed_public_index_rebuild_contract.py",
+    "scripts/validate_pack_builder_runtime.py",
+    "scripts/validate_pack_export_runtime.py"
+  ],
+  "policy_families": [
+    "control/inventory/nodes",
+    "control/inventory/local_state",
+    "control/inventory/observations",
+    "control/inventory/candidates",
+    "control/inventory/source_cache",
+    "control/inventory/evidence_ledger",
+    "control/inventory/review",
+    "control/inventory/packs"
+  ],
+  "example_families": [
+    "examples/query_observations",
+    "examples/search_misses",
+    "examples/search_needs",
+    "examples/work_units",
+    "examples/work_unit_results",
+    "examples/candidates",
+    "examples/source_cache_records",
+    "examples/evidence_ledger_records",
+    "examples/source_cache_to_evidence",
+    "examples/review_queue_entries",
+    "examples/candidate_promotion_dry_runs",
+    "examples/reviewed_public_index_rebuilds",
+    "examples/reviewed_public_records",
+    "examples/pack_builder",
+    "examples/pack_drafts",
+    "examples/pack_exports"
+  ],
+  "audit_packs": [
+    "control/audits/track-b-01-eureka-node-manifest-v0",
+    "control/audits/track-b-02-node-policy-contract-v0",
+    "control/audits/track-b-03-node-capability-contract-v0",
+    "control/audits/track-b-04-workunit-contract-v0",
+    "control/audits/track-b-05-workunit-result-contract-v0",
+    "control/audits/track-b-06-local-foundry-state-contract-v0",
+    "control/audits/track-b-07-query-observation-runtime-v0",
+    "control/audits/track-b-08-search-miss-ledger-runtime-v0",
+    "control/audits/track-b-09-search-need-runtime-v0",
+    "control/audits/track-b-10-workunit-dry-run-runner-v0",
+    "control/audits/track-b-11-node-policy-evaluator-v0",
+    "control/audits/track-b-12-candidate-store-runtime-v0",
+    "control/audits/track-b-13-local-source-cache-runtime-planning-v0",
+    "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0",
+    "control/audits/track-b-15-local-source-cache-runtime-v0",
+    "control/audits/track-b-16-local-evidence-ledger-runtime-v0",
+    "control/audits/track-b-17-source-cache-to-evidence-bridge-v0",
+    "control/audits/track-b-18-local-review-queue-runtime-v0",
+    "control/audits/track-b-19-candidate-promotion-dry-run-v0",
+    "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0",
+    "control/audits/track-b-21-pack-builder-runtime-v0",
+    "control/audits/track-b-22-pack-export-runtime-v0"
+  ],
+  "required_exit_gates": [
+    "all_expected_track_b_artifacts_exist",
+    "track_b_json_artifacts_are_parseable",
+    "track_b_validators_pass",
+    "truth_boundary_preserved",
+    "product_boundary_preserved",
+    "public_index_not_mutated",
+    "master_index_not_mutated",
+    "live_source_behavior_not_enabled",
+    "first_connector_prerequisites_reviewed"
+  ],
+  "gate_results": {
+    "all_expected_track_b_artifacts_exist": "pass",
+    "track_b_json_artifacts_are_parseable": "pass",
+    "track_b_validators_pass": "pass",
+    "truth_boundary_preserved": "pass",
+    "product_boundary_preserved": "pass",
+    "public_index_not_mutated": "pass",
+    "master_index_not_mutated": "pass",
+    "live_source_behavior_not_enabled": "pass",
+    "first_connector_prerequisites_reviewed": "pass_with_warnings"
+  },
+  "known_gaps": [
+    "Repository is currently in an active merge with many unrelated staged Track B and OBS changes.",
+    "Full unittest currently fails on unrelated OBS hardening literals outside the Track B local foundry spine.",
+    "contracts/evidence is not present; evidence ledger contract material is currently documented under docs/reference and control inventories."
+  ],
+  "deferred_work": [
+    "IA connector approval prompt must decide source policy, User-Agent/contact posture, rate limits, cache TTL, and kill switch before any external call.",
+    "Actual public-index rebuild remains future work.",
+    "Pack import, submission, hosted upload, and federation remain future work.",
+    "Track C native clients, Track D relay/snapshot work, and Track E hosted operations remain deferred."
+  ],
+  "product_boundary": {
+    "changed_product_behavior": false,
+    "changed_public_search_behavior": false,
+    "enabled_live_source_behavior": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_or_submission": false,
+    "created_local_private_state": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "truth_boundary": {
+    "accepted_public_truth_created": false,
+    "accepted_evidence_truth_created": false,
+    "accepted_candidate_truth_created": false,
+    "source_truth_accepted": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "automatic_merge_or_promotion_claimed": false
+  },
+  "next_phase": "IA-01 - Internet Archive metadata connector approval decision",
+  "notes": [
+    "Track B is an explicit-input local foundry spine, not a live connector or public-index runtime.",
+    "PASS_WITH_WARNINGS is expected while the active merge and unrelated OBS hardening test remain unresolved."
+  ]
+}

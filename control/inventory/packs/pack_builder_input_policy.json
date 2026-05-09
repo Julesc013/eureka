@@ -1,0 +1,48 @@
+{
+  "schema_version": "pack_builder_input_policy.v0",
+  "policy_id": "pack_builder_input_policy.v0",
+  "allowed_input_types": [
+    "source_cache_record",
+    "evidence_ledger_record",
+    "candidate_record",
+    "search_need_record",
+    "search_miss_record",
+    "query_observation_record",
+    "local_review_queue_entry",
+    "source_cache_to_evidence_bridge_result",
+    "candidate_promotion_dry_run",
+    "reviewed_public_record_proposal",
+    "workunit_result",
+    "node_policy_evaluation",
+    "observation_candidate",
+    "committed_pack_example",
+    "explicit_fixture"
+  ],
+  "forbidden_input_types": [
+    "unreviewed_live_source_result",
+    "scraped_search_result",
+    "scraped_forum_thread",
+    "bulk_reddit_content",
+    "private_user_file",
+    "secret_or_credential",
+    "executable_download",
+    "installer_payload",
+    "raw_browser_profile",
+    "account_session_data",
+    "telemetry_stream",
+    "unreviewed_external_api_payload",
+    "accepted_truth_without_review",
+    "master_index_record_current"
+  ],
+  "requirements": {
+    "inputs_must_be_explicit": true,
+    "inputs_must_be_repo_local_or_fixture": true,
+    "inputs_must_remain_public_safe_examples": true,
+    "private_local_state_inputs_allowed": false,
+    "live_source_inputs_allowed": false,
+    "accepted_truth_inputs_allowed_without_review": false
+  },
+  "notes": [
+    "Inputs are copied into draft summaries only; Pack Builder does not import them."
+  ]
+}

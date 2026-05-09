@@ -1,0 +1,39 @@
+{
+  "schema_version": "local_evidence_ledger_record.v0",
+  "input_id": "compatibility_claim_fixture_v0",
+  "input_type": "committed_evidence_fixture",
+  "input_ref": "examples/evidence_ledger_records/compatibility_claim_record_v0.json",
+  "input_status": "normalized",
+  "input_public_safe": true,
+  "input_summary": "Compatibility claim fixture.",
+  "evidence_record_status": "compatibility_claim_candidate",
+  "evidence_record_type": "compatibility_claim",
+  "evidence_label": "Compatibility Claim Fixture",
+  "source_id": "source:fixture:evidence:compatibility",
+  "source_label": "Compatibility Evidence Source",
+  "source_locator": "fixture:evidence-ledger:compatibility",
+  "claim_type": "compatibility",
+  "claim_summary": "Fixture reports a compatibility statement requiring review.",
+  "claim_value": {
+    "platform": "synthetic-os",
+    "state": "reported-compatible"
+  },
+  "claim_subject": "synthetic-compatibility-item",
+  "observation_summary": "Compatibility statement is recorded as a candidate.",
+  "provenance_summary": "Committed compatibility claim fixture.",
+  "lineage_refs": [
+    "fixture:compatibility_claim_record_v0"
+  ],
+  "related_candidate_refs": [],
+  "related_source_cache_refs_future": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs": [],
+  "related_review_refs_future": [],
+  "confidence_or_uncertainty": "reported_compatibility_review_required",
+  "conflict_summary": "",
+  "limitations": [
+    "Compatibility is not independently verified."
+  ],
+  "notes": []
+}

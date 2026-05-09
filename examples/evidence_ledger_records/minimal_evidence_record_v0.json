@@ -1,0 +1,38 @@
+{
+  "schema_version": "local_evidence_ledger_record.v0",
+  "input_id": "minimal_evidence_fixture_v0",
+  "input_type": "committed_evidence_fixture",
+  "input_ref": "examples/evidence_ledger_records/minimal_evidence_record_v0.json",
+  "input_status": "fixture_only",
+  "input_public_safe": true,
+  "input_summary": "Minimal public-safe evidence candidate fixture.",
+  "evidence_record_status": "example_only",
+  "evidence_record_type": "metadata_claim",
+  "evidence_label": "Minimal Evidence Fixture",
+  "source_id": "source:fixture:evidence:minimal",
+  "source_label": "Minimal Evidence Source",
+  "source_locator": "fixture:evidence-ledger:minimal",
+  "claim_type": "metadata",
+  "claim_summary": "Fixture contains a reviewable metadata claim shape.",
+  "claim_value": "minimal-fixture",
+  "claim_subject": "minimal-fixture-subject",
+  "observation_summary": "Committed fixture asserts a bounded metadata candidate.",
+  "provenance_summary": "Committed evidence ledger fixture.",
+  "lineage_refs": [
+    "fixture:minimal_evidence_record_v0"
+  ],
+  "related_candidate_refs": [],
+  "related_source_cache_refs_future": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs": [],
+  "related_review_refs_future": [],
+  "confidence_or_uncertainty": "low_confidence_review_required",
+  "conflict_summary": "",
+  "limitations": [
+    "Synthetic fixture only."
+  ],
+  "notes": [
+    "No live source access was used."
+  ]
+}

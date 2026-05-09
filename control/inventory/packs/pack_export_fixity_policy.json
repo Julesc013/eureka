@@ -1,0 +1,23 @@
+{
+  "schema_version": "pack_export_fixity_policy.v0",
+  "policy_id": "pack_export_fixity_policy.v0",
+  "allowed_hash_algorithms": [
+    "sha256"
+  ],
+  "fixity_required_for_export": true,
+  "hash_input_scope": "deterministic_export_payload_without_fixity_or_manifest",
+  "deterministic_serialization_required": true,
+  "signature_status": "unsigned_placeholder_only",
+  "real_signing_enabled": false,
+  "signature_placeholder_allowed": true,
+  "no_private_keys_allowed": true,
+  "forbidden_claims": [
+    "real_signature",
+    "cryptographic_signing_complete",
+    "authenticity_proof",
+    "private_key_use"
+  ],
+  "notes": [
+    "SHA-256 fixity is local deterministic hashing only and does not claim authenticity beyond local fixity."
+  ]
+}

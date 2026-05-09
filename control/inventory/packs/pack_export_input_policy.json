@@ -1,0 +1,38 @@
+{
+  "schema_version": "pack_export_input_policy.v0",
+  "policy_id": "pack_export_input_policy.v0",
+  "allowed_input_types": [
+    "source_pack_draft",
+    "evidence_pack_draft",
+    "contribution_pack_draft",
+    "review_pack_draft",
+    "index_pack_preview",
+    "policy_blocked_pack_draft"
+  ],
+  "forbidden_input_types": [
+    "raw_unreviewed_live_source_result",
+    "scraped_search_result",
+    "private_user_file",
+    "secret_or_credential",
+    "executable_download",
+    "installer_payload",
+    "account_session_data",
+    "telemetry_stream",
+    "submitted_pack",
+    "accepted_pack",
+    "hosted_upload_result",
+    "master_index_record_current",
+    "public_index_mutation_current"
+  ],
+  "requirements": {
+    "input_must_be_pack_draft": true,
+    "input_must_be_public_safe_example_or_explicit_local_draft": true,
+    "submitted_pack_input_allowed": false,
+    "accepted_pack_input_allowed": false,
+    "private_key_input_allowed": false,
+    "live_source_input_allowed": false
+  },
+  "notes": [
+    "Pack Export consumes pack drafts produced by the local pack builder runtime."
+  ]
+}

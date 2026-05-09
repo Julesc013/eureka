@@ -1,0 +1,95 @@
+{
+  "schema_version": "source_cache_to_evidence_mapping_policy.v0",
+  "policy_id": "source_cache_to_evidence_mapping_policy_v0",
+  "label": "Source cache to evidence mapping policy",
+  "allowed_mappings": {
+    "connector_fixture_record": {
+      "claim_type": "source_observation",
+      "evidence_record_type": "source_observation"
+    },
+    "source_access_posture_record": {
+      "claim_type": "source_observation",
+      "evidence_record_type": "source_observation"
+    },
+    "source_coverage_record": {
+      "claim_type": "metadata",
+      "evidence_record_type": "metadata_claim"
+    },
+    "source_health_record": {
+      "claim_type": "metadata",
+      "evidence_record_type": "metadata_claim"
+    },
+    "source_identity_record": {
+      "claim_type": "identity",
+      "evidence_record_type": "identity_claim"
+    },
+    "source_lead_record": {
+      "claim_type": "source_observation",
+      "evidence_record_type": "source_observation"
+    },
+    "source_limitations_record": {
+      "claim_type": "metadata",
+      "evidence_record_type": "metadata_claim"
+    },
+    "source_locator": {
+      "claim_type": "source_observation",
+      "evidence_record_type": "source_observation"
+    },
+    "source_metadata": {
+      "claim_type": "metadata",
+      "evidence_record_type": "metadata_claim"
+    },
+    "source_policy_record": {
+      "claim_type": "source_observation",
+      "evidence_record_type": "source_observation"
+    }
+  },
+  "forbidden_mappings": [
+    "AI_draft_to_evidence_truth",
+    "checksum_claim_to_authenticity_proof_without_review",
+    "compatibility_claim_to_verified_compatibility_without_review",
+    "contribution_claim_to_accepted_public_record",
+    "metadata_claim_to_rights_clearance",
+    "source_cache_record_to_accepted_evidence_truth",
+    "source_cache_record_to_accepted_public_record",
+    "source_cache_record_to_master_index_record",
+    "source_observation_to_accepted_truth"
+  ],
+  "review_required_for_all_outputs": true,
+  "mapping_rules": [
+    {
+      "source_cache_record_type": "source_metadata",
+      "output_evidence_type": "metadata_claim",
+      "output_claim_type": "metadata",
+      "review_required": true
+    },
+    {
+      "source_cache_record_type": "source_locator",
+      "output_evidence_type": "source_observation",
+      "output_claim_type": "source_observation",
+      "review_required": true
+    },
+    {
+      "source_cache_record_type": "source_policy_record",
+      "output_evidence_type": "source_observation",
+      "output_claim_type": "source_observation",
+      "review_required": true
+    },
+    {
+      "source_cache_record_type": "source_coverage_record",
+      "output_evidence_type": "metadata_claim",
+      "output_claim_type": "metadata",
+      "review_required": true
+    }
+  ],
+  "truth_boundary": {
+    "accepted_as_evidence": false,
+    "accepted_as_public_truth": false,
+    "master_index_mutation_allowed": false,
+    "review_required": true
+  },
+  "notes": [
+    "Mappings are deterministic and fixture-only.",
+    "A mapping records a candidate claim; it does not settle the claim."
+  ]
+}

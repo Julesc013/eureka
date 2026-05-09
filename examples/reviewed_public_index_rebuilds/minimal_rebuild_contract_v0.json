@@ -1,0 +1,131 @@
+{
+  "schema_version": "reviewed_public_index_rebuild.v0",
+  "rebuild_contract_id": "reviewed_public_index_rebuild.minimal.contract.v0",
+  "rebuild_label": "Minimal reviewed public-index rebuild contract example",
+  "rebuild_status": "contract_only",
+  "rebuild_scope": [
+    "define future reviewed rebuild inputs",
+    "define future proposal outputs"
+  ],
+  "rebuild_input_policy": {
+    "allowed_input_types": [
+      "candidate_promotion_dry_run",
+      "local_review_queue_entry",
+      "evidence_ledger_record"
+    ],
+    "forbidden_input_types": [
+      "unreviewed_candidate",
+      "secret_or_credential"
+    ]
+  },
+  "rebuild_output_policy": {
+    "allowed_output_types": [
+      "reviewed_public_record_proposal",
+      "rebuild_audit_report"
+    ],
+    "forbidden_output_types": [
+      "public_index_mutation_current",
+      "master_index_mutation"
+    ]
+  },
+  "reviewed_input_refs": [],
+  "blocked_input_refs": [],
+  "record_selection_policy": {
+    "review_required": true,
+    "evidence_required": true,
+    "ready_is_future_only": true
+  },
+  "evidence_requirements": {
+    "evidence_refs_required_for_ready_records": true,
+    "missing_evidence_blocks_ready_status": true
+  },
+  "review_requirements": {
+    "review_refs_required_for_ready_records": true,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "source_policy_requirements": {
+    "source_policy_review_required": true,
+    "source_limitations_preserved": true
+  },
+  "rights_risk_requirements": {
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "rights_or_risk_blocks_defer_or_block": true
+  },
+  "compatibility_requirements": {
+    "compatibility_caveats_preserved": true
+  },
+  "identity_requirements": {
+    "identity_uncertainty_blocks_or_defers": true
+  },
+  "conflict_policy": {
+    "conflict_preservation_required": true,
+    "automatic_conflict_resolution_allowed": false
+  },
+  "duplicate_policy": {
+    "duplicate_preservation_required": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "proposed_public_records": [],
+  "blocked_records": [],
+  "output_manifest_policy": {
+    "manifest_future_only": true,
+    "writes_public_index_current": false
+  },
+  "public_search_effect_policy": {
+    "public_search_behavior_changed_current": false,
+    "search_card_candidates_future_only": true
+  },
+  "public_index_mutation_policy": {
+    "public_index_mutation_allowed_current": false
+  },
+  "master_index_mutation_policy": {
+    "master_index_mutation_allowed_current": false
+  },
+  "audit_policy": {
+    "audit_report_required": true,
+    "audit_is_not_production_readiness": true
+  },
+  "truth_boundary": {
+    "rebuild_contract_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "implemented_master_index_mutation": false,
+    "implemented_hosted_review_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no rebuild runtime",
+    "no public index mutation",
+    "no master index mutation"
+  ],
+  "notes": [
+    "This fixture defines contract shape only."
+  ]
+}

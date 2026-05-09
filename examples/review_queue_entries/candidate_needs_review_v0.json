@@ -1,0 +1,25 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "candidate_needs_review_v0",
+  "input_type": "candidate_record",
+  "input_ref": "examples/candidates/search_need_candidate_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "needs_review",
+  "review_subject_type": "candidate_record",
+  "review_subject_ref": "candidate.search_need.software_version.v0",
+  "review_subject_summary": "SearchNeed-derived version candidate requires local review.",
+  "review_decision": "no_decision_yet",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Candidate is provisional and needs evidence review before any dry-run promotion.",
+  "required_evidence": [
+    "source locator",
+    "metadata claim candidate"
+  ],
+  "missing_evidence": [],
+  "related_candidate_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "notes": [
+    "Candidate remains provisional."
+  ]
+}

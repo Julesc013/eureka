@@ -1,0 +1,21 @@
+{
+  "schema_version": "pack_builder_truth_policy.v0",
+  "policy_id": "pack_builder_truth_policy.v0",
+  "pack_draft_is_truth": false,
+  "pack_draft_is_public_truth": false,
+  "pack_draft_is_accepted_evidence": false,
+  "pack_draft_is_accepted_pack": false,
+  "pack_draft_is_public_record": false,
+  "pack_draft_is_imported_state": false,
+  "pack_draft_can_mutate_public_index": false,
+  "pack_draft_can_mutate_master_index": false,
+  "pack_draft_can_claim_rights_clearance": false,
+  "pack_draft_can_claim_malware_safety": false,
+  "pack_draft_can_claim_verified_installability": false,
+  "pack_draft_can_claim_exhaustive_global_search": false,
+  "pack_draft_can_claim_production_readiness": false,
+  "human_review_required_before_submission_or_import": true,
+  "notes": [
+    "Pack draft truth posture is negative by default; a draft is portable review material only."
+  ]
+}

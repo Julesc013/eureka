@@ -1,0 +1,33 @@
+{
+  "schema_version": "pack_builder_path_policy.v0",
+  "policy_id": "pack_builder_path_policy.v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/pack_drafts/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "data/public_index/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "master-index-related roots",
+    "hosted-submission roots",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "current_task_constraints": {
+    "site_dist_mutation_allowed": false,
+    "runtime_output_allowed": false,
+    "contracts_output_allowed": false,
+    "public_index_output_allowed": false,
+    "master_index_output_allowed": false,
+    "private_local_state_output_allowed": false
+  },
+  "notes": [
+    "Examples and audit generated files are explicit fixture outputs, not runtime stores."
+  ]
+}

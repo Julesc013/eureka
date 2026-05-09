@@ -1,0 +1,44 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_metadata_bridge_case_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/source_cache_to_evidence/source_metadata_to_metadata_claim_v0.json",
+  "input_status": "fixture_only",
+  "input_public_safe": true,
+  "input_summary": "Bridge case for source metadata mapping.",
+  "source_cache_record_status": "fixture_only",
+  "source_cache_record_type": "source_metadata",
+  "source_id": "source:bridge:metadata",
+  "source_label": "Metadata Bridge Source",
+  "source_family": "metadata_bridge_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:bridge:metadata",
+  "source_access_mode": "committed_fixture_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "descriptive_not_authoritative",
+  "source_coverage_summary": "Covers only metadata fields present in this fixture.",
+  "source_metadata_summary": "Maps source family, kind, locator, and normalized fields into a metadata claim candidate.",
+  "source_health_summary": "No source freshness or uptime check.",
+  "source_limitations": [
+    "Metadata is fixture scoped.",
+    "No source completeness is claimed."
+  ],
+  "source_observation_summary": "The fixture describes local source metadata.",
+  "normalized_fields": {
+    "source_family": "metadata_bridge_fixture",
+    "metadata_fields_present": [
+      "source_family",
+      "source_kind",
+      "source_locator"
+    ]
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "Bridge output remains review-gated."
+  ]
+}

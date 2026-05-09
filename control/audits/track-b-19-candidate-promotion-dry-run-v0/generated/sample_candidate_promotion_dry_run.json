@@ -1,0 +1,128 @@
+{
+  "allowed_next_actions": [
+    "prepare_reviewed_public_record_proposal_future",
+    "request_human_review"
+  ],
+  "blockers": [],
+  "candidate_ref": "candidate.search_need.software_version.v0",
+  "candidate_summary": "Candidate has explicit fixture evidence and local dry-run approval.",
+  "conflict_requirement_results": [],
+  "duplicate_requirement_results": [],
+  "evidence_refs": [
+    "evidence.metadata_claim.fixture.v0"
+  ],
+  "evidence_requirement_results": [
+    {
+      "blocker_refs": [],
+      "evidence_or_review_refs": [
+        "evidence.metadata_claim.fixture.v0"
+      ],
+      "limitations": [
+        "Satisfied for dry-run does not mean accepted truth."
+      ],
+      "notes": "Evidence candidate is present for dry-run review only.",
+      "pass_fail_unknown": "pass",
+      "requirement_id": "evidence.present",
+      "requirement_status": "satisfied_for_dry_run",
+      "requirement_type": "evidence"
+    }
+  ],
+  "forbidden_next_actions": [
+    "accept_candidate",
+    "accept_evidence_truth",
+    "create_public_record",
+    "mutate_public_index",
+    "mutate_master_index",
+    "automatic_merge",
+    "automatic_delete",
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability",
+    "hosted_moderation"
+  ],
+  "identity_requirement_results": [],
+  "input_id": "candidate_promotion_dry_run.ready.fixture.v0",
+  "input_type": "candidate_promotion_dry_run",
+  "limitations": [
+    "Readiness is limited to dry-run planning."
+  ],
+  "notes": [
+    "Ready is not promotion."
+  ],
+  "policy_requirement_results": [],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_actual_promotion": false,
+    "implemented_candidate_promotion_dry_run": true,
+    "implemented_hosted_review_runtime": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "promotion_dry_run_id": "candidate_promotion_dry_run.ready.fixture.v0",
+  "promotion_dry_run_status": "ready_for_promotion_dry_run",
+  "promotion_readiness": "ready_for_future_reviewed_record_proposal",
+  "proposed_reviewed_record_summary_future": "A future reviewed-record proposal may be drafted after separate review.",
+  "related_pack_refs_future": [],
+  "related_search_need_refs": [
+    "search_need.software_version.vintage_app.v0"
+  ],
+  "related_workunit_refs": [
+    "search_need_review_v0"
+  ],
+  "review_entry_refs": [
+    "review_queue.workunit_result.1840e313e896.v0"
+  ],
+  "review_requirement_results": [
+    {
+      "blocker_refs": [],
+      "evidence_or_review_refs": [
+        "review_queue.workunit_result.1840e313e896.v0"
+      ],
+      "limitations": [
+        "Satisfied for dry-run does not mean accepted truth."
+      ],
+      "notes": "Local review includes promotion dry-run approval.",
+      "pass_fail_unknown": "pass",
+      "requirement_id": "review.dry_run_approval",
+      "requirement_status": "satisfied_for_dry_run",
+      "requirement_type": "review"
+    }
+  ],
+  "rights_risk_requirement_results": [],
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "source_cache_bridge_refs": [],
+  "source_cache_refs": [],
+  "truth_boundary": {
+    "human_review_required_for_actual_promotion": true,
+    "promotion_dry_run_accepts_candidate": false,
+    "promotion_dry_run_accepts_evidence": false,
+    "promotion_dry_run_can_claim_exhaustive_global_search": false,
+    "promotion_dry_run_can_claim_malware_safety": false,
+    "promotion_dry_run_can_claim_production_readiness": false,
+    "promotion_dry_run_can_claim_rights_clearance": false,
+    "promotion_dry_run_can_claim_verified_installability": false,
+    "promotion_dry_run_creates_public_record": false,
+    "promotion_dry_run_is_public_truth": false,
+    "promotion_dry_run_mutates_master_index": false,
+    "promotion_dry_run_mutates_public_index": false
+  },
+  "warnings": []
+}

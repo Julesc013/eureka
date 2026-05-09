@@ -1,0 +1,156 @@
+{
+  "schema_version": "obs_agent_local_eval_failure_mining_policy.v0",
+  "policy_id": "obs_agent_local_eval_failure_mining_policy_v0",
+  "label": "OBS agent local eval failure mining policy",
+  "description": "Policy for mining committed repo-local eval, query, audit, observation-manifest, and static-demo materials into review-gated observation candidates without external access.",
+  "allowed_input_roots": [
+    "evals/search_usefulness/**",
+    "examples/**",
+    "control/audits/**",
+    "control/inventory/observations/**",
+    "site/dist/data/**",
+    "site/dist/demo/**",
+    "docs/operations/**",
+    "docs/reference/**"
+  ],
+  "forbidden_input_roots": [
+    "live web",
+    "browser sessions",
+    "API calls",
+    "downloaded binary archives",
+    "private local caches",
+    ".aide.local/**",
+    "secrets/**",
+    ".git/**",
+    "untracked external data"
+  ],
+  "allowed_candidate_types": [
+    "local_eval_failure",
+    "source_lead",
+    "search_need_seed",
+    "work_unit_seed",
+    "policy_blocked_candidate",
+    "not_evaluable_candidate"
+  ],
+  "allowed_failure_modes": [
+    "absence_reasoning_gap",
+    "actionability_gap",
+    "ambiguous_need",
+    "capability_gap",
+    "compatibility_evidence_gap",
+    "compatibility_gap",
+    "dead_link_or_unavailable",
+    "decomposition_gap",
+    "external_baseline_unavailable",
+    "extraction_gap",
+    "identity_cluster_gap",
+    "identity_gap",
+    "index_gap",
+    "insufficient_local_evidence",
+    "live_source_gap",
+    "member_access_gap",
+    "near_match_only",
+    "noisy_result_list",
+    "not_evaluable",
+    "observation_incomplete",
+    "planner_gap",
+    "query_interpretation_gap",
+    "ranking_gap",
+    "representation_gap",
+    "rights_or_policy_block",
+    "source_coverage_gap",
+    "source_gap",
+    "surface_ux_gap",
+    "temporal_version_gap"
+  ],
+  "candidate_status_policy": {
+    "allowed_initial_statuses": [
+      "proposed",
+      "needs_human_review",
+      "policy_blocked",
+      "deferred"
+    ],
+    "required_status_before_downstream_use": "needs_human_review",
+    "forbidden_statuses_without_human_review": [
+      "approved_for_manual_observation",
+      "approved_as_source_lead",
+      "approved_as_work_unit_seed"
+    ]
+  },
+  "review_required": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_access_policy": {
+    "default_source_access_mode": "repo_local_only",
+    "allowed_current_agent_source_access_modes": [
+      "repo_local_only",
+      "approved_fixture_only"
+    ],
+    "policy_blocked_agent_source_access_modes": [
+      "manual_human_only",
+      "approved_api_future",
+      "approved_metadata_probe_future",
+      "approved_static_dump_future",
+      "permission_needed",
+      "robots_blocked",
+      "terms_blocked",
+      "restricted_demand_signal_only",
+      "no_autonomous_access"
+    ],
+    "external_access_authorized": false,
+    "live_source_access_authorized": false,
+    "external_observation_authorized": false
+  },
+  "truth_boundary": {
+    "candidate_output_state": "proposed_needs_human_review",
+    "candidates_are_observed_baselines": false,
+    "candidates_are_evidence_truth": false,
+    "candidates_validate_sources": false,
+    "candidates_can_mutate_index": false,
+    "human_review_required_before_downstream_use": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "no actual external observations",
+    "no browser automation",
+    "no external search automation",
+    "no scraping",
+    "no crawling",
+    "no API calls",
+    "no network calls",
+    "no model or provider calls",
+    "no observed baseline creation",
+    "no accepted evidence creation",
+    "no pending slot completion",
+    "no index mutation",
+    "no Track B contract or runtime mutation",
+    "no Eureka product behavior change"
+  ],
+  "notes": [
+    "Local mining may identify gaps and proposed next steps only.",
+    "Candidate records remain review-gated planning records until a human review decision approves a later action.",
+    "Source leads and future WorkUnit seeds produced under this policy are not accepted evidence."
+  ]
+}

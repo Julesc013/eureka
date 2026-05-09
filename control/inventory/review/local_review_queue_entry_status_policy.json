@@ -1,0 +1,56 @@
+{
+  "schema_version": "local_review_queue_entry_status_policy.v0",
+  "policy_id": "local_review_queue_entry_status_policy_v0",
+  "allowed_statuses": [
+    "accepted_public_future",
+    "conflict_detected",
+    "deferred",
+    "duplicate_possible",
+    "example_only",
+    "needs_review",
+    "policy_blocked",
+    "queued",
+    "ready_for_promotion_dry_run",
+    "rejected",
+    "request_more_evidence",
+    "rights_blocked",
+    "risk_blocked",
+    "superseded",
+    "takedown_pending_future",
+    "under_review_future",
+    "withdrawn_future"
+  ],
+  "current_allowed_statuses": [
+    "conflict_detected",
+    "deferred",
+    "duplicate_possible",
+    "example_only",
+    "needs_review",
+    "policy_blocked",
+    "queued",
+    "ready_for_promotion_dry_run",
+    "rejected",
+    "request_more_evidence",
+    "rights_blocked",
+    "risk_blocked"
+  ],
+  "statuses_requiring_more_evidence": [
+    "request_more_evidence"
+  ],
+  "blocked_statuses": [
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked"
+  ],
+  "statuses_forbidden_current": [
+    "accepted_public_future",
+    "superseded",
+    "takedown_pending_future",
+    "under_review_future",
+    "withdrawn_future"
+  ],
+  "notes": [
+    "Ready for promotion dry-run is a local gate only.",
+    "No status accepts evidence, candidates, or public records."
+  ]
+}

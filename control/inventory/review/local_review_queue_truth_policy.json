@@ -1,0 +1,31 @@
+{
+  "schema_version": "local_review_queue_truth_policy.v0",
+  "policy_id": "local_review_queue_truth_policy_v0",
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "review_entry_accepts_candidate": false,
+    "review_entry_accepts_evidence": false,
+    "review_entry_allows_public_index_mutation": false,
+    "review_entry_can_claim_exhaustive_global_search": false,
+    "review_entry_can_claim_malware_safety": false,
+    "review_entry_can_claim_production_readiness": false,
+    "review_entry_can_claim_rights_clearance": false,
+    "review_entry_can_claim_verified_installability": false,
+    "review_entry_is_public_truth": false,
+    "review_entry_mutates_master_index": false,
+    "review_queue_snapshot_is_master_index": false
+  },
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "automatic_duplicate_merge_allowed": false,
+  "automatic_conflict_resolution_allowed": false,
+  "notes": [
+    "Review queue entries can gate local dry-run work only.",
+    "A review queue entry cannot itself create evidence truth, candidate truth, or public truth."
+  ]
+}

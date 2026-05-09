@@ -1,0 +1,19 @@
+{
+  "schema_version": "pack_builder_review_policy.v0",
+  "policy_id": "pack_builder_review_policy.v0",
+  "review_required_before_pack_import": true,
+  "review_required_before_pack_submission": true,
+  "review_required_before_public_use": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "automatic_pack_import_allowed": false,
+  "automatic_pack_submission_allowed": false,
+  "automatic_pack_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "notes": [
+    "Pack Builder output must remain review-gated until a future reviewed import or export task."
+  ]
+}

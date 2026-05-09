@@ -1,0 +1,106 @@
+{
+  "schema_version": "observation_candidate_review_queue.v0",
+  "review_queue_id": "review_queue_minimal_v0",
+  "label": "Minimal review queue example",
+  "description": "Single-entry review queue example for a manual pending-slot candidate. This is not approval.",
+  "queue_status": "queued_for_review",
+  "generated_from": [
+    "examples/observation_candidates/minimal_observation_candidate_v0.json"
+  ],
+  "candidate_sources": [
+    "examples/observation_candidates/minimal_observation_candidate_v0.json"
+  ],
+  "queue_entries": [
+    {
+      "review_queue_entry_id": "review_queue_entry::obs_candidate_minimal_v0",
+      "observation_candidate_id": "obs_candidate_minimal_v0",
+      "candidate_file_path": "examples/observation_candidates/minimal_observation_candidate_v0.json",
+      "candidate_type": "manual_slot_suggestion",
+      "candidate_status": "needs_human_review",
+      "candidate_origin": "manual_pending_slot",
+      "related_batch_id": "batch_0",
+      "related_query_id": "windows_7_apps",
+      "related_slot_id": "batch_0::windows_7_apps::google_web_search",
+      "source_family": "manual_external_baseline",
+      "source_access_mode": "manual_human_only",
+      "source_policy_status": "not_approved_for_agent_access",
+      "proposed_failure_modes": [
+        "manual_observation_pending"
+      ],
+      "proposed_review_state": "needs_human_review",
+      "recommended_review_action": "approve_for_manual_observation_future",
+      "priority_score": 40,
+      "priority_band": "medium",
+      "review_required": true,
+      "review_decision_ref": null,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Example queue entry only.",
+        "No review decision is recorded."
+      ]
+    }
+  ],
+  "status_counts": {
+    "needs_human_review": 1
+  },
+  "recommended_action_counts": {
+    "approve_for_manual_observation_future": 1
+  },
+  "candidate_type_counts": {
+    "manual_slot_suggestion": 1
+  },
+  "source_family_counts": {
+    "manual_external_baseline": 1
+  },
+  "priority_band_counts": {
+    "medium": 1
+  },
+  "priority_summary": {
+    "min": 40,
+    "max": 40,
+    "average": 40.0
+  },
+  "review_policy_ref": "control/inventory/observations/observation_candidate_review_queue_policy.json",
+  "triage_rules_ref": "control/inventory/observations/observation_candidate_triage_rules.json",
+  "truth_boundary": {
+    "queue_entries_are_observed_baselines": false,
+    "queue_entries_are_evidence_truth": false,
+    "queue_entries_can_mutate_master_index": false,
+    "human_review_required": true,
+    "source_access_approved": false
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "No approval.",
+    "No observation.",
+    "No evidence truth.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "Compact public-safe queue example."
+  ]
+}

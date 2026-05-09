@@ -1,0 +1,86 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_source_gap_wayback_metadata_v0",
+  "candidate_type": "source_lead",
+  "candidate_status": "needs_human_review",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "control/inventory/sources/wayback-memento-placeholder.source.json",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "archived_firefox_xp_release_notes",
+  "related_system_id": "wayback_manual_search",
+  "query_text": "archived Firefox XP release notes",
+  "source_family": "wayback_cdx_memento_metadata",
+  "source_mode": "approved_metadata_probe_future",
+  "source_access_mode": "approved_metadata_probe_future",
+  "source_policy_status": "future_deferred_source_policy_required",
+  "source_gap_summary": "Repo-local source inventory shows Wayback/Memento as a deferred metadata source family for dead vendor pages, release notes, and temporal capture gaps.",
+  "why_this_source_family": "Local Wayback placeholder and recorded fixture records describe temporal capture metadata as useful while keeping replay, content fetch, and WARC handling out of scope.",
+  "recommended_next_review_action": "Prepare a source policy decision packet for availability and capture metadata only, including URI privacy and forbidden content retrieval constraints.",
+  "candidate_summary": "Wayback/CDX/Memento metadata is a review-gated source lead for dead-source and temporal-version gaps. It is not source approval and no external source was queried.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "source_coverage_gap",
+    "live_source_gap",
+    "temporal_version_gap",
+    "representation_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "priority_score": 76,
+  "priority_band": "high",
+  "priority_score_rationale": [
+    "Local source inventory names capture metadata fixtures as the next step.",
+    "Dead vendor and historical release-note query classes require temporal evidence shape review.",
+    "Policy risk remains nonzero because arbitrary URL and archived content handling must stay excluded."
+  ],
+  "evidence_refs": [
+    "control/inventory/sources/wayback-memento-placeholder.source.json",
+    "control/inventory/sources/wayback-memento-recorded-fixtures.source.json",
+    "docs/reference/WAYBACK_CDX_MEMENTO_CONNECTOR_APPROVAL.md",
+    "evals/search_usefulness/external_baselines/systems.json"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:wayback-cdx-memento-metadata"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-wayback-metadata-source-policy"
+  ],
+  "limitations": [
+    "Derived from committed repo-local source inventory, eval, and approval-plan materials only.",
+    "No live capture lookup, replay, content retrieval, or WARC handling occurred.",
+    "No capture metadata is accepted as evidence truth."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Source lead is not source validation.",
+    "Future review must keep availability metadata separate from archived content."
+  ]
+}

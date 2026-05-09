@@ -1,0 +1,251 @@
+{
+  "batch_id": "obs_agent_local_eval_failure_mining_batch_0",
+  "candidate_count": 5,
+  "candidate_records": [
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/local_eval_extraction_gap_candidate_v0.json",
+      "candidate_status": "proposed",
+      "candidate_type": "work_unit_seed",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "query_text=driver INF inside support CD",
+        "Candidate is limited to local support-media member query classes."
+      ],
+      "observation_candidate_id": "obs_candidate_local_eval_extraction_gap_v0",
+      "origin": "local_eval",
+      "proposed_failure_modes": [
+        "decomposition_gap",
+        "member_access_gap",
+        "extraction_gap",
+        "source_coverage_gap"
+      ],
+      "related_batch_id": "batch_0",
+      "related_query_id": "driver_inf_inside_support_cd",
+      "related_slot_id": null,
+      "requires_human_review": true,
+      "source_access_mode": "repo_local_only"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/local_eval_failure_mining_batch_0_v0.json",
+      "candidate_status": "needs_human_review",
+      "candidate_type": "local_eval_failure",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "batch_0_pending_observation_count=39",
+        "batch_0_observed_observation_count=0"
+      ],
+      "observation_candidate_id": "obs_candidate_local_eval_failure_mining_batch_0_v0",
+      "origin": "local_eval",
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "compatibility_evidence_gap",
+        "planner_gap",
+        "representation_gap",
+        "member_access_gap",
+        "ranking_gap"
+      ],
+      "related_batch_id": "batch_0",
+      "related_query_id": null,
+      "related_slot_id": null,
+      "requires_human_review": true,
+      "source_access_mode": "repo_local_only"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/local_eval_policy_blocked_candidate_v0.json",
+      "candidate_status": "policy_blocked",
+      "candidate_type": "policy_blocked_candidate",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Google web search remains blocked for autonomous agent access in this lane.",
+        "No source result was collected."
+      ],
+      "observation_candidate_id": "obs_candidate_local_eval_policy_blocked_v0",
+      "origin": "search_usefulness_audit",
+      "proposed_failure_modes": [
+        "rights_or_policy_block",
+        "external_baseline_unavailable"
+      ],
+      "related_batch_id": "batch_0",
+      "related_query_id": "windows_7_apps",
+      "related_slot_id": null,
+      "requires_human_review": true,
+      "source_access_mode": "no_autonomous_access"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/local_eval_ranking_gap_candidate_v0.json",
+      "candidate_status": "proposed",
+      "candidate_type": "search_need_seed",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "query_text=PC Magazine July 1994 ray tracing",
+        "Ranking weakness is inferred only from committed local audit labels."
+      ],
+      "observation_candidate_id": "obs_candidate_local_eval_ranking_gap_v0",
+      "origin": "search_usefulness_audit",
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "member_access_gap",
+        "ranking_gap"
+      ],
+      "related_batch_id": "batch_0",
+      "related_query_id": "pc_magazine_july_1994_ray_tracing",
+      "related_slot_id": null,
+      "requires_human_review": true,
+      "source_access_mode": "repo_local_only"
+    },
+    {
+      "accepted_as_evidence_truth": false,
+      "accepted_as_observed_baseline": false,
+      "candidate_file_path": "examples/observation_candidates/local_eval_source_gap_candidate_v0.json",
+      "candidate_status": "proposed",
+      "candidate_type": "source_lead",
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "query_text=Windows 7 apps",
+        "Selected query is in Batch 0."
+      ],
+      "observation_candidate_id": "obs_candidate_local_eval_source_gap_v0",
+      "origin": "search_usefulness_audit",
+      "proposed_failure_modes": [
+        "source_coverage_gap",
+        "compatibility_evidence_gap",
+        "ranking_gap"
+      ],
+      "related_batch_id": "batch_0",
+      "related_query_id": "windows_7_apps",
+      "related_slot_id": null,
+      "requires_human_review": true,
+      "source_access_mode": "repo_local_only"
+    }
+  ],
+  "description": "Deterministic repo-local candidate manifest for OBS-AGENT-01 local eval failure mining.",
+  "failure_mode_counts": {
+    "compatibility_evidence_gap": 2,
+    "decomposition_gap": 1,
+    "external_baseline_unavailable": 1,
+    "extraction_gap": 1,
+    "member_access_gap": 3,
+    "planner_gap": 1,
+    "ranking_gap": 3,
+    "representation_gap": 1,
+    "rights_or_policy_block": 1,
+    "source_coverage_gap": 4
+  },
+  "input_files": [
+    "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
+    "control/audits/obs0-02-manual-observation-batch-0-execution-packet-v0/obs0_02_report.json",
+    "control/inventory/observations/manual_observation_batch_0_slot_manifest.json",
+    "control/inventory/observations/manual_observation_failure_taxonomy.json",
+    "control/inventory/observations/obs_agent_local_eval_failure_mining_policy.json",
+    "control/inventory/observations/observation_source_access_modes.json",
+    "docs/operations/AGENT_ASSISTED_OBSERVATION_WORKFLOW.md",
+    "docs/operations/MANUAL_OBSERVATION_FAILURE_TAXONOMY.md",
+    "docs/operations/OBSERVATION_SOURCE_ACCESS_POLICY.md",
+    "evals/search_usefulness/external_baselines/batches/batch_0/batch_manifest.json",
+    "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json",
+    "evals/search_usefulness/queries/search_usefulness_v0.json",
+    "site/dist/data/eval_summary.json",
+    "site/dist/demo/data/demo_snapshots.json"
+  ],
+  "label": "OBS agent candidate batch 0 local eval manifest",
+  "local_eval_failure_mode_counts": {
+    "absence_reasoning_gap": 2,
+    "actionability_gap": 2,
+    "compatibility_evidence_gap": 25,
+    "decomposition_gap": 12,
+    "external_baseline_pending": 64,
+    "identity_cluster_gap": 14,
+    "index_gap": 2,
+    "live_source_gap": 10,
+    "member_access_gap": 12,
+    "planner_gap": 24,
+    "query_interpretation_gap": 21,
+    "ranking_gap": 9,
+    "representation_gap": 14,
+    "source_coverage_gap": 49,
+    "surface_ux_gap": 4
+  },
+  "local_eval_status_counts": {
+    "capability_gap": 7,
+    "covered": 5,
+    "partial": 40,
+    "source_gap": 10,
+    "unknown": 2
+  },
+  "manifest_id": "obs_agent_candidate_batch_0_local_eval_manifest_v0",
+  "manual_batch_0": {
+    "observed_observation_count": 0,
+    "pending_observation_count": 39,
+    "selected_query_count": 13,
+    "slot_manifest_status_counts": {
+      "pending_manual_observation": 39
+    }
+  },
+  "notes": [
+    "Generated from committed repo-local materials only.",
+    "Manual external baseline slots remain pending.",
+    "No live source access, browser use, API calls, scraping, crawling, downloads, model calls, or provider calls were performed.",
+    "Track B local task packet was observed at TRACK-B-06; queue/context mutation is deferred to avoid overwriting parallel Track B state."
+  ],
+  "product_boundary": {
+    "automated_external_search": false,
+    "called_external_apis": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "crawled_external_systems": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "modified_track_b_files": false,
+    "mutated_master_index": false,
+    "opened_browsers": false,
+    "performed_observations": false,
+    "scraped_external_systems": false
+  },
+  "review_required": true,
+  "schema_version": "obs_agent_candidate_batch_local_eval_manifest.v0",
+  "source_policy": "control/inventory/observations/obs_agent_local_eval_failure_mining_policy.json",
+  "source_roots_inspected": [
+    "control/audits/**",
+    "control/inventory/observations/**",
+    "docs/operations/**",
+    "evals/search_usefulness/**",
+    "site/dist/data/**",
+    "site/dist/demo/**"
+  ],
+  "source_roots_skipped": [
+    "docs/reference/**",
+    "examples/**"
+  ],
+  "static_demo_summary": {
+    "contains_live_data": false,
+    "contains_live_probes": false,
+    "demo_count": 8
+  },
+  "status_counts": {
+    "needs_human_review": 1,
+    "policy_blocked": 1,
+    "proposed": 3
+  },
+  "truth_boundary": {
+    "candidates_are_evidence_truth": false,
+    "candidates_are_observed_baselines": false,
+    "candidates_can_mutate_master_index": false,
+    "human_review_required": true
+  }
+}

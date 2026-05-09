@@ -1,0 +1,69 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_local_eval_source_gap_v0",
+  "candidate_type": "source_lead",
+  "candidate_status": "proposed",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "evals/search_usefulness/queries/search_usefulness_v0.json#windows_7_apps",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "windows_7_apps",
+  "related_system_id": null,
+  "query_text": "Windows 7 apps",
+  "source_mode": "repo_local_only",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "source_policy_required_before_external_access",
+  "candidate_summary": "The local hard-query pack labels Windows 7 application discovery as a source coverage and compatibility evidence gap; a future reviewed source lead could target old-platform-compatible software collections.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "source_coverage_gap",
+    "compatibility_evidence_gap",
+    "ranking_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "evidence_refs": [
+    "evals/search_usefulness/queries/search_usefulness_v0.json",
+    "site/dist/data/eval_summary.json"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:old-platform-compatible-software-collections"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:review-old-platform-source-coverage"
+  ],
+  "limitations": [
+    "Lead is derived from committed local query and eval files only.",
+    "No source was queried."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "Source lead is not source validation."
+  ]
+}

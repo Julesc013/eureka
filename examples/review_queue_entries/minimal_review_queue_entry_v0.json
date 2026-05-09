@@ -1,0 +1,21 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "minimal_review_queue_entry_v0",
+  "input_type": "committed_review_fixture",
+  "input_ref": "examples/review_queue_entries/minimal_review_queue_entry_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "example_only",
+  "review_subject_type": "candidate_record",
+  "review_subject_ref": "candidate.minimal.fixture.v0",
+  "review_subject_summary": "Minimal local review queue fixture.",
+  "review_decision": "no_decision_yet",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Fixture demonstrates review entry shape.",
+  "required_evidence": [
+    "candidate context"
+  ],
+  "missing_evidence": [],
+  "notes": [
+    "No downstream promotion occurs."
+  ]
+}

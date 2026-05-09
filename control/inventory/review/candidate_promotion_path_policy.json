@@ -1,0 +1,33 @@
+{
+  "schema_version": "candidate_promotion_path_policy.v0",
+  "policy_id": "candidate_promotion_path_policy_v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "control/inventory/master_index/",
+    "control/master_index/",
+    "master_index/",
+    "public_index/",
+    "evals/search_usefulness/external_baselines/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    ".git/"
+  ],
+  "private_roots_must_not_be_created": [
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "notes": [
+    "Promotion dry-run scripts write no files by default.",
+    "Committed dry-run output is limited to audit generated evidence."
+  ]
+}

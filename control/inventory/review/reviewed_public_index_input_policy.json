@@ -1,0 +1,46 @@
+{
+  "schema_version": "reviewed_public_index_input_policy.v0",
+  "policy_id": "reviewed_public_index_input_policy_v0",
+  "allowed_future_input_types": [
+    "candidate_promotion_dry_run",
+    "local_review_queue_entry",
+    "candidate_record",
+    "evidence_ledger_record",
+    "source_cache_record",
+    "source_cache_to_evidence_bridge_result",
+    "search_need_record",
+    "search_miss_record",
+    "query_observation_record",
+    "source_pack_future",
+    "evidence_pack_future",
+    "contribution_pack_future",
+    "review_pack_future"
+  ],
+  "forbidden_input_types": [
+    "unreviewed_candidate",
+    "unreviewed_evidence_candidate",
+    "unreviewed_source_observation",
+    "unreviewed_source_cache_record",
+    "unreviewed_AI_draft",
+    "scraped_result",
+    "unapproved_live_source_result",
+    "private_user_file",
+    "secret_or_credential",
+    "executable_download",
+    "installer_payload",
+    "account_session_data",
+    "telemetry_stream"
+  ],
+  "requirements": {
+    "all_input_records_must_preserve_review_refs_or_limitations": true,
+    "evidence_backed_records_must_have_source_or_provenance_refs_where_available": true,
+    "unresolved_conflicts_must_be_preserved": true,
+    "duplicate_uncertainty_must_be_preserved": true,
+    "missing_evidence_must_block_or_defer": true,
+    "rights_risk_blocks_must_block_or_defer": true
+  },
+  "notes": [
+    "Inputs are references to reviewed local records or future reviewed packs.",
+    "Unreviewed sources cannot enter a future rebuild without an explicit blocker or deferral."
+  ]
+}

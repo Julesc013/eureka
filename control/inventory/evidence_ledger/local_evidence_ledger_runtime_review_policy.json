@@ -1,0 +1,36 @@
+{
+  "schema_version": "local_evidence_ledger_runtime_review_policy.v0",
+  "policy_id": "local_evidence_ledger_runtime_review_policy_v0",
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_pack_export": true,
+  "review_required_before_master_index": true,
+  "review_required_before_rights_claim": true,
+  "review_required_before_malware_safety_claim": true,
+  "review_required_before_installability_claim": true,
+  "review_required_before_source_cache_bridge": true,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "allowed_review_states": [
+    "needs_review",
+    "review_deferred",
+    "conflict_review_required",
+    "approved_for_future_candidate_use",
+    "approved_for_future_pack_draft",
+    "rejected",
+    "blocked"
+  ],
+  "forbidden_review_outcomes": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "local_evidence_ledger_record_type_policy.v0",
+  "policy_id": "local_evidence_ledger_record_type_policy_v0",
+  "allowed_record_types": [
+    "ai_draft_future",
+    "checksum_claim",
+    "compatibility_claim",
+    "conflict_record",
+    "contribution_claim",
+    "discussion_derived_future",
+    "filename_or_member_claim",
+    "identity_claim",
+    "manual_observation_claim",
+    "metadata_claim",
+    "pack_claim",
+    "provenance_link",
+    "review_status_record",
+    "source_cache_derived_claim_future",
+    "source_locator",
+    "source_observation"
+  ],
+  "current_allowed_record_types": [
+    "checksum_claim",
+    "compatibility_claim",
+    "conflict_record",
+    "contribution_claim",
+    "filename_or_member_claim",
+    "identity_claim",
+    "manual_observation_claim",
+    "metadata_claim",
+    "pack_claim",
+    "provenance_link",
+    "review_status_record",
+    "source_locator",
+    "source_observation"
+  ],
+  "future_record_types": [
+    "ai_draft_future",
+    "discussion_derived_future",
+    "source_cache_derived_claim_future"
+  ],
+  "notes": [
+    "Types classify candidates and provenance events; they do not establish truth.",
+    "Source-cache derived claim is future-only because the bridge runtime is deferred."
+  ]
+}

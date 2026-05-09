@@ -1,0 +1,78 @@
+{
+  "schema_version": "local_source_cache_input_output_policy.v0",
+  "policy_id": "local_source_cache_input_output_policy_v0",
+  "label": "Local source cache input/output policy",
+  "allowed_input_types": [
+    "approved_api_result_future",
+    "approved_metadata_probe_result_future",
+    "candidate_record",
+    "committed_audit_report",
+    "committed_pack_example",
+    "committed_public_data_summary",
+    "committed_source_fixture",
+    "committed_static_artifact",
+    "manual_observation_record_future",
+    "node_policy_evaluation",
+    "search_need_record",
+    "source_cache_record",
+    "source_lead_candidate",
+    "workunit_result"
+  ],
+  "current_allowed_input_types": [
+    "candidate_record",
+    "committed_audit_report",
+    "committed_pack_example",
+    "committed_public_data_summary",
+    "committed_source_fixture",
+    "committed_static_artifact",
+    "node_policy_evaluation",
+    "search_need_record",
+    "source_cache_record",
+    "source_lead_candidate",
+    "workunit_result"
+  ],
+  "forbidden_input_types": [
+    "account_session_data",
+    "bulk_reddit_content",
+    "executable_download",
+    "installer_payload",
+    "private_user_file",
+    "raw_browser_profile",
+    "scraped_forum_thread",
+    "scraped_search_result",
+    "secret_or_credential",
+    "telemetry_stream",
+    "unapproved_live_source_result",
+    "unreviewed_external_api_payload"
+  ],
+  "allowed_output_types": [
+    "candidate_store_use_request_future",
+    "evidence_candidate_future",
+    "review_item_future",
+    "source_cache_record",
+    "source_cache_snapshot",
+    "source_cache_summary"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "malware_safety",
+    "master_index_mutation",
+    "production_readiness_claim",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "current_output_rules": {
+    "writes_no_files_by_default": true,
+    "explicit_output_path_required": true,
+    "audit_generated_or_temp_only": true,
+    "source_cache_to_evidence_bridge_enabled": false,
+    "public_index_use_enabled": false,
+    "master_index_mutation_enabled": false
+  },
+  "notes": [
+    "Future output types are review items only and do not create accepted evidence.",
+    "Current runtime accepts committed fixtures/examples and existing provisional records only."
+  ]
+}

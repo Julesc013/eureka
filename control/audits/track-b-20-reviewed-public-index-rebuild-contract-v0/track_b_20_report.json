@@ -1,0 +1,107 @@
+{
+  "schema_version": "track_b_20_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-20",
+  "added_contracts": [
+    "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+    "contracts/master_index/reviewed_public_record_proposal.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/REVIEWED_PUBLIC_INDEX_REBUILD_CONTRACT.md",
+    "docs/reference/REVIEWED_PUBLIC_RECORD_PROPOSAL_CONTRACT.md",
+    "docs/architecture/REVIEWED_PUBLIC_INDEX_REBUILD_MODEL.md",
+    "docs/operations/REVIEWED_PUBLIC_INDEX_REBUILD_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/review/reviewed_public_index_rebuild_policy.json",
+    "control/inventory/review/reviewed_public_index_input_policy.json",
+    "control/inventory/review/reviewed_public_index_output_policy.json",
+    "control/inventory/review/reviewed_public_index_record_policy.json",
+    "control/inventory/review/reviewed_public_index_path_policy.json",
+    "control/inventory/review/reviewed_public_index_truth_policy.json"
+  ],
+  "added_examples": [
+    "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+    "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
+    "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+    "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+    "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json",
+    "examples/reviewed_public_records/software_candidate_record_proposal_v0.json",
+    "examples/reviewed_public_records/source_record_proposal_v0.json",
+    "examples/reviewed_public_records/need_record_proposal_v0.json",
+    "examples/reviewed_public_records/policy_blocked_record_proposal_v0.json"
+  ],
+  "added_validators": [
+    "scripts/validate_reviewed_public_index_rebuild_contract.py"
+  ],
+  "added_tests": [
+    "tests/contracts/test_reviewed_public_index_rebuild_contract.py"
+  ],
+  "validation": {
+    "git_status": "warn_active_merge",
+    "git_diff_check": "pass_crlf_warnings",
+    "json_syntax": "pass",
+    "validate_reviewed_public_index_rebuild_contract": "pass",
+    "contract_unittest": "pass",
+    "full_unittest": "fail_unrelated_obs_agent_hardening_phrase_guard",
+    "architecture_boundaries": "pass",
+    "predecessor_track_b_validators": "pass",
+    "track_a_validators": "pass",
+    "obs_validators": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "warn_verifier",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "runtime_scope": {
+    "contract_only": true,
+    "implemented_rebuild_runtime": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "writes_public_index_files": false
+  },
+  "truth_boundary": {
+    "rebuild_contract_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "implemented_master_index_mutation": false,
+    "implemented_hosted_review_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Status is warn because the repository remains in an active merge state and full unittest has an unrelated OBS phrase-guard failure.",
+    "B-20 scoped validation passes and no public-index or master-index output was written."
+  ],
+  "next_task": "TRACK-B-21 \u2014 Pack builder runtime"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "track_b_19_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-19",
+  "added_runtime_modules": [
+    "runtime/local_foundry/candidate_promotion_dry_run.py"
+  ],
+  "added_scripts": [
+    "scripts/run_candidate_promotion_dry_run.py",
+    "scripts/validate_candidate_promotion_dry_run.py"
+  ],
+  "added_docs": [
+    "docs/reference/CANDIDATE_PROMOTION_DRY_RUN.md",
+    "docs/architecture/CANDIDATE_PROMOTION_DRY_RUN_MODEL.md",
+    "docs/operations/CANDIDATE_PROMOTION_DRY_RUN_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/review/candidate_promotion_dry_run_policy.json",
+    "control/inventory/review/candidate_promotion_readiness_policy.json",
+    "control/inventory/review/candidate_promotion_blocker_policy.json",
+    "control/inventory/review/candidate_promotion_output_policy.json",
+    "control/inventory/review/candidate_promotion_path_policy.json",
+    "control/inventory/review/candidate_promotion_truth_policy.json"
+  ],
+  "added_examples": [
+    "examples/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/missing_evidence_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/conflict_blocked_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/duplicate_blocked_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/policy_blocked_promotion_dry_run_v0.json",
+    "examples/candidate_promotion_dry_runs/rights_risk_blocked_promotion_dry_run_v0.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_candidate_promotion_dry_run.py",
+    "tests/operations/test_candidate_promotion_dry_run_scripts.py"
+  ],
+  "validation": {
+    "git_status": "warn_active_merge",
+    "git_diff_check": "pass_crlf_warnings",
+    "json_syntax": "pass",
+    "validate_local_review_queue_runtime": "pass",
+    "validate_candidate_store_runtime": "pass",
+    "validate_local_evidence_ledger_runtime": "pass",
+    "validate_source_cache_to_evidence_bridge": "pass",
+    "validate_candidate_promotion_dry_run": "pass",
+    "dry_run_script_check": "pass",
+    "scoped_unittest": "pass",
+    "full_unittest": "fail_unrelated_obs_agent_hardening_phrase_guard",
+    "architecture_boundaries": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "warn_verifier",
+    "aide_lite_adapter_validate": "pass",
+    "broader_track_b_validators": "pass",
+    "track_a_validators": "pass",
+    "obs_validators": "pass"
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "fixture_only": true,
+    "writes_no_files_by_default": true,
+    "promotion_dry_run_only": true,
+    "candidate_acceptance_enabled": false,
+    "evidence_acceptance_enabled": false,
+    "public_index_mutation_enabled": false,
+    "master_index_mutation_enabled": false
+  },
+  "truth_boundary": {
+    "promotion_dry_run_is_public_truth": false,
+    "promotion_dry_run_accepts_candidate": false,
+    "promotion_dry_run_accepts_evidence": false,
+    "promotion_dry_run_can_mutate_public_index": false,
+    "promotion_dry_run_can_mutate_master_index": false,
+    "human_review_required_for_actual_promotion": true
+  },
+  "product_boundary": {
+    "implemented_candidate_promotion_dry_run": true,
+    "implemented_actual_promotion": false,
+    "implemented_hosted_review_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Status is warn until repository-level merge state and unrelated test failures are resolved.",
+    "B-19 scoped validation is recorded in validation.md."
+  ],
+  "next_task": "TRACK-B-20 \u2014 Reviewed public-index rebuild contract"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "local_source_cache_record_status_policy.v0",
+  "policy_id": "local_source_cache_record_status_policy_v0",
+  "label": "Local source cache record status policy",
+  "allowed_statuses": [
+    "accepted_public_future",
+    "candidate_source_record",
+    "deferred",
+    "example_only",
+    "fixture_only",
+    "future_live_probe_result",
+    "needs_review",
+    "normalized",
+    "policy_blocked",
+    "recorded_local",
+    "rejected_future",
+    "rights_blocked",
+    "risk_blocked",
+    "source_observation",
+    "stale",
+    "superseded"
+  ],
+  "current_allowed_statuses": [
+    "candidate_source_record",
+    "deferred",
+    "example_only",
+    "fixture_only",
+    "needs_review",
+    "normalized",
+    "policy_blocked",
+    "recorded_local",
+    "source_observation"
+  ],
+  "statuses_forbidden_current": [
+    "accepted_public_future",
+    "future_live_probe_result",
+    "rejected_future",
+    "rights_blocked",
+    "risk_blocked",
+    "stale",
+    "superseded"
+  ],
+  "status_meanings": {
+    "accepted_public_future": "Future vocabulary only; not allowed for current runtime records.",
+    "candidate_source_record": "A provisional source lead or source posture candidate requiring review.",
+    "deferred": "Deferred for a later reviewed task.",
+    "example_only": "Synthetic committed example only.",
+    "fixture_only": "Committed fixture record only.",
+    "future_live_probe_result": "Future vocabulary only; live probes remain disabled.",
+    "needs_review": "Review is required before downstream use.",
+    "normalized": "Repo-local normalized fixture fields only.",
+    "policy_blocked": "Blocked by source access, privacy, rights, risk, or product policy.",
+    "recorded_local": "Recorded from explicit local fixture input only.",
+    "rejected_future": "Future vocabulary only for a reviewed rejection trail.",
+    "rights_blocked": "Future rights-risk block vocabulary.",
+    "risk_blocked": "Future operational or privacy-risk block vocabulary.",
+    "source_observation": "Repo-local source observation draft, not truth.",
+    "stale": "Future stale-record vocabulary.",
+    "superseded": "Future supersession vocabulary."
+  },
+  "no_truth_claim_rules": [
+    "No current status means public truth.",
+    "No current status means accepted evidence.",
+    "No current status allows master-index mutation."
+  ],
+  "notes": [
+    "Current examples must not use accepted_public_future or future_live_probe_result."
+  ]
+}

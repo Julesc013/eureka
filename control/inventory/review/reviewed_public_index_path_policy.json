@@ -1,0 +1,29 @@
+{
+  "schema_version": "reviewed_public_index_path_policy.v0",
+  "policy_id": "reviewed_public_index_path_policy_v0",
+  "allowed_output_roots_current": [
+    "examples/reviewed_public_index_rebuilds/",
+    "examples/reviewed_public_records/",
+    "control/audits/**/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "master-index production roots",
+    "public-index production roots",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "current_task_writes_public_index_artifacts": false,
+  "current_task_writes_site_dist": false,
+  "current_task_writes_data_public_index": false,
+  "notes": [
+    "Contract files under contracts/master_index are allowed source artifacts, not generated runtime output.",
+    "Future rebuild output must use a separately approved path policy."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "pack_export_truth_policy.v0",
+  "policy_id": "pack_export_truth_policy.v0",
+  "exported_pack_is_truth": false,
+  "exported_pack_is_public_truth": false,
+  "exported_pack_is_accepted_evidence": false,
+  "exported_pack_is_accepted_pack": false,
+  "exported_pack_is_public_record": false,
+  "exported_pack_is_imported_state": false,
+  "exported_pack_is_submitted": false,
+  "exported_pack_can_mutate_public_index": false,
+  "exported_pack_can_mutate_master_index": false,
+  "exported_pack_can_claim_rights_clearance": false,
+  "exported_pack_can_claim_malware_safety": false,
+  "exported_pack_can_claim_verified_installability": false,
+  "exported_pack_can_claim_exhaustive_global_search": false,
+  "exported_pack_can_claim_production_readiness": false,
+  "human_review_required_before_import_or_submission": true,
+  "notes": [
+    "Export truth posture is negative by default; export is portable draft material only."
+  ]
+}

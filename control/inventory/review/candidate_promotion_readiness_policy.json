@@ -1,0 +1,42 @@
+{
+  "schema_version": "candidate_promotion_readiness_policy.v0",
+  "policy_id": "candidate_promotion_readiness_policy_v0",
+  "allowed_readiness_values": [
+    "not_evaluable",
+    "not_ready_conflict_unresolved",
+    "not_ready_duplicate_uncertain",
+    "not_ready_identity_uncertain",
+    "not_ready_missing_evidence",
+    "not_ready_missing_review",
+    "not_ready_policy_blocked",
+    "not_ready_representation_uncertain",
+    "not_ready_rights_blocked",
+    "not_ready_risk_blocked",
+    "not_ready_source_uncertain",
+    "ready_for_future_reviewed_record_proposal"
+  ],
+  "ready_value": "ready_for_future_reviewed_record_proposal",
+  "ready_value_meaning": "Candidate has enough explicit local dry-run inputs to seed a future reviewed public-record proposal.",
+  "ready_value_is_public_truth": false,
+  "ready_value_accepts_candidate": false,
+  "ready_value_accepts_evidence": false,
+  "ready_value_allows_public_index_mutation": false,
+  "ready_value_allows_master_index_mutation": false,
+  "blocked_values": [
+    "not_evaluable",
+    "not_ready_conflict_unresolved",
+    "not_ready_duplicate_uncertain",
+    "not_ready_identity_uncertain",
+    "not_ready_missing_evidence",
+    "not_ready_missing_review",
+    "not_ready_policy_blocked",
+    "not_ready_representation_uncertain",
+    "not_ready_rights_blocked",
+    "not_ready_risk_blocked",
+    "not_ready_source_uncertain"
+  ],
+  "notes": [
+    "Readiness is a dry-run conclusion only.",
+    "Actual promotion remains a separate reviewed future task."
+  ]
+}

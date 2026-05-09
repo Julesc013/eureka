@@ -1,0 +1,27 @@
+{
+  "schema_version": "reviewed_public_index_truth_policy.v0",
+  "policy_id": "reviewed_public_index_truth_policy_v0",
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_record_creation_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "public_record_requires_review": true,
+  "evidence_summary_requires_review": true,
+  "source_summary_requires_review": true,
+  "truth_boundary": {
+    "rebuild_contract_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "notes": [
+    "This policy keeps reviewed public record proposals separate from accepted public truth.",
+    "Actual publication requires a future reviewed rebuild runtime."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "pack_export_output_policy.v0",
+  "policy_id": "pack_export_output_policy.v0",
+  "allowed_output_types": [
+    "exported_pack_draft",
+    "exported_pack_manifest",
+    "pack_export_result",
+    "pack_export_summary",
+    "pack_fixity_report",
+    "pack_validation_report",
+    "pack_blocker_report"
+  ],
+  "forbidden_output_types": [
+    "pack_import",
+    "pack_submission",
+    "hosted_upload",
+    "accepted_pack",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim",
+    "real_signature"
+  ],
+  "output_scope": {
+    "pack_export_only": true,
+    "review_required_before_downstream_use": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "real_signature_allowed_current": false
+  },
+  "notes": [
+    "Export output is portable draft material only."
+  ]
+}

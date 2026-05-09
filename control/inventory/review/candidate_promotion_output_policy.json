@@ -1,0 +1,30 @@
+{
+  "schema_version": "candidate_promotion_output_policy.v0",
+  "policy_id": "candidate_promotion_output_policy_v0",
+  "allowed_output_types": [
+    "promotion_blocker_report",
+    "promotion_dry_run_record",
+    "promotion_dry_run_summary",
+    "review_item_future",
+    "reviewed_public_record_proposal_future",
+    "workunit_seed_future"
+  ],
+  "forbidden_output_types": [
+    "accepted_candidate",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "malware_safety",
+    "master_index_mutation",
+    "production_readiness_claim",
+    "public_index_mutation",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "writes_public_index": false,
+  "writes_master_index": false,
+  "notes": [
+    "Outputs are review evidence and summaries only.",
+    "Future proposal output remains future-only and review-gated."
+  ]
+}

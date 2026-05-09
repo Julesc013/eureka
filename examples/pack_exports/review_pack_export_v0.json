@@ -1,0 +1,298 @@
+{
+  "blocked_items": [],
+  "export_format": "json_pack_export",
+  "export_label": "Review Pack Export",
+  "export_manifest": {
+    "acceptance_allowed": false,
+    "export_format": "json_pack_export",
+    "export_pack_type": "review_pack_export",
+    "export_status": "exported_local",
+    "fixity": {
+      "algorithm": "sha256",
+      "authenticity_claim": "local_fixity_only_not_signature",
+      "deterministic_serialization": true,
+      "hash_input_scope": "deterministic_export_payload_without_fixity_or_manifest",
+      "real_signature": false,
+      "sha256": "4f445b561862e3006cded45c62af23adc1496ffd8adc7182d38819c5843b878c",
+      "status": "computed_local"
+    },
+    "generated_from_pack_draft_ref": "pack_draft.review_pack_draft.cdece7aeef60.v0",
+    "hosted_upload_allowed": false,
+    "import_allowed": false,
+    "manifest_id": "export_manifest.964028396686.v0",
+    "master_index_mutation_allowed": false,
+    "pack_export_id": "pack_export.review_pack_export.036a152545fc.v0",
+    "public_index_mutation_allowed": false,
+    "review_required": true,
+    "schema_version": "exported_pack_manifest.v0",
+    "signature_status": "unsigned_placeholder_only",
+    "submission_allowed": false
+  },
+  "export_pack_type": "review_pack_export",
+  "export_status": "exported_local",
+  "exported_pack": {
+    "export_metadata": {
+      "accepted": false,
+      "exported_local": true,
+      "hosted_upload": false,
+      "imported": false,
+      "master_index_mutation": false,
+      "public_index_mutation": false,
+      "published": false,
+      "submitted": false
+    },
+    "exported_pack_kind": "draft_export",
+    "no_claim_summary": [
+      "not accepted truth",
+      "not imported state",
+      "not submitted",
+      "not public index mutation",
+      "not master index mutation",
+      "not rights clearance",
+      "not malware safety",
+      "not verified installability",
+      "not real signing"
+    ],
+    "review_required_marker": true,
+    "source_pack_draft": {
+      "blocked_items": [],
+      "candidate_summary": {
+        "candidate_acceptance_claimed": false,
+        "candidate_ref_count": 0,
+        "candidate_refs": [],
+        "review_required": true
+      },
+      "evidence_summary": {
+        "evidence_acceptance_claimed": false,
+        "evidence_ref_count": 0,
+        "evidence_refs": [],
+        "review_required": true
+      },
+      "generated_from": "explicit_input_only",
+      "input_record_refs": [
+        "candidate_needs_review_v0"
+      ],
+      "input_record_summary": {
+        "input_record_count": 1,
+        "input_records_are_accepted_truth": false,
+        "input_records_are_imported": false,
+        "input_type_counts": {
+          "local_review_queue_entry": 1
+        },
+        "public_safe_examples_only": true
+      },
+      "limitations": [
+        "Pack draft is not imported, submitted, accepted, published, or public truth.",
+        "Pack draft cannot mutate public index or master index.",
+        "Pack draft cannot claim rights clearance, malware safety, or verified installability."
+      ],
+      "no_goals": [
+        "no pack import",
+        "no pack submission",
+        "no accepted pack",
+        "no public index mutation",
+        "no master index mutation"
+      ],
+      "notes": [
+        "Pack draft is local review material only.",
+        "Review is required before any future import, submission, public use, or index use."
+      ],
+      "pack_contents": {
+        "accepted_state": false,
+        "content_mode": "local_draft_preview",
+        "imported_state": false,
+        "master_index_mutation": false,
+        "pack_type": "review_pack_draft",
+        "public_index_mutation": false,
+        "records": [
+          {
+            "input_type": "local_review_queue_entry",
+            "public_safe_summary_only": true,
+            "record_label": "SearchNeed-derived version candidate requires local review.",
+            "record_ref": "candidate_needs_review_v0",
+            "record_status": "needs_review"
+          }
+        ],
+        "submitted_state": false
+      },
+      "pack_draft_id": "pack_draft.review_pack_draft.cdece7aeef60.v0",
+      "pack_label": "Review Pack Draft",
+      "pack_status": "drafted_local",
+      "pack_type": "review_pack_draft",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "claimed_exhaustive_global_search": false,
+        "claimed_malware_safety": false,
+        "claimed_production_readiness": false,
+        "claimed_rights_clearance": false,
+        "claimed_verified_installability": false,
+        "created_local_private_state": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_model_provider_calls": false,
+        "enabled_network_access": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "implemented_candidate_acceptance": false,
+        "implemented_evidence_acceptance": false,
+        "implemented_hosted_upload_runtime": false,
+        "implemented_pack_builder_runtime": true,
+        "implemented_pack_import_runtime": false,
+        "implemented_pack_submission_runtime": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "review_gates": {
+        "review_required_before_evidence_acceptance": true,
+        "review_required_before_master_index": true,
+        "review_required_before_pack_import": true,
+        "review_required_before_pack_submission": true,
+        "review_required_before_public_index_use": true,
+        "review_required_before_public_use": true
+      },
+      "review_summary": {
+        "review_gate_count": 6,
+        "review_required": true,
+        "review_status": "needs_review"
+      },
+      "schema_version": "local_pack_draft.v0",
+      "source_summary": {
+        "source_pack_candidate": false,
+        "source_ref_count": 0,
+        "source_refs": [],
+        "source_truth_claimed": false
+      },
+      "truth_boundary": {
+        "human_review_required_before_submission_or_import": true,
+        "pack_draft_can_claim_exhaustive_global_search": false,
+        "pack_draft_can_claim_malware_safety": false,
+        "pack_draft_can_claim_production_readiness": false,
+        "pack_draft_can_claim_rights_clearance": false,
+        "pack_draft_can_claim_verified_installability": false,
+        "pack_draft_can_mutate_master_index": false,
+        "pack_draft_can_mutate_public_index": false,
+        "pack_draft_is_accepted_evidence": false,
+        "pack_draft_is_accepted_pack": false,
+        "pack_draft_is_public_truth": false
+      }
+    }
+  },
+  "fixity": {
+    "algorithm": "sha256",
+    "authenticity_claim": "local_fixity_only_not_signature",
+    "deterministic_serialization": true,
+    "hash_input_scope": "deterministic_export_payload_without_fixity_or_manifest",
+    "real_signature": false,
+    "sha256": "4f445b561862e3006cded45c62af23adc1496ffd8adc7182d38819c5843b878c",
+    "status": "computed_local"
+  },
+  "generated_from_pack_draft_ref": "pack_draft.review_pack_draft.cdece7aeef60.v0",
+  "input_pack_draft_summary": {
+    "blocked_item_count": 0,
+    "input_record_count": 1,
+    "pack_draft_can_mutate_master_index": false,
+    "pack_draft_can_mutate_public_index": false,
+    "pack_draft_id": "pack_draft.review_pack_draft.cdece7aeef60.v0",
+    "pack_draft_is_accepted_pack": false,
+    "pack_status": "drafted_local",
+    "pack_type": "review_pack_draft",
+    "review_required": true
+  },
+  "limitations": [
+    "Export is not imported, submitted, uploaded, published, accepted, or public truth.",
+    "Export cannot mutate public index or master index.",
+    "Export cannot claim rights clearance, malware safety, verified installability, or production readiness.",
+    "SHA-256 fixity is local deterministic hashing only and not a real signature."
+  ],
+  "no_goals": [
+    "no pack import",
+    "no pack submission",
+    "no hosted upload",
+    "no accepted pack",
+    "no real signing",
+    "no public index mutation",
+    "no master index mutation"
+  ],
+  "notes": [
+    "Export is a local draft artifact only.",
+    "SHA-256 fixity is local deterministic hashing, not a real signature."
+  ],
+  "pack_export_id": "pack_export.review_pack_export.036a152545fc.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_real_signing": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_candidate_acceptance": false,
+    "implemented_evidence_acceptance": false,
+    "implemented_hosted_upload_runtime": false,
+    "implemented_pack_export_runtime": true,
+    "implemented_pack_import_runtime": false,
+    "implemented_pack_submission_runtime": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "used_private_keys": false
+  },
+  "review_gates": {
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_master_index": true,
+    "review_required_before_pack_import": true,
+    "review_required_before_pack_submission": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_public_use": true
+  },
+  "schema_version": "local_pack_export.v0",
+  "signature_policy": {
+    "claims_cryptographic_signature": false,
+    "notes": "No real signing keys are used by this runtime.",
+    "private_keys_allowed": false,
+    "real_signing_enabled": false,
+    "signature_placeholder_allowed": true,
+    "signature_status": "unsigned_placeholder_only"
+  },
+  "truth_boundary": {
+    "exported_pack_can_claim_exhaustive_global_search": false,
+    "exported_pack_can_claim_malware_safety": false,
+    "exported_pack_can_claim_production_readiness": false,
+    "exported_pack_can_claim_rights_clearance": false,
+    "exported_pack_can_claim_verified_installability": false,
+    "exported_pack_can_mutate_master_index": false,
+    "exported_pack_can_mutate_public_index": false,
+    "exported_pack_is_accepted_evidence": false,
+    "exported_pack_is_accepted_pack": false,
+    "exported_pack_is_imported_state": false,
+    "exported_pack_is_public_record": false,
+    "exported_pack_is_public_truth": false,
+    "exported_pack_is_submitted": false,
+    "exported_pack_is_truth": false,
+    "human_review_required_before_import_or_submission": true
+  },
+  "validation_summary": {
+    "hosted_upload_enabled": false,
+    "pack_acceptance_enabled": false,
+    "pack_import_enabled": false,
+    "pack_submission_enabled": false,
+    "real_signing_enabled": false,
+    "validation_errors": []
+  }
+}

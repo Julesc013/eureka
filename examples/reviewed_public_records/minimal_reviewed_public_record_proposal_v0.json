@@ -1,0 +1,120 @@
+{
+  "schema_version": "reviewed_public_record_proposal.v0",
+  "reviewed_public_record_proposal_id": "reviewed_public_record_proposal.minimal.v0",
+  "proposal_status": "example_only",
+  "proposal_type": "object_public_record",
+  "proposal_label": "Minimal reviewed public record proposal",
+  "source_candidate_refs": [],
+  "source_review_refs": [],
+  "source_evidence_refs": [],
+  "source_cache_refs": [],
+  "source_pack_refs_future": [],
+  "proposed_public_record": {
+    "record_id": "public_record_proposal.minimal.v0",
+    "record_kind": "object",
+    "display_label": "Minimal proposal",
+    "review_status": "example_only",
+    "public_search_effect_status": "candidate_only"
+  },
+  "public_search_card_summary": {
+    "card_candidate_allowed_future": true,
+    "current_public_search_behavior_changed": false
+  },
+  "object_summary": {
+    "object_label": "Minimal proposal",
+    "object_kind": "example"
+  },
+  "source_summary": {
+    "source_refs": [],
+    "source_posture": "not_evaluated",
+    "source_limitations": [
+      "No source refs are provided in the minimal example."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_refs": [],
+    "evidence_posture": "not_evaluated",
+    "evidence_limitations": [
+      "No evidence refs are provided in the minimal example."
+    ]
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "not_evaluated",
+    "compatibility_caveats": []
+  },
+  "rights_summary": {
+    "rights_clearance_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Rights posture is not cleared."
+    ]
+  },
+  "risk_summary": {
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Risk posture is not cleared."
+    ]
+  },
+  "limitation_summary": {
+    "limitations": [
+      "Example proposal only."
+    ],
+    "no_claims": [
+      "no rights clearance",
+      "no malware safety",
+      "no verified installability"
+    ]
+  },
+  "absence_or_gap_summary": {
+    "known_gaps": [
+      "evidence refs"
+    ]
+  },
+  "review_summary": {
+    "review_refs": [],
+    "human_review_required": true
+  },
+  "conflict_summary": {
+    "conflict_status": "none_detected",
+    "conflict_preserved": true,
+    "automatic_resolution_allowed": false
+  },
+  "duplicate_summary": {
+    "duplicate_status": "unknown",
+    "duplicate_preserved": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "publication_constraints": {
+    "future_rebuild_required": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "truth_boundary": {
+    "record_proposal_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "record_proposal_mutates_public_index_current": false,
+    "record_proposal_mutates_master_index_current": false,
+    "record_proposal_can_claim_rights_clearance": false,
+    "record_proposal_can_claim_malware_safety": false,
+    "record_proposal_can_claim_verified_installability": false,
+    "human_review_required_for_actual_publication": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "created_public_record_current": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "A proposal is not publication."
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "track_b_22_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-22",
+  "added_runtime_modules": [
+    "runtime/local_foundry/pack_export.py"
+  ],
+  "added_scripts": [
+    "scripts/export_local_pack.py",
+    "scripts/validate_pack_export_runtime.py"
+  ],
+  "added_docs": [
+    "docs/reference/PACK_EXPORT_RUNTIME.md",
+    "docs/architecture/PACK_EXPORT_MODEL.md",
+    "docs/operations/PACK_EXPORT_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/packs/pack_export_runtime_policy.json",
+    "control/inventory/packs/pack_export_input_policy.json",
+    "control/inventory/packs/pack_export_output_policy.json",
+    "control/inventory/packs/pack_export_format_policy.json",
+    "control/inventory/packs/pack_export_path_policy.json",
+    "control/inventory/packs/pack_export_review_policy.json",
+    "control/inventory/packs/pack_export_truth_policy.json",
+    "control/inventory/packs/pack_export_fixity_policy.json"
+  ],
+  "added_examples": [
+    "examples/pack_exports/source_pack_export_v0.json",
+    "examples/pack_exports/evidence_pack_export_v0.json",
+    "examples/pack_exports/contribution_pack_export_v0.json",
+    "examples/pack_exports/review_pack_export_v0.json",
+    "examples/pack_exports/index_pack_preview_export_v0.json",
+    "examples/pack_exports/policy_blocked_pack_export_v0.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_pack_export_runtime.py",
+    "tests/operations/test_pack_export_runtime_scripts.py"
+  ],
+  "validation": {
+    "git status --short": "warn: repository was already in an active merge with unrelated staged changes",
+    "git diff --check": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_runtime_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_input_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_output_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_format_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_path_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_review_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_truth_policy.json": "pass",
+    "python -m json.tool control/inventory/packs/pack_export_fixity_policy.json": "pass",
+    "python -m json.tool control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json": "pass",
+    "python scripts/validate_pack_export_runtime.py": "pass",
+    "python scripts/export_local_pack.py --input examples/pack_drafts/evidence_pack_draft_v0.json --check": "pass",
+    "python -m unittest tests.runtime.test_pack_export_runtime tests.operations.test_pack_export_runtime_scripts": "pass",
+    "python -m unittest discover -s tests -t .": "fail: existing OBS hardening literals for google scrape remain outside B22 scope",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "earlier Track B validators": "pass",
+    "python scripts/validate_track_a_contracts.py": "pass",
+    "python scripts/validate_agent_assisted_observation_policy.py": "pass",
+    "python scripts/validate_observation_candidate.py": "pass",
+    "py -3 .aide/scripts/aide_lite.py doctor": "pass",
+    "py -3 .aide/scripts/aide_lite.py validate": "pass with existing review-packet reference warnings",
+    "py -3 .aide/scripts/aide_lite.py test": "pass",
+    "py -3 .aide/scripts/aide_lite.py selftest": "pass",
+    "py -3 .aide/scripts/aide_lite.py verify": "warn: active merge includes unrelated staged changes outside B22",
+    "py -3 .aide/scripts/aide_lite.py eval list": "pass",
+    "py -3 .aide/scripts/aide_lite.py eval run": "pass",
+    "py -3 .aide/scripts/aide_lite.py review-pack": "warn: verifier result remained warn",
+    "py -3 .aide/scripts/aide_lite.py adapter validate": "pass",
+    "git commit -m \"runtime(pack): add local pack export runtime\" -- <B22 paths>": "blocked: git refused partial commit during active merge"
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "fixture_only": true,
+    "writes_no_files_by_default": true,
+    "pack_export_only": true,
+    "pack_import_enabled": false,
+    "pack_submission_enabled": false,
+    "hosted_upload_enabled": false,
+    "pack_acceptance_enabled": false,
+    "real_signing_enabled": false,
+    "public_index_mutation_enabled": false,
+    "master_index_mutation_enabled": false
+  },
+  "truth_boundary": {
+    "exported_pack_is_public_truth": false,
+    "exported_pack_is_accepted_evidence": false,
+    "exported_pack_is_accepted_pack": false,
+    "exported_pack_can_mutate_public_index": false,
+    "exported_pack_can_mutate_master_index": false,
+    "human_review_required_before_import_or_submission": true
+  },
+  "product_boundary": {
+    "implemented_pack_export_runtime": true,
+    "implemented_pack_import_runtime": false,
+    "implemented_pack_submission_runtime": false,
+    "implemented_hosted_upload_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "next_task": "TRACK-B-23 \u2014 Track B integration audit"
+}

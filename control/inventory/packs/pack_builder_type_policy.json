@@ -1,0 +1,73 @@
+{
+  "schema_version": "pack_builder_type_policy.v0",
+  "policy_id": "pack_builder_type_policy.v0",
+  "current_pack_types": [
+    "source_pack_draft",
+    "evidence_pack_draft",
+    "contribution_pack_draft",
+    "review_pack_draft",
+    "index_pack_preview",
+    "policy_blocked_pack"
+  ],
+  "future_pack_types": [
+    "compatibility_pack_draft_future",
+    "alias_pack_draft_future",
+    "hash_pack_draft_future",
+    "extraction_pack_draft_future",
+    "query_need_pack_draft_future",
+    "snapshot_pack_draft_future"
+  ],
+  "allowed_pack_types": [
+    "source_pack_draft",
+    "evidence_pack_draft",
+    "contribution_pack_draft",
+    "review_pack_draft",
+    "index_pack_preview",
+    "compatibility_pack_draft_future",
+    "alias_pack_draft_future",
+    "hash_pack_draft_future",
+    "extraction_pack_draft_future",
+    "query_need_pack_draft_future",
+    "snapshot_pack_draft_future",
+    "policy_blocked_pack"
+  ],
+  "allowed_pack_statuses": [
+    "example_only",
+    "drafted_local",
+    "validate_only",
+    "needs_review",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "incomplete",
+    "deferred",
+    "not_evaluable",
+    "submitted_future",
+    "accepted_public_future",
+    "rejected_future"
+  ],
+  "current_pack_statuses": [
+    "example_only",
+    "drafted_local",
+    "validate_only",
+    "needs_review",
+    "policy_blocked",
+    "rights_blocked",
+    "risk_blocked",
+    "incomplete",
+    "deferred",
+    "not_evaluable"
+  ],
+  "request_statuses": [
+    "example_only",
+    "planned",
+    "local_draft_only",
+    "fixture_only",
+    "policy_blocked",
+    "deferred",
+    "not_evaluable"
+  ],
+  "notes": [
+    "Future pack types are vocabulary only and not current build behavior."
+  ]
+}

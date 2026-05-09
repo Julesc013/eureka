@@ -1,0 +1,65 @@
+{
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "promotion_dry_run_id": "candidate_promotion_dry_run.duplicate.fixture.v0",
+  "promotion_dry_run_status": "duplicate_possible",
+  "promotion_readiness": "not_ready_duplicate_uncertain",
+  "candidate_ref": "candidate.duplicate_possible.fixture.v0",
+  "candidate_summary": "Candidate has unresolved duplicate uncertainty.",
+  "evidence_refs": [],
+  "review_entry_refs": [
+    "review_queue.candidate_record.64e92e331c1f.v0"
+  ],
+  "source_cache_refs": [],
+  "source_cache_bridge_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs_future": [],
+  "evidence_requirement_results": [],
+  "review_requirement_results": [],
+  "identity_requirement_results": [],
+  "conflict_requirement_results": [],
+  "duplicate_requirement_results": [
+    {
+      "requirement_id": "duplicate.none_uncertain",
+      "requirement_type": "duplicate",
+      "requirement_status": "duplicate_uncertain",
+      "evidence_or_review_refs": [
+        "review_queue.candidate_record.64e92e331c1f.v0"
+      ],
+      "pass_fail_unknown": "fail",
+      "blocker_refs": [
+        "duplicate_uncertain"
+      ],
+      "limitations": [],
+      "notes": "Duplicate uncertainty blocks readiness."
+    }
+  ],
+  "rights_risk_requirement_results": [],
+  "policy_requirement_results": [],
+  "blockers": [
+    {
+      "blocker_id": "promotion_blocker.duplicate_uncertain.v0",
+      "blocker_category": "duplicate_uncertain",
+      "blocker_summary": "Duplicate marker requires review.",
+      "evidence_or_review_refs": [
+        "review_queue.candidate_record.64e92e331c1f.v0"
+      ],
+      "automatic_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_delete_allowed": false
+    }
+  ],
+  "warnings": [],
+  "proposed_reviewed_record_summary_future": "Deferred until duplicate review.",
+  "allowed_next_actions": [
+    "request_review"
+  ],
+  "forbidden_next_actions": [
+    "automatic_merge",
+    "automatic_delete",
+    "mutate_public_index",
+    "mutate_master_index"
+  ],
+  "limitations": [],
+  "notes": []
+}

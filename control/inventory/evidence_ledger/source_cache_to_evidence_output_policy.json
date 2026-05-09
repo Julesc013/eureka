@@ -1,0 +1,39 @@
+{
+  "schema_version": "source_cache_to_evidence_output_policy.v0",
+  "policy_id": "source_cache_to_evidence_output_policy_v0",
+  "allowed_output_types": [
+    "bridge_result",
+    "bridge_summary",
+    "conflict_report",
+    "evidence_candidate_record",
+    "provenance_gap_report",
+    "review_item_future"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "malware_safety",
+    "master_index_mutation",
+    "production_readiness_claim",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "allowed_current_outputs": [
+    "bridge_result",
+    "bridge_summary",
+    "evidence_candidate_record",
+    "provenance_gap_report",
+    "conflict_report"
+  ],
+  "output_truth_boundary": {
+    "accepted_as_evidence": false,
+    "accepted_as_public_truth": false,
+    "master_index_mutation_allowed": false,
+    "review_required": true
+  },
+  "notes": [
+    "Bridge outputs are local review artifacts.",
+    "No output type is public truth, accepted evidence, or a master-index write."
+  ]
+}

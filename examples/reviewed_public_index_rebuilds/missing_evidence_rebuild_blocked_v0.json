@@ -1,0 +1,155 @@
+{
+  "schema_version": "reviewed_public_index_rebuild.v0",
+  "rebuild_contract_id": "reviewed_public_index_rebuild.missing_evidence.fixture.v0",
+  "rebuild_label": "Missing evidence blocked rebuild example",
+  "rebuild_status": "blocked_missing_evidence",
+  "rebuild_scope": [
+    "blocker reporting"
+  ],
+  "rebuild_input_policy": {
+    "allowed_input_types": [
+      "candidate_record",
+      "local_review_queue_entry"
+    ],
+    "forbidden_input_types": [
+      "unreviewed_evidence_candidate"
+    ]
+  },
+  "rebuild_output_policy": {
+    "allowed_output_types": [
+      "review_blocker_report"
+    ],
+    "forbidden_output_types": [
+      "accepted_evidence_truth_without_review",
+      "public_index_mutation_current"
+    ]
+  },
+  "reviewed_input_refs": [
+    {
+      "input_ref": "examples/candidates/search_need_candidate_v0.json",
+      "input_type": "candidate_record",
+      "review_status": "needs_more_evidence",
+      "provenance_refs": [],
+      "evidence_refs": [],
+      "limitations": [
+        "Evidence refs are missing."
+      ]
+    }
+  ],
+  "blocked_input_refs": [
+    {
+      "input_ref": "candidate.search_need.software_version.v0",
+      "input_type": "candidate_record",
+      "review_status": "blocked_missing_evidence",
+      "provenance_refs": [],
+      "evidence_refs": [],
+      "limitations": [
+        "Missing evidence blocks future rebuild readiness."
+      ]
+    }
+  ],
+  "record_selection_policy": {
+    "review_required": true,
+    "evidence_required": true,
+    "ready_is_future_only": true
+  },
+  "evidence_requirements": {
+    "evidence_refs_required_for_ready_records": true,
+    "evidence_refs_present": false,
+    "missing_evidence_blocks_ready_status": true
+  },
+  "review_requirements": {
+    "review_refs_required_for_ready_records": true,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "source_policy_requirements": {
+    "source_policy_review_required": true,
+    "source_limitations_preserved": true
+  },
+  "rights_risk_requirements": {
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "rights_or_risk_blocks_defer_or_block": true
+  },
+  "compatibility_requirements": {
+    "compatibility_caveats_preserved": true
+  },
+  "identity_requirements": {
+    "identity_uncertainty_blocks_or_defers": true
+  },
+  "conflict_policy": {
+    "conflict_preservation_required": true,
+    "conflict_status": "none_detected",
+    "automatic_conflict_resolution_allowed": false
+  },
+  "duplicate_policy": {
+    "duplicate_preservation_required": true,
+    "duplicate_status": "none_detected",
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "proposed_public_records": [],
+  "blocked_records": [
+    {
+      "blocked_record_ref": "candidate.search_need.software_version.v0",
+      "blocker": "missing_evidence"
+    }
+  ],
+  "output_manifest_policy": {
+    "manifest_future_only": true,
+    "writes_public_index_current": false
+  },
+  "public_search_effect_policy": {
+    "public_search_behavior_changed_current": false,
+    "search_card_candidates_future_only": true
+  },
+  "public_index_mutation_policy": {
+    "public_index_mutation_allowed_current": false
+  },
+  "master_index_mutation_policy": {
+    "master_index_mutation_allowed_current": false
+  },
+  "audit_policy": {
+    "audit_report_required": true,
+    "audit_is_not_production_readiness": true
+  },
+  "truth_boundary": {
+    "rebuild_contract_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "implemented_master_index_mutation": false,
+    "implemented_hosted_review_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no current rebuild runtime"
+  ],
+  "notes": [
+    "Blocked examples preserve missing evidence instead of treating readiness as truth."
+  ]
+}

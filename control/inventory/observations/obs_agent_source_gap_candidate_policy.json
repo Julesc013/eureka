@@ -1,0 +1,133 @@
+{
+  "schema_version": "obs_agent_source_gap_candidate_policy.v0",
+  "policy_id": "obs_agent_source_gap_candidate_policy_v0",
+  "label": "OBS agent source gap candidate policy",
+  "description": "Policy for generating review-gated source gap observation candidates from committed repo-local materials only.",
+  "allowed_input_roots": [
+    "evals/search_usefulness/**",
+    "control/audits/**",
+    "control/inventory/observations/**",
+    "control/inventory/sources/**",
+    "contracts/source_registry/**",
+    "contracts/query/**",
+    "docs/reference/**",
+    "docs/operations/**",
+    "examples/**",
+    "site/dist/data/**",
+    "site/dist/demo/**"
+  ],
+  "forbidden_input_roots": [
+    "live web",
+    "browser sessions",
+    "API calls",
+    "downloaded binary archives",
+    "private local caches",
+    ".aide.local/**",
+    "secrets/**",
+    ".git/**",
+    "untracked external data"
+  ],
+  "allowed_source_gap_candidate_types": [
+    "source_lead",
+    "search_need_seed",
+    "work_unit_seed",
+    "policy_blocked_candidate",
+    "not_evaluable_candidate"
+  ],
+  "allowed_source_families": [
+    "internet_archive_metadata",
+    "wayback_cdx_memento_metadata",
+    "github_releases_metadata",
+    "package_registry_metadata",
+    "manual_only_forum_or_community",
+    "broad_web_policy_blocked"
+  ],
+  "allowed_source_access_modes": [
+    "repo_local_only",
+    "manual_human_only",
+    "permission_needed",
+    "no_autonomous_access",
+    "approved_api_future",
+    "approved_metadata_probe_future",
+    "approved_static_dump_future",
+    "restricted_demand_signal_only"
+  ],
+  "required_review_states": [
+    "proposed",
+    "needs_human_review",
+    "policy_blocked",
+    "deferred"
+  ],
+  "required_false_truth_boundary_fields": [
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "source_access_approved",
+    "performed_external_observation"
+  ],
+  "candidate_priority_fields": [
+    "priority_score",
+    "priority_band",
+    "priority_score_rationale",
+    "positive_factors",
+    "negative_factors"
+  ],
+  "source_policy_decision_requirements": [
+    "human_or_operator_review",
+    "source_family_scope",
+    "allowed_endpoint_or_surface",
+    "forbidden_endpoint_or_surface",
+    "rate_limit_and_timeout",
+    "terms_and_robots_posture",
+    "privacy_posture",
+    "rights_risk_posture",
+    "download_and_execution_exclusions",
+    "cache_and_evidence_destination",
+    "kill_switch",
+    "reviewed_output_contract"
+  ],
+  "forbidden_truth_conversions": [
+    "candidate_to_observed_baseline_without_review",
+    "source_lead_to_approved_source_without_policy",
+    "source_family_to_connector_runtime",
+    "metadata_lead_to_accepted_evidence",
+    "ranked_gap_to_master_index_mutation"
+  ],
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "No live external searches.",
+    "No browser automation or browser opening.",
+    "No API calls or source probes.",
+    "No scraping, crawling, downloads, installs, uploads, accounts, telemetry, or provider calls.",
+    "No source approval or connector runtime enablement.",
+    "No observed baselines, accepted evidence, source truth, or master-index mutation.",
+    "No Track B runtime or contract mutation."
+  ],
+  "notes": [
+    "A source gap candidate is a review item, not source approval.",
+    "A source lead is not evidence truth.",
+    "Ranking is advisory and bounded to committed repo-local evidence."
+  ]
+}

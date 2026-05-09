@@ -1,0 +1,382 @@
+{
+  "audit_packs": [
+    "control/audits/track-b-01-eureka-node-manifest-v0",
+    "control/audits/track-b-02-node-policy-contract-v0",
+    "control/audits/track-b-03-node-capability-contract-v0",
+    "control/audits/track-b-04-workunit-contract-v0",
+    "control/audits/track-b-05-workunit-result-contract-v0",
+    "control/audits/track-b-06-local-foundry-state-contract-v0",
+    "control/audits/track-b-07-query-observation-runtime-v0",
+    "control/audits/track-b-08-search-miss-ledger-runtime-v0",
+    "control/audits/track-b-09-search-need-runtime-v0",
+    "control/audits/track-b-10-workunit-dry-run-runner-v0",
+    "control/audits/track-b-11-node-policy-evaluator-v0",
+    "control/audits/track-b-12-candidate-store-runtime-v0",
+    "control/audits/track-b-13-local-source-cache-runtime-planning-v0",
+    "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0",
+    "control/audits/track-b-15-local-source-cache-runtime-v0",
+    "control/audits/track-b-16-local-evidence-ledger-runtime-v0",
+    "control/audits/track-b-17-source-cache-to-evidence-bridge-v0",
+    "control/audits/track-b-18-local-review-queue-runtime-v0",
+    "control/audits/track-b-19-candidate-promotion-dry-run-v0",
+    "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0",
+    "control/audits/track-b-21-pack-builder-runtime-v0",
+    "control/audits/track-b-22-pack-export-runtime-v0"
+  ],
+  "audited_tasks": [
+    "TRACK-B-01",
+    "TRACK-B-02",
+    "TRACK-B-03",
+    "TRACK-B-04",
+    "TRACK-B-05",
+    "TRACK-B-06",
+    "TRACK-B-07",
+    "TRACK-B-08",
+    "TRACK-B-09",
+    "TRACK-B-10",
+    "TRACK-B-11",
+    "TRACK-B-12",
+    "TRACK-B-13",
+    "TRACK-B-14",
+    "TRACK-B-15",
+    "TRACK-B-16",
+    "TRACK-B-17",
+    "TRACK-B-18",
+    "TRACK-B-19",
+    "TRACK-B-20",
+    "TRACK-B-21",
+    "TRACK-B-22"
+  ],
+  "contract_families": [
+    "contracts/node",
+    "contracts/query",
+    "contracts/source_cache",
+    "contracts/packs",
+    "contracts/master_index",
+    "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
+  ],
+  "critical_blockers": [],
+  "deferred_work": [
+    "IA connector approval prompt must decide source policy, User-Agent/contact posture, rate limits, cache TTL, and kill switch before any external call.",
+    "Actual public-index rebuild remains future work.",
+    "Pack import, submission, hosted upload, and federation remain future work.",
+    "Track C native clients, Track D relay/snapshot work, and Track E hosted operations remain deferred."
+  ],
+  "exit_gate_decision": "PASS_WITH_WARNINGS",
+  "first_connector_readiness": "READY_WITH_WARNINGS",
+  "gate_results": {
+    "banned_runtime_imports_absent": true,
+    "expected_paths_exist": true,
+    "forbidden_roots_unchanged": true,
+    "json_syntax_valid": true,
+    "product_boundary_preserved": true,
+    "truth_boundary_preserved": true
+  },
+  "known_gaps": [
+    "Repository is currently in an active merge with many unrelated staged Track B and OBS changes.",
+    "Full unittest currently fails on unrelated OBS hardening literals outside the Track B local foundry spine.",
+    "contracts/evidence is not present; evidence ledger contract material is currently documented under docs/reference and control inventories."
+  ],
+  "next_task": "IA-01 - Internet Archive metadata connector approval decision",
+  "notes": [
+    "Audit script is read-only unless --json-output is provided.",
+    "Existing site/dist and data/public_index roots are checked for git changes, not mere historical presence."
+  ],
+  "product_boundary": {
+    "changed_generated_site_artifacts": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "changed_public_search_behavior": false,
+    "created_local_private_state": false,
+    "created_native_projects": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosted_review_runtime": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "regenerated_site_dist": false
+  },
+  "runtime_families": [
+    "runtime/local_foundry/query_observation.py",
+    "runtime/local_foundry/search_miss_ledger.py",
+    "runtime/local_foundry/search_need.py",
+    "runtime/local_foundry/workunit_dry_run.py",
+    "runtime/local_foundry/node_policy_evaluator.py",
+    "runtime/local_foundry/candidate_store.py",
+    "runtime/local_foundry/source_cache.py",
+    "runtime/local_foundry/evidence_ledger.py",
+    "runtime/local_foundry/source_cache_to_evidence.py",
+    "runtime/local_foundry/review_queue.py",
+    "runtime/local_foundry/candidate_promotion_dry_run.py",
+    "runtime/local_foundry/pack_builder.py",
+    "runtime/local_foundry/pack_export.py"
+  ],
+  "schema_version": "track_b_23_report.v0",
+  "status": "pass_with_warnings",
+  "task": "TRACK-B-23",
+  "task_results": [
+    {
+      "known_warnings": [],
+      "label": "Eureka Node manifest contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-01",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Node policy contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-02",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Node capability contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-03",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "WorkUnit contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-04",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "WorkUnit result contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-05",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Local Foundry State contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-06",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Query Observation runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-07",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Search Miss Ledger runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-08",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "SearchNeed runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-09",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "WorkUnit dry-run runner",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-10",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Node Policy Evaluator",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-11",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Candidate Store runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-12",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Local Source Cache runtime planning",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-13",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [
+        "Evidence ledger contract remains documented in reference docs rather than contracts/evidence."
+      ],
+      "label": "Local Evidence Ledger runtime planning",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "warn",
+      "task_id": "TRACK-B-14",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Fixture-only Source Cache runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-15",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [
+        "No contracts/evidence directory exists; active evidence contracts are reference docs and policy inventories."
+      ],
+      "label": "Fixture-only Evidence Ledger runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "warn",
+      "task_id": "TRACK-B-16",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Source Cache to Evidence Ledger bridge",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-17",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Local Review Queue runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-18",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Candidate Promotion dry-run",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-19",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Reviewed Public Index Rebuild contract",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-20",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [],
+      "label": "Pack Builder runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "pass",
+      "task_id": "TRACK-B-21",
+      "truth_boundary_preserved": true
+    },
+    {
+      "known_warnings": [
+        "B22 commit was blocked by the existing active merge.",
+        "Repo-wide unittest has an unrelated OBS hardening failure outside B22 scope."
+      ],
+      "label": "Pack Export runtime",
+      "missing_paths": [],
+      "product_boundary_preserved": true,
+      "status": "warn",
+      "task_id": "TRACK-B-22",
+      "truth_boundary_preserved": true
+    }
+  ],
+  "track": "B",
+  "track_status": "complete_enough_for_first_connector_approval",
+  "truth_boundary": {
+    "accepted_candidate_truth_created": false,
+    "accepted_evidence_truth_created": false,
+    "accepted_public_truth_created": false,
+    "automatic_merge_or_promotion_claimed": false,
+    "exhaustive_global_search_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "validators": [
+    "scripts/validate_eureka_node_manifest.py",
+    "scripts/validate_eureka_node_policy.py",
+    "scripts/validate_eureka_node_capability.py",
+    "scripts/validate_eureka_workunit.py",
+    "scripts/validate_eureka_workunit_result.py",
+    "scripts/validate_local_foundry_state.py",
+    "scripts/validate_query_observation_runtime.py",
+    "scripts/validate_search_miss_ledger_runtime.py",
+    "scripts/validate_search_need_runtime.py",
+    "scripts/validate_workunit_dry_run_runner.py",
+    "scripts/validate_node_policy_evaluator.py",
+    "scripts/validate_candidate_store_runtime.py",
+    "scripts/validate_local_source_cache_runtime_plan.py",
+    "scripts/validate_local_evidence_ledger_runtime_plan.py",
+    "scripts/validate_local_source_cache_runtime.py",
+    "scripts/validate_local_evidence_ledger_runtime.py",
+    "scripts/validate_source_cache_to_evidence_bridge.py",
+    "scripts/validate_local_review_queue_runtime.py",
+    "scripts/validate_candidate_promotion_dry_run.py",
+    "scripts/validate_reviewed_public_index_rebuild_contract.py",
+    "scripts/validate_pack_builder_runtime.py",
+    "scripts/validate_pack_export_runtime.py"
+  ],
+  "warnings": [
+    "TRACK-B-14 warning: Evidence ledger contract remains documented in reference docs rather than contracts/evidence.",
+    "TRACK-B-16 warning: No contracts/evidence directory exists; active evidence contracts are reference docs and policy inventories.",
+    "TRACK-B-22 warning: B22 commit was blocked by the existing active merge.",
+    "TRACK-B-22 warning: Repo-wide unittest has an unrelated OBS hardening failure outside B22 scope."
+  ]
+}

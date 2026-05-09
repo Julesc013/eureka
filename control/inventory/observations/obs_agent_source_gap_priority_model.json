@@ -1,0 +1,73 @@
+{
+  "schema_version": "obs_agent_source_gap_priority_model.v0",
+  "model_id": "obs_agent_source_gap_priority_model_v0",
+  "label": "OBS agent source gap priority model",
+  "description": "Bounded advisory scoring model for ranking repo-local source gap candidates. Scores are review aids only and do not approve source access or rank accepted truth.",
+  "score_fields": {
+    "minimum": 0,
+    "maximum": 100,
+    "band_definitions": {
+      "high": "70-100: likely early review target if policy gates are satisfied later",
+      "medium": "40-69: useful candidate but either narrower, more uncertain, or more policy-sensitive",
+      "low": "0-39: weak local support or high review burden"
+    }
+  },
+  "positive_factors": {
+    "query_frequency_or_batch_presence": 20,
+    "failure_mode_relevance": 20,
+    "source_family_fit": 15,
+    "metadata_likelihood": 10,
+    "object_family_coverage": 10,
+    "old_platform_coverage": 10,
+    "hidden_member_discovery_relevance": 10,
+    "compatibility_evidence_relevance": 10,
+    "low_policy_risk": 10,
+    "fixture_or_contract_readiness": 10
+  },
+  "negative_factors": {
+    "source_policy_unknown": -15,
+    "terms_or_robots_risk": -15,
+    "rights_or_malware_risk": -15,
+    "broad_crawl_required": -20,
+    "binary_download_required": -20,
+    "private_or_restricted_source": -20,
+    "high_manual_cost": -10,
+    "insufficient_local_evidence": -30
+  },
+  "required_review_notes": [
+    "Scores are advisory only.",
+    "Scores do not approve source access.",
+    "Scores do not indicate accepted evidence.",
+    "Scores do not mutate source cache, evidence ledger, candidate index, public index, or master index.",
+    "Future API or metadata probe modes remain deferred until explicit source policy approval exists."
+  ],
+  "forbidden_inputs": [
+    "live web",
+    "browser sessions",
+    "API calls",
+    "downloaded binary archives",
+    "private local caches",
+    ".aide.local/**",
+    "secrets/**",
+    ".git/**",
+    "untracked external data"
+  ],
+  "output_interpretation": {
+    "advisory_only": true,
+    "approves_source_access": false,
+    "ranks_accepted_truth": false,
+    "creates_observation": false,
+    "creates_evidence_truth": false,
+    "mutates_master_index": false
+  },
+  "no_goals": [
+    "No automated source access.",
+    "No accepted source policy decision.",
+    "No connector runtime selection.",
+    "No source sync, cache write, evidence ledger write, or public search fanout."
+  ],
+  "notes": [
+    "Use stable integer scoring and deterministic sort order.",
+    "When local evidence is too thin, record insufficient_local_evidence instead of filling in detail."
+  ]
+}

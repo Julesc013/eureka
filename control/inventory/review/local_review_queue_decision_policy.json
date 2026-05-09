@@ -1,0 +1,66 @@
+{
+  "schema_version": "local_review_queue_decision_policy.v0",
+  "policy_id": "local_review_queue_decision_policy_v0",
+  "allowed_decisions": [
+    "accept_public_future",
+    "approve_as_search_need_seed",
+    "approve_as_source_lead",
+    "approve_as_workunit_seed",
+    "approve_for_manual_observation",
+    "approve_for_promotion_dry_run",
+    "defer",
+    "mark_duplicate_possible",
+    "no_decision_yet",
+    "not_evaluable",
+    "policy_block",
+    "preserve_conflict",
+    "reject",
+    "request_more_evidence",
+    "rights_block",
+    "risk_block",
+    "supersede_future",
+    "withdraw_future"
+  ],
+  "current_allowed_decisions": [
+    "approve_as_search_need_seed",
+    "approve_as_source_lead",
+    "approve_as_workunit_seed",
+    "approve_for_manual_observation",
+    "approve_for_promotion_dry_run",
+    "defer",
+    "mark_duplicate_possible",
+    "no_decision_yet",
+    "not_evaluable",
+    "policy_block",
+    "preserve_conflict",
+    "reject",
+    "request_more_evidence",
+    "rights_block",
+    "risk_block"
+  ],
+  "future_only_decisions": [
+    "accept_public_future",
+    "supersede_future",
+    "withdraw_future"
+  ],
+  "decisions_forbidden_current": [
+    "accept_public_future",
+    "supersede_future",
+    "withdraw_future"
+  ],
+  "dry_run_only_decisions": [
+    "approve_for_promotion_dry_run"
+  ],
+  "forbidden_current_effects": [
+    "evidence_acceptance",
+    "candidate_acceptance",
+    "public_index_mutation",
+    "master_index_mutation",
+    "automatic_merge",
+    "automatic_delete"
+  ],
+  "notes": [
+    "Review decisions are local governance state.",
+    "Approving a promotion dry-run does not accept public truth."
+  ]
+}

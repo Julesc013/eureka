@@ -1,0 +1,50 @@
+{
+  "schema_version": "local_review_queue_subject_policy.v0",
+  "policy_id": "local_review_queue_subject_policy_v0",
+  "allowed_subject_types": [
+    "candidate_record",
+    "connector_approval_future",
+    "evidence_candidate",
+    "node_policy_evaluation",
+    "not_evaluable_subject",
+    "observation_candidate",
+    "pack_draft_future",
+    "policy_blocked_subject",
+    "promotion_dry_run_future",
+    "query_observation",
+    "search_miss",
+    "search_need",
+    "source_cache_record",
+    "source_cache_to_evidence_bridge_result",
+    "source_lead_candidate",
+    "source_policy_decision_future",
+    "workunit",
+    "workunit_result"
+  ],
+  "current_subject_types": [
+    "candidate_record",
+    "evidence_candidate",
+    "source_cache_record",
+    "source_cache_to_evidence_bridge_result",
+    "search_need",
+    "search_miss",
+    "query_observation",
+    "observation_candidate",
+    "source_lead_candidate",
+    "workunit",
+    "workunit_result",
+    "node_policy_evaluation",
+    "policy_blocked_subject",
+    "not_evaluable_subject"
+  ],
+  "future_subject_types": [
+    "pack_draft_future",
+    "source_policy_decision_future",
+    "connector_approval_future",
+    "promotion_dry_run_future"
+  ],
+  "notes": [
+    "Subjects are local review inputs, not promoted records.",
+    "Future subject types require separate reviewed runtime tasks."
+  ]
+}

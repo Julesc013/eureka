@@ -1,0 +1,101 @@
+{
+  "schema_version": "track_b_17_report.v0",
+  "status": "warn",
+  "track": "B",
+  "task": "TRACK-B-17",
+  "added_runtime_modules": [
+    "runtime/local_foundry/source_cache_to_evidence.py"
+  ],
+  "added_scripts": [
+    "scripts/bridge_source_cache_to_evidence.py",
+    "scripts/validate_source_cache_to_evidence_bridge.py"
+  ],
+  "added_docs": [
+    "docs/reference/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_RUNTIME.md",
+    "docs/architecture/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_MODEL.md",
+    "docs/operations/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_REVIEW.md"
+  ],
+  "added_inventories": [
+    "control/inventory/evidence_ledger/source_cache_to_evidence_bridge_runtime_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_mapping_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_output_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_review_policy.json",
+    "control/inventory/evidence_ledger/source_cache_to_evidence_path_policy.json"
+  ],
+  "added_examples": [
+    "examples/source_cache_to_evidence/minimal_bridge_case_v0.json",
+    "examples/source_cache_to_evidence/source_metadata_to_metadata_claim_v0.json",
+    "examples/source_cache_to_evidence/source_locator_to_source_observation_v0.json",
+    "examples/source_cache_to_evidence/source_policy_to_policy_claim_v0.json",
+    "examples/source_cache_to_evidence/source_coverage_to_coverage_claim_v0.json",
+    "examples/source_cache_to_evidence/policy_blocked_bridge_case_v0.json"
+  ],
+  "added_tests": [
+    "tests/runtime/test_source_cache_to_evidence_bridge.py",
+    "tests/operations/test_source_cache_to_evidence_bridge_scripts.py"
+  ],
+  "validation": {
+    "git_status": "warn_active_merge",
+    "git_diff_check": "pass",
+    "json_syntax": "pass",
+    "validate_local_source_cache_runtime": "pass",
+    "validate_local_evidence_ledger_runtime": "pass",
+    "validate_source_cache_to_evidence_bridge": "pass",
+    "bridge_script_check": "pass",
+    "scoped_unittest": "pass",
+    "full_unittest": "fail_unrelated_obs_agent_hardening",
+    "architecture_boundaries": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_verify": "warn_zero_errors",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "pass_warn_verifier",
+    "aide_lite_adapter_validate": "pass"
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "fixture_only": true,
+    "writes_no_files_by_default": true,
+    "source_cache_bridge_enabled": true,
+    "evidence_acceptance_enabled": false,
+    "live_source_access_enabled": false
+  },
+  "truth_boundary": {
+    "source_cache_record_is_public_truth": false,
+    "bridge_output_is_accepted_evidence": false,
+    "bridge_output_can_mutate_master_index": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "product_boundary": {
+    "implemented_source_cache_to_evidence_bridge": true,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Status is warn until repository-level merge state and unrelated test failures are resolved.",
+    "B-17 scoped validation is recorded in validation.md."
+  ],
+  "next_task": "TRACK-B-18 \u2014 Local review queue runtime"
+}

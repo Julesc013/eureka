@@ -1,0 +1,129 @@
+{
+  "schema_version": "reviewed_public_record_proposal.v0",
+  "reviewed_public_record_proposal_id": "reviewed_public_record_proposal.policy_blocked.fixture.v0",
+  "proposal_status": "blocked_policy",
+  "proposal_type": "policy_blocked_record",
+  "proposal_label": "Policy blocked reviewed public record proposal",
+  "source_candidate_refs": [
+    "candidate_promotion_dry_run.policy_blocked.fixture.v0"
+  ],
+  "source_review_refs": [
+    "review_queue.policy_blocked.fixture.v0"
+  ],
+  "source_evidence_refs": [],
+  "source_cache_refs": [],
+  "source_pack_refs_future": [],
+  "proposed_public_record": {
+    "record_id": "public_record_proposal.policy_blocked.fixture.v0",
+    "record_kind": "blocked",
+    "display_label": "Policy blocked proposal",
+    "review_status": "blocked_policy",
+    "public_search_effect_status": "blocked"
+  },
+  "public_search_card_summary": {
+    "card_candidate_allowed_future": false,
+    "current_public_search_behavior_changed": false
+  },
+  "object_summary": {
+    "object_label": "Policy blocked proposal",
+    "object_kind": "blocked"
+  },
+  "source_summary": {
+    "source_refs": [],
+    "source_posture": "policy_blocked",
+    "source_limitations": [
+      "Policy block prevents publication proposal readiness."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_refs": [],
+    "evidence_posture": "blocked",
+    "evidence_limitations": [
+      "Evidence is not used while policy block is active."
+    ]
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "not_evaluable",
+    "compatibility_caveats": [
+      "Policy block prevents compatibility review."
+    ]
+  },
+  "rights_summary": {
+    "rights_clearance_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Rights review is blocked by policy posture."
+    ]
+  },
+  "risk_summary": {
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Risk review is blocked by policy posture."
+    ]
+  },
+  "limitation_summary": {
+    "limitations": [
+      "Policy blocked proposals cannot be used for rebuild readiness."
+    ],
+    "no_claims": [
+      "no publication",
+      "no rights clearance",
+      "no malware safety",
+      "no verified installability"
+    ]
+  },
+  "absence_or_gap_summary": {
+    "known_gaps": [
+      "policy approval"
+    ]
+  },
+  "review_summary": {
+    "review_refs": [
+      "review_queue.policy_blocked.fixture.v0"
+    ],
+    "human_review_required": true
+  },
+  "conflict_summary": {
+    "conflict_status": "none_detected",
+    "conflict_preserved": true,
+    "automatic_resolution_allowed": false
+  },
+  "duplicate_summary": {
+    "duplicate_status": "none_detected",
+    "duplicate_preserved": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "publication_constraints": {
+    "future_rebuild_required": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "truth_boundary": {
+    "record_proposal_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "record_proposal_mutates_public_index_current": false,
+    "record_proposal_mutates_master_index_current": false,
+    "record_proposal_can_claim_rights_clearance": false,
+    "record_proposal_can_claim_malware_safety": false,
+    "record_proposal_can_claim_verified_installability": false,
+    "human_review_required_for_actual_publication": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "created_public_record_current": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Policy block is preserved."
+  ]
+}

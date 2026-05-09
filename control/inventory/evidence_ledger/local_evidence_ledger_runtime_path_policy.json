@@ -1,0 +1,34 @@
+{
+  "schema_version": "local_evidence_ledger_runtime_path_policy.v0",
+  "policy_id": "local_evidence_ledger_runtime_path_policy_v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    ".aide.local/",
+    ".cache/eureka/",
+    ".local/eureka/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "evals/search_usefulness/external_baselines/",
+    "master-index-related roots",
+    "master_index/",
+    "runtime/",
+    "site/dist/"
+  ],
+  "future_private_roots_not_created_by_this_task": [
+    ".aide.local/eureka/evidence_ledger/",
+    ".local/eureka/evidence_ledger/",
+    ".cache/eureka/evidence_ledger/"
+  ],
+  "path_rules": {
+    "create_private_roots_allowed": false,
+    "write_to_runtime_allowed": false,
+    "write_to_contracts_allowed": false,
+    "write_to_site_dist_allowed": false,
+    "write_to_control_inventory_sources_allowed": false,
+    "write_to_master_index_allowed": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "reviewed_public_index_output_policy.v0",
+  "policy_id": "reviewed_public_index_output_policy_v0",
+  "allowed_future_output_types": [
+    "reviewed_public_record_proposal",
+    "public_search_card_candidate",
+    "public_index_rebuild_manifest_future",
+    "public_index_delta_preview_future",
+    "public_limitations_report",
+    "public_no_claim_summary",
+    "review_blocker_report",
+    "rebuild_audit_report"
+  ],
+  "forbidden_output_types": [
+    "public_index_mutation_current",
+    "master_index_mutation",
+    "accepted_evidence_truth_without_review",
+    "accepted_candidate_truth_without_review",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "exhaustive_global_search_proof",
+    "production_readiness_claim"
+  ],
+  "writes_public_index_current": false,
+  "writes_master_index_current": false,
+  "creates_public_truth_current": false,
+  "requires_review_for_public_record_proposal": true,
+  "notes": [
+    "Outputs are proposal and audit shapes only for this milestone.",
+    "Future manifests remain previews until a separately reviewed rebuild runtime exists."
+  ]
+}

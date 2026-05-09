@@ -1,0 +1,22 @@
+{
+  "schema_version": "local_evidence_ledger_provenance_policy.v0",
+  "policy_id": "local_evidence_ledger_provenance_policy_v0",
+  "source_locator_required_when_available": true,
+  "source_id_required_when_available": true,
+  "claim_subject_required": true,
+  "lineage_refs_allowed": true,
+  "missing_provenance_requires_limitation": true,
+  "no_silent_lineage_removal": true,
+  "allowed_lineage_ref_types": [
+    "candidate_record",
+    "source_cache_record",
+    "search_need_record",
+    "workunit_result",
+    "node_policy_evaluation",
+    "evidence_pack_example",
+    "committed_fixture"
+  ],
+  "notes": [
+    "Provenance links support review; they do not promote evidence."
+  ]
+}

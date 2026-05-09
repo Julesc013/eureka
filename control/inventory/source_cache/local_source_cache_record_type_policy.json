@@ -1,0 +1,60 @@
+{
+  "schema_version": "local_source_cache_record_type_policy.v0",
+  "policy_id": "local_source_cache_record_type_policy_v0",
+  "label": "Local source cache record type policy",
+  "allowed_record_types": [
+    "approved_api_result_future",
+    "approved_metadata_probe_result_future",
+    "connector_fixture_record",
+    "source_access_posture_record",
+    "source_coverage_record",
+    "source_health_record",
+    "source_identity_record",
+    "source_lead_record",
+    "source_limitations_record",
+    "source_locator",
+    "source_metadata",
+    "source_policy_record",
+    "static_dump_record_future"
+  ],
+  "current_allowed_record_types": [
+    "connector_fixture_record",
+    "source_access_posture_record",
+    "source_coverage_record",
+    "source_health_record",
+    "source_identity_record",
+    "source_lead_record",
+    "source_limitations_record",
+    "source_locator",
+    "source_metadata",
+    "source_policy_record"
+  ],
+  "type_meanings": {
+    "approved_api_result_future": "Future approved API fixture/result vocabulary only.",
+    "approved_metadata_probe_result_future": "Future approved metadata probe vocabulary only.",
+    "connector_fixture_record": "Committed connector fixture output summary.",
+    "source_access_posture_record": "Source access posture and block summary.",
+    "source_coverage_record": "Coverage or limitation observation summary.",
+    "source_health_record": "Repo-local health/status summary, not live monitoring.",
+    "source_identity_record": "Source identity or alias summary.",
+    "source_lead_record": "Provisional source lead normalization record.",
+    "source_limitations_record": "Known limitations summary.",
+    "source_locator": "Repo-local locator or fixture identifier.",
+    "source_metadata": "Committed metadata summary.",
+    "source_policy_record": "Source policy/access posture summary.",
+    "static_dump_record_future": "Future approved static dump vocabulary only."
+  },
+  "future_record_types": [
+    "approved_api_result_future",
+    "approved_metadata_probe_result_future",
+    "static_dump_record_future"
+  ],
+  "ambiguity_rules": [
+    "Prefer source_lead_record for source-lead candidates.",
+    "Prefer connector_fixture_record for committed connector fixture outputs.",
+    "When type is unclear, use source_metadata and keep review gates enabled."
+  ],
+  "notes": [
+    "Types classify records for review; they do not establish source authority."
+  ]
+}

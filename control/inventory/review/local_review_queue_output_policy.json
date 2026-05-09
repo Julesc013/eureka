@@ -1,0 +1,40 @@
+{
+  "schema_version": "local_review_queue_output_policy.v0",
+  "policy_id": "local_review_queue_output_policy_v0",
+  "allowed_output_types": [
+    "conflict_review_report",
+    "duplicate_review_report",
+    "missing_evidence_report",
+    "promotion_dry_run_allowance",
+    "review_item_future",
+    "review_queue_entry",
+    "review_queue_snapshot",
+    "review_queue_summary"
+  ],
+  "forbidden_output_types": [
+    "accepted_candidate_truth",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "hosted_moderation_state",
+    "malware_safety",
+    "master_index_mutation",
+    "production_readiness_claim",
+    "public_index_mutation",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "allowed_current_outputs": [
+    "review_queue_entry",
+    "review_queue_summary",
+    "review_queue_snapshot",
+    "promotion_dry_run_allowance",
+    "missing_evidence_report",
+    "duplicate_review_report",
+    "conflict_review_report"
+  ],
+  "notes": [
+    "Review queue outputs are local records and summaries.",
+    "No output is public moderation state or accepted truth."
+  ]
+}

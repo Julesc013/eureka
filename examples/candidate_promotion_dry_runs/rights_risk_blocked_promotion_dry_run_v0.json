@@ -1,0 +1,66 @@
+{
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "promotion_dry_run_id": "candidate_promotion_dry_run.rights_risk.fixture.v0",
+  "promotion_dry_run_status": "rights_blocked",
+  "promotion_readiness": "not_ready_rights_blocked",
+  "candidate_ref": "candidate.search_need.software_version.v0",
+  "candidate_summary": "Candidate is blocked by rights/risk review.",
+  "evidence_refs": [],
+  "review_entry_refs": [
+    "review_queue.rights_block.fixture.v0"
+  ],
+  "source_cache_refs": [],
+  "source_cache_bridge_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs_future": [],
+  "evidence_requirement_results": [],
+  "review_requirement_results": [],
+  "identity_requirement_results": [],
+  "conflict_requirement_results": [],
+  "duplicate_requirement_results": [],
+  "rights_risk_requirement_results": [
+    {
+      "requirement_id": "rights.none_blocked",
+      "requirement_type": "rights_risk",
+      "requirement_status": "blocked",
+      "evidence_or_review_refs": [
+        "review_queue.rights_block.fixture.v0"
+      ],
+      "pass_fail_unknown": "fail",
+      "blocker_refs": [
+        "rights_block"
+      ],
+      "limitations": [],
+      "notes": "Rights block prevents readiness."
+    }
+  ],
+  "policy_requirement_results": [],
+  "blockers": [
+    {
+      "blocker_id": "promotion_blocker.rights_block.v0",
+      "blocker_category": "rights_block",
+      "blocker_summary": "Rights review blocks dry-run readiness.",
+      "evidence_or_review_refs": [
+        "review_queue.rights_block.fixture.v0"
+      ],
+      "automatic_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_delete_allowed": false
+    }
+  ],
+  "warnings": [],
+  "proposed_reviewed_record_summary_future": "Deferred until rights/risk review changes.",
+  "allowed_next_actions": [
+    "request_review"
+  ],
+  "forbidden_next_actions": [
+    "claim_rights_clearance",
+    "claim_malware_safety",
+    "claim_verified_installability",
+    "mutate_public_index",
+    "mutate_master_index"
+  ],
+  "limitations": [],
+  "notes": []
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "promotion_dry_run_id": "candidate_promotion_dry_run.conflict.fixture.v0",
+  "promotion_dry_run_status": "conflict_detected",
+  "promotion_readiness": "not_ready_conflict_unresolved",
+  "candidate_ref": "candidate.search_need.software_version.v0",
+  "candidate_summary": "Candidate is blocked by unresolved conflict.",
+  "evidence_refs": [
+    "evidence.conflicting.fixture.v0"
+  ],
+  "review_entry_refs": [],
+  "source_cache_refs": [],
+  "source_cache_bridge_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs_future": [],
+  "evidence_requirement_results": [],
+  "review_requirement_results": [],
+  "identity_requirement_results": [],
+  "conflict_requirement_results": [
+    {
+      "requirement_id": "conflict.none_unresolved",
+      "requirement_type": "conflict",
+      "requirement_status": "conflict_detected",
+      "evidence_or_review_refs": [
+        "evidence.conflicting.fixture.v0"
+      ],
+      "pass_fail_unknown": "fail",
+      "blocker_refs": [
+        "unresolved_conflict"
+      ],
+      "limitations": [],
+      "notes": "Conflict marker blocks readiness."
+    }
+  ],
+  "duplicate_requirement_results": [],
+  "rights_risk_requirement_results": [],
+  "policy_requirement_results": [],
+  "blockers": [
+    {
+      "blocker_id": "promotion_blocker.unresolved_conflict.v0",
+      "blocker_category": "unresolved_conflict",
+      "blocker_summary": "Conflict must be preserved for review.",
+      "evidence_or_review_refs": [
+        "evidence.conflicting.fixture.v0"
+      ],
+      "automatic_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_delete_allowed": false
+    }
+  ],
+  "warnings": [],
+  "proposed_reviewed_record_summary_future": "Deferred until conflict review.",
+  "allowed_next_actions": [
+    "request_review"
+  ],
+  "forbidden_next_actions": [
+    "automatic_merge",
+    "accept_candidate",
+    "mutate_public_index",
+    "mutate_master_index"
+  ],
+  "limitations": [],
+  "notes": []
+}

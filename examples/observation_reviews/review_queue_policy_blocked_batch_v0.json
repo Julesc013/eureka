@@ -1,0 +1,138 @@
+{
+  "schema_version": "observation_candidate_review_queue.v0",
+  "review_queue_id": "review_queue_policy_blocked_batch_v0",
+  "label": "Policy-blocked review queue example",
+  "description": "Small review queue example for blocked broad web baseline candidates. This is not a policy decision.",
+  "queue_status": "queued_for_review",
+  "generated_from": [
+    "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+    "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json"
+  ],
+  "candidate_sources": [
+    "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+    "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json"
+  ],
+  "queue_entries": [
+    {
+      "review_queue_entry_id": "review_queue_entry::obs_candidate_policy_blocked_v0",
+      "observation_candidate_id": "obs_candidate_policy_blocked_v0",
+      "candidate_file_path": "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+      "candidate_type": "policy_blocked_candidate",
+      "candidate_status": "policy_blocked",
+      "candidate_origin": "search_usefulness_audit",
+      "related_batch_id": "batch_0",
+      "related_query_id": "windows_7_apps",
+      "related_slot_id": null,
+      "source_family": "broad_web_policy_blocked",
+      "source_access_mode": "manual_human_only",
+      "source_policy_status": "blocked_for_agent_until_approved_api_exists",
+      "proposed_failure_modes": [
+        "rights_or_policy_block"
+      ],
+      "proposed_review_state": "policy_blocked",
+      "recommended_review_action": "mark_policy_blocked_future",
+      "priority_score": 0,
+      "priority_band": "blocked",
+      "review_required": true,
+      "review_decision_ref": null,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Policy-blocked example only."
+      ]
+    },
+    {
+      "review_queue_entry_id": "review_queue_entry::obs_candidate_source_gap_policy_blocked_v0",
+      "observation_candidate_id": "obs_candidate_source_gap_policy_blocked_v0",
+      "candidate_file_path": "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json",
+      "candidate_type": "policy_blocked_candidate",
+      "candidate_status": "policy_blocked",
+      "candidate_origin": "search_usefulness_audit",
+      "related_batch_id": "batch_0",
+      "related_query_id": "windows_7_apps",
+      "related_slot_id": null,
+      "source_family": "broad_web_policy_blocked",
+      "source_access_mode": "no_autonomous_access",
+      "source_policy_status": "blocked_no_autonomous_access_without_review",
+      "proposed_failure_modes": [
+        "rights_or_policy_block",
+        "external_baseline_unavailable",
+        "source_coverage_gap"
+      ],
+      "proposed_review_state": "policy_blocked",
+      "recommended_review_action": "mark_policy_blocked_future",
+      "priority_score": 24,
+      "priority_band": "blocked",
+      "review_required": true,
+      "review_decision_ref": null,
+      "accepted_as_observed_baseline": false,
+      "accepted_as_evidence_truth": false,
+      "master_index_mutation_allowed": false,
+      "notes": [
+        "Policy-blocked example only."
+      ]
+    }
+  ],
+  "status_counts": {
+    "policy_blocked": 2
+  },
+  "recommended_action_counts": {
+    "mark_policy_blocked_future": 2
+  },
+  "candidate_type_counts": {
+    "policy_blocked_candidate": 2
+  },
+  "source_family_counts": {
+    "broad_web_policy_blocked": 2
+  },
+  "priority_band_counts": {
+    "blocked": 2
+  },
+  "priority_summary": {
+    "min": 0,
+    "max": 24,
+    "average": 12.0
+  },
+  "review_policy_ref": "control/inventory/observations/observation_candidate_review_queue_policy.json",
+  "triage_rules_ref": "control/inventory/observations/observation_candidate_triage_rules.json",
+  "truth_boundary": {
+    "queue_entries_are_observed_baselines": false,
+    "queue_entries_are_evidence_truth": false,
+    "queue_entries_can_mutate_master_index": false,
+    "human_review_required": true,
+    "source_access_approved": false
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "no_goals": [
+    "No policy change.",
+    "No observation.",
+    "No evidence truth.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "Compact public-safe policy-blocked queue example."
+  ]
+}

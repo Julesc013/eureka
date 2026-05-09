@@ -1,0 +1,131 @@
+{
+  "schema_version": "reviewed_public_record_proposal.v0",
+  "reviewed_public_record_proposal_id": "reviewed_public_record_proposal.source.fixture.v0",
+  "proposal_status": "ready_for_review",
+  "proposal_type": "source_public_record",
+  "proposal_label": "Source reviewed public record proposal",
+  "source_candidate_refs": [],
+  "source_review_refs": [
+    "review_queue.source.fixture.v0"
+  ],
+  "source_evidence_refs": [
+    "evidence.source_locator.fixture.v0"
+  ],
+  "source_cache_refs": [
+    "source_cache.source_metadata.fixture.v0"
+  ],
+  "source_pack_refs_future": [],
+  "proposed_public_record": {
+    "record_id": "public_record_proposal.source.fixture.v0",
+    "record_kind": "source",
+    "display_label": "Synthetic source",
+    "review_status": "ready_for_review",
+    "public_search_effect_status": "candidate_only"
+  },
+  "public_search_card_summary": {
+    "card_candidate_allowed_future": true,
+    "current_public_search_behavior_changed": false
+  },
+  "object_summary": {
+    "object_label": "Synthetic source",
+    "object_kind": "source"
+  },
+  "source_summary": {
+    "source_refs": [
+      "source_cache.source_metadata.fixture.v0"
+    ],
+    "source_posture": "fixture_metadata_only",
+    "source_limitations": [
+      "Source record is based on local fixture metadata."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_refs": [
+      "evidence.source_locator.fixture.v0"
+    ],
+    "evidence_posture": "candidate_review_required",
+    "evidence_limitations": [
+      "Source locator evidence is not canonical truth."
+    ]
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "not_applicable",
+    "compatibility_caveats": []
+  },
+  "rights_summary": {
+    "rights_clearance_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Source terms may require later review."
+    ]
+  },
+  "risk_summary": {
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "No executable payload is referenced."
+    ]
+  },
+  "limitation_summary": {
+    "limitations": [
+      "Fixture-only source proposal."
+    ],
+    "no_claims": [
+      "no rights clearance",
+      "no source completeness"
+    ]
+  },
+  "absence_or_gap_summary": {
+    "known_gaps": [
+      "source health needs later review"
+    ]
+  },
+  "review_summary": {
+    "review_refs": [
+      "review_queue.source.fixture.v0"
+    ],
+    "human_review_required": true
+  },
+  "conflict_summary": {
+    "conflict_status": "none_detected",
+    "conflict_preserved": true,
+    "automatic_resolution_allowed": false
+  },
+  "duplicate_summary": {
+    "duplicate_status": "none_detected",
+    "duplicate_preserved": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "publication_constraints": {
+    "future_rebuild_required": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "truth_boundary": {
+    "record_proposal_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "record_proposal_mutates_public_index_current": false,
+    "record_proposal_mutates_master_index_current": false,
+    "record_proposal_can_claim_rights_clearance": false,
+    "record_proposal_can_claim_malware_safety": false,
+    "record_proposal_can_claim_verified_installability": false,
+    "human_review_required_for_actual_publication": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "created_public_record_current": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Source proposal remains review-gated."
+  ]
+}

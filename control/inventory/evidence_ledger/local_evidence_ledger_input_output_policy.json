@@ -1,0 +1,81 @@
+{
+  "schema_version": "local_evidence_ledger_input_output_policy.v0",
+  "policy_id": "local_evidence_ledger_input_output_policy_v0",
+  "allowed_input_types": [
+    "candidate_record",
+    "committed_audit_report",
+    "committed_candidate_example",
+    "committed_evidence_fixture",
+    "committed_pack_example",
+    "committed_public_data_summary",
+    "committed_source_cache_example",
+    "contribution_pack_future",
+    "evidence_ledger_record",
+    "evidence_pack_example",
+    "manual_observation_record_future",
+    "node_policy_evaluation",
+    "search_need_record",
+    "source_cache_bridge_result_future",
+    "source_cache_record",
+    "workunit_result"
+  ],
+  "current_allowed_input_types": [
+    "candidate_record",
+    "committed_audit_report",
+    "committed_candidate_example",
+    "committed_evidence_fixture",
+    "committed_pack_example",
+    "committed_public_data_summary",
+    "committed_source_cache_example",
+    "evidence_ledger_record",
+    "evidence_pack_example",
+    "node_policy_evaluation",
+    "search_need_record",
+    "source_cache_record",
+    "workunit_result"
+  ],
+  "forbidden_input_types": [
+    "AI_output_claiming_truth",
+    "account_session_data",
+    "bulk_reddit_content",
+    "executable_download",
+    "installer_payload",
+    "private_user_file",
+    "raw_browser_profile",
+    "scraped_forum_thread",
+    "scraped_search_result",
+    "secret_or_credential",
+    "telemetry_stream",
+    "unapproved_live_source_result",
+    "unreviewed_external_api_payload"
+  ],
+  "allowed_output_types": [
+    "candidate_store_use_request_future",
+    "conflict_report",
+    "evidence_ledger_record",
+    "evidence_ledger_snapshot",
+    "evidence_ledger_summary",
+    "evidence_pack_draft_future",
+    "provenance_report",
+    "review_item_future"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "exhaustive_global_search_proof",
+    "malware_safety",
+    "master_index_mutation",
+    "production_readiness_claim",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "current_output_rules": {
+    "writes_no_files_by_default": true,
+    "explicit_output_path_required": true,
+    "audit_generated_or_temp_only": true,
+    "source_cache_bridge_enabled": false,
+    "evidence_acceptance_enabled": false,
+    "public_index_use_enabled": false,
+    "master_index_mutation_enabled": false
+  }
+}

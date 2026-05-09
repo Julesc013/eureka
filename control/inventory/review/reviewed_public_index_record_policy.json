@@ -1,0 +1,92 @@
+{
+  "schema_version": "reviewed_public_index_record_policy.v0",
+  "policy_id": "reviewed_public_index_record_policy_v0",
+  "allowed_proposal_types": [
+    "object_public_record",
+    "source_public_record",
+    "need_public_record",
+    "candidate_public_record_future",
+    "evidence_summary_public_record",
+    "compatibility_public_record",
+    "representation_public_record",
+    "absence_public_record",
+    "pack_public_record_future",
+    "policy_blocked_record",
+    "not_evaluable_record"
+  ],
+  "allowed_proposal_statuses": [
+    "example_only",
+    "proposed",
+    "ready_for_review",
+    "ready_for_future_rebuild_dry_run",
+    "blocked_missing_evidence",
+    "blocked_missing_review",
+    "blocked_policy",
+    "blocked_rights",
+    "blocked_risk",
+    "blocked_conflict",
+    "blocked_duplicate_uncertain",
+    "rejected",
+    "deferred",
+    "accepted_public_future"
+  ],
+  "current_example_proposal_statuses": [
+    "example_only",
+    "proposed",
+    "ready_for_review",
+    "ready_for_future_rebuild_dry_run",
+    "blocked_missing_evidence",
+    "blocked_missing_review",
+    "blocked_policy",
+    "blocked_rights",
+    "blocked_risk",
+    "blocked_conflict",
+    "blocked_duplicate_uncertain",
+    "rejected",
+    "deferred"
+  ],
+  "required_public_record_fields": [
+    "record_id",
+    "record_kind",
+    "display_label",
+    "review_status",
+    "public_search_effect_status"
+  ],
+  "required_source_summary_fields": [
+    "source_refs",
+    "source_posture",
+    "source_limitations"
+  ],
+  "required_evidence_summary_fields": [
+    "evidence_refs",
+    "evidence_posture",
+    "evidence_limitations"
+  ],
+  "required_rights_risk_fields": [
+    "rights_clearance_claimed",
+    "malware_safety_claimed",
+    "verified_installability_claimed",
+    "review_required"
+  ],
+  "required_limitation_fields": [
+    "limitations",
+    "no_claims"
+  ],
+  "conflict_preservation_required": true,
+  "duplicate_preservation_required": true,
+  "no_claim_requirements": [
+    "no rights-clearance claim without future reviewed evidence",
+    "no malware-safety claim without future reviewed evidence",
+    "no verified-installability claim without future reviewed evidence",
+    "no exhaustive-search claim",
+    "no production-readiness claim"
+  ],
+  "no_goals": [
+    "no current public record acceptance",
+    "no current public-index write",
+    "no master-index mutation"
+  ],
+  "notes": [
+    "Public record proposals expose posture, caveats, limitations, and review status."
+  ]
+}

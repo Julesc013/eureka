@@ -1,0 +1,139 @@
+{
+  "schema_version": "reviewed_public_record_proposal.v0",
+  "reviewed_public_record_proposal_id": "reviewed_public_record_proposal.software_candidate.fixture.v0",
+  "proposal_status": "ready_for_future_rebuild_dry_run",
+  "proposal_type": "object_public_record",
+  "proposal_label": "Software candidate reviewed public record proposal",
+  "source_candidate_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "source_review_refs": [
+    "review_queue.workunit_result.1840e313e896.v0"
+  ],
+  "source_evidence_refs": [
+    "evidence.metadata_claim.fixture.v0"
+  ],
+  "source_cache_refs": [],
+  "source_pack_refs_future": [],
+  "proposed_public_record": {
+    "record_id": "public_record_proposal.software_candidate.fixture.v0",
+    "record_kind": "object",
+    "display_label": "Synthetic software candidate",
+    "review_status": "ready_for_future_rebuild_dry_run",
+    "public_search_effect_status": "candidate_only"
+  },
+  "public_search_card_summary": {
+    "title_candidate": "Synthetic software candidate",
+    "snippet_candidate": "Review-gated fixture proposal.",
+    "card_candidate_allowed_future": true,
+    "current_public_search_behavior_changed": false
+  },
+  "object_summary": {
+    "object_label": "Synthetic software candidate",
+    "object_kind": "software",
+    "identity_posture": "reviewed_for_dry_run"
+  },
+  "source_summary": {
+    "source_refs": [
+      "fixture:evidence"
+    ],
+    "source_posture": "fixture_reviewed",
+    "source_limitations": [
+      "Fixture evidence does not prove completeness."
+    ]
+  },
+  "evidence_summary": {
+    "evidence_refs": [
+      "evidence.metadata_claim.fixture.v0"
+    ],
+    "evidence_posture": "candidate_reviewed_for_dry_run",
+    "evidence_limitations": [
+      "Evidence remains review material."
+    ]
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "not_verified",
+    "compatibility_caveats": [
+      "Compatibility is not asserted by this proposal."
+    ]
+  },
+  "rights_summary": {
+    "rights_clearance_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "Rights posture is limited to public-safe metadata review."
+    ]
+  },
+  "risk_summary": {
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "No binary or installer is part of this proposal."
+    ]
+  },
+  "limitation_summary": {
+    "limitations": [
+      "Future rebuild dry-run only.",
+      "No public index file is written."
+    ],
+    "no_claims": [
+      "no rights clearance",
+      "no malware safety",
+      "no verified installability",
+      "no exhaustive search"
+    ]
+  },
+  "absence_or_gap_summary": {
+    "known_gaps": [
+      "live source review is not part of this fixture"
+    ]
+  },
+  "review_summary": {
+    "review_refs": [
+      "review_queue.workunit_result.1840e313e896.v0"
+    ],
+    "human_review_required": true
+  },
+  "conflict_summary": {
+    "conflict_status": "none_detected",
+    "conflict_preserved": true,
+    "automatic_resolution_allowed": false
+  },
+  "duplicate_summary": {
+    "duplicate_status": "none_detected",
+    "duplicate_preserved": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "publication_constraints": {
+    "future_rebuild_required": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "truth_boundary": {
+    "record_proposal_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "record_proposal_mutates_public_index_current": false,
+    "record_proposal_mutates_master_index_current": false,
+    "record_proposal_can_claim_rights_clearance": false,
+    "record_proposal_can_claim_malware_safety": false,
+    "record_proposal_can_claim_verified_installability": false,
+    "human_review_required_for_actual_publication": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "created_public_record_current": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Ready for future rebuild dry-run is not publication."
+  ]
+}

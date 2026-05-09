@@ -1,0 +1,66 @@
+{
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "promotion_dry_run_id": "candidate_promotion_dry_run.minimal.v0",
+  "promotion_dry_run_status": "example_only",
+  "promotion_readiness": "not_ready_missing_evidence",
+  "candidate_ref": "candidate.search_need.software_version.v0",
+  "candidate_summary": "Minimal fixture candidate promotion dry-run.",
+  "evidence_refs": [],
+  "review_entry_refs": [],
+  "source_cache_refs": [],
+  "source_cache_bridge_refs": [],
+  "related_search_need_refs": [
+    "search_need.software_version.vintage_app.v0"
+  ],
+  "related_workunit_refs": [],
+  "related_pack_refs_future": [],
+  "evidence_requirement_results": [
+    {
+      "requirement_id": "evidence.present",
+      "requirement_type": "evidence",
+      "requirement_status": "missing",
+      "evidence_or_review_refs": [],
+      "pass_fail_unknown": "fail",
+      "blocker_refs": [
+        "missing_evidence"
+      ],
+      "limitations": [],
+      "notes": "No evidence candidate records were provided."
+    }
+  ],
+  "review_requirement_results": [],
+  "identity_requirement_results": [],
+  "conflict_requirement_results": [],
+  "duplicate_requirement_results": [],
+  "rights_risk_requirement_results": [],
+  "policy_requirement_results": [],
+  "blockers": [
+    {
+      "blocker_id": "promotion_blocker.missing_evidence.v0",
+      "blocker_category": "missing_evidence",
+      "blocker_summary": "Evidence candidate input is required for dry-run readiness.",
+      "evidence_or_review_refs": [],
+      "automatic_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_delete_allowed": false
+    }
+  ],
+  "warnings": [],
+  "proposed_reviewed_record_summary_future": "Future reviewed-record proposal is deferred.",
+  "allowed_next_actions": [
+    "request_more_evidence"
+  ],
+  "forbidden_next_actions": [
+    "accept_candidate",
+    "accept_evidence_truth",
+    "create_public_record",
+    "mutate_public_index",
+    "mutate_master_index"
+  ],
+  "limitations": [
+    "Example only."
+  ],
+  "notes": [
+    "Dry-run output remains local review evidence."
+  ]
+}

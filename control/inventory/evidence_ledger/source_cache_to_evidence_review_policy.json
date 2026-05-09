@@ -1,0 +1,45 @@
+{
+  "schema_version": "source_cache_to_evidence_review_policy.v0",
+  "policy_id": "source_cache_to_evidence_review_policy_v0",
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_pack_export": true,
+  "review_required_before_master_index": true,
+  "review_required_before_rights_claim": true,
+  "review_required_before_malware_safety_claim": true,
+  "review_required_before_installability_claim": true,
+  "allowed_review_states": [
+    "not_reviewed",
+    "needs_review",
+    "review_in_progress",
+    "reviewed_rejected",
+    "reviewed_deferred",
+    "reviewed_request_more_evidence",
+    "future_reviewed_candidate"
+  ],
+  "allowed_review_decisions": [
+    "reject",
+    "defer",
+    "request_more_evidence",
+    "accept_as_candidate_future",
+    "route_to_pack_review_future"
+  ],
+  "forbidden_review_outcomes": [
+    "automatic_evidence_acceptance",
+    "automatic_public_index_use",
+    "automatic_master_index_mutation",
+    "automatic_rights_clearance",
+    "automatic_malware_safety",
+    "automatic_installability_verification"
+  ],
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "notes": [
+    "All bridge output requires review before downstream use.",
+    "Review may keep, reject, defer, or request more evidence, but cannot create public truth by itself."
+  ]
+}

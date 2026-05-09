@@ -1,0 +1,80 @@
+{
+  "schema_version": "reviewed_public_index_rebuild_policy.v0",
+  "policy_id": "reviewed_public_index_rebuild_policy_v0",
+  "current_rebuild_runtime_enabled": false,
+  "current_public_index_mutation_enabled": false,
+  "current_master_index_mutation_enabled": false,
+  "future_dry_run_allowed": true,
+  "future_actual_rebuild_requires_operator_approval": true,
+  "allowed_rebuild_statuses": [
+    "example_only",
+    "contract_only",
+    "planning_only",
+    "ready_for_future_dry_run",
+    "blocked_missing_evidence",
+    "blocked_missing_review",
+    "blocked_policy",
+    "blocked_rights",
+    "blocked_risk",
+    "blocked_conflict",
+    "blocked_duplicate_uncertain",
+    "deferred",
+    "not_evaluable",
+    "future_runtime"
+  ],
+  "current_example_rebuild_statuses": [
+    "example_only",
+    "contract_only",
+    "planning_only",
+    "ready_for_future_dry_run",
+    "blocked_missing_evidence",
+    "blocked_missing_review",
+    "blocked_policy",
+    "blocked_rights",
+    "blocked_risk",
+    "blocked_conflict",
+    "blocked_duplicate_uncertain",
+    "deferred",
+    "not_evaluable"
+  ],
+  "required_input_policies": [
+    "reviewed_public_index_input_policy_v0",
+    "candidate_promotion_dry_run_policy_v0",
+    "local_review_queue_truth_policy_v0"
+  ],
+  "required_output_policies": [
+    "reviewed_public_index_output_policy_v0",
+    "reviewed_public_index_record_policy_v0"
+  ],
+  "required_truth_policies": [
+    "reviewed_public_index_truth_policy_v0"
+  ],
+  "required_path_policies": [
+    "reviewed_public_index_path_policy_v0"
+  ],
+  "required_validators": [
+    "scripts/validate_reviewed_public_index_rebuild_contract.py"
+  ],
+  "required_review_gates": [
+    "candidate_review",
+    "evidence_review",
+    "source_policy_review",
+    "rights_review",
+    "risk_review",
+    "conflict_review",
+    "duplicate_review",
+    "operator_approval_before_actual_rebuild"
+  ],
+  "no_goals": [
+    "no current public-index rebuild runtime",
+    "no current public-index mutation",
+    "no master-index mutation",
+    "no candidate acceptance",
+    "no evidence acceptance",
+    "no public truth creation"
+  ],
+  "notes": [
+    "This policy defines the future rebuild contract only.",
+    "Ready values only authorize a future dry-run or proposal review path."
+  ]
+}

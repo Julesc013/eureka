@@ -1,0 +1,169 @@
+{
+  "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_source_cache_to_evidence_bridge": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "_source_identity": "source:fixture:source-lead",
+    "input_id": "source_lead_fixture_v0",
+    "input_public_safe": true,
+    "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+    "input_status": "candidate_source_record",
+    "input_summary": "Source lead candidate for a metadata fixture.",
+    "input_type": "source_lead_candidate",
+    "normalized_fields": {
+      "downstream_bridge": "review_required_future",
+      "lead_status": "candidate"
+    },
+    "notes": [
+      "This is the sample input for the B-15 generated report."
+    ],
+    "privacy_posture": {
+      "account_session_retained": false,
+      "credentials_retained": false,
+      "private_user_data_retained": false,
+      "public_safe_fixture_only": true,
+      "raw_user_history_retained": false,
+      "telemetry_retained": false
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_source_cache_to_evidence_bridge": false,
+      "mutated_master_index": false
+    },
+    "related_candidate_refs": [
+      "candidate.source_lead.fixture.v0"
+    ],
+    "related_evidence_refs_future": [],
+    "related_pack_refs_future": [],
+    "related_search_need_refs": [],
+    "related_source_lead_refs": [
+      "source_lead.fixture.v0"
+    ],
+    "related_workunit_refs": [],
+    "review_gates": {
+      "candidate_store_review_required": true,
+      "evidence_ledger_bridge_review_required": true,
+      "human_review_required": true,
+      "pack_export_review_required": true,
+      "privacy_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true,
+      "risk_review_required": true,
+      "source_cache_review_required": true
+    },
+    "rights_risk_posture": {
+      "download_or_installer_present": false,
+      "executable_payload_present": false,
+      "malware_safety_claimed": false,
+      "review_required": true,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "schema_version": "local_source_cache_record.v0",
+    "source_access_mode": "repo_local_only",
+    "source_authority_posture": "lead_not_validated_source",
+    "source_cache_record_id": "source_cache.source_lead_record.c04e392c535d.v0",
+    "source_cache_record_status": "candidate_source_record",
+    "source_cache_record_type": "source_lead_record",
+    "source_coverage_summary": "Lead may help plan future source cache review.",
+    "source_family": "source_lead_fixture",
+    "source_health_summary": "No live source health check.",
+    "source_id": "source:fixture:source-lead",
+    "source_kind": "source_lead",
+    "source_label": "Source Lead Fixture",
+    "source_limitations": [
+      "Lead is provisional.",
+      "No source availability is established."
+    ],
+    "source_locator": "fixture:source-cache:source-lead",
+    "source_metadata_summary": "Lead names a possible metadata source family without validating it.",
+    "source_observation_summary": "The source lead is normalized into a reviewable fixture record.",
+    "source_policy_status": "review_required",
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "source_cache_record_can_claim_exhaustive_global_search": false,
+      "source_cache_record_can_claim_malware_safety": false,
+      "source_cache_record_can_claim_production_readiness": false,
+      "source_cache_record_can_claim_rights_clearance": false,
+      "source_cache_record_can_claim_verified_installability": false,
+      "source_cache_record_can_mutate_master_index": false,
+      "source_cache_record_is_accepted_evidence": false,
+      "source_cache_record_is_public_truth": false,
+      "source_cache_snapshot_is_master_index": false
+    }
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "live_probe_enabled": false,
+    "local_only": true,
+    "source_access_enabled": false,
+    "source_sync_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "local_source_cache_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "enabled_network_access": false,
+    "review_required": true,
+    "source_access_mode": "repo_local_only",
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_id": "source_cache.source_lead_record.c04e392c535d.v0",
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_status": "candidate_source_record",
+    "source_cache_record_type": "source_lead_record",
+    "source_family": "source_lead_fixture",
+    "source_id": "source:fixture:source-lead",
+    "source_label": "Source Lead Fixture"
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}

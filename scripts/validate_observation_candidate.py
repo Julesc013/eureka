@@ -13,9 +13,20 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CANDIDATE_CONTRACT = "contracts/query/observation_candidate.v0.json"
 REVIEW_CONTRACT = "contracts/query/observation_review_decision.v0.json"
 CANDIDATE_EXAMPLES = (
+    "examples/observation_candidates/local_eval_extraction_gap_candidate_v0.json",
+    "examples/observation_candidates/local_eval_failure_mining_batch_0_v0.json",
     "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
+    "examples/observation_candidates/local_eval_policy_blocked_candidate_v0.json",
+    "examples/observation_candidates/local_eval_ranking_gap_candidate_v0.json",
+    "examples/observation_candidates/local_eval_source_gap_candidate_v0.json",
     "examples/observation_candidates/minimal_observation_candidate_v0.json",
     "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
+    "examples/observation_candidates/source_gap_github_releases_candidate_v0.json",
+    "examples/observation_candidates/source_gap_internet_archive_metadata_candidate_v0.json",
+    "examples/observation_candidates/source_gap_manual_only_forum_candidate_v0.json",
+    "examples/observation_candidates/source_gap_package_registry_candidate_v0.json",
+    "examples/observation_candidates/source_gap_policy_blocked_candidate_v0.json",
+    "examples/observation_candidates/source_gap_wayback_metadata_candidate_v0.json",
     "examples/observation_candidates/source_lead_observation_candidate_v0.json",
 )
 REVIEW_EXAMPLES = (

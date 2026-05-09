@@ -1,0 +1,28 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "source_cache_bridge_needs_review_v0",
+  "input_type": "source_cache_to_evidence_bridge_result",
+  "input_ref": "control/audits/track-b-17-source-cache-to-evidence-bridge-v0/generated/sample_bridge_result.json",
+  "input_public_safe": true,
+  "review_entry_status": "needs_review",
+  "review_subject_type": "source_cache_to_evidence_bridge_result",
+  "review_subject_ref": "source_cache_bridge.source_cache.source_metadata.fixture.v0",
+  "review_subject_summary": "Bridge output requires review before any downstream dry-run gate.",
+  "review_decision": "no_decision_yet",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Bridge output creates reviewable candidates only.",
+  "required_evidence": [
+    "source cache record",
+    "generated evidence candidate"
+  ],
+  "missing_evidence": [],
+  "related_bridge_refs": [
+    "source_cache_bridge.source_cache.source_metadata.fixture.v0"
+  ],
+  "related_evidence_refs": [
+    "evidence.metadata_claim.fixture.v0"
+  ],
+  "notes": [
+    "Bridge output remains local review material."
+  ]
+}

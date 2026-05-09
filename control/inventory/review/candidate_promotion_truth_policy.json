@@ -1,0 +1,30 @@
+{
+  "schema_version": "candidate_promotion_truth_policy.v0",
+  "policy_id": "candidate_promotion_truth_policy_v0",
+  "truth_boundary": {
+    "human_review_required_for_actual_promotion": true,
+    "promotion_dry_run_accepts_candidate": false,
+    "promotion_dry_run_accepts_evidence": false,
+    "promotion_dry_run_can_claim_exhaustive_global_search": false,
+    "promotion_dry_run_can_claim_malware_safety": false,
+    "promotion_dry_run_can_claim_production_readiness": false,
+    "promotion_dry_run_can_claim_rights_clearance": false,
+    "promotion_dry_run_can_claim_verified_installability": false,
+    "promotion_dry_run_creates_public_record": false,
+    "promotion_dry_run_is_public_truth": false,
+    "promotion_dry_run_mutates_master_index": false,
+    "promotion_dry_run_mutates_public_index": false
+  },
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_record_creation_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_rights_clearance_allowed": false,
+  "automatic_malware_safety_allowed": false,
+  "automatic_installability_verification_allowed": false,
+  "notes": [
+    "Dry-run readiness cannot accept evidence, candidates, or public truth.",
+    "Actual promotion requires a future reviewed runtime and separate approval."
+  ]
+}

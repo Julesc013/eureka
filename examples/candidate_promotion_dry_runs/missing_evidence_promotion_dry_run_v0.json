@@ -1,0 +1,50 @@
+{
+  "schema_version": "candidate_promotion_dry_run.v0",
+  "promotion_dry_run_id": "candidate_promotion_dry_run.missing_evidence.fixture.v0",
+  "promotion_dry_run_status": "missing_evidence",
+  "promotion_readiness": "not_ready_missing_evidence",
+  "candidate_ref": "candidate.search_need.software_version.v0",
+  "candidate_summary": "Candidate lacks evidence candidate inputs.",
+  "evidence_refs": [],
+  "review_entry_refs": [
+    "review_queue.candidate_record.596f1cf17cf7.v0"
+  ],
+  "source_cache_refs": [],
+  "source_cache_bridge_refs": [],
+  "related_search_need_refs": [
+    "search_need.software_version.vintage_app.v0"
+  ],
+  "related_workunit_refs": [],
+  "related_pack_refs_future": [],
+  "evidence_requirement_results": [],
+  "review_requirement_results": [],
+  "identity_requirement_results": [],
+  "conflict_requirement_results": [],
+  "duplicate_requirement_results": [],
+  "rights_risk_requirement_results": [],
+  "policy_requirement_results": [],
+  "blockers": [
+    {
+      "blocker_id": "promotion_blocker.missing_evidence.v0",
+      "blocker_category": "missing_evidence",
+      "blocker_summary": "Dry-run evidence is missing.",
+      "evidence_or_review_refs": [],
+      "automatic_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "automatic_delete_allowed": false
+    }
+  ],
+  "warnings": [],
+  "proposed_reviewed_record_summary_future": "Deferred until evidence candidates are provided.",
+  "allowed_next_actions": [
+    "request_more_evidence"
+  ],
+  "forbidden_next_actions": [
+    "accept_candidate",
+    "accept_evidence_truth",
+    "mutate_public_index",
+    "mutate_master_index"
+  ],
+  "limitations": [],
+  "notes": []
+}

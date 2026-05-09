@@ -1,0 +1,109 @@
+{
+  "schema_version": "pack_builder_runtime_policy.v0",
+  "policy_id": "pack_builder_runtime_policy.v0",
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "local_only": true,
+    "fixture_only": true,
+    "writes_no_files_by_default": true,
+    "pack_draft_only": true,
+    "pack_import_enabled": false,
+    "pack_submission_enabled": false,
+    "pack_acceptance_enabled": false,
+    "hosted_upload_enabled": false,
+    "public_index_mutation_enabled": false,
+    "master_index_mutation_enabled": false
+  },
+  "allowed_input_types": [
+    "candidate_promotion_dry_run",
+    "candidate_record",
+    "committed_pack_example",
+    "evidence_ledger_record",
+    "explicit_fixture",
+    "local_review_queue_entry",
+    "node_policy_evaluation",
+    "observation_candidate",
+    "query_observation_record",
+    "reviewed_public_record_proposal",
+    "search_miss_record",
+    "search_need_record",
+    "source_cache_record",
+    "source_cache_to_evidence_bridge_result",
+    "workunit_result"
+  ],
+  "forbidden_input_types": [
+    "accepted_truth_without_review",
+    "account_session_data",
+    "bulk_reddit_content",
+    "executable_download",
+    "installer_payload",
+    "master_index_record_current",
+    "private_user_file",
+    "raw_browser_profile",
+    "scraped_forum_thread",
+    "scraped_search_result",
+    "secret_or_credential",
+    "telemetry_stream",
+    "unreviewed_external_api_payload",
+    "unreviewed_live_source_result"
+  ],
+  "allowed_pack_types": [
+    "alias_pack_draft_future",
+    "compatibility_pack_draft_future",
+    "contribution_pack_draft",
+    "evidence_pack_draft",
+    "extraction_pack_draft_future",
+    "hash_pack_draft_future",
+    "index_pack_preview",
+    "policy_blocked_pack",
+    "query_need_pack_draft_future",
+    "review_pack_draft",
+    "snapshot_pack_draft_future",
+    "source_pack_draft"
+  ],
+  "allowed_output_types": [
+    "contribution_pack_draft",
+    "evidence_pack_draft",
+    "index_pack_preview",
+    "pack_blocker_report",
+    "pack_builder_result",
+    "pack_draft",
+    "pack_summary",
+    "pack_validation_report",
+    "review_pack_draft",
+    "source_pack_draft"
+  ],
+  "forbidden_output_types": [
+    "accepted_evidence_truth",
+    "accepted_pack",
+    "accepted_public_record",
+    "hosted_upload",
+    "malware_safety",
+    "master_index_mutation",
+    "pack_import",
+    "pack_submission",
+    "production_readiness_claim",
+    "public_index_mutation",
+    "rights_clearance",
+    "verified_installability"
+  ],
+  "required_review_gates": [
+    "review_required_before_pack_import",
+    "review_required_before_pack_submission",
+    "review_required_before_public_use",
+    "review_required_before_evidence_acceptance",
+    "review_required_before_public_index_use",
+    "review_required_before_master_index"
+  ],
+  "no_goals": [
+    "no pack import runtime",
+    "no pack submission runtime",
+    "no hosted upload runtime",
+    "no public index mutation",
+    "no master index mutation",
+    "no evidence or candidate acceptance"
+  ],
+  "notes": [
+    "Pack Builder creates local pack drafts only from explicit committed inputs."
+  ]
+}

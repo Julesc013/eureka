@@ -1,0 +1,170 @@
+{
+  "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_source_cache_bridge": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "claim_subject": "synthetic-metadata-item",
+    "claim_summary": "A committed fixture reports a metadata field value.",
+    "claim_type": "metadata",
+    "claim_value": {
+      "field": "display_name",
+      "value": "Synthetic Metadata Item"
+    },
+    "claim_value_optional": {
+      "field": "display_name",
+      "value": "Synthetic Metadata Item"
+    },
+    "confidence_or_uncertainty": "low_confidence_review_required",
+    "conflict_summary": "",
+    "evidence_label": "Metadata Claim Fixture",
+    "evidence_record_id": "evidence.metadata_claim.9a9d882856da.v0",
+    "evidence_record_status": "metadata_claim_candidate",
+    "evidence_record_type": "metadata_claim",
+    "input_id": "metadata_claim_fixture_v0",
+    "input_public_safe": true,
+    "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+    "input_status": "recorded_local",
+    "input_summary": "Metadata claim fixture.",
+    "input_type": "committed_evidence_fixture",
+    "limitations": [
+      "Metadata is scoped to the fixture."
+    ],
+    "lineage_refs": [
+      "fixture:metadata_claim_record_v0"
+    ],
+    "notes": [
+      "Sample input for the B-16 generated report."
+    ],
+    "observation_summary": "The metadata field is present in the fixture.",
+    "privacy_posture": {
+      "account_session_retained": false,
+      "credentials_retained": false,
+      "private_user_data_retained": false,
+      "public_safe_fixture_only": true,
+      "raw_user_history_retained": false,
+      "telemetry_retained": false
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_source_cache_bridge": false,
+      "mutated_master_index": false
+    },
+    "provenance_summary": "Committed metadata claim example.",
+    "related_candidate_refs": [],
+    "related_pack_refs": [],
+    "related_review_refs_future": [],
+    "related_search_need_refs": [],
+    "related_source_cache_refs_future": [],
+    "related_workunit_refs": [],
+    "review_gates": {
+      "candidate_store_review_required": true,
+      "conflict_review_required": true,
+      "human_review_required": true,
+      "installability_review_required": true,
+      "malware_safety_review_required": true,
+      "master_index_review_required": true,
+      "pack_export_review_required": true,
+      "privacy_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true
+    },
+    "rights_risk_posture": {
+      "download_or_installer_present": false,
+      "executable_payload_present": false,
+      "malware_safety_claimed": false,
+      "review_required": true,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "schema_version": "local_evidence_ledger_record.v0",
+    "source_id": "source:fixture:evidence:metadata",
+    "source_label": "Metadata Evidence Source",
+    "source_locator": "fixture:evidence-ledger:metadata",
+    "truth_boundary": {
+      "evidence_ledger_snapshot_is_master_index": false,
+      "evidence_record_can_claim_exhaustive_global_search": false,
+      "evidence_record_can_claim_malware_safety": false,
+      "evidence_record_can_claim_production_readiness": false,
+      "evidence_record_can_claim_rights_clearance": false,
+      "evidence_record_can_claim_verified_installability": false,
+      "evidence_record_can_mutate_master_index": false,
+      "evidence_record_is_accepted_evidence": false,
+      "evidence_record_is_public_truth": false,
+      "human_review_required_for_downstream_use": true
+    }
+  },
+  "runtime_scope": {
+    "evidence_acceptance_enabled": false,
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "live_source_access_enabled": false,
+    "local_only": true,
+    "source_cache_bridge_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "local_evidence_ledger_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "claim_subject": "synthetic-metadata-item",
+    "claim_type": "metadata",
+    "evidence_label": "Metadata Claim Fixture",
+    "evidence_record_can_mutate_master_index": false,
+    "evidence_record_id": "evidence.metadata_claim.9a9d882856da.v0",
+    "evidence_record_is_accepted_evidence": false,
+    "evidence_record_is_public_truth": false,
+    "evidence_record_status": "metadata_claim_candidate",
+    "evidence_record_type": "metadata_claim",
+    "implemented_source_cache_bridge": false,
+    "review_required": true,
+    "source_id": "source:fixture:evidence:metadata"
+  },
+  "truth_boundary": {
+    "evidence_record_can_mutate_master_index": false,
+    "evidence_record_is_accepted_evidence": false,
+    "evidence_record_is_public_truth": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "validation_errors": [],
+  "warnings": []
+}

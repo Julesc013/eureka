@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5254 chars, 1314 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6086 chars, 1522 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,27 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_append_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_record_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_rollout_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_runtime_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/local_evidence_ledger_runtime_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/evidence_ledger/source_cache_to_evidence_bridge_plan.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/LOCAL_EVIDENCE_LEDGER_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_EVIDENCE_LEDGER_APPROVAL_GATES.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_EVIDENCE_LEDGER_PRIVACY_RISK_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/SOURCE_CACHE_TO_EVIDENCE_LEDGER_BRIDGE_PLAN.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/LOCAL_EVIDENCE_LEDGER_RUNTIME_PLAN.md` (??; matches active task allowed path)
-- unknown: `examples/evidence_ledger_plans` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_local_evidence_ledger_runtime_plan.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_local_evidence_ledger_runtime_plan.py` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-review-packet.md` (MM; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (MM; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (MM; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (MM; matches active task allowed path)
+- unknown: `contracts/master_index/reviewed_public_index_rebuild.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/master_index/reviewed_public_record_proposal.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/query/observation_candidate_review_queue.v0.json` (A; does not match active task allowed paths)
+- allowed: `control/audits/obs-agent-01-local-eval-failure-mining-v0/README.md` (A; matches active task allowed path)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/candidate_review_queue_preview.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/obs_agent_01_report.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/source_gap_candidates.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/validation.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-01-local-eval-failure-mining-v0/workunit_seed_candidates_future.md` (A; does not match active task allowed paths)
+- allowed: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/README.md` (A; matches active task allowed path)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/connector_pattern_candidates_future.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/obs_agent_02_report.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/search_need_seed_candidates_future.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_manifest.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_policy_decision_queue_preview.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/validation.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/obs-agent-02-source-gap-candidate-generation-v0/workunit_seed_candidates_future.md` (A; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 284; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -63,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6439
-- approx_tokens: 1610
+- chars: 7285
+- approx_tokens: 1822
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

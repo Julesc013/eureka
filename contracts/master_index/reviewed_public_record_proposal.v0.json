@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/master_index/reviewed_public_record_proposal.v0.json",
+  "title": "EurekaReviewedPublicRecordProposalV0",
+  "description": "Contract-only schema for a future reviewed public record proposal. A proposal is review material for a future rebuild and is not accepted public truth, accepted evidence, rights clearance, malware safety, verified installability, or a public-index write.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "reviewed_public_record_proposal_id",
+    "proposal_status",
+    "proposal_type",
+    "proposal_label",
+    "source_candidate_refs",
+    "source_review_refs",
+    "source_evidence_refs",
+    "source_cache_refs",
+    "source_pack_refs_future",
+    "proposed_public_record",
+    "public_search_card_summary",
+    "object_summary",
+    "source_summary",
+    "evidence_summary",
+    "compatibility_summary",
+    "rights_summary",
+    "risk_summary",
+    "limitation_summary",
+    "absence_or_gap_summary",
+    "review_summary",
+    "conflict_summary",
+    "duplicate_summary",
+    "publication_constraints",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "reviewed_public_record_proposal.v0"
+    },
+    "reviewed_public_record_proposal_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,180}$"
+    },
+    "proposal_status": {
+      "$ref": "#/$defs/proposal_status"
+    },
+    "proposal_type": {
+      "$ref": "#/$defs/proposal_type"
+    },
+    "proposal_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_candidate_refs": {
+      "$ref": "#/$defs/string_array"
+    },
+    "source_review_refs": {
+      "$ref": "#/$defs/string_array"
+    },
+    "source_evidence_refs": {
+      "$ref": "#/$defs/string_array"
+    },
+    "source_cache_refs": {
+      "$ref": "#/$defs/string_array"
+    },
+    "source_pack_refs_future": {
+      "$ref": "#/$defs/string_array"
+    },
+    "proposed_public_record": {
+      "type": "object"
+    },
+    "public_search_card_summary": {
+      "type": "object"
+    },
+    "object_summary": {
+      "type": "object"
+    },
+    "source_summary": {
+      "type": "object"
+    },
+    "evidence_summary": {
+      "type": "object"
+    },
+    "compatibility_summary": {
+      "type": "object"
+    },
+    "rights_summary": {
+      "type": "object"
+    },
+    "risk_summary": {
+      "type": "object"
+    },
+    "limitation_summary": {
+      "type": "object"
+    },
+    "absence_or_gap_summary": {
+      "type": "object"
+    },
+    "review_summary": {
+      "type": "object"
+    },
+    "conflict_summary": {
+      "type": "object"
+    },
+    "duplicate_summary": {
+      "type": "object"
+    },
+    "publication_constraints": {
+      "type": "object"
+    },
+    "truth_boundary": {
+      "$ref": "#/$defs/proposal_truth_boundary"
+    },
+    "product_boundary": {
+      "$ref": "#/$defs/product_boundary"
+    },
+    "notes": {
+      "$ref": "#/$defs/string_array"
+    }
+  },
+  "$defs": {
+    "proposal_status": {
+      "enum": [
+        "example_only",
+        "proposed",
+        "ready_for_review",
+        "ready_for_future_rebuild_dry_run",
+        "blocked_missing_evidence",
+        "blocked_missing_review",
+        "blocked_policy",
+        "blocked_rights",
+        "blocked_risk",
+        "blocked_conflict",
+        "blocked_duplicate_uncertain",
+        "rejected",
+        "deferred",
+        "accepted_public_future"
+      ]
+    },
+    "proposal_type": {
+      "enum": [
+        "object_public_record",
+        "source_public_record",
+        "need_public_record",
+        "candidate_public_record_future",
+        "evidence_summary_public_record",
+        "compatibility_public_record",
+        "representation_public_record",
+        "absence_public_record",
+        "pack_public_record_future",
+        "policy_blocked_record",
+        "not_evaluable_record"
+      ]
+    },
+    "proposal_truth_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_proposal_is_public_truth",
+        "record_proposal_is_accepted_truth",
+        "record_proposal_is_accepted_evidence",
+        "record_proposal_mutates_public_index_current",
+        "record_proposal_mutates_master_index_current",
+        "record_proposal_can_claim_rights_clearance",
+        "record_proposal_can_claim_malware_safety",
+        "record_proposal_can_claim_verified_installability",
+        "human_review_required_for_actual_publication"
+      ],
+      "properties": {
+        "record_proposal_is_public_truth": {
+          "const": false
+        },
+        "record_proposal_is_accepted_truth": {
+          "const": false
+        },
+        "record_proposal_is_accepted_evidence": {
+          "const": false
+        },
+        "record_proposal_mutates_public_index_current": {
+          "const": false
+        },
+        "record_proposal_mutates_master_index_current": {
+          "const": false
+        },
+        "record_proposal_can_claim_rights_clearance": {
+          "const": false
+        },
+        "record_proposal_can_claim_malware_safety": {
+          "const": false
+        },
+        "record_proposal_can_claim_verified_installability": {
+          "const": false
+        },
+        "human_review_required_for_actual_publication": {
+          "const": true
+        }
+      }
+    },
+    "product_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "implemented_public_index_rebuild_runtime",
+        "created_public_record_current",
+        "mutated_public_index",
+        "mutated_master_index",
+        "claimed_rights_clearance",
+        "claimed_malware_safety",
+        "claimed_verified_installability",
+        "claimed_exhaustive_global_search",
+        "claimed_production_readiness"
+      ],
+      "properties": {
+        "implemented_public_index_rebuild_runtime": {
+          "const": false
+        },
+        "created_public_record_current": {
+          "const": false
+        },
+        "mutated_public_index": {
+          "const": false
+        },
+        "mutated_master_index": {
+          "const": false
+        },
+        "claimed_rights_clearance": {
+          "const": false
+        },
+        "claimed_malware_safety": {
+          "const": false
+        },
+        "claimed_verified_installability": {
+          "const": false
+        },
+        "claimed_exhaustive_global_search": {
+          "const": false
+        },
+        "claimed_production_readiness": {
+          "const": false
+        }
+      }
+    },
+    "string_array": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-contract_id": "eureka_reviewed_public_record_proposal_v0",
+  "x-status": "stable_draft",
+  "x-contract_only": true,
+  "x-no_current_public_truth": true,
+  "x-no_public_index_mutation": true,
+  "x-no_master_index_mutation": true,
+  "x-no_auto_acceptance": true
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "local_evidence_ledger_record_status_policy.v0",
+  "policy_id": "local_evidence_ledger_record_status_policy_v0",
+  "allowed_statuses": [
+    "accepted_public_future",
+    "checksum_claim_candidate",
+    "compatibility_claim_candidate",
+    "conflicting",
+    "contribution_claim_candidate",
+    "deferred",
+    "evidence_candidate",
+    "evidence_needed",
+    "example_only",
+    "filename_or_member_claim_candidate",
+    "fixture_only",
+    "identity_claim_candidate",
+    "metadata_claim_candidate",
+    "needs_review",
+    "normalized",
+    "pack_claim_candidate",
+    "policy_blocked",
+    "recorded_local",
+    "rejected_future",
+    "rights_blocked",
+    "risk_blocked",
+    "source_locator_candidate",
+    "source_observation_candidate",
+    "stale",
+    "superseded"
+  ],
+  "current_allowed_statuses": [
+    "checksum_claim_candidate",
+    "compatibility_claim_candidate",
+    "conflicting",
+    "deferred",
+    "evidence_candidate",
+    "evidence_needed",
+    "example_only",
+    "filename_or_member_claim_candidate",
+    "fixture_only",
+    "identity_claim_candidate",
+    "metadata_claim_candidate",
+    "needs_review",
+    "normalized",
+    "pack_claim_candidate",
+    "policy_blocked",
+    "recorded_local",
+    "source_locator_candidate",
+    "source_observation_candidate"
+  ],
+  "statuses_forbidden_current": [
+    "accepted_public_future",
+    "contribution_claim_candidate",
+    "rejected_future",
+    "rights_blocked",
+    "risk_blocked",
+    "stale",
+    "superseded"
+  ],
+  "no_truth_claim_rules": [
+    "No status marks evidence as accepted.",
+    "No status marks a public record as accepted.",
+    "No status permits master-index mutation."
+  ],
+  "notes": [
+    "Accepted-public vocabulary is future-only.",
+    "Conflicting records preserve disagreement and require review."
+  ]
+}

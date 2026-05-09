@@ -1,0 +1,34 @@
+{
+  "schema_version": "candidate_promotion_blocker_policy.v0",
+  "policy_id": "candidate_promotion_blocker_policy_v0",
+  "allowed_blocker_categories": [
+    "candidate_not_reviewed",
+    "compatibility_uncertain",
+    "duplicate_uncertain",
+    "evidence_not_accepted",
+    "identity_uncertain",
+    "master_index_gate_missing",
+    "missing_evidence",
+    "missing_provenance",
+    "missing_review",
+    "missing_source_locator",
+    "not_evaluable",
+    "policy_block",
+    "privacy_block",
+    "representation_uncertain",
+    "review_decision_missing",
+    "rights_block",
+    "risk_block",
+    "source_policy_missing",
+    "unresolved_conflict"
+  ],
+  "automatic_resolution_allowed": false,
+  "automatic_merge_allowed": false,
+  "automatic_delete_allowed": false,
+  "conflict_preservation_required": true,
+  "duplicate_preservation_required": true,
+  "notes": [
+    "Blockers are reported, not automatically fixed.",
+    "Duplicate and conflict blockers must not merge or delete records."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "local_evidence_ledger_conflict_policy.v0",
+  "policy_id": "local_evidence_ledger_conflict_policy_v0",
+  "conflict_preservation_required": true,
+  "automatic_conflict_resolution_allowed": false,
+  "automatic_merge_allowed": false,
+  "conflicting_claims_require_review": true,
+  "allowed_conflict_outputs": [
+    "conflict_report",
+    "review_item_future"
+  ],
+  "forbidden_conflict_outputs": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation"
+  ],
+  "notes": [
+    "Conflicts are preserved and summarized; they are not auto-resolved or merged."
+  ]
+}

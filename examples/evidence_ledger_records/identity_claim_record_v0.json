@@ -1,0 +1,39 @@
+{
+  "schema_version": "local_evidence_ledger_record.v0",
+  "input_id": "identity_claim_fixture_v0",
+  "input_type": "committed_evidence_fixture",
+  "input_ref": "examples/evidence_ledger_records/identity_claim_record_v0.json",
+  "input_status": "normalized",
+  "input_public_safe": true,
+  "input_summary": "Identity claim fixture.",
+  "evidence_record_status": "identity_claim_candidate",
+  "evidence_record_type": "identity_claim",
+  "evidence_label": "Identity Claim Fixture",
+  "source_id": "source:fixture:evidence:identity",
+  "source_label": "Identity Evidence Source",
+  "source_locator": "fixture:evidence-ledger:identity",
+  "claim_type": "identity",
+  "claim_summary": "Fixture suggests two labels may refer to the same synthetic object.",
+  "claim_value": {
+    "relation": "possible_same_object",
+    "confidence": "low"
+  },
+  "claim_subject": "synthetic-identity-pair",
+  "observation_summary": "Identity relation is a reviewable candidate.",
+  "provenance_summary": "Committed identity claim fixture.",
+  "lineage_refs": [
+    "fixture:identity_claim_record_v0"
+  ],
+  "related_candidate_refs": [],
+  "related_source_cache_refs_future": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs": [],
+  "related_review_refs_future": [],
+  "confidence_or_uncertainty": "possible_identity_review_required",
+  "conflict_summary": "",
+  "limitations": [
+    "Identity is not verified."
+  ],
+  "notes": []
+}

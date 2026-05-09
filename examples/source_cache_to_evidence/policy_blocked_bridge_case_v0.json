@@ -1,0 +1,39 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "policy_blocked_bridge_case_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/source_cache_to_evidence/policy_blocked_bridge_case_v0.json",
+  "input_status": "policy_blocked",
+  "input_public_safe": true,
+  "input_summary": "Policy-blocked bridge fixture.",
+  "source_cache_record_status": "policy_blocked",
+  "source_cache_record_type": "source_access_posture_record",
+  "source_id": "source:bridge:policy-blocked",
+  "source_label": "Policy Blocked Bridge Source",
+  "source_family": "policy_blocked_bridge_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:bridge:policy-blocked",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "policy_blocked",
+  "source_authority_posture": "blocked_not_authoritative",
+  "source_coverage_summary": "Blocked fixture documents the policy gate only.",
+  "source_metadata_summary": "No source access is allowed.",
+  "source_health_summary": "No live check.",
+  "source_limitations": [
+    "Blocked by policy.",
+    "Bridge result must preserve the block."
+  ],
+  "source_observation_summary": "The source is represented only as a blocked local fixture.",
+  "normalized_fields": {
+    "blocked_reason": "no_autonomous_access"
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "Policy block is preserved for review."
+  ]
+}

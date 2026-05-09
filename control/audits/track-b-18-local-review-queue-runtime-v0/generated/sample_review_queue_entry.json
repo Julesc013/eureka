@@ -1,0 +1,133 @@
+{
+  "allowed_next_actions": [
+    "review_locally",
+    "request_more_evidence",
+    "defer",
+    "reject"
+  ],
+  "conflict_summary": {
+    "automatic_conflict_resolution_allowed": false,
+    "automatic_merge_allowed": false,
+    "conflict_detected": false
+  },
+  "decision_rationale": "Candidate is provisional and needs evidence review before any dry-run promotion.",
+  "decision_scope": "local_review_only",
+  "duplicate_summary": {
+    "automatic_delete_allowed": false,
+    "automatic_merge_allowed": false,
+    "duplicate_possible": false
+  },
+  "forbidden_next_actions": [
+    "accept_candidate_truth",
+    "accept_evidence_truth",
+    "accept_public_truth",
+    "automatic_delete",
+    "automatic_merge",
+    "claim_malware_safety",
+    "claim_rights_clearance",
+    "claim_verified_installability",
+    "hosted_moderation",
+    "mutate_master_index",
+    "mutate_public_index"
+  ],
+  "input_id": "candidate_needs_review_v0",
+  "input_public_safe": true,
+  "input_ref": "examples/candidates/search_need_candidate_v0.json",
+  "input_type": "candidate_record",
+  "limitations": [],
+  "missing_evidence": [],
+  "notes": [
+    "Candidate remains provisional."
+  ],
+  "policy_summary": "Local review policy applies.",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_candidate_promotion": false,
+    "implemented_evidence_acceptance": false,
+    "implemented_hosted_review_runtime": false,
+    "implemented_public_truth_acceptance": false,
+    "mutated_master_index": false
+  },
+  "promotion_readiness": {
+    "candidate_acceptance_allowed": false,
+    "evidence_acceptance_allowed": false,
+    "master_index_mutation_allowed": false,
+    "promotion_is_public_acceptance": false,
+    "public_index_mutation_allowed": false,
+    "ready_for_promotion_dry_run": false
+  },
+  "related_bridge_refs": [],
+  "related_candidate_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "related_evidence_refs": [],
+  "related_pack_refs_future": [],
+  "related_source_cache_refs": [],
+  "related_workunit_refs": [],
+  "required_evidence": [
+    "source locator",
+    "metadata claim candidate"
+  ],
+  "review_decision": "no_decision_yet",
+  "review_entry_id": "review_queue.candidate_record.596f1cf17cf7.v0",
+  "review_entry_status": "needs_review",
+  "review_gates": {
+    "candidate_review_required": true,
+    "conflict_review_required": true,
+    "downstream_review_required": true,
+    "evidence_review_required": true,
+    "human_review_required": true,
+    "installability_review_required": true,
+    "malware_safety_review_required": true,
+    "master_index_review_required": true,
+    "privacy_review_required": true,
+    "promotion_dry_run_review_required": true,
+    "public_index_review_required": true,
+    "rights_review_required": true,
+    "source_cache_review_required": true
+  },
+  "review_subject_ref": "candidate.search_need.software_version.v0",
+  "review_subject_summary": "SearchNeed-derived version candidate requires local review.",
+  "review_subject_type": "candidate_record",
+  "reviewed_at_note": "No reviewed timestamp; fixture only.",
+  "reviewer_posture": "not_reviewed",
+  "rights_risk_summary": {
+    "malware_safety_claimed": false,
+    "rights_clearance_claimed": false,
+    "rights_review_required": true,
+    "verified_installability_claimed": false
+  },
+  "schema_version": "local_review_queue_entry.v0",
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "review_entry_accepts_candidate": false,
+    "review_entry_accepts_evidence": false,
+    "review_entry_allows_public_index_mutation": false,
+    "review_entry_can_claim_exhaustive_global_search": false,
+    "review_entry_can_claim_malware_safety": false,
+    "review_entry_can_claim_production_readiness": false,
+    "review_entry_can_claim_rights_clearance": false,
+    "review_entry_can_claim_verified_installability": false,
+    "review_entry_is_public_truth": false,
+    "review_entry_mutates_master_index": false,
+    "review_queue_snapshot_is_master_index": false
+  }
+}

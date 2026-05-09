@@ -1,0 +1,69 @@
+{
+  "schema_version": "observation_candidate.v0",
+  "observation_candidate_id": "obs_candidate_local_eval_ranking_gap_v0",
+  "candidate_type": "search_need_seed",
+  "candidate_status": "proposed",
+  "origin": "search_usefulness_audit",
+  "origin_ref": "evals/search_usefulness/queries/search_usefulness_v0.json#pc_magazine_july_1994_ray_tracing",
+  "related_batch_id": "batch_0",
+  "related_slot_id": null,
+  "related_query_id": "pc_magazine_july_1994_ray_tracing",
+  "related_system_id": null,
+  "query_text": "PC Magazine July 1994 ray tracing",
+  "source_mode": "repo_local_only",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "candidate_summary": "Local search-usefulness materials mark periodical article discovery as source, member access, and ranking weakness; a reviewed SearchNeed seed could preserve the article-level intent before source work exists.",
+  "proposed_top_results": [],
+  "proposed_no_result_summary": null,
+  "proposed_near_matches": [],
+  "proposed_failure_modes": [
+    "source_coverage_gap",
+    "member_access_gap",
+    "ranking_gap"
+  ],
+  "proposed_usefulness_scores": null,
+  "evidence_refs": [
+    "evals/search_usefulness/queries/search_usefulness_v0.json",
+    "site/dist/data/eval_summary.json"
+  ],
+  "source_lead_refs": [
+    "source-lead-future:periodical-article-source-coverage"
+  ],
+  "work_unit_refs_future": [
+    "work-unit-future:article-level-search-need-review"
+  ],
+  "limitations": [
+    "Ranking gap is a local audit label, not externally observed rank evidence.",
+    "Manual external baselines remain pending."
+  ],
+  "required_human_review": true,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "modified_track_b_files": false
+  },
+  "notes": [
+    "SearchNeed seed remains future and review-gated."
+  ]
+}

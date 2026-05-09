@@ -1,0 +1,39 @@
+{
+  "schema_version": "pack_builder_output_policy.v0",
+  "policy_id": "pack_builder_output_policy.v0",
+  "allowed_output_types": [
+    "pack_draft",
+    "pack_builder_result",
+    "pack_summary",
+    "pack_validation_report",
+    "pack_blocker_report",
+    "source_pack_draft",
+    "evidence_pack_draft",
+    "contribution_pack_draft",
+    "review_pack_draft",
+    "index_pack_preview"
+  ],
+  "forbidden_output_types": [
+    "pack_import",
+    "pack_submission",
+    "hosted_upload",
+    "accepted_pack",
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ],
+  "output_scope": {
+    "pack_draft_only": true,
+    "review_required_before_downstream_use": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "notes": [
+    "Output is a draft or report only and cannot be treated as accepted pack state."
+  ]
+}

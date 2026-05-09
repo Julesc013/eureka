@@ -1,0 +1,123 @@
+{
+  "schema_version": "reviewed_public_record_proposal.v0",
+  "reviewed_public_record_proposal_id": "reviewed_public_record_proposal.need.fixture.v0",
+  "proposal_status": "ready_for_review",
+  "proposal_type": "need_public_record",
+  "proposal_label": "Need reviewed public record proposal",
+  "source_candidate_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "source_review_refs": [
+    "review_queue.candidate_record.fixture.v0"
+  ],
+  "source_evidence_refs": [],
+  "source_cache_refs": [],
+  "source_pack_refs_future": [],
+  "proposed_public_record": {
+    "record_id": "public_record_proposal.need.fixture.v0",
+    "record_kind": "need",
+    "display_label": "Synthetic search need",
+    "review_status": "ready_for_review",
+    "public_search_effect_status": "candidate_only"
+  },
+  "public_search_card_summary": {
+    "card_candidate_allowed_future": true,
+    "current_public_search_behavior_changed": false
+  },
+  "object_summary": {
+    "object_label": "Synthetic search need",
+    "object_kind": "need"
+  },
+  "source_summary": {
+    "source_refs": [],
+    "source_posture": "not_applicable",
+    "source_limitations": []
+  },
+  "evidence_summary": {
+    "evidence_refs": [],
+    "evidence_posture": "review_needed",
+    "evidence_limitations": [
+      "Need proposals may require evidence before future rebuild readiness."
+    ]
+  },
+  "compatibility_summary": {
+    "compatibility_posture": "not_applicable",
+    "compatibility_caveats": []
+  },
+  "rights_summary": {
+    "rights_clearance_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "No rights posture is cleared."
+    ]
+  },
+  "risk_summary": {
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "review_required": true,
+    "limitations": [
+      "No installability posture is established."
+    ]
+  },
+  "limitation_summary": {
+    "limitations": [
+      "Need proposal requires further review before rebuild use."
+    ],
+    "no_claims": [
+      "no public truth",
+      "no evidence acceptance"
+    ]
+  },
+  "absence_or_gap_summary": {
+    "known_gaps": [
+      "supporting evidence refs"
+    ]
+  },
+  "review_summary": {
+    "review_refs": [
+      "review_queue.candidate_record.fixture.v0"
+    ],
+    "human_review_required": true
+  },
+  "conflict_summary": {
+    "conflict_status": "none_detected",
+    "conflict_preserved": true,
+    "automatic_resolution_allowed": false
+  },
+  "duplicate_summary": {
+    "duplicate_status": "unknown",
+    "duplicate_preserved": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "publication_constraints": {
+    "future_rebuild_required": true,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false
+  },
+  "truth_boundary": {
+    "record_proposal_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "record_proposal_mutates_public_index_current": false,
+    "record_proposal_mutates_master_index_current": false,
+    "record_proposal_can_claim_rights_clearance": false,
+    "record_proposal_can_claim_malware_safety": false,
+    "record_proposal_can_claim_verified_installability": false,
+    "human_review_required_for_actual_publication": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "created_public_record_current": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "notes": [
+    "Need proposal is review material only."
+  ]
+}

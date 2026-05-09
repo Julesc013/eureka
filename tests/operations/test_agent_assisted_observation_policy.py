@@ -17,7 +17,7 @@ from scripts.validate_agent_assisted_observation_policy import (
     validate_agent_policy,
     validate_source_access_modes,
 )
-from scripts.validate_observation_candidate import validate_observation_candidates
+from scripts.validate_observation_candidate import CANDIDATE_EXAMPLES, validate_observation_candidates
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -73,8 +73,8 @@ class AgentAssistedObservationPolicyTest(unittest.TestCase):
 
         self.assertEqual(first.getvalue(), second.getvalue())
         payload = json.loads(first.getvalue())
-        self.assertEqual(payload["candidate_count"], 4)
-        self.assertEqual(payload["by_review_need"], {"review_required": 4})
+        self.assertEqual(payload["candidate_count"], len(CANDIDATE_EXAMPLES))
+        self.assertEqual(payload["by_review_need"], {"review_required": len(CANDIDATE_EXAMPLES)})
 
     def test_summarizer_writes_only_when_explicit(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

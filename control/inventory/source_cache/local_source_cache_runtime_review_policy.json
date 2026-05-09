@@ -1,0 +1,44 @@
+{
+  "schema_version": "local_source_cache_runtime_review_policy.v0",
+  "policy_id": "local_source_cache_runtime_review_policy_v0",
+  "label": "Local source cache runtime review policy",
+  "review_required_before_evidence_ledger_bridge": true,
+  "review_required_before_candidate_store_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_pack_export": true,
+  "review_required_before_source_policy_change": true,
+  "review_required_before_live_probe": true,
+  "review_required_before_connector_runtime": true,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_public_index_use_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_connector_enable_allowed": false,
+  "allowed_review_states": [
+    "needs_review",
+    "review_deferred",
+    "approved_for_future_bridge",
+    "rejected",
+    "blocked"
+  ],
+  "allowed_review_decisions": [
+    "approve_fixture_record_future",
+    "approve_candidate_store_use_future",
+    "approve_evidence_bridge_future",
+    "reject",
+    "defer",
+    "block"
+  ],
+  "forbidden_review_outcomes": [
+    "accepted_evidence_truth",
+    "accepted_public_record",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_readiness_claim"
+  ],
+  "notes": [
+    "Review gates preserve the distinction between source observations and evidence.",
+    "This milestone does not implement review runtime."
+  ]
+}

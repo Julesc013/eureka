@@ -1,0 +1,74 @@
+{
+  "schema_version": "pack_builder_request.v0",
+  "pack_builder_request_id": "pack_builder_request.index_pack_preview_case.v0",
+  "requested_pack_type": "index_pack_preview",
+  "request_status": "fixture_only",
+  "input_refs": [
+    "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json"
+  ],
+  "input_records": [],
+  "input_summary": {
+    "input_count": 1,
+    "input_types": [
+      "reviewed_public_record_proposal"
+    ],
+    "public_safe_fixtures_only": true
+  },
+  "requested_output_path": "examples/pack_drafts/index_pack_preview_v0.json",
+  "review_gates": {
+    "review_required_before_pack_import": true,
+    "review_required_before_pack_submission": true,
+    "review_required_before_public_use": true,
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_master_index": true
+  },
+  "truth_boundary": {
+    "pack_draft_is_public_truth": false,
+    "pack_draft_is_accepted_evidence": false,
+    "pack_draft_is_accepted_pack": false,
+    "pack_draft_can_mutate_public_index": false,
+    "pack_draft_can_mutate_master_index": false,
+    "pack_draft_can_claim_rights_clearance": false,
+    "pack_draft_can_claim_malware_safety": false,
+    "pack_draft_can_claim_verified_installability": false,
+    "pack_draft_can_claim_exhaustive_global_search": false,
+    "pack_draft_can_claim_production_readiness": false,
+    "human_review_required_before_submission_or_import": true
+  },
+  "product_boundary": {
+    "implemented_pack_import_runtime": false,
+    "implemented_pack_submission_runtime": false,
+    "implemented_hosted_upload_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "implemented_evidence_acceptance": false,
+    "implemented_candidate_acceptance": false,
+    "changed_public_search_behavior": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no public index rebuild",
+    "no public index mutation",
+    "no master index mutation"
+  ],
+  "notes": [
+    "Index pack preview case remains preview-only."
+  ]
+}

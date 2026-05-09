@@ -1,0 +1,26 @@
+{
+  "schema_version": "pack_export_format_policy.v0",
+  "policy_id": "pack_export_format_policy.v0",
+  "current_allowed_formats": [
+    "json_pack_export",
+    "json_pack_manifest",
+    "json_pack_export_report",
+    "markdown_pack_summary"
+  ],
+  "future_deferred_formats": [
+    "signed_json_pack_future",
+    "zipped_pack_future",
+    "tar_pack_future",
+    "snapshot_pack_future",
+    "hosted_submission_package_future"
+  ],
+  "current_format_constraints": {
+    "archive_bundle_allowed": false,
+    "signed_output_allowed": false,
+    "hosted_submission_package_allowed": false,
+    "binary_payload_allowed": false
+  },
+  "notes": [
+    "Current export is JSON and markdown only; archive and signed formats are future vocabulary."
+  ]
+}

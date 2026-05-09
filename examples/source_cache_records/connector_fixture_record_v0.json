@@ -1,0 +1,40 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "connector_fixture_record_v0",
+  "input_type": "committed_pack_example",
+  "input_ref": "examples/source_cache_records/connector_fixture_record_v0.json",
+  "input_status": "fixture_only",
+  "input_public_safe": true,
+  "input_summary": "Committed connector fixture output shape.",
+  "source_cache_record_status": "fixture_only",
+  "source_cache_record_type": "connector_fixture_record",
+  "source_id": "source:fixture:connector",
+  "source_label": "Connector Fixture Source",
+  "source_family": "connector_fixture",
+  "source_kind": "committed_connector_fixture",
+  "source_locator": "fixture:source-cache:connector",
+  "source_access_mode": "committed_fixture_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "fixture_output_only",
+  "source_coverage_summary": "Connector fixture shape only.",
+  "source_metadata_summary": "No connector runtime is enabled.",
+  "source_health_summary": "No live connector check.",
+  "source_limitations": [
+    "Connector fixture is not connector execution.",
+    "No source sync is enabled."
+  ],
+  "source_observation_summary": "The connector fixture can be summarized locally.",
+  "normalized_fields": {
+    "connector_runtime_executed": false,
+    "source_sync_enabled": false
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "Connector work remains future and review-gated."
+  ]
+}

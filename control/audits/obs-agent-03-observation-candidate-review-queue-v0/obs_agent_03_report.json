@@ -1,0 +1,180 @@
+{
+  "schema_version": "obs_agent_03_report.v0",
+  "status": "warn",
+  "track": "Observation",
+  "task": "OBS-AGENT-03",
+  "lane": "OBS side lane",
+  "parallel_track_b_state_observed": {
+    "obs_replan_01_seen": true,
+    "obs_agent_01_seen": true,
+    "obs_agent_02_seen": true,
+    "track_b_01_seen": true,
+    "track_b_02_seen": true,
+    "track_b_03_or_later_seen": true,
+    "track_b_04_seen": true,
+    "track_b_05_seen": true,
+    "track_b_06_seen": true,
+    "latest_track_b_task_seen": "TRACK-B-06",
+    "next_track_b_task_expected": "TRACK-B-07 - Query observation runtime"
+  },
+  "preflight": {
+    "git_status_short": "clean",
+    "git_log_oneline_12": [
+      "fe96586f ops(observation): generate source gap candidates",
+      "5273eb37 ops(observation): mine local eval failure candidates",
+      "10301208 contracts(local): add local foundry state contract",
+      "de056c95 contracts(workunit): add Eureka WorkUnit result contract",
+      "b59424f2 contracts(workunit): add Eureka WorkUnit contract",
+      "c730be82 contracts(node): add Eureka Node capability model",
+      "72572aca contracts(node): add Eureka Node policy",
+      "714fe82b contracts(node): add Eureka Node manifest",
+      "cfe56ecc ops(observation): add agent-assisted observation workflow",
+      "abca0f44 ops(observation): prepare manual baseline execution packet",
+      "12ebb1a4 ops(observation): add manual baseline protocol",
+      "8a8a519c contracts(representation): add renderer parity harness"
+    ],
+    "queue_update_performed": false,
+    "queue_update_note": "Deferred because latest local task packet points at TRACK-B-06 and Track B may be active on a separate machine."
+  },
+  "added_contracts": [
+    "contracts/query/observation_candidate_review_queue.v0.json"
+  ],
+  "added_docs": [
+    "docs/operations/OBSERVATION_CANDIDATE_REVIEW_QUEUE.md",
+    "docs/operations/OBS_CANDIDATE_TRIAGE_GUIDE.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/README.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/observation_candidate_review_queue.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/candidate_triage_summary.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/human_review_packet.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/source_policy_review_items.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/workunit_seed_review_items_future.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/search_need_seed_review_items_future.md",
+    "control/audits/obs-agent-03-observation-candidate-review-queue-v0/validation.md"
+  ],
+  "added_inventories": [
+    "control/inventory/observations/observation_candidate_review_queue_policy.json",
+    "control/inventory/observations/observation_candidate_review_queue.json",
+    "control/inventory/observations/observation_candidate_triage_rules.json"
+  ],
+  "added_examples": [
+    "examples/observation_reviews/review_queue_minimal_v0.json",
+    "examples/observation_reviews/review_queue_source_gap_batch_v0.json",
+    "examples/observation_reviews/review_queue_policy_blocked_batch_v0.json",
+    "examples/observation_reviews/review_queue_request_more_evidence_batch_v0.json"
+  ],
+  "added_scripts": [
+    "scripts/build_observation_candidate_review_queue.py",
+    "scripts/validate_observation_candidate_review_queue.py",
+    "scripts/summarize_observation_candidate_review_queue.py"
+  ],
+  "added_tests": [
+    "tests/contracts/test_observation_candidate_review_queue_contract.py",
+    "tests/operations/test_observation_candidate_review_queue.py"
+  ],
+  "validation": {
+    "git diff --check": "pass",
+    "git status --short": "pass_scoped_dirty_before_commit",
+    "python -m json.tool control/audits/obs-agent-03-observation-candidate-review-queue-v0/obs_agent_03_report.json": "pass",
+    "python -m json.tool control/inventory/observations/observation_candidate_review_queue.json": "pass",
+    "python -m json.tool control/inventory/observations/observation_candidate_review_queue_policy.json": "pass",
+    "python -m json.tool control/inventory/observations/observation_candidate_triage_rules.json": "pass",
+    "python scripts/build_observation_candidate_review_queue.py --list-inputs": "pass",
+    "python scripts/build_observation_candidate_review_queue.py --check": "pass",
+    "python scripts/summarize_observation_candidate_review_queue.py": "pass",
+    "python scripts/summarize_observation_candidates.py": "pass",
+    "python scripts/validate_agent_assisted_observation_policy.py": "pass",
+    "python scripts/validate_eureka_node_manifest.py": "pass",
+    "python scripts/validate_eureka_node_policy.py": "pass",
+    "python scripts/validate_observation_candidate.py": "pass",
+    "python scripts/validate_observation_candidate_review_queue.py": "pass",
+    "python scripts/check_architecture_boundaries.py": "pass",
+    "python -m unittest tests.contracts.test_observation_candidate_review_queue_contract": "pass",
+    "python -m unittest tests.operations.test_observation_candidate_review_queue": "pass",
+    "python -m unittest discover -s tests -t .": "fail_python_3_8_runtime_and_existing_repo_failures",
+    "python scripts/validate_track_a_contracts.py": "fail_python_3_8_type_syntax",
+    "python3 scripts/validate_track_a_contracts.py": "pass",
+    "py -3 --version": "fail_launcher_unavailable",
+    "python3 .aide/scripts/aide_lite.py doctor": "pass",
+    "python3 .aide/scripts/aide_lite.py validate": "pass_with_warnings",
+    "python3 .aide/scripts/aide_lite.py test": "fail_python_runtime_too_old_for_pathlib_newline",
+    "python3 .aide/scripts/aide_lite.py selftest": "fail_python_runtime_too_old_for_pathlib_newline",
+    "python3 .aide/scripts/aide_lite.py verify": "warn_zero_errors",
+    "python3 .aide/scripts/aide_lite.py eval list": "pass",
+    "python3 .aide/scripts/aide_lite.py eval run": "fail_python_runtime_too_old_for_pathlib_newline",
+    "python3 .aide/scripts/aide_lite.py review-pack": "fail_python_runtime_too_old_for_pathlib_newline",
+    "python3 .aide/scripts/aide_lite.py adapter validate": "pass"
+  },
+  "queue_entry_count": 15,
+  "recommended_action_counts": {
+    "approve_as_search_need_seed_future": 1,
+    "approve_as_source_lead_future": 7,
+    "approve_as_workunit_seed_future": 1,
+    "approve_for_manual_observation_future": 1,
+    "mark_policy_blocked_future": 3,
+    "request_more_evidence_future": 2
+  },
+  "priority_band_counts": {
+    "blocked": 4,
+    "high": 3,
+    "medium": 8
+  },
+  "candidate_type_counts": {
+    "local_eval_failure": 2,
+    "manual_slot_suggestion": 1,
+    "policy_blocked_candidate": 3,
+    "search_need_seed": 1,
+    "source_lead": 7,
+    "work_unit_seed": 1
+  },
+  "source_family_counts": {
+    "broad_web_policy_blocked": 4,
+    "github_releases_metadata": 1,
+    "internet_archive_metadata": 1,
+    "local_eval": 2,
+    "manual_only_forum_or_community": 1,
+    "package_registry_metadata": 1,
+    "repo_local_candidate": 4,
+    "wayback_cdx_memento_metadata": 1
+  },
+  "priority_summary": {
+    "min": 0,
+    "max": 82,
+    "average": 47.93
+  },
+  "truth_boundary": {
+    "queue_entries_are_observed_baselines": false,
+    "queue_entries_are_evidence_truth": false,
+    "queue_entries_can_mutate_master_index": false,
+    "human_review_required": true
+  },
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "modified_track_b_files": false
+  },
+  "warnings": [
+    "Track B appears advanced through TRACK-B-06 locally; OBS-AGENT-03 did not rewrite AIDE queue or latest task packet.",
+    "The local py launcher is unavailable; python3 was used as the documented equivalent for py -3 commands.",
+    "Full unittest discovery failed on default Python 3.8 because repo tests use newer Python features and unrelated runtime/static-artifact checks fail.",
+    "AIDE test, selftest, eval run, and review-pack failed because the available Python Path.write_text does not support the newline keyword used by AIDE Lite."
+  ],
+  "next_task": "OBS-AGENT-04 - Candidate-to-SearchNeed seed conversion"
+}
