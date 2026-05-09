@@ -1,0 +1,11 @@
+{
+  "schema_version": "explanation_review_policy.v0",
+  "policy_id": "explanation_review_policy.g_bundle_01.v0",
+  "review_required_before_public_display_if_public_claim": true,
+  "review_required_before_ranking_use": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index_use": true,
+  "automatic_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_candidate_acceptance_allowed": false
+}

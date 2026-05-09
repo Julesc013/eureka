@@ -1,0 +1,127 @@
+{
+  "schema_version": "explanation_input_bundle.v0",
+  "input_bundle_id": "explanation.input.software_search.v0",
+  "bundle_status": "fixture_only",
+  "query_observation_refs": [],
+  "search_miss_refs": [
+    "search_miss.weak.vintage_app_version.v0"
+  ],
+  "search_need_refs": [
+    "search_need.software_version.vintage_app.v0"
+  ],
+  "candidate_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "source_cache_refs": [
+    "source_cache.source_metadata.fixture.v0"
+  ],
+  "evidence_refs": [
+    "evidence.metadata_claim.fixture.v0"
+  ],
+  "review_refs": [],
+  "extraction_result_refs": [],
+  "extraction_search_gap_refs": [
+    "extraction.search_gap.98660a95c647.v0"
+  ],
+  "local_fixture_result_refs": [
+    "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json"
+  ],
+  "candidate_records": [
+    {
+      "schema_version": "candidate_record.v0",
+      "candidate_id": "candidate.search_need.software_version.v0",
+      "candidate_status": "candidate",
+      "candidate_label": "Vintage app exact version candidate",
+      "proposed_object_summary": {
+        "object_family": "software",
+        "product_or_topic": "vintage app example",
+        "version_or_state": "version 1.2",
+        "platform_or_context": "legacy desktop",
+        "artifact_type": "application"
+      },
+      "confidence_or_uncertainty": "low_confidence_review_required"
+    }
+  ],
+  "source_cache_records": [
+    {
+      "schema_version": "local_source_cache_record.v0",
+      "source_cache_record_id": "source_cache.source_metadata.fixture.v0",
+      "input_summary": "Local fixture source metadata mentions the same vintage app family.",
+      "observation_summary": "Source metadata fixture is present but not accepted source truth."
+    }
+  ],
+  "evidence_records": [
+    {
+      "schema_version": "local_evidence_ledger_record.v0",
+      "evidence_record_id": "evidence.metadata_claim.fixture.v0",
+      "claim_type": "metadata",
+      "claim_summary": "Fixture metadata claim mentions the candidate family.",
+      "observation_summary": "Evidence remains a candidate pending review."
+    }
+  ],
+  "extraction_search_gaps": [
+    {
+      "schema_version": "extraction_search_gap.v0",
+      "search_gap_id": "extraction.search_gap.98660a95c647.v0",
+      "search_gap_status": "fixture_preview",
+      "gap_type": "manifest_not_indexed",
+      "gap_summary": "Manifest-like fixture metadata may explain a missing exact result.",
+      "why_extraction_matters": "A manifest inside a fixture container can expose member-level metadata not visible from outer records.",
+      "recommended_next_action": "request_human_review",
+      "member_refs": [],
+      "manifest_refs": [
+        "extraction.manifest_candidate.740b0f9c29b4.v0"
+      ]
+    }
+  ],
+  "near_miss_inputs": [
+    {
+      "result_ref": "candidate.near_miss.wrong_version.v0",
+      "mismatch_type": "wrong_version",
+      "matched_fields": [
+        "product_or_topic"
+      ],
+      "mismatched_fields": [
+        "version_or_state"
+      ],
+      "why_not_exact": "The fixture result names the product family but not the requested exact version.",
+      "useful_followup": "Review exact-version evidence before treating this as resolved."
+    },
+    {
+      "result_ref": "candidate.near_miss.wrong_platform.v0",
+      "mismatch_type": "wrong_platform",
+      "matched_fields": [
+        "product_or_topic"
+      ],
+      "mismatched_fields": [
+        "platform_or_context"
+      ],
+      "why_not_exact": "The fixture result is for a different platform lane.",
+      "useful_followup": "Request platform compatibility review."
+    }
+  ],
+  "sources_checked": [
+    "local_fixture_index",
+    "examples/candidates",
+    "examples/evidence_ledger_records"
+  ],
+  "sources_not_checked": [
+    "live_web",
+    "external_source_apis",
+    "public_query_fanout"
+  ],
+  "review_seed_previews": [],
+  "workunit_seed_previews_future": [],
+  "truth_boundary": {
+    "explanation_accepts_result_as_truth": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_candidate": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false
+  },
+  "limitations": [
+    "Input bundle is synthetic and fixture-only."
+  ]
+}

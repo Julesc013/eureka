@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/search_result_explanation.v0.json",
+  "title": "Eureka Search Result Explanation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "explanation_id",
+    "explanation_status",
+    "query_ref",
+    "result_ref",
+    "result_kind",
+    "explanation_summary",
+    "match_reasons",
+    "source_reasons",
+    "evidence_reasons",
+    "candidate_reasons",
+    "extraction_reasons",
+    "compatibility_reasons",
+    "risk_rights_reasons",
+    "limitation_reasons",
+    "missing_evidence",
+    "review_posture",
+    "confidence_or_uncertainty",
+    "forbidden_claims",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "search_result_explanation.v0"
+    },
+    "explanation_status": {
+      "enum": [
+        "example_only",
+        "fixture_only",
+        "local_dry_run",
+        "evidence_supported_candidate",
+        "near_miss",
+        "known_absence",
+        "policy_blocked",
+        "not_evaluable"
+      ]
+    }
+  },
+  "x-runtime_mutates_ranking": false,
+  "x-public_search_mutation_allowed": false,
+  "x-truth_acceptance_allowed": false
+}

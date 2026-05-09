@@ -1,0 +1,87 @@
+{
+  "candidate_reasons": [],
+  "compatibility_reasons": [
+    {
+      "known": false,
+      "reason": "Compatibility requires review before use."
+    }
+  ],
+  "confidence_or_uncertainty": "low_confidence_review_required",
+  "evidence_reasons": [
+    {
+      "claim_type": "metadata",
+      "evidence_ref": "evidence.unknown.v0",
+      "reason": "A committed fixture reports a metadata field value."
+    }
+  ],
+  "explanation_id": "search.explanation.ad58e17b6f65.v0",
+  "explanation_status": "evidence_supported_candidate",
+  "explanation_summary": "Evidence fixture can support a candidate explanation after review, but is not accepted evidence here.",
+  "extraction_reasons": [],
+  "forbidden_claims": [
+    "accepted_truth",
+    "accepted_evidence",
+    "accepted_candidate",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "global_absence",
+    "production_quality"
+  ],
+  "limitation_reasons": [
+    "Explanation is fixture-only and does not change ranking or search behavior."
+  ],
+  "match_reasons": [],
+  "missing_evidence": [
+    "human_evidence_review",
+    "conflict_review"
+  ],
+  "notes": [
+    "Explanation is evidence-linked reasoning, not authority."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_ref": "search_need.software_version.vintage_app.v0",
+  "result_kind": "evidence_record",
+  "result_ref": "evidence.unknown.v0",
+  "review_posture": {
+    "human_review_required": true,
+    "public_display_claim_requires_review": true,
+    "ranking_use_requires_review": true
+  },
+  "risk_rights_reasons": [
+    {
+      "known": false,
+      "reason": "Risk and rights posture are unknown until review."
+    }
+  ],
+  "schema_version": "search_result_explanation.v0",
+  "source_reasons": [],
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

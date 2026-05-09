@@ -52,6 +52,13 @@ Current contracts:
   or master-index mutation.
 - `candidate_lifecycle.v0.json`: reusable lifecycle and review vocabulary for
   future candidate review and promotion policy.
+- `search_result_explanation.v0.json`, `near_miss_explanation.v0.json`,
+  `known_absence_record.v0.json`, `search_gap_explanation.v0.json`,
+  `explanation_input_bundle.v0.json`, and `explanation_output_bundle.v0.json`:
+  fixture-only Track G explanation contracts. They explain inclusion, near
+  misses, scoped absence, and extraction-derived gaps without changing ranking,
+  mutating public search, accepting evidence/candidates, or creating public
+  truth.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative

@@ -1,0 +1,18 @@
+{
+  "schema_version": "known_absence_policy.v0",
+  "policy_id": "known_absence_policy.g_bundle_01.v0",
+  "global_absence_claim_allowed": false,
+  "exhaustive_web_search_claim_allowed": false,
+  "source_scope_required": true,
+  "sources_not_checked_required": true,
+  "remaining_work_required": true,
+  "allowed_absence_statuses": [
+    "example_only",
+    "local_fixture_absence",
+    "no_reviewed_result",
+    "source_gap",
+    "extraction_needed",
+    "policy_blocked",
+    "not_evaluable"
+  ]
+}

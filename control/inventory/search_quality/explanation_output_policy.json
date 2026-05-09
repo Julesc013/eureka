@@ -1,0 +1,26 @@
+{
+  "schema_version": "explanation_output_policy.v0",
+  "policy_id": "explanation_output_policy.g_bundle_01.v0",
+  "allowed_outputs": [
+    "search_result_explanation",
+    "near_miss_explanation",
+    "known_absence_record",
+    "search_gap_explanation",
+    "explanation_output_bundle",
+    "review_seed_preview",
+    "workunit_seed_preview_future"
+  ],
+  "forbidden_outputs": [
+    "ranking_change",
+    "public_search_runtime_change",
+    "public_index_mutation",
+    "master_index_mutation",
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "production_quality_claim"
+  ]
+}

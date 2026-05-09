@@ -1,0 +1,21 @@
+{
+  "schema_version": "near_miss_policy.v0",
+  "policy_id": "near_miss_policy.g_bundle_01.v0",
+  "allowed_mismatch_types": [
+    "wrong_version",
+    "wrong_platform",
+    "wrong_architecture",
+    "wrong_format",
+    "wrong_source_lane",
+    "source_only",
+    "evidence_too_weak",
+    "compatibility_uncertain",
+    "rights_or_risk_blocked",
+    "extraction_needed",
+    "identity_uncertain",
+    "not_evaluable"
+  ],
+  "required_why_not_exact": true,
+  "automatic_rejection_allowed": false,
+  "automatic_dedup_or_merge_allowed": false
+}

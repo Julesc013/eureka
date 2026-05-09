@@ -1,0 +1,18 @@
+{
+  "schema_version": "explanation_truth_policy.v0",
+  "policy_id": "explanation_truth_policy.g_bundle_01.v0",
+  "explanation_accepts_result_as_truth": false,
+  "explanation_accepts_evidence": false,
+  "explanation_accepts_candidate": false,
+  "explanation_mutates_ranking": false,
+  "explanation_mutates_public_search": false,
+  "explanation_mutates_public_index": false,
+  "explanation_mutates_master_index": false,
+  "known_absence_claims_global_absence": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false,
+  "production_quality_claimed": false
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "search_explanation_policy.v0",
+  "policy_id": "search_explanation_policy.g_bundle_01.v0",
+  "fixture_only_current": true,
+  "public_ranking_mutation_allowed": false,
+  "public_search_mutation_allowed": false,
+  "accepted_truth_creation_allowed": false,
+  "source_acceptance_allowed": false,
+  "evidence_acceptance_allowed": false,
+  "candidate_acceptance_allowed": false,
+  "allowed_inputs": [
+    "query_observation_ref",
+    "search_miss_ref",
+    "search_need_ref",
+    "candidate_record",
+    "source_cache_record",
+    "evidence_record",
+    "review_ref",
+    "extraction_search_gap",
+    "local_fixture_result"
+  ],
+  "allowed_outputs": [
+    "search_result_explanation",
+    "near_miss_explanation",
+    "known_absence_record",
+    "search_gap_explanation",
+    "explanation_output_bundle"
+  ],
+  "no_goals": [
+    "ranking_change",
+    "public_search_runtime_change",
+    "accepted_truth"
+  ]
+}

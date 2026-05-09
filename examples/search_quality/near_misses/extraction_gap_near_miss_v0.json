@@ -1,0 +1,53 @@
+{
+  "limitations": [
+    "Near miss does not reject, merge, or accept a result."
+  ],
+  "matched_fields": [
+    "container_outer_metadata"
+  ],
+  "mismatch_type": "extraction_needed",
+  "mismatched_fields": [
+    "member_visibility"
+  ],
+  "near_miss_id": "search.near_miss.3adc2c3eedd0.v0",
+  "near_miss_result_ref": "candidate.near_miss.extraction_gap.v0",
+  "near_miss_status": "fixture_only",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_ref": "search_need.software_version.vintage_app.v0",
+  "schema_version": "near_miss_explanation.v0",
+  "suggested_workunit_seed_future": {
+    "created": false,
+    "proposed_workunit_type": "check_member_relevance_future",
+    "review_required": true
+  },
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "useful_followup": "Review extraction gap before treating the result as exact.",
+  "why_not_exact": "The fixture container is visible but member-level relevance needs extraction review."
+}

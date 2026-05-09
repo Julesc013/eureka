@@ -1,0 +1,31 @@
+{
+  "schema_version": "explanation_path_policy.v0",
+  "policy_id": "explanation_path_policy.g_bundle_01.v0",
+  "allowed_input_roots": [
+    "examples/search_quality",
+    "examples/search_needs",
+    "examples/search_misses",
+    "examples/candidates",
+    "examples/evidence_ledger_records",
+    "examples/source_cache_records",
+    "examples/extraction/search_integration",
+    "explicit temp test directory"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated",
+    "examples/search_quality",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist",
+    "data/public_index",
+    "runtime",
+    "contracts",
+    "control/inventory/publication",
+    "data/master_index",
+    "master_index",
+    ".aide.local",
+    ".local/eureka",
+    ".cache/eureka"
+  ]
+}

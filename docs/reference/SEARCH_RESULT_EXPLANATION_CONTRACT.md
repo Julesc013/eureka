@@ -47,3 +47,9 @@ Public search result cards may later carry an explanation ref or inline summary 
 ## Runtime Boundary
 
 No runtime route, public search response mutation, public search order change, ranking execution, model call, telemetry, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
+
+## G-BUNDLE-01 Query Contract
+
+Track G adds `contracts/query/search_result_explanation.v0.json` as the fixture/local explanation artifact for result explanations, near misses, known absence, and extraction-derived search gaps. It remains contract-only for public behavior: explanations may cite candidate, source-cache, evidence, and extraction inputs, but they do not accept truth, change ranking, or mutate public search.
+
+Validation: `python scripts/validate_search_explanation_runtime.py`.

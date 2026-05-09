@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/known_absence_record.v0.json",
+  "title": "Eureka Known Absence Record v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "known_absence_id",
+    "absence_status",
+    "query_ref",
+    "search_need_refs",
+    "sources_checked",
+    "sources_not_checked",
+    "local_index_scope",
+    "fixture_scope",
+    "reviewed_records_scope",
+    "near_miss_refs",
+    "search_gap_refs",
+    "extraction_gap_refs",
+    "blocked_source_refs",
+    "remaining_work",
+    "absence_summary",
+    "no_claims",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "known_absence_record.v0"
+    },
+    "absence_status": {
+      "enum": [
+        "example_only",
+        "local_fixture_absence",
+        "no_reviewed_result",
+        "source_gap",
+        "extraction_needed",
+        "policy_blocked",
+        "not_evaluable"
+      ]
+    }
+  },
+  "x-global_absence_claim_allowed": false,
+  "x-exhaustive_web_search_claim_allowed": false
+}

@@ -1,0 +1,325 @@
+{
+  "input_bundle_ref": "explanation.input.extraction_gap.v0",
+  "known_absence_records": [
+    {
+      "absence_status": "policy_blocked",
+      "absence_summary": "No reviewed exact result is present in the fixture scope; this is not a global absence claim.",
+      "blocked_source_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "extraction_gap_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "fixture_scope": "examples/search_quality and referenced fixture records",
+      "known_absence_id": "search.known_absence.ffb7dd56cce9.v0",
+      "limitations": [
+        "Known absence is scoped to explicit local fixture inputs."
+      ],
+      "local_index_scope": "fixture_and_local_examples_only",
+      "near_miss_refs": [
+        "candidate.near_miss.extraction_gap.v0"
+      ],
+      "no_claims": {
+        "all_sources_checked": false,
+        "exhaustive_web_search_claimed": false,
+        "global_absence_claimed": false,
+        "public_truth_created": false
+      },
+      "notes": [
+        "Known absence preserves sources-not-checked and remaining-work lists."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.extraction_visibility.fixture.v0",
+      "remaining_work": [
+        "human_review",
+        "source_policy_review",
+        "future_workunit_review"
+      ],
+      "reviewed_records_scope": "no accepted reviewed public records in this bundle",
+      "schema_version": "known_absence_record.v0",
+      "search_gap_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "search_need_refs": [
+        "search_need.extraction_visibility.fixture.v0"
+      ],
+      "sources_checked": [
+        "examples/extraction/search_integration"
+      ],
+      "sources_not_checked": [
+        "live_web",
+        "external_archives",
+        "private_files"
+      ],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "limitations": [
+    "Explanation bundle is fixture-only and does not mutate ranking or public search."
+  ],
+  "near_miss_explanations": [
+    {
+      "limitations": [
+        "Near miss does not reject, merge, or accept a result."
+      ],
+      "matched_fields": [
+        "container_outer_metadata"
+      ],
+      "mismatch_type": "extraction_needed",
+      "mismatched_fields": [
+        "member_visibility"
+      ],
+      "near_miss_id": "search.near_miss.c90d1bf8f398.v0",
+      "near_miss_result_ref": "candidate.near_miss.extraction_gap.v0",
+      "near_miss_status": "fixture_only",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.extraction_visibility.fixture.v0",
+      "schema_version": "near_miss_explanation.v0",
+      "suggested_workunit_seed_future": {
+        "created": false,
+        "proposed_workunit_type": "check_member_relevance_future",
+        "review_required": true
+      },
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "useful_followup": "Review extraction policy and seed a future deepening WorkUnit.",
+      "why_not_exact": "The outer container fixture exists but member-level relevance is not reviewable yet."
+    }
+  ],
+  "no_claims": {
+    "candidate_accepted": false,
+    "evidence_accepted": false,
+    "global_absence_claimed": false,
+    "public_search_changed": false,
+    "ranking_changed": false
+  },
+  "output_bundle_id": "search.explanation_output.6da8becd678f.v0",
+  "output_status": "local_dry_run",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "result_explanations": [
+    {
+      "candidate_reasons": [],
+      "compatibility_reasons": [
+        {
+          "known": false,
+          "reason": "Compatibility requires review before use."
+        }
+      ],
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "evidence_reasons": [],
+      "explanation_id": "search.explanation.766f6b657f4d.v0",
+      "explanation_status": "policy_blocked",
+      "explanation_summary": "Extraction-derived gap explains why member or manifest visibility may affect the local result set.",
+      "extraction_reasons": [
+        {
+          "gap_type": "policy_blocked_extraction_gap",
+          "search_gap_ref": "extraction.search_gap.policy_blocked.fixture.v0",
+          "why_extraction_matters": "Blocked extraction explains why member-level visibility is unavailable in this fixture."
+        }
+      ],
+      "forbidden_claims": [
+        "accepted_truth",
+        "accepted_evidence",
+        "accepted_candidate",
+        "rights_clearance",
+        "malware_safety",
+        "verified_installability",
+        "global_absence",
+        "production_quality"
+      ],
+      "limitation_reasons": [
+        "Explanation is fixture-only and does not change ranking or search behavior."
+      ],
+      "match_reasons": [],
+      "missing_evidence": [
+        "member_relevance_review",
+        "future_deepening_policy_review"
+      ],
+      "notes": [
+        "Explanation is evidence-linked reasoning, not authority."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.extraction_visibility.fixture.v0",
+      "result_kind": "extraction_search_gap",
+      "result_ref": "extraction.search_gap.policy_blocked.fixture.v0",
+      "review_posture": {
+        "human_review_required": true,
+        "public_display_claim_requires_review": true,
+        "ranking_use_requires_review": true
+      },
+      "risk_rights_reasons": [
+        {
+          "known": false,
+          "reason": "Risk and rights posture are unknown until review."
+        }
+      ],
+      "schema_version": "search_result_explanation.v0",
+      "source_reasons": [],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "review_seed_previews": [],
+  "schema_version": "explanation_output_bundle.v0",
+  "search_gap_explanations": [
+    {
+      "gap_type": "policy_blocked_extraction_gap",
+      "limitations": [
+        "Gap explanation is a fixture-only planning artifact."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "related_extraction_gap_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "related_search_gap_refs": [
+        "extraction.search_gap.policy_blocked.fixture.v0"
+      ],
+      "schema_version": "search_gap_explanation.v0",
+      "search_gap_explanation_id": "search.gap_explanation.b4f6cc87a274.v0",
+      "suggested_next_actions": [
+        "policy_review_future"
+      ],
+      "suggested_workunit_seed_refs": [
+        "workunit_seed_future.review_required.v0"
+      ],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "what_would_close_gap": "Human review plus future policy-approved WorkUnit output.",
+      "why_gap_exists": "Blocked extraction explains why member-level visibility is unavailable in this fixture."
+    }
+  ],
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "workunit_seed_previews_future": []
+}

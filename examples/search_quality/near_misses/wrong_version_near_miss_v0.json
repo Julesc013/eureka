@@ -1,0 +1,53 @@
+{
+  "limitations": [
+    "Near miss does not reject, merge, or accept a result."
+  ],
+  "matched_fields": [
+    "product_or_topic"
+  ],
+  "mismatch_type": "wrong_version",
+  "mismatched_fields": [
+    "version_or_state"
+  ],
+  "near_miss_id": "search.near_miss.54a1a6438a25.v0",
+  "near_miss_result_ref": "candidate.near_miss.wrong_version.v0",
+  "near_miss_status": "fixture_only",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_ref": "search_need.software_version.vintage_app.v0",
+  "schema_version": "near_miss_explanation.v0",
+  "suggested_workunit_seed_future": {
+    "created": false,
+    "proposed_workunit_type": "policy_review_future",
+    "review_required": true
+  },
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "useful_followup": "Review exact-version evidence before treating this as resolved.",
+  "why_not_exact": "The fixture result names the product family but not the requested exact version."
+}

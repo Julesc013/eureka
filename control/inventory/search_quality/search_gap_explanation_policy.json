@@ -1,0 +1,19 @@
+{
+  "schema_version": "search_gap_explanation_policy.v0",
+  "policy_id": "search_gap_explanation_policy.g_bundle_01.v0",
+  "allowed_gap_types": [
+    "hidden_member_not_indexed",
+    "manifest_not_indexed",
+    "archive_outer_metadata_insufficient",
+    "member_name_matches_need",
+    "member_path_matches_need",
+    "manifest_field_matches_need",
+    "source_has_container_but_no_member_visibility",
+    "policy_blocked_extraction_gap",
+    "future_deep_extraction_needed",
+    "not_evaluable"
+  ],
+  "extraction_gap_references_allowed": true,
+  "suggested_workunit_seeds_are_future_only": true,
+  "automatic_source_access_allowed": false
+}

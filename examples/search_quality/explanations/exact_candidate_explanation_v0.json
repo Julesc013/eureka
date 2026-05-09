@@ -1,0 +1,113 @@
+{
+  "candidate_reasons": [
+    {
+      "candidate_ref": "candidate.search_need.software_version.v0",
+      "candidate_status": "candidate",
+      "reason": "Candidate is included as a provisional fixture result only."
+    }
+  ],
+  "compatibility_reasons": [
+    {
+      "known": false,
+      "reason": "Compatibility requires review before use."
+    }
+  ],
+  "confidence_or_uncertainty": "low_confidence_review_required",
+  "evidence_reasons": [],
+  "explanation_id": "search.explanation.e8c6a401d5c2.v0",
+  "explanation_status": "local_dry_run",
+  "explanation_summary": "Candidate appears because the fixture candidate matches the requested object fields: Vintage app exact version candidate",
+  "extraction_reasons": [],
+  "forbidden_claims": [
+    "accepted_truth",
+    "accepted_evidence",
+    "accepted_candidate",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "global_absence",
+    "production_quality"
+  ],
+  "limitation_reasons": [
+    "Explanation is fixture-only and does not change ranking or search behavior."
+  ],
+  "match_reasons": [
+    {
+      "field": "object_family",
+      "reason": "Fixture field contributes to local explanation.",
+      "value": "software"
+    },
+    {
+      "field": "product_or_topic",
+      "reason": "Fixture field contributes to local explanation.",
+      "value": "vintage app example"
+    },
+    {
+      "field": "version_or_state",
+      "reason": "Fixture field contributes to local explanation.",
+      "value": "version 1.2"
+    },
+    {
+      "field": "platform_or_context",
+      "reason": "Fixture field contributes to local explanation.",
+      "value": "legacy desktop"
+    },
+    {
+      "field": "artifact_type",
+      "reason": "Fixture field contributes to local explanation.",
+      "value": "application"
+    }
+  ],
+  "missing_evidence": [
+    "accepted_evidence_review",
+    "human_candidate_review"
+  ],
+  "notes": [
+    "Explanation is evidence-linked reasoning, not authority."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "query_ref": "search_need.software_version.vintage_app.v0",
+  "result_kind": "candidate_record",
+  "result_ref": "candidate.search_need.software_version.v0",
+  "review_posture": {
+    "human_review_required": true,
+    "public_display_claim_requires_review": true,
+    "ranking_use_requires_review": true
+  },
+  "risk_rights_reasons": [
+    {
+      "known": false,
+      "reason": "Risk and rights posture are unknown until review."
+    }
+  ],
+  "schema_version": "search_result_explanation.v0",
+  "source_reasons": [],
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

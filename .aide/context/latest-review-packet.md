@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4006 chars, 1002 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4106 chars, 1027 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/F-BUNDLE-02` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/G-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/G-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/G-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `contracts/extraction/README.md` (M; matches active task allowed path)
-- unknown: `contracts/extraction/extraction_review_seed.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/extraction/extraction_search_gap.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/extraction/extraction_search_integration.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/extraction/extraction_usefulness_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/extraction/extraction_workunit_seed.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/f-bundle-02-extraction-candidate-search-integration-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_candidate_effect_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_review_seed_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_search_gap_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_search_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_search_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_search_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_to_track_g_handoff_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/extraction/extraction_workunit_seed_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/EXTRACTION_CANDIDATE_EFFECT_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/EXTRACTION_SEARCH_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/EXTRACTION_CANDIDATE_EFFECTS.md` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 24; see task evidence changed-files report
+- allowed: `contracts/query/README.md` (M; matches active task allowed path)
+- unknown: `contracts/query/explanation_input_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/explanation_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/known_absence_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/near_miss_explanation.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/search_gap_explanation.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/query/search_result_explanation.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/g-bundle-01-result-explanations-absence-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_quality` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/KNOWN_ABSENCE_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SEARCH_EXPLANATION_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/NEAR_MISS_AND_ABSENCE_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SEARCH_EXPLANATION_NO_RANKING_CHANGE_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/SEARCH_EXPLANATION_REVIEW.md` (??; does not match active task allowed paths)
+- allowed: `docs/reference/KNOWN_ABSENCE_RECORD_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/NEAR_MISS_EXPLANATION_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SEARCH_GAP_EXPLANATION_CONTRACT.md` (??; matches active task allowed path)
+- allowed: `docs/reference/SEARCH_RESULT_EXPLANATION_CONTRACT.md` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 8; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6733
-- approx_tokens: 1684
+- chars: 6486
+- approx_tokens: 1622
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,665 @@
+{
+  "input_bundle_ref": "explanation.input.software_search.v0",
+  "known_absence_records": [
+    {
+      "absence_status": "extraction_needed",
+      "absence_summary": "No reviewed exact result is present in the fixture scope; this is not a global absence claim.",
+      "blocked_source_refs": [],
+      "extraction_gap_refs": [
+        "extraction.search_gap.98660a95c647.v0"
+      ],
+      "fixture_scope": "examples/search_quality and referenced fixture records",
+      "known_absence_id": "search.known_absence.f651284a402d.v0",
+      "limitations": [
+        "Known absence is scoped to explicit local fixture inputs."
+      ],
+      "local_index_scope": "fixture_and_local_examples_only",
+      "near_miss_refs": [
+        "candidate.near_miss.wrong_version.v0",
+        "candidate.near_miss.wrong_platform.v0"
+      ],
+      "no_claims": {
+        "all_sources_checked": false,
+        "exhaustive_web_search_claimed": false,
+        "global_absence_claimed": false,
+        "public_truth_created": false
+      },
+      "notes": [
+        "Known absence preserves sources-not-checked and remaining-work lists."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "remaining_work": [
+        "human_review",
+        "source_policy_review",
+        "future_workunit_review"
+      ],
+      "reviewed_records_scope": "no accepted reviewed public records in this bundle",
+      "schema_version": "known_absence_record.v0",
+      "search_gap_refs": [
+        "extraction.search_gap.98660a95c647.v0"
+      ],
+      "search_need_refs": [
+        "search_need.software_version.vintage_app.v0"
+      ],
+      "sources_checked": [
+        "local_fixture_index",
+        "examples/candidates",
+        "examples/evidence_ledger_records"
+      ],
+      "sources_not_checked": [
+        "live_web",
+        "external_source_apis",
+        "public_query_fanout"
+      ],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "limitations": [
+    "Explanation bundle is fixture-only and does not mutate ranking or public search."
+  ],
+  "near_miss_explanations": [
+    {
+      "limitations": [
+        "Near miss does not reject, merge, or accept a result."
+      ],
+      "matched_fields": [
+        "product_or_topic"
+      ],
+      "mismatch_type": "wrong_version",
+      "mismatched_fields": [
+        "version_or_state"
+      ],
+      "near_miss_id": "search.near_miss.54a1a6438a25.v0",
+      "near_miss_result_ref": "candidate.near_miss.wrong_version.v0",
+      "near_miss_status": "fixture_only",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "schema_version": "near_miss_explanation.v0",
+      "suggested_workunit_seed_future": {
+        "created": false,
+        "proposed_workunit_type": "policy_review_future",
+        "review_required": true
+      },
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "useful_followup": "Review exact-version evidence before treating this as resolved.",
+      "why_not_exact": "The fixture result names the product family but not the requested exact version."
+    },
+    {
+      "limitations": [
+        "Near miss does not reject, merge, or accept a result."
+      ],
+      "matched_fields": [
+        "product_or_topic"
+      ],
+      "mismatch_type": "wrong_platform",
+      "mismatched_fields": [
+        "platform_or_context"
+      ],
+      "near_miss_id": "search.near_miss.b45a15986eed.v0",
+      "near_miss_result_ref": "candidate.near_miss.wrong_platform.v0",
+      "near_miss_status": "fixture_only",
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "schema_version": "near_miss_explanation.v0",
+      "suggested_workunit_seed_future": {
+        "created": false,
+        "proposed_workunit_type": "policy_review_future",
+        "review_required": true
+      },
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "useful_followup": "Request platform compatibility review.",
+      "why_not_exact": "The fixture result is for a different platform lane."
+    }
+  ],
+  "no_claims": {
+    "candidate_accepted": false,
+    "evidence_accepted": false,
+    "global_absence_claimed": false,
+    "public_search_changed": false,
+    "ranking_changed": false
+  },
+  "output_bundle_id": "search.explanation_output.1853cf69d777.v0",
+  "output_status": "local_dry_run",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_model_provider_calls": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "result_explanations": [
+    {
+      "candidate_reasons": [
+        {
+          "candidate_ref": "candidate.search_need.software_version.v0",
+          "candidate_status": "candidate",
+          "reason": "Candidate is included as a provisional fixture result only."
+        }
+      ],
+      "compatibility_reasons": [
+        {
+          "known": false,
+          "reason": "Compatibility requires review before use."
+        }
+      ],
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "evidence_reasons": [],
+      "explanation_id": "search.explanation.e8c6a401d5c2.v0",
+      "explanation_status": "local_dry_run",
+      "explanation_summary": "Candidate appears because the fixture candidate matches the requested object fields: Vintage app exact version candidate",
+      "extraction_reasons": [],
+      "forbidden_claims": [
+        "accepted_truth",
+        "accepted_evidence",
+        "accepted_candidate",
+        "rights_clearance",
+        "malware_safety",
+        "verified_installability",
+        "global_absence",
+        "production_quality"
+      ],
+      "limitation_reasons": [
+        "Explanation is fixture-only and does not change ranking or search behavior."
+      ],
+      "match_reasons": [
+        {
+          "field": "object_family",
+          "reason": "Fixture field contributes to local explanation.",
+          "value": "software"
+        },
+        {
+          "field": "product_or_topic",
+          "reason": "Fixture field contributes to local explanation.",
+          "value": "vintage app example"
+        },
+        {
+          "field": "version_or_state",
+          "reason": "Fixture field contributes to local explanation.",
+          "value": "version 1.2"
+        },
+        {
+          "field": "platform_or_context",
+          "reason": "Fixture field contributes to local explanation.",
+          "value": "legacy desktop"
+        },
+        {
+          "field": "artifact_type",
+          "reason": "Fixture field contributes to local explanation.",
+          "value": "application"
+        }
+      ],
+      "missing_evidence": [
+        "accepted_evidence_review",
+        "human_candidate_review"
+      ],
+      "notes": [
+        "Explanation is evidence-linked reasoning, not authority."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "result_kind": "candidate_record",
+      "result_ref": "candidate.search_need.software_version.v0",
+      "review_posture": {
+        "human_review_required": true,
+        "public_display_claim_requires_review": true,
+        "ranking_use_requires_review": true
+      },
+      "risk_rights_reasons": [
+        {
+          "known": false,
+          "reason": "Risk and rights posture are unknown until review."
+        }
+      ],
+      "schema_version": "search_result_explanation.v0",
+      "source_reasons": [],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "candidate_reasons": [],
+      "compatibility_reasons": [
+        {
+          "known": false,
+          "reason": "Compatibility requires review before use."
+        }
+      ],
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "evidence_reasons": [],
+      "explanation_id": "search.explanation.27d3fee7f0ad.v0",
+      "explanation_status": "local_dry_run",
+      "explanation_summary": "Source-cache fixture metadata can explain why this local result is visible.",
+      "extraction_reasons": [],
+      "forbidden_claims": [
+        "accepted_truth",
+        "accepted_evidence",
+        "accepted_candidate",
+        "rights_clearance",
+        "malware_safety",
+        "verified_installability",
+        "global_absence",
+        "production_quality"
+      ],
+      "limitation_reasons": [
+        "Explanation is fixture-only and does not change ranking or search behavior."
+      ],
+      "match_reasons": [],
+      "missing_evidence": [
+        "source_cache_review",
+        "evidence_acceptance_review"
+      ],
+      "notes": [
+        "Explanation is evidence-linked reasoning, not authority."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "result_kind": "source_cache_record",
+      "result_ref": "source_cache.source_metadata.fixture.v0",
+      "review_posture": {
+        "human_review_required": true,
+        "public_display_claim_requires_review": true,
+        "ranking_use_requires_review": true
+      },
+      "risk_rights_reasons": [
+        {
+          "known": false,
+          "reason": "Risk and rights posture are unknown until review."
+        }
+      ],
+      "schema_version": "search_result_explanation.v0",
+      "source_reasons": [
+        {
+          "reason": "Local fixture source metadata mentions the same vintage app family.",
+          "source_cache_ref": "source_cache.source_metadata.fixture.v0"
+        }
+      ],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "candidate_reasons": [],
+      "compatibility_reasons": [
+        {
+          "known": false,
+          "reason": "Compatibility requires review before use."
+        }
+      ],
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "evidence_reasons": [
+        {
+          "claim_type": "metadata",
+          "evidence_ref": "evidence.metadata_claim.fixture.v0",
+          "reason": "Fixture metadata claim mentions the candidate family."
+        }
+      ],
+      "explanation_id": "search.explanation.67324199b43d.v0",
+      "explanation_status": "evidence_supported_candidate",
+      "explanation_summary": "Evidence fixture can support a candidate explanation after review, but is not accepted evidence here.",
+      "extraction_reasons": [],
+      "forbidden_claims": [
+        "accepted_truth",
+        "accepted_evidence",
+        "accepted_candidate",
+        "rights_clearance",
+        "malware_safety",
+        "verified_installability",
+        "global_absence",
+        "production_quality"
+      ],
+      "limitation_reasons": [
+        "Explanation is fixture-only and does not change ranking or search behavior."
+      ],
+      "match_reasons": [],
+      "missing_evidence": [
+        "human_evidence_review",
+        "conflict_review"
+      ],
+      "notes": [
+        "Explanation is evidence-linked reasoning, not authority."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "result_kind": "evidence_record",
+      "result_ref": "evidence.metadata_claim.fixture.v0",
+      "review_posture": {
+        "human_review_required": true,
+        "public_display_claim_requires_review": true,
+        "ranking_use_requires_review": true
+      },
+      "risk_rights_reasons": [
+        {
+          "known": false,
+          "reason": "Risk and rights posture are unknown until review."
+        }
+      ],
+      "schema_version": "search_result_explanation.v0",
+      "source_reasons": [],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    {
+      "candidate_reasons": [],
+      "compatibility_reasons": [
+        {
+          "known": false,
+          "reason": "Compatibility requires review before use."
+        }
+      ],
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "evidence_reasons": [],
+      "explanation_id": "search.explanation.a307c2c4d4f5.v0",
+      "explanation_status": "local_dry_run",
+      "explanation_summary": "Extraction-derived gap explains why member or manifest visibility may affect the local result set.",
+      "extraction_reasons": [
+        {
+          "gap_type": "manifest_not_indexed",
+          "search_gap_ref": "extraction.search_gap.98660a95c647.v0",
+          "why_extraction_matters": "A manifest inside a fixture container can expose member-level metadata not visible from outer records."
+        }
+      ],
+      "forbidden_claims": [
+        "accepted_truth",
+        "accepted_evidence",
+        "accepted_candidate",
+        "rights_clearance",
+        "malware_safety",
+        "verified_installability",
+        "global_absence",
+        "production_quality"
+      ],
+      "limitation_reasons": [
+        "Explanation is fixture-only and does not change ranking or search behavior."
+      ],
+      "match_reasons": [],
+      "missing_evidence": [
+        "member_relevance_review",
+        "future_deepening_policy_review"
+      ],
+      "notes": [
+        "Explanation is evidence-linked reasoning, not authority."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "query_ref": "search_need.software_version.vintage_app.v0",
+      "result_kind": "extraction_search_gap",
+      "result_ref": "extraction.search_gap.98660a95c647.v0",
+      "review_posture": {
+        "human_review_required": true,
+        "public_display_claim_requires_review": true,
+        "ranking_use_requires_review": true
+      },
+      "risk_rights_reasons": [
+        {
+          "known": false,
+          "reason": "Risk and rights posture are unknown until review."
+        }
+      ],
+      "schema_version": "search_result_explanation.v0",
+      "source_reasons": [],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "review_seed_previews": [],
+  "schema_version": "explanation_output_bundle.v0",
+  "search_gap_explanations": [
+    {
+      "gap_type": "manifest_not_indexed",
+      "limitations": [
+        "Gap explanation is a fixture-only planning artifact."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "changed_ranking_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_model_provider_calls": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false
+      },
+      "related_extraction_gap_refs": [
+        "extraction.search_gap.98660a95c647.v0"
+      ],
+      "related_search_gap_refs": [
+        "extraction.search_gap.98660a95c647.v0"
+      ],
+      "schema_version": "search_gap_explanation.v0",
+      "search_gap_explanation_id": "search.gap_explanation.870670191cf4.v0",
+      "suggested_next_actions": [
+        "request_human_review"
+      ],
+      "suggested_workunit_seed_refs": [
+        "workunit_seed_future.review_required.v0"
+      ],
+      "truth_boundary": {
+        "explanation_accepts_candidate": false,
+        "explanation_accepts_evidence": false,
+        "explanation_accepts_result_as_truth": false,
+        "explanation_mutates_master_index": false,
+        "explanation_mutates_public_index": false,
+        "explanation_mutates_public_search": false,
+        "explanation_mutates_ranking": false,
+        "known_absence_claims_global_absence": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_quality_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "what_would_close_gap": "Human review plus future policy-approved WorkUnit output.",
+      "why_gap_exists": "A manifest inside a fixture container can expose member-level metadata not visible from outer records."
+    }
+  ],
+  "truth_boundary": {
+    "explanation_accepts_candidate": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_result_as_truth": false,
+    "explanation_mutates_master_index": false,
+    "explanation_mutates_public_index": false,
+    "explanation_mutates_public_search": false,
+    "explanation_mutates_ranking": false,
+    "known_absence_claims_global_absence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_quality_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "workunit_seed_previews_future": []
+}

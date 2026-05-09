@@ -1,0 +1,107 @@
+{
+  "schema_version": "g_bundle_01_report.v0",
+  "status": "pass",
+  "task": "G-BUNDLE-01",
+  "track": "G",
+  "purpose": "result_explanations_near_misses_known_absence",
+  "added_contracts": [
+    "contracts/query/search_result_explanation.v0.json",
+    "contracts/query/near_miss_explanation.v0.json",
+    "contracts/query/known_absence_record.v0.json",
+    "contracts/query/search_gap_explanation.v0.json",
+    "contracts/query/explanation_input_bundle.v0.json",
+    "contracts/query/explanation_output_bundle.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/search_quality/__init__.py",
+    "runtime/search_quality/explanation.py",
+    "runtime/search_quality/near_miss.py",
+    "runtime/search_quality/known_absence.py",
+    "runtime/search_quality/gap_explanation.py",
+    "runtime/search_quality/explanation_summary.py"
+  ],
+  "added_scripts": [
+    "scripts/explain_search_fixture.py",
+    "scripts/summarize_search_explanations.py",
+    "scripts/validate_search_explanation_runtime.py"
+  ],
+  "added_docs": [
+    "docs/reference/SEARCH_RESULT_EXPLANATION_CONTRACT.md",
+    "docs/reference/NEAR_MISS_EXPLANATION_CONTRACT.md",
+    "docs/reference/KNOWN_ABSENCE_RECORD_CONTRACT.md",
+    "docs/reference/SEARCH_GAP_EXPLANATION_CONTRACT.md",
+    "docs/architecture/SEARCH_EXPLANATION_MODEL.md",
+    "docs/architecture/KNOWN_ABSENCE_MODEL.md",
+    "docs/operations/SEARCH_EXPLANATION_REVIEW.md",
+    "docs/operations/NEAR_MISS_AND_ABSENCE_POLICY.md",
+    "docs/operations/SEARCH_EXPLANATION_NO_RANKING_CHANGE_POLICY.md"
+  ],
+  "added_inventories": [
+    "control/inventory/search_quality/search_explanation_policy.json",
+    "control/inventory/search_quality/near_miss_policy.json",
+    "control/inventory/search_quality/known_absence_policy.json",
+    "control/inventory/search_quality/search_gap_explanation_policy.json",
+    "control/inventory/search_quality/explanation_output_policy.json",
+    "control/inventory/search_quality/explanation_path_policy.json",
+    "control/inventory/search_quality/explanation_truth_policy.json",
+    "control/inventory/search_quality/explanation_review_policy.json"
+  ],
+  "added_examples": [
+    "examples/search_quality/explanations/",
+    "examples/search_quality/near_misses/",
+    "examples/search_quality/known_absence/",
+    "examples/search_quality/input_bundles/",
+    "examples/search_quality/output_bundles/"
+  ],
+  "added_tests": [
+    "tests/search_quality/test_search_explanation_runtime.py",
+    "tests/search_quality/test_near_miss_and_absence.py",
+    "tests/operations/test_search_explanation_scripts.py"
+  ],
+  "validation": {
+    "json_contracts_and_policies": "pass",
+    "validate_search_explanation_runtime": "pass",
+    "explain_search_fixture_check": "pass",
+    "summarize_search_explanations_check": "pass",
+    "search_quality_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_f_h_core_validators": "pass_with_existing_h1_audit_warnings",
+    "aide_lite": "pass_with_verify_warnings"
+  },
+  "explanation_scope": {
+    "fixture_only": true,
+    "result_explanations_enabled": true,
+    "near_miss_explanations_enabled": true,
+    "known_absence_records_enabled": true,
+    "search_gap_explanations_enabled": true,
+    "public_search_mutation_enabled": false,
+    "ranking_mutation_enabled": false
+  },
+  "truth_boundary": {
+    "explanation_accepts_result_as_truth": false,
+    "explanation_accepts_evidence": false,
+    "explanation_accepts_candidate": false,
+    "known_absence_claims_global_absence": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "production_quality_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "g_bundle_02_readiness": "READY_FOR_G_BUNDLE_02",
+  "next_task": "G-BUNDLE-02 - Ranking shadow runtime and search-quality harness"
+}

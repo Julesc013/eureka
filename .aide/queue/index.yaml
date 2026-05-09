@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: G-BUNDLE-01
+current_recommended_task: G-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -214,12 +214,20 @@ entries:
     recommended_after: F-BUNDLE-01
   - id: G-BUNDLE-01
     title: Result explanations, near misses, and known absence
-    status: queued
+    status: needs_review
     purpose: Convert reviewable search gaps and extraction previews into fixture-only explanation, near-miss, and known-absence planning artifacts without changing public search behavior.
     allowed_scope_summary: G explanation/known-absence contracts, policies, docs, examples, scripts, tests, and audit evidence only until separately scoped.
     gate: F-BUNDLE-02 passes with Track G readiness; no public search runtime mutation, index mutation, truth acceptance, live calls, downloads, or model/provider calls by default.
     task: .aide/queue/G-BUNDLE-01/task.yaml
     recommended_after: F-BUNDLE-02
+  - id: G-BUNDLE-02
+    title: Ranking shadow runtime and search-quality harness
+    status: queued
+    purpose: Build a fixture-only shadow ranking and search-quality harness from G-BUNDLE-01 explanations without changing public ranking or search behavior.
+    allowed_scope_summary: G shadow-ranking contracts, policies, docs, examples, scripts, tests, and audit evidence only until separately scoped.
+    gate: G-BUNDLE-01 passes; no public ranking/search mutation, index mutation, truth acceptance, live calls, downloads, telemetry, or model/provider calls by default.
+    task: .aide/queue/G-BUNDLE-02/task.yaml
+    recommended_after: G-BUNDLE-01
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/search_gap_explanation.v0.json",
+  "title": "Eureka Search Gap Explanation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "search_gap_explanation_id",
+    "gap_type",
+    "related_search_gap_refs",
+    "related_extraction_gap_refs",
+    "why_gap_exists",
+    "what_would_close_gap",
+    "suggested_next_actions",
+    "suggested_workunit_seed_refs",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "search_gap_explanation.v0"
+    }
+  },
+  "x-automatic_source_access_allowed": false
+}

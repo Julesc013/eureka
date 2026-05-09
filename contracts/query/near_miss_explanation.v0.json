@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/query/near_miss_explanation.v0.json",
+  "title": "Eureka Near Miss Explanation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "near_miss_id",
+    "near_miss_status",
+    "query_ref",
+    "near_miss_result_ref",
+    "mismatch_type",
+    "matched_fields",
+    "mismatched_fields",
+    "why_not_exact",
+    "useful_followup",
+    "suggested_workunit_seed_future",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "near_miss_explanation.v0"
+    },
+    "mismatch_type": {
+      "enum": [
+        "wrong_version",
+        "wrong_platform",
+        "wrong_architecture",
+        "wrong_format",
+        "wrong_source_lane",
+        "source_only",
+        "evidence_too_weak",
+        "compatibility_uncertain",
+        "rights_or_risk_blocked",
+        "extraction_needed",
+        "identity_uncertain",
+        "not_evaluable"
+      ]
+    }
+  },
+  "x-auto_reject_allowed": false,
+  "x-auto_merge_allowed": false
+}
