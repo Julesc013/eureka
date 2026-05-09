@@ -1,0 +1,69 @@
+{
+  "schema_version": "repo_sync_03_report.v0",
+  "status": "warn",
+  "task": "REPO-SYNC-03",
+  "operation": "active_merge_rescue_and_dirty_worktree_preservation",
+  "current_branch_before": "main",
+  "safety_branch": "sync/preserve-dirty-work-20260509",
+  "local_head_before": "2f63e190964d19bd7f7d6c9130e716ecbd61b6ac",
+  "origin_main_observed": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+  "merge_head_before": "6c852097ec812ddd2c8584dbff5b847bdebd94c5",
+  "merge_head_subject_before": "ops(observation): add candidate review queue",
+  "merge_quit_attempted": true,
+  "merge_quit_succeeded": true,
+  "merge_head_after_quit": null,
+  "dirty_tree_detected": true,
+  "dirty_tree_counts_before": {
+    "staged": 317,
+    "unstaged": 3,
+    "untracked": 0,
+    "unmerged": 0
+  },
+  "dirty_tree_counts_after_preservation": {
+    "staged": 0,
+    "unstaged": 0,
+    "untracked": 0
+  },
+  "preservation_commits": [
+    {
+      "sha": "03355592851ae643c33ec8d29ff3ca5b6b61b984",
+      "subject": "chore(sync): preserve merge-rescued local work",
+      "semantic_approval": false,
+      "remote_convergence": false
+    }
+  ],
+  "stopped_for_risk": false,
+  "risk_flags": [],
+  "validation": {
+    "git_ls_files_u_before_quit": "pass",
+    "git_merge_quit": "pass",
+    "git_rev_parse_merge_head_after_quit": "pass_absent",
+    "path_name_risk_screen": "pass",
+    "git_diff_check": "pass_with_crlf_warnings",
+    "json_reports": "pass"
+  },
+  "product_boundary": {
+    "changed_product_behavior_by_this_task": false,
+    "changed_public_routes_by_this_task": false,
+    "enabled_hosting_by_this_task": false,
+    "enabled_live_probes_by_this_task": false,
+    "enabled_source_connectors_by_this_task": false,
+    "enabled_downloads_by_this_task": false,
+    "enabled_uploads_by_this_task": false,
+    "enabled_accounts_by_this_task": false,
+    "enabled_telemetry_by_this_task": false,
+    "mutated_master_index_by_this_task": false,
+    "concluded_merge_commit": false,
+    "merged_remote_history": false,
+    "pulled_or_rebased": false,
+    "force_pushed": false,
+    "deleted_branches": false,
+    "discarded_uncommitted_work": false
+  },
+  "warnings": [
+    "Preservation commit contains mixed local work and is not semantic approval.",
+    "Remote convergence remains pending.",
+    "Safety branch is local and should not be pushed until reviewed."
+  ],
+  "next_task": "REPO-SYNC-01 - Branch convergence audit and safe local merge plan"
+}

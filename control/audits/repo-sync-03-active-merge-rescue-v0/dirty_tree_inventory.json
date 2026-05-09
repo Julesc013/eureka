@@ -1,0 +1,72 @@
+{
+  "schema_version": "repo_sync_dirty_tree_inventory.v0",
+  "task": "REPO-SYNC-03",
+  "current_branch_before": "main",
+  "safety_branch": "sync/preserve-dirty-work-20260509",
+  "local_head_before": "2f63e190964d19bd7f7d6c9130e716ecbd61b6ac",
+  "origin_main_observed": "f83b005dcd68bc9710bccefe8d788b64c5fce461",
+  "merge_head_before": "6c852097ec812ddd2c8584dbff5b847bdebd94c5",
+  "preservation_commit": "03355592851ae643c33ec8d29ff3ca5b6b61b984",
+  "staged_count_before": 317,
+  "unstaged_count_before": 3,
+  "untracked_count_before": 0,
+  "staged_files": [
+    "317 staged paths across OBS side-lane work, Track B work, B23 audit files, AIDE files, runtime modules, scripts, examples, docs, contracts, and tests"
+  ],
+  "unstaged_files": [
+    ".aide/context/latest-review-packet.md",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/evals/runs/latest-golden-tasks.md"
+  ],
+  "untracked_files": [],
+  "path_classification": {
+    "aide_context_or_eval": [
+      ".aide/context/latest-review-packet.md",
+      ".aide/context/latest-task-packet.md",
+      ".aide/evals/runs/latest-golden-tasks.json",
+      ".aide/evals/runs/latest-golden-tasks.md"
+    ],
+    "obs_side_lane": [
+      "control/audits/obs-agent-*",
+      "control/inventory/observations/obs_agent_*",
+      "examples/observation_candidates/*",
+      "examples/observation_reviews/*",
+      "scripts/*observation*",
+      "tests/*observation*"
+    ],
+    "track_b_source_cache": [
+      "runtime/local_foundry/source_cache.py",
+      "control/inventory/source_cache/*",
+      "examples/source_cache_records/*"
+    ],
+    "track_b_evidence_ledger": [
+      "runtime/local_foundry/evidence_ledger.py",
+      "control/inventory/evidence_ledger/*",
+      "examples/evidence_ledger_records/*"
+    ],
+    "b23_or_later": [
+      "control/audits/track-b-23-integration-audit-v0/*",
+      "control/inventory/track_b_completion_matrix.json",
+      "scripts/audit_track_b_integration.py",
+      "tests/operations/test_track_b_integration_audit.py"
+    ],
+    "runtime_or_tests": [
+      "runtime/local_foundry/*",
+      "scripts/*",
+      "tests/*"
+    ],
+    "docs_or_ops": [
+      "docs/architecture/*",
+      "docs/operations/*",
+      "docs/reference/*"
+    ],
+    "site_or_generated_artifacts": [],
+    "risky_or_should_not_commit": []
+  },
+  "risk_flags": [],
+  "notes": [
+    "Path-name risk screen found no obvious secret, private cache, raw prompt, credential, token, or private-key path names.",
+    "The preservation commit is intentionally mixed and is not semantic approval.",
+    "Remote convergence remains deferred to REPO-SYNC-01."
+  ]
+}

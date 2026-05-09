@@ -1,0 +1,19 @@
+{
+  "schema_version": "repo_sync_active_merge_state.v0",
+  "task": "REPO-SYNC-03",
+  "merge_head_present": true,
+  "merge_head_sha": "6c852097ec812ddd2c8584dbff5b847bdebd94c5",
+  "merge_head_subject": "ops(observation): add candidate review queue",
+  "merge_msg": "Merge branch 'main' of https://github.com/Julesc013/eureka",
+  "merge_mode": "",
+  "unmerged_entries_count": 0,
+  "unmerged_paths": [],
+  "staged_count": 317,
+  "unstaged_count": 3,
+  "untracked_count": 0,
+  "notes": [
+    "Committing before merge quit would have concluded the active merge.",
+    "git ls-files -u returned no unmerged entries.",
+    "git merge --quit was allowed by the task policy and succeeded."
+  ]
+}
