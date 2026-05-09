@@ -1,0 +1,78 @@
+{
+  "blockers": [],
+  "forbidden_effects": [
+    "pack_import",
+    "pack_submission",
+    "pack_publication",
+    "pack_acceptance",
+    "accepted_evidence",
+    "accepted_candidate",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "import_preview_id": "pack_import_preview.pack_quarantine_result.5ac750cd6194.v0.v0",
+  "import_preview_status": "preview_only",
+  "input_pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+  "notes": [
+    "evidence_pack_export import preview is proposal-only.",
+    "No records are written to source cache, evidence ledger, candidate store, review queue, public index, or master index."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "proposed_candidate_records": [],
+  "proposed_evidence_records": [
+    {
+      "accepted": false,
+      "candidate_record_type": "evidence_record",
+      "imported": false,
+      "proposal_only": true,
+      "record_label": "Metadata Evidence Source",
+      "record_ref": "metadata_claim_fixture_v0"
+    }
+  ],
+  "proposed_public_records_future": [],
+  "proposed_records": [
+    {
+      "accepted": false,
+      "candidate_record_type": "evidence_record",
+      "imported": false,
+      "proposal_only": true,
+      "record_label": "Metadata Evidence Source",
+      "record_ref": "metadata_claim_fixture_v0"
+    }
+  ],
+  "proposed_review_records": [],
+  "proposed_source_records": [],
+  "required_reviews": [
+    "schema_review",
+    "fixity_review",
+    "signature_envelope_review",
+    "provenance_review",
+    "rights_risk_review"
+  ],
+  "schema_version": "pack_import_preview.v0",
+  "truth_boundary": {
+    "accepted_candidate": false,
+    "accepted_evidence": false,
+    "accepted_public_record": false,
+    "import_preview_imports_records": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

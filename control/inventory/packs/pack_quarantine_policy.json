@@ -1,0 +1,28 @@
+{
+  "acceptance_enabled": false,
+  "allowed_pack_types": [
+    "exported_pack_draft",
+    "source_pack_export",
+    "evidence_pack_export",
+    "contribution_pack_export",
+    "review_pack_export",
+    "index_pack_preview_export",
+    "policy_blocked_pack_export"
+  ],
+  "forbidden_effects": [
+    "pack_import",
+    "pack_submission",
+    "pack_publication",
+    "hosted_upload",
+    "pack_acceptance",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "hosted_upload_enabled": false,
+  "import_enabled": false,
+  "publication_enabled": false,
+  "quarantine_only_current": true,
+  "review_required": true,
+  "schema_version": "pack_quarantine_policy.v0",
+  "submission_enabled": false
+}

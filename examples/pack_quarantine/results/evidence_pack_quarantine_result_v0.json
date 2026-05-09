@@ -1,0 +1,101 @@
+{
+  "allowed_next_actions": [
+    "human_review",
+    "request_more_evidence",
+    "defer_import_policy_review",
+    "discard_quarantined_preview"
+  ],
+  "blocker_summary": {
+    "blocker_count": 0,
+    "blockers": [],
+    "requires_review": true
+  },
+  "contribution_review_seed_refs": [
+    "contribution_review_seed.pack_quarantine_result.5ac750cd6194.v0.v0"
+  ],
+  "fixity_report_ref": "pack_fixity.71e73d2d9e7c7aa3.v0",
+  "forbidden_next_actions": [
+    "import_pack",
+    "submit_pack",
+    "publish_pack",
+    "hosted_upload",
+    "accept_pack",
+    "accept_evidence",
+    "accept_candidate",
+    "mutate_public_index",
+    "mutate_master_index",
+    "use_private_key",
+    "real_signing"
+  ],
+  "import_preview_ref": "pack_import_preview.pack_quarantine_result.5ac750cd6194.v0.v0",
+  "input_pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+  "input_pack_type": "evidence_pack_export",
+  "limitations": [
+    "Quarantine result is review-gated and does not imply import or acceptance.",
+    "Fixity is local content identity only.",
+    "Signature handling is envelope validation only."
+  ],
+  "notes": [
+    "No pack was imported, submitted, published, uploaded, accepted, trusted, or revoked."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "provenance_summary": {
+    "export_status": "exported_local",
+    "generated_from_pack_draft_ref": "pack_draft.evidence_pack_draft.ef18c2ffc9eb.v0",
+    "pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+    "pack_type": "evidence_pack_export",
+    "proposed_record_count": 1,
+    "proposed_record_summary": [
+      {
+        "accepted": false,
+        "candidate_record_type": "evidence_record",
+        "imported": false,
+        "proposal_only": true,
+        "record_label": "Metadata Evidence Source",
+        "record_ref": "metadata_claim_fixture_v0"
+      }
+    ],
+    "source_authenticity_claimed": false,
+    "trust_created": false
+  },
+  "quarantine_result_id": "pack_quarantine_result.5ac750cd6194.v0",
+  "quarantine_status": "quarantined_local",
+  "request_ref": "pack_quarantine_request.ec1fb21fba76.v0",
+  "revocation_preview_ref": "pack_revocation_preview.pack_quarantine_result.5ac750cd6194.v0.v0",
+  "schema_validation_summary": {
+    "error_count": 0,
+    "schema_version": "local_pack_export.v0",
+    "validation_errors": []
+  },
+  "schema_version": "pack_quarantine_result.v0",
+  "signature_verification_report_ref": "pack_signature_verification.pack_signature_envelope.pack_export.evidence_pack_export.6277c3d89647.v0.v0.v0",
+  "trust_preview_ref": "pack_trust_preview.pack_quarantine_result.5ac750cd6194.v0.v0",
+  "truth_boundary": {
+    "accepted_candidate": false,
+    "accepted_evidence": false,
+    "accepted_public_record": false,
+    "fixity_implies_authenticity": false,
+    "import_preview_imports_records": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "verified_installability_claimed": false
+  }
+}

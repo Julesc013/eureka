@@ -1,0 +1,8 @@
+{
+  "malformed_envelope_blocks_acceptance": true,
+  "placeholder_envelope_allowed": true,
+  "private_keys_allowed": false,
+  "real_signature_verification_current": false,
+  "real_signing_allowed": false,
+  "schema_version": "pack_signature_verification_policy.v0"
+}

@@ -1,0 +1,8 @@
+{
+  "allowed_hash_algorithms": [
+    "sha256"
+  ],
+  "deterministic_json_serialization_required": true,
+  "fixity_does_not_mean_authenticity": true,
+  "schema_version": "pack_fixity_verification_policy.v0"
+}

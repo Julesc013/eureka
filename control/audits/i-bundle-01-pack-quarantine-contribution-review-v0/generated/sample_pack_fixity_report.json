@@ -1,0 +1,59 @@
+{
+  "canonical_serialization_policy": {
+    "encoding": "utf-8",
+    "format": "json",
+    "separators": [
+      ",",
+      ":"
+    ],
+    "sort_keys": true,
+    "volatile_fields_removed": [
+      "fixity_report",
+      "signature_verification_report",
+      "quarantine_result",
+      "import_preview",
+      "contribution_review_seed"
+    ]
+  },
+  "deterministic": true,
+  "fixity_report_id": "pack_fixity.71e73d2d9e7c7aa3.v0",
+  "hash_algorithm": "sha256",
+  "hash_input_summary": {
+    "local_content_identity_only": true,
+    "pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+    "pack_schema_version": "local_pack_export.v0",
+    "pack_type": "evidence_pack_export",
+    "source_authenticity_claimed": false
+  },
+  "hash_value": "71e73d2d9e7c7aa3287c3400a68e8f3fa4a5b9bec9618b4416f3ac42377fdaea",
+  "limitations": [
+    "SHA-256 fixity identifies this local serialized content only.",
+    "Fixity does not establish source authenticity, trust, acceptance, rights, safety, or installability."
+  ],
+  "pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "schema_version": "pack_fixity_report.v0",
+  "truth_boundary": {
+    "fixity_implies_authenticity": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "verification_status": "computed_local"
+}

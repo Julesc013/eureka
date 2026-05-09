@@ -1,0 +1,118 @@
+{
+  "added_contracts": [
+    "contracts/packs/pack_quarantine_request.v0.json",
+    "contracts/packs/pack_quarantine_result.v0.json",
+    "contracts/packs/pack_fixity_report.v0.json",
+    "contracts/packs/pack_signature_envelope.v0.json",
+    "contracts/packs/pack_signature_verification_report.v0.json",
+    "contracts/packs/pack_import_preview.v0.json",
+    "contracts/packs/contribution_review_seed.v0.json",
+    "contracts/packs/pack_trust_revocation_preview.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/PACK_QUARANTINE_RUNTIME.md",
+    "docs/reference/PACK_FIXITY_REPORT_CONTRACT.md",
+    "docs/reference/PACK_SIGNATURE_ENVELOPE_CONTRACT.md",
+    "docs/reference/PACK_IMPORT_PREVIEW_CONTRACT.md",
+    "docs/reference/CONTRIBUTION_REVIEW_SEED_CONTRACT.md",
+    "docs/architecture/PACK_QUARANTINE_MODEL.md",
+    "docs/architecture/PACK_TRUST_MODEL.md",
+    "docs/operations/PACK_QUARANTINE_REVIEW.md",
+    "docs/operations/PACK_SIGNATURE_AND_FIXITY_POLICY.md",
+    "docs/operations/CONTRIBUTION_REVIEW_POLICY.md",
+    "docs/operations/PACK_IMPORT_PREVIEW_NO_IMPORT_POLICY.md"
+  ],
+  "added_examples": [
+    "examples/pack_quarantine/"
+  ],
+  "added_inventories": [
+    "control/inventory/packs/pack_quarantine_policy.json",
+    "control/inventory/packs/pack_quarantine_input_policy.json",
+    "control/inventory/packs/pack_quarantine_output_policy.json",
+    "control/inventory/packs/pack_quarantine_path_policy.json",
+    "control/inventory/packs/pack_quarantine_truth_policy.json",
+    "control/inventory/packs/pack_fixity_verification_policy.json",
+    "control/inventory/packs/pack_signature_verification_policy.json",
+    "control/inventory/packs/pack_import_preview_policy.json",
+    "control/inventory/packs/contribution_review_seed_policy.json",
+    "control/inventory/packs/pack_trust_revocation_policy.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/local_foundry/pack_quarantine.py",
+    "runtime/local_foundry/pack_fixity.py",
+    "runtime/local_foundry/pack_signature.py",
+    "runtime/local_foundry/pack_import_preview.py",
+    "runtime/local_foundry/contribution_review.py"
+  ],
+  "added_scripts": [
+    "scripts/quarantine_local_pack.py",
+    "scripts/verify_local_pack_fixity.py",
+    "scripts/preview_pack_import.py",
+    "scripts/validate_pack_quarantine_runtime.py",
+    "scripts/summarize_pack_quarantine.py"
+  ],
+  "added_tests": [
+    "tests/packs/test_pack_quarantine_runtime.py",
+    "tests/packs/test_pack_fixity_signature.py",
+    "tests/packs/test_pack_import_preview.py",
+    "tests/operations/test_pack_quarantine_scripts.py"
+  ],
+  "j0_readiness": "READY_FOR_J0_BUNDLE_01",
+  "next_task": "J0-BUNDLE-01 - Safe actions, manifests, citation, and export",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "pack_quarantine_signature_fixity_contribution_review",
+  "quarantine_scope": {
+    "fixity_verification_enabled": true,
+    "hosted_upload_enabled": false,
+    "import_preview_enabled": true,
+    "pack_acceptance_enabled": false,
+    "pack_import_enabled": false,
+    "pack_submission_enabled": false,
+    "private_keys_allowed": false,
+    "quarantine_only": true,
+    "real_signing_enabled": false,
+    "signature_envelope_validation_enabled": true
+  },
+  "schema_version": "i_bundle_01_report.v0",
+  "status": "pass",
+  "task": "I-BUNDLE-01",
+  "track": "I",
+  "truth_boundary": {
+    "fixity_implies_authenticity": false,
+    "import_preview_imports_records": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "json_contracts_and_policies": "pass",
+    "validate_pack_quarantine_runtime": "pass",
+    "quarantine_local_pack_check": "pass",
+    "verify_local_pack_fixity_check": "pass",
+    "preview_pack_import_check": "pass",
+    "summarize_pack_quarantine_check": "pass",
+    "pack_quarantine_tests": "pass",
+    "full_unittest_discover": "pass",
+    "architecture_boundaries": "pass",
+    "existing_g_f_h_core_validators": "pass_with_existing_h1_audit_warnings",
+    "aide_lite": "pass_with_verify_warnings"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "limitations": [
+    "Signature verification is envelope validation only in this bundle.",
+    "Unsigned or placeholder envelopes require review before any future import or trust decision."
+  ],
+  "private_key_used": false,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "real_signature_created": false,
+  "schema_version": "pack_signature_verification_report.v0",
+  "signature_envelope_ref": "pack_signature_envelope.pack_export.evidence_pack_export.6277c3d89647.v0.v0",
+  "signature_verification_report_id": "pack_signature_verification.pack_signature_envelope.pack_export.evidence_pack_export.6277c3d89647.v0.v0.v0",
+  "truth_boundary": {
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "verified_installability_claimed": false
+  },
+  "verification_method": "envelope_validation_only",
+  "verification_performed": false,
+  "verification_status": "placeholder_only",
+  "warnings": [
+    "placeholder envelope does not establish trust"
+  ]
+}

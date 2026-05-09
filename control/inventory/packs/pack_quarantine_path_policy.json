@@ -1,0 +1,27 @@
+{
+  "allowed_input_roots": [
+    "examples/pack_exports/",
+    "examples/pack_quarantine/",
+    "examples/pack_drafts/",
+    "explicit temp test directory"
+  ],
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/pack_quarantine/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "data/master_index/",
+    "master_index/",
+    "hosted_upload/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "schema_version": "pack_quarantine_path_policy.v0"
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3937 chars, 985 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4144 chars, 1036 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/G-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/I-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/I-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/J0-BUNDLE-01` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `contracts/query/README.md` (M; matches active task allowed path)
-- unknown: `contracts/query/dedup_shadow_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/identity_merge_shadow.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/public_ranking_gate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/ranking_factor.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/ranking_input_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/ranking_output_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/ranking_shadow_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/search_quality_query_set.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/query/search_quality_regression_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/g-bundle-02-ranking-shadow-quality-harness-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/dedup_shadow_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/identity_merge_shadow_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/public_ranking_gate_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/ranking_factor_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/ranking_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/ranking_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/search_quality/ranking_shadow_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 35; see task evidence changed-files report
+- unknown: `contracts/packs/contribution_review_seed.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_fixity_report.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_import_preview.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_quarantine_request.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_quarantine_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_signature_envelope.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_signature_verification_report.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/packs/pack_trust_revocation_preview.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/i-bundle-01-pack-quarantine-contribution-review-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/contribution_review_seed_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_fixity_verification_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_import_preview_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_quarantine_input_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_quarantine_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_quarantine_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_quarantine_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_quarantine_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/packs/pack_signature_verification_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 25; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6603
-- approx_tokens: 1651
+- chars: 6667
+- approx_tokens: 1667
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

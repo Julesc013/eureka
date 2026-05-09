@@ -1,0 +1,6 @@
+{
+  "automatic_review_decision_allowed": false,
+  "hosted_submission_allowed": false,
+  "schema_version": "contribution_review_seed_policy.v0",
+  "seed_only": true
+}

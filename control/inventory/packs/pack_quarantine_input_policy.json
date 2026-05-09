@@ -1,0 +1,28 @@
+{
+  "allowed_input_roots": [
+    "examples/pack_exports/",
+    "examples/pack_quarantine/",
+    "examples/pack_drafts/",
+    "explicit temp test directory"
+  ],
+  "allowed_inputs": [
+    "exported_pack_draft",
+    "source_pack_export",
+    "evidence_pack_export",
+    "contribution_pack_export",
+    "review_pack_export",
+    "index_pack_preview_export",
+    "explicit_fixture_pack"
+  ],
+  "forbidden_inputs": [
+    "submitted_pack",
+    "accepted_pack",
+    "hosted_upload_result",
+    "private_user_file",
+    "secret_or_credential",
+    "executable_payload",
+    "installer_payload",
+    "telemetry_stream"
+  ],
+  "schema_version": "pack_quarantine_input_policy.v0"
+}

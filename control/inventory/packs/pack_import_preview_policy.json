@@ -1,0 +1,7 @@
+{
+  "import_allowed_current": false,
+  "mutation_allowed_current": false,
+  "preview_only": true,
+  "proposed_records_remain_proposals_only": true,
+  "schema_version": "pack_import_preview_policy.v0"
+}

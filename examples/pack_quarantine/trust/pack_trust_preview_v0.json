@@ -1,0 +1,47 @@
+{
+  "dispute_or_takedown_refs_future": [],
+  "limitations": [
+    "Trust preview does not create trust.",
+    "Revocation preview does not revoke anything."
+  ],
+  "pack_ref": "pack_export.evidence_pack_export.6277c3d89647.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "revocation_reasons": [],
+  "revocation_status": "not_revoked_preview_only",
+  "schema_version": "pack_trust_revocation_preview.v0",
+  "trust_inputs": {
+    "fixity_report_ref": "pack_fixity.71e73d2d9e7c7aa3.v0",
+    "provenance_summary_available": true,
+    "signature_verification_report_ref": "pack_signature_verification.pack_signature_envelope.pack_export.evidence_pack_export.6277c3d89647.v0.v0.v0"
+  },
+  "trust_preview_id": "pack_trust_preview.pack_quarantine_result.5ac750cd6194.v0.v0",
+  "trust_status": "preview_only_no_trust_created",
+  "truth_boundary": {
+    "accepted_candidate": false,
+    "accepted_evidence": false,
+    "accepted_public_record": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "review_seed_is_review_decision": false,
+    "revocation_preview_revokes_pack": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "trust_preview_creates_trust": false,
+    "verified_installability_claimed": false
+  }
+}

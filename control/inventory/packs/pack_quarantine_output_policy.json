@@ -1,0 +1,24 @@
+{
+  "allowed_outputs": [
+    "quarantine_result",
+    "fixity_report",
+    "signature_envelope_report",
+    "import_preview",
+    "contribution_review_seed",
+    "blocker_report",
+    "trust_preview",
+    "revocation_preview",
+    "summary"
+  ],
+  "forbidden_outputs": [
+    "imported_pack",
+    "submitted_pack",
+    "accepted_pack",
+    "accepted_evidence",
+    "accepted_candidate",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "schema_version": "pack_quarantine_output_policy.v0"
+}

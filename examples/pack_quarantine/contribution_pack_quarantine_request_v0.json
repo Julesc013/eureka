@@ -1,0 +1,66 @@
+{
+  "acceptance_allowed_current": false,
+  "expected_pack_status": "needs_review",
+  "import_allowed_current": false,
+  "input_pack_ref": "pack_export.contribution_pack_export.21585e862769.v0",
+  "input_pack_type": "contribution_pack_export",
+  "no_goals": [
+    "no pack import",
+    "no pack submission",
+    "no pack publication",
+    "no hosted upload",
+    "no pack acceptance",
+    "no evidence acceptance",
+    "no candidate acceptance",
+    "no public index mutation",
+    "no master index mutation",
+    "no private signing keys",
+    "no real signing"
+  ],
+  "notes": [
+    "Request is local quarantine-only over an explicit exported pack draft."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quarantine_request_id": "pack_quarantine_request.9f2236d7b5bc.v0",
+  "request_status": "local_quarantine_only",
+  "requested_checks": [
+    "schema_validation",
+    "sha256_fixity",
+    "signature_envelope_validation",
+    "import_preview",
+    "contribution_review_seed",
+    "trust_revocation_preview"
+  ],
+  "requested_output_paths": [],
+  "review_required": true,
+  "schema_version": "pack_quarantine_request.v0",
+  "submission_allowed_current": false,
+  "truth_boundary": {
+    "accepted_candidate": false,
+    "accepted_evidence": false,
+    "accepted_public_record": false,
+    "fixity_implies_authenticity": false,
+    "import_preview_imports_records": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "verified_installability_claimed": false
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "contribution_review_seed_id": "contribution_review_seed.pack_quarantine_result.7c570bfb3ed0.v0.v0",
+  "input_pack_ref": "pack_export.contribution_pack_export.21585e862769.v0",
+  "limitations": [
+    "Review seed is not a review decision.",
+    "No pack import, submission, publication, upload, acceptance, or trust mutation occurs."
+  ],
+  "missing_evidence": [
+    "human_review_decision",
+    "future_import_policy_approval",
+    "real_signature_verification_future"
+  ],
+  "policy_blockers": [],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "proposed_review_entry": {
+    "automatic_acceptance_allowed": false,
+    "review_decision_created": false,
+    "review_status": "seed_only",
+    "subject_ref": "pack_export.contribution_pack_export.21585e862769.v0",
+    "subject_type": "contribution_pack_export"
+  },
+  "review_reason": "pack_quarantine_requires_review",
+  "review_subject_type": "contribution_pack_export",
+  "rights_risk_blockers": [],
+  "schema_version": "contribution_review_seed.v0",
+  "trust_notes": [
+    "Unsigned or placeholder signature posture requires human review.",
+    "Fixity does not create authenticity or trust."
+  ],
+  "truth_boundary": {
+    "accepted_candidate": false,
+    "accepted_evidence": false,
+    "accepted_public_record": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

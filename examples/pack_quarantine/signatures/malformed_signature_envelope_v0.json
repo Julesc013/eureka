@@ -1,0 +1,38 @@
+{
+  "limitations": [
+    "Malformed envelope blocks acceptance and requires review."
+  ],
+  "pack_ref": "pack_export.unsigned.fixture.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_hosted_upload_runtime": false,
+    "enabled_hosting": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_pack_submission_runtime": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_key_ref_future": "",
+  "schema_version": "pack_signature_envelope.v0",
+  "signature_envelope_id": "pack_signature_envelope.malformed.fixture.v0",
+  "signature_kind": "malformed_placeholder",
+  "signature_status": "malformed",
+  "signature_value_ref_future": "",
+  "signer_ref": "",
+  "truth_boundary": {
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "quarantined_pack_is_accepted": false,
+    "quarantined_pack_is_imported": false,
+    "quarantined_pack_is_submitted": false,
+    "rights_clearance_claimed": false,
+    "signature_placeholder_implies_trust": false,
+    "verified_installability_claimed": false
+  },
+  "verification_method": "envelope_validation_only",
+  "verification_status": "not_performed"
+}

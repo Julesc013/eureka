@@ -1,0 +1,18 @@
+{
+  "accepted_candidate": false,
+  "accepted_evidence": false,
+  "accepted_public_record": false,
+  "fixity_implies_authenticity": false,
+  "import_preview_imports_records": false,
+  "malware_safety_claimed": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "quarantined_pack_is_accepted": false,
+  "quarantined_pack_is_imported": false,
+  "quarantined_pack_is_submitted": false,
+  "review_seed_is_review_decision": false,
+  "rights_clearance_claimed": false,
+  "schema_version": "pack_quarantine_truth_policy.v0",
+  "signature_placeholder_implies_trust": false,
+  "verified_installability_claimed": false
+}

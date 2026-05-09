@@ -1,0 +1,7 @@
+{
+  "automatic_revocation_allowed": false,
+  "automatic_trust_allowed": false,
+  "revocation_preview_only": true,
+  "schema_version": "pack_trust_revocation_policy.v0",
+  "trust_preview_only": true
+}
