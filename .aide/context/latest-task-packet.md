@@ -2,17 +2,17 @@
 
 ## PHASE
 
-LOCAL-MVP-ITERATION-01 - Continue local MVP improvements pending operator decision
+LOCAL-MVP-ITERATION-01 - Continue local MVP improvements pending deployment approval
 
 ## GOAL
 
-Continue after MVP-ALPHA-OPERATOR-REVIEW-01 using only local, review-gated planning. This default safe route exists because the operator review packet is unsigned. It must proceed without changing Eureka product behavior and must not deploy, launch, call providers, change DNS, enable public hosting, enable public relay, mutate generated site output, mutate public or master indexes, enable unsafe behavior, infer operator signoff, or claim public alpha is live.
+Continue after PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 using only local, review-gated planning. This default safe route exists because deployment execution approval is absent. It must proceed without changing Eureka product behavior and must not deploy, launch, call providers, change DNS, enable public hosting, enable public relay, mutate generated site output, mutate public or master indexes, enable unsafe behavior, infer operator signoff, or claim public alpha is live.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-MVP-ALPHA-OPERATOR-REVIEW-01 prepared the human decision packet, signoff template, blocker register, public claim review, and decision-to-next-task routing. It intentionally did not infer approval. The default next task is local iteration unless a future explicit operator artifact selects planning, remediation, block, or deferred paths.
+PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture, environment/config planning, static/backend split, DNS readiness, rollout gates, operator checklist, and no-op deployment evidence. It intentionally did not deploy or approve launch.
 
 ## CONTEXT_REFS
 
@@ -23,11 +23,11 @@ MVP-ALPHA-OPERATOR-REVIEW-01 prepared the human decision packet, signoff templat
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/MVP-ALPHA-OPERATOR-REVIEW-01/task.yaml`
+- `.aide/queue/PUBLIC-ALPHA-DEPLOYMENT-PLAN-01/task.yaml`
 - `.aide/queue/LOCAL-MVP-ITERATION-01/task.yaml`
+- `control/audits/public-alpha-deployment-plan-01-v0/`
 - `control/audits/mvp-alpha-operator-review-01-v0/`
-- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/`
-- `examples/audits/mvp_alpha_operator/`
+- `examples/hosting/deployment/`
 
 ## ALLOWED_PATHS
 
@@ -36,22 +36,23 @@ MVP-ALPHA-OPERATOR-REVIEW-01 prepared the human decision packet, signoff templat
 
 ## IMPLEMENTATION
 
-- Treat the operator review packet as unsigned.
-- Require explicit human/operator decision before deployment planning can advance beyond planning-only artifacts.
+- Treat deployment planning as unsigned and no-op.
+- Require explicit human/operator deployment execution approval before any future provider, DNS, or public launch action.
 - Keep launch, provider, DNS, hosting, public relay, live source fanout, downloads, uploads, accounts, telemetry, public/master index mutation, and production claims disabled.
 - Do not accept evidence, candidates, packs, sources, actions, or public truth.
 
 ## ACCEPTANCE
 
-- Local iteration remains bounded by the unsigned operator review posture.
-- Any future decision path names a reviewed task.
+- Local iteration remains bounded by the no-deployment planning posture.
+- Any future deployment decision path names a reviewed operator approval task.
 - Any warning or blocker is preserved honestly.
 
 ## VALIDATION
 
-- `python scripts/validate_mvp_alpha_operator_review.py`
-- `python scripts/check_mvp_alpha_operator_signoff.py --input examples/audits/mvp_alpha_operator/operator_signoff_packet_unsigned_v0.json --check`
-- `python scripts/check_mvp_alpha_public_claims.py --input examples/audits/mvp_alpha_operator --check`
+- `python scripts/validate_public_alpha_deployment_plan.py`
+- `python scripts/check_public_alpha_deployment_plan.py --input examples/hosting/deployment/public_alpha_deployment_plan_v0.json --check`
+- `python scripts/check_public_alpha_config_manifest.py --input examples/hosting/deployment/public_alpha_config_manifest_v0.json --check`
+- `python scripts/check_public_alpha_dns_readiness.py --input examples/hosting/deployment/public_alpha_dns_readiness_unknown_v0.json --check`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -62,11 +63,10 @@ MVP-ALPHA-OPERATOR-REVIEW-01 prepared the human decision packet, signoff templat
 
 ## EVIDENCE
 
-- `control/audits/mvp-alpha-operator-review-01-v0/mvp_alpha_operator_review_01_report.json`
-- `control/audits/mvp-alpha-operator-review-01-v0/operator_decision_packet.md`
-- `control/audits/mvp-alpha-operator-review-01-v0/operator_signoff_template.md`
-- `control/audits/mvp-alpha-operator-review-01-v0/recommended_next_task.md`
-- `control/audits/mvp-alpha-operator-review-01-v0/validation.md`
+- `control/audits/public-alpha-deployment-plan-01-v0/public_alpha_deployment_plan_01_report.json`
+- `control/audits/public-alpha-deployment-plan-01-v0/no_deployment_report.md`
+- `control/audits/public-alpha-deployment-plan-01-v0/next_task_recommendation.md`
+- `control/audits/public-alpha-deployment-plan-01-v0/validation.md`
 
 ## NON_GOALS
 

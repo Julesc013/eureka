@@ -1,0 +1,105 @@
+{
+  "checklist_items": [
+    {
+      "item_id": "review_non-claims",
+      "label": "review non-claims",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_disabled_risky_features",
+      "label": "review disabled risky features",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_secrets_policy",
+      "label": "review secrets policy",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_runtime_config",
+      "label": "review runtime config",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_rate_limits",
+      "label": "review rate limits",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_connector_kill_switches",
+      "label": "review connector kill switches",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_rollback_plan",
+      "label": "review rollback plan",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_incident_contact_process",
+      "label": "review incident contact/process",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_takedown_rights_safety_policy",
+      "label": "review takedown/rights/safety policy",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_smoke_matrix",
+      "label": "review smoke matrix",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "review_launch_evidence",
+      "label": "review launch evidence",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "confirm_DNS_custom_domain",
+      "label": "confirm DNS/custom domain",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "confirm_provider_configs",
+      "label": "confirm provider configs",
+      "status": "pending_operator_review"
+    },
+    {
+      "item_id": "confirm_explicit_launch_decision",
+      "label": "confirm explicit launch decision",
+      "status": "pending_operator_review"
+    }
+  ],
+  "limitations": [
+    "Checklist completion is future/operator-gated."
+  ],
+  "operator_checklist_id": "public-alpha-operator-checklist-v0",
+  "operator_signoff_required": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "schema_version": "public_alpha_operator_checklist.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

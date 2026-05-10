@@ -242,6 +242,25 @@ class IAReadinessPolishTest(unittest.TestCase):
             result = validator.validate_repo(root)
             self.assertEqual(result["status"], "valid", result["errors"])
 
+    def test_latest_task_packet_public_alpha_local_progression_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.make_fixture(root)
+            write_text(
+                root / ".aide/context/latest-task-packet.md",
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "## PHASE",
+                        "LOCAL-MVP-ITERATION-01 - Continue local MVP improvements pending deployment approval",
+                        "## GOAL",
+                        "PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 completed planning only; HUMAN-OBS-REVIEW-01 is a parallel side-lane.",
+                    ]
+                ),
+            )
+            result = validator.validate_repo(root)
+            self.assertEqual(result["status"], "valid", result["errors"])
+
     def assert_report_claim_fails(self, path_parts, value=True):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

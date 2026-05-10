@@ -1,0 +1,59 @@
+{
+  "candidate_provider_classes": [
+    "GitHub Pages-style static host",
+    "Render/Fly/DigitalOcean/Railway-style backend",
+    "Neon/Supabase/managed Postgres-style database",
+    "R2/S3-style object storage",
+    "Cloudflare-style DNS/CDN/WAF"
+  ],
+  "credentials_required_current": false,
+  "limitations": [
+    "Provider classes are examples, not selected providers or active resources."
+  ],
+  "operator_gated_actions_future": [
+    "provider_account_setup",
+    "backend_service_create",
+    "dns_record_create",
+    "object_storage_create"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "provider_actions_current": [],
+  "provider_neutral": true,
+  "provider_profile_id": "public-alpha-provider-neutral-v0",
+  "provider_roles": [
+    "static_host",
+    "backend_host",
+    "object_storage",
+    "database",
+    "queue",
+    "cache",
+    "dns_cdn_waf",
+    "status_page",
+    "logs_observability"
+  ],
+  "schema_version": "public_alpha_provider_profile.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

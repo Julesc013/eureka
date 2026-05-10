@@ -1,0 +1,5 @@
+{
+  "checklist_required_before_execution": true,
+  "explicit_operator_signoff_required": true,
+  "schema_version": "public_alpha_operator_checklist_policy.v0"
+}

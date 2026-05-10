@@ -1,0 +1,7 @@
+{
+  "operator_signoff_inferred": false,
+  "planning_is_not_deployment": true,
+  "production_claimed": false,
+  "public_alpha_live_claimed": false,
+  "schema_version": "public_alpha_planning_truth_policy.v0"
+}

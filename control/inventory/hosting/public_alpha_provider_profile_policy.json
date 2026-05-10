@@ -1,0 +1,6 @@
+{
+  "credentials_allowed": false,
+  "provider_api_calls_allowed": false,
+  "provider_neutral_required": true,
+  "schema_version": "public_alpha_provider_profile_policy.v0"
+}

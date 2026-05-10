@@ -1,0 +1,6 @@
+{
+  "old_host_unsafe_tls_weakening_allowed": false,
+  "schema_version": "public_alpha_static_backend_split_policy.v0",
+  "static_backend_files_status_roles_separated": true,
+  "static_site_alone_is_not_backend": true
+}

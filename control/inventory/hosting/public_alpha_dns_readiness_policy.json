@@ -1,0 +1,5 @@
+{
+  "custom_domain_claim_requires_evidence": true,
+  "dns_mutation_allowed_current": false,
+  "schema_version": "public_alpha_dns_readiness_policy.v0"
+}

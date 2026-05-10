@@ -166,6 +166,8 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
         "C-BUNDLE-",
         "E-BUNDLE-",
         "MVP-ALPHA-",
+        "PUBLIC-ALPHA-",
+        "LOCAL-MVP-",
     )
     if not any(marker in text for marker in allowed_ia_progression_markers) and not any(
         marker in text for marker in allowed_later_track_prefixes

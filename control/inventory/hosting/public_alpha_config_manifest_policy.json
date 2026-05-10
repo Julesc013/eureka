@@ -1,0 +1,25 @@
+{
+  "no_secrets_in_repo": true,
+  "required_config_keys": [
+    "ACCOUNTS_ENABLED",
+    "CONNECTOR_H1_ENABLED",
+    "CONNECTOR_IA_ENABLED",
+    "DOWNLOADS_ENABLED",
+    "HOSTED_BACKEND_ENABLED",
+    "KILL_SWITCH_CONNECTORS",
+    "KILL_SWITCH_DOWNLOADS",
+    "KILL_SWITCH_GLOBAL",
+    "LIVE_PROBES_ENABLED",
+    "MASTER_INDEX_WRITE_ENABLED",
+    "PUBLIC_INDEX_WRITE_ENABLED",
+    "PUBLIC_RELAY_ENABLED",
+    "PUBLIC_SEARCH_ENABLED",
+    "RATE_LIMIT_ENABLED",
+    "SOURCE_SYNC_ENABLED",
+    "TELEMETRY_ENABLED",
+    "UPLOADS_ENABLED"
+  ],
+  "risky_booleans_disabled_current": true,
+  "safe_defaults_required": true,
+  "schema_version": "public_alpha_config_manifest_policy.v0"
+}

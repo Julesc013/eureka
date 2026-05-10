@@ -1,0 +1,40 @@
+{
+  "deployment_performed": false,
+  "dns_changed": false,
+  "noop_report_id": "public-alpha-deployment-noop-report-v0",
+  "notes": [
+    "No deployment, provider call, DNS mutation, secret creation, or public backend start occurred."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "production_claimed": false,
+  "provider_api_called": false,
+  "public_alpha_live_claimed": false,
+  "public_backend_started": false,
+  "schema_version": "public_alpha_deployment_noop_report.v0",
+  "secrets_created": false,
+  "site_dist_mutated": false,
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

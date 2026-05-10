@@ -1,0 +1,202 @@
+{
+  "config_manifest_id": "public-alpha-config-manifest-v0",
+  "config_variables": [
+    {
+      "config_key": "PUBLIC_SEARCH_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "HOSTED_BACKEND_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "LIVE_PROBES_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "SOURCE_SYNC_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "CONNECTOR_IA_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "CONNECTOR_H1_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "DOWNLOADS_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "UPLOADS_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "ACCOUNTS_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "TELEMETRY_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "PUBLIC_RELAY_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "PUBLIC_INDEX_WRITE_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "MASTER_INDEX_WRITE_ENABLED",
+      "public_safe": false,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "risky_disabled",
+      "safe_default": false,
+      "secret": false
+    },
+    {
+      "config_key": "RATE_LIMIT_ENABLED",
+      "public_safe": true,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "control",
+      "safe_default": true,
+      "secret": false
+    },
+    {
+      "config_key": "KILL_SWITCH_GLOBAL",
+      "public_safe": true,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "control",
+      "safe_default": true,
+      "secret": false
+    },
+    {
+      "config_key": "KILL_SWITCH_CONNECTORS",
+      "public_safe": true,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "control",
+      "safe_default": true,
+      "secret": false
+    },
+    {
+      "config_key": "KILL_SWITCH_DOWNLOADS",
+      "public_safe": true,
+      "required_for": [
+        "future_public_alpha_review"
+      ],
+      "risk_class": "control",
+      "safe_default": true,
+      "secret": false
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "safe_default_policy": "fail_closed_risky_features_disabled",
+  "schema_version": "public_alpha_config_manifest.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

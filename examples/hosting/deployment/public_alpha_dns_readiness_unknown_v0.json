@@ -1,0 +1,43 @@
+{
+  "current_records_known": false,
+  "custom_domain_status": "unknown",
+  "dns_readiness_id": "public-alpha-dns-readiness-unknown-v0",
+  "hsts_policy_future": "operator_review_required",
+  "limitations": [
+    "No DNS lookup was performed.",
+    "No DNS state is claimed or changed."
+  ],
+  "old_host_http_policy_future": "operator_review_required_without_unsafe_tls_weakening",
+  "operator_required": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "required_records_future": [
+    "A or CNAME record future",
+    "TLS certificate evidence future"
+  ],
+  "schema_version": "public_alpha_dns_readiness.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "verification_evidence_refs": []
+}

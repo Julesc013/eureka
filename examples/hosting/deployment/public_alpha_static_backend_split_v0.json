@@ -1,0 +1,91 @@
+{
+  "api_alias_future": {
+    "role_status": "future_operator_gated"
+  },
+  "forbidden_current": [
+    "deployment",
+    "provider_api_calls",
+    "dns_changes",
+    "custom_domain_claims",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_relay",
+    "install",
+    "execute",
+    "mirror",
+    "emulate",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "hosted_backend_role": {
+    "public_backend_started": false,
+    "role_status": "operator_gated_future"
+  },
+  "limitations": [
+    "GitHub Pages or any static host cannot run Eureka's Python backend.",
+    "Hosted backend is separate and operator-gated."
+  ],
+  "old_browser_alias_future": {
+    "no_unsafe_tls_weakening": true,
+    "role_status": "future_operator_gated"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "schema_version": "public_alpha_static_backend_split.v0",
+  "split_id": "public-alpha-static-backend-split-v0",
+  "static_files_role": {
+    "immutable_public_safe_only_when_approved": true,
+    "role_status": "planning_only"
+  },
+  "static_site_role": {
+    "can_run_python_backend": false,
+    "role_status": "planning_only"
+  },
+  "status_page_role": {
+    "no_live_claim_without_evidence": true,
+    "role_status": "planning_only"
+  },
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "what_backend_can_serve": [
+    "read-only local-index search future",
+    "status endpoint future",
+    "object/source summaries future"
+  ],
+  "what_files_host_can_serve": [
+    "approved immutable files future",
+    "snapshot manifests future"
+  ],
+  "what_static_can_serve": [
+    "public non-claims",
+    "static documentation",
+    "approved public-safe snapshot metadata future"
+  ]
+}

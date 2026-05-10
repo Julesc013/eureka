@@ -1,0 +1,33 @@
+task_id: PUBLIC-ALPHA-DEPLOYMENT-PLAN-01
+title: Public alpha deployment planning only
+status: needs_review
+phase: PUBLIC-ALPHA-DEPLOYMENT-PLAN-01
+allowed_paths:
+  - contracts/hosting/**
+  - control/inventory/hosting/**
+  - examples/hosting/**
+  - scripts/**
+  - tests/hosting/**
+  - tests/operations/**
+  - docs/reference/**
+  - docs/architecture/**
+  - docs/operations/**
+  - control/audits/**
+  - .aide/**
+forbidden_paths:
+  - site/dist/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, launch, provider calls, DNS changes, generated site output mutation, provider credentials, secrets, public alpha live claim, production claim, live source fanout, source sync, downloads, uploads, accounts, telemetry, public relay, public/master index mutation, or inferred operator signoff
+validation:
+  - python scripts/validate_public_alpha_deployment_plan.py
+  - python scripts/build_public_alpha_deployment_plan.py --check
+  - python scripts/check_public_alpha_deployment_plan.py --input examples/hosting/deployment/public_alpha_deployment_plan_v0.json --check
+  - python scripts/check_public_alpha_config_manifest.py --input examples/hosting/deployment/public_alpha_config_manifest_v0.json --check
+  - python scripts/check_public_alpha_dns_readiness.py --input examples/hosting/deployment/public_alpha_dns_readiness_unknown_v0.json --check
+next_recommended_task: LOCAL-MVP-ITERATION-01

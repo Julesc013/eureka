@@ -1,0 +1,6 @@
+{
+  "deployment_disallowed_current": true,
+  "launch_requires_evidence": true,
+  "launch_requires_explicit_operator_approval": true,
+  "schema_version": "public_alpha_rollout_gate_policy.v0"
+}

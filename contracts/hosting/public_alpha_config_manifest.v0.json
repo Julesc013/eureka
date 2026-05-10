@@ -1,0 +1,32 @@
+{
+  "$id": "contracts/hosting/public_alpha_config_manifest.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "config_manifest_id": {
+      "type": "string"
+    },
+    "config_variables": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "safe_default_policy": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "public_alpha_config_manifest.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "config_manifest_id",
+    "config_variables"
+  ],
+  "title": "Eureka Public Alpha Config Manifest v0",
+  "type": "object"
+}

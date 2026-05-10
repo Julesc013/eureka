@@ -1,17 +1,16 @@
 # Eureka Repo Health
 
 - status: warn
-- completed_queue_item: MVP-ALPHA-OPERATOR-REVIEW-01
+- completed_queue_item: PUBLIC-ALPHA-DEPLOYMENT-PLAN-01
 - current_queue_item: LOCAL-MVP-ITERATION-01
 - next_recommended_queue_item: LOCAL-MVP-ITERATION-01
 
 ## Warn-Only Conditions
 
-- Operator signoff is required and currently absent.
+- Deployment execution approval is absent.
+- DNS/custom-domain evidence remains unknown.
+- Provider selection and resource creation remain future/operator-gated.
 - Public launch evidence remains future-gated.
-- Track A final audit naming remains warning-only.
-- H1 live-probe posture remains approval-gated.
-- Native old-toolchain build evidence remains manual/toolchain-gated.
 
 ## Boundary
 
@@ -19,8 +18,10 @@ No deployment, provider calls, DNS changes, generated site output mutation, publ
 
 ## Validation
 
-- MVP alpha operator-review validator: PASS.
-- Focused operator-review scripts and tests: PASS.
-- Full unittest discovery: PASS.
-- Major validators: PASS.
-- AIDE Lite: PASS, with verify WARN-only diff-scope warnings after routing the latest packet to LOCAL-MVP-ITERATION-01.
+- PASS: public alpha deployment-planning validator and focused scripts.
+- PASS: focused deployment-planning tests.
+- PASS: full unittest discovery.
+- PASS: requested major validators present locally.
+- PASS: architecture boundary check.
+- PASS: AIDE Lite doctor, validate, test, selftest, eval, review-pack, and adapter validate.
+- WARN: AIDE Lite verify reported zero errors and warning-only diff-scope notes after routing the latest task packet to `LOCAL-MVP-ITERATION-01`.

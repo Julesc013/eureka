@@ -1,0 +1,379 @@
+{
+  "environment_matrix_id": "public-alpha-environment-matrix-v0",
+  "environments": [
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "local_fixture",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    },
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "local_rehearsal",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    },
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "static_only",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    },
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "hosted_backend_rehearsal_future",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    },
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "public_alpha_future",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    },
+    {
+      "allowed_features": [
+        "read_only_fixture_review",
+        "operator_planning"
+      ],
+      "disabled_features": [
+        "deployment",
+        "provider_api_calls",
+        "dns_changes",
+        "custom_domain_claims",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_relay",
+        "install",
+        "execute",
+        "mirror",
+        "emulate",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "environment_kind": "production_future",
+      "evidence_required": [
+        "operator_signoff_future",
+        "launch_evidence_future"
+      ],
+      "forbidden_config": [
+        "provider_secrets_in_repo",
+        "public_index_write",
+        "master_index_write"
+      ],
+      "launch_allowed_current": false,
+      "required_config": [
+        "ACCOUNTS_ENABLED",
+        "CONNECTOR_H1_ENABLED",
+        "CONNECTOR_IA_ENABLED",
+        "DOWNLOADS_ENABLED",
+        "HOSTED_BACKEND_ENABLED",
+        "KILL_SWITCH_CONNECTORS",
+        "KILL_SWITCH_DOWNLOADS",
+        "KILL_SWITCH_GLOBAL",
+        "LIVE_PROBES_ENABLED",
+        "MASTER_INDEX_WRITE_ENABLED",
+        "PUBLIC_INDEX_WRITE_ENABLED",
+        "PUBLIC_RELAY_ENABLED",
+        "PUBLIC_SEARCH_ENABLED",
+        "RATE_LIMIT_ENABLED",
+        "SOURCE_SYNC_ENABLED",
+        "TELEMETRY_ENABLED",
+        "UPLOADS_ENABLED"
+      ],
+      "secrets_policy": "no_secrets_in_repo"
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "schema_version": "public_alpha_environment_matrix.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

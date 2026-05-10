@@ -1,0 +1,311 @@
+{
+  "blocked_features": [
+    "deployment",
+    "provider_api_calls",
+    "dns_changes",
+    "custom_domain_claims",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_relay",
+    "install",
+    "execute",
+    "mirror",
+    "emulate",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "config_manifest_ref": "examples/hosting/deployment/public_alpha_config_manifest_v0.json",
+  "deployment_plan_id": "public-alpha-deployment-plan-v0",
+  "deployment_steps": [
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": false,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "local-rehearsal-review",
+      "step_kind": "local_rehearsal",
+      "step_label": "Review local rehearsal evidence",
+      "step_order": 1
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "static-build-check-future",
+      "step_kind": "static_build_check",
+      "step_label": "Plan static build check",
+      "step_order": 2
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "backend-config-review-future",
+      "step_kind": "backend_config_review",
+      "step_label": "Plan backend config review",
+      "step_order": 3
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "provider-config-future",
+      "step_kind": "provider_config_future",
+      "step_label": "Plan provider config",
+      "step_order": 4
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "dns-config-future",
+      "step_kind": "dns_config_future",
+      "step_label": "Plan DNS config",
+      "step_order": 5
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "smoke-test-future",
+      "step_kind": "smoke_test_future",
+      "step_label": "Plan public alpha smoke test",
+      "step_order": 6
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "rollback-test-future",
+      "step_kind": "rollback_test_future",
+      "step_label": "Plan rollback rehearsal",
+      "step_order": 7
+    },
+    {
+      "expected_evidence": [
+        "future operator evidence packet required"
+      ],
+      "external_provider_action": false,
+      "forbidden_current": true,
+      "limitations": [
+        "Provider and DNS actions remain future/operator-gated."
+      ],
+      "notes": [
+        "This is a planning step only."
+      ],
+      "operator_required": true,
+      "preconditions": [
+        "planning packet reviewed",
+        "no deployment execution in this task"
+      ],
+      "rollback_step_ref": null,
+      "schema_version": "public_alpha_deployment_step.v0",
+      "secret_required": false,
+      "step_id": "operator-signoff-future",
+      "step_kind": "operator_signoff_future",
+      "step_label": "Require operator signoff",
+      "step_order": 8
+    }
+  ],
+  "dns_readiness_ref": "examples/hosting/deployment/public_alpha_dns_readiness_unknown_v0.json",
+  "environment_matrix_ref": "examples/hosting/deployment/public_alpha_environment_matrix_v0.json",
+  "host_profiles": [
+    "static_site",
+    "hosted_backend_future",
+    "static_files_future",
+    "status_page_future"
+  ],
+  "incident_refs": [
+    "docs/operations/INCIDENT_RESPONSE_AND_ROLLBACK.md"
+  ],
+  "launch_evidence_refs_required": [
+    "examples/hosting/launch/public_launch_evidence_packet_required_v0.json"
+  ],
+  "limitations": [
+    "Planning does not deploy or approve launch.",
+    "No explicit deployment execution approval exists."
+  ],
+  "no_goals": [
+    "deployment",
+    "provider_api_calls",
+    "dns_changes",
+    "custom_domain_claims",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_relay",
+    "install",
+    "execute",
+    "mirror",
+    "emulate",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "notes": [
+    "Provider and DNS steps are future/operator-gated."
+  ],
+  "operator_checklist_ref": "examples/hosting/deployment/public_alpha_operator_checklist_v0.json",
+  "plan_scope": "provider_neutral_public_alpha_planning_only",
+  "plan_status": "planning_only",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "provider_profile_refs": [
+    "examples/hosting/deployment/public_alpha_provider_profile_provider_neutral_v0.json"
+  ],
+  "rollback_refs": [
+    "docs/operations/INCIDENT_RESPONSE_AND_ROLLBACK.md"
+  ],
+  "rollout_gate_refs": [
+    "examples/hosting/deployment/public_alpha_rollout_gate_operator_required_v0.json"
+  ],
+  "schema_version": "public_alpha_deployment_plan.v0",
+  "static_backend_split_ref": "examples/hosting/deployment/public_alpha_static_backend_split_v0.json",
+  "takedown_refs": [
+    "docs/operations/TAKEDOWN_RIGHTS_SAFETY_OPERATIONS.md"
+  ],
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

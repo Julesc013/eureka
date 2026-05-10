@@ -1,0 +1,48 @@
+{
+  "$id": "contracts/hosting/public_alpha_provider_profile.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "candidate_provider_classes": {
+      "type": "array"
+    },
+    "credentials_required_current": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "operator_gated_actions_future": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "provider_actions_current": {
+      "type": "array"
+    },
+    "provider_neutral": {
+      "type": "boolean"
+    },
+    "provider_profile_id": {
+      "type": "string"
+    },
+    "provider_roles": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "public_alpha_provider_profile.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "provider_profile_id",
+    "provider_neutral",
+    "provider_roles"
+  ],
+  "title": "Eureka Public Alpha Provider Profile v0",
+  "type": "object"
+}

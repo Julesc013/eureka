@@ -1,0 +1,6 @@
+{
+  "launch_disallowed_current": true,
+  "production_future_only": true,
+  "risky_features_disabled_by_default": true,
+  "schema_version": "public_alpha_environment_matrix_policy.v0"
+}

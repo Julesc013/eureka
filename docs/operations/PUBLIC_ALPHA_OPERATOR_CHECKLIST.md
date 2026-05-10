@@ -112,3 +112,12 @@ For a supervised rehearsal, record the result in:
 - A demo requires local-dev-only routes such as local index, local task, run,
   memory, store, fetch, member, or arbitrary bundle inspection routes.
 - The operator cannot stop the server immediately.
+
+## Deployment Planning Addendum
+
+PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 adds provider-neutral planning artifacts only.
+It does not approve deployment, call providers, change DNS, write secrets,
+mutate generated site output, bind public interfaces, or claim public alpha is
+live. Before any future deployment execution, the operator must also review the
+deployment plan, environment matrix, config manifest, DNS readiness record,
+rollout gate, no-op deployment report, and explicit deployment approval packet.

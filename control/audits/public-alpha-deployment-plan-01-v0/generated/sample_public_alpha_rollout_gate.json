@@ -1,0 +1,76 @@
+{
+  "blocked_features": [
+    "deployment",
+    "provider_api_calls",
+    "dns_changes",
+    "custom_domain_claims",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_relay",
+    "install",
+    "execute",
+    "mirror",
+    "emulate",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "deployment_allowed_current": false,
+  "gate_status": "operator_required",
+  "incident_ready": false,
+  "launch_allowed_current": false,
+  "limitations": [
+    "Rollout is blocked until future operator evidence exists."
+  ],
+  "missing_evidence": [
+    "explicit_operator_deployment_approval",
+    "provider_evidence",
+    "dns_evidence",
+    "public_smoke_evidence"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "required_evidence": [
+    "static_url_future",
+    "backend_url_future",
+    "health_check_future",
+    "safe_query_future",
+    "rollback_future",
+    "incident_contact_future"
+  ],
+  "required_operator_decisions": [
+    "deployment_execution_approval_future",
+    "public_launch_approval_future"
+  ],
+  "rollback_ready": false,
+  "rollout_gate_id": "public-alpha-rollout-gate-operator-required-v0",
+  "schema_version": "public_alpha_rollout_gate.v0",
+  "truth_boundary": {
+    "deployment_plan_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}
