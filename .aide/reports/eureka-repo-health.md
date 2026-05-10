@@ -1,7 +1,7 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H7-BUNDLE-02`
-- current_queue_item: `H7-BUNDLE-03`
+- completed_queue_item: `H7-BUNDLE-03`
+- current_queue_item: `H7-BUNDLE-04`
 - status: `warn`
-- validation: H7 fixture runtime validator, targeted tests, unittest discovery, architecture boundaries, and existing validator sweep passed; AIDE Lite checks are run as the final repo-governance lane.
-- boundary: H7 fixture runtime used committed synthetic fixtures only; no live source calls, OAI-PMH harvests, API queries, fetch/download/scrape/crawl/bypass/restricted-source/truth/index behavior was enabled.
+- validation: H7 live-probe validator, targeted tests, full unittest discovery, architecture boundaries, existing validator sweep, and AIDE Lite checks passed.
+- boundary: H7 live probes default to offline preflight and blocked output; no live source calls, OAI-PMH harvests, API queries, fetch/download/scrape/crawl/bypass/restricted-source/truth/index behavior was enabled.

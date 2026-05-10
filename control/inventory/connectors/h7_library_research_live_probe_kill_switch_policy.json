@@ -1,0 +1,311 @@
+{
+  "policy_id": "h7_library_research_live_probe_kill_switch_policy",
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "schema_version": "h7_library_research_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_worldcat_library_catalog",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "worldcat_library_catalog"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_oaister_oai_pmh",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "oaister_oai_pmh"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_google_books",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "google_books"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_hathitrust",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "hathitrust"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_open_library",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "open_library"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_trove_library_cultural",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "trove_library_cultural"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_europeana",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "europeana"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_dpla",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "dpla"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_gallica_bnf",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "gallica_bnf"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_library_of_congress",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "library_of_congress"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_nara_catalog",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "nara_catalog"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_national_archives_australia",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "national_archives_australia"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_uk_national_archives_discovery",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "uk_national_archives_discovery"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_govinfo",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "govinfo"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_openalex",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "openalex"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_crossref",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "crossref"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_datacite",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "datacite"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_arxiv",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "arxiv"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_pubmed",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "pubmed"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_pubmed_central",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "pubmed_central"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_doaj",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "doaj"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_zenodo",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "zenodo"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_repec",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "repec"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_ssrn",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "ssrn"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_semantic_scholar",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "semantic_scholar"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_kaggle_datasets",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "kaggle_datasets"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_deep_blue_repository",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "deep_blue_repository"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_google_patents",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "google_patents"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_wipo_patentscope",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "wipo_patentscope"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h7_library_research_live_probe_uspto_patents",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "uspto_patents"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  }
+}

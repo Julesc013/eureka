@@ -1,0 +1,948 @@
+{
+  "allowed_endpoint_model": "metadata_class_allowlist_not_arbitrary_url",
+  "policy_id": "h7_library_research_live_probe_endpoint_policy",
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "schema_version": "h7_library_research_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "holdings_availability_metadata_future"
+      ],
+      "preferred_connector_family": "library_catalog",
+      "source_id": "worldcat_library_catalog"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "oai_pmh_identify_metadata_future",
+        "oai_pmh_single_record_metadata_future"
+      ],
+      "preferred_connector_family": "oai_pmh",
+      "source_id": "oaister_oai_pmh"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "api_metadata_lookup_future",
+        "article_metadata_lookup_future",
+        "book_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "api_json",
+      "source_id": "google_books"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "holdings_availability_metadata_future"
+      ],
+      "preferred_connector_family": "library_catalog",
+      "source_id": "hathitrust"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "api_metadata_lookup_future",
+        "article_metadata_lookup_future",
+        "edition_metadata_lookup_future",
+        "work_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "api_json",
+      "source_id": "open_library"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "trove_library_cultural"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "europeana"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "dpla"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "gallica_bnf"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "holdings_availability_metadata_future"
+      ],
+      "preferred_connector_family": "library_catalog",
+      "source_id": "library_of_congress"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "nara_catalog"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "national_archives_australia"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "catalog_record_metadata_lookup_future",
+        "cultural_object_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "cultural_repository",
+      "source_id": "uk_national_archives_discovery"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "api_metadata_lookup_future",
+        "article_metadata_lookup_future",
+        "government_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "api_json",
+      "source_id": "govinfo"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "author_metadata_lookup_future",
+        "doi_metadata_lookup_future",
+        "work_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_graph",
+      "source_id": "openalex"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "author_metadata_lookup_future",
+        "doi_metadata_lookup_future",
+        "work_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_graph",
+      "source_id": "crossref"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "author_metadata_lookup_future",
+        "dataset_metadata_lookup_future",
+        "doi_metadata_lookup_future",
+        "work_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_graph",
+      "source_id": "datacite"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "article_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_repository",
+      "source_id": "arxiv"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "api_metadata_lookup_future",
+        "article_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "api_json",
+      "source_id": "pubmed"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "article_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_repository",
+      "source_id": "pubmed_central"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "api_metadata_lookup_future",
+        "article_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "api_json",
+      "source_id": "doaj"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "dataset_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "dataset_repository",
+      "source_id": "zenodo"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "article_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_repository",
+      "source_id": "repec"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "article_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_repository",
+      "source_id": "ssrn"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "author_metadata_lookup_future",
+        "doi_metadata_lookup_future",
+        "work_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_graph",
+      "source_id": "semantic_scholar"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "dataset_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "dataset_repository",
+      "source_id": "kaggle_datasets"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "article_metadata_lookup_future",
+        "repository_record_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "research_repository",
+      "source_id": "deep_blue_repository"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "patent_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "patent_metadata",
+      "source_id": "google_patents"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "patent_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "patent_metadata",
+      "source_id": "wipo_patentscope"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "oai_pmh_bulk_harvest_forbidden_current",
+        "broad_api_search_forbidden_current",
+        "api_sync_forbidden_current",
+        "full_text_fetch_forbidden_current",
+        "pdf_download_forbidden_current",
+        "book_scan_download_forbidden_current",
+        "article_download_forbidden_current",
+        "dataset_download_forbidden_current",
+        "patent_document_download_forbidden_current",
+        "iiif_manifest_fetch_forbidden_current",
+        "media_download_forbidden_current",
+        "scraping_crawling_forbidden_current",
+        "restricted_source_direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planning labels only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "patent_metadata_lookup_future"
+      ],
+      "preferred_connector_family": "patent_metadata",
+      "source_id": "uspto_patents"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  }
+}

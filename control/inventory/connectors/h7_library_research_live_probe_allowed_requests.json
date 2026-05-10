@@ -1,0 +1,1931 @@
+{
+  "policy_id": "h7_library_research_live_probe_allowed_requests",
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "schema_version": "h7_library_research_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "worldcat_library_catalog",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_catalog_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_catalog_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "catalog_record_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_catalog_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "WorldCat / OCLC-style library catalog metadata",
+              "source_native_id_or_identifier": "fixture:h7:worldcat_library_catalog:metadata-only",
+              "title_or_label_context": "Synthetic WorldCat / OCLC-style library catalog metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "worldcat_library_catalog",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "oaister_oai_pmh",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_oai_pmh_record_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_oai_pmh_record_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "oai_pmh_single_record_metadata_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_oai_pmh_record_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "OAIster / OAI-PMH repository metadata",
+              "source_native_id_or_identifier": "fixture:h7:oaister_oai_pmh:metadata-only",
+              "title_or_label_context": "Synthetic OAIster / OAI-PMH repository metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "oaister_oai_pmh",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "google_books",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_book_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_book_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "book_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_book_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Google Books metadata",
+              "source_native_id_or_identifier": "fixture:h7:google_books:metadata-only",
+              "title_or_label_context": "Synthetic Google Books metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "google_books",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "hathitrust",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_catalog_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_catalog_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "catalog_record_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_catalog_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "HathiTrust metadata",
+              "source_native_id_or_identifier": "fixture:h7:hathitrust:metadata-only",
+              "title_or_label_context": "Synthetic HathiTrust metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "hathitrust",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "open_library",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_work_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_work_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "work_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_work_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Open Library metadata",
+              "source_native_id_or_identifier": "fixture:h7:open_library:metadata-only",
+              "title_or_label_context": "Synthetic Open Library metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "open_library",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "trove_library_cultural",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Trove library/cultural metadata",
+              "source_native_id_or_identifier": "fixture:h7:trove_library_cultural:metadata-only",
+              "title_or_label_context": "Synthetic Trove library/cultural metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "trove_library_cultural",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "europeana",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Europeana metadata",
+              "source_native_id_or_identifier": "fixture:h7:europeana:metadata-only",
+              "title_or_label_context": "Synthetic Europeana metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "europeana",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "dpla",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Digital Public Library of America metadata",
+              "source_native_id_or_identifier": "fixture:h7:dpla:metadata-only",
+              "title_or_label_context": "Synthetic Digital Public Library of America metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "dpla",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "gallica_bnf",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Gallica / BnF metadata",
+              "source_native_id_or_identifier": "fixture:h7:gallica_bnf:metadata-only",
+              "title_or_label_context": "Synthetic Gallica / BnF metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "gallica_bnf",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "library_of_congress",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_catalog_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_catalog_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "catalog_record_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_catalog_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Library of Congress metadata",
+              "source_native_id_or_identifier": "fixture:h7:library_of_congress:metadata-only",
+              "title_or_label_context": "Synthetic Library of Congress metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "library_of_congress",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "nara_catalog",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "NARA catalog metadata",
+              "source_native_id_or_identifier": "fixture:h7:nara_catalog:metadata-only",
+              "title_or_label_context": "Synthetic NARA catalog metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "nara_catalog",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "national_archives_australia",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "National Archives of Australia metadata",
+              "source_native_id_or_identifier": "fixture:h7:national_archives_australia:metadata-only",
+              "title_or_label_context": "Synthetic National Archives of Australia metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "national_archives_australia",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "uk_national_archives_discovery",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_cultural_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_cultural_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "cultural_object_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_cultural_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "UK National Archives Discovery metadata",
+              "source_native_id_or_identifier": "fixture:h7:uk_national_archives_discovery:metadata-only",
+              "title_or_label_context": "Synthetic UK National Archives Discovery metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "uk_national_archives_discovery",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "govinfo",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_government_record_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_government_record_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "government_record_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_government_record_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "govinfo metadata",
+              "source_native_id_or_identifier": "fixture:h7:govinfo:metadata-only",
+              "title_or_label_context": "Synthetic govinfo metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "govinfo",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "openalex",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_work_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_work_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "work_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_work_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "OpenAlex metadata",
+              "source_native_id_or_identifier": "fixture:h7:openalex:metadata-only",
+              "title_or_label_context": "Synthetic OpenAlex metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "openalex",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "crossref",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_doi_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_doi_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "doi_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_doi_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Crossref metadata",
+              "source_native_id_or_identifier": "fixture:h7:crossref:metadata-only",
+              "title_or_label_context": "Synthetic Crossref metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "crossref",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "datacite",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_dataset_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_dataset_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "dataset_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_dataset_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "DataCite metadata",
+              "source_native_id_or_identifier": "fixture:h7:datacite:metadata-only",
+              "title_or_label_context": "Synthetic DataCite metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "datacite",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "arxiv",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "arXiv metadata",
+              "source_native_id_or_identifier": "fixture:h7:arxiv:metadata-only",
+              "title_or_label_context": "Synthetic arXiv metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "arxiv",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "pubmed",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "PubMed metadata",
+              "source_native_id_or_identifier": "fixture:h7:pubmed:metadata-only",
+              "title_or_label_context": "Synthetic PubMed metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "pubmed",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "pubmed_central",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "PubMed Central metadata",
+              "source_native_id_or_identifier": "fixture:h7:pubmed_central:metadata-only",
+              "title_or_label_context": "Synthetic PubMed Central metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "pubmed_central",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "doaj",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "DOAJ metadata",
+              "source_native_id_or_identifier": "fixture:h7:doaj:metadata-only",
+              "title_or_label_context": "Synthetic DOAJ metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "doaj",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "zenodo",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_dataset_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_dataset_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "dataset_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_dataset_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Zenodo metadata",
+              "source_native_id_or_identifier": "fixture:h7:zenodo:metadata-only",
+              "title_or_label_context": "Synthetic Zenodo metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "zenodo",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "repec",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "RePEc metadata",
+              "source_native_id_or_identifier": "fixture:h7:repec:metadata-only",
+              "title_or_label_context": "Synthetic RePEc metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "repec",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "ssrn",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "article_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "SSRN metadata",
+              "source_native_id_or_identifier": "fixture:h7:ssrn:metadata-only",
+              "title_or_label_context": "Synthetic SSRN metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "ssrn",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "semantic_scholar",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_article_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_article_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "work_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_article_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Semantic Scholar metadata",
+              "source_native_id_or_identifier": "fixture:h7:semantic_scholar:metadata-only",
+              "title_or_label_context": "Synthetic Semantic Scholar metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "semantic_scholar",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "kaggle_datasets",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_dataset_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_dataset_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "dataset_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_dataset_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Kaggle dataset metadata",
+              "source_native_id_or_identifier": "fixture:h7:kaggle_datasets:metadata-only",
+              "title_or_label_context": "Synthetic Kaggle dataset metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "kaggle_datasets",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "deep_blue_repository",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_repository_record_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_repository_record_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "repository_record_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_repository_record_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Deep Blue / institutional repository metadata",
+              "source_native_id_or_identifier": "fixture:h7:deep_blue_repository:metadata-only",
+              "title_or_label_context": "Synthetic Deep Blue / institutional repository metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "deep_blue_repository",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "google_patents",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_patent_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_patent_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "patent_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_patent_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "Google Patents / public patent metadata",
+              "source_native_id_or_identifier": "fixture:h7:google_patents:metadata-only",
+              "title_or_label_context": "Synthetic Google Patents / public patent metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "google_patents",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "wipo_patentscope",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_patent_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_patent_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "patent_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_patent_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "WIPO PATENTSCOPE metadata",
+              "source_native_id_or_identifier": "fixture:h7:wipo_patentscope:metadata-only",
+              "title_or_label_context": "Synthetic WIPO PATENTSCOPE metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "wipo_patentscope",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "api_query_allowed": false,
+      "api_query_approved": false,
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "uspto_patents",
+      "article_download_approved": false,
+      "book_scan_download_approved": false,
+      "browser_automation_approved": false,
+      "bypass_or_access_control_automation_approved": false,
+      "bypass_or_automation_allowed": false,
+      "crawling_approved": false,
+      "dataset_download_approved": false,
+      "download_allowed": false,
+      "full_text_fetch_allowed": false,
+      "full_text_fetch_approved": false,
+      "iiif_manifest_fetch_allowed": false,
+      "iiif_manifest_fetch_approved": false,
+      "limitations": [
+        "Blocked by default; H7 fixture outputs are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "media_download_approved": false,
+      "metadata_probe_approved": false,
+      "oai_pmh_harvest_allowed": false,
+      "oai_pmh_harvest_approved": false,
+      "patent_document_download_approved": false,
+      "pdf_download_approved": false,
+      "planned_request_keys": [
+        "example_patent_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_patent_metadata": {
+          "bounded_metadata_only": true,
+          "endpoint_or_metadata_class": "patent_metadata_lookup_future",
+          "harvest_or_payload_requested": false,
+          "request_key": "example_patent_metadata",
+          "request_shape": {
+            "identifier": {
+              "date_context": "2026-05-11",
+              "source_context": "USPTO patent metadata",
+              "source_native_id_or_identifier": "fixture:h7:uspto_patents:metadata-only",
+              "title_or_label_context": "Synthetic USPTO patent metadata metadata context"
+            },
+            "kind": "bounded_library_research_metadata_lookup"
+          }
+        }
+      },
+      "restricted_rights_sensitive_source_approved": false,
+      "restricted_source_access_allowed": false,
+      "scraping_approved": false,
+      "scraping_crawling_allowed": false,
+      "source_id": "uspto_patents",
+      "source_sync_approved": false
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  }
+}

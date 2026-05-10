@@ -1,0 +1,7 @@
+id: H7-BUNDLE-04
+title: Library, cultural, book, and research review integration and quality delta
+status: queued
+purpose: Integrate H7 fixture-equivalent and blocked live-probe outputs into review/quality dry-runs and close the H7 wave audit.
+allowed_scope_summary: H7 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
+gate: H7-BUNDLE-03 passes or is blocked only by missing committed live approvals with fixture-equivalent outputs; no new live calls, harvests, downloads, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H7-BUNDLE-03

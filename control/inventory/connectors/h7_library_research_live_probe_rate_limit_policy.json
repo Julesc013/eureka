@@ -1,0 +1,551 @@
+{
+  "policy_id": "h7_library_research_live_probe_rate_limit_policy",
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "schema_version": "h7_library_research_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "worldcat_library_catalog",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "oaister_oai_pmh",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "google_books",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "hathitrust",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "open_library",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "trove_library_cultural",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "europeana",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "dpla",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "gallica_bnf",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "library_of_congress",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "nara_catalog",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "national_archives_australia",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "uk_national_archives_discovery",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "govinfo",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "openalex",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "crossref",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "datacite",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "arxiv",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "pubmed",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "pubmed_central",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "doaj",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "zenodo",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "repec",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "ssrn",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "semantic_scholar",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "kaggle_datasets",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "deep_blue_repository",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "google_patents",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "wipo_patentscope",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    },
+    {
+      "auth_posture": "no_auth_current",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on": []
+      },
+      "source_id": "uspto_patents",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_pending_operator_decision"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  }
+}

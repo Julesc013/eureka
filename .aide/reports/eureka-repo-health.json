@@ -1,12 +1,12 @@
 {
-  "completed_queue_item": "H7-BUNDLE-02",
-  "current_queue_item": "H7-BUNDLE-03",
-  "generated_at_note": "codex_updated_after_h7_bundle_02",
+  "completed_queue_item": "H7-BUNDLE-03",
+  "current_queue_item": "H7-BUNDLE-04",
+  "generated_at_note": "codex_updated_after_h7_bundle_03",
   "known_warn_only_conditions": [
-    "H7 fixture runtime used committed synthetic fixtures only.",
-    "No H7 live access, OAI-PMH harvest, API query, full-text/PDF/book/article/dataset/patent/IIIF/media fetch or download, scrape, crawl, bypass, restricted-source access, source sync, or truth acceptance exists."
+    "H7 live probes default to offline preflight and blocked output unless source-specific committed approval is added.",
+    "No H7 live source call, OAI-PMH harvest, API query, full-text/PDF/book/article/dataset/patent/IIIF/media fetch or download, scrape, crawl, bypass, restricted-source access, source sync, or truth acceptance was enabled."
   ],
-  "next_recommended_queue_item": "H7-BUNDLE-03",
+  "next_recommended_queue_item": "H7-BUNDLE-04",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -28,6 +28,7 @@
     "h6_review_quality": "pass",
     "h6_targeted_unittests": "pass",
     "h7_fixture_runtime": "pass",
+    "h7_live_probe": "pass",
     "h7_policy_packs": "pass",
     "h7_targeted_unittests": "pass",
     "unittest_discovery": "pass"

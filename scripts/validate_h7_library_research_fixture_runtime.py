@@ -237,6 +237,8 @@ def validate_runtime_imports(errors: list[str]) -> None:
 def validate_python_safety(root: Path, errors: list[str]) -> None:
     runtime_dir = root / "runtime/connectors/h7_library_research"
     for path in runtime_dir.glob("*.py"):
+        if path.name.startswith("live_probe_"):
+            continue
         text = path.read_text(encoding="utf-8")
         if BANNED_RUNTIME_IMPORT_RE.search(text):
             errors.append(f"{path.relative_to(root)}: imports network/provider/browser library")

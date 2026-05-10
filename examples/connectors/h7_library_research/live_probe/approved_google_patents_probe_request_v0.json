@@ -1,0 +1,145 @@
+{
+  "api_query_requested": false,
+  "approval_refs": [
+    "control/inventory/connectors/h7_library_research_live_probe_allowed_requests.json"
+  ],
+  "approved_request_key": "example_patent_metadata",
+  "article_download_requested": false,
+  "book_scan_download_requested": false,
+  "bypass_or_automation_requested": false,
+  "connector_family": "patent_metadata",
+  "dataset_download_requested": false,
+  "doi_or_identifier_context": {
+    "doi_candidate": "fixture-only-unapproved",
+    "identifier_only": true
+  },
+  "dry_run_only": true,
+  "endpoint_or_metadata_class": "patent_metadata_lookup_future",
+  "full_text_fetch_requested": false,
+  "identifier_or_query_context": {
+    "date_context": "2026-05-11",
+    "source_context": "Google Patents / public patent metadata",
+    "source_native_id_or_identifier": "fixture:h7:google_patents:metadata-only",
+    "title_or_label_context": "Synthetic Google Patents / public patent metadata metadata context"
+  },
+  "iiif_manifest_fetch_requested": false,
+  "isbn_or_catalog_context": {
+    "catalog_record_only": true,
+    "isbn_candidate": "fixture-only-unapproved"
+  },
+  "limitations": [
+    "No live call is permitted unless committed source-specific policy gates approve the exact request."
+  ],
+  "live_probe_request_id": "h7.library_research_live_probe_request.google_patents.example-patent-metadata.v0",
+  "live_requested": false,
+  "media_download_requested": false,
+  "notes": [
+    "H7 live-probe request envelope is metadata-only and fail-closed by default."
+  ],
+  "oai_pmh_harvest_requested": false,
+  "operation_scope": "metadata_only",
+  "output_policy_ref": "control/inventory/connectors/h7_library_research_live_probe_output_policy.json",
+  "patent_document_download_requested": false,
+  "patent_or_publication_context": {
+    "patent_or_publication_ref": "fixture:h7:google_patents:publication"
+  },
+  "pdf_download_requested": false,
+  "policy_refs": [
+    "control/inventory/connectors/h7_library_research_live_probe_allowed_requests.json",
+    "control/inventory/connectors/h7_library_research_live_probe_cache_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_kill_switch_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_no_harvest_download_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_output_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_path_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_rate_limit_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_restricted_source_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_review_policy.json",
+    "control/inventory/connectors/h7_library_research_live_probe_truth_policy.json"
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "repository_or_collection_context": {
+    "repository_record_ref": "fixture:h7:google_patents:repository"
+  },
+  "request_shape": {
+    "identifier": {
+      "date_context": "2026-05-11",
+      "source_context": "Google Patents / public patent metadata",
+      "source_native_id_or_identifier": "fixture:h7:google_patents:metadata-only",
+      "title_or_label_context": "Synthetic Google Patents / public patent metadata metadata context"
+    },
+    "kind": "bounded_library_research_metadata_lookup"
+  },
+  "restricted_source_requested": false,
+  "review_policy_ref": "control/inventory/connectors/h7_library_research_live_probe_review_policy.json",
+  "schema_version": "h7_library_research_live_probe_request.v0",
+  "scraping_or_crawling_requested": false,
+  "source_id": "google_patents",
+  "source_record_kind": "patent_metadata",
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  },
+  "truth_policy_ref": "control/inventory/connectors/h7_library_research_live_probe_truth_policy.json"
+}

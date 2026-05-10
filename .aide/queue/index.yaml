@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H7-BUNDLE-03
+current_recommended_task: H7-BUNDLE-04
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -596,9 +596,18 @@ entries:
 
 - id: H7-BUNDLE-03
   title: Library, cultural, book, and research approved metadata-only live probes
-  status: queued
+  status: needs_review
   purpose: Add approval-gated bounded metadata-only live-probe framework for H7 sources after fixture runtime review.
   allowed_scope_summary: H7 live-probe contracts, policies, source-specific metadata wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
   gate: H7-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, no harvests, full-text/PDF/book/article/dataset/patent/IIIF/media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H7-BUNDLE-03/task.yaml
   recommended_after: H7-BUNDLE-02
+
+- id: H7-BUNDLE-04
+  title: Library, cultural, book, and research review integration and quality delta
+  status: queued
+  purpose: Integrate H7 fixture-equivalent and blocked live-probe outputs into review/quality dry-runs and close the H7 wave audit.
+  allowed_scope_summary: H7 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H7-BUNDLE-03 passes or is blocked only by missing committed live approvals with fixture-equivalent outputs; no new live calls, harvests, downloads, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H7-BUNDLE-04/task.yaml
+  recommended_after: H7-BUNDLE-03

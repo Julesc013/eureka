@@ -1,0 +1,341 @@
+{
+  "policy_id": "h7_library_research_live_probe_cache_policy",
+  "product_boundary": {
+    "api_calls_made": false,
+    "article_download_used": false,
+    "book_scan_download_used": false,
+    "bypass_or_automation_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "dataset_download_used": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "full_text_fetch_used": false,
+    "iiif_fetch_used": false,
+    "media_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_used": false,
+    "patent_document_download_used": false,
+    "pdf_download_used": false,
+    "restricted_source_access_used": false,
+    "scraping_used": false
+  },
+  "schema_version": "h7_library_research_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "worldcat_library_catalog"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "oaister_oai_pmh"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "google_books"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "hathitrust"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "open_library"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "trove_library_cultural"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "europeana"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "dpla"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "gallica_bnf"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "library_of_congress"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "nara_catalog"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "national_archives_australia"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "uk_national_archives_discovery"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "govinfo"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "openalex"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "crossref"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "datacite"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "arxiv"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "pubmed"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "pubmed_central"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "doaj"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "zenodo"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "repec"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "ssrn"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "semantic_scholar"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "kaggle_datasets"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "deep_blue_repository"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "google_patents"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "wipo_patentscope"
+    },
+    {
+      "cache_ttl": "not_enabled_current",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "uspto_patents"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "citation_relation_candidate_is_truth": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_identity_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_availability_claimed": false
+  }
+}
