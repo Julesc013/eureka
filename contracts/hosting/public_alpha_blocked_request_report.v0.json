@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Blocked Request Report Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "blocked_request_report_id",
+    "request_kind",
+    "request_shape",
+    "blocked",
+    "blocked_reason",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_alpha_blocked_request_report.v0"
+    },
+    "blocked_request_report_id": {
+      "type": "string"
+    },
+    "request_kind": {
+      "type": "string",
+      "enum": [
+        "download",
+        "upload",
+        "account",
+        "telemetry",
+        "live_probe",
+        "source_sync",
+        "public_index_write",
+        "master_index_write",
+        "public_relay_bind",
+        "production_claim"
+      ]
+    },
+    "request_shape": {
+      "type": "object"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "blocked_reason": {
+      "type": "string"
+    },
+    "policy_ref": {
+      "type": "string"
+    },
+    "safe_alternative": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

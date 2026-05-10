@@ -1,0 +1,88 @@
+{
+  "schema_version": "public_launch_readiness_audit.v0",
+  "readiness_audit_id": "public_launch_readiness.local_fixture.v0",
+  "audited_tracks": [
+    "A",
+    "B",
+    "H",
+    "F",
+    "G",
+    "I",
+    "J",
+    "D",
+    "C",
+    "E"
+  ],
+  "readiness_status": "ready_for_local_rehearsal",
+  "required_evidence": [
+    "status",
+    "smoke matrix",
+    "blocked requests",
+    "non-claims",
+    "rollback",
+    "secrets",
+    "operator signoff"
+  ],
+  "available_evidence": [
+    "local fixture smoke matrix",
+    "blocked request examples",
+    "non-claims examples",
+    "rollback plan",
+    "secrets policy"
+  ],
+  "missing_evidence": [
+    "operator signoff",
+    "public endpoint evidence",
+    "provider evidence",
+    "DNS evidence"
+  ],
+  "smoke_matrix_status": "local_fixture_pass",
+  "blocked_request_status": "pass",
+  "non_claims_status": "pass",
+  "operations_status": "documented",
+  "rollback_status": "documented",
+  "takedown_status": "documented",
+  "secrets_status": "policy_pass",
+  "rate_limit_status": "policy_defined",
+  "launch_blockers": [
+    "operator signoff missing",
+    "public launch evidence not collected"
+  ],
+  "warnings": [
+    "Ready for local MVP readiness audit, not launch."
+  ],
+  "operator_signoff_required": true,
+  "truth_boundary": {
+    "hosting_rehearsal_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "operator_signoff_inferred": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "accepts_evidence": false,
+    "accepts_candidate": false,
+    "accepts_public_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_bind_enabled": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "public_alpha_smoke_matrix_policy.v0",
+  "smoke_matrix_required_for_launch": true,
+  "local_fixture_smoke_allowed": true,
+  "live_url_required_current": false,
+  "live_url_required_future_for_launch": true,
+  "required_case_kinds": [
+    "status",
+    "search_fixture",
+    "object_fixture",
+    "source_fixture",
+    "snapshot_fixture",
+    "action_manifest_fixture",
+    "blocked_download",
+    "blocked_upload",
+    "blocked_account",
+    "blocked_live_probe",
+    "blocked_public_index_write",
+    "blocked_master_index_write",
+    "non_claims_page_or_doc",
+    "rate_limit_policy",
+    "kill_switch_policy",
+    "secret_scan_policy"
+  ]
+}

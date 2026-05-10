@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hosted Wrapper Rehearsal Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "rehearsal_id",
+    "rehearsal_status",
+    "rehearsal_scope",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "hosted_wrapper_rehearsal.v0"
+    },
+    "rehearsal_id": {
+      "type": "string"
+    },
+    "rehearsal_status": {
+      "type": "string",
+      "enum": [
+        "example_only",
+        "local_fixture_rehearsal",
+        "loopback_rehearsal",
+        "policy_blocked",
+        "operator_gated",
+        "not_evaluable"
+      ]
+    },
+    "rehearsal_scope": {
+      "type": "object"
+    },
+    "environment_ref": {
+      "type": "string"
+    },
+    "host_profile_ref": {
+      "type": "string"
+    },
+    "runtime_config_refs": {
+      "type": "array"
+    },
+    "input_fixture_refs": {
+      "type": "array"
+    },
+    "routes_rehearsed": {
+      "type": "array"
+    },
+    "safe_request_cases": {
+      "type": "array"
+    },
+    "blocked_request_cases": {
+      "type": "array"
+    },
+    "status_case_refs": {
+      "type": "array"
+    },
+    "smoke_report_refs": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "no_goals": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "array"
+    }
+  }
+}

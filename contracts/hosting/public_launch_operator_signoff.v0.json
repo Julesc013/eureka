@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Launch Operator Signoff Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "signoff_id",
+    "signoff_status",
+    "operator_role",
+    "required_checks",
+    "explicit_approval",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_launch_operator_signoff.v0"
+    },
+    "signoff_id": {
+      "type": "string"
+    },
+    "signoff_status": {
+      "type": "string"
+    },
+    "operator_role": {
+      "type": "string"
+    },
+    "required_checks": {
+      "type": "array"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "explicit_approval": {
+      "type": "boolean"
+    },
+    "approval_scope": {
+      "type": "string"
+    },
+    "approval_timestamp_future": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

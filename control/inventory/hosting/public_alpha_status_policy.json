@@ -1,0 +1,7 @@
+{
+  "schema_version": "public_alpha_status_policy.v0",
+  "status_exposes_non_claims": true,
+  "status_exposes_disabled_risky_features": true,
+  "live_booleans_false_without_evidence": true,
+  "production_booleans_false_without_evidence": true
+}

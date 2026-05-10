@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Smoke Matrix Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "smoke_matrix_id",
+    "matrix_status",
+    "smoke_cases",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_alpha_smoke_matrix.v0"
+    },
+    "smoke_matrix_id": {
+      "type": "string"
+    },
+    "matrix_status": {
+      "type": "string"
+    },
+    "required_case_kinds": {
+      "type": "array"
+    },
+    "smoke_cases": {
+      "type": "array"
+    },
+    "live_url_required_current": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

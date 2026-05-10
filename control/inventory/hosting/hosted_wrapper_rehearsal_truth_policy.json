@@ -1,0 +1,11 @@
+{
+  "schema_version": "hosted_wrapper_rehearsal_truth_policy.v0",
+  "all_live_deploy_production_index_rights_malware_installability_booleans_false": true,
+  "public_alpha_live_claimed": false,
+  "production_claimed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "verified_installability_claimed": false
+}

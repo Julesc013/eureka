@@ -1,0 +1,18 @@
+{
+  "schema_version": "public_alpha_blocked_request_policy.v0",
+  "blocked_unsafe_requests_required": true,
+  "risky_requests_require_safe_alternatives": true,
+  "smoke_tests_enable_risky_behavior": false,
+  "blocked_request_kinds": [
+    "download",
+    "upload",
+    "account",
+    "telemetry",
+    "live_probe",
+    "source_sync",
+    "public_index_write",
+    "master_index_write",
+    "public_relay_bind",
+    "production_claim"
+  ]
+}

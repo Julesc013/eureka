@@ -1,0 +1,286 @@
+{
+  "schema_version": "public_alpha_smoke_matrix.v0",
+  "smoke_matrix_id": "public_alpha_smoke_matrix.local_fixture.v0",
+  "matrix_status": "local_fixture_pass",
+  "required_case_kinds": [
+    "status",
+    "search_fixture",
+    "object_fixture",
+    "source_fixture",
+    "snapshot_fixture",
+    "action_manifest_fixture",
+    "blocked_download",
+    "blocked_upload",
+    "blocked_account",
+    "blocked_live_probe",
+    "blocked_public_index_write",
+    "blocked_master_index_write",
+    "non_claims_page_or_doc",
+    "rate_limit_policy",
+    "kill_switch_policy",
+    "secret_scan_policy"
+  ],
+  "smoke_cases": [
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.status.v0",
+      "case_kind": "status",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.search_fixture.v0",
+      "case_kind": "search_fixture",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.object_fixture.v0",
+      "case_kind": "object_fixture",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.source_fixture.v0",
+      "case_kind": "source_fixture",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.snapshot_fixture.v0",
+      "case_kind": "snapshot_fixture",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.action_manifest_fixture.v0",
+      "case_kind": "action_manifest_fixture",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_download.v0",
+      "case_kind": "blocked_download",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_upload.v0",
+      "case_kind": "blocked_upload",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_account.v0",
+      "case_kind": "blocked_account",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_live_probe.v0",
+      "case_kind": "blocked_live_probe",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_public_index_write.v0",
+      "case_kind": "blocked_public_index_write",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.blocked_master_index_write.v0",
+      "case_kind": "blocked_master_index_write",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "blocked",
+      "actual_result": "blocked",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.non_claims_page_or_doc.v0",
+      "case_kind": "non_claims_page_or_doc",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.rate_limit_policy.v0",
+      "case_kind": "rate_limit_policy",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.kill_switch_policy.v0",
+      "case_kind": "kill_switch_policy",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    },
+    {
+      "schema_version": "public_alpha_smoke_case.v0",
+      "smoke_case_id": "public_alpha_smoke.secret_scan_policy.v0",
+      "case_kind": "secret_scan_policy",
+      "case_status": "local_fixture_pass",
+      "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+      "expected_result": "local_fixture_available",
+      "actual_result": "local_fixture_available",
+      "passed": true,
+      "external_call_performed": false,
+      "limitations": [
+        "Fixture smoke only; no public endpoint was called."
+      ]
+    }
+  ],
+  "live_url_required_current": false,
+  "limitations": [
+    "Smoke cases use local fixture data only."
+  ],
+  "truth_boundary": {
+    "hosting_rehearsal_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "operator_signoff_inferred": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "accepts_evidence": false,
+    "accepts_candidate": false,
+    "accepts_public_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_bind_enabled": false
+  }
+}

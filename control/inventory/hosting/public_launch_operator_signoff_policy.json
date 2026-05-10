@@ -1,0 +1,6 @@
+{
+  "schema_version": "public_launch_operator_signoff_policy.v0",
+  "implicit_signoff_allowed": false,
+  "inferred_approval_allowed": false,
+  "explicit_operator_approval_required": true
+}

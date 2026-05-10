@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_smoke_case.v0",
+  "smoke_case_id": "public_alpha_smoke.snapshot_fixture.v0",
+  "case_kind": "snapshot_fixture",
+  "case_status": "local_fixture_pass",
+  "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+  "expected_result": "local_fixture_available",
+  "actual_result": "local_fixture_available",
+  "passed": true,
+  "external_call_performed": false,
+  "limitations": [
+    "Fixture smoke only; no public endpoint was called."
+  ]
+}

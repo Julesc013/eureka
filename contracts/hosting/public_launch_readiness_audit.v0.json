@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Launch Readiness Audit Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "readiness_audit_id",
+    "audited_tracks",
+    "readiness_status",
+    "required_evidence",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_launch_readiness_audit.v0"
+    },
+    "readiness_audit_id": {
+      "type": "string"
+    },
+    "audited_tracks": {
+      "type": "array"
+    },
+    "readiness_status": {
+      "type": "string",
+      "enum": [
+        "not_ready",
+        "ready_for_local_rehearsal",
+        "ready_for_operator_review",
+        "ready_for_public_alpha_future",
+        "blocked",
+        "not_evaluable"
+      ]
+    },
+    "required_evidence": {
+      "type": "array"
+    },
+    "available_evidence": {
+      "type": "array"
+    },
+    "missing_evidence": {
+      "type": "array"
+    },
+    "smoke_matrix_status": {
+      "type": "string"
+    },
+    "blocked_request_status": {
+      "type": "string"
+    },
+    "non_claims_status": {
+      "type": "string"
+    },
+    "operations_status": {
+      "type": "string"
+    },
+    "rollback_status": {
+      "type": "string"
+    },
+    "takedown_status": {
+      "type": "string"
+    },
+    "secrets_status": {
+      "type": "string"
+    },
+    "rate_limit_status": {
+      "type": "string"
+    },
+    "launch_blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "operator_signoff_required": {
+      "type": "boolean"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

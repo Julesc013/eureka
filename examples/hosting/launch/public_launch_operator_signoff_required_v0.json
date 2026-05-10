@@ -1,0 +1,55 @@
+{
+  "schema_version": "public_launch_operator_signoff.v0",
+  "signoff_id": "public_launch_operator_signoff.required.v0",
+  "signoff_status": "signoff_required",
+  "operator_role": "human_operator",
+  "required_checks": [
+    "status",
+    "smoke matrix",
+    "blocked requests",
+    "non-claims",
+    "rollback",
+    "secrets",
+    "operator signoff"
+  ],
+  "evidence_refs": [],
+  "explicit_approval": false,
+  "approval_scope": "not_signed",
+  "approval_timestamp_future": "",
+  "limitations": [
+    "No operator approval is present in E-BUNDLE-02."
+  ],
+  "truth_boundary": {
+    "hosting_rehearsal_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "operator_signoff_inferred": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "accepts_evidence": false,
+    "accepts_candidate": false,
+    "accepts_public_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_bind_enabled": false
+  }
+}

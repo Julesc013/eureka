@@ -1,0 +1,33 @@
+{
+  "schema_version": "post_launch_remediation_plan.v0",
+  "remediation_plan_id": "post_launch_remediation.public_alpha.v0",
+  "trigger": "rights, safety, privacy, abuse, connector, or operations incident",
+  "severity": "operator_triaged",
+  "immediate_actions": [
+    "freeze launch claim",
+    "disable affected route",
+    "collect evidence",
+    "notify operator"
+  ],
+  "rollback_steps": [
+    "return to static or local fixture posture",
+    "disable connector switches",
+    "publish limitation update"
+  ],
+  "evidence_to_collect": [
+    "status output",
+    "request shape",
+    "operator notes",
+    "relevant audit references"
+  ],
+  "communication_steps": [
+    "update non-claims and incident note if needed"
+  ],
+  "followup_audit": [
+    "record root cause",
+    "update readiness policy before relaunch"
+  ],
+  "limitations": [
+    "Plan only; no public incident system is active."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_smoke_case.v0",
+  "smoke_case_id": "public_alpha_smoke.blocked_live_probe.v0",
+  "case_kind": "blocked_live_probe",
+  "case_status": "local_fixture_pass",
+  "input_ref": "examples/hosting/public_alpha_non_claims_v0.json",
+  "expected_result": "blocked",
+  "actual_result": "blocked",
+  "passed": true,
+  "external_call_performed": false,
+  "limitations": [
+    "Fixture smoke only; no public endpoint was called."
+  ]
+}

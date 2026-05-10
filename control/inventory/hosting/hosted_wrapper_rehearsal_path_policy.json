@@ -1,0 +1,19 @@
+{
+  "schema_version": "hosted_wrapper_rehearsal_path_policy.v0",
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/hosting/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "provider config roots",
+    "secret roots",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ]
+}

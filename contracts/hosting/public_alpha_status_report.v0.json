@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Status Report Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status_report_id",
+    "status_kind",
+    "service_status",
+    "public_alpha_live",
+    "production_live",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "public_alpha_status_report.v0"
+    },
+    "status_report_id": {
+      "type": "string"
+    },
+    "status_kind": {
+      "type": "string"
+    },
+    "service_status": {
+      "type": "string"
+    },
+    "public_alpha_live": {
+      "type": "boolean"
+    },
+    "production_live": {
+      "type": "boolean"
+    },
+    "static_site_status": {
+      "type": "string"
+    },
+    "hosted_backend_status": {
+      "type": "string"
+    },
+    "reviewed_index_status": {
+      "type": "string"
+    },
+    "connector_status": {
+      "type": "string"
+    },
+    "downloads_enabled": {
+      "type": "boolean"
+    },
+    "uploads_enabled": {
+      "type": "boolean"
+    },
+    "accounts_enabled": {
+      "type": "boolean"
+    },
+    "telemetry_enabled": {
+      "type": "boolean"
+    },
+    "live_fanout_enabled": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "no_claims": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

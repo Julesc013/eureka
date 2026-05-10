@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: E-BUNDLE-02
+current_recommended_task: MVP-ALPHA-AUDIT-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -294,12 +294,20 @@ entries:
     recommended_after: C-BUNDLE-03
   - id: E-BUNDLE-02
     title: Hosted wrapper rehearsal and public launch evidence
-    status: queued
+    status: needs_review
     purpose: Rehearse hosted wrapper launch evidence after E-BUNDLE-01 readiness without enabling deployment, provider changes, live source fanout, uploads, accounts, telemetry, public relay, or production claims by default.
     allowed_scope_summary: E hosted-wrapper rehearsal evidence, docs, policies, scripts, tests, audit evidence, and AIDE queue/context metadata only until explicitly scoped.
     gate: E-BUNDLE-01 passes; readiness is not launch, and no deployment/provider/DNS/API call or generated site output mutation occurred.
     task: .aide/queue/E-BUNDLE-02/task.yaml
     recommended_after: E-BUNDLE-01
+  - id: MVP-ALPHA-AUDIT-01
+    title: End-to-end local MVP readiness audit
+    status: queued
+    purpose: Audit local MVP alpha readiness after E-BUNDLE-02 without making public launch, deployment, provider, DNS, or production claims.
+    allowed_scope_summary: MVP alpha local readiness audit evidence, docs, scripts, tests, and AIDE queue/context metadata only until explicitly scoped.
+    gate: E-BUNDLE-02 passes; hosted wrapper rehearsal remains local fixture evidence and operator signoff remains required before any public launch.
+    task: .aide/queue/MVP-ALPHA-AUDIT-01/task.yaml
+    recommended_after: E-BUNDLE-02
   - id: TRACK-B-04
     title: Pack import and local staging dry-run review
     status: queued

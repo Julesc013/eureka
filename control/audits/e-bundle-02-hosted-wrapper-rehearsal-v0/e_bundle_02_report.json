@@ -1,0 +1,117 @@
+{
+  "schema_version": "e_bundle_02_report.v0",
+  "status": "pass",
+  "task": "E-BUNDLE-02",
+  "track": "E",
+  "purpose": "hosted_wrapper_rehearsal_public_launch_evidence",
+  "added_contracts": [
+    "contracts/hosting/hosted_wrapper_rehearsal.v0.json",
+    "contracts/hosting/hosted_wrapper_smoke_report.v0.json",
+    "contracts/hosting/public_alpha_smoke_matrix.v0.json",
+    "contracts/hosting/public_alpha_blocked_request_report.v0.json",
+    "contracts/hosting/public_alpha_status_report.v0.json",
+    "contracts/hosting/public_launch_readiness_audit.v0.json",
+    "contracts/hosting/public_launch_operator_signoff.v0.json",
+    "contracts/hosting/post_launch_remediation_plan.v0.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/hosting/"
+  ],
+  "added_scripts": [
+    "scripts/rehearse_hosted_wrapper.py",
+    "scripts/run_public_alpha_smoke_matrix.py",
+    "scripts/check_public_launch_evidence.py",
+    "scripts/check_public_alpha_blocked_requests.py",
+    "scripts/audit_public_alpha_readiness.py",
+    "scripts/validate_hosted_wrapper_rehearsal.py",
+    "scripts/summarize_public_alpha_readiness.py"
+  ],
+  "added_docs": [
+    "docs/reference/",
+    "docs/architecture/",
+    "docs/operations/"
+  ],
+  "added_inventories": [
+    "control/inventory/hosting/"
+  ],
+  "added_examples": [
+    "examples/hosting/rehearsal/",
+    "examples/hosting/smoke/",
+    "examples/hosting/blocked_requests/",
+    "examples/hosting/status/",
+    "examples/hosting/launch/"
+  ],
+  "added_tests": [
+    "tests/hosting/",
+    "tests/operations/test_hosted_wrapper_rehearsal_scripts.py"
+  ],
+  "validation": {
+    "git_diff_check": "pass",
+    "contract_json": "pass",
+    "policy_json": "pass",
+    "audit_report_json": "pass",
+    "hosted_wrapper_validator": "pass",
+    "hosted_wrapper_rehearsal_script": "pass",
+    "public_alpha_smoke_matrix_script": "pass",
+    "public_alpha_blocked_requests_check": "pass",
+    "public_launch_evidence_check": "pass",
+    "public_alpha_readiness_audit": "pass",
+    "public_alpha_summary_check": "pass",
+    "focused_hosting_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "architecture_boundaries": "pass",
+    "existing_validators": "pass_with_h1_warning",
+    "aide_lite_doctor_validate_test_selftest_eval_adapter": "pass",
+    "aide_lite_verify_review_pack": "warn_zero_errors",
+    "known_warnings": [
+      "H1 metadata wave audit remains PASS_WITH_WARNINGS as a pre-existing advisory posture.",
+      "AIDE Lite verify/review-pack remains WARN-only because the active handoff packet points at MVP-ALPHA-AUDIT-01 after E-BUNDLE-02."
+    ]
+  },
+  "rehearsal_scope": {
+    "local_fixture_rehearsal_enabled": true,
+    "smoke_matrix_enabled": true,
+    "blocked_request_reports_enabled": true,
+    "launch_evidence_packet_defined": true,
+    "operator_signoff_required": true,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false
+  },
+  "truth_boundary": {
+    "hosting_rehearsal_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "operator_signoff_inferred": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_bind_enabled": false
+  },
+  "next_phase": "READY_FOR_MVP_ALPHA_AUDIT",
+  "next_task": "MVP-ALPHA-AUDIT-01 - End-to-end local MVP readiness audit"
+}

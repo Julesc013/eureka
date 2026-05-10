@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hosted Wrapper Smoke Report Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "smoke_report_id",
+    "rehearsal_ref",
+    "route_results",
+    "blocked_request_results",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "hosted_wrapper_smoke_report.v0"
+    },
+    "smoke_report_id": {
+      "type": "string"
+    },
+    "rehearsal_ref": {
+      "type": "string"
+    },
+    "route_results": {
+      "type": "array"
+    },
+    "blocked_request_results": {
+      "type": "array"
+    },
+    "status_result": {
+      "type": "object"
+    },
+    "non_claims_result": {
+      "type": "object"
+    },
+    "runtime_config_result": {
+      "type": "object"
+    },
+    "kill_switch_result": {
+      "type": "object"
+    },
+    "rate_limit_result": {
+      "type": "object"
+    },
+    "secret_policy_result": {
+      "type": "object"
+    },
+    "rollback_result": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    }
+  }
+}

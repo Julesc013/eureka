@@ -2,7 +2,7 @@
 
 ## Review Objective
 
-Review E-BUNDLE-01 from compact repo-local evidence and decide whether it is
+Review E-BUNDLE-02 from compact repo-local evidence and decide whether it is
 ready to pass its review gate.
 
 ## Decision Requested
@@ -13,9 +13,9 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 ## Task Packet Reference
 
 - `.aide/context/latest-task-packet.md` now points the main lane to
-  `E-BUNDLE-02` after E-BUNDLE-01 implementation.
-- E-BUNDLE-01 task evidence is under
-  `control/audits/e-bundle-01-hosting-ops-readiness-v0/`.
+  `MVP-ALPHA-AUDIT-01` after E-BUNDLE-02 implementation.
+- E-BUNDLE-02 task evidence is under
+  `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/`.
 
 ## Context Packet Reference
 
@@ -30,47 +30,47 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 - `.aide/verification/review-decision-policy.yaml`
 - verifier_result: WARN
 - note: WARN is advisory diff-scope noise with zero errors after the active
-  task packet advanced to E-BUNDLE-02.
+  task packet advanced to MVP-ALPHA-AUDIT-01.
 
 ## Evidence Packet References
 
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_01_report.json`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/validation.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/public_alpha_non_claims_summary.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/runtime_config_boundary_report.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/rate_limit_abuse_report.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/incident_rollback_report.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/no_deployment_report.md`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_02_readiness_recommendation.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/e_bundle_02_report.json`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/validation.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/hosted_wrapper_rehearsal_summary.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_smoke_matrix_report.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_blocked_request_report.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_status_report.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_launch_evidence_report.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_launch_readiness_audit.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/no_deployment_report.md`
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/next_phase_recommendation.md`
 - `.aide/reports/eureka-repo-health.md`
 
 ## Changed Files Summary
 
-- Added hosting readiness contracts under `contracts/hosting/`.
-- Added public alpha non-claims, host profile, environment, runtime config,
-  rate-limit, secrets, observability, incident, rollback, takedown,
-  connector-kill-switch, launch-evidence, truth, path, and no-deploy policies.
-- Added examples under `examples/hosting/`.
-- Added hosting readiness validators, non-claims checker, boundary checker, and
-  summary script.
-- Added hosting-focused tests and E-BUNDLE-01 audit evidence.
-- Updated the existing host profile reference doc only to cross-reference the
-  new hosting-readiness profile contract.
+- Added hosted-wrapper rehearsal, smoke report, smoke matrix, blocked request,
+  status report, readiness audit, operator signoff, and remediation contracts.
+- Added fixture-only hosting runtime helpers under `runtime/hosting/`.
+- Added E-BUNDLE-02 hosting policies, examples, docs, scripts, tests, and audit
+  evidence.
+- Updated AIDE queue/context/repo-health handoff to
+  `MVP-ALPHA-AUDIT-01`.
 
 ## Validation Summary
 
 - `git diff --check`: PASS
-- E-BUNDLE-01 contract and policy JSON syntax checks: PASS
-- `python scripts/validate_hosting_readiness.py`: PASS
-- `python scripts/check_public_alpha_non_claims.py`: PASS
-- `python scripts/check_hosting_boundaries.py`: PASS
-- `python scripts/summarize_hosting_readiness.py --input examples/hosting --check`: PASS
-- E-BUNDLE-01 focused tests: PASS
+- E-BUNDLE-02 contract and policy JSON syntax checks: PASS
+- `python scripts/validate_hosted_wrapper_rehearsal.py`: PASS
+- `python scripts/rehearse_hosted_wrapper.py --input examples/hosting/rehearsal/hosted_wrapper_rehearsal_local_fixture_v0.json --check`: PASS
+- `python scripts/run_public_alpha_smoke_matrix.py --matrix examples/hosting/smoke/public_alpha_smoke_matrix_v0.json --check`: PASS
+- `python scripts/check_public_alpha_blocked_requests.py --input examples/hosting/blocked_requests --check`: PASS
+- `python scripts/check_public_launch_evidence.py --input examples/hosting/launch/public_launch_evidence_packet_required_v0.json --check`: PASS
+- `python scripts/audit_public_alpha_readiness.py --check`: PASS
+- E-BUNDLE-02 focused tests: PASS
 - `python -m unittest discover -s tests -t .`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
-- Existing C/D/J/I/G/F/H/core validators requested by the task: PASS, with the
-  pre-existing H1 metadata wave audit returning PASS_WITH_WARNINGS.
+- Existing E/C/D/J/I/G/F/H/core validators: PASS, with the pre-existing H1
+  metadata wave audit returning PASS_WITH_WARNINGS.
 - AIDE Lite doctor, validate, test, selftest, eval list, eval run, and adapter
   validation: PASS.
 - AIDE Lite verify and review-pack: WARN with zero errors.
@@ -84,20 +84,16 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 
 ## Boundary Summary
 
-- E-BUNDLE-01 is readiness-only.
+- E-BUNDLE-02 is rehearsal-only.
 - No deployment, provider call, DNS change, provider credential, generated site
-  output mutation, hosted backend, public alpha live claim, production claim,
-  live source fanout, downloads, uploads, accounts, telemetry, public relay,
+  output mutation, public bind, public alpha live claim, production claim, live
+  source fanout, downloads, uploads, accounts, telemetry, public relay,
   public/master index mutation, or truth acceptance was introduced.
 
 ## Risk Summary
 
-- E-BUNDLE-02 remains operator-gated and must keep rehearsal evidence separate
-  from actual deployment.
-- Launch evidence requirements are defined, but no real launch evidence is
-  collected in E-BUNDLE-01.
-- AIDE Lite verify may remain WARN-only after the active packet advances to
-  E-BUNDLE-02.
+- Operator signoff and real public launch evidence remain missing by design.
+- The next phase is a local MVP readiness audit, not public deployment.
 
 ## Non-Goals / Scope Guard
 

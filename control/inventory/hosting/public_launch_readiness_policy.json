@@ -1,0 +1,7 @@
+{
+  "schema_version": "public_launch_readiness_policy.v0",
+  "operator_signoff_required": true,
+  "launch_evidence_required": true,
+  "no_launch_without_status_smoke_nonclaims_rollback_secrets": true,
+  "ready_for_public_alpha_future_requires_all_evidence": true
+}

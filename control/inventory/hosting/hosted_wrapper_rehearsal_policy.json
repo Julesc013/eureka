@@ -1,0 +1,19 @@
+{
+  "schema_version": "hosted_wrapper_rehearsal_policy.v0",
+  "local_rehearsal_only": true,
+  "deployment_allowed_current": false,
+  "provider_api_calls_allowed": false,
+  "dns_changes_allowed": false,
+  "site_dist_mutation_allowed": false,
+  "public_bind_allowed": false,
+  "public_alpha_live_claim_allowed": false,
+  "production_claim_allowed": false,
+  "allowed_statuses": [
+    "example_only",
+    "local_fixture_rehearsal",
+    "loopback_rehearsal",
+    "policy_blocked",
+    "operator_gated",
+    "not_evaluable"
+  ]
+}

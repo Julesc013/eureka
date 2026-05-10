@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Post Launch Remediation Plan Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "remediation_plan_id",
+    "trigger",
+    "severity",
+    "immediate_actions",
+    "rollback_steps",
+    "evidence_to_collect",
+    "limitations"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "post_launch_remediation_plan.v0"
+    },
+    "remediation_plan_id": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "immediate_actions": {
+      "type": "array"
+    },
+    "rollback_steps": {
+      "type": "array"
+    },
+    "evidence_to_collect": {
+      "type": "array"
+    },
+    "communication_steps": {
+      "type": "array"
+    },
+    "followup_audit": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

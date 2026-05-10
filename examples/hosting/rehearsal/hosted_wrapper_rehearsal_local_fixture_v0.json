@@ -1,0 +1,97 @@
+{
+  "schema_version": "hosted_wrapper_rehearsal.v0",
+  "rehearsal_id": "hosted_wrapper_rehearsal.local_fixture.v0",
+  "rehearsal_status": "local_fixture_rehearsal",
+  "rehearsal_scope": {
+    "local_fixture_only": true,
+    "deployment_performed": false,
+    "provider_api_called": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "public_bind_used": false
+  },
+  "environment_ref": "examples/hosting/environments/local_rehearsal_environment_v0.json",
+  "host_profile_ref": "examples/hosting/host_profiles/hosted_backend_rehearsal_profile_v0.json",
+  "runtime_config_refs": [
+    "examples/hosting/config/runtime_config_boundary_v0.json"
+  ],
+  "input_fixture_refs": [
+    "examples/snapshots/fixtures/search_snapshot_input_v0.json",
+    "examples/relay/profiles/localhost_readonly_profile_v0.json"
+  ],
+  "routes_rehearsed": [
+    "/status",
+    "/search",
+    "/object/example-object",
+    "/source/example-source",
+    "/snapshot"
+  ],
+  "safe_request_cases": [
+    "status",
+    "search_fixture",
+    "object_fixture",
+    "source_fixture",
+    "snapshot_fixture",
+    "action_manifest_fixture"
+  ],
+  "blocked_request_cases": [
+    "download",
+    "upload",
+    "account",
+    "live_probe",
+    "public_index_write",
+    "master_index_write"
+  ],
+  "status_case_refs": [
+    "examples/hosting/status/public_alpha_status_report_local_rehearsal_v0.json"
+  ],
+  "smoke_report_refs": [
+    "examples/hosting/rehearsal/hosted_wrapper_smoke_report_v0.json"
+  ],
+  "limitations": [
+    "No public backend, static deployment, provider call, DNS change, or public route activation occurred."
+  ],
+  "truth_boundary": {
+    "hosting_rehearsal_is_launch": false,
+    "public_alpha_live_claimed": false,
+    "production_claimed": false,
+    "operator_signoff_inferred": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "accepts_evidence": false,
+    "accepts_candidate": false,
+    "accepts_public_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_public_relay": false,
+    "mutated_site_dist": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "deployed_backend": false,
+    "deployed_static_site": false,
+    "dns_changed": false,
+    "provider_api_called": false,
+    "site_dist_mutated": false,
+    "public_bind_enabled": false
+  },
+  "no_goals": [
+    "deployment",
+    "provider API calls",
+    "DNS changes",
+    "site/dist mutation",
+    "public launch claims"
+  ],
+  "notes": [
+    "Local fixture rehearsal over already-reviewed examples only."
+  ]
+}
