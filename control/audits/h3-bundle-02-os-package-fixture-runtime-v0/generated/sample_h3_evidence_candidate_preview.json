@@ -1,0 +1,117 @@
+{
+  "accepted_evidence": false,
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "package_name_candidate",
+      "claim_value": "fixture-debian-snapshot",
+      "limitations": [
+        "Package name is a source observation, not accepted identity truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "version_candidate",
+      "claim_value": "1.2.3",
+      "limitations": [
+        "Version is a source observation, not accepted release truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "architecture_candidate",
+      "claim_value": "amd64",
+      "limitations": [
+        "Architecture metadata does not prove runtime compatibility.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "purl_candidate",
+      "claim_value": "pkg:debian/fixture-debian-snapshot@1.2.3?distro=Debian&release=bookworm-fixture&arch=amd64",
+      "limitations": [
+        "PURL is a candidate mapping, not accepted identity truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "dependency_relation_count_candidate",
+      "claim_value": 2,
+      "limitations": [
+        "Dependency/conflict/provides metadata does not prove correctness.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "file_metadata_count_candidate",
+      "claim_value": 1,
+      "limitations": [
+        "File metadata does not grant download permission.",
+        "Requires human review before downstream use."
+      ]
+    }
+  ],
+  "connector_family": "directory_listing",
+  "evidence_ledger_runtime_mutated": false,
+  "evidence_ledger_write_enabled": false,
+  "evidence_preview_id": "h3.evidence_candidate_preview.debian_snapshot.debian_snapshot_fixture_debian_snapshot_1_2_3_typical.v0",
+  "notes": [
+    "Evidence preview only; no evidence ledger runtime write occurred."
+  ],
+  "package_locator": "fixture:h3:debian_snapshot:typical:fixture-debian-snapshot",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "schema_version": "h3_os_package_evidence_candidate_preview.v0",
+  "source_id": "debian_snapshot",
+  "source_native_id": "debian_snapshot/fixture-debian-snapshot/1.2.3/typical",
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

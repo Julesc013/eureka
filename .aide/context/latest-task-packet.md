@@ -2,17 +2,17 @@
 
 ## PHASE
 
-H3-BUNDLE-02 - OS package archive fixture runtimes and normalizers
+H3-BUNDLE-03 - OS package archive approved metadata-only live probes
 
 ## GOAL
 
-Prepare the next Eureka H3 task after H3-BUNDLE-01. This packet is a compact AIDE resumption handoff only; it does not itself authorize code edits or Eureka product behavior changes. A future task prompt must explicitly scope H3-BUNDLE-02 implementation before product paths are edited.
+Prepare the next Eureka H3 task after H3-BUNDLE-02. This packet is a compact AIDE resumption handoff only; it does not itself authorize code edits or Eureka product behavior changes. A future task prompt must explicitly scope H3-BUNDLE-03 implementation before product paths are edited.
 
-H3-BUNDLE-02 should add committed-fixture-only OS package archive fixture replay and normalizer runtime after H3 policy packs close.
+H3-BUNDLE-03 should add fail-closed, approval-gated, metadata-only live probe envelopes for OS package archives after the fixture runtime closes.
 
 ## WHY
 
-H3-BUNDLE-01 adds OS package archive source-family policy packs for thirteen sources with source records, connector-family assignments, identity and platform compatibility policies, approval gates, coverage previews, scorecard previews, docs, scripts, tests, and audit evidence. H3 remains policy-pack-only: no live access, no repository index fetch, no package downloads, no package-manager invocation, no install or execution, no source sync, no public/master index mutation, and no truth acceptance.
+H3-BUNDLE-02 adds fixture-only OS package archive normalizers and replay outputs for thirteen sources. H3 fixture outputs remain candidate-only: no live access, no source sync, no repository index fetch, no package downloads, no package-manager invocation, no install or execution, no public/master index mutation, and no package identity, compatibility, dependency, source, evidence, candidate, or public truth acceptance.
 
 ## CONTEXT_REFS
 
@@ -23,45 +23,43 @@ H3-BUNDLE-01 adds OS package archive source-family policy packs for thirteen sou
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/H3-BUNDLE-01/task.yaml`
 - `.aide/queue/H3-BUNDLE-02/task.yaml`
+- `.aide/queue/H3-BUNDLE-03/task.yaml`
 - `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
+- `control/audits/h3-bundle-02-os-package-fixture-runtime-v0/`
 - `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0/`
-- `control/audits/h2-bundle-04-package-review-quality-audit-v0/`
-- `control/inventory/source_packs/h3_os_package_archive_sources.json`
-- `control/inventory/source_packs/h3_os_package_archive_source_pack_policy.json`
-- `scripts/validate_h3_os_package_archive_policy_packs.py`
-- `scripts/summarize_h3_os_package_archive_sources.py`
+- `runtime/connectors/h3_os_package_archives/`
+- `scripts/validate_h3_os_package_archive_fixture_runtime.py`
+- `scripts/replay_h3_os_package_fixtures.py`
 - `scripts/check_architecture_boundaries.py`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- H3 fixture-runtime paths only if a future prompt explicitly scopes H3-BUNDLE-02 implementation.
+- H3 live-probe paths only if a future prompt explicitly scopes H3-BUNDLE-03 implementation.
 
 ## IMPLEMENTATION
 
-- Do not start H3-BUNDLE-02 implementation from this packet alone.
-- Resume from repo-local evidence, especially `.aide/queue/` and `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0/`.
-- Treat H3 source records, policy packs, coverage previews, and scorecard previews as planning artifacts only.
-- Preserve no-live-call, no-repository-index-fetch, no-download, no-package-manager-invocation, no-install, no-execute, no-source-sync, no-index-mutation, and no-truth-acceptance boundaries.
-- H3 fixture work must use committed synthetic or public-safe fixtures only and must not infer OS package identity truth, compatibility correctness, dependency correctness, installability, rights clearance, malware safety, or production coverage.
+- Do not start H3-BUNDLE-03 implementation from this packet alone.
+- Resume from repo-local evidence, especially `.aide/queue/` and `control/audits/h3-bundle-02-os-package-fixture-runtime-v0/`.
+- Preserve fail-closed live probe behavior unless committed source-specific approvals exist.
+- Preserve no-repository-index-fetch, no-download, no-package-manager-invocation, no-install, no-execute, no-source-sync, no-index-mutation, and no-truth-acceptance boundaries.
 - No Eureka product behavior change is authorized by this handoff.
 
 ## ACCEPTANCE
 
-- Latest handoff points to H3-BUNDLE-02.
-- H3-BUNDLE-01 evidence remains reviewable.
-- H3 policy packs validate offline.
-- AIDE doctor, validate, test, selftest, eval run, and verify are available as local validation lanes.
-- No live source calls, repository index fetches, package downloads, package-manager invocation, installs, execution, scraping, crawling, source sync, public query fanout, public/master index mutation, evidence acceptance, candidate acceptance, source truth acceptance, package identity truth acceptance, compatibility truth acceptance, or product behavior changes are authorized by this handoff.
+- Latest handoff points to H3-BUNDLE-03.
+- H3-BUNDLE-02 evidence remains reviewable.
+- H3 fixture runtime validates offline.
+- No live source calls, repository index fetches, package downloads, package-manager invocation, installs, execution, scraping, crawling, source sync, public query fanout, public/master index mutation, evidence acceptance, candidate acceptance, source truth acceptance, package identity truth acceptance, compatibility truth acceptance, dependency correctness acceptance, or product behavior changes are authorized by this handoff.
 
 ## VALIDATION
 
-- `python scripts/validate_h3_os_package_archive_policy_packs.py`
-- `python scripts/summarize_h3_os_package_archive_sources.py --check`
-- `python -m unittest tests.operations.test_h3_os_package_archive_policy_packs`
-- `python -m unittest tests.operations.test_h3_os_package_archive_summary`
+- `python scripts/validate_h3_os_package_archive_fixture_runtime.py`
+- `python scripts/replay_h3_os_package_fixtures.py --check`
+- `python scripts/summarize_h3_os_package_fixture_outputs.py --input examples/connectors/h3_os_package_archives --check`
+- `python -m unittest tests.connectors.test_h3_os_package_fixture_runtime`
+- `python -m unittest tests.operations.test_h3_os_package_fixture_scripts`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py test`
@@ -73,12 +71,10 @@ H3-BUNDLE-01 adds OS package archive source-family policy packs for thirteen sou
 ## EVIDENCE
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/H3-BUNDLE-01/task.yaml`
 - `.aide/queue/H3-BUNDLE-02/task.yaml`
-- `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
-- `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0/h3_bundle_01_report.json`
-- `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0/validation.md`
-- `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0/h3_readiness_for_fixture_runtime.md`
+- `.aide/queue/H3-BUNDLE-03/task.yaml`
+- `control/audits/h3-bundle-02-os-package-fixture-runtime-v0/h3_bundle_02_report.json`
+- `control/audits/h3-bundle-02-os-package-fixture-runtime-v0/validation.md`
 
 ## NON_GOALS
 
@@ -88,7 +84,7 @@ H3-BUNDLE-01 adds OS package archive source-family policy packs for thirteen sou
 
 ## OUTPUT_SCHEMA
 
-Future H3-BUNDLE-02 responses should preserve status, summary, commits, changed paths, validation, H3 fixture-only scope, no-download boundary, risks, and next task.
+Future H3-BUNDLE-03 responses should preserve status, summary, commits, changed paths, validation, H3 metadata-only scope, no-download boundary, risks, and next task.
 
 ## TOKEN_ESTIMATE
 

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5853 chars, 1464 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5229 chars, 1308 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H3-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H3-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H3-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H3-BUNDLE-03` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `control/audits/h3-bundle-01-os-package-archive-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_no_download_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_archive_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_package_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h3_os_platform_compatibility_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H3_OS_PACKAGE_ARCHIVE_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/OS_PACKAGE_ARCHIVE_SOURCE_FAMILY_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H3_OS_PACKAGE_ARCHIVE_FIXTURE_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H3_OS_PACKAGE_ARCHIVE_NO_DOWNLOAD_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H3_OS_PACKAGE_ARCHIVE_NO_LIVE_CALL_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H3_OS_PACKAGE_ARCHIVE_POLICY_GATES.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 26; see task evidence changed-files report
+- unknown: `contracts/connectors/h3_os_package_dependency_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_package_file_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_package_fixture.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_package_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_package_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_package_normalized_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h3_os_platform_compatibility_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h3-bundle-02-os-package-fixture-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_dependency_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_evidence_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_file_metadata_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_fixture_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_fixture_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_fixture_runtime_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_fixture_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_identity_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h3_os_package_no_download_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 27; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6873
-- approx_tokens: 1719
+- chars: 6832
+- approx_tokens: 1708
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

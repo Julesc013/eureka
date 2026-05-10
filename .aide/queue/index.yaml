@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H3-BUNDLE-02
+current_recommended_task: H3-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -442,9 +442,19 @@ entries:
 
 - id: H3-BUNDLE-02
   title: OS package archive fixture runtimes and normalizers
-  status: queued
+  status: needs_review
   purpose: Add committed-fixture-only OS package archive fixture replay and normalizer runtime after H3 policy packs.
   allowed_scope_summary: H3 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
   gate: H3-BUNDLE-01 passes; no live archive calls, source sync, repository index fetches, package downloads, package-manager invocation, install/execute, public/master index mutation, or truth acceptance.
   task: .aide/queue/H3-BUNDLE-02/task.yaml
   recommended_after: H3-BUNDLE-01
+
+
+- id: H3-BUNDLE-03
+  title: OS package archive approved metadata-only live probes
+  status: queued
+  purpose: Prepare approval-gated metadata-only live probe envelopes for H3 OS package archives after fixture normalizers pass.
+  allowed_scope_summary: H3 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
+  gate: H3-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and repository index fetches/downloads/package-manager invocation/install/execute remain forbidden.
+  task: .aide/queue/H3-BUNDLE-03/task.yaml
+  recommended_after: H3-BUNDLE-02

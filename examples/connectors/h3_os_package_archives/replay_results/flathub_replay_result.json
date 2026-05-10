@@ -1,0 +1,936 @@
+{
+  "connector_family": "storefront",
+  "connector_output_envelope": {
+    "connector_id": "flathub_os_package_fixture_normalizer",
+    "evidence_candidate_preview": {
+      "accepted_evidence": false,
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "package_name_candidate",
+          "claim_value": "fixture-flathub",
+          "limitations": [
+            "Package name is a source observation, not accepted identity truth.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "version_candidate",
+          "claim_value": "1.2.3",
+          "limitations": [
+            "Version is a source observation, not accepted release truth.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "architecture_candidate",
+          "claim_value": "x86_64",
+          "limitations": [
+            "Architecture metadata does not prove runtime compatibility.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "purl_candidate",
+          "claim_value": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+          "limitations": [
+            "PURL is a candidate mapping, not accepted identity truth.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "dependency_relation_count_candidate",
+          "claim_value": 2,
+          "limitations": [
+            "Dependency/conflict/provides metadata does not prove correctness.",
+            "Requires human review before downstream use."
+          ]
+        },
+        {
+          "accepted_as_evidence": false,
+          "accepted_as_public_truth": false,
+          "claim_status": "candidate_preview",
+          "claim_type": "file_metadata_count_candidate",
+          "claim_value": 1,
+          "limitations": [
+            "File metadata does not grant download permission.",
+            "Requires human review before downstream use."
+          ]
+        }
+      ],
+      "connector_family": "storefront",
+      "evidence_ledger_runtime_mutated": false,
+      "evidence_ledger_write_enabled": false,
+      "evidence_preview_id": "h3.evidence_candidate_preview.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+      "notes": [
+        "Evidence preview only; no evidence ledger runtime write occurred."
+      ],
+      "package_locator": "fixture:h3:flathub:typical:fixture-flathub",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "schema_version": "h3_os_package_evidence_candidate_preview.v0",
+      "source_id": "flathub",
+      "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+      "truth_boundary": {
+        "dependency_candidate_is_correctness_proof": false,
+        "evidence_preview_is_accepted_evidence": false,
+        "file_hash_candidate_is_malware_safety": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "os_compatibility_candidate_is_truth": false,
+        "os_package_identity_candidate_is_truth": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      }
+    },
+    "limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only OS package archive parsing evidence",
+      "synthetic public-safe fixture",
+      "fixture-only OS package archive parsing evidence"
+    ],
+    "normalized_record": {
+      "architecture": "x86_64",
+      "binary_package_name": "fixture-flathub",
+      "build_id": "flathub-fixture-build",
+      "changelog_or_news_refs": [
+        "fixture:changelog:h3:flathub:fixture-flathub"
+      ],
+      "conflict_summary": {
+        "conflict_count": 0,
+        "relations": []
+      },
+      "connector_family": "storefront",
+      "dependency_candidate_preview": [
+        {
+          "architecture_or_context": "x86_64",
+          "dependency_candidate_id": "h3.dependency_candidate.flathub.depends.fixture_flathub_dep.0.v0",
+          "limitations": [
+            "Dependency/conflict/provides candidate is a source observation and does not prove dependency correctness or environment solvability."
+          ],
+          "optional": false,
+          "package_identity_candidate_ref": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+          "product_boundary": {
+            "api_calls_made": false,
+            "changed_public_search_behavior": false,
+            "downloads_made": false,
+            "enabled_accounts": false,
+            "enabled_downloads": false,
+            "enabled_execution": false,
+            "enabled_hosting": false,
+            "enabled_installers": false,
+            "enabled_live_probes": false,
+            "enabled_source_connectors": false,
+            "enabled_source_sync": false,
+            "enabled_telemetry": false,
+            "enabled_uploads": false,
+            "mutated_master_index": false,
+            "mutated_public_index": false,
+            "network_calls_made": false,
+            "package_manager_invoked": false,
+            "repository_index_fetch_used": false,
+            "scraping_made": false
+          },
+          "related_package_name": "fixture-flathub-dep",
+          "relation_kind": "depends",
+          "schema_version": "h3_os_package_dependency_candidate.v0",
+          "source_id": "flathub",
+          "source_metadata_ref": "flathub/fixture-flathub/1.2.3/typical",
+          "truth_boundary": {
+            "accepted_candidate_truth": false,
+            "compatibility_correctness_claimed": false,
+            "dependency_candidate_is_correctness_proof": false,
+            "dependency_candidate_proves_correctness": false,
+            "dependency_correctness_claimed": false,
+            "master_index_mutated": false,
+            "public_index_mutated": false
+          },
+          "version_range_or_constraint": ">= 1.0"
+        },
+        {
+          "architecture_or_context": "x86_64",
+          "dependency_candidate_id": "h3.dependency_candidate.flathub.provides.virtual_fixture_flathub.1.v0",
+          "limitations": [
+            "Dependency/conflict/provides candidate is a source observation and does not prove dependency correctness or environment solvability."
+          ],
+          "optional": false,
+          "package_identity_candidate_ref": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+          "product_boundary": {
+            "api_calls_made": false,
+            "changed_public_search_behavior": false,
+            "downloads_made": false,
+            "enabled_accounts": false,
+            "enabled_downloads": false,
+            "enabled_execution": false,
+            "enabled_hosting": false,
+            "enabled_installers": false,
+            "enabled_live_probes": false,
+            "enabled_source_connectors": false,
+            "enabled_source_sync": false,
+            "enabled_telemetry": false,
+            "enabled_uploads": false,
+            "mutated_master_index": false,
+            "mutated_public_index": false,
+            "network_calls_made": false,
+            "package_manager_invoked": false,
+            "repository_index_fetch_used": false,
+            "scraping_made": false
+          },
+          "related_package_name": "virtual-fixture-flathub",
+          "relation_kind": "provides",
+          "schema_version": "h3_os_package_dependency_candidate.v0",
+          "source_id": "flathub",
+          "source_metadata_ref": "flathub/fixture-flathub/1.2.3/typical",
+          "truth_boundary": {
+            "accepted_candidate_truth": false,
+            "compatibility_correctness_claimed": false,
+            "dependency_candidate_is_correctness_proof": false,
+            "dependency_candidate_proves_correctness": false,
+            "dependency_correctness_claimed": false,
+            "master_index_mutated": false,
+            "public_index_mutated": false
+          },
+          "version_range_or_constraint": "1"
+        }
+      ],
+      "dependency_summary": {
+        "dependency_count": 1,
+        "relations": [
+          {
+            "architecture_or_context": "x86_64",
+            "optional": false,
+            "related_package_name": "fixture-flathub-dep",
+            "relation_kind": "depends",
+            "version_range_or_constraint": ">= 1.0"
+          },
+          {
+            "architecture_or_context": "x86_64",
+            "optional": false,
+            "related_package_name": "virtual-fixture-flathub",
+            "relation_kind": "provides",
+            "version_range_or_constraint": "1"
+          }
+        ]
+      },
+      "description_summary": "Synthetic flathub fixture for OS package archive normalization.",
+      "distribution": "Flathub",
+      "distribution_release": "linux-desktop-fixture",
+      "ecosystem": "flatpak",
+      "epoch": "0",
+      "evidence_candidate_preview": {
+        "accepted_evidence": false,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "package_name_candidate",
+            "claim_value": "fixture-flathub",
+            "limitations": [
+              "Package name is a source observation, not accepted identity truth.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "version_candidate",
+            "claim_value": "1.2.3",
+            "limitations": [
+              "Version is a source observation, not accepted release truth.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "architecture_candidate",
+            "claim_value": "x86_64",
+            "limitations": [
+              "Architecture metadata does not prove runtime compatibility.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "purl_candidate",
+            "claim_value": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+            "limitations": [
+              "PURL is a candidate mapping, not accepted identity truth.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "dependency_relation_count_candidate",
+            "claim_value": 2,
+            "limitations": [
+              "Dependency/conflict/provides metadata does not prove correctness.",
+              "Requires human review before downstream use."
+            ]
+          },
+          {
+            "accepted_as_evidence": false,
+            "accepted_as_public_truth": false,
+            "claim_status": "candidate_preview",
+            "claim_type": "file_metadata_count_candidate",
+            "claim_value": 1,
+            "limitations": [
+              "File metadata does not grant download permission.",
+              "Requires human review before downstream use."
+            ]
+          }
+        ],
+        "connector_family": "storefront",
+        "evidence_ledger_runtime_mutated": false,
+        "evidence_ledger_write_enabled": false,
+        "evidence_preview_id": "h3.evidence_candidate_preview.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+        "notes": [
+          "Evidence preview only; no evidence ledger runtime write occurred."
+        ],
+        "package_locator": "fixture:h3:flathub:typical:fixture-flathub",
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_hosting": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "package_manager_invoked": false,
+          "repository_index_fetch_used": false,
+          "scraping_made": false
+        },
+        "schema_version": "h3_os_package_evidence_candidate_preview.v0",
+        "source_id": "flathub",
+        "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+        "truth_boundary": {
+          "dependency_candidate_is_correctness_proof": false,
+          "evidence_preview_is_accepted_evidence": false,
+          "file_hash_candidate_is_malware_safety": false,
+          "malware_safety_claimed": false,
+          "master_index_mutated": false,
+          "normalized_record_is_public_truth": false,
+          "os_compatibility_candidate_is_truth": false,
+          "os_package_identity_candidate_is_truth": false,
+          "public_index_mutated": false,
+          "rights_clearance_claimed": false,
+          "verified_installability_claimed": false
+        }
+      },
+      "file_candidate_preview": [
+        {
+          "download_allowed_current": false,
+          "file_candidate_id": "h3.file_candidate.flathub.fixture_flathub_1_2_3_flatpak_metadata.0.v0",
+          "file_hashes": {
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "file_kind": "metadata_record",
+          "file_name": "fixture-flathub-1.2.3.flatpak.metadata",
+          "file_size": 12345,
+          "limitations": [
+            "File metadata candidate is not package download permission.",
+            "Hash metadata candidate is not malware safety or authenticity proof without review."
+          ],
+          "package_identity_candidate_ref": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+          "payload_available_current": false,
+          "product_boundary": {
+            "api_calls_made": false,
+            "changed_public_search_behavior": false,
+            "downloads_made": false,
+            "enabled_accounts": false,
+            "enabled_downloads": false,
+            "enabled_execution": false,
+            "enabled_hosting": false,
+            "enabled_installers": false,
+            "enabled_live_probes": false,
+            "enabled_source_connectors": false,
+            "enabled_source_sync": false,
+            "enabled_telemetry": false,
+            "enabled_uploads": false,
+            "mutated_master_index": false,
+            "mutated_public_index": false,
+            "network_calls_made": false,
+            "package_manager_invoked": false,
+            "repository_index_fetch_used": false,
+            "scraping_made": false
+          },
+          "repository_locator": "fixture:h3:flathub:repository:stable",
+          "schema_version": "h3_os_package_file_candidate.v0",
+          "source_id": "flathub",
+          "source_locator": "fixture:h3:flathub:file-metadata:typical",
+          "truth_boundary": {
+            "download_allowed_current": false,
+            "file_hash_candidate_is_malware_safety": false,
+            "malware_safety_claimed": false,
+            "master_index_mutated": false,
+            "payload_available_current": false,
+            "public_index_mutated": false,
+            "verified_installability_claimed": false
+          }
+        }
+      ],
+      "file_or_artifact_summary": {
+        "file_count": 1,
+        "files": [
+          {
+            "download_allowed_current": false,
+            "file_hashes": {
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "file_kind": "metadata_record",
+            "file_name": "fixture-flathub-1.2.3.flatpak.metadata",
+            "file_size": 12345,
+            "payload_available_current": false,
+            "repository_locator": "fixture:h3:flathub:repository:stable",
+            "source_locator": "fixture:h3:flathub:file-metadata:typical"
+          }
+        ]
+      },
+      "hash_metadata": {
+        "os_package_hash_proves_malware_safety": false,
+        "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "license_metadata": {
+        "declared_licenses": [
+          "MIT"
+        ],
+        "license_metadata_is_rights_clearance": false
+      },
+      "maintainer_or_packager_metadata": [
+        {
+          "identity_verified": false,
+          "name": "fixture-packager"
+        }
+      ],
+      "normalized_record_id": "h3.normalized.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+      "notes": [
+        "Normalized from a committed H3 public-safe fixture.",
+        "Fixture runtime proves parsing only and grants no live access, repository index fetch, download, package-manager invocation, install, or execution permission."
+      ],
+      "os_package_identity_candidate": {
+        "architecture": "x86_64",
+        "binary_package_name": "fixture-flathub",
+        "confidence_or_uncertainty": "candidate_from_committed_fixture_with_review_required",
+        "distribution": "Flathub",
+        "distribution_release": "linux-desktop-fixture",
+        "ecosystem": "flatpak",
+        "epoch": "0",
+        "identity_candidate_id": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+        "limitations": [
+          "OS package identity candidate is not accepted identity truth.",
+          "PURL candidate is not accepted identity truth.",
+          "Repository metadata does not prove installability, compatibility, endorsement, rights, or safety."
+        ],
+        "missing_fields": [],
+        "package_name": "fixture-flathub",
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_hosting": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "package_manager_invoked": false,
+          "repository_index_fetch_used": false,
+          "scraping_made": false
+        },
+        "purl_candidate": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+        "release_revision": "fixture-1",
+        "repository_component": "stable",
+        "schema_version": "h3_os_package_identity_candidate.v0",
+        "source_id": "flathub",
+        "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+        "source_package_name": "fixture-flathub-src",
+        "supporting_fields": [
+          "ecosystem",
+          "distribution",
+          "distribution_release",
+          "repository_component",
+          "package_name",
+          "architecture",
+          "version",
+          "source_native_id",
+          "purl_candidate"
+        ],
+        "truth_boundary": {
+          "identity_candidate_is_accepted_identity": false,
+          "master_index_mutated": false,
+          "os_package_identity_candidate_is_truth": false,
+          "os_package_metadata_is_identity_truth": false,
+          "os_package_metadata_proves_installability": false,
+          "public_index_mutated": false,
+          "purl_candidate_is_accepted_identity": false,
+          "purl_candidate_is_truth": false,
+          "repository_metadata_is_installability_verification": false
+        },
+        "version": "1.2.3"
+      },
+      "os_platform_compatibility_candidate": {
+        "architecture": "x86_64",
+        "compatibility_candidate_id": "h3.compatibility_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+        "compatibility_status_candidate": "metadata_candidate_review_required",
+        "dependency_environment_summary": {
+          "dependency_count": 1,
+          "relations": [
+            {
+              "architecture_or_context": "x86_64",
+              "optional": false,
+              "related_package_name": "fixture-flathub-dep",
+              "relation_kind": "depends",
+              "version_range_or_constraint": ">= 1.0"
+            },
+            {
+              "architecture_or_context": "x86_64",
+              "optional": false,
+              "related_package_name": "virtual-fixture-flathub",
+              "relation_kind": "provides",
+              "version_range_or_constraint": "1"
+            }
+          ]
+        },
+        "distribution": "Flathub",
+        "distribution_release": "linux-desktop-fixture",
+        "limitations": [
+          "Compatibility candidate is not verified compatibility.",
+          "Repository presence does not prove installability on every system.",
+          "Architecture match does not prove runtime compatibility."
+        ],
+        "operating_system_family": "Linux",
+        "package_identity_candidate_ref": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+        "package_manager_context": "flatpak",
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_hosting": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "package_manager_invoked": false,
+          "repository_index_fetch_used": false,
+          "scraping_made": false
+        },
+        "repository_channel": "stable",
+        "repository_component": "stable",
+        "schema_version": "h3_os_platform_compatibility_candidate.v0",
+        "source_id": "flathub",
+        "truth_boundary": {
+          "architecture_match_proves_runtime_compatibility": false,
+          "compatibility_candidate_is_verified_compatibility": false,
+          "compatibility_correctness_claimed": false,
+          "dependency_correctness_claimed": false,
+          "master_index_mutated": false,
+          "os_compatibility_candidate_is_truth": false,
+          "os_platform_compatibility_candidate_is_truth": false,
+          "public_index_mutated": false,
+          "repository_presence_proves_installability": false
+        },
+        "unsupported_or_removed_candidate": false
+      },
+      "package_locator": "fixture:h3:flathub:typical:fixture-flathub",
+      "package_name": "fixture-flathub",
+      "platform_or_environment_markers": [
+        "Linux",
+        "flatpak"
+      ],
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "project_urls": [
+        "fixture:project:h3:flathub:fixture-flathub"
+      ],
+      "provides_summary": {
+        "provides_count": 1,
+        "relations": [
+          {
+            "architecture_or_context": "x86_64",
+            "optional": false,
+            "related_package_name": "virtual-fixture-flathub",
+            "relation_kind": "provides",
+            "version_range_or_constraint": "1"
+          }
+        ]
+      },
+      "purl_candidate": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+      "release_revision": "fixture-1",
+      "repository_channel": "stable",
+      "repository_component": "stable",
+      "repository_urls": [
+        "fixture:repository:h3:flathub:fixture-flathub"
+      ],
+      "schema_version": "h3_os_package_normalized_record.v0",
+      "source_cache_candidate_preview": {
+        "accepted_source_truth": false,
+        "candidate_id": "h3.source_cache_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+        "connector_family": "storefront",
+        "mapping_status": "preview_only_fixture",
+        "notes": [
+          "Source-cache preview only; no source-cache runtime write occurred."
+        ],
+        "package_locator": "fixture:h3:flathub:typical:fixture-flathub",
+        "product_boundary": {
+          "api_calls_made": false,
+          "changed_public_search_behavior": false,
+          "downloads_made": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_hosting": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "mutated_master_index": false,
+          "mutated_public_index": false,
+          "network_calls_made": false,
+          "package_manager_invoked": false,
+          "repository_index_fetch_used": false,
+          "scraping_made": false
+        },
+        "schema_version": "h3_os_package_source_cache_candidate_preview.v0",
+        "source_cache_runtime_mutated": false,
+        "source_cache_write_enabled": false,
+        "source_id": "flathub",
+        "source_limitations": [
+          "synthetic public-safe fixture",
+          "fixture-only OS package archive parsing evidence",
+          "synthetic public-safe fixture",
+          "fixture-only OS package archive parsing evidence"
+        ],
+        "source_metadata_summary": {
+          "architecture": "x86_64",
+          "distribution": "Flathub",
+          "distribution_release": "linux-desktop-fixture",
+          "ecosystem": "flatpak",
+          "package_name": "fixture-flathub",
+          "purl_candidate": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+          "version": "1.2.3"
+        },
+        "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+        "truth_boundary": {
+          "master_index_mutated": false,
+          "normalized_record_is_public_truth": false,
+          "os_compatibility_candidate_is_truth": false,
+          "os_package_identity_candidate_is_truth": false,
+          "public_index_mutated": false,
+          "source_cache_preview_is_accepted_source": false
+        }
+      },
+      "source_id": "flathub",
+      "source_limitations": [
+        "synthetic public-safe fixture",
+        "fixture-only OS package archive parsing evidence",
+        "synthetic public-safe fixture",
+        "fixture-only OS package archive parsing evidence"
+      ],
+      "source_metadata": {
+        "fixture_shape": "typical",
+        "source_label": "flathub",
+        "synthetic_fixture_only": true
+      },
+      "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+      "source_package_name": "fixture-flathub-src",
+      "title": "fixture-flathub 1.2.3",
+      "truth_boundary": {
+        "accepted_candidate_truth": false,
+        "accepted_evidence_truth": false,
+        "accepted_os_compatibility_fact": false,
+        "accepted_os_package_identity": false,
+        "accepted_source_truth": false,
+        "compatibility_candidate_is_verified_compatibility": false,
+        "compatibility_correctness_claimed": false,
+        "dependency_candidate_is_correctness_proof": false,
+        "dependency_correctness_claimed": false,
+        "evidence_preview_is_accepted_evidence": false,
+        "file_hash_candidate_is_malware_safety": false,
+        "license_metadata_is_rights_clearance": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "os_compatibility_candidate_is_truth": false,
+        "os_package_identity_candidate_is_truth": false,
+        "public_index_mutated": false,
+        "purl_candidate_is_truth": false,
+        "repository_metadata_is_installability_verification": false,
+        "rights_clearance_claimed": false,
+        "source_cache_preview_is_accepted_source": false,
+        "verified_installability_claimed": false
+      },
+      "upstream_urls": [
+        "fixture:upstream:h3:flathub:fixture-flathub"
+      ],
+      "version": "1.2.3"
+    },
+    "notes": [
+      "Output envelope is candidate-only and review-gated."
+    ],
+    "output_envelope_id": "h3.output_envelope.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+    "output_status": "candidate_preview",
+    "output_type": "normalized_source_record",
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_hosting": false,
+      "enabled_live_probes": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false
+    },
+    "review_queue_seed_preview": null,
+    "schema_version": "source_connector_output_envelope.v0",
+    "source_cache_candidate": {
+      "accepted_source_truth": false,
+      "candidate_id": "h3.source_cache_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+      "connector_family": "storefront",
+      "mapping_status": "preview_only_fixture",
+      "notes": [
+        "Source-cache preview only; no source-cache runtime write occurred."
+      ],
+      "package_locator": "fixture:h3:flathub:typical:fixture-flathub",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "schema_version": "h3_os_package_source_cache_candidate_preview.v0",
+      "source_cache_runtime_mutated": false,
+      "source_cache_write_enabled": false,
+      "source_id": "flathub",
+      "source_limitations": [
+        "synthetic public-safe fixture",
+        "fixture-only OS package archive parsing evidence",
+        "synthetic public-safe fixture",
+        "fixture-only OS package archive parsing evidence"
+      ],
+      "source_metadata_summary": {
+        "architecture": "x86_64",
+        "distribution": "Flathub",
+        "distribution_release": "linux-desktop-fixture",
+        "ecosystem": "flatpak",
+        "package_name": "fixture-flathub",
+        "purl_candidate": "pkg:flatpak/fixture-flathub@1.2.3?distro=Flathub&release=linux-desktop-fixture&arch=x86_64",
+        "version": "1.2.3"
+      },
+      "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+      "truth_boundary": {
+        "master_index_mutated": false,
+        "normalized_record_is_public_truth": false,
+        "os_compatibility_candidate_is_truth": false,
+        "os_package_identity_candidate_is_truth": false,
+        "public_index_mutated": false,
+        "source_cache_preview_is_accepted_source": false
+      }
+    },
+    "source_id": "flathub",
+    "source_native_id": "flathub/fixture-flathub/1.2.3/typical",
+    "truth_boundary": {
+      "accepted_candidate_truth": false,
+      "accepted_evidence_truth": false,
+      "accepted_public_truth": false,
+      "accepted_source_truth": false,
+      "connector_output_is_accepted_evidence": false,
+      "connector_output_is_public_truth": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "warnings": []
+  },
+  "dependency_candidate_refs": [
+    "h3.dependency_candidate.flathub.depends.fixture_flathub_dep.0.v0",
+    "h3.dependency_candidate.flathub.provides.virtual_fixture_flathub.1.v0"
+  ],
+  "evidence_candidate_preview_ref": "h3.evidence_candidate_preview.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+  "file_candidate_refs": [
+    "h3.file_candidate.flathub.fixture_flathub_1_2_3_flatpak_metadata.0.v0"
+  ],
+  "fixture_id": "h3.fixture.flathub.typical.v0",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence",
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence"
+  ],
+  "no_live_source_used": true,
+  "no_network_used": true,
+  "no_package_download_used": true,
+  "no_package_manager_invoked": true,
+  "no_repository_index_fetch_used": true,
+  "normalized_record_ref": "examples/connectors/h3_os_package_archives/normalized/flathub_normalized.json",
+  "notes": [
+    "Fixture replay proves parsing only; it grants no source access, repository index fetch, download, package-manager invocation, install, or execution permission."
+  ],
+  "os_package_identity_candidate_ref": "h3.identity_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+  "os_platform_compatibility_candidate_ref": "h3.compatibility_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "replay_result_id": "h3.fixture_replay.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+  "replay_status": "pass",
+  "schema_version": "h3_os_package_fixture_replay_result.v0",
+  "source_cache_candidate_ref": "h3.source_cache_candidate.flathub.flathub_fixture_flathub_1_2_3_typical.v0",
+  "source_id": "flathub",
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "fixture_replay_can_claim_malware_safety": false,
+    "fixture_replay_can_claim_rights_clearance": false,
+    "fixture_replay_can_claim_verified_installability": false,
+    "fixture_replay_can_mutate_master_index": false,
+    "fixture_replay_can_mutate_public_index": false,
+    "fixture_replay_result_is_source_truth": false,
+    "normalized_record_is_public_truth": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "source_cache_preview_is_accepted_source": false
+  },
+  "validation_summary": {
+    "compatibility_candidate_count": 1,
+    "dependency_candidate_count": 2,
+    "evidence_ledger_write_enabled": false,
+    "file_candidate_count": 1,
+    "fixture_only": true,
+    "identity_candidate_count": 1,
+    "no_live_source_used": true,
+    "no_network_used": true,
+    "no_package_download_used": true,
+    "no_package_manager_invoked": true,
+    "no_repository_index_fetch_used": true,
+    "normalization_succeeded": true,
+    "source_cache_write_enabled": false,
+    "status": "pass"
+  },
+  "warnings": []
+}

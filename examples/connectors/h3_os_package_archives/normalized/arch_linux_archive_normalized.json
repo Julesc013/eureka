@@ -1,0 +1,628 @@
+{
+  "architecture": "x86_64",
+  "binary_package_name": "fixture-arch-linux-archive",
+  "build_id": "arch_linux_archive-fixture-build",
+  "changelog_or_news_refs": [
+    "fixture:changelog:h3:arch_linux_archive:fixture-arch-linux-archive"
+  ],
+  "conflict_summary": {
+    "conflict_count": 0,
+    "relations": []
+  },
+  "connector_family": "directory_listing",
+  "dependency_candidate_preview": [
+    {
+      "architecture_or_context": "x86_64",
+      "dependency_candidate_id": "h3.dependency_candidate.arch_linux_archive.depends.fixture_arch_linux_archive_dep.0.v0",
+      "limitations": [
+        "Dependency/conflict/provides candidate is a source observation and does not prove dependency correctness or environment solvability."
+      ],
+      "optional": false,
+      "package_identity_candidate_ref": "h3.identity_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "related_package_name": "fixture-arch-linux-archive-dep",
+      "relation_kind": "depends",
+      "schema_version": "h3_os_package_dependency_candidate.v0",
+      "source_id": "arch_linux_archive",
+      "source_metadata_ref": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+      "truth_boundary": {
+        "accepted_candidate_truth": false,
+        "compatibility_correctness_claimed": false,
+        "dependency_candidate_is_correctness_proof": false,
+        "dependency_candidate_proves_correctness": false,
+        "dependency_correctness_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false
+      },
+      "version_range_or_constraint": ">= 1.0"
+    },
+    {
+      "architecture_or_context": "x86_64",
+      "dependency_candidate_id": "h3.dependency_candidate.arch_linux_archive.provides.virtual_fixture_arch_linux_archive.1.v0",
+      "limitations": [
+        "Dependency/conflict/provides candidate is a source observation and does not prove dependency correctness or environment solvability."
+      ],
+      "optional": false,
+      "package_identity_candidate_ref": "h3.identity_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "related_package_name": "virtual-fixture-arch-linux-archive",
+      "relation_kind": "provides",
+      "schema_version": "h3_os_package_dependency_candidate.v0",
+      "source_id": "arch_linux_archive",
+      "source_metadata_ref": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+      "truth_boundary": {
+        "accepted_candidate_truth": false,
+        "compatibility_correctness_claimed": false,
+        "dependency_candidate_is_correctness_proof": false,
+        "dependency_candidate_proves_correctness": false,
+        "dependency_correctness_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false
+      },
+      "version_range_or_constraint": "1"
+    }
+  ],
+  "dependency_summary": {
+    "dependency_count": 1,
+    "relations": [
+      {
+        "architecture_or_context": "x86_64",
+        "optional": false,
+        "related_package_name": "fixture-arch-linux-archive-dep",
+        "relation_kind": "depends",
+        "version_range_or_constraint": ">= 1.0"
+      },
+      {
+        "architecture_or_context": "x86_64",
+        "optional": false,
+        "related_package_name": "virtual-fixture-arch-linux-archive",
+        "relation_kind": "provides",
+        "version_range_or_constraint": "1"
+      }
+    ]
+  },
+  "description_summary": "Synthetic arch_linux_archive fixture for OS package archive normalization.",
+  "distribution": "Arch Linux",
+  "distribution_release": "rolling-fixture",
+  "ecosystem": "arch",
+  "epoch": "0",
+  "evidence_candidate_preview": {
+    "accepted_evidence": false,
+    "candidate_count": 6,
+    "candidates": [
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "package_name_candidate",
+        "claim_value": "fixture-arch-linux-archive",
+        "limitations": [
+          "Package name is a source observation, not accepted identity truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "version_candidate",
+        "claim_value": "1.2.3",
+        "limitations": [
+          "Version is a source observation, not accepted release truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "architecture_candidate",
+        "claim_value": "x86_64",
+        "limitations": [
+          "Architecture metadata does not prove runtime compatibility.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "purl_candidate",
+        "claim_value": "pkg:arch/fixture-arch-linux-archive@1.2.3?distro=Arch Linux&release=rolling-fixture&arch=x86_64",
+        "limitations": [
+          "PURL is a candidate mapping, not accepted identity truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "dependency_relation_count_candidate",
+        "claim_value": 2,
+        "limitations": [
+          "Dependency/conflict/provides metadata does not prove correctness.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "file_metadata_count_candidate",
+        "claim_value": 1,
+        "limitations": [
+          "File metadata does not grant download permission.",
+          "Requires human review before downstream use."
+        ]
+      }
+    ],
+    "connector_family": "directory_listing",
+    "evidence_ledger_runtime_mutated": false,
+    "evidence_ledger_write_enabled": false,
+    "evidence_preview_id": "h3.evidence_candidate_preview.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+    "notes": [
+      "Evidence preview only; no evidence ledger runtime write occurred."
+    ],
+    "package_locator": "fixture:h3:arch_linux_archive:typical:fixture-arch-linux-archive",
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "repository_index_fetch_used": false,
+      "scraping_made": false
+    },
+    "schema_version": "h3_os_package_evidence_candidate_preview.v0",
+    "source_id": "arch_linux_archive",
+    "source_native_id": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+    "truth_boundary": {
+      "dependency_candidate_is_correctness_proof": false,
+      "evidence_preview_is_accepted_evidence": false,
+      "file_hash_candidate_is_malware_safety": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "os_compatibility_candidate_is_truth": false,
+      "os_package_identity_candidate_is_truth": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    }
+  },
+  "file_candidate_preview": [
+    {
+      "download_allowed_current": false,
+      "file_candidate_id": "h3.file_candidate.arch_linux_archive.fixture_arch_linux_archive_1_2_3_arch_metadata.0.v0",
+      "file_hashes": {
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "file_kind": "metadata_record",
+      "file_name": "fixture-arch-linux-archive-1.2.3.arch.metadata",
+      "file_size": 12345,
+      "limitations": [
+        "File metadata candidate is not package download permission.",
+        "Hash metadata candidate is not malware safety or authenticity proof without review."
+      ],
+      "package_identity_candidate_ref": "h3.identity_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+      "payload_available_current": false,
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "repository_index_fetch_used": false,
+        "scraping_made": false
+      },
+      "repository_locator": "fixture:h3:arch_linux_archive:repository:core",
+      "schema_version": "h3_os_package_file_candidate.v0",
+      "source_id": "arch_linux_archive",
+      "source_locator": "fixture:h3:arch_linux_archive:file-metadata:typical",
+      "truth_boundary": {
+        "download_allowed_current": false,
+        "file_hash_candidate_is_malware_safety": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "payload_available_current": false,
+        "public_index_mutated": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "file_or_artifact_summary": {
+    "file_count": 1,
+    "files": [
+      {
+        "download_allowed_current": false,
+        "file_hashes": {
+          "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        },
+        "file_kind": "metadata_record",
+        "file_name": "fixture-arch-linux-archive-1.2.3.arch.metadata",
+        "file_size": 12345,
+        "payload_available_current": false,
+        "repository_locator": "fixture:h3:arch_linux_archive:repository:core",
+        "source_locator": "fixture:h3:arch_linux_archive:file-metadata:typical"
+      }
+    ]
+  },
+  "hash_metadata": {
+    "os_package_hash_proves_malware_safety": false,
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "license_metadata": {
+    "declared_licenses": [
+      "MIT"
+    ],
+    "license_metadata_is_rights_clearance": false
+  },
+  "maintainer_or_packager_metadata": [
+    {
+      "identity_verified": false,
+      "name": "fixture-packager"
+    }
+  ],
+  "normalized_record_id": "h3.normalized.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+  "notes": [
+    "Normalized from a committed H3 public-safe fixture.",
+    "Fixture runtime proves parsing only and grants no live access, repository index fetch, download, package-manager invocation, install, or execution permission."
+  ],
+  "os_package_identity_candidate": {
+    "architecture": "x86_64",
+    "binary_package_name": "fixture-arch-linux-archive",
+    "confidence_or_uncertainty": "candidate_from_committed_fixture_with_review_required",
+    "distribution": "Arch Linux",
+    "distribution_release": "rolling-fixture",
+    "ecosystem": "arch",
+    "epoch": "0",
+    "identity_candidate_id": "h3.identity_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+    "limitations": [
+      "OS package identity candidate is not accepted identity truth.",
+      "PURL candidate is not accepted identity truth.",
+      "Repository metadata does not prove installability, compatibility, endorsement, rights, or safety."
+    ],
+    "missing_fields": [],
+    "package_name": "fixture-arch-linux-archive",
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "repository_index_fetch_used": false,
+      "scraping_made": false
+    },
+    "purl_candidate": "pkg:arch/fixture-arch-linux-archive@1.2.3?distro=Arch Linux&release=rolling-fixture&arch=x86_64",
+    "release_revision": "fixture-1",
+    "repository_component": "core",
+    "schema_version": "h3_os_package_identity_candidate.v0",
+    "source_id": "arch_linux_archive",
+    "source_native_id": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+    "source_package_name": "fixture-arch-linux-archive-src",
+    "supporting_fields": [
+      "ecosystem",
+      "distribution",
+      "distribution_release",
+      "repository_component",
+      "package_name",
+      "architecture",
+      "version",
+      "source_native_id",
+      "purl_candidate"
+    ],
+    "truth_boundary": {
+      "identity_candidate_is_accepted_identity": false,
+      "master_index_mutated": false,
+      "os_package_identity_candidate_is_truth": false,
+      "os_package_metadata_is_identity_truth": false,
+      "os_package_metadata_proves_installability": false,
+      "public_index_mutated": false,
+      "purl_candidate_is_accepted_identity": false,
+      "purl_candidate_is_truth": false,
+      "repository_metadata_is_installability_verification": false
+    },
+    "version": "1.2.3"
+  },
+  "os_platform_compatibility_candidate": {
+    "architecture": "x86_64",
+    "compatibility_candidate_id": "h3.compatibility_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+    "compatibility_status_candidate": "metadata_candidate_review_required",
+    "dependency_environment_summary": {
+      "dependency_count": 1,
+      "relations": [
+        {
+          "architecture_or_context": "x86_64",
+          "optional": false,
+          "related_package_name": "fixture-arch-linux-archive-dep",
+          "relation_kind": "depends",
+          "version_range_or_constraint": ">= 1.0"
+        },
+        {
+          "architecture_or_context": "x86_64",
+          "optional": false,
+          "related_package_name": "virtual-fixture-arch-linux-archive",
+          "relation_kind": "provides",
+          "version_range_or_constraint": "1"
+        }
+      ]
+    },
+    "distribution": "Arch Linux",
+    "distribution_release": "rolling-fixture",
+    "limitations": [
+      "Compatibility candidate is not verified compatibility.",
+      "Repository presence does not prove installability on every system.",
+      "Architecture match does not prove runtime compatibility."
+    ],
+    "operating_system_family": "Arch Linux",
+    "package_identity_candidate_ref": "h3.identity_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+    "package_manager_context": "pacman",
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "repository_index_fetch_used": false,
+      "scraping_made": false
+    },
+    "repository_channel": "core",
+    "repository_component": "core",
+    "schema_version": "h3_os_platform_compatibility_candidate.v0",
+    "source_id": "arch_linux_archive",
+    "truth_boundary": {
+      "architecture_match_proves_runtime_compatibility": false,
+      "compatibility_candidate_is_verified_compatibility": false,
+      "compatibility_correctness_claimed": false,
+      "dependency_correctness_claimed": false,
+      "master_index_mutated": false,
+      "os_compatibility_candidate_is_truth": false,
+      "os_platform_compatibility_candidate_is_truth": false,
+      "public_index_mutated": false,
+      "repository_presence_proves_installability": false
+    },
+    "unsupported_or_removed_candidate": false
+  },
+  "package_locator": "fixture:h3:arch_linux_archive:typical:fixture-arch-linux-archive",
+  "package_name": "fixture-arch-linux-archive",
+  "platform_or_environment_markers": [
+    "Arch Linux",
+    "pacman"
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "project_urls": [
+    "fixture:project:h3:arch_linux_archive:fixture-arch-linux-archive"
+  ],
+  "provides_summary": {
+    "provides_count": 1,
+    "relations": [
+      {
+        "architecture_or_context": "x86_64",
+        "optional": false,
+        "related_package_name": "virtual-fixture-arch-linux-archive",
+        "relation_kind": "provides",
+        "version_range_or_constraint": "1"
+      }
+    ]
+  },
+  "purl_candidate": "pkg:arch/fixture-arch-linux-archive@1.2.3?distro=Arch Linux&release=rolling-fixture&arch=x86_64",
+  "release_revision": "fixture-1",
+  "repository_channel": "core",
+  "repository_component": "core",
+  "repository_urls": [
+    "fixture:repository:h3:arch_linux_archive:fixture-arch-linux-archive"
+  ],
+  "schema_version": "h3_os_package_normalized_record.v0",
+  "source_cache_candidate_preview": {
+    "accepted_source_truth": false,
+    "candidate_id": "h3.source_cache_candidate.arch_linux_archive.arch_linux_archive_fixture_arch_linux_archive_1_2_3_typical.v0",
+    "connector_family": "directory_listing",
+    "mapping_status": "preview_only_fixture",
+    "notes": [
+      "Source-cache preview only; no source-cache runtime write occurred."
+    ],
+    "package_locator": "fixture:h3:arch_linux_archive:typical:fixture-arch-linux-archive",
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "repository_index_fetch_used": false,
+      "scraping_made": false
+    },
+    "schema_version": "h3_os_package_source_cache_candidate_preview.v0",
+    "source_cache_runtime_mutated": false,
+    "source_cache_write_enabled": false,
+    "source_id": "arch_linux_archive",
+    "source_limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only OS package archive parsing evidence",
+      "synthetic public-safe fixture",
+      "fixture-only OS package archive parsing evidence"
+    ],
+    "source_metadata_summary": {
+      "architecture": "x86_64",
+      "distribution": "Arch Linux",
+      "distribution_release": "rolling-fixture",
+      "ecosystem": "arch",
+      "package_name": "fixture-arch-linux-archive",
+      "purl_candidate": "pkg:arch/fixture-arch-linux-archive@1.2.3?distro=Arch Linux&release=rolling-fixture&arch=x86_64",
+      "version": "1.2.3"
+    },
+    "source_native_id": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+    "truth_boundary": {
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "os_compatibility_candidate_is_truth": false,
+      "os_package_identity_candidate_is_truth": false,
+      "public_index_mutated": false,
+      "source_cache_preview_is_accepted_source": false
+    }
+  },
+  "source_id": "arch_linux_archive",
+  "source_limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence",
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence"
+  ],
+  "source_metadata": {
+    "fixture_shape": "typical",
+    "source_label": "arch_linux_archive",
+    "synthetic_fixture_only": true
+  },
+  "source_native_id": "arch_linux_archive/fixture-arch-linux-archive/1.2.3/typical",
+  "source_package_name": "fixture-arch-linux-archive-src",
+  "title": "fixture-arch-linux-archive 1.2.3",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_os_compatibility_fact": false,
+    "accepted_os_package_identity": false,
+    "accepted_source_truth": false,
+    "compatibility_candidate_is_verified_compatibility": false,
+    "compatibility_correctness_claimed": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "repository_metadata_is_installability_verification": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "upstream_urls": [
+    "fixture:upstream:h3:arch_linux_archive:fixture-arch-linux-archive"
+  ],
+  "version": "1.2.3"
+}

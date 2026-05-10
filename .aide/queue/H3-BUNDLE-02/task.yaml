@@ -1,6 +1,6 @@
 id: H3-BUNDLE-02
 title: OS package archive fixture runtimes and normalizers
-status: queued
+status: needs_review
 purpose: Add committed-fixture-only OS package archive fixture replay and normalizer runtime after H3 policy packs.
 allowed_scope_summary: H3 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
 gate: H3-BUNDLE-01 passes; no live archive calls, source sync, repository index fetches, package downloads, package-manager invocation, install/execute, public/master index mutation, or truth acceptance.

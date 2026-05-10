@@ -1,0 +1,50 @@
+{
+  "download_allowed_current": false,
+  "file_candidate_id": "h3.file_candidate.debian_snapshot.fixture_debian_snapshot_1_2_3_debian_metadata.0.v0",
+  "file_hashes": {
+    "sha256": "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"
+  },
+  "file_kind": "metadata_record",
+  "file_name": "fixture-debian-snapshot-1.2.3.debian.metadata",
+  "file_size": 12345,
+  "limitations": [
+    "File metadata candidate is not package download permission.",
+    "Hash metadata candidate is not malware safety or authenticity proof without review."
+  ],
+  "package_identity_candidate_ref": "h3.identity_candidate.debian_snapshot.debian_snapshot_fixture_debian_snapshot_1_2_3_typical.v0",
+  "payload_available_current": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "repository_locator": "fixture:h3:debian_snapshot:repository:main",
+  "schema_version": "h3_os_package_file_candidate.v0",
+  "source_id": "debian_snapshot",
+  "source_locator": "fixture:h3:debian_snapshot:file-metadata:typical",
+  "truth_boundary": {
+    "download_allowed_current": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "payload_available_current": false,
+    "public_index_mutated": false,
+    "verified_installability_claimed": false
+  }
+}

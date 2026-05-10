@@ -1,0 +1,136 @@
+{
+  "connector_family": "directory_listing",
+  "expected_normalized_ref": "examples/connectors/h3_os_package_archives/normalized/freebsd_packages_ports_normalized.json",
+  "external_api_used": false,
+  "fixture_id": "h3.fixture.freebsd_packages_ports.policy_blocked.v0",
+  "fixture_kind": "policy_blocked",
+  "fixture_payload": {
+    "architecture": "",
+    "binary_package_name": "fixture-freebsd-packages-ports",
+    "build_id": "",
+    "changelog_or_news_refs": [],
+    "description_summary": "Synthetic freebsd_packages_ports fixture for OS package archive normalization.",
+    "distribution": "FreeBSD",
+    "distribution_release": "freebsd-fixture",
+    "ecosystem": "freebsd",
+    "epoch": "0",
+    "files": [],
+    "hash_metadata": {
+      "os_package_hash_proves_malware_safety": false,
+      "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    "license_metadata": {
+      "declared_licenses": [
+        "MIT"
+      ],
+      "license_metadata_is_rights_clearance": false
+    },
+    "limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only OS package archive parsing evidence",
+      "policy-blocked fixture; no live access or repository index fetch approved"
+    ],
+    "maintainer_or_packager_metadata": [
+      {
+        "identity_verified": false,
+        "name": "fixture-packager"
+      }
+    ],
+    "package_locator": "fixture:h3:freebsd_packages_ports:policy_blocked:fixture-freebsd-packages-ports",
+    "package_name": "fixture-freebsd-packages-ports",
+    "platform_or_environment_markers": [
+      "FreeBSD",
+      "pkg/ports"
+    ],
+    "project_urls": [
+      "fixture:project:h3:freebsd_packages_ports:fixture-freebsd-packages-ports"
+    ],
+    "relations": [],
+    "release_revision": "fixture-1",
+    "repository_channel": "quarterly",
+    "repository_component": "quarterly",
+    "repository_urls": [
+      "fixture:repository:h3:freebsd_packages_ports:fixture-freebsd-packages-ports"
+    ],
+    "source_metadata": {
+      "fixture_shape": "policy_blocked",
+      "source_label": "freebsd_packages_ports",
+      "synthetic_fixture_only": true
+    },
+    "source_native_id": "freebsd_packages_ports/fixture-freebsd-packages-ports/1.2.3/policy_blocked",
+    "source_package_name": "fixture-freebsd-packages-ports-src",
+    "title": "fixture-freebsd-packages-ports 1.2.3",
+    "upstream_urls": [
+      "fixture:upstream:h3:freebsd_packages_ports:fixture-freebsd-packages-ports"
+    ],
+    "version": "1.2.3"
+  },
+  "fixture_public_safe": true,
+  "fixture_status": "policy_blocked",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence"
+  ],
+  "live_call_used": false,
+  "network_used": false,
+  "notes": [
+    "No live archive access, API call, repository index fetch, package download, package-manager invocation, install, or execution occurred."
+  ],
+  "package_manager_invoked": false,
+  "package_payload_included": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "repository_index_payload_included": false,
+  "schema_version": "h3_os_package_fixture.v0",
+  "source_id": "freebsd_packages_ports",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_compatibility_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_os_compatibility_fact": false,
+    "accepted_os_package_identity": false,
+    "accepted_package_identity_truth": false,
+    "accepted_public_truth": false,
+    "accepted_source_truth": false,
+    "compatibility_candidate_is_verified_compatibility": false,
+    "compatibility_correctness_claimed": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "os_package_metadata_is_identity_truth": false,
+    "os_package_metadata_proves_installability": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "repository_metadata_is_installability_verification": false,
+    "repository_presence_proves_installability": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

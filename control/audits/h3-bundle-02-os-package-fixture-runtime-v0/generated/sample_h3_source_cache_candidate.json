@@ -1,0 +1,59 @@
+{
+  "accepted_source_truth": false,
+  "candidate_id": "h3.source_cache_candidate.debian_snapshot.debian_snapshot_fixture_debian_snapshot_1_2_3_typical.v0",
+  "connector_family": "directory_listing",
+  "mapping_status": "preview_only_fixture",
+  "notes": [
+    "Source-cache preview only; no source-cache runtime write occurred."
+  ],
+  "package_locator": "fixture:h3:debian_snapshot:typical:fixture-debian-snapshot",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "schema_version": "h3_os_package_source_cache_candidate_preview.v0",
+  "source_cache_runtime_mutated": false,
+  "source_cache_write_enabled": false,
+  "source_id": "debian_snapshot",
+  "source_limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence",
+    "synthetic public-safe fixture",
+    "fixture-only OS package archive parsing evidence"
+  ],
+  "source_metadata_summary": {
+    "architecture": "amd64",
+    "distribution": "Debian",
+    "distribution_release": "bookworm-fixture",
+    "ecosystem": "debian",
+    "package_name": "fixture-debian-snapshot",
+    "purl_candidate": "pkg:debian/fixture-debian-snapshot@1.2.3?distro=Debian&release=bookworm-fixture&arch=amd64",
+    "version": "1.2.3"
+  },
+  "source_native_id": "debian_snapshot/fixture-debian-snapshot/1.2.3/typical",
+  "truth_boundary": {
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "source_cache_preview_is_accepted_source": false
+  }
+}

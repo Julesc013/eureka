@@ -1,0 +1,45 @@
+{
+  "architecture_or_context": "amd64",
+  "dependency_candidate_id": "h3.dependency_candidate.debian_snapshot.provides.virtual_fixture_debian_snapshot.1.v0",
+  "limitations": [
+    "Dependency/conflict/provides candidate is a source observation and does not prove dependency correctness or environment solvability."
+  ],
+  "optional": false,
+  "package_identity_candidate_ref": "h3.identity_candidate.debian_snapshot.debian_snapshot_fixture_debian_snapshot_1_2_3_typical.v0",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "repository_index_fetch_used": false,
+    "scraping_made": false
+  },
+  "related_package_name": "virtual-fixture-debian-snapshot",
+  "relation_kind": "provides",
+  "schema_version": "h3_os_package_dependency_candidate.v0",
+  "source_id": "debian_snapshot",
+  "source_metadata_ref": "debian_snapshot/fixture-debian-snapshot/1.2.3/typical",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "compatibility_correctness_claimed": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_candidate_proves_correctness": false,
+    "dependency_correctness_claimed": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  },
+  "version_range_or_constraint": "1"
+}
