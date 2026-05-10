@@ -1,6 +1,6 @@
 {
-  "completed_queue_item": "PUBLIC-ALPHA-DEPLOYMENT-PLAN-01",
-  "current_queue_item": "LOCAL-MVP-ITERATION-01",
+  "completed_queue_item": "LOCAL-MVP-ITERATION-01",
+  "current_queue_item": "H2-BUNDLE-01",
   "deployment_scope": {
     "deployment_performed": false,
     "dns_changed": false,
@@ -17,18 +17,18 @@
     ".aide/reports/eureka-repo-health.md",
     "AGENTS.md"
   ],
-  "generated_at_note": "codex_updated_after_public_alpha_deployment_plan_01",
+  "generated_at_note": "codex_updated_after_local_mvp_iteration_01",
   "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
   "known_warn_only_conditions": [
     "Deployment execution approval is absent.",
-    "DNS/custom-domain evidence remains unknown.",
-    "Provider selection and resource creation remain future/operator-gated.",
-    "Public launch evidence remains future-gated."
+    "H3 remains deferred until H2 patterns are reviewed.",
+    "J1 risky-action policy remains deferred.",
+    "K semantic/AI and L wider-client lanes remain deferred."
   ],
   "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "next_recommended_queue_item": "LOCAL-MVP-ITERATION-01",
+  "next_recommended_queue_item": "H2-BUNDLE-01",
   "next_spine": [
-    "LOCAL-MVP-ITERATION-01 continue local MVP improvements pending deployment approval"
+    "H2-BUNDLE-01 package registry source-family policy packs"
   ],
   "primary_task_packet": ".aide/context/latest-task-packet.md",
   "product_boundary": {
@@ -53,8 +53,8 @@
   "validation": {
     "aide_lite": "pass_with_verify_warnings",
     "architecture_boundaries": "pass",
+    "local_mvp_iteration": "pass",
     "major_validators": "pass",
-    "public_alpha_deployment_plan": "pass",
     "unittest_discovery": "pass"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "deployment_requires_explicit_operator_approval": true,
+  "gate_evaluation_required_before_selecting_next_task": true,
+  "risky_actions_require_j1": true,
+  "schema_version": "local_mvp_expansion_gate_policy.v0",
+  "semantic_ai_requires_k0_no_truth_policy": true,
+  "source_expansion_must_follow_h0_h1_pattern": true,
+  "wider_clients_require_l0_planning": true
+}

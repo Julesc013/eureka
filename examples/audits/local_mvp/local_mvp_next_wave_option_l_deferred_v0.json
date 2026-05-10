@@ -1,0 +1,68 @@
+{
+  "deferral_reason": "Requires L0 wider-client planning and compatibility gates.",
+  "forbidden_actions": [
+    "deployment",
+    "hosting_provider_calls",
+    "dns_changes",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_index_mutation",
+    "master_index_mutation",
+    "truth_acceptance"
+  ],
+  "notes": [
+    "Deferred by LOCAL-MVP-ITERATION-01."
+  ],
+  "option_id": "local-mvp-option-l-v0",
+  "option_status": "deferred",
+  "option_task_id": "L0-BUNDLE-01",
+  "option_title": "Wider client roadmap and compatibility expansion",
+  "option_track": "L",
+  "prerequisites": [
+    "Local MVP router review",
+    "Preserved product and truth boundaries"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "readiness_evidence_refs": [
+    "control/audits/local-mvp-iteration-01-v0/"
+  ],
+  "required_gates": [
+    "Explicit lane gate before implementation"
+  ],
+  "risk_assessment": "Premature before more source/ranking maturity and hosted/operator decisions.",
+  "schema_version": "local_mvp_next_wave_option.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "local_iteration_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "selected_next_task_is_approval": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "value_assessment": "Useful future client expansion lane."
+}

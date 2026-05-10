@@ -1,0 +1,56 @@
+{
+  "deferral_id": "local-mvp-deployment-deferral-v0",
+  "deferral_reason": "Public-alpha deployment planning is not deployment approval, and no explicit operator deployment execution approval artifact is present.",
+  "deployment_approval_present": false,
+  "deployment_deferred": true,
+  "forbidden_next_tasks": [
+    "deployment execution",
+    "public launch",
+    "provider API mutation",
+    "DNS mutation"
+  ],
+  "missing_approval_items": [
+    "explicit operator deployment execution approval",
+    "provider-specific launch evidence",
+    "DNS/custom-domain evidence",
+    "signed rollout authorization"
+  ],
+  "notes": [
+    "Deployment remains operator-gated."
+  ],
+  "operator_signoff_present": false,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "safe_next_tasks": [
+    "H2-BUNDLE-01",
+    "MVP-ALPHA-REMEDIATION-01",
+    "LOCAL-MVP-BLOCKED-01"
+  ],
+  "schema_version": "local_mvp_deployment_deferral.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "local_iteration_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "selected_next_task_is_approval": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  }
+}

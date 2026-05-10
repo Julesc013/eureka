@@ -1,0 +1,71 @@
+{
+  "alternatives_considered": [
+    "H3-BUNDLE-01",
+    "J1-POLICY-01",
+    "K0-BUNDLE-01",
+    "L0-BUNDLE-01",
+    "PUBLIC-ALPHA-OPERATOR-DEPLOYMENT-APPROVAL-01",
+    "MVP-ALPHA-REMEDIATION-01"
+  ],
+  "decision_id": "local-mvp-next-task-remediation-v0",
+  "decision_reason": "Use this decision shape only if blockers are found in local MVP evidence.",
+  "decision_status": "needs_remediation",
+  "deployment_allowed_current": false,
+  "forbidden_actions": [
+    "deployment",
+    "hosting_provider_calls",
+    "dns_changes",
+    "site_dist_mutation",
+    "public_bind",
+    "live_source_fanout",
+    "source_sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_index_mutation",
+    "master_index_mutation",
+    "truth_acceptance"
+  ],
+  "launch_allowed_current": false,
+  "notes": [
+    "This decision selects the next local planning bundle only."
+  ],
+  "operator_approval_required": false,
+  "preconditions": [
+    "PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 passed with planning-only evidence",
+    "No remediation blocker is present",
+    "No deployment approval is inferred"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "schema_version": "local_mvp_next_task_decision.v0",
+  "selected_next_task": "MVP-ALPHA-REMEDIATION-01",
+  "selected_next_task_title": "Resolve local MVP readiness blockers",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "local_iteration_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "selected_next_task_is_approval": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  }
+}

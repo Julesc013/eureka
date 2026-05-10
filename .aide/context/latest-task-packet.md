@@ -2,17 +2,19 @@
 
 ## PHASE
 
-LOCAL-MVP-ITERATION-01 - Continue local MVP improvements pending deployment approval
+H2-BUNDLE-01 - Package registry source-family policy packs
 
 ## GOAL
 
-Continue after PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 using only local, review-gated planning. This default safe route exists because deployment execution approval is absent. It must proceed without changing Eureka product behavior and must not deploy, launch, call providers, change DNS, enable public hosting, enable public relay, mutate generated site output, mutate public or master indexes, enable unsafe behavior, infer operator signoff, or claim public alpha is live.
+Begin the next local non-deploy source expansion wave selected by LOCAL-MVP-ITERATION-01. H2 should add package registry source-family policy packs for Maven Central, NuGet, crates.io, RubyGems, CPAN, CRAN, conda-forge, and OCI registry metadata while preserving the H0/H1 source-family policy pattern.
+
+This packet is a Eureka AIDE resumption handoff only and must proceed without changing Eureka product behavior until a future H2 task prompt explicitly scopes implementation. H2 remains local and metadata-first. It must not deploy, launch, call providers, change DNS, enable hosting, enable public relay, mutate generated site output, perform live source fanout, enable source sync, download, upload, install, execute, mirror, emulate, mutate public/master indexes, accept source/evidence/candidate truth, or claim rights clearance, malware safety, installability, production readiness, or public launch.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture, environment/config planning, static/backend split, DNS readiness, rollout gates, operator checklist, and no-op deployment evidence. It intentionally did not deploy or approve launch.
+LOCAL-MVP-ITERATION-01 selected H2 as the highest-value non-deploy local expansion after the MVP alpha and public-alpha deployment-planning packets. H3, J1, K, L, and deployment execution remain deferred behind explicit gates.
 
 ## CONTEXT_REFS
 
@@ -23,11 +25,12 @@ PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/PUBLIC-ALPHA-DEPLOYMENT-PLAN-01/task.yaml`
 - `.aide/queue/LOCAL-MVP-ITERATION-01/task.yaml`
+- `.aide/queue/H2-BUNDLE-01/task.yaml`
+- `control/audits/local-mvp-iteration-01-v0/`
 - `control/audits/public-alpha-deployment-plan-01-v0/`
-- `control/audits/mvp-alpha-operator-review-01-v0/`
-- `examples/hosting/deployment/`
+- `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/`
+- `control/audits/h1-bundle-04-review-quality-audit-v0/`
 
 ## ALLOWED_PATHS
 
@@ -36,23 +39,21 @@ PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture
 
 ## IMPLEMENTATION
 
-- Treat deployment planning as unsigned and no-op.
-- Require explicit human/operator deployment execution approval before any future provider, DNS, or public launch action.
-- Keep launch, provider, DNS, hosting, public relay, live source fanout, downloads, uploads, accounts, telemetry, public/master index mutation, and production claims disabled.
-- Do not accept evidence, candidates, packs, sources, actions, or public truth.
+- Follow H0/H1 source-family policy-pack patterns.
+- Keep package registry expansion policy-pack and metadata-first.
+- Do not perform live source calls or source sync.
+- Do not enable downloads, install, execute, mirror, or emulate actions.
+- Preserve deployment deferral and no-truth boundaries.
 
 ## ACCEPTANCE
 
-- Local iteration remains bounded by the no-deployment planning posture.
-- Any future deployment decision path names a reviewed operator approval task.
-- Any warning or blocker is preserved honestly.
+- H2 work remains non-deploy and local.
+- Package registry source-family policy packs are reviewable without enabling source runtime behavior.
+- Public/master indexes and product runtime behavior remain unchanged.
 
 ## VALIDATION
 
-- `python scripts/validate_public_alpha_deployment_plan.py`
-- `python scripts/check_public_alpha_deployment_plan.py --input examples/hosting/deployment/public_alpha_deployment_plan_v0.json --check`
-- `python scripts/check_public_alpha_config_manifest.py --input examples/hosting/deployment/public_alpha_config_manifest_v0.json --check`
-- `python scripts/check_public_alpha_dns_readiness.py --input examples/hosting/deployment/public_alpha_dns_readiness_unknown_v0.json --check`
+- `python scripts/validate_local_mvp_iteration.py`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -63,17 +64,16 @@ PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture
 
 ## EVIDENCE
 
-- `control/audits/public-alpha-deployment-plan-01-v0/public_alpha_deployment_plan_01_report.json`
-- `control/audits/public-alpha-deployment-plan-01-v0/no_deployment_report.md`
-- `control/audits/public-alpha-deployment-plan-01-v0/next_task_recommendation.md`
-- `control/audits/public-alpha-deployment-plan-01-v0/validation.md`
+- `control/audits/local-mvp-iteration-01-v0/local_mvp_iteration_01_report.json`
+- `control/audits/local-mvp-iteration-01-v0/recommended_next_task.md`
+- `control/audits/local-mvp-iteration-01-v0/deployment_deferral_review.md`
+- `control/audits/local-mvp-iteration-01-v0/validation.md`
 
 ## NON_GOALS
 
 - No deployment or launch.
 - No provider API calls, provider credentials, secrets, DNS changes, or custom domain claims.
-- No public relay or public bind.
-- No live source calls, external/API/model/provider calls, source sync, or public query fanout.
+- No public relay, public bind, live source calls, source sync, or public query fanout.
 - No downloads, mirroring, installs, execution, or emulation.
 - No uploads, accounts, telemetry, or credential collection.
 - No public search behavior change.
@@ -83,12 +83,12 @@ PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 defined provider-neutral deployment architecture
 
 ## OUTPUT_SCHEMA
 
-Future local-iteration responses should preserve status, summary, commits, changed paths, validation, decision/scope, risks, and next task.
+Future H2 responses should preserve status, summary, commits, changed paths, validation, source-family scope, no-deploy boundary, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1120
+- approx_tokens: 1000
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS

@@ -1,0 +1,6 @@
+{
+  "deployment_deferred_unless_explicit_operator_approval_artifact_exists": true,
+  "operator_review_pass_counts_as_deployment_approval": false,
+  "planning_only_artifacts_count_as_approval": false,
+  "schema_version": "local_mvp_deployment_deferral_policy.v0"
+}

@@ -1,0 +1,15 @@
+{
+  "deferral_fields_required": true,
+  "readiness_fields_required": true,
+  "required_options": [
+    "H2",
+    "H3",
+    "J1",
+    "K",
+    "L",
+    "deployment",
+    "remediation"
+  ],
+  "risk_fields_required": true,
+  "schema_version": "local_mvp_next_wave_option_policy.v0"
+}

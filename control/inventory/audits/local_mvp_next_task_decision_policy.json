@@ -1,0 +1,8 @@
+{
+  "default_safe_selected_task": "H2-BUNDLE-01",
+  "no_broader_source_family_route_without_h0_h1_evidence": true,
+  "no_deployment_execution_route_without_explicit_approval": true,
+  "no_risky_action_route_without_j1": true,
+  "no_semantic_ai_route_without_k0": true,
+  "schema_version": "local_mvp_next_task_decision_policy.v0"
+}

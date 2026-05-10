@@ -1,0 +1,17 @@
+{
+  "deployment_allowed_current": false,
+  "launch_allowed_current": false,
+  "local_iteration_only": true,
+  "recommended_default_next_task": "H2-BUNDLE-01",
+  "remediation_overrides_expansion": true,
+  "required_decision_candidates": [
+    "H2-BUNDLE-01",
+    "H3-BUNDLE-01",
+    "J1-POLICY-01",
+    "K0-BUNDLE-01",
+    "L0-BUNDLE-01",
+    "PUBLIC-ALPHA-OPERATOR-DEPLOYMENT-APPROVAL-01",
+    "MVP-ALPHA-REMEDIATION-01"
+  ],
+  "schema_version": "local_mvp_iteration_policy.v0"
+}

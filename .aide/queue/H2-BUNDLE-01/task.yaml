@@ -1,0 +1,40 @@
+task_id: H2-BUNDLE-01
+title: Package registry source-family policy packs
+status: queued
+phase: H2-BUNDLE-01
+allowed_paths:
+  - .aide/**
+  - control/audits/**
+  - control/inventory/**
+  - contracts/**
+  - docs/**
+  - examples/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - site/dist/**
+  - runtime/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - connectors/**
+  - packaging/**
+  - third_party/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, launch, provider calls, DNS changes, generated site output mutation, public behavior enablement, public/master index mutation, secrets, source sync, live fanout, downloads, installs, execution, or truth acceptance
+validation:
+  - python scripts/validate_local_mvp_iteration.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py verify
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: H2-BUNDLE-01

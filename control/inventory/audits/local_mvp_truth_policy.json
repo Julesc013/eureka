@@ -1,0 +1,10 @@
+{
+  "candidate_truth_acceptance_allowed": false,
+  "evidence_truth_acceptance_allowed": false,
+  "local_iteration_is_launch": false,
+  "master_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "schema_version": "local_mvp_truth_policy.v0",
+  "selected_next_task_is_approval": false,
+  "source_truth_acceptance_allowed": false
+}

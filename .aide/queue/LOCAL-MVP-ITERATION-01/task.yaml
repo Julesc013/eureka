@@ -1,15 +1,20 @@
 task_id: LOCAL-MVP-ITERATION-01
-title: Continue local MVP improvements pending deployment approval
-status: queued
+title: Local MVP iteration router and next-wave selection
+status: needs_review
 phase: LOCAL-MVP-ITERATION-01
 allowed_paths:
   - .aide/**
   - control/audits/**
+  - control/inventory/audits/**
+  - contracts/audits/**
   - docs/**
+  - examples/audits/**
+  - scripts/**
+  - tests/audits/**
+  - tests/operations/**
 forbidden_paths:
   - site/dist/**
   - runtime/**
-  - contracts/**
   - surfaces/**
   - site/**
   - native/**
@@ -26,10 +31,15 @@ forbidden_paths:
 non_goals:
   - no deployment, launch, provider calls, DNS changes, generated site output mutation, public behavior enablement, public/master index mutation, secrets, or inferred operator approval
 validation:
+  - python scripts/validate_local_mvp_iteration.py
+  - python scripts/plan_local_mvp_iteration.py --check
+  - python scripts/select_local_mvp_next_task.py --plan examples/audits/local_mvp/local_mvp_iteration_plan_v0.json --check
+  - python scripts/check_local_mvp_deployment_deferral.py --input examples/audits/local_mvp/local_mvp_deployment_deferral_v0.json --check
+  - python scripts/summarize_local_mvp_iteration.py --input examples/audits/local_mvp --check
   - py -3 .aide/scripts/aide_lite.py doctor
   - py -3 .aide/scripts/aide_lite.py validate
   - py -3 .aide/scripts/aide_lite.py test
   - py -3 .aide/scripts/aide_lite.py selftest
   - py -3 .aide/scripts/aide_lite.py verify
   - py -3 .aide/scripts/aide_lite.py eval run
-next_recommended_task: LOCAL-MVP-ITERATION-01
+next_recommended_task: H2-BUNDLE-01

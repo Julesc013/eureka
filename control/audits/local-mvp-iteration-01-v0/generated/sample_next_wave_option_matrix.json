@@ -1,0 +1,515 @@
+{
+  "options": [
+    {
+      "deferral_reason": null,
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Recommended as the next local bundle when no remediation blocker is present."
+      ],
+      "option_id": "local-mvp-option-h2-v0",
+      "option_status": "recommended",
+      "option_task_id": "H2-BUNDLE-01",
+      "option_title": "Package registry source-family policy packs",
+      "option_track": "H2",
+      "prerequisites": [
+        "H0 Source OS foundation evidence is present.",
+        "H1 first metadata wave evidence is present.",
+        "Public deployment remains deferred and local expansion remains non-deploy."
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/",
+        "control/audits/h1-bundle-04-review-quality-audit-v0/",
+        "control/audits/public-alpha-deployment-plan-01-v0/"
+      ],
+      "required_gates": [
+        "H0/H1 source-family policy pattern",
+        "no-live-default posture",
+        "no deployment approval inference"
+      ],
+      "risk_assessment": "Low current execution risk because H2 is policy-pack only and forbids downloads, source sync, live fanout, and truth acceptance.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "High value metadata-first source-family expansion for developer/software artifact coverage."
+    },
+    {
+      "deferral_reason": "Defer until H2 package registry policy patterns are reviewed.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-h3-v0",
+      "option_status": "deferred",
+      "option_task_id": "H3-BUNDLE-01",
+      "option_title": "OS package archive policy packs",
+      "option_track": "H3",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "Higher compatibility and historical-state complexity than H2.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "High future value for OS package archive coverage."
+    },
+    {
+      "deferral_reason": "Requires J1 policy gates and operator review before any risky action path.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-j1-v0",
+      "option_status": "deferred",
+      "option_task_id": "J1-POLICY-01",
+      "option_title": "Download, mirror, install, execute, and emulate action policy",
+      "option_track": "J1",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "High safety, rights, malware, and execution risk if rushed.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "Important future policy for risky actions."
+    },
+    {
+      "deferral_reason": "Requires K0 typed-output, eval, and no-truth gates.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-k-v0",
+      "option_status": "deferred",
+      "option_task_id": "K0-BUNDLE-01",
+      "option_title": "Semantic/AI preflight, typed outputs, eval gates, and no-truth policy",
+      "option_track": "K",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "Semantic or AI output must not become truth or bypass review.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "Useful future acceleration layer for a proven deterministic pipeline."
+    },
+    {
+      "deferral_reason": "Requires L0 wider-client planning and compatibility gates.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-l-v0",
+      "option_status": "deferred",
+      "option_task_id": "L0-BUNDLE-01",
+      "option_title": "Wider client roadmap and compatibility expansion",
+      "option_track": "L",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "Premature before more source/ranking maturity and hosted/operator decisions.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "Useful future client expansion lane."
+    },
+    {
+      "deferral_reason": "No explicit operator deployment execution approval artifact is present.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-deployment-v0",
+      "option_status": "deferred",
+      "option_task_id": "PUBLIC-ALPHA-OPERATOR-DEPLOYMENT-APPROVAL-01",
+      "option_title": "Operator approval for deployment execution",
+      "option_track": "deployment",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "Deployment approval cannot be inferred from planning, audit, or PASS statuses.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "Required only when a future explicit deployment approval artifact exists."
+    },
+    {
+      "deferral_reason": "Not selected because no blocking evidence is present in current reports.",
+      "forbidden_actions": [
+        "deployment",
+        "hosting_provider_calls",
+        "dns_changes",
+        "site_dist_mutation",
+        "public_bind",
+        "live_source_fanout",
+        "source_sync",
+        "downloads",
+        "uploads",
+        "accounts",
+        "telemetry",
+        "public_index_mutation",
+        "master_index_mutation",
+        "truth_acceptance"
+      ],
+      "notes": [
+        "Deferred by LOCAL-MVP-ITERATION-01."
+      ],
+      "option_id": "local-mvp-option-remediation-v0",
+      "option_status": "ready",
+      "option_task_id": "MVP-ALPHA-REMEDIATION-01",
+      "option_title": "Resolve local MVP readiness blockers",
+      "option_track": "remediation",
+      "prerequisites": [
+        "Local MVP router review",
+        "Preserved product and truth boundaries"
+      ],
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_hosting": false,
+        "enabled_live_source_fanout": false,
+        "enabled_public_relay": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "mutated_site_dist": false
+      },
+      "readiness_evidence_refs": [
+        "control/audits/local-mvp-iteration-01-v0/"
+      ],
+      "required_gates": [
+        "Explicit lane gate before implementation"
+      ],
+      "risk_assessment": "Safe remediation route when blockers exist.",
+      "schema_version": "local_mvp_next_wave_option.v0",
+      "truth_boundary": {
+        "candidate_truth_accepted": false,
+        "evidence_truth_accepted": false,
+        "local_iteration_is_launch": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "production_claimed": false,
+        "public_alpha_live_claimed": false,
+        "public_index_mutated": false,
+        "rights_clearance_claimed": false,
+        "selected_next_task_is_approval": false,
+        "source_truth_accepted": false,
+        "verified_installability_claimed": false
+      },
+      "value_assessment": "Use if local MVP evidence reveals blockers."
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "recommended_next_task": "H2-BUNDLE-01",
+  "schema_version": "local_mvp_option_matrix.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "local_iteration_is_launch": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "selected_next_task_is_approval": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  }
+}
