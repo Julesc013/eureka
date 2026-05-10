@@ -1,0 +1,7 @@
+id: H7-BUNDLE-03
+title: Library, cultural, book, and research approved metadata-only live probes
+status: queued
+purpose: Add approval-gated bounded metadata-only live-probe framework for H7 sources after fixture runtime review.
+allowed_scope_summary: H7 live-probe contracts, policies, source-specific metadata wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+gate: H7-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, no OAI-PMH harvests, API fanout, full-text/PDF/book/article/dataset/patent/IIIF/media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H7-BUNDLE-02

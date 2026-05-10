@@ -1,0 +1,133 @@
+{
+  "$id": "contracts/connectors/h7_library_research_normalized_record.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "access_rights_availability_summary": {
+      "type": "string"
+    },
+    "arxiv_id_candidate": {
+      "type": "string"
+    },
+    "catalog_record_id": {
+      "type": "string"
+    },
+    "citation_or_relation_summary": {
+      "type": "string"
+    },
+    "collection_or_repository_ref": {
+      "type": "string"
+    },
+    "connector_family": {
+      "type": "string"
+    },
+    "contributors": {
+      "type": "array"
+    },
+    "creators": {
+      "type": "array"
+    },
+    "crossref_id_candidate": {
+      "type": "string"
+    },
+    "datacite_id_candidate": {
+      "type": "string"
+    },
+    "dataset_id_candidate": {
+      "type": "string"
+    },
+    "doi_candidate": {
+      "type": "string"
+    },
+    "format_or_medium": {
+      "type": "string"
+    },
+    "identifiers": {
+      "type": "array"
+    },
+    "isbn_candidate": {
+      "type": "string"
+    },
+    "issn_candidate": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "lccn_candidate": {
+      "type": "string"
+    },
+    "normalized_record_id": {
+      "type": "string"
+    },
+    "oclc_candidate": {
+      "type": "string"
+    },
+    "openalex_id_candidate": {
+      "type": "string"
+    },
+    "patent_number_candidate": {
+      "type": "string"
+    },
+    "pmcid_candidate": {
+      "type": "string"
+    },
+    "pmid_candidate": {
+      "type": "string"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "publication_or_creation_date": {
+      "type": "string"
+    },
+    "publisher_or_institution": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "h7_library_research_normalized_record.v0"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_limitations": {
+      "type": "array"
+    },
+    "source_metadata": {
+      "type": "object"
+    },
+    "source_native_id": {
+      "type": "string"
+    },
+    "source_record_kind": {
+      "type": "string"
+    },
+    "subject_or_classification": {
+      "type": "array"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_id",
+    "truth_boundary",
+    "product_boundary",
+    "normalized_record_id",
+    "connector_family",
+    "source_record_kind",
+    "title",
+    "source_metadata",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview"
+  ],
+  "title": "H7 Library Research Normalized Record",
+  "type": "object"
+}

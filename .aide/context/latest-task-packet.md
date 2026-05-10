@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - H7-BUNDLE-02 - Library, cultural, book, and research fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+UNSPECIFIED - H7-BUNDLE-03 - Library, cultural, book, and research approved metadata-only live probes. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-H7-BUNDLE-02 - Library, cultural, book, and research fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H7-BUNDLE-03 - Library, cultural, book, and research approved metadata-only live probes. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
