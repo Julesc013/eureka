@@ -1,0 +1,172 @@
+{
+  "schema_version": "source_pack_manifest.v0",
+  "source_pack_manifest_id": "source_pack.h2_package_registry.policy_pack.v0",
+  "pack_status": "draft_only",
+  "wave_id": "H2",
+  "wave_label": "Package registry source-family policy packs",
+  "source_records": [
+    {
+      "source_record_ref": "examples/sources/source_records/maven_central_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/nuget_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/crates_io_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/rubygems_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/cpan_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/cran_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/conda_forge_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/oci_registry_metadata_source_v2.json"
+    }
+  ],
+  "source_families": [
+    "package_registry"
+  ],
+  "source_capabilities": [
+    "source_known",
+    "catalog_indexed_future",
+    "supports_identifier_lookup_future",
+    "supports_metadata_record_fetch_future",
+    "supports_hashes_future"
+  ],
+  "source_policy_refs": [
+    "control/inventory/source_packs/h2_package_registry_source_pack_policy.json",
+    "control/inventory/source_packs/h2_package_registry_identity_policy.json",
+    "control/inventory/source_packs/h2_package_registry_approval_gates.json",
+    "control/inventory/source_packs/h2_package_registry_output_policy.json",
+    "control/inventory/source_packs/h2_package_registry_truth_policy.json",
+    "control/inventory/source_packs/h2_package_registry_no_live_call_policy.json",
+    "control/inventory/source_packs/h2_package_registry_no_download_policy.json"
+  ],
+  "connector_family_refs": [
+    "package_registry",
+    "api_json"
+  ],
+  "coverage_records": [
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/maven_central_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/nuget_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/crates_io_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/rubygems_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/cpan_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/cran_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/conda_forge_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h2_package_registries/coverage/oci_registry_metadata_coverage_preview_v0.json"
+    }
+  ],
+  "connector_scorecards": [
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/maven_central_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/nuget_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/crates_io_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/rubygems_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/cpan_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/cran_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/conda_forge_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h2_package_registries/scorecards/oci_registry_metadata_scorecard_preview_v0.json"
+    }
+  ],
+  "limitations": [
+    "H2-BUNDLE-01 is policy-pack-only.",
+    "The pack is an export preview and is not imported, submitted, or accepted.",
+    "Coverage previews are bounded planning records, not exhaustive source coverage."
+  ],
+  "review_posture": {
+    "review_required_before_live_access": true,
+    "review_required_before_source_cache_write": true,
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_master_index": true,
+    "review_required_before_import_or_submission": true
+  },
+  "no_live_access_posture": {
+    "live_access_enabled": false,
+    "source_sync_enabled": false,
+    "connector_runtime_enabled": false,
+    "approved_live_probe_enabled": false,
+    "network_calls_made": false
+  },
+  "truth_boundary": {
+    "source_pack_is_accepted_truth": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_submitted": false,
+    "source_pack_can_mutate_public_index": false,
+    "source_pack_can_mutate_master_index": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "verified_installability_claimed": false,
+    "source_pack_is_truth": false,
+    "source_pack_is_accepted_evidence": false,
+    "policy_pack_grants_live_access": false,
+    "capability_grants_permission": false,
+    "coverage_preview_is_exhaustive": false,
+    "scorecard_preview_is_production_ready": false,
+    "package_metadata_is_identity_truth": false,
+    "package_metadata_proves_installability": false,
+    "package_hash_proves_malware_safety": false,
+    "license_field_proves_rights_clearance": false,
+    "dependency_metadata_proves_dependency_correctness": false,
+    "public_index_mutation_allowed": false,
+    "master_index_mutation_allowed": false,
+    "accepted_source_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_candidate_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": [
+    "This source pack prepares H2 fixture work; it grants no source access."
+  ]
+}

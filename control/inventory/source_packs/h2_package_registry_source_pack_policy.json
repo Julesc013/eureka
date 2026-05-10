@@ -1,0 +1,48 @@
+{
+  "schema_version": "h2_package_registry_source_pack_policy.v0",
+  "policy_id": "h2_package_registry_source_pack_policy",
+  "wave_id": "H2",
+  "source_family": "package_registry",
+  "wave_label": "Package registry source-family policy packs",
+  "current_status": "policy_pack_only",
+  "live_access_enabled": false,
+  "source_sync_enabled": false,
+  "connector_runtime_enabled": false,
+  "approved_live_probe_enabled": false,
+  "package_download_enabled": false,
+  "artifact_download_enabled": false,
+  "source_archive_download_enabled": false,
+  "container_layer_download_enabled": false,
+  "install_or_execute_enabled": false,
+  "source_pack_export_only": true,
+  "source_pack_import_enabled": false,
+  "review_required_before_live_access": true,
+  "review_required_before_source_cache_write": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_master_index": true,
+  "sources": [
+    "maven_central",
+    "nuget",
+    "crates_io",
+    "rubygems",
+    "cpan",
+    "cran",
+    "conda_forge",
+    "oci_registry_metadata"
+  ],
+  "no_goals": [
+    "no live source calls",
+    "no source sync",
+    "no package downloads",
+    "no package-manager invocation",
+    "no installs or execution",
+    "no source cache writes",
+    "no evidence acceptance",
+    "no public or master index mutation"
+  ],
+  "notes": [
+    "A package registry source policy pack is not source access approval.",
+    "H2-BUNDLE-01 prepares fixture-runtime work only."
+  ]
+}

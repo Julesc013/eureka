@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H2-BUNDLE-01
+current_recommended_task: H2-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -397,9 +397,17 @@ entries:
     recommended_after: MVP-ALPHA-OPERATOR-REVIEW-01
   - id: H2-BUNDLE-01
     title: Package registry source-family policy packs
-    status: queued
+    status: needs_review
     purpose: Add package registry source-family policy packs after local MVP iteration selected H2 as the next non-deploy expansion lane.
     allowed_scope_summary: H2 source-family policy packs, source records, connector-family mappings, coverage previews, docs, scripts, tests, audit evidence, and AIDE metadata only.
     gate: LOCAL-MVP-ITERATION-01 passes; no deployment, live source fanout, source sync, downloads, public/master index mutation, or truth acceptance.
     task: .aide/queue/H2-BUNDLE-01/task.yaml
     recommended_after: LOCAL-MVP-ITERATION-01
+  - id: H2-BUNDLE-02
+    title: Package registry fixture runtimes and normalizers
+    status: queued
+    purpose: Add committed-fixture-only package registry fixture replay and normalizer runtime after H2 policy packs.
+    allowed_scope_summary: H2 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
+    gate: H2-BUNDLE-01 passes; no live registry calls, source sync, package downloads, install/execute, public/master index mutation, or truth acceptance.
+    task: .aide/queue/H2-BUNDLE-02/task.yaml
+    recommended_after: H2-BUNDLE-01

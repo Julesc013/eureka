@@ -1,0 +1,23 @@
+{
+  "schema_version": "h2_package_registry_option_matrix.v0",
+  "options": [
+    {
+      "task": "H2-BUNDLE-02",
+      "status": "recommended",
+      "reason": "fixture runtimes and normalizers can use committed fixtures without live calls"
+    },
+    {
+      "task": "H2-BUNDLE-03",
+      "status": "deferred",
+      "reason": "metadata-only live probes require fixture runtime and explicit review first"
+    },
+    {
+      "task": "J1-POLICY-01",
+      "status": "deferred",
+      "reason": "downloads/install/execute remain forbidden"
+    }
+  ],
+  "deployment_or_live_access": {
+    "allowed_current": false
+  }
+}

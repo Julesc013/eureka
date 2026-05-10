@@ -2,19 +2,33 @@
 
 ## PHASE
 
-H2-BUNDLE-01 - Package registry source-family policy packs
+H2-BUNDLE-02 - Package registry fixture runtimes and normalizers
 
 ## GOAL
 
-Begin the next local non-deploy source expansion wave selected by LOCAL-MVP-ITERATION-01. H2 should add package registry source-family policy packs for Maven Central, NuGet, crates.io, RubyGems, CPAN, CRAN, conda-forge, and OCI registry metadata while preserving the H0/H1 source-family policy pattern.
+Prepare the next H2 task after H2-BUNDLE-01 package-registry policy packs.
+H2-BUNDLE-02 should add committed-fixture-only fixture replay and normalizer
+support for the package registry source family while preserving the H0/H1/H2
+source-policy boundaries.
 
-This packet is a Eureka AIDE resumption handoff only and must proceed without changing Eureka product behavior until a future H2 task prompt explicitly scopes implementation. H2 remains local and metadata-first. It must not deploy, launch, call providers, change DNS, enable hosting, enable public relay, mutate generated site output, perform live source fanout, enable source sync, download, upload, install, execute, mirror, emulate, mutate public/master indexes, accept source/evidence/candidate truth, or claim rights clearance, malware safety, installability, production readiness, or public launch.
+This packet is a Eureka AIDE resumption handoff with no Eureka product behavior
+change. A future task prompt must scope implementation before code changes
+proceed. The default boundary remains
+local and fixture-only: no live registry calls, source sync, package downloads,
+package-manager invocation, installs, execution, scraping, public search
+behavior changes, public/master index mutation, source/evidence/candidate truth
+acceptance, provider calls, hosting, deployment, rights-clearance claims,
+malware-safety claims, verified-installability claims, or dependency-correctness
+claims.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-LOCAL-MVP-ITERATION-01 selected H2 as the highest-value non-deploy local expansion after the MVP alpha and public-alpha deployment-planning packets. H3, J1, K, L, and deployment execution remain deferred behind explicit gates.
+H2-BUNDLE-01 added package registry source records, source-family policy packs,
+approval gates, output/truth/no-live/no-download policies, coverage previews,
+scorecard previews, and package identity candidate policy. The next local
+expansion should exercise those policies against committed fixtures only.
 
 ## CONTEXT_REFS
 
@@ -25,35 +39,39 @@ LOCAL-MVP-ITERATION-01 selected H2 as the highest-value non-deploy local expansi
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/LOCAL-MVP-ITERATION-01/task.yaml`
 - `.aide/queue/H2-BUNDLE-01/task.yaml`
-- `control/audits/local-mvp-iteration-01-v0/`
-- `control/audits/public-alpha-deployment-plan-01-v0/`
-- `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/`
+- `.aide/queue/H2-BUNDLE-02/task.yaml`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/`
 - `control/audits/h1-bundle-04-review-quality-audit-v0/`
+- `control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- local-only planning docs or audit notes under `control/audits/**` if a future prompt explicitly scopes them.
+- local-only planning docs or audit notes under `control/audits/**` if a future
+  prompt explicitly scopes them.
 
 ## IMPLEMENTATION
 
-- Follow H0/H1 source-family policy-pack patterns.
-- Keep package registry expansion policy-pack and metadata-first.
-- Do not perform live source calls or source sync.
-- Do not enable downloads, install, execute, mirror, or emulate actions.
-- Preserve deployment deferral and no-truth boundaries.
+- Reuse the H0/H1 connector fixture-replay pattern.
+- Keep H2 fixture runtime committed-fixture-only.
+- Normalize package registry fixture records as candidates, not truth.
+- Preserve package identity candidate boundaries.
+- Keep all downloads, installs, execution, source sync, live probes, and public
+  index use disabled.
+- Do not change Eureka product behavior from this AIDE handoff packet alone.
 
 ## ACCEPTANCE
 
-- H2 work remains non-deploy and local.
-- Package registry source-family policy packs are reviewable without enabling source runtime behavior.
-- Public/master indexes and product runtime behavior remain unchanged.
+- H2 fixture replay and normalizer behavior remains offline and fixture-only.
+- Package registry examples validate without live source access.
+- Public/master indexes and public search behavior remain unchanged.
+- No source/evidence/candidate truth is accepted.
 
 ## VALIDATION
 
-- `python scripts/validate_local_mvp_iteration.py`
+- `python scripts/validate_h2_package_registry_policy_packs.py`
+- `python scripts/summarize_h2_package_registry_sources.py --check`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -64,31 +82,38 @@ LOCAL-MVP-ITERATION-01 selected H2 as the highest-value non-deploy local expansi
 
 ## EVIDENCE
 
-- `control/audits/local-mvp-iteration-01-v0/local_mvp_iteration_01_report.json`
-- `control/audits/local-mvp-iteration-01-v0/recommended_next_task.md`
-- `control/audits/local-mvp-iteration-01-v0/deployment_deferral_review.md`
-- `control/audits/local-mvp-iteration-01-v0/validation.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_bundle_01_report.json`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_source_pack_summary.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_fixture_plan.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/validation.md`
 
 ## NON_GOALS
 
 - No deployment or launch.
-- No provider API calls, provider credentials, secrets, DNS changes, or custom domain claims.
-- No public relay, public bind, live source calls, source sync, or public query fanout.
-- No downloads, mirroring, installs, execution, or emulation.
-- No uploads, accounts, telemetry, or credential collection.
+- No provider API calls, provider credentials, secrets, DNS changes, or custom
+  domain claims.
+- No public relay, public bind, live source calls, source sync, or public query
+  fanout.
+- No package downloads, artifact downloads, source archive downloads, OCI layer
+  pulls, mirroring, installs, execution, emulation, or package-manager commands.
 - No public search behavior change.
 - No public index or master index mutation.
-- No source, evidence, candidate, pack, action, snapshot, relay, native fixture, or public truth acceptance.
-- No generated site output regeneration, local private-state roots, rights-clearance claims, malware-safety claims, verified installability claims, public alpha live claims, production claims, or inferred signoff.
+- No source, evidence, candidate, pack, action, snapshot, relay, native fixture,
+  or public truth acceptance.
+- No generated site output regeneration, local private-state roots,
+  rights-clearance claims, malware-safety claims, verified-installability
+  claims, dependency-correctness claims, public alpha live claims, production
+  claims, or inferred signoff.
 
 ## OUTPUT_SCHEMA
 
-Future H2 responses should preserve status, summary, commits, changed paths, validation, source-family scope, no-deploy boundary, risks, and next task.
+Future H2 responses should preserve status, summary, commits, changed paths,
+validation, H2 fixture scope, no-live/no-download boundary, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1000
+- approx_tokens: 1200
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS

@@ -2,7 +2,8 @@
 
 ## Review Objective
 
-Review LOCAL-MVP-ITERATION-01 from compact evidence only and decide whether its next-wave router correctly selects the next non-deploy local expansion path.
+Review H2-BUNDLE-01 from compact evidence only and decide whether the package
+registry policy-pack wave is ready to pass its review gate.
 
 ## Decision Requested
 
@@ -18,56 +19,72 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
+- `.aide/verification/review-decision-policy.yaml`
 
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
 - verifier_result: WARN
-- note: warning-only scope notes are expected because the latest task packet now routes to `H2-BUNDLE-01` while this branch still carries the completed LOCAL-MVP-ITERATION-01 diff.
+- note: warning-only diff-scope notes are expected because the latest task packet
+  now routes to `H2-BUNDLE-02` while this branch carries the completed
+  H2-BUNDLE-01 diff.
 
 ## Evidence Packet References
 
-- `control/audits/local-mvp-iteration-01-v0/local_mvp_iteration_01_report.json`
-- `control/audits/local-mvp-iteration-01-v0/recommended_next_task.md`
-- `control/audits/local-mvp-iteration-01-v0/deployment_deferral_review.md`
-- `control/audits/local-mvp-iteration-01-v0/validation.md`
-- `examples/audits/local_mvp/`
-- `.aide/queue/LOCAL-MVP-ITERATION-01/task.yaml`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_bundle_01_report.json`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_source_pack_summary.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_source_policy_gate_summary.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_package_identity_policy_summary.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_fixture_plan.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_no_live_call_report.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_no_download_report.md`
+- `control/audits/h2-bundle-01-package-registry-policy-packs-v0/validation.md`
+- `control/inventory/source_packs/h2_package_registry_sources.json`
+- `control/inventory/source_packs/h2_package_registry_identity_policy.json`
 - `.aide/queue/H2-BUNDLE-01/task.yaml`
-- `.aide/reports/eureka-repo-health.md`
-- `.aide/verification/review-decision-policy.yaml`
+- `.aide/queue/H2-BUNDLE-02/task.yaml`
+- `.aide/queue/index.yaml`
 
 ## Changed Files Summary
 
-- Added local MVP router contracts under `contracts/audits/`.
-- Added local MVP router policies under `control/inventory/audits/`.
-- Added next-wave option, decision, and deployment-deferral examples under `examples/audits/local_mvp/`.
-- Added offline planning, selector, deferral, validator, and summarizer scripts under `scripts/`.
-- Added local MVP router tests under `tests/audits/` and `tests/operations/`.
-- Added local MVP reference, architecture, operation, and audit docs.
-- Updated AIDE queue/context/health to recommend `H2-BUNDLE-01`.
+- Added H2 package registry source-pack policies under `control/inventory/source_packs/`.
+- Added eight H2 source records plus a policy-blocked source record under `examples/sources/source_records/`.
+- Added H2 per-source policy packs, coverage previews, and scorecard previews under `examples/connectors/h2_package_registries/`.
+- Added aggregate H2 source-pack manifest and policy-pack examples under `examples/source_packs/`.
+- Added H2 package-registry reference, architecture, operation, no-live-call, no-download, and fixture-plan docs.
+- Added offline H2 validator and summary scripts under `scripts/`.
+- Added H2 operations tests under `tests/operations/`.
+- Added H2 audit evidence under `control/audits/h2-bundle-01-package-registry-policy-packs-v0/`.
+- Updated AIDE queue/context to recommend `H2-BUNDLE-02`.
+- Updated the AIDE commit-message policy to allow the task-required `policy(...)`
+  Conventional Commit type in both YAML policy and the local checker.
 
 ## Validation Summary
 
-- PASS: `python scripts/validate_local_mvp_iteration.py`
-- PASS: `python scripts/plan_local_mvp_iteration.py --check`
-- PASS: `python scripts/select_local_mvp_next_task.py --plan examples/audits/local_mvp/local_mvp_iteration_plan_v0.json --check`
-- PASS: `python scripts/check_local_mvp_deployment_deferral.py --input examples/audits/local_mvp/local_mvp_deployment_deferral_v0.json --check`
-- PASS: `python scripts/summarize_local_mvp_iteration.py --input examples/audits/local_mvp --check`
-- PASS: focused local MVP unittest modules
-- PASS: `python -m unittest discover -s tests -t .` (2867 tests)
-- PASS: requested existing major validators present locally
+- PASS: `git diff --check`
+- PASS: required `python -m json.tool ...` H2 inventory/example/audit JSON checks
+- PASS: `python scripts/validate_h2_package_registry_policy_packs.py`
+- PASS: `python scripts/summarize_h2_package_registry_sources.py --check`
+- PASS: `python -m unittest tests.operations.test_h2_package_registry_policy_packs`
+- PASS: `python -m unittest tests.operations.test_h2_package_registry_summary`
+- PASS: `python -m unittest discover -s tests -t .` (2895 tests)
 - PASS: `python scripts/check_architecture_boundaries.py`
-- PASS: AIDE Lite doctor, validate, test, selftest, eval list, eval run, review-pack, and adapter validate
-- WARN: AIDE Lite verify reported zero errors and warning-only diff-scope notes after the latest task packet was safely routed to `H2-BUNDLE-01`
+- PASS: requested existing local MVP, H, IA, E/C/D/J/I/G/F, and core validators present locally
+- PASS: AIDE Lite doctor, validate, test, selftest, verify, eval list, eval run, review-pack, and adapter validate after packet reconciliation
+- PASS: AIDE commit-message golden eval after allowing the `policy` type
 
 ## Boundary Summary
 
-- No deployment or launch was performed.
-- No provider API, DNS, custom-domain, external, model, or live source call was made.
-- No provider resources, credentials, secrets, public backend, public relay, public bind, or generated site output were created.
-- No public alpha live, production, rights-clearance, malware-safety, verified-installability, operator-signoff, public-index mutation, or master-index mutation claim was made.
-- H2 is recommended only as a local non-deploy next task.
+- H2-BUNDLE-01 is policy-pack-only.
+- No live source access, registry query, API call, source sync, package download,
+  source archive download, OCI layer pull, package-manager invocation, install,
+  execution, scraping, browser automation, model/provider call, hosting, or
+  deployment occurred.
+- No public search behavior changed.
+- No public index or master index mutation occurred.
+- No source, evidence, candidate, pack, action, or public truth was accepted.
+- No rights-clearance, malware-safety, verified-installability, dependency
+  correctness, production-readiness, public-alpha-live, or launch claim was made.
 
 ## Token Summary
 
@@ -78,17 +95,18 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Risk Summary
 
-- Deployment execution approval remains absent.
-- H3 remains deferred until H2 patterns are reviewed.
-- J1 risky-action policy remains deferred.
-- K semantic/AI and L wider-client lanes remain deferred.
+- H2 fixture runtimes are not implemented yet.
+- Metadata endpoint details remain future/operator-gated and fixture-first.
+- OCI registry metadata may later need a specialized connector-family shape.
+- Package identity remains candidate-only until reviewed downstream.
 
 ## Non-Goals / Scope Guard
 
-- No deployment, launch, provider calls, DNS changes, custom-domain claims, secrets, or site/dist regeneration.
-- No public search behavior change, live source fanout, source sync, public relay, downloads, uploads, accounts, telemetry, install, execute, mirror, or emulation.
-- No public index or master index mutation.
-- No source, evidence, candidate, pack, action, or public truth acceptance.
+- No live source calls, network/API calls, model/provider calls, or browser automation.
+- No package downloads, source archive downloads, OCI layer pulls, installs, execution, mirroring, or emulation.
+- No source sync, public query fanout, hosting, deployment, or public route activation.
+- No public search behavior change, public index mutation, or master index mutation.
+- No evidence/candidate/source truth acceptance or public truth creation.
 
 ## Reviewer Instructions
 

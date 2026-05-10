@@ -1,7 +1,7 @@
-task_id: H2-BUNDLE-01
-title: Package registry source-family policy packs
-status: needs_review
-phase: H2-BUNDLE-01
+task_id: H2-BUNDLE-02
+title: Package registry fixture runtimes and normalizers
+status: queued
+phase: H2-BUNDLE-02
 allowed_paths:
   - .aide/**
   - control/audits/**
@@ -11,9 +11,9 @@ allowed_paths:
   - examples/**
   - scripts/**
   - tests/**
+  - runtime/connectors/core/**
 forbidden_paths:
   - site/dist/**
-  - runtime/**
   - surfaces/**
   - site/**
   - native/**
@@ -28,9 +28,11 @@ forbidden_paths:
   - .local/eureka/**
   - .cache/eureka/**
 non_goals:
-  - no deployment, launch, provider calls, DNS changes, generated site output mutation, public behavior enablement, public/master index mutation, secrets, source sync, live fanout, downloads, installs, execution, or truth acceptance
+  - no live registry calls, source sync, package downloads, package-manager invocation, installs, execution, scraping, public search behavior changes, public/master index mutation, source/evidence/candidate truth acceptance, provider calls, or deployment
 validation:
-  - python scripts/validate_local_mvp_iteration.py
+  - python scripts/validate_h2_package_registry_policy_packs.py
+  - python scripts/summarize_h2_package_registry_sources.py --check
+  - python scripts/check_architecture_boundaries.py
   - py -3 .aide/scripts/aide_lite.py doctor
   - py -3 .aide/scripts/aide_lite.py validate
   - py -3 .aide/scripts/aide_lite.py test
