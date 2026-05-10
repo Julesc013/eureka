@@ -1,0 +1,266 @@
+{
+  "policy_id": "h6_web_archive_live_probe_rate_limit_policy",
+  "schema_version": "h6_web_archive_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_wayback_cdx_memento",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "wayback_cdx_memento",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_common_crawl_cdxj",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "common_crawl_cdxj",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_public_warc_wacz_collection",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "public_warc_wacz_collection",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_gdelt_news_event",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "gdelt_news_event",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_chronicling_america",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "chronicling_america",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_trove_newspapers",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "trove_newspapers",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_cspan_video_library",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "cspan_video_library",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_aapb_broadcast_archive",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "aapb_broadcast_archive",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_archive_today_snapshot",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "archive_today_snapshot",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_newspaper_archive",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "generic_newspaper_archive",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_web_archive",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "generic_web_archive",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_public_event_trace",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "generic_public_event_trace",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved_public_no_auth_future",
+      "cache_ttl": "no_cache_until_approved",
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_restricted_public_document_manifest",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "robots_source_policy_posture": "review_required_before_live_access",
+      "sensitive_source_posture": "policy_blocked_by_default",
+      "source_id": "restricted_public_document_manifest",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    }
+  ]
+}

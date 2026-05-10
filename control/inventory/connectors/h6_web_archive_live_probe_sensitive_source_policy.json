@@ -1,0 +1,129 @@
+{
+  "all_sources": [
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "common_crawl_cdxj"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "public_warc_wacz_collection"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "gdelt_news_event"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "chronicling_america"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "trove_newspapers"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "cspan_video_library"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "aapb_broadcast_archive"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "archive_today_snapshot"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "generic_newspaper_archive"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "generic_web_archive"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "generic_public_event_trace"
+    },
+    {
+      "direct_fetch_allowed_current": false,
+      "sensitive_source_access_allowed": false,
+      "source_id": "restricted_public_document_manifest"
+    }
+  ],
+  "policy_id": "h6_web_archive_live_probe_sensitive_source_policy",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fetching": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "restricted_sensitive_source_access_used": false
+  },
+  "restricted_public_document_manifest": {
+    "direct_fetch_allowed_current": false,
+    "live_probe_allowed_current": false,
+    "manifest_only_allowed_current": true,
+    "policy_status": "blocked_by_default",
+    "review_required": true,
+    "sensitive_source_access_approved": false
+  },
+  "schema_version": "h6_web_archive_live_probe_sensitive_source_policy.v0",
+  "truth_boundary": {
+    "accepted_article_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_event_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_document_truth": false,
+    "accepted_public_record": false,
+    "accepted_source_truth": false,
+    "accepted_time_state_truth": false,
+    "accepted_web_capture_truth": false,
+    "archived_content_proves_rights_clearance": false,
+    "archived_time_state_candidate_is_truth": false,
+    "capture_digest_proves_authenticity": false,
+    "dead_link_trace_grants_acquisition_permission": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "media_transcript_metadata_is_full_context": false,
+    "news_event_mention_candidate_is_event_truth": false,
+    "normalized_record_is_public_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_document_trace_is_public_truth": false,
+    "public_index_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "source_cache_preview_is_accepted_source": false,
+    "time_state_candidate_is_historical_truth": false,
+    "verified_authenticity_claimed": false,
+    "web_capture_candidate_is_truth": false
+  }
+}

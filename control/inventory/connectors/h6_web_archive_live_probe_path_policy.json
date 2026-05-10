@@ -1,0 +1,29 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h6_web_archive_news_event/live_probe_results/",
+    "examples/connectors/h6_web_archive_news_event/live_probe_outputs/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "crawl/",
+    "warc_cache/",
+    "wacz_cache/",
+    "media_downloads/",
+    "transcript_dump/",
+    "document_dump/",
+    "sensitive_sources/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "policy_id": "h6_web_archive_live_probe_path_policy",
+  "schema_version": "h6_web_archive_live_probe_path_policy.v0"
+}

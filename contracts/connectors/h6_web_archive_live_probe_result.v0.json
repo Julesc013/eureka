@@ -1,0 +1,144 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h6_web_archive_live_probe_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "archived_url_time_state_candidate": {
+      "type": "object"
+    },
+    "blocked_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "connector_family": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "connector_health_summary": {
+      "type": "object"
+    },
+    "dead_link_trace_candidate": {
+      "type": "object"
+    },
+    "endpoint_or_metadata_used": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_candidate_preview": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "live_probe_request_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "live_probe_result_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "media_transcript_metadata_candidate": {
+      "type": "object"
+    },
+    "network_used": {
+      "type": "boolean"
+    },
+    "news_event_mention_candidate": {
+      "type": "object"
+    },
+    "normalized_record": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "public_document_trace_candidate": {
+      "type": "object"
+    },
+    "request_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "response_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response_status_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response_summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "result_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_queue_seed_preview": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "h6_web_archive_live_probe_result.v0"
+    },
+    "source_cache_candidate_preview": {
+      "type": "object"
+    },
+    "source_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_record_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "web_capture_identity_candidate": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_result_id",
+    "source_id",
+    "connector_family",
+    "result_status",
+    "request_count",
+    "network_used",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h6_web_archive_live_probe_result",
+  "type": "object"
+}

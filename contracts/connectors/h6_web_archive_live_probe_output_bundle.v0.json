@@ -1,0 +1,61 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h6_web_archive_live_probe_output_bundle.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "archived_url_time_state_candidate": {
+      "type": "object"
+    },
+    "bundle_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "connector_health_summary": {
+      "type": "object"
+    },
+    "dead_link_trace_candidate": {
+      "type": "object"
+    },
+    "evidence_candidate_preview": {
+      "type": "object"
+    },
+    "live_probe_result": {
+      "type": "object"
+    },
+    "media_transcript_metadata_candidate": {
+      "type": "object"
+    },
+    "news_event_mention_candidate": {
+      "type": "object"
+    },
+    "normalized_record": {
+      "type": "object"
+    },
+    "public_document_trace_candidate": {
+      "type": "object"
+    },
+    "review_queue_seed_preview": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "h6_web_archive_live_probe_output_bundle.v0"
+    },
+    "source_cache_candidate_preview": {
+      "type": "object"
+    },
+    "validation_summary": {
+      "type": "object"
+    },
+    "web_capture_identity_candidate": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "bundle_id"
+  ],
+  "title": "h6_web_archive_live_probe_output_bundle",
+  "type": "object"
+}

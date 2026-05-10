@@ -1,0 +1,82 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h6_web_archive_connector_health_summary.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "connector_family": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "health_summary_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "live_probe_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_recommended_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "policy_blockers": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "request_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "response_status_summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "h6_web_archive_connector_health_summary.v0"
+    },
+    "sensitive_source_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "health_summary_id",
+    "source_id",
+    "connector_family",
+    "request_count",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h6_web_archive_connector_health_summary",
+  "type": "object"
+}

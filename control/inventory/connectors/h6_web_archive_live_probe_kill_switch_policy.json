@@ -1,0 +1,110 @@
+{
+  "policy_id": "h6_web_archive_live_probe_kill_switch_policy",
+  "schema_version": "h6_web_archive_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_wayback_cdx_memento",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_common_crawl_cdxj",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "common_crawl_cdxj"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_public_warc_wacz_collection",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "public_warc_wacz_collection"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_gdelt_news_event",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "gdelt_news_event"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_chronicling_america",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "chronicling_america"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_trove_newspapers",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "trove_newspapers"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_cspan_video_library",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "cspan_video_library"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_aapb_broadcast_archive",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "aapb_broadcast_archive"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_archive_today_snapshot",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "archive_today_snapshot"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_newspaper_archive",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_newspaper_archive"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_web_archive",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_web_archive"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_generic_public_event_trace",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_public_event_trace"
+    },
+    {
+      "decision_status": "not_approved_fail_closed",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h6_live_probe_restricted_public_document_manifest",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "restricted_public_document_manifest"
+    }
+  ]
+}

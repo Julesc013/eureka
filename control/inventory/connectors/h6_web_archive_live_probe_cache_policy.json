@@ -1,0 +1,123 @@
+{
+  "policy_id": "h6_web_archive_live_probe_cache_policy",
+  "schema_version": "h6_web_archive_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "wayback_cdx_memento"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "common_crawl_cdxj"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "public_warc_wacz_collection"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "gdelt_news_event"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "chronicling_america"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "trove_newspapers"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "cspan_video_library"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "aapb_broadcast_archive"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "archive_today_snapshot"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "generic_newspaper_archive"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "generic_web_archive"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "generic_public_event_trace"
+    },
+    {
+      "cache_ttl": "no_cache_until_approved",
+      "cache_write_allowed": false,
+      "decision_status": "not_approved_fail_closed",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_allowed": false,
+      "source_id": "restricted_public_document_manifest"
+    }
+  ]
+}

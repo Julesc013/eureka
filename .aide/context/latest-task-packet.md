@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - H6-BUNDLE-03 - Web archive, news, and event approved metadata-only live probes. Default offline preflight, fail closed without committed approvals. No broad crawling, CDX/Memento/WARC/page/media/document fetch, scraping, bypass, source sync, public/master index mutation, or truth acceptance.
+UNSPECIFIED - H6-BUNDLE-04 - Web archive, news, and event review integration and quality delta. Use H6-BUNDLE-03 blocked or fixture-equivalent outputs only. No new live calls, CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## GOAL
 
-H6-BUNDLE-03 - Web archive, news, and event approved metadata-only live probes. Default offline preflight, fail closed without committed approvals. No broad crawling, CDX/Memento/WARC/page/media/document fetch, scraping, bypass, source sync, public/master index mutation, or truth acceptance.
+H6-BUNDLE-04 - Web archive, news, and event review integration and quality delta. Use H6-BUNDLE-03 blocked or fixture-equivalent outputs only. No new live calls, CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4529
-- approx_tokens: 1133
+- chars: 4629
+- approx_tokens: 1158
 - budget_status: PASS
 - warnings:
   - none
