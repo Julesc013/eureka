@@ -1,0 +1,192 @@
+{
+  "archived_url_time_state_gaps": [
+    "Archived URL time-state candidates are not exact historical state or absence proof."
+  ],
+  "auto_approves_future_connectors": false,
+  "blocked_sources": [
+    "aapb_broadcast_archive",
+    "archive_today_snapshot",
+    "chronicling_america",
+    "common_crawl_cdxj",
+    "cspan_video_library",
+    "gdelt_news_event",
+    "generic_newspaper_archive",
+    "generic_public_event_trace",
+    "generic_web_archive",
+    "public_warc_wacz_collection",
+    "restricted_public_document_manifest",
+    "trove_newspapers",
+    "wayback_cdx_memento"
+  ],
+  "dead_link_trace_gaps": [
+    "Dead-link traces do not grant acquisition, fetch, crawl, download, authenticity, or rights permission."
+  ],
+  "do_not_repeat_risks": [
+    "Do not treat archive/news/event metadata as capture completeness, event truth, article truth, public-document truth, authenticity, privacy, safety, rights, or public truth.",
+    "Do not use fixture replay or blocked probes as live access approval.",
+    "Do not let dead-link or media metadata become fetch, crawl, download, or acquisition permission."
+  ],
+  "evidence_mapping_gaps": [
+    "Evidence candidates remain previews only."
+  ],
+  "fixture_gaps": [
+    "Fixtures are synthetic/public-safe and do not prove live archive, news, event, or public-document behavior."
+  ],
+  "h7_handoff_recommendation": "H7-BUNDLE-01 may start policy-pack-only work for library, cultural, book, and research sources.",
+  "h7_or_j1_k_l_recommendation": "proceed_to_h7_policy_packs; keep_j1_k_l_deferred",
+  "j1_k_l_deferral_recommendation": "J1 risky actions, K semantic/AI, and L wider clients remain deferred unless explicit gates open.",
+  "live_probe_gaps": [
+    "Blocked live probes provide gate evidence but no completed metadata response."
+  ],
+  "media_transcript_metadata_gaps": [
+    "Media/transcript metadata does not prove full context or authorize downloads."
+  ],
+  "news_event_mention_gaps": [
+    "News/event mention candidates are not event truth, article truth, or full context."
+  ],
+  "next_phase_recommendation": "READY_FOR_H7_BUNDLE_01",
+  "no_goals_preserved": [
+    "no_cdx_memento_query",
+    "no_warc_wacz_fetch",
+    "no_page_fetch",
+    "no_media_document_download",
+    "no_scrape_crawl",
+    "no_sensitive_source_access",
+    "no_truth_acceptance",
+    "no_public_index_mutation"
+  ],
+  "normalizer_gaps": [
+    "Normalizers cover metadata fixture shapes, not archived pages, WARC/WACZ payloads, media, transcripts, documents, scraping, or crawling."
+  ],
+  "notes": [
+    "Postmortem recommends H7 policy packs, not risky actions or production readiness."
+  ],
+  "policy_gaps": [
+    "source-specific live probe approvals remain absent"
+  ],
+  "postmortem_id": "h6.connector_wave_postmortem.f0d152566118.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_archived_page_fetch": false,
+    "enabled_cdx_query": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fetching": false,
+    "enabled_hosting": false,
+    "enabled_media_downloads": false,
+    "enabled_memento_lookup": false,
+    "enabled_scraping_crawling": false,
+    "enabled_sensitive_source_access": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enabled_warc_wacz_fetch": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_document_trace_gaps": [
+    "Public-document traces are not public-document truth and restricted/sensitive sources remain policy-blocked."
+  ],
+  "quality_delta_summary": {
+    "archived_url_time_state_candidate_count": 13,
+    "blocked_sources_count": 13,
+    "blocker_count": 0,
+    "claims_archived_time_state_verified": false,
+    "claims_article_truth_verified": false,
+    "claims_capture_completeness_verified": false,
+    "claims_event_truth_verified": false,
+    "claims_malware_safety": false,
+    "claims_privacy_safety": false,
+    "claims_production_readiness": false,
+    "claims_public_document_truth_verified": false,
+    "claims_rights_clearance": false,
+    "claims_source_authenticity": false,
+    "dead_link_trace_candidate_count": 13,
+    "fixture_sources_count": 13,
+    "known_gap_count": 2,
+    "live_probe_sources_count": 0,
+    "media_transcript_metadata_candidate_count": 13,
+    "news_event_mention_candidate_count": 13,
+    "overclaim_errors": [],
+    "public_document_trace_candidate_count": 13,
+    "quality_delta_id": "h6.quality_delta.b688cd04a0d3.v0",
+    "review_seed_count": 104,
+    "schema_version": "h6_quality_delta_summary.v0",
+    "source_count": 13,
+    "status": "pass",
+    "web_capture_identity_candidate_count": 13
+  },
+  "review_mapping_gaps": [
+    "Review seeds are not human review decisions and are not persisted."
+  ],
+  "risks": [
+    "Live H6 metadata probes remain blocked pending operator approval."
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "archived_page_fetch_enabled": false,
+    "boundary_result": "preserved",
+    "cdx_query_enabled": false,
+    "master_index_mutated": false,
+    "media_download_enabled": false,
+    "memento_lookup_enabled": false,
+    "network_calls_made": false,
+    "public_index_mutated": false,
+    "scraping_crawling_enabled": false,
+    "sensitive_source_access_enabled": false,
+    "source_sync_enabled": false,
+    "warc_wacz_fetch_enabled": false
+  },
+  "schema_version": "h6_web_archive_connector_wave_postmortem.v0",
+  "scorecard_summary": {
+    "auto_approves_future_connectors": false,
+    "production_ready": false,
+    "scorecard_update_count": 13
+  },
+  "sensitive_source_policy_gaps": [
+    "Sensitive-source access remains blocked by default and requires future legal/privacy/safety review."
+  ],
+  "source_os_reuse_assessment": "H6 reused H0-H5 Source OS review gates while preserving web archive/news/event-specific boundaries.",
+  "truth_boundary": {
+    "accepted_archived_time_state_truth": false,
+    "accepted_article_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_event_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_privacy_safety_truth": false,
+    "accepted_public_document_truth": false,
+    "accepted_source_truth": false,
+    "accepted_web_capture_truth": false,
+    "archived_time_state_seed_accepts_historical_truth": false,
+    "automatic_future_connector_approval": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "dead_link_seed_grants_acquisition_permission": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "media_transcript_seed_accepts_full_context_truth": false,
+    "news_event_seed_accepts_event_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_document_seed_accepts_public_document_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_authenticity_claimed": false,
+    "web_capture_seed_accepts_capture_truth": false
+  },
+  "wave_id": "H6",
+  "web_capture_identity_gaps": [
+    "Web capture identity candidates require review before any capture identity or completeness use."
+  ],
+  "what_failed": [
+    "No H6 source has committed operator approval for a live metadata probe."
+  ],
+  "what_worked": [
+    "Thirteen H6 web archive/news/event/public-trace sources have policy packs, fixtures, normalizers, replay outputs, blocked live-probe envelopes, and review previews.",
+    "Web capture identity, archived time-state, news/event mention, dead-link, public-document, and media/transcript candidates remain review-gated and candidate-only.",
+    "Live-probe outputs failed closed when committed source approvals were missing."
+  ]
+}

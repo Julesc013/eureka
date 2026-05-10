@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - H6-BUNDLE-04 - Web archive, news, and event review integration and quality delta. Use H6-BUNDLE-03 blocked or fixture-equivalent outputs only. No new live calls, CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+UNSPECIFIED - H7-BUNDLE-01 - Library, cultural, book, and research source-family policy packs. H6-BUNDLE-04 completed with PASS_WITH_WARNINGS using fixture-equivalent and blocked live-probe outputs only. Preserve no live calls, fetches, crawls, downloads, sensitive-source access, source sync, public/master index mutation, or truth acceptance.
 
 ## GOAL
 
-H6-BUNDLE-04 - Web archive, news, and event review integration and quality delta. Use H6-BUNDLE-03 blocked or fixture-equivalent outputs only. No new live calls, CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+H7-BUNDLE-01 - Library, cultural, book, and research source-family policy packs. H6-BUNDLE-04 completed with PASS_WITH_WARNINGS using fixture-equivalent and blocked live-probe outputs only. Preserve no live calls, fetches, crawls, downloads, sensitive-source access, source sync, public/master index mutation, or truth acceptance.
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4629
-- approx_tokens: 1158
+- chars: 4605
+- approx_tokens: 1152
 - budget_status: PASS
 - warnings:
   - none

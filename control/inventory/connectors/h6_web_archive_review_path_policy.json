@@ -1,0 +1,24 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h6_web_archive_news_event/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "crawl roots",
+    "WARC/WACZ cache roots",
+    "media download roots",
+    "transcript/document dump roots",
+    "sensitive-source roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "policy_id": "h6.web_archive.review_path.policy.v0",
+  "schema_version": "h6_web_archive_review_path_policy.v0"
+}

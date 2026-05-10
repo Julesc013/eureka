@@ -1,19 +1,17 @@
 {
-  "completed_queue_item": "H6-BUNDLE-03",
-  "current_queue_item": "H6-BUNDLE-04",
-  "generated_at_note": "codex_updated_after_h6_bundle_03",
+  "completed_queue_item": "H6-BUNDLE-04",
+  "current_queue_item": "H7-BUNDLE-01",
+  "generated_at_note": "codex_updated_after_h6_bundle_04",
   "known_warn_only_conditions": [
-    "H6 live-probe framework is metadata-only and fail-closed without explicit source-specific approval.",
-    "No H6 live access was used; all committed examples are blocked/preflight outputs.",
-    "No CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, restricted-source access, or truth acceptance exists."
+    "H6 review integration used fixture-equivalent outputs and blocked live-probe reports only.",
+    "No H6 live access was used; no CDX/Memento/WARC/page/media/document fetch, scrape, crawl, bypass, sensitive-source access, source sync, or truth acceptance exists."
   ],
-  "next_recommended_queue_item": "H6-BUNDLE-04",
+  "next_recommended_queue_item": "H7-BUNDLE-01",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
     "enabled_downloads": false,
     "enabled_fetching": false,
-    "enabled_live_probes": false,
     "enabled_source_sync": false,
     "mutated_master_index": false,
     "mutated_public_index": false
@@ -23,11 +21,12 @@
   "validation": {
     "aide_lite": "pass",
     "architecture_boundaries": "pass",
+    "existing_validator_sweep": "pass",
     "h6_fixture_runtime": "pass",
     "h6_live_probe": "pass",
     "h6_policy_packs": "pass",
+    "h6_review_quality": "pass",
     "h6_targeted_unittests": "pass",
-    "existing_validator_sweep": "pass",
     "unittest_discovery": "pass"
   }
 }

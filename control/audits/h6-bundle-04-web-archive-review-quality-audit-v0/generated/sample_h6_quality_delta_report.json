@@ -1,0 +1,311 @@
+{
+  "archived_url_time_state_candidate_count": 13,
+  "blocked_sources_count": 13,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 13,
+  "dead_link_trace_candidate_count": 13,
+  "evidence_candidate_preview_count": 13,
+  "fixture_sources_count": 13,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_web_archive_coverage",
+    "exhaustive_global_coverage",
+    "capture_completeness_verified",
+    "archived_time_state_verified",
+    "event_truth_verified",
+    "article_truth_verified",
+    "public_document_truth_verified",
+    "rights_clearance",
+    "privacy_safety",
+    "malware_safety",
+    "source_authenticity_verified",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H6 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Web archive/news/event metadata is not capture completeness, event truth, article truth, public-document truth, source authenticity, rights, privacy, malware, or production coverage proof."
+  ],
+  "live_probe_sources_count": 0,
+  "media_transcript_metadata_candidate_count": 13,
+  "news_event_mention_candidate_count": 13,
+  "normalized_record_count": 13,
+  "notes": [
+    "H6 quality delta is operational review evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "aapb_broadcast_archive",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "archive_today_snapshot",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "chronicling_america",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "common_crawl_cdxj",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "cspan_video_library",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gdelt_news_event",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_newspaper_archive",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_public_event_trace",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_web_archive",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "public_warc_wacz_collection",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "restricted_public_document_manifest",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "trove_newspapers",
+      "web_capture_identity_review_seed_created": true
+    },
+    {
+      "archived_url_time_state_review_seed_created": true,
+      "dead_link_trace_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, web capture, time-state, event, article, public-document, privacy, safety, authenticity, rights, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_transcript_metadata_review_seed_created": true,
+      "news_event_mention_review_seed_created": true,
+      "public_document_trace_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "wayback_cdx_memento",
+      "web_capture_identity_review_seed_created": true
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_archived_page_fetch": false,
+    "enabled_cdx_query": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fetching": false,
+    "enabled_hosting": false,
+    "enabled_media_downloads": false,
+    "enabled_memento_lookup": false,
+    "enabled_scraping_crawling": false,
+    "enabled_sensitive_source_access": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enabled_warc_wacz_fetch": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_document_trace_candidate_count": 13,
+  "quality_delta_id": "h6.quality_delta.b688cd04a0d3.v0",
+  "review_seed_count": 104,
+  "schema_version": "h6_web_archive_quality_delta_report.v0",
+  "scorecard_update_count": 13,
+  "source_cache_candidate_count": 13,
+  "source_count": 13,
+  "truth_boundary": {
+    "archived_time_state_verified": false,
+    "article_truth_verified": false,
+    "automatic_future_connector_approval": false,
+    "capture_completeness_verified": false,
+    "event_truth_verified": false,
+    "exhaustive_global_coverage": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "production_web_archive_coverage": false,
+    "public_document_truth_verified": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "source_authenticity_verified": false,
+    "verified_authenticity_claimed": false
+  },
+  "warning_count": 2,
+  "wave_id": "H6",
+  "web_capture_identity_candidate_count": 13
+}

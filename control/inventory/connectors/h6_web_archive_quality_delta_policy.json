@@ -1,0 +1,40 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "web_capture_identity_candidate_count",
+    "archived_url_time_state_candidate_count",
+    "news_event_mention_candidate_count",
+    "dead_link_trace_candidate_count",
+    "public_document_trace_candidate_count",
+    "media_transcript_metadata_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_web_archive_coverage",
+    "exhaustive_global_coverage",
+    "capture_completeness_verified",
+    "archived_time_state_verified",
+    "event_truth_verified",
+    "article_truth_verified",
+    "public_document_truth_verified",
+    "rights_clearance",
+    "privacy_safety",
+    "malware_safety",
+    "source_authenticity_verified",
+    "automatic_future_connector_approval"
+  ],
+  "policy_id": "h6.web_archive.quality_delta.policy.v0",
+  "schema_version": "h6_web_archive_quality_delta_policy.v0"
+}

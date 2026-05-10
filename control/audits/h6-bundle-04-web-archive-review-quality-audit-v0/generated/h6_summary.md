@@ -1,0 +1,23 @@
+# H6 Review Integration Summary
+
+- status: `pass`
+- source_count: `13`
+- web_capture_identity_review_seed_count: `13`
+- archived_url_time_state_review_seed_count: `13`
+- news_event_mention_review_seed_count: `13`
+- dead_link_trace_review_seed_count: `13`
+- public_document_trace_review_seed_count: `13`
+- media_transcript_metadata_review_seed_count: `13`
+- blocked_sources: `aapb_broadcast_archive, archive_today_snapshot, chronicling_america, common_crawl_cdxj, cspan_video_library, gdelt_news_event, generic_newspaper_archive, generic_public_event_trace, generic_web_archive, public_warc_wacz_collection, restricted_public_document_manifest, trove_newspapers, wayback_cdx_memento`
+- web_capture_truth_accepted: `false`
+- time_state_truth_accepted: `false`
+- event_truth_accepted: `false`
+- article_truth_accepted: `false`
+- public_document_truth_accepted: `false`
+- privacy_safety_truth_accepted: `false`
+- fetch_crawl: `false`
+- downloads: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

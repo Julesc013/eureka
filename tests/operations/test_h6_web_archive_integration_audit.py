@@ -1,0 +1,55 @@
+"""Tests for H6 web archive/news/event integration audit routing."""
+
+from __future__ import annotations
+
+from pathlib import Path
+import unittest
+
+from runtime.connectors.h6_web_archive_news_event.normalizer_common import H6_SOURCE_IDS
+from runtime.connectors.h6_web_archive_news_event.quality_delta import build_h6_quality_delta
+from runtime.connectors.h6_web_archive_news_event.review_integration import build_h6_review_integration_result, load_h6_web_archive_outputs
+from runtime.connectors.h6_web_archive_news_event.wave_postmortem import (
+    apply_missing_source_gate,
+    build_h6_connector_wave_postmortem,
+    build_h6_integration_audit,
+    build_h6_next_phase_recommendation,
+)
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+class H6IntegrationAuditTests(unittest.TestCase):
+    def _audit(self):
+        paths = sorted((ROOT / "examples/connectors/h6_web_archive_news_event/replay_results").glob("*.json"))
+        paths += sorted((ROOT / "examples/connectors/h6_web_archive_news_event/live_probe_results").glob("*.json"))
+        outputs = load_h6_web_archive_outputs(paths)
+        review = build_h6_review_integration_result({"outputs": outputs, "input_refs": [str(p) for p in paths]})
+        delta = build_h6_quality_delta({"review_integration_result": review})
+        postmortem = build_h6_connector_wave_postmortem(review, delta)
+        recommendation = build_h6_next_phase_recommendation(postmortem)
+        return build_h6_integration_audit(review, delta, postmortem, recommendation)
+
+    def test_h6_audit_returns_explicit_exit_gate_and_h7_recommendation(self):
+        audit = self._audit()
+        self.assertIn(audit["h6_exit_gate"], {"PASS", "PASS_WITH_WARNINGS"})
+        self.assertEqual("READY_FOR_H7_BUNDLE_01", audit["next_phase_recommendation"])
+        self.assertEqual(13, len(audit["audited_sources"]))
+
+    def test_h6_audit_can_recommend_remediation_when_sources_missing(self):
+        audit = self._audit()
+        audit["audited_sources"] = list(H6_SOURCE_IDS[:-1])
+        apply_missing_source_gate(audit)
+        self.assertEqual("PARTIAL", audit["h6_exit_gate"])
+        self.assertEqual("NEEDS_REMEDIATION", audit["next_phase_recommendation"])
+
+    def test_j1_k_l_remain_deferred(self):
+        audit = self._audit()
+        postmortem_summary = audit["postmortem_summary"]
+        self.assertIn("keep_j1_k_l_deferred", postmortem_summary["h7_or_j1_k_l_recommendation"])
+        self.assertFalse(audit["truth_boundary"]["automatic_future_connector_approval"])
+        self.assertFalse(audit["product_boundary"]["enabled_fetching"])
+        self.assertFalse(audit["product_boundary"]["enabled_downloads"])
+
+
+if __name__ == "__main__":
+    unittest.main()

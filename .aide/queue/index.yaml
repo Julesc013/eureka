@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H6-BUNDLE-04
+current_recommended_task: H7-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -569,9 +569,18 @@ entries:
 
 - id: H6-BUNDLE-04
   title: Web archive, news, and event review integration and quality delta
-  status: queued
+  status: needs_review
   purpose: Integrate H6 fixture-equivalent and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H6 exit evidence.
   allowed_scope_summary: H6 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
   gate: H6-BUNDLE-03 passes with blocked or fixture-equivalent outputs; no new live calls, CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, index mutation, or truth acceptance.
   task: .aide/queue/H6-BUNDLE-04/task.yaml
   recommended_after: H6-BUNDLE-03
+
+- id: H7-BUNDLE-01
+  title: Library, cultural, book, and research source-family policy packs
+  status: queued
+  purpose: Start H7 by defining source-family policy packs for library, cultural, book, and research metadata sources after H6 review closeout.
+  allowed_scope_summary: H7 source-pack policies, source records, connector-family mappings, docs, examples, tests, audit pack, and AIDE metadata only until explicitly scoped.
+  gate: H6-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H7_BUNDLE_01; no live source calls, downloads, scraping, crawling, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
+  task: .aide/queue/H7-BUNDLE-01/task.yaml
+  recommended_after: H6-BUNDLE-04

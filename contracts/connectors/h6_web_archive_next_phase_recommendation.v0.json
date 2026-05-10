@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "alternatives_considered": {},
+    "deployment_deferral": {},
+    "h7_readiness": {},
+    "j1_deferral": {},
+    "k_deferral": {},
+    "l_deferral": {},
+    "limitations": {},
+    "product_boundary": {},
+    "reason": {},
+    "recommendation_id": {},
+    "recommendation_status": {},
+    "recommended_next_task": {},
+    "remediation_required": {},
+    "schema_version": {},
+    "truth_boundary": {}
+  },
+  "required": [
+    "schema_version",
+    "recommendation_id",
+    "recommended_next_task",
+    "recommendation_status",
+    "alternatives_considered",
+    "h7_readiness",
+    "j1_deferral",
+    "k_deferral",
+    "l_deferral",
+    "deployment_deferral",
+    "remediation_required",
+    "reason",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h6_web_archive_next_phase_recommendation.v0",
+  "type": "object"
+}
