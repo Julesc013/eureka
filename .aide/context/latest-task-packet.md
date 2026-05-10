@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - H7-BUNDLE-01 - Library, cultural, book, and research source-family policy packs. H6-BUNDLE-04 completed with PASS_WITH_WARNINGS using fixture-equivalent and blocked live-probe outputs only. Preserve no live calls, fetches, crawls, downloads, sensitive-source access, source sync, public/master index mutation, or truth acceptance.
+UNSPECIFIED - H7-BUNDLE-02 - Library, cultural, book, and research fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-H7-BUNDLE-01 - Library, cultural, book, and research source-family policy packs. H6-BUNDLE-04 completed with PASS_WITH_WARNINGS using fixture-equivalent and blocked live-probe outputs only. Preserve no live calls, fetches, crawls, downloads, sensitive-source access, source sync, public/master index mutation, or truth acceptance.
+H7-BUNDLE-02 - Library, cultural, book, and research fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4605
-- approx_tokens: 1152
+- chars: 4115
+- approx_tokens: 1029
 - budget_status: PASS
 - warnings:
   - none

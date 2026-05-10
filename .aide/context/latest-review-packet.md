@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4605 chars, 1152 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4755 chars, 1189 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H6-BUNDLE-04/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H7-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H7-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H7-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h6_web_archive_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h6_web_archive_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h6_web_archive_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h6_web_archive_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h6-bundle-04-web-archive-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h6_web_archive_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H6_WEB_ARCHIVE_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
+- unknown: `control/audits/h7-bundle-01-library-research-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_access_rights_availability_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_bibliographic_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_citation_relation_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_cultural_object_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_dataset_repository_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_no_harvest_download_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_no_live_call_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_library_research_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_patent_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h7_research_work_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/H7_LIBRARY_RESEARCH_MODEL.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 52; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6806
-- approx_tokens: 1702
+- chars: 6916
+- approx_tokens: 1729
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,599 @@
+{
+  "api_queries_performed": 0,
+  "coverage_basis": "policy_pack_only",
+  "coverage_depth_current": "D0_source_known",
+  "coverage_id": "h7_library_research_coverage_preview_v0",
+  "coverage_manifest_is_exhaustive_global_coverage": false,
+  "downloads_performed": 0,
+  "full_text_fetches_performed": 0,
+  "limitations": [
+    "aggregate policy-only coverage preview"
+  ],
+  "live_access_enabled": false,
+  "oai_pmh_harvests_performed": 0,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_browser_automation": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fetching": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false
+  },
+  "records_seen": 0,
+  "schema_version": "h7_library_research_coverage_preview.v0",
+  "scraping_crawling_performed": 0,
+  "source_count": 30,
+  "source_family": "library_cultural_research",
+  "sources": [
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "worldcat_library_catalog"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "oaister_oai_pmh"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "google_books"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "hathitrust"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "open_library"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "trove_library_cultural"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "europeana"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "dpla"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "gallica_bnf"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "library_of_congress"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "nara_catalog"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "national_archives_australia"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "uk_national_archives_discovery"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "govinfo"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "openalex"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "crossref"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "datacite"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "arxiv"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "pubmed"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "pubmed_central"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "doaj"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "zenodo"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "repec"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "ssrn"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "semantic_scholar"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "kaggle_datasets"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "deep_blue_repository"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "google_patents"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "wipo_patentscope"
+    },
+    {
+      "api_queries_performed": 0,
+      "coverage_basis": "policy_pack_only",
+      "coverage_depth_current": "D0_source_known",
+      "coverage_manifest_is_exhaustive_global_coverage": false,
+      "downloads_performed": 0,
+      "full_text_fetches_performed": 0,
+      "limitations": [
+        "policy pack preview only",
+        "not production coverage"
+      ],
+      "live_access_enabled": false,
+      "oai_pmh_harvests_performed": 0,
+      "records_seen": 0,
+      "scraping_crawling_performed": 0,
+      "source_id": "uspto_patents"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_public_record": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_metadata_is_rights_truth": false,
+    "article_truth_accepted": false,
+    "bibliographic_completeness_claimed": false,
+    "bibliographic_metadata_is_identity_truth": false,
+    "capability_grants_permission": false,
+    "catalog_presence_proves_current_availability": false,
+    "citation_correctness_verified": false,
+    "citation_relation_is_citation_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_preview_is_exhaustive": false,
+    "cultural_object_metadata_is_object_truth": false,
+    "dataset_metadata_is_dataset_truth": false,
+    "dataset_validity_verified": false,
+    "landing_page_grants_download_permission": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "open_access_truth_claimed": false,
+    "patent_metadata_is_patent_truth": false,
+    "patent_validity_verified": false,
+    "policy_pack_grants_live_access": false,
+    "privacy_safety_claimed": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "research_work_metadata_is_work_truth": false,
+    "rights_clearance_claimed": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_preview_is_production_ready": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "verified_availability_claimed": false
+  },
+  "wave_id": "H7"
+}

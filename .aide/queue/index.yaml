@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H7-BUNDLE-01
+current_recommended_task: H7-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -578,9 +578,18 @@ entries:
 
 - id: H7-BUNDLE-01
   title: Library, cultural, book, and research source-family policy packs
-  status: queued
+  status: needs_review
   purpose: Start H7 by defining source-family policy packs for library, cultural, book, and research metadata sources after H6 review closeout.
   allowed_scope_summary: H7 source-pack policies, source records, connector-family mappings, docs, examples, tests, audit pack, and AIDE metadata only until explicitly scoped.
   gate: H6-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H7_BUNDLE_01; no live source calls, downloads, scraping, crawling, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
   task: .aide/queue/H7-BUNDLE-01/task.yaml
   recommended_after: H6-BUNDLE-04
+
+- id: H7-BUNDLE-02
+  title: Library, cultural, book, and research fixture runtimes and normalizers
+  status: queued
+  purpose: Add committed-fixture-only normalizers and replay outputs for H7 library, cultural, book, research, repository, dataset, and patent metadata sources.
+  allowed_scope_summary: H7 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H7-BUNDLE-01 passes; no live source calls, OAI-PMH harvests, API queries, full-text/PDF/book/article/dataset/patent/IIIF/media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H7-BUNDLE-02/task.yaml
+  recommended_after: H7-BUNDLE-01

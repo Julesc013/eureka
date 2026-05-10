@@ -582,9 +582,8 @@
       ]
     },
     {
-      "schema_version": "connector_family.v0",
-      "family_id": "warc_wacz_manifest",
       "current_default_access": "committed_fixture_only",
+      "family_id": "warc_wacz_manifest",
       "fixture_replay_required": true,
       "forbidden_default_operations": [
         "warc_wacz_download",
@@ -605,6 +604,7 @@
         "rights_posture",
         "review_gates"
       ],
+      "schema_version": "connector_family.v0",
       "source_families_supported": [
         "web_archive_news_event"
       ],
@@ -618,9 +618,8 @@
       ]
     },
     {
-      "schema_version": "connector_family.v0",
-      "family_id": "newspaper_archive_metadata",
       "current_default_access": "committed_fixture_only",
+      "family_id": "newspaper_archive_metadata",
       "fixture_replay_required": true,
       "forbidden_default_operations": [
         "newspaper_page_download",
@@ -641,6 +640,7 @@
         "terms_review",
         "review_gates"
       ],
+      "schema_version": "connector_family.v0",
       "source_families_supported": [
         "web_archive_news_event"
       ],
@@ -653,9 +653,8 @@
       ]
     },
     {
-      "schema_version": "connector_family.v0",
-      "family_id": "media_archive_metadata",
       "current_default_access": "committed_fixture_only",
+      "family_id": "media_archive_metadata",
       "fixture_replay_required": true,
       "forbidden_default_operations": [
         "media_download",
@@ -675,6 +674,7 @@
         "media_rights_posture",
         "review_gates"
       ],
+      "schema_version": "connector_family.v0",
       "source_families_supported": [
         "web_archive_news_event"
       ],
@@ -688,9 +688,8 @@
       ]
     },
     {
-      "schema_version": "connector_family.v0",
-      "family_id": "html_catalog_policy_blocked",
       "current_default_access": "robots_blocked",
+      "family_id": "html_catalog_policy_blocked",
       "fixture_replay_required": true,
       "forbidden_default_operations": [
         "scrape_html",
@@ -713,6 +712,7 @@
         "terms_review",
         "review_gates"
       ],
+      "schema_version": "connector_family.v0",
       "source_families_supported": [
         "web_archive_news_event"
       ],
@@ -721,6 +721,280 @@
       ],
       "typical_output_shapes": [
         "blocked_source_policy_preview"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Library catalog metadata",
+      "family_id": "library_catalog",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "catalog_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "bibliographic_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "IIIF manifest metadata planned for future gated work",
+      "family_id": "iiif_future",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "iiif_manifest_fixture_future"
+      ],
+      "typical_output_shapes": [
+        "cultural_object_identity_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Research graph and citation metadata",
+      "family_id": "research_graph",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "research_graph_fixture",
+        "identifier_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "research_work_identity_candidate",
+        "citation_relation_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Research repository and preprint metadata",
+      "family_id": "research_repository",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "repository_metadata_fixture",
+        "deposit_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "research_work_identity_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Dataset repository metadata",
+      "family_id": "dataset_repository",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "dataset_metadata_fixture",
+        "dataset_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "dataset_identity_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Patent metadata records",
+      "family_id": "patent_metadata",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "patent_metadata_fixture",
+        "patent_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "patent_identity_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Cultural heritage repository metadata",
+      "family_id": "cultural_repository",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "bulk_harvest",
+        "download_payload",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no harvest or download",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "rate_limit",
+        "kill_switch",
+        "review_gates",
+        "download_prohibition"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "library_cultural_research"
+      ],
+      "typical_input_shapes": [
+        "cultural_object_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "cultural_object_identity_candidate"
       ]
     }
   ],

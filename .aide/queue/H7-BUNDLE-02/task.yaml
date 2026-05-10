@@ -1,0 +1,7 @@
+id: H7-BUNDLE-02
+title: Library, cultural, book, and research fixture runtimes and normalizers
+status: queued
+purpose: Add committed-fixture-only normalizers and replay outputs for H7 library, cultural, book, research, repository, dataset, and patent metadata sources.
+allowed_scope_summary: H7 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+gate: H7-BUNDLE-01 passes; no live source calls, OAI-PMH harvests, API queries, full-text/PDF/book/article/dataset/patent/IIIF/media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H7-BUNDLE-01

@@ -1,0 +1,114 @@
+{
+  "added_docs": [
+    "docs/reference/H7_LIBRARY_RESEARCH_SOURCE_PACKS.md",
+    "docs/architecture/H7_LIBRARY_RESEARCH_MODEL.md",
+    "docs/operations/H7_LIBRARY_RESEARCH_FIXTURE_PLAN.md"
+  ],
+  "added_examples": [
+    "examples/source_packs/h7_library_research_source_pack_manifest_v0.json",
+    "examples/connectors/h7_library_research/coverage/h7_library_research_coverage_preview_v0.json",
+    "examples/connectors/h7_library_research/scorecards/h7_library_research_scorecard_preview_v0.json"
+  ],
+  "added_inventories": [
+    "control/inventory/source_packs/h7_library_research_source_pack_policy.json",
+    "control/inventory/source_packs/h7_library_research_sources.json",
+    "control/inventory/source_packs/h7_library_research_connector_families.json"
+  ],
+  "added_scripts": [
+    "scripts/validate_h7_library_research_policy_packs.py",
+    "scripts/summarize_h7_library_research_sources.py"
+  ],
+  "added_tests": [
+    "tests/operations/test_h7_library_research_policy_packs.py",
+    "tests/operations/test_h7_library_research_summary.py"
+  ],
+  "next_task": "H7-BUNDLE-02 \u2014 Library, cultural, book, and research fixture runtimes and normalizers",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "library_cultural_research_source_family_policy_packs",
+  "schema_version": "h7_bundle_01_report.v0",
+  "source_count": 30,
+  "status": "pass",
+  "task": "H7-BUNDLE-01",
+  "track": "H7",
+  "truth_boundary": {
+    "access_metadata_is_rights_truth": false,
+    "bibliographic_identity_candidate_is_truth": false,
+    "capability_grants_permission": false,
+    "citation_relation_candidate_is_truth": false,
+    "coverage_preview_claims_exhaustive_coverage": false,
+    "cultural_object_candidate_is_truth": false,
+    "dataset_identity_candidate_is_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "open_access_metadata_is_rights_clearance": false,
+    "patent_identity_candidate_is_truth": false,
+    "policy_pack_grants_live_access": false,
+    "privacy_safety_claimed": false,
+    "public_index_mutated": false,
+    "research_work_candidate_is_truth": false,
+    "rights_clearance_claimed": false,
+    "scorecard_preview_claims_production_readiness": false,
+    "source_pack_is_truth": false,
+    "verified_availability_claimed": false
+  },
+  "validation": {
+    "aide_lite": {
+      "adapter_validate": "pass",
+      "doctor": "pass",
+      "eval_list": "pass",
+      "eval_run": "pass",
+      "pack": "pass",
+      "review_pack": "pass",
+      "selftest": "pass",
+      "test": "pass",
+      "validate": "pass",
+      "verify": "warn"
+    },
+    "architecture_boundaries": "pass",
+    "existing_h0_h6_and_core_validators": "pass",
+    "full_unittest_discovery": "pass",
+    "git_diff_check": "pass",
+    "h7_json_syntax": "pass",
+    "h7_policy_pack_validator": "pass",
+    "h7_summary_script": "pass",
+    "h7_unit_tests": "pass",
+    "ia_readiness_progression": "pass"
+  },
+  "wave_scope": {
+    "access_rights_availability_policy_added": true,
+    "api_query_enabled": false,
+    "bibliographic_identity_policy_added": true,
+    "citation_relation_policy_added": true,
+    "connector_runtime_enabled": false,
+    "coverage_preview_added": true,
+    "crawling_enabled": false,
+    "cultural_object_identity_policy_added": true,
+    "dataset_repository_identity_policy_added": true,
+    "downloads_enabled": false,
+    "fixture_plan_added": true,
+    "live_access_enabled": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_enabled": false,
+    "patent_identity_policy_added": true,
+    "policy_pack_only": true,
+    "policy_packs_added": true,
+    "research_work_identity_policy_added": true,
+    "scorecard_preview_added": true,
+    "scraping_enabled": false,
+    "source_records_added": true,
+    "source_sync_enabled": false
+  }
+}
