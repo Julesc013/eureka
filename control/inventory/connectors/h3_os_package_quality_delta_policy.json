@@ -1,0 +1,37 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "os_package_identity_candidate_count",
+    "os_platform_compatibility_candidate_count",
+    "dependency_candidate_count",
+    "conflict_candidate_count",
+    "provides_candidate_count",
+    "package_file_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_archive_coverage",
+    "exhaustive_global_coverage",
+    "package_installability_verified",
+    "dependency_correctness_verified",
+    "compatibility_correctness_verified",
+    "repository_index_coverage_complete",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "future_connector_auto_approval"
+  ],
+  "schema_version": "h3_os_package_quality_delta_policy.v0"
+}

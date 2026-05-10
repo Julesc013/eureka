@@ -1,0 +1,33 @@
+{
+  "auto_approves_future_connectors": false,
+  "contract_id": "h3_os_package_connector_wave_postmortem.v0",
+  "description": "H3 OS package archive connector wave postmortem. It does not auto-approve future connectors.",
+  "required_fields": [
+    "postmortem_id",
+    "wave_id",
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "os_package_identity_gaps",
+    "os_platform_compatibility_gaps",
+    "dependency_mapping_gaps",
+    "conflict_provides_mapping_gaps",
+    "file_hash_mapping_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "scorecard_summary",
+    "safety_boundary_assessment",
+    "next_phase_recommendation",
+    "h4_or_j1_k_l_recommendation",
+    "do_not_repeat_risks",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h3_os_package_connector_wave_postmortem.v0"
+}

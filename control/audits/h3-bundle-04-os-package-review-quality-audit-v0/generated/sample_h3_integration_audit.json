@@ -1,0 +1,180 @@
+{
+  "artifact_inventory": {
+    "connector_wave_postmortem": true,
+    "fixture_outputs_integrated": 13,
+    "live_probe_outputs_integrated": 14,
+    "next_phase_recommendation": true,
+    "quality_delta_report": true,
+    "review_integration_result": true
+  },
+  "audit_id": "h3.integration_audit.01bcc51bd4a8.v0",
+  "audited_sources": [
+    "arch_linux_archive",
+    "chocolatey",
+    "debian_snapshot",
+    "fedora_rpm_metadata",
+    "flathub",
+    "freebsd_packages_ports",
+    "homebrew",
+    "macports",
+    "nixpkgs",
+    "pkgsrc",
+    "snapcraft",
+    "ubuntu_old_releases",
+    "winget"
+  ],
+  "audited_tasks": [
+    "H3-BUNDLE-01",
+    "H3-BUNDLE-02",
+    "H3-BUNDLE-03",
+    "H3-BUNDLE-04"
+  ],
+  "blockers": [],
+  "fixture_runtime_summary": {
+    "fixture_outputs_integrated": 13
+  },
+  "h3_exit_gate": "PASS_WITH_WARNINGS",
+  "live_probe_summary": {
+    "blocked_sources": [
+      "arch_linux_archive",
+      "chocolatey",
+      "debian_snapshot",
+      "fedora_rpm_metadata",
+      "flathub",
+      "freebsd_packages_ports",
+      "homebrew",
+      "macports",
+      "nixpkgs",
+      "pkgsrc",
+      "snapcraft",
+      "ubuntu_old_releases",
+      "winget"
+    ],
+    "completed_sources": [],
+    "network_used": false
+  },
+  "next_phase_recommendation": "READY_FOR_H4_BUNDLE_01",
+  "notes": [
+    "H3 passes with warnings for H4 policy-pack planning using fixture-equivalent outputs."
+  ],
+  "postmortem_summary": {
+    "auto_approves_future_connectors": false,
+    "errors": [],
+    "h4_or_j1_k_l_recommendation": "proceed_to_h4_policy_packs; keep_j1_k_l_deferred",
+    "next_phase_recommendation": "READY_FOR_H4_BUNDLE_01",
+    "postmortem_id": "h3.connector_wave_postmortem.c2d3a91bbe60.v0",
+    "schema_version": "h3_connector_wave_postmortem_summary.v0",
+    "status": "pass"
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_repository_index_sync": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "install_execute_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "package_download_enabled": false,
+    "package_manager_invocation_enabled": false,
+    "repository_index_sync_enabled": false,
+    "repository_mirror_enabled": false
+  },
+  "quality_delta_summary": {
+    "blocked_sources_count": 13,
+    "blocker_count": 0,
+    "claims_compatibility_correctness": false,
+    "claims_dependency_correctness": false,
+    "claims_installability_verified": false,
+    "claims_malware_safety": false,
+    "claims_production_readiness": false,
+    "claims_rights_clearance": false,
+    "conflict_candidate_count": 1,
+    "dependency_candidate_count": 13,
+    "fixture_sources_count": 13,
+    "known_gap_count": 2,
+    "live_probe_sources_count": 0,
+    "os_package_identity_candidate_count": 13,
+    "os_platform_compatibility_candidate_count": 13,
+    "overclaim_errors": [],
+    "package_file_candidate_count": 13,
+    "provides_candidate_count": 13,
+    "quality_delta_id": "h3.quality_delta.57c596906b84.v0",
+    "review_seed_count": 92,
+    "schema_version": "h3_quality_delta_summary.v0",
+    "source_count": 13,
+    "status": "pass"
+  },
+  "review_integration_summary": {
+    "blocked_sources": [
+      "arch_linux_archive",
+      "chocolatey",
+      "debian_snapshot",
+      "fedora_rpm_metadata",
+      "flathub",
+      "freebsd_packages_ports",
+      "homebrew",
+      "macports",
+      "nixpkgs",
+      "pkgsrc",
+      "snapcraft",
+      "ubuntu_old_releases",
+      "winget"
+    ],
+    "candidate_promotion_preview_count": 1,
+    "conflict_candidate_review_seed_count": 1,
+    "coverage_update_preview_count": 13,
+    "dependency_candidate_review_seed_count": 13,
+    "evidence_candidate_review_seed_count": 13,
+    "os_package_identity_review_seed_count": 13,
+    "os_platform_compatibility_review_seed_count": 13,
+    "package_file_candidate_review_seed_count": 13,
+    "provides_candidate_review_seed_count": 13,
+    "schema_version": "h3_review_integration_summary.v0",
+    "scorecard_update_count": 13,
+    "source_cache_review_seed_count": 13,
+    "source_count": 13,
+    "source_pack_update_preview_count": 1,
+    "status": "pass",
+    "truth_boundary_violations": [],
+    "wave_id": "H3"
+  },
+  "schema_version": "h3_os_package_integration_audit.v0",
+  "source_policy_summary": {
+    "live_access_default": false,
+    "policy_packs_present": true
+  },
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "compatibility_correctness_claimed": false,
+    "dependency_correctness_claimed": false,
+    "dependency_seed_accepts_correctness": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "h3_postmortem_enables_future_connectors_automatically": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "os_package_identity_seed_accepts_identity": false,
+    "os_platform_compatibility_seed_accepts_compatibility": false,
+    "package_file_seed_grants_download_or_safety": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_installability_claimed": false
+  },
+  "validation_summary": {
+    "offline_default": true,
+    "status": "pass"
+  },
+  "warnings": [
+    "H3 live probes remain blocked pending operator approval"
+  ],
+  "wave_id": "H3"
+}

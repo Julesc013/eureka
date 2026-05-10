@@ -1,0 +1,26 @@
+{
+  "auto_approves_future_connectors": false,
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "os_package_identity_gaps",
+    "os_platform_compatibility_gaps",
+    "dependency_mapping_gaps",
+    "conflict_provides_mapping_gaps",
+    "file_hash_mapping_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h4_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h3_os_package_connector_wave_postmortem_policy.v0"
+}

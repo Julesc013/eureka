@@ -1,0 +1,9 @@
+{
+  "deployment_remains_operator_gated": true,
+  "h4_preferred_after_h3_if_coherent": true,
+  "j1_risky_actions_remain_deferred": true,
+  "k_semantic_ai_remains_deferred": true,
+  "l_wider_clients_remain_deferred": true,
+  "remediation_overrides_expansion": true,
+  "schema_version": "h3_os_package_next_phase_policy.v0"
+}

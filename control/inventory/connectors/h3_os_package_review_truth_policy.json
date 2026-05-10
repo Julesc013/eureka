@@ -1,0 +1,13 @@
+{
+  "accepts_candidate_truth": false,
+  "accepts_dependency_correctness": false,
+  "accepts_evidence_truth": false,
+  "accepts_os_package_identity_truth": false,
+  "accepts_os_platform_compatibility_truth": false,
+  "accepts_source_truth": false,
+  "master_index_mutation_allowed": false,
+  "package_download_permission": false,
+  "public_index_mutation_allowed": false,
+  "repository_index_sync_permission": false,
+  "schema_version": "h3_os_package_review_truth_policy.v0"
+}

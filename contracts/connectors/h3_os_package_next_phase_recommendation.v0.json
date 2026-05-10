@@ -1,0 +1,22 @@
+{
+  "contract_id": "h3_os_package_next_phase_recommendation.v0",
+  "description": "H3 next-phase recommendation. Preferred next task is H4-BUNDLE-01 when H3 is sufficient.",
+  "preferred_next_phase": "H4-BUNDLE-01 - Code/source/release host source-family policy packs",
+  "required_fields": [
+    "recommendation_id",
+    "recommended_next_task",
+    "recommendation_status",
+    "alternatives_considered",
+    "h4_readiness",
+    "j1_deferral",
+    "k_deferral",
+    "l_deferral",
+    "deployment_deferral",
+    "remediation_required",
+    "reason",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "schema_version": "h3_os_package_next_phase_recommendation.v0"
+}

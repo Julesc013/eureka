@@ -1,0 +1,37 @@
+{
+  "allowed_outputs": [
+    "review integration result",
+    "OS package identity review seed",
+    "OS/platform compatibility review seed",
+    "dependency/conflict/provides candidate review seed",
+    "package file candidate review seed",
+    "source-cache review seed",
+    "evidence candidate review seed",
+    "candidate promotion preview",
+    "coverage update preview",
+    "scorecard update",
+    "source pack update preview",
+    "blocked review integration report"
+  ],
+  "forbidden_outputs": [
+    "accepted_os_package_identity_truth",
+    "accepted_os_platform_compatibility_truth",
+    "accepted_dependency_correctness",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "repository_index_sync_permission",
+    "package_download_permission",
+    "install_execute_permission",
+    "source_sync_enablement",
+    "production_readiness_claim",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "compatibility_correctness_claim"
+  ],
+  "schema_version": "h3_os_package_review_output_policy.v0"
+}

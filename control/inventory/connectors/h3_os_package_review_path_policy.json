@@ -1,0 +1,20 @@
+{
+  "allowed_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h3_os_package_archives/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "package cache roots",
+    "repository mirror roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "schema_version": "h3_os_package_review_path_policy.v0"
+}

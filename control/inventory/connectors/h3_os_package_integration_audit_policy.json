@@ -1,0 +1,54 @@
+{
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_H4_BUNDLE_01",
+    "READY_FOR_J1_POLICY_FUTURE",
+    "READY_FOR_K0_FUTURE",
+    "READY_FOR_L0_FUTURE",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "no_goals": [
+    "accepted_os_package_identity_truth",
+    "accepted_os_platform_compatibility_truth",
+    "accepted_dependency_correctness",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "repository_index_sync_permission",
+    "package_download_permission",
+    "install_execute_permission",
+    "source_sync_enablement",
+    "production_readiness_claim",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "compatibility_correctness_claim"
+  ],
+  "preferred_next_phase": "READY_FOR_H4_BUNDLE_01",
+  "required_artifacts": [
+    "contracts",
+    "policies",
+    "examples",
+    "audit",
+    "docs",
+    "tests"
+  ],
+  "required_no_truth_claims": true,
+  "required_product_boundaries": true,
+  "required_validators": [
+    "validate_h3_os_package_review_quality_audit.py",
+    "audit_h3_os_package_archive_wave.py"
+  ],
+  "schema_version": "h3_os_package_integration_audit_policy.v0"
+}

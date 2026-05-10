@@ -1,0 +1,26 @@
+{
+  "contract_id": "h3_os_package_integration_audit.v0",
+  "description": "H3 OS package archive integration audit contract.",
+  "required_fields": [
+    "audit_id",
+    "wave_id",
+    "audited_sources",
+    "audited_tasks",
+    "artifact_inventory",
+    "validation_summary",
+    "source_policy_summary",
+    "fixture_runtime_summary",
+    "live_probe_summary",
+    "review_integration_summary",
+    "quality_delta_summary",
+    "postmortem_summary",
+    "blockers",
+    "warnings",
+    "h3_exit_gate",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h3_os_package_integration_audit.v0"
+}
