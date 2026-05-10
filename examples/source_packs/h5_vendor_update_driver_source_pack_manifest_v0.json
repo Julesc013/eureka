@@ -1,0 +1,189 @@
+{
+  "current_status": "policy_pack_only",
+  "manifest_id": "h5_vendor_update_driver_source_pack_manifest_v0",
+  "notes": [
+    "Manifest exports policy-pack examples only and imports no source truth."
+  ],
+  "policy_refs": [
+    "control/inventory/source_packs/h5_vendor_update_driver_source_pack_policy.json",
+    "control/inventory/source_packs/h5_vendor_identity_policy.json",
+    "control/inventory/source_packs/h5_driver_device_compatibility_policy.json",
+    "control/inventory/source_packs/h5_firmware_update_policy.json",
+    "control/inventory/source_packs/h5_runtime_redistributable_policy.json"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_catalog_fetch": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "schema_version": "source_pack_manifest.v0",
+  "source_count": 15,
+  "source_family": "vendor_update_driver_firmware",
+  "sources": [
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_download_center_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/microsoft_download_center_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/microsoft_download_center_scorecard_preview_v0.json",
+      "source_id": "microsoft_download_center",
+      "source_record_ref": "examples/sources/source_records/microsoft_download_center_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_update_catalog_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/microsoft_update_catalog_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/microsoft_update_catalog_scorecard_preview_v0.json",
+      "source_id": "microsoft_update_catalog",
+      "source_record_ref": "examples/sources/source_records/microsoft_update_catalog_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_runtime_redistributables_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/microsoft_runtime_redistributables_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/microsoft_runtime_redistributables_scorecard_preview_v0.json",
+      "source_id": "microsoft_runtime_redistributables",
+      "source_record_ref": "examples/sources/source_records/microsoft_runtime_redistributables_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/apple_software_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/apple_software_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/apple_software_downloads_scorecard_preview_v0.json",
+      "source_id": "apple_software_downloads",
+      "source_record_ref": "examples/sources/source_records/apple_software_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/apple_software_update_catalog_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/apple_software_update_catalog_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/apple_software_update_catalog_scorecard_preview_v0.json",
+      "source_id": "apple_software_update_catalog",
+      "source_record_ref": "examples/sources/source_records/apple_software_update_catalog_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/nvidia_driver_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/nvidia_driver_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/nvidia_driver_downloads_scorecard_preview_v0.json",
+      "source_id": "nvidia_driver_downloads",
+      "source_record_ref": "examples/sources/source_records/nvidia_driver_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/amd_driver_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/amd_driver_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/amd_driver_downloads_scorecard_preview_v0.json",
+      "source_id": "amd_driver_downloads",
+      "source_record_ref": "examples/sources/source_records/amd_driver_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/intel_driver_support_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/intel_driver_support_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/intel_driver_support_scorecard_preview_v0.json",
+      "source_id": "intel_driver_support",
+      "source_record_ref": "examples/sources/source_records/intel_driver_support_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/dell_support_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/dell_support_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/dell_support_downloads_scorecard_preview_v0.json",
+      "source_id": "dell_support_downloads",
+      "source_record_ref": "examples/sources/source_records/dell_support_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/hp_support_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/hp_support_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/hp_support_downloads_scorecard_preview_v0.json",
+      "source_id": "hp_support_downloads",
+      "source_record_ref": "examples/sources/source_records/hp_support_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/lenovo_support_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/lenovo_support_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/lenovo_support_downloads_scorecard_preview_v0.json",
+      "source_id": "lenovo_support_downloads",
+      "source_record_ref": "examples/sources/source_records/lenovo_support_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/asus_support_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/asus_support_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/asus_support_downloads_scorecard_preview_v0.json",
+      "source_id": "asus_support_downloads",
+      "source_record_ref": "examples/sources/source_records/asus_support_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/acer_support_downloads_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/acer_support_downloads_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/acer_support_downloads_scorecard_preview_v0.json",
+      "source_id": "acer_support_downloads",
+      "source_record_ref": "examples/sources/source_records/acer_support_downloads_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/generic_vendor_driver_firmware_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/generic_vendor_driver_firmware_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/generic_vendor_driver_firmware_scorecard_preview_v0.json",
+      "source_id": "generic_vendor_driver_firmware",
+      "source_record_ref": "examples/sources/source_records/generic_vendor_driver_firmware_source_v2.json"
+    },
+    {
+      "coverage_preview_ref": "examples/connectors/h5_vendor_update_driver/coverage/generic_runtime_redistributable_coverage_preview_v0.json",
+      "policy_pack_ref": "examples/connectors/h5_vendor_update_driver/policies/generic_runtime_redistributable_policy_pack_v0.json",
+      "scorecard_preview_ref": "examples/connectors/h5_vendor_update_driver/scorecards/generic_runtime_redistributable_scorecard_preview_v0.json",
+      "source_id": "generic_runtime_redistributable",
+      "source_record_ref": "examples/sources/source_records/generic_runtime_redistributable_source_v2.json"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_record": false,
+    "accepted_source_truth": false,
+    "authenticity_candidate_is_truth": false,
+    "capability_grants_permission": false,
+    "compatibility_candidate_is_truth": false,
+    "compatibility_metadata_is_compatibility_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_preview_is_exhaustive": false,
+    "device_id_match_proves_safe_installability": false,
+    "driver_identity_candidate_is_truth": false,
+    "driver_metadata_is_driver_identity_truth": false,
+    "firmware_identity_candidate_is_truth": false,
+    "firmware_metadata_is_firmware_identity_truth": false,
+    "firmware_metadata_proves_device_compatibility": false,
+    "flashing_tool_metadata_grants_execution_permission": false,
+    "hash_metadata_proves_malware_safety": false,
+    "installer_metadata_grants_execution_permission": false,
+    "license_field_proves_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "os_version_match_proves_runtime_correctness": false,
+    "policy_pack_grants_live_access": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "rights_clearance_claimed": false,
+    "runtime_identity_candidate_is_truth": false,
+    "runtime_metadata_is_runtime_identity_truth": false,
+    "safety_candidate_is_truth": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_preview_is_production_ready": false,
+    "signature_metadata_proves_authenticity": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "vendor_identity_candidate_is_truth": false,
+    "vendor_metadata_is_official_truth": false,
+    "vendor_presence_proves_endorsement": false,
+    "vendor_presence_proves_official_status": false,
+    "verified_authenticity_claimed": false,
+    "verified_compatibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "wave_id": "H5"
+}

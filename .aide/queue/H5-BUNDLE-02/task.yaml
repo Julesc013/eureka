@@ -1,0 +1,7 @@
+id: H5-BUNDLE-02
+title: Vendor/update/driver fixture runtimes and normalizers
+status: queued
+purpose: Add fixture-only normalizers and replay outputs for H5 vendor, update, driver, firmware, and runtime redistributable metadata.
+allowed_scope_summary: H5 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+gate: H5-BUNDLE-01 passes; no live calls, catalog fetches, downloads, installer/vendor tool/package manager invocation, firmware flashing, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H5-BUNDLE-01

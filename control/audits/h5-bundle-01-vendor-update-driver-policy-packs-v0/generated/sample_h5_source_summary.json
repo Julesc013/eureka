@@ -1,0 +1,29 @@
+{
+  "catalog_fetch_enabled_count": 0,
+  "download_enabled_count": 0,
+  "firmware_flash_enabled_count": 0,
+  "live_access_enabled_count": 0,
+  "policy_pack_only": true,
+  "readiness": "READY_FOR_H5_FIXTURE_RUNTIME",
+  "schema_version": "h5_vendor_update_driver_source_summary.v0",
+  "source_count": 15,
+  "source_ids": [
+    "microsoft_download_center",
+    "microsoft_update_catalog",
+    "microsoft_runtime_redistributables",
+    "apple_software_downloads",
+    "apple_software_update_catalog",
+    "nvidia_driver_downloads",
+    "amd_driver_downloads",
+    "intel_driver_support",
+    "dell_support_downloads",
+    "hp_support_downloads",
+    "lenovo_support_downloads",
+    "asus_support_downloads",
+    "acer_support_downloads",
+    "generic_vendor_driver_firmware",
+    "generic_runtime_redistributable"
+  ],
+  "status": "pass",
+  "vendor_tool_invocation_enabled_count": 0
+}

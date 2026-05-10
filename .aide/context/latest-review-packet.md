@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5923 chars, 1481 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6231 chars, 1558 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H4-BUNDLE-04/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H5-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H5-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H5-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h4-bundle-04-code-source-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H4_CODE_SOURCE_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H4_CODE_SOURCE_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H4_CODE_SOURCE_WAVE_QUALITY_DELTA.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H4_TO_H5_HANDOFF.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 15; see task evidence changed-files report
+- unknown: `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_driver_device_compatibility_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_firmware_update_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_runtime_redistributable_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_no_download_execute_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_no_live_call_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h5_vendor_update_driver_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/sources/source_family_registry.json` (M; does not match active task allowed paths)
+- unknown: `docs/architecture/H5_VENDOR_UPDATE_DRIVER_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/VENDOR_UPDATE_DRIVER_SOURCE_FAMILY_MODEL.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 33; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6860
-- approx_tokens: 1715
+- chars: 6886
+- approx_tokens: 1722
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

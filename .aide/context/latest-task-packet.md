@@ -2,27 +2,27 @@
 
 ## PHASE
 
-H5-BUNDLE-01 - Vendor, update, driver, and firmware source-family policy packs
+H5-BUNDLE-02 - Vendor/update/driver fixture runtimes and normalizers
 
 ## GOAL
 
-Prepare the next Eureka H5 task after H4-BUNDLE-04. This packet is a compact
+Prepare the next Eureka H5 task after H5-BUNDLE-01. This packet is a compact
 AIDE resumption handoff only; it does not itself authorize live source calls,
-downloads, firmware or driver handling, installs, execution, source sync, public
-or master index mutation, truth acceptance, or changing Eureka product behavior.
+catalog fetching, downloads, vendor tool invocation, package manager invocation,
+installer execution, firmware flashing, source sync, public/master index
+mutation, truth acceptance, or changing Eureka product behavior.
 
-H5-BUNDLE-01 should add policy-pack-only source-family structure for vendor,
-update, driver, and firmware metadata sources if a future prompt explicitly
-scopes that work. No Eureka product behavior change is authorized by this
-handoff.
+H5-BUNDLE-02 should add fixture-only runtimes, committed synthetic fixtures,
+normalizers, replay reports, candidate previews, docs, tests, and audit evidence
+for vendor/update/driver/firmware and runtime redistributable metadata if a
+future prompt explicitly scopes that work.
 
 ## WHY
 
-H4-BUNDLE-04 closed the code/source/release host wave with fixture-equivalent
-review integration, quality delta, connector postmortem, and H5 readiness
-evidence. H4 live probes remain blocked by missing operator approval, but
-committed fixture replay outputs are sufficient for the next policy-pack-only
-expansion lane.
+H5-BUNDLE-01 added policy-pack-only source-family structure for fifteen H5
+vendor/update/driver/firmware sources. The H5 policy wave remains offline and
+blocked from live access, catalog fetches, downloads, installers, vendor tools,
+package managers, firmware flashing, index mutation, and truth acceptance.
 
 ## CONTEXT_REFS
 
@@ -33,55 +33,59 @@ expansion lane.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
-- `.aide/queue/H4-BUNDLE-04/task.yaml`
 - `.aide/queue/H5-BUNDLE-01/task.yaml`
-- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/`
-- `control/audits/h4-bundle-03-code-source-live-probes-v0/`
-- `control/audits/h4-bundle-02-code-source-fixture-runtime-v0/`
-- `control/audits/h4-bundle-01-code-source-release-policy-packs-v0/`
-- `runtime/connectors/h4_code_source_release/`
-- `examples/connectors/h4_code_source_release/review_integration/`
+- `.aide/queue/H5-BUNDLE-02/task.yaml`
+- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/`
+- `control/inventory/source_packs/h5_vendor_update_driver_source_pack_policy.json`
+- `control/inventory/source_packs/h5_vendor_update_driver_sources.json`
+- `control/inventory/source_packs/h5_vendor_update_driver_connector_families.json`
+- `control/inventory/source_packs/h5_vendor_identity_policy.json`
+- `control/inventory/source_packs/h5_driver_device_compatibility_policy.json`
+- `control/inventory/source_packs/h5_firmware_update_policy.json`
+- `control/inventory/source_packs/h5_runtime_redistributable_policy.json`
+- `examples/connectors/h5_vendor_update_driver/`
+- `examples/source_packs/h5_vendor_update_driver_source_pack_manifest_v0.json`
+- `docs/operations/H5_VENDOR_UPDATE_DRIVER_FIXTURE_PLAN.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- H5 policy-pack paths only if a future prompt explicitly scopes H5-BUNDLE-01 implementation.
+- H5 fixture-runtime paths only if a future prompt explicitly scopes
+  H5-BUNDLE-02 implementation.
 
 ## IMPLEMENTATION
 
-- Do not start H5-BUNDLE-01 implementation from this packet alone.
-- Resume from repo-local evidence, especially H4-BUNDLE-04 audit outputs.
-- Preserve no-live-call, no-download, no-driver-or-firmware-handling,
-  no-install, no-execute, no-source-sync, no-index-mutation, and
+- Do not start H5-BUNDLE-02 implementation from this packet alone.
+- Resume from repo-local evidence, especially H5-BUNDLE-01 audit outputs.
+- Preserve no-live-call, no-catalog-fetch, no-download, no-install,
+  no-execute, no-firmware-flash, no-source-sync, no-index-mutation, and
   no-truth-acceptance boundaries.
-- Treat vendor/update/driver/firmware source records, capabilities, source
-  identities, release/update identifiers, hardware or platform compatibility,
-  firmware/driver metadata, source-cache, evidence, and review outputs as
-  candidates/previews only until future reviewed gates explicitly accept them.
+- Treat vendor identity, driver identity, firmware/update identity, runtime
+  identity, device compatibility, hash/signature metadata, source-cache,
+  evidence, and review outputs as candidates/previews only until future
+  reviewed gates explicitly accept them.
 
 ## ACCEPTANCE
 
-- Latest handoff points to H5-BUNDLE-01.
-- H4-BUNDLE-04 evidence remains reviewable.
+- Latest handoff points to H5-BUNDLE-02.
+- H5-BUNDLE-01 evidence remains reviewable.
 - No Eureka product behavior change is authorized by this handoff.
-- No live source calls, downloads, firmware downloads, driver downloads,
-  installer downloads, package downloads, source sync, public/master index
-  mutation, evidence acceptance, candidate acceptance, source truth acceptance,
-  identity truth acceptance, compatibility truth acceptance, provenance
-  acceptance, authenticity acceptance, rights clearance, malware safety,
-  installability, execution, hosting, deployment, or product behavior changes
-  are authorized by this handoff.
+- No live source calls, catalog fetches, downloads, driver downloads, firmware
+  downloads, runtime downloads, installer downloads, update package downloads,
+  checksum/signature downloads, vendor tool invocation, package manager
+  invocation, firmware flashing, installs, execution, source sync, public/master
+  index mutation, evidence acceptance, candidate acceptance, source truth
+  acceptance, vendor/driver/firmware/runtime identity truth acceptance,
+  compatibility truth acceptance, authenticity truth acceptance, safety truth
+  acceptance, rights clearance, malware safety, installability, hosting,
+  deployment, or product behavior changes are authorized by this handoff.
 
 ## VALIDATION
 
-- `python scripts/validate_h4_code_source_review_quality_audit.py`
-- `python scripts/integrate_h4_code_source_review.py --input-dir examples/connectors/h4_code_source_release/replay_results --check`
-- `python scripts/summarize_h4_code_source_quality_delta.py --input-dir examples/connectors/h4_code_source_release/review_integration --check`
-- `python scripts/audit_h4_code_source_release_wave.py --check`
-- `python -m unittest tests.connectors.test_h4_code_source_review_integration_quality`
-- `python -m unittest tests.operations.test_h4_code_source_review_quality_scripts`
-- `python -m unittest tests.operations.test_h4_code_source_integration_audit`
+- `python scripts/validate_h5_vendor_update_driver_policy_packs.py`
+- `python scripts/summarize_h5_vendor_update_driver_sources.py --check`
+- `python -m unittest tests.operations.test_h5_vendor_update_driver_policy_packs`
+- `python -m unittest tests.operations.test_h5_vendor_update_driver_summary`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
@@ -94,27 +98,29 @@ expansion lane.
 ## EVIDENCE
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/H4-BUNDLE-04/task.yaml`
 - `.aide/queue/H5-BUNDLE-01/task.yaml`
-- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/h4_bundle_04_report.json`
-- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/validation.md`
-- `examples/connectors/h4_code_source_release/review_integration/`
+- `.aide/queue/H5-BUNDLE-02/task.yaml`
+- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/h5_bundle_01_report.json`
+- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/validation.md`
+- `examples/connectors/h5_vendor_update_driver/policies/`
+- `examples/connectors/h5_vendor_update_driver/coverage/`
+- `examples/connectors/h5_vendor_update_driver/scorecards/`
 
 ## NON_GOALS
 
-- No live calls, API calls, provider/model calls, browser automation, downloads,
-  installs, execution, scraping, crawling, repository clones, git fetch, git
-  command invocation, build tool invocation, firmware downloads, driver
-  downloads, installer downloads, package downloads, source sync, public query
-  fanout, public/master index mutation, evidence acceptance, candidate
+- No live calls, API calls, provider/model calls, browser automation, catalog
+  fetching, downloads, installs, execution, scraping, crawling, vendor tool
+  invocation, package manager invocation, firmware flashing, source sync, public
+  query fanout, public/master index mutation, evidence acceptance, candidate
   acceptance, source truth acceptance, identity truth acceptance, compatibility
-  truth acceptance, provenance acceptance, authenticity acceptance, public truth
-  creation, public launch, deployment, or production-readiness claims.
+  truth acceptance, authenticity truth acceptance, safety truth acceptance,
+  public truth creation, public launch, deployment, or production-readiness
+  claims.
 
 ## OUTPUT_SCHEMA
 
-Future H5-BUNDLE-01 responses should preserve status, summary, commits, H5
-scope boundaries, changed paths, validation, risks, and next task.
+Future H5-BUNDLE-02 responses should preserve status, summary, commits, H5
+fixture scope boundaries, changed paths, validation, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
@@ -142,5 +148,7 @@ scope boundaries, changed paths, validation, risks, and next task.
 - `.cache/eureka/**`
 - provider secret files
 - package cache roots
+- vendor download roots
+- firmware staging roots
 - repository clone roots
 - repository mirror roots
