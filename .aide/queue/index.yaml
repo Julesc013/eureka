@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: MVP-ALPHA-AUDIT-01
+current_recommended_task: MVP-ALPHA-OPERATOR-REVIEW-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -371,3 +371,11 @@ entries:
     allowed_scope_summary: review evidence, task packet, architecture docs, and validation reports only.
     gate: all prior real AIDE-driven tasks reviewed with no boundary regressions.
     recommended_after: EUREKA-AIDE-REAL-03
+  - id: MVP-ALPHA-OPERATOR-REVIEW-01
+    title: Operator review and launch decision packet
+    status: queued
+    purpose: Human/operator review of MVP alpha audit evidence and launch decision boundaries.
+    allowed_scope_summary: Review packets, launch decision evidence, and no-deployment operator gate docs only unless future prompt scopes otherwise.
+    gate: MVP-ALPHA-AUDIT-01 passes or passes with warnings; explicit operator approval required before any launch claim.
+    task: .aide/queue/MVP-ALPHA-OPERATOR-REVIEW-01/task.yaml
+    recommended_after: MVP-ALPHA-AUDIT-01

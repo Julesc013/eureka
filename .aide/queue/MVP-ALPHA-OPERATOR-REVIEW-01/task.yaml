@@ -1,0 +1,22 @@
+task_id: MVP-ALPHA-OPERATOR-REVIEW-01
+title: Operator review and launch decision packet
+status: queued
+phase: MVP-ALPHA-OPERATOR-REVIEW-01
+allowed_paths:
+  - .aide/**
+  - control/audits/**
+  - docs/**
+forbidden_paths:
+  - site/dist/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, no hosting provider calls, no DNS changes, no provider credentials, no secrets, no public alpha live claim, no production claim, no public search behavior change, no live source fanout, no source sync, no downloads, no uploads, no accounts, no telemetry, no public/master index mutation, and no operator signoff inference
+validation:
+  - python scripts/validate_mvp_alpha_audit.py
+  - python scripts/audit_mvp_alpha_readiness.py --check
+next_recommended_task: MVP-ALPHA-OPERATOR-REVIEW-01

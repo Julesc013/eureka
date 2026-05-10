@@ -1,0 +1,27 @@
+{
+  "deployment_allowed_current": false,
+  "full_observation_completion_required_current": false,
+  "obs_side_lane_allowed": true,
+  "operator_review_required": true,
+  "required_boundaries": [
+    "no_deployment",
+    "no_public_alpha_live_claim",
+    "no_production_claim",
+    "no_public_or_master_index_mutation"
+  ],
+  "required_tracks": [
+    "A",
+    "B",
+    "IA",
+    "H0",
+    "H1",
+    "F",
+    "G",
+    "I",
+    "J0",
+    "D",
+    "C",
+    "E"
+  ],
+  "schema_version": "mvp_alpha_readiness_policy.v0"
+}

@@ -2,30 +2,26 @@
 
 ## PHASE
 
-MVP-ALPHA-AUDIT-01 - End-to-end local MVP readiness audit
+MVP-ALPHA-OPERATOR-REVIEW-01 - Operator review and launch decision packet
 
 ## GOAL
 
-Continue after E-BUNDLE-02 by preparing the next reviewed Eureka lane:
-an end-to-end local MVP alpha readiness audit.
-
-This packet is a handoff only. MVP-ALPHA-AUDIT-01 must remain local,
-fixture-oriented, review-gated, and non-deploying unless a future reviewed
-prompt explicitly scopes otherwise, without changing Eureka product behavior.
+Continue after MVP-ALPHA-AUDIT-01 by preparing the human/operator review and
+launch decision packet. This is a review-gated step only. It must not deploy,
+call providers, change DNS, enable public hosting, enable public relay, mutate
+site/dist, mutate public or master indexes, enable unsafe behavior, infer
+operator signoff, or claim public alpha is live. It must proceed without
+changing Eureka product behavior.
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-E-BUNDLE-02 added hosted-wrapper rehearsal contracts, local fixture smoke
-matrix checks, blocked request reports, public alpha status reports, launch
-evidence packet requirements, operator signoff requirements, post-launch
-remediation planning, runtime helpers, scripts, tests, and audit evidence
-without deploying anything.
-
-The next useful step is a local MVP alpha audit that reads the accumulated
-A/B/H/F/G/I/J0/D/C/E evidence and decides what is locally ready, what is
-operator-gated, and what remains blocked before any public launch claim.
+MVP-ALPHA-AUDIT-01 added local MVP readiness contracts, policies, examples,
+scripts, tests, and audit evidence. The gate is READY_WITH_WARNINGS: the local
+fixture and audit spine is coherent enough for operator review, while Track A
+final audit naming, H1 approval-gated posture, native manual build evidence,
+and missing public launch evidence remain documented warnings.
 
 ## CONTEXT_REFS
 
@@ -35,46 +31,41 @@ operator-gated, and what remains blocked before any public launch claim.
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/E-BUNDLE-02/task.yaml`
 - `.aide/queue/MVP-ALPHA-AUDIT-01/task.yaml`
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/`
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/`
-- `contracts/hosting/`
-- `runtime/hosting/`
-- `examples/hosting/`
-- `docs/operations/E_TRACK_COMPLETION_AUDIT.md`
+- `.aide/queue/MVP-ALPHA-OPERATOR-REVIEW-01/task.yaml`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/`
+- `examples/audits/mvp_alpha/`
+- `contracts/audits/`
+- `docs/operations/MVP_ALPHA_OPERATOR_REVIEW.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- MVP alpha audit paths are to be defined by the next task prompt.
-- E-BUNDLE-02 artifacts are read-only context unless the next task explicitly
-  scopes updates.
+- operator review docs/evidence under `control/audits/**` if a future prompt
+  explicitly scopes them.
 
 ## IMPLEMENTATION
 
-- Use E-BUNDLE-02 audit evidence as readiness context only.
-- Keep local MVP audit separate from real deployment, provider state, DNS,
-  credentials, public route activation, live source fanout, public relay,
-  uploads, accounts, telemetry, downloads, and production claims.
-- Preserve C-BUNDLE-03 native evidence as context, not release evidence.
+- This packet is for operator review without changing Eureka product behavior.
+- Use MVP-ALPHA-AUDIT-01 evidence as read-only context.
+- Require explicit human/operator decision before any future public launch
+  evidence collection.
+- Keep launch, provider, DNS, hosting, public relay, live source fanout,
+  downloads, uploads, accounts, telemetry, public/master index mutation, and
+  production claims disabled.
 
 ## ACCEPTANCE
 
-- MVP-ALPHA-AUDIT-01 acceptance criteria will be defined by its task prompt.
-- This handoff is acceptable only if E-BUNDLE-02 validation remains PASS and no
-  deployment, hosted behavior, provider change, DNS change, generated site
-  output mutation, public relay, live access, public/master index mutation,
-  truth acceptance, public alpha live claim, or production claim is introduced.
+- Operator review packet references MVP-ALPHA-AUDIT-01 evidence.
+- Signoff is explicit, not inferred.
+- Any decision to continue names the next reviewed task.
+- Any warning or blocker is preserved honestly.
 
 ## VALIDATION
 
-- `python scripts/validate_hosted_wrapper_rehearsal.py`
-- `python scripts/audit_public_alpha_readiness.py --check`
-- `python scripts/check_public_alpha_blocked_requests.py --input examples/hosting/blocked_requests --check`
-- `python scripts/check_public_launch_evidence.py --input examples/hosting/launch/public_launch_evidence_packet_required_v0.json --check`
-- `python scripts/validate_hosting_readiness.py`
+- `python scripts/validate_mvp_alpha_audit.py`
+- `python scripts/audit_mvp_alpha_readiness.py --check`
+- `python scripts/build_mvp_alpha_operator_review_packet.py --check`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -85,13 +76,11 @@ operator-gated, and what remains blocked before any public launch claim.
 
 ## EVIDENCE
 
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/e_bundle_02_report.json`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/validation.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/no_deployment_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_launch_readiness_audit.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/next_phase_recommendation.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_audit_01_report.json`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_gate_decision.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/operator_review_packet.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/remediation_plan.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/validation.md`
 
 ## NON_GOALS
 
@@ -107,30 +96,27 @@ operator-gated, and what remains blocked before any public launch claim.
 - No public index or master index mutation.
 - No source, evidence, candidate, pack, action, snapshot, relay, native fixture,
   or public truth acceptance.
-- No release binaries, build-output commits, generated site output regeneration,
-  local private-state roots, rights-clearance claims, malware-safety claims,
-  verified installability claims, public alpha live claims, or production
-  claims.
+- No generated site output regeneration, local private-state roots,
+  rights-clearance claims, malware-safety claims, verified installability
+  claims, public alpha live claims, production claims, or inferred signoff.
 
 ## OUTPUT_SCHEMA
 
-Future MVP-ALPHA-AUDIT-01 task responses should preserve the repo task final
-schema: status, summary, commits, changed paths, validation, scope,
-readiness, risks, and next task.
+Future operator-review responses should preserve status, summary, commits,
+changed paths, validation, decision/scope, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1340
+- approx_tokens: 980
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS
 
-- generated site distribution output
+- `site/dist/**`
 - `runtime/**`
 - `contracts/**`
 - `surfaces/**`
-- `site/dist/**`
 - `site/**`
 - `native/**`
 - `crates/**`

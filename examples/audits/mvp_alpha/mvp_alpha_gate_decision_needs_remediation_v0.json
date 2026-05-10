@@ -1,0 +1,61 @@
+{
+  "blockers": [
+    "Track evidence incomplete"
+  ],
+  "decision": "NEEDS_REMEDIATION",
+  "decision_reason": "Required track evidence is missing or unsafe behavior was not proven blocked.",
+  "deployment_allowed_current": false,
+  "gate_decision_id": "mvp-alpha-gate-needs-remediation-v0",
+  "launch_allowed_current": false,
+  "limitations": [
+    "Gate decision is for local operator review only.",
+    "Deployment and public launch claims remain disallowed."
+  ],
+  "operator_review_required": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "deployment_performed": false,
+    "dns_changed": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_emulation": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_source_fanout": false,
+    "enabled_mirroring": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false,
+    "provider_api_called": false,
+    "public_bind_enabled": false
+  },
+  "production_claim_allowed": false,
+  "public_alpha_live_claim_allowed": false,
+  "remediation_required": true,
+  "required_next_task": "MVP-ALPHA-REMEDIATION-01 - Resolve local MVP readiness blockers",
+  "schema_version": "mvp_alpha_gate_decision.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "production_readiness_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "public_truth_created": false,
+    "readiness_audit_is_launch": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": [
+    "Remediation is required before operator review."
+  ]
+}

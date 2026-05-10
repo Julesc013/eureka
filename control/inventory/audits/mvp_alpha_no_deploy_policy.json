@@ -1,0 +1,10 @@
+{
+  "no_deployment": true,
+  "no_dns_changes": true,
+  "no_external_calls": true,
+  "no_provider_calls": true,
+  "no_public_bind": true,
+  "no_secrets": true,
+  "no_site_dist_mutation": true,
+  "schema_version": "mvp_alpha_no_deploy_policy.v0"
+}

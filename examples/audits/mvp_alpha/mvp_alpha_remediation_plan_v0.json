@@ -1,0 +1,96 @@
+{
+  "critical_blockers": [],
+  "notes": [
+    "No remediation item authorizes deployment or public launch."
+  ],
+  "optional_followups": [
+    "Collect manual native build evidence on old toolchains when those hosts are available.",
+    "Keep OBS manual side-lane status separate from automated local readiness."
+  ],
+  "owner_or_lane": "MVP audit",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "deployment_performed": false,
+    "dns_changed": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_emulation": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_source_fanout": false,
+    "enabled_mirroring": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false,
+    "provider_api_called": false,
+    "public_bind_enabled": false
+  },
+  "remediation_items": [
+    {
+      "action": "Confirm the available Track A evidence path or add the missing final integration audit before launch evidence collection.",
+      "item_id": "mvp-alpha-track-a-final-audit-name",
+      "owner_or_lane": "A",
+      "severity": "warning",
+      "suggested_task_id": "MVP-ALPHA-OPERATOR-REVIEW-01",
+      "validation_required": [
+        "python scripts/audit_mvp_alpha_readiness.py --check"
+      ]
+    },
+    {
+      "action": "Keep H1 live-probe warning visible and require operator approval for any future live source probe.",
+      "item_id": "mvp-alpha-h1-warning-carryforward",
+      "owner_or_lane": "H1",
+      "severity": "warning",
+      "suggested_task_id": "MVP-ALPHA-OPERATOR-REVIEW-01",
+      "validation_required": [
+        "python scripts/validate_h1_review_quality_audit.py"
+      ]
+    },
+    {
+      "action": "Collect explicit operator review decision before any public launch evidence packet is promoted.",
+      "item_id": "mvp-alpha-operator-signoff-required",
+      "owner_or_lane": "E",
+      "severity": "operator_gate",
+      "suggested_task_id": "MVP-ALPHA-OPERATOR-REVIEW-01",
+      "validation_required": [
+        "python scripts/build_mvp_alpha_operator_review_packet.py --check"
+      ]
+    }
+  ],
+  "remediation_plan_id": "mvp-alpha-remediation-plan-v0",
+  "remediation_status": "warnings_only",
+  "schema_version": "mvp_alpha_remediation_plan.v0",
+  "suggested_task_id": "MVP-ALPHA-OPERATOR-REVIEW-01",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "production_readiness_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "public_truth_created": false,
+    "readiness_audit_is_launch": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "validation_required": [
+    "python scripts/validate_mvp_alpha_audit.py",
+    "python scripts/audit_mvp_alpha_readiness.py --check",
+    "python -m unittest tests.operations.test_mvp_alpha_audit_scripts"
+  ],
+  "warnings": [
+    "Track A final integration prompt references track-a-17; local evidence uses the latest available Track A parity audit.",
+    "H1 metadata wave remains PASS_WITH_WARNINGS because live-probe posture is approval-gated.",
+    "Operator signoff and real public launch evidence remain intentionally missing.",
+    "Native old-toolchain build evidence remains manual/toolchain-gated."
+  ]
+}

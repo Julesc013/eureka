@@ -1,0 +1,31 @@
+{
+  "launch_allowed_current": false,
+  "operator_review_required": true,
+  "ready_for_operator_review_requires": {
+    "deployment_performed": false,
+    "f_g_i_j0_d_c_e_status": [
+      "pass",
+      "pass_with_warnings"
+    ],
+    "h0_h1_status": [
+      "pass",
+      "pass_with_warnings"
+    ],
+    "ia_status": [
+      "pass",
+      "pass_with_warnings",
+      "fixture_equivalent",
+      "blocked_with_fixture_path"
+    ],
+    "master_index_mutation": false,
+    "production_claimed": false,
+    "public_claims_bounded": true,
+    "public_index_mutation": false,
+    "track_b_status": [
+      "pass",
+      "pass_with_warnings"
+    ],
+    "unsafe_behavior_blocked": true
+  },
+  "schema_version": "mvp_alpha_gate_policy.v0"
+}

@@ -1,0 +1,442 @@
+{
+  "audit_id": "mvp-alpha-policy-blocked-audit-v0",
+  "audit_scope": "local_fixture_and_audit_evidence_only",
+  "audit_status": "blocked",
+  "audited_audit_packs": [
+    "control/audits/track-a-16-renderer-parity-harness-v0/",
+    "control/audits/track-b-23-integration-audit-v0/",
+    "control/audits/ia-bundle-03-review-integration-quality-delta-v0/",
+    "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/",
+    "control/audits/h1-bundle-04-review-quality-audit-v0/",
+    "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/",
+    "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/",
+    "control/audits/i-bundle-01-pack-quarantine-contribution-review-v0/",
+    "control/audits/j0-bundle-01-safe-actions-manifests-v0/",
+    "control/audits/d-bundle-02-localhost-readonly-relay-v0/",
+    "control/audits/c-bundle-03-native-smoke-packaging-v0/",
+    "control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/"
+  ],
+  "audited_contracts": [
+    "contracts/",
+    "contracts/audits/mvp_alpha_readiness_audit.v0.json",
+    "contracts/hosting/",
+    "contracts/native/",
+    "contracts/relay/",
+    "contracts/snapshots/",
+    "contracts/actions/"
+  ],
+  "audited_examples": [
+    "examples/",
+    "examples/audits/mvp_alpha/"
+  ],
+  "audited_runtime_modules": [
+    "runtime/local_foundry/",
+    "runtime/search_quality/",
+    "runtime/actions/",
+    "runtime/snapshots/",
+    "runtime/relay/",
+    "runtime/hosting/"
+  ],
+  "audited_scripts": [
+    "scripts/validate_hosted_wrapper_rehearsal.py",
+    "scripts/validate_hosting_readiness.py",
+    "scripts/validate_native_packaging_manifests.py",
+    "scripts/validate_relay_runtime.py",
+    "scripts/validate_snapshot_runtime.py",
+    "scripts/validate_safe_actions_runtime.py"
+  ],
+  "audited_tests": [
+    "tests/",
+    "tests/audits/",
+    "tests/operations/test_mvp_alpha_audit_scripts.py"
+  ],
+  "audited_tracks": [
+    "A",
+    "B",
+    "IA",
+    "H0",
+    "H1",
+    "F",
+    "G",
+    "I",
+    "J0",
+    "D",
+    "C",
+    "E"
+  ],
+  "blockers": [
+    "Policy blocked example refuses launch approval when a deployment or production claim appears."
+  ],
+  "limitations": [
+    "This audit checks local fixture and governed audit evidence only.",
+    "No public endpoint, production service, provider state, or DNS state was checked or changed."
+  ],
+  "local_mvp_path_results": {
+    "explanations_present": true,
+    "extraction_present": true,
+    "hosting_readiness_present": true,
+    "local_fixture_rehearsal_present": true,
+    "local_foundry_present": true,
+    "metadata_wave_present": true,
+    "native_readiness_present": true,
+    "pack_quarantine_present": true,
+    "ranking_shadow_present": true,
+    "relay_present": true,
+    "representation_spine_present": true,
+    "safe_actions_present": true,
+    "snapshots_present": true,
+    "source_os_present": true
+  },
+  "next_recommended_action": "MVP-ALPHA-REMEDIATION-01 - Resolve local MVP readiness blockers",
+  "notes": [
+    "MVP readiness is not production readiness.",
+    "Operator signoff is required and is not inferred by this audit."
+  ],
+  "operator_gated_items": [
+    "Operator review and launch decision packet",
+    "Real public launch evidence",
+    "Provider, DNS, and public hosting choices",
+    "Live connector approvals",
+    "Native release build evidence"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "deployment_performed": false,
+    "dns_changed": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_emulation": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_source_fanout": false,
+    "enabled_mirroring": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false,
+    "provider_api_called": false,
+    "public_bind_enabled": false
+  },
+  "public_claim_boundary_results": {
+    "deployment_allowed_current": false,
+    "malware_safety_claimed": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "remediation_items": [
+    "Carry H1 warning posture into operator review.",
+    "Confirm Track A final audit naming before public launch evidence is collected.",
+    "Collect explicit operator signoff before any launch claim."
+  ],
+  "schema_version": "mvp_alpha_readiness_audit.v0",
+  "track_gate_results": [
+    {
+      "actual_status": "pass_with_warnings",
+      "audit_ref": "control/audits/track-a-16-renderer-parity-harness-v0/",
+      "blockers": [],
+      "component_id": "track_a_representation",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Track A representation and view-model spine",
+      "next_action": "Operator review should confirm Track A final audit naming before any launch claim.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "A",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/check_architecture_boundaries.py"
+      ],
+      "warnings": [
+        "Track A prompt references a future track-a-17 audit path; current local evidence uses the latest available Track A renderer parity pack."
+      ]
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/track-b-23-integration-audit-v0/",
+      "blockers": [],
+      "component_id": "track_b_local_foundry",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Track B local foundry, review, and pack spine",
+      "next_action": "Keep public and master index mutation disabled.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "B",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_local_review_queue_runtime.py",
+        "python scripts/validate_pack_export_runtime.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/ia-bundle-03-review-integration-quality-delta-v0/",
+      "blockers": [],
+      "component_id": "ia_reference_connector",
+      "expected_status": "pass_or_fixture_equivalent",
+      "label": "Internet Archive reference connector pattern",
+      "next_action": "Keep live connector access disabled unless an explicit future approval task scopes it.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "IA",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_ia_review_integration.py"
+      ],
+      "warnings": [
+        "Live probe approvals remain operator-gated and are not part of local MVP readiness."
+      ]
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/",
+      "blockers": [],
+      "component_id": "h0_source_os",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Source OS foundation",
+      "next_action": "Preserve source-pack review gates.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "H0",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_source_os_foundation.py",
+        "python scripts/audit_h0_integration.py --check"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass_with_warnings",
+      "audit_ref": "control/audits/h1-bundle-04-review-quality-audit-v0/",
+      "blockers": [],
+      "component_id": "h1_metadata_wave",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "First metadata wave",
+      "next_action": "Carry the warning into operator review without enabling live source calls.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "H1",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_h1_review_quality_audit.py",
+        "python scripts/audit_h1_metadata_wave.py --check"
+      ],
+      "warnings": [
+        "H1 metadata wave audit is known PASS_WITH_WARNINGS because live-probe posture remains approval-gated."
+      ]
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/",
+      "blockers": [],
+      "component_id": "track_f_extraction",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Extraction and member-discovery fixtures",
+      "next_action": "Keep extraction candidate outputs review-only.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "F",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_extraction_search_integration.py",
+        "python scripts/validate_extraction_sandbox.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/",
+      "blockers": [],
+      "component_id": "track_g_search_quality",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Explanations, ranking shadow, and search-quality harness",
+      "next_action": "Keep ranking shadow separate from public ranking behavior.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "G",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_ranking_shadow_runtime.py",
+        "python scripts/validate_search_explanation_runtime.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/i-bundle-01-pack-quarantine-contribution-review-v0/",
+      "blockers": [],
+      "component_id": "track_i_pack_quarantine",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Pack quarantine and contribution review",
+      "next_action": "Keep pack acceptance blocked without review.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "I",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_pack_quarantine_runtime.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/j0-bundle-01-safe-actions-manifests-v0/",
+      "blockers": [],
+      "component_id": "track_j0_safe_actions",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Safe action manifests",
+      "next_action": "Keep unsafe actions represented as blocked reports.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "J0",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_safe_actions_runtime.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/d-bundle-02-localhost-readonly-relay-v0/",
+      "blockers": [],
+      "component_id": "track_d_snapshots_relay",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Snapshot and localhost read-only relay substrate",
+      "next_action": "Keep relay loopback-only and fixture-only.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "D",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_snapshot_runtime.py",
+        "python scripts/validate_relay_runtime.py"
+      ],
+      "warnings": []
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/c-bundle-03-native-smoke-packaging-v0/",
+      "blockers": [],
+      "component_id": "track_c_native_clients",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "First-wave native readiness",
+      "next_action": "Keep native artifacts manifest-only until future verified builds exist.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "C",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_native_packaging_manifests.py",
+        "python scripts/audit_track_c_integration.py --check"
+      ],
+      "warnings": [
+        "Native build evidence remains manual/toolchain-gated and is not a release claim."
+      ]
+    },
+    {
+      "actual_status": "pass",
+      "audit_ref": "control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/",
+      "blockers": [],
+      "component_id": "track_e_hosting_readiness",
+      "expected_status": "pass_or_pass_with_warnings",
+      "label": "Hosting and operations readiness and local rehearsal",
+      "next_action": "Proceed only to operator review, not deployment.",
+      "product_boundary_preserved": true,
+      "tests_refs": [
+        "python -m unittest discover -s tests -t ."
+      ],
+      "track": "E",
+      "truth_boundary_preserved": true,
+      "validator_refs": [
+        "python scripts/validate_hosting_readiness.py",
+        "python scripts/validate_hosted_wrapper_rehearsal.py"
+      ],
+      "warnings": [
+        "Operator signoff and real launch evidence are intentionally absent."
+      ]
+    },
+    {
+      "actual_status": "side_lane",
+      "audit_ref": ".aide/queue/MANUAL-OBSERVATION-BATCH-0/",
+      "blockers": [],
+      "component_id": "obs_side_lane_status",
+      "expected_status": "side_lane_allowed",
+      "label": "Observation side-lane",
+      "next_action": "Keep manual observation outside automated MVP launch claims.",
+      "product_boundary_preserved": true,
+      "tests_refs": [],
+      "track": "OBS",
+      "truth_boundary_preserved": true,
+      "validator_refs": [],
+      "warnings": [
+        "OBS remains a human-operated side-lane and is not required to block this local readiness audit."
+      ]
+    }
+  ],
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "production_readiness_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "public_truth_created": false,
+    "readiness_audit_is_launch": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "unsafe_behavior_results": {
+    "accounts_enabled": false,
+    "downloads_enabled": false,
+    "install_execution_enabled": false,
+    "live_source_fanout_enabled": false,
+    "public_relay_enabled": false,
+    "source_sync_enabled": false,
+    "telemetry_enabled": false,
+    "unsafe_actions_blocked": true,
+    "uploads_enabled": false
+  },
+  "validation_summary": {
+    "major_validators": "pass_with_h1_warning",
+    "mvp_alpha_audit_script": "pass_with_warnings",
+    "mvp_alpha_validator": "pass",
+    "operator_review_required": true,
+    "public_claim_boundary": "pass",
+    "unsafe_behavior_checks": "pass"
+  },
+  "warnings": [
+    "Example demonstrates blocked posture; unsafe booleans remain false."
+  ]
+}

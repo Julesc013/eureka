@@ -1,0 +1,110 @@
+{
+  "blockers": [],
+  "disabled_features": [
+    "deployment",
+    "provider API calls",
+    "DNS changes",
+    "public bind",
+    "live source fanout",
+    "source sync",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "install",
+    "execute",
+    "public relay"
+  ],
+  "evidence_refs": [
+    "control/audits/track-a-16-renderer-parity-harness-v0/",
+    "control/audits/track-b-23-integration-audit-v0/",
+    "control/audits/ia-bundle-03-review-integration-quality-delta-v0/",
+    "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/",
+    "control/audits/h1-bundle-04-review-quality-audit-v0/",
+    "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/",
+    "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/",
+    "control/audits/i-bundle-01-pack-quarantine-contribution-review-v0/",
+    "control/audits/j0-bundle-01-safe-actions-manifests-v0/",
+    "control/audits/d-bundle-02-localhost-readonly-relay-v0/",
+    "control/audits/c-bundle-03-native-smoke-packaging-v0/",
+    "control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/",
+    "examples/audits/mvp_alpha/mvp_alpha_readiness_audit_v0.json",
+    "examples/audits/mvp_alpha/mvp_alpha_gate_decision_ready_for_operator_review_v0.json",
+    "control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/"
+  ],
+  "launch_non_claims": [
+    "Eureka is not live.",
+    "Eureka is not production.",
+    "Eureka is not a download service or app store.",
+    "Rights clearance, malware safety, and installability are not claimed.",
+    "Public and master indexes were not mutated."
+  ],
+  "local_mvp_capabilities": [
+    "Contract and fixture spine across Tracks A, B, IA, H0, H1, F, G, I, J0, D, C, and E.",
+    "Local fixture rehearsal and blocked request evidence.",
+    "Snapshot, relay, safe action, native, and hosting readiness audit packs."
+  ],
+  "notes": [
+    "This packet prepares operator review. It does not approve launch."
+  ],
+  "operator_gated_decisions": [
+    "Whether to proceed to public launch evidence collection.",
+    "Whether any live connector probe should be separately approved.",
+    "Whether hosting provider, DNS, and rollback evidence are sufficient in a future task."
+  ],
+  "operator_review_packet_id": "mvp-alpha-operator-review-packet-v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "deployment_performed": false,
+    "dns_changed": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_emulation": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_source_fanout": false,
+    "enabled_mirroring": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false,
+    "provider_api_called": false,
+    "public_bind_enabled": false
+  },
+  "recommended_decision": "READY_WITH_WARNINGS",
+  "required_signoffs": [
+    "Operator launch decision",
+    "No-claims review",
+    "Secrets and deployment boundary review",
+    "Incident, rollback, takedown, and kill-switch review"
+  ],
+  "review_status": "operator_review_required",
+  "schema_version": "mvp_alpha_operator_review_packet.v0",
+  "summary": "Local MVP audit evidence is coherent enough for operator review with documented warnings and no launch approval inferred.",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "production_readiness_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "public_truth_created": false,
+    "readiness_audit_is_launch": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": [
+    "Track A final integration prompt references track-a-17; local evidence uses the latest available Track A parity audit.",
+    "H1 metadata wave remains PASS_WITH_WARNINGS because live-probe posture is approval-gated.",
+    "Operator signoff and real public launch evidence remain intentionally missing.",
+    "Native old-toolchain build evidence remains manual/toolchain-gated."
+  ]
+}

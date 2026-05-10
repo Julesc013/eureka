@@ -1,0 +1,7 @@
+{
+  "approval_must_be_explicit_future": true,
+  "no_implicit_signoff": true,
+  "operator_review_packet_required_before_deployment_or_public_alpha_claim": true,
+  "operator_review_required": true,
+  "schema_version": "mvp_alpha_operator_review_policy.v0"
+}

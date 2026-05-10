@@ -1,0 +1,6 @@
+{
+  "remediation_must_be_explicit": true,
+  "remediation_must_be_taskable": true,
+  "schema_version": "mvp_alpha_remediation_policy.v0",
+  "warnings_may_be_carried_to_operator_review": true
+}

@@ -1,0 +1,17 @@
+{
+  "candidate_truth_accepted": false,
+  "evidence_truth_accepted": false,
+  "malware_safety_claimed": false,
+  "master_index_mutated": false,
+  "operator_signoff_inferred": false,
+  "production_claimed": false,
+  "production_readiness_claimed": false,
+  "public_alpha_live_claimed": false,
+  "public_index_mutated": false,
+  "public_truth_created": false,
+  "readiness_audit_is_launch": false,
+  "rights_clearance_claimed": false,
+  "schema_version": "mvp_alpha_truth_policy.v0",
+  "source_truth_accepted": false,
+  "verified_installability_claimed": false
+}

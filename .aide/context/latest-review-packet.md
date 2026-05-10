@@ -2,20 +2,24 @@
 
 ## Review Objective
 
-Review E-BUNDLE-02 from compact repo-local evidence and decide whether it is
-ready to pass its review gate.
+Review MVP-ALPHA-AUDIT-01 local MVP readiness evidence. Confirm the audit is
+ready for operator review without treating it as deployment approval, public
+launch approval, or production readiness.
 
 ## Decision Requested
 
-Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
-`BLOCKED`.
+`PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED`
+
+Use PASS_WITH_NOTES if the reviewer accepts the MVP audit's
+PASS_WITH_WARNINGS / READY_WITH_WARNINGS posture for
+MVP-ALPHA-OPERATOR-REVIEW-01. Use REQUEST_CHANGES or BLOCKED if the local MVP
+evidence is insufficient.
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` now points the main lane to
-  `MVP-ALPHA-AUDIT-01` after E-BUNDLE-02 implementation.
-- E-BUNDLE-02 task evidence is under
-  `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/`.
+- `.aide/context/latest-task-packet.md`
+- `.aide/queue/MVP-ALPHA-AUDIT-01/task.yaml`
+- `.aide/queue/MVP-ALPHA-OPERATOR-REVIEW-01/task.yaml`
 
 ## Context Packet Reference
 
@@ -28,88 +32,71 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
 
 - `.aide/verification/latest-verification-report.md`
 - `.aide/verification/review-decision-policy.yaml`
-- verifier_result: WARN
-- note: WARN is advisory diff-scope noise with zero errors after the active
-  task packet advanced to MVP-ALPHA-AUDIT-01.
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/validation.md`
 
 ## Evidence Packet References
 
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/e_bundle_02_report.json`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/validation.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/hosted_wrapper_rehearsal_summary.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_smoke_matrix_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_blocked_request_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_alpha_status_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_launch_evidence_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/public_launch_readiness_audit.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/no_deployment_report.md`
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/next_phase_recommendation.md`
-- `.aide/reports/eureka-repo-health.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_audit_01_report.json`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_integration_matrix.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_gate_decision.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/operator_review_packet.md`
+- `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/remediation_plan.md`
+- `examples/audits/mvp_alpha/`
 
 ## Changed Files Summary
 
-- Added hosted-wrapper rehearsal, smoke report, smoke matrix, blocked request,
-  status report, readiness audit, operator signoff, and remediation contracts.
-- Added fixture-only hosting runtime helpers under `runtime/hosting/`.
-- Added E-BUNDLE-02 hosting policies, examples, docs, scripts, tests, and audit
-  evidence.
-- Updated AIDE queue/context/repo-health handoff to
-  `MVP-ALPHA-AUDIT-01`.
+- Added MVP alpha audit contracts under `contracts/audits/`.
+- Added MVP alpha audit policies under `control/inventory/audits/`.
+- Added MVP alpha examples under `examples/audits/mvp_alpha/`.
+- Added MVP alpha scripts under `scripts/`.
+- Added MVP alpha tests under `tests/audits/` and `tests/operations/`.
+- Added MVP alpha docs under `docs/reference/`, `docs/architecture/`, and `docs/operations/`.
+- Added audit evidence under `control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/`.
+- Updated AIDE queue/context/repo-health metadata for the next operator-review task.
 
 ## Validation Summary
 
-- `git diff --check`: PASS
-- E-BUNDLE-02 contract and policy JSON syntax checks: PASS
-- `python scripts/validate_hosted_wrapper_rehearsal.py`: PASS
-- `python scripts/rehearse_hosted_wrapper.py --input examples/hosting/rehearsal/hosted_wrapper_rehearsal_local_fixture_v0.json --check`: PASS
-- `python scripts/run_public_alpha_smoke_matrix.py --matrix examples/hosting/smoke/public_alpha_smoke_matrix_v0.json --check`: PASS
-- `python scripts/check_public_alpha_blocked_requests.py --input examples/hosting/blocked_requests --check`: PASS
-- `python scripts/check_public_launch_evidence.py --input examples/hosting/launch/public_launch_evidence_packet_required_v0.json --check`: PASS
-- `python scripts/audit_public_alpha_readiness.py --check`: PASS
-- E-BUNDLE-02 focused tests: PASS
-- `python -m unittest discover -s tests -t .`: PASS
-- `python scripts/check_architecture_boundaries.py`: PASS
-- Existing E/C/D/J/I/G/F/H/core validators: PASS, with the pre-existing H1
-  metadata wave audit returning PASS_WITH_WARNINGS.
-- AIDE Lite doctor, validate, test, selftest, eval list, eval run, and adapter
-  validation: PASS.
-- AIDE Lite verify and review-pack: WARN with zero errors.
+- `python scripts/validate_mvp_alpha_audit.py`: PASS.
+- `python scripts/audit_mvp_alpha_readiness.py --check`: PASS_WITH_WARNINGS.
+- `python scripts/summarize_mvp_alpha_readiness.py --input examples/audits/mvp_alpha --check`: PASS.
+- `python scripts/build_mvp_alpha_operator_review_packet.py --audit examples/audits/mvp_alpha/mvp_alpha_readiness_audit_v0.json --gate examples/audits/mvp_alpha/mvp_alpha_gate_decision_ready_for_operator_review_v0.json --check`: PASS.
+- `python -m unittest discover -s tests -t .`: PASS.
+- Existing major validators: PASS, with H1 warning posture carried in the audit evidence.
+- AIDE Lite golden evals: PASS after packet repair.
 
 ## Token Summary
 
-- packet_path: `.aide/context/latest-review-packet.md`
-- method: chars / 4, rounded up
-- budget_status: PASS
-- formal ledger: `.aide/reports/token-ledger.jsonl`
-
-## Boundary Summary
-
-- E-BUNDLE-02 is rehearsal-only.
-- No deployment, provider call, DNS change, provider credential, generated site
-  output mutation, public bind, public alpha live claim, production claim, live
-  source fanout, downloads, uploads, accounts, telemetry, public relay,
-  public/master index mutation, or truth acceptance was introduced.
+- packet_status: compact.
+- review_scope: local MVP audit only.
+- approx_tokens: 760.
+- budget_status: within_budget.
+- formal ledger: `.aide/reports/token-ledger.jsonl`.
 
 ## Risk Summary
 
-- Operator signoff and real public launch evidence remain missing by design.
-- The next phase is a local MVP readiness audit, not public deployment.
+- Track A final audit naming remains a warning because current local evidence uses the latest available Track A parity audit.
+- H1 live-probe posture remains approval-gated and warning-only.
+- Native old-toolchain build evidence remains manual/toolchain-gated.
+- Real public launch evidence and explicit operator signoff remain future work.
 
 ## Non-Goals / Scope Guard
 
-- No deployment, provider calls, DNS changes, custom domain claims, credentials,
-  secrets, or generated site output regeneration.
-- No public alpha live claim or production claim.
-- No live source fanout, source sync, downloads, uploads, accounts, telemetry,
-  public relay, public search behavior change, public/master index mutation, or
-  truth acceptance.
+- Do not deploy.
+- Do not call hosting providers, model providers, or external APIs.
+- Do not change DNS or custom-domain state.
+- Do not mutate generated site output.
+- Do not enable public bind, public relay, live source fanout, source sync, downloads, uploads, accounts, telemetry, install, execute, mirror, or emulation.
+- Do not mutate public or master indexes.
+- Do not accept source, evidence, candidate, pack, action, snapshot, relay, native fixture, or public truth.
+- Do not infer operator approval.
+- Do not claim public alpha is live, production readiness, rights clearance, malware safety, or verified installability.
 
 ## Reviewer Instructions
 
-- Review only this packet and the referenced evidence when needed.
-- Do not request full chat history unless the packet is insufficient to judge
-  correctness.
+- Review only this packet and referenced evidence when needed.
+- Do not request full chat history unless the packet is insufficient.
+- Do not re-summarize the whole project.
 - Do not reward scope creep.
 - Do not approve missing validation as a pass.
-- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`,
-  `OPTIONAL_NOTES`, `NEXT_PHASE`.
+- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
+- Decision policy: `.aide/verification/review-decision-policy.yaml`.

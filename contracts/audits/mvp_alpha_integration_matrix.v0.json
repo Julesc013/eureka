@@ -1,0 +1,42 @@
+{
+  "$id": "contracts/audits/mvp_alpha_integration_matrix.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "matrix_id": {
+      "type": "string"
+    },
+    "matrix_status": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "needs_remediation",
+        "blocked",
+        "fail",
+        "not_evaluable"
+      ]
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "rows": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mvp_alpha_integration_matrix.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "matrix_id",
+    "matrix_status",
+    "rows",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka MVP Alpha Integration Matrix v0",
+  "type": "object"
+}

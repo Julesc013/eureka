@@ -1,0 +1,21 @@
+{
+  "blockers_and_warnings_required": true,
+  "required_rows": [
+    "track_a_representation",
+    "track_b_local_foundry",
+    "ia_reference_connector",
+    "h0_source_os",
+    "h1_metadata_wave",
+    "track_f_extraction",
+    "track_g_search_quality",
+    "track_i_pack_quarantine",
+    "track_j0_safe_actions",
+    "track_d_snapshots_relay",
+    "track_c_native_clients",
+    "track_e_hosting_readiness",
+    "obs_side_lane_status"
+  ],
+  "row_must_state_actual_status": true,
+  "row_must_state_boundary_status": true,
+  "schema_version": "mvp_alpha_integration_matrix_policy.v0"
+}

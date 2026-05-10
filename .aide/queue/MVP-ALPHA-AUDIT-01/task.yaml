@@ -1,16 +1,23 @@
 task_id: MVP-ALPHA-AUDIT-01
 title: End-to-end local MVP readiness audit
-status: queued
+status: needs_review
 phase: MVP-ALPHA-AUDIT-01
 allowed_paths:
   - .aide/context/latest-task-packet.md
   - .aide/context/latest-review-packet.md
   - .aide/queue/index.yaml
   - .aide/queue/MVP-ALPHA-AUDIT-01/**
-  - control/audits/**
-  - docs/**
-  - scripts/**
-  - tests/**
+  - .aide/queue/MVP-ALPHA-OPERATOR-REVIEW-01/**
+  - contracts/audits/**
+  - control/inventory/audits/**
+  - control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/**
+  - docs/reference/MVP_ALPHA_*
+  - docs/architecture/MVP_ALPHA_STACK_MODEL.md
+  - docs/operations/MVP_ALPHA_*
+  - scripts/*mvp_alpha*
+  - examples/audits/mvp_alpha/**
+  - tests/audits/**
+  - tests/operations/test_mvp_alpha_audit_scripts.py
 forbidden_paths:
   - site/dist/**
   - data/public_index/**
@@ -22,12 +29,12 @@ forbidden_paths:
 non_goals:
   - no deployment, no hosting provider calls, no DNS changes, no provider credentials, no secrets, no generated site output regeneration, no public alpha live claim, no production claim, no public search behavior change, no live source fanout, no source sync, no public relay, no downloads, no uploads, no accounts, no telemetry, no public/master index mutation, no evidence/candidate/public truth acceptance, and no local private-state roots
 validation:
-  - python scripts/validate_hosted_wrapper_rehearsal.py
-  - python scripts/audit_public_alpha_readiness.py --check
+  - python scripts/validate_mvp_alpha_audit.py
+  - python scripts/audit_mvp_alpha_readiness.py --check
+  - python scripts/summarize_mvp_alpha_readiness.py --input examples/audits/mvp_alpha --check
+  - python scripts/build_mvp_alpha_operator_review_packet.py --audit examples/audits/mvp_alpha/mvp_alpha_readiness_audit_v0.json --gate examples/audits/mvp_alpha/mvp_alpha_gate_decision_ready_for_operator_review_v0.json --check
+  - python -m unittest tests.audits.test_mvp_alpha_readiness_contracts
+  - python -m unittest tests.audits.test_mvp_alpha_gate_decision
+  - python -m unittest tests.operations.test_mvp_alpha_audit_scripts
   - python scripts/check_architecture_boundaries.py
-  - py -3 .aide/scripts/aide_lite.py doctor
-  - py -3 .aide/scripts/aide_lite.py validate
-  - py -3 .aide/scripts/aide_lite.py test
-  - py -3 .aide/scripts/aide_lite.py selftest
-  - py -3 .aide/scripts/aide_lite.py eval run
-next_recommended_task: MVP-ALPHA-AUDIT-01
+next_recommended_task: MVP-ALPHA-OPERATOR-REVIEW-01

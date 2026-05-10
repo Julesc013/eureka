@@ -1,0 +1,62 @@
+{
+  "blockers": [],
+  "decision": "READY_FOR_OPERATOR_REVIEW",
+  "decision_reason": "Local MVP evidence is coherent enough for operator review with documented warnings.",
+  "deployment_allowed_current": false,
+  "gate_decision_id": "mvp-alpha-gate-ready-for-operator-review-v0",
+  "launch_allowed_current": false,
+  "limitations": [
+    "Gate decision is for local operator review only.",
+    "Deployment and public launch claims remain disallowed."
+  ],
+  "operator_review_required": true,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "deployment_performed": false,
+    "dns_changed": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_emulation": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_source_fanout": false,
+    "enabled_mirroring": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false,
+    "provider_api_called": false,
+    "public_bind_enabled": false
+  },
+  "production_claim_allowed": false,
+  "public_alpha_live_claim_allowed": false,
+  "remediation_required": false,
+  "required_next_task": "MVP-ALPHA-OPERATOR-REVIEW-01 - Operator review and launch decision packet",
+  "schema_version": "mvp_alpha_gate_decision.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "production_readiness_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "public_truth_created": false,
+    "readiness_audit_is_launch": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": [
+    "Track A final integration prompt references track-a-17; local evidence uses the latest available Track A parity audit.",
+    "H1 metadata wave remains PASS_WITH_WARNINGS because live-probe posture is approval-gated.",
+    "Operator signoff and real public launch evidence remain intentionally missing.",
+    "Native old-toolchain build evidence remains manual/toolchain-gated."
+  ]
+}
