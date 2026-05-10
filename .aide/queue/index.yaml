@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-10
+updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H3-BUNDLE-01
+current_recommended_task: H3-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -433,9 +433,18 @@ entries:
 
 - id: H3-BUNDLE-01
   title: OS package archive source-family policy packs
-  status: queued
+  status: needs_review
   purpose: Extend Source OS policy packs to OS package archives after H2 package registry review closes.
   allowed_scope_summary: H3 OS package archive policy packs, source records, docs, scripts, tests, audit evidence, and AIDE metadata only.
   gate: H2-BUNDLE-04 passes or passes with warnings; no downloads, installs, execution, source sync, live calls, public/master index mutation, or truth acceptance.
   task: .aide/queue/H3-BUNDLE-01/task.yaml
   recommended_after: H2-BUNDLE-04
+
+- id: H3-BUNDLE-02
+  title: OS package archive fixture runtimes and normalizers
+  status: queued
+  purpose: Add committed-fixture-only OS package archive fixture replay and normalizer runtime after H3 policy packs.
+  allowed_scope_summary: H3 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
+  gate: H3-BUNDLE-01 passes; no live archive calls, source sync, repository index fetches, package downloads, package-manager invocation, install/execute, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H3-BUNDLE-02/task.yaml
+  recommended_after: H3-BUNDLE-01

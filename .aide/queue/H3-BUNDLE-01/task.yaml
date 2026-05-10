@@ -1,6 +1,6 @@
 id: H3-BUNDLE-01
 title: OS package archive source-family policy packs
-status: queued
+status: needs_review
 purpose: Extend Source OS policy packs to OS package archives after H2 package registry review closes.
 allowed_scope_summary: H3 OS package archive policy packs, source records, docs, scripts, tests, audit evidence, and AIDE metadata only.
 gate: H2-BUNDLE-04 passes or passes with warnings; no downloads, installs, execution, source sync, live calls, public/master index mutation, or truth acceptance.

@@ -1,0 +1,231 @@
+{
+  "connector_family_refs": [
+    "api_json",
+    "directory_listing",
+    "os_package_archive",
+    "package_registry",
+    "storefront"
+  ],
+  "connector_scorecards": [
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/debian_snapshot_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/ubuntu_old_releases_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/arch_linux_archive_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/fedora_rpm_metadata_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/freebsd_packages_ports_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/pkgsrc_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/homebrew_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/macports_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/nixpkgs_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/winget_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/chocolatey_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/flathub_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h3_os_package_archives/scorecards/snapcraft_scorecard_preview_v0.json"
+    }
+  ],
+  "coverage_records": [
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/debian_snapshot_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/ubuntu_old_releases_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/arch_linux_archive_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/fedora_rpm_metadata_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/freebsd_packages_ports_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/pkgsrc_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/homebrew_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/macports_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/nixpkgs_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/winget_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/chocolatey_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/flathub_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h3_os_package_archives/coverage/snapcraft_coverage_preview_v0.json"
+    }
+  ],
+  "limitations": [
+    "H3-BUNDLE-01 is policy-pack-only.",
+    "The pack is an export preview and is not imported, submitted, or accepted.",
+    "Coverage previews are bounded planning records, not exhaustive source coverage."
+  ],
+  "no_live_access_posture": {
+    "approved_live_probe_enabled": false,
+    "connector_runtime_enabled": false,
+    "live_access_enabled": false,
+    "network_calls_made": false,
+    "repository_index_fetch_enabled": false,
+    "source_sync_enabled": false
+  },
+  "notes": [
+    "This source pack prepares H3 fixture work; it grants no source access."
+  ],
+  "pack_status": "draft_only",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_posture": {
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_import_or_submission": true,
+    "review_required_before_live_access": true,
+    "review_required_before_master_index": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_source_cache_write": true
+  },
+  "schema_version": "source_pack_manifest.v0",
+  "source_capabilities": [
+    "source_known",
+    "catalog_indexed_future",
+    "supports_metadata_record_fetch_future",
+    "supports_member_listing_future",
+    "supports_hashes_future",
+    "supports_os_platform_compatibility_candidate_future"
+  ],
+  "source_families": [
+    "os_package_archive"
+  ],
+  "source_pack_manifest_id": "source_pack.h3_os_package_archive.policy_pack.v0",
+  "source_policy_refs": [
+    "control/inventory/source_packs/h3_os_package_archive_source_pack_policy.json",
+    "control/inventory/source_packs/h3_os_package_identity_policy.json",
+    "control/inventory/source_packs/h3_os_platform_compatibility_policy.json",
+    "control/inventory/source_packs/h3_os_package_archive_approval_gates.json",
+    "control/inventory/source_packs/h3_os_package_archive_output_policy.json",
+    "control/inventory/source_packs/h3_os_package_archive_truth_policy.json",
+    "control/inventory/source_packs/h3_os_package_archive_no_live_call_policy.json",
+    "control/inventory/source_packs/h3_os_package_archive_no_download_policy.json"
+  ],
+  "source_records": [
+    {
+      "source_record_ref": "examples/sources/source_records/debian_snapshot_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/ubuntu_old_releases_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/arch_linux_archive_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/fedora_rpm_metadata_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/freebsd_packages_ports_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/pkgsrc_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/homebrew_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/macports_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/nixpkgs_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/winget_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/chocolatey_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/flathub_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/snapcraft_source_v2.json"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_os_compatibility_fact": false,
+    "accepted_os_package_identity": false,
+    "accepted_source_truth": false,
+    "capability_grants_permission": false,
+    "compatibility_correctness_claimed": false,
+    "compatibility_metadata_proves_compatibility_correctness": false,
+    "coverage_preview_is_exhaustive": false,
+    "dependency_correctness_claimed": false,
+    "dependency_metadata_proves_dependency_correctness": false,
+    "license_field_proves_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutation_allowed": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_hash_proves_malware_safety": false,
+    "os_package_identity_candidate_is_truth": false,
+    "os_package_metadata_is_identity_truth": false,
+    "os_package_metadata_proves_installability": false,
+    "policy_pack_grants_live_access": false,
+    "public_index_mutation_allowed": false,
+    "repository_presence_proves_endorsement": false,
+    "rights_clearance_claimed": false,
+    "scorecard_preview_is_production_ready": false,
+    "source_pack_can_mutate_master_index": false,
+    "source_pack_can_mutate_public_index": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_accepted_truth": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_submitted": false,
+    "source_pack_is_truth": false,
+    "verified_installability_claimed": false
+  },
+  "wave_id": "H3",
+  "wave_label": "OS package archive source-family policy packs"
+}

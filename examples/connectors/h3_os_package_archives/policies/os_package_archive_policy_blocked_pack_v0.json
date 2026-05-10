@@ -1,0 +1,122 @@
+{
+  "allowed_current_operations": [
+    "record_source_policy"
+  ],
+  "connector_family": "os_package_archive",
+  "coverage_requirements": [
+    "not applicable"
+  ],
+  "current_status": "policy_blocked",
+  "endpoint_or_index_classes_forbidden_current": [
+    "all_live_access",
+    "all_downloads",
+    "all_package_manager_invocation"
+  ],
+  "endpoint_or_index_classes_planned": [],
+  "evidence_mapping_future": "blocked",
+  "fixture_requirements": [
+    "policy-blocked record"
+  ],
+  "forbidden_current_operations": [
+    "live_probe_result",
+    "source_sync",
+    "source_cache_write",
+    "evidence_candidate_write",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_os_package_identity",
+    "accepted_os_compatibility_fact",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "repository_index_fetch",
+    "repository_index_mirror",
+    "package_download",
+    "artifact_download",
+    "release_asset_download",
+    "source_archive_download",
+    "container_layer_pull",
+    "package_manager_invocation",
+    "install_package",
+    "execute_downloaded_artifact",
+    "scrape_or_crawl",
+    "arbitrary_url_fetch"
+  ],
+  "live_probe_requirements_future": [],
+  "no_goals": [
+    "no live source calls",
+    "no repository index fetch or mirror",
+    "no package downloads",
+    "no package-manager invocation",
+    "no installs",
+    "no execution",
+    "no rights clearance claim",
+    "no malware safety claim",
+    "no installability claim",
+    "no dependency correctness claim",
+    "no compatibility correctness claim"
+  ],
+  "os_package_identity_mapping_future": {
+    "candidate_only": true
+  },
+  "os_platform_compatibility_mapping_future": {
+    "candidate_only": true
+  },
+  "policy_pack_grants_live_access": false,
+  "policy_pack_id": "h3.policy_pack.os_package_archive_policy_blocked.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_requirements": [
+    "source policy review"
+  ],
+  "schema_version": "h3_os_package_archive_policy_pack.v0",
+  "scorecard_requirements": [
+    "blocked policy evaluation"
+  ],
+  "source_cache_mapping_future": "blocked",
+  "source_id": "os_package_archive_policy_blocked",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_os_compatibility_fact": false,
+    "accepted_os_package_identity": false,
+    "accepted_source_truth": false,
+    "capability_grants_permission": false,
+    "compatibility_correctness_claimed": false,
+    "compatibility_metadata_proves_compatibility_correctness": false,
+    "coverage_preview_is_exhaustive": false,
+    "dependency_correctness_claimed": false,
+    "dependency_metadata_proves_dependency_correctness": false,
+    "license_field_proves_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutation_allowed": false,
+    "os_compatibility_candidate_is_truth": false,
+    "os_package_hash_proves_malware_safety": false,
+    "os_package_identity_candidate_is_truth": false,
+    "os_package_metadata_is_identity_truth": false,
+    "os_package_metadata_proves_installability": false,
+    "policy_pack_grants_live_access": false,
+    "public_index_mutation_allowed": false,
+    "repository_presence_proves_endorsement": false,
+    "rights_clearance_claimed": false,
+    "scorecard_preview_is_production_ready": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "verified_installability_claimed": false
+  }
+}
