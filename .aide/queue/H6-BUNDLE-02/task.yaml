@@ -1,6 +1,6 @@
 id: H6-BUNDLE-02
 title: Web archive, news, and event fixture runtimes and normalizers
-status: queued
+status: needs_review
 purpose: Add fixture-only normalizers and replay outputs for H6 web archive, news, event, and public trace metadata sources.
 allowed_scope_summary: H6 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
 gate: H6-BUNDLE-01 passes; no live calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H6-BUNDLE-02
+current_recommended_task: H6-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -551,9 +551,18 @@ entries:
 
 - id: H6-BUNDLE-02
   title: Web archive, news, and event fixture runtimes and normalizers
-  status: queued
+  status: needs_review
   purpose: Add fixture-only normalizers and replay outputs for H6 web archive, news, event, and public trace metadata sources.
   allowed_scope_summary: H6 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
   gate: H6-BUNDLE-01 passes; no live calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H6-BUNDLE-02/task.yaml
   recommended_after: H6-BUNDLE-01
+
+- id: H6-BUNDLE-03
+  title: Web archive, news, and event approved metadata-only live probes
+  status: queued
+  purpose: Prepare approval-gated metadata-only live probe envelopes for H6 web archive, news, event, and public trace metadata after fixture normalizers pass.
+  allowed_scope_summary: H6 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
+  gate: H6-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and CDX/Memento/WARC/page/media/document fetch, scraping, crawling, bypass, source sync, index mutation, and truth acceptance remain forbidden by default.
+  task: .aide/queue/H6-BUNDLE-03/task.yaml
+  recommended_after: H6-BUNDLE-02

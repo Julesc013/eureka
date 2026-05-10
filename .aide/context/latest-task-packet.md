@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - H6-BUNDLE-02 - Web archive, news, and event fixture runtimes and normalizers. Use committed public-safe fixtures only. Do not authorize live source calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, transcripts, newspaper pages, public document fetches, scraping, crawling, browser automation, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+UNSPECIFIED - H6-BUNDLE-03 - Web archive, news, and event approved metadata-only live probes. Default offline preflight, fail closed without committed approvals. No broad crawling, CDX/Memento/WARC/page/media/document fetch, scraping, bypass, source sync, public/master index mutation, or truth acceptance.
 
 ## GOAL
 
-H6-BUNDLE-02 - Web archive, news, and event fixture runtimes and normalizers. Use committed public-safe fixtures only. Do not authorize live source calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, transcripts, newspaper pages, public document fetches, scraping, crawling, browser automation, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H6-BUNDLE-03 - Web archive, news, and event approved metadata-only live probes. Default offline preflight, fail closed without committed approvals. No broad crawling, CDX/Memento/WARC/page/media/document fetch, scraping, bypass, source sync, public/master index mutation, or truth acceptance.
 
 ## WHY
 
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4847
-- approx_tokens: 1212
+- chars: 4529
+- approx_tokens: 1133
 - budget_status: PASS
 - warnings:
   - none

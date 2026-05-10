@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4847 chars, 1212 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4529 chars, 1133 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H6-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H6-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H6-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H6-BUNDLE-03` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `control/audits/h6-bundle-01-web-archive-news-event-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_archived_url_time_state_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_dead_link_trace_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_news_event_mention_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_public_document_trace_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_no_fetch_crawl_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_archive_news_event_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h6_web_capture_identity_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
+- unknown: `contracts/connectors/h6_archived_url_time_state_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_dead_link_trace_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_media_transcript_metadata_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_news_event_mention_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_public_document_trace_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_web_archive_fixture.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_web_archive_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_web_archive_normalized_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h6_web_capture_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h6-bundle-02-web-archive-fixture-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_archived_url_time_state_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_dead_link_trace_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_media_transcript_metadata_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_news_event_mention_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_public_document_trace_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h6_web_archive_evidence_mapping_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 40; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6853
-- approx_tokens: 1714
+- chars: 6799
+- approx_tokens: 1700
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

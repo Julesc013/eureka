@@ -1,13 +1,13 @@
 {
-  "completed_queue_item": "H6-BUNDLE-01",
-  "current_queue_item": "H6-BUNDLE-02",
-  "generated_at_note": "codex_updated_after_h6_bundle_01",
+  "completed_queue_item": "H6-BUNDLE-02",
+  "current_queue_item": "H6-BUNDLE-03",
+  "generated_at_note": "codex_updated_after_h6_bundle_02",
   "known_warn_only_conditions": [
-    "H6 is policy-pack-only; fixture runtime is next.",
-    "No H6 live access or fetch approval exists.",
-    "J1/K/L remain deferred."
+    "H6 fixture runtime is committed-fixture-only; live probes require explicit source-specific approval.",
+    "No H6 live access, fetch, crawl, scraping, bypass, source sync, or truth acceptance exists.",
+    "H6-BUNDLE-03 remains fail-closed until approval policies are committed."
   ],
-  "next_recommended_queue_item": "H6-BUNDLE-02",
+  "next_recommended_queue_item": "H6-BUNDLE-03",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -23,6 +23,7 @@
   "validation": {
     "aide_lite": "pass",
     "architecture_boundaries": "pass",
+    "h6_fixture_runtime": "pass",
     "h6_policy_packs": "pass",
     "unittest_discovery": "pass"
   }
