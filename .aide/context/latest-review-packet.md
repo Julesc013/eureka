@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6231 chars, 1558 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6163 chars, 1541 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H5-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H5-BUNDLE-02` (??; does not match active task allowed paths)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (MM; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (MM; matches active task allowed path)
+- unknown: `.aide/queue/H5-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H5-BUNDLE-03/task.yaml` (A; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_driver_device_compatibility_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_firmware_update_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_runtime_redistributable_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_no_download_execute_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h5_vendor_update_driver_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/sources/source_family_registry.json` (M; does not match active task allowed paths)
-- unknown: `docs/architecture/H5_VENDOR_UPDATE_DRIVER_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/VENDOR_UPDATE_DRIVER_SOURCE_FAMILY_MODEL.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 33; see task evidence changed-files report
+- unknown: `contracts/connectors/h5_driver_device_compatibility_candidate.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_firmware_update_candidate.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_runtime_redistributable_candidate.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_vendor_identity_candidate.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_vendor_payload_metadata_candidate.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_vendor_update_fixture.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_vendor_update_fixture_replay_result.v0.json` (A; does not match active task allowed paths)
+- unknown: `contracts/connectors/h5_vendor_update_normalized_record.v0.json` (A; does not match active task allowed paths)
+- allowed: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/README.md` (A; matches active task allowed path)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/driver_device_compatibility_mapping_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/evidence_mapping_preview.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/firmware_update_mapping_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/fixture_runtime_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/generated/sample_h5_driver_device_compatibility_candidate.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/generated/sample_h5_evidence_candidate_preview.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/generated/sample_h5_firmware_update_candidate.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/generated/sample_h5_fixture_replay_result.json` (A; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 219; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6886
-- approx_tokens: 1722
+- chars: 7113
+- approx_tokens: 1779
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

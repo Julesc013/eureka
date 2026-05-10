@@ -1,0 +1,64 @@
+{
+  "bios_or_uefi_version": "UEFI-9.9.9",
+  "blocked_action_candidate": "firmware_flash_blocked_current",
+  "board_model": "Synthetic Board",
+  "checksum_metadata_candidate": {
+    "hash_metadata_proves_malware_safety": false,
+    "sha256_candidate": "synthetic-hash-candidate"
+  },
+  "device_model": "Synthetic Device",
+  "downgrade_or_rollback_candidate": "unknown",
+  "firmware_name": "Dell Synthetic Firmware",
+  "firmware_update_candidate_id": "h5.firmware_update.dell_support_downloads.dell-support-downloads-typical.v0",
+  "firmware_version": "9.9.9",
+  "flashing_tool_candidate": "blocked_action_candidate_only",
+  "hardware_revision": "A01",
+  "limitations": [
+    "Firmware update candidate is not approval to download, install, execute, or flash."
+  ],
+  "prerequisite_candidate": "synthetic prerequisite candidate",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "download_used": false,
+    "enabled_accounts": false,
+    "enabled_catalog_fetch": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "firmware_flash_invoked": false,
+    "installer_or_artifact_executed": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "vendor_catalog_fetch_used": false,
+    "vendor_tool_invoked": false
+  },
+  "release_date_candidate": "2026-01-15",
+  "risk_warning_candidate": "review required before any action",
+  "schema_version": "h5_firmware_update_candidate.v0",
+  "signature_metadata_candidate": {
+    "signature_candidate": "synthetic-signature-metadata",
+    "signature_metadata_proves_authenticity": false
+  },
+  "source_id": "dell_support_downloads",
+  "truth_boundary": {
+    "firmware_hash_proves_malware_safety": false,
+    "firmware_identity_candidate_is_truth": false,
+    "firmware_metadata_proves_device_compatibility": false,
+    "firmware_signature_metadata_is_verified_authenticity": false,
+    "firmware_update_candidate_is_approved_to_flash": false,
+    "flashing_tool_metadata_is_execution_permission": false
+  },
+  "update_package_id": "dell_support_downloads-firmware-update",
+  "update_type": "firmware_metadata_candidate",
+  "vendor_identity_candidate_ref": "h5.vendor_identity.dell_support_downloads.dell-support-downloads-typical.v0"
+}

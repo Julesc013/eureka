@@ -2,27 +2,31 @@
 
 ## PHASE
 
-H5-BUNDLE-02 - Vendor/update/driver fixture runtimes and normalizers
+H5-BUNDLE-03 - Vendor/update/driver approved metadata-only live probes
 
 ## GOAL
 
-Prepare the next Eureka H5 task after H5-BUNDLE-01. This packet is a compact
+Prepare the next Eureka H5 task after H5-BUNDLE-02. This packet is a compact
 AIDE resumption handoff only; it does not itself authorize live source calls,
 catalog fetching, downloads, vendor tool invocation, package manager invocation,
 installer execution, firmware flashing, source sync, public/master index
 mutation, truth acceptance, or changing Eureka product behavior.
 
-H5-BUNDLE-02 should add fixture-only runtimes, committed synthetic fixtures,
-normalizers, replay reports, candidate previews, docs, tests, and audit evidence
-for vendor/update/driver/firmware and runtime redistributable metadata if a
-future prompt explicitly scopes that work.
+H5-BUNDLE-03 should add fail-closed, approval-gated metadata-only live-probe
+envelopes for vendor/update/driver/firmware/runtime metadata only if a future
+prompt explicitly scopes that work and committed policies approve exact bounded
+requests.
+
+HUMAN-OBS-REVIEW-01 remains preserved as a parallel side-lane and is not
+completed, promoted, or replaced by this H5 live-probe handoff.
 
 ## WHY
 
-H5-BUNDLE-01 added policy-pack-only source-family structure for fifteen H5
-vendor/update/driver/firmware sources. The H5 policy wave remains offline and
-blocked from live access, catalog fetches, downloads, installers, vendor tools,
-package managers, firmware flashing, index mutation, and truth acceptance.
+H5-BUNDLE-02 added fixture-only normalizers, replay outputs, candidate previews,
+docs, tests, policies, and audit evidence for fifteen H5 vendor/update/driver
+sources. The H5 fixture runtime remains offline and blocked from live access,
+catalog fetches, downloads, installers, vendor tools, package managers, firmware
+flashing, index mutation, and truth acceptance.
 
 ## CONTEXT_REFS
 
@@ -31,44 +35,40 @@ package managers, firmware flashing, index mutation, and truth acceptance.
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/H5-BUNDLE-01/task.yaml`
 - `.aide/queue/H5-BUNDLE-02/task.yaml`
-- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/`
-- `control/inventory/source_packs/h5_vendor_update_driver_source_pack_policy.json`
-- `control/inventory/source_packs/h5_vendor_update_driver_sources.json`
-- `control/inventory/source_packs/h5_vendor_update_driver_connector_families.json`
-- `control/inventory/source_packs/h5_vendor_identity_policy.json`
-- `control/inventory/source_packs/h5_driver_device_compatibility_policy.json`
-- `control/inventory/source_packs/h5_firmware_update_policy.json`
-- `control/inventory/source_packs/h5_runtime_redistributable_policy.json`
+- `.aide/queue/H5-BUNDLE-03/task.yaml`
+- `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/`
+- `contracts/connectors/h5_vendor_update_*.v0.json`
+- `contracts/connectors/h5_*candidate.v0.json`
+- `runtime/connectors/h5_vendor_update_driver/`
 - `examples/connectors/h5_vendor_update_driver/`
-- `examples/source_packs/h5_vendor_update_driver_source_pack_manifest_v0.json`
-- `docs/operations/H5_VENDOR_UPDATE_DRIVER_FIXTURE_PLAN.md`
+- `docs/operations/H5_VENDOR_UPDATE_FIXTURE_*.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- H5 fixture-runtime paths only if a future prompt explicitly scopes
-  H5-BUNDLE-02 implementation.
+- H5 live-probe policy, contract, runtime wrapper, script, example, test, docs,
+  and audit paths only if a future prompt explicitly scopes H5-BUNDLE-03.
 
 ## IMPLEMENTATION
 
-- Do not start H5-BUNDLE-02 implementation from this packet alone.
-- Resume from repo-local evidence, especially H5-BUNDLE-01 audit outputs.
-- Preserve no-live-call, no-catalog-fetch, no-download, no-install,
-  no-execute, no-firmware-flash, no-source-sync, no-index-mutation, and
+- Do not start H5-BUNDLE-03 implementation from this packet alone.
+- Resume from repo-local evidence, especially H5-BUNDLE-02 audit outputs.
+- Preserve fail-closed default behavior for every source.
+- Do not infer operator approval for any live metadata probe.
+- Preserve no-catalog-fetch, no-download, no-install, no-execute,
+  no-firmware-flash, no-source-sync, no-index-mutation, and
   no-truth-acceptance boundaries.
 - Treat vendor identity, driver identity, firmware/update identity, runtime
-  identity, device compatibility, hash/signature metadata, source-cache,
-  evidence, and review outputs as candidates/previews only until future
-  reviewed gates explicitly accept them.
+  identity, device compatibility, payload/hash/signature metadata, source-cache,
+  evidence, and review outputs as candidates/previews only until future reviewed
+  gates explicitly accept them.
 
 ## ACCEPTANCE
 
-- Latest handoff points to H5-BUNDLE-02.
-- H5-BUNDLE-01 evidence remains reviewable.
+- Latest handoff points to H5-BUNDLE-03.
+- H5-BUNDLE-02 evidence remains reviewable.
 - No Eureka product behavior change is authorized by this handoff.
 - No live source calls, catalog fetches, downloads, driver downloads, firmware
   downloads, runtime downloads, installer downloads, update package downloads,
@@ -82,29 +82,23 @@ package managers, firmware flashing, index mutation, and truth acceptance.
 
 ## VALIDATION
 
-- `python scripts/validate_h5_vendor_update_driver_policy_packs.py`
-- `python scripts/summarize_h5_vendor_update_driver_sources.py --check`
-- `python -m unittest tests.operations.test_h5_vendor_update_driver_policy_packs`
-- `python -m unittest tests.operations.test_h5_vendor_update_driver_summary`
+- `python scripts/validate_h5_vendor_update_driver_fixture_runtime.py`
+- `python scripts/normalize_h5_vendor_update_fixture.py --source-id nvidia_driver_downloads --input examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json --check`
+- `python scripts/replay_h5_vendor_update_fixtures.py --check`
+- `python scripts/summarize_h5_vendor_update_fixture_outputs.py --input examples/connectors/h5_vendor_update_driver --check`
+- H5 targeted unit tests
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- `py -3 .aide/scripts/aide_lite.py verify`
+- AIDE Lite: `.aide/scripts/aide_lite.py doctor`; `.aide/scripts/aide_lite.py validate`; `.aide/scripts/aide_lite.py test`; `.aide/scripts/aide_lite.py selftest`; `.aide/scripts/aide_lite.py eval run`; `.aide/scripts/aide_lite.py verify`; review-pack; adapter validate
 
 ## EVIDENCE
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/H5-BUNDLE-01/task.yaml`
 - `.aide/queue/H5-BUNDLE-02/task.yaml`
-- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/h5_bundle_01_report.json`
-- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/validation.md`
-- `examples/connectors/h5_vendor_update_driver/policies/`
-- `examples/connectors/h5_vendor_update_driver/coverage/`
-- `examples/connectors/h5_vendor_update_driver/scorecards/`
+- `.aide/queue/H5-BUNDLE-03/task.yaml`
+- `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/h5_bundle_02_report.json`
+- `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/validation.md`
+- `examples/connectors/h5_vendor_update_driver/{fixtures,normalized,replay_results,identity}/`
 
 ## NON_GOALS
 
@@ -119,13 +113,13 @@ package managers, firmware flashing, index mutation, and truth acceptance.
 
 ## OUTPUT_SCHEMA
 
-Future H5-BUNDLE-02 responses should preserve status, summary, commits, H5
-fixture scope boundaries, changed paths, validation, risks, and next task.
+Future H5-BUNDLE-03 responses should preserve status, summary, commits, live
+probe scope boundaries, changed paths, validation, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1450
+- approx_tokens: 1500
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS

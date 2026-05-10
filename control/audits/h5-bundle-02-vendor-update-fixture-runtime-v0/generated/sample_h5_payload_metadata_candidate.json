@@ -1,0 +1,64 @@
+{
+  "download_allowed_current": false,
+  "firmware_flash_allowed_current": false,
+  "installer_execution_allowed_current": false,
+  "limitations": [
+    "Payload metadata candidate grants no download, availability, install, execution, flash, safety, or authenticity permission."
+  ],
+  "payload_available_current": false,
+  "payload_candidate_id": "h5.payload.nvidia_driver_downloads.nvidia-driver-downloads-typical.v0",
+  "payload_hashes": {
+    "hash_metadata_proves_malware_safety": false,
+    "sha256_candidate": "synthetic-hash-candidate"
+  },
+  "payload_kind": "metadata_only",
+  "payload_name": "nvidia_driver_downloads-typical-metadata-only",
+  "payload_size": "unknown",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "download_used": false,
+    "enabled_accounts": false,
+    "enabled_catalog_fetch": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "firmware_flash_invoked": false,
+    "installer_or_artifact_executed": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "vendor_catalog_fetch_used": false,
+    "vendor_tool_invoked": false
+  },
+  "related_driver_candidate_ref": null,
+  "related_firmware_candidate_ref": null,
+  "related_runtime_candidate_ref": null,
+  "sbom_metadata": {
+    "candidate_only": true,
+    "sbom_metadata_is_verified_provenance": false
+  },
+  "schema_version": "h5_vendor_payload_metadata_candidate.v0",
+  "signature_metadata": {
+    "signature_candidate": "synthetic-signature-metadata",
+    "signature_metadata_proves_authenticity": false
+  },
+  "source_id": "nvidia_driver_downloads",
+  "source_locator": "fixture://h5/nvidia_driver_downloads/payload-metadata",
+  "truth_boundary": {
+    "malware_safety_claimed": false,
+    "payload_hash_proves_malware_safety": false,
+    "sbom_metadata_is_verified_provenance": false,
+    "signature_metadata_proves_authenticity": false,
+    "verified_authenticity_claimed": false
+  },
+  "vendor_identity_candidate_ref": "h5.vendor_identity.nvidia_driver_downloads.nvidia-driver-downloads-typical.v0"
+}

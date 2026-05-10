@@ -1,0 +1,61 @@
+{
+  "architecture": "x86_64",
+  "dependency_or_requirement_candidate": "synthetic prerequisite candidate",
+  "download_locator_candidate": "fixture://h5/microsoft_runtime_redistributables/payload-metadata",
+  "end_of_life_candidate": "unknown",
+  "hash_metadata_candidate": {
+    "hash_metadata_proves_malware_safety": false,
+    "sha256_candidate": "synthetic-hash-candidate"
+  },
+  "installer_name": "synthetic-installer-name-metadata-only",
+  "limitations": [
+    "Runtime candidate is not installability truth or execution permission."
+  ],
+  "operating_system_family": "synthetic-os",
+  "operating_system_version": "1.0",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "download_used": false,
+    "enabled_accounts": false,
+    "enabled_catalog_fetch": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "firmware_flash_invoked": false,
+    "installer_or_artifact_executed": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "vendor_catalog_fetch_used": false,
+    "vendor_tool_invoked": false
+  },
+  "redistributable_package_id": "microsoft_runtime_redistributables-runtime-redist",
+  "runtime_candidate_id": "h5.runtime.microsoft_runtime_redistributables.microsoft-runtime-redistributables-typical.v0",
+  "runtime_family": "synthetic-runtime-family",
+  "runtime_name": "Microsoft Synthetic Runtime",
+  "runtime_version": "8.0.0",
+  "schema_version": "h5_runtime_redistributable_candidate.v0",
+  "security_update_candidate": "unknown",
+  "signature_metadata_candidate": {
+    "signature_candidate": "synthetic-signature-metadata",
+    "signature_metadata_proves_authenticity": false
+  },
+  "source_id": "microsoft_runtime_redistributables",
+  "truth_boundary": {
+    "dependency_metadata_is_dependency_correctness": false,
+    "installer_metadata_is_execution_permission": false,
+    "runtime_candidate_is_installability_truth": false,
+    "runtime_identity_candidate_is_truth": false,
+    "security_update_metadata_is_safety_proof": false
+  },
+  "vendor_identity_candidate_ref": "h5.vendor_identity.microsoft_runtime_redistributables.microsoft-runtime-redistributables-typical.v0"
+}
