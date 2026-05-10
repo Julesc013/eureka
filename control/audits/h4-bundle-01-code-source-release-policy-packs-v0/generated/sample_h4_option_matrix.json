@@ -1,0 +1,17 @@
+{
+  "no_live_access_enabled": true,
+  "options": [
+    {
+      "option": "H4-BUNDLE-02",
+      "reason": "fixture runtime is the next bounded step before any live probe approval",
+      "recommended": true
+    },
+    {
+      "option": "H4-REMEDIATION-01",
+      "reason": "only if H4-BUNDLE-01 validation fails or required artifacts are missing",
+      "recommended": false
+    }
+  ],
+  "schema_version": "h4_option_matrix.v0",
+  "source_count": 10
+}

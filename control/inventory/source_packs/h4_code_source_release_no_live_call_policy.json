@@ -1,0 +1,20 @@
+{
+  "no_api_calls": true,
+  "no_build_commands": true,
+  "no_endpoint_probing": true,
+  "no_git_commands": true,
+  "no_hosted_behavior": true,
+  "no_live_connector_runtime": true,
+  "no_network_calls": true,
+  "no_public_query_fanout": true,
+  "no_release_asset_downloads": true,
+  "no_release_metadata_queries": true,
+  "no_repository_cloning": true,
+  "no_repository_metadata_queries": true,
+  "no_scraping": true,
+  "no_source_archive_downloads": true,
+  "no_source_sync": true,
+  "policy_id": "h4_code_source_release_no_live_call_policy",
+  "schema_version": "h4_code_source_release_no_live_call_policy.v0",
+  "wave_id": "H4"
+}

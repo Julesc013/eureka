@@ -1,0 +1,226 @@
+{
+  "connector_family_refs": [
+    "api_json",
+    "archival_metadata",
+    "git_metadata_future",
+    "html_catalog",
+    "release_host_metadata",
+    "source_archive_identity"
+  ],
+  "connector_scorecards": [
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/software_heritage_identity_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/github_repository_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/github_releases_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/gitlab_repository_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/gitlab_releases_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/sourceforge_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/fosshub_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/github_archive_program_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/generic_git_repository_scorecard_preview_v0.json"
+    },
+    {
+      "connector_scorecard_ref": "examples/connectors/h4_code_source_release/scorecards/generic_release_host_scorecard_preview_v0.json"
+    }
+  ],
+  "coverage_records": [
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/software_heritage_identity_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/github_repository_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/github_releases_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/gitlab_repository_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/gitlab_releases_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/sourceforge_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/fosshub_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/github_archive_program_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/generic_git_repository_coverage_preview_v0.json"
+    },
+    {
+      "coverage_record_ref": "examples/connectors/h4_code_source_release/coverage/generic_release_host_coverage_preview_v0.json"
+    }
+  ],
+  "limitations": [
+    "H4-BUNDLE-01 is policy-pack-only.",
+    "The pack is an export preview and is not imported, submitted, or accepted.",
+    "Coverage previews are bounded planning records, not exhaustive source coverage."
+  ],
+  "no_live_access_posture": {
+    "approved_live_probe_enabled": false,
+    "connector_runtime_enabled": false,
+    "live_access_enabled": false,
+    "network_calls_made": false,
+    "release_asset_download_enabled": false,
+    "repository_clone_enabled": false,
+    "source_archive_download_enabled": false,
+    "source_sync_enabled": false
+  },
+  "notes": [
+    "This source pack prepares H4 fixture work; it grants no source access."
+  ],
+  "pack_status": "draft_only",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_repository_clone": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "review_posture": {
+    "review_required_before_evidence_acceptance": true,
+    "review_required_before_import_or_submission": true,
+    "review_required_before_live_access": true,
+    "review_required_before_master_index": true,
+    "review_required_before_public_index_use": true,
+    "review_required_before_source_cache_write": true
+  },
+  "schema_version": "source_pack_manifest.v0",
+  "source_capabilities": [
+    "source_known",
+    "catalog_indexed_future",
+    "supports_metadata_record_fetch_future",
+    "supports_source_identity_candidate_future",
+    "supports_release_identity_candidate_future",
+    "supports_source_to_binary_relation_candidate_future"
+  ],
+  "source_families": [
+    "code_source_release_host"
+  ],
+  "source_ids": [
+    "software_heritage_identity",
+    "github_repository",
+    "github_releases",
+    "gitlab_repository",
+    "gitlab_releases",
+    "sourceforge",
+    "fosshub",
+    "github_archive_program",
+    "generic_git_repository",
+    "generic_release_host"
+  ],
+  "source_pack_manifest_id": "source_pack.h4_code_source_release.policy_pack.v0",
+  "source_policy_refs": [
+    "control/inventory/source_packs/h4_code_source_release_source_pack_policy.json",
+    "control/inventory/source_packs/h4_source_identity_policy.json",
+    "control/inventory/source_packs/h4_release_identity_policy.json",
+    "control/inventory/source_packs/h4_source_to_binary_relation_policy.json",
+    "control/inventory/source_packs/h4_code_source_release_approval_gates.json",
+    "control/inventory/source_packs/h4_code_source_release_output_policy.json",
+    "control/inventory/source_packs/h4_code_source_release_truth_policy.json",
+    "control/inventory/source_packs/h4_code_source_release_no_live_call_policy.json",
+    "control/inventory/source_packs/h4_code_source_release_no_clone_download_policy.json"
+  ],
+  "source_records": [
+    {
+      "source_record_ref": "examples/sources/source_records/software_heritage_identity_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/github_repository_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/github_releases_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/gitlab_repository_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/gitlab_releases_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/sourceforge_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/fosshub_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/github_archive_program_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/generic_git_repository_source_v2.json"
+    },
+    {
+      "source_record_ref": "examples/sources/source_records/generic_release_host_source_v2.json"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_release_identity": false,
+    "accepted_source_identity": false,
+    "accepted_source_to_binary_relation": false,
+    "accepted_source_truth": false,
+    "archived_presence_proves_completeness": false,
+    "capability_grants_permission": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_preview_is_exhaustive": false,
+    "git_object_id_candidate_is_provenance_truth": false,
+    "license_field_proves_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "policy_pack_grants_live_access": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "release_asset_hash_proves_malware_safety": false,
+    "release_identity_candidate_is_truth": false,
+    "release_metadata_is_release_truth": false,
+    "release_notes_prove_compatibility_or_installability": false,
+    "repository_presence_proves_endorsement": false,
+    "rights_clearance_claimed": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_preview_is_production_ready": false,
+    "signature_metadata_proves_authenticity": false,
+    "source_archive_asset_proves_build_reproducibility": false,
+    "source_identity_candidate_is_truth": false,
+    "source_metadata_is_identity_truth": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "source_to_binary_relation_candidate_is_provenance_truth": false,
+    "swhid_candidate_is_object_truth": false,
+    "verified_authenticity_claimed": false,
+    "verified_build_reproducibility_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

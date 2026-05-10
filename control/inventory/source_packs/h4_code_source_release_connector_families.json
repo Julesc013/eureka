@@ -1,0 +1,99 @@
+{
+  "current_status": "policy_pack_only",
+  "notes": [
+    "Planned H4 connector families do not enable connector runtime."
+  ],
+  "planned_connector_family_values": [
+    "api_json",
+    "archival_metadata",
+    "git_metadata_future",
+    "html_catalog",
+    "release_host_metadata",
+    "source_archive_identity"
+  ],
+  "schema_version": "h4_code_source_release_connector_families.v0",
+  "source_connector_family_mappings": [
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "source_archive_identity",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "source_archive_identity",
+      "source_id": "software_heritage_identity"
+    },
+    {
+      "alternate_connector_family": "git_metadata_future",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "api_json",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "api_json",
+      "source_id": "github_repository"
+    },
+    {
+      "alternate_connector_family": "release_host_metadata",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "api_json",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "api_json",
+      "source_id": "github_releases"
+    },
+    {
+      "alternate_connector_family": "git_metadata_future",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "api_json",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "api_json",
+      "source_id": "gitlab_repository"
+    },
+    {
+      "alternate_connector_family": "release_host_metadata",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "api_json",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "api_json",
+      "source_id": "gitlab_releases"
+    },
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "html_catalog",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "html_catalog",
+      "source_id": "sourceforge"
+    },
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "html_catalog",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "html_catalog",
+      "source_id": "fosshub"
+    },
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "archival_metadata",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "archival_metadata",
+      "source_id": "github_archive_program"
+    },
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "git_metadata_future",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "git_metadata_future",
+      "source_id": "generic_git_repository"
+    },
+    {
+      "alternate_connector_family": "api_json",
+      "ambiguity_note": "Policy-pack-only assignment; runtime connector choice requires H4 fixture and live-probe review.",
+      "connector_family": "release_host_metadata",
+      "live_connector_runtime_enabled": false,
+      "preferred_connector_family": "release_host_metadata",
+      "source_id": "generic_release_host"
+    }
+  ],
+  "source_family": "code_source_release_host",
+  "wave_id": "H4"
+}

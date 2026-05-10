@@ -3,7 +3,7 @@
     "no_autonomous_access",
     "committed_fixture_only"
   ],
-  "alternate_connector_family": "release_host_metadata",
+  "alternate_connector_family": "api_json",
   "approved_live_probe_enabled": false,
   "archival_identity_support": {
     "archival_identity_candidate_future": false
@@ -11,16 +11,18 @@
   "auth_required": false,
   "binary_download_enabled": false,
   "build_tool_invocation_enabled": false,
-  "cache_policy_ref": "future:github_releases_cache_policy",
+  "cache_policy_ref": "future:generic_release_host_cache_policy",
   "capability_refs": [
     "source_known",
-    "catalog_indexed",
-    "supports_identifier_lookup",
-    "supports_release_assets",
-    "supports_metadata_record_fetch"
+    "catalog_indexed_future",
+    "supports_metadata_record_fetch_future",
+    "supports_source_identity_candidate_future",
+    "supports_release_identity_candidate_future",
+    "supports_source_to_binary_relation_candidate_future"
   ],
-  "connector_family": "api_json",
+  "connector_family": "release_host_metadata",
   "connector_family_refs": [
+    "release_host_metadata",
     "api_json"
   ],
   "connector_runtime_enabled": false,
@@ -79,14 +81,14 @@
     "approved_release_metadata_lookup"
   ],
   "git_command_invocation_enabled": false,
-  "homepage_or_locator": "source:github_releases",
+  "homepage_or_locator": "source:generic_release_host",
   "index_depth_current": "D0_source_known",
   "index_depth_target_future": "D2_metadata_indexed",
   "install_execute_enabled": false,
-  "kill_switch_policy_ref": "future:github_releases_kill_switch_policy",
+  "kill_switch_policy_ref": "future:generic_release_host_kill_switch_policy",
   "legal_or_rights_posture": "license_and_rights_review_required",
   "limitations": [
-    "GitHub Releases metadata is represented as policy-pack-only metadata posture.",
+    "Generic release-host metadata is represented as policy-pack-only metadata posture.",
     "H4-BUNDLE-01 grants no source access and accepts no source identity, release identity, or provenance truth."
   ],
   "live_access_enabled": false,
@@ -117,7 +119,7 @@
     "mutated_master_index": false,
     "mutated_public_index": false
   },
-  "rate_limit_policy_ref": "future:github_releases_rate_limit_policy",
+  "rate_limit_policy_ref": "future:generic_release_host_rate_limit_policy",
   "release_asset_download_enabled": false,
   "release_identity_support": {
     "candidate_only": true,
@@ -155,21 +157,19 @@
   "scorecard_required": true,
   "source_archive_download_enabled": false,
   "source_family": "code_source_release_host",
-  "source_id": "github_releases",
+  "source_id": "generic_release_host",
   "source_identity_support": {
     "candidate_only": true,
-    "owner_or_namespace_future": true,
-    "release_tag_candidate_future": true,
-    "repository_name_future": true,
-    "source_host": "GitHub"
+    "project_name_future": true,
+    "repository_url_candidate_future": true,
+    "source_host": "generic_release_host_candidate"
   },
-  "source_kind": "github_releases_metadata",
-  "source_label": "GitHub Releases metadata",
+  "source_kind": "generic_release_host_metadata",
+  "source_label": "Generic release-host metadata",
   "source_sync_enabled": false,
   "source_to_binary_relation_support": {
-    "binary_asset_to_release_candidate_future": true,
     "candidate_only": true,
-    "tag_to_release_candidate_future": true
+    "release_asset_to_source_candidate_future": true
   },
   "supports_bulk": false,
   "supports_hashes": true,
@@ -178,7 +178,7 @@
   "supports_reviews_or_notes": false,
   "supports_search": false,
   "target_index_depth_future": "D2_metadata_indexed",
-  "trust_lane": "official",
+  "trust_lane": "unknown",
   "truth_boundary": {
     "accepted_candidate_truth": false,
     "accepted_evidence_truth": false,
@@ -211,14 +211,6 @@
     "source_archive_asset_proves_build_reproducibility": false,
     "source_identity_candidate_is_truth": false,
     "source_metadata_is_identity_truth": false,
-    "source_record_can_claim_malware_safety": false,
-    "source_record_can_claim_rights_clearance": false,
-    "source_record_can_claim_verified_installability": false,
-    "source_record_can_mutate_master_index": false,
-    "source_record_can_mutate_public_index": false,
-    "source_record_grants_live_access": false,
-    "source_record_is_accepted_evidence": false,
-    "source_record_is_public_truth": false,
     "source_pack_is_accepted_evidence": false,
     "source_pack_is_imported_state": false,
     "source_pack_is_truth": false,

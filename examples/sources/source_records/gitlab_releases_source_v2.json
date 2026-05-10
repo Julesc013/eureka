@@ -11,17 +11,19 @@
   "auth_required": false,
   "binary_download_enabled": false,
   "build_tool_invocation_enabled": false,
-  "cache_policy_ref": "future:github_releases_cache_policy",
+  "cache_policy_ref": "future:gitlab_releases_cache_policy",
   "capability_refs": [
     "source_known",
-    "catalog_indexed",
-    "supports_identifier_lookup",
-    "supports_release_assets",
-    "supports_metadata_record_fetch"
+    "catalog_indexed_future",
+    "supports_metadata_record_fetch_future",
+    "supports_source_identity_candidate_future",
+    "supports_release_identity_candidate_future",
+    "supports_source_to_binary_relation_candidate_future"
   ],
   "connector_family": "api_json",
   "connector_family_refs": [
-    "api_json"
+    "api_json",
+    "release_host_metadata"
   ],
   "connector_runtime_enabled": false,
   "coverage_required": true,
@@ -79,14 +81,14 @@
     "approved_release_metadata_lookup"
   ],
   "git_command_invocation_enabled": false,
-  "homepage_or_locator": "source:github_releases",
+  "homepage_or_locator": "source:gitlab_releases",
   "index_depth_current": "D0_source_known",
   "index_depth_target_future": "D2_metadata_indexed",
   "install_execute_enabled": false,
-  "kill_switch_policy_ref": "future:github_releases_kill_switch_policy",
+  "kill_switch_policy_ref": "future:gitlab_releases_kill_switch_policy",
   "legal_or_rights_posture": "license_and_rights_review_required",
   "limitations": [
-    "GitHub Releases metadata is represented as policy-pack-only metadata posture.",
+    "GitLab Releases metadata is represented as policy-pack-only metadata posture.",
     "H4-BUNDLE-01 grants no source access and accepts no source identity, release identity, or provenance truth."
   ],
   "live_access_enabled": false,
@@ -117,7 +119,7 @@
     "mutated_master_index": false,
     "mutated_public_index": false
   },
-  "rate_limit_policy_ref": "future:github_releases_rate_limit_policy",
+  "rate_limit_policy_ref": "future:gitlab_releases_rate_limit_policy",
   "release_asset_download_enabled": false,
   "release_identity_support": {
     "candidate_only": true,
@@ -155,16 +157,16 @@
   "scorecard_required": true,
   "source_archive_download_enabled": false,
   "source_family": "code_source_release_host",
-  "source_id": "github_releases",
+  "source_id": "gitlab_releases",
   "source_identity_support": {
     "candidate_only": true,
     "owner_or_namespace_future": true,
     "release_tag_candidate_future": true,
     "repository_name_future": true,
-    "source_host": "GitHub"
+    "source_host": "GitLab"
   },
-  "source_kind": "github_releases_metadata",
-  "source_label": "GitHub Releases metadata",
+  "source_kind": "gitlab_releases_metadata",
+  "source_label": "GitLab Releases metadata",
   "source_sync_enabled": false,
   "source_to_binary_relation_support": {
     "binary_asset_to_release_candidate_future": true,
@@ -211,14 +213,6 @@
     "source_archive_asset_proves_build_reproducibility": false,
     "source_identity_candidate_is_truth": false,
     "source_metadata_is_identity_truth": false,
-    "source_record_can_claim_malware_safety": false,
-    "source_record_can_claim_rights_clearance": false,
-    "source_record_can_claim_verified_installability": false,
-    "source_record_can_mutate_master_index": false,
-    "source_record_can_mutate_public_index": false,
-    "source_record_grants_live_access": false,
-    "source_record_is_accepted_evidence": false,
-    "source_record_is_public_truth": false,
     "source_pack_is_accepted_evidence": false,
     "source_pack_is_imported_state": false,
     "source_pack_is_truth": false,

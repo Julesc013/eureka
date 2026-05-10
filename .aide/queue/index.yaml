@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H4-BUNDLE-01
+current_recommended_task: H4-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -471,9 +471,18 @@ entries:
 
 - id: H4-BUNDLE-01
   title: Code/source/release host source-family policy packs
-  status: queued
+  status: needs_review
   purpose: Add policy-pack-only source-family packs for code, source, and release hosts after H3 closes.
   allowed_scope_summary: H4 source-family policy packs, docs, scripts, tests, audit evidence, and AIDE metadata only.
   gate: H3-BUNDLE-04 passes or passes with warnings; no live calls, downloads, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H4-BUNDLE-01/task.yaml
   recommended_after: H3-BUNDLE-04
+
+- id: H4-BUNDLE-02
+  title: Code/source/release host fixture runtimes and normalizers
+  status: queued
+  purpose: Add fixture-only normalizers and replayable connector outputs for code/source/release host metadata.
+  allowed_scope_summary: H4 committed fixtures, fixture runtime policies, normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
+  gate: H4-BUNDLE-01 passes; no live source calls, repository clone, source archive downloads, release asset downloads, git/build command invocation, installs, execution, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H4-BUNDLE-02/task.yaml
+  recommended_after: H4-BUNDLE-01
