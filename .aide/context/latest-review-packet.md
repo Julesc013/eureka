@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6052 chars, 1513 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6113 chars, 1529 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H4-BUNDLE-02/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H4-BUNDLE-03` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H4-BUNDLE-03/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H4-BUNDLE-04` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_fixture.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_normalized_record.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_release_asset_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_release_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_source_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_source_to_binary_relation_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h4-bundle-02-code-source-fixture-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_evidence_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_fixture_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_fixture_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_fixture_runtime_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_fixture_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_no_clone_download_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_normalization_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_source_cache_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_release_asset_metadata_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 30; see task evidence changed-files report
+- unknown: `contracts/connectors/h4_code_source_connector_health_summary.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_live_probe_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_live_probe_request.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_live_probe_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h4-bundle-03-code-source-live-probes-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_allowed_requests.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_cache_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_endpoint_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_kill_switch_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_no_clone_download_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_rate_limit_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_live_probe_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/H4_CODE_SOURCE_LIVE_PROBE_MODEL.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 27; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6836
-- approx_tokens: 1709
+- chars: 6912
+- approx_tokens: 1728
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

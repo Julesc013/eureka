@@ -1,6 +1,6 @@
 id: H4-BUNDLE-03
 title: Code/source/release host approved metadata-only live probes
-status: queued
+status: needs_review
 purpose: Prepare approval-gated metadata-only live probe envelopes for H4 code/source/release hosts after fixture normalizers pass.
 allowed_scope_summary: H4 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
 gate: H4-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and repository clone/download/git/build/install/execute behavior remains forbidden.

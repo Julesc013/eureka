@@ -1,0 +1,646 @@
+{
+  "policy_id": "h4_code_source_live_probe_allowed_requests",
+  "schema_version": "h4_code_source_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "software_heritage_identity",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_swhid_resolution_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_swhid_resolution_metadata": {
+          "endpoint_or_metadata_class": "swhid_resolution_metadata_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-org",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-preserved-project",
+            "source_host": "Software Heritage",
+            "swhid_or_git_object_identifier": "swh:1:rev:fixture0000000000000000000000000000000000000000"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "swhid_resolution_metadata_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_swhid_resolution_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-org",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-preserved-project",
+              "source_host": "Software Heritage",
+              "swhid_or_git_object_identifier": "swh:1:rev:fixture0000000000000000000000000000000000000000"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "software_heritage_identity",
+      "source_label": "Software Heritage identity and archival metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "github_repository",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_repository_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_repository_metadata": {
+          "endpoint_or_metadata_class": "repository_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-org",
+            "release_or_tag_identifier": "main-fixture",
+            "repository_or_project": "example-repository",
+            "source_host": "GitHub",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "repository_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_repository_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-org",
+              "release_or_tag_identifier": "main-fixture",
+              "repository_or_project": "example-repository",
+              "source_host": "GitHub",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "github_repository",
+      "source_label": "GitHub repository metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "github_releases",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_release_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_release_metadata": {
+          "endpoint_or_metadata_class": "release_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-org",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-release-repository",
+            "source_host": "GitHub",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "release_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_release_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-org",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-release-repository",
+              "source_host": "GitHub",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "github_releases",
+      "source_label": "GitHub Releases metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "gitlab_repository",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_repository_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_repository_metadata": {
+          "endpoint_or_metadata_class": "repository_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-group",
+            "release_or_tag_identifier": "main-fixture",
+            "repository_or_project": "example-repository",
+            "source_host": "GitLab",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "repository_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_repository_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-group",
+              "release_or_tag_identifier": "main-fixture",
+              "repository_or_project": "example-repository",
+              "source_host": "GitLab",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "gitlab_repository",
+      "source_label": "GitLab repository metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "gitlab_releases",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_release_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_release_metadata": {
+          "endpoint_or_metadata_class": "release_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-group",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-release-repository",
+            "source_host": "GitLab",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "release_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_release_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-group",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-release-repository",
+              "source_host": "GitLab",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "gitlab_releases",
+      "source_label": "GitLab Releases metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "sourceforge",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_project_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_project_metadata": {
+          "endpoint_or_metadata_class": "project_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-projects",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-sourceforge-project",
+            "source_host": "SourceForge",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "project_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_project_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-projects",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-sourceforge-project",
+              "source_host": "SourceForge",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "sourceforge",
+      "source_label": "SourceForge project and release/file metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "fosshub",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_project_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_project_metadata": {
+          "endpoint_or_metadata_class": "project_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-publisher",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-fosshub-project",
+            "source_host": "FossHub",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "project_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_project_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-publisher",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-fosshub-project",
+              "source_host": "FossHub",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "fosshub",
+      "source_label": "FossHub project and release metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "github_archive_program",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_archive_presence_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_archive_presence_metadata": {
+          "endpoint_or_metadata_class": "archive_presence_metadata_lookup_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-org",
+            "release_or_tag_identifier": "main-fixture",
+            "repository_or_project": "example-archived-repository",
+            "source_host": "GitHub Archive Program",
+            "swhid_or_git_object_identifier": "swh:1:rev:fixture0000000000000000000000000000000000000000"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "archive_presence_metadata_lookup_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_archive_presence_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-org",
+              "release_or_tag_identifier": "main-fixture",
+              "repository_or_project": "example-archived-repository",
+              "source_host": "GitHub Archive Program",
+              "swhid_or_git_object_identifier": "swh:1:rev:fixture0000000000000000000000000000000000000000"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "github_archive_program",
+      "source_label": "GitHub Archive Program archive-presence metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "generic_git_repository",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_repository_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_repository_metadata": {
+          "endpoint_or_metadata_class": "repository_metadata_fixture_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-namespace",
+            "release_or_tag_identifier": "main-fixture",
+            "repository_or_project": "example-git-repository",
+            "source_host": "generic_git_host_candidate",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "repository_metadata_fixture_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_repository_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-namespace",
+              "release_or_tag_identifier": "main-fixture",
+              "repository_or_project": "example-git-repository",
+              "source_host": "generic_git_host_candidate",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "generic_git_repository",
+      "source_label": "Generic Git repository metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "generic_release_host",
+      "binary_download_approved": false,
+      "build_tool_invocation_allowed": false,
+      "build_tool_invocation_approved": false,
+      "crawling_approved": false,
+      "git_command_invocation_allowed": false,
+      "git_command_invocation_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_approved": false,
+      "planned_request_keys": [
+        "example_release_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "release_asset_download_allowed": false,
+      "release_asset_download_approved": false,
+      "repository_clone_allowed": false,
+      "repository_clone_approved": false,
+      "requests": {
+        "example_release_metadata": {
+          "endpoint_or_metadata_class": "release_page_metadata_fixture_future",
+          "identifier_or_query": {
+            "owner_or_namespace": "example-publisher",
+            "release_or_tag_identifier": "v1.0.0-fixture",
+            "repository_or_project": "example-release-project",
+            "source_host": "generic_release_host_candidate",
+            "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+          },
+          "max_requests_current": 0,
+          "metadata_class": "release_page_metadata_fixture_future",
+          "operation_scope": "metadata_only",
+          "request_key": "example_release_metadata",
+          "request_shape": {
+            "identifier": {
+              "owner_or_namespace": "example-publisher",
+              "release_or_tag_identifier": "v1.0.0-fixture",
+              "repository_or_project": "example-release-project",
+              "source_host": "generic_release_host_candidate",
+              "swhid_or_git_object_identifier": "git:fixture:object:0000001"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_allowed": false,
+      "source_archive_download_approved": false,
+      "source_id": "generic_release_host",
+      "source_label": "Generic release-host metadata",
+      "source_sync_approved": false
+    }
+  ]
+}

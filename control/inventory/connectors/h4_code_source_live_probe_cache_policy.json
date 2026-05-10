@@ -1,0 +1,116 @@
+{
+  "policy_id": "h4_code_source_live_probe_cache_policy",
+  "schema_version": "h4_code_source_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "software_heritage_identity"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "github_repository"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "github_releases"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "gitlab_repository"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "gitlab_releases"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "sourceforge"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "fosshub"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "github_archive_program"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "generic_git_repository"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Cache policy is fail-closed until source-specific approval."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_cache_mutation_enabled": false,
+      "source_id": "generic_release_host"
+    }
+  ]
+}

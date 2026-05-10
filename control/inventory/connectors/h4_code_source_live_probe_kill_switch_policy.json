@@ -1,0 +1,116 @@
+{
+  "policy_id": "h4_code_source_live_probe_kill_switch_policy",
+  "schema_version": "h4_code_source_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_software_heritage_identity",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "software_heritage_identity"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_github_repository",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "github_repository"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_github_releases",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "github_releases"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_gitlab_repository",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "gitlab_repository"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_gitlab_releases",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "gitlab_releases"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_sourceforge",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "sourceforge"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_fosshub",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "fosshub"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_github_archive_program",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "github_archive_program"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_generic_git_repository",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_git_repository"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h4_code_source_live_probe_generic_release_host",
+      "limitations": [
+        "Kill switch blocks live calls unless explicitly opened by committed policy."
+      ],
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_release_host"
+    }
+  ]
+}

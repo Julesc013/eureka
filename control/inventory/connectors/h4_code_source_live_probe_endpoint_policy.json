@@ -1,0 +1,383 @@
+{
+  "policy_id": "h4_code_source_live_probe_endpoint_policy",
+  "schema_version": "h4_code_source_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "source_archive_download_forbidden_current",
+        "archive_payload_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "source_archive_download_forbidden_current",
+        "archive_payload_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "swhid_resolution_metadata_future",
+        "source_archive_download_forbidden_current",
+        "archive_payload_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "software_heritage_identity",
+      "source_label": "Software Heritage identity and archival metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "repository_metadata_lookup_future",
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "github_repository",
+      "source_label": "GitHub repository metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "release_metadata_lookup_future",
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "github_releases",
+      "source_label": "GitHub Releases metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "repository_metadata_lookup_future",
+        "repository_clone_forbidden_current",
+        "git_ls_remote_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "gitlab_repository",
+      "source_label": "GitLab repository metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "release_metadata_lookup_future",
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "binary_download_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "gitlab_releases",
+      "source_label": "GitLab Releases metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "project_metadata_lookup_future",
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "sourceforge",
+      "source_label": "SourceForge project and release/file metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "project_metadata_lookup_future",
+        "file_download_forbidden_current",
+        "release_asset_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "fosshub",
+      "source_label": "FossHub project and release metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "archive_payload_download_forbidden_current",
+        "repository_clone_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "archive_payload_download_forbidden_current",
+        "repository_clone_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "archive_presence_metadata_lookup_future",
+        "archive_payload_download_forbidden_current",
+        "repository_clone_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "github_archive_program",
+      "source_label": "GitHub Archive Program archive-presence metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "git_ls_remote_forbidden_current",
+        "git_clone_forbidden_current",
+        "repository_clone_forbidden_current",
+        "source_archive_download_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "git_ls_remote_forbidden_current",
+        "git_clone_forbidden_current",
+        "repository_clone_forbidden_current",
+        "source_archive_download_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "repository_metadata_fixture_future",
+        "git_ls_remote_forbidden_current",
+        "git_clone_forbidden_current",
+        "repository_clone_forbidden_current",
+        "source_archive_download_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "generic_git_repository",
+      "source_label": "Generic Git repository metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_metadata_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "build_tool_invocation_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "forbidden_metadata_classes_current": [
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "git_command_invocation_allowed": false,
+      "limitations": [
+        "Endpoint/metadata classes are not live-approved in H4-BUNDLE-03."
+      ],
+      "planned_endpoint_or_metadata_classes": [
+        "release_page_metadata_fixture_future",
+        "release_asset_download_forbidden_current",
+        "source_archive_download_forbidden_current",
+        "scraping_forbidden_current",
+        "broad_search_forbidden_current"
+      ],
+      "public_query_fanout_allowed": false,
+      "release_asset_download_allowed": false,
+      "repository_clone_allowed": false,
+      "scraping_allowed": false,
+      "source_archive_download_allowed": false,
+      "source_id": "generic_release_host",
+      "source_label": "Generic release-host metadata"
+    }
+  ]
+}

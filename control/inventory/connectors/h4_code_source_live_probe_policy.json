@@ -1,0 +1,63 @@
+{
+  "allowed_operation_scope": "metadata_only",
+  "binary_download_enabled": false,
+  "build_tool_invocation_enabled": false,
+  "current_status": "fail_closed_pending_operator_approval",
+  "forbidden_operations": [
+    "broad_repository_search",
+    "public_query_fanout",
+    "repository_clone",
+    "git_fetch_or_ls_remote",
+    "source_archive_download",
+    "release_asset_download",
+    "binary_download",
+    "checksum_signature_or_sbom_payload_download",
+    "build_tool_invocation",
+    "package_manager_invocation",
+    "install_or_execute",
+    "scraping",
+    "crawling",
+    "source_sync",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "git_command_invocation_enabled": false,
+  "install_execute_enabled": false,
+  "live_probe_default_enabled": false,
+  "max_requests_per_source_per_run": 1,
+  "max_sources_per_run": 1,
+  "max_total_requests_per_run": 1,
+  "no_goals": [
+    "live source access without approval",
+    "repository cloning",
+    "source archive or release asset downloads",
+    "git or build command invocation",
+    "truth acceptance",
+    "product behavior change"
+  ],
+  "package_download_enabled": false,
+  "policy_id": "h4_code_source_live_probe_policy",
+  "public_query_fanout_enabled": false,
+  "release_asset_download_enabled": false,
+  "repository_clone_enabled": false,
+  "required_approvals": [
+    "source_specific_live_access_approval",
+    "metadata_probe_approval",
+    "exact_request_key_approval",
+    "endpoint_or_metadata_class_allowlist",
+    "user_agent_or_not_required_documentation",
+    "auth_or_no_auth_posture",
+    "timeout_retry_budget_cache_decision",
+    "kill_switch_fail_closed",
+    "output_path_policy"
+  ],
+  "required_output_boundaries": [
+    "candidate_preview_only",
+    "review_required_before_persistence",
+    "no_public_or_master_index_mutation",
+    "no_authenticity_rights_malware_installability_or_build_reproducibility_claims"
+  ],
+  "schema_version": "h4_code_source_live_probe_policy.v0",
+  "source_archive_download_enabled": false,
+  "source_sync_enabled": false
+}

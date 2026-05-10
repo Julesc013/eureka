@@ -1,0 +1,110 @@
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+import tempfile
+import unittest
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+RUNNER = REPO_ROOT / "scripts/run_h4_code_source_live_probe.py"
+SUMMARY = REPO_ROOT / "scripts/summarize_h4_code_source_live_probe_outputs.py"
+VALIDATOR = REPO_ROOT / "scripts/validate_h4_code_source_live_probe.py"
+GENERATED = REPO_ROOT / "control/audits/h4-bundle-03-code-source-live-probes-v0/generated"
+
+
+def run_cmd(args):
+    return subprocess.run([sys.executable, *args], cwd=REPO_ROOT, check=False, capture_output=True, text=True, timeout=120)
+
+
+class H4CodeSourceLiveProbeScriptTests(unittest.TestCase):
+    def test_cli_writes_no_files_by_default(self):
+        before = sorted(path.name for path in GENERATED.glob("*"))
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata"])
+        after = sorted(path.name for path in GENERATED.glob("*"))
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(before, after)
+
+    def test_cli_live_without_approval_is_blocked_offline(self):
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--live", "--json"])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        live = json.loads(result.stdout)["live_probe"]
+        self.assertEqual(live["request_count"], 0)
+        self.assertFalse(live["network_used"])
+
+    def test_cli_writes_explicit_outputs_to_temp_path(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_path = Path(tmp)
+            result = run_cmd([
+                "scripts/run_h4_code_source_live_probe.py",
+                "--source-id",
+                "github_releases",
+                "--request-key",
+                "example_release_metadata",
+                "--output",
+                str(tmp_path / "result.json"),
+                "--source-identity-output",
+                str(tmp_path / "source-identity.json"),
+                "--release-identity-output",
+                str(tmp_path / "release-identity.json"),
+                "--relation-output",
+                str(tmp_path / "relations.json"),
+                "--asset-output",
+                str(tmp_path / "assets.json"),
+                "--source-cache-output",
+                str(tmp_path / "source-cache.json"),
+                "--evidence-preview-output",
+                str(tmp_path / "evidence.json"),
+                "--review-seed-output",
+                str(tmp_path / "review.json"),
+                "--health-output",
+                str(tmp_path / "health.json"),
+                "--summary-output",
+                str(tmp_path / "summary.md"),
+            ])
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(json.loads((tmp_path / "result.json").read_text(encoding="utf-8"))["source_id"], "github_releases")
+            self.assertTrue((tmp_path / "summary.md").is_file())
+
+    def test_cli_refuses_site_dist_output(self):
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--output", "site/dist/h4.json"])
+        self.assertNotEqual(result.returncode, 0)
+
+    def test_cli_refuses_data_public_index_output(self):
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--output", "data/public_index/h4.json"])
+        self.assertNotEqual(result.returncode, 0)
+
+    def test_cli_refuses_repository_clone_output(self):
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--output", "repository_clones/h4.json"])
+        self.assertNotEqual(result.returncode, 0)
+
+    def test_summary_script_passes_on_examples(self):
+        result = run_cmd(["scripts/summarize_h4_code_source_live_probe_outputs.py", "--input", "examples/connectors/h4_code_source_release/live_probe_results", "--check", "--json"])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertFalse(payload["network_used"])
+        self.assertFalse(payload["repository_clone_used"])
+        self.assertGreaterEqual(payload["blocked_count"], 10)
+
+    def test_validator_passes_current_repo(self):
+        result = run_cmd(["scripts/validate_h4_code_source_live_probe.py", "--json"])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload["status"], "valid")
+        self.assertFalse(payload["network_calls_made"])
+        self.assertFalse(payload["repository_clone_used"])
+
+    def test_runtime_does_not_import_model_or_provider_libraries(self):
+        text = RUNNER.read_text(encoding="utf-8") + SUMMARY.read_text(encoding="utf-8") + VALIDATOR.read_text(encoding="utf-8")
+        banned = re.compile(r"^\s*(?:from|import)\s+(requests|httpx|aiohttp|openai|anthropic|selenium|playwright)\b", re.MULTILINE)
+        self.assertIsNone(banned.search(text))
+
+    def test_validator_does_not_create_local_private_roots(self):
+        result = run_cmd(["scripts/validate_h4_code_source_live_probe.py"])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        for rel in (".aide.local", ".local/eureka", ".cache/eureka", "repository_clones"):
+            self.assertFalse((REPO_ROOT / rel).exists(), rel)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,166 @@
+{
+  "policy_id": "h4_code_source_live_probe_rate_limit_policy",
+  "schema_version": "h4_code_source_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "software_heritage_identity",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "github_repository",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "github_releases",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "gitlab_repository",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "gitlab_releases",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "sourceforge",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "fosshub",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "github_archive_program",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "generic_git_repository",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "public_no_auth_planned_not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Rate policy is documented but not approved for live access."
+      ],
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "source_id": "generic_release_host",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved"
+    }
+  ]
+}

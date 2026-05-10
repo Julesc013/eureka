@@ -1,0 +1,43 @@
+{
+  "accepted_as_source": false,
+  "accepted_source_truth": false,
+  "cache_entry_kind": "code_source_release_metadata_preview",
+  "candidate_id": "h4.source_cache.github_releases.fixture_github_releases_typical.v0",
+  "limitations": [
+    "Preview only; it is not persisted to source cache by H4-BUNDLE-02."
+  ],
+  "mapping_status": "live_probe_preview_only",
+  "payload_ref": "h4.normalized.github_releases.fixture_github_releases_typical.v0",
+  "product_boundary": {
+    "api_calls_made": false,
+    "build_tool_invoked": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_repository_clone": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "git_command_invoked": false,
+    "install_execute_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "release_asset_download_used": false,
+    "repository_clone_used": false,
+    "source_archive_download_used": false
+  },
+  "schema_version": "h4_code_source_live_probe_source_cache_candidate_preview.v0",
+  "source_cache_write_enabled": false,
+  "source_id": "github_releases",
+  "source_native_id": "fixture-github_releases-typical",
+  "truth_boundary": {
+    "accepted_source_truth": false,
+    "source_cache_preview_is_accepted_source": false
+  }
+}

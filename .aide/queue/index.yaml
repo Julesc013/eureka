@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H4-BUNDLE-03
+current_recommended_task: H4-BUNDLE-04
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -489,9 +489,18 @@ entries:
 
 - id: H4-BUNDLE-03
   title: Code/source/release host approved metadata-only live probes
-  status: queued
+  status: needs_review
   purpose: Prepare approval-gated metadata-only live probe envelopes for H4 code/source/release hosts after fixture normalizers pass.
   allowed_scope_summary: H4 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
   gate: H4-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and repository clone/download/git/build/install/execute behavior remains forbidden.
   task: .aide/queue/H4-BUNDLE-03/task.yaml
   recommended_after: H4-BUNDLE-02
+
+- id: H4-BUNDLE-04
+  title: Code/source/release host review integration and quality delta
+  status: queued
+  purpose: Integrate H4 fixture-equivalent and blocked live-probe outputs into review seed previews, quality delta, postmortem, and next-phase audit evidence.
+  allowed_scope_summary: H4 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H4-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, clone/download/git/build/install/execute behavior, source sync, index mutation, or truth acceptance.
+  task: .aide/queue/H4-BUNDLE-04/task.yaml
+  recommended_after: H4-BUNDLE-03
