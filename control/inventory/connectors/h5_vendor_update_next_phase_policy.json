@@ -1,0 +1,11 @@
+{
+  "deployment_operator_gated": true,
+  "h6_preferred_after_h5_if_coherent": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "policy_id": "h5.vendor_update.next_phase.policy.v0",
+  "preferred_next_task": "H6-BUNDLE-01 - Web archive, news, and event source-family policy packs",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h5_vendor_update_next_phase_policy.v0"
+}

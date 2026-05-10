@@ -1,0 +1,44 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h5_vendor_update_quality_delta_report.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_sources_count": {},
+    "comparison_scope": {},
+    "fixture_sources_count": {},
+    "forbidden_claims": {},
+    "live_probe_sources_count": {},
+    "per_source_deltas": {},
+    "product_boundary": {},
+    "quality_delta_id": {},
+    "review_seed_count": {},
+    "schema_version": {
+      "const": "h5_vendor_update_quality_delta_report.v0"
+    },
+    "source_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "truth_boundary": {},
+    "wave_id": {
+      "const": "H5"
+    }
+  },
+  "required": [
+    "schema_version",
+    "quality_delta_id",
+    "wave_id",
+    "comparison_scope",
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "review_seed_count",
+    "per_source_deltas",
+    "forbidden_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h5_vendor_update_quality_delta_report",
+  "type": "object"
+}

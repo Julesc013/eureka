@@ -1,0 +1,52 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h5_vendor_update_integration_audit.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifact_inventory": {},
+    "audit_id": {},
+    "audited_sources": {},
+    "audited_tasks": {},
+    "h5_exit_gate": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "PARTIAL",
+        "BLOCKED",
+        "FAIL"
+      ]
+    },
+    "next_phase_recommendation": {
+      "enum": [
+        "READY_FOR_H6_BUNDLE_01",
+        "READY_WITH_WARNINGS",
+        "NEEDS_REMEDIATION",
+        "NOT_READY"
+      ]
+    },
+    "product_boundary": {},
+    "schema_version": {
+      "const": "h5_vendor_update_integration_audit.v0"
+    },
+    "truth_boundary": {},
+    "validation_summary": {},
+    "wave_id": {
+      "const": "H5"
+    }
+  },
+  "required": [
+    "schema_version",
+    "audit_id",
+    "wave_id",
+    "audited_sources",
+    "audited_tasks",
+    "artifact_inventory",
+    "validation_summary",
+    "h5_exit_gate",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h5_vendor_update_integration_audit",
+  "type": "object"
+}

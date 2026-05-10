@@ -1,0 +1,7 @@
+id: H6-BUNDLE-01
+title: Web archive, news, and event source-family policy packs
+status: queued
+purpose: Define policy-pack-only source-family structure for web archive, news, and event metadata sources after H5 vendor/update/driver review closeout.
+allowed_scope_summary: H6 source-pack policies, source records, connector-family mappings, approval gates, output/truth/no-live-call policies, examples, docs, validators, tests, audit pack, and AIDE queue/context metadata only.
+gate: H5-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H6_BUNDLE_01; no live source calls, scraping, crawling, source sync, downloads, public/master index mutation, evidence acceptance, candidate acceptance, or source/public truth acceptance.
+recommended_after: H5-BUNDLE-04

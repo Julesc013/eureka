@@ -1,0 +1,22 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h5_vendor_update_driver/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "vendor download roots",
+    "firmware staging roots",
+    "package cache roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "policy_id": "h5.vendor_update.review_path.policy.v0",
+  "schema_version": "h5_vendor_update_review_path_policy.v0"
+}

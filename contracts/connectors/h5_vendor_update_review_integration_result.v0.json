@@ -1,0 +1,88 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h5_vendor_update_review_integration_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "accepts_authenticity_truth": {
+      "const": false
+    },
+    "accepts_compatibility_truth": {
+      "const": false
+    },
+    "accepts_driver_identity_truth": {
+      "const": false
+    },
+    "accepts_firmware_identity_truth": {
+      "const": false
+    },
+    "accepts_runtime_identity_truth": {
+      "const": false
+    },
+    "accepts_safety_truth": {
+      "const": false
+    },
+    "accepts_vendor_truth": {
+      "const": false
+    },
+    "blocked_sources": {
+      "type": "array"
+    },
+    "driver_device_compatibility_review_seeds": {},
+    "enables_catalog_fetch": {
+      "const": false
+    },
+    "enables_downloads": {
+      "const": false
+    },
+    "enables_firmware_flash": {
+      "const": false
+    },
+    "enables_install_execute": {
+      "const": false
+    },
+    "enables_vendor_tool_invocation": {
+      "const": false
+    },
+    "evidence_candidate_review_seeds": {},
+    "firmware_update_review_seeds": {},
+    "mutates_master_index": {
+      "const": false
+    },
+    "mutates_public_index": {
+      "const": false
+    },
+    "payload_metadata_review_seeds": {},
+    "product_boundary": {},
+    "review_integration_result_id": {},
+    "runtime_redistributable_review_seeds": {},
+    "schema_version": {
+      "const": "h5_vendor_update_review_integration_result.v0"
+    },
+    "source_cache_review_seeds": {},
+    "sources": {
+      "type": "array"
+    },
+    "truth_boundary": {},
+    "vendor_identity_review_seeds": {},
+    "wave_id": {
+      "const": "H5"
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_integration_result_id",
+    "wave_id",
+    "sources",
+    "vendor_identity_review_seeds",
+    "driver_device_compatibility_review_seeds",
+    "firmware_update_review_seeds",
+    "runtime_redistributable_review_seeds",
+    "payload_metadata_review_seeds",
+    "source_cache_review_seeds",
+    "evidence_candidate_review_seeds",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h5_vendor_update_review_integration_result",
+  "type": "object"
+}

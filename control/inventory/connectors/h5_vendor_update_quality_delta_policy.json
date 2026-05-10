@@ -1,0 +1,40 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "vendor_identity_candidate_count",
+    "driver_device_compatibility_candidate_count",
+    "firmware_update_candidate_count",
+    "runtime_redistributable_candidate_count",
+    "payload_metadata_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_vendor_coverage",
+    "exhaustive_global_coverage",
+    "official_status_verified",
+    "driver_identity_verified",
+    "firmware_identity_verified",
+    "runtime_identity_verified",
+    "compatibility_verified",
+    "authenticity_verified",
+    "safety_verified",
+    "installability_verified",
+    "rights_clearance",
+    "malware_safety",
+    "future_connector_auto_approval"
+  ],
+  "policy_id": "h5.vendor_update.quality_delta.policy.v0",
+  "schema_version": "h5_vendor_update_quality_delta_policy.v0"
+}

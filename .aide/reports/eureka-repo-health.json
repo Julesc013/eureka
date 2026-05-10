@@ -1,6 +1,6 @@
 {
-  "completed_queue_item": "H5-BUNDLE-03",
-  "current_queue_item": "H5-BUNDLE-04",
+  "completed_queue_item": "H5-BUNDLE-04",
+  "current_queue_item": "H6-BUNDLE-01",
   "deployment_scope": {
     "deployment_performed": false,
     "dns_changed": false,
@@ -17,18 +17,19 @@
     ".aide/reports/eureka-repo-health.md",
     "AGENTS.md"
   ],
-  "generated_at_note": "codex_updated_after_h5_bundle_03",
+  "generated_at_note": "codex_updated_after_h5_bundle_04",
   "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
   "known_warn_only_conditions": [
-    "H5 live-probe source approvals are absent; all H5 live probes are blocked preflight outputs.",
+    "H5 live-probe source approvals are absent; H5 closeout used fixture replay outputs and blocked live-probe reports only.",
     "Deployment execution approval is absent.",
     "J1 risky-action policy remains deferred.",
-    "K semantic/AI and L wider-client lanes remain deferred."
+    "K semantic/AI and L wider-client lanes remain deferred.",
+    "AIDE Lite verify may report diff-scope warnings after routing latest task packet to H6 while H5 closeout changes are still in the working tree."
   ],
   "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "next_recommended_queue_item": "H5-BUNDLE-04",
+  "next_recommended_queue_item": "H6-BUNDLE-01",
   "next_spine": [
-    "H5-BUNDLE-04 vendor/update/driver review integration and quality delta"
+    "H6-BUNDLE-01 web archive, news, and event source-family policy packs"
   ],
   "primary_task_packet": ".aide/context/latest-task-packet.md",
   "product_boundary": {
@@ -59,7 +60,8 @@
     "aide_lite": "pass_with_verify_warnings",
     "architecture_boundaries": "pass",
     "existing_major_validators": "pass",
-    "h5_live_probe": "pass",
+    "h5_review_quality_audit": "pass",
+    "h5_wave_audit": "pass",
     "unittest_discovery": "pass"
   }
 }

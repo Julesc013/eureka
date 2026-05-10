@@ -1,0 +1,181 @@
+{
+  "auto_approves_future_connectors": false,
+  "blocked_sources": [
+    "acer_support_downloads",
+    "amd_driver_downloads",
+    "apple_software_downloads",
+    "apple_software_update_catalog",
+    "asus_support_downloads",
+    "dell_support_downloads",
+    "generic_runtime_redistributable",
+    "generic_vendor_driver_firmware",
+    "hp_support_downloads",
+    "intel_driver_support",
+    "lenovo_support_downloads",
+    "microsoft_download_center",
+    "microsoft_runtime_redistributables",
+    "microsoft_update_catalog",
+    "nvidia_driver_downloads"
+  ],
+  "do_not_repeat_risks": [
+    "Do not treat vendor metadata as official status, compatibility, authenticity, safety, installability, rights, malware, or public truth.",
+    "Do not use fixture replay as live access approval.",
+    "Do not let payload metadata become download, install, execute, or firmware flashing permission."
+  ],
+  "driver_device_compatibility_gaps": [
+    "Driver/device compatibility candidates are not verified compatibility or safe installability facts."
+  ],
+  "evidence_mapping_gaps": [
+    "Evidence candidates remain previews only."
+  ],
+  "firmware_update_gaps": [
+    "Firmware/update candidates are not install, execute, download, or flash permission."
+  ],
+  "fixture_gaps": [
+    "Fixtures are synthetic/public-safe and do not prove live vendor behavior."
+  ],
+  "h6_handoff_recommendation": "H6-BUNDLE-01 may start policy-pack-only work for web archive, news, and event sources.",
+  "h6_or_j1_k_l_recommendation": "proceed_to_h6_policy_packs; keep_j1_k_l_deferred",
+  "j1_k_l_deferral_recommendation": "J1 risky actions, K semantic/AI, and L wider clients remain deferred unless explicit gates open.",
+  "live_probe_gaps": [
+    "Blocked live probes provide gate evidence but no completed metadata response."
+  ],
+  "next_phase_recommendation": "READY_FOR_H6_BUNDLE_01",
+  "no_goals_preserved": [
+    "no_catalog_sync",
+    "no_download",
+    "no_vendor_tool",
+    "no_flash",
+    "no_install_execute",
+    "no_truth_acceptance",
+    "no_public_index_mutation"
+  ],
+  "normalizer_gaps": [
+    "Normalizers cover metadata fixture shapes, not catalogs, payloads, installers, firmware images, or vendor tools."
+  ],
+  "notes": [
+    "Postmortem recommends H6 policy packs, not risky actions or production readiness."
+  ],
+  "payload_metadata_gaps": [
+    "Payload metadata does not grant download permission, safety, authenticity, or rights clearance."
+  ],
+  "policy_gaps": [
+    "source-specific live probe approvals remain absent"
+  ],
+  "postmortem_id": "h5.connector_wave_postmortem.83e2c70be425.v0",
+  "product_boundary": {
+    "catalog_fetch_enabled": false,
+    "changed_public_search_behavior": false,
+    "driver_download_enabled": false,
+    "enabled_accounts": false,
+    "enabled_catalog_sync": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enabled_vendor_tool_invocation": false,
+    "firmware_download_enabled": false,
+    "firmware_flash_enabled": false,
+    "install_execute_enabled": false,
+    "installer_download_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "runtime_download_enabled": false,
+    "vendor_tool_invocation_enabled": false
+  },
+  "quality_delta_summary": {
+    "blocked_sources_count": 15,
+    "blocker_count": 0,
+    "claims_authenticity_verified": false,
+    "claims_compatibility_verified": false,
+    "claims_installability_verified": false,
+    "claims_malware_safety": false,
+    "claims_official_status_verified": false,
+    "claims_production_readiness": false,
+    "claims_rights_clearance": false,
+    "claims_safety_verified": false,
+    "driver_device_compatibility_candidate_count": 15,
+    "firmware_update_candidate_count": 15,
+    "fixture_sources_count": 15,
+    "known_gap_count": 2,
+    "live_probe_sources_count": 0,
+    "overclaim_errors": [],
+    "payload_metadata_candidate_count": 15,
+    "quality_delta_id": "h5.quality_delta.4337357e360d.v0",
+    "review_seed_count": 105,
+    "runtime_redistributable_candidate_count": 15,
+    "schema_version": "h5_quality_delta_summary.v0",
+    "source_count": 15,
+    "status": "pass",
+    "vendor_identity_candidate_count": 15
+  },
+  "review_mapping_gaps": [
+    "Review seeds are not human review decisions and are not persisted."
+  ],
+  "risks": [
+    "Live H5 metadata probes remain blocked pending operator approval."
+  ],
+  "runtime_redistributable_gaps": [
+    "Runtime redistributable candidates are not installability or dependency correctness proof."
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "boundary_result": "preserved",
+    "catalog_sync_enabled": false,
+    "downloads_enabled": false,
+    "firmware_flash_enabled": false,
+    "install_execute_enabled": false,
+    "master_index_mutated": false,
+    "network_calls_made": false,
+    "public_index_mutated": false,
+    "source_sync_enabled": false,
+    "vendor_tool_invocation_enabled": false
+  },
+  "schema_version": "h5_vendor_update_connector_wave_postmortem.v0",
+  "scorecard_summary": {
+    "auto_approves_future_connectors": false,
+    "production_ready": false,
+    "scorecard_update_count": 15
+  },
+  "source_os_reuse_assessment": "H5 reused H0-H4 Source OS review gates while preserving vendor/update/driver-specific boundaries.",
+  "truth_boundary": {
+    "authenticity_seed_accepts_authenticity_truth": false,
+    "automatic_future_connector_approval": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "compatibility_seed_accepts_compatibility_truth": false,
+    "driver_identity_seed_accepts_driver_truth": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "firmware_identity_seed_accepts_firmware_truth": false,
+    "h5_postmortem_enables_future_connectors_automatically": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "payload_seed_grants_download_or_safety": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "runtime_identity_seed_accepts_runtime_truth": false,
+    "safety_seed_accepts_safety_truth": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "vendor_identity_seed_accepts_vendor_truth": false,
+    "verified_authenticity_claimed": false,
+    "verified_compatibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "vendor_identity_gaps": [
+    "Vendor identity candidates require review before any identity or official-status use."
+  ],
+  "wave_id": "H5",
+  "what_failed": [
+    "No H5 source has committed operator approval for a live metadata probe."
+  ],
+  "what_worked": [
+    "Fifteen H5 vendor/update/driver/firmware/runtime sources have policy packs, fixtures, normalizers, replay outputs, and review previews.",
+    "Vendor identity, driver/device compatibility, firmware/update, runtime redistributable, and payload metadata candidates remain review-gated and candidate-only.",
+    "Live-probe outputs failed closed when committed source approvals were missing."
+  ]
+}

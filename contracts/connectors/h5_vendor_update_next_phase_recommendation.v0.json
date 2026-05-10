@@ -1,0 +1,42 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h5_vendor_update_next_phase_recommendation.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "h6_readiness": {},
+    "j1_deferral": {},
+    "k_deferral": {},
+    "l_deferral": {},
+    "product_boundary": {},
+    "recommendation_id": {},
+    "recommendation_status": {
+      "enum": [
+        "READY_FOR_H6_BUNDLE_01",
+        "READY_WITH_WARNINGS",
+        "NEEDS_REMEDIATION",
+        "NOT_READY"
+      ]
+    },
+    "recommended_next_task": {},
+    "remediation_required": {},
+    "schema_version": {
+      "const": "h5_vendor_update_next_phase_recommendation.v0"
+    },
+    "truth_boundary": {}
+  },
+  "required": [
+    "schema_version",
+    "recommendation_id",
+    "recommended_next_task",
+    "recommendation_status",
+    "h6_readiness",
+    "j1_deferral",
+    "k_deferral",
+    "l_deferral",
+    "remediation_required",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h5_vendor_update_next_phase_recommendation",
+  "type": "object"
+}

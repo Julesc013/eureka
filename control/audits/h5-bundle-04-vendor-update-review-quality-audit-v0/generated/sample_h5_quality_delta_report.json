@@ -1,0 +1,337 @@
+{
+  "blocked_sources_count": 15,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 15,
+  "driver_device_compatibility_candidate_count": 15,
+  "evidence_candidate_preview_count": 15,
+  "firmware_update_candidate_count": 15,
+  "fixture_sources_count": 15,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_vendor_coverage",
+    "exhaustive_global_coverage",
+    "official_status_verified",
+    "driver_identity_verified",
+    "firmware_identity_verified",
+    "runtime_identity_verified",
+    "compatibility_verified",
+    "authenticity_verified",
+    "safety_verified",
+    "installability_verified",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H5 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Vendor metadata is not official-status, compatibility, authenticity, safety, installability, rights, malware, or production coverage proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 15,
+  "notes": [
+    "H5 quality delta is operational review evidence only."
+  ],
+  "payload_metadata_candidate_count": 15,
+  "per_source_deltas": [
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "acer_support_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "amd_driver_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "apple_software_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "apple_software_update_catalog",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "asus_support_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "dell_support_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_runtime_redistributable",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_vendor_driver_firmware",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "hp_support_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "intel_driver_support",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "lenovo_support_downloads",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "microsoft_download_center",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "microsoft_runtime_redistributables",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "microsoft_update_catalog",
+      "vendor_identity_review_seed_created": true
+    },
+    {
+      "driver_device_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "firmware_update_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted vendor, driver, firmware, runtime, compatibility, authenticity, safety, rights, or installability proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "payload_metadata_review_seed_created": true,
+      "runtime_redistributable_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "nvidia_driver_downloads",
+      "vendor_identity_review_seed_created": true
+    }
+  ],
+  "product_boundary": {
+    "catalog_fetch_enabled": false,
+    "changed_public_search_behavior": false,
+    "driver_download_enabled": false,
+    "enabled_accounts": false,
+    "enabled_catalog_sync": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enabled_vendor_tool_invocation": false,
+    "firmware_download_enabled": false,
+    "firmware_flash_enabled": false,
+    "install_execute_enabled": false,
+    "installer_download_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "runtime_download_enabled": false,
+    "vendor_tool_invocation_enabled": false
+  },
+  "quality_delta_id": "h5.quality_delta.4337357e360d.v0",
+  "review_seed_count": 105,
+  "runtime_redistributable_candidate_count": 15,
+  "schema_version": "h5_vendor_update_quality_delta_report.v0",
+  "scorecard_update_count": 15,
+  "source_cache_candidate_count": 15,
+  "source_count": 15,
+  "truth_boundary": {
+    "authenticity_verified": false,
+    "automatic_future_connector_approval": false,
+    "compatibility_verified": false,
+    "driver_identity_verified": false,
+    "exhaustive_global_coverage": false,
+    "firmware_identity_verified": false,
+    "installability_verified": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "official_status_verified": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "production_vendor_coverage": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "runtime_identity_verified": false,
+    "safety_verified": false,
+    "verified_authenticity_claimed": false,
+    "verified_compatibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "vendor_identity_candidate_count": 15,
+  "warning_count": 2,
+  "wave_id": "H5"
+}

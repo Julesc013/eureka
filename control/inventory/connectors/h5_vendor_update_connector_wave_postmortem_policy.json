@@ -1,0 +1,27 @@
+{
+  "auto_approves_future_connectors": false,
+  "policy_id": "h5.vendor_update.connector_wave_postmortem.policy.v0",
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "vendor_identity_gaps",
+    "driver_device_compatibility_gaps",
+    "firmware_update_gaps",
+    "runtime_redistributable_gaps",
+    "payload_metadata_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h6_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h5_vendor_update_connector_wave_postmortem_policy.v0"
+}
