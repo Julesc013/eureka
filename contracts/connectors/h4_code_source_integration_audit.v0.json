@@ -1,0 +1,27 @@
+{
+  "contract_id": "h4_code_source_integration_audit.v0",
+  "description": "H4 integration audit for the code/source/release host wave.",
+  "required_current_values": {},
+  "required_fields": [
+    "audit_id",
+    "wave_id",
+    "audited_sources",
+    "audited_tasks",
+    "artifact_inventory",
+    "validation_summary",
+    "source_policy_summary",
+    "fixture_runtime_summary",
+    "live_probe_summary",
+    "review_integration_summary",
+    "quality_delta_summary",
+    "postmortem_summary",
+    "blockers",
+    "warnings",
+    "h4_exit_gate",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h4_code_source_integration_audit.v0"
+}

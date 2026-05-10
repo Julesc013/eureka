@@ -1,0 +1,11 @@
+{
+  "deployment_operator_gated": true,
+  "h5_preferred_if_code_source_release_wave_is_coherent": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "policy_id": "h4_code_source_next_phase_policy",
+  "preferred_after_h4": "H5-BUNDLE-01 - Vendor, update, driver, and firmware source-family policy packs",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h4_code_source_next_phase_policy.v0"
+}

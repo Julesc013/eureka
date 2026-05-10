@@ -2,27 +2,27 @@
 
 ## PHASE
 
-H4-BUNDLE-04 - Code/source/release host review integration and quality delta
+H5-BUNDLE-01 - Vendor, update, driver, and firmware source-family policy packs
 
 ## GOAL
 
-Prepare the next Eureka H4 task after H4-BUNDLE-03. This packet is a compact
-AIDE resumption handoff only; it does not itself authorize new live source
-calls, repository clones, downloads, git/build commands, source sync, public or
-master index mutation, truth acceptance, or changing Eureka product behavior.
+Prepare the next Eureka H5 task after H4-BUNDLE-04. This packet is a compact
+AIDE resumption handoff only; it does not itself authorize live source calls,
+downloads, firmware or driver handling, installs, execution, source sync, public
+or master index mutation, truth acceptance, or changing Eureka product behavior.
 
-H4-BUNDLE-04 should integrate H4 fixture-equivalent outputs and H4-BUNDLE-03
-blocked live-probe reports into review seed previews, quality delta, connector
-wave postmortem, integration audit, and next-phase recommendations without
-changing Eureka product behavior.
+H5-BUNDLE-01 should add policy-pack-only source-family structure for vendor,
+update, driver, and firmware metadata sources if a future prompt explicitly
+scopes that work. No Eureka product behavior change is authorized by this
+handoff.
 
 ## WHY
 
-H4-BUNDLE-03 adds the fail-closed metadata-only live-probe framework for ten
-code/source/release host sources. No source is currently approved for live
-access; all live-probe examples are blocked offline with request_count 0 and
-network_used false. H4-BUNDLE-02 fixture replay outputs are sufficient
-fixture-equivalent material for review integration rehearsal.
+H4-BUNDLE-04 closed the code/source/release host wave with fixture-equivalent
+review integration, quality delta, connector postmortem, and H5 readiness
+evidence. H4 live probes remain blocked by missing operator approval, but
+committed fixture replay outputs are sufficient for the next policy-pack-only
+expansion lane.
 
 ## CONTEXT_REFS
 
@@ -34,59 +34,54 @@ fixture-equivalent material for review integration rehearsal.
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
 - `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
-- `.aide/queue/H4-BUNDLE-02/task.yaml`
-- `.aide/queue/H4-BUNDLE-03/task.yaml`
 - `.aide/queue/H4-BUNDLE-04/task.yaml`
+- `.aide/queue/H5-BUNDLE-01/task.yaml`
+- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/`
 - `control/audits/h4-bundle-03-code-source-live-probes-v0/`
 - `control/audits/h4-bundle-02-code-source-fixture-runtime-v0/`
 - `control/audits/h4-bundle-01-code-source-release-policy-packs-v0/`
 - `runtime/connectors/h4_code_source_release/`
-- `examples/connectors/h4_code_source_release/fixtures/`
-- `examples/connectors/h4_code_source_release/normalized/`
-- `examples/connectors/h4_code_source_release/replay_results/`
-- `examples/connectors/h4_code_source_release/live_probe_results/`
-- `examples/connectors/h4_code_source_release/live_probe_outputs/`
+- `examples/connectors/h4_code_source_release/review_integration/`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- H4 review integration paths only if a future prompt explicitly scopes
-  H4-BUNDLE-04 implementation.
+- H5 policy-pack paths only if a future prompt explicitly scopes H5-BUNDLE-01 implementation.
 
 ## IMPLEMENTATION
 
-- Do not start H4-BUNDLE-04 implementation from this packet alone.
-- Resume from repo-local evidence, especially H4-BUNDLE-02 fixture outputs and
-  H4-BUNDLE-03 blocked live-probe reports.
-- Preserve no-live-call, no-repository-clone, no-source-archive-download,
-  no-release-asset-download, no-git-command, no-build-command, no-install,
-  no-execute, no-source-sync, no-index-mutation, and no-truth-acceptance
-  boundaries.
-- Treat source identity, release identity, source-to-binary relation, release
-  asset, source-cache, evidence, and review outputs as candidates/previews only.
+- Do not start H5-BUNDLE-01 implementation from this packet alone.
+- Resume from repo-local evidence, especially H4-BUNDLE-04 audit outputs.
+- Preserve no-live-call, no-download, no-driver-or-firmware-handling,
+  no-install, no-execute, no-source-sync, no-index-mutation, and
+  no-truth-acceptance boundaries.
+- Treat vendor/update/driver/firmware source records, capabilities, source
+  identities, release/update identifiers, hardware or platform compatibility,
+  firmware/driver metadata, source-cache, evidence, and review outputs as
+  candidates/previews only until future reviewed gates explicitly accept them.
 
 ## ACCEPTANCE
 
-- Latest handoff points to H4-BUNDLE-04.
-- H4-BUNDLE-03 evidence remains reviewable.
+- Latest handoff points to H5-BUNDLE-01.
+- H4-BUNDLE-04 evidence remains reviewable.
 - No Eureka product behavior change is authorized by this handoff.
-- No live source calls, repository clone, source archive downloads, release
-  asset downloads, git command invocation, build tool invocation, installs,
-  execution, source sync, public/master index mutation, evidence acceptance,
-  candidate acceptance, source truth acceptance, source identity truth
-  acceptance, release identity truth acceptance, source-to-binary relation truth
-  acceptance, provenance acceptance, or product behavior changes are authorized
-  by this handoff.
+- No live source calls, downloads, firmware downloads, driver downloads,
+  installer downloads, package downloads, source sync, public/master index
+  mutation, evidence acceptance, candidate acceptance, source truth acceptance,
+  identity truth acceptance, compatibility truth acceptance, provenance
+  acceptance, authenticity acceptance, rights clearance, malware safety,
+  installability, execution, hosting, deployment, or product behavior changes
+  are authorized by this handoff.
 
 ## VALIDATION
 
-- `python scripts/validate_h4_code_source_live_probe.py`
-- `python scripts/run_h4_code_source_live_probe.py --source-id github_releases --request-key example_release_metadata --check`
-- `python scripts/summarize_h4_code_source_live_probe_outputs.py --input examples/connectors/h4_code_source_release/live_probe_results --check`
-- `python scripts/validate_h4_code_source_release_fixture_runtime.py`
-- `python scripts/validate_h4_code_source_release_policy_packs.py`
-- `python -m unittest tests.connectors.test_h4_code_source_live_probe`
-- `python -m unittest tests.operations.test_h4_code_source_live_probe_scripts`
+- `python scripts/validate_h4_code_source_review_quality_audit.py`
+- `python scripts/integrate_h4_code_source_review.py --input-dir examples/connectors/h4_code_source_release/replay_results --check`
+- `python scripts/summarize_h4_code_source_quality_delta.py --input-dir examples/connectors/h4_code_source_release/review_integration --check`
+- `python scripts/audit_h4_code_source_release_wave.py --check`
+- `python -m unittest tests.connectors.test_h4_code_source_review_integration_quality`
+- `python -m unittest tests.operations.test_h4_code_source_review_quality_scripts`
+- `python -m unittest tests.operations.test_h4_code_source_integration_audit`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
@@ -99,33 +94,32 @@ fixture-equivalent material for review integration rehearsal.
 ## EVIDENCE
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/H4-BUNDLE-03/task.yaml`
 - `.aide/queue/H4-BUNDLE-04/task.yaml`
-- `control/audits/h4-bundle-03-code-source-live-probes-v0/h4_bundle_03_report.json`
-- `control/audits/h4-bundle-03-code-source-live-probes-v0/validation.md`
+- `.aide/queue/H5-BUNDLE-01/task.yaml`
+- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/h4_bundle_04_report.json`
+- `control/audits/h4-bundle-04-code-source-review-quality-audit-v0/validation.md`
+- `examples/connectors/h4_code_source_release/review_integration/`
 
 ## NON_GOALS
 
 - No live calls, API calls, provider/model calls, browser automation, downloads,
   installs, execution, scraping, crawling, repository clones, git fetch, git
-  command invocation, build tool invocation, source archive downloads, release
-  asset downloads, binary downloads, source sync, public query fanout,
-  public/master index mutation, evidence acceptance, candidate acceptance,
-  source truth acceptance, source identity truth acceptance, release identity
-  truth acceptance, source-to-binary relation truth acceptance, provenance
-  acceptance, public truth creation, public launch, deployment, or
-  production-readiness claims.
+  command invocation, build tool invocation, firmware downloads, driver
+  downloads, installer downloads, package downloads, source sync, public query
+  fanout, public/master index mutation, evidence acceptance, candidate
+  acceptance, source truth acceptance, identity truth acceptance, compatibility
+  truth acceptance, provenance acceptance, authenticity acceptance, public truth
+  creation, public launch, deployment, or production-readiness claims.
 
 ## OUTPUT_SCHEMA
 
-Future H4-BUNDLE-04 responses should preserve status, summary, commits, H4 exit
-decision, next-phase recommendation, changed paths, validation, scope
-boundaries, risks, and next task.
+Future H5-BUNDLE-01 responses should preserve status, summary, commits, H5
+scope boundaries, changed paths, validation, risks, and next task.
 
 ## TOKEN_ESTIMATE
 
 - method: manual chars / 4 estimate
-- approx_tokens: 1500
+- approx_tokens: 1450
 - budget_status: within_budget
 
 ## FORBIDDEN_PATHS

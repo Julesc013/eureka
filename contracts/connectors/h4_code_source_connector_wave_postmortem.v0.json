@@ -1,0 +1,34 @@
+{
+  "contract_id": "h4_code_source_connector_wave_postmortem.v0",
+  "description": "H4 connector wave postmortem. It records fixture, live-probe, mapping, policy, evidence, and review gaps without auto-approving future connectors.",
+  "required_current_values": {
+    "auto_approves_future_connectors": false
+  },
+  "required_fields": [
+    "postmortem_id",
+    "wave_id",
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "source_identity_gaps",
+    "release_identity_gaps",
+    "source_to_binary_relation_gaps",
+    "release_asset_mapping_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "scorecard_summary",
+    "safety_boundary_assessment",
+    "next_phase_recommendation",
+    "h5_or_j1_k_l_recommendation",
+    "do_not_repeat_risks",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h4_code_source_connector_wave_postmortem.v0"
+}

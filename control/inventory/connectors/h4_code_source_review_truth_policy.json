@@ -1,0 +1,27 @@
+{
+  "policy_id": "h4_code_source_review_truth_policy",
+  "required_false_values": {
+    "accepts_authenticity_truth": false,
+    "accepts_build_reproducibility_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "release_asset_seed_grants_download_or_safety": false,
+    "release_identity_candidate_is_truth": false,
+    "release_identity_seed_accepts_release_truth": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_identity_candidate_is_truth": false,
+    "source_identity_seed_accepts_identity": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "source_to_binary_relation_candidate_is_provenance_truth": false,
+    "source_to_binary_seed_accepts_provenance": false,
+    "verified_authenticity_claimed": false,
+    "verified_build_reproducibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "schema_version": "h4_code_source_review_truth_policy.v0"
+}

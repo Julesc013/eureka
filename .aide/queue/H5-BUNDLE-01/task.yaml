@@ -1,0 +1,7 @@
+id: H5-BUNDLE-01
+title: Vendor, update, driver, and firmware source-family policy packs
+status: queued
+purpose: Add policy-pack-only source-family packs for vendor, update, driver, and firmware metadata after H4 closes.
+allowed_scope_summary: H5 source-family policy packs, source records, connector-family mappings, approval gates, coverage/scorecard previews, docs, scripts, tests, audit evidence, and AIDE metadata only.
+gate: H4-BUNDLE-04 passes or passes with warnings; no live calls, downloads, firmware or driver handling, installs, execution, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H4-BUNDLE-04

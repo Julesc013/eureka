@@ -1,6 +1,6 @@
 id: H4-BUNDLE-04
 title: Code/source/release host review integration and quality delta
-status: queued
+status: needs_review
 purpose: Integrate H4 fixture-equivalent and blocked live-probe outputs into review seed previews, quality delta, postmortem, and next-phase audit evidence.
 allowed_scope_summary: H4 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
 gate: H4-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, clone/download/git/build/install/execute behavior, source sync, public/master index mutation, source/evidence/candidate/source identity/release identity/source-to-binary truth acceptance, or product behavior changes.

@@ -1,0 +1,36 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "source_identity_candidate_count",
+    "release_identity_candidate_count",
+    "source_to_binary_relation_candidate_count",
+    "release_asset_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_source_coverage",
+    "exhaustive_global_coverage",
+    "source_authenticity_verified",
+    "release_authenticity_verified",
+    "source_to_binary_provenance_verified",
+    "build_reproducibility_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "future_connector_auto_approval"
+  ],
+  "policy_id": "h4_code_source_quality_delta_policy",
+  "schema_version": "h4_code_source_quality_delta_policy.v0"
+}

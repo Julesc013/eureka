@@ -1,0 +1,152 @@
+{
+  "added_contracts": [
+    "contracts/connectors/h4_code_source_review_integration_result.v0.json",
+    "contracts/connectors/h4_code_source_quality_delta_report.v0.json",
+    "contracts/connectors/h4_code_source_connector_wave_postmortem.v0.json",
+    "contracts/connectors/h4_code_source_integration_audit.v0.json",
+    "contracts/connectors/h4_code_source_next_phase_recommendation.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/H4_CODE_SOURCE_REVIEW_INTEGRATION.md",
+    "docs/reference/H4_CODE_SOURCE_QUALITY_DELTA_REPORT.md",
+    "docs/reference/H4_CODE_SOURCE_CONNECTOR_WAVE_POSTMORTEM.md",
+    "docs/architecture/H4_CODE_SOURCE_REVIEW_INTEGRATION_MODEL.md",
+    "docs/operations/H4_CODE_SOURCE_WAVE_POSTMORTEM.md",
+    "docs/operations/H4_CODE_SOURCE_WAVE_QUALITY_DELTA.md",
+    "docs/operations/H4_TO_H5_HANDOFF.md",
+    "docs/operations/H4_TO_J1_K_L_DEFERRAL.md"
+  ],
+  "added_examples": [
+    "examples/connectors/h4_code_source_release/review_integration/"
+  ],
+  "added_inventories": [
+    "control/inventory/connectors/h4_code_source_review_integration_policy.json",
+    "control/inventory/connectors/h4_code_source_review_output_policy.json",
+    "control/inventory/connectors/h4_code_source_review_path_policy.json",
+    "control/inventory/connectors/h4_code_source_review_truth_policy.json",
+    "control/inventory/connectors/h4_code_source_quality_delta_policy.json",
+    "control/inventory/connectors/h4_code_source_connector_wave_postmortem_policy.json",
+    "control/inventory/connectors/h4_code_source_integration_audit_policy.json",
+    "control/inventory/connectors/h4_code_source_next_phase_policy.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/connectors/h4_code_source_release/review_integration.py",
+    "runtime/connectors/h4_code_source_release/quality_delta.py",
+    "runtime/connectors/h4_code_source_release/wave_postmortem.py"
+  ],
+  "added_scripts": [
+    "scripts/integrate_h4_code_source_review.py",
+    "scripts/summarize_h4_code_source_quality_delta.py",
+    "scripts/audit_h4_code_source_release_wave.py",
+    "scripts/validate_h4_code_source_review_quality_audit.py"
+  ],
+  "added_tests": [
+    "tests/connectors/test_h4_code_source_review_integration_quality.py",
+    "tests/operations/test_h4_code_source_review_quality_scripts.py",
+    "tests/operations/test_h4_code_source_integration_audit.py"
+  ],
+  "h4_exit_gate": "PASS_WITH_WARNINGS",
+  "next_phase_recommendation": "READY_FOR_H5_BUNDLE_01",
+  "next_task": "H5-BUNDLE-01 - Vendor, update, driver, and firmware source-family policy packs",
+  "postmortem": {
+    "auto_approves_future_connectors": false,
+    "created": true,
+    "recommends_next_phase": true
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_repository_clone": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "code_source_release_review_quality_postmortem_audit",
+  "quality_delta": {
+    "claims_build_reproducibility_verified": false,
+    "claims_malware_safety": false,
+    "claims_production_readiness": false,
+    "claims_release_authenticity_verified": false,
+    "claims_rights_clearance": false,
+    "claims_source_authenticity_verified": false,
+    "claims_source_to_binary_provenance_verified": false,
+    "created": true,
+    "limitations_documented": true
+  },
+  "review_integration": {
+    "candidate_promotion_previews_created": true,
+    "coverage_update_previews_created": true,
+    "created": true,
+    "evidence_candidate_review_seeds_created": true,
+    "release_asset_review_seeds_created": true,
+    "release_identity_review_seeds_created": true,
+    "scorecard_updates_created": true,
+    "source_cache_review_seeds_created": true,
+    "source_identity_review_seeds_created": true,
+    "source_pack_update_previews_created": true,
+    "source_to_binary_relation_review_seeds_created": true
+  },
+  "schema_version": "h4_bundle_04_report.v0",
+  "sources": [
+    "fosshub",
+    "generic_git_repository",
+    "generic_release_host",
+    "github_archive_program",
+    "github_releases",
+    "github_repository",
+    "gitlab_releases",
+    "gitlab_repository",
+    "software_heritage_identity",
+    "sourceforge"
+  ],
+  "status": "pass_with_warnings",
+  "task": "H4-BUNDLE-04",
+  "track": "H4",
+  "truth_boundary": {
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "release_asset_seed_grants_download_or_safety": false,
+    "release_identity_seed_accepts_release_truth": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_identity_seed_accepts_identity": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "source_to_binary_seed_accepts_provenance": false,
+    "verified_authenticity_claimed": false,
+    "verified_build_reproducibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "aide_lite_adapter_validate": "PASS",
+    "aide_lite_doctor": "PASS_WITH_WARNINGS",
+    "aide_lite_eval_list": "PASS",
+    "aide_lite_eval_run": "PASS_WITH_WARNINGS",
+    "aide_lite_review_pack": "PASS_WITH_WARNINGS",
+    "aide_lite_selftest": "PASS",
+    "aide_lite_test": "PASS",
+    "aide_lite_validate": "PASS_WITH_WARNINGS",
+    "aide_lite_verify": "PASS_WITH_WARNINGS",
+    "audit_h4_code_source_release_wave_check": "PASS",
+    "check_architecture_boundaries": "PASS",
+    "existing_h4_h3_h2_h1_h0_ia_core_validators": "PASS",
+    "full_unittest_discover": "PASS",
+    "git_diff_check": "PASS_WITH_LINE_ENDING_WARNINGS",
+    "integrate_h4_code_source_review_check": "PASS",
+    "json_required_h4_bundle_04_files": "PASS",
+    "summarize_h4_code_source_quality_delta_check": "PASS",
+    "test_h4_code_source_integration_audit": "PASS",
+    "test_h4_code_source_review_integration_quality": "PASS",
+    "test_h4_code_source_review_quality_scripts": "PASS",
+    "validate_h4_code_source_review_quality_audit": "PASS"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h4_code_source_release/review_integration/",
+    "explicit_temp_test_directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "repository_clone_roots",
+    "package_cache_roots",
+    "master_index_roots",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "policy_id": "h4_code_source_review_path_policy",
+  "schema_version": "h4_code_source_review_path_policy.v0"
+}

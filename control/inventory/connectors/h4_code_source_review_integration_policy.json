@@ -1,0 +1,38 @@
+{
+  "allowed_inputs": [
+    "fixture_replay_results",
+    "normalized_code_source_release_records",
+    "source_identity_candidates",
+    "release_identity_candidates",
+    "source_to_binary_relation_candidates",
+    "release_asset_candidates",
+    "live_probe_results",
+    "source_cache_candidate_previews",
+    "evidence_candidate_previews",
+    "review_queue_seed_previews",
+    "connector_health_summaries",
+    "coverage_previews",
+    "scorecard_previews"
+  ],
+  "build_tool_invocation_enabled": false,
+  "candidate_acceptance_enabled": false,
+  "evidence_acceptance_enabled": false,
+  "git_command_invocation_enabled": false,
+  "install_execute_enabled": false,
+  "live_call_allowed_by_default": false,
+  "master_index_mutation_allowed": false,
+  "notes": [
+    "H4 review integration is a wave audit and rehearsal, not promotion."
+  ],
+  "policy_id": "h4_code_source_review_integration_policy",
+  "public_index_mutation_allowed": false,
+  "release_asset_download_enabled": false,
+  "release_identity_acceptance_enabled": false,
+  "repository_clone_enabled": false,
+  "schema_version": "h4_code_source_review_integration_policy.v0",
+  "source_archive_download_enabled": false,
+  "source_cache_persistence_enabled": false,
+  "source_identity_acceptance_enabled": false,
+  "source_to_binary_provenance_acceptance_enabled": false,
+  "wave_id": "H4"
+}

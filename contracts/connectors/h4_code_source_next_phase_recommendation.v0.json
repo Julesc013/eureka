@@ -1,0 +1,22 @@
+{
+  "contract_id": "h4_code_source_next_phase_recommendation.v0",
+  "description": "H4 next-phase recommendation. Preferred expansion is H5 when H4 is coherent; J1, K, L, and deployment remain deferred.",
+  "required_current_values": {},
+  "required_fields": [
+    "recommendation_id",
+    "recommended_next_task",
+    "recommendation_status",
+    "alternatives_considered",
+    "h5_readiness",
+    "j1_deferral",
+    "k_deferral",
+    "l_deferral",
+    "deployment_deferral",
+    "remediation_required",
+    "reason",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "schema_version": "h4_code_source_next_phase_recommendation.v0"
+}

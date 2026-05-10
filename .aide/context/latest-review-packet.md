@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6113 chars, 1529 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5923 chars, 1481 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H4-BUNDLE-03/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H4-BUNDLE-04` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H4-BUNDLE-04/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H5-BUNDLE-01` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_connector_health_summary.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_live_probe_output_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_live_probe_request.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h4_code_source_live_probe_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h4-bundle-03-code-source-live-probes-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_allowed_requests.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_cache_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_endpoint_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_kill_switch_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_no_clone_download_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_rate_limit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h4_code_source_live_probe_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H4_CODE_SOURCE_LIVE_PROBE_MODEL.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 27; see task evidence changed-files report
+- unknown: `contracts/connectors/h4_code_source_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_integration_audit.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_quality_delta_report.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h4_code_source_review_integration_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h4-bundle-04-code-source-review-quality-audit-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_integration_audit_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_next_phase_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_quality_delta_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_review_integration_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_review_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_review_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h4_code_source_review_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/H4_CODE_SOURCE_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/H4_CODE_SOURCE_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/H4_CODE_SOURCE_WAVE_QUALITY_DELTA.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/H4_TO_H5_HANDOFF.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 15; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6912
-- approx_tokens: 1728
+- chars: 6860
+- approx_tokens: 1715
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

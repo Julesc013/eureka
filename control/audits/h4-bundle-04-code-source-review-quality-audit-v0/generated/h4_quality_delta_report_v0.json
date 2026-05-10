@@ -1,0 +1,235 @@
+{
+  "blocked_sources_count": 10,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 10,
+  "evidence_candidate_preview_count": 10,
+  "fixture_sources_count": 10,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_source_coverage",
+    "exhaustive_global_coverage",
+    "source_authenticity_verified",
+    "release_authenticity_verified",
+    "source_to_binary_provenance_verified",
+    "build_reproducibility_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H4 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Repository and release metadata is not authenticity, provenance, build reproducibility, rights, safety, installability, or production coverage proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 10,
+  "notes": [
+    "H4 quality delta is operational evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": true,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "fosshub",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": false,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_git_repository",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": true,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_release_host",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": false,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "github_archive_program",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": true,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "github_releases",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": false,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "github_repository",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": true,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gitlab_releases",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": false,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gitlab_repository",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": false,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "software_heritage_identity",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth, authenticity, provenance, safety, rights, or build proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "release_asset_review_seed_created": true,
+      "release_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "sourceforge",
+      "source_identity_review_seed_created": true,
+      "source_to_binary_relation_review_seed_created": true
+    }
+  ],
+  "product_boundary": {
+    "build_tool_invocation_enabled": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_repository_clone": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "git_command_invocation_enabled": false,
+    "install_execute_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "release_asset_download_enabled": false,
+    "repository_clone_enabled": false,
+    "source_archive_download_enabled": false
+  },
+  "quality_delta_id": "h4.quality_delta.14c289cfc742.v0",
+  "release_asset_candidate_count": 5,
+  "release_identity_candidate_count": 10,
+  "review_seed_count": 55,
+  "schema_version": "h4_code_source_quality_delta_report.v0",
+  "scorecard_update_count": 10,
+  "source_cache_candidate_count": 10,
+  "source_count": 10,
+  "source_identity_candidate_count": 10,
+  "source_to_binary_relation_candidate_count": 10,
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "build_reproducibility_verified": false,
+    "exhaustive_global_coverage": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "production_source_coverage": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "release_authenticity_verified": false,
+    "rights_clearance_claimed": false,
+    "source_authenticity_verified": false,
+    "source_to_binary_provenance_verified": false,
+    "verified_authenticity_claimed": false,
+    "verified_build_reproducibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "warning_count": 1,
+  "wave_id": "H4"
+}
