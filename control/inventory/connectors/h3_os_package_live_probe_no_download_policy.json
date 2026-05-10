@@ -1,0 +1,26 @@
+{
+  "forbidden_current": [
+    "deb downloads",
+    "rpm downloads",
+    "pkg downloads",
+    "ports distfile downloads",
+    "bottle downloads",
+    "formula artifacts",
+    "nix store path downloads",
+    "winget installers",
+    "chocolatey nupkgs",
+    "flatpak downloads",
+    "snap downloads",
+    "source archives",
+    "signatures",
+    "SBOMs",
+    "vulnerability payloads",
+    "package manager invocation",
+    "install or execute"
+  ],
+  "install_execute_enabled": false,
+  "package_downloads_enabled": false,
+  "package_manager_invocation_enabled": false,
+  "policy_id": "h3_os_package_live_probe_no_download_policy",
+  "schema_version": "h3_os_package_live_probe_no_download_policy.v0"
+}

@@ -1,0 +1,123 @@
+{
+  "policy_id": "h3_os_package_live_probe_cache_policy",
+  "schema_version": "h3_os_package_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "debian_snapshot"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "ubuntu_old_releases"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "arch_linux_archive"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "fedora_rpm_metadata"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "freebsd_packages_ports"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "pkgsrc"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "homebrew"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "macports"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "nixpkgs"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "winget"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "chocolatey"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "flathub"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No cache write or source-sync behavior is enabled."
+      ],
+      "no_cache_decision": "not_approved",
+      "source_id": "snapcraft"
+    }
+  ]
+}

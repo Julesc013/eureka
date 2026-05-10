@@ -1,0 +1,98 @@
+{
+  "approval_refs": [
+    "control/inventory/connectors/h3_os_package_live_probe_allowed_requests.json"
+  ],
+  "approved_request_key": "example_package_metadata",
+  "architecture": "x86_64",
+  "artifact_download_requested": false,
+  "connector_family": "package_registry",
+  "container_layer_download_requested": false,
+  "distribution": "MacPorts",
+  "distribution_release_or_channel": "macos-fixture",
+  "dry_run_only": true,
+  "ecosystem": "macports",
+  "endpoint_or_index_class": "port_metadata_lookup_future",
+  "install_execute_requested": false,
+  "limitations": [
+    "Request envelope does not grant live access."
+  ],
+  "live_probe_request_id": "h3.os_package_live_probe_request.macports.example_package_metadata.v0",
+  "live_requested": false,
+  "notes": [
+    "H3 OS package live probes fail closed unless committed source policy approves this exact metadata request."
+  ],
+  "operation_scope": "metadata_only",
+  "output_policy_ref": "control/inventory/connectors/h3_os_package_live_probe_output_policy.json",
+  "package_download_requested": false,
+  "package_manager_invocation_requested": false,
+  "package_name_or_identifier": "fixture-macports",
+  "policy_refs": [
+    "control/inventory/connectors/h3_os_package_live_probe_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_allowed_requests.json",
+    "control/inventory/connectors/h3_os_package_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_rate_limit_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_cache_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_kill_switch_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_output_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_review_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_truth_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_no_download_policy.json",
+    "control/inventory/connectors/h3_os_package_live_probe_no_index_sync_policy.json"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_repository_index_sync": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "install_execute_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "package_download_enabled": false,
+    "package_manager_invocation_enabled": false,
+    "repository_index_sync_enabled": false,
+    "repository_mirror_enabled": false
+  },
+  "repository_index_fetch_requested": false,
+  "repository_mirror_requested": false,
+  "request_shape": {
+    "identifier": {
+      "architecture": "x86_64",
+      "distribution_release": "macos-fixture",
+      "package": "fixture-macports"
+    },
+    "kind": "bounded_metadata_lookup"
+  },
+  "review_policy_ref": "control/inventory/connectors/h3_os_package_live_probe_review_policy.json",
+  "schema_version": "h3_os_package_live_probe_request.v0",
+  "source_archive_download_requested": false,
+  "source_id": "macports",
+  "truth_boundary": {
+    "compatibility_candidate_is_verified_compatibility": false,
+    "compatibility_correctness_claimed": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "os_package_identity_candidate_is_truth": false,
+    "os_platform_compatibility_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "truth_policy_ref": "control/inventory/connectors/h3_os_package_live_probe_truth_policy.json",
+  "version_or_release_identifier": "1.2.3"
+}

@@ -1,0 +1,760 @@
+{
+  "policy_id": "h3_os_package_live_probe_allowed_requests",
+  "schema_version": "h3_os_package_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "debian_snapshot",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "amd64",
+            "distribution_release": "bookworm-fixture",
+            "package": "fixture-debian-snapshot"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "amd64",
+              "distribution_release": "bookworm-fixture",
+              "package": "fixture-debian-snapshot"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "debian_snapshot",
+      "source_label": "Debian snapshot/archive metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "ubuntu_old_releases",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "amd64",
+            "distribution_release": "jammy-fixture",
+            "package": "fixture-ubuntu-old-releases"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "amd64",
+              "distribution_release": "jammy-fixture",
+              "package": "fixture-ubuntu-old-releases"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "ubuntu_old_releases",
+      "source_label": "Ubuntu old-releases / Launchpad package metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "arch_linux_archive",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64",
+            "distribution_release": "rolling-fixture",
+            "package": "fixture-arch-linux-archive"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64",
+              "distribution_release": "rolling-fixture",
+              "package": "fixture-arch-linux-archive"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "arch_linux_archive",
+      "source_label": "Arch Linux Archive metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "fedora_rpm_metadata",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "rpm_metadata_lookup_future",
+          "endpoint_or_index_class": "rpm_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64",
+            "distribution_release": "fedora-fixture",
+            "package": "fixture-fedora-rpm-metadata"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64",
+              "distribution_release": "fedora-fixture",
+              "package": "fixture-fedora-rpm-metadata"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "fedora_rpm_metadata",
+      "source_label": "Fedora/RPM repository metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "freebsd_packages_ports",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "amd64",
+            "distribution_release": "freebsd-fixture",
+            "package": "fixture-freebsd-packages-ports"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "amd64",
+              "distribution_release": "freebsd-fixture",
+              "package": "fixture-freebsd-packages-ports"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "freebsd_packages_ports",
+      "source_label": "FreeBSD packages / ports metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "pkgsrc",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "port_metadata_lookup_future",
+          "endpoint_or_index_class": "port_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64",
+            "distribution_release": "pkgsrc-current-fixture",
+            "package": "fixture-pkgsrc"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64",
+              "distribution_release": "pkgsrc-current-fixture",
+              "package": "fixture-pkgsrc"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "pkgsrc",
+      "source_label": "pkgsrc metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "homebrew",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "formula_metadata_lookup_future",
+          "endpoint_or_index_class": "formula_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "arm64",
+            "distribution_release": "macos-fixture",
+            "package": "fixture-homebrew"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "arm64",
+              "distribution_release": "macos-fixture",
+              "package": "fixture-homebrew"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "homebrew",
+      "source_label": "Homebrew formula/cask metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "macports",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "port_metadata_lookup_future",
+          "endpoint_or_index_class": "port_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64",
+            "distribution_release": "macos-fixture",
+            "package": "fixture-macports"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64",
+              "distribution_release": "macos-fixture",
+              "package": "fixture-macports"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "macports",
+      "source_label": "MacPorts port metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "nixpkgs",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64-linux",
+            "distribution_release": "nixos-fixture",
+            "package": "fixture-nixpkgs"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64-linux",
+              "distribution_release": "nixos-fixture",
+              "package": "fixture-nixpkgs"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "nixpkgs",
+      "source_label": "Nixpkgs / NixOS package metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "winget",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_manifest_metadata_lookup_future",
+          "endpoint_or_index_class": "package_manifest_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x64",
+            "distribution_release": "windows-fixture",
+            "package": "fixture-winget"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x64",
+              "distribution_release": "windows-fixture",
+              "package": "fixture-winget"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "winget",
+      "source_label": "WinGet package metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "chocolatey",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "endpoint_or_index_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x64",
+            "distribution_release": "windows-fixture",
+            "package": "fixture-chocolatey"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x64",
+              "distribution_release": "windows-fixture",
+              "package": "fixture-chocolatey"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "chocolatey",
+      "source_label": "Chocolatey package metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "flathub",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "app_metadata_lookup_future",
+          "endpoint_or_index_class": "app_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "x86_64",
+            "distribution_release": "linux-desktop-fixture",
+            "package": "fixture-flathub"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "x86_64",
+              "distribution_release": "linux-desktop-fixture",
+              "package": "fixture-flathub"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "flathub",
+      "source_label": "Flathub package metadata",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "snapcraft",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "repository_index_fetch_allowed": false,
+      "repository_index_fetch_approved": false,
+      "repository_mirror_approved": false,
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "snap_metadata_lookup_future",
+          "endpoint_or_index_class": "snap_metadata_lookup_future",
+          "identifier_or_query": {
+            "architecture": "amd64",
+            "distribution_release": "linux-fixture",
+            "package": "fixture-snapcraft"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "architecture": "amd64",
+              "distribution_release": "linux-fixture",
+              "package": "fixture-snapcraft"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "snapcraft",
+      "source_label": "Snapcraft package metadata",
+      "source_sync_approved": false
+    }
+  ]
+}

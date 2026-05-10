@@ -1,0 +1,422 @@
+{
+  "policy_id": "h3_os_package_live_probe_endpoint_policy",
+  "schema_version": "h3_os_package_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "debian_snapshot",
+      "source_label": "Debian snapshot/archive metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "deb_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "ubuntu_old_releases",
+      "source_label": "Ubuntu old-releases / Launchpad package metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "arch_linux_archive",
+      "source_label": "Arch Linux Archive metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "rpm_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "rpm_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "rpm_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "rpm_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "fedora_rpm_metadata",
+      "source_label": "Fedora/RPM repository metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "pkg_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "freebsd_packages_ports",
+      "source_label": "FreeBSD packages / ports metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "port_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "pkgsrc",
+      "source_label": "pkgsrc metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "bottle_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "bottle_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "formula_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "bottle_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "homebrew",
+      "source_label": "Homebrew formula/cask metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "port_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "distfile_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "macports",
+      "source_label": "MacPorts port metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "nix_store_path_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "nix_store_path_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "nix_store_path_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "nixpkgs",
+      "source_label": "Nixpkgs / NixOS package metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "installer_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "installer_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_manifest_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "installer_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "winget",
+      "source_label": "WinGet package metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "nupkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "nupkg_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "package_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "nupkg_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "chocolatey",
+      "source_label": "Chocolatey package metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "flatpak_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "flatpak_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "app_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "flatpak_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "flathub",
+      "source_label": "Flathub package metadata"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "allowlisted_endpoint_or_index_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "forbidden_endpoint_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "snap_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "forbidden_endpoint_or_index_classes_current": [
+        "full_repository_index_fetch_forbidden_current",
+        "snap_download_forbidden_current",
+        "repository_mirror_forbidden_current",
+        "package_manager_invocation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint/index classes are not live-approved in H3-BUNDLE-03."
+      ],
+      "planned_endpoint_or_index_classes": [
+        "snap_metadata_lookup_future",
+        "full_repository_index_fetch_forbidden_current",
+        "snap_download_forbidden_current"
+      ],
+      "repository_index_sync_allowed": false,
+      "repository_mirror_allowed": false,
+      "scraping_allowed": false,
+      "source_id": "snapcraft",
+      "source_label": "Snapcraft package metadata"
+    }
+  ]
+}

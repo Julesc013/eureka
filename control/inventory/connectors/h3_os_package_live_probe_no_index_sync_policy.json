@@ -1,0 +1,15 @@
+{
+  "forbidden_current": [
+    "full repository index fetching",
+    "repository mirroring",
+    "archive sync",
+    "package cache creation",
+    "public query fanout",
+    "source cache mutation"
+  ],
+  "policy_id": "h3_os_package_live_probe_no_index_sync_policy",
+  "repository_index_sync_enabled": false,
+  "repository_mirror_enabled": false,
+  "schema_version": "h3_os_package_live_probe_no_index_sync_policy.v0",
+  "source_sync_enabled": false
+}

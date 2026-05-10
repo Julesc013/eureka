@@ -1,0 +1,201 @@
+{
+  "policy_id": "h3_os_package_live_probe_rate_limit_policy",
+  "schema_version": "h3_os_package_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "debian_snapshot",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "ubuntu_old_releases",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "arch_linux_archive",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "fedora_rpm_metadata",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "freebsd_packages_ports",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "pkgsrc",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "homebrew",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "macports",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "nixpkgs",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "winget",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "chocolatey",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "flathub",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "snapcraft",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    }
+  ]
+}

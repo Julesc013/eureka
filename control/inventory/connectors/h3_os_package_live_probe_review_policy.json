@@ -1,0 +1,15 @@
+{
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "policy_id": "h3_os_package_live_probe_review_policy",
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_compatibility_fact_acceptance": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_master_index": true,
+  "review_required_before_package_identity_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_source_cache_persistence": true,
+  "schema_version": "h3_os_package_live_probe_review_policy.v0"
+}

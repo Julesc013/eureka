@@ -1,0 +1,136 @@
+{
+  "policy_id": "h3_os_package_live_probe_kill_switch_policy",
+  "schema_version": "h3_os_package_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_debian_snapshot_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "debian_snapshot"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_ubuntu_old_releases_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "ubuntu_old_releases"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_arch_linux_archive_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "arch_linux_archive"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_fedora_rpm_metadata_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "fedora_rpm_metadata"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_freebsd_packages_ports_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "freebsd_packages_ports"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_pkgsrc_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "pkgsrc"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_homebrew_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "homebrew"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_macports_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "macports"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_nixpkgs_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "nixpkgs"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_winget_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "winget"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_chocolatey_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "chocolatey"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_flathub_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "flathub"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h3_os_package_live_probe_snapcraft_enabled",
+      "limitations": [
+        "Kill switch defaults to blocking live calls."
+      ],
+      "source_id": "snapcraft"
+    }
+  ]
+}

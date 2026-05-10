@@ -1,6 +1,6 @@
 id: H3-BUNDLE-03
 title: OS package archive approved metadata-only live probes
-status: queued
+status: needs_review
 purpose: Prepare approval-gated metadata-only live probe envelopes for H3 OS package archives after fixture normalizers pass.
 allowed_scope_summary: H3 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
 gate: H3-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and repository index fetches/downloads/package-manager invocation/install/execute remain forbidden.
