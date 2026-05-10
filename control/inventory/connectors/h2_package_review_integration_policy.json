@@ -1,0 +1,32 @@
+{
+  "allowed_inputs": [
+    "fixture_replay_result",
+    "normalized_package_record",
+    "package_identity_candidate",
+    "dependency_candidate",
+    "package_file_candidate",
+    "live_probe_result",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary",
+    "coverage_preview",
+    "scorecard_preview"
+  ],
+  "candidate_acceptance_enabled": false,
+  "current_status": "offline_review_preview_only",
+  "evidence_acceptance_enabled": false,
+  "live_call_allowed_by_default": false,
+  "master_index_mutation_allowed": false,
+  "package_identity_acceptance_enabled": false,
+  "policy_id": "h2_package_review_integration_policy.v0",
+  "public_index_mutation_allowed": false,
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_master_index": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_source_cache_persistence": true,
+  "schema_version": "h2_package_review_integration_policy.v0",
+  "source_cache_persistence_enabled": false,
+  "wave_id": "H2"
+}

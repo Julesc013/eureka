@@ -1,0 +1,33 @@
+{
+  "contract_id": "h2_package_connector_wave_postmortem.v0",
+  "description": "H2 connector wave postmortem records lessons and next-phase recommendation without auto-approval.",
+  "required_current_values": {
+    "auto_approves_future_connectors": false
+  },
+  "required_fields": [
+    "postmortem_id",
+    "wave_id",
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "package_identity_gaps",
+    "dependency_mapping_gaps",
+    "file_hash_mapping_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "scorecard_summary",
+    "safety_boundary_assessment",
+    "next_phase_recommendation",
+    "h3_or_j1_k_l_recommendation",
+    "do_not_repeat_risks",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h2_package_connector_wave_postmortem.v0"
+}

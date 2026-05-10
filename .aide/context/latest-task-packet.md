@@ -2,17 +2,17 @@
 
 ## PHASE
 
-H2-BUNDLE-04 - Package registry review integration and quality delta
+H3-BUNDLE-01 - OS package archive source-family policy packs
 
 ## GOAL
 
-Prepare the next Eureka H2 task after H2-BUNDLE-03. This packet is a compact AIDE resumption handoff only; it does not itself authorize code edits or Eureka product behavior changes. A future task prompt must explicitly scope H2-BUNDLE-04 implementation before product paths are edited.
+Prepare the next Eureka H3 task after H2-BUNDLE-04. This packet is a compact AIDE resumption handoff only; it does not itself authorize code edits or Eureka product behavior changes. A future task prompt must explicitly scope H3-BUNDLE-01 implementation before product paths are edited.
 
-H2-BUNDLE-04 should integrate H2 fixture outputs and blocked live-probe outputs into review previews, quality delta, source-pack update previews, and readiness evidence.
+H3-BUNDLE-01 should define OS package archive source-family policy packs after H2 package registry review integration closes.
 
 ## WHY
 
-H2-BUNDLE-03 established fail-closed metadata-only live-probe contracts, policies, wrappers, examples, tests, docs, and audit evidence. All current H2 package live probes are blocked before network use because no source-specific approval is committed. H2-BUNDLE-02 fixture-equivalent outputs remain available for review integration.
+H2-BUNDLE-04 integrated package-registry fixture outputs and blocked live-probe outputs into review seeds, quality delta, postmortem, integration audit, and a next-phase recommendation. H2 live probes remain blocked by missing source-specific operator approval, and no live evidence is inferred.
 
 ## CONTEXT_REFS
 
@@ -23,8 +23,10 @@ H2-BUNDLE-03 established fail-closed metadata-only live-probe contracts, policie
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-review-packet.md`
-- `.aide/queue/H2-BUNDLE-03/task.yaml`
 - `.aide/queue/H2-BUNDLE-04/task.yaml`
+- `.aide/queue/H3-BUNDLE-01/task.yaml`
+- `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
+- `control/audits/h2-bundle-04-package-review-quality-audit-v0/`
 - `control/audits/h2-bundle-03-package-live-probes-v0/`
 - `control/audits/h2-bundle-02-package-fixture-runtime-v0/`
 - `scripts/check_architecture_boundaries.py`
@@ -36,18 +38,18 @@ H2-BUNDLE-03 established fail-closed metadata-only live-probe contracts, policie
 
 ## IMPLEMENTATION
 
-- Do not start H2-BUNDLE-04 implementation from this packet alone.
-- Resume from repo-local evidence, especially `.aide/queue/` and `control/audits/h2-bundle-03-package-live-probes-v0/`.
-- Treat H2-BUNDLE-03 outputs as blocked/preflight evidence unless a future committed approval artifact exists.
+- Do not start H3-BUNDLE-01 implementation from this packet alone.
+- Resume from repo-local evidence, especially `.aide/queue/` and `control/audits/h2-bundle-04-package-review-quality-audit-v0/`.
+- Treat H2 live-probe outputs as blocked/preflight evidence unless a future committed approval artifact exists.
 - Preserve no-download, no-install, no-execute, no-source-sync, no-index-mutation, and no-truth-acceptance boundaries.
 - This handoff is AIDE operating metadata and should proceed without changing Eureka product behavior.
 
 ## ACCEPTANCE
 
-- Latest handoff points to H2-BUNDLE-04.
-- H2-BUNDLE-03 evidence remains reviewable.
+- Latest handoff points to H3-BUNDLE-01.
+- H2-BUNDLE-04 evidence remains reviewable.
 - AIDE doctor, validate, test, selftest, eval run, and verify are available as local validation lanes.
-- No live source calls, package downloads, source sync, public query fanout, public/master index mutation, or product behavior changes are authorized by this handoff.
+- No live source calls, package downloads, package-manager invocation, source sync, public query fanout, public/master index mutation, truth acceptance, or product behavior changes are authorized by this handoff.
 
 ## VALIDATION
 
@@ -62,21 +64,22 @@ H2-BUNDLE-03 established fail-closed metadata-only live-probe contracts, policie
 ## EVIDENCE
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/H2-BUNDLE-04/task.yaml`
-- `control/audits/h2-bundle-03-package-live-probes-v0/h2_bundle_03_report.json`
-- `control/audits/h2-bundle-03-package-live-probes-v0/validation.md`
-- `control/audits/h2-bundle-03-package-live-probes-v0/live_probe_execution_report.md`
-- `control/audits/h2-bundle-02-package-fixture-runtime-v0/h2_bundle_02_report.json`
+- `.aide/queue/H3-BUNDLE-01/task.yaml`
+- `HUMAN-OBS-REVIEW-01` parallel side-lane remains preserved for human observation review.
+- `control/audits/h2-bundle-04-package-review-quality-audit-v0/h2_bundle_04_report.json`
+- `control/audits/h2-bundle-04-package-review-quality-audit-v0/validation.md`
+- `control/audits/h2-bundle-04-package-review-quality-audit-v0/h2_exit_gate_decision.md`
+- `control/audits/h2-bundle-04-package-review-quality-audit-v0/next_phase_recommendation.md`
 
 ## NON_GOALS
 
 - Do not rely on full chat history or pasted whole-repository contents.
-- No downloads, installs, execution, scraping, crawling, source sync, public query fanout, public/master index mutation, evidence acceptance, candidate acceptance, source truth acceptance, public truth creation, public launch, deployment, or production-readiness claims.
+- No downloads, installs, execution, scraping, crawling, source sync, public query fanout, public/master index mutation, evidence acceptance, candidate acceptance, source truth acceptance, package identity truth acceptance, dependency correctness acceptance, public truth creation, public launch, deployment, or production-readiness claims.
 - No live probe execution without explicit committed source approval.
 
 ## OUTPUT_SCHEMA
 
-Future H2-BUNDLE-04 responses should preserve status, summary, commits, changed paths, validation, review-integration scope, blocked/live probe status, no-download boundary, risks, and next task.
+Future H3-BUNDLE-01 responses should preserve status, summary, commits, changed paths, validation, H3 policy-pack scope, no-download boundary, risks, and next task.
 
 ## TOKEN_ESTIMATE
 

@@ -1,0 +1,40 @@
+{
+  "contract_id": "h2_package_review_integration_result.v0",
+  "description": "Offline H2 package review integration result. Review seeds and previews are not review decisions, acceptance, downloads, or index mutation.",
+  "required_current_values": {
+    "accepts_candidate_truth": false,
+    "accepts_dependency_correctness": false,
+    "accepts_evidence_truth": false,
+    "accepts_package_identity_truth": false,
+    "accepts_source_truth": false,
+    "enables_install_execute": false,
+    "enables_package_downloads": false,
+    "mutates_master_index": false,
+    "mutates_public_index": false
+  },
+  "required_fields": [
+    "schema_version",
+    "review_integration_result_id",
+    "wave_id",
+    "sources",
+    "input_refs",
+    "used_fixture_outputs",
+    "used_live_probe_outputs",
+    "package_identity_review_seeds",
+    "dependency_candidate_review_seeds",
+    "package_file_candidate_review_seeds",
+    "source_cache_review_seeds",
+    "evidence_candidate_review_seeds",
+    "candidate_promotion_previews",
+    "coverage_update_previews",
+    "scorecard_updates",
+    "source_pack_update_previews",
+    "blocked_sources",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h2_package_review_integration_result.v0"
+}

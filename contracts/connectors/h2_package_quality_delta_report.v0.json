@@ -1,0 +1,42 @@
+{
+  "contract_id": "h2_package_quality_delta_report.v0",
+  "description": "H2 quality delta is operational evidence only and cannot claim production quality, coverage, rights, safety, installability, or dependency correctness.",
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_registry_coverage",
+    "exhaustive_global_coverage",
+    "package_installability_verified",
+    "dependency_correctness_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "automatic_future_connector_approval"
+  ],
+  "required_fields": [
+    "quality_delta_id",
+    "wave_id",
+    "comparison_scope",
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "package_identity_candidate_count",
+    "dependency_candidate_count",
+    "package_file_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "known_gap_count",
+    "blocker_count",
+    "per_source_deltas",
+    "limitations",
+    "forbidden_claims",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h2_package_quality_delta_report.v0"
+}

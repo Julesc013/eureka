@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-10
 repo: julesc013/eureka
-current_recommended_task: H2-BUNDLE-04
+current_recommended_task: H3-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -423,9 +423,19 @@ entries:
 
 - id: H2-BUNDLE-04
   title: Package registry review integration and quality delta
-  status: queued
+  status: needs_review
   purpose: Integrate H2 fixture and blocked live-probe outputs into review previews, quality delta, source-pack update previews, and readiness evidence.
   allowed_scope_summary: H2 review/quality/audit contracts, connector policies, runtime helpers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
   gate: H2-BUNDLE-03 passes or is blocked only by missing source-specific approval; no new live calls by default, downloads, source sync, index mutation, truth acceptance, or product behavior changes.
   task: .aide/queue/H2-BUNDLE-04/task.yaml
   recommended_after: H2-BUNDLE-03
+
+
+- id: H3-BUNDLE-01
+  title: OS package archive source-family policy packs
+  status: queued
+  purpose: Extend Source OS policy packs to OS package archives after H2 package registry review closes.
+  allowed_scope_summary: H3 OS package archive policy packs, source records, docs, scripts, tests, audit evidence, and AIDE metadata only.
+  gate: H2-BUNDLE-04 passes or passes with warnings; no downloads, installs, execution, source sync, live calls, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H3-BUNDLE-01/task.yaml
+  recommended_after: H2-BUNDLE-04

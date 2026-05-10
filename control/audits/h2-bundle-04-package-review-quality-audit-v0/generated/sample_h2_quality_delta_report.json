@@ -1,0 +1,167 @@
+{
+  "blocked_sources_count": 8,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 8,
+  "dependency_candidate_count": 8,
+  "evidence_candidate_preview_count": 8,
+  "fixture_sources_count": 8,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_registry_coverage",
+    "exhaustive_global_coverage",
+    "package_installability_verified",
+    "dependency_correctness_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H2 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Package metadata is not installability, safety, rights, or dependency correctness proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 8,
+  "notes": [
+    "H2 quality delta is operational evidence only."
+  ],
+  "package_file_candidate_count": 8,
+  "package_identity_candidate_count": 8,
+  "per_source_deltas": [
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "conda_forge"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "cpan"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "cran"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "crates_io"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "maven_central"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "nuget"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "oci_registry_metadata"
+    },
+    {
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted truth."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "source_cache_review_seed_created": true,
+      "source_id": "rubygems"
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h2.quality_delta.89f5dc492af4.v0",
+  "review_seed_count": 40,
+  "schema_version": "h2_package_quality_delta_report.v0",
+  "scorecard_update_count": 8,
+  "source_cache_candidate_count": 8,
+  "source_count": 8,
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "dependency_correctness_verified": false,
+    "exhaustive_global_coverage": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "package_installability_verified": false,
+    "production_readiness_claimed": false,
+    "production_registry_coverage": false,
+    "production_search_quality": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "warning_count": 1,
+  "wave_id": "H2"
+}

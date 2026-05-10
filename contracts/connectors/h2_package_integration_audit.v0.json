@@ -1,0 +1,42 @@
+{
+  "contract_id": "h2_package_integration_audit.v0",
+  "description": "H2 integration audit closes the package-registry wave and routes to H3 or remediation without accepting truth.",
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_H3_BUNDLE_01",
+    "READY_FOR_J1_POLICY_FUTURE",
+    "READY_FOR_K0_FUTURE",
+    "READY_FOR_L0_FUTURE",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "required_fields": [
+    "audit_id",
+    "wave_id",
+    "audited_sources",
+    "audited_tasks",
+    "artifact_inventory",
+    "validation_summary",
+    "source_policy_summary",
+    "fixture_runtime_summary",
+    "live_probe_summary",
+    "review_integration_summary",
+    "quality_delta_summary",
+    "postmortem_summary",
+    "blockers",
+    "warnings",
+    "h2_exit_gate",
+    "next_phase_recommendation",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h2_package_integration_audit.v0"
+}
