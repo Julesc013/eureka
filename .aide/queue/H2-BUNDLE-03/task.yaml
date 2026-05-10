@@ -1,0 +1,8 @@
+id: H2-BUNDLE-03
+title: Package registry approved metadata-only live probes
+status: queued
+purpose: Prepare approval-gated metadata-only live probe envelopes for H2 package registries after fixture normalizers pass.
+allowed_scope_summary: H2 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
+gate: H2-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and downloads/install/execute remain forbidden.
+recommended_after: H2-BUNDLE-02
+

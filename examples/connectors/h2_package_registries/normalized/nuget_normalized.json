@@ -1,0 +1,432 @@
+{
+  "advisory_or_vulnerability_refs": [],
+  "connector_family": "package_registry",
+  "dependency_candidate_preview": [
+    {
+      "dependency_candidate_id": "h2.dependency_candidate.nuget.example_core.0.v0",
+      "dependency_group_or_scope": null,
+      "dependency_kind": "runtime",
+      "dependency_name": "Example.Core",
+      "dependency_version_range": "[2.0.0,3.0.0)",
+      "limitations": [
+        "Dependency candidate is a source observation and does not prove dependency correctness."
+      ],
+      "optional": false,
+      "package_identity_candidate_ref": "h2.identity_candidate.nuget.example_utility_2_0_0.v0",
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "scraping_made": false
+      },
+      "schema_version": "h2_package_dependency_candidate.v0",
+      "source_id": "nuget",
+      "source_metadata_ref": "Example.Utility/2.0.0",
+      "truth_boundary": {
+        "accepted_candidate_truth": false,
+        "dependency_candidate_is_correctness_proof": false,
+        "dependency_candidate_proves_correctness": false,
+        "dependency_correctness_claimed": false,
+        "master_index_mutated": false,
+        "public_index_mutated": false
+      }
+    }
+  ],
+  "dependency_summary": {
+    "dependencies": [
+      {
+        "dependency_candidate_proves_correctness": false,
+        "dependency_group_or_scope": "",
+        "dependency_kind": "runtime",
+        "dependency_name": "Example.Core",
+        "dependency_version_range": "[2.0.0,3.0.0)",
+        "optional": false
+      }
+    ],
+    "dependency_count": 1
+  },
+  "description_summary": "Synthetic NuGet Metadata fixture for package metadata normalization.",
+  "distribution_file_summary": {
+    "file_count": 1,
+    "files": [
+      {
+        "download_allowed_current": false,
+        "file_hashes": {
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "file_kind": "nupkg",
+        "file_name": "Example.Utility.2.0.0.nupkg",
+        "file_size": 23456,
+        "payload_available_current": false,
+        "source_locator": "fixture:h2:nuget:file-metadata:typical"
+      }
+    ]
+  },
+  "ecosystem": "nuget",
+  "evidence_candidate_preview": {
+    "accepted_evidence": false,
+    "candidate_count": 5,
+    "candidates": [
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "package_name_candidate",
+        "claim_value": "Example.Utility",
+        "limitations": [
+          "Package name is a source observation, not accepted identity truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "version_candidate",
+        "claim_value": "2.0.0",
+        "limitations": [
+          "Version is a source observation, not accepted release truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "purl_candidate",
+        "claim_value": "pkg:nuget/Example.Utility@2.0.0",
+        "limitations": [
+          "PURL is a candidate mapping, not accepted identity truth.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "dependency_count_candidate",
+        "claim_value": 1,
+        "limitations": [
+          "Dependency metadata does not prove dependency correctness.",
+          "Requires human review before downstream use."
+        ]
+      },
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "claim_status": "candidate_preview",
+        "claim_type": "file_metadata_count_candidate",
+        "claim_value": 1,
+        "limitations": [
+          "File metadata does not grant download permission.",
+          "Requires human review before downstream use."
+        ]
+      }
+    ],
+    "connector_family": "package_registry",
+    "evidence_ledger_runtime_mutated": false,
+    "evidence_ledger_write_enabled": false,
+    "evidence_preview_id": "h2.evidence_candidate_preview.nuget.example_utility_2_0_0.v0",
+    "notes": [
+      "Evidence preview only; no evidence ledger runtime write occurred."
+    ],
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "scraping_made": false
+    },
+    "schema_version": "h2_package_evidence_candidate_preview.v0",
+    "source_id": "nuget",
+    "source_locator": "fixture:h2:nuget:typical",
+    "source_native_id": "Example.Utility/2.0.0",
+    "truth_boundary": {
+      "dependency_candidate_is_correctness_proof": false,
+      "evidence_preview_is_accepted_evidence": false,
+      "file_hash_candidate_is_malware_safety": false,
+      "malware_safety_claimed": false,
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "package_identity_candidate_is_truth": false,
+      "public_index_mutated": false,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    }
+  },
+  "file_candidate_preview": [
+    {
+      "download_allowed_current": false,
+      "file_candidate_id": "h2.file_candidate.nuget.example_utility_2_0_0_nupkg.0.v0",
+      "file_hashes": {
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "file_kind": "nupkg",
+      "file_name": "Example.Utility.2.0.0.nupkg",
+      "file_size": 23456,
+      "limitations": [
+        "File metadata candidate is not package download permission.",
+        "Hash metadata candidate is not malware safety."
+      ],
+      "package_identity_candidate_ref": "h2.identity_candidate.nuget.example_utility_2_0_0.v0",
+      "payload_available_current": false,
+      "product_boundary": {
+        "api_calls_made": false,
+        "changed_public_search_behavior": false,
+        "downloads_made": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_hosting": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "mutated_master_index": false,
+        "mutated_public_index": false,
+        "network_calls_made": false,
+        "package_manager_invoked": false,
+        "scraping_made": false
+      },
+      "schema_version": "h2_package_file_candidate.v0",
+      "source_id": "nuget",
+      "source_locator": "fixture:h2:nuget:file-metadata:typical",
+      "truth_boundary": {
+        "download_allowed_current": false,
+        "file_hash_candidate_is_malware_safety": false,
+        "malware_safety_claimed": false,
+        "master_index_mutated": false,
+        "payload_available_current": false,
+        "public_index_mutated": false,
+        "verified_installability_claimed": false
+      }
+    }
+  ],
+  "hash_metadata": {
+    "package_hash_proves_malware_safety": false,
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "license_metadata": {
+    "declared_licenses": [
+      "Example-License"
+    ],
+    "license_metadata_is_rights_clearance": false
+  },
+  "maintainer_or_owner_metadata": [
+    {
+      "identity_verified": false,
+      "name": "fixture-maintainer"
+    }
+  ],
+  "namespace_or_scope": null,
+  "normalized_record_id": "h2.normalized.nuget.example_utility_2_0_0.v0",
+  "notes": [
+    "Normalized from a committed H2 public-safe fixture.",
+    "Fixture runtime proves parsing only and grants no live access, download, install, or execution permission."
+  ],
+  "package_identity_candidate": {
+    "confidence_or_uncertainty": "candidate_from_committed_fixture_with_review_required",
+    "ecosystem": "nuget",
+    "identity_candidate_id": "h2.identity_candidate.nuget.example_utility_2_0_0.v0",
+    "limitations": [
+      "Package identity candidate is not accepted identity truth.",
+      "PURL candidate is not accepted identity truth.",
+      "Registry metadata does not prove installability or endorsement."
+    ],
+    "missing_fields": [],
+    "namespace_or_scope": null,
+    "package_name": "Example.Utility",
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "scraping_made": false
+    },
+    "purl_candidate": "pkg:nuget/Example.Utility@2.0.0",
+    "schema_version": "h2_package_identity_candidate.v0",
+    "source_id": "nuget",
+    "source_native_id": "Example.Utility/2.0.0",
+    "supporting_fields": [
+      "ecosystem",
+      "package_name",
+      "namespace_or_scope",
+      "version",
+      "source_native_id",
+      "purl_candidate"
+    ],
+    "truth_boundary": {
+      "identity_candidate_is_accepted_identity": false,
+      "master_index_mutated": false,
+      "package_identity_candidate_is_truth": false,
+      "package_metadata_is_identity_truth": false,
+      "public_index_mutated": false,
+      "purl_candidate_is_accepted_identity": false,
+      "purl_candidate_is_truth": false,
+      "registry_metadata_is_installability_verification": false
+    },
+    "version": "2.0.0"
+  },
+  "package_name": "Example.Utility",
+  "platform_or_environment_markers": [
+    "dotnet"
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "scraping_made": false
+  },
+  "project_urls": [
+    "fixture:project:nuget:Example.Utility"
+  ],
+  "purl_candidate": "pkg:nuget/Example.Utility@2.0.0",
+  "release_id": "Example.Utility/2.0.0",
+  "repository_urls": [
+    "fixture:repo:nuget:Example.Utility"
+  ],
+  "schema_version": "h2_package_normalized_record.v0",
+  "source_cache_candidate_preview": {
+    "accepted_source_truth": false,
+    "candidate_id": "h2.source_cache_candidate.nuget.example_utility_2_0_0.v0",
+    "connector_family": "package_registry",
+    "mapping_status": "preview_only_fixture",
+    "notes": [
+      "Source-cache preview only; no source-cache runtime write occurred."
+    ],
+    "product_boundary": {
+      "api_calls_made": false,
+      "changed_public_search_behavior": false,
+      "downloads_made": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_hosting": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false,
+      "network_calls_made": false,
+      "package_manager_invoked": false,
+      "scraping_made": false
+    },
+    "schema_version": "h2_package_source_cache_candidate_preview.v0",
+    "source_cache_runtime_mutated": false,
+    "source_cache_write_enabled": false,
+    "source_id": "nuget",
+    "source_limitations": [
+      "synthetic public-safe fixture",
+      "fixture-only package registry parsing evidence"
+    ],
+    "source_locator": "fixture:h2:nuget:typical",
+    "source_metadata_summary": {
+      "ecosystem": "nuget",
+      "namespace_or_scope": null,
+      "package_name": "Example.Utility",
+      "purl_candidate": "pkg:nuget/Example.Utility@2.0.0",
+      "release_id": "Example.Utility/2.0.0",
+      "version": "2.0.0"
+    },
+    "source_native_id": "Example.Utility/2.0.0",
+    "truth_boundary": {
+      "master_index_mutated": false,
+      "normalized_record_is_public_truth": false,
+      "package_identity_candidate_is_truth": false,
+      "public_index_mutated": false,
+      "source_cache_preview_is_accepted_source": false
+    }
+  },
+  "source_id": "nuget",
+  "source_limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only package registry parsing evidence"
+  ],
+  "source_locator": "fixture:h2:nuget:typical",
+  "source_metadata": {
+    "fixture_shape": "typical",
+    "source_label": "NuGet Metadata"
+  },
+  "source_native_id": "Example.Utility/2.0.0",
+  "title": "Example.Utility 2.0.0",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_source_truth": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "registry_metadata_is_installability_verification": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "version": "2.0.0"
+}

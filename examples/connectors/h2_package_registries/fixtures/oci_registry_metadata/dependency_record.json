@@ -1,0 +1,136 @@
+{
+  "connector_family": "package_registry",
+  "expected_normalized_ref": "examples/connectors/h2_package_registries/normalized/oci_registry_metadata_normalized.json",
+  "external_api_used": false,
+  "fixture_id": "h2.fixture.oci_registry_metadata.dependency.v0",
+  "fixture_kind": "dependency",
+  "fixture_payload": {
+    "dependencies": [
+      {
+        "dependency_candidate_proves_correctness": false,
+        "dependency_group_or_scope": "example-org",
+        "dependency_kind": "base_image_reference",
+        "dependency_name": "base-image-metadata",
+        "dependency_version_range": "fixture-tag",
+        "optional": false
+      },
+      {
+        "dependency_candidate_proves_correctness": false,
+        "dependency_group_or_scope": "example-org",
+        "dependency_kind": "optional",
+        "dependency_name": "base-image-metadata-optional",
+        "dependency_version_range": "fixture-range",
+        "optional": true
+      }
+    ],
+    "description_summary": "Synthetic OCI Registry Metadata fixture for package metadata normalization.",
+    "distribution_files": [
+      {
+        "download_allowed_current": false,
+        "file_hashes": {
+          "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+        },
+        "file_kind": "oci_manifest_metadata",
+        "file_name": "manifest-list.json",
+        "file_size": 89012,
+        "payload_available_current": false,
+        "source_locator": "fixture:h2:oci_registry_metadata:file-metadata:dependency"
+      }
+    ],
+    "ecosystem": "oci",
+    "hash_metadata": {
+      "package_hash_proves_malware_safety": false,
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+    },
+    "license_metadata": {
+      "declared_licenses": [
+        "Example-License"
+      ],
+      "license_metadata_is_rights_clearance": false
+    },
+    "maintainer_or_owner_metadata": [
+      {
+        "identity_verified": false,
+        "name": "fixture-maintainer"
+      }
+    ],
+    "namespace_or_scope": "example-org",
+    "package_name": "example-image",
+    "platform_or_environment_markers": [
+      "linux/amd64",
+      "linux/arm64"
+    ],
+    "project_urls": [
+      "fixture:project:oci_registry_metadata:example-image"
+    ],
+    "purl_candidate": "pkg:oci/example-org/example-image@sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "release_id": "example-org/example-image@sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "repository_urls": [
+      "fixture:repo:oci_registry_metadata:example-image"
+    ],
+    "source_locator": "fixture:h2:oci_registry_metadata:dependency",
+    "source_metadata": {
+      "fixture_shape": "dependency",
+      "source_label": "OCI Registry Metadata"
+    },
+    "source_native_id": "example-org/example-image@sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "title": "example-image sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "version": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "fixture_public_safe": true,
+  "fixture_status": "committed_fixture",
+  "limitations": [
+    "synthetic public-safe fixture",
+    "fixture-only package registry parsing evidence"
+  ],
+  "live_call_used": false,
+  "network_used": false,
+  "notes": [
+    "No live registry access, API call, package download, package-manager invocation, install, or execution occurred."
+  ],
+  "package_manager_invoked": false,
+  "package_payload_included": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "scraping_made": false
+  },
+  "schema_version": "h2_package_fixture.v0",
+  "source_id": "oci_registry_metadata",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_truth": false,
+    "accepted_source_truth": false,
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "registry_metadata_is_installability_verification": false,
+    "rights_clearance_claimed": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_installability_claimed": false
+  }
+}

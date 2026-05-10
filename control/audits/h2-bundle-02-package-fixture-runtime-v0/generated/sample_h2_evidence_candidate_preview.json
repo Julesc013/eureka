@@ -1,0 +1,104 @@
+{
+  "accepted_evidence": false,
+  "candidate_count": 5,
+  "candidates": [
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "package_name_candidate",
+      "claim_value": "example-crate",
+      "limitations": [
+        "Package name is a source observation, not accepted identity truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "version_candidate",
+      "claim_value": "0.3.0",
+      "limitations": [
+        "Version is a source observation, not accepted release truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "purl_candidate",
+      "claim_value": "pkg:cargo/example-crate@0.3.0",
+      "limitations": [
+        "PURL is a candidate mapping, not accepted identity truth.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "dependency_count_candidate",
+      "claim_value": 1,
+      "limitations": [
+        "Dependency metadata does not prove dependency correctness.",
+        "Requires human review before downstream use."
+      ]
+    },
+    {
+      "accepted_as_evidence": false,
+      "accepted_as_public_truth": false,
+      "claim_status": "candidate_preview",
+      "claim_type": "file_metadata_count_candidate",
+      "claim_value": 1,
+      "limitations": [
+        "File metadata does not grant download permission.",
+        "Requires human review before downstream use."
+      ]
+    }
+  ],
+  "connector_family": "package_registry",
+  "evidence_ledger_runtime_mutated": false,
+  "evidence_ledger_write_enabled": false,
+  "evidence_preview_id": "h2.evidence_candidate_preview.crates_io.example_crate_0_3_0.v0",
+  "notes": [
+    "Evidence preview only; no evidence ledger runtime write occurred."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "scraping_made": false
+  },
+  "schema_version": "h2_package_evidence_candidate_preview.v0",
+  "source_id": "crates_io",
+  "source_locator": "fixture:h2:crates_io:typical",
+  "source_native_id": "example-crate/0.3.0",
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "verified_installability_claimed": false
+  }
+}

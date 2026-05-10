@@ -1,0 +1,56 @@
+{
+  "confidence_or_uncertainty": "candidate_from_committed_fixture_with_review_required",
+  "ecosystem": "cargo",
+  "identity_candidate_id": "h2.identity_candidate.crates_io.example_crate_0_3_0.v0",
+  "limitations": [
+    "Package identity candidate is not accepted identity truth.",
+    "PURL candidate is not accepted identity truth.",
+    "Registry metadata does not prove installability or endorsement."
+  ],
+  "missing_fields": [],
+  "namespace_or_scope": null,
+  "package_name": "example-crate",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "downloads_made": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "package_manager_invoked": false,
+    "scraping_made": false
+  },
+  "purl_candidate": "pkg:cargo/example-crate@blocked",
+  "schema_version": "h2_package_identity_candidate.v0",
+  "source_id": "crates_io",
+  "source_native_id": "example-crate/0.3.0",
+  "supporting_fields": [
+    "ecosystem",
+    "package_name",
+    "namespace_or_scope",
+    "version",
+    "source_native_id",
+    "purl_candidate"
+  ],
+  "truth_boundary": {
+    "identity_candidate_is_accepted_identity": false,
+    "master_index_mutated": false,
+    "package_identity_candidate_is_truth": false,
+    "package_metadata_is_identity_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_accepted_identity": false,
+    "purl_candidate_is_truth": false,
+    "registry_metadata_is_installability_verification": false
+  },
+  "version": "0.3.0"
+}
