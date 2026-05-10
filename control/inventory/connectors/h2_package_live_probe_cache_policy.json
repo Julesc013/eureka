@@ -1,0 +1,78 @@
+{
+  "policy_id": "h2_package_live_probe_cache_policy",
+  "schema_version": "h2_package_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "maven_central"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "nuget"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "crates_io"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "rubygems"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "cpan"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "cran"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "conda_forge"
+    },
+    {
+      "cache_ttl": "not_approved",
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "No persistence occurs in this bundle."
+      ],
+      "no_cache_decision": "not_required_documented",
+      "source_id": "oci_registry_metadata"
+    }
+  ]
+}

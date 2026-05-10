@@ -1,0 +1,24 @@
+{
+  "artifact_downloads_enabled": false,
+  "container_layer_pulls_enabled": false,
+  "forbidden_current": [
+    "jar downloads",
+    "nupkg downloads",
+    "crate downloads",
+    "gem downloads",
+    "CPAN tarball downloads",
+    "CRAN tarball downloads",
+    "conda package downloads",
+    "OCI manifest/layer pulls",
+    "source archive downloads",
+    "package manager invocation",
+    "install",
+    "execute"
+  ],
+  "install_execute_enabled": false,
+  "package_downloads_enabled": false,
+  "package_manager_invocation_enabled": false,
+  "policy_id": "h2_package_live_probe_no_download_policy",
+  "schema_version": "h2_package_live_probe_no_download_policy.v0",
+  "source_archive_downloads_enabled": false
+}

@@ -1,0 +1,150 @@
+{
+  "added_contracts": [
+    "contracts/connectors/h2_package_live_probe_request.v0.json",
+    "contracts/connectors/h2_package_live_probe_result.v0.json",
+    "contracts/connectors/h2_package_live_probe_output_bundle.v0.json",
+    "contracts/connectors/h2_package_connector_health_summary.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/H2_PACKAGE_LIVE_PROBE.md",
+    "docs/reference/H2_PACKAGE_LIVE_PROBE_RESULT.md",
+    "docs/reference/H2_PACKAGE_CONNECTOR_HEALTH_SUMMARY.md",
+    "docs/architecture/H2_PACKAGE_LIVE_PROBE_MODEL.md",
+    "docs/operations/H2_PACKAGE_LIVE_PROBE_APPROVAL_GATES.md",
+    "docs/operations/H2_PACKAGE_LIVE_PROBE_REVIEW.md",
+    "docs/operations/H2_PACKAGE_LIVE_PROBE_BLOCKED_MODE.md",
+    "docs/operations/H2_PACKAGE_LIVE_PROBE_NO_DOWNLOAD_POLICY.md"
+  ],
+  "added_examples": [
+    "examples/connectors/h2_package_registries/live_probe/",
+    "examples/connectors/h2_package_registries/live_probe_results/",
+    "examples/connectors/h2_package_registries/live_probe_outputs/"
+  ],
+  "added_inventories": [
+    "control/inventory/connectors/h2_package_live_probe_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_allowed_requests.json",
+    "control/inventory/connectors/h2_package_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_rate_limit_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_cache_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_kill_switch_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_output_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_path_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_review_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_truth_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_no_download_policy.json"
+  ],
+  "added_runtime_modules": [
+    "runtime/connectors/h2_package_registries/live_probe_common.py",
+    "runtime/connectors/h2_package_registries/live_probe_maven_central.py",
+    "runtime/connectors/h2_package_registries/live_probe_nuget.py",
+    "runtime/connectors/h2_package_registries/live_probe_crates_io.py",
+    "runtime/connectors/h2_package_registries/live_probe_rubygems.py",
+    "runtime/connectors/h2_package_registries/live_probe_cpan.py",
+    "runtime/connectors/h2_package_registries/live_probe_cran.py",
+    "runtime/connectors/h2_package_registries/live_probe_conda_forge.py",
+    "runtime/connectors/h2_package_registries/live_probe_oci_registry_metadata.py"
+  ],
+  "added_scripts": [
+    "scripts/run_h2_package_live_probe.py",
+    "scripts/validate_h2_package_live_probe.py",
+    "scripts/summarize_h2_package_live_probe_outputs.py"
+  ],
+  "added_tests": [
+    "tests/connectors/test_h2_package_live_probe.py",
+    "tests/operations/test_h2_package_live_probe_scripts.py"
+  ],
+  "live_probe_results": {
+    "attempted_sources": [],
+    "blocked_sources": [
+      "maven_central",
+      "nuget",
+      "crates_io",
+      "rubygems",
+      "cpan",
+      "cran",
+      "conda_forge",
+      "oci_registry_metadata"
+    ],
+    "completed_sources": [],
+    "network_used": false,
+    "request_count_total": 0
+  },
+  "live_probe_scope": {
+    "bounded_metadata_only": true,
+    "default_offline_preflight": true,
+    "install_execute_enabled": false,
+    "live_call_requires_committed_approval": true,
+    "live_call_requires_explicit_flag": true,
+    "package_download_enabled": false,
+    "package_manager_invocation_enabled": false,
+    "public_query_fanout_enabled": false,
+    "source_sync_enabled": false
+  },
+  "next_task": "H2-BUNDLE-04 - Package registry review integration and quality delta",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "purpose": "package_registry_bounded_metadata_live_probes",
+  "schema_version": "h2_bundle_03_report.v0",
+  "sources": [
+    "maven_central",
+    "nuget",
+    "crates_io",
+    "rubygems",
+    "cpan",
+    "cran",
+    "conda_forge",
+    "oci_registry_metadata"
+  ],
+  "status": "pass_with_warnings",
+  "task": "H2-BUNDLE-03",
+  "track": "H2",
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "aide_adapter_validate": "pass",
+    "aide_doctor": "pass",
+    "aide_eval_list": "pass",
+    "aide_eval_run": "pass_14_of_14",
+    "aide_review_pack": "pass",
+    "aide_selftest": "pass",
+    "aide_test": "pass",
+    "aide_validate": "pass",
+    "aide_verify": "warn_only_diff_scope_after_next_task_handoff_0_errors",
+    "architecture_boundaries": "pass",
+    "existing_h2_h1_h0_core_validators": "pass",
+    "focused_h2_live_probe_validator": "pass",
+    "full_unittest_discover": "pass_2948_tests",
+    "git_diff_check": "pass",
+    "h2_live_probe_cli_check": "pass_blocked_offline_no_network",
+    "h2_live_probe_script_tests": "pass_9_tests",
+    "h2_live_probe_summary": "pass",
+    "h2_live_probe_tests": "pass_19_tests",
+    "json_tool": "pass",
+    "network_used": "false"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "policy_id": "h2_package_live_probe_endpoint_policy",
+  "schema_version": "h2_package_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "jar_download_forbidden_current",
+        "source_archive_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "package_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "maven_central"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "nupkg_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "package_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "nuget"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "crate_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "crate_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "crates_io"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "gem_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "gem_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "rubygems"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "tarball_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "distribution_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "cpan"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "package_tarball_download_forbidden_current",
+        "archive_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "package_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "cran"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "conda_package_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "feedstock_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "conda_forge"
+    },
+    {
+      "allowlisted_endpoint_classes_current": [],
+      "arbitrary_url_fetch_allowed": false,
+      "broad_search_allowed": false,
+      "crawling_allowed": false,
+      "decision_status": "not_approved_for_live_access",
+      "forbidden_endpoint_classes_current": [
+        "manifest_download_forbidden_current",
+        "layer_pull_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are planned for approval review only."
+      ],
+      "planned_endpoint_classes": [
+        "registry_metadata_lookup_future"
+      ],
+      "scraping_allowed": false,
+      "source_id": "oci_registry_metadata"
+    }
+  ]
+}

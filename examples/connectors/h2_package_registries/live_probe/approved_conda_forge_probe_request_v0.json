@@ -1,0 +1,98 @@
+{
+  "approval_refs": [
+    "control/inventory/connectors/h2_package_live_probe_allowed_requests.json"
+  ],
+  "approved_request_key": "example_package_metadata",
+  "artifact_download_requested": false,
+  "connector_family": "package_registry",
+  "container_layer_download_requested": false,
+  "dry_run_only": true,
+  "ecosystem": "conda",
+  "endpoint_class": "feedstock_metadata_lookup_future",
+  "install_execute_requested": false,
+  "limitations": [
+    "Request envelope does not grant live access."
+  ],
+  "live_probe_request_id": "h2.package_live_probe_request.conda_forge.example_package_metadata.v0",
+  "live_requested": false,
+  "notes": [
+    "H2 package live probes fail closed unless committed source policy approves this exact metadata request.",
+    "File name says approved request because the request shape is prepared for approval review; committed policy does not approve live access."
+  ],
+  "operation_scope": "metadata_only",
+  "output_policy_ref": "control/inventory/connectors/h2_package_live_probe_output_policy.json",
+  "package_download_requested": false,
+  "package_manager_invocation_requested": false,
+  "package_name_or_identifier": "sample-package",
+  "policy_refs": [
+    "control/inventory/connectors/h2_package_live_probe_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_allowed_requests.json",
+    "control/inventory/connectors/h2_package_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_rate_limit_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_cache_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_kill_switch_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_output_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_path_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_review_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_truth_policy.json",
+    "control/inventory/connectors/h2_package_live_probe_no_download_policy.json"
+  ],
+  "product_boundary": {
+    "artifact_download_enabled": false,
+    "changed_public_search_behavior": false,
+    "container_layer_download_enabled": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_public_query_fanout": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "install_execute_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "package_download_enabled": false,
+    "package_manager_invocation_enabled": false,
+    "source_archive_download_enabled": false
+  },
+  "request_shape": {
+    "identifier": {
+      "feedstock": "sample-feedstock",
+      "package": "sample-package"
+    },
+    "kind": "bounded_metadata_lookup"
+  },
+  "review_policy_ref": "control/inventory/connectors/h2_package_live_probe_review_policy.json",
+  "schema_version": "h2_package_live_probe_request.v0",
+  "source_archive_download_requested": false,
+  "source_id": "conda_forge",
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "live_probe_can_claim_malware_safety": false,
+    "live_probe_can_claim_rights_clearance": false,
+    "live_probe_can_claim_verified_installability": false,
+    "live_probe_can_mutate_master_index": false,
+    "live_probe_can_mutate_public_index": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "truth_policy_ref": "control/inventory/connectors/h2_package_live_probe_truth_policy.json",
+  "version_or_release_identifier": "1.0.0"
+}

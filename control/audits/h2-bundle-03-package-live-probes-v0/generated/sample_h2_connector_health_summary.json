@@ -1,0 +1,66 @@
+{
+  "connector_family": "package_registry",
+  "health_summary_id": "h2.connector_health.maven_central.blocked_by_missing_approval.v0",
+  "live_probe_status": "blocked_by_missing_approval",
+  "network_used": false,
+  "next_recommended_action": "operator_approval_required",
+  "notes": [
+    "Connector health is operational evidence only, not production readiness."
+  ],
+  "policy_blockers": [
+    "committed source-specific approval is missing"
+  ],
+  "product_boundary": {
+    "artifact_download_enabled": false,
+    "changed_public_search_behavior": false,
+    "container_layer_download_enabled": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_public_query_fanout": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "install_execute_enabled": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "package_download_enabled": false,
+    "package_manager_invocation_enabled": false,
+    "source_archive_download_enabled": false
+  },
+  "request_count": 0,
+  "response_status_summary": "blocked_before_network",
+  "schema_version": "h2_package_connector_health_summary.v0",
+  "source_id": "maven_central",
+  "source_limitations": [
+    "Connector health is not production readiness."
+  ],
+  "truth_boundary": {
+    "dependency_candidate_is_correctness_proof": false,
+    "dependency_correctness_claimed": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "file_hash_candidate_is_malware_safety": false,
+    "license_metadata_is_rights_clearance": false,
+    "live_probe_can_claim_malware_safety": false,
+    "live_probe_can_claim_rights_clearance": false,
+    "live_probe_can_claim_verified_installability": false,
+    "live_probe_can_mutate_master_index": false,
+    "live_probe_can_mutate_public_index": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "package_identity_candidate_is_truth": false,
+    "public_index_mutated": false,
+    "purl_candidate_is_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": []
+}

@@ -1,0 +1,126 @@
+{
+  "policy_id": "h2_package_live_probe_rate_limit_policy",
+  "schema_version": "h2_package_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "maven_central",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "nuget",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "crates_io",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "rubygems",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "cpan",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "cran",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "conda_forge",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "limitations": [
+        "Budget is documented but live access is not approved."
+      ],
+      "max_requests_per_minute": 1,
+      "max_requests_per_run": 1,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_on_status": []
+      },
+      "source_id": "oci_registry_metadata",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_required_documented"
+    }
+  ]
+}

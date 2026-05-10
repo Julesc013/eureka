@@ -1,0 +1,41 @@
+{
+  "allowed_outputs": [
+    "live_probe_result",
+    "normalized_package_record",
+    "package_identity_candidate",
+    "dependency_candidate_preview",
+    "package_file_candidate_preview",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary",
+    "live_probe_summary",
+    "blocked_probe_report"
+  ],
+  "forbidden_outputs": [
+    "source_cache_write_current",
+    "evidence_ledger_write_current",
+    "review_queue_write_current",
+    "live_sync_state",
+    "downloaded_package",
+    "downloaded_artifact",
+    "downloaded_source_archive",
+    "downloaded_container_layer",
+    "package_manager_output",
+    "installed_package",
+    "executed_package",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "rights_clearance",
+    "malware_safety",
+    "verified_installability",
+    "dependency_correctness_claim",
+    "production_readiness_claim"
+  ],
+  "policy_id": "h2_package_live_probe_output_policy",
+  "schema_version": "h2_package_live_probe_output_policy.v0"
+}

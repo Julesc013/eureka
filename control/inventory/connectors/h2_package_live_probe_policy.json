@@ -1,0 +1,54 @@
+{
+  "allowed_operation_scope": "metadata_only",
+  "current_status": "blocked_pending_operator_approval",
+  "forbidden_operations": [
+    "broad_registry_search",
+    "public_query_fanout",
+    "scrape_html",
+    "crawl",
+    "package_download",
+    "artifact_download",
+    "source_archive_download",
+    "container_layer_pull",
+    "package_manager_invocation",
+    "install_execute",
+    "source_sync",
+    "mutate_public_index",
+    "mutate_master_index",
+    "accept_truth"
+  ],
+  "live_probe_default_enabled": false,
+  "max_requests_per_source_per_run": 1,
+  "max_sources_per_run": 1,
+  "max_total_requests_per_run": 1,
+  "no_goals": [
+    "no broad search",
+    "no downloads",
+    "no package manager invocation",
+    "no source sync",
+    "no truth acceptance"
+  ],
+  "package_downloads_enabled": false,
+  "package_manager_invocation_enabled": false,
+  "policy_id": "h2_package_live_probe_policy",
+  "public_query_fanout_enabled": false,
+  "required_approvals": [
+    "source_policy_approval",
+    "endpoint_allowlist",
+    "request_key_approval",
+    "rate_limit",
+    "timeout",
+    "retry_budget",
+    "cache_ttl_or_no_cache",
+    "kill_switch",
+    "output_path_policy"
+  ],
+  "required_output_boundaries": [
+    "preview_only",
+    "review_required",
+    "no_index_mutation",
+    "no_downloads"
+  ],
+  "schema_version": "h2_package_live_probe_policy.v0",
+  "source_sync_enabled": false
+}

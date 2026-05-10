@@ -1,0 +1,414 @@
+{
+  "policy_id": "h2_package_live_probe_allowed_requests",
+  "schema_version": "h2_package_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "maven_central",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "artifact_id": "sample-library",
+            "group_id": "org.example"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "artifact_id": "sample-library",
+              "group_id": "org.example"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "maven_central",
+      "source_label": "Maven Central",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "nuget",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "package": "Sample.Widget"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "package": "Sample.Widget"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "nuget",
+      "source_label": "NuGet",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "crates_io",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "crate_metadata_lookup_future",
+          "identifier_or_query": {
+            "crate": "sample-crate"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "crate": "sample-crate"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "crates_io",
+      "source_label": "crates.io",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "rubygems",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "gem_metadata_lookup_future",
+          "identifier_or_query": {
+            "gem": "sample_gem"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "gem": "sample_gem"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "rubygems",
+      "source_label": "RubyGems",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "cpan",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "distribution_metadata_lookup_future",
+          "identifier_or_query": {
+            "distribution": "Sample-Module"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "distribution": "Sample-Module"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "cpan",
+      "source_label": "CPAN",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "cran",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "package_metadata_lookup_future",
+          "identifier_or_query": {
+            "package": "samplePackage"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "package": "samplePackage"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "cran",
+      "source_label": "CRAN",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "conda_forge",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "feedstock_metadata_lookup_future",
+          "identifier_or_query": {
+            "feedstock": "sample-feedstock",
+            "package": "sample-package"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "feedstock": "sample-feedstock",
+              "package": "sample-package"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "conda_forge",
+      "source_label": "conda-forge",
+      "source_sync_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "single_metadata_identifier_or_query"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "oci_registry_metadata",
+      "artifact_download_approved": false,
+      "container_layer_download_approved": false,
+      "crawling_approved": false,
+      "install_execute_approved": false,
+      "limitations": [
+        "Planned request is documented for approval review only; it is not live-approved."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_download_allowed": false,
+      "package_download_approved": false,
+      "package_manager_invocation_allowed": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_package_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "Operator approval has not been committed for this source.",
+      "requests": {
+        "example_package_metadata": {
+          "endpoint_class": "registry_metadata_lookup_future",
+          "identifier_or_query": {
+            "registry": "registry.example.invalid",
+            "repository": "library/sample-image",
+            "tag": "1.0.0"
+          },
+          "max_requests_current": 0,
+          "operation_scope": "metadata_only",
+          "request_key": "example_package_metadata",
+          "request_shape": {
+            "identifier": {
+              "registry": "registry.example.invalid",
+              "repository": "library/sample-image",
+              "tag": "1.0.0"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "scraping_approved": false,
+      "source_archive_download_approved": false,
+      "source_id": "oci_registry_metadata",
+      "source_label": "OCI registry metadata",
+      "source_sync_approved": false
+    }
+  ]
+}

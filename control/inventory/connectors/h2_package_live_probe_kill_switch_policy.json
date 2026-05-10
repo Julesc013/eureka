@@ -1,0 +1,86 @@
+{
+  "policy_id": "h2_package_live_probe_kill_switch_policy",
+  "schema_version": "h2_package_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_MAVEN_CENTRAL",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "maven_central"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_NUGET",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "nuget"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_CRATES_IO",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "crates_io"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_RUBYGEMS",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "rubygems"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_CPAN",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "cpan"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_CRAN",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "cran"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_CONDA_FORGE",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "conda_forge"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "H2_PACKAGE_LIVE_PROBE_OCI_REGISTRY_METADATA",
+      "limitations": [
+        "Kill switch blocks live calls until source approval is committed."
+      ],
+      "source_id": "oci_registry_metadata"
+    }
+  ]
+}
