@@ -137,6 +137,7 @@ KNOWN_SOURCE_FAMILIES = {
     "code_source_release_host",
     "vendor_update_driver",
     "vendor_update_driver_firmware",
+    "web_archive_news_event",
     "library_cultural_research",
     "manuals_docs_standards",
     "media_music_image_video_map",

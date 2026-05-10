@@ -1,0 +1,25 @@
+{
+  "schema_version": "h6_archived_url_time_state_policy.v0",
+  "time_state_boundary": {
+    "archived_download_page_candidate_does_not_grant_download_permission": true,
+    "missing_capture_does_not_prove_absence": true,
+    "nearest_capture_does_not_prove_page_state_at_exact_time": true,
+    "time_state_candidate_is_not_historical_truth": true,
+    "url_status_does_not_prove_source_availability_or_safety": true
+  },
+  "time_state_concepts": [
+    "original_url",
+    "capture_timestamp",
+    "requested_time",
+    "nearest_capture",
+    "first_seen_candidate",
+    "last_seen_candidate",
+    "status_at_time_candidate",
+    "redirect_state_candidate",
+    "missing_capture_candidate",
+    "gap_period_candidate",
+    "source_disappearance_candidate",
+    "resurrected_source_candidate",
+    "archived_download_page_candidate"
+  ]
+}

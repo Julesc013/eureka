@@ -2,144 +2,124 @@
 
 ## PHASE
 
-H6-BUNDLE-01 - Web archive, news, and event source-family policy packs
+UNSPECIFIED - H6-BUNDLE-02 - Web archive, news, and event fixture runtimes and normalizers. Use committed public-safe fixtures only. Do not authorize live source calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, transcripts, newspaper pages, public document fetches, scraping, crawling, browser automation, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Prepare the next Eureka H6 task after H5-BUNDLE-04. This packet is a compact
-AIDE resumption handoff only; it does not itself authorize live source calls,
-scraping, crawling, source sync, downloads, browser automation, provider/model
-calls, public/master index mutation, truth acceptance, hosting, deployment, or
-changing Eureka product behavior.
-
-H6-BUNDLE-01 should define policy-pack-only source-family structure for web
-archive, news, and event metadata sources. It should reuse the H0-H5 Source OS
-patterns and treat all source observations, candidates, and packs as
-review-gated previews until later gates explicitly open.
-
-HUMAN-OBS-REVIEW-01 remains preserved as a parallel side-lane and is not
-completed, promoted, or replaced by this H6 handoff.
+H6-BUNDLE-02 - Web archive, news, and event fixture runtimes and normalizers. Use committed public-safe fixtures only. Do not authorize live source calls, CDX/Memento queries, WARC/WACZ fetches, archived page fetches, media downloads, transcripts, newspaper pages, public document fetches, scraping, crawling, browser automation, bypass, source sync, public/master index mutation, or truth acceptance. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-H5-BUNDLE-04 closed the vendor/update/driver wave with review integration,
-quality delta, a connector wave postmortem, an integration audit, and a next
-phase recommendation of `READY_FOR_H6_BUNDLE_01`.
-
-H5 live probes remain approval-blocked. H5 fixture replay and blocked live-probe
-outputs are sufficient for H5 closeout but do not approve any future live
-access.
+Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
-- `AGENTS.md`
 - `.aide/memory/project-state.md`
-- `.aide/context/latest-context-packet.md`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/latest-review-packet.md`
-- `.aide/queue/H5-BUNDLE-04/task.yaml`
-- `.aide/queue/H6-BUNDLE-01/task.yaml`
-- `control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/`
-- `control/audits/h5-bundle-03-vendor-update-live-probes-v0/`
-- `control/audits/h5-bundle-02-vendor-update-fixture-runtime-v0/`
-- `control/audits/h5-bundle-01-vendor-update-driver-policy-packs-v0/`
-- `docs/operations/H5_TO_H6_HANDOFF.md`
-- `docs/operations/H5_TO_J1_K_L_DEFERRAL.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `AGENTS.md`
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `.aide/**`
-- H6 policy-pack contracts, source-pack policies, source records,
-  connector-family mappings, approval gates, output/truth/no-live-call policies,
-  examples, docs, validators, tests, audit pack, and bounded AIDE metadata only
-  after an explicit H6-BUNDLE-01 prompt.
-
-## IMPLEMENTATION
-
-- Do not start H6-BUNDLE-01 implementation from this packet alone.
-- Reuse Source OS policy, fixture, live-boundary, review, quality, postmortem,
-  and audit patterns from H0-H5.
-- Preserve no-live-call, no-scrape, no-crawl, no-download, no-source-sync,
-  no-index-mutation, and no-truth-acceptance boundaries.
-- Treat web archive, news, and event metadata as source observation material,
-  not accepted public truth.
-- Keep J1 risky actions, K semantic/AI, and L wider clients deferred unless a
-  future reviewed gate explicitly opens them.
-
-## ACCEPTANCE
-
-- Latest handoff points to H6-BUNDLE-01.
-- H5-BUNDLE-04 evidence remains reviewable.
-- H6-BUNDLE-01 must not make live source calls by default.
-- No Eureka product behavior change is authorized by this handoff.
-- No live calls, scraping, crawling, downloads, source sync, public/master index
-  mutation, evidence acceptance, candidate acceptance, source truth acceptance,
-  public truth creation, hosting, deployment, or production-readiness claims are
-  authorized.
-
-## VALIDATION
-
-- H5 closeout validator: `python scripts/validate_h5_vendor_update_review_quality_audit.py`
-- H5 audit: `python scripts/audit_h5_vendor_update_driver_wave.py --check`
-- Existing H5/H4/H3/H2/H1/H0/core validators
-- `python -m unittest discover -s tests -t .`
-- `python scripts/check_architecture_boundaries.py`
-- AIDE Lite: `.aide/scripts/aide_lite.py doctor`; `.aide/scripts/aide_lite.py validate`; `.aide/scripts/aide_lite.py test`; `.aide/scripts/aide_lite.py selftest`; `.aide/scripts/aide_lite.py eval run`; `.aide/scripts/aide_lite.py verify`; review-pack; adapter validate
-
-## EVIDENCE
-
-- `.aide/queue/index.yaml`
-- `.aide/queue/H5-BUNDLE-04/task.yaml`
-- `.aide/queue/H6-BUNDLE-01/task.yaml`
-- `control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/h5_bundle_04_report.json`
-- `control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/h5_exit_gate_decision.md`
-- `control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/next_phase_recommendation.md`
-- `examples/connectors/h5_vendor_update_driver/review_integration/`
-
-## NON_GOALS
-
-- No live calls, API calls, provider/model calls, browser automation, scraping,
-  crawling, catalog sync, downloads, installs, execution, vendor tool
-  invocation, package manager invocation, firmware flashing, source sync, public
-  query fanout, public/master index mutation, evidence acceptance, candidate
-  acceptance, source truth acceptance, identity truth acceptance, compatibility
-  truth acceptance, authenticity truth acceptance, safety truth acceptance,
-  public truth creation, public launch, deployment, or production-readiness
-  claims.
-
-## OUTPUT_SCHEMA
-
-Future H6-BUNDLE-01 responses should preserve status, summary, commits, changed
-paths, validation, risks, and next task.
-
-## TOKEN_ESTIMATE
-
-- method: manual chars / 4 estimate
-- approx_tokens: 1200
-- budget_status: within_budget
+- `<fill from the next reviewed queue packet>`
+- `.aide/context/**`
+- `.aide/queue/unspecified-*` if this task becomes a queue item
+- root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
 
-- `surfaces/**`
+- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
 - `runtime/**`
 - `contracts/**`
-- `connectors/**`
+- `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
+- `connectors/**`
 - `packaging/**`
 - `third_party/**`
-- `site/**`
-- `site/dist/**`
-- `data/public_index/**`
-- `data/master_index/**`
-- `master_index/**`
-- `.aide.local/**`
-- `.local/eureka/**`
-- `.cache/eureka/**`
-- provider secret files
-- package cache roots
-- vendor download roots
-- firmware staging roots
-- repository clone roots
-- repository mirror roots
+- raw provider credentials, API keys, local caches, raw prompt logs
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+
+## IMPLEMENTATION
+
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+
+## VALIDATION
+
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 scripts/check_architecture_boundaries.py`
+- `py -3 scripts/aide validate`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
+
+## EVIDENCE
+
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
+
+## NON_GOALS
+
+- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+
+## ACCEPTANCE
+
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+
+## OUTPUT_SCHEMA
+
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
+
+## TOKEN_ESTIMATE
+
+- method: chars / 4, rounded up
+- chars: 4847
+- approx_tokens: 1212
+- budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

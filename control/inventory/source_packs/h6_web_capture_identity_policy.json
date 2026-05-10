@@ -1,0 +1,32 @@
+{
+  "identity_boundary": {
+    "archived_content_may_be_stale_partial_harmful_private_or_context_dependent": true,
+    "archived_page_existence_does_not_prove_rights_clearance": true,
+    "capture_digest_does_not_prove_source_authenticity_without_review": true,
+    "capture_presence_does_not_prove_completeness": true,
+    "url_normalization_can_collapse_distinct_resources_and_requires_review": true,
+    "web_capture_identity_candidate_is_not_accepted_object_truth": true
+  },
+  "identity_concepts": [
+    "original_url",
+    "normalized_url_candidate",
+    "capture_url",
+    "capture_timestamp",
+    "memento_datetime",
+    "capture_status_code",
+    "capture_mime_type",
+    "capture_digest",
+    "capture_length",
+    "warc_record_id_candidate",
+    "warc_filename_candidate",
+    "cdx_key_candidate",
+    "collection_id",
+    "source_archive_ref",
+    "capture_locator_candidate",
+    "redirect_chain_candidate",
+    "canonical_url_candidate",
+    "live_url_status_candidate",
+    "dead_link_candidate"
+  ],
+  "schema_version": "h6_web_capture_identity_policy.v0"
+}

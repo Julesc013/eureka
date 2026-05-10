@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "next_task": "H6-BUNDLE-02",
+      "recommended": true,
+      "requires_live_access": false
+    },
+    {
+      "next_task": "H6-REMEDIATION-01",
+      "recommended": false,
+      "requires_live_access": false
+    }
+  ],
+  "schema_version": "h6_option_matrix.v0",
+  "source_count": 13
+}

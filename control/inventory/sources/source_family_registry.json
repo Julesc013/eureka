@@ -376,6 +376,39 @@
       "schema_version": "source_family.v0",
       "typical_risk_posture": "review_required",
       "typical_trust_lane": "unknown"
+    },
+    {
+      "schema_version": "source_family.v0",
+      "family_id": "web_archive_news_event",
+      "label": "Web Archive News Event",
+      "description": "Web archive, news, event, newspaper, broadcast, dead-link, and public trace metadata sources.",
+      "typical_trust_lane": "web_archive_trace",
+      "typical_risk_posture": "trace_context_rights_privacy_review_required",
+      "allowed_default_depth": "D2_metadata_indexed",
+      "default_live_access_posture": "committed_fixture_only",
+      "default_download_posture": "forbidden_by_default",
+      "default_review_requirements": [
+        "source_policy",
+        "trace_context_review",
+        "rights_posture",
+        "privacy_risk_review"
+      ],
+      "preferred_adapter_families": [
+        "warc_cdx",
+        "warc_wacz_manifest",
+        "api_json",
+        "newspaper_archive_metadata",
+        "media_archive_metadata",
+        "html_catalog_policy_blocked",
+        "restricted_manifest_only"
+      ],
+      "no_goals": [
+        "no live source calls by default",
+        "no CDX/Memento/WARC/WACZ fetch by default",
+        "no archived page, media, transcript, or public document download",
+        "no scraping, crawling, or bypass",
+        "no event or capture truth claim"
+      ]
     }
   ],
   "registry_id": "source_family_registry",

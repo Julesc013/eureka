@@ -1,0 +1,24 @@
+{
+  "public_document_boundary": {
+    "do_not_bypass_access_controls_paywalls_captchas_or_authentication": true,
+    "legal_privacy_safety_and_rights_review_required_before_connector_work": true,
+    "manifest_only_references_do_not_approve_fetching": true,
+    "restricted_sensitive_public_document_sources_are_policy_blocked_by_default": true,
+    "sensitive_source_metadata_must_not_expose_private_data": true
+  },
+  "public_document_concepts": [
+    "document_collection_ref",
+    "document_record_id",
+    "document_title",
+    "publication_or_disclosure_date",
+    "source_locator",
+    "source_risk_class",
+    "sensitivity_class",
+    "rights_or_access_uncertainty",
+    "restricted_source_policy",
+    "manifest_only_allowed",
+    "direct_fetch_allowed_current",
+    "review_required"
+  ],
+  "schema_version": "h6_public_document_trace_policy.v0"
+}

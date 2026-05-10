@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5583 chars, 1396 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4847 chars, 1212 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H5-BUNDLE-04/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/H6-BUNDLE-01` (??; does not match active task allowed paths)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/H6-BUNDLE-01/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/H6-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h5_vendor_update_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h5_vendor_update_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h5_vendor_update_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h5_vendor_update_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h5_vendor_update_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h5_vendor_update_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H5_VENDOR_UPDATE_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H5_TO_H6_HANDOFF.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H5_TO_J1_K_L_DEFERRAL.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 16; see task evidence changed-files report
+- unknown: `control/audits/h6-bundle-01-web-archive-news-event-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_archived_url_time_state_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_dead_link_trace_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_news_event_mention_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_public_document_trace_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_no_fetch_crawl_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_no_live_call_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_archive_news_event_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h6_web_capture_identity_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6849
-- approx_tokens: 1713
+- chars: 6853
+- approx_tokens: 1714
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

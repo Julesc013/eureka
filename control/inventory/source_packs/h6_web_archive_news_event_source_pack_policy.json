@@ -1,0 +1,41 @@
+{
+  "approved_live_probe_enabled": false,
+  "archived_page_fetch_enabled": false,
+  "bypass_or_automation_enabled": false,
+  "cdx_query_enabled": false,
+  "connector_runtime_enabled": false,
+  "crawling_enabled": false,
+  "current_status": "policy_pack_only",
+  "live_access_enabled": false,
+  "media_download_enabled": false,
+  "memento_lookup_enabled": false,
+  "newspaper_page_download_enabled": false,
+  "no_goals": [
+    "no live source calls",
+    "no CDX/CDXJ or Memento network lookups",
+    "no WARC/WACZ, archived page, media, transcript, newspaper page, or public document fetch",
+    "no scraping, crawling, browser automation, or bypass",
+    "no trace, event, article, public-document, evidence, candidate, source, or public truth acceptance"
+  ],
+  "notes": [
+    "H6-BUNDLE-01 is policy-pack-only."
+  ],
+  "policy_id": "h6_web_archive_news_event_source_pack_policy",
+  "public_document_fetch_enabled": false,
+  "restricted_sensitive_source_enabled": false,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_live_access": true,
+  "review_required_before_master_index": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_source_cache_write": true,
+  "schema_version": "h6_web_archive_news_event_source_pack_policy.v0",
+  "scraping_enabled": false,
+  "source_family": "web_archive_news_event",
+  "source_pack_export_only": true,
+  "source_pack_import_enabled": false,
+  "source_sync_enabled": false,
+  "transcript_download_enabled": false,
+  "warc_wacz_fetch_enabled": false,
+  "wave_id": "H6",
+  "wave_label": "Web archive, news, event, and public trace metadata"
+}

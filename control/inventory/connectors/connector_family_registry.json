@@ -27,7 +27,8 @@
       "source_families_supported": [
         "archive_metadata",
         "code_source_release_host",
-        "package_registry"
+        "package_registry",
+        "web_archive_news_event"
       ],
       "typical_input_shapes": [
         "committed_json_fixture",
@@ -207,7 +208,8 @@
       ],
       "schema_version": "connector_family.v0",
       "source_families_supported": [
-        "web_archive"
+        "web_archive",
+        "web_archive_news_event"
       ],
       "typical_input_shapes": [
         "cdx_fixture",
@@ -240,7 +242,8 @@
       "source_families_supported": [
         "retro_community_archive",
         "manuals_docs_standards",
-        "storefront_app_store"
+        "storefront_app_store",
+        "web_archive_news_event"
       ],
       "typical_input_shapes": [
         "committed_catalog_fixture"
@@ -418,7 +421,8 @@
       ],
       "schema_version": "connector_family.v0",
       "source_families_supported": [
-        "restricted_source_manifest_only"
+        "restricted_source_manifest_only",
+        "web_archive_news_event"
       ],
       "typical_input_shapes": [
         "restricted_manifest_fixture"
@@ -575,6 +579,148 @@
         "runtime_identity_candidate",
         "dependency_candidate",
         "source_cache_candidate"
+      ]
+    },
+    {
+      "schema_version": "connector_family.v0",
+      "family_id": "warc_wacz_manifest",
+      "current_default_access": "committed_fixture_only",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "warc_wacz_download",
+        "archived_page_fetch",
+        "media_download",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no WARC/WACZ download",
+        "no replay fetch",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "manifest_allowlist",
+        "rights_posture",
+        "review_gates"
+      ],
+      "source_families_supported": [
+        "web_archive_news_event"
+      ],
+      "typical_input_shapes": [
+        "warc_manifest_fixture",
+        "wacz_manifest_fixture"
+      ],
+      "typical_output_shapes": [
+        "manifest_metadata_preview",
+        "capture_metadata_preview"
+      ]
+    },
+    {
+      "schema_version": "connector_family.v0",
+      "family_id": "newspaper_archive_metadata",
+      "current_default_access": "committed_fixture_only",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "newspaper_page_download",
+        "licensed_text_fetch",
+        "paywall_bypass",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no page download",
+        "no licensed access bypass",
+        "no article truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "rights_posture",
+        "terms_review",
+        "review_gates"
+      ],
+      "source_families_supported": [
+        "web_archive_news_event"
+      ],
+      "typical_input_shapes": [
+        "newspaper_metadata_fixture"
+      ],
+      "typical_output_shapes": [
+        "news_event_mention_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "schema_version": "connector_family.v0",
+      "family_id": "media_archive_metadata",
+      "current_default_access": "committed_fixture_only",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "media_download",
+        "transcript_download",
+        "stream_fetch",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no media download",
+        "no transcript fetch",
+        "no event truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "media_rights_posture",
+        "review_gates"
+      ],
+      "source_families_supported": [
+        "web_archive_news_event"
+      ],
+      "typical_input_shapes": [
+        "broadcast_metadata_fixture",
+        "video_event_metadata_fixture"
+      ],
+      "typical_output_shapes": [
+        "news_event_mention_candidate",
+        "media_metadata_preview"
+      ]
+    },
+    {
+      "schema_version": "connector_family.v0",
+      "family_id": "html_catalog_policy_blocked",
+      "current_default_access": "robots_blocked",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "scrape_html",
+        "crawl",
+        "bypass_access_controls",
+        "archived_page_fetch",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no scraping",
+        "no crawl",
+        "no bypass",
+        "policy blocked by default"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "robots_source_policy_review",
+        "terms_review",
+        "review_gates"
+      ],
+      "source_families_supported": [
+        "web_archive_news_event"
+      ],
+      "typical_input_shapes": [
+        "policy_blocked_catalog_fixture"
+      ],
+      "typical_output_shapes": [
+        "blocked_source_policy_preview"
       ]
     }
   ],

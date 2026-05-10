@@ -1,67 +1,29 @@
 {
-  "completed_queue_item": "H5-BUNDLE-04",
-  "current_queue_item": "H6-BUNDLE-01",
-  "deployment_scope": {
-    "deployment_performed": false,
-    "dns_changed": false,
-    "production_claimed": false,
-    "provider_api_called": false,
-    "public_alpha_live_claimed": false,
-    "public_backend_started": false,
-    "secrets_created": false,
-    "site_dist_mutated": false
-  },
-  "future_agent_read_order": [
-    ".aide/context/latest-task-packet.md",
-    ".aide/reports/eureka-aide-lite-operating-handoff.md",
-    ".aide/reports/eureka-repo-health.md",
-    "AGENTS.md"
-  ],
-  "generated_at_note": "codex_updated_after_h5_bundle_04",
-  "handoff_report": ".aide/reports/eureka-aide-lite-operating-handoff.md",
+  "completed_queue_item": "H6-BUNDLE-01",
+  "current_queue_item": "H6-BUNDLE-02",
+  "generated_at_note": "codex_updated_after_h6_bundle_01",
   "known_warn_only_conditions": [
-    "H5 live-probe source approvals are absent; H5 closeout used fixture replay outputs and blocked live-probe reports only.",
-    "Deployment execution approval is absent.",
-    "J1 risky-action policy remains deferred.",
-    "K semantic/AI and L wider-client lanes remain deferred.",
-    "AIDE Lite verify may report diff-scope warnings after routing latest task packet to H6 while H5 closeout changes are still in the working tree."
+    "H6 is policy-pack-only; fixture runtime is next.",
+    "No H6 live access or fetch approval exists.",
+    "J1/K/L remain deferred."
   ],
-  "latest_review_packet": ".aide/context/latest-review-packet.md",
-  "next_recommended_queue_item": "H6-BUNDLE-01",
-  "next_spine": [
-    "H6-BUNDLE-01 web archive, news, and event source-family policy packs"
-  ],
-  "primary_task_packet": ".aide/context/latest-task-packet.md",
+  "next_recommended_queue_item": "H6-BUNDLE-02",
   "product_boundary": {
     "changed_public_search_behavior": false,
-    "deployment_performed": false,
-    "dns_changed": false,
-    "enabled_accounts": false,
-    "enabled_catalog_sync": false,
+    "enabled_crawling": false,
     "enabled_downloads": false,
-    "enabled_execution": false,
-    "enabled_firmware_flashing": false,
-    "enabled_hosting": false,
-    "enabled_installers": false,
-    "enabled_live_source_fanout": false,
-    "enabled_public_relay": false,
+    "enabled_fetching": false,
+    "enabled_live_probes": false,
     "enabled_source_sync": false,
-    "enabled_telemetry": false,
-    "enabled_uploads": false,
     "mutated_master_index": false,
-    "mutated_public_index": false,
-    "mutated_site_dist": false,
-    "provider_api_called": false,
-    "vendor_tool_invocation_enabled": false
+    "mutated_public_index": false
   },
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
   "validation": {
-    "aide_lite": "pass_with_verify_warnings",
+    "aide_lite": "pass",
     "architecture_boundaries": "pass",
-    "existing_major_validators": "pass",
-    "h5_review_quality_audit": "pass",
-    "h5_wave_audit": "pass",
+    "h6_policy_packs": "pass",
     "unittest_discovery": "pass"
   }
 }

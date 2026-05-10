@@ -1,0 +1,26 @@
+{
+  "crawling_enabled": false,
+  "fetching_enabled": false,
+  "forbidden_current": [
+    "CDX/CDXJ network fetch",
+    "Memento network lookup",
+    "WARC/WACZ download",
+    "archived page download",
+    "live page fetch",
+    "media download",
+    "video/audio download",
+    "transcript download",
+    "newspaper page download",
+    "public document download",
+    "bulk index fetch",
+    "crawl execution",
+    "browser automation",
+    "captcha/paywall/auth bypass",
+    "robots bypass",
+    "account/session use",
+    "scraping output",
+    "sensitive-source direct access"
+  ],
+  "policy_id": "h6_web_archive_news_event_no_fetch_crawl_policy",
+  "schema_version": "h6_web_archive_news_event_no_fetch_crawl_policy.v0"
+}

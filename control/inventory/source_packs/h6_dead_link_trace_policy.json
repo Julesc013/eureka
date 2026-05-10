@@ -1,0 +1,24 @@
+{
+  "dead_link_boundary": {
+    "absence_capture_gaps_require_explicit_uncertainty": true,
+    "checksum_candidate_is_not_malware_safety": true,
+    "dead_link_trace_is_not_acquisition_permission": true,
+    "mirror_candidate_is_not_authenticity_or_rights_proof": true,
+    "old_download_page_is_not_current_availability": true
+  },
+  "schema_version": "h6_dead_link_trace_policy.v0",
+  "trace_concepts": [
+    "dead_url_candidate",
+    "last_live_candidate",
+    "first_dead_candidate",
+    "archived_snapshot_candidate",
+    "referring_page_candidate",
+    "old_download_page_candidate",
+    "mirror_candidate",
+    "checksum_candidate",
+    "product_or_artifact_ref",
+    "vendor_or_source_ref",
+    "disappearance_reason_candidate",
+    "followup_workunit_candidate"
+  ]
+}

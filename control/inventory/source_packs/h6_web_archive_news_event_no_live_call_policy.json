@@ -1,0 +1,24 @@
+{
+  "forbidden_current": [
+    "network calls",
+    "API calls",
+    "endpoint probing",
+    "CDX/CDXJ queries",
+    "Memento lookups",
+    "WARC/WACZ fetches",
+    "archived page fetches",
+    "news/event API queries",
+    "newspaper archive queries",
+    "media/transcript fetches",
+    "public document fetches",
+    "scraping",
+    "crawling",
+    "source sync",
+    "live connector runtime",
+    "public-query fanout",
+    "hosted behavior"
+  ],
+  "network_calls_made": false,
+  "policy_id": "h6_web_archive_news_event_no_live_call_policy",
+  "schema_version": "h6_web_archive_news_event_no_live_call_policy.v0"
+}

@@ -1,0 +1,28 @@
+{
+  "mention_boundary": {
+    "article_metadata_does_not_prove_claim_accuracy": true,
+    "mentions_are_evidence_candidates_requiring_review": true,
+    "news_coverage_can_be_biased_stale_incomplete_or_duplicated": true,
+    "news_event_mention_candidate_is_not_event_truth": true,
+    "transcript_metadata_does_not_prove_full_context": true
+  },
+  "mention_event_concepts": [
+    "article_or_record_id",
+    "headline_or_title",
+    "publication_or_program",
+    "publication_date",
+    "byline_or_actor",
+    "event_date_candidate",
+    "event_location_candidate",
+    "mentioned_entity",
+    "mentioned_url",
+    "mentioned_software_or_artifact",
+    "topic_or_theme",
+    "snippet_or_summary",
+    "transcript_or_caption_ref",
+    "media_ref",
+    "source_locator",
+    "confidence_or_uncertainty"
+  ],
+  "schema_version": "h6_news_event_mention_policy.v0"
+}
