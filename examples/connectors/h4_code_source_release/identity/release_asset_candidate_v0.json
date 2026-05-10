@@ -1,0 +1,57 @@
+{
+  "asset_hashes": {
+    "sha256": "fixture-sha256-github_releases"
+  },
+  "asset_kind": "source_archive_metadata",
+  "asset_locator": "fixture:release-asset/github_releases/source-archive",
+  "asset_name": "example-release-repository-fixture-1.0.0.tar.gz",
+  "asset_size": 12345,
+  "download_allowed_current": false,
+  "limitations": [
+    "Release asset candidate is metadata-only and grants no download, authenticity, rights, or malware-safety claim."
+  ],
+  "payload_available_current": false,
+  "product_boundary": {
+    "api_calls_made": false,
+    "build_tool_invoked": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_repository_clone": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "git_command_invoked": false,
+    "install_execute_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "release_asset_download_used": false,
+    "repository_clone_used": false,
+    "source_archive_download_used": false
+  },
+  "release_asset_candidate_id": "h4.release_asset.github_releases.example_release_repository_fixture_1_0_0_tar_gz.v0",
+  "release_identity_candidate_ref": "h4.release_identity.github_releases.fixture_release_github_releases.v0",
+  "sbom_metadata": {
+    "present": false,
+    "verified_current": false
+  },
+  "schema_version": "h4_release_asset_candidate.v0",
+  "signature_metadata": {
+    "present": true,
+    "verified_current": false
+  },
+  "source_id": "github_releases",
+  "truth_boundary": {
+    "asset_hash_proves_malware_safety": false,
+    "release_asset_hash_candidate_is_malware_safety": false,
+    "release_asset_metadata_grants_download_permission": false,
+    "sbom_metadata_is_provenance": false,
+    "signature_metadata_proves_authenticity": false
+  }
+}

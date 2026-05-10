@@ -1,6 +1,6 @@
 id: H4-BUNDLE-02
 title: Code/source/release host fixture runtimes and normalizers
-status: queued
+status: needs_review
 purpose: Add fixture-only normalizers and replayable connector outputs for code/source/release host metadata after H4 policy packs pass.
 allowed_scope_summary: H4 committed fixtures, fixture runtime policies, normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
 gate: H4-BUNDLE-01 passes; no live source calls, repository clone, source archive downloads, release asset downloads, git/build command invocation, installs, execution, source sync, public/master index mutation, or truth acceptance.

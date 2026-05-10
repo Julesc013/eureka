@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H4-BUNDLE-02
+current_recommended_task: H4-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -480,9 +480,18 @@ entries:
 
 - id: H4-BUNDLE-02
   title: Code/source/release host fixture runtimes and normalizers
-  status: queued
+  status: needs_review
   purpose: Add fixture-only normalizers and replayable connector outputs for code/source/release host metadata.
   allowed_scope_summary: H4 committed fixtures, fixture runtime policies, normalizers, scripts, examples, docs, tests, audit evidence, and AIDE metadata only.
   gate: H4-BUNDLE-01 passes; no live source calls, repository clone, source archive downloads, release asset downloads, git/build command invocation, installs, execution, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H4-BUNDLE-02/task.yaml
   recommended_after: H4-BUNDLE-01
+
+- id: H4-BUNDLE-03
+  title: Code/source/release host approved metadata-only live probes
+  status: queued
+  purpose: Prepare approval-gated metadata-only live probe envelopes for H4 code/source/release hosts after fixture normalizers pass.
+  allowed_scope_summary: H4 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
+  gate: H4-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and repository clone/download/git/build/install/execute behavior remains forbidden.
+  task: .aide/queue/H4-BUNDLE-03/task.yaml
+  recommended_after: H4-BUNDLE-02

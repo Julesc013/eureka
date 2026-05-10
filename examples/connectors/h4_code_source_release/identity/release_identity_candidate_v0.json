@@ -1,0 +1,58 @@
+{
+  "confidence_or_uncertainty": "candidate_from_fixture_no_release_truth",
+  "limitations": [
+    "Release identity candidate does not prove release authenticity, availability, compatibility, or installability."
+  ],
+  "missing_fields": [],
+  "product_boundary": {
+    "api_calls_made": false,
+    "build_tool_invoked": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_repository_clone": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "git_command_invoked": false,
+    "install_execute_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "release_asset_download_used": false,
+    "repository_clone_used": false,
+    "source_archive_download_used": false
+  },
+  "release_actor_or_author": "fixture-maintainer",
+  "release_asset_refs": [],
+  "release_id": "fixture-release-github_releases",
+  "release_identity_candidate_id": "h4.release_identity.github_releases.fixture_release_github_releases.v0",
+  "release_name": "example-release-repository fixture release",
+  "release_notes_ref": "fixture:release-notes/github_releases",
+  "release_tag": "v1.0.0-fixture",
+  "release_timestamp": "2026-05-10T00:00:00Z",
+  "release_version": "1.0.0-fixture",
+  "schema_version": "h4_release_identity_candidate.v0",
+  "source_id": "github_releases",
+  "source_identity_candidate_ref": "h4.source_identity.github_releases.fixture_github_releases_typical.v0",
+  "supporting_fields": [
+    "release_id",
+    "release_tag",
+    "release_name",
+    "release_version",
+    "release_timestamp",
+    "release_notes_summary"
+  ],
+  "truth_boundary": {
+    "release_asset_metadata_grants_download_permission": false,
+    "release_identity_candidate_is_accepted_release_truth": false,
+    "release_identity_candidate_is_truth": false,
+    "release_notes_prove_installability": false,
+    "signature_metadata_proves_authenticity": false
+  }
+}
