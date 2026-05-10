@@ -1,0 +1,25 @@
+{
+  "allowed_decision_options": [
+    "approve_local_only_continuation",
+    "approve_public_alpha_deployment_planning_only",
+    "approve_operator_supervised_launch_future",
+    "request_remediation",
+    "block_launch",
+    "defer_launch",
+    "not_evaluable"
+  ],
+  "deployment_allowed_current": false,
+  "launch_allowed_current": false,
+  "next_task_mapping": {
+    "approve_local_only_continuation": "LOCAL-MVP-ITERATION-01",
+    "approve_operator_supervised_launch_future": "PUBLIC-ALPHA-LAUNCH-PREP-01",
+    "approve_public_alpha_deployment_planning_only": "PUBLIC-ALPHA-DEPLOYMENT-PLAN-01",
+    "block_launch": "MVP-ALPHA-BLOCKED-01",
+    "defer_launch": "LOCAL-MVP-ITERATION-01",
+    "not_evaluable": "LOCAL-MVP-ITERATION-01",
+    "request_remediation": "MVP-ALPHA-REMEDIATION-01"
+  },
+  "no_implicit_approval": true,
+  "operator_signoff_required": true,
+  "schema_version": "mvp_alpha_operator_decision_policy.v0"
+}

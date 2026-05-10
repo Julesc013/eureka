@@ -1,0 +1,63 @@
+{
+  "approval_scope": null,
+  "blocker_summary": [
+    "operator_request_remediation"
+  ],
+  "decision_options": [
+    "approve_local_only_continuation",
+    "approve_public_alpha_deployment_planning_only",
+    "approve_operator_supervised_launch_future",
+    "request_remediation",
+    "block_launch",
+    "defer_launch",
+    "not_evaluable"
+  ],
+  "decision_status": "operator_selected",
+  "deployment_allowed_current": false,
+  "evidence_refs": [
+    "control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_audit_01_report.json",
+    "control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/operator_review_packet.md",
+    "control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/remediation_plan.md"
+  ],
+  "explicit_operator_approval": false,
+  "launch_allowed_current": false,
+  "limitations": [
+    "This is an operator decision request example, not a signed launch approval.",
+    "No deployment, provider, DNS, or public hosting action is allowed by this record."
+  ],
+  "notes": [
+    "PASS and PASS_WITH_WARNINGS evidence do not substitute for explicit operator signoff."
+  ],
+  "operator_decision_id": "operator-decision-request-remediation-v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "remediation_required": true,
+  "schema_version": "mvp_alpha_operator_decision.v0",
+  "selected_decision": "request_remediation",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_review_is_launch": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  }
+}

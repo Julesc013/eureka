@@ -1,0 +1,10 @@
+{
+  "deployment_allowed": false,
+  "dns_changes_allowed": false,
+  "external_calls_allowed": false,
+  "provider_calls_allowed": false,
+  "public_bind_allowed": false,
+  "schema_version": "mvp_alpha_operator_review_no_deploy_policy.v0",
+  "secrets_allowed": false,
+  "site_dist_mutation_allowed": false
+}

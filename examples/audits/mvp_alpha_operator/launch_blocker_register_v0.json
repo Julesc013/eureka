@@ -1,0 +1,78 @@
+{
+  "blocker_register_id": "mvp-alpha-launch-blocker-register-v0",
+  "blockers": [],
+  "deployment_blockers": [
+    "deployment_execution_forbidden_current",
+    "provider_dns_evidence_absent"
+  ],
+  "evidence_blockers": [
+    "public_launch_evidence_operator_gated"
+  ],
+  "hosting_blockers": [
+    "public_hosting_not_enabled"
+  ],
+  "launch_blockers": [
+    "missing_explicit_operator_signoff",
+    "missing_real_public_launch_evidence"
+  ],
+  "operator_gated_items": [
+    "public alpha deployment planning",
+    "operator supervised launch preparation",
+    "provider or DNS evidence collection",
+    "live connector approval"
+  ],
+  "policy_blockers": [
+    "no_deployment_in_operator_review_bundle"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "remediation_items": [
+    {
+      "action": "Provide an explicit human decision artifact before any launch planning beyond local iteration.",
+      "item_id": "operator-signoff-required",
+      "owner_or_lane": "operator",
+      "suggested_task_id": "MVP-ALPHA-OPERATOR-REVIEW-01",
+      "validation_required": "scripts/check_mvp_alpha_operator_signoff.py --input <operator-signoff-packet> --check"
+    }
+  ],
+  "safety_blockers": [
+    "rights_malware_installability_claims_not_established"
+  ],
+  "schema_version": "mvp_alpha_launch_blocker_register.v0",
+  "source_connector_blockers": [
+    "live_connector_approval_gated"
+  ],
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_review_is_launch": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "warnings": [
+    "Operator signoff is required and currently absent.",
+    "Public launch evidence is specified but not collected.",
+    "Track A final audit naming remains warning-only.",
+    "H1 metadata wave remains approval-gated for live probes.",
+    "Native old-toolchain build evidence remains manual/toolchain-gated."
+  ]
+}

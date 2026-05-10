@@ -1,0 +1,81 @@
+{
+  "decision_ref": "examples/audits/mvp_alpha_operator/operator_decision_request_v0.json",
+  "limitations": [
+    "Unsigned packets are not approval."
+  ],
+  "operator_identity_ref_optional": null,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "required_acknowledgements": [
+    "I have reviewed the MVP alpha audit evidence.",
+    "I understand this packet does not deploy or launch Eureka.",
+    "I understand deployment requires a future reviewed operator artifact."
+  ],
+  "required_disabled_feature_acknowledgements": [
+    "deployment",
+    "provider_api_calls",
+    "dns_changes",
+    "public_bind",
+    "live_source_fanout",
+    "downloads",
+    "uploads",
+    "accounts",
+    "telemetry",
+    "public_relay"
+  ],
+  "required_launch_evidence_acknowledgements": [
+    "Operator signoff is absent.",
+    "Public launch evidence remains future-gated.",
+    "No launch can proceed from an unsigned packet."
+  ],
+  "required_non_claim_acknowledgements": [
+    "not_live",
+    "not_production",
+    "not_rights_cleared",
+    "not_malware_safe",
+    "not_installability_verified",
+    "not_download_service",
+    "not_upload_service",
+    "not_account_service",
+    "not_telemetry_service",
+    "not_live_source_fanout",
+    "not_operator_signed"
+  ],
+  "required_risk_acknowledgements": [
+    "Track A final audit naming warning remains documented.",
+    "H1 live-probe posture remains approval-gated.",
+    "Native old-toolchain evidence remains manual/toolchain-gated.",
+    "Real public launch evidence is missing by design."
+  ],
+  "schema_version": "mvp_alpha_operator_signoff_packet.v0",
+  "signature_or_confirmation_future": null,
+  "signed_at_future": null,
+  "signoff_packet_id": "operator-signoff-required-v0",
+  "signoff_status": "signoff_required",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_review_is_launch": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  }
+}

@@ -1,0 +1,26 @@
+# Validation
+
+- `git diff --check`: PASS (Git reported LF/CRLF normalization warnings only).
+- `python -m json.tool` for all operator-review contracts, policies, and report JSON: PASS.
+- `python scripts/validate_mvp_alpha_operator_review.py`: PASS.
+- `python scripts/build_mvp_alpha_decision_packet.py --audit control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_audit_01_report.json --check`: PASS.
+- `python scripts/check_mvp_alpha_operator_signoff.py --input examples/audits/mvp_alpha_operator/operator_signoff_packet_unsigned_v0.json --check`: PASS.
+- `python scripts/check_mvp_alpha_public_claims.py --input examples/audits/mvp_alpha_operator --check`: PASS.
+- `python scripts/route_mvp_alpha_next_task.py --decision examples/audits/mvp_alpha_operator/operator_decision_approve_planning_only_v0.json --check`: PASS.
+- `python scripts/summarize_mvp_alpha_operator_review.py --input examples/audits/mvp_alpha_operator --check`: PASS.
+- `python -m unittest tests.audits.test_mvp_alpha_operator_decision_contracts`: PASS.
+- `python -m unittest tests.audits.test_mvp_alpha_operator_signoff`: PASS.
+- `python -m unittest tests.audits.test_mvp_alpha_public_claim_review`: PASS.
+- `python -m unittest tests.operations.test_mvp_alpha_operator_review_scripts`: PASS.
+- `python -m unittest discover -s tests -t .`: PASS (2855 tests).
+- `python scripts/check_architecture_boundaries.py`: PASS.
+- Existing major validators listed in the task packet: PASS, with inherited H1 warning posture still reported by the H1 audit.
+- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- `py -3 .aide/scripts/aide_lite.py test`: PASS.
+- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.
+- `py -3 .aide/scripts/aide_lite.py verify`: WARN with 0 errors; warnings are diff-scope warnings because the latest packet now points to the next safe local-iteration task.
+- `py -3 .aide/scripts/aide_lite.py eval list`: PASS.
+- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS.
+- `py -3 .aide/scripts/aide_lite.py adapter validate`: PASS.

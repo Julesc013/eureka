@@ -1,42 +1,26 @@
-# Eureka AIDE Lite Repo Health
+# Eureka Repo Health
 
-This compact repo-local health note reflects MVP-ALPHA-AUDIT-01.
+- status: warn
+- completed_queue_item: MVP-ALPHA-OPERATOR-REVIEW-01
+- current_queue_item: LOCAL-MVP-ITERATION-01
+- next_recommended_queue_item: LOCAL-MVP-ITERATION-01
 
-## Status
+## Warn-Only Conditions
 
-- Overall status: WARN.
-- Current completed queue item: `MVP-ALPHA-AUDIT-01`.
-- Next recommended queue item: `MVP-ALPHA-OPERATOR-REVIEW-01`.
-- Gate decision: `READY_WITH_WARNINGS`.
+- Operator signoff is required and currently absent.
+- Public launch evidence remains future-gated.
+- Track A final audit naming remains warning-only.
+- H1 live-probe posture remains approval-gated.
+- Native old-toolchain build evidence remains manual/toolchain-gated.
 
-## MVP Audit State
+## Boundary
 
-- Local MVP readiness contracts, policies, examples, scripts, tests, and audit
-  evidence exist.
-- The integrated local MVP path is coherent enough for operator review.
-- Warnings remain for Track A final audit naming, H1 approval-gated posture,
-  native manual build evidence, and missing public launch evidence.
+No deployment, provider calls, DNS changes, generated site output mutation, public alpha live claim, production claim, public search behavior change, live fanout, public relay, uploads, accounts, telemetry, public index mutation, or master index mutation occurred.
 
-## Product Boundary
+## Validation
 
-- Deployment performed: no.
-- Hosting provider call performed: no.
-- DNS changed: no.
-- Generated site output mutated: no.
-- Public alpha live claimed: no.
-- Production claimed: no.
-- Public search behavior changed: no.
-- Live source fanout enabled: no.
-- Downloads/uploads/accounts/telemetry enabled: no.
-- Public relay enabled: no.
-- Public index mutated: no.
-- Master index mutated: no.
-- Operator signoff inferred: no.
-
-## Next
-
-Proceed to `MVP-ALPHA-OPERATOR-REVIEW-01 - Operator review and launch decision packet`.
-Do not deploy, call hosting providers, change DNS, create credentials, enable
-public hosting, enable public relay, enable live fanout, mutate generated site
-output, enable downloads/uploads/accounts/telemetry, mutate public/master
-indexes, accept truth, infer signoff, or claim public alpha is live.
+- MVP alpha operator-review validator: PASS.
+- Focused operator-review scripts and tests: PASS.
+- Full unittest discovery: PASS.
+- Major validators: PASS.
+- AIDE Lite: PASS, with verify WARN-only diff-scope warnings after routing the latest packet to LOCAL-MVP-ITERATION-01.

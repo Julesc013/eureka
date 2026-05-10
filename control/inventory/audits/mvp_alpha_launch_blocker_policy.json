@@ -1,0 +1,6 @@
+{
+  "blockers_must_be_taskable": true,
+  "operator_gates_must_be_visible": true,
+  "schema_version": "mvp_alpha_launch_blocker_policy.v0",
+  "warnings_must_be_classified": true
+}

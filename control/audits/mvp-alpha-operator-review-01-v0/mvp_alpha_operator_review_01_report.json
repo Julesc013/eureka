@@ -1,0 +1,120 @@
+{
+  "added_contracts": [
+    "contracts/audits/mvp_alpha_operator_decision.v0.json",
+    "contracts/audits/mvp_alpha_operator_signoff_packet.v0.json",
+    "contracts/audits/mvp_alpha_launch_blocker_register.v0.json",
+    "contracts/audits/mvp_alpha_launch_decision_options.v0.json",
+    "contracts/audits/mvp_alpha_public_claim_review.v0.json",
+    "contracts/audits/mvp_alpha_operator_next_task.v0.json"
+  ],
+  "added_docs": [
+    "docs/reference/MVP_ALPHA_OPERATOR_DECISION_CONTRACT.md",
+    "docs/reference/MVP_ALPHA_OPERATOR_SIGNOFF_PACKET_CONTRACT.md",
+    "docs/reference/MVP_ALPHA_LAUNCH_BLOCKER_REGISTER_CONTRACT.md",
+    "docs/reference/MVP_ALPHA_PUBLIC_CLAIM_REVIEW_CONTRACT.md",
+    "docs/operations/MVP_ALPHA_OPERATOR_DECISION.md",
+    "docs/operations/MVP_ALPHA_LAUNCH_DECISION_OPTIONS.md",
+    "docs/operations/MVP_ALPHA_LAUNCH_BLOCKERS.md",
+    "docs/operations/MVP_ALPHA_PUBLIC_CLAIM_REVIEW.md",
+    "docs/operations/MVP_ALPHA_OPERATOR_SIGNOFF_NO_INFERENCE_POLICY.md",
+    "docs/operations/MVP_ALPHA_TO_DEPLOYMENT_HANDOFF.md"
+  ],
+  "added_examples": [
+    "examples/audits/mvp_alpha_operator/"
+  ],
+  "added_inventories": [
+    "control/inventory/audits/mvp_alpha_operator_decision_policy.json",
+    "control/inventory/audits/mvp_alpha_operator_signoff_policy.json",
+    "control/inventory/audits/mvp_alpha_launch_blocker_policy.json",
+    "control/inventory/audits/mvp_alpha_launch_decision_options_policy.json",
+    "control/inventory/audits/mvp_alpha_public_claim_review_policy.json",
+    "control/inventory/audits/mvp_alpha_operator_next_task_policy.json",
+    "control/inventory/audits/mvp_alpha_operator_review_truth_policy.json",
+    "control/inventory/audits/mvp_alpha_operator_review_no_deploy_policy.json"
+  ],
+  "added_scripts": [
+    "scripts/build_mvp_alpha_decision_packet.py",
+    "scripts/check_mvp_alpha_operator_signoff.py",
+    "scripts/check_mvp_alpha_public_claims.py",
+    "scripts/route_mvp_alpha_next_task.py",
+    "scripts/validate_mvp_alpha_operator_review.py",
+    "scripts/summarize_mvp_alpha_operator_review.py"
+  ],
+  "added_tests": [
+    "tests/audits/test_mvp_alpha_operator_decision_contracts.py",
+    "tests/audits/test_mvp_alpha_operator_signoff.py",
+    "tests/audits/test_mvp_alpha_public_claim_review.py",
+    "tests/operations/test_mvp_alpha_operator_review_scripts.py"
+  ],
+  "decision_options": [
+    "approve_local_only_continuation",
+    "approve_public_alpha_deployment_planning_only",
+    "approve_operator_supervised_launch_future",
+    "request_remediation",
+    "block_launch",
+    "defer_launch"
+  ],
+  "next_task": "LOCAL-MVP-ITERATION-01 | PUBLIC-ALPHA-DEPLOYMENT-PLAN-01 | MVP-ALPHA-REMEDIATION-01 | MVP-ALPHA-BLOCKED-01",
+  "operator_review_scope": {
+    "decision_packet_created": true,
+    "deployment_allowed_current": false,
+    "launch_allowed_current": false,
+    "launch_blocker_register_created": true,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_claim_review_created": true,
+    "recommended_next_task_created": true,
+    "signoff_packet_created": true
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "purpose": "operator_review_launch_decision_packet",
+  "schema_version": "mvp_alpha_operator_review_01_report.v0",
+  "status": "pass_with_warnings",
+  "task": "MVP-ALPHA-OPERATOR-REVIEW-01",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_review_is_launch": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "validation": {
+    "aide_lite_adapter_validate": "pass",
+    "aide_lite_doctor": "pass",
+    "aide_lite_eval_list": "pass",
+    "aide_lite_eval_run": "pass",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_verify": "warn_no_errors",
+    "architecture_boundaries": "pass",
+    "diff_check": "pass",
+    "focused_operator_review_scripts": "pass",
+    "full_unittest_discovery": "pass",
+    "json_syntax": "pass",
+    "major_validators": "pass",
+    "operator_review_validator": "pass"
+  }
+}

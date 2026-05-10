@@ -1,0 +1,8 @@
+{
+  "operator_identity_optional_current": true,
+  "pass_status_is_not_approval": true,
+  "schema_version": "mvp_alpha_operator_signoff_policy.v0",
+  "signature_mechanism_future": true,
+  "signoff_must_be_explicit": true,
+  "unsigned_is_not_approval": true
+}

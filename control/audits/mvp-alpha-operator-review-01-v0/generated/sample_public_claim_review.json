@@ -1,0 +1,78 @@
+{
+  "allowed_claims": [
+    "Eureka has local audit evidence ready for operator review.",
+    "Unsafe public behaviors remain disabled.",
+    "Operator signoff is required before launch planning can advance."
+  ],
+  "forbidden_claims": [
+    "production_ready",
+    "public_alpha_live",
+    "exhaustive_index",
+    "global_search_complete",
+    "rights_cleared",
+    "malware_safe",
+    "installability_verified",
+    "app_store",
+    "downloader",
+    "upload_service",
+    "account_service",
+    "telemetry_enabled",
+    "live_source_fanout_enabled",
+    "public_index_mutated",
+    "master_index_mutated"
+  ],
+  "limitations": [
+    "This review is limited to repo-local examples, docs, and audit packets.",
+    "It does not establish rights clearance, safety, installability, deployment, or production readiness."
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_hosting": false,
+    "enabled_live_source_fanout": false,
+    "enabled_public_relay": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "mutated_site_dist": false
+  },
+  "public_claim_review_id": "mvp-alpha-public-claim-review-v0",
+  "remediation_required": false,
+  "required_non_claims": [
+    "not_live",
+    "not_production",
+    "not_rights_cleared",
+    "not_malware_safe",
+    "not_installability_verified",
+    "not_download_service",
+    "not_upload_service",
+    "not_account_service",
+    "not_telemetry_service",
+    "not_live_source_fanout",
+    "not_operator_signed"
+  ],
+  "reviewed_claims": [
+    "Local MVP audit evidence exists.",
+    "Operator review is required before launch planning proceeds.",
+    "No deployment, public alpha, or production state is claimed."
+  ],
+  "schema_version": "mvp_alpha_public_claim_review.v0",
+  "truth_boundary": {
+    "candidate_truth_accepted": false,
+    "evidence_truth_accepted": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "operator_review_is_launch": false,
+    "operator_signoff_inferred": false,
+    "production_claimed": false,
+    "public_alpha_live_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "source_truth_accepted": false,
+    "verified_installability_claimed": false
+  },
+  "unsafe_claim_findings": []
+}

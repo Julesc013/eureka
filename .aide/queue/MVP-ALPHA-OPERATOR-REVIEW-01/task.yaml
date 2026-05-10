@@ -1,11 +1,18 @@
 task_id: MVP-ALPHA-OPERATOR-REVIEW-01
 title: Operator review and launch decision packet
-status: queued
+status: needs_review
 phase: MVP-ALPHA-OPERATOR-REVIEW-01
 allowed_paths:
-  - .aide/**
+  - contracts/audits/**
+  - control/inventory/audits/**
+  - examples/audits/**
+  - scripts/**
+  - tests/audits/**
+  - tests/operations/**
+  - docs/reference/**
+  - docs/operations/**
   - control/audits/**
-  - docs/**
+  - .aide/**
 forbidden_paths:
   - site/dist/**
   - data/public_index/**
@@ -15,8 +22,12 @@ forbidden_paths:
   - .local/eureka/**
   - .cache/eureka/**
 non_goals:
-  - no deployment, no hosting provider calls, no DNS changes, no provider credentials, no secrets, no public alpha live claim, no production claim, no public search behavior change, no live source fanout, no source sync, no downloads, no uploads, no accounts, no telemetry, no public/master index mutation, and no operator signoff inference
+  - no deployment, no launch, no hosting provider calls, no DNS changes, no provider credentials, no secrets, no public alpha live claim, no production claim, no public search behavior change, no live source fanout, no source sync, no downloads, no uploads, no accounts, no telemetry, no public/master index mutation, and no operator signoff inference
 validation:
-  - python scripts/validate_mvp_alpha_audit.py
-  - python scripts/audit_mvp_alpha_readiness.py --check
-next_recommended_task: MVP-ALPHA-OPERATOR-REVIEW-01
+  - python scripts/validate_mvp_alpha_operator_review.py
+  - python scripts/build_mvp_alpha_decision_packet.py --audit control/audits/mvp-alpha-audit-01-local-mvp-readiness-v0/mvp_alpha_audit_01_report.json --check
+  - python scripts/check_mvp_alpha_operator_signoff.py --input examples/audits/mvp_alpha_operator/operator_signoff_packet_unsigned_v0.json --check
+  - python scripts/check_mvp_alpha_public_claims.py --input examples/audits/mvp_alpha_operator --check
+  - python scripts/route_mvp_alpha_next_task.py --decision examples/audits/mvp_alpha_operator/operator_decision_approve_planning_only_v0.json --check
+  - python scripts/summarize_mvp_alpha_operator_review.py --input examples/audits/mvp_alpha_operator --check
+next_recommended_task: LOCAL-MVP-ITERATION-01

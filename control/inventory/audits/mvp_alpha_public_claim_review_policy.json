@@ -1,0 +1,34 @@
+{
+  "claim_review_required_before_public_copy": true,
+  "forbidden_claims": [
+    "production_ready",
+    "public_alpha_live",
+    "exhaustive_index",
+    "global_search_complete",
+    "rights_cleared",
+    "malware_safe",
+    "installability_verified",
+    "app_store",
+    "downloader",
+    "upload_service",
+    "account_service",
+    "telemetry_enabled",
+    "live_source_fanout_enabled",
+    "public_index_mutated",
+    "master_index_mutated"
+  ],
+  "required_non_claims": [
+    "not_live",
+    "not_production",
+    "not_rights_cleared",
+    "not_malware_safe",
+    "not_installability_verified",
+    "not_download_service",
+    "not_upload_service",
+    "not_account_service",
+    "not_telemetry_service",
+    "not_live_source_fanout",
+    "not_operator_signed"
+  ],
+  "schema_version": "mvp_alpha_public_claim_review_policy.v0"
+}

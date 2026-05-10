@@ -1,0 +1,35 @@
+task_id: LOCAL-MVP-ITERATION-01
+title: Continue local MVP improvements pending operator decision
+status: queued
+phase: LOCAL-MVP-ITERATION-01
+allowed_paths:
+  - .aide/**
+  - control/audits/**
+  - docs/**
+forbidden_paths:
+  - site/dist/**
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - connectors/**
+  - packaging/**
+  - third_party/**
+  - data/public_index/**
+  - data/master_index/**
+  - master_index/**
+  - .aide.local/**
+  - .local/eureka/**
+  - .cache/eureka/**
+non_goals:
+  - no deployment, launch, provider calls, DNS changes, generated site output mutation, public behavior enablement, public/master index mutation, secrets, or inferred operator approval
+validation:
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py verify
+  - py -3 .aide/scripts/aide_lite.py eval run
+next_recommended_task: LOCAL-MVP-ITERATION-01

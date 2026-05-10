@@ -1,0 +1,24 @@
+{
+  "decision_ref": "examples/audits/mvp_alpha_operator/operator_decision_approve_planning_only_v0.json",
+  "next_task_allowed": true,
+  "next_task_forbidden_actions": [
+    "deployment",
+    "hosting_provider_calls",
+    "dns_changes",
+    "site_dist_mutation",
+    "public_alpha_live_claim",
+    "production_claim",
+    "operator_signoff_inference"
+  ],
+  "next_task_id": "PUBLIC-ALPHA-DEPLOYMENT-PLAN-01",
+  "next_task_record_id": "operator-next-task-planning-v0",
+  "next_task_title": "Public alpha deployment planning only",
+  "notes": [
+    "Routing is advisory and does not execute the next task."
+  ],
+  "preconditions": [
+    "Operator decision artifact remains unsigned for this bundle.",
+    "No deployment execution is allowed by this next-task record."
+  ],
+  "schema_version": "mvp_alpha_operator_next_task.v0"
+}

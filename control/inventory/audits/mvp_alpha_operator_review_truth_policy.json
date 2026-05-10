@@ -1,0 +1,11 @@
+{
+  "malware_safety_claimed": false,
+  "master_index_mutated": false,
+  "operator_review_is_not_launch": true,
+  "production_claimed": false,
+  "public_alpha_live_claimed": false,
+  "public_index_mutated": false,
+  "rights_clearance_claimed": false,
+  "schema_version": "mvp_alpha_operator_review_truth_policy.v0",
+  "verified_installability_claimed": false
+}

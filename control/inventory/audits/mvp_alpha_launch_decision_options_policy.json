@@ -1,0 +1,13 @@
+{
+  "decision_options_allowed": [
+    "approve_local_only_continuation",
+    "approve_public_alpha_deployment_planning_only",
+    "approve_operator_supervised_launch_future",
+    "request_remediation",
+    "block_launch",
+    "defer_launch",
+    "not_evaluable"
+  ],
+  "deployment_execution_forbidden_current": true,
+  "schema_version": "mvp_alpha_launch_decision_options_policy.v0"
+}
