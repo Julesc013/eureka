@@ -1,0 +1,231 @@
+{
+  "policy_id": "h5_vendor_update_live_probe_rate_limit_policy",
+  "schema_version": "h5_vendor_update_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "microsoft_download_center",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "microsoft_update_catalog",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "microsoft_runtime_redistributables",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "apple_software_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "apple_software_update_catalog",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "nvidia_driver_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "amd_driver_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "intel_driver_support",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "dell_support_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "hp_support_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "lenovo_support_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "asus_support_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "acer_support_downloads",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "generic_vendor_driver_firmware",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    },
+    {
+      "auth_posture": "approved_public_no_auth_only_after_future_gate",
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "retry_policy": {
+        "max_retries": 0,
+        "retry_backoff_seconds": 0
+      },
+      "source_id": "generic_runtime_redistributable",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_or_not_required_for_blocked_preflight"
+    }
+  ]
+}

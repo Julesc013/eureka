@@ -1,6 +1,6 @@
 id: H5-BUNDLE-03
 title: Vendor/update/driver approved metadata-only live probes
-status: queued
+status: needs_review
 purpose: Prepare approval-gated metadata-only live probe envelopes for H5 vendor, update, driver, firmware, and runtime redistributable metadata after fixture normalizers pass.
 allowed_scope_summary: H5 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE queue/context metadata only.
 gate: H5-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and catalog fetch/download/vendor-tool/package-manager/firmware-flash/install/execute behavior remains forbidden by default.

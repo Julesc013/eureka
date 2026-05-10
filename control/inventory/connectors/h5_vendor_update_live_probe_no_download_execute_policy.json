@@ -1,0 +1,30 @@
+{
+  "checksum_signature_payload_downloads_allowed": false,
+  "driver_downloads_allowed": false,
+  "firmware_downloads_allowed": false,
+  "firmware_flash_allowed": false,
+  "forbidden_artifact_classes": [
+    "EXE",
+    "MSI",
+    "MSU",
+    "CAB",
+    "DMG",
+    "PKG",
+    "ZIP",
+    "TAR",
+    "driver_package",
+    "firmware_image",
+    "BIOS_UEFI_image",
+    "runtime_redistributable",
+    "installer",
+    "update_package"
+  ],
+  "install_execute_allowed": false,
+  "installer_downloads_allowed": false,
+  "package_manager_invocation_allowed": false,
+  "policy_id": "h5_vendor_update_live_probe_no_download_execute_policy",
+  "runtime_downloads_allowed": false,
+  "schema_version": "h5_vendor_update_live_probe_no_download_execute_policy.v0",
+  "update_package_downloads_allowed": false,
+  "vendor_tool_invocation_allowed": false
+}

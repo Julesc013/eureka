@@ -1,0 +1,262 @@
+{
+  "policy_id": "h5_vendor_update_live_probe_endpoint_policy",
+  "schema_version": "h5_vendor_update_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "download_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "exe_msi_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "microsoft_download_center"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "update_catalog_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "cab_msu_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "microsoft_update_catalog"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "runtime_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "installer_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "microsoft_runtime_redistributables"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "software_download_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "dmg_pkg_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "apple_software_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "update_catalog_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "catalog_sync_forbidden_current",
+        "package_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "apple_software_update_catalog"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "driver_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "nvidia_driver_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "driver_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "amd_driver_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "intel_driver_support"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "dell_support_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "hp_support_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "lenovo_support_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "asus_support_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "support_page_metadata_lookup_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "driver_firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "acer_support_downloads"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "vendor_metadata_fixture_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "firmware_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "generic_vendor_driver_firmware"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "allowlisted_endpoint_or_metadata_classes_future": [
+        "runtime_metadata_fixture_future"
+      ],
+      "arbitrary_url_allowed": false,
+      "catalog_sync_allowed": false,
+      "download_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "installer_download_forbidden_current"
+      ],
+      "notes": [
+        "Endpoint classes are policy labels, not URL permission."
+      ],
+      "scraping_allowed": false,
+      "source_id": "generic_runtime_redistributable"
+    }
+  ]
+}

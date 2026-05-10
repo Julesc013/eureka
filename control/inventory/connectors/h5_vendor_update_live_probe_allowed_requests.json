@@ -1,0 +1,951 @@
+{
+  "policy_id": "h5_vendor_update_live_probe_allowed_requests",
+  "schema_version": "h5_vendor_update_live_probe_allowed_requests.v0",
+  "sources": [
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "microsoft_download_center",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_runtime_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_runtime_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "download_page_metadata_lookup_future",
+          "request_key": "example_runtime_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "microsoft_download_center-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Microsoft"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "microsoft_download_center",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "microsoft_update_catalog",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_firmware_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_firmware_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "update_catalog_metadata_lookup_future",
+          "request_key": "example_firmware_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "microsoft_update_catalog-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Microsoft"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "microsoft_update_catalog",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "microsoft_runtime_redistributables",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_runtime_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_runtime_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "runtime_metadata_lookup_future",
+          "request_key": "example_runtime_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "microsoft_runtime_redistributables-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Microsoft"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "microsoft_runtime_redistributables",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "apple_software_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_runtime_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_runtime_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "software_download_metadata_lookup_future",
+          "request_key": "example_runtime_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "apple_software_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Apple"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "apple_software_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "apple_software_update_catalog",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_firmware_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_firmware_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "update_catalog_metadata_lookup_future",
+          "request_key": "example_firmware_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "apple_software_update_catalog-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Apple"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "apple_software_update_catalog",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "nvidia_driver_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_driver_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_driver_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "driver_metadata_lookup_future",
+          "request_key": "example_driver_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "nvidia_driver_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "NVIDIA"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "nvidia_driver_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "amd_driver_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_driver_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_driver_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "driver_metadata_lookup_future",
+          "request_key": "example_driver_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "amd_driver_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "AMD"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "amd_driver_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "intel_driver_support",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_driver_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_driver_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_metadata_lookup_future",
+          "request_key": "example_driver_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "intel_driver_support-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Intel"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "intel_driver_support",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "dell_support_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_support_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_support_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+          "request_key": "example_support_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "dell_support_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Dell"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "dell_support_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "hp_support_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_support_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_support_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+          "request_key": "example_support_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "hp_support_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "HP"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "hp_support_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "lenovo_support_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_support_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_support_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+          "request_key": "example_support_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "lenovo_support_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Lenovo"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "lenovo_support_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "asus_support_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_support_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_support_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+          "request_key": "example_support_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "asus_support_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "ASUS"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "asus_support_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "acer_support_downloads",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_support_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_support_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+          "request_key": "example_support_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "acer_support_downloads-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Acer"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "acer_support_downloads",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "generic_vendor_driver_firmware",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_firmware_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_firmware_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "vendor_metadata_fixture_future",
+          "request_key": "example_firmware_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "generic_vendor_driver_firmware-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Generic Vendor"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "generic_vendor_driver_firmware",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    },
+    {
+      "allowed_identifier_or_query_shapes": [
+        "exact_committed_identifier_only_after_future_approval"
+      ],
+      "allowed_request_keys": [],
+      "approval_status": "not_approved_for_live_access",
+      "approved_operation_scope": "metadata_only",
+      "approved_source_id": "generic_runtime_redistributable",
+      "checksum_fetch_approved": false,
+      "crawling_approved": false,
+      "driver_download_allowed": false,
+      "driver_download_approved": false,
+      "firmware_download_allowed": false,
+      "firmware_download_approved": false,
+      "firmware_flash_allowed": false,
+      "firmware_flash_approved": false,
+      "install_execute_allowed": false,
+      "install_execute_approved": false,
+      "installer_download_allowed": false,
+      "installer_download_approved": false,
+      "limitations": [
+        "Blocked by default; fixtures are the current review-equivalent input."
+      ],
+      "live_access_approved": false,
+      "max_requests_current": 0,
+      "metadata_probe_approved": false,
+      "package_manager_invocation_approved": false,
+      "planned_request_keys": [
+        "example_runtime_metadata"
+      ],
+      "public_query_fanout_approved": false,
+      "reason": "operator approval is not committed",
+      "requests": {
+        "example_runtime_metadata": {
+          "bounded_metadata_only": true,
+          "download_or_execution_requested": false,
+          "endpoint_or_metadata_class": "runtime_metadata_fixture_future",
+          "request_key": "example_runtime_metadata",
+          "request_shape": {
+            "identifier": {
+              "device_or_hardware_identifier": "metadata-only-device-candidate",
+              "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+              "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+              "product_or_package_identifier": "generic_runtime_redistributable-metadata-fixture",
+              "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+              "vendor_name": "Generic Runtime Vendor"
+            },
+            "kind": "bounded_metadata_lookup"
+          }
+        }
+      },
+      "runtime_download_allowed": false,
+      "runtime_download_approved": false,
+      "scraping_approved": false,
+      "signature_fetch_approved": false,
+      "source_id": "generic_runtime_redistributable",
+      "source_sync_approved": false,
+      "update_package_download_approved": false,
+      "vendor_catalog_fetch_allowed": false,
+      "vendor_catalog_fetch_approved": false,
+      "vendor_tool_invocation_allowed": false,
+      "vendor_tool_invocation_approved": false
+    }
+  ]
+}

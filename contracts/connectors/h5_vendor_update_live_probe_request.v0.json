@@ -1,0 +1,133 @@
+{
+  "$id": "https://example.invalid/eureka/contracts/h5_vendor_update_live_probe_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "approval_refs": {
+      "type": "array"
+    },
+    "approved_request_key": {
+      "type": "string"
+    },
+    "checksum_signature_fetch_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "connector_family": {
+      "type": "string"
+    },
+    "device_or_hardware_identifier": {
+      "type": "string"
+    },
+    "driver_download_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "driver_or_update_identifier": {
+      "type": "string"
+    },
+    "dry_run_only": {
+      "type": "boolean"
+    },
+    "endpoint_or_metadata_class": {
+      "type": "string"
+    },
+    "firmware_download_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "firmware_flash_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "install_execute_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "installer_download_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "live_probe_request_id": {
+      "type": "string"
+    },
+    "live_requested": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "operation_scope": {
+      "const": "metadata_only"
+    },
+    "os_or_architecture_context": {
+      "type": "string"
+    },
+    "output_policy_ref": {
+      "type": "string"
+    },
+    "policy_refs": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "product_or_package_identifier": {
+      "type": "string"
+    },
+    "request_shape": {
+      "type": "object"
+    },
+    "review_policy_ref": {
+      "type": "string"
+    },
+    "runtime_download_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "runtime_or_firmware_identifier": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "h5_vendor_update_live_probe_request.v0"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "truth_policy_ref": {
+      "type": "string"
+    },
+    "vendor_catalog_fetch_requested": {
+      "const": false,
+      "type": "boolean"
+    },
+    "vendor_name": {
+      "type": "string"
+    },
+    "vendor_tool_invocation_requested": {
+      "const": false,
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_request_id",
+    "source_id",
+    "connector_family",
+    "operation_scope",
+    "endpoint_or_metadata_class",
+    "approved_request_key",
+    "live_requested",
+    "dry_run_only",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h5_vendor_update_live_probe_request",
+  "type": "object"
+}

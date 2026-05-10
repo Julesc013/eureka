@@ -1,0 +1,13 @@
+{
+  "broad_search_allowed": false,
+  "full_catalog_sync_allowed": false,
+  "notes": [
+    "Only future exact bounded metadata lookups can be considered after committed approval."
+  ],
+  "policy_id": "h5_vendor_update_live_probe_no_catalog_sync_policy",
+  "public_query_fanout_allowed": false,
+  "schema_version": "h5_vendor_update_live_probe_no_catalog_sync_policy.v0",
+  "source_sync_allowed": false,
+  "update_catalog_mirroring_allowed": false,
+  "vendor_support_crawling_allowed": false
+}

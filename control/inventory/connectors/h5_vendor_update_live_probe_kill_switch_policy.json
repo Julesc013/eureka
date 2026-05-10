@@ -1,0 +1,126 @@
+{
+  "policy_id": "h5_vendor_update_live_probe_kill_switch_policy",
+  "schema_version": "h5_vendor_update_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_microsoft_download_center",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "microsoft_download_center"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_microsoft_update_catalog",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "microsoft_update_catalog"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_microsoft_runtime_redistributables",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "microsoft_runtime_redistributables"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_apple_software_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "apple_software_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_apple_software_update_catalog",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "apple_software_update_catalog"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_nvidia_driver_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "nvidia_driver_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_amd_driver_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "amd_driver_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_intel_driver_support",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "intel_driver_support"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_dell_support_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "dell_support_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_hp_support_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "hp_support_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_lenovo_support_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "lenovo_support_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_asus_support_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "asus_support_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_acer_support_downloads",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "acer_support_downloads"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_generic_vendor_driver_firmware",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_vendor_driver_firmware"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed",
+      "kill_switch_name": "h5_vendor_update_live_probe_generic_runtime_redistributable",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_runtime_redistributable"
+    }
+  ]
+}

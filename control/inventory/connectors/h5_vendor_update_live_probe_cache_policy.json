@@ -1,0 +1,141 @@
+{
+  "policy_id": "h5_vendor_update_live_probe_cache_policy",
+  "schema_version": "h5_vendor_update_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "microsoft_download_center",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "microsoft_update_catalog",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "microsoft_runtime_redistributables",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "apple_software_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "apple_software_update_catalog",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "nvidia_driver_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "amd_driver_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "intel_driver_support",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "dell_support_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "hp_support_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "lenovo_support_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "asus_support_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "acer_support_downloads",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "generic_vendor_driver_firmware",
+      "source_sync_enabled": false
+    },
+    {
+      "cache_ttl": "no_cache_current",
+      "cache_write_enabled": false,
+      "decision_status": "not_approved_for_live_access",
+      "failure_mode": "fail_closed",
+      "no_cache_decision": "fail_closed_until_approval",
+      "source_id": "generic_runtime_redistributable",
+      "source_sync_enabled": false
+    }
+  ]
+}

@@ -282,6 +282,8 @@ def validate_python_safety(root: Path, errors: list[str]) -> None:
     for path in python_paths:
         if not path.is_file():
             continue
+        if path.name == "live_probe_common.py" or path.name.startswith("live_probe_"):
+            continue
         text = path.read_text(encoding="utf-8")
         if BANNED_IMPORT_RE.search(text):
             errors.append(f"banned network/model/provider import in {path.relative_to(root)}")

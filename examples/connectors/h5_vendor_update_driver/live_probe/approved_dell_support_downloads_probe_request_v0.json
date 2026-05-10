@@ -1,0 +1,102 @@
+{
+  "approval_refs": [
+    "control/inventory/connectors/h5_vendor_update_live_probe_allowed_requests.json"
+  ],
+  "approved_request_key": "example_support_metadata",
+  "checksum_signature_fetch_requested": false,
+  "connector_family": "vendor_support_catalog",
+  "device_or_hardware_identifier": "metadata-only-device-candidate",
+  "driver_download_requested": false,
+  "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+  "dry_run_only": true,
+  "endpoint_or_metadata_class": "support_page_metadata_lookup_future",
+  "firmware_download_requested": false,
+  "firmware_flash_requested": false,
+  "install_execute_requested": false,
+  "installer_download_requested": false,
+  "limitations": [
+    "Dry request example; committed policies do not grant live access."
+  ],
+  "live_probe_request_id": "h5.vendor_update_live_probe_request.dell_support_downloads.example_support_metadata.v0",
+  "live_requested": false,
+  "notes": [
+    "H5 vendor/update probes fail closed unless a source-specific committed policy approves this exact metadata request."
+  ],
+  "operation_scope": "metadata_only",
+  "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+  "output_policy_ref": "control/inventory/connectors/h5_vendor_update_live_probe_output_policy.json",
+  "policy_refs": [
+    "control/inventory/connectors/h5_vendor_update_live_probe_policy.json",
+    "control/inventory/connectors/h5_vendor_update_live_probe_endpoint_policy.json",
+    "control/inventory/connectors/h5_vendor_update_live_probe_no_download_execute_policy.json"
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_catalog_sync": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_firmware_flashing": false,
+    "enabled_hosting": false,
+    "enabled_installers": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "product_or_package_identifier": "dell_support_downloads-metadata-fixture",
+  "request_shape": {
+    "identifier": {
+      "device_or_hardware_identifier": "metadata-only-device-candidate",
+      "driver_or_update_identifier": "metadata-only-driver-or-update-candidate",
+      "os_or_architecture_context": "metadata-only-os-architecture-candidate",
+      "product_or_package_identifier": "dell_support_downloads-metadata-fixture",
+      "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+      "vendor_name": "Dell"
+    },
+    "kind": "bounded_metadata_lookup"
+  },
+  "review_policy_ref": "control/inventory/connectors/h5_vendor_update_live_probe_review_policy.json",
+  "runtime_download_requested": false,
+  "runtime_or_firmware_identifier": "metadata-only-runtime-or-firmware-candidate",
+  "schema_version": "h5_vendor_update_live_probe_request.v0",
+  "source_id": "dell_support_downloads",
+  "truth_boundary": {
+    "accepted_authenticity_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_compatibility_truth": false,
+    "accepted_driver_identity_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_firmware_identity_truth": false,
+    "accepted_public_record": false,
+    "accepted_runtime_identity_truth": false,
+    "accepted_safety_truth": false,
+    "accepted_source_truth": false,
+    "accepted_vendor_truth": false,
+    "compatibility_candidate_is_truth": false,
+    "driver_identity_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "firmware_identity_candidate_is_truth": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "normalized_record_is_public_truth": false,
+    "payload_hash_candidate_is_malware_safety": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "runtime_identity_candidate_is_truth": false,
+    "signature_metadata_is_authenticity": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "vendor_identity_candidate_is_truth": false,
+    "verified_authenticity_claimed": false,
+    "verified_compatibility_claimed": false,
+    "verified_installability_claimed": false
+  },
+  "truth_policy_ref": "control/inventory/connectors/h5_vendor_update_live_probe_truth_policy.json",
+  "vendor_catalog_fetch_requested": false,
+  "vendor_name": "Dell",
+  "vendor_tool_invocation_requested": false
+}

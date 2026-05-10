@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H5-BUNDLE-03
+current_recommended_task: H5-BUNDLE-04
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -525,9 +525,18 @@ entries:
 
 - id: H5-BUNDLE-03
   title: Vendor/update/driver approved metadata-only live probes
-  status: queued
+  status: needs_review
   purpose: Prepare approval-gated metadata-only live probe envelopes for H5 vendor, update, driver, firmware, and runtime redistributable metadata after fixture normalizers pass.
   allowed_scope_summary: H5 live-probe request manifests, fail-closed wrappers, policies, docs, scripts, tests, audit evidence, and AIDE metadata only.
   gate: H5-BUNDLE-02 passes; no live probe may run without explicit committed source approval, and catalog fetch/download/vendor-tool/package-manager/firmware-flash/install/execute behavior remains forbidden by default.
   task: .aide/queue/H5-BUNDLE-03/task.yaml
   recommended_after: H5-BUNDLE-02
+
+- id: H5-BUNDLE-04
+  title: Vendor/update/driver review integration and quality delta
+  status: queued
+  purpose: Integrate H5 fixture replay and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H5 exit evidence.
+  allowed_scope_summary: H5 review integration contracts, connector policies, runtime helpers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+  gate: H5-BUNDLE-03 passes with blocked or fixture-equivalent outputs; no new live calls, catalog sync, downloads, vendor tools, firmware flashing, install, execution, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H5-BUNDLE-04/task.yaml
+  recommended_after: H5-BUNDLE-03
