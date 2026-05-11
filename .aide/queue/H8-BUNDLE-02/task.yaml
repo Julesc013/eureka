@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H8-BUNDLE-02
+title: Manuals, technical docs, datasheets, and standards fixture runtimes and normalizers
+status: queued
+recommended_after: H8-BUNDLE-01
+gate: H8-BUNDLE-01 passes; no live source calls, API/catalog queries, document downloads, full-text/OCR extraction, scraping, crawling, bypass, source sync, public/master index mutation, action execution, or truth acceptance.
+allowed_scope_summary: H8 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+next_if_blocked: H8-REMEDIATION-02

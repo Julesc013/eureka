@@ -1,16 +1,17 @@
 {
-  "completed_queue_item": "H7-BUNDLE-04",
-  "current_queue_item": "H8-BUNDLE-01",
-  "generated_at_note": "codex_updated_after_h7_bundle_04",
+  "completed_queue_item": "H8-BUNDLE-01",
+  "current_queue_item": "H8-BUNDLE-02",
+  "generated_at_note": "codex_updated_after_h8_bundle_01",
   "known_warn_only_conditions": [
-    "H7 live probes remained blocked by missing operator approval; fixture-equivalent outputs carried review integration.",
-    "No H7 live source call, OAI-PMH harvest, API query, full-text/PDF/book/article/dataset/patent/IIIF/media fetch or download, scrape, crawl, bypass, restricted-source access, source sync, or truth acceptance was enabled."
+    "H8-BUNDLE-01 is policy-pack-only; fixture runtime and live probes remain future work.",
+    "No H8 live source call, API/catalog query, document/PDF/manual/datasheet/standards fetch or download, full-text/OCR extraction, scrape, crawl, bypass, restricted-source access, source sync, action execution, or truth acceptance was enabled."
   ],
-  "next_recommended_queue_item": "H8-BUNDLE-01",
+  "next_recommended_queue_item": "H8-BUNDLE-02",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
     "enabled_downloads": false,
+    "enabled_extraction": false,
     "enabled_fetching": false,
     "enabled_source_sync": false,
     "mutated_master_index": false,
@@ -23,10 +24,9 @@
     "aide_lite_eval_run": "pass",
     "architecture_boundaries": "pass",
     "existing_validator_sweep": "pass",
-    "h7_fixture_runtime": "pass",
-    "h7_live_probe": "pass",
-    "h7_policy_packs": "pass",
     "h7_review_quality": "pass",
+    "h8_policy_packs": "pass",
+    "h8_targeted_unittests": "pass",
     "unittest_discovery": "pass"
   }
 }

@@ -28,7 +28,8 @@
         "archive_metadata",
         "code_source_release_host",
         "package_registry",
-        "web_archive_news_event"
+        "web_archive_news_event",
+        "manuals_docs_standards"
       ],
       "typical_input_shapes": [
         "committed_json_fixture",
@@ -422,7 +423,8 @@
       "schema_version": "connector_family.v0",
       "source_families_supported": [
         "restricted_source_manifest_only",
-        "web_archive_news_event"
+        "web_archive_news_event",
+        "manuals_docs_standards"
       ],
       "typical_input_shapes": [
         "restricted_manifest_fixture"
@@ -995,6 +997,240 @@
       ],
       "typical_output_shapes": [
         "cultural_object_identity_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Technical document catalog metadata",
+      "family_id": "technical_document_catalog",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Manual library metadata",
+      "family_id": "manual_library_metadata",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Vendor documentation catalog metadata",
+      "family_id": "vendor_documentation_catalog",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Standards and specification public metadata",
+      "family_id": "standards_metadata",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Datasheet catalog metadata",
+      "family_id": "datasheet_catalog",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
+      ]
+    },
+    {
+      "current_default_access": "committed_fixture_only",
+      "description": "Service manual and schematic catalog metadata",
+      "family_id": "service_manual_catalog",
+      "fixture_replay_required": true,
+      "forbidden_default_operations": [
+        "live_network_call",
+        "api_or_catalog_query",
+        "document_download",
+        "full_text_ocr_extraction",
+        "scrape_or_crawl",
+        "mutate_public_index",
+        "mutate_master_index"
+      ],
+      "live_access_default": false,
+      "no_goals": [
+        "no live call by default",
+        "no downloads or extraction",
+        "no truth acceptance"
+      ],
+      "policy_gates_required": [
+        "source_policy_approval",
+        "endpoint_or_metadata_allowlist",
+        "download_prohibition",
+        "review_gates"
+      ],
+      "schema_version": "connector_family.v0",
+      "source_families_supported": [
+        "manuals_docs_standards"
+      ],
+      "typical_input_shapes": [
+        "technical_document_metadata_fixture",
+        "catalog_metadata_response_future"
+      ],
+      "typical_output_shapes": [
+        "technical_document_identity_candidate",
+        "source_cache_candidate"
       ]
     }
   ],

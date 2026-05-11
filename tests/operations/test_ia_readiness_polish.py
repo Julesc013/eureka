@@ -223,6 +223,25 @@ class IAReadinessPolishTest(unittest.TestCase):
             result = validator.validate_repo(root)
             self.assertEqual(result["status"], "valid", result["errors"])
 
+    def test_latest_task_packet_h8_progression_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.make_fixture(root)
+            write_text(
+                root / ".aide/context/latest-task-packet.md",
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "## PHASE",
+                        "H8-BUNDLE-01 - Manuals docs standards policy packs",
+                        "## GOAL",
+                        "Main development lane proceeds to H8-BUNDLE-01 after H7 exit; HUMAN-OBS-REVIEW-01 is a parallel side-lane.",
+                    ]
+                ),
+            )
+            result = validator.validate_repo(root)
+            self.assertEqual(result["status"], "valid", result["errors"])
+
     def test_latest_task_packet_h2_progression_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

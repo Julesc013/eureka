@@ -41,7 +41,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 930,
+      "approx_tokens_if_applicable": 1153,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -56,7 +56,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 930,
+      "approx_tokens_if_applicable": 1153,
       "checks_run": 32,
       "errors": [],
       "notes": "Checks the latest compact packet is target-specific and actionable for Eureka.",

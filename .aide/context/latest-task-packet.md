@@ -2,37 +2,47 @@
 
 ## PHASE
 
-UNSPECIFIED - H8-BUNDLE-01 - Manuals, technical docs, datasheets, and standards source-family policy packs. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H8-BUNDLE-02 - Manuals docs standards fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-H8-BUNDLE-01 - Manuals, technical docs, datasheets, and standards source-family policy packs. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+Main development lane H8-BUNDLE-02 manuals docs standards fixture runtimes and normalizers; HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-H7-BUNDLE-04 closed the library/cultural/research review integration wave with fixture-equivalent outputs, blocked-live-probe evidence, quality delta, postmortem, and H8 routing.
+H8-BUNDLE-01 added policy-pack-only manuals/docs/standards source records, policies, examples, docs, validators, tests, and audit evidence. H8-BUNDLE-02 is the next fixture-only normalizer step; continue using repo-local context refs and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
-- `.aide/queue/H8-BUNDLE-01/task.yaml`
 - `.aide/memory/project-state.md`
-- `.aide/context/latest-context-packet.md`
-- `.aide/context/context-index.json`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `control/audits/h7-bundle-04-library-research-review-quality-audit-v0/`
-- `control/audits/h7-bundle-03-library-research-live-probes-v0/`
-- `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `.aide/reports/eureka-repo-health.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/queue/H8-BUNDLE-02/task.yaml`
+- `control/audits/h8-bundle-01-manuals-docs-standards-policy-packs-v0/`
+- `scripts/validate_h8_manuals_docs_standards_policy_packs.py`
+- `scripts/summarize_h8_manuals_docs_standards_sources.py`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
 - `AGENTS.md`
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed H8 queue packet>`
+- `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/H8-BUNDLE-01/**`
+- `.aide/queue/H8-BUNDLE-02/**`
 - `.aide/queue/index.yaml`
-- `.aide/reports/eureka-repo-health.*`
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -50,55 +60,72 @@ H7-BUNDLE-04 closed the library/cultural/research review integration wave with f
 - `connectors/**`
 - `packaging/**`
 - `third_party/**`
-- `site/dist/**`
-- `data/public_index/**`
-- live source outputs, local private roots, provider secret files, harvested payload roots, download roots, OCR roots, or media roots
+- raw provider credentials, API keys, local caches, raw prompt logs
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
-- Read the next reviewed H8 queue packet before opening H8 work.
-- Keep H8 policy-pack work policy-only until a future task explicitly broadens scope.
-- Work without changing Eureka product behavior.
-- Preserve H7 review boundaries: no live calls, harvests, queries, fetches, downloads, source sync, public/master index mutation, or truth acceptance.
-- Do not treat H7 fixture replay or blocked live-probe reports as production coverage or approval.
-
-## EVIDENCE
-
-- H7 closeout audit: `control/audits/h7-bundle-04-library-research-review-quality-audit-v0/`
-- H7 review examples: `examples/connectors/h7_library_research/review_integration/`
-- H7 validator: `scripts/validate_h7_library_research_review_quality_audit.py`
-
-## NON_GOALS
-
-- No live source calls.
-- No OAI-PMH harvests, DOI/ISBN/library/research/patent API queries, full-text/PDF/book/article/dataset/patent/IIIF/media fetches, scraping, crawling, bypass, restricted-source access, source sync, public/master index mutation, truth acceptance, or production readiness claims.
-
-## ACCEPTANCE
-
-- H8-BUNDLE-01 may start only after H7-BUNDLE-04 passes or passes with warnings and recommends `READY_FOR_H8_BUNDLE_01`.
-- J1 risky actions, K semantic/AI, and L wider clients remain deferred unless explicitly opened by future reviewed gates.
-
-## OUTPUT_SCHEMA
-
-- final_status: `PASS|PASS_WITH_WARNINGS|PARTIAL|BLOCKED|FAIL`
-- next_task: `H8-BUNDLE-01`
-- public_index_mutated: `false`
-- master_index_mutated: `false`
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- `python scripts/validate_h7_library_research_review_quality_audit.py`
-- `python scripts/audit_h7_library_research_wave.py --check`
-- `python scripts/check_architecture_boundaries.py`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 scripts/check_architecture_boundaries.py`
+- `py -3 scripts/aide validate`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
+
+## EVIDENCE
+
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
+
+## NON_GOALS
+
+- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+
+## ACCEPTANCE
+
+- H8-BUNDLE-02 starts only after H8-BUNDLE-01 passes and keeps fixture runtime work offline.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+
+## OUTPUT_SCHEMA
+
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 520
 - method: chars / 4, rounded up
+- chars: 4041
+- approx_tokens: 1011
 - budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`
