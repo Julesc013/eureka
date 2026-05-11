@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4612 chars, 1153 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6703 chars, 1676 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H8-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H8-BUNDLE-03` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `control/audits/h8-bundle-01-manuals-docs-standards-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/connector_family_registry.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_access_rights_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_datasheet_device_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_install_requirement_claim_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manual_artifact_relation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_no_download_extract_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_manuals_docs_standards_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_repair_service_safety_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_standards_specification_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h8_technical_document_identity_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 42; see task evidence changed-files report
+- unknown: `contracts/connectors/h8_access_rights_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_datasheet_device_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_install_requirement_claim_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manual_artifact_relation_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_fixture.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_normalized_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_repair_service_safety_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_standards_specification_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_technical_document_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_access_rights_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_datasheet_device_identity_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_install_requirement_claim_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manual_artifact_relation_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_evidence_mapping_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 45; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6959
-- approx_tokens: 1740
+- chars: 6819
+- approx_tokens: 1705
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

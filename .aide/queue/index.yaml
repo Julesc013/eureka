@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H8-BUNDLE-02
+current_recommended_task: H8-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -629,3 +629,13 @@ entries:
   gate: H8-BUNDLE-01 passes; no live source calls, API/catalog queries, document downloads, full-text/OCR extraction, scraping, crawling, bypass, source sync, public/master index mutation, action execution, or truth acceptance.
   task: .aide/queue/H8-BUNDLE-02/task.yaml
   recommended_after: H8-BUNDLE-01
+
+
+- id: H8-BUNDLE-03
+  title: Manuals, technical docs, datasheets, and standards approved metadata-only live probes
+  status: queued
+  purpose: Add approval-gated bounded metadata-only live-probe framework for H8 sources after fixture runtime review.
+  allowed_scope_summary: H8 live-probe contracts, policies, source-specific metadata wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H8-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, and downloads/extraction/scraping/action execution remain forbidden.
+  task: .aide/queue/H8-BUNDLE-03/task.yaml
+  recommended_after: H8-BUNDLE-02

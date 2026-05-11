@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H8-BUNDLE-03
+title: Manuals, technical docs, datasheets, and standards approved metadata-only live probes
+status: queued
+recommended_after: H8-BUNDLE-02
+gate: H8-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, and downloads/extraction/scraping/action execution remain forbidden.
+allowed_scope_summary: H8 live-probe contracts, policies, source-specific metadata wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+next_if_blocked: H8-APPROVAL-01

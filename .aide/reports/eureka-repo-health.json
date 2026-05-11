@@ -1,12 +1,13 @@
 {
-  "completed_queue_item": "H8-BUNDLE-01",
-  "current_queue_item": "H8-BUNDLE-02",
-  "generated_at_note": "codex_updated_after_h8_bundle_01",
+  "completed_queue_item": "H8-BUNDLE-02",
+  "current_queue_item": "H8-BUNDLE-03",
+  "generated_at_note": "codex_updated_after_h8_bundle_02",
   "known_warn_only_conditions": [
-    "H8-BUNDLE-01 is policy-pack-only; fixture runtime and live probes remain future work.",
+    "AIDE Lite verify remains WARN with zero errors because its diff-scope/file-reference heuristics do not fully model this large H8 product task.",
+    "H8-BUNDLE-02 is fixture-runtime-only; live probes remain future work.",
     "No H8 live source call, API/catalog query, document/PDF/manual/datasheet/standards fetch or download, full-text/OCR extraction, scrape, crawl, bypass, restricted-source access, source sync, action execution, or truth acceptance was enabled."
   ],
-  "next_recommended_queue_item": "H8-BUNDLE-02",
+  "next_recommended_queue_item": "H8-BUNDLE-03",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -20,11 +21,10 @@
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
   "validation": {
-    "aide_lite": "warn_zero_errors",
-    "aide_lite_eval_run": "pass",
+    "aide_lite": "pass_with_verify_warnings",
     "architecture_boundaries": "pass",
     "existing_validator_sweep": "pass",
-    "h7_review_quality": "pass",
+    "h8_fixture_runtime": "pass",
     "h8_policy_packs": "pass",
     "h8_targeted_unittests": "pass",
     "unittest_discovery": "pass"

@@ -1,7 +1,8 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H8-BUNDLE-01`
-- current_queue_item: `H8-BUNDLE-02`
+- completed_queue_item: `H8-BUNDLE-02`
+- current_queue_item: `H8-BUNDLE-03`
 - status: `warn`
-- validation: H8 policy-pack validator, H8 summary check, H8 targeted unit tests, full unittest discovery, architecture boundaries, existing H7/H6/H5/H4/H3/H2/H1/H0/core validators, and AIDE evals passed. `aide_lite verify` may remain WARN-only after the H8-BUNDLE-02 handoff because this commit contains H8-BUNDLE-01 artifacts.
-- boundary: H8-BUNDLE-01 remained policy-pack-only; no live source calls, API/catalog queries, document/PDF/manual/datasheet/standards fetches or downloads, full-text/OCR extraction, scrape/crawl/bypass/restricted-source/action/truth/index behavior was enabled.
+- validation: H8 fixture runtime validator, normalizer check, replay check, summary check, targeted H8 unit tests, H8 policy-pack validator, existing H8/H7/H6/H5/H4/H3/H2/H1/H0/core validators, full unittest discovery, architecture boundaries, and AIDE evals passed. AIDE Lite `verify` is WARN with zero errors because its diff-scope/file-reference heuristics do not fully model this large H8 product task.
+- note: H8-BUNDLE-02 is fixture-runtime-only; live probes remain future work.
+- boundary: no live calls, API/catalog queries, fetches, downloads, extraction, scraping, crawling, bypass, restricted-source access, source sync, truth acceptance, or public/master index mutation.
