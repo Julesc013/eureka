@@ -1,0 +1,25 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h8_manuals_docs_standards/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "document download roots",
+    "standards download roots",
+    "OCR/full-text roots",
+    "media roots",
+    "restricted-source roots",
+    "repair/action roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "policy_id": "h8_manuals_docs_review_path_policy",
+  "schema_version": "h8_manuals_docs_review_path_policy.v0"
+}

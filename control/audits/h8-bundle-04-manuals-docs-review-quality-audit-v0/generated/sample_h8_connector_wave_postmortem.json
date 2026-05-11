@@ -1,0 +1,203 @@
+{
+  "access_rights_gaps": [
+    "Access/rights candidates are not rights clearance, open-access truth, redistribution permission, or download permission."
+  ],
+  "auto_approves_future_connectors": false,
+  "blocked_sources": [
+    "apple_support_developer_docs",
+    "bitsavers_docs",
+    "dec_vax_pdp_documentation",
+    "generic_technical_document_collection",
+    "hp_hpe_documentation",
+    "ia_manuals_library",
+    "ibm_documentation",
+    "ieee_acm_standards_metadata",
+    "iso_iec_public_standards",
+    "manualslib_metadata",
+    "microsoft_technical_docs",
+    "rfc_editor_ietf",
+    "semiconductor_datasheets",
+    "service_manual_schematic_archive",
+    "sgi_documentation",
+    "sun_oracle_documentation",
+    "vendor_documentation_portal",
+    "w3c_technical_reports"
+  ],
+  "datasheet_device_identity_gaps": [
+    "Datasheet/device candidates are not device truth, lifecycle availability, electrical safety, or engineering guidance."
+  ],
+  "do_not_repeat_risks": [
+    "Do not treat manuals/docs/standards metadata as documentation completeness, standards compliance, compatibility correctness, installability, repair safety, electrical safety, access rights, rights clearance, open-access truth, malware safety, verified authenticity, or public truth.",
+    "Do not use fixture replay or blocked probes as live access approval.",
+    "Do not let access metadata become query, fetch, download, extraction, repair, install, or acquisition permission."
+  ],
+  "evidence_mapping_gaps": [
+    "Evidence candidates remain previews only."
+  ],
+  "fixture_gaps": [
+    "Fixtures are synthetic/public-safe and do not prove live manuals/docs/standards behavior."
+  ],
+  "h9_handoff_recommendation": "H9-BUNDLE-01 may start policy-pack-only work for media, music, image, video, and map sources.",
+  "h9_or_j1_k_l_recommendation": "proceed_to_h9_policy_packs; keep_j1_k_l_deferred",
+  "install_requirement_claim_gaps": [
+    "Install requirement candidates are not installability, compatibility correctness, safe execution guidance, or action permission."
+  ],
+  "j1_k_l_deferral_recommendation": "J1 risky actions, K semantic/AI, and L wider clients remain deferred unless explicit gates open.",
+  "live_probe_gaps": [
+    "Blocked live probes provide gate evidence but no completed metadata response."
+  ],
+  "manual_artifact_relation_gaps": [
+    "Manual-artifact relation candidates are not applicability, compatibility, installability, repair safety, or rights truth."
+  ],
+  "next_phase_recommendation": "READY_FOR_H9_BUNDLE_01",
+  "no_goals_preserved": [
+    "no_api_catalog_query",
+    "no_document_fetch",
+    "no_downloads",
+    "no_full_text_ocr",
+    "no_iiif_media_fetch",
+    "no_scrape_crawl",
+    "no_restricted_source_access",
+    "no_repair_install_action",
+    "no_truth_acceptance",
+    "no_public_index_mutation"
+  ],
+  "normalizer_gaps": [
+    "Normalizers cover metadata fixture shapes, not PDFs, manuals, datasheets, standards documents, schematics, service manuals, OCR/full text, media, scraping, or crawling."
+  ],
+  "notes": [
+    "Postmortem recommends H9 policy packs, not risky actions or production readiness."
+  ],
+  "policy_gaps": [
+    "source-specific live probe approvals remain absent"
+  ],
+  "postmortem_id": "h8.connector_wave_postmortem.2035979acf02.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_extraction": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_summary": {
+    "access_rights_candidate_count": 18,
+    "blocked_sources_count": 18,
+    "blocker_count": 0,
+    "claims_compatibility_correctness_verified": false,
+    "claims_documentation_completeness_verified": false,
+    "claims_electrical_safety_verified": false,
+    "claims_installability_verified": false,
+    "claims_malware_safety": false,
+    "claims_open_access_truth": false,
+    "claims_production_readiness": false,
+    "claims_repair_safety_verified": false,
+    "claims_rights_clearance": false,
+    "claims_standards_compliance_verified": false,
+    "claims_verified_authenticity": false,
+    "datasheet_device_identity_candidate_count": 18,
+    "fixture_sources_count": 18,
+    "install_requirement_claim_candidate_count": 18,
+    "known_gap_count": 2,
+    "live_probe_sources_count": 0,
+    "manual_artifact_relation_candidate_count": 18,
+    "overclaim_errors": [],
+    "quality_delta_id": "h8.quality_delta.3ef36f857eaf.v0",
+    "repair_service_safety_candidate_count": 18,
+    "review_seed_count": 162,
+    "schema_version": "h8_quality_delta_summary.v0",
+    "source_count": 18,
+    "standards_specification_identity_candidate_count": 18,
+    "status": "pass",
+    "technical_document_identity_candidate_count": 18
+  },
+  "repair_service_safety_gaps": [
+    "Repair/service/safety candidates are not repair safety, electrical safety, calibration permission, or action authorization."
+  ],
+  "restricted_source_policy_gaps": [
+    "Paywalled, restricted, licensed, standards-body controlled, and rights-sensitive sources remain policy-blocked by default."
+  ],
+  "review_mapping_gaps": [
+    "Review seeds are not human review decisions and are not persisted."
+  ],
+  "risks": [
+    "Live H8 metadata probes remain blocked pending operator approval."
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "api_catalog_query_enabled": false,
+    "boundary_result": "preserved",
+    "document_fetch_enabled": false,
+    "download_enabled": false,
+    "full_text_ocr_enabled": false,
+    "master_index_mutated": false,
+    "network_calls_made": false,
+    "public_index_mutated": false,
+    "repair_or_install_action_permission": false,
+    "restricted_source_access_enabled": false,
+    "scraping_crawling_enabled": false,
+    "source_sync_enabled": false
+  },
+  "schema_version": "h8_manuals_docs_connector_wave_postmortem.v0",
+  "scorecard_summary": {
+    "auto_approves_future_connectors": false,
+    "production_ready": false,
+    "scorecard_update_count": 18
+  },
+  "source_os_reuse_assessment": "H8 reused H0-H7 Source OS review gates while preserving technical-document-specific boundaries.",
+  "standards_specification_identity_gaps": [
+    "Standards/specification candidates are not standards truth, conformance proof, or standards-document access permission."
+  ],
+  "technical_document_identity_gaps": [
+    "Technical document identity candidates require review before any document identity use."
+  ],
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_datasheet_device_truth": false,
+    "accepted_document_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_install_requirement_truth": false,
+    "accepted_manual_artifact_relation_truth": false,
+    "accepted_repair_service_safety_truth": false,
+    "accepted_source_truth": false,
+    "accepted_standards_truth": false,
+    "access_rights_seed_accepts_rights_truth": false,
+    "automatic_future_connector_approval": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "compatibility_correctness_claimed": false,
+    "datasheet_device_seed_accepts_device_truth": false,
+    "electrical_safety_claimed": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "install_requirement_seed_accepts_installability_truth": false,
+    "installability_claimed": false,
+    "malware_safety_claimed": false,
+    "manual_artifact_seed_accepts_relation_truth": false,
+    "master_index_mutated": false,
+    "open_access_truth_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "repair_safety_claimed": false,
+    "repair_service_safety_seed_accepts_safety_truth": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "standards_specification_seed_accepts_standards_truth": false,
+    "technical_document_seed_accepts_document_truth": false,
+    "verified_authenticity_claimed": false
+  },
+  "wave_id": "H8",
+  "what_failed": [
+    "No H8 source has committed operator approval for a live metadata probe."
+  ],
+  "what_worked": [
+    "Eighteen H8 manuals/docs/standards sources have policy packs, fixtures, normalizers, replay outputs, fail-closed live-probe envelopes, and review previews.",
+    "Technical document, manual-artifact, datasheet/device, standards/specification, install requirement, repair/service/safety, and access-rights candidates remain review-gated and candidate-only.",
+    "Live-probe outputs failed closed when committed source approvals were missing."
+  ]
+}

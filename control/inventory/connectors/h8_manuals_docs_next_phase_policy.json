@@ -1,0 +1,11 @@
+{
+  "deployment_operator_gated": true,
+  "h9_preferred_after_h8_if_coherent": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "policy_id": "h8_manuals_docs_next_phase_policy",
+  "preferred_next_phase_after_h8": "H9-BUNDLE-01",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h8_manuals_docs_next_phase_policy.v0"
+}

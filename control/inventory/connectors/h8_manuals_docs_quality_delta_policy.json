@@ -1,0 +1,43 @@
+{
+  "allowed_metrics": [
+    "source_count",
+    "fixture_sources_count",
+    "live_probe_sources_count",
+    "blocked_sources_count",
+    "normalized_record_count",
+    "technical_document_identity_candidate_count",
+    "manual_artifact_relation_candidate_count",
+    "datasheet_device_identity_candidate_count",
+    "standards_specification_identity_candidate_count",
+    "install_requirement_claim_candidate_count",
+    "repair_service_safety_candidate_count",
+    "access_rights_candidate_count",
+    "source_cache_candidate_count",
+    "evidence_candidate_preview_count",
+    "review_seed_count",
+    "coverage_preview_count",
+    "scorecard_update_count",
+    "blocker_count",
+    "warning_count",
+    "known_gap_count"
+  ],
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_documentation_coverage",
+    "exhaustive_global_coverage",
+    "documentation_completeness_verified",
+    "standards_compliance_verified",
+    "compatibility_correctness_verified",
+    "installability_verified",
+    "repair_safety_verified",
+    "electrical_safety_verified",
+    "access_rights_verified",
+    "open_access_truth_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_authenticity",
+    "future_connector_auto_approval"
+  ],
+  "policy_id": "h8_manuals_docs_quality_delta_policy",
+  "schema_version": "h8_manuals_docs_quality_delta_policy.v0"
+}

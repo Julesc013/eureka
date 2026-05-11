@@ -1,0 +1,24 @@
+# H8 Review Integration Summary
+
+- status: `pass`
+- source_count: `18`
+- technical_document_identity_review_seed_count: `18`
+- manual_artifact_relation_review_seed_count: `18`
+- datasheet_device_identity_review_seed_count: `18`
+- standards_specification_identity_review_seed_count: `18`
+- install_requirement_claim_review_seed_count: `18`
+- repair_service_safety_review_seed_count: `18`
+- access_rights_review_seed_count: `18`
+- blocked_sources: `apple_support_developer_docs, bitsavers_docs, dec_vax_pdp_documentation, generic_technical_document_collection, hp_hpe_documentation, ia_manuals_library, ibm_documentation, ieee_acm_standards_metadata, iso_iec_public_standards, manualslib_metadata, microsoft_technical_docs, rfc_editor_ietf, semiconductor_datasheets, service_manual_schematic_archive, sgi_documentation, sun_oracle_documentation, vendor_documentation_portal, w3c_technical_reports`
+- document_truth_accepted: `false`
+- manual_artifact_relation_truth_accepted: `false`
+- datasheet_device_truth_accepted: `false`
+- standards_truth_accepted: `false`
+- install_requirement_truth_accepted: `false`
+- repair_service_safety_truth_accepted: `false`
+- access_rights_truth_accepted: `false`
+- query_fetch_download_extract: `false`
+- restricted_source_access: `false`
+- repair_or_install_action_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

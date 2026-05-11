@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H9-BUNDLE-01
+title: Media, music, image, video, and map source-family policy packs
+status: queued
+recommended_after: H8-BUNDLE-04
+gate: H8-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H9_BUNDLE_01; policy-pack-only scope; no live calls, downloads, scraping, source sync, public/master index mutation, or truth acceptance.
+allowed_scope_summary: H9 source-family policy packs, docs, examples, validators, audit pack, and AIDE queue/context metadata only.
+next_if_blocked: H8-REMEDIATION-04

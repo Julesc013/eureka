@@ -1,0 +1,411 @@
+{
+  "access_rights_candidate_count": 18,
+  "blocked_sources_count": 18,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 18,
+  "datasheet_device_identity_candidate_count": 18,
+  "evidence_candidate_preview_count": 18,
+  "fixture_sources_count": 18,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_documentation_coverage",
+    "exhaustive_global_coverage",
+    "documentation_completeness_verified",
+    "standards_compliance_verified",
+    "compatibility_correctness_verified",
+    "installability_verified",
+    "repair_safety_verified",
+    "electrical_safety_verified",
+    "access_rights_verified",
+    "open_access_truth_verified",
+    "rights_clearance",
+    "malware_safety",
+    "verified_authenticity",
+    "automatic_future_connector_approval"
+  ],
+  "install_requirement_claim_candidate_count": 18,
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H8 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Technical-document metadata is not documentation completeness, standards compliance, compatibility correctness, installability, repair safety, electrical safety, rights clearance, open-access truth, malware safety, verified authenticity, or production coverage proof."
+  ],
+  "live_probe_sources_count": 0,
+  "manual_artifact_relation_candidate_count": 18,
+  "normalized_record_count": 18,
+  "notes": [
+    "H8 quality delta is operational review evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "apple_support_developer_docs",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "bitsavers_docs",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "dec_vax_pdp_documentation",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_technical_document_collection",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "hp_hpe_documentation",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "ia_manuals_library",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "ibm_documentation",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "ieee_acm_standards_metadata",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "iso_iec_public_standards",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "manualslib_metadata",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "microsoft_technical_docs",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "rfc_editor_ietf",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "semiconductor_datasheets",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "service_manual_schematic_archive",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "sgi_documentation",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "sun_oracle_documentation",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "vendor_documentation_portal",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    },
+    {
+      "access_rights_review_seed_created": true,
+      "datasheet_device_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "install_requirement_claim_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, document, relation, datasheet/device, standards, install, repair/safety, access-rights, rights, action, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "manual_artifact_relation_review_seed_created": true,
+      "repair_service_safety_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "w3c_technical_reports",
+      "standards_specification_identity_review_seed_created": true,
+      "technical_document_identity_review_seed_created": true
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_extraction": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h8.quality_delta.3ef36f857eaf.v0",
+  "repair_service_safety_candidate_count": 18,
+  "review_seed_count": 162,
+  "schema_version": "h8_manuals_docs_quality_delta_report.v0",
+  "scorecard_update_count": 18,
+  "source_cache_candidate_count": 18,
+  "source_count": 18,
+  "standards_specification_identity_candidate_count": 18,
+  "technical_document_identity_candidate_count": 18,
+  "truth_boundary": {
+    "access_rights_verified": false,
+    "automatic_future_connector_approval": false,
+    "compatibility_correctness_verified": false,
+    "documentation_completeness_verified": false,
+    "electrical_safety_verified": false,
+    "exhaustive_global_coverage": false,
+    "installability_verified": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "open_access_truth_claimed": false,
+    "production_documentation_coverage": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "repair_safety_verified": false,
+    "rights_clearance_claimed": false,
+    "standards_compliance_verified": false,
+    "verified_authenticity_claimed": false
+  },
+  "warning_count": 2,
+  "wave_id": "H8"
+}

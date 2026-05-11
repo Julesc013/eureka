@@ -1,13 +1,12 @@
 {
-  "completed_queue_item": "H8-BUNDLE-03",
-  "current_queue_item": "H8-BUNDLE-04",
-  "generated_at_note": "codex_updated_after_h8_bundle_03_validation",
+  "completed_queue_item": "H8-BUNDLE-04",
+  "current_queue_item": "H9-BUNDLE-01",
+  "generated_at_note": "codex_updated_after_h8_bundle_04_validation",
   "known_warn_only_conditions": [
-    "H8-BUNDLE-03 all live probes are blocked by missing committed operator approval; fixture-equivalent H8-BUNDLE-02 outputs remain sufficient for review integration.",
-    "AIDE Lite doctor/validate/review-pack report WARN-level governance notes and verify reports diff-scope warnings with zero hard errors for this large H8 task.",
-    "No H8 live source call, API/catalog query, document/PDF/manual/datasheet/standards fetch or download, full-text/OCR extraction, scrape, crawl, bypass, restricted-source access, source sync, action execution, or truth acceptance was enabled."
+    "H8 live probes remain blocked by missing committed operator approval; fixture-equivalent outputs carried review integration.",
+    "H8 quality delta is not production documentation coverage, standards compliance, compatibility correctness, installability, repair safety, electrical safety, rights clearance, open-access truth, malware safety, verified authenticity, or production readiness proof."
   ],
-  "next_recommended_queue_item": "H8-BUNDLE-04",
+  "next_recommended_queue_item": "H9-BUNDLE-01",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -21,12 +20,9 @@
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
   "validation": {
-    "aide_lite": "pass_with_verify_warnings",
+    "aide_lite": "pass_with_warnings",
     "architecture_boundaries": "pass",
-    "existing_validator_sweep": "pass",
-    "h8_fixture_runtime": "pass",
-    "h8_live_probe": "pass",
-    "h8_policy_packs": "pass",
+    "h8_review_quality": "pass",
     "unittest_discovery": "pass"
   }
 }
