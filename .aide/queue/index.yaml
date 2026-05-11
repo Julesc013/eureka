@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H14-BUNDLE-03
+current_recommended_task: H14-BUNDLE-04
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -860,3 +860,11 @@ entries:
   gate: H14-BUNDLE-02 passes; default offline preflight only, no live source discovery, web search, crawling, scraping, source sync, pack import/export, registry mutation, public/master index mutation, or truth acceptance.
   task: .aide/queue/H14-BUNDLE-03/task.yaml
   recommended_after: H14-BUNDLE-02
+
+- id: H14-BUNDLE-04
+  title: Source discovery, source packs, coverage manifests, and scorecard review integration and quality delta
+  status: queued
+  purpose: Integrate H14 rollup dry-run outputs into review seeds, quality delta, Source OS health, and next-phase recommendation.
+  allowed_scope_summary: H14 review/quality/audit contracts, policies, docs, runtime helpers, examples, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H14-BUNDLE-03 passes or is blocked only by missing approvals with fixture-equivalent outputs; no live source calls, source discovery runtime, pack import/export, registry mutation, source-cache/evidence writes, index mutation, or truth acceptance.
+  recommended_after: H14-BUNDLE-03

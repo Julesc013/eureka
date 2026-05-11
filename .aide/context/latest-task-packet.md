@@ -2,17 +2,17 @@
 
 ## PHASE
 
-H14-BUNDLE-03 - Source discovery, source packs, coverage manifests, and scorecard dry-run rollups
+H14-BUNDLE-04 - Source discovery, source packs, coverage manifests, and scorecard review integration and quality delta
 
 ## GOAL
 
-H14-BUNDLE-03 - Source discovery, source packs, coverage manifests, and scorecard dry-run rollups
+H14-BUNDLE-04 - Source discovery, source packs, coverage manifests, and scorecard review integration and quality delta
 
 ## WHY
 
 Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
-Main development lane proceeds to H14-BUNDLE-03 after H14 fixture-runtime rollups; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+Main development lane proceeds to H14-BUNDLE-04 after H14 rollup dry-runs; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## CONTEXT_REFS
 

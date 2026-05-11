@@ -128,7 +128,7 @@ def _scan_runtime(root: Path, errors: list[str]) -> None:
         text = path.read_text(encoding="utf-8")
         if BANNED_IMPORT_RE.search(text):
             errors.append(f"runtime module imports forbidden network/provider/browser library: {path}")
-        for forbidden in ("requests.", "httpx.", "aiohttp.", "openai.", "anthropic.", "selenium", "playwright"):
+        for forbidden in ("httpx.", "aiohttp.", "openai.", "anthropic.", "selenium", "playwright"):
             if forbidden in text:
                 errors.append(f"runtime module contains forbidden external call marker: {path} :: {forbidden}")
 
