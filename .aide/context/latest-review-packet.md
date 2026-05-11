@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4137 chars, 1035 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4210 chars, 1053 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H11-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H11-BUNDLE-03` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `control/audits/h11-bundle-01-storefront-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_account_entitlement_boundary_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_acquisition_path_candidate_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_app_product_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_price_availability_region_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_review_rating_metadata_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_listing_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_no_purchase_download_account_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_rights_safety_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_storefront_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h11_version_release_channel_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 39; see task evidence changed-files report
+- unknown: `contracts/connectors/h11_account_entitlement_boundary_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_acquisition_path_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_app_product_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_price_availability_region_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_review_rating_metadata_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_storefront_fixture.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_storefront_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_storefront_listing_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_storefront_normalized_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_storefront_rights_safety_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h11_version_release_channel_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h11-bundle-02-storefront-fixture-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h11_account_entitlement_boundary_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h11_acquisition_path_candidate_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h11_app_product_identity_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h11_price_availability_region_mapping_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 50; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6894
-- approx_tokens: 1724
+- chars: 6827
+- approx_tokens: 1707
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H11-BUNDLE-02
+current_recommended_task: H11-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -734,9 +734,18 @@ entries:
 
 - id: H11-BUNDLE-02
   title: Storefront and app-store fixture runtimes and normalizers
-  status: queued
+  status: needs_review
   purpose: Add fixture-only storefront and app-store normalizers after H11 policy-pack governance.
   allowed_scope_summary: H11 storefront fixture contracts, committed fixtures, normalizers, replay scripts, examples, tests, audit pack, and AIDE metadata only.
   gate: H11-BUNDLE-01 passes; no live calls, storefront queries, product-page fetches, downloads, account access, purchase automation, entitlement checks, install/launch actions, scraping, public/master index mutation, or truth acceptance.
   task: .aide/queue/H11-BUNDLE-02/task.yaml
   recommended_after: H11-BUNDLE-01
+
+- id: H11-BUNDLE-03
+  title: Storefront and app-store approved metadata-only live probes
+  status: queued
+  purpose: Add approval-gated bounded metadata-only storefront/app-store live-probe policies and blocked/approved probe envelopes after H11 fixture runtime.
+  allowed_scope_summary: H11 live-probe policies, allowed request manifests, wrappers, examples, tests, docs, audit pack, and AIDE metadata only.
+  gate: H11-BUNDLE-02 passes; default offline preflight, no live calls unless exact committed approval exists, and no downloads, account access, purchase automation, entitlement checks, install/launch actions, scraping, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H11-BUNDLE-03/task.yaml
+  recommended_after: H11-BUNDLE-02

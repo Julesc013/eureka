@@ -1,0 +1,7 @@
+id: H11-BUNDLE-03
+title: Storefront and app-store approved metadata-only live probes
+status: queued
+purpose: Add approval-gated bounded metadata-only storefront/app-store live-probe envelopes after H11 fixture runtime.
+allowed_scope_summary: H11 storefront live-probe policies, allowed request manifests, wrappers, examples, docs, tests, audit pack, and AIDE metadata only.
+gate: H11-BUNDLE-02 passes; default mode remains offline/dry preflight and live calls require exact committed source-specific approval.
+recommended_after: H11-BUNDLE-02

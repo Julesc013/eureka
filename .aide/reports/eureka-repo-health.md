@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H11-BUNDLE-01`
-- current_queue_item: `H11-BUNDLE-02`
-- next_recommended_queue_item: `H11-BUNDLE-02`
+- completed_queue_item: `H11-BUNDLE-02`
+- current_queue_item: `H11-BUNDLE-03`
+- next_recommended_queue_item: `H11-BUNDLE-03`
 - status: `warn`
-- note: H11 storefront/app-store policy packs validated offline and route to fixture runtime; H11 remains policy-pack-only.
-- validation: H11 policy packs `pass`; H11 summary `pass`; H11 targeted tests `pass`; unittest discovery `pass`; H10-H0/core validator sweep `pass`; architecture boundaries `pass`; AIDE Lite `pass_with_verify_warnings`.
+- note: H11 storefront/app-store fixture runtime validated offline and routes to approval-gated metadata-only live probes; H11 remains no-live by default.
+- validation: H11 fixture runtime `pass`; H11 fixture summary `pass`; H11 targeted tests `pass`; unittest discovery `pass`; H11 policy packs `pass`; H10-H0/core validator sweep `pass`; architecture boundaries `pass`; AIDE Lite `pass_with_verify_warnings`.
 - public_index_mutated: `false`
 - master_index_mutated: `false`
 - downloads_enabled: `false`
