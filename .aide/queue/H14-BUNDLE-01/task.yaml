@@ -1,0 +1,15 @@
+id: H14-BUNDLE-01
+title: Source discovery, source packs, and connector scorecards
+status: queued
+track: H14
+recommended_after: H13-BUNDLE-04
+goal: Aggregate H0-H13 source discovery, source pack, coverage, and connector scorecard posture after H13 local/private/restricted boundary closeout.
+allowed_scope_summary: H14 source discovery policies, docs, contracts, examples, scripts, tests, audit pack, and AIDE metadata only until explicitly scoped.
+gate: H13-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H14_BUNDLE_01.
+no_goals:
+  - no local/private/restricted access
+  - no live source calls, source sync, or connector runtime access by default
+  - no public or master index mutation
+  - no source/evidence/candidate truth acceptance
+  - no CAS import, pack export/import, extraction, execution, acquisition, upload, or publication
+  - no model/provider calls

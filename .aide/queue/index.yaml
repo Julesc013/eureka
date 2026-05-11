@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H13-BUNDLE-04
+current_recommended_task: H14-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -827,9 +827,18 @@ entries:
 
 - id: H13-BUNDLE-04
   title: Local, private, user-supplied, and restricted-source review integration and quality delta
-  status: queued
+  status: needs_review
   purpose: Integrate H13 policy, fixture, and blocked boundary dry-run outputs into review seeds, quality delta, boundary health, coverage previews, and next-phase recommendations.
   allowed_scope_summary: H13 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE metadata only.
   gate: H13-BUNDLE-03 passes or is blocked only by missing boundary approvals with sufficient fixture-equivalent outputs; no new local/private/restricted access, URL fetches, account access, scans, CAS import, pack export/import, publication, source-cache/evidence writes, public/master index mutation, or truth acceptance.
   task: .aide/queue/H13-BUNDLE-04/task.yaml
   recommended_after: H13-BUNDLE-03
+
+- id: H14-BUNDLE-01
+  title: Source discovery, source packs, and connector scorecards
+  status: queued
+  purpose: Aggregate H0-H13 source discovery, source-pack, coverage, and connector-scorecard posture after H13 local/private boundary closeout.
+  allowed_scope_summary: H14 source discovery policy/docs/contracts/examples/scripts/tests/audit pack and AIDE metadata only until explicitly scoped.
+  gate: H13-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H14_BUNDLE_01; no local/private/restricted access, live source calls, source sync, public/master index mutation, truth acceptance, CAS import, pack export/import, publication, extraction, execution, acquisition, uploads, or model/provider calls by default.
+  task: .aide/queue/H14-BUNDLE-01/task.yaml
+  recommended_after: H13-BUNDLE-04

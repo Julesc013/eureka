@@ -1,0 +1,30 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h13_local_private/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "local source roots",
+    "CAS roots",
+    "private-source roots",
+    "credential roots",
+    "account roots",
+    "user URL fetch roots",
+    "import/export staging roots",
+    "archive extraction roots",
+    "source-cache runtime roots",
+    "evidence-ledger runtime roots",
+    "public-index roots",
+    "master-index roots",
+    "local private roots"
+  ],
+  "policy_id": "h13_local_private_review_path_policy",
+  "schema_version": "h13_local_private_review_path_policy.v0"
+}

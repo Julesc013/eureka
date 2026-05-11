@@ -1,22 +1,23 @@
 {
   "authenticated_access_enabled": false,
   "cas_import_enabled": false,
-  "completed_queue_item": "H13-BUNDLE-03",
-  "current_queue_item": "H13-BUNDLE-04",
+  "completed_queue_item": "H13-BUNDLE-04",
+  "current_queue_item": "H14-BUNDLE-01",
   "local_access_enabled": false,
   "master_index_mutated": false,
-  "next_recommended_queue_item": "H13-BUNDLE-04",
-  "note": "H13 local/private boundary dry-runs are fail-closed and blocked by missing approvals; fixture-equivalent outputs are sufficient for review integration.",
+  "next_recommended_queue_item": "H14-BUNDLE-01",
+  "note": "H13 local/private review integration closes with fixture-equivalent outputs and blocked boundary dry-run evidence; H14 source discovery and scorecard aggregation is ready without opening access.",
   "pack_export_import_enabled": false,
   "private_source_access_enabled": false,
   "public_index_mutated": false,
   "restricted_source_access_enabled": false,
-  "status": "pass",
+  "status": "pass_with_warnings",
   "user_supplied_url_fetch_enabled": false,
   "validation": {
-    "h13_boundary_dry_run_cli": "pass",
-    "h13_boundary_dry_run_summary": "pass",
-    "h13_boundary_dry_run_tests": "pass",
-    "h13_boundary_dry_run_validator": "pass"
+    "h13_review_integration": "pass",
+    "h13_review_quality_audit": "pass",
+    "h13_review_tests": "pass",
+    "h13_quality_delta": "pass",
+    "h13_wave_audit": "pass"
   }
 }

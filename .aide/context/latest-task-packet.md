@@ -2,15 +2,17 @@
 
 ## PHASE
 
-H13-BUNDLE-04 - Local, private, user-supplied, and restricted-source review integration and quality delta
+H14-BUNDLE-01 - Source discovery, source packs, and connector scorecards
 
 ## GOAL
 
-H13-BUNDLE-04 - Local, private, user-supplied, and restricted-source review integration and quality delta
+H14-BUNDLE-01 - Source discovery, source packs, and connector scorecards
 
 ## WHY
 
 Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+
+Main development lane proceeds to H14-BUNDLE-01 after H13 local/private boundary closeout; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## CONTEXT_REFS
 
@@ -117,8 +119,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4155
-- approx_tokens: 1039
+- chars: 3970
+- approx_tokens: 993
 - budget_status: PASS
 - warnings:
   - none
