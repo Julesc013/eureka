@@ -147,6 +147,7 @@ KNOWN_SOURCE_FAMILIES = {
     "local_private_user_supplied",
     "restricted_source_manifest_only",
     "source_discovery_scorecard",
+    "source_discovery_and_scorecards",
 }
 FORBIDDEN_DEFAULT_OPERATIONS = {
     "arbitrary_url_fetch",

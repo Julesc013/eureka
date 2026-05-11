@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H14-BUNDLE-01
+current_recommended_task: H14-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -836,9 +836,18 @@ entries:
 
 - id: H14-BUNDLE-01
   title: Source discovery, source packs, and connector scorecards
-  status: queued
+  status: needs_review
   purpose: Aggregate H0-H13 source discovery, source-pack, coverage, and connector-scorecard posture after H13 local/private boundary closeout.
   allowed_scope_summary: H14 source discovery policy/docs/contracts/examples/scripts/tests/audit pack and AIDE metadata only until explicitly scoped.
   gate: H13-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H14_BUNDLE_01; no local/private/restricted access, live source calls, source sync, public/master index mutation, truth acceptance, CAS import, pack export/import, publication, extraction, execution, acquisition, uploads, or model/provider calls by default.
   task: .aide/queue/H14-BUNDLE-01/task.yaml
   recommended_after: H13-BUNDLE-04
+
+- id: H14-BUNDLE-02
+  title: Source discovery, source packs, coverage manifests, and scorecard fixture runtimes
+  status: queued
+  purpose: Add committed-fixture-only H14 SourceNeed, SourceCandidate, source-pack, coverage, scorecard, reliability/freshness, dispute/revocation, lineage, and pack-boundary normalizers after H14 policy packs.
+  allowed_scope_summary: H14 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+  gate: H14-BUNDLE-01 passes; no live source calls, source discovery runtime, web search, crawling, scraping, source sync, pack import/export, registry mutation, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H14-BUNDLE-02/task.yaml
+  recommended_after: H14-BUNDLE-01

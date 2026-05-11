@@ -2,17 +2,17 @@
 
 ## PHASE
 
-H14-BUNDLE-01 - Source discovery, source packs, and connector scorecards
+H14-BUNDLE-02 - Source discovery, source packs, coverage manifests, and scorecard fixture runtimes
 
 ## GOAL
 
-H14-BUNDLE-01 - Source discovery, source packs, and connector scorecards
+H14-BUNDLE-02 - Source discovery, source packs, coverage manifests, and scorecard fixture runtimes
 
 ## WHY
 
 Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
-Main development lane proceeds to H14-BUNDLE-01 after H13 local/private boundary closeout; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+Main development lane proceeds to H14-BUNDLE-02 after H14 policy-pack rollup; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## CONTEXT_REFS
 

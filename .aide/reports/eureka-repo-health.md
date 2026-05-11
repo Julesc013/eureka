@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H13-BUNDLE-04`
-- current_queue_item: `H14-BUNDLE-01`
-- next_recommended_queue_item: `H14-BUNDLE-01`
-- status: `pass_with_warnings`
-- note: H13 local/private review integration closes with fixture-equivalent outputs and blocked boundary dry-run evidence; H14 source discovery and scorecard aggregation is ready without opening access.
-- validation: H13 review quality validator `pass`; H13 review integration `pass`; H13 quality delta `pass`; H13 wave audit `pass`; H13 review tests `pass`.
+- completed_queue_item: `H14-BUNDLE-01`
+- current_queue_item: `H14-BUNDLE-02`
+- next_recommended_queue_item: `H14-BUNDLE-02`
+- status: `pass`
+- note: H14 source discovery policy packs aggregate H0-H13 Source OS posture without opening source discovery, live access, pack import/export, registry mutation, index mutation, or truth acceptance.
+- validation: H14 policy pack validator `pass`; H14 summary check `pass`; H14 unit tests `pass`; cross-wave validators `pass`; architecture boundaries `pass`.
 - public_index_mutated: `false`
 - master_index_mutated: `false`
 - local_access_enabled: `false`
@@ -15,3 +15,13 @@
 - restricted_source_access_enabled: `false`
 - cas_import_enabled: `false`
 - pack_export_import_enabled: `false`
+- source_discovery_runtime_enabled: `false`
+- live_access_enabled: `false`
+- network_access_enabled: `false`
+- model_provider_enabled: `false`
+- source_sync_enabled: `false`
+- registry_mutation_enabled: `false`
+- source_cache_writes_enabled: `false`
+- public_index_writes_enabled: `false`
+- source_candidate_truth_accepted: `false`
+- scorecard_truth_accepted: `false`

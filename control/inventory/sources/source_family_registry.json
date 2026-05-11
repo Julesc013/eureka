@@ -378,20 +378,24 @@
       "typical_trust_lane": "unknown"
     },
     {
-      "schema_version": "source_family.v0",
-      "family_id": "web_archive_news_event",
-      "label": "Web Archive News Event",
-      "description": "Web archive, news, event, newspaper, broadcast, dead-link, and public trace metadata sources.",
-      "typical_trust_lane": "web_archive_trace",
-      "typical_risk_posture": "trace_context_rights_privacy_review_required",
       "allowed_default_depth": "D2_metadata_indexed",
-      "default_live_access_posture": "committed_fixture_only",
       "default_download_posture": "forbidden_by_default",
+      "default_live_access_posture": "committed_fixture_only",
       "default_review_requirements": [
         "source_policy",
         "trace_context_review",
         "rights_posture",
         "privacy_risk_review"
+      ],
+      "description": "Web archive, news, event, newspaper, broadcast, dead-link, and public trace metadata sources.",
+      "family_id": "web_archive_news_event",
+      "label": "Web Archive News Event",
+      "no_goals": [
+        "no live source calls by default",
+        "no CDX/Memento/WARC/WACZ fetch by default",
+        "no archived page, media, transcript, or public document download",
+        "no scraping, crawling, or bypass",
+        "no event or capture truth claim"
       ],
       "preferred_adapter_families": [
         "warc_cdx",
@@ -402,13 +406,9 @@
         "html_catalog_policy_blocked",
         "restricted_manifest_only"
       ],
-      "no_goals": [
-        "no live source calls by default",
-        "no CDX/Memento/WARC/WACZ fetch by default",
-        "no archived page, media, transcript, or public document download",
-        "no scraping, crawling, or bypass",
-        "no event or capture truth claim"
-      ]
+      "schema_version": "source_family.v0",
+      "typical_risk_posture": "trace_context_rights_privacy_review_required",
+      "typical_trust_lane": "web_archive_trace"
     },
     {
       "allowed_default_depth": "D0_source_known",
@@ -445,6 +445,41 @@
       "schema_version": "source_family.v0",
       "typical_risk_posture": "rights_license_identity_safety_review_required",
       "typical_trust_lane": "community"
+    },
+    {
+      "allowed_default_depth": "D0_source_known",
+      "default_download_posture": "not_applicable",
+      "default_live_access_posture": "policy_pack_only",
+      "default_review_requirements": [
+        "source_policy",
+        "scorecard_review",
+        "coverage_review",
+        "registry_mutation_prohibition"
+      ],
+      "description": "Source OS rollup records for SourceNeeds, SourceCandidates, source packs, coverage manifests, connector scorecards, reliability/freshness, disputes, revocations, and lineage policy.",
+      "family_id": "source_discovery_and_scorecards",
+      "label": "Source Discovery And Scorecards",
+      "no_goals": [
+        "no live discovery",
+        "no pack import/export",
+        "no registry mutation",
+        "no truth acceptance"
+      ],
+      "preferred_adapter_families": [
+        "source_need_registry",
+        "source_candidate_registry",
+        "source_discovery_policy",
+        "source_pack_manifest",
+        "connector_pack_manifest",
+        "coverage_manifest",
+        "connector_scorecard",
+        "source_reliability_freshness",
+        "source_dispute_revocation",
+        "source_lineage_provenance"
+      ],
+      "schema_version": "source_family.v0",
+      "typical_risk_posture": "governance_review_required",
+      "typical_trust_lane": "governance"
     }
   ],
   "registry_id": "source_family_registry",
