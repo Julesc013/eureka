@@ -1,0 +1,32 @@
+schema_version: aide.task.v0
+id: H12-BUNDLE-01
+title: Retro and community archive source-family policy packs
+status: queued
+track: H12
+recommended_after: H11-BUNDLE-04
+purpose: Add policy-pack-only retro/community archive source-family governance after H11 storefront review closeout.
+allowed_scope_summary: H12 source-family policy packs, source records, connector-family mappings, approval gates, coverage previews, scorecard previews, source-pack manifests, docs, validators, tests, audit pack, and AIDE metadata only.
+gate: H11-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H12_BUNDLE_01.
+non_goals:
+  - no live source calls
+  - no scraping or crawling
+  - no downloads or uploads
+  - no account access
+  - no source sync
+  - no public index mutation
+  - no master index mutation
+  - no evidence acceptance
+  - no candidate acceptance
+  - no source truth acceptance
+  - no public truth creation
+inputs:
+  - control/audits/h11-bundle-04-storefront-review-quality-audit-v0/
+  - control/audits/h11-bundle-03-storefront-live-probes-v0/
+  - control/audits/h11-bundle-02-storefront-fixture-runtime-v0/
+  - control/audits/h11-bundle-01-storefront-policy-packs-v0/
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+validation:
+  - python scripts/validate_h11_storefront_review_quality_audit.py
+  - python scripts/check_architecture_boundaries.py
+  - py -3 .aide/scripts/aide_lite.py validate

@@ -1,0 +1,21 @@
+# H11 Review Integration Summary
+
+- status: `pass`
+- source_count: `16`
+- storefront_listing_identity_review_seed_count: `16`
+- app_product_identity_review_seed_count: `16`
+- version_release_channel_review_seed_count: `16`
+- blocked_sources: `apple_app_store_metadata, chrome_web_store_metadata, epic_games_store_policy_limited, fdroid_metadata, flathub_metadata, generic_commercial_software_marketplace, generic_vendor_product_page, gog_store_metadata, google_play_metadata, humble_store_policy_limited, itchio_storefront_metadata, mac_app_store_metadata, microsoft_store_metadata, mozilla_addons_metadata, snapcraft_metadata, steam_store_metadata`
+- listing_identity_truth_accepted: `false`
+- app_product_truth_accepted: `false`
+- version_release_truth_accepted: `false`
+- price_availability_truth_accepted: `false`
+- acquisition_permission_accepted: `false`
+- review_rating_truth_accepted: `false`
+- account_entitlement_truth_accepted: `false`
+- rights_safety_truth_accepted: `false`
+- query_fetch_download_account_purchase_entitlement_install_launch: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

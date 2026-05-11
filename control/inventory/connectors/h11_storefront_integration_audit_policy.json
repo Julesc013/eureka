@@ -1,0 +1,71 @@
+{
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_H12_BUNDLE_01",
+    "READY_FOR_J1_POLICY_FUTURE",
+    "READY_FOR_K0_FUTURE",
+    "READY_FOR_L0_FUTURE",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "no_goals": [
+    "no production readiness",
+    "no future connector auto approval"
+  ],
+  "preferred_next_phase": "READY_FOR_H12_BUNDLE_01",
+  "required_no_truth_claims": [
+    "accepted_listing_identity_truth",
+    "accepted_app_product_truth",
+    "accepted_version_release_truth",
+    "accepted_price_availability_truth",
+    "accepted_acquisition_permission",
+    "accepted_review_rating_truth",
+    "accepted_account_entitlement_truth",
+    "accepted_rights_safety_truth",
+    "accepted_source_truth",
+    "accepted_evidence_truth",
+    "accepted_candidate_truth",
+    "accepted_public_record",
+    "public_index_mutation",
+    "master_index_mutation",
+    "api_catalog_sync_permission",
+    "product_page_fetch_permission",
+    "download_permission",
+    "account_access_permission",
+    "purchase_permission",
+    "checkout_permission",
+    "entitlement_verification_permission",
+    "install_launch_permission",
+    "review_rating_write_permission",
+    "scraping_crawling_permission",
+    "restricted_source_access_permission",
+    "source_sync_enablement",
+    "production_readiness_claim",
+    "rights_clearance",
+    "current_price_truth",
+    "current_availability_truth",
+    "license_entitlement_truth",
+    "legal_acquisition_truth",
+    "installability_truth",
+    "malware_safety",
+    "content_safety_truth",
+    "privacy_safety",
+    "verified_authenticity"
+  ],
+  "required_product_boundaries": [
+    "no query/fetch/download/account/purchase/entitlement/install/launch/review-write/scrape/crawl/bypass/restricted-source behavior"
+  ],
+  "required_validators": [
+    "scripts/validate_h11_storefront_review_quality_audit.py"
+  ],
+  "schema_version": "h11_storefront_integration_audit_policy.v0",
+  "task": "H11-BUNDLE-04",
+  "wave_id": "H11"
+}

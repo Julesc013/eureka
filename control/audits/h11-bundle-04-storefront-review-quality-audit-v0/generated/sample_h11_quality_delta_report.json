@@ -1,0 +1,400 @@
+{
+  "account_entitlement_boundary_candidate_count": 16,
+  "acquisition_path_candidate_count": 16,
+  "app_product_identity_candidate_count": 16,
+  "blocked_sources_count": 16,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 16,
+  "evidence_candidate_preview_count": 16,
+  "fixture_sources_count": 16,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_storefront_coverage",
+    "exhaustive_global_coverage",
+    "storefront_availability_verified",
+    "current_price_verified",
+    "current_availability_verified",
+    "license_entitlement_verified",
+    "legal_acquisition_verified",
+    "download_permission_verified",
+    "installability_verified",
+    "review_correctness_verified",
+    "rating_correctness_verified",
+    "rights_clearance",
+    "malware_safety",
+    "content_safety",
+    "privacy_safety",
+    "verified_authenticity",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H11 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Storefront metadata is not listing truth, app/product truth, version truth, storefront availability proof, current price proof, current availability proof, license entitlement proof, legal acquisition proof, download permission, installability, review correctness, rating correctness, rights clearance, malware safety, privacy safety, content safety, production coverage, or production quality proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 16,
+  "notes": [
+    "H11 quality delta is operational review evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "apple_app_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "chrome_web_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "epic_games_store_policy_limited",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "fdroid_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "flathub_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_commercial_software_marketplace",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_vendor_product_page",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gog_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "google_play_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "humble_store_policy_limited",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "itchio_storefront_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "mac_app_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "microsoft_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "mozilla_addons_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "snapcraft_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    },
+    {
+      "account_entitlement_boundary_review_seed_created": true,
+      "acquisition_path_review_seed_created": true,
+      "app_product_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "price_availability_region_review_seed_created": true,
+      "review_rating_metadata_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "steam_store_metadata",
+      "storefront_listing_identity_review_seed_created": true,
+      "storefront_rights_safety_review_seed_created": true,
+      "version_release_channel_review_seed_created": true
+    }
+  ],
+  "price_availability_region_candidate_count": 16,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_entitlement_checks": false,
+    "enabled_hosting": false,
+    "enabled_install_launch": false,
+    "enabled_purchase_actions": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h11.quality_delta.400a4361eb10.v0",
+  "review_rating_metadata_candidate_count": 16,
+  "review_seed_count": 160,
+  "schema_version": "h11_storefront_quality_delta_report.v0",
+  "scorecard_update_count": 16,
+  "source_cache_candidate_count": 16,
+  "source_count": 16,
+  "storefront_listing_identity_candidate_count": 16,
+  "storefront_rights_safety_candidate_count": 16,
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "content_safety_claimed": false,
+    "current_availability_verified": false,
+    "current_price_verified": false,
+    "download_permission_verified": false,
+    "exhaustive_global_coverage": false,
+    "installability_verified": false,
+    "legal_acquisition_verified": false,
+    "license_entitlement_verified": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "production_storefront_coverage": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rating_correctness_verified": false,
+    "review_correctness_verified": false,
+    "rights_clearance_claimed": false,
+    "storefront_availability_verified": false,
+    "verified_authenticity_claimed": false
+  },
+  "version_release_channel_candidate_count": 16,
+  "warning_count": 2,
+  "wave_id": "H11"
+}

@@ -1,0 +1,28 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h11_storefront/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "account roots",
+    "receipt roots",
+    "entitlement roots",
+    "storefront library roots",
+    "app/package/download roots",
+    "checkout/session roots",
+    "install/launch/action roots",
+    "restricted-source roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "schema_version": "h11_storefront_review_path_policy.v0",
+  "task": "H11-BUNDLE-04",
+  "wave_id": "H11"
+}

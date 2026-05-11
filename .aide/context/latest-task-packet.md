@@ -2,15 +2,15 @@
 
 ## PHASE
 
-H11-BUNDLE-04 - Storefront and app-store review integration and quality delta
+H12-BUNDLE-01 - Retro and community archive source-family policy packs
 
 ## GOAL
 
-Integrate H11 storefront/app-store policy, fixture, and blocked live-probe outputs into review/quality previews only. Main development lane proceeds to H11-BUNDLE-04 after H11-BUNDLE-03; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+Start H12 by adding policy-pack-only governance for retro/community archive source families after H11 storefront/app-store review closeout. Main development lane proceeds to H12-BUNDLE-01 after H11-BUNDLE-04; HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## WHY
 
-H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. No operator live approvals are committed, so H11-BUNDLE-04 should use committed H11 policy packs, fixture replay outputs, and blocked live-probe reports as fixture-equivalent review material.
+H11-BUNDLE-04 closed the storefront/app-store wave with fixture-equivalent review integration, quality delta, postmortem, and a next-phase recommendation of READY_FOR_H12_BUNDLE_01. H12 should define source-family policy packs only and must not enable live access, downloads, scraping, crawling, source sync, index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
 
 ## CONTEXT_REFS
 
@@ -24,7 +24,8 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
-- `.aide/queue/H11-BUNDLE-04/task.yaml`
+- `.aide/queue/H12-BUNDLE-01/task.yaml`
+- `control/audits/h11-bundle-04-storefront-review-quality-audit-v0/`
 - `control/audits/h11-bundle-03-storefront-live-probes-v0/`
 - `control/audits/h11-bundle-02-storefront-fixture-runtime-v0/`
 - `control/audits/h11-bundle-01-storefront-policy-packs-v0/`
@@ -33,7 +34,7 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 ## ALLOWED_PATHS
 
 - `.aide/`
-- H11-BUNDLE-04 governed review-integration artifacts only when that queue item is explicitly started from its task packet.
+- H12-BUNDLE-01 governed policy-pack artifacts only when that queue item is explicitly started from its task packet.
 
 ## FORBIDDEN_PATHS
 
@@ -58,10 +59,10 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 
 ## IMPLEMENTATION
 
-- Read H11-BUNDLE-03 audit outputs and fixture-equivalent results first.
-- Keep outputs as review seeds, previews, scorecards, quality deltas, and postmortems only.
+- Read H11-BUNDLE-04 audit outputs and next-phase recommendation first.
+- Keep H12 work policy-pack-only unless a future reviewed packet explicitly broadens scope.
 - Do not perform new live calls or infer operator signoff.
-- Do not accept source, evidence, candidate, listing, app/product, version, price/availability, acquisition, review/rating, account/entitlement, rights/safety, public, or master truth.
+- Do not accept source, evidence, candidate, archive identity, availability, acquisition, rights/safety, public, or master truth.
 
 ## VALIDATION
 
@@ -72,6 +73,7 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 - `.aide/scripts/aide_lite.py eval run`
 - `.aide/scripts/aide_lite.py verify`
 - `scripts/check_architecture_boundaries.py`
+- `python scripts/validate_h11_storefront_review_quality_audit.py`
 - `python scripts/validate_h11_storefront_live_probe.py`
 - `python scripts/validate_h11_storefront_fixture_runtime.py`
 - `python scripts/validate_h11_storefront_policy_packs.py`
@@ -79,9 +81,9 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 
 ## EVIDENCE
 
-- H11-BUNDLE-03 audit pack under `control/audits/h11-bundle-03-storefront-live-probes-v0/`
-- H11 live-probe result examples under `examples/connectors/h11_storefront/live_probe_results/`
-- H11 live-probe output previews under `examples/connectors/h11_storefront/live_probe_outputs/`
+- H11-BUNDLE-04 audit pack under `control/audits/h11-bundle-04-storefront-review-quality-audit-v0/`
+- H11 review integration examples under `examples/connectors/h11_storefront/review_integration/`
+- H11 live-probe blocked reports under `examples/connectors/h11_storefront/live_probe_results/`
 - Validation command results and commit hash from the completed task.
 
 ## NON_GOALS
@@ -92,8 +94,8 @@ H11-BUNDLE-03 added the fail-closed bounded metadata-only live-probe framework. 
 
 ## ACCEPTANCE
 
-- H11-BUNDLE-04 can start from fixture-equivalent H11 outputs.
-- HUMAN-OBS-REVIEW-01 remains documented as a parallel side-lane.
+- H12-BUNDLE-01 can start from H11 fixture-equivalent review outputs.
+- J1 risky actions, K semantic/AI, and L wider clients remain deferred.
 - Validation is run and recorded honestly.
 
 ## OUTPUT_SCHEMA
@@ -103,7 +105,7 @@ Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILE
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4230
-- approx_tokens: 1058
+- chars: 4222
+- approx_tokens: 1056
 - budget_status: PASS
 - formal ledger: `.aide/reports/token-ledger.jsonl`

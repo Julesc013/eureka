@@ -1,0 +1,22 @@
+{
+  "all_review_outputs_are_previews": true,
+  "schema_version": "h11_storefront_review_truth_policy.v0",
+  "task": "H11-BUNDLE-04",
+  "truth_values": {
+    "account_entitlement_seed_accepts_license_truth": false,
+    "acquisition_path_seed_accepts_action_permission": false,
+    "app_product_seed_accepts_product_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "listing_identity_seed_accepts_listing_truth": false,
+    "master_index_mutated": false,
+    "price_availability_seed_accepts_price_availability_truth": false,
+    "public_index_mutated": false,
+    "review_rating_seed_accepts_review_rating_truth": false,
+    "rights_safety_seed_accepts_rights_safety_truth": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "version_release_seed_accepts_version_truth": false
+  },
+  "wave_id": "H11"
+}

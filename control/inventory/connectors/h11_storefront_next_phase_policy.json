@@ -1,0 +1,12 @@
+{
+  "deployment_operator_gated": true,
+  "h12_preferred_after_h11_if_coherent": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "preferred_next_task": "H12-BUNDLE-01 - Retro and community archive source-family policy packs",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h11_storefront_next_phase_policy.v0",
+  "task": "H11-BUNDLE-04",
+  "wave_id": "H11"
+}

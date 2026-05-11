@@ -1,0 +1,32 @@
+{
+  "auto_approval_allowed": false,
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "listing_identity_gaps",
+    "app_product_identity_gaps",
+    "version_release_channel_gaps",
+    "price_availability_region_gaps",
+    "acquisition_path_gaps",
+    "review_rating_metadata_gaps",
+    "account_entitlement_boundary_gaps",
+    "rights_safety_gaps",
+    "restricted_source_policy_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h12_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h11_storefront_connector_wave_postmortem_policy.v0",
+  "task": "H11-BUNDLE-04",
+  "wave_id": "H11"
+}

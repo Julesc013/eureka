@@ -1,0 +1,78 @@
+{
+  "$id": "https://eureka.local/contracts/connectors/h11_storefront_integration_audit.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "account_purchase_action_boundary_summary": {
+      "description": "H11 storefront review-quality field: account_purchase_action_boundary_summary"
+    },
+    "artifact_inventory": {
+      "description": "H11 storefront review-quality field: artifact_inventory"
+    },
+    "audit_id": {
+      "description": "H11 storefront review-quality field: audit_id"
+    },
+    "audited_sources": {
+      "description": "H11 storefront review-quality field: audited_sources"
+    },
+    "audited_tasks": {
+      "description": "H11 storefront review-quality field: audited_tasks"
+    },
+    "blockers": {
+      "description": "H11 storefront review-quality field: blockers"
+    },
+    "fixture_runtime_summary": {
+      "description": "H11 storefront review-quality field: fixture_runtime_summary"
+    },
+    "h11_exit_gate": {
+      "description": "H11 storefront review-quality field: h11_exit_gate"
+    },
+    "live_probe_summary": {
+      "description": "H11 storefront review-quality field: live_probe_summary"
+    },
+    "next_phase_recommendation": {
+      "description": "H11 storefront review-quality field: next_phase_recommendation"
+    },
+    "notes": {
+      "description": "H11 storefront review-quality field: notes"
+    },
+    "postmortem_summary": {
+      "description": "H11 storefront review-quality field: postmortem_summary"
+    },
+    "product_boundary": {
+      "description": "H11 storefront review-quality field: product_boundary"
+    },
+    "quality_delta_summary": {
+      "description": "H11 storefront review-quality field: quality_delta_summary"
+    },
+    "restricted_source_policy_summary": {
+      "description": "H11 storefront review-quality field: restricted_source_policy_summary"
+    },
+    "review_integration_summary": {
+      "description": "H11 storefront review-quality field: review_integration_summary"
+    },
+    "schema_version": {
+      "description": "H11 storefront review-quality field: schema_version"
+    },
+    "source_policy_summary": {
+      "description": "H11 storefront review-quality field: source_policy_summary"
+    },
+    "truth_boundary": {
+      "description": "H11 storefront review-quality field: truth_boundary"
+    },
+    "validation_summary": {
+      "description": "H11 storefront review-quality field: validation_summary"
+    },
+    "warnings": {
+      "description": "H11 storefront review-quality field: warnings"
+    },
+    "wave_id": {
+      "description": "H11 storefront review-quality field: wave_id"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "h11_storefront_integration_audit",
+  "type": "object"
+}
