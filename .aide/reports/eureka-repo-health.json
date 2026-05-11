@@ -1,12 +1,13 @@
 {
-  "completed_queue_item": "H9-BUNDLE-01",
-  "current_queue_item": "H9-BUNDLE-02",
-  "generated_at_note": "codex_updated_after_h9_bundle_01_validation",
+  "completed_queue_item": "H9-BUNDLE-02",
+  "current_queue_item": "H9-BUNDLE-03",
+  "generated_at_note": "codex_updated_after_h9_bundle_02_validation",
   "known_warn_only_conditions": [
-    "H9-BUNDLE-01 is policy-pack-only; fixture runtime is intentionally deferred to H9-BUNDLE-02.",
-    "H9 media metadata policies do not prove media authenticity, audio identity, image identity, map correctness, rights clearance, public-domain status, Creative Commons validity, attribution correctness, malware safety, privacy safety, content safety, or production media coverage."
+    "H9-BUNDLE-02 is fixture-runtime-only and does not approve live access.",
+    "H9 media metadata fixtures do not prove media authenticity, audio identity, image identity, map correctness, rights clearance, public-domain status, Creative Commons validity, attribution correctness, malware safety, privacy safety, content safety, or production media coverage.",
+    "AIDE Lite verify/review-pack may report warning-only diff-scope and missing optional reference items with 0 errors."
   ],
-  "next_recommended_queue_item": "H9-BUNDLE-02",
+  "next_recommended_queue_item": "H9-BUNDLE-03",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -14,8 +15,8 @@
     "enabled_extraction": false,
     "enabled_fetching": false,
     "enabled_fingerprinting": false,
-    "enabled_uploads": false,
     "enabled_source_sync": false,
+    "enabled_uploads": false,
     "mutated_master_index": false,
     "mutated_public_index": false
   },
@@ -25,6 +26,7 @@
     "aide_lite": "pass_with_warnings",
     "architecture_boundaries": "pass",
     "existing_validator_sweep": "pass",
+    "h9_fixture_runtime": "pass",
     "h9_policy_packs": "pass",
     "unittest_discovery": "pass"
   }

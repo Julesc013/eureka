@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H9-BUNDLE-03
+title: Media, music, image, video, and map approved metadata-only live probes
+status: queued
+recommended_after: H9-BUNDLE-02
+gate: H9-BUNDLE-02 PASS or PASS_WITH_WARNINGS with fixture-equivalent outputs sufficient for approved metadata-only probe planning.
+scope: H9 approval-gated bounded metadata-only live-probe policies, wrappers, examples, scripts, tests, audit evidence, and AIDE context metadata only.
+forbidden: no live source call unless explicit committed approval passes all gates; no media downloads/uploads, fingerprint generation/submission, scraping/crawling, bypass, source sync, public/master index mutation, or media/music/image/video/map/fingerprint/rights/safety truth acceptance.

@@ -1,0 +1,334 @@
+{
+  "$id": "eureka://contracts/connectors/h9_media_metadata_normalized_record.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "invariants": [
+    "H9-BUNDLE-02 is committed-fixture-only.",
+    "Live calls, media downloads/uploads, fingerprint generation/submission, scraping, crawling, bypass, source sync, public/master index mutation, and truth acceptance remain forbidden.",
+    "Candidates and previews are review inputs only."
+  ],
+  "product_boundary": {
+    "api_calls_made": false,
+    "audio_download_used": false,
+    "bypass_or_automation_used": false,
+    "catalog_fetch_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fingerprinting": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "fingerprint_generation_used": false,
+    "fingerprint_submission_used": false,
+    "image_download_used": false,
+    "map_download_used": false,
+    "media_download_used": false,
+    "media_upload_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "restricted_source_access_used": false,
+    "score_download_used": false,
+    "scraping_used": false,
+    "thumbnail_fetch_used": false,
+    "video_download_used": false
+  },
+  "properties": {
+    "acoustid_candidate": {
+      "description": "acoustid_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "alternate_title": {
+      "description": "alternate_title field for h9_media_metadata_normalized_record.v0"
+    },
+    "artist_or_creator": {
+      "description": "artist_or_creator field for h9_media_metadata_normalized_record.v0"
+    },
+    "catalog_number": {
+      "description": "catalog_number field for h9_media_metadata_normalized_record.v0"
+    },
+    "catalog_record_id": {
+      "description": "catalog_record_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "checksum_metadata_candidate": {
+      "description": "checksum_metadata_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "collection_id": {
+      "description": "collection_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "connector_family": {
+      "description": "connector_family field for h9_media_metadata_normalized_record.v0"
+    },
+    "country_or_region_candidate": {
+      "description": "country_or_region_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "creation_date_candidate": {
+      "description": "creation_date_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "creator_or_contributor": {
+      "description": "creator_or_contributor field for h9_media_metadata_normalized_record.v0"
+    },
+    "discogs_id_candidate": {
+      "description": "discogs_id_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "duration_or_dimensions_candidate": {
+      "description": "duration_or_dimensions_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "evidence_candidate_preview": {
+      "description": "evidence_candidate_preview field for h9_media_metadata_normalized_record.v0"
+    },
+    "file_metadata_candidate": {
+      "description": "file_metadata_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "fingerprint_metadata": {
+      "description": "fingerprint_metadata field for h9_media_metadata_normalized_record.v0"
+    },
+    "image_or_video_id": {
+      "description": "image_or_video_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "image_video_map_identity_candidate": {
+      "description": "image_video_map_identity_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "isrc_candidate": {
+      "description": "isrc_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "iswc_candidate": {
+      "description": "iswc_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "label_or_publisher": {
+      "description": "label_or_publisher field for h9_media_metadata_normalized_record.v0"
+    },
+    "language_or_locale": {
+      "description": "language_or_locale field for h9_media_metadata_normalized_record.v0"
+    },
+    "map_id": {
+      "description": "map_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_creator_collection_relation_candidate": {
+      "description": "media_creator_collection_relation_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_fingerprint_candidate": {
+      "description": "media_fingerprint_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_format": {
+      "description": "media_format field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_object_identity_candidate": {
+      "description": "media_object_identity_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_rights_license_candidate": {
+      "description": "media_rights_license_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_safety_privacy_candidate": {
+      "description": "media_safety_privacy_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_title": {
+      "description": "media_title field for h9_media_metadata_normalized_record.v0"
+    },
+    "media_type": {
+      "description": "media_type field for h9_media_metadata_normalized_record.v0"
+    },
+    "medium_format_candidate": {
+      "description": "medium_format_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "medium_or_material": {
+      "description": "medium_or_material field for h9_media_metadata_normalized_record.v0"
+    },
+    "metadata_license_candidate": {
+      "description": "metadata_license_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "music_work_recording_release_candidate": {
+      "description": "music_work_recording_release_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "musicbrainz_id_candidate": {
+      "description": "musicbrainz_id_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "normalized_record_id": {
+      "description": "normalized_record_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "notes": {
+      "description": "notes field for h9_media_metadata_normalized_record.v0"
+    },
+    "object_record_id": {
+      "description": "object_record_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "place_or_geospatial_ref": {
+      "description": "place_or_geospatial_ref field for h9_media_metadata_normalized_record.v0"
+    },
+    "product_boundary": {
+      "description": "product_boundary field for h9_media_metadata_normalized_record.v0"
+    },
+    "publication_date_candidate": {
+      "description": "publication_date_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "publisher_or_collection": {
+      "description": "publisher_or_collection field for h9_media_metadata_normalized_record.v0"
+    },
+    "recording_title": {
+      "description": "recording_title field for h9_media_metadata_normalized_record.v0"
+    },
+    "release_group_candidate": {
+      "description": "release_group_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "release_title": {
+      "description": "release_title field for h9_media_metadata_normalized_record.v0"
+    },
+    "rights_or_license_metadata": {
+      "description": "rights_or_license_metadata field for h9_media_metadata_normalized_record.v0"
+    },
+    "safety_privacy_metadata": {
+      "description": "safety_privacy_metadata field for h9_media_metadata_normalized_record.v0"
+    },
+    "schema_version": {
+      "description": "schema_version field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_cache_candidate_preview": {
+      "description": "source_cache_candidate_preview field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_id": {
+      "description": "source_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_limitations": {
+      "description": "source_limitations field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_locator_candidate": {
+      "description": "source_locator_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_metadata": {
+      "description": "source_metadata field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_native_id": {
+      "description": "source_native_id field for h9_media_metadata_normalized_record.v0"
+    },
+    "source_record_kind": {
+      "description": "source_record_kind field for h9_media_metadata_normalized_record.v0"
+    },
+    "subject_or_tag": {
+      "description": "subject_or_tag field for h9_media_metadata_normalized_record.v0"
+    },
+    "thumbnail_or_preview_ref": {
+      "description": "thumbnail_or_preview_ref field for h9_media_metadata_normalized_record.v0"
+    },
+    "track_number_candidate": {
+      "description": "track_number_candidate field for h9_media_metadata_normalized_record.v0"
+    },
+    "truth_boundary": {
+      "description": "truth_boundary field for h9_media_metadata_normalized_record.v0"
+    },
+    "visual_title": {
+      "description": "visual_title field for h9_media_metadata_normalized_record.v0"
+    },
+    "work_title": {
+      "description": "work_title field for h9_media_metadata_normalized_record.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "normalized_record_id",
+    "source_id",
+    "connector_family",
+    "source_record_kind",
+    "media_title",
+    "alternate_title",
+    "media_type",
+    "media_format",
+    "source_native_id",
+    "collection_id",
+    "catalog_record_id",
+    "creator_or_contributor",
+    "publisher_or_collection",
+    "creation_date_candidate",
+    "publication_date_candidate",
+    "language_or_locale",
+    "subject_or_tag",
+    "duration_or_dimensions_candidate",
+    "file_metadata_candidate",
+    "checksum_metadata_candidate",
+    "source_locator_candidate",
+    "thumbnail_or_preview_ref",
+    "metadata_license_candidate",
+    "artist_or_creator",
+    "work_title",
+    "recording_title",
+    "release_title",
+    "release_group_candidate",
+    "label_or_publisher",
+    "catalog_number",
+    "isrc_candidate",
+    "iswc_candidate",
+    "musicbrainz_id_candidate",
+    "discogs_id_candidate",
+    "acoustid_candidate",
+    "track_number_candidate",
+    "medium_format_candidate",
+    "country_or_region_candidate",
+    "visual_title",
+    "object_record_id",
+    "image_or_video_id",
+    "map_id",
+    "place_or_geospatial_ref",
+    "medium_or_material",
+    "rights_or_license_metadata",
+    "fingerprint_metadata",
+    "safety_privacy_metadata",
+    "media_object_identity_candidate",
+    "music_work_recording_release_candidate",
+    "image_video_map_identity_candidate",
+    "media_creator_collection_relation_candidate",
+    "media_fingerprint_candidate",
+    "media_rights_license_candidate",
+    "media_safety_privacy_candidate",
+    "source_metadata",
+    "source_limitations",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "schema_version": "h9_media_metadata_normalized_record.v0",
+  "title": "h9_media_metadata_normalized_record.v0",
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_creator_collection_relation_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_fingerprint_identity_truth": false,
+    "accepted_image_video_map_truth": false,
+    "accepted_media_identity_truth": false,
+    "accepted_music_identity_truth": false,
+    "accepted_public_record": false,
+    "accepted_rights_license_truth": false,
+    "accepted_safety_privacy_truth": false,
+    "accepted_source_truth": false,
+    "content_safety_claimed": false,
+    "creative_commons_metadata_is_license_truth": false,
+    "creative_commons_truth_claimed": false,
+    "creator_collection_relation_candidate_is_truth": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "fingerprint_candidate_grants_upload_or_submission_permission": false,
+    "fingerprint_match_candidate_is_truth": false,
+    "image_video_map_identity_candidate_is_truth": false,
+    "license_metadata_is_rights_clearance": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "media_metadata_grants_download_permission": false,
+    "media_object_identity_candidate_is_truth": false,
+    "music_identity_candidate_is_truth": false,
+    "normalized_record_is_public_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_domain_metadata_is_public_domain_truth": false,
+    "public_domain_truth_claimed": false,
+    "public_index_mutated": false,
+    "rights_clearance_claimed": false,
+    "rights_license_candidate_is_rights_truth": false,
+    "safety_privacy_candidate_is_safety_truth": false,
+    "source_cache_preview_is_accepted_source": false,
+    "verified_authenticity_claimed": false
+  },
+  "type": "object"
+}

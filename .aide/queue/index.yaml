@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H9-BUNDLE-02
+current_recommended_task: H9-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -667,3 +667,12 @@ entries:
   gate: H9-BUNDLE-01 passes; no live source calls, API/catalog queries, media downloads/uploads, fingerprint generation/submission, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H9-BUNDLE-02/task.yaml
   recommended_after: H9-BUNDLE-01
+
+- id: H9-BUNDLE-03
+  title: Media, music, image, video, and map approved metadata-only live probes
+  status: queued
+  purpose: Add approval-gated bounded metadata-only live-probe framework for H9 media metadata sources after fixture runtime review.
+  allowed_scope_summary: H9 live-probe contracts, policies, source-specific metadata wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H9-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, and downloads/uploads/fingerprinting/scraping/crawling remain forbidden.
+  task: .aide/queue/H9-BUNDLE-03/task.yaml
+  recommended_after: H9-BUNDLE-02

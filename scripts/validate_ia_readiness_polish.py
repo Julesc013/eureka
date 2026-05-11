@@ -172,6 +172,8 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
         "H7-APPROVAL-",
         "H8-BUNDLE-",
         "H8-APPROVAL-",
+        "H9-BUNDLE-",
+        "H9-APPROVAL-",
         "F-BUNDLE-",
         "G-BUNDLE-",
         "I-BUNDLE-",
@@ -186,7 +188,7 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
     if not any(marker in text for marker in allowed_ia_progression_markers) and not any(
         marker in text for marker in allowed_later_track_prefixes
     ):
-        errors.append("latest task packet must point the main development lane to IA-BUNDLE-01 or a later IA/H/F/G/I/J0/D/C/E/MVP/H2/H3/H4/H5/H6/H7/H8 task")
+        errors.append("latest task packet must point the main development lane to IA-BUNDLE-01 or a later IA/H/F/G/I/J0/D/C/E/MVP/H2/H3/H4/H5/H6/H7/H8/H9 task")
     if "HUMAN-OBS-REVIEW-01" not in text or "parallel side-lane" not in text:
         errors.append("latest task packet must preserve HUMAN-OBS-REVIEW-01 as a parallel side-lane")
     if "SYNC-BASELINE-01" in phase or "SYNC-BASELINE-01" in goal:

@@ -280,6 +280,25 @@ class IAReadinessPolishTest(unittest.TestCase):
             result = validator.validate_repo(root)
             self.assertEqual(result["status"], "valid", result["errors"])
 
+    def test_latest_task_packet_h9_progression_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.make_fixture(root)
+            write_text(
+                root / ".aide/context/latest-task-packet.md",
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "## PHASE",
+                        "H9-BUNDLE-02 - Media metadata fixture runtimes and normalizers",
+                        "## GOAL",
+                        "Main development lane proceeds to H9-BUNDLE-02 after H9 policy packs; HUMAN-OBS-REVIEW-01 is a parallel side-lane.",
+                    ]
+                ),
+            )
+            result = validator.validate_repo(root)
+            self.assertEqual(result["status"], "valid", result["errors"])
+
     def test_latest_task_packet_mvp_progression_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

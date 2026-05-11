@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4030 chars, 1008 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3279 chars, 820 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H9-BUNDLE-02` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H9-BUNDLE-03` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `control/audits/h9-bundle-01-media-metadata-policy-packs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_image_video_map_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_creator_collection_relation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_fingerprint_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_approval_gates.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_connector_families.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_no_download_upload_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_source_pack_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_sources.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_metadata_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_object_identity_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_rights_license_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_media_safety_privacy_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/source_packs/h9_music_work_recording_release_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/sources/source_family_registry.json` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 42; see task evidence changed-files report
+- unknown: `contracts/connectors/h9_image_video_map_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_creator_collection_relation_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_fingerprint_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_metadata_fixture.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_metadata_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_metadata_normalized_record.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_object_identity_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_rights_license_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_media_safety_privacy_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h9_music_work_recording_release_candidate.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h9-bundle-02-media-metadata-fixture-runtime-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h9_image_video_map_identity_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h9_media_creator_collection_relation_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h9_media_fingerprint_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h9_media_metadata_evidence_mapping_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h9_media_metadata_fixture_output_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 47; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6876
-- approx_tokens: 1719
+- chars: 6832
+- approx_tokens: 1708
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
