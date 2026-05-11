@@ -2,17 +2,15 @@
 
 ## PHASE
 
-H14-BUNDLE-04 - Source discovery, source packs, coverage manifests, and scorecard review integration and quality delta
+UNSPECIFIED - F0-BUNDLE-01 - Deep extraction source-family and extraction-boundary policy packs
 
 ## GOAL
 
-H14-BUNDLE-04 - Source discovery, source packs, coverage manifests, and scorecard review integration and quality delta
+F0-BUNDLE-01 - Deep extraction source-family and extraction-boundary policy packs
 
 ## WHY
 
 Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
-
-Main development lane proceeds to H14-BUNDLE-04 after H14 rollup dry-runs; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## CONTEXT_REFS
 
@@ -119,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3970
-- approx_tokens: 993
+- chars: 4107
+- approx_tokens: 1027
 - budget_status: PASS
 - warnings:
   - none

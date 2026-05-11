@@ -1,0 +1,60 @@
+{
+  "contract_id": "h14_source_discovery_next_phase_recommendation.v0",
+  "notes": [
+    "H14-BUNDLE-04 contracts describe review, quality, audit, postmortem, and next-phase artifacts only.",
+    "They do not enable source discovery, live access, pack import/export, registry mutation, writes, or truth acceptance."
+  ],
+  "product_boundary_required_false": [
+    "enables_source_discovery_runtime",
+    "enables_live_access",
+    "enables_network_access",
+    "enables_model_provider",
+    "enables_source_sync",
+    "enables_pack_export_import",
+    "enables_source_cache_write",
+    "enables_evidence_write"
+  ],
+  "required_fields": [
+    "recommendation_id",
+    "recommended_next_task",
+    "recommendation_status",
+    "alternatives_considered",
+    "f0_readiness",
+    "i_deferral",
+    "j_deferral",
+    "k_deferral",
+    "l_deferral",
+    "e_deployment_deferral",
+    "remediation_required",
+    "reason",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "schema_version": "h14_source_discovery_next_phase_recommendation.v0",
+  "status": "review_quality_contract_only",
+  "title": "H14 next-phase recommendation",
+  "truth_boundary_required_false": [
+    "accepts_source_need_truth",
+    "accepts_source_candidate_truth",
+    "accepts_source_discovery_truth",
+    "accepts_source_approval",
+    "accepts_connector_approval",
+    "accepts_source_pack_truth",
+    "accepts_connector_pack_truth",
+    "accepts_coverage_truth",
+    "accepts_scorecard_truth",
+    "accepts_reliability_truth",
+    "accepts_freshness_truth",
+    "accepts_dispute_revocation_truth",
+    "accepts_lineage_provenance_truth",
+    "accepts_source_truth",
+    "accepts_evidence_truth",
+    "accepts_candidate_truth",
+    "mutates_source_registry",
+    "mutates_connector_registry",
+    "mutates_public_index",
+    "mutates_master_index"
+  ],
+  "wave_id": "H14"
+}

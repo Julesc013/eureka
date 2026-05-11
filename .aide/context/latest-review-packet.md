@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4287 chars, 1072 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4107 chars, 1027 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h14_source_discovery_rollup_dry_run_request.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_rollup_dry_run_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_rollup_output_bundle.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_os_rollup_health_summary.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h14-bundle-03-source-discovery-rollup-dry-runs-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_allowed_requests.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_dry_run_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_input_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_kill_switch_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_no_live_call_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_no_pack_import_export_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_operation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_registry_mutation_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_review_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_rollup_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H14_SOURCE_DISCOVERY_ROLLUP_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H14_SOURCE_DISCOVERY_ROLLUP_APPROVAL_GATES.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- unknown: `contracts/connectors/h14_source_discovery_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h14_source_discovery_integration_audit.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h14_source_discovery_quality_delta_report.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h14_source_discovery_review_integration_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h14-bundle-04-source-discovery-review-quality-audit-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_integration_audit_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_next_phase_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_quality_delta_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_review_integration_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_review_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_review_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h14_source_discovery_review_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/H14_SOURCE_DISCOVERY_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/H14_SOURCE_DISCOVERY_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/H14_SOURCE_DISCOVERY_WAVE_QUALITY_DELTA.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 16; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7069
-- approx_tokens: 1768
+- chars: 6952
+- approx_tokens: 1738
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

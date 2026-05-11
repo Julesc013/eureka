@@ -1,32 +1,20 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H14-BUNDLE-02`
-- current_queue_item: `H14-BUNDLE-03`
-- next_recommended_queue_item: `H14-BUNDLE-03`
-- status: `pass`
-- note: H14 source discovery fixture rollups normalize committed synthetic Source OS records without opening source discovery, live access, pack import/export, registry mutation, index mutation, or truth acceptance.
-- validation: H14 fixture runtime validator `pass`; H14 fixture replay `pass`; H14 fixture summary `pass`; H14 unit tests `pass`; unittest discovery `pass`; cross-wave validators `pass`; architecture boundaries `pass`.
-- public_index_mutated: `false`
-- master_index_mutated: `false`
-- local_access_enabled: `false`
-- private_source_access_enabled: `false`
-- user_supplied_url_fetch_enabled: `false`
-- authenticated_access_enabled: `false`
-- restricted_source_access_enabled: `false`
-- cas_import_enabled: `false`
-- pack_export_import_enabled: `false`
+- completed_queue_item: `H14-BUNDLE-04`
+- current_queue_item: `F0-BUNDLE-01`
+- next_recommended_queue_item: `F0-BUNDLE-01`
+- status: `pass_with_warnings`
+- h14_exit_gate: `PASS_WITH_WARNINGS`
+- next_phase_recommendation: `READY_FOR_F0_BUNDLE_01`
+- note: H14 Source OS review integration closes with candidate/previews only and routes to F0 extraction-boundary policy packs.
 - source_discovery_runtime_enabled: `false`
 - live_access_enabled: `false`
 - network_access_enabled: `false`
 - model_provider_enabled: `false`
 - source_sync_enabled: `false`
+- pack_export_import_enabled: `false`
 - registry_mutation_enabled: `false`
 - source_cache_writes_enabled: `false`
+- evidence_writes_enabled: `false`
 - public_index_writes_enabled: `false`
-- source_candidate_truth_accepted: `false`
-- scorecard_truth_accepted: `false`
-- fixture_runtime_only: `true`
-- normalized_source_os_records: `true`
-- source_need_candidates: `enabled`
-- source_candidate_candidates: `enabled`
-- source_discovery_candidates: `enabled`
+- production_readiness: `false`

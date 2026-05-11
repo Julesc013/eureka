@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H14-BUNDLE-04
+current_recommended_task: F0-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -868,3 +868,11 @@ entries:
   allowed_scope_summary: H14 review/quality/audit contracts, policies, docs, runtime helpers, examples, tests, audit pack, and AIDE queue/context metadata only.
   gate: H14-BUNDLE-03 passes or is blocked only by missing approvals with fixture-equivalent outputs; no live source calls, source discovery runtime, pack import/export, registry mutation, source-cache/evidence writes, index mutation, or truth acceptance.
   recommended_after: H14-BUNDLE-03
+
+- id: F0-BUNDLE-01
+  title: Deep extraction source-family and extraction-boundary policy packs
+  status: queued
+  purpose: Start Track F0 with extraction-boundary policy packs after H14 Source OS review closure.
+  allowed_scope_summary: F0 extraction-boundary policies, contracts, docs, examples, tests, and audit evidence only; no extraction runtime or live access.
+  gate: H14-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_F0_BUNDLE_01.
+  recommended_after: H14-BUNDLE-04

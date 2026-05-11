@@ -1,0 +1,26 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h14_source_discovery/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/sources/ for generated mutations",
+    "control/inventory/connectors/ for generated mutations",
+    "source registry mutation roots",
+    "connector registry mutation roots",
+    "pack import/export roots",
+    "source-cache runtime roots",
+    "evidence-ledger runtime roots",
+    "public-index roots",
+    "master-index roots",
+    "local private roots"
+  ],
+  "policy_id": "h14_source_discovery_review_path_policy",
+  "schema_version": "h14_source_discovery_review_path_policy.v0",
+  "writes_no_files_by_default": true
+}

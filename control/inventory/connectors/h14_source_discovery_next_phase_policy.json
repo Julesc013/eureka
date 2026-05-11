@@ -1,0 +1,13 @@
+{
+  "f0_must_start_with_extraction_boundary_policy_packs": true,
+  "f0_preferred_after_h14_if_source_os_rollup_is_coherent": true,
+  "h14_opens_e_deployment": false,
+  "h14_opens_j_acquisition_actions": false,
+  "h14_opens_k_semantic_ai": false,
+  "h14_opens_l_wider_clients": false,
+  "h14_opens_pack_federation_export_import": false,
+  "h14_opens_source_discovery_runtime": false,
+  "policy_id": "h14_source_discovery_next_phase_policy",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h14_source_discovery_next_phase_policy.v0"
+}
