@@ -1,0 +1,3 @@
+# H13 Boundary Dry-Run Audit
+
+H13-BUNDLE-03 adds fail-closed boundary dry-run policies, request envelopes, wrappers, examples, candidate previews, and validation. All committed dry-runs are blocked by missing source-specific approval, with fixture-equivalent outputs sufficient for H13-BUNDLE-04 review integration. No local/private/restricted access, URL fetch, account access, filesystem scan, directory listing, archive listing, CAS import, pack export/import, source-cache write, evidence write, public/master index write, extraction, execution, acquisition, upload, publication, or truth acceptance occurred.

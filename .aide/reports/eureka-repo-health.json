@@ -1,12 +1,12 @@
 {
   "authenticated_access_enabled": false,
   "cas_import_enabled": false,
-  "completed_queue_item": "H13-BUNDLE-02",
-  "current_queue_item": "H13-BUNDLE-03",
+  "completed_queue_item": "H13-BUNDLE-03",
+  "current_queue_item": "H13-BUNDLE-04",
   "local_access_enabled": false,
   "master_index_mutated": false,
-  "next_recommended_queue_item": "H13-BUNDLE-03",
-  "note": "H13 local/private fixture boundary runtime is fixture-only and fail-closed; approved boundary dry-runs are recommended next.",
+  "next_recommended_queue_item": "H13-BUNDLE-04",
+  "note": "H13 local/private boundary dry-runs are fail-closed and blocked by missing approvals; fixture-equivalent outputs are sufficient for review integration.",
   "pack_export_import_enabled": false,
   "private_source_access_enabled": false,
   "public_index_mutated": false,
@@ -14,8 +14,9 @@
   "status": "pass",
   "user_supplied_url_fetch_enabled": false,
   "validation": {
-    "h13_fixture_summary": "pass",
-    "h13_fixture_tests": "pass",
-    "h13_fixture_validator": "pass"
+    "h13_boundary_dry_run_cli": "pass",
+    "h13_boundary_dry_run_summary": "pass",
+    "h13_boundary_dry_run_tests": "pass",
+    "h13_boundary_dry_run_validator": "pass"
   }
 }

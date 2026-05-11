@@ -1,0 +1,14 @@
+id: H13-BUNDLE-04
+title: Local, private, user-supplied, and restricted-source review integration and quality delta
+status: queued
+track: H13
+recommended_after: H13-BUNDLE-03
+goal: Integrate H13 policy, fixture, and blocked boundary dry-run outputs into review/quality postmortem evidence.
+allowed_scope_summary: H13 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE metadata only.
+gate: H13-BUNDLE-03 passes or is blocked only by missing boundary approvals with sufficient fixture-equivalent outputs.
+no_goals:
+  - no new local/private/user-supplied/authenticated/restricted access
+  - no URL fetches, account access, filesystem scans, directory listings, or archive listings
+  - no CAS import, pack export/import, extraction, execution, acquisition, upload, or publication
+  - no source cache, evidence ledger, review queue, public index, or master index writes
+  - no truth acceptance

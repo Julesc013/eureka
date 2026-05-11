@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4236 chars, 1059 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4141 chars, 1036 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H13-BUNDLE-03` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H13-BUNDLE-04` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h13_authenticated_source_boundary_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_cas_import_boundary_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_private_fixture.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_private_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_private_normalized_record.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_private_rights_safety_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_local_source_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_pack_export_import_boundary_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_privacy_redaction_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_private_source_boundary_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_restricted_source_manifest_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h13_user_supplied_url_boundary_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h13-bundle-02-local-private-fixture-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h13_authenticated_source_boundary_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h13_local_cas_import_boundary_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h13_local_private_evidence_mapping_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 55; see task evidence changed-files report
+- unknown: `contracts/connectors/h13_local_private_boundary_dry_run_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h13_local_private_boundary_dry_run_request.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h13_local_private_boundary_dry_run_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h13_local_private_boundary_health_summary.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h13-bundle-03-local-private-boundary-dry-runs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_dry_run_allowed_requests.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_dry_run_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_kill_switch_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_no_access_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_no_import_export_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_operation_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_private_data_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h13_local_private_boundary_truth_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6842
-- approx_tokens: 1711
+- chars: 6953
+- approx_tokens: 1739
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,247 @@
+{
+  "operation_class_kind": "boundary_only",
+  "operation_scope": "boundary_dry_run_only",
+  "policy_id": "h13_local_private_boundary_operation_policy",
+  "product_boundary": {
+    "account_access_used": false,
+    "acquisition_action_used": false,
+    "api_calls_made": false,
+    "archive_listing_used": false,
+    "authenticated_access_used": false,
+    "cas_import_used": false,
+    "changed_public_search_behavior": false,
+    "credential_handling_used": false,
+    "directory_listing_used": false,
+    "enabled_account_access": false,
+    "enabled_acquisition_actions": false,
+    "enabled_cas_import": false,
+    "enabled_execution": false,
+    "enabled_extraction": false,
+    "enabled_hosting": false,
+    "enabled_local_access": false,
+    "enabled_pack_export_import": false,
+    "enabled_private_access": false,
+    "enabled_restricted_access": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "enabled_url_fetch": false,
+    "execution_used": false,
+    "extraction_used": false,
+    "file_hashing_used": false,
+    "filesystem_scan_used": false,
+    "fingerprinting_used": false,
+    "local_access_used": false,
+    "malware_scanning_used": false,
+    "model_provider_calls_made": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "pack_export_import_used": false,
+    "private_source_access_used": false,
+    "publication_used": false,
+    "restricted_source_access_used": false,
+    "upload_used": false,
+    "user_supplied_url_fetch_used": false
+  },
+  "schema_version": "h13_local_private_boundary_operation_policy.v0",
+  "sources": [
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "local_source_boundary_check_future",
+        "filesystem_scan_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "local_folder_metadata"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "archive_boundary_check_future",
+        "archive_listing_forbidden_current",
+        "extraction_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "local_archive_file_metadata"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "removable_media_boundary_check_future",
+        "media_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "local_removable_media_metadata"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "disk_image_boundary_check_future",
+        "disk_image_listing_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "local_disk_image_metadata"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "package_cache_boundary_check_future",
+        "package_cache_scan_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "local_package_cache_metadata"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "private_network_storage_boundary_check_future",
+        "private_nas_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "private_nas_metadata_boundary"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "object_store_boundary_check_future",
+        "object_store_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "private_object_store_metadata_boundary"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "institutional_private_boundary_check_future",
+        "institutional_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "institutional_private_collection_boundary"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "user_supplied_url_boundary_check_future",
+        "url_fetch_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "user_supplied_url_metadata_boundary"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "authenticated_source_boundary_check_future",
+        "account_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "user_owned_authenticated_source_boundary"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "restricted_manifest_boundary_check_future",
+        "restricted_source_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "restricted_source_manifest_only"
+    },
+    {
+      "allowed_current": false,
+      "boundary_operation_classes": [
+        "policy_blocked_boundary_check_current",
+        "direct_access_forbidden_current"
+      ],
+      "limitations": [
+        "Operation classes describe policy checks only, not source access."
+      ],
+      "real_access_operations_allowed": false,
+      "source_id": "rights_sensitive_source_policy_blocked"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_CAS_import_truth": false,
+    "accepted_authenticated_source_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_cas_import_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_local_source_identity_truth": false,
+    "accepted_pack_export_import_truth": false,
+    "accepted_privacy_redaction_truth": false,
+    "accepted_private_source_truth": false,
+    "accepted_public_record": false,
+    "accepted_restricted_source_truth": false,
+    "accepted_rights_safety_truth": false,
+    "accepted_source_truth": false,
+    "accepted_user_supplied_url_truth": false,
+    "authenticated_source_boundary_candidate_is_account_permission": false,
+    "authenticated_source_candidate_is_account_permission": false,
+    "boundary_dry_run_result_is_public_truth": false,
+    "cas_import_candidate_is_import_permission": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "legal_access_claimed": false,
+    "local_cas_import_boundary_candidate_is_import_permission": false,
+    "local_private_rights_safety_candidate_is_rights_or_safety_truth": false,
+    "local_source_identity_candidate_is_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "normalized_record_is_public_truth": false,
+    "ownership_truth_claimed": false,
+    "pack_export_import_boundary_candidate_is_export_import_permission": false,
+    "pack_export_import_candidate_is_export_import_permission": false,
+    "privacy_redaction_candidate_proves_public_safety": false,
+    "privacy_safety_claimed": false,
+    "private_source_boundary_candidate_is_access_permission": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "publication_permission_claimed": false,
+    "restricted_source_manifest_candidate_grants_access_permission": false,
+    "restricted_source_manifest_grants_access_permission": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "rights_safety_candidate_is_rights_or_safety_truth": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "source_cache_preview_is_accepted_source": false,
+    "source_safety_claimed": false,
+    "user_authority_claimed": false,
+    "user_supplied_url_boundary_candidate_is_fetch_permission": false,
+    "user_supplied_url_candidate_is_fetch_permission": false,
+    "verified_authenticity_claimed": false
+  }
+}
