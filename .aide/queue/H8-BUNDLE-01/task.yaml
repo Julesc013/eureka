@@ -1,0 +1,7 @@
+id: H8-BUNDLE-01
+title: Manuals, technical docs, datasheets, and standards source-family policy packs
+status: queued
+purpose: Start H8 by defining source-family policy packs for manuals, technical docs, datasheets, and standards after H7 review closeout.
+allowed_scope_summary: H8 source-family policy packs, source records, connector-family mappings, docs, examples, tests, audit pack, and AIDE metadata only until explicitly scoped.
+gate: H7-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H8_BUNDLE_01; no live source calls, downloads, scraping, crawling, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
+recommended_after: H7-BUNDLE-04

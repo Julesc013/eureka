@@ -1,0 +1,24 @@
+# H7 Review Integration Summary
+
+- status: `pass`
+- source_count: `30`
+- bibliographic_identity_review_seed_count: `30`
+- research_work_identity_review_seed_count: `30`
+- dataset_identity_review_seed_count: `30`
+- cultural_object_identity_review_seed_count: `30`
+- patent_identity_review_seed_count: `30`
+- citation_relation_review_seed_count: `30`
+- access_rights_availability_review_seed_count: `30`
+- blocked_sources: `arxiv, crossref, datacite, google_patents, open_library, openalex, pubmed`
+- bibliographic_truth_accepted: `false`
+- research_work_truth_accepted: `false`
+- dataset_truth_accepted: `false`
+- cultural_object_truth_accepted: `false`
+- patent_truth_accepted: `false`
+- citation_truth_accepted: `false`
+- access_rights_truth_accepted: `false`
+- harvest_query_fetch_download: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

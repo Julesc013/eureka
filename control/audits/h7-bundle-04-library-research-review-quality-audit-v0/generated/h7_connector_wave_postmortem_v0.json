@@ -1,0 +1,184 @@
+{
+  "access_rights_availability_gaps": [
+    "Access/rights/availability candidates are not rights clearance, open-access truth, or verified availability."
+  ],
+  "auto_approves_future_connectors": false,
+  "bibliographic_identity_gaps": [
+    "Bibliographic identity candidates require review before any work/manifestation/identifier/holding use."
+  ],
+  "blocked_sources": [
+    "arxiv",
+    "crossref",
+    "datacite",
+    "google_patents",
+    "open_library",
+    "openalex",
+    "pubmed"
+  ],
+  "citation_relation_gaps": [
+    "Citation relation candidates are not citation correctness, impact proof, or same-work clustering truth."
+  ],
+  "cultural_object_identity_gaps": [
+    "Cultural object candidates are not collection completeness, object truth, media fetch permission, or rights clearance."
+  ],
+  "dataset_identity_gaps": [
+    "Dataset candidates are not dataset validity, download permission, rights clearance, or malware safety."
+  ],
+  "do_not_repeat_risks": [
+    "Do not treat library/research metadata as bibliographic completeness, citation correctness, dataset validity, patent validity, access rights, rights clearance, open-access truth, privacy safety, malware safety, verified availability, or public truth.",
+    "Do not use fixture replay or blocked probes as live access approval.",
+    "Do not let access metadata become fetch, harvest, query, download, or acquisition permission."
+  ],
+  "evidence_mapping_gaps": [
+    "Evidence candidates remain previews only."
+  ],
+  "fixture_gaps": [
+    "Fixtures are synthetic/public-safe and do not prove live library, repository, dataset, cultural, research, or patent behavior."
+  ],
+  "h8_handoff_recommendation": "H8-BUNDLE-01 may start policy-pack-only work for manuals, technical docs, datasheets, and standards sources.",
+  "h8_or_j1_k_l_recommendation": "proceed_to_h8_policy_packs; keep_j1_k_l_deferred",
+  "j1_k_l_deferral_recommendation": "J1 risky actions, K semantic/AI, and L wider clients remain deferred unless explicit gates open.",
+  "live_probe_gaps": [
+    "Blocked live probes provide gate evidence but no completed metadata response."
+  ],
+  "next_phase_recommendation": "READY_FOR_H8_BUNDLE_01",
+  "no_goals_preserved": [
+    "no_oai_pmh_harvest",
+    "no_api_sync",
+    "no_full_text_fetch",
+    "no_downloads",
+    "no_iiif_media_fetch",
+    "no_scrape_crawl",
+    "no_restricted_source_access",
+    "no_truth_acceptance",
+    "no_public_index_mutation"
+  ],
+  "normalizer_gaps": [
+    "Normalizers cover metadata fixture shapes, not full text, PDFs, scans, article payloads, datasets, patent documents, IIIF/media payloads, scraping, or crawling."
+  ],
+  "notes": [
+    "Postmortem recommends H8 policy packs, not risky actions or production readiness."
+  ],
+  "patent_identity_gaps": [
+    "Patent candidates are not legal status, grant/expiry/enforceability, or patent document download permission."
+  ],
+  "policy_gaps": [
+    "source-specific live probe approvals remain absent"
+  ],
+  "postmortem_id": "h7.connector_wave_postmortem.e16db17a8f1c.v0",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_summary": {
+    "access_rights_availability_candidate_count": 30,
+    "bibliographic_identity_candidate_count": 30,
+    "blocked_sources_count": 7,
+    "blocker_count": 0,
+    "citation_relation_candidate_count": 30,
+    "claims_bibliographic_completeness_verified": false,
+    "claims_citation_correctness_verified": false,
+    "claims_malware_safety": false,
+    "claims_open_access_truth": false,
+    "claims_privacy_safety": false,
+    "claims_production_readiness": false,
+    "claims_rights_clearance": false,
+    "claims_verified_availability": false,
+    "cultural_object_identity_candidate_count": 30,
+    "dataset_identity_candidate_count": 30,
+    "fixture_sources_count": 30,
+    "known_gap_count": 2,
+    "live_probe_sources_count": 0,
+    "overclaim_errors": [],
+    "patent_identity_candidate_count": 30,
+    "quality_delta_id": "h7.quality_delta.b2d7613e507d.v0",
+    "research_work_identity_candidate_count": 30,
+    "review_seed_count": 270,
+    "schema_version": "h7_quality_delta_summary.v0",
+    "source_count": 30,
+    "status": "pass"
+  },
+  "research_work_identity_gaps": [
+    "Research work candidates are not article truth, DOI truth, preprint/reviewed-state truth, or citation truth."
+  ],
+  "restricted_source_policy_gaps": [
+    "Restricted/licensed sources remain policy-blocked by default and require future legal/privacy/safety review."
+  ],
+  "review_mapping_gaps": [
+    "Review seeds are not human review decisions and are not persisted."
+  ],
+  "risks": [
+    "Live H7 metadata probes remain blocked pending operator approval."
+  ],
+  "safety_boundary_assessment": {
+    "accepted_truth": false,
+    "api_sync_enabled": false,
+    "boundary_result": "preserved",
+    "download_enabled": false,
+    "full_text_fetch_enabled": false,
+    "master_index_mutated": false,
+    "network_calls_made": false,
+    "oai_pmh_harvest_enabled": false,
+    "public_index_mutated": false,
+    "restricted_source_access_enabled": false,
+    "scraping_crawling_enabled": false,
+    "source_sync_enabled": false
+  },
+  "schema_version": "h7_library_research_connector_wave_postmortem.v0",
+  "scorecard_summary": {
+    "auto_approves_future_connectors": false,
+    "production_ready": false,
+    "scorecard_update_count": 30
+  },
+  "source_os_reuse_assessment": "H7 reused H0-H6 Source OS review gates while preserving library/cultural/research-specific boundaries.",
+  "truth_boundary": {
+    "accepted_access_rights_truth": false,
+    "accepted_bibliographic_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_citation_truth": false,
+    "accepted_cultural_object_truth": false,
+    "accepted_dataset_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_patent_truth": false,
+    "accepted_research_work_truth": false,
+    "accepted_source_truth": false,
+    "access_rights_seed_accepts_rights_truth": false,
+    "automatic_future_connector_approval": false,
+    "bibliographic_seed_accepts_bibliographic_truth": false,
+    "candidate_promotion_preview_promotes_candidate": false,
+    "citation_seed_accepts_citation_truth": false,
+    "cultural_object_seed_accepts_object_truth": false,
+    "dataset_seed_accepts_dataset_truth": false,
+    "evidence_review_seed_accepts_evidence": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "open_access_truth_claimed": false,
+    "patent_seed_accepts_patent_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "research_work_seed_accepts_work_truth": false,
+    "rights_clearance_claimed": false,
+    "source_cache_review_seed_accepts_source": false,
+    "source_pack_preview_is_imported_or_submitted": false,
+    "verified_availability_claimed": false
+  },
+  "wave_id": "H7",
+  "what_failed": [
+    "No H7 source has committed operator approval for a live metadata probe."
+  ],
+  "what_worked": [
+    "Thirty H7 library/cultural/research sources have policy packs, fixtures, normalizers, replay outputs, fail-closed live-probe envelopes, and review previews.",
+    "Bibliographic, research work, dataset, cultural object, patent, citation, and access-rights candidates remain review-gated and candidate-only.",
+    "Live-probe outputs failed closed when committed source approvals were missing."
+  ]
+}

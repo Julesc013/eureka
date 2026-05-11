@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H7-BUNDLE-04
+current_recommended_task: H8-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -611,3 +611,12 @@ entries:
   gate: H7-BUNDLE-03 passes or is blocked only by missing committed live approvals with fixture-equivalent outputs; no new live calls, harvests, downloads, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H7-BUNDLE-04/task.yaml
   recommended_after: H7-BUNDLE-03
+
+- id: H8-BUNDLE-01
+  title: Manuals, technical docs, datasheets, and standards source-family policy packs
+  status: queued
+  purpose: Start H8 by defining source-family policy packs for manuals, technical docs, datasheets, and standards after H7 review closeout.
+  allowed_scope_summary: H8 source-family policy packs, source records, connector-family mappings, docs, examples, tests, audit pack, and AIDE metadata only until explicitly scoped.
+  gate: H7-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H8_BUNDLE_01; no live source calls, downloads, scraping, crawling, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
+  task: .aide/queue/H8-BUNDLE-01/task.yaml
+  recommended_after: H7-BUNDLE-04

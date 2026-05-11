@@ -1,0 +1,23 @@
+{
+  "access_rights_truth_acceptance_allowed": false,
+  "bibliographic_truth_acceptance_allowed": false,
+  "candidate_truth_acceptance_allowed": false,
+  "citation_truth_acceptance_allowed": false,
+  "cultural_object_truth_acceptance_allowed": false,
+  "dataset_truth_acceptance_allowed": false,
+  "evidence_truth_acceptance_allowed": false,
+  "malware_safety_claim_allowed": false,
+  "master_index_mutation_allowed": false,
+  "open_access_truth_claim_allowed": false,
+  "patent_truth_acceptance_allowed": false,
+  "policy_id": "h7.library_research.review_truth.policy.v0",
+  "privacy_safety_claim_allowed": false,
+  "production_readiness_claim_allowed": false,
+  "public_index_mutation_allowed": false,
+  "research_work_truth_acceptance_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "schema_version": "h7_library_research_review_truth_policy.v0",
+  "source_truth_acceptance_allowed": false,
+  "verified_availability_claim_allowed": false,
+  "wave_id": "H7"
+}

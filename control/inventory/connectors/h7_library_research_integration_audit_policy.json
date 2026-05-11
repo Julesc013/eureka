@@ -1,0 +1,34 @@
+{
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_H8_BUNDLE_01",
+    "READY_FOR_J1_POLICY_FUTURE",
+    "READY_FOR_K0_FUTURE",
+    "READY_FOR_L0_FUTURE",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "no_goals": [
+    "no live calls",
+    "no harvests",
+    "no downloads",
+    "no truth acceptance",
+    "no index mutation"
+  ],
+  "policy_id": "h7.library_research.integration_audit.policy.v0",
+  "preferred_next_phase": "READY_FOR_H8_BUNDLE_01",
+  "required_no_truth_claims": true,
+  "required_product_boundaries": true,
+  "required_validators": [
+    "scripts/validate_h7_library_research_review_quality_audit.py"
+  ],
+  "schema_version": "h7_library_research_integration_audit_policy.v0",
+  "wave_id": "H7"
+}

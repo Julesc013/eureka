@@ -1,0 +1,629 @@
+{
+  "access_rights_availability_candidate_count": 30,
+  "bibliographic_identity_candidate_count": 30,
+  "blocked_sources_count": 7,
+  "blocker_count": 0,
+  "citation_relation_candidate_count": 30,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 30,
+  "cultural_object_identity_candidate_count": 30,
+  "dataset_identity_candidate_count": 30,
+  "evidence_candidate_preview_count": 30,
+  "fixture_sources_count": 30,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_library_research_coverage",
+    "exhaustive_global_coverage",
+    "bibliographic_completeness_verified",
+    "research_work_identity_verified",
+    "dataset_validity_verified",
+    "cultural_object_truth_verified",
+    "patent_validity_verified",
+    "citation_correctness_verified",
+    "access_rights_verified",
+    "open_access_truth_verified",
+    "rights_clearance",
+    "privacy_safety",
+    "malware_safety",
+    "verified_availability",
+    "automatic_future_connector_approval"
+  ],
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H7 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Library/cultural/research metadata is not bibliographic completeness, citation correctness, research work truth, dataset validity, cultural object truth, patent validity, access rights, rights clearance, open-access truth, privacy safety, malware safety, verified availability, or production coverage proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 30,
+  "notes": [
+    "H7 quality delta is operational review evidence only."
+  ],
+  "patent_identity_candidate_count": 30,
+  "per_source_deltas": [
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "arxiv"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "crossref"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "datacite"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "deep_blue_repository"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "doaj"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "dpla"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "europeana"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gallica_bnf"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "google_books"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "google_patents"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "govinfo"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "hathitrust"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "kaggle_datasets"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "library_of_congress"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "nara_catalog"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "national_archives_australia"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "oaister_oai_pmh"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "open_library"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "openalex"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "pubmed"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "pubmed_central"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "repec"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "semantic_scholar"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "ssrn"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "trove_library_cultural"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "uk_national_archives_discovery"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "uspto_patents"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "wipo_patentscope"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "worldcat_library_catalog"
+    },
+    {
+      "access_rights_availability_review_seed_created": true,
+      "bibliographic_identity_review_seed_created": true,
+      "citation_relation_review_seed_created": true,
+      "cultural_object_identity_review_seed_created": true,
+      "dataset_identity_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, bibliographic, research work, dataset, cultural object, patent, citation, access-rights, rights, availability, or production proof."
+      ],
+      "live_probe_blocked": false,
+      "live_probe_completed": false,
+      "patent_identity_review_seed_created": true,
+      "research_work_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "zenodo"
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_harvesting": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h7.quality_delta.b2d7613e507d.v0",
+  "research_work_identity_candidate_count": 30,
+  "review_seed_count": 270,
+  "schema_version": "h7_library_research_quality_delta_report.v0",
+  "scorecard_update_count": 30,
+  "source_cache_candidate_count": 30,
+  "source_count": 30,
+  "truth_boundary": {
+    "access_rights_verified": false,
+    "automatic_future_connector_approval": false,
+    "bibliographic_completeness_verified": false,
+    "citation_correctness_verified": false,
+    "cultural_object_truth_verified": false,
+    "dataset_validity_verified": false,
+    "exhaustive_global_coverage": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "open_access_truth_claimed": false,
+    "patent_validity_verified": false,
+    "privacy_safety_claimed": false,
+    "production_library_research_coverage": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "research_work_identity_verified": false,
+    "rights_clearance_claimed": false,
+    "verified_availability_claimed": false
+  },
+  "warning_count": 2,
+  "wave_id": "H7"
+}

@@ -1,0 +1,31 @@
+{
+  "auto_approves_future_connectors": false,
+  "policy_id": "h7.library_research.connector_wave_postmortem.policy.v0",
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "bibliographic_identity_gaps",
+    "research_work_identity_gaps",
+    "dataset_identity_gaps",
+    "cultural_object_identity_gaps",
+    "patent_identity_gaps",
+    "citation_relation_gaps",
+    "access_rights_availability_gaps",
+    "restricted_source_policy_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h8_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h7_library_research_connector_wave_postmortem_policy.v0",
+  "wave_id": "H7"
+}

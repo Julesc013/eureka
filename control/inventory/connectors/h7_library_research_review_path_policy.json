@@ -1,0 +1,24 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h7_library_research/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "harvest roots",
+    "PDF/book/article/dataset download roots",
+    "OCR/media roots",
+    "restricted-source roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "policy_id": "h7.library_research.review_path.policy.v0",
+  "schema_version": "h7_library_research_review_path_policy.v0",
+  "wave_id": "H7"
+}

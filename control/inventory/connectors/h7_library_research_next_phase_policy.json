@@ -1,0 +1,12 @@
+{
+  "deployment_operator_gated": true,
+  "h8_preferred_after_h7": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "policy_id": "h7.library_research.next_phase.policy.v0",
+  "preferred_next_task": "H8-BUNDLE-01 - Manuals, technical docs, datasheets, and standards source-family policy packs",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h7_library_research_next_phase_policy.v0",
+  "wave_id": "H7"
+}

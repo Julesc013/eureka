@@ -1,12 +1,12 @@
 {
-  "completed_queue_item": "H7-BUNDLE-03",
-  "current_queue_item": "H7-BUNDLE-04",
-  "generated_at_note": "codex_updated_after_h7_bundle_03",
+  "completed_queue_item": "H7-BUNDLE-04",
+  "current_queue_item": "H8-BUNDLE-01",
+  "generated_at_note": "codex_updated_after_h7_bundle_04",
   "known_warn_only_conditions": [
-    "H7 live probes default to offline preflight and blocked output unless source-specific committed approval is added.",
+    "H7 live probes remained blocked by missing operator approval; fixture-equivalent outputs carried review integration.",
     "No H7 live source call, OAI-PMH harvest, API query, full-text/PDF/book/article/dataset/patent/IIIF/media fetch or download, scrape, crawl, bypass, restricted-source access, source sync, or truth acceptance was enabled."
   ],
-  "next_recommended_queue_item": "H7-BUNDLE-04",
+  "next_recommended_queue_item": "H8-BUNDLE-01",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
@@ -19,18 +19,14 @@
   "schema_version": "eureka_repo_health.v0",
   "status": "warn",
   "validation": {
-    "aide_lite": "pass",
+    "aide_lite": "warn_zero_errors",
+    "aide_lite_eval_run": "pass",
     "architecture_boundaries": "pass",
     "existing_validator_sweep": "pass",
-    "h6_fixture_runtime": "pass",
-    "h6_live_probe": "pass",
-    "h6_policy_packs": "pass",
-    "h6_review_quality": "pass",
-    "h6_targeted_unittests": "pass",
     "h7_fixture_runtime": "pass",
     "h7_live_probe": "pass",
     "h7_policy_packs": "pass",
-    "h7_targeted_unittests": "pass",
+    "h7_review_quality": "pass",
     "unittest_discovery": "pass"
   }
 }
