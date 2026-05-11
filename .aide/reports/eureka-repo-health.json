@@ -1,41 +1,36 @@
 {
-  "completed_queue_item": "H11-BUNDLE-04",
-  "current_queue_item": "H12-BUNDLE-01",
-  "current_recommended_task": "H12-BUNDLE-01",
-  "generated_at_note": "codex_updated_after_h11_bundle_04_review_quality_audit_validation",
-  "known_warn_only_conditions": [
-    "H11 live probes remain blocked by missing operator approval.",
-    "H11 review integration uses fixture replay outputs and blocked/preflight live-probe reports only.",
-    "H11 quality delta is not production quality, production coverage, current price, current availability, license entitlement, legal acquisition, installability, rights clearance, malware safety, content safety, privacy safety, verified authenticity, or production readiness proof."
-  ],
-  "last_completed_task": "H11-BUNDLE-04",
-  "next_recommended_queue_item": "H12-BUNDLE-01",
+  "completed_queue_item": "H12-BUNDLE-01",
+  "current_queue_item": "H12-BUNDLE-02",
+  "current_recommended_task": "H12-BUNDLE-02",
+  "generated_at_note": "codex_updated_after_h12_bundle_01_policy_pack_validation",
+  "last_completed_task": "H12-BUNDLE-01",
+  "next_recommended_queue_item": "H12-BUNDLE-02",
   "product_boundary": {
     "changed_public_search_behavior": false,
-    "enabled_account_access": false,
+    "enabled_accounts": false,
     "enabled_acquisition_actions": false,
+    "enabled_api_catalog_query": false,
+    "enabled_connector_runtime": false,
     "enabled_crawling": false,
     "enabled_downloads": false,
-    "enabled_entitlement_checks": false,
     "enabled_execution": false,
-    "enabled_fetching": false,
-    "enabled_install_launch": false,
-    "enabled_purchase_actions": false,
+    "enabled_extraction": false,
+    "enabled_forum_gated_access": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
     "enabled_source_sync": false,
+    "enabled_telemetry": false,
     "enabled_uploads": false,
     "mutated_master_index": false,
-    "mutated_public_index": false
+    "mutated_public_index": false,
+    "network_calls_made": false
   },
   "schema_version": "eureka_repo_health.v0",
-  "status": "warn",
+  "status": "pass",
   "validation": {
-    "h11_fixture_runtime": "pass",
-    "h11_live_probe": "pass",
-    "h11_policy_packs": "pass",
-    "h11_quality_delta": "pass",
-    "h11_review_integration": "pass",
-    "h11_review_quality_audit": "pass",
-    "h11_targeted_tests": "pass",
-    "h11_wave_audit": "pass"
+    "h12_policy_packs": "pass",
+    "h12_summary": "pass",
+    "h12_targeted_tests": "pass"
   }
 }

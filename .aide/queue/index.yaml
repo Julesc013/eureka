@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H12-BUNDLE-01
+current_recommended_task: H12-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -761,9 +761,18 @@ entries:
 
 - id: H12-BUNDLE-01
   title: Retro and community archive source-family policy packs
-  status: queued
+  status: needs_review
   purpose: Add policy-pack-only retro/community archive source-family governance after H11 storefront review closeout.
   allowed_scope_summary: H12 source-family policy packs, source records, connector-family mappings, approval gates, coverage previews, scorecard previews, source-pack manifests, docs, validators, tests, audit pack, and AIDE metadata only.
   gate: H11-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H12_BUNDLE_01; no live source calls, scraping, crawling, downloads, account access, source sync, public/master index mutation, evidence acceptance, candidate acceptance, or truth acceptance.
   task: .aide/queue/H12-BUNDLE-01/task.yaml
   recommended_after: H11-BUNDLE-04
+
+- id: H12-BUNDLE-02
+  title: Retro and community archive fixture runtimes and normalizers
+  status: queued
+  purpose: Add fixture-only H12 retro/community archive normalizers, replay reports, normalized records, source-cache/evidence previews, docs, validators, tests, and audit evidence.
+  allowed_scope_summary: H12 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H12-BUNDLE-01 passes; no live source calls, source sync, live connector runtime, downloads, scraping, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
+  task: .aide/queue/H12-BUNDLE-02/task.yaml
+  recommended_after: H12-BUNDLE-01

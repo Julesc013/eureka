@@ -1,0 +1,46 @@
+{
+  "acquisition_upload_scrape_crawl_enabled_count": 0,
+  "api_catalog_forum_gated_enabled_count": 0,
+  "connector_family_counts": {
+    "abandonware_metadata_policy_limited": 1,
+    "community_archive_catalog": 3,
+    "gated_community_boundary": 1,
+    "ia_mirror_bridge": 1,
+    "old_version_catalog": 2,
+    "platform_archive_metadata": 2,
+    "retro_software_catalog": 3
+  },
+  "connector_runtime_enabled_count": 0,
+  "downloads_enabled_count": 0,
+  "extraction_execution_enabled_count": 0,
+  "live_access_enabled_count": 0,
+  "readiness": "READY_FOR_H12_FIXTURE_RUNTIME",
+  "schema_version": "h12_retro_community_source_summary.v0",
+  "source_count": 13,
+  "source_family_counts": {
+    "retro_community_archive": 13
+  },
+  "source_ids": [
+    "winworld_metadata",
+    "macintosh_garden_metadata",
+    "macintosh_repository_metadata",
+    "vetusware_metadata",
+    "oldversion_metadata",
+    "my_abandonware_metadata",
+    "dos_games_archive_metadata",
+    "hobbes_os2_archive_metadata",
+    "aminet_metadata",
+    "atarimania_metadata",
+    "tucows_ia_legacy_metadata",
+    "betaarchive_public_metadata_policy_limited",
+    "generic_retro_community_archive"
+  ],
+  "source_sync_enabled_count": 0,
+  "status": "pass",
+  "trust_lane_counts": {
+    "community": 10,
+    "preservation": 3
+  },
+  "wave_id": "H12",
+  "wrote_files": false
+}

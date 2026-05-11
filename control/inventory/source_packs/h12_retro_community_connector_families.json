@@ -1,0 +1,319 @@
+{
+  "connector_families": [
+    {
+      "connector_family": "retro_software_catalog",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Retro Software Catalog",
+      "live_access_enabled": false,
+      "source_ids": [
+        "winworld_metadata",
+        "dos_games_archive_metadata",
+        "atarimania_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "community_archive_catalog",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Community Archive Catalog",
+      "live_access_enabled": false,
+      "source_ids": [
+        "macintosh_garden_metadata",
+        "macintosh_repository_metadata",
+        "generic_retro_community_archive"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "old_version_catalog",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Old Version Catalog",
+      "live_access_enabled": false,
+      "source_ids": [
+        "vetusware_metadata",
+        "oldversion_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "abandonware_metadata_policy_limited",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Abandonware Metadata Policy Limited",
+      "live_access_enabled": false,
+      "source_ids": [
+        "my_abandonware_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "platform_archive_metadata",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Platform Archive Metadata",
+      "live_access_enabled": false,
+      "source_ids": [
+        "hobbes_os2_archive_metadata",
+        "aminet_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "html_catalog_policy_limited",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Html Catalog Policy Limited",
+      "live_access_enabled": false,
+      "source_ids": [
+        "my_abandonware_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "forum_or_comment_metadata_policy_limited",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Forum Or Comment Metadata Policy Limited",
+      "live_access_enabled": false,
+      "source_ids": [
+        "betaarchive_public_metadata_policy_limited"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "ia_mirror_bridge",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Ia Mirror Bridge",
+      "live_access_enabled": false,
+      "source_ids": [
+        "tucows_ia_legacy_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "wayback_trace_bridge",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Wayback Trace Bridge",
+      "live_access_enabled": false,
+      "source_ids": [
+        "tucows_ia_legacy_metadata"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "gated_community_boundary",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Gated Community Boundary",
+      "live_access_enabled": false,
+      "source_ids": [
+        "betaarchive_public_metadata_policy_limited",
+        "retro_community_policy_blocked"
+      ],
+      "source_sync_enabled": false
+    },
+    {
+      "connector_family": "restricted_manifest_only",
+      "connector_runtime_enabled": false,
+      "current_status": "policy_pack_only",
+      "label": "Restricted Manifest Only",
+      "live_access_enabled": false,
+      "source_ids": [
+        "retro_community_policy_blocked"
+      ],
+      "source_sync_enabled": false
+    }
+  ],
+  "mapping_id": "h12_retro_community_connector_families",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_acquisition_actions": false,
+    "enabled_api_catalog_query": false,
+    "enabled_connector_runtime": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_extraction": false,
+    "enabled_forum_gated_access": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false
+  },
+  "schema_version": "h12_retro_community_connector_families.v0",
+  "source_connector_family_mappings": [
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "retro_software_catalog",
+      "preferred_connector_family": "retro_software_catalog",
+      "source_id": "winworld_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "community_archive_catalog",
+      "preferred_connector_family": "community_archive_catalog",
+      "source_id": "macintosh_garden_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "community_archive_catalog",
+      "preferred_connector_family": "community_archive_catalog",
+      "source_id": "macintosh_repository_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "old_version_catalog",
+      "preferred_connector_family": "old_version_catalog",
+      "source_id": "vetusware_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "old_version_catalog",
+      "preferred_connector_family": "old_version_catalog",
+      "source_id": "oldversion_metadata"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "abandonware_metadata_policy_limited",
+      "preferred_connector_family": "abandonware_metadata_policy_limited",
+      "source_id": "my_abandonware_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "retro_software_catalog",
+      "preferred_connector_family": "retro_software_catalog",
+      "source_id": "dos_games_archive_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "platform_archive_metadata",
+      "preferred_connector_family": "platform_archive_metadata",
+      "source_id": "hobbes_os2_archive_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "platform_archive_metadata",
+      "preferred_connector_family": "platform_archive_metadata",
+      "source_id": "aminet_metadata"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "retro_software_catalog",
+      "preferred_connector_family": "retro_software_catalog",
+      "source_id": "atarimania_metadata"
+    },
+    {
+      "alternate_connector_family": "wayback_trace_bridge",
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "ia_mirror_bridge",
+      "preferred_connector_family": "ia_mirror_bridge",
+      "source_id": "tucows_ia_legacy_metadata"
+    },
+    {
+      "alternate_connector_family": "forum_or_comment_metadata_policy_limited",
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "gated_community_boundary",
+      "preferred_connector_family": "gated_community_boundary",
+      "source_id": "betaarchive_public_metadata_policy_limited"
+    },
+    {
+      "alternate_connector_family": null,
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "community_archive_catalog",
+      "preferred_connector_family": "community_archive_catalog",
+      "source_id": "generic_retro_community_archive"
+    },
+    {
+      "alternate_connector_family": "gated_community_boundary",
+      "ambiguity_note": "Policy-pack-only mapping; fixture replay may refine connector family after review.",
+      "connector_family": "restricted_manifest_only",
+      "preferred_connector_family": "restricted_manifest_only",
+      "source_id": "retro_community_policy_blocked"
+    }
+  ],
+  "truth_boundary": {
+    "abandonware_label_is_legal_permission": false,
+    "accepted_archive_item_member_truth": false,
+    "accepted_candidate_truth": false,
+    "accepted_community_review_truth": false,
+    "accepted_compatibility_install_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_gated_source_access_truth": false,
+    "accepted_hash_checksum_truth": false,
+    "accepted_ia_wayback_corroboration_truth": false,
+    "accepted_platform_version_truth": false,
+    "accepted_public_record": false,
+    "accepted_retro_software_identity_truth": false,
+    "accepted_rights_safety_truth": false,
+    "accepted_source_truth": false,
+    "archive_item_member_candidate_is_truth": false,
+    "archive_item_member_metadata_is_file_truth": false,
+    "capability_grants_permission": false,
+    "checksum_correctness_claimed": false,
+    "community_download_metadata_grants_acquisition_permission": false,
+    "community_reputation_claimed": false,
+    "community_review_comment_candidate_is_truth": false,
+    "community_review_comment_is_truth": false,
+    "compatibility_correctness_claimed": false,
+    "compatibility_install_note_candidate_is_truth": false,
+    "compatibility_install_note_is_compatibility_truth": false,
+    "content_safety_claimed": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_preview_claims_exhaustive_coverage": false,
+    "coverage_preview_is_exhaustive": false,
+    "file_authenticity_claimed": false,
+    "gated_source_metadata_grants_access_permission": false,
+    "hash_checksum_candidate_is_truth": false,
+    "hash_checksum_metadata_is_identity_truth": false,
+    "ia_wayback_corroboration_candidate_is_truth": false,
+    "ia_wayback_corroboration_is_truth": false,
+    "installability_claimed": false,
+    "legal_acquisition_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "platform_version_edition_candidate_is_truth": false,
+    "platform_version_metadata_is_version_truth": false,
+    "playability_claimed": false,
+    "policy_pack_grants_live_access": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "retro_software_identity_candidate_is_truth": false,
+    "retro_software_metadata_is_software_truth": false,
+    "rights_clearance_claimed": false,
+    "rights_safety_candidate_is_rights_or_safety_truth": false,
+    "rights_safety_metadata_is_rights_or_safety_truth": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_preview_is_production_ready": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "verified_authenticity_claimed": false
+  }
+}

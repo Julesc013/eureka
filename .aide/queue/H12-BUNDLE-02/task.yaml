@@ -1,0 +1,25 @@
+schema_version: aide.task.v0
+id: H12-BUNDLE-02
+title: Retro and community archive fixture runtimes and normalizers
+status: queued
+track: H12
+recommended_after: H12-BUNDLE-01
+purpose: Add fixture-only normalizers and replay outputs for H12 retro/community archive metadata after policy packs pass.
+allowed_scope_summary: H12 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+gate: H12-BUNDLE-01 passes; no live source calls, downloads, extraction, execution, source sync, public/master index mutation, or truth acceptance.
+non_goals:
+  - no live source calls
+  - no downloads, extraction, or execution
+  - no account, gated-source, or restricted-source access
+  - no scraping or crawling
+  - no source sync
+  - no truth acceptance
+  - no public or master index mutation
+inputs:
+  - control/audits/h12-bundle-01-retro-community-policy-packs-v0/
+  - control/inventory/source_packs/h12_retro_community_sources.json
+  - examples/connectors/h12_retro_community/
+  - .aide/context/latest-task-packet.md
+validation:
+  - python scripts/validate_h12_retro_community_policy_packs.py
+  - python scripts/check_architecture_boundaries.py
