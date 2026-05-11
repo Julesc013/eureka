@@ -1,15 +1,15 @@
 {
-  "completed_queue_item": "H11-BUNDLE-02",
-  "current_queue_item": "H11-BUNDLE-03",
-  "current_recommended_task": "H11-BUNDLE-03",
-  "generated_at_note": "codex_updated_after_h11_bundle_02_fixture_runtime_validation",
+  "completed_queue_item": "H11-BUNDLE-03",
+  "current_queue_item": "H11-BUNDLE-04",
+  "current_recommended_task": "H11-BUNDLE-04",
+  "generated_at_note": "codex_updated_after_h11_bundle_03_live_probe_framework_validation",
   "known_warn_only_conditions": [
-    "H11 live probes are the next task but remain offline/dry preflight by default until exact committed approvals exist.",
-    "Storefront/app-store fixture metadata does not prove listing identity, app/product identity, version, price, availability, acquisition permission, entitlement, installability, rights clearance, malware safety, content safety, privacy safety, verified authenticity, production coverage, or production readiness.",
+    "H11 live probes remain blocked by missing operator approval.",
+    "H11 live-probe outputs are fixture-equivalent blocked/preflight reports and do not prove listing identity, app/product identity, version, current price, current availability, acquisition permission, entitlement, installability, rights clearance, malware safety, content safety, privacy safety, verified authenticity, production coverage, or production readiness.",
     "AIDE Lite verify/review-pack may report warning-only diff-scope and missing optional reference items with 0 errors."
   ],
-  "last_completed_task": "H11-BUNDLE-02",
-  "next_recommended_queue_item": "H11-BUNDLE-03",
+  "last_completed_task": "H11-BUNDLE-03",
+  "next_recommended_queue_item": "H11-BUNDLE-04",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_account_access": false,
@@ -18,9 +18,7 @@
     "enabled_downloads": false,
     "enabled_entitlement_checks": false,
     "enabled_execution": false,
-    "enabled_extraction": false,
     "enabled_fetching": false,
-    "enabled_fingerprinting": false,
     "enabled_install_launch": false,
     "enabled_purchase_actions": false,
     "enabled_source_sync": false,
@@ -34,15 +32,13 @@
     "aide_lite": "pass_with_verify_warnings",
     "architecture_boundaries": "pass",
     "existing_validator_sweep": "pass",
-    "h10_fixture_runtime": "pass",
     "h10_live_probe": "pass",
-    "h10_policy_packs": "pass",
     "h10_review_quality": "pass",
     "h11_fixture_runtime": "pass",
-    "h11_fixture_summary": "pass",
+    "h11_live_probe": "pass",
+    "h11_live_probe_summary": "pass",
     "h11_policy_packs": "pass",
     "h11_targeted_tests": "pass",
-    "h9_review_quality": "pass",
     "unittest_discovery": "pass"
   }
 }

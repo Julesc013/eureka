@@ -1,0 +1,57 @@
+schema_version: aide.task.v0
+id: H11-BUNDLE-04
+title: Storefront and app-store review integration and quality delta
+status: queued
+track: H11
+recommended_after: H11-BUNDLE-03
+purpose: >
+  Integrate H11 storefront/app-store policy, fixture, and blocked live-probe
+  outputs into local review seeds, quality-delta reports, connector health
+  previews, coverage previews, and next-phase recommendations.
+allowed_scope:
+  - contracts/connectors/h11_storefront_review_integration*
+  - runtime/connectors/h11_storefront/review*
+  - runtime/connectors/h11_storefront/quality*
+  - scripts/*h11_storefront*review*
+  - scripts/*h11_storefront*quality*
+  - control/inventory/connectors/h11_storefront*review*
+  - control/inventory/connectors/h11_storefront*quality*
+  - examples/connectors/h11_storefront/review_integration/**
+  - docs/reference/H11_STOREFRONT*REVIEW*
+  - docs/architecture/H11_STOREFRONT*REVIEW*
+  - docs/operations/H11_STOREFRONT*REVIEW*
+  - control/audits/h11-bundle-04-storefront-review-quality-audit-v0/**
+  - tests/connectors/test_h11_storefront*review*
+  - tests/operations/test_h11_storefront*review*
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/eureka-repo-health.md
+  - .aide/reports/eureka-repo-health.json
+gate: >
+  Use H11-BUNDLE-03 outputs only if they passed or were blocked only by
+  missing live approvals with sufficient fixture-equivalent outputs. No new
+  live calls, downloads, account access, purchases, entitlement checks,
+  install/launch actions, scraping/crawling, public/master index mutation,
+  product behavior change, or truth acceptance.
+non_goals:
+  - live source calls
+  - source sync
+  - downloads
+  - account access
+  - purchase or checkout automation
+  - entitlement checks
+  - install or launch actions
+  - review/rating writes
+  - scraping or crawling
+  - restricted-source access
+  - bypass behavior
+  - public index mutation
+  - master index mutation
+  - source/evidence/candidate/listing/app-product/version/price/acquisition/review/account/rights truth acceptance
+validation_hint:
+  - python scripts/validate_h11_storefront_live_probe.py
+  - python scripts/validate_h11_storefront_fixture_runtime.py
+  - python scripts/validate_h11_storefront_policy_packs.py
+  - python -m unittest discover -s tests -t .
+  - python scripts/check_architecture_boundaries.py

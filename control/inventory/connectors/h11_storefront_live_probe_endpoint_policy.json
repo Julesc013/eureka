@@ -1,0 +1,382 @@
+{
+  "notes": [
+    "Endpoint policy names metadata classes, not arbitrary URLs."
+  ],
+  "policy_id": "h11_storefront_live_probe_endpoint_policy",
+  "product_boundary": {
+    "account_access_used": false,
+    "api_calls_made": false,
+    "bypass_or_automation_used": false,
+    "catalog_fetch_used": false,
+    "changed_public_search_behavior": false,
+    "crawling_used": false,
+    "download_used": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_entitlement_checks": false,
+    "enabled_hosting": false,
+    "enabled_install_launch": false,
+    "enabled_purchase_actions": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "entitlement_check_used": false,
+    "install_launch_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "product_page_fetch_used": false,
+    "purchase_action_used": false,
+    "restricted_source_access_used": false,
+    "review_rating_write_used": false,
+    "scraping_used": false,
+    "screenshot_media_fetch_used": false,
+    "storefront_search_used": false
+  },
+  "schema_version": "h11_storefront_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "app_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "microsoft_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "app_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "mac_app_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "app_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "apple_app_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "app_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "google_play_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "linux_app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "package_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "app_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "fdroid_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "game_storefront_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "purchase_or_account_automation_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "public_app_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "steam_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "game_storefront_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "installer_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "public_listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "gog_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "game_storefront_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "purchase_or_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "public_listing_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "itchio_storefront_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "game_storefront_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "restricted_storefront_access_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "public_listing_metadata_policy_limited_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "epic_games_store_policy_limited"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "software_marketplace_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "purchase_download_account_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "marketplace_listing_metadata_policy_limited_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "humble_store_policy_limited"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "browser_extension_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "extension_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "extension_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "chrome_web_store_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "browser_extension_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "extension_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "extension_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "mozilla_addons_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "linux_app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "package_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "app_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "flathub_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "linux_app_store_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "package_download_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "app_metadata_lookup_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "snapcraft_metadata"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "vendor_product_page_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "product_page_fetch_policy_limited_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "product_metadata_fixture_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "generic_vendor_product_page"
+    },
+    {
+      "account_payload_allowed": false,
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "connector_family": "software_marketplace_metadata",
+      "download_payload_allowed": false,
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "purchase_download_account_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint class is documentation-only until source-specific approval is committed."
+      ],
+      "planned_endpoint_or_metadata_classes_future": [
+        "marketplace_metadata_fixture_future"
+      ],
+      "product_page_payload_allowed": false,
+      "screenshot_or_media_payload_allowed": false,
+      "source_id": "generic_commercial_software_marketplace"
+    }
+  ],
+  "truth_boundary": {
+    "accepted_candidate_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_public_record": false,
+    "accepted_source_truth": false,
+    "account_entitlement_boundary_candidate_is_license_truth": false,
+    "account_entitlement_candidate_is_license_truth": false,
+    "acquisition_path_candidate_is_action_permission": false,
+    "app_product_identity_candidate_is_truth": false,
+    "content_safety_claimed": false,
+    "current_availability_claimed": false,
+    "current_price_claimed": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "installability_claimed": false,
+    "legal_acquisition_claimed": false,
+    "license_entitlement_claimed": false,
+    "listing_identity_candidate_is_truth": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "price_availability_candidate_is_truth": false,
+    "price_availability_region_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "review_rating_candidate_is_quality_truth": false,
+    "review_rating_metadata_candidate_is_quality_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "rights_safety_candidate_is_rights_or_safety_truth": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "storefront_listing_identity_candidate_is_truth": false,
+    "storefront_metadata_grants_acquisition_permission": false,
+    "storefront_rights_safety_candidate_is_rights_or_safety_truth": false,
+    "verified_authenticity_claimed": false,
+    "version_release_candidate_is_truth": false,
+    "version_release_channel_candidate_is_truth": false
+  }
+}
