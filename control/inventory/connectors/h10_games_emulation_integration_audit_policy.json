@@ -1,0 +1,46 @@
+{
+  "exit_gate_values": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "PARTIAL",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "next_phase_values": [
+    "READY_FOR_H11_BUNDLE_01",
+    "READY_FOR_J1_POLICY_FUTURE",
+    "READY_FOR_K0_FUTURE",
+    "READY_FOR_L0_FUTURE",
+    "READY_WITH_WARNINGS",
+    "NEEDS_REMEDIATION",
+    "NOT_READY"
+  ],
+  "no_goals": [
+    "no_live_calls",
+    "no_downloads_uploads_execution_acquisition",
+    "no_source_sync",
+    "no_public_or_master_index_mutation",
+    "no_truth_acceptance"
+  ],
+  "policy_id": "h10_games_emulation_integration_audit_policy",
+  "preferred_next_phase": "READY_FOR_H11_BUNDLE_01",
+  "required_artifacts": [
+    "contracts",
+    "policies",
+    "runtime",
+    "scripts",
+    "examples",
+    "tests",
+    "audit_pack"
+  ],
+  "required_no_truth_claims": true,
+  "required_product_boundaries": true,
+  "required_validators": [
+    "validate_h10_games_emulation_review_quality_audit",
+    "validate_h10_games_emulation_live_probe",
+    "validate_h10_games_emulation_fixture_runtime",
+    "validate_h10_games_emulation_policy_packs"
+  ],
+  "schema_version": "h10_games_emulation_integration_audit_policy.v0",
+  "wave_id": "H10"
+}

@@ -1,0 +1,75 @@
+{
+  "$id": "https://eureka.local/contracts/connectors/h10_games_emulation_integration_audit.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "action_safety_boundary_summary": {
+      "description": "H10 games/emulation review-quality field: action_safety_boundary_summary"
+    },
+    "artifact_inventory": {
+      "description": "H10 games/emulation review-quality field: artifact_inventory"
+    },
+    "audit_id": {
+      "description": "H10 games/emulation review-quality field: audit_id"
+    },
+    "audited_sources": {
+      "description": "H10 games/emulation review-quality field: audited_sources"
+    },
+    "audited_tasks": {
+      "description": "H10 games/emulation review-quality field: audited_tasks"
+    },
+    "blockers": {
+      "description": "H10 games/emulation review-quality field: blockers"
+    },
+    "fixture_runtime_summary": {
+      "description": "H10 games/emulation review-quality field: fixture_runtime_summary"
+    },
+    "h10_exit_gate": {
+      "description": "H10 games/emulation review-quality field: h10_exit_gate"
+    },
+    "live_probe_summary": {
+      "description": "H10 games/emulation review-quality field: live_probe_summary"
+    },
+    "next_phase_recommendation": {
+      "description": "H10 games/emulation review-quality field: next_phase_recommendation"
+    },
+    "notes": {
+      "description": "H10 games/emulation review-quality field: notes"
+    },
+    "postmortem_summary": {
+      "description": "H10 games/emulation review-quality field: postmortem_summary"
+    },
+    "product_boundary": {
+      "description": "H10 games/emulation review-quality field: product_boundary"
+    },
+    "quality_delta_summary": {
+      "description": "H10 games/emulation review-quality field: quality_delta_summary"
+    },
+    "restricted_source_policy_summary": {
+      "description": "H10 games/emulation review-quality field: restricted_source_policy_summary"
+    },
+    "review_integration_summary": {
+      "description": "H10 games/emulation review-quality field: review_integration_summary"
+    },
+    "source_policy_summary": {
+      "description": "H10 games/emulation review-quality field: source_policy_summary"
+    },
+    "truth_boundary": {
+      "description": "H10 games/emulation review-quality field: truth_boundary"
+    },
+    "validation_summary": {
+      "description": "H10 games/emulation review-quality field: validation_summary"
+    },
+    "warnings": {
+      "description": "H10 games/emulation review-quality field: warnings"
+    },
+    "wave_id": {
+      "description": "H10 games/emulation review-quality field: wave_id"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "h10_games_emulation_integration_audit",
+  "type": "object"
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H10-BUNDLE-04
+current_recommended_task: H11-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -722,3 +722,12 @@ entries:
   gate: H10-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, downloads, uploads, execution, acquisition, source sync, index mutation, or truth acceptance.
   task: .aide/queue/H10-BUNDLE-04/task.yaml
   recommended_after: H10-BUNDLE-03
+
+- id: H11-BUNDLE-01
+  title: Storefront and app-store source-family policy packs
+  status: queued
+  purpose: Add policy-pack-only storefront and app-store source-family governance after H10 games/emulation review closeout.
+  allowed_scope_summary: H11 source-family policy packs, source records, connector-family mappings, docs, examples, validators, audit pack, and AIDE metadata only.
+  gate: H10-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H11_BUNDLE_01; no live calls, downloads, uploads, account access, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H11-BUNDLE-01/task.yaml
+  recommended_after: H10-BUNDLE-04

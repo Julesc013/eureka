@@ -1,0 +1,32 @@
+{
+  "auto_approve_future_connectors_allowed": false,
+  "policy_id": "h10_games_emulation_connector_wave_postmortem_policy",
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "game_software_identity_gaps",
+    "platform_release_edition_gaps",
+    "emulator_compatibility_gaps",
+    "preservation_hashset_gaps",
+    "rom_disc_media_identity_gaps",
+    "game_relation_gaps",
+    "emulator_action_candidate_gaps",
+    "rights_safety_gaps",
+    "restricted_source_policy_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h11_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h10_games_emulation_connector_wave_postmortem_policy.v0",
+  "wave_id": "H10"
+}

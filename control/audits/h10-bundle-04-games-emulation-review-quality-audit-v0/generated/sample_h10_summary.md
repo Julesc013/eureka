@@ -1,0 +1,21 @@
+# H10 Review Integration Summary
+
+- status: `pass`
+- source_count: `14`
+- game_software_identity_review_seed_count: `14`
+- platform_release_edition_review_seed_count: `14`
+- emulator_compatibility_review_seed_count: `14`
+- blocked_sources: `flashpoint_metadata, games_emulation_policy_blocked, generic_emulator_compatibility, generic_game_database, generic_preservation_hashset, gog_game_metadata_policy_limited, itchio_game_metadata_policy_limited, mame_software_lists, mobygames, no_intro_hash_sets, redump_hash_sets, scummvm_compatibility, steam_game_metadata_policy_limited, tosec_hash_sets`
+- game_identity_truth_accepted: `false`
+- platform_release_truth_accepted: `false`
+- emulator_compatibility_truth_accepted: `false`
+- hashset_truth_accepted: `false`
+- rom_disc_media_truth_accepted: `false`
+- game_relation_truth_accepted: `false`
+- action_permission_accepted: `false`
+- rights_safety_truth_accepted: `false`
+- query_fetch_download_upload_execute_acquire: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

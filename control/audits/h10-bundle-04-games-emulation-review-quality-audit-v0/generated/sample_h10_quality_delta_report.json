@@ -1,0 +1,361 @@
+{
+  "blocked_sources_count": 14,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 14,
+  "emulator_action_candidate_count": 14,
+  "emulator_compatibility_candidate_count": 14,
+  "evidence_candidate_preview_count": 14,
+  "fixture_sources_count": 14,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_games_emulation_coverage",
+    "exhaustive_global_coverage",
+    "game_identity_verified",
+    "release_identity_verified",
+    "emulator_compatibility_verified",
+    "hashset_correctness_verified",
+    "rom_authenticity_verified",
+    "disc_authenticity_verified",
+    "legal_acquisition_verified",
+    "playability_verified",
+    "installability_verified",
+    "rights_clearance",
+    "malware_safety",
+    "content_safety",
+    "privacy_safety",
+    "verified_authenticity",
+    "automatic_future_connector_approval"
+  ],
+  "game_relation_candidate_count": 14,
+  "game_software_identity_candidate_count": 14,
+  "games_rights_safety_candidate_count": 14,
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H10 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Games/emulation metadata is not game identity, release identity, emulator compatibility, hash-set correctness, ROM or disc authenticity, legal acquisition, playability, installability, rights clearance, malware safety, privacy safety, content safety, production coverage, or production quality proof."
+  ],
+  "live_probe_sources_count": 0,
+  "normalized_record_count": 14,
+  "notes": [
+    "H10 quality delta is operational review evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "flashpoint_metadata"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "games_emulation_policy_blocked"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_emulator_compatibility"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_game_database"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "generic_preservation_hashset"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "gog_game_metadata_policy_limited"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "itchio_game_metadata_policy_limited"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "mame_software_lists"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "mobygames"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "no_intro_hash_sets"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "redump_hash_sets"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "scummvm_compatibility"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "steam_game_metadata_policy_limited"
+    },
+    {
+      "emulator_action_candidate_review_seed_created": true,
+      "emulator_compatibility_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "game_relation_review_seed_created": true,
+      "game_software_identity_review_seed_created": true,
+      "games_rights_safety_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "platform_release_edition_review_seed_created": true,
+      "preservation_hashset_review_seed_created": true,
+      "rom_disc_media_identity_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "tosec_hash_sets"
+    }
+  ],
+  "platform_release_edition_candidate_count": 14,
+  "preservation_hashset_candidate_count": 14,
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_acquisition_actions": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h10.quality_delta.816ec43b5d43.v0",
+  "review_seed_count": 140,
+  "rom_disc_media_identity_candidate_count": 14,
+  "schema_version": "h10_games_emulation_quality_delta_report.v0",
+  "scorecard_update_count": 14,
+  "source_cache_candidate_count": 14,
+  "source_count": 14,
+  "truth_boundary": {
+    "automatic_future_connector_approval": false,
+    "content_safety_claimed": false,
+    "disc_authenticity_verified": false,
+    "emulator_compatibility_verified": false,
+    "exhaustive_global_coverage": false,
+    "game_identity_verified": false,
+    "hashset_correctness_verified": false,
+    "installability_verified": false,
+    "legal_acquisition_verified": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "playability_verified": false,
+    "privacy_safety_claimed": false,
+    "production_games_emulation_coverage": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "release_identity_verified": false,
+    "rights_clearance_claimed": false,
+    "rom_authenticity_verified": false,
+    "verified_authenticity_claimed": false
+  },
+  "warning_count": 2,
+  "wave_id": "H10"
+}

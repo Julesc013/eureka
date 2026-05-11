@@ -1,0 +1,7 @@
+id: H11-BUNDLE-01
+title: Storefront and app-store source-family policy packs
+status: queued
+purpose: Add policy-pack-only storefront and app-store source-family governance after H10 games/emulation review closeout.
+allowed_scope_summary: H11 source-family policy packs, source records, connector-family mappings, docs, examples, validators, audit pack, and AIDE metadata only.
+gate: H10-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H11_BUNDLE_01; no live calls, downloads, uploads, account access, source sync, public/master index mutation, or truth acceptance.
+recommended_after: H10-BUNDLE-04
