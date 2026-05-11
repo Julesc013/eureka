@@ -1,0 +1,16 @@
+id: H14-BUNDLE-03
+title: Source discovery, source packs, coverage manifests, and scorecard dry-run rollups
+status: queued
+track: H14
+recommended_after: H14-BUNDLE-02
+goal: Add policy-gated H14 Source OS rollup dry-runs from fixture-equivalent outputs without opening live source discovery, pack movement, registry mutation, or truth acceptance.
+allowed_scope_summary: H14 dry-run contracts, policies, committed request manifests, wrappers, examples, docs, tests, audit pack, and AIDE metadata only until explicitly scoped.
+gate: H14-BUNDLE-02 passes and recommends H14-BUNDLE-03.
+no_goals:
+  - no live source calls, web search, crawling, scraping, source sync, or connector runtime access by default
+  - no network/API/model/provider calls
+  - no local/private/user-supplied/authenticated/restricted access
+  - no pack import/export/signing/publication/acceptance
+  - no source or connector registry mutation
+  - no source-cache, evidence, review queue, public-index, or master-index writes
+  - no source/candidate/coverage/scorecard/reliability/freshness/dispute/revocation/lineage/pack truth acceptance

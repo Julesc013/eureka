@@ -1,0 +1,35 @@
+{
+  "allowed_output_roots": [
+    "examples/connectors/h14_source_discovery/normalized/",
+    "examples/connectors/h14_source_discovery/identity/",
+    "examples/connectors/h14_source_discovery/replay_results/",
+    "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/generated/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "source_registry_mutation/",
+    "connector_registry_mutation/",
+    "pack_import_staging/",
+    "pack_export_staging/",
+    "source_discovery_runtime/",
+    "external_source_fetch/",
+    "source_cache/",
+    "evidence_ledger/",
+    "review_queue/",
+    "master_index/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/",
+    "local_sources/",
+    "private_sources/",
+    "cas_store/"
+  ],
+  "notes": [
+    "Scripts write no files by default and refuse forbidden roots."
+  ],
+  "schema_version": "h14_source_discovery_fixture_path_policy.v0"
+}

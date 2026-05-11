@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H14-BUNDLE-01`
-- current_queue_item: `H14-BUNDLE-02`
-- next_recommended_queue_item: `H14-BUNDLE-02`
+- completed_queue_item: `H14-BUNDLE-02`
+- current_queue_item: `H14-BUNDLE-03`
+- next_recommended_queue_item: `H14-BUNDLE-03`
 - status: `pass`
-- note: H14 source discovery policy packs aggregate H0-H13 Source OS posture without opening source discovery, live access, pack import/export, registry mutation, index mutation, or truth acceptance.
-- validation: H14 policy pack validator `pass`; H14 summary check `pass`; H14 unit tests `pass`; cross-wave validators `pass`; architecture boundaries `pass`.
+- note: H14 source discovery fixture rollups normalize committed synthetic Source OS records without opening source discovery, live access, pack import/export, registry mutation, index mutation, or truth acceptance.
+- validation: H14 fixture runtime validator `pass`; H14 fixture replay `pass`; H14 fixture summary `pass`; H14 unit tests `pass`; unittest discovery `pass`; cross-wave validators `pass`; architecture boundaries `pass`.
 - public_index_mutated: `false`
 - master_index_mutated: `false`
 - local_access_enabled: `false`
@@ -25,3 +25,8 @@
 - public_index_writes_enabled: `false`
 - source_candidate_truth_accepted: `false`
 - scorecard_truth_accepted: `false`
+- fixture_runtime_only: `true`
+- normalized_source_os_records: `true`
+- source_need_candidates: `enabled`
+- source_candidate_candidates: `enabled`
+- source_discovery_candidates: `enabled`

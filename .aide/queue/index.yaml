@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H14-BUNDLE-02
+current_recommended_task: H14-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -845,9 +845,18 @@ entries:
 
 - id: H14-BUNDLE-02
   title: Source discovery, source packs, coverage manifests, and scorecard fixture runtimes
-  status: queued
+  status: needs_review
   purpose: Add committed-fixture-only H14 SourceNeed, SourceCandidate, source-pack, coverage, scorecard, reliability/freshness, dispute/revocation, lineage, and pack-boundary normalizers after H14 policy packs.
   allowed_scope_summary: H14 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
   gate: H14-BUNDLE-01 passes; no live source calls, source discovery runtime, web search, crawling, scraping, source sync, pack import/export, registry mutation, public/master index mutation, or truth acceptance.
   task: .aide/queue/H14-BUNDLE-02/task.yaml
   recommended_after: H14-BUNDLE-01
+
+- id: H14-BUNDLE-03
+  title: Source discovery, source packs, coverage manifests, and scorecard dry-run rollups
+  status: queued
+  purpose: Add policy-gated H14 Source OS rollup dry-runs after fixture-runtime review without opening live discovery, pack import/export, registry mutation, or truth acceptance.
+  allowed_scope_summary: H14 dry-run policies, committed request manifests, dry-run wrappers, examples, docs, tests, audit pack, and AIDE metadata only.
+  gate: H14-BUNDLE-02 passes; default offline preflight only, no live source discovery, web search, crawling, scraping, source sync, pack import/export, registry mutation, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H14-BUNDLE-03/task.yaml
+  recommended_after: H14-BUNDLE-02
