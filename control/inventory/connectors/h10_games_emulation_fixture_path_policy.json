@@ -1,0 +1,35 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h10_games_emulation/normalized/",
+    "examples/connectors/h10_games_emulation/replay_results/",
+    "examples/connectors/h10_games_emulation/identity/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/",
+    "contracts/",
+    "roms/",
+    "isos/",
+    "disc_images/",
+    "chd/",
+    "bios/",
+    "firmware/",
+    "game_binaries/",
+    "emulators/",
+    "installers/",
+    "patches/",
+    "game_installs/",
+    "launchers/",
+    "hash_submissions/",
+    "storefront_accounts/",
+    "restricted_sources/",
+    ".aide.local/",
+    ".local/eureka/",
+    ".cache/eureka/"
+  ],
+  "policy_id": "h10_games_emulation_fixture_path_policy",
+  "schema_version": "h10_games_emulation_fixture_path_policy.v0"
+}

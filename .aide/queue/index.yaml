@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H10-BUNDLE-02
+current_recommended_task: H10-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -704,3 +704,12 @@ entries:
   gate: H10-BUNDLE-01 passes; no live calls, downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H10-BUNDLE-02/task.yaml
   recommended_after: H10-BUNDLE-01
+
+- id: H10-BUNDLE-03
+  title: Games, emulation, and software-identity approved metadata-only live probes
+  status: queued
+  purpose: Add approval-gated bounded metadata-only live-probe framework for H10 game/software metadata sources after fixture runtime review.
+  allowed_scope_summary: H10 live-probe contracts, committed request manifests, fail-closed wrappers, policies, docs, scripts, examples, tests, audit pack, and AIDE metadata only.
+  gate: H10-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific metadata-only policy gates pass, and downloads/uploads/execution/acquisition/scraping/crawling remain forbidden.
+  task: .aide/queue/H10-BUNDLE-03/task.yaml
+  recommended_after: H10-BUNDLE-02

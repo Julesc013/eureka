@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H10-BUNDLE-03
+title: Games, emulation, and software-identity approved metadata-only live probes
+status: queued
+recommended_after: H10-BUNDLE-02
+gate: H10-BUNDLE-02 PASS or PASS_WITH_WARNINGS.
+scope: H10 approval-gated, bounded metadata-only live probe envelopes for game/software identity sources.
+forbidden: no live call by default; no downloads, uploads, execution, emulation, acquisition, scraping/crawling, bypass, source sync, public/master index mutation, or source/evidence/candidate/game software truth acceptance.
