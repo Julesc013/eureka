@@ -1,0 +1,18 @@
+id: H13-BUNDLE-02
+title: Local, private, user-supplied, and restricted-source fixture runtimes and boundary validators
+status: queued
+track: H13
+recommended_after: H13-BUNDLE-01
+goal: Add fixture-only H13 local/private/restricted boundary validators.
+allowed_scope_summary: H13 fixture contracts, connector fixture policies, runtime fixture boundary normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+gate: H13-BUNDLE-01 passes.
+no_goals:
+  - no local/private/user-supplied/authenticated/restricted access
+  - no source sync
+  - no connector runtime
+  - no scans or URL fetches
+  - no account access or credential handling
+  - no CAS import or pack export/import
+  - no extraction, execution, acquisition, uploads, or publication
+  - no public or master index mutation
+  - no truth acceptance

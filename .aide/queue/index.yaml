@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H13-BUNDLE-01
+current_recommended_task: H13-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -798,9 +798,19 @@ entries:
 
 - id: H13-BUNDLE-01
   title: Local, private, user-supplied, and restricted-source policy packs
-  status: queued
+  status: needs_review
   purpose: Add policy-pack-only governance for local, private, user-supplied, and restricted-source handling after H12 retro/community review closeout.
   allowed_scope_summary: H13 source-family policy packs, source records, connector-family mappings, approval gates, docs, validators, tests, audit pack, and AIDE metadata only.
   gate: H12-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H13_BUNDLE_01; no live source calls, downloads, extraction, execution, acquisition actions, uploads, scraping/crawling, account/gated/restricted-source access, public/master index mutation, or truth acceptance.
   task: .aide/queue/H13-BUNDLE-01/task.yaml
   recommended_after: H12-BUNDLE-04
+
+
+- id: H13-BUNDLE-02
+  title: Local, private, user-supplied, and restricted-source fixture runtimes and boundary validators
+  status: queued
+  purpose: Add fixture-only H13 local/private/restricted boundary validators after H13 policy packs.
+  allowed_scope_summary: H13 fixture contracts, connector fixture policies, runtime fixture boundary normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+  gate: H13-BUNDLE-01 passes; no local/private/user-supplied/authenticated/restricted access, source sync, connector runtime, scans, URL fetches, account access, CAS import, pack export/import, extraction, execution, acquisition, uploads, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H13-BUNDLE-02/task.yaml
+  recommended_after: H13-BUNDLE-01

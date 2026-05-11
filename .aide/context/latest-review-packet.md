@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4093 chars, 1024 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4264 chars, 1066 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H13-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H13-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h12_retro_community_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h12_retro_community_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h12_retro_community_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h12_retro_community_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h12_retro_community_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h12-bundle-04-retro-community-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h12_retro_community_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H12_RETRO_COMMUNITY_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H12_RETRO_COMMUNITY_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
+- unknown: `control/audits/h13-bundle-01-local-private-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_authenticated_source_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_cas_import_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_no_access_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_no_import_export_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_rights_safety_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_private_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_local_source_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_pack_export_import_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_privacy_redaction_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_private_source_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h13_restricted_source_manifest_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 37; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6903
-- approx_tokens: 1726
+- chars: 6906
+- approx_tokens: 1727
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

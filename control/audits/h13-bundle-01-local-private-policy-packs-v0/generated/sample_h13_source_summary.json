@@ -1,0 +1,79 @@
+{
+  "access_mode_counts": {
+    "no_access": 12
+  },
+  "authenticated_access_enabled_count": 0,
+  "authenticated_source_boundary_support_count": 1,
+  "blockers": [
+    "fixture runtime not implemented",
+    "local/private/user-supplied/authenticated/restricted access not approved",
+    "CAS import and pack export/import forbidden",
+    "source cache, evidence, public index, and master index writes forbidden",
+    "local/private/restricted truth acceptance forbidden"
+  ],
+  "cas_pack_import_export_enabled_count": 0,
+  "connector_family_counts": {
+    "authenticated_user_source_boundary": 1,
+    "institutional_private_boundary": 1,
+    "local_archive_boundary": 1,
+    "local_disk_image_boundary": 1,
+    "local_folder_boundary": 1,
+    "local_media_boundary": 1,
+    "local_package_cache_boundary": 1,
+    "policy_blocked_boundary": 1,
+    "private_network_storage_boundary": 1,
+    "private_object_store_boundary": 1,
+    "restricted_manifest_only": 1,
+    "user_supplied_url_boundary": 1
+  },
+  "connector_mapping_count": 12,
+  "connector_runtime_enabled_count": 0,
+  "current_status": "policy_pack_only",
+  "index_depth_counts": {
+    "D0_source_known": 12
+  },
+  "local_access_enabled_count": 0,
+  "local_cas_import_boundary_support_count": 12,
+  "local_source_identity_support_count": 12,
+  "pack_export_import_boundary_support_count": 12,
+  "privacy_redaction_support_count": 12,
+  "private_access_enabled_count": 0,
+  "private_source_boundary_support_count": 12,
+  "public_index_writes_enabled_count": 0,
+  "readiness": "READY_FOR_H13_FIXTURE_RUNTIME",
+  "restricted_source_access_enabled_count": 0,
+  "restricted_source_manifest_support_count": 2,
+  "rights_safety_support_count": 12,
+  "schema_version": "h13_local_private_source_summary.v0",
+  "source_cache_writes_enabled_count": 0,
+  "source_count": 12,
+  "source_family_counts": {
+    "local_private_user_supplied_source": 12
+  },
+  "source_ids": [
+    "institutional_private_collection_boundary",
+    "local_archive_file_metadata",
+    "local_disk_image_metadata",
+    "local_folder_metadata",
+    "local_package_cache_metadata",
+    "local_removable_media_metadata",
+    "private_nas_metadata_boundary",
+    "private_object_store_metadata_boundary",
+    "restricted_source_manifest_only",
+    "rights_sensitive_source_policy_blocked",
+    "user_owned_authenticated_source_boundary",
+    "user_supplied_url_metadata_boundary"
+  ],
+  "source_sync_enabled_count": 0,
+  "status": "pass",
+  "trust_lane_counts": {
+    "local_private": 8,
+    "policy_blocked": 1,
+    "restricted_manifest_only": 1,
+    "user_supplied": 2
+  },
+  "user_supplied_url_fetch_enabled_count": 0,
+  "user_supplied_url_support_count": 1,
+  "wave_id": "H13",
+  "wrote_files": false
+}

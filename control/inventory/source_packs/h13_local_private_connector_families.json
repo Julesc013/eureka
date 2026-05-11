@@ -1,0 +1,140 @@
+{
+  "connector_families": [
+    {
+      "access_enabled": false,
+      "connector_family": "local_folder_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "local_archive_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "local_media_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "local_disk_image_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "local_package_cache_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "private_network_storage_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "private_object_store_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "institutional_private_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "user_supplied_url_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "authenticated_user_source_boundary",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "restricted_manifest_only",
+      "current_status": "policy_boundary_only"
+    },
+    {
+      "access_enabled": false,
+      "connector_family": "policy_blocked_boundary",
+      "current_status": "policy_boundary_only"
+    }
+  ],
+  "schema_version": "h13_local_private_connector_families.v0",
+  "source_connector_family_mappings": [
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "local_folder_boundary",
+      "source_id": "local_folder_metadata"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "local_archive_boundary",
+      "source_id": "local_archive_file_metadata"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "local_media_boundary",
+      "source_id": "local_removable_media_metadata"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "local_disk_image_boundary",
+      "source_id": "local_disk_image_metadata"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "local_package_cache_boundary",
+      "source_id": "local_package_cache_metadata"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "private_network_storage_boundary",
+      "source_id": "private_nas_metadata_boundary"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "private_object_store_boundary",
+      "source_id": "private_object_store_metadata_boundary"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "institutional_private_boundary",
+      "source_id": "institutional_private_collection_boundary"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "user_supplied_url_boundary",
+      "source_id": "user_supplied_url_metadata_boundary"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "authenticated_user_source_boundary",
+      "source_id": "user_owned_authenticated_source_boundary"
+    },
+    {
+      "alternate_connector_family": "",
+      "ambiguity_note": "none",
+      "preferred_connector_family": "restricted_manifest_only",
+      "source_id": "restricted_source_manifest_only"
+    },
+    {
+      "alternate_connector_family": "policy_blocked_boundary",
+      "ambiguity_note": "policy-blocked boundary takes precedence",
+      "preferred_connector_family": "policy_blocked_boundary",
+      "source_id": "rights_sensitive_source_policy_blocked"
+    }
+  ],
+  "wave_id": "H13"
+}
