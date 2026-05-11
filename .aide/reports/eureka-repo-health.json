@@ -1,18 +1,20 @@
 {
-  "completed_queue_item": "H8-BUNDLE-04",
-  "current_queue_item": "H9-BUNDLE-01",
-  "generated_at_note": "codex_updated_after_h8_bundle_04_validation",
+  "completed_queue_item": "H9-BUNDLE-01",
+  "current_queue_item": "H9-BUNDLE-02",
+  "generated_at_note": "codex_updated_after_h9_bundle_01_validation",
   "known_warn_only_conditions": [
-    "H8 live probes remain blocked by missing committed operator approval; fixture-equivalent outputs carried review integration.",
-    "H8 quality delta is not production documentation coverage, standards compliance, compatibility correctness, installability, repair safety, electrical safety, rights clearance, open-access truth, malware safety, verified authenticity, or production readiness proof."
+    "H9-BUNDLE-01 is policy-pack-only; fixture runtime is intentionally deferred to H9-BUNDLE-02.",
+    "H9 media metadata policies do not prove media authenticity, audio identity, image identity, map correctness, rights clearance, public-domain status, Creative Commons validity, attribution correctness, malware safety, privacy safety, content safety, or production media coverage."
   ],
-  "next_recommended_queue_item": "H9-BUNDLE-01",
+  "next_recommended_queue_item": "H9-BUNDLE-02",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "enabled_crawling": false,
     "enabled_downloads": false,
     "enabled_extraction": false,
     "enabled_fetching": false,
+    "enabled_fingerprinting": false,
+    "enabled_uploads": false,
     "enabled_source_sync": false,
     "mutated_master_index": false,
     "mutated_public_index": false
@@ -22,7 +24,8 @@
   "validation": {
     "aide_lite": "pass_with_warnings",
     "architecture_boundaries": "pass",
-    "h8_review_quality": "pass",
+    "existing_validator_sweep": "pass",
+    "h9_policy_packs": "pass",
     "unittest_discovery": "pass"
   }
 }

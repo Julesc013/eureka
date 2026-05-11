@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H9-BUNDLE-01
+current_recommended_task: H9-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -650,11 +650,20 @@ entries:
   task: .aide/queue/H8-BUNDLE-04/task.yaml
   recommended_after: H8-BUNDLE-03
 
-  - id: H9-BUNDLE-01
-    title: Media, music, image, video, and map source-family policy packs
-    status: queued
-    purpose: Add policy-pack-only media, music, image, video, and map source-family governance after H8 closes.
-    allowed_scope_summary: H9 source-family policy packs, docs, examples, validators, audit pack, and AIDE queue/context metadata only.
-    gate: H8-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H9_BUNDLE_01; no live calls, downloads, scraping, source sync, public/master index mutation, or truth acceptance.
-    task: .aide/queue/H9-BUNDLE-01/task.yaml
-    recommended_after: H8-BUNDLE-04
+- id: H9-BUNDLE-01
+  title: Media, music, image, video, and map source-family policy packs
+  status: queued
+  purpose: Add policy-pack-only media, music, image, video, and map source-family governance after H8 closes.
+  allowed_scope_summary: H9 source-family policy packs, docs, examples, validators, audit pack, and AIDE queue/context metadata only.
+  gate: H8-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H9_BUNDLE_01; no live calls, downloads, scraping, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H9-BUNDLE-01/task.yaml
+  recommended_after: H8-BUNDLE-04
+
+- id: H9-BUNDLE-02
+  title: Media, music, image, video, and map fixture runtimes and normalizers
+  status: queued
+  purpose: Add committed-fixture-only H9 media metadata normalizers and replay outputs after H9 policy packs pass.
+  allowed_scope_summary: H9 fixture contracts, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H9-BUNDLE-01 passes; no live source calls, API/catalog queries, media downloads/uploads, fingerprint generation/submission, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H9-BUNDLE-02/task.yaml
+  recommended_after: H9-BUNDLE-01

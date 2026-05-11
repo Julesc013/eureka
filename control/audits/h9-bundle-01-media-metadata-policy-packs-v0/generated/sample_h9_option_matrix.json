@@ -1,0 +1,13 @@
+{
+  "options": {
+    "fingerprinting_current": false,
+    "fixture_runtime_future": true,
+    "live_access_current": false,
+    "media_download_current": false,
+    "media_upload_current": false,
+    "policy_pack_only": true,
+    "scraping_crawling_current": false
+  },
+  "schema_version": "h9_media_metadata_option_matrix.v0",
+  "source_count": 20
+}

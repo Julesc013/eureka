@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H9-BUNDLE-02
+title: Media, music, image, video, and map fixture runtimes and normalizers
+status: queued
+recommended_after: H9-BUNDLE-01
+gate: H9-BUNDLE-01 PASS or PASS_WITH_WARNINGS with NEXT_PHASE READY_FOR_H9_BUNDLE_02 or READY_WITH_WARNINGS.
+scope: H9 committed-fixture-only normalizers, replay outputs, scripts, docs, tests, audit evidence, and AIDE context metadata only.
+forbidden: no live source calls, API/catalog queries, media downloads/uploads, fingerprint generation/submission, scraping/crawling, bypass, source sync, public/master index mutation, or media/music/image/video/map/fingerprint/rights/safety truth acceptance.

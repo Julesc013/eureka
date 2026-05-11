@@ -409,6 +409,42 @@
         "no scraping, crawling, or bypass",
         "no event or capture truth claim"
       ]
+    },
+    {
+      "allowed_default_depth": "D0_source_known",
+      "default_download_posture": "forbidden_by_default",
+      "default_live_access_posture": "policy_pack_only",
+      "default_review_requirements": [
+        "source_policy",
+        "rights_license_review",
+        "media_identity_review",
+        "safety_privacy_review"
+      ],
+      "description": "Media, music, image, video, audio, map, museum, art, open-media, and fingerprint metadata sources.",
+      "family_id": "media_metadata",
+      "label": "Media Metadata",
+      "no_goals": [
+        "no live source calls by default",
+        "no media download or upload by default",
+        "no fingerprint generation or submission by default",
+        "no media, rights, safety, or identity truth claim"
+      ],
+      "preferred_adapter_families": [
+        "media_metadata_api",
+        "open_media_catalog",
+        "museum_collection_api",
+        "music_metadata_api",
+        "audio_archive_metadata",
+        "image_collection_metadata",
+        "video_archive_metadata",
+        "map_collection_metadata",
+        "fingerprint_metadata",
+        "html_catalog_policy_limited",
+        "restricted_manifest_only"
+      ],
+      "schema_version": "source_family.v0",
+      "typical_risk_posture": "rights_license_identity_safety_review_required",
+      "typical_trust_lane": "community"
     }
   ],
   "registry_id": "source_family_registry",

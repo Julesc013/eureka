@@ -2,22 +2,23 @@
 
 ## PHASE
 
-H9-BUNDLE-01 - Media, music, image, video, and map source-family policy packs. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H9-BUNDLE-02 - Media, music, image, video, and map fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Start Track H9 by adding policy-pack-only governance for media, music, image, video, and map sources after H8 review integration closed with fixture-equivalent outputs.
+Add committed-fixture-only H9 media metadata normalizers and replay outputs after H9-BUNDLE-01 established policy-pack-only governance.
 
 ## WHY
 
-H8-BUNDLE-04 closes the manuals/docs/standards wave without accepting truth, enabling downloads, or approving future connectors. H9 can now define the next source-family policy layer while J1/K/L remain deferred.
+H9-BUNDLE-01 added source records, policy packs, identity/relation/fingerprint/rights/safety policies, coverage and scorecard previews, and no-live/no-download/no-upload boundaries for media metadata sources. H9-BUNDLE-02 can now prove parsing and boundary behavior with synthetic or repo-local fixtures.
 
 ## CONTEXT_REFS
 
-- `control/audits/h8-bundle-04-manuals-docs-review-quality-audit-v0/`
-- `control/audits/h8-bundle-03-manuals-docs-live-probes-v0/`
-- `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0/`
-- `control/audits/h8-bundle-01-manuals-docs-standards-policy-packs-v0/`
+- `control/audits/h9-bundle-01-media-metadata-policy-packs-v0/`
+- `control/inventory/source_packs/h9_media_metadata_sources.json`
+- `control/inventory/source_packs/h9_media_metadata_source_pack_policy.json`
+- `control/inventory/source_packs/h9_media_metadata_no_live_call_policy.json`
+- `control/inventory/source_packs/h9_media_metadata_no_download_upload_policy.json`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/memory/project-state.md`
@@ -28,8 +29,8 @@ H8-BUNDLE-04 closes the manuals/docs/standards wave without accepting truth, ena
 
 ## ALLOWED_PATHS
 
-- H9 policy-pack contracts, inventories, examples, docs, scripts, tests, audit pack, and AIDE routing metadata only.
-- `.aide/queue/`, `.aide/context/`, and `.aide/reports/` routing metadata updates for the H9 handoff.
+- H9 fixture contracts, committed fixtures, normalizer runtime modules, replay outputs, examples, docs, scripts, tests, audit pack, and AIDE routing metadata only.
+- `.aide/queue/`, `.aide/context/`, and `.aide/reports/` routing metadata updates for the H9 fixture-runtime handoff.
 
 ## FORBIDDEN_PATHS
 
@@ -45,22 +46,22 @@ H8-BUNDLE-04 closes the manuals/docs/standards wave without accepting truth, ena
 - packaging/**
 - third_party/**
 - master-index or publication roots
-- document, standards, OCR, full-text, media, restricted-source, repair/action, and local private-state roots
-- product runtime behavior outside explicit future H9 policy-pack scope
+- media download/upload, fingerprint cache, image/video/audio/map cache, restricted-source, OCR/full-text, and local private-state roots
+- product runtime behavior outside explicit future H9 fixture-runtime scope
 
 ## IMPLEMENTATION
 
-- Read H8-BUNDLE-04 audit output and H9 task packet context first.
-- Add H9 media/music/image/video/map policy-pack-only artifacts.
-- Keep H9 work to source records, policy packs, coverage/scorecard previews, docs, validators, tests, and audit evidence.
-- Do not enable live probes, source sync, downloads, scraping, crawling, extraction, or truth acceptance.
+- Read H9-BUNDLE-01 audit output and media metadata policy packs first.
+- Add committed fixture-only normalizers for H9 sources.
+- Convert public-safe fixtures into normalized media metadata records and candidate/previews only.
+- Do not enable live probes, source sync, downloads, uploads, fingerprint generation/submission, scraping, crawling, bypass, or truth acceptance.
 
 ## VALIDATION
 
 - Run `git status --short`.
 - Run `git diff --check`.
-- Run the H9 policy-pack validator added by the task.
-- Run relevant H8/H7/core validators if present.
+- Run the H9 fixture-runtime validator added by the task.
+- Run relevant H9/H8/H7/core validators if present.
 - Run focused unit tests and `python scripts/check_architecture_boundaries.py` when runtime or connector boundaries are touched.
 - Run AIDE Lite checks where practical.
 - Run `.aide/scripts/aide_lite.py doctor`.
@@ -72,21 +73,21 @@ H8-BUNDLE-04 closes the manuals/docs/standards wave without accepting truth, ena
 
 ## EVIDENCE
 
-- `control/audits/h8-bundle-04-manuals-docs-review-quality-audit-v0/`
-- `.aide/queue/H9-BUNDLE-01/task.yaml`
+- `control/audits/h9-bundle-01-media-metadata-policy-packs-v0/`
+- `.aide/queue/H9-BUNDLE-02/task.yaml`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/context/latest-review-packet.md`
 
 ## ACCEPTANCE
 
-- H9 policy-pack scope is explicit and fixture/live runtime behavior remains disabled.
-- Media/music/image/video/map source records and policy packs validate.
+- H9 fixture runtime remains committed-fixture-only.
+- Media/music/image/video/map/fingerprint/rights/safety normalized outputs remain candidates or previews.
 - No public/master index mutation or product behavior change occurs.
-- No source, evidence, candidate, media, rights, access, geospatial, identity, or public truth is accepted.
+- No source, evidence, candidate, media, music, image/video/map, fingerprint, rights, safety, or public truth is accepted.
 
 ## NON_GOALS
 
-- No live calls, downloads, scraping, crawling, source sync, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
+- No live calls, downloads, uploads, fingerprint generation/submission, scraping, crawling, source sync, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
 - Proceed without changing Eureka product behavior.
 
 ## OUTPUT_SCHEMA
@@ -95,4 +96,4 @@ Return a compact final report with status, summary, changed paths, validation, r
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1400
+- approx_tokens: 1500
