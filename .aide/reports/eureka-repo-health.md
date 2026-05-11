@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H12-BUNDLE-03`
-- current_queue_item: `H12-BUNDLE-04`
-- next_recommended_queue_item: `H12-BUNDLE-04`
-- status: `pass`
-- note: H12 retro/community archive live-probe framework is fail-closed; live calls are blocked by missing operator approval, with fixture-equivalent outputs ready for review integration.
-- validation: H12 live-probe validator `pass`; H12 live-probe CLI `pass`; H12 live-probe summary `pass`; H12 live-probe tests `pass`.
+- completed_queue_item: `H12-BUNDLE-04`
+- current_queue_item: `H13-BUNDLE-01`
+- next_recommended_queue_item: `H13-BUNDLE-01`
+- status: `pass_with_warnings`
+- note: H12 retro/community archive review integration closed with fixture-equivalent outputs and blocked live-probe reports; H13 policy-pack-only work is recommended.
+- validation: H12 review-quality validator `pass`; H12 review integration `pass`; H12 quality delta `pass`; H12 wave audit `pass`.
 - public_index_mutated: `false`
 - master_index_mutated: `false`
 - live_access_enabled: `false`

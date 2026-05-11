@@ -1,0 +1,31 @@
+{
+  "allowed_output_roots": [
+    "control/audits/**/generated/",
+    "examples/connectors/h12_retro_community/review_integration/",
+    "explicit temp test directory"
+  ],
+  "forbidden_output_roots": [
+    "site/dist/",
+    "data/public_index/",
+    "runtime/ for generated outputs",
+    "contracts/ for generated outputs",
+    "control/inventory/publication/",
+    "control/inventory/sources/",
+    "ROM roots",
+    "ISO roots",
+    "disc-image roots",
+    "BIOS/firmware roots",
+    "vintage software download roots",
+    "installer/patch roots",
+    "crack/key/serial roots",
+    "gated-source account roots",
+    "forum-session roots",
+    "extraction roots",
+    "execution/action roots",
+    "restricted-source roots",
+    "master-index-related roots",
+    "local private roots"
+  ],
+  "schema_version": "h12_retro_community_review_path_policy.v0",
+  "task": "H12-BUNDLE-04"
+}

@@ -1,0 +1,33 @@
+{
+  "auto_approves_future_connectors": false,
+  "required_sections": [
+    "what_worked",
+    "what_failed",
+    "blocked_sources",
+    "fixture_gaps",
+    "live_probe_gaps",
+    "normalizer_gaps",
+    "retro_software_identity_gaps",
+    "platform_version_edition_gaps",
+    "archive_item_member_gaps",
+    "compatibility_install_note_gaps",
+    "community_review_comment_gaps",
+    "hash_checksum_gaps",
+    "ia_wayback_corroboration_gaps",
+    "gated_source_boundary_gaps",
+    "rights_safety_gaps",
+    "restricted_source_policy_gaps",
+    "community_lane_trust_gaps",
+    "policy_gaps",
+    "evidence_mapping_gaps",
+    "review_mapping_gaps",
+    "quality_delta_summary",
+    "source_os_reuse_assessment",
+    "h13_handoff_recommendation",
+    "j1_k_l_deferral_recommendation",
+    "risks",
+    "no_goals_preserved"
+  ],
+  "schema_version": "h12_retro_community_connector_wave_postmortem_policy.v0",
+  "task": "H12-BUNDLE-04"
+}

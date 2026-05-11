@@ -1,0 +1,22 @@
+# H12 Review Integration Summary
+
+- status: `pass`
+- source_count: `13`
+- retro_software_identity_review_seed_count: `13`
+- platform_version_edition_review_seed_count: `13`
+- archive_item_member_review_seed_count: `13`
+- blocked_sources: `aminet_metadata, atarimania_metadata, betaarchive_public_metadata_policy_limited, dos_games_archive_metadata, generic_retro_community_archive, hobbes_os2_archive_metadata, macintosh_garden_metadata, macintosh_repository_metadata, my_abandonware_metadata, oldversion_metadata, tucows_ia_legacy_metadata, vetusware_metadata, winworld_metadata`
+- retro_software_identity_truth_accepted: `false`
+- platform_version_truth_accepted: `false`
+- archive_item_member_truth_accepted: `false`
+- compatibility_install_truth_accepted: `false`
+- community_review_truth_accepted: `false`
+- hash_checksum_truth_accepted: `false`
+- ia_wayback_corroboration_truth_accepted: `false`
+- gated_source_access_truth_accepted: `false`
+- rights_safety_truth_accepted: `false`
+- query_fetch_download_extract_execute_acquire_upload: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`

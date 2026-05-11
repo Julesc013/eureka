@@ -2,13 +2,11 @@
 
 ## PHASE
 
-H12-BUNDLE-04 - Retro and community archive review integration and quality delta
+H13-BUNDLE-01 - Local, private, user-supplied, and restricted-source policy packs
 
 ## GOAL
 
-H12-BUNDLE-04 - Retro and community archive review integration and quality delta
-
-HUMAN-OBS-REVIEW-01 remains a parallel side-lane and is not advanced by this packet.
+H13-BUNDLE-01 - Local, private, user-supplied, and restricted-source policy packs
 
 ## WHY
 
@@ -103,7 +101,6 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 ## NON_GOALS
 
 - No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
-- HUMAN-OBS-REVIEW-01 remains a parallel side-lane and is not advanced by this packet.
 
 ## ACCEPTANCE
 
@@ -120,7 +117,7 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4105
+- chars: 4107
 - approx_tokens: 1027
 - budget_status: PASS
 - warnings:

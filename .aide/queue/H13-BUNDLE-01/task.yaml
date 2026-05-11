@@ -1,0 +1,19 @@
+id: H13-BUNDLE-01
+title: Local, private, user-supplied, and restricted-source policy packs
+status: queued
+track: H13
+recommended_after: H12-BUNDLE-04
+goal: Add policy-pack-only governance for local, private, user-supplied, and restricted-source handling.
+allowed_scope_summary: H13 source-family policy packs, source records, connector-family mappings, approval gates, docs, validators, tests, audit pack, and AIDE metadata only.
+gate: H12-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H13_BUNDLE_01.
+no_goals:
+  - no live source calls
+  - no downloads
+  - no extraction
+  - no execution
+  - no acquisition actions
+  - no uploads
+  - no scraping or crawling
+  - no account, gated, private, or restricted-source access
+  - no public or master index mutation
+  - no truth acceptance
