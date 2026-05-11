@@ -1,0 +1,7 @@
+id: H11-BUNDLE-02
+title: Storefront and app-store fixture runtimes and normalizers
+status: queued
+purpose: Add fixture-only storefront and app-store normalizers after H11 policy-pack governance.
+allowed_scope_summary: H11 storefront fixture contracts, committed fixtures, normalizers, replay scripts, examples, tests, audit pack, and AIDE metadata only.
+gate: H11-BUNDLE-01 passes; no live calls, storefront queries, product-page fetches, downloads, account access, purchase automation, entitlement checks, install/launch actions, scraping, public/master index mutation, or truth acceptance.
+recommended_after: H11-BUNDLE-01

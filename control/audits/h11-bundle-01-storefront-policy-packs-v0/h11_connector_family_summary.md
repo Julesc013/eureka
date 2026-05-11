@@ -1,0 +1,3 @@
+# H11 Connector Family Summary
+
+Connector families are app_store_metadata, game_storefront_metadata, software_marketplace_metadata, browser_extension_store_metadata, linux_app_store_metadata, vendor_product_page_metadata, html_catalog_policy_limited, and restricted_manifest_only.

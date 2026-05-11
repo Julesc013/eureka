@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3603 chars, 901 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4137 chars, 1035 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H11-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H11-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h10_games_emulation_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h10-bundle-04-games-emulation-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_games_emulation_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H10_GAMES_EMULATION_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H10_GAMES_EMULATION_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
+- unknown: `control/audits/h11-bundle-01-storefront-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_account_entitlement_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_acquisition_path_candidate_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_app_product_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_price_availability_region_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_review_rating_metadata_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_listing_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_no_live_call_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_no_purchase_download_account_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_rights_safety_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_storefront_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h11_version_release_channel_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 39; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6902
-- approx_tokens: 1726
+- chars: 6894
+- approx_tokens: 1724
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
