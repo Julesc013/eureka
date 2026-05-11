@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H10-BUNDLE-01
+title: Games, emulation, and software-identity source-family policy packs
+status: queued
+recommended_after: H9-BUNDLE-04
+gate: H9-BUNDLE-04 PASS or PASS_WITH_WARNINGS with READY_FOR_H10_BUNDLE_01.
+scope: H10 policy-pack-only source-family governance for games, emulation, and software identity.
+forbidden: no live calls; no downloads, execution, emulation, scraping/crawling, bypass, source sync, public/master index mutation, or source/evidence/candidate/software identity truth acceptance.

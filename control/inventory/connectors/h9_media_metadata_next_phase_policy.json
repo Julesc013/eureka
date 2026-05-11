@@ -1,0 +1,12 @@
+{
+  "deployment_operator_gated": true,
+  "h10_preferred_after_h9_if_coherent": true,
+  "j1_risky_actions_deferred": true,
+  "k_semantic_ai_deferred": true,
+  "l_wider_clients_deferred": true,
+  "policy_id": "h9_media_metadata_next_phase_policy",
+  "preferred_next_task": "H10-BUNDLE-01 - Games, emulation, and software-identity source-family policy packs",
+  "remediation_overrides_expansion": true,
+  "schema_version": "h9_media_metadata_next_phase_policy.v0",
+  "wave_id": "H9"
+}

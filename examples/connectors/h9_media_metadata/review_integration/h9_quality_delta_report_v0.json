@@ -1,0 +1,449 @@
+{
+  "blocked_sources_count": 20,
+  "blocker_count": 0,
+  "comparison_scope": "fixture_review_and_blocked_live_probe_evidence",
+  "coverage_preview_count": 20,
+  "creator_collection_relation_candidate_count": 20,
+  "evidence_candidate_preview_count": 20,
+  "fingerprint_candidate_count": 20,
+  "fixture_sources_count": 20,
+  "forbidden_claims": [
+    "production_search_quality",
+    "production_media_coverage",
+    "exhaustive_global_coverage",
+    "media_authenticity_verified",
+    "audio_identity_verified",
+    "image_identity_verified",
+    "fingerprint_identity_verified",
+    "rights_clearance",
+    "public_domain_truth_verified",
+    "creative_commons_truth_verified",
+    "license_correctness_verified",
+    "attribution_correctness_verified",
+    "content_safety_verified",
+    "privacy_safety_verified",
+    "malware_safety",
+    "verified_authenticity",
+    "automatic_future_connector_approval"
+  ],
+  "image_video_map_identity_candidate_count": 20,
+  "known_gap_count": 2,
+  "limitations": [
+    "Quality delta measures H9 review readiness only.",
+    "Blocked live probes do not prove endpoint behavior.",
+    "Media metadata is not media authenticity, audio identity, image identity, map correctness, rights clearance, public-domain truth, Creative Commons truth, attribution correctness, malware safety, privacy safety, content safety, production coverage, or production quality proof."
+  ],
+  "live_probe_sources_count": 0,
+  "media_object_identity_candidate_count": 20,
+  "music_work_recording_release_candidate_count": 20,
+  "normalized_record_count": 20,
+  "notes": [
+    "H9 quality delta is operational review evidence only."
+  ],
+  "per_source_deltas": [
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "acoustid_policy_limited"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "art_institute_chicago"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "david_rumsey_maps"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "discogs"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "flickr_commons"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "freesound"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "great_78_project"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "imslp"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "librivox"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "live_music_archive"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "met_museum_collection"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "musicbrainz"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "nasa_image_video"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "openverse"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "prelinger_archives"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "rate_your_music_policy_limited"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "smithsonian_folkways"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "ubuweb_policy_limited"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "vimeo_creative_commons_policy_limited"
+    },
+    {
+      "creator_collection_relation_review_seed_created": true,
+      "evidence_review_seed_created": true,
+      "fingerprint_review_seed_created": true,
+      "fixture_output_integrated": true,
+      "image_video_map_identity_review_seed_created": true,
+      "limitations": [
+        "Fixture/local review only; not accepted source, evidence, candidate, media, music, image/video/map, relation, fingerprint, rights/license, safety/privacy, or production proof."
+      ],
+      "live_probe_blocked": true,
+      "live_probe_completed": false,
+      "media_object_identity_review_seed_created": true,
+      "music_work_recording_release_review_seed_created": true,
+      "rights_license_review_seed_created": true,
+      "safety_privacy_review_seed_created": true,
+      "source_cache_review_seed_created": true,
+      "source_id": "wikimedia_commons"
+    }
+  ],
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_fingerprinting": false,
+    "enabled_hosting": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "quality_delta_id": "h9.quality_delta.b2e41c5a95db.v0",
+  "review_seed_count": 180,
+  "rights_license_candidate_count": 20,
+  "safety_privacy_candidate_count": 20,
+  "schema_version": "h9_media_metadata_quality_delta_report.v0",
+  "scorecard_update_count": 20,
+  "source_cache_candidate_count": 20,
+  "source_count": 20,
+  "truth_boundary": {
+    "audio_identity_verified": false,
+    "automatic_future_connector_approval": false,
+    "content_safety_claimed": false,
+    "creative_commons_truth_claimed": false,
+    "exhaustive_global_coverage": false,
+    "fingerprint_identity_verified": false,
+    "image_identity_verified": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "media_authenticity_verified": false,
+    "privacy_safety_claimed": false,
+    "production_media_coverage": false,
+    "production_readiness_claimed": false,
+    "production_search_quality": false,
+    "public_domain_truth_claimed": false,
+    "public_index_mutated": false,
+    "quality_delta_is_public_truth": false,
+    "rights_clearance_claimed": false,
+    "verified_authenticity_claimed": false
+  },
+  "warning_count": 2,
+  "wave_id": "H9"
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H9-BUNDLE-04
+current_recommended_task: H10-BUNDLE-01
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -686,3 +686,12 @@ entries:
   gate: H9-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, media downloads/uploads, fingerprinting, source sync, index mutation, or truth acceptance.
   task: .aide/queue/H9-BUNDLE-04/task.yaml
   recommended_after: H9-BUNDLE-03
+
+- id: H10-BUNDLE-01
+  title: Games, emulation, and software-identity source-family policy packs
+  status: queued
+  purpose: Add policy-pack-only games, emulation, ROM/software identity, compatibility, preservation, and launcher-adjacent source-family governance after H9 closes.
+  allowed_scope_summary: H10 source-family policy packs, docs, examples, validators, audit pack, and AIDE queue/context metadata only.
+  gate: H9-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H10_BUNDLE_01; no live calls, downloads, execution, emulation, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H10-BUNDLE-01/task.yaml
+  recommended_after: H9-BUNDLE-04

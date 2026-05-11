@@ -2,23 +2,22 @@
 
 ## PHASE
 
-H9-BUNDLE-04 - Media, music, image, video, and map review integration and quality delta. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H10-BUNDLE-01 - Games, emulation, and software-identity source-family policy packs. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Integrate H9 fixture-equivalent and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H9 exit evidence.
+Start H10 with policy-pack-only source-family governance after H9 media metadata review closeout.
 
 ## WHY
 
-H9-BUNDLE-03 added fail-closed metadata-only live-probe policies, wrappers, scripts, examples, tests, and blocked audit evidence without external calls or media payload handling.
+H9-BUNDLE-04 closes the media metadata wave using fixture-equivalent and blocked live-probe evidence, preserving no-live, no-download/upload/fingerprint, no-truth, and no-index-mutation boundaries.
 
 ## CONTEXT_REFS
 
+- `control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/`
 - `control/audits/h9-bundle-03-media-metadata-live-probes-v0/`
 - `control/audits/h9-bundle-02-media-metadata-fixture-runtime-v0/`
-- `examples/connectors/h9_media_metadata/live_probe_results/`
-- `examples/connectors/h9_media_metadata/live_probe_outputs/`
-- `runtime/connectors/h9_media_metadata/`
+- `control/audits/h9-bundle-01-media-metadata-policy-packs-v0/`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/context/latest-review-packet.md`
@@ -30,12 +29,12 @@ H9-BUNDLE-03 added fail-closed metadata-only live-probe policies, wrappers, scri
 
 ## ALLOWED_PATHS
 
-H9 review integration artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped and do the work without changing Eureka product behavior.
+H10 policy-pack artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped and do the work without changing Eureka product behavior.
 
 ## FORBIDDEN_PATHS
 
-- `runtime/**` outside the explicit H9 review-integration scope
-- `contracts/**` outside the explicit H9 review-integration scope
+- `runtime/**`
+- `contracts/**`
 - `surfaces/**`
 - `site/**`
 - `native/**`
@@ -46,16 +45,16 @@ H9 review integration artifacts requested by the next task, plus `.aide/` routin
 - site distribution output root
 - public index data root
 - master-index or publication roots
-- media download/upload/fingerprint/restricted-source roots
+- download/upload/execution/emulation/private local roots
 - product behavior surfaces
 
 ## IMPLEMENTATION
 
-Use H9-BUNDLE-02 fixture replay outputs and H9-BUNDLE-03 blocked/preflight outputs. Do not make new live source calls by default.
+Use H9 closeout evidence as the route handoff. Do not make live source calls, downloads, execution, emulation, scraping, crawling, model/provider calls, index mutations, or truth acceptance.
 
 ## VALIDATION
 
-Run `git status --short`, `git diff --check`, H9 review-quality validator when added, H9/H8/core validators where practical, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
+Run `git status --short`, `git diff --check`, H10 validators when added, existing H9/H8/core validators where practical, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
 
 - `.aide/scripts/aide_lite.py doctor`
 - `.aide/scripts/aide_lite.py validate`
@@ -63,20 +62,21 @@ Run `git status --short`, `git diff --check`, H9 review-quality validator when a
 - `.aide/scripts/aide_lite.py selftest`
 - `.aide/scripts/aide_lite.py eval run`
 - `.aide/scripts/aide_lite.py verify`
+- `scripts/check_architecture_boundaries.py`
 
 ## EVIDENCE
 
-- `control/audits/h9-bundle-03-media-metadata-live-probes-v0/`
-- `.aide/queue/H9-BUNDLE-04/task.yaml`
+- `control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/`
+- `.aide/queue/H10-BUNDLE-01/task.yaml`
 - `.aide/queue/`
 
 ## ACCEPTANCE
 
-H9 outputs remain candidates/previews; no source/evidence/candidate/media/music/image/video/map/fingerprint/rights/safety/public truth is accepted.
+H10 remains policy-pack-only; no source/evidence/candidate/software identity/public truth is accepted.
 
 ## NON_GOALS
 
-No new live calls, media downloads/uploads, fingerprinting, scraping, crawling, restricted access, source sync, public/master index mutation, or product behavior changes.
+No live calls, downloads, execution, emulation, uploads, scraping, crawling, restricted access, source sync, public/master index mutation, product behavior changes, or model/provider calls.
 
 ## OUTPUT_SCHEMA
 
@@ -84,4 +84,4 @@ Return a compact final report with status, summary, changed paths, validation, r
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1500
+- approx_tokens: 1200

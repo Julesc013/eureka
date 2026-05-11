@@ -1,0 +1,21 @@
+# H9 Review Integration Summary
+
+- status: `pass`
+- source_count: `20`
+- media_object_identity_review_seed_count: `20`
+- music_work_recording_release_review_seed_count: `20`
+- image_video_map_identity_review_seed_count: `20`
+- media_fingerprint_review_seed_count: `20`
+- blocked_sources: `acoustid_policy_limited, art_institute_chicago, david_rumsey_maps, discogs, flickr_commons, freesound, great_78_project, imslp, librivox, live_music_archive, met_museum_collection, musicbrainz, nasa_image_video, openverse, prelinger_archives, rate_your_music_policy_limited, smithsonian_folkways, ubuweb_policy_limited, vimeo_creative_commons_policy_limited, wikimedia_commons`
+- media_identity_truth_accepted: `false`
+- music_identity_truth_accepted: `false`
+- image_video_map_truth_accepted: `false`
+- creator_collection_relation_truth_accepted: `false`
+- fingerprint_identity_truth_accepted: `false`
+- rights_license_truth_accepted: `false`
+- safety_privacy_truth_accepted: `false`
+- query_fetch_download_upload_fingerprint: `false`
+- restricted_source_access: `false`
+- acquisition_permission: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`
