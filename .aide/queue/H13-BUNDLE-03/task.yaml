@@ -1,0 +1,16 @@
+id: H13-BUNDLE-03
+title: Local, private, user-supplied, and restricted-source approved boundary dry-runs
+status: queued
+track: H13
+recommended_after: H13-BUNDLE-02
+goal: Add approval-gated dry-run boundary checks for H13 local/private/restricted handling.
+allowed_scope_summary: H13 dry-run policies, committed request manifests, fail-closed wrappers, examples, docs, tests, audit pack, and AIDE metadata only.
+gate: H13-BUNDLE-02 passes.
+no_goals:
+  - no unapproved local/private/user-supplied/authenticated/restricted access
+  - no source sync or connector runtime access
+  - no filesystem scans, directory listings, archive listings, URL fetches, or account access by default
+  - no credential, token, session, receipt, license key, or entitlement handling
+  - no CAS import, pack export/import, extraction, execution, acquisition, upload, or publication
+  - no source cache, evidence ledger, review queue, public index, or master index writes
+  - no truth acceptance

@@ -2,13 +2,13 @@
 
 ## PHASE
 
-H13-BUNDLE-02 - Local, private, user-supplied, and restricted-source fixture runtimes and boundary validators
+H13-BUNDLE-03 - Local, private, user-supplied, and restricted-source approved boundary dry-runs
 
 ## GOAL
 
-H13-BUNDLE-02 - Local, private, user-supplied, and restricted-source fixture runtimes and boundary validators
+H13-BUNDLE-03 - Local, private, user-supplied, and restricted-source approved boundary dry-runs
 
-Main development lane proceeds to H13-BUNDLE-02 after H13-BUNDLE-01; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
+Main development lane proceeds to H13-BUNDLE-03 after H13-BUNDLE-02; HUMAN-OBS-REVIEW-01 is a parallel side-lane.
 
 ## WHY
 
@@ -119,8 +119,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4163
-- approx_tokens: 1041
+- chars: 4135
+- approx_tokens: 1034
 - budget_status: PASS
 - warnings:
   - none

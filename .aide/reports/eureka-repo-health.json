@@ -1,22 +1,21 @@
 {
   "authenticated_access_enabled": false,
   "cas_import_enabled": false,
-  "completed_queue_item": "H13-BUNDLE-01",
-  "current_queue_item": "H13-BUNDLE-02",
+  "completed_queue_item": "H13-BUNDLE-02",
+  "current_queue_item": "H13-BUNDLE-03",
   "local_access_enabled": false,
   "master_index_mutated": false,
-  "next_recommended_queue_item": "H13-BUNDLE-02",
-  "note": "H13 local/private/restricted-source policy packs are policy-pack-only; H13 fixture boundary validators are recommended next.",
+  "next_recommended_queue_item": "H13-BUNDLE-03",
+  "note": "H13 local/private fixture boundary runtime is fixture-only and fail-closed; approved boundary dry-runs are recommended next.",
   "pack_export_import_enabled": false,
   "private_source_access_enabled": false,
   "public_index_mutated": false,
   "restricted_source_access_enabled": false,
-  "source_sync_enabled": false,
   "status": "pass",
   "user_supplied_url_fetch_enabled": false,
   "validation": {
-    "h13_policy_validator": "pass",
-    "h13_summary": "pass",
-    "h13_tests": "pass"
+    "h13_fixture_summary": "pass",
+    "h13_fixture_tests": "pass",
+    "h13_fixture_validator": "pass"
   }
 }
