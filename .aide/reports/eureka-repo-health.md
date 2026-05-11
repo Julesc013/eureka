@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- completed_queue_item: `H12-BUNDLE-01`
-- current_queue_item: `H12-BUNDLE-02`
-- next_recommended_queue_item: `H12-BUNDLE-02`
+- completed_queue_item: `H12-BUNDLE-02`
+- current_queue_item: `H12-BUNDLE-03`
+- next_recommended_queue_item: `H12-BUNDLE-03`
 - status: `pass`
-- note: H12 retro/community archive policy packs are policy-pack-only and ready for fixture-runtime work.
-- validation: H12 policy packs `pass`; H12 summary `pass`; H12 targeted tests `pass`.
+- note: H12 retro/community archive fixture runtimes are fixture-only and ready for approval-gated live-probe envelope work.
+- validation: H12 fixture validator `pass`; H12 fixture summary `pass`; H12 fixture tests `pass`.
 - public_index_mutated: `false`
 - master_index_mutated: `false`
 - live_access_enabled: `false`

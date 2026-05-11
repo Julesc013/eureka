@@ -1,0 +1,9 @@
+schema_version: aide.task.v0
+id: H12-BUNDLE-03
+title: Retro and community archive approved metadata-only live probes
+status: queued
+track: H12
+recommended_after: H12-BUNDLE-02
+purpose: Add approval-gated metadata-only live-probe envelopes for H12 retro/community archive sources after fixture runtime passes.
+allowed_scope_summary: H12 live-probe policy/docs/runtime/scripts/tests/examples/audit pack and AIDE metadata only.
+gate: H12-BUNDLE-02 passes; no live call unless committed source policy approves one exact metadata-only request, and no downloads, extraction, execution, acquisition actions, uploads, scraping, source sync, index mutation, or truth acceptance.

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H12-BUNDLE-02
+current_recommended_task: H12-BUNDLE-03
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -770,9 +770,18 @@ entries:
 
 - id: H12-BUNDLE-02
   title: Retro and community archive fixture runtimes and normalizers
-  status: queued
+  status: needs_review
   purpose: Add fixture-only H12 retro/community archive normalizers, replay reports, normalized records, source-cache/evidence previews, docs, validators, tests, and audit evidence.
   allowed_scope_summary: H12 fixture contracts, connector fixture policies, runtime fixture normalizers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
   gate: H12-BUNDLE-01 passes; no live source calls, source sync, live connector runtime, downloads, scraping, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
   task: .aide/queue/H12-BUNDLE-02/task.yaml
   recommended_after: H12-BUNDLE-01
+
+- id: H12-BUNDLE-03
+  title: Retro and community archive approved metadata-only live probes
+  status: queued
+  purpose: Add fail-closed H12 metadata-only live-probe policies, request manifests, wrappers, blocked outputs, docs, tests, and audit evidence.
+  allowed_scope_summary: H12 live-probe contracts, connector policies, runtime wrappers, scripts, examples, docs, tests, audit pack, and AIDE queue/context metadata only.
+  gate: H12-BUNDLE-02 passes; no live call unless committed policy approves exact metadata-only request; no downloads, extraction, execution, acquisition actions, uploads, scraping, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H12-BUNDLE-03/task.yaml
+  recommended_after: H12-BUNDLE-02
