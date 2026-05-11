@@ -1,0 +1,14 @@
+{
+  "adult_extremist_illegal_sensitive_media_default": "blocked",
+  "blocked_examples": [
+    "rights-sensitive media archives",
+    "restricted platform catalogs",
+    "adult, extremist, illegal, or otherwise sensitive media collections"
+  ],
+  "future_policy_required": true,
+  "licensed_sources_default": "blocked",
+  "platform_restricted_sources_default": "blocked",
+  "restricted_source_enabled": false,
+  "rights_sensitive_sources_default": "blocked",
+  "schema_version": "h9_media_metadata_live_probe_restricted_source_policy.v0"
+}

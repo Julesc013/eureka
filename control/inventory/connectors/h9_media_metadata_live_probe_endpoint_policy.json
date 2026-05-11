@@ -1,0 +1,466 @@
+{
+  "policy_id": "h9_media_metadata_live_probe_endpoint_policy",
+  "schema_version": "h9_media_metadata_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "media_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "wikimedia_commons"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "open_media_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "openverse"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "image_collection_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "flickr_commons"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "map_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "david_rumsey_maps"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "media_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "nasa_image_video"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "collection_object_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "met_museum_collection"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "collection_object_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "art_institute_chicago"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "artist_recording_release_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "musicbrainz"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "release_artist_label_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "discogs"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "metadata_manifest_only_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "rate_your_music_policy_limited"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "fingerprint_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "acoustid_policy_limited"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "score_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "imslp"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "audiobook_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "librivox"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "sound_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "freesound"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "audio_archive_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "great_78_project"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "live_music_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "live_music_archive"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "audio_collection_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "smithsonian_folkways"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "video_archive_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "prelinger_archives"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "metadata_manifest_only_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "ubuweb_policy_limited"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "arbitrary_url_allowed": false,
+      "endpoint_or_metadata_classes_future": [
+        "cc_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "media_download_current",
+        "image_file_download_forbidden_current",
+        "video_download_forbidden_current",
+        "audio_download_forbidden_current",
+        "map_image_download_forbidden_current",
+        "score_download_forbidden_current",
+        "thumbnail_fetch_forbidden_current",
+        "fingerprint_submission_forbidden_current",
+        "user_media_upload_forbidden_current",
+        "scraping_forbidden_current"
+      ],
+      "limitations": [
+        "Endpoint classes are future metadata classes only until committed approval is added."
+      ],
+      "source_id": "vimeo_creative_commons_policy_limited"
+    }
+  ]
+}

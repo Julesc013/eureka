@@ -1,0 +1,19 @@
+{
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_creator_collection_relation_truth_acceptance": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_fingerprint_identity_truth_acceptance": true,
+  "review_required_before_image_video_map_truth_acceptance": true,
+  "review_required_before_master_index": true,
+  "review_required_before_media_identity_truth_acceptance": true,
+  "review_required_before_music_identity_truth_acceptance": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_rights_license_truth_acceptance": true,
+  "review_required_before_safety_privacy_truth_acceptance": true,
+  "review_required_before_source_cache_persistence": true,
+  "schema_version": "h9_media_metadata_live_probe_review_policy.v0"
+}

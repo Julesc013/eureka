@@ -1,0 +1,206 @@
+{
+  "policy_id": "h9_media_metadata_live_probe_cache_policy",
+  "schema_version": "h9_media_metadata_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "wikimedia_commons",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "openverse",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "flickr_commons",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "david_rumsey_maps",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "nasa_image_video",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "met_museum_collection",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "art_institute_chicago",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "musicbrainz",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "discogs",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "rate_your_music_policy_limited",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "acoustid_policy_limited",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "imslp",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "librivox",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "freesound",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "great_78_project",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "live_music_archive",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "smithsonian_folkways",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "prelinger_archives",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "ubuweb_policy_limited",
+      "user_agent_contact_posture": "not_approved"
+    },
+    {
+      "auth_posture": "not_approved",
+      "cache_ttl": "not_set_until_approval",
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "not_approved",
+      "restricted_source_posture": "blocked_current",
+      "safety_posture": "metadata_only_blocked_by_default",
+      "source_id": "vimeo_creative_commons_policy_limited",
+      "user_agent_contact_posture": "not_approved"
+    }
+  ]
+}

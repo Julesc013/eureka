@@ -2,72 +2,81 @@
 
 ## PHASE
 
-H9-BUNDLE-03 - Media, music, image, video, and map approved metadata-only live probes. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H9-BUNDLE-04 - Media, music, image, video, and map review integration and quality delta. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Add approval-gated bounded metadata-only live-probe framework for H9 media metadata sources after H9-BUNDLE-02 fixture runtime passed.
+Integrate H9 fixture-equivalent and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H9 exit evidence.
 
 ## WHY
 
-H9-BUNDLE-02 added committed-fixture-only normalizers, replay outputs, candidates, source-cache/evidence previews, tests, and audit evidence for 20 H9 media metadata sources. H9-BUNDLE-03 may now define fail-closed live-probe envelopes without approving broad access or media payload handling.
+H9-BUNDLE-03 added fail-closed metadata-only live-probe policies, wrappers, scripts, examples, tests, and blocked audit evidence without external calls or media payload handling.
 
 ## CONTEXT_REFS
 
+- `control/audits/h9-bundle-03-media-metadata-live-probes-v0/`
 - `control/audits/h9-bundle-02-media-metadata-fixture-runtime-v0/`
-- `control/audits/h9-bundle-01-media-metadata-policy-packs-v0/`
+- `examples/connectors/h9_media_metadata/live_probe_results/`
+- `examples/connectors/h9_media_metadata/live_probe_outputs/`
 - `runtime/connectors/h9_media_metadata/`
-- `examples/connectors/h9_media_metadata/fixtures/`
-- `examples/connectors/h9_media_metadata/normalized/`
-- `examples/connectors/h9_media_metadata/replay_results/`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/context/latest-review-packet.md`
+- `.aide/context/latest-context-packet.md`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/memory/project-state.md`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- H9 live-probe contracts, policies, source-specific metadata wrappers, examples, docs, scripts, tests, audit pack, and AIDE routing metadata only.
-- `.aide/queue/`, `.aide/context/`, and `.aide/reports/` routing metadata updates for the H9 live-probe handoff.
+H9 review integration artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped and do the work without changing Eureka product behavior.
 
 ## FORBIDDEN_PATHS
 
+- `runtime/**` outside the explicit H9 review-integration scope
+- `contracts/**` outside the explicit H9 review-integration scope
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `connectors/**`
+- `packaging/**`
+- `third_party/**`
 - site distribution output root
 - public index data root
 - master-index or publication roots
-- media download/upload, fingerprint cache, image/video/audio/map cache, restricted-source, OCR/full-text, and local private-state roots
-- product runtime behavior outside explicit future H9 live-probe scope
+- media download/upload/fingerprint/restricted-source roots
+- product behavior surfaces
 
 ## IMPLEMENTATION
 
-- Read H9-BUNDLE-02 audit output and fixture runtime artifacts first.
-- Default behavior must remain offline preflight and fail-closed.
-- Do not enable broad media search, source sync, media downloads/uploads, fingerprint generation/submission, scraping, crawling, bypass, public/master index mutation, or truth acceptance.
+Use H9-BUNDLE-02 fixture replay outputs and H9-BUNDLE-03 blocked/preflight outputs. Do not make new live source calls by default.
 
 ## VALIDATION
 
-- Run `git status --short`.
-- Run `git diff --check`.
-- Run the H9 live-probe validator added by the task.
-- Run relevant H9/H8/H7/core validators if present.
-- Run focused unit tests and `python scripts/check_architecture_boundaries.py` when runtime or connector boundaries are touched.
-- Run AIDE Lite checks where practical.
+Run `git status --short`, `git diff --check`, H9 review-quality validator when added, H9/H8/core validators where practical, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
+
+- `.aide/scripts/aide_lite.py doctor`
+- `.aide/scripts/aide_lite.py validate`
+- `.aide/scripts/aide_lite.py test`
+- `.aide/scripts/aide_lite.py selftest`
+- `.aide/scripts/aide_lite.py eval run`
+- `.aide/scripts/aide_lite.py verify`
 
 ## EVIDENCE
 
-- `control/audits/h9-bundle-02-media-metadata-fixture-runtime-v0/`
-- `.aide/queue/H9-BUNDLE-03/task.yaml`
-- `.aide/reports/eureka-repo-health.md`
-- `.aide/context/latest-review-packet.md`
+- `control/audits/h9-bundle-03-media-metadata-live-probes-v0/`
+- `.aide/queue/H9-BUNDLE-04/task.yaml`
+- `.aide/queue/`
 
 ## ACCEPTANCE
 
-- H9 live probes remain metadata-only, approval-gated, and fail-closed by default.
-- No media payload handling, upload, fingerprinting, scraping, crawling, restricted access, source sync, public/master index mutation, or truth acceptance occurs.
+H9 outputs remain candidates/previews; no source/evidence/candidate/media/music/image/video/map/fingerprint/rights/safety/public truth is accepted.
 
 ## NON_GOALS
 
-- No live calls by default, downloads, uploads, fingerprint generation/submission, scraping, crawling, source sync, public/master index mutation, source/evidence/candidate truth acceptance, or product behavior changes.
+No new live calls, media downloads/uploads, fingerprinting, scraping, crawling, restricted access, source sync, public/master index mutation, or product behavior changes.
 
 ## OUTPUT_SCHEMA
 

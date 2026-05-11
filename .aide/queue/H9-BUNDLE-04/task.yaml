@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H9-BUNDLE-04
+title: Media, music, image, video, and map review integration and quality delta
+status: queued
+recommended_after: H9-BUNDLE-03
+gate: H9-BUNDLE-03 PASS, PASS_WITH_WARNINGS, or BLOCKED with sufficient fixture-equivalent outputs.
+scope: H9 review integration, quality delta, postmortem, scorecard updates, source-pack previews, audit evidence, and AIDE context metadata only.
+forbidden: no new live calls by default; no media downloads/uploads, fingerprint generation/submission, scraping/crawling, bypass, source sync, public/master index mutation, or media/music/image/video/map/fingerprint/rights/safety truth acceptance.

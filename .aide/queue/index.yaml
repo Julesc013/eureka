@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H9-BUNDLE-03
+current_recommended_task: H9-BUNDLE-04
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -676,3 +676,13 @@ entries:
   gate: H9-BUNDLE-02 passes; default offline preflight only, no live source call unless explicit approved source-specific policy gates pass, and downloads/uploads/fingerprinting/scraping/crawling remain forbidden.
   task: .aide/queue/H9-BUNDLE-03/task.yaml
   recommended_after: H9-BUNDLE-02
+
+
+- id: H9-BUNDLE-04
+  title: Media, music, image, video, and map review integration and quality delta
+  status: queued
+  purpose: Integrate H9 fixture-equivalent and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H9 exit evidence.
+  allowed_scope_summary: H9 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE metadata only.
+  gate: H9-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, media downloads/uploads, fingerprinting, source sync, index mutation, or truth acceptance.
+  task: .aide/queue/H9-BUNDLE-04/task.yaml
+  recommended_after: H9-BUNDLE-03

@@ -1,12 +1,14 @@
 {
   "completed_queue_item": "H9-BUNDLE-02",
   "current_queue_item": "H9-BUNDLE-03",
+  "current_recommended_task": "H9-BUNDLE-04",
   "generated_at_note": "codex_updated_after_h9_bundle_02_validation",
   "known_warn_only_conditions": [
     "H9-BUNDLE-02 is fixture-runtime-only and does not approve live access.",
     "H9 media metadata fixtures do not prove media authenticity, audio identity, image identity, map correctness, rights clearance, public-domain status, Creative Commons validity, attribution correctness, malware safety, privacy safety, content safety, or production media coverage.",
     "AIDE Lite verify/review-pack may report warning-only diff-scope and missing optional reference items with 0 errors."
   ],
+  "last_completed_task": "H9-BUNDLE-03",
   "next_recommended_queue_item": "H9-BUNDLE-03",
   "product_boundary": {
     "changed_public_search_behavior": false,
