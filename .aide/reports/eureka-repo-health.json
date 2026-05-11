@@ -1,19 +1,21 @@
 {
-  "completed_queue_item": "H10-BUNDLE-02",
-  "current_queue_item": "H10-BUNDLE-03",
-  "current_recommended_task": "H10-BUNDLE-03",
-  "generated_at_note": "codex_updated_after_h10_bundle_02_validation",
+  "completed_queue_item": "H10-BUNDLE-03",
+  "current_queue_item": "H10-BUNDLE-04",
+  "current_recommended_task": "H10-BUNDLE-04",
+  "generated_at_note": "codex_updated_after_h10_bundle_03_validation",
   "known_warn_only_conditions": [
-    "H10 fixture outputs are synthetic and fixture-only.",
-    "H10 games/emulation fixture outputs do not prove game identity, ROM/disc authenticity, hash-set correctness, emulator compatibility, installability, playability, legal acquisition, rights clearance, malware safety, content safety, privacy safety, verified authenticity, or production coverage.",
+    "H10 live probes are fail-closed because no operator approval is committed.",
+    "H10 live-probe examples are dry-run or blocked fixture-equivalent outputs and do not prove game identity, ROM/disc authenticity, hash-set correctness, compatibility, playability, legal acquisition, rights clearance, malware safety, content safety, privacy safety, verified authenticity, or production coverage.",
     "AIDE Lite verify/review-pack may report warning-only diff-scope and missing optional reference items with 0 errors."
   ],
-  "last_completed_task": "H10-BUNDLE-02",
-  "next_recommended_queue_item": "H10-BUNDLE-03",
+  "last_completed_task": "H10-BUNDLE-03",
+  "next_recommended_queue_item": "H10-BUNDLE-04",
   "product_boundary": {
     "changed_public_search_behavior": false,
+    "enabled_acquisition_actions": false,
     "enabled_crawling": false,
     "enabled_downloads": false,
+    "enabled_execution": false,
     "enabled_extraction": false,
     "enabled_fetching": false,
     "enabled_fingerprinting": false,
@@ -28,11 +30,11 @@
     "aide_lite": "pass_with_warnings",
     "architecture_boundaries": "pass",
     "h10_fixture_runtime": "pass",
+    "h10_live_probe": "pass",
     "h10_policy_packs": "pass",
     "h9_fixture_runtime": "pass",
     "h9_live_probe": "pass",
     "h9_policy_packs": "pass",
-    "h9_review_quality": "pass",
-    "unittest_discovery": "pass"
+    "h9_review_quality": "pass"
   }
 }

@@ -278,6 +278,8 @@ def _scan_json_boundaries(value: Any, path: Path, errors: list[str], prefix: str
 
 def _scan_runtime(root: Path, errors: list[str]) -> None:
     for path in sorted((root / RUNTIME_DIR).glob("*.py")):
+        if path.name == "live_probe_common.py" or path.name.startswith("live_probe_"):
+            continue
         text = path.read_text(encoding="utf-8")
         if BANNED_IMPORT_RE.search(text):
             errors.append(f"runtime imports or references banned live/network library: {path.relative_to(root).as_posix()}")

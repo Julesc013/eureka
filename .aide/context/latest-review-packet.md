@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3273 chars, 819 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3694 chars, 924 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H10-BUNDLE-03` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H10-BUNDLE-04` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h10_emulator_action_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_emulator_compatibility_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_game_relation_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_game_software_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_fixture.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_emulation_normalized_record.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_games_rights_safety_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_platform_release_edition_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_preservation_hashset_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h10_rom_disc_media_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h10-bundle-02-games-emulation-fixture-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_emulator_action_candidate_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_emulator_compatibility_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_game_relation_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h10_game_software_identity_mapping_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 50; see task evidence changed-files report
+- unknown: `contracts/connectors/h10_games_emulation_connector_health_summary.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h10_games_emulation_live_probe_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h10_games_emulation_live_probe_request.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h10_games_emulation_live_probe_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h10-bundle-03-games-emulation-live-probes-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_allowed_requests.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_cache_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_endpoint_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_kill_switch_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_no_download_execute_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_rate_limit_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_restricted_source_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h10_games_emulation_live_probe_review_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 34; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6802
-- approx_tokens: 1701
+- chars: 6975
+- approx_tokens: 1744
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

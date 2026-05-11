@@ -2,36 +2,36 @@
 
 ## PHASE
 
-H10-BUNDLE-03 - Games, emulation, and software-identity approved metadata-only live probes. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H10-BUNDLE-04 - Games, emulation, and software-identity review integration and quality delta. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Prepare fail-closed, approval-gated H10 games/emulation metadata-only live-probe envelopes after H10-BUNDLE-02 fixture runtime validation.
+Integrate H10 fixture-equivalent and blocked metadata-only live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H10 exit evidence.
 
 ## WHY
 
-H10-BUNDLE-02 establishes committed-fixture-only parsing, normalization, candidate previews, source-cache/evidence previews, replay reports, and boundary validation for H10 games/emulation metadata.
+H10-BUNDLE-03 establishes fail-closed, approval-gated metadata-only live-probe envelopes. No live source calls are enabled; blocked and dry fixture-equivalent outputs are sufficient for the review integration rehearsal.
 
 ## CONTEXT_REFS
 
+- `control/audits/h10-bundle-03-games-emulation-live-probes-v0/`
 - `control/audits/h10-bundle-02-games-emulation-fixture-runtime-v0/`
 - `control/audits/h10-bundle-01-games-emulation-policy-packs-v0/`
-- `control/inventory/source_packs/h10_games_emulation_sources.json`
 - `runtime/connectors/h10_games_emulation/`
 - `examples/connectors/h10_games_emulation/`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-context-packet.md`
-- `.aide/context/context-index.json`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
 - `.aide/memory/project-state.md`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-H10 live-probe policy/envelope artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped without changing Eureka product behavior.
+H10 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and `.aide/` operating metadata only when the next reviewed task explicitly scopes them. Keep the next task to review/quality rehearsal with no Eureka product behavior change.
 
 ## FORBIDDEN_PATHS
 
@@ -46,6 +46,7 @@ H10 live-probe policy/envelope artifacts requested by the next task, plus `.aide
 - connectors/**
 - packaging/**
 - third_party/**
+- source sync or hosted behavior
 - site distribution output root
 - public index data root
 - master-index or publication roots
@@ -53,11 +54,11 @@ H10 live-probe policy/envelope artifacts requested by the next task, plus `.aide
 
 ## IMPLEMENTATION
 
-Default to offline preflight and blocked output. Do not make live source calls unless future committed source-specific policy explicitly approves one exact bounded metadata-only request; downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, model/provider calls, index mutations, and truth acceptance remain forbidden.
+Use committed H10 fixtures, fixture replay outputs, blocked live-probe reports, and dry preflight examples only. Do not make new live calls, downloads, uploads, execution, acquisition actions, scraping, crawling, restricted access, source sync, public/master index mutation, or truth acceptance.
 
 ## VALIDATION
 
-Run H10 live-probe validators when added, existing H10 fixture and policy-pack validators, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
+Run H10 review-quality validators when added, existing H10 live-probe, fixture, and policy validators, targeted tests, architecture checks, and AIDE Lite checks where practical:
 
 - `.aide/scripts/aide_lite.py doctor`
 - `.aide/scripts/aide_lite.py validate`
@@ -65,19 +66,20 @@ Run H10 live-probe validators when added, existing H10 fixture and policy-pack v
 - `.aide/scripts/aide_lite.py selftest`
 - `.aide/scripts/aide_lite.py eval run`
 - `.aide/scripts/aide_lite.py verify`
+- `scripts/check_architecture_boundaries.py`
 
 ## EVIDENCE
 
-- `control/audits/h10-bundle-02-games-emulation-fixture-runtime-v0/`
-- `.aide/queue/H10-BUNDLE-03/task.yaml`
+- `control/audits/h10-bundle-03-games-emulation-live-probes-v0/`
+- `.aide/queue/H10-BUNDLE-04/task.yaml`
 
 ## ACCEPTANCE
 
-H10 live-probe framework remains fail-closed by default and preserves no-download/no-upload, no-execute, no-acquisition, no-index-mutation, and no-truth boundaries.
+H10 review integration remains a rehearsal only and does not accept source, evidence, candidate, game/release/platform/emulator/hash-set/ROM-disc/relation/action/rights/safety/public truth. H10-BUNDLE-04 should preserve no-live-call, no-download, no-upload, no-execute, no-acquisition, no-index-mutation, and no-product-behavior-change boundaries.
 
 ## NON_GOALS
 
-No broad live calls, downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, restricted access, source sync, public/master index mutation, product behavior changes, or model/provider calls.
+No live source calls, catalog/API/software-list/hash-set fetches, downloads, uploads, hash submissions, emulator/game/install execution, acquisition actions, scraping, crawling, restricted-source access, source sync, public/master index mutation, product behavior changes, or model/provider calls.
 
 ## OUTPUT_SCHEMA
 
@@ -85,4 +87,4 @@ Return a compact final report with status, summary, changed paths, validation, r
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1200
+- approx_tokens: 900

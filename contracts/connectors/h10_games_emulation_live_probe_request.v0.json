@@ -1,0 +1,309 @@
+{
+  "$id": "eureka://contracts/connectors/h10_games_emulation_live_probe_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "contract_id": "h10_games_emulation_live_probe_request.v0",
+  "invariants": [
+    "live_requested may be true only when committed source-specific policies approve the exact metadata-only request.",
+    "API/catalog/software-list/hash-set lookup requests remain false unless exact bounded metadata policy approves them.",
+    "ROM, ISO, disc, CHD, BIOS, game binary, emulator, installer, patch, asset, upload, hash submission, execution, acquisition, scrape, crawl, restricted-source, and bypass requests must remain false.",
+    "Example requests are dry_run_only unless a future committed approval changes the gate."
+  ],
+  "notes": [
+    "H10 live-probe objects are bounded metadata observations, candidates, or previews only.",
+    "They do not grant live access, downloads, uploads, execution, acquisition, source sync, index mutation, or truth acceptance."
+  ],
+  "product_boundary": {
+    "acquisition_action_used": false,
+    "api_calls_made": false,
+    "asset_download_used": false,
+    "bios_firmware_download_used": false,
+    "browser_automation_used": false,
+    "bypass_or_automation_used": false,
+    "catalog_fetch_used": false,
+    "changed_public_search_behavior": false,
+    "chd_download_used": false,
+    "crawling_used": false,
+    "disc_image_download_used": false,
+    "emulator_download_used": false,
+    "emulator_execution_used": false,
+    "enabled_accounts": false,
+    "enabled_acquisition_actions": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "file_upload_used": false,
+    "game_binary_download_used": false,
+    "game_execution_used": false,
+    "hash_submission_used": false,
+    "hashset_fetch_used": false,
+    "install_execute_used": false,
+    "installer_download_used": false,
+    "iso_download_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "patch_download_used": false,
+    "restricted_source_access_used": false,
+    "rom_download_used": false,
+    "scraping_used": false,
+    "software_list_fetch_used": false
+  },
+  "properties": {
+    "acquisition_action_requested": {
+      "description": "acquisition_action_requested field for H10 games/emulation live-probe objects."
+    },
+    "api_query_requested": {
+      "description": "api_query_requested field for H10 games/emulation live-probe objects."
+    },
+    "approval_refs": {
+      "description": "approval_refs field for H10 games/emulation live-probe objects."
+    },
+    "approved_request_key": {
+      "description": "approved_request_key field for H10 games/emulation live-probe objects."
+    },
+    "asset_download_requested": {
+      "description": "asset_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "bios_firmware_download_requested": {
+      "description": "bios_firmware_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "bypass_or_automation_requested": {
+      "description": "bypass_or_automation_requested field for H10 games/emulation live-probe objects."
+    },
+    "catalog_fetch_requested": {
+      "description": "catalog_fetch_requested field for H10 games/emulation live-probe objects."
+    },
+    "chd_download_requested": {
+      "description": "chd_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "connector_family": {
+      "description": "connector_family field for H10 games/emulation live-probe objects."
+    },
+    "disc_image_download_requested": {
+      "description": "disc_image_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "dry_run_only": {
+      "description": "dry_run_only field for H10 games/emulation live-probe objects."
+    },
+    "emulator_download_requested": {
+      "description": "emulator_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "emulator_execution_requested": {
+      "description": "emulator_execution_requested field for H10 games/emulation live-probe objects."
+    },
+    "emulator_or_compatibility_context": {
+      "description": "emulator_or_compatibility_context field for H10 games/emulation live-probe objects."
+    },
+    "endpoint_or_metadata_class": {
+      "description": "endpoint_or_metadata_class field for H10 games/emulation live-probe objects."
+    },
+    "file_upload_requested": {
+      "description": "file_upload_requested field for H10 games/emulation live-probe objects."
+    },
+    "game_binary_download_requested": {
+      "description": "game_binary_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "game_execution_requested": {
+      "description": "game_execution_requested field for H10 games/emulation live-probe objects."
+    },
+    "game_or_software_identifier": {
+      "description": "game_or_software_identifier field for H10 games/emulation live-probe objects."
+    },
+    "hash_submission_requested": {
+      "description": "hash_submission_requested field for H10 games/emulation live-probe objects."
+    },
+    "hashset_fetch_requested": {
+      "description": "hashset_fetch_requested field for H10 games/emulation live-probe objects."
+    },
+    "hashset_or_media_context": {
+      "description": "hashset_or_media_context field for H10 games/emulation live-probe objects."
+    },
+    "install_execute_requested": {
+      "description": "install_execute_requested field for H10 games/emulation live-probe objects."
+    },
+    "installer_download_requested": {
+      "description": "installer_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "iso_download_requested": {
+      "description": "iso_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "limitations": {
+      "description": "limitations field for H10 games/emulation live-probe objects."
+    },
+    "live_probe_request_id": {
+      "description": "live_probe_request_id field for H10 games/emulation live-probe objects."
+    },
+    "live_requested": {
+      "description": "live_requested field for H10 games/emulation live-probe objects."
+    },
+    "notes": {
+      "description": "notes field for H10 games/emulation live-probe objects."
+    },
+    "operation_scope": {
+      "description": "operation_scope field for H10 games/emulation live-probe objects."
+    },
+    "output_policy_ref": {
+      "description": "output_policy_ref field for H10 games/emulation live-probe objects."
+    },
+    "patch_download_requested": {
+      "description": "patch_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "platform_or_release_context": {
+      "description": "platform_or_release_context field for H10 games/emulation live-probe objects."
+    },
+    "policy_refs": {
+      "description": "policy_refs field for H10 games/emulation live-probe objects."
+    },
+    "product_boundary": {
+      "description": "product_boundary field for H10 games/emulation live-probe objects."
+    },
+    "request_shape": {
+      "description": "request_shape field for H10 games/emulation live-probe objects."
+    },
+    "restricted_source_requested": {
+      "description": "restricted_source_requested field for H10 games/emulation live-probe objects."
+    },
+    "review_policy_ref": {
+      "description": "review_policy_ref field for H10 games/emulation live-probe objects."
+    },
+    "rom_download_requested": {
+      "description": "rom_download_requested field for H10 games/emulation live-probe objects."
+    },
+    "schema_version": {
+      "description": "schema_version field for H10 games/emulation live-probe objects."
+    },
+    "scraping_or_crawling_requested": {
+      "description": "scraping_or_crawling_requested field for H10 games/emulation live-probe objects."
+    },
+    "software_list_fetch_requested": {
+      "description": "software_list_fetch_requested field for H10 games/emulation live-probe objects."
+    },
+    "source_id": {
+      "description": "source_id field for H10 games/emulation live-probe objects."
+    },
+    "source_record_kind": {
+      "description": "source_record_kind field for H10 games/emulation live-probe objects."
+    },
+    "storefront_or_availability_context": {
+      "description": "storefront_or_availability_context field for H10 games/emulation live-probe objects."
+    },
+    "truth_boundary": {
+      "description": "truth_boundary field for H10 games/emulation live-probe objects."
+    },
+    "truth_policy_ref": {
+      "description": "truth_policy_ref field for H10 games/emulation live-probe objects."
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_request_id",
+    "source_id",
+    "connector_family",
+    "source_record_kind",
+    "operation_scope",
+    "endpoint_or_metadata_class",
+    "request_shape",
+    "approved_request_key",
+    "game_or_software_identifier",
+    "platform_or_release_context",
+    "emulator_or_compatibility_context",
+    "hashset_or_media_context",
+    "storefront_or_availability_context",
+    "approval_refs",
+    "policy_refs",
+    "live_requested",
+    "dry_run_only",
+    "api_query_requested",
+    "catalog_fetch_requested",
+    "software_list_fetch_requested",
+    "hashset_fetch_requested",
+    "rom_download_requested",
+    "iso_download_requested",
+    "disc_image_download_requested",
+    "chd_download_requested",
+    "bios_firmware_download_requested",
+    "game_binary_download_requested",
+    "emulator_download_requested",
+    "installer_download_requested",
+    "patch_download_requested",
+    "asset_download_requested",
+    "file_upload_requested",
+    "hash_submission_requested",
+    "emulator_execution_requested",
+    "game_execution_requested",
+    "install_execute_requested",
+    "acquisition_action_requested",
+    "scraping_or_crawling_requested",
+    "restricted_source_requested",
+    "bypass_or_automation_requested",
+    "output_policy_ref",
+    "review_policy_ref",
+    "truth_policy_ref",
+    "product_boundary",
+    "truth_boundary",
+    "limitations",
+    "notes"
+  ],
+  "truth_boundary": {
+    "accepted_action_permission": false,
+    "accepted_candidate_truth": false,
+    "accepted_emulator_compatibility_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_game_identity_truth": false,
+    "accepted_game_relation_truth": false,
+    "accepted_hashset_truth": false,
+    "accepted_platform_truth": false,
+    "accepted_public_record": false,
+    "accepted_release_truth": false,
+    "accepted_rights_safety_truth": false,
+    "accepted_rom_disc_media_truth": false,
+    "accepted_source_truth": false,
+    "acquisition_permission_granted": false,
+    "compatibility_correctness_claimed": false,
+    "compatibility_metadata_proves_playability": false,
+    "content_safety_claimed": false,
+    "disc_authenticity_claimed": false,
+    "download_permission_granted": false,
+    "emulator_action_candidate_is_action_permission": false,
+    "emulator_compatibility_candidate_is_truth": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "execution_permission_granted": false,
+    "game_relation_candidate_is_truth": false,
+    "game_software_identity_candidate_is_truth": false,
+    "hash_metadata_proves_authenticity": false,
+    "hash_submission_permission_granted": false,
+    "installability_claimed": false,
+    "legal_acquisition_claimed": false,
+    "live_probe_result_is_public_truth": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "media_identity_grants_download_permission": false,
+    "normalized_record_is_public_truth": false,
+    "platform_release_edition_candidate_is_truth": false,
+    "playability_claimed": false,
+    "preservation_hashset_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "rights_safety_candidate_is_rights_or_safety_truth": false,
+    "rom_authenticity_claimed": false,
+    "rom_disc_media_candidate_is_truth": false,
+    "rom_disc_media_identity_candidate_is_truth": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "source_cache_preview_is_accepted_source": false,
+    "storefront_metadata_grants_acquisition_permission": false,
+    "upload_permission_granted": false,
+    "verified_authenticity_claimed": false
+  },
+  "type": "object"
+}

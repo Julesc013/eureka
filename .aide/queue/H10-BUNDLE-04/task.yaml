@@ -1,0 +1,7 @@
+id: H10-BUNDLE-04
+title: Games, emulation, and software-identity review integration and quality delta
+status: queued
+purpose: Integrate H10 fixture-equivalent and blocked live-probe outputs into review seeds, quality delta, connector scorecards, postmortem, and H10 exit evidence.
+allowed_scope_summary: H10 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE metadata only.
+gate: H10-BUNDLE-03 passes or is blocked only by missing live approvals with sufficient fixture-equivalent outputs; no new live calls, downloads, uploads, execution, acquisition, source sync, index mutation, or truth acceptance.
+recommended_after: H10-BUNDLE-03
