@@ -1,0 +1,52 @@
+{
+  "candidate_outputs": [
+    "normalized_record",
+    "retro_software_identity_candidate",
+    "platform_version_edition_candidate",
+    "archive_item_member_candidate",
+    "compatibility_install_note_candidate",
+    "community_review_comment_candidate",
+    "hash_checksum_candidate",
+    "ia_wayback_corroboration_candidate",
+    "gated_source_boundary_candidate",
+    "retro_rights_safety_candidate",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary"
+  ],
+  "contract_id": "h12_retro_community_live_probe_result.v0",
+  "required_fields": [
+    "schema_version",
+    "live_probe_result_id",
+    "live_probe_request_ref",
+    "source_id",
+    "connector_family",
+    "source_record_kind",
+    "result_status",
+    "request_count",
+    "network_used",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "result_statuses": [
+    "blocked_by_policy",
+    "blocked_by_missing_approval",
+    "blocked_by_kill_switch",
+    "blocked_by_endpoint_policy",
+    "blocked_by_download_policy",
+    "blocked_by_extraction_policy",
+    "blocked_by_execution_policy",
+    "blocked_by_acquisition_policy",
+    "blocked_by_upload_policy",
+    "blocked_by_gated_source_policy",
+    "blocked_by_restricted_source_policy",
+    "blocked_by_bypass_policy",
+    "dry_run_preflight_pass",
+    "live_probe_completed",
+    "live_probe_failed",
+    "not_evaluable"
+  ],
+  "schema_version": "json_schema_reference.v0",
+  "type": "object"
+}

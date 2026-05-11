@@ -2,11 +2,11 @@
 
 ## PHASE
 
-H12-BUNDLE-03 - Retro and community archive approved metadata-only live probes
+H12-BUNDLE-04 - Retro and community archive review integration and quality delta
 
 ## GOAL
 
-H12-BUNDLE-03 - Retro and community archive approved metadata-only live probes
+H12-BUNDLE-04 - Retro and community archive review integration and quality delta
 
 HUMAN-OBS-REVIEW-01 remains a parallel side-lane and is not advanced by this packet.
 
@@ -120,8 +120,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4101
-- approx_tokens: 1026
+- chars: 4105
+- approx_tokens: 1027
 - budget_status: PASS
 - warnings:
   - none

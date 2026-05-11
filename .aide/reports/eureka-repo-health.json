@@ -1,23 +1,24 @@
 {
   "account_access_enabled": false,
   "acquisition_actions_enabled": false,
-  "completed_queue_item": "H12-BUNDLE-02",
-  "current_queue_item": "H12-BUNDLE-03",
+  "completed_queue_item": "H12-BUNDLE-03",
+  "current_queue_item": "H12-BUNDLE-04",
   "downloads_enabled": false,
   "execution_enabled": false,
   "extraction_enabled": false,
   "live_access_enabled": false,
   "master_index_mutated": false,
-  "next_recommended_queue_item": "H12-BUNDLE-03",
-  "note": "H12 retro/community archive fixture runtimes are fixture-only and ready for approval-gated live-probe envelope work.",
+  "next_recommended_queue_item": "H12-BUNDLE-04",
+  "note": "H12 retro/community archive live-probe framework is fail-closed; live calls are blocked by missing operator approval, with fixture-equivalent outputs ready for review integration.",
   "public_index_mutated": false,
   "restricted_source_access_enabled": false,
   "scraping_crawling_enabled": false,
   "source_sync_enabled": false,
   "status": "pass",
   "validation": {
-    "h12_fixture_summary": "pass",
-    "h12_fixture_tests": "pass",
-    "h12_fixture_validator": "pass"
+    "h12_live_probe_cli": "pass",
+    "h12_live_probe_summary": "pass",
+    "h12_live_probe_tests": "pass",
+    "h12_live_probe_validator": "pass"
   }
 }

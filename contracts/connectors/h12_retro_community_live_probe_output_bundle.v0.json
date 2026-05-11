@@ -1,0 +1,23 @@
+{
+  "contract_id": "h12_retro_community_live_probe_output_bundle.v0",
+  "grouped_outputs": [
+    "live_probe_result",
+    "normalized_record",
+    "retro_software_identity_candidate",
+    "platform_version_edition_candidate",
+    "archive_item_member_candidate",
+    "compatibility_install_note_candidate",
+    "community_review_comment_candidate",
+    "hash_checksum_candidate",
+    "ia_wayback_corroboration_candidate",
+    "gated_source_boundary_candidate",
+    "retro_rights_safety_candidate",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary",
+    "validation_summary"
+  ],
+  "schema_version": "json_schema_reference.v0",
+  "type": "object"
+}
