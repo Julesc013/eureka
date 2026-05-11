@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H8-BUNDLE-04
+title: Manuals, technical docs, datasheets, and standards review integration and quality delta
+status: queued
+recommended_after: H8-BUNDLE-03
+gate: H8-BUNDLE-03 passes or is blocked only by missing committed live approvals with sufficient fixture-equivalent outputs; no new live calls, downloads, extraction, scraping, source sync, public/master index mutation, action authorization, or truth acceptance.
+allowed_scope_summary: H8 review integration policies, docs, runtime helpers, scripts, examples, tests, audit pack, and AIDE queue/context metadata only.
+next_if_blocked: H8-APPROVAL-01

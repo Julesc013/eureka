@@ -1,0 +1,149 @@
+{
+  "schema_version": "h8_manuals_docs_live_probe_kill_switch_policy.v0",
+  "sources": [
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_bitsavers_docs",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "bitsavers_docs"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_ia_manuals_library",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "ia_manuals_library"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_manualslib_metadata",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "manualslib_metadata"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_vendor_documentation_portal",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "vendor_documentation_portal"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_microsoft_technical_docs",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "microsoft_technical_docs"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_apple_support_developer_docs",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "apple_support_developer_docs"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_ibm_documentation",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "ibm_documentation"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_sun_oracle_documentation",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "sun_oracle_documentation"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_hp_hpe_documentation",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "hp_hpe_documentation"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_dec_vax_pdp_documentation",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "dec_vax_pdp_documentation"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_sgi_documentation",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "sgi_documentation"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_rfc_editor_ietf",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "rfc_editor_ietf"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_w3c_technical_reports",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "w3c_technical_reports"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_iso_iec_public_standards",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "iso_iec_public_standards"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_ieee_acm_standards_metadata",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "ieee_acm_standards_metadata"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_semiconductor_datasheets",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "semiconductor_datasheets"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_service_manual_schematic_archive",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "service_manual_schematic_archive"
+    },
+    {
+      "decision_status": "not_approved_for_live_access",
+      "default_enabled": false,
+      "failure_mode": "fail_closed_blocked_result",
+      "kill_switch_name": "h8_manuals_docs_live_probe_generic_technical_document_collection",
+      "live_probe_kill_switch_engaged": true,
+      "source_id": "generic_technical_document_collection"
+    }
+  ]
+}

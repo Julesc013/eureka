@@ -1,0 +1,149 @@
+{
+  "schema_version": "h8_manuals_docs_live_probe_cache_policy.v0",
+  "sources": [
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "bitsavers_docs"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "ia_manuals_library"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "manualslib_metadata"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "vendor_documentation_portal"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "microsoft_technical_docs"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "apple_support_developer_docs"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "ibm_documentation"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "sun_oracle_documentation"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "hp_hpe_documentation"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "dec_vax_pdp_documentation"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "sgi_documentation"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "rfc_editor_ietf"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "w3c_technical_reports"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "iso_iec_public_standards"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "ieee_acm_standards_metadata"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "semiconductor_datasheets"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "service_manual_schematic_archive"
+    },
+    {
+      "cache_ttl_seconds": 0,
+      "cache_write_allowed_current": false,
+      "decision_status": "not_approved_for_live_access",
+      "no_cache_decision": "fail_closed_not_approved",
+      "source_cache_persistence_allowed_current": false,
+      "source_id": "generic_technical_document_collection"
+    }
+  ]
+}

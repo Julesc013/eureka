@@ -1,0 +1,150 @@
+{
+  "default_restricted_source_status": "blocked_current",
+  "schema_version": "h8_manuals_docs_live_probe_restricted_source_policy.v0",
+  "sources": [
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "bitsavers_docs",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "ia_manuals_library",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "manualslib_metadata",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "vendor_documentation_portal",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "microsoft_technical_docs",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "apple_support_developer_docs",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "ibm_documentation",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "sun_oracle_documentation",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "hp_hpe_documentation",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "dec_vax_pdp_documentation",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "sgi_documentation",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "rfc_editor_ietf",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "w3c_technical_reports",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "iso_iec_public_standards",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "ieee_acm_standards_metadata",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "semiconductor_datasheets",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "service_manual_schematic_archive",
+      "standards_body_controlled_document_access_allowed": false
+    },
+    {
+      "account_or_session_use_allowed": false,
+      "paywalled_or_rights_sensitive_access_allowed": false,
+      "restricted_payload_inclusion_allowed": false,
+      "restricted_source_status": "blocked_current",
+      "source_id": "generic_technical_document_collection",
+      "standards_body_controlled_document_access_allowed": false
+    }
+  ]
+}

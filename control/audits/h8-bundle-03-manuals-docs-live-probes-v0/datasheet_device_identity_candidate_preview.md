@@ -1,0 +1,12 @@
+# Datasheet Device Identity Candidate Preview
+
+Datasheet/device previews are candidate-only and do not prove device identity, electrical correctness, lifecycle availability, or safety.
+
+- network_used: `false`
+- downloads_enabled: `false`
+- full_text_ocr_enabled: `false`
+- scraping_crawling_enabled: `false`
+- restricted_source_access: `false`
+- public_index_mutated: `false`
+- master_index_mutated: `false`
+- truth_accepted: `false`

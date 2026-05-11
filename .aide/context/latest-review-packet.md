@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6703 chars, 1676 approximate tokens)
+- `.aide/context/latest-task-packet.md` (7047 chars, 1762 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H8-BUNDLE-03` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H8-BUNDLE-04` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h8_access_rights_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_datasheet_device_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_install_requirement_claim_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_manual_artifact_relation_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_manuals_docs_fixture.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_manuals_docs_fixture_replay_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_manuals_docs_normalized_record.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_repair_service_safety_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_standards_specification_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h8_technical_document_identity_candidate.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h8_access_rights_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h8_datasheet_device_identity_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h8_install_requirement_claim_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h8_manual_artifact_relation_mapping_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h8_manuals_docs_evidence_mapping_policy.json` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 45; see task evidence changed-files report
+- unknown: `contracts/connectors/h8_manuals_docs_connector_health_summary.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_live_probe_output_bundle.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_live_probe_request.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/connectors/h8_manuals_docs_live_probe_result.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/h8-bundle-03-manuals-docs-live-probes-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_allowed_requests.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_cache_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_endpoint_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_kill_switch_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_no_download_extract_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_path_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_rate_limit_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_restricted_source_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_review_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/connectors/h8_manuals_docs_live_probe_truth_policy.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6819
-- approx_tokens: 1705
+- chars: 6956
+- approx_tokens: 1739
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,383 @@
+{
+  "schema_version": "h8_manuals_docs_live_probe_endpoint_policy.v0",
+  "sources": [
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "bitsavers_docs"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "item_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "ia_manuals_library"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "manual_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "manualslib_metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "vendor_documentation_portal"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "microsoft_technical_docs"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "apple_support_developer_docs"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "ibm_documentation"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "sun_oracle_documentation"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "hp_hpe_documentation"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "dec_vax_pdp_documentation"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "sgi_documentation"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "rfc_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "rfc_editor_ietf"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_report_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "w3c_technical_reports"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "public_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "iso_iec_public_standards"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "public_metadata_policy_limited_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "ieee_acm_standards_metadata"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "datasheet_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "semiconductor_datasheets"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "service_manual_metadata_lookup_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "service_manual_schematic_archive"
+    },
+    {
+      "allowlisted_endpoint_or_metadata_classes_current": [],
+      "decision_status": "not_approved_for_live_access",
+      "endpoint_or_metadata_classes_future": [
+        "technical_document_metadata_fixture_future"
+      ],
+      "forbidden_endpoint_or_metadata_classes_current": [
+        "document_download_forbidden_current",
+        "pdf_download_forbidden_current",
+        "manual_download_forbidden_current",
+        "datasheet_download_forbidden_current",
+        "standards_document_fetch_forbidden_current",
+        "schematic_download_forbidden_current",
+        "service_manual_download_forbidden_current",
+        "full_text_ocr_forbidden_current",
+        "iiif_media_fetch_forbidden_current",
+        "scraping_forbidden_current",
+        "crawling_forbidden_current"
+      ],
+      "source_id": "generic_technical_document_collection"
+    }
+  ]
+}

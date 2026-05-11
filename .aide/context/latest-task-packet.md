@@ -2,15 +2,15 @@
 
 ## PHASE
 
-H8-BUNDLE-02 - Manuals/docs/standards fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H8-BUNDLE-03 - Manuals/docs/standards approved metadata-only live probes. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Add fixture-only manuals, technical documentation, datasheets, service manuals, schematics, install guides, compatibility notes, and standards normalizers and replayable connector outputs for H8.
+Add the H8 manuals, technical docs, datasheets, service manuals, schematics, install guides, compatibility notes, and standards bounded metadata-only live-probe framework.
 
 ## WHY
 
-H8-BUNDLE-01 added policy-pack-only source governance for manuals/docs/standards sources. H8-BUNDLE-02 proves committed synthetic/repo-local fixture parsing, normalization, candidate mapping, replay output, and boundary enforcement without enabling live source access.
+H8-BUNDLE-01 added policy-pack-only governance and H8-BUNDLE-02 proved fixture-only normalization. H8-BUNDLE-03 adds the fail-closed live boundary: offline preflight by default, blocked reports when approval is missing, exact-request policies for any future bounded metadata-only probe, and candidate/preview outputs only.
 
 ## CONTEXT_REFS
 
@@ -22,17 +22,17 @@ H8-BUNDLE-01 added policy-pack-only source governance for manuals/docs/standards
 - `.aide/context/test-map.json`
 - `control/audits/h8-bundle-01-manuals-docs-standards-policy-packs-v0/`
 - `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0/`
+- `control/audits/h8-bundle-03-manuals-docs-live-probes-v0/`
 - `control/inventory/source_packs/h8_manuals_docs_standards_sources.json`
 - `control/inventory/connectors/`
 - `contracts/connectors/`
 - `runtime/connectors/h8_manuals_docs_standards/`
 - `examples/connectors/h8_manuals_docs_standards/`
-- `scripts/normalize_h8_manuals_docs_fixture.py`
-- `scripts/replay_h8_manuals_docs_fixtures.py`
-- `scripts/summarize_h8_manuals_docs_fixture_outputs.py`
-- `scripts/validate_h8_manuals_docs_standards_fixture_runtime.py`
-- `tests/connectors/`
-- `tests/operations/`
+- `scripts/run_h8_manuals_docs_live_probe.py`
+- `scripts/validate_h8_manuals_docs_live_probe.py`
+- `scripts/summarize_h8_manuals_docs_live_probe_outputs.py`
+- `tests/connectors/test_h8_manuals_docs_live_probe.py`
+- `tests/operations/test_h8_manuals_docs_live_probe_scripts.py`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
@@ -40,20 +40,23 @@ H8-BUNDLE-01 added policy-pack-only source governance for manuals/docs/standards
 - `.aide/context/`
 - `.aide/queue/`
 - `.aide/reports/`
-- `contracts/connectors/h8_`
-- `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0/`
-- `control/inventory/connectors/h8_`
-- `runtime/connectors/h8_manuals_docs_standards/`
-- `examples/connectors/h8_manuals_docs_standards/`
-- `docs/reference/H8_`
-- `docs/architecture/H8_`
-- `docs/operations/H8_MANUALS_DOCS_`
-- `scripts/normalize_h8_manuals_docs_fixture.py`
-- `scripts/replay_h8_manuals_docs_fixtures.py`
-- `scripts/summarize_h8_manuals_docs_fixture_outputs.py`
-- `scripts/validate_h8_manuals_docs_standards_fixture_runtime.py`
-- `tests/connectors/test_h8_`
-- `tests/operations/test_h8_manuals_docs_fixture_scripts.py`
+- `contracts/connectors/h8_manuals_docs_live_probe_`
+- `contracts/connectors/h8_manuals_docs_connector_health_summary.v0.json`
+- `control/audits/h8-bundle-03-manuals-docs-live-probes-v0/`
+- `control/inventory/connectors/h8_manuals_docs_live_probe_`
+- `runtime/connectors/h8_manuals_docs_standards/live_probe_`
+- `examples/connectors/h8_manuals_docs_standards/live_probe/`
+- `examples/connectors/h8_manuals_docs_standards/live_probe_results/`
+- `examples/connectors/h8_manuals_docs_standards/live_probe_outputs/`
+- `docs/reference/H8_MANUALS_DOCS_LIVE_PROBE`
+- `docs/reference/H8_MANUALS_DOCS_CONNECTOR_HEALTH_SUMMARY.md`
+- `docs/architecture/H8_MANUALS_DOCS_LIVE_PROBE_MODEL.md`
+- `docs/operations/H8_MANUALS_DOCS_LIVE_PROBE_`
+- `scripts/run_h8_manuals_docs_live_probe.py`
+- `scripts/validate_h8_manuals_docs_live_probe.py`
+- `scripts/summarize_h8_manuals_docs_live_probe_outputs.py`
+- `tests/connectors/test_h8_manuals_docs_live_probe.py`
+- `tests/operations/test_h8_manuals_docs_live_probe_scripts.py`
 
 ## FORBIDDEN_PATHS
 
@@ -62,27 +65,25 @@ H8-BUNDLE-01 added policy-pack-only source governance for manuals/docs/standards
 - Local private-state, cache, provider secret, credential, cookie, or account/session roots.
 - Document, PDF, manual, datasheet, standard, schematic, OCR, media, archive, or download roots.
 - Restricted-source mirrors or harvested source payload roots.
-- AIDE-only broad product boundary patterns remain forbidden outside the explicit H8 task allowlist: `runtime/**`, `contracts/**`, `surfaces/**`, `site/**`, `native/**`, `crates/**`, `connectors/**`, `packaging/**`, `third_party/**`.
+- AIDE-only broad product boundary patterns remain forbidden outside the explicit H8 live-probe task allowlist: `runtime/**`, `contracts/**`, `surfaces/**`, `site/**`, `native/**`, `crates/**`, `connectors/**`, `packaging/**`, `third_party/**`.
 
 ## IMPLEMENTATION
 
-- Add H8 fixture, normalized record, candidate, and replay-result contracts.
-- Add standard-library-only H8 fixture loader, common normalizer, candidate builders, replay helper, and one source wrapper per H8 source.
-- Add explicit fixture runtime, normalization, mapping, output, path, truth, source-cache, evidence, and no-download/extract policies.
-- Add synthetic public-safe fixtures for all 18 sources with minimal, identity, relation, datasheet, standard, install, repair/safety, access-rights, and policy-blocked cases.
-- Add normalized examples, replay result examples, candidate examples, docs, audit evidence, CLI scripts, validator, and tests.
+- Add H8 live-probe request/result/output-bundle and connector-health contracts.
+- Add fail-closed global, per-source allowed-request, endpoint, rate, cache, kill-switch, output, path, review, truth, no-download/extract, and restricted-source policies.
+- Add standard-library-only H8 live-probe common helpers and one source wrapper per H8 source.
+- Add CLI, validator, summary script, request/result/output examples, docs, audit evidence, and tests.
 - Keep all outputs as candidates/previews only.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- JSON syntax checks for H8-BUNDLE-02 contracts, policies, and report.
-- `python scripts/validate_h8_manuals_docs_standards_fixture_runtime.py`
-- `python scripts/normalize_h8_manuals_docs_fixture.py --source-id bitsavers_docs --input examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json --check`
-- `python scripts/replay_h8_manuals_docs_fixtures.py --check`
-- `python scripts/summarize_h8_manuals_docs_fixture_outputs.py --input examples/connectors/h8_manuals_docs_standards --check`
-- H8 targeted unit tests.
+- JSON syntax checks for H8-BUNDLE-03 contracts, policies, and report.
+- `python scripts/validate_h8_manuals_docs_live_probe.py`
+- `python scripts/run_h8_manuals_docs_live_probe.py --source-id bitsavers_docs --request-key example_document_metadata --check`
+- `python scripts/summarize_h8_manuals_docs_live_probe_outputs.py --input examples/connectors/h8_manuals_docs_standards/live_probe_results --check`
+- H8 live-probe targeted unit tests.
 - Existing H8/H7/H6/H5/H4/H3/H2/H1/H0/core validators when present.
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
@@ -97,34 +98,35 @@ H8-BUNDLE-01 added policy-pack-only source governance for manuals/docs/standards
 
 ## EVIDENCE
 
-- H8-BUNDLE-02 audit pack under `control/audits/h8-bundle-02-manuals-docs-fixture-runtime-v0/`.
-- H8 fixtures under `examples/connectors/h8_manuals_docs_standards/fixtures/`.
-- H8 normalized examples under `examples/connectors/h8_manuals_docs_standards/normalized/`.
-- H8 replay results under `examples/connectors/h8_manuals_docs_standards/replay_results/`.
-- H8 candidate examples under `examples/connectors/h8_manuals_docs_standards/identity/`.
-- H8-BUNDLE-03 routing evidence may be added under `.aide/queue/` after H8-BUNDLE-02 validation.
+- H8-BUNDLE-03 audit pack under `control/audits/h8-bundle-03-manuals-docs-live-probes-v0/`.
+- H8 live-probe requests under `examples/connectors/h8_manuals_docs_standards/live_probe/`.
+- H8 live-probe results under `examples/connectors/h8_manuals_docs_standards/live_probe_results/`.
+- H8 live-probe output previews under `examples/connectors/h8_manuals_docs_standards/live_probe_outputs/`.
+- H8-BUNDLE-04 routing evidence may be added under `.aide/queue/` after H8-BUNDLE-03 validation.
 
 ## NON_GOALS
 
-- No live source calls, external calls, network calls, API/catalog queries, source sync, live probes, scraping, crawling, or browser automation.
-- No document, PDF, manual, datasheet, standard, schematic, OCR, media, archive, or attachment fetch/download/extraction.
+- No broad documentation/manual/standards search, public-query fanout, source sync, scraping, crawling, browser automation, arbitrary URL fetch, or live call without exact committed approval.
+- No API/catalog query unless an exact future policy approves bounded metadata-only preflight.
+- No document, PDF, manual, datasheet, standard, schematic, OCR, media, archive, service manual, full-text, IIIF, or attachment fetch/download/extraction.
 - No restricted/licensed source access, account/session use, access-control bypass, or repair/install/electrical action authorization.
 - No evidence, candidate, document, relation, datasheet/device, standards, install, repair/safety, access-rights, source, pack, public, or master truth acceptance.
-- Complete H8 fixture runtime without changing Eureka product behavior: no public search behavior changes, hosting, uploads, accounts, telemetry, public index mutation, or master index mutation.
+- Complete H8 live-probe framework without changing Eureka product behavior: no public search behavior changes, hosting, uploads, accounts, telemetry, public index mutation, or master index mutation.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 1600
+approx_tokens: 1700
 
 ## ACCEPTANCE
 
-- H8 fixture contracts, policies, normalizers, scripts, examples, docs, audit pack, and tests exist.
-- Required fixtures, normalized outputs, replay outputs, and candidate examples exist for all H8 sources.
-- Validators and tests pass.
-- No live/source-sync/query/fetch/download/extract/scrape/crawl/bypass behavior is enabled.
+- H8 live-probe contracts, policies, runtime wrappers, scripts, examples, docs, audit pack, and tests exist.
+- Default validation mode is offline and fail-closed.
+- No source is live-enabled without committed approval.
+- No source sync, broad query/fetch/download/extract/scrape/crawl/bypass behavior is enabled.
+- H8 outputs remain candidates/previews only.
 - No public/master index mutation occurs.
 - No source/evidence/candidate/document/manual-artifact/datasheet/standard/install/repair/access-rights/public truth is accepted.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED`, `VALIDATION`, `H8_SCOPE`, `RISKS`, and `NEXT TASK`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `LIVE_PROBES`, `H8_SCOPE`, `CHANGED`, `VALIDATION`, `RISKS`, and `NEXT TASK`.

@@ -1,0 +1,19 @@
+{
+  "automatic_candidate_acceptance_allowed": false,
+  "automatic_evidence_acceptance_allowed": false,
+  "automatic_master_index_mutation_allowed": false,
+  "automatic_public_index_mutation_allowed": false,
+  "review_required_before_access_rights_truth_acceptance": true,
+  "review_required_before_candidate_acceptance": true,
+  "review_required_before_datasheet_device_truth_acceptance": true,
+  "review_required_before_document_truth_acceptance": true,
+  "review_required_before_evidence_acceptance": true,
+  "review_required_before_install_requirement_truth_acceptance": true,
+  "review_required_before_manual_artifact_relation_truth_acceptance": true,
+  "review_required_before_master_index": true,
+  "review_required_before_public_index_use": true,
+  "review_required_before_repair_service_safety_truth_acceptance": true,
+  "review_required_before_source_cache_persistence": true,
+  "review_required_before_standards_truth_acceptance": true,
+  "schema_version": "h8_manuals_docs_live_probe_review_policy.v0"
+}

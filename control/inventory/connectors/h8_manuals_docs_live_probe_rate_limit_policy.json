@@ -1,0 +1,293 @@
+{
+  "schema_version": "h8_manuals_docs_live_probe_rate_limit_policy.v0",
+  "sources": [
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "bitsavers_docs",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "ia_manuals_library",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "manualslib_metadata",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "vendor_documentation_portal",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "microsoft_technical_docs",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "apple_support_developer_docs",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "ibm_documentation",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "sun_oracle_documentation",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "hp_hpe_documentation",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "dec_vax_pdp_documentation",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "sgi_documentation",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "rfc_editor_ietf",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "w3c_technical_reports",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "iso_iec_public_standards",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "ieee_acm_standards_metadata",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "semiconductor_datasheets",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "service_manual_schematic_archive",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    },
+    {
+      "auth_posture": "no_auth_required_but_not_approved_for_live_access",
+      "decision_status": "not_approved_for_live_access",
+      "max_requests_per_minute": 0,
+      "max_requests_per_run": 0,
+      "request_budget": 0,
+      "restricted_source_posture": "blocked_current",
+      "retry_policy": {
+        "backoff_seconds": 0,
+        "max_retries": 0
+      },
+      "safety_posture": "no_download_no_extract_no_action",
+      "source_id": "generic_technical_document_collection",
+      "timeout_seconds": 10,
+      "user_agent_contact_posture": "not_approved_for_live_access"
+    }
+  ]
+}

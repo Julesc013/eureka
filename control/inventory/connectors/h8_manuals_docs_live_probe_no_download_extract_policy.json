@@ -1,0 +1,29 @@
+{
+  "browser_automation_allowed_current": false,
+  "bypass_or_access_control_automation_allowed_current": false,
+  "crawling_allowed_current": false,
+  "datasheet_downloads_allowed_current": false,
+  "document_downloads_allowed_current": false,
+  "forbidden_current": [
+    "document/PDF/manual/datasheet/standard/schematic/service-manual downloads",
+    "OCR/full-text extraction",
+    "IIIF/media fetches",
+    "scraping/crawling/browser automation",
+    "paywall/auth/captcha/access-control bypass",
+    "restricted-source direct access",
+    "repair/install/electrical action execution"
+  ],
+  "full_text_fetch_allowed_current": false,
+  "iiif_manifest_or_image_fetch_allowed_current": false,
+  "manual_downloads_allowed_current": false,
+  "media_downloads_allowed_current": false,
+  "ocr_extraction_allowed_current": false,
+  "pdf_downloads_allowed_current": false,
+  "repair_install_electrical_action_authorization_allowed_current": false,
+  "restricted_source_access_allowed_current": false,
+  "schema_version": "h8_manuals_docs_live_probe_no_download_extract_policy.v0",
+  "schematic_downloads_allowed_current": false,
+  "scraping_allowed_current": false,
+  "service_manual_downloads_allowed_current": false,
+  "standards_document_downloads_allowed_current": false
+}
