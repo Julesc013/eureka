@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: H10-BUNDLE-01
+current_recommended_task: H10-BUNDLE-02
 entries:
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
@@ -695,3 +695,12 @@ entries:
   gate: H9-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_H10_BUNDLE_01; no live calls, downloads, execution, emulation, source sync, public/master index mutation, or truth acceptance.
   task: .aide/queue/H10-BUNDLE-01/task.yaml
   recommended_after: H9-BUNDLE-04
+
+- id: H10-BUNDLE-02
+  title: Games, emulation, and software-identity fixture runtimes and normalizers
+  status: queued
+  purpose: Add committed-fixture-only H10 games, emulation, ROM/software identity, compatibility, preservation hash-set, action-boundary, and rights/safety normalizers and replay outputs.
+  allowed_scope_summary: H10 fixtures, fixture runtime policies, normalizers, scripts, examples, docs, tests, audit pack, and AIDE metadata only.
+  gate: H10-BUNDLE-01 passes; no live calls, downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, bypass, source sync, public/master index mutation, or truth acceptance.
+  task: .aide/queue/H10-BUNDLE-02/task.yaml
+  recommended_after: H10-BUNDLE-01

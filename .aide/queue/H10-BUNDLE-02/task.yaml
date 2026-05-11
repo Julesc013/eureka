@@ -1,0 +1,8 @@
+schema_version: aide.queue-task.v0
+id: H10-BUNDLE-02
+title: Games, emulation, and software-identity fixture runtimes and normalizers
+status: queued
+recommended_after: H10-BUNDLE-01
+gate: H10-BUNDLE-01 PASS or PASS_WITH_WARNINGS.
+scope: H10 committed-fixture-only games, emulation, and software identity normalizers and replay outputs.
+forbidden: no live calls; no downloads, uploads, execution, emulation, acquisition, scraping/crawling, bypass, source sync, public/master index mutation, or source/evidence/candidate/game software truth acceptance.

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2951 chars, 738 approximate tokens)
+- `.aide/context/latest-task-packet.md` (2968 chars, 742 approximate tokens)
 
 ## Context Packet Reference
 
@@ -37,27 +37,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/H10-BUNDLE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/H10-BUNDLE-02` (??; does not match active task allowed paths)
 - unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h9_media_metadata_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h9_media_metadata_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h9_media_metadata_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h9_media_metadata_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h9_media_metadata_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h9_media_metadata_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H9_MEDIA_METADATA_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H9_MEDIA_METADATA_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
+- unknown: `control/audits/h10-bundle-01-games-emulation-policy-packs-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_emulator_action_candidate_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_emulator_compatibility_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_game_relation_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_game_software_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_approval_gates.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_connector_families.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_no_download_execute_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_no_live_call_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_output_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_source_pack_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_sources.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_emulation_truth_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_games_rights_safety_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_platform_release_edition_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_preservation_hashset_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/source_packs/h10_rom_disc_media_identity_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/GAMES_EMULATION_SOURCE_FAMILY_MODEL.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6870
-- approx_tokens: 1718
+- chars: 6932
+- approx_tokens: 1733
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

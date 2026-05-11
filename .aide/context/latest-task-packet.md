@@ -2,26 +2,26 @@
 
 ## PHASE
 
-H10-BUNDLE-01 - Games, emulation, and software-identity source-family policy packs. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+H10-BUNDLE-02 - Games, emulation, and software-identity fixture runtimes and normalizers. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## GOAL
 
-Start H10 with policy-pack-only source-family governance after H9 media metadata review closeout.
+Build committed-fixture-only H10 games/emulation normalizers after H10-BUNDLE-01 source policy packs.
 
 ## WHY
 
-H9-BUNDLE-04 closes the media metadata wave using fixture-equivalent and blocked live-probe evidence, preserving no-live, no-download/upload/fingerprint, no-truth, and no-index-mutation boundaries.
+H10-BUNDLE-01 establishes policy-pack-only source records, connector-family assignments, approval gates, no-live/no-download/no-execute boundaries, coverage previews, scorecard previews, and fixture requirements.
 
 ## CONTEXT_REFS
 
-- `control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/`
-- `control/audits/h9-bundle-03-media-metadata-live-probes-v0/`
-- `control/audits/h9-bundle-02-media-metadata-fixture-runtime-v0/`
-- `control/audits/h9-bundle-01-media-metadata-policy-packs-v0/`
+- `control/audits/h10-bundle-01-games-emulation-policy-packs-v0/`
+- `control/inventory/source_packs/h10_games_emulation_sources.json`
+- `examples/connectors/h10_games_emulation/`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-context-packet.md`
+- `.aide/context/context-index.json`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/memory/project-state.md`
@@ -29,32 +29,33 @@ H9-BUNDLE-04 closes the media metadata wave using fixture-equivalent and blocked
 
 ## ALLOWED_PATHS
 
-H10 policy-pack artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped and do the work without changing Eureka product behavior.
+H10 fixture-runtime artifacts requested by the next task, plus `.aide/` routing and operating metadata only. Keep edits narrowly scoped without changing Eureka product behavior.
 
 ## FORBIDDEN_PATHS
 
-- `runtime/**`
-- `contracts/**`
-- `surfaces/**`
-- `site/**`
-- `native/**`
-- `crates/**`
-- `connectors/**`
-- `packaging/**`
-- `third_party/**`
+- live connector runtime enablement
+- product search/public surfaces
+- runtime/**
+- contracts/**
+- surfaces/**
+- site/**
+- native/**
+- crates/**
+- connectors/**
+- packaging/**
+- third_party/**
 - site distribution output root
 - public index data root
 - master-index or publication roots
-- download/upload/execution/emulation/private local roots
-- product behavior surfaces
+- ROM/ISO/disc-image/emulator/BIOS/game-install/download/upload/execution/private local roots
 
 ## IMPLEMENTATION
 
-Use H9 closeout evidence as the route handoff. Do not make live source calls, downloads, execution, emulation, scraping, crawling, model/provider calls, index mutations, or truth acceptance.
+Use committed synthetic fixtures only. Do not make live source calls, downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, model/provider calls, index mutations, or truth acceptance.
 
 ## VALIDATION
 
-Run `git status --short`, `git diff --check`, H10 validators when added, existing H9/H8/core validators where practical, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
+Run H10 fixture validators when added, existing H10 policy-pack validator, `scripts/check_architecture_boundaries.py`, and AIDE Lite checks where practical:
 
 - `.aide/scripts/aide_lite.py doctor`
 - `.aide/scripts/aide_lite.py validate`
@@ -62,21 +63,19 @@ Run `git status --short`, `git diff --check`, H10 validators when added, existin
 - `.aide/scripts/aide_lite.py selftest`
 - `.aide/scripts/aide_lite.py eval run`
 - `.aide/scripts/aide_lite.py verify`
-- `scripts/check_architecture_boundaries.py`
 
 ## EVIDENCE
 
-- `control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/`
-- `.aide/queue/H10-BUNDLE-01/task.yaml`
-- `.aide/queue/`
+- `control/audits/h10-bundle-01-games-emulation-policy-packs-v0/`
+- `.aide/queue/H10-BUNDLE-02/task.yaml`
 
 ## ACCEPTANCE
 
-H10 remains policy-pack-only; no source/evidence/candidate/software identity/public truth is accepted.
+H10 fixture runtime remains committed-fixture-only and preserves no-live, no-download/no-upload, no-execute, no-acquisition, no-index-mutation, and no-truth boundaries.
 
 ## NON_GOALS
 
-No live calls, downloads, execution, emulation, uploads, scraping, crawling, restricted access, source sync, public/master index mutation, product behavior changes, or model/provider calls.
+No live calls, downloads, uploads, execution, emulation, acquisition actions, scraping, crawling, restricted access, source sync, public/master index mutation, product behavior changes, or model/provider calls.
 
 ## OUTPUT_SCHEMA
 

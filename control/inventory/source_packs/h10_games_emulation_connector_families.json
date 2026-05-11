@@ -1,0 +1,255 @@
+{
+  "connector_families": [
+    {
+      "connector_family": "game_database_api",
+      "current_access_mode": "policy_pack_only",
+      "label": "Game Database API",
+      "live_access_enabled": false,
+      "notes": "Metadata lookup family only after future approval.",
+      "preferred_for": [
+        "mobygames",
+        "generic_game_database"
+      ]
+    },
+    {
+      "connector_family": "emulator_compatibility_metadata",
+      "current_access_mode": "policy_pack_only",
+      "label": "Emulator Compatibility Metadata",
+      "live_access_enabled": false,
+      "notes": "Compatibility observations remain candidates and do not authorize execution.",
+      "preferred_for": [
+        "scummvm_compatibility",
+        "generic_emulator_compatibility"
+      ]
+    },
+    {
+      "connector_family": "software_list_metadata",
+      "current_access_mode": "policy_pack_only",
+      "label": "Software List Metadata",
+      "live_access_enabled": false,
+      "notes": "Software-list metadata fetch is forbidden in this bundle.",
+      "preferred_for": [
+        "mame_software_lists"
+      ]
+    },
+    {
+      "connector_family": "preservation_hashset_metadata",
+      "current_access_mode": "policy_pack_only",
+      "label": "Preservation Hash-Set Metadata",
+      "live_access_enabled": false,
+      "notes": "Hash-set observations do not prove authenticity or lawful acquisition.",
+      "preferred_for": [
+        "redump_hash_sets",
+        "no_intro_hash_sets",
+        "tosec_hash_sets",
+        "generic_preservation_hashset"
+      ]
+    },
+    {
+      "connector_family": "game_storefront_metadata",
+      "current_access_mode": "policy_pack_only",
+      "label": "Game Storefront Metadata",
+      "live_access_enabled": false,
+      "notes": "Storefront metadata does not authorize account use, purchases, downloads, installs, or play actions.",
+      "preferred_for": [
+        "steam_game_metadata_policy_limited",
+        "gog_game_metadata_policy_limited",
+        "itchio_game_metadata_policy_limited"
+      ]
+    },
+    {
+      "connector_family": "web_game_archive_metadata",
+      "current_access_mode": "policy_pack_only",
+      "label": "Web Game Archive Metadata",
+      "live_access_enabled": false,
+      "notes": "Archive metadata only; no game payloads or launcher actions.",
+      "preferred_for": [
+        "flashpoint_metadata"
+      ]
+    },
+    {
+      "connector_family": "html_catalog_policy_limited",
+      "current_access_mode": "policy_pack_only",
+      "label": "HTML Catalog Policy Limited",
+      "live_access_enabled": false,
+      "notes": "Listed as a future policy-limited family; scraping remains forbidden.",
+      "preferred_for": []
+    },
+    {
+      "connector_family": "restricted_manifest_only",
+      "current_access_mode": "policy_blocked",
+      "label": "Restricted Manifest Only",
+      "live_access_enabled": false,
+      "notes": "Restricted and rights-sensitive sources stay manifest-only and blocked by default.",
+      "preferred_for": [
+        "games_emulation_policy_blocked"
+      ]
+    }
+  ],
+  "mapping_id": "h10_games_emulation_connector_families",
+  "product_boundary": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "enabled_accounts": false,
+    "enabled_acquisition_actions": false,
+    "enabled_crawling": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_scraping": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false
+  },
+  "schema_version": "h10_games_emulation_connector_families.v0",
+  "source_connector_family_mappings": [
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "game_database_api",
+      "source_id": "mobygames"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "software_list_metadata",
+      "source_id": "mame_software_lists"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "emulator_compatibility_metadata",
+      "source_id": "scummvm_compatibility"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "preservation_hashset_metadata",
+      "source_id": "redump_hash_sets"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "preservation_hashset_metadata",
+      "source_id": "no_intro_hash_sets"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "preservation_hashset_metadata",
+      "source_id": "tosec_hash_sets"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "web_game_archive_metadata",
+      "source_id": "flashpoint_metadata"
+    },
+    {
+      "alternate_connector_family": "restricted_manifest_only",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "game_storefront_metadata",
+      "source_id": "steam_game_metadata_policy_limited"
+    },
+    {
+      "alternate_connector_family": "restricted_manifest_only",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "game_storefront_metadata",
+      "source_id": "gog_game_metadata_policy_limited"
+    },
+    {
+      "alternate_connector_family": "restricted_manifest_only",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "game_storefront_metadata",
+      "source_id": "itchio_game_metadata_policy_limited"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "game_database_api",
+      "source_id": "generic_game_database"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "emulator_compatibility_metadata",
+      "source_id": "generic_emulator_compatibility"
+    },
+    {
+      "alternate_connector_family": "html_catalog_policy_limited",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "preservation_hashset_metadata",
+      "source_id": "generic_preservation_hashset"
+    },
+    {
+      "alternate_connector_family": "restricted_manifest_only",
+      "ambiguity_note": "policy-pack-only mapping; live access and scraping are not approved",
+      "preferred_connector_family": "restricted_manifest_only",
+      "source_id": "games_emulation_policy_blocked"
+    }
+  ],
+  "source_family": "games_emulation_software_identity",
+  "truth_boundary": {
+    "accepted_action_permission": false,
+    "accepted_candidate_truth": false,
+    "accepted_emulator_compatibility_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_game_identity_truth": false,
+    "accepted_game_relation_truth": false,
+    "accepted_hashset_truth": false,
+    "accepted_platform_truth": false,
+    "accepted_public_record": false,
+    "accepted_release_truth": false,
+    "accepted_rights_safety_truth": false,
+    "accepted_rom_disc_media_truth": false,
+    "accepted_source_truth": false,
+    "capability_grants_permission": false,
+    "compatibility_correctness_claimed": false,
+    "content_safety_claimed": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_preview_claims_exhaustive_coverage": false,
+    "coverage_preview_is_exhaustive": false,
+    "disc_authenticity_claimed": false,
+    "emulator_action_candidate_is_action_permission": false,
+    "emulator_compatibility_candidate_is_truth": false,
+    "emulator_compatibility_metadata_is_compatibility_truth": false,
+    "game_relation_candidate_is_relation_truth": false,
+    "game_software_identity_candidate_is_truth": false,
+    "game_software_metadata_is_game_truth": false,
+    "hash_metadata_proves_authenticity": false,
+    "hashset_metadata_is_hashset_truth": false,
+    "installability_claimed": false,
+    "legal_acquisition_claimed": false,
+    "malware_safety_claimed": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "platform_metadata_is_platform_truth": false,
+    "platform_release_edition_candidate_is_truth": false,
+    "playability_claimed": false,
+    "policy_pack_grants_live_access": false,
+    "preservation_hashset_candidate_is_truth": false,
+    "privacy_safety_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "release_metadata_is_release_truth": false,
+    "rights_clearance_claimed": false,
+    "rights_safety_metadata_is_rights_or_safety_truth": false,
+    "rom_authenticity_claimed": false,
+    "rom_disc_media_candidate_is_truth": false,
+    "rom_disc_media_metadata_is_media_truth": false,
+    "scorecard_auto_approves_future_connectors": false,
+    "scorecard_claims_production_readiness": false,
+    "scorecard_preview_is_production_ready": false,
+    "source_pack_is_accepted_evidence": false,
+    "source_pack_is_imported_state": false,
+    "source_pack_is_truth": false,
+    "storefront_metadata_grants_acquisition_permission": false,
+    "verified_authenticity_claimed": false
+  },
+  "wave_id": "H10"
+}
