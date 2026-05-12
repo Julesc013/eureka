@@ -1,0 +1,145 @@
+{
+  "schema_version": "contract_taxonomy_policy.v0",
+  "policy_id": "contract_taxonomy_policy",
+  "status": "active",
+  "contract_classes": [
+    "product_domain_contract",
+    "product_runtime_contract",
+    "public_api_contract",
+    "snapshot_contract",
+    "native_contract",
+    "durable_store_contract",
+    "connector_interface_contract",
+    "source_policy_contract",
+    "control_schema",
+    "audit_schema",
+    "fixture_schema",
+    "preview_schema",
+    "validator_schema",
+    "task_queue_schema",
+    "generated_scaffold_schema",
+    "deprecated_schema",
+    "unknown"
+  ],
+  "target_roots": {
+    "product_domain_contract": "contracts/domain/",
+    "product_runtime_contract": "contracts/runtime/",
+    "public_api_contract": "contracts/api/",
+    "snapshot_contract": "contracts/snapshot/",
+    "native_contract": "contracts/native/",
+    "durable_store_contract": "contracts/stores/",
+    "connector_interface_contract": "contracts/connectors/",
+    "source_policy_contract": "contracts/connectors/",
+    "control_schema": "control/schemas/policies/",
+    "audit_schema": "control/schemas/audits/",
+    "fixture_schema": "control/schemas/fixtures/",
+    "preview_schema": "control/schemas/previews/",
+    "validator_schema": "control/schemas/validators/",
+    "task_queue_schema": "control/schemas/tasks/",
+    "generated_scaffold_schema": "control/schemas/deprecated/",
+    "deprecated_schema": "control/schemas/deprecated/",
+    "unknown": "control/schemas/deprecated/"
+  },
+  "classification_rules": [
+    {
+      "class": "audit_schema",
+      "signals": ["path contains contracts/audits", "filename contains audit, quality_delta, postmortem, signoff, smoke_report, readiness_report, report"]
+    },
+    {
+      "class": "fixture_schema",
+      "signals": ["filename contains fixture, fixture_replay, replay_result, dry_run fixture"]
+    },
+    {
+      "class": "preview_schema",
+      "signals": ["filename contains preview, candidate, output_bundle, task-specific live_probe_result, normalized_record"]
+    },
+    {
+      "class": "task_queue_schema",
+      "signals": ["filename contains next_phase, next_task, queue, task, decision_option"]
+    },
+    {
+      "class": "public_api_contract",
+      "signals": ["path contains contracts/api or contracts/gateway/public_api"]
+    },
+    {
+      "class": "durable_store_contract",
+      "signals": ["path contains evidence_ledger, source_cache, master_index, or stores"]
+    },
+    {
+      "class": "connector_interface_contract",
+      "signals": ["generic connector interface, approval, manifest, capability, family, live_probe_request/result without task prefix"]
+    }
+  ],
+  "public_contract_requirements": [
+    "stable product/domain concept",
+    "consumed or emitted by runtime/API/snapshot/native/public surface/durable store",
+    "not named by task ID, prompt ID, or bundle ID",
+    "not merely next-phase, quality-delta, audit-report, fixture-replay, or planning output",
+    "has owner and compatibility policy",
+    "has validation path",
+    "has versioning policy"
+  ],
+  "control_schema_requirements": [
+    "may describe audits, fixtures, previews, validators, task queues, and operating policies",
+    "must not be treated as product runtime truth",
+    "must preserve enough provenance for validators and audit packs to keep working",
+    "must have an explicit target root under control/schemas when moved out of contracts"
+  ],
+  "forbidden_product_contract_signals": [
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "h7",
+    "h8",
+    "h9",
+    "h10",
+    "h11",
+    "h12",
+    "h13",
+    "h14",
+    "bundle",
+    "quality_delta",
+    "next_phase",
+    "integration_audit",
+    "review_integration_result",
+    "fixture_replay",
+    "live_probe_result when task-specific",
+    "prompt",
+    "aide",
+    "local_mvp",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "migration_rules": [
+    {
+      "rule": "planning_only",
+      "description": "R0-03A may classify and plan only; no contract file may move until R0-03B."
+    },
+    {
+      "rule": "keep_product_contracts_in_contracts",
+      "description": "Stable product boundary contracts remain under contracts/ target roots."
+    },
+    {
+      "rule": "move_control_schemas_to_control",
+      "description": "Audit, fixture, preview, validator, task queue, generated scaffold, and deprecated schemas move to control/schemas target roots."
+    },
+    {
+      "rule": "preserve_compatibility",
+      "description": "R0-03B must update references and provide compatibility shims or aliases where validators still require old paths."
+    }
+  ],
+  "no_goals": [
+    "no file moves in R0-03A",
+    "no deletes in R0-03A",
+    "no runtime refactor",
+    "no product behavior changes",
+    "no live source calls",
+    "no network/API/model/provider calls",
+    "no source cache, evidence ledger, review queue, public index, or master index mutation",
+    "no dev-to-main merge"
+  ]
+}

@@ -33,17 +33,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_blockers.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_gate_report.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_remediation_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/policies` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/RUNTIME_NAMING_BOUNDARY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/R0_RUNTIME_LEAKAGE_GATE.md` (??; does not match active task allowed paths)
-- unknown: `scripts/audit_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/contract_migration_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/contract_reference_graph.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/contract_risk_register.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/contract_taxonomy_inventory.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_03b_execution_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/contract_migration_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/contract_taxonomy_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/CONTRACT_TAXONOMY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/R0_CONTRACT_TAXONOMY_REFACTOR_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `scripts/audit_contract_taxonomy.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_contract_taxonomy_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_contract_taxonomy_plan.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -53,8 +55,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5168
-- approx_tokens: 1292
+- chars: 5361
+- approx_tokens: 1341
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

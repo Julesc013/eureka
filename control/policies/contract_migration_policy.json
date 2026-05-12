@@ -1,0 +1,45 @@
+{
+  "schema_version": "contract_migration_policy.v0",
+  "policy_id": "contract_migration_policy",
+  "status": "active",
+  "migration_allowed_current": false,
+  "planning_only_current": true,
+  "r0_03b_may_move_contracts_after_plan": true,
+  "runtime_changes_allowed_current": false,
+  "compatibility_shims_required": true,
+  "import_update_required": true,
+  "validation_required_after_move": true,
+  "deletion_allowed_current": false,
+  "quarantine_before_delete": true,
+  "dev_to_main_blocked_until_complete": true,
+  "f0_blocked_until_complete": true,
+  "required_move_fields": [
+    "source_path",
+    "target_path",
+    "action",
+    "contract_class_before",
+    "contract_class_after",
+    "rationale",
+    "references_to_update",
+    "compatibility_shim_required",
+    "risk",
+    "validation"
+  ],
+  "r0_03b_batching_rule": {
+    "one_shot_limit_changed_files": 12,
+    "split_when_move_count_exceeds": 40,
+    "recommended_batches": [
+      "R0-03B-1 — Create target schema roots and move audit/fixture/preview schemas",
+      "R0-03B-2 — Update references and validators",
+      "R0-03B-3 — Product contract cleanup and compatibility audit"
+    ]
+  },
+  "no_goals": [
+    "no contract moves in R0-03A",
+    "no contract deletion in R0-03A",
+    "no runtime refactor in R0-03A",
+    "no product behavior changes",
+    "no live/network/model/provider calls",
+    "no dev-to-main merge"
+  ]
+}
