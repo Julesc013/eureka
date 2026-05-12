@@ -13,7 +13,7 @@ from pack_validator_examples import argument_error, format_all_examples, validat
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "contribution_packs" / "minimal_contribution_pack_v0"
-CONTRIBUTION_PACK_SCHEMA = REPO_ROOT / "contracts" / "packs" / "contribution_pack.v0.json"
+CONTRIBUTION_PACK_SCHEMA = REPO_ROOT / "control" / "schemas" / "policies" / "packs" / "contribution_pack.v0.json"
 
 REQUIRED_FILES = {
     "CONTRIBUTION_PACK.json",

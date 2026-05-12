@@ -41,19 +41,19 @@ REQUIRED_CONFIG_KEYS = [
     "RELAY_PUBLIC_BIND_ENABLED",
 ]
 REQUIRED_CONTRACTS = [
-    "contracts/hosting/public_alpha_non_claims.v0.json",
+    "control/schemas/policies/hosting/public_alpha_non_claims.v0.json",
     "contracts/hosting/host_profile.v0.json",
-    "contracts/hosting/deployment_environment.v0.json",
+    "control/schemas/policies/hosting/deployment_environment.v0.json",
     "control/schemas/audits/hosting/hosting_readiness_report.v0.json",
     "contracts/hosting/runtime_config_boundary.v0.json",
     "contracts/hosting/rate_limit_policy.v0.json",
     "contracts/hosting/secrets_policy.v0.json",
     "contracts/hosting/observability_policy.v0.json",
-    "contracts/hosting/incident_response_plan.v0.json",
-    "contracts/hosting/rollback_plan.v0.json",
-    "contracts/hosting/takedown_rights_safety_plan.v0.json",
-    "contracts/hosting/connector_kill_switch_plan.v0.json",
-    "contracts/hosting/public_launch_evidence.v0.json",
+    "control/schemas/policies/hosting/incident_response_plan.v0.json",
+    "control/schemas/policies/hosting/rollback_plan.v0.json",
+    "control/schemas/policies/hosting/takedown_rights_safety_plan.v0.json",
+    "control/schemas/policies/hosting/connector_kill_switch_plan.v0.json",
+    "control/schemas/policies/hosting/public_launch_evidence.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/hosting/public_alpha_non_claims_policy.json",

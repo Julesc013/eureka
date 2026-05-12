@@ -6,6 +6,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+TASK_SCHEMA_ROOT = REPO_ROOT / "control" / "schemas" / "tasks" / "master_index"
 SCHEMA_ROOT = REPO_ROOT / "contracts" / "master_index"
 INVENTORY_ROOT = REPO_ROOT / "control" / "inventory" / "master_index"
 EXAMPLE_QUEUE = REPO_ROOT / "examples" / "master_index_review_queue" / "minimal_review_queue_v0"
@@ -23,8 +24,8 @@ AUDIT_REPORT = (
 class MasterIndexReviewQueueContractTestCase(unittest.TestCase):
     def test_schemas_and_inventory_parse(self) -> None:
         for path in [
-            SCHEMA_ROOT / "review_queue_manifest.v0.json",
-            SCHEMA_ROOT / "review_queue_entry.v0.json",
+            TASK_SCHEMA_ROOT / "review_queue_manifest.v0.json",
+            TASK_SCHEMA_ROOT / "review_queue_entry.v0.json",
             SCHEMA_ROOT / "review_decision.v0.json",
             INVENTORY_ROOT / "review_queue_policy.json",
             INVENTORY_ROOT / "review_state_taxonomy.json",

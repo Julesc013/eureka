@@ -1,6 +1,6 @@
 # Node Capability Contract
 
-`contracts/node/node_capability.v0.json` defines a declarative capability record for future Eureka Nodes.
+`control/schemas/policies/node/node_capability.v0.json` defines a declarative capability record for future Eureka Nodes.
 
 Manifests identify nodes. Policies constrain behavior. Capabilities describe what a node may be designed to do under those policies. A capability is not runtime permission, source approval, model/provider approval, network approval, or master index authority.
 

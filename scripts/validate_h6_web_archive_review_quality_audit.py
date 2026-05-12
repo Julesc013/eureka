@@ -28,7 +28,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h6/connectors/web_archive_quality_delta_report.v0.json",
     "control/schemas/audits/h6/connectors/web_archive_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
-    "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h6_web_archive_review_integration_policy.json",
     "control/inventory/connectors/h6_web_archive_review_output_policy.json",
     "control/inventory/connectors/h6_web_archive_review_path_policy.json",

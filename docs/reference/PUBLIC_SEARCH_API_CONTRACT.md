@@ -316,7 +316,7 @@ records.
 
 ## P63 Probe Queue Boundary
 
-P63 adds `contracts/query/probe_queue_item.v0.json` for future policy-gated
+P63 adds `control/schemas/tasks/query/probe_queue_item.v0.json` for future policy-gated
 probe planning. Public search routes remain unchanged: they do not create queue
 items, persist queue state, execute probes, call live sources, mutate source
 caches, mutate evidence ledgers, mutate candidate indexes, or mutate

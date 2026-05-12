@@ -7,7 +7,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA = REPO_ROOT / "contracts" / "packs" / "index_pack.v0.json"
+SCHEMA = REPO_ROOT / "control" / "schemas" / "policies" / "packs" / "index_pack.v0.json"
 EXAMPLE_PACK = REPO_ROOT / "examples" / "index_packs" / "minimal_index_pack_v0"
 DOC = REPO_ROOT / "docs" / "reference" / "INDEX_PACK_CONTRACT.md"
 SOURCE_DOC = REPO_ROOT / "docs" / "reference" / "SOURCE_PACK_CONTRACT.md"

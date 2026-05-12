@@ -1,6 +1,6 @@
 # Action Taxonomy Contract
 
-`contracts/actions/action_taxonomy.v0.json` defines the J0 action families.
+`control/schemas/policies/actions/action_taxonomy.v0.json` defines the J0 action families.
 
 Current safe families are `view`, `inspect`, `compare`, `cite`, `export`, `preserve_manifest`, `acquisition_manifest`, and `blocked_action`.
 

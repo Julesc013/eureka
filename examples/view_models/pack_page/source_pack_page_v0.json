@@ -336,7 +336,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/packs/source_pack.v0.json",
+      "control/schemas/policies/packs/source_pack.v0.json",
       "docs/reference/SOURCE_PACK_CONTRACT.md"
     ],
     "policy_inventory": "control/inventory/publication/pack_page_view_model_policy.json",

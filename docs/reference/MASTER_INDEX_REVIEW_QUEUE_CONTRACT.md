@@ -21,8 +21,8 @@ any future public index state may be considered.
 
 ## Contract Files
 
-- `contracts/master_index/review_queue_manifest.v0.json`
-- `contracts/master_index/review_queue_entry.v0.json`
+- `control/schemas/tasks/master_index/review_queue_manifest.v0.json`
+- `control/schemas/tasks/master_index/review_queue_entry.v0.json`
 - `contracts/master_index/review_decision.v0.json`
 
 The inventory files under `control/inventory/master_index/` define policy,

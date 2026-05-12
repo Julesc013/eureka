@@ -1,0 +1,120 @@
+{
+  "schema_version": "r0_03b_2_unresolved_contracts.v0",
+  "task": "R0-03B-2",
+  "unresolved": [
+    {
+      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/node/work_unit.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/node/work_unit_result.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    }
+  ]
+}

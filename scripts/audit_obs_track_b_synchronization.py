@@ -48,10 +48,10 @@ OBS_INPUT_PATHS = (
 TRACK_B_CONTRACT_PATHS = (
     "contracts/node/eureka_node_manifest.v0.json",
     "contracts/node/node_policy.v0.json",
-    "contracts/node/node_capability.v0.json",
+    "control/schemas/policies/node/node_capability.v0.json",
     "contracts/node/work_unit.v0.json",
     "contracts/node/work_unit_result.v0.json",
-    "contracts/node/local_foundry_state.v0.json",
+    "control/schemas/policies/node/local_foundry_state.v0.json",
 )
 
 TRACK_B_INVENTORY_PATHS = (
@@ -242,10 +242,10 @@ def detect_track_b_state(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
         "contracts_present": {
             "node_manifest": (repo_root / "contracts/node/eureka_node_manifest.v0.json").is_file(),
             "node_policy": (repo_root / "contracts/node/node_policy.v0.json").is_file(),
-            "node_capability": (repo_root / "contracts/node/node_capability.v0.json").is_file(),
+            "node_capability": (repo_root / "control/schemas/policies/node/node_capability.v0.json").is_file(),
             "workunit_contract": (repo_root / "contracts/node/work_unit.v0.json").is_file(),
             "workunit_result_contract": (repo_root / "contracts/node/work_unit_result.v0.json").is_file(),
-            "local_foundry_state_contract": (repo_root / "contracts/node/local_foundry_state.v0.json").is_file()
+            "local_foundry_state_contract": (repo_root / "control/schemas/policies/node/local_foundry_state.v0.json").is_file()
         },
         "runtime_consumption_enabled": False,
         "notes": [
@@ -369,7 +369,7 @@ def build_mappings(repo_root: Path = REPO_ROOT) -> list[dict[str, Any]]:
             "workunit_seed",
             "control/inventory/observations/workunit_seed_manifest.json",
             "local_foundry_state_future",
-            "contracts/node/local_foundry_state.v0.json",
+            "control/schemas/policies/node/local_foundry_state.v0.json",
             "ready_for_track_b_after_contracts",
             "track_b_dependency_present_read_only",
             "Local foundry state contract can later host private draft state, but this audit writes no runtime state.",

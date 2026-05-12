@@ -1,0 +1,1150 @@
+{
+  "blocked": [
+    {
+      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
+      "reason": "Artifact is not a clear product schema and requires manual classification.",
+      "recommended_next_action": "Classify, quarantine, or move in a follow-up contract cleanup task.",
+      "severity": "medium"
+    },
+    {
+      "path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/node/work_unit.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/node/work_unit_result.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "reason": "References require forbidden or unsupported path updates in this batch.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    },
+    {
+      "path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "reason": "References require forbidden or unsupported path updates in R0-03B-2.",
+      "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to control/schemas/.",
+      "severity": "high"
+    }
+  ],
+  "contracts_clean_enough_for_r0_04": false,
+  "contracts_scanned": 279,
+  "moved_in_this_task": [
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/actions/action_taxonomy.v0.json",
+        "docs/reference/ACTION_TAXONOMY_CONTRACT.md",
+        "scripts/validate_safe_actions_runtime.py"
+      ],
+      "source_path": "contracts/actions/action_taxonomy.v0.json",
+      "target_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/production_gap_register.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/actions/citation_bundle.v0.json",
+        "docs/reference/CITATION_BUNDLE_CONTRACT.md",
+        "scripts/validate_safe_actions_runtime.py"
+      ],
+      "source_path": "contracts/actions/citation_bundle.v0.json",
+      "target_path": "control/schemas/policies/actions/citation_bundle.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json",
+        "docs/architecture/CONTRACT_TAXONOMY.md",
+        "scripts/validate_local_mvp_iteration.py"
+      ],
+      "source_path": "contracts/audits/local_mvp_next_task_decision.v0.json",
+      "target_path": "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/audits/local_mvp_next_wave_option.v0.json",
+        "scripts/validate_local_mvp_iteration.py"
+      ],
+      "source_path": "contracts/audits/local_mvp_next_wave_option.v0.json",
+      "target_path": "control/schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json",
+        "scripts/validate_mvp_alpha_operator_review.py"
+      ],
+      "source_path": "contracts/audits/mvp_alpha_launch_decision_options.v0.json",
+      "target_path": "control/schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json",
+        "scripts/validate_mvp_alpha_operator_review.py"
+      ],
+      "source_path": "contracts/audits/mvp_alpha_operator_next_task.v0.json",
+      "target_path": "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json",
+        "scripts/validate_h10_games_emulation_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json",
+        "scripts/validate_h11_storefront_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h11_storefront_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json",
+        "scripts/validate_h12_retro_community_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h12_retro_community_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json",
+        "scripts/validate_h13_local_private_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h13_local_private_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h14_source_discovery_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h2_package_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h2_package_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h3_os_package_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h3_os_package_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h4_code_source_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h4_code_source_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h5_vendor_update_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h5_vendor_update_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h5/connectors/vendor_update_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/connectors/h6_web_archive_integration_audit_policy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h6_web_archive_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_h7_library_research_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h7_library_research_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json",
+        "scripts/validate_h8_manuals_docs_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h8_manuals_docs_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact belongs under control/schemas and should drop task-phase prefix from the filename.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json",
+        "scripts/validate_h9_media_metadata_review_quality_audit.py"
+      ],
+      "source_path": "contracts/connectors/h9_media_metadata_next_phase_recommendation.v0.json",
+      "target_path": "control/schemas/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/connector_kill_switch_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/connector_kill_switch_plan.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/deployment_environment.v0.json",
+      "target_path": "control/schemas/policies/hosting/deployment_environment.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosted_wrapper_rehearsal.py"
+      ],
+      "source_path": "contracts/hosting/hosted_wrapper_rehearsal.v0.json",
+      "target_path": "control/schemas/policies/hosting/hosted_wrapper_rehearsal.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/incident_response_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/incident_response_plan.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "scripts/validate_hosted_wrapper_rehearsal.py"
+      ],
+      "source_path": "contracts/hosting/post_launch_remediation_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/post_launch_remediation_plan.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_deployment_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/schemas/policies/hosting/public_alpha_deployment_step.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_deployment_step.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_deployment_step.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_dns_readiness.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_dns_readiness.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_environment_matrix.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_environment_matrix.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_non_claims.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_operator_checklist.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_rollout_gate.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_rollout_gate.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosted_wrapper_rehearsal.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_smoke_matrix.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
+        "scripts/validate_public_alpha_deployment_plan.py"
+      ],
+      "source_path": "contracts/hosting/public_alpha_static_backend_split.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_alpha_static_backend_split.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_architecture_leakage_report.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/public_launch_evidence.v0.json",
+      "target_path": "control/schemas/policies/hosting/public_launch_evidence.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/rollback_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/rollback_plan.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "scripts/validate_hosting_readiness.py"
+      ],
+      "source_path": "contracts/hosting/takedown_rights_safety_plan.v0.json",
+      "target_path": "control/schemas/policies/hosting/takedown_rights_safety_plan.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/schemas/tasks/master_index/review_queue_entry.v0.json",
+        "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md",
+        "docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md",
+        "examples/view_models/review_page/minimal_review_page_v0.json",
+        "examples/view_models/review_page/promotion_requirements_review_page_v0.json"
+      ],
+      "source_path": "contracts/master_index/review_queue_entry.v0.json",
+      "target_path": "control/schemas/tasks/master_index/review_queue_entry.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/runtime_maturity_matrix.json",
+        "control/schemas/tasks/master_index/review_queue_manifest.v0.json",
+        "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md",
+        "docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md"
+      ],
+      "source_path": "contracts/master_index/review_queue_manifest.v0.json",
+      "target_path": "control/schemas/tasks/master_index/review_queue_manifest.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/audits/track-b-06-local-foundry-state-contract-v0/README.md",
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/observations/obs_track_b_sync_matrix.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/node/local_foundry_state.v0.json",
+        "docs/reference/LOCAL_FOUNDRY_STATE_CONTRACT.md",
+        "scripts/audit_obs_track_b_synchronization.py",
+        "scripts/validate_local_foundry_state.py",
+        "tests/operations/test_obs_agent_local_eval_mining.py",
+        "tests/operations/test_obs_human_review_packet.py",
+        "tests/operations/test_obs_track_b_synchronization.py",
+        "tests/operations/test_observation_candidate_review_queue.py",
+        "tests/operations/test_search_need_seed_conversion.py",
+        "tests/operations/test_source_gap_observation_candidates.py",
+        "tests/operations/test_workunit_seed_conversion.py"
+      ],
+      "source_path": "contracts/node/local_foundry_state.v0.json",
+      "target_path": "control/schemas/policies/node/local_foundry_state.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/audits/track-b-03-node-capability-contract-v0/README.md",
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/observations/obs_track_b_sync_matrix.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/node/node_capability.v0.json",
+        "docs/reference/NODE_CAPABILITY_CONTRACT.md",
+        "scripts/audit_obs_track_b_synchronization.py",
+        "scripts/validate_eureka_node_capability.py",
+        "tests/operations/test_obs_agent_local_eval_mining.py",
+        "tests/operations/test_obs_human_review_packet.py",
+        "tests/operations/test_obs_track_b_synchronization.py",
+        "tests/operations/test_observation_candidate_review_queue.py",
+        "tests/operations/test_search_need_seed_conversion.py",
+        "tests/operations/test_source_gap_observation_candidates.py",
+        "tests/operations/test_workunit_seed_conversion.py"
+      ],
+      "source_path": "contracts/node/node_capability.v0.json",
+      "target_path": "control/schemas/policies/node/node_capability.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/schemas/policies/packs/contribution_pack.v0.json",
+        "docs/reference/CONTRIBUTION_PACK_CONTRACT.md",
+        "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+        "examples/view_models/pack_page/contribution_pack_page_v0.json"
+      ],
+      "source_path": "contracts/packs/contribution_pack.v0.json",
+      "target_path": "control/schemas/policies/packs/contribution_pack.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/packs/contribution_review_seed.v0.json",
+        "scripts/validate_pack_quarantine_runtime.py"
+      ],
+      "source_path": "contracts/packs/contribution_review_seed.v0.json",
+      "target_path": "control/schemas/policies/packs/contribution_review_seed.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/schemas/policies/packs/evidence_pack.v0.json",
+        "docs/reference/EVIDENCE_PACK_CONTRACT.md",
+        "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+        "examples/view_models/pack_page/evidence_pack_page_v0.json"
+      ],
+      "source_path": "contracts/packs/evidence_pack.v0.json",
+      "target_path": "control/schemas/policies/packs/evidence_pack.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/schemas/policies/packs/index_pack.v0.json",
+        "docs/reference/INDEX_PACK_CONTRACT.md",
+        "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+        "examples/view_models/pack_page/minimal_pack_page_v0.json"
+      ],
+      "source_path": "contracts/packs/index_pack.v0.json",
+      "target_path": "control/schemas/policies/packs/index_pack.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/packs/pack_quarantine_request.v0.json",
+        "scripts/validate_pack_quarantine_runtime.py"
+      ],
+      "source_path": "contracts/packs/pack_quarantine_request.v0.json",
+      "target_path": "control/schemas/policies/packs/pack_quarantine_request.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/packs/pack_quarantine_result.v0.json",
+        "scripts/validate_pack_quarantine_runtime.py"
+      ],
+      "source_path": "contracts/packs/pack_quarantine_result.v0.json",
+      "target_path": "control/schemas/policies/packs/pack_quarantine_result.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "contracts/README.md",
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/inventory/track_b_completion_matrix.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/packs/source_pack.v0.json",
+        "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
+        "docs/reference/SOURCE_PACK_CONTRACT.md",
+        "examples/view_models/pack_page/source_pack_page_v0.json"
+      ],
+      "source_path": "contracts/packs/source_pack.v0.json",
+      "target_path": "control/schemas/policies/packs/source_pack.v0.json"
+    },
+    {
+      "contract_class": "control_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/policies/packs/source_pack_export.v0.json",
+        "scripts/validate_source_os_coverage_scorecards.py"
+      ],
+      "source_path": "contracts/packs/source_pack_export.v0.json",
+      "target_path": "control/schemas/policies/packs/source_pack_export.v0.json"
+    },
+    {
+      "contract_class": "task_queue_schema",
+      "mode": "apply",
+      "reason": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_updated": [
+        "control/inventory/artifact_taxonomy.json",
+        "control/inventory/contract_migration_plan.json",
+        "control/inventory/contract_reference_graph.json",
+        "control/inventory/contract_risk_register.json",
+        "control/inventory/contract_taxonomy_inventory.json",
+        "control/inventory/r0_03b_1_migration_result.json",
+        "control/inventory/r0_03b_execution_plan.json",
+        "control/inventory/scaffold_to_runtime_map.json",
+        "control/policies/runtime_architecture_leakage_allowlist.json",
+        "control/schemas/tasks/query/probe_queue_item.v0.json",
+        "docs/architecture/QUERY_INTELLIGENCE_PLANE.md",
+        "docs/reference/PROBE_QUEUE_CONTRACT.md",
+        "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
+        "docs/reference/QUERY_OBSERVATION_CONTRACT.md",
+        "examples/view_models/need_page/work_unit_future_need_page_v0.json",
+        "scripts/validate_probe_queue_contract.py",
+        "tests/operations/test_probe_queue_contract.py",
+        "tests/scripts/test_validate_probe_queue_contract.py"
+      ],
+      "source_path": "contracts/query/probe_queue_item.v0.json",
+      "target_path": "control/schemas/tasks/query/probe_queue_item.v0.json"
+    }
+  ],
+  "non_product_contract_count": 16,
+  "product_contract_count": 260,
+  "schema_version": "r0_03b_2_product_contract_cleanup_result.v0",
+  "status": "pass_with_warnings",
+  "task": "R0-03B-2",
+  "task_named_contract_count": 2,
+  "unknown_contract_count": 3,
+  "warnings": [
+    "task/bundle-shaped product contract name needs later cleanup review: contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml",
+    "task/bundle-shaped product contract name needs later cleanup review: contracts/ui/view_models/bundle_inspection.view_model.yaml"
+  ]
+}

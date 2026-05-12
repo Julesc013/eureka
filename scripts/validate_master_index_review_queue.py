@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_QUEUE_ROOT = REPO_ROOT / "examples" / "master_index_review_queue" / "minimal_review_queue_v0"
 
 SCHEMA_FILES = [
-    REPO_ROOT / "contracts" / "master_index" / "review_queue_manifest.v0.json",
-    REPO_ROOT / "contracts" / "master_index" / "review_queue_entry.v0.json",
+    REPO_ROOT / "control" / "schemas" / "tasks" / "master_index" / "review_queue_manifest.v0.json",
+    REPO_ROOT / "control" / "schemas" / "tasks" / "master_index" / "review_queue_entry.v0.json",
     REPO_ROOT / "contracts" / "master_index" / "review_decision.v0.json",
 ]
 INVENTORY_FILES = [

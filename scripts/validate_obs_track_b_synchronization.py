@@ -126,6 +126,11 @@ TRACK_B_PREFIXES = (
     "runtime/",
 )
 
+HISTORICAL_PATH_ALIASES = {
+    "contracts/node/local_foundry_state.v0.json": "control/schemas/policies/node/local_foundry_state.v0.json",
+    "contracts/node/node_capability.v0.json": "control/schemas/policies/node/node_capability.v0.json",
+}
+
 FORBIDDEN_MATRIX_MARKERS = (
     "live source observed",
     "external observation performed",
@@ -315,7 +320,10 @@ def validate_mapping_payload(mapping: Mapping[str, Any], source: str, repo_root:
         errors.append(f"{source}: {mapping_id}: obs_artifact_ref missing {obs_ref}")
     dependency_ref = mapping.get("track_b_dependency_ref")
     if isinstance(dependency_ref, str) and not dependency_ref.endswith("_future") and not (repo_root / dependency_ref).exists():
-        errors.append(f"{source}: {mapping_id}: track_b_dependency_ref missing {dependency_ref}")
+        alias = HISTORICAL_PATH_ALIASES.get(dependency_ref)
+        historical_source = source.replace("\\", "/").startswith("control/audits/")
+        if not (historical_source and alias and (repo_root / alias).exists()):
+            errors.append(f"{source}: {mapping_id}: track_b_dependency_ref missing {dependency_ref}")
     errors.extend(_forbidden_text_errors(mapping, f"{source}: {mapping_id}"))
     return errors
 

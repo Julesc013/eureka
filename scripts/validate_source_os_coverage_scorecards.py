@@ -37,7 +37,7 @@ CONTRACTS = (
     "contracts/connectors/connector_scorecard.v0.json",
     "control/schemas/audits/connectors/connector_quality_delta.v0.json",
     "contracts/packs/source_pack_manifest.v0.json",
-    "contracts/packs/source_pack_export.v0.json",
+    "control/schemas/policies/packs/source_pack_export.v0.json",
 )
 INVENTORIES = (
     "control/inventory/sources/source_coverage_ledger_policy.json",

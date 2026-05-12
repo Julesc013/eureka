@@ -13,7 +13,7 @@ from pack_validator_examples import argument_error, format_all_examples, validat
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "index_packs" / "minimal_index_pack_v0"
-INDEX_PACK_SCHEMA = REPO_ROOT / "contracts" / "packs" / "index_pack.v0.json"
+INDEX_PACK_SCHEMA = REPO_ROOT / "control" / "schemas" / "policies" / "packs" / "index_pack.v0.json"
 
 REQUIRED_FILES = {
     "INDEX_PACK.json",
