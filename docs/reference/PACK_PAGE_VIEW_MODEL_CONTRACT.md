@@ -53,10 +53,10 @@ Current examples must keep these false or unavailable:
 
 - `contracts/views/pack_page.v0.json`
 - `control/inventory/publication/pack_page_view_model_policy.json`
-- `contracts/packs/source_pack.v0.json`
-- `contracts/packs/evidence_pack.v0.json`
-- `contracts/packs/index_pack.v0.json`
-- `contracts/packs/contribution_pack.v0.json`
+- `control/schemas/policies/packs/source_pack.v0.json`
+- `control/schemas/policies/packs/evidence_pack.v0.json`
+- `control/schemas/policies/packs/index_pack.v0.json`
+- `control/schemas/policies/packs/contribution_pack.v0.json`
 - `docs/reference/SOURCE_PACK_CONTRACT.md`
 - `docs/reference/EVIDENCE_PACK_CONTRACT.md`
 - `docs/reference/INDEX_PACK_CONTRACT.md`

@@ -28,11 +28,11 @@
   "policy_id": "h6.web_archive.integration_audit.policy.v0",
   "preferred_next_phase": "READY_FOR_H7_BUNDLE_01",
   "required_artifacts": [
-    "contracts/connectors/h6_web_archive_review_integration_result.v0.json",
-    "contracts/connectors/h6_web_archive_quality_delta_report.v0.json",
-    "contracts/connectors/h6_web_archive_connector_wave_postmortem.v0.json",
-    "contracts/connectors/h6_web_archive_integration_audit.v0.json",
-    "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_review_integration_result.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_quality_delta_report.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_connector_wave_postmortem.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+    "control/schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json",
     "runtime/connectors/h6_web_archive_news_event/review_integration.py",
     "runtime/connectors/h6_web_archive_news_event/quality_delta.py",
     "runtime/connectors/h6_web_archive_news_event/wave_postmortem.py"

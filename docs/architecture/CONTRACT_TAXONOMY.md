@@ -104,9 +104,9 @@ depends on it.
 
 Bad:
 
-- `contracts/connectors/h14_source_discovery_quality_delta_report.v0.json`
-- `contracts/connectors/h1_metadata_fixture_replay_result.v0.json`
-- `contracts/audits/local_mvp_next_task_decision.v0.json`
+- `control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json`
+- `control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json`
+- `control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json`
 
 Better:
 

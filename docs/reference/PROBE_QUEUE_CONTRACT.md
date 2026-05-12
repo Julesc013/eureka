@@ -16,7 +16,7 @@ local-index mutation, and no master-index mutation.
 
 ## Record Shape
 
-`contracts/query/probe_queue_item.v0.json` requires:
+`control/schemas/tasks/query/probe_queue_item.v0.json` requires:
 
 - `probe_identity`: non-reversible `sha256` fingerprint, public-safe canonical
   probe label, and normalized probe terms.

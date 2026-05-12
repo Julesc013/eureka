@@ -28,7 +28,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h7/connectors/library_research_quality_delta_report.v0.json",
     "control/schemas/audits/h7/connectors/library_research_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
-    "contracts/connectors/h7_library_research_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h7_library_research_review_integration_policy.json",
     "control/inventory/connectors/h7_library_research_review_output_policy.json",
     "control/inventory/connectors/h7_library_research_review_path_policy.json",

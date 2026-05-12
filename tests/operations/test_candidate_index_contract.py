@@ -54,7 +54,7 @@ class CandidateIndexContractAuditTests(unittest.TestCase):
             self.report["contract_file"],
             {
                 "control/schemas/previews/query/candidate_index_record.v0.json",
-                "contracts/query/candidate_index_record.v0.json",
+                "control/schemas/previews/query/candidate_index_record.v0.json",
             },
         )
         for key, value in self.report["no_truth_no_mutation_guarantees"].items():

@@ -99,7 +99,7 @@
         "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json"
       ],
       "contract_paths": [
-        "contracts/node/node_capability.v0.json"
+        "control/schemas/policies/node/node_capability.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/node_capability_registry.json",
@@ -223,7 +223,7 @@
         "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json"
       ],
       "contract_paths": [
-        "contracts/node/local_foundry_state.v0.json"
+        "control/schemas/policies/node/local_foundry_state.v0.json"
       ],
       "policy_paths": [
         "control/inventory/local_state/local_foundry_state_policy.json",
@@ -767,7 +767,7 @@
         "control/audits/track-b-18-local-review-queue-runtime-v0/track_b_18_report.json"
       ],
       "contract_paths": [
-        "contracts/master_index/review_queue_entry.v0.json",
+        "control/schemas/tasks/master_index/review_queue_entry.v0.json",
         "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md"
       ],
       "policy_paths": [
@@ -910,10 +910,10 @@
         "control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json"
       ],
       "contract_paths": [
-        "contracts/packs/source_pack.v0.json",
-        "contracts/packs/evidence_pack.v0.json",
-        "contracts/packs/index_pack.v0.json",
-        "contracts/packs/contribution_pack.v0.json"
+        "control/schemas/policies/packs/source_pack.v0.json",
+        "control/schemas/policies/packs/evidence_pack.v0.json",
+        "control/schemas/policies/packs/index_pack.v0.json",
+        "control/schemas/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_builder_runtime_policy.json",
@@ -963,10 +963,10 @@
         "control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json"
       ],
       "contract_paths": [
-        "contracts/packs/source_pack.v0.json",
-        "contracts/packs/evidence_pack.v0.json",
-        "contracts/packs/index_pack.v0.json",
-        "contracts/packs/contribution_pack.v0.json"
+        "control/schemas/policies/packs/source_pack.v0.json",
+        "control/schemas/policies/packs/evidence_pack.v0.json",
+        "control/schemas/policies/packs/index_pack.v0.json",
+        "control/schemas/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_export_runtime_policy.json",

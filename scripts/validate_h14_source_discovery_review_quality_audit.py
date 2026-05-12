@@ -30,7 +30,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json",
     "control/schemas/audits/h14/connectors/source_discovery_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
-    "contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h14_source_discovery_review_integration_policy.json",
     "control/inventory/connectors/h14_source_discovery_review_output_policy.json",
     "control/inventory/connectors/h14_source_discovery_review_path_policy.json",

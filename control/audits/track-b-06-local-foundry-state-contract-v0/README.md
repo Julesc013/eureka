@@ -8,7 +8,7 @@ without treating those outputs as truth.
 
 ## Added
 
-- `contracts/node/local_foundry_state.v0.json`
+- `control/schemas/policies/node/local_foundry_state.v0.json`
 - local foundry state policy, kind, path, privacy, export, and reset
   inventories
 - five compact Local Foundry State examples

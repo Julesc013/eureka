@@ -28,7 +28,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h10/connectors/games_emulation_quality_delta_report.v0.json",
     "control/schemas/audits/h10/connectors/games_emulation_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
-    "contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h10_games_emulation_review_integration_policy.json",
     "control/inventory/connectors/h10_games_emulation_review_output_policy.json",
     "control/inventory/connectors/h10_games_emulation_review_path_policy.json",

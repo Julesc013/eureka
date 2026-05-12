@@ -147,7 +147,7 @@ def validate_probe_queue_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/query/probe_queue_item.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "control/schemas/tasks/query/probe_queue_item.v0.json")
     if contract:
         _validate_contract_schema(contract, errors)
 
@@ -178,7 +178,7 @@ def validate_probe_queue_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "probe_queue_contract_validator_v0",
-        "contract_file": "contracts/query/probe_queue_item.v0.json",
+        "contract_file": "control/schemas/tasks/query/probe_queue_item.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -296,8 +296,8 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
         return
     if report.get("report_id") != "probe_queue_v0":
         errors.append("report_id must be probe_queue_v0.")
-    if report.get("contract_file") != "contracts/query/probe_queue_item.v0.json":
-        errors.append("report contract_file must point to contracts/query/probe_queue_item.v0.json.")
+    if report.get("contract_file") != "control/schemas/tasks/query/probe_queue_item.v0.json":
+        errors.append("report contract_file must point to control/schemas/tasks/query/probe_queue_item.v0.json.")
     hard = report.get("no_execution_no_mutation_guarantees")
     if not isinstance(hard, Mapping):
         errors.append("report no_execution_no_mutation_guarantees must be present.")

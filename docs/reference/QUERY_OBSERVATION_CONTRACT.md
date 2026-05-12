@@ -85,7 +85,7 @@ probe enqueueing, candidate mutation, or master-index mutation.
 
 ## Relation To Probe Queue
 
-P63 adds `contracts/query/probe_queue_item.v0.json` as the contract-only future
+P63 adds `control/schemas/tasks/query/probe_queue_item.v0.json` as the contract-only future
 work-request layer. Query observations may be referenced by later probe queue
 items only after privacy filtering and review. P63 adds no runtime probe queue,
 probe execution, source cache mutation, evidence ledger mutation,

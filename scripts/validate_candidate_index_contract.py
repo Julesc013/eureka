@@ -314,10 +314,10 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
         errors.append("report_id must be candidate_index_v0.")
     if report.get("contract_file") not in {
         "control/schemas/previews/query/candidate_index_record.v0.json",
-        "contracts/query/candidate_index_record.v0.json",
+        "control/schemas/previews/query/candidate_index_record.v0.json",
     }:
         errors.append("report contract_file must point to the candidate index schema path.")
-    elif report.get("contract_file") == "contracts/query/candidate_index_record.v0.json":
+    elif report.get("contract_file") == "control/schemas/previews/query/candidate_index_record.v0.json":
         warnings.append("P64 historical audit report still records the pre-R0-03B-1 contract path.")
     hard = report.get("no_truth_no_mutation_guarantees")
     if not isinstance(hard, Mapping):

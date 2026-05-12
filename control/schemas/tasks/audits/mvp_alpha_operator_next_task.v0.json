@@ -1,0 +1,46 @@
+{
+  "$id": "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "decision_ref": {
+      "type": "string"
+    },
+    "next_task_allowed": {
+      "type": "boolean"
+    },
+    "next_task_forbidden_actions": {
+      "type": "array"
+    },
+    "next_task_id": {
+      "type": "string"
+    },
+    "next_task_record_id": {
+      "type": "string"
+    },
+    "next_task_title": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "preconditions": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mvp_alpha_operator_next_task.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "next_task_record_id",
+    "decision_ref",
+    "next_task_id",
+    "next_task_title",
+    "next_task_allowed",
+    "next_task_forbidden_actions",
+    "preconditions"
+  ],
+  "title": "Eureka MVP Alpha Operator Next Task v0",
+  "type": "object"
+}

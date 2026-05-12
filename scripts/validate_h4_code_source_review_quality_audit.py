@@ -28,7 +28,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h4/connectors/code_source_quality_delta_report.v0.json",
     "control/schemas/audits/h4/connectors/code_source_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
-    "contracts/connectors/h4_code_source_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h4_code_source_review_integration_policy.json",
     "control/inventory/connectors/h4_code_source_review_output_policy.json",
     "control/inventory/connectors/h4_code_source_review_path_policy.json",

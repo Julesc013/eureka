@@ -30,7 +30,7 @@ REQUIRED_JSON = (
     "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
     "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
     "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
-    "contracts/connectors/h3_os_package_next_phase_recommendation.v0.json",
+    "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h3_os_package_review_integration_policy.json",
     "control/inventory/connectors/h3_os_package_review_output_policy.json",
     "control/inventory/connectors/h3_os_package_review_path_policy.json",
