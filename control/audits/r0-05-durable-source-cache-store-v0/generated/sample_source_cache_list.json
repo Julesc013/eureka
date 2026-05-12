@@ -1,0 +1,11 @@
+[
+  {
+    "entry_id": "sce_22596cca8e4b42f5",
+    "source_id": "source.example.metadata",
+    "source_family": "package_registry",
+    "status": "cached",
+    "response_id": "res_980e849c8125dea1",
+    "observation_id": "obs_87a54eb707e10042",
+    "normalized_observation_id": "norm_8228e286ae6a1b25"
+  }
+]

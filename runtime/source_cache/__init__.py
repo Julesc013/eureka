@@ -16,11 +16,26 @@ from runtime.source_cache.models import (
     SourceCacheDryRunError,
     SourceCacheDryRunReport,
 )
+from runtime.source_cache.records import (
+    SourceCacheEntry,
+    SourceCacheRead,
+    SourceCacheStatus,
+    SourceCacheSummary,
+    SourceCacheWrite,
+)
+from runtime.source_cache.store import SourceCacheStore, build_cache_entry
 
 __all__ = [
     "SourceCacheCandidateSummary",
     "SourceCacheDryRunError",
     "SourceCacheDryRunReport",
+    "SourceCacheEntry",
+    "SourceCacheRead",
+    "SourceCacheStatus",
+    "SourceCacheStore",
+    "SourceCacheSummary",
+    "SourceCacheWrite",
+    "build_cache_entry",
     "classify_candidate",
     "discover_candidates",
     "load_candidate",

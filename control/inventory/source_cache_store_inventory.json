@@ -1,0 +1,46 @@
+{
+  "schema_version": "source_cache_store_inventory.v0",
+  "task": "R0-05",
+  "runtime_package": "runtime/source_cache",
+  "public_api": [
+    "SourceCacheStore",
+    "SourceCacheEntry",
+    "SourceCacheStatus",
+    "SourceCacheWrite",
+    "SourceCacheRead",
+    "SourceCacheSummary",
+    "SourceCacheMigration",
+    "build_cache_entry"
+  ],
+  "contracts": [
+    "contracts/stores/source_cache_store.v0.json",
+    "contracts/stores/source_cache_entry.v0.json",
+    "contracts/stores/source_cache_migration.v0.json",
+    "contracts/stores/source_cache_status.v0.json"
+  ],
+  "tests": [
+    "tests/runtime/test_source_cache_store.py",
+    "tests/runtime/test_source_cache_migrations.py",
+    "tests/runtime/test_source_cache_integration.py"
+  ],
+  "scripts": [
+    "scripts/init_source_cache_store.py",
+    "scripts/demo_source_cache_store.py",
+    "scripts/validate_source_cache_store.py"
+  ],
+  "sqlite_tables": [
+    "source_cache_meta",
+    "source_cache_migrations",
+    "source_records",
+    "metadata_responses",
+    "source_observations",
+    "normalized_observations",
+    "cache_entries"
+  ],
+  "network_dependencies": 0,
+  "h_series_dependencies": 0,
+  "evidence_ledger_writes_enabled": false,
+  "review_queue_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "ready_for_r0_06": true
+}

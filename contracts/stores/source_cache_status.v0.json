@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/source_cache_status.v0.json",
+  "title": "SourceCacheStatus",
+  "type": "string",
+  "enum": [
+    "cached",
+    "stale",
+    "superseded",
+    "blocked",
+    "invalid",
+    "not_evaluable"
+  ]
+}

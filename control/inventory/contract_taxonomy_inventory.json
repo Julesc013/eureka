@@ -1,5 +1,5 @@
 {
-  "contract_count": 615,
+  "contract_count": 619,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -7402,6 +7402,86 @@
       ],
       "target_path": "contracts/connectors/source_trust_lane.v0.json",
       "target_root": "contracts/connectors/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/source_cache_entry.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/source_cache_entry.v0.json",
+        "scripts/validate_source_cache_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1390",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/source_cache_entry.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/source_cache_migration.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/source_cache_migration.v0.json",
+        "scripts/validate_source_cache_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:498",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/source_cache_migration.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/source_cache_status.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/source_cache_status.v0.json",
+        "scripts/validate_source_cache_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:306",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/source_cache_status.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/source_cache_store.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/source_cache_store.v0.json",
+        "scripts/validate_source_cache_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1475",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/source_cache_store.v0.json",
+      "target_root": "contracts/stores/"
     },
     {
       "contract_class": "public_api_contract",
@@ -19450,7 +19530,7 @@
       "audit_schema": 88,
       "connector_interface_contract": 21,
       "control_schema": 31,
-      "durable_store_contract": 7,
+      "durable_store_contract": 11,
       "fixture_schema": 32,
       "native_contract": 15,
       "preview_schema": 171,
@@ -19465,11 +19545,11 @@
     "maturity": {
       "control_schema_candidate": 312,
       "placeholder": 18,
-      "stable_boundary_candidate": 285
+      "stable_boundary_candidate": 289
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 385,
+      "keep": 389,
       "move": 216,
       "move_and_rename": 11
     }

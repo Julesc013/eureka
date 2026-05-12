@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-05-12T00:00:02Z",
+  "entry_id": "sce_22596cca8e4b42f5",
+  "limitations": [
+    "no durable evidence write",
+    "no live request",
+    "synthetic payload only",
+    "metadata remains a cached candidate"
+  ],
+  "normalized_observation_id": "norm_8228e286ae6a1b25",
+  "observation_id": "obs_87a54eb707e10042",
+  "payload": {
+    "source_id": "source.example.metadata",
+    "source_family": "package_registry",
+    "observation_kind": "json"
+  },
+  "request_id": "req_76d2b42881543ac3",
+  "response_fingerprint": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97",
+  "response_id": "res_980e849c8125dea1",
+  "source_family": "package_registry",
+  "source_id": "source.example.metadata",
+  "status": "cached",
+  "trust_lane": "synthetic",
+  "updated_at": "2026-05-12T00:00:02Z",
+  "warnings": []
+}
