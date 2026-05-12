@@ -371,6 +371,10 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
     if any(token in name for token in ("quality_delta", "integration_audit", "postmortem", "readiness_audit", "smoke_report", "audit", "signoff", "operator_review", "review_integration_result", "report")):
         signals.append("audit_schema_signal")
         return "audit_schema"
+    if lowered.startswith("contracts/runtime/") and name in {"evidence_candidate.v0.json"}:
+        signals.append("runtime_contract_path")
+        signals.append("candidate_named_product_contract_exception")
+        return "product_runtime_contract"
     if any(token in name for token in ("preview", "candidate", "output_bundle", "normalized_record")):
         signals.append("preview_schema_signal")
         return "preview_schema"

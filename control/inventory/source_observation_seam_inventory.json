@@ -1,0 +1,46 @@
+{
+  "schema_version": "source_observation_seam_inventory.v0",
+  "task": "R0-04",
+  "runtime_package": "runtime/source_observation",
+  "public_api": [
+    "SourceId",
+    "SourceRecord",
+    "SourceCapability",
+    "SourceLocator",
+    "SourcePolicy",
+    "PolicyDecision",
+    "PolicyDecisionStatus",
+    "MetadataRequest",
+    "MetadataResponse",
+    "ResponseFingerprint",
+    "SourceObservation",
+    "NormalizedObservation",
+    "EvidenceCandidate",
+    "ReviewItem",
+    "ReviewStatus",
+    "ConnectorHealth"
+  ],
+  "contracts": [
+    "contracts/domain/source_record.v0.json",
+    "contracts/domain/source_policy.v0.json",
+    "contracts/runtime/metadata_request.v0.json",
+    "contracts/runtime/metadata_response.v0.json",
+    "contracts/runtime/source_observation.v0.json",
+    "contracts/runtime/normalized_observation.v0.json",
+    "contracts/runtime/evidence_candidate.v0.json",
+    "contracts/runtime/review_item.v0.json",
+    "contracts/runtime/connector_health.v0.json"
+  ],
+  "tests": [
+    "tests/runtime/test_source_observation_seam.py",
+    "tests/runtime/test_source_observation_policy.py",
+    "tests/runtime/test_source_observation_validation.py"
+  ],
+  "demo_script": "scripts/demo_source_observation_seam.py",
+  "forbidden_vocabulary_found": 0,
+  "h_series_dependencies": 0,
+  "network_dependencies": 0,
+  "durable_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "ready_for_r0_05": true
+}

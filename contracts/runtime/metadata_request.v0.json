@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/metadata_request.v0.json",
+  "title": "MetadataRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "source_id", "request_kind", "target", "requested_operation", "parameters", "created_at"],
+  "properties": {
+    "request_id": {"type": "string", "pattern": "^req_[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "request_kind": {"type": "string", "minLength": 1},
+    "target": {"type": "string", "minLength": 1},
+    "requested_operation": {"type": "string", "minLength": 1},
+    "parameters": {"type": "object"},
+    "created_at": {"type": "string"}
+  }
+}

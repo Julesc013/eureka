@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/metadata_response.v0.json",
+  "title": "MetadataResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "response_id",
+    "request_id",
+    "source_id",
+    "status",
+    "payload_format",
+    "payload",
+    "fingerprint",
+    "observed_at",
+    "warnings",
+    "limitations"
+  ],
+  "properties": {
+    "response_id": {"type": "string", "pattern": "^res_[a-f0-9]{16}$"},
+    "request_id": {"type": "string"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "status": {"type": "string"},
+    "payload_format": {"type": "string"},
+    "payload": {"type": "string"},
+    "fingerprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    },
+    "observed_at": {"type": "string"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

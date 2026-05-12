@@ -1,0 +1,176 @@
+{
+  "evidence_candidate": {
+    "accepted": false,
+    "candidate_id": "evc_6c5e8a6fd6024c63",
+    "claim": {
+      "fields": {
+        "name": "demo-project",
+        "summary": "Synthetic metadata for seam validation",
+        "version": "1.0.0"
+      },
+      "source_family": "package_registry"
+    },
+    "confidence": 0.7,
+    "evidence_kind": "metadata",
+    "limitations": [
+      "no durable write",
+      "no live request",
+      "synthetic payload only",
+      "metadata is a candidate until review"
+    ],
+    "observation_id": "obs_99ca6c58a065e371",
+    "source_id": "source.example.metadata",
+    "warnings": []
+  },
+  "metadata_request": {
+    "created_at": "2026-05-12T00:00:00Z",
+    "parameters": {
+      "name": "demo-project"
+    },
+    "request_id": "req_76d2b42881543ac3",
+    "request_kind": "package_metadata",
+    "requested_operation": "metadata_observation",
+    "source_id": "source.example.metadata",
+    "target": "demo-project"
+  },
+  "metadata_response": {
+    "fingerprint": {
+      "algorithm": "sha256",
+      "value": "8646a9876443b876eb7cd773435fdfb3785e1173db8d26ac0493467212919a31"
+    },
+    "limitations": [
+      "synthetic payload only"
+    ],
+    "observed_at": "2026-05-12T00:00:01Z",
+    "payload": "{\"name\":\"demo-project\",\"summary\":\"Synthetic metadata for seam validation\",\"version\":\"1.0.0\"}",
+    "payload_format": "json",
+    "request_id": "req_76d2b42881543ac3",
+    "response_id": "res_440f7b18e9b48acc",
+    "source_id": "source.example.metadata",
+    "status": "observed",
+    "warnings": []
+  },
+  "normalized_observation": {
+    "confidence": 0.7,
+    "limitations": [
+      "no durable write",
+      "no live request",
+      "synthetic payload only",
+      "metadata is a candidate until review"
+    ],
+    "normalized_fields": {
+      "name": "demo-project",
+      "summary": "Synthetic metadata for seam validation",
+      "version": "1.0.0"
+    },
+    "normalized_observation_id": "norm_3711511409c57cce",
+    "observation_id": "obs_99ca6c58a065e371",
+    "source_family": "package_registry",
+    "source_id": "source.example.metadata",
+    "warnings": []
+  },
+  "policy": {
+    "allowed_operations": [
+      "metadata_observation"
+    ],
+    "blocked_operations": [
+      "live_network_request",
+      "source_sync",
+      "download",
+      "upload",
+      "execution",
+      "private_source_access",
+      "registry_mutation",
+      "public_index_write"
+    ],
+    "limitations": [
+      "metadata is a candidate until review"
+    ],
+    "required_trust_lanes": [],
+    "review_operations": []
+  },
+  "policy_decision": {
+    "limitations": [
+      "metadata is a candidate until review"
+    ],
+    "reason": "operation is allowed for metadata observation",
+    "requested_operation": "metadata_observation",
+    "source_id": "source.example.metadata",
+    "status": "allowed"
+  },
+  "review_item": {
+    "candidate_id": "evc_6c5e8a6fd6024c63",
+    "decision": null,
+    "limitations": [
+      "no durable write",
+      "no live request",
+      "synthetic payload only",
+      "metadata is a candidate until review"
+    ],
+    "review_item_id": "rev_b5affef88b7c8840",
+    "review_status": "needs_review",
+    "source_id": "source.example.metadata",
+    "summary": "metadata evidence candidate requires review",
+    "warnings": []
+  },
+  "source_observation": {
+    "confidence": 0.7,
+    "limitations": [
+      "no durable write",
+      "no live request",
+      "synthetic payload only",
+      "metadata is a candidate until review"
+    ],
+    "observation_id": "obs_99ca6c58a065e371",
+    "observation_kind": "json",
+    "observed_fields": {
+      "name": "demo-project",
+      "summary": "Synthetic metadata for seam validation",
+      "version": "1.0.0"
+    },
+    "request_id": "req_76d2b42881543ac3",
+    "response_fingerprint": {
+      "algorithm": "sha256",
+      "value": "8646a9876443b876eb7cd773435fdfb3785e1173db8d26ac0493467212919a31"
+    },
+    "response_id": "res_440f7b18e9b48acc",
+    "source_id": "source.example.metadata",
+    "warnings": []
+  },
+  "source_record": {
+    "capabilities": [
+      {
+        "limitations": [
+          "synthetic payload only"
+        ],
+        "name": "metadata_observation",
+        "operations": [
+          "metadata_observation"
+        ]
+      }
+    ],
+    "id": "source.example.metadata",
+    "label": "Synthetic package metadata source",
+    "limitations": [
+      "no durable write",
+      "no live request"
+    ],
+    "locators": [
+      {
+        "kind": "synthetic",
+        "label": "demo-project",
+        "metadata": {},
+        "value": "package/demo-project"
+      }
+    ],
+    "metadata": {
+      "owner": "repo"
+    },
+    "source_family": "package_registry",
+    "trust_lane": "synthetic"
+  },
+  "writes_enabled": {
+    "durable_store": false,
+    "public_index": false
+  }
+}

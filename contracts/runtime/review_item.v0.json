@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/review_item.v0.json",
+  "title": "ReviewItem",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_item_id",
+    "candidate_id",
+    "source_id",
+    "review_status",
+    "summary",
+    "decision",
+    "limitations",
+    "warnings"
+  ],
+  "properties": {
+    "review_item_id": {"type": "string", "pattern": "^rev_[a-f0-9]{16}$"},
+    "candidate_id": {"type": "string"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "review_status": {
+      "type": "string",
+      "enum": ["candidate", "needs_review", "accepted", "rejected", "blocked", "superseded"]
+    },
+    "summary": {"type": "string"},
+    "decision": {"type": ["string", "null"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}
