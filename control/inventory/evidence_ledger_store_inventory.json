@@ -1,0 +1,49 @@
+{
+  "schema_version": "evidence_ledger_store_inventory.v0",
+  "task": "R0-06",
+  "runtime_package": "runtime/evidence_ledger",
+  "public_api": [
+    "EvidenceLedgerStore",
+    "EvidenceCandidateRecord",
+    "EvidenceEvent",
+    "EvidenceEventKind",
+    "EvidenceConflict",
+    "EvidenceReviewStatus",
+    "EvidenceLedgerSummary",
+    "EvidenceLedgerMigration"
+  ],
+  "contracts": [
+    "contracts/stores/evidence_ledger_store.v0.json",
+    "contracts/stores/evidence_candidate_record.v0.json",
+    "contracts/stores/evidence_event.v0.json",
+    "contracts/stores/evidence_conflict.v0.json",
+    "contracts/stores/evidence_review_status.v0.json",
+    "contracts/stores/evidence_ledger_migration.v0.json"
+  ],
+  "tests": [
+    "tests/runtime/test_evidence_ledger_store.py",
+    "tests/runtime/test_evidence_ledger_migrations.py",
+    "tests/runtime/test_evidence_ledger_integration.py"
+  ],
+  "scripts": [
+    "scripts/init_evidence_ledger_store.py",
+    "scripts/demo_evidence_ledger_store.py",
+    "scripts/validate_evidence_ledger_store.py"
+  ],
+  "sqlite_tables": [
+    "evidence_ledger_meta",
+    "evidence_ledger_migrations",
+    "evidence_candidates",
+    "evidence_events",
+    "evidence_source_cache_links",
+    "evidence_conflicts",
+    "evidence_review_status"
+  ],
+  "network_dependencies": 0,
+  "h_series_dependencies": 0,
+  "source_cache_linking_enabled": true,
+  "review_queue_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "master_index_writes_enabled": false,
+  "ready_for_r0_07": true
+}

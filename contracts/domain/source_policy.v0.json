@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/domain/source_policy.v0.json",
+  "title": "SourcePolicy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["allowed_operations", "blocked_operations", "review_operations", "required_trust_lanes", "limitations"],
+  "properties": {
+    "allowed_operations": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "blocked_operations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "live_network_request",
+          "source_sync",
+          "download",
+          "upload",
+          "execution",
+          "private_source_access",
+          "registry_mutation",
+          "public_index_write"
+        ]
+      }
+    },
+    "review_operations": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "required_trust_lanes": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

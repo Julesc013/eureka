@@ -1,0 +1,52 @@
+{
+  "schema_version": "review_queue_store_inventory.v0",
+  "task": "R0-07",
+  "runtime_package": "runtime/review_queue",
+  "public_api": [
+    "ReviewQueueStore",
+    "ReviewItemRecord",
+    "ReviewDecision",
+    "ReviewEvent",
+    "ReviewQueueStatus",
+    "ReviewQueueSummary",
+    "validate_review_queue_path",
+    "validate_review_item_record",
+    "validate_review_decision",
+    "validate_review_event"
+  ],
+  "contracts": [
+    "contracts/stores/review_queue_store.v0.json",
+    "contracts/stores/review_item_record.v0.json",
+    "contracts/stores/review_decision.v0.json",
+    "contracts/stores/review_event.v0.json",
+    "contracts/stores/review_queue_status.v0.json",
+    "contracts/stores/review_queue_migration.v0.json"
+  ],
+  "tests": [
+    "tests/runtime/test_review_queue_store.py",
+    "tests/runtime/test_review_queue_migrations.py",
+    "tests/runtime/test_review_queue_integration.py"
+  ],
+  "scripts": [
+    "scripts/init_review_queue_store.py",
+    "scripts/demo_review_queue_store.py",
+    "scripts/validate_review_queue_store.py"
+  ],
+  "sqlite_tables": [
+    "review_queue_meta",
+    "review_queue_migrations",
+    "review_items",
+    "review_events",
+    "review_evidence_links",
+    "review_source_cache_links",
+    "review_decisions"
+  ],
+  "network_dependencies": 0,
+  "h_series_dependencies": 0,
+  "evidence_ledger_linking_enabled": true,
+  "source_cache_linking_enabled": true,
+  "explicit_review_decisions_enabled": true,
+  "public_index_writes_enabled": false,
+  "master_index_writes_enabled": false,
+  "ready_for_r0_08": true
+}

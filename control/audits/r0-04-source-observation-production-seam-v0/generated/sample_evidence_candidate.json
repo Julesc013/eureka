@@ -1,0 +1,23 @@
+{
+  "accepted": false,
+  "candidate_id": "evc_6c5e8a6fd6024c63",
+  "claim": {
+    "fields": {
+      "name": "demo-project",
+      "summary": "Synthetic metadata for seam validation",
+      "version": "1.0.0"
+    },
+    "source_family": "package_registry"
+  },
+  "confidence": 0.7,
+  "evidence_kind": "metadata",
+  "limitations": [
+    "no durable write",
+    "no live request",
+    "synthetic payload only",
+    "metadata is a candidate until review"
+  ],
+  "observation_id": "obs_99ca6c58a065e371",
+  "source_id": "source.example.metadata",
+  "warnings": []
+}

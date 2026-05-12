@@ -1,0 +1,19 @@
+{
+  "confidence": 0.7,
+  "limitations": [
+    "no durable write",
+    "no live request",
+    "synthetic payload only",
+    "metadata is a candidate until review"
+  ],
+  "normalized_fields": {
+    "name": "demo-project",
+    "summary": "Synthetic metadata for seam validation",
+    "version": "1.0.0"
+  },
+  "normalized_observation_id": "norm_3711511409c57cce",
+  "observation_id": "obs_99ca6c58a065e371",
+  "source_family": "package_registry",
+  "source_id": "source.example.metadata",
+  "warnings": []
+}

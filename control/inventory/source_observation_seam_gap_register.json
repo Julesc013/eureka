@@ -1,0 +1,27 @@
+{
+  "schema_version": "source_observation_seam_gap_register.v0",
+  "task": "R0-04",
+  "gaps": [
+    {
+      "gap_id": "R0-OBS-GAP-001",
+      "severity": "medium",
+      "area": "source_cache",
+      "finding": "The seam emits serializable observation objects but does not persist them.",
+      "recommended_next_task": "R0-05 \u2014 Durable source cache store"
+    },
+    {
+      "gap_id": "R0-OBS-GAP-002",
+      "severity": "medium",
+      "area": "evidence_ledger",
+      "finding": "Evidence candidates remain in memory and are not append-only durable records.",
+      "recommended_next_task": "R0-06 \u2014 Durable evidence ledger store"
+    },
+    {
+      "gap_id": "R0-OBS-GAP-003",
+      "severity": "low",
+      "area": "contract_taxonomy",
+      "finding": "R0-03B-2 still records unresolved legacy contract taxonomy debt.",
+      "recommended_next_task": "R0-03C \u2014 Resolve remaining contract taxonomy blockers"
+    }
+  ]
+}

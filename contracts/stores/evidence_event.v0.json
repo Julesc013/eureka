@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_event.v0.json",
+  "title": "Evidence Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "evidence_id",
+    "event_kind",
+    "event_payload",
+    "created_at"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_kind": {
+      "type": "string",
+      "enum": [
+        "candidate_created",
+        "source_cache_linked",
+        "normalized_observation_linked",
+        "conflict_detected",
+        "review_requested",
+        "review_status_changed",
+        "superseded",
+        "blocked",
+        "note_added"
+      ]
+    },
+    "event_payload": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

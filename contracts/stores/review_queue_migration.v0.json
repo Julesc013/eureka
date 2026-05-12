@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/review_queue_migration.v0.json",
+  "title": "Review Queue Migration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "migration_id",
+    "version",
+    "checksum",
+    "statement_count"
+  ],
+  "properties": {
+    "migration_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "const": "review_queue_store.v0"
+    },
+    "checksum": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statement_count": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

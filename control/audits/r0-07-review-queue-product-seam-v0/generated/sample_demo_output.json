@@ -1,0 +1,337 @@
+{
+  "automatic_acceptance_enabled": false,
+  "evidence_candidate_record": {
+    "claim_kind": "metadata",
+    "claim_payload": {
+      "fields": {
+        "name": "demo-project",
+        "summary": "Synthetic metadata for source cache validation",
+        "version": "1.0.0"
+      },
+      "source_family": "package_registry"
+    },
+    "claim_subject": "source.example.metadata",
+    "created_at": "2026-05-12T07:12:11Z",
+    "evidence_id": "evc_539adc078a70acf6",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "normalized_observation_id": "norm_8228e286ae6a1b25",
+    "observation_id": "obs_87a54eb707e10042",
+    "source_cache_entry_id": "sce_22596cca8e4b42f5",
+    "source_id": "source.example.metadata",
+    "status": "candidate",
+    "updated_at": "2026-05-12T07:12:11Z",
+    "warnings": []
+  },
+  "integrity": {
+    "applied_migrations": [
+      {
+        "applied_at": "2026-05-12T07:12:09Z",
+        "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+        "id": "001_initial_review_queue_store",
+        "version": "review_queue_store.v0"
+      }
+    ],
+    "missing_tables": [],
+    "schema_version": "review_queue_store.v0",
+    "sqlite_integrity": "ok",
+    "status": "pass"
+  },
+  "master_index_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "review_decisions": [
+    {
+      "created_at": "2026-05-12T07:12:12Z",
+      "decision_actor": "operator:local",
+      "decision_id": "rvd_96f9020b75f04aa891c5a1e777ae1bbe",
+      "decision_kind": "accept",
+      "decision_status": "accepted",
+      "limitations": [
+        "local review state only"
+      ],
+      "payload": {
+        "scope": "local_review_flow"
+      },
+      "reason": null,
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    }
+  ],
+  "review_events": [
+    {
+      "created_at": "2026-05-12T07:12:12Z",
+      "event_id": "rve_b2522cf897b249c8b78cf59c36e3d4e7",
+      "event_kind": "item_created",
+      "event_payload": {
+        "status": "needs_review",
+        "subject_kind": "evidence_candidate"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T07:12:12Z",
+      "event_id": "rve_b80f84ff034c412bb80758c5fd0fbb61",
+      "event_kind": "evidence_linked",
+      "event_payload": {
+        "evidence_id": "evc_539adc078a70acf6"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T07:12:13Z",
+      "event_id": "rve_eaad51ca5c2348ffbf03442b0ecfc556",
+      "event_kind": "source_cache_linked",
+      "event_payload": {
+        "source_cache_entry_id": "sce_22596cca8e4b42f5"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T07:12:13Z",
+      "event_id": "rve_0353a630d1334eddbefe9650a60db541",
+      "event_kind": "note_added",
+      "event_payload": {
+        "note": "synthetic durable review queue demonstration"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T07:12:14Z",
+      "event_id": "rve_8ae9904bf15c4f9d9e772c039f1d4ca4",
+      "event_kind": "decision_recorded",
+      "event_payload": {
+        "decision_id": "rvd_96f9020b75f04aa891c5a1e777ae1bbe",
+        "decision_kind": "accept",
+        "decision_status": "accepted"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T07:12:14Z",
+      "event_id": "rve_3ce91a32716a40e394d1036b34d0ebe3",
+      "event_kind": "status_changed",
+      "event_payload": {
+        "from": "needs_review",
+        "to": "accepted"
+      },
+      "limitations": [],
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "warnings": []
+    }
+  ],
+  "review_item": {
+    "created_at": "2026-05-12T07:12:12Z",
+    "evidence_id": "evc_539adc078a70acf6",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "payload": {
+      "claim_kind": "metadata",
+      "claim_payload": {
+        "fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "source_family": "package_registry"
+      },
+      "claim_subject": "source.example.metadata"
+    },
+    "priority": 100,
+    "queue_status": "accepted",
+    "review_item_id": "rvi_541cb4884ea5f047",
+    "source_cache_entry_id": "sce_22596cca8e4b42f5",
+    "subject_id": "evc_539adc078a70acf6",
+    "subject_kind": "evidence_candidate",
+    "summary": "review evidence candidate evc_539adc078a70acf6",
+    "updated_at": "2026-05-12T07:12:14Z",
+    "warnings": []
+  },
+  "review_items": [
+    {
+      "created_at": "2026-05-12T07:12:12Z",
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate"
+      ],
+      "payload": {
+        "claim_kind": "metadata",
+        "claim_payload": {
+          "fields": {
+            "name": "demo-project",
+            "summary": "Synthetic metadata for source cache validation",
+            "version": "1.0.0"
+          },
+          "source_family": "package_registry"
+        },
+        "claim_subject": "source.example.metadata"
+      },
+      "priority": 100,
+      "queue_status": "accepted",
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "source_cache_entry_id": "sce_22596cca8e4b42f5",
+      "subject_id": "evc_539adc078a70acf6",
+      "subject_kind": "evidence_candidate",
+      "summary": "review evidence candidate evc_539adc078a70acf6",
+      "updated_at": "2026-05-12T07:12:14Z",
+      "warnings": []
+    }
+  ],
+  "schema_version": "review_queue_demo_output.v0",
+  "source_cache_entry": {
+    "created_at": "2026-05-12T07:12:11Z",
+    "entry_id": "sce_22596cca8e4b42f5",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "normalized_observation_id": "norm_8228e286ae6a1b25",
+    "observation_id": "obs_87a54eb707e10042",
+    "payload": {
+      "metadata_response": {
+        "fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "limitations": [
+          "synthetic payload only"
+        ],
+        "observed_at": "2026-05-12T00:00:01Z",
+        "payload": "{\"name\":\"demo-project\",\"summary\":\"Synthetic metadata for source cache validation\",\"version\":\"1.0.0\"}",
+        "payload_format": "json",
+        "request_id": "req_76d2b42881543ac3",
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "status": "observed",
+        "warnings": []
+      },
+      "normalized_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "normalized_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "normalized_observation_id": "norm_8228e286ae6a1b25",
+        "observation_id": "obs_87a54eb707e10042",
+        "source_family": "package_registry",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "observation_id": "obs_87a54eb707e10042",
+        "observation_kind": "json",
+        "observed_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "request_id": "req_76d2b42881543ac3",
+        "response_fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_record": {
+        "capabilities": [
+          {
+            "limitations": [
+              "synthetic payload only"
+            ],
+            "name": "metadata_observation",
+            "operations": [
+              "metadata_observation"
+            ]
+          }
+        ],
+        "id": "source.example.metadata",
+        "label": "Synthetic package metadata source",
+        "limitations": [
+          "no durable evidence write",
+          "no live request"
+        ],
+        "locators": [
+          {
+            "kind": "synthetic",
+            "label": "demo-project",
+            "metadata": {},
+            "value": "package/demo-project"
+          }
+        ],
+        "metadata": {
+          "owner": "repo"
+        },
+        "source_family": "package_registry",
+        "trust_lane": "synthetic"
+      }
+    },
+    "request_id": "req_76d2b42881543ac3",
+    "response_fingerprint": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97",
+    "response_id": "res_980e849c8125dea1",
+    "source_family": "package_registry",
+    "source_id": "source.example.metadata",
+    "status": "cached",
+    "trust_lane": "synthetic",
+    "updated_at": "2026-05-12T07:12:11Z",
+    "warnings": []
+  },
+  "status": "pass",
+  "summary": {
+    "decision_count": 1,
+    "evidence_link_count": 1,
+    "review_event_count": 6,
+    "review_item_count": 1,
+    "source_cache_link_count": 1,
+    "status_counts": {
+      "accepted": 1
+    },
+    "subject_kind_counts": {
+      "evidence_candidate": 1
+    }
+  }
+}

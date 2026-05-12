@@ -1,0 +1,13 @@
+{
+  "schema_version": "review_queue_store_gap_register.v0",
+  "task": "R0-07",
+  "gaps": [
+    {
+      "gap_id": "R0-REVIEW-GAP-001",
+      "severity": "high",
+      "area": "reviewed_public_index",
+      "finding": "Review decisions are durable local state, but no reviewed public index rebuild exists yet.",
+      "recommended_next_task": "R0-08 \u2014 Reviewed public index rebuild"
+    }
+  ]
+}

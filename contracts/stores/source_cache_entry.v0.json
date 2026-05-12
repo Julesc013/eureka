@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/source_cache_entry.v0.json",
+  "title": "SourceCacheEntry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entry_id",
+    "source_id",
+    "source_family",
+    "trust_lane",
+    "request_id",
+    "response_id",
+    "observation_id",
+    "normalized_observation_id",
+    "response_fingerprint",
+    "status",
+    "payload",
+    "limitations",
+    "warnings",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "entry_id": {"type": "string", "pattern": "^sce_[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "source_family": {"type": "string"},
+    "trust_lane": {"type": "string"},
+    "request_id": {"type": "string"},
+    "response_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "normalized_observation_id": {"type": "string"},
+    "response_fingerprint": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["cached", "stale", "superseded", "blocked", "invalid", "not_evaluable"]
+    },
+    "payload": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "created_at": {"type": "string"},
+    "updated_at": {"type": "string"}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/evidence_candidate.v0.json",
+  "title": "EvidenceCandidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "source_id",
+    "observation_id",
+    "evidence_kind",
+    "claim",
+    "confidence",
+    "accepted",
+    "limitations",
+    "warnings"
+  ],
+  "properties": {
+    "candidate_id": {"type": "string", "pattern": "^evc_[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "observation_id": {"type": "string"},
+    "evidence_kind": {"type": "string"},
+    "claim": {"type": "object"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "accepted": {"type": "boolean", "const": false},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

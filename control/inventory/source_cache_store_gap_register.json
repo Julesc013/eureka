@@ -1,0 +1,27 @@
+{
+  "schema_version": "source_cache_store_gap_register.v0",
+  "task": "R0-05",
+  "gaps": [
+    {
+      "gap_id": "R0-CACHE-GAP-001",
+      "severity": "medium",
+      "area": "evidence_ledger",
+      "finding": "Cached observations are durable, but no evidence ledger records are created.",
+      "recommended_next_task": "R0-06 \u2014 Durable evidence ledger store"
+    },
+    {
+      "gap_id": "R0-CACHE-GAP-002",
+      "severity": "medium",
+      "area": "review_queue",
+      "finding": "Source cache entries do not make review decisions or persist review queue state.",
+      "recommended_next_task": "R0-07 \u2014 Review queue product seam"
+    },
+    {
+      "gap_id": "R0-CACHE-GAP-003",
+      "severity": "low",
+      "area": "legacy_source_cache",
+      "finding": "Older dry-run source cache helpers remain beside the durable store and should be retired or quarantined later.",
+      "recommended_next_task": "R0-05-REMEDIATION \u2014 Retire legacy source cache dry-run helpers"
+    }
+  ]
+}

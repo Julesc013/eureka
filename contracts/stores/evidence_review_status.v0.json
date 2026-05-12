@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_review_status.v0.json",
+  "title": "Evidence Review Status",
+  "type": "string",
+  "enum": [
+    "candidate",
+    "needs_review",
+    "accepted",
+    "rejected",
+    "blocked",
+    "superseded"
+  ]
+}

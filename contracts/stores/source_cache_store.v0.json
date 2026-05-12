@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/source_cache_store.v0.json",
+  "title": "SourceCacheStore",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "tables", "write_boundaries"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "source_cache_store.v0"},
+    "tables": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "source_cache_meta",
+          "source_cache_migrations",
+          "source_records",
+          "metadata_responses",
+          "source_observations",
+          "normalized_observations",
+          "cache_entries"
+        ]
+      }
+    },
+    "write_boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "explicit_database_path_required",
+        "evidence_ledger_writes_enabled",
+        "review_queue_writes_enabled",
+        "public_index_writes_enabled",
+        "master_index_writes_enabled"
+      ],
+      "properties": {
+        "explicit_database_path_required": {"type": "boolean", "const": true},
+        "evidence_ledger_writes_enabled": {"type": "boolean", "const": false},
+        "review_queue_writes_enabled": {"type": "boolean", "const": false},
+        "public_index_writes_enabled": {"type": "boolean", "const": false},
+        "master_index_writes_enabled": {"type": "boolean", "const": false}
+      }
+    }
+  }
+}

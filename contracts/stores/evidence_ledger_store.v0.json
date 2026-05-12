@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_ledger_store.v0.json",
+  "title": "Evidence Ledger Store",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sqlite_tables",
+    "append_only_events",
+    "source_cache_linking_enabled",
+    "review_queue_writes_enabled",
+    "public_index_writes_enabled",
+    "master_index_writes_enabled"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "evidence_ledger_store.v0"
+    },
+    "sqlite_tables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "append_only_events": {
+      "type": "boolean",
+      "const": true
+    },
+    "source_cache_linking_enabled": {
+      "type": "boolean",
+      "const": true
+    },
+    "review_queue_writes_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "public_index_writes_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_writes_enabled": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "additionalProperties": false
+}

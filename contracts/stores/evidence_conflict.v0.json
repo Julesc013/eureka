@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_conflict.v0.json",
+  "title": "Evidence Conflict",
+  "type": "object",
+  "required": [
+    "conflict_id",
+    "evidence_id",
+    "conflict_kind",
+    "conflict_payload",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "conflict_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conflicting_evidence_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conflict_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conflict_payload": {
+      "type": "object"
+    },
+    "status": {
+      "$ref": "evidence_review_status.v0.json"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

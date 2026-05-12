@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/source_cache_migration.v0.json",
+  "title": "SourceCacheMigration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["migration_id", "version", "checksum", "statement_count"],
+  "properties": {
+    "migration_id": {"type": "string"},
+    "version": {"type": "string"},
+    "checksum": {"type": "string"},
+    "statement_count": {"type": "integer", "minimum": 1}
+  }
+}

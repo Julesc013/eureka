@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_ledger_migration.v0.json",
+  "title": "Evidence Ledger Migration",
+  "type": "object",
+  "required": [
+    "migration_id",
+    "version",
+    "checksum",
+    "statement_count"
+  ],
+  "properties": {
+    "migration_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "const": "evidence_ledger_store.v0"
+    },
+    "checksum": {
+      "type": "string",
+      "minLength": 32
+    },
+    "statement_count": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

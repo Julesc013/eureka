@@ -1,0 +1,20 @@
+{
+  "schema_version": "evidence_ledger_store_gap_register.v0",
+  "task": "R0-06",
+  "gaps": [
+    {
+      "gap_id": "R0-EVIDENCE-GAP-001",
+      "severity": "medium",
+      "area": "review_queue",
+      "finding": "Evidence review status can be represented, but no review queue persistence or reviewer workflow exists yet.",
+      "recommended_next_task": "R0-07 \u2014 Review queue product seam"
+    },
+    {
+      "gap_id": "R0-EVIDENCE-GAP-002",
+      "severity": "low",
+      "area": "legacy_fixture_runtime",
+      "finding": "Older fixture-only evidence ledger helpers remain separate from the durable product store.",
+      "recommended_next_task": "Future cleanup after R0-07"
+    }
+  ]
+}

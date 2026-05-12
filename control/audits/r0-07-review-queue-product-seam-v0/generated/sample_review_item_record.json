@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-05-12T07:12:12Z",
+  "evidence_id": "evc_539adc078a70acf6",
+  "limitations": [
+    "no durable evidence write",
+    "no live request",
+    "synthetic payload only",
+    "metadata remains a cached candidate"
+  ],
+  "payload": {
+    "claim_kind": "metadata",
+    "claim_payload": {
+      "fields": {
+        "name": "demo-project",
+        "summary": "Synthetic metadata for source cache validation",
+        "version": "1.0.0"
+      },
+      "source_family": "package_registry"
+    },
+    "claim_subject": "source.example.metadata"
+  },
+  "priority": 100,
+  "queue_status": "accepted",
+  "review_item_id": "rvi_541cb4884ea5f047",
+  "source_cache_entry_id": "sce_22596cca8e4b42f5",
+  "subject_id": "evc_539adc078a70acf6",
+  "subject_kind": "evidence_candidate",
+  "summary": "review evidence candidate evc_539adc078a70acf6",
+  "updated_at": "2026-05-12T07:12:14Z",
+  "warnings": []
+}

@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-05-12T07:12:12Z",
+  "event_id": "rve_b2522cf897b249c8b78cf59c36e3d4e7",
+  "event_kind": "item_created",
+  "event_payload": {
+    "status": "needs_review",
+    "subject_kind": "evidence_candidate"
+  },
+  "limitations": [],
+  "review_item_id": "rvi_541cb4884ea5f047",
+  "warnings": []
+}

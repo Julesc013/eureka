@@ -1,0 +1,278 @@
+{
+  "evidence_ledger_writes_enabled": false,
+  "integrity": {
+    "applied_migrations": [
+      {
+        "applied_at": "2026-05-12T06:10:43Z",
+        "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+        "id": "001_initial_source_cache_store",
+        "version": "source_cache_store.v0"
+      }
+    ],
+    "missing_tables": [],
+    "schema_version": "source_cache_store.v0",
+    "sqlite_integrity": "ok",
+    "status": "pass"
+  },
+  "master_index_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "review_queue_writes_enabled": false,
+  "schema_version": "source_cache_demo_output.v0",
+  "source_cache_entry": {
+    "created_at": "2026-05-12T06:10:44Z",
+    "entry_id": "sce_22596cca8e4b42f5",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "normalized_observation_id": "norm_8228e286ae6a1b25",
+    "observation_id": "obs_87a54eb707e10042",
+    "payload": {
+      "metadata_response": {
+        "fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "limitations": [
+          "synthetic payload only"
+        ],
+        "observed_at": "2026-05-12T00:00:01Z",
+        "payload": "{\"name\":\"demo-project\",\"summary\":\"Synthetic metadata for source cache validation\",\"version\":\"1.0.0\"}",
+        "payload_format": "json",
+        "request_id": "req_76d2b42881543ac3",
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "status": "observed",
+        "warnings": []
+      },
+      "normalized_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "normalized_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "normalized_observation_id": "norm_8228e286ae6a1b25",
+        "observation_id": "obs_87a54eb707e10042",
+        "source_family": "package_registry",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "observation_id": "obs_87a54eb707e10042",
+        "observation_kind": "json",
+        "observed_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "request_id": "req_76d2b42881543ac3",
+        "response_fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_record": {
+        "capabilities": [
+          {
+            "limitations": [
+              "synthetic payload only"
+            ],
+            "name": "metadata_observation",
+            "operations": [
+              "metadata_observation"
+            ]
+          }
+        ],
+        "id": "source.example.metadata",
+        "label": "Synthetic package metadata source",
+        "limitations": [
+          "no durable evidence write",
+          "no live request"
+        ],
+        "locators": [
+          {
+            "kind": "synthetic",
+            "label": "demo-project",
+            "metadata": {},
+            "value": "package/demo-project"
+          }
+        ],
+        "metadata": {
+          "owner": "repo"
+        },
+        "source_family": "package_registry",
+        "trust_lane": "synthetic"
+      }
+    },
+    "request_id": "req_76d2b42881543ac3",
+    "response_fingerprint": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97",
+    "response_id": "res_980e849c8125dea1",
+    "source_family": "package_registry",
+    "source_id": "source.example.metadata",
+    "status": "cached",
+    "trust_lane": "synthetic",
+    "updated_at": "2026-05-12T06:10:44Z",
+    "warnings": []
+  },
+  "source_cache_list": [
+    {
+      "created_at": "2026-05-12T06:10:44Z",
+      "entry_id": "sce_22596cca8e4b42f5",
+      "limitations": [
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate"
+      ],
+      "normalized_observation_id": "norm_8228e286ae6a1b25",
+      "observation_id": "obs_87a54eb707e10042",
+      "payload": {
+        "metadata_response": {
+          "fingerprint": {
+            "algorithm": "sha256",
+            "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+          },
+          "limitations": [
+            "synthetic payload only"
+          ],
+          "observed_at": "2026-05-12T00:00:01Z",
+          "payload": "{\"name\":\"demo-project\",\"summary\":\"Synthetic metadata for source cache validation\",\"version\":\"1.0.0\"}",
+          "payload_format": "json",
+          "request_id": "req_76d2b42881543ac3",
+          "response_id": "res_980e849c8125dea1",
+          "source_id": "source.example.metadata",
+          "status": "observed",
+          "warnings": []
+        },
+        "normalized_observation": {
+          "confidence": 0.7,
+          "limitations": [
+            "no durable evidence write",
+            "no live request",
+            "synthetic payload only",
+            "metadata remains a cached candidate"
+          ],
+          "normalized_fields": {
+            "name": "demo-project",
+            "summary": "Synthetic metadata for source cache validation",
+            "version": "1.0.0"
+          },
+          "normalized_observation_id": "norm_8228e286ae6a1b25",
+          "observation_id": "obs_87a54eb707e10042",
+          "source_family": "package_registry",
+          "source_id": "source.example.metadata",
+          "warnings": []
+        },
+        "source_observation": {
+          "confidence": 0.7,
+          "limitations": [
+            "no durable evidence write",
+            "no live request",
+            "synthetic payload only",
+            "metadata remains a cached candidate"
+          ],
+          "observation_id": "obs_87a54eb707e10042",
+          "observation_kind": "json",
+          "observed_fields": {
+            "name": "demo-project",
+            "summary": "Synthetic metadata for source cache validation",
+            "version": "1.0.0"
+          },
+          "request_id": "req_76d2b42881543ac3",
+          "response_fingerprint": {
+            "algorithm": "sha256",
+            "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+          },
+          "response_id": "res_980e849c8125dea1",
+          "source_id": "source.example.metadata",
+          "warnings": []
+        },
+        "source_record": {
+          "capabilities": [
+            {
+              "limitations": [
+                "synthetic payload only"
+              ],
+              "name": "metadata_observation",
+              "operations": [
+                "metadata_observation"
+              ]
+            }
+          ],
+          "id": "source.example.metadata",
+          "label": "Synthetic package metadata source",
+          "limitations": [
+            "no durable evidence write",
+            "no live request"
+          ],
+          "locators": [
+            {
+              "kind": "synthetic",
+              "label": "demo-project",
+              "metadata": {},
+              "value": "package/demo-project"
+            }
+          ],
+          "metadata": {
+            "owner": "repo"
+          },
+          "source_family": "package_registry",
+          "trust_lane": "synthetic"
+        }
+      },
+      "request_id": "req_76d2b42881543ac3",
+      "response_fingerprint": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97",
+      "response_id": "res_980e849c8125dea1",
+      "source_family": "package_registry",
+      "source_id": "source.example.metadata",
+      "status": "cached",
+      "trust_lane": "synthetic",
+      "updated_at": "2026-05-12T06:10:44Z",
+      "warnings": []
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "cache_entry_count": 1,
+    "metadata_response_count": 1,
+    "normalized_observation_count": 1,
+    "source_observation_count": 1,
+    "source_record_count": 1,
+    "status_counts": {
+      "cached": 1
+    }
+  }
+}

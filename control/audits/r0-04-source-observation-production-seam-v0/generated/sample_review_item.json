@@ -1,0 +1,15 @@
+{
+  "candidate_id": "evc_6c5e8a6fd6024c63",
+  "decision": null,
+  "limitations": [
+    "no durable write",
+    "no live request",
+    "synthetic payload only",
+    "metadata is a candidate until review"
+  ],
+  "review_item_id": "rev_b5affef88b7c8840",
+  "review_status": "needs_review",
+  "source_id": "source.example.metadata",
+  "summary": "metadata evidence candidate requires review",
+  "warnings": []
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "r0_05_next_task_decision.v0",
+  "task": "R0-05",
+  "status": "pass_with_warnings",
+  "ready_for_r0_06": true,
+  "f0_should_remain_blocked": true,
+  "dev_to_main_should_remain_blocked": true,
+  "recommended_next_task": "R0-06 \u2014 Durable evidence ledger store"
+}
