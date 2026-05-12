@@ -1,5 +1,5 @@
 {
-  "contract_count": 619,
+  "contract_count": 625,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -7408,10 +7408,134 @@
       "current_root": "contracts/stores/",
       "maturity": "stable_boundary_candidate",
       "notes": [],
+      "path": "contracts/stores/evidence_candidate_record.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_candidate_record.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1433",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_candidate_record.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/evidence_conflict.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_conflict.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1143",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_conflict.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/evidence_event.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_event.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1126",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_event.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/evidence_ledger_migration.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_ledger_migration.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:668",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_ledger_migration.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/evidence_ledger_store.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_ledger_store.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1125",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_ledger_store.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/evidence_review_status.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/evidence_candidate_record.v0.json",
+        "contracts/stores/evidence_conflict.v0.json",
+        "contracts/stores/evidence_review_status.v0.json",
+        "scripts/validate_evidence_ledger_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:320",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/evidence_review_status.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
       "path": "contracts/stores/source_cache_entry.v0.json",
       "recommended_action": "keep",
       "references": [
         "contracts/stores/source_cache_entry.v0.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/r0_05_report.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/validation.md",
         "scripts/validate_source_cache_store.py"
       ],
       "risks": [],
@@ -7432,6 +7556,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/source_cache_migration.v0.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/r0_05_report.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/validation.md",
         "scripts/validate_source_cache_store.py"
       ],
       "risks": [],
@@ -7452,6 +7578,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/source_cache_status.v0.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/r0_05_report.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/validation.md",
         "scripts/validate_source_cache_store.py"
       ],
       "risks": [],
@@ -7472,6 +7600,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/source_cache_store.v0.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/r0_05_report.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/validation.md",
         "scripts/validate_source_cache_store.py"
       ],
       "risks": [],
@@ -19530,7 +19660,7 @@
       "audit_schema": 88,
       "connector_interface_contract": 21,
       "control_schema": 31,
-      "durable_store_contract": 11,
+      "durable_store_contract": 17,
       "fixture_schema": 32,
       "native_contract": 15,
       "preview_schema": 171,
@@ -19545,11 +19675,11 @@
     "maturity": {
       "control_schema_candidate": 312,
       "placeholder": 18,
-      "stable_boundary_candidate": 289
+      "stable_boundary_candidate": 295
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 389,
+      "keep": 395,
       "move": 216,
       "move_and_rename": 11
     }

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/evidence_candidate_record.v0.json",
+  "title": "Evidence Candidate Record",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "source_id",
+    "observation_id",
+    "normalized_observation_id",
+    "claim_kind",
+    "claim_subject",
+    "claim_payload",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_cache_entry_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalized_observation_id": {
+      "type": "string"
+    },
+    "claim_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_payload": {
+      "type": "object"
+    },
+    "status": {
+      "$ref": "evidence_review_status.v0.json"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "evidence_id": "evc_sample",
+    "source_id": "source.example.metadata",
+    "claim_kind": "metadata",
+    "status": "candidate"
+  }
+]

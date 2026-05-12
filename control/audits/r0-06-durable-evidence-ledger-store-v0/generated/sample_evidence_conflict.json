@@ -1,0 +1,18 @@
+{
+  "conflict_id": "evcon_sample",
+  "conflict_kind": "metadata_disagreement_candidate",
+  "conflict_payload": {
+    "field": "version",
+    "observed": "1.0.0",
+    "other_candidate": "unknown"
+  },
+  "conflicting_evidence_id": null,
+  "created_at": "2026-05-12T00:00:04Z",
+  "evidence_id": "evc_sample",
+  "limitations": [
+    "synthetic sample only"
+  ],
+  "status": "needs_review",
+  "updated_at": "2026-05-12T00:00:04Z",
+  "warnings": []
+}

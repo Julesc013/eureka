@@ -1,0 +1,293 @@
+{
+  "evidence_acceptance_enabled": false,
+  "evidence_candidate_record": {
+    "claim_kind": "metadata",
+    "claim_payload": {
+      "fields": {
+        "name": "demo-project",
+        "summary": "Synthetic metadata for source cache validation",
+        "version": "1.0.0"
+      },
+      "source_family": "package_registry"
+    },
+    "claim_subject": "source.example.metadata",
+    "created_at": "2026-05-12T06:46:47Z",
+    "evidence_id": "evc_539adc078a70acf6",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "normalized_observation_id": "norm_8228e286ae6a1b25",
+    "observation_id": "obs_87a54eb707e10042",
+    "source_cache_entry_id": "sce_22596cca8e4b42f5",
+    "source_id": "source.example.metadata",
+    "status": "needs_review",
+    "updated_at": "2026-05-12T06:46:48Z",
+    "warnings": []
+  },
+  "evidence_conflicts": [
+    {
+      "conflict_id": "evcon_e3478bf9450c40b6",
+      "conflict_kind": "metadata_disagreement_candidate",
+      "conflict_payload": {
+        "field": "version",
+        "observed": "1.0.0",
+        "other_candidate": "unknown"
+      },
+      "conflicting_evidence_id": null,
+      "created_at": "2026-05-12T06:46:47Z",
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [
+        "synthetic conflict candidate only"
+      ],
+      "status": "needs_review",
+      "updated_at": "2026-05-12T06:46:47Z",
+      "warnings": []
+    }
+  ],
+  "evidence_events": [
+    {
+      "created_at": "2026-05-12T06:46:47Z",
+      "event_id": "eve_dce16eb59214474bbd577218e40b87c0",
+      "event_kind": "candidate_created",
+      "event_payload": {
+        "claim_kind": "metadata",
+        "status": "candidate"
+      },
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [],
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T06:46:47Z",
+      "event_id": "eve_6397ec2f1d7343cf9d9d2dfb6615e1eb",
+      "event_kind": "source_cache_linked",
+      "event_payload": {
+        "source_cache_entry_id": "sce_22596cca8e4b42f5"
+      },
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [],
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T06:46:47Z",
+      "event_id": "eve_10a67c957429416697f94b152c3b1d09",
+      "event_kind": "note_added",
+      "event_payload": {
+        "note": "synthetic durable evidence ledger demonstration"
+      },
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [],
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T06:46:47Z",
+      "event_id": "eve_694a398f42d04cd8818bbf15a7e8aa86",
+      "event_kind": "conflict_detected",
+      "event_payload": {
+        "conflict_id": "evcon_e3478bf9450c40b6",
+        "conflict_kind": "metadata_disagreement_candidate"
+      },
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [],
+      "warnings": []
+    },
+    {
+      "created_at": "2026-05-12T06:46:48Z",
+      "event_id": "eve_4a555f535bf3458ea6cfd8c24e4438e9",
+      "event_kind": "review_status_changed",
+      "event_payload": {
+        "reason": "manual review required",
+        "status": "needs_review"
+      },
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [],
+      "warnings": []
+    }
+  ],
+  "evidence_list": [
+    {
+      "claim_kind": "metadata",
+      "claim_payload": {
+        "fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "source_family": "package_registry"
+      },
+      "claim_subject": "source.example.metadata",
+      "created_at": "2026-05-12T06:46:47Z",
+      "evidence_id": "evc_539adc078a70acf6",
+      "limitations": [
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate"
+      ],
+      "normalized_observation_id": "norm_8228e286ae6a1b25",
+      "observation_id": "obs_87a54eb707e10042",
+      "source_cache_entry_id": "sce_22596cca8e4b42f5",
+      "source_id": "source.example.metadata",
+      "status": "needs_review",
+      "updated_at": "2026-05-12T06:46:48Z",
+      "warnings": []
+    }
+  ],
+  "integrity": {
+    "applied_migrations": [
+      {
+        "applied_at": "2026-05-12T06:46:46Z",
+        "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+        "id": "001_initial_evidence_ledger_store",
+        "version": "evidence_ledger_store.v0"
+      }
+    ],
+    "missing_tables": [],
+    "schema_version": "evidence_ledger_store.v0",
+    "sqlite_integrity": "ok",
+    "status": "pass"
+  },
+  "master_index_writes_enabled": false,
+  "public_index_writes_enabled": false,
+  "review_queue_writes_enabled": false,
+  "schema_version": "evidence_ledger_demo_output.v0",
+  "source_cache_entry": {
+    "created_at": "2026-05-12T06:46:47Z",
+    "entry_id": "sce_22596cca8e4b42f5",
+    "limitations": [
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate",
+      "no durable evidence write",
+      "no live request",
+      "synthetic payload only",
+      "metadata remains a cached candidate"
+    ],
+    "normalized_observation_id": "norm_8228e286ae6a1b25",
+    "observation_id": "obs_87a54eb707e10042",
+    "payload": {
+      "metadata_response": {
+        "fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "limitations": [
+          "synthetic payload only"
+        ],
+        "observed_at": "2026-05-12T00:00:01Z",
+        "payload": "{\"name\":\"demo-project\",\"summary\":\"Synthetic metadata for source cache validation\",\"version\":\"1.0.0\"}",
+        "payload_format": "json",
+        "request_id": "req_76d2b42881543ac3",
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "status": "observed",
+        "warnings": []
+      },
+      "normalized_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "normalized_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "normalized_observation_id": "norm_8228e286ae6a1b25",
+        "observation_id": "obs_87a54eb707e10042",
+        "source_family": "package_registry",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_observation": {
+        "confidence": 0.7,
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate"
+        ],
+        "observation_id": "obs_87a54eb707e10042",
+        "observation_kind": "json",
+        "observed_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "request_id": "req_76d2b42881543ac3",
+        "response_fingerprint": {
+          "algorithm": "sha256",
+          "value": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97"
+        },
+        "response_id": "res_980e849c8125dea1",
+        "source_id": "source.example.metadata",
+        "warnings": []
+      },
+      "source_record": {
+        "capabilities": [
+          {
+            "limitations": [
+              "synthetic payload only"
+            ],
+            "name": "metadata_observation",
+            "operations": [
+              "metadata_observation"
+            ]
+          }
+        ],
+        "id": "source.example.metadata",
+        "label": "Synthetic package metadata source",
+        "limitations": [
+          "no durable evidence write",
+          "no live request"
+        ],
+        "locators": [
+          {
+            "kind": "synthetic",
+            "label": "demo-project",
+            "metadata": {},
+            "value": "package/demo-project"
+          }
+        ],
+        "metadata": {
+          "owner": "repo"
+        },
+        "source_family": "package_registry",
+        "trust_lane": "synthetic"
+      }
+    },
+    "request_id": "req_76d2b42881543ac3",
+    "response_fingerprint": "ee5729a0b44607f2e968b21a60251fb6f36532109615a99a5db10ede1e2ebf97",
+    "response_id": "res_980e849c8125dea1",
+    "source_family": "package_registry",
+    "source_id": "source.example.metadata",
+    "status": "cached",
+    "trust_lane": "synthetic",
+    "updated_at": "2026-05-12T06:46:47Z",
+    "warnings": []
+  },
+  "status": "pass",
+  "summary": {
+    "claim_kind_counts": {
+      "metadata": 1
+    },
+    "conflict_count": 1,
+    "evidence_candidate_count": 1,
+    "evidence_event_count": 5,
+    "review_status_count": 1,
+    "source_cache_link_count": 1,
+    "status_counts": {
+      "needs_review": 1
+    }
+  }
+}
