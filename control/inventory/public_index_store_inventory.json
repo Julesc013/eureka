@@ -1,0 +1,60 @@
+{
+  "schema_version": "public_index_store_inventory.v0",
+  "task": "R0-08",
+  "runtime_package": "runtime/public_index",
+  "public_api": [
+    "PublicIndexStore",
+    "PublicIndexRecord",
+    "PublicIndexRebuild",
+    "PublicIndexSearchResult",
+    "PublicIndexAbsenceReport",
+    "PublicIndexSummary",
+    "rebuild_reviewed_public_index",
+    "validate_public_index_path",
+    "validate_public_index_record",
+    "validate_public_index_rebuild",
+    "validate_public_index_search_result",
+    "validate_public_index_absence_report"
+  ],
+  "contracts": [
+    "contracts/stores/public_index_store.v0.json",
+    "contracts/stores/public_index_record.v0.json",
+    "contracts/stores/public_index_rebuild.v0.json",
+    "contracts/stores/public_index_search_result.v0.json",
+    "contracts/stores/public_index_absence_report.v0.json",
+    "contracts/stores/public_index_migration.v0.json"
+  ],
+  "tests": [
+    "tests/runtime/test_public_index_store.py",
+    "tests/runtime/test_public_index_rebuild.py",
+    "tests/runtime/test_public_index_search_absence.py",
+    "tests/runtime/test_public_index_integration.py"
+  ],
+  "scripts": [
+    "scripts/init_public_index_store.py",
+    "scripts/rebuild_reviewed_public_index.py",
+    "scripts/demo_reviewed_public_index.py",
+    "scripts/validate_reviewed_public_index.py"
+  ],
+  "sqlite_tables": [
+    "public_index_meta",
+    "public_index_migrations",
+    "public_index_records",
+    "public_index_rebuilds",
+    "public_index_search_terms",
+    "public_index_source_refs",
+    "public_index_evidence_refs",
+    "public_index_review_refs"
+  ],
+  "network_dependencies": 0,
+  "h_series_dependencies": 0,
+  "source_cache_input_enabled": true,
+  "evidence_ledger_input_enabled": true,
+  "review_queue_input_enabled": true,
+  "reviewed_rebuild_enabled": true,
+  "search_enabled": true,
+  "absence_report_enabled": true,
+  "site_dist_writes_enabled": false,
+  "master_index_writes_enabled": false,
+  "ready_for_r0_09": true
+}

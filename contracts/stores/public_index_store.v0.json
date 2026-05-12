@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_store.v0.json",
+  "title": "Reviewed Public Index Store",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "store_kind",
+    "sqlite_tables",
+    "input_store_kinds",
+    "writes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_index_store.v0"
+    },
+    "store_kind": {
+      "const": "reviewed_public_index"
+    },
+    "sqlite_tables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "input_store_kinds": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "source_cache",
+          "evidence_ledger",
+          "review_queue"
+        ]
+      }
+    },
+    "writes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewed_index_database",
+        "input_databases",
+        "site_distribution",
+        "master_index"
+      ],
+      "properties": {
+        "reviewed_index_database": {
+          "type": "boolean"
+        },
+        "input_databases": {
+          "const": false
+        },
+        "site_distribution": {
+          "const": false
+        },
+        "master_index": {
+          "const": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_rebuild.v0.json",
+  "title": "Reviewed Public Index Rebuild",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rebuild_id",
+    "status",
+    "included_count",
+    "excluded_count",
+    "include_statuses",
+    "source_cache_db",
+    "evidence_ledger_db",
+    "review_queue_db",
+    "public_index_db",
+    "dry_run",
+    "created_at"
+  ],
+  "properties": {
+    "rebuild_id": {
+      "type": "string",
+      "pattern": "^pireb_[a-f0-9]{16}$"
+    },
+    "status": {
+      "enum": [
+        "dry_run",
+        "applied",
+        "partial",
+        "failed"
+      ]
+    },
+    "included_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "include_statuses": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "accepted"
+        ]
+      }
+    },
+    "source_cache_db": {
+      "type": "string"
+    },
+    "evidence_ledger_db": {
+      "type": "string"
+    },
+    "review_queue_db": {
+      "type": "string"
+    },
+    "public_index_db": {
+      "type": "string"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}

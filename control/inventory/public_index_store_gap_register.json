@@ -1,0 +1,20 @@
+{
+  "schema_version": "public_index_store_gap_register.v0",
+  "task": "R0-08",
+  "gaps": [
+    {
+      "gap_id": "R0-PUBLIC-INDEX-GAP-001",
+      "severity": "medium",
+      "area": "live_validation",
+      "finding": "The reviewed index rebuild is local and synthetic-tested only; no one-source live test has been run.",
+      "recommended_next_task": "R0-09 \u2014 One-source live test"
+    },
+    {
+      "gap_id": "R0-PUBLIC-INDEX-GAP-002",
+      "severity": "low",
+      "area": "search_quality",
+      "finding": "Local search is deterministic keyword matching and is not a hosted ranking system.",
+      "recommended_next_task": "Future search quality task after R0-09"
+    }
+  ]
+}

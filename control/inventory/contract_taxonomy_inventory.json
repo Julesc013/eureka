@@ -1,5 +1,5 @@
 {
-  "contract_count": 631,
+  "contract_count": 637,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -325,6 +325,7 @@
       "references": [
         "contracts/api/absence_report.v0.json",
         "contracts/api/search_response.v0.json",
+        "contracts/stores/public_index_absence_report.v0.json",
         "control/audits/public-search-production-contract-v0/ABSENCE_AND_GAP_CONTRACT.md",
         "control/audits/public-search-production-contract-v0/public_search_production_contract_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
@@ -334,6 +335,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/execute_contract_taxonomy_migration.py",
         "scripts/validate_public_search_production_contract.py",
+        "scripts/validate_reviewed_public_index.py",
         "tests/operations/test_public_search_production_contract.py"
       ],
       "risks": [],
@@ -2558,7 +2560,7 @@
       "risks": [],
       "signals": [
         "domain_contract_path",
-        "size:1078",
+        "size:1120",
         "suffix:.json"
       ],
       "target_path": "contracts/domain/source_policy.v0.json",
@@ -2582,7 +2584,7 @@
       "risks": [],
       "signals": [
         "domain_contract_path",
-        "size:1594",
+        "size:1654",
         "suffix:.json"
       ],
       "target_path": "contracts/domain/source_record.v0.json",
@@ -6037,7 +6039,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:686",
+        "size:702",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/connector_health.v0.json",
@@ -6060,7 +6062,7 @@
       "signals": [
         "candidate_named_product_contract_exception",
         "runtime_contract_path",
-        "size:957",
+        "size:986",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/evidence_candidate.v0.json",
@@ -6081,7 +6083,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:768",
+        "size:785",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/metadata_request.v0.json",
@@ -6102,7 +6104,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:1161",
+        "size:1200",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/metadata_response.v0.json",
@@ -6123,7 +6125,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:947",
+        "size:974",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/normalized_observation.v0.json",
@@ -6144,7 +6146,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:962",
+        "size:992",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/review_item.v0.json",
@@ -6165,7 +6167,7 @@
       "risks": [],
       "signals": [
         "runtime_contract_path",
-        "size:1243",
+        "size:1282",
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/source_observation.v0.json",
@@ -7421,7 +7423,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1433",
+        "size:1507",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_candidate_record.v0.json",
@@ -7443,7 +7445,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1143",
+        "size:1203",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_conflict.v0.json",
@@ -7465,7 +7467,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1126",
+        "size:1182",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_event.v0.json",
@@ -7487,7 +7489,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:668",
+        "size:699",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_ledger_migration.v0.json",
@@ -7509,7 +7511,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1125",
+        "size:1173",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_ledger_store.v0.json",
@@ -7533,10 +7535,138 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:320",
+        "size:334",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_review_status.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_absence_report.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/public_index_absence_report.v0.json",
+        "scripts/validate_reviewed_public_index.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:899",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_absence_report.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_migration.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/public_index_migration.v0.json",
+        "scripts/validate_reviewed_public_index.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:548",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_migration.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_rebuild.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+        "contracts/stores/public_index_rebuild.v0.json",
+        "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/track_b_20_report.json",
+        "scripts/validate_reviewed_public_index.py",
+        "scripts/validate_reviewed_public_index_rebuild_contract.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1522",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_rebuild.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_record.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/public_index_record.v0.json",
+        "scripts/validate_reviewed_public_index.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1711",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_record.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_search_result.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/public_index_search_result.v0.json",
+        "scripts/validate_reviewed_public_index.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:990",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_search_result.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/public_index_store.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/public_index_store.v0.json",
+        "scripts/validate_reviewed_public_index.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1333",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/public_index_store.v0.json",
       "target_root": "contracts/stores/"
     },
     {
@@ -7570,7 +7700,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1392",
+        "size:1468",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_decision.v0.json",
@@ -7590,7 +7720,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1074",
+        "size:1129",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_event.v0.json",
@@ -7610,7 +7740,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1388",
+        "size:1464",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_item_record.v0.json",
@@ -7630,7 +7760,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:658",
+        "size:689",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_queue_migration.v0.json",
@@ -7652,7 +7782,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:338",
+        "size:353",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_queue_status.v0.json",
@@ -7672,7 +7802,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1512",
+        "size:1574",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/review_queue_store.v0.json",
@@ -7694,7 +7824,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1390",
+        "size:1434",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/source_cache_entry.v0.json",
@@ -7716,7 +7846,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:498",
+        "size:512",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/source_cache_migration.v0.json",
@@ -7738,7 +7868,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:306",
+        "size:320",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/source_cache_status.v0.json",
@@ -7760,7 +7890,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1475",
+        "size:1519",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/source_cache_store.v0.json",
@@ -19813,7 +19943,7 @@
       "audit_schema": 88,
       "connector_interface_contract": 21,
       "control_schema": 31,
-      "durable_store_contract": 23,
+      "durable_store_contract": 29,
       "fixture_schema": 32,
       "native_contract": 15,
       "preview_schema": 171,
@@ -19828,11 +19958,11 @@
     "maturity": {
       "control_schema_candidate": 312,
       "placeholder": 18,
-      "stable_boundary_candidate": 301
+      "stable_boundary_candidate": 307
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 401,
+      "keep": 407,
       "move": 216,
       "move_and_rename": 11
     }

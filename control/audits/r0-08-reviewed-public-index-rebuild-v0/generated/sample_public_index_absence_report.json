@@ -1,0 +1,14 @@
+{
+  "query": "missing package",
+  "result_count": 0,
+  "checked_sources": [
+    "source.example.metadata"
+  ],
+  "limitations": [
+    "local reviewed index only",
+    "absence does not prove no matching source exists",
+    "absence does not inspect live sources"
+  ],
+  "warnings": [],
+  "created_at": "2026-05-12T00:00:00Z"
+}

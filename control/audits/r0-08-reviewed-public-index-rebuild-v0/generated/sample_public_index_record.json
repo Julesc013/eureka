@@ -1,0 +1,23 @@
+{
+  "id": "pir_0123456789abcdef",
+  "source_id": "source.example.metadata",
+  "source_cache_entry_id": "sce_sample",
+  "evidence_id": "evc_sample",
+  "review_item_id": "rvi_sample",
+  "review_decision_id": "rvd_sample",
+  "title": "demo-project",
+  "description": "Synthetic metadata for local review",
+  "normalized_fields": {
+    "name": "demo-project",
+    "summary": "Synthetic metadata"
+  },
+  "searchable_text": "demo project synthetic metadata source example",
+  "source_family": "package_registry",
+  "trust_lane": "synthetic",
+  "limitations": [
+    "local reviewed index only"
+  ],
+  "warnings": [],
+  "created_at": "2026-05-12T00:00:00Z",
+  "updated_at": "2026-05-12T00:00:00Z"
+}

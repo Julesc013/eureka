@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_absence_report.v0.json",
+  "title": "Reviewed Public Index Absence Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "query",
+    "result_count",
+    "checked_sources",
+    "limitations",
+    "warnings",
+    "created_at"
+  ],
+  "properties": {
+    "query": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checked_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}

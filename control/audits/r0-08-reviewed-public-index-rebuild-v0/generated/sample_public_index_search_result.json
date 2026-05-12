@@ -1,0 +1,15 @@
+{
+  "record_id": "pir_0123456789abcdef",
+  "title": "demo-project",
+  "description": "Synthetic metadata for local review",
+  "source_id": "source.example.metadata",
+  "score": 1.0,
+  "matched_terms": [
+    "demo",
+    "project"
+  ],
+  "limitations": [
+    "local reviewed index only"
+  ],
+  "warnings": []
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_search_result.v0.json",
+  "title": "Reviewed Public Index Search Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "title",
+    "description",
+    "source_id",
+    "score",
+    "matched_terms",
+    "limitations",
+    "warnings"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0
+    },
+    "matched_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

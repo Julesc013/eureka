@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_index_rebuild_report.v0",
+  "status": "dry_run",
+  "included_count": 1,
+  "excluded_count": 0,
+  "records": [],
+  "excluded": [],
+  "input_stores_mutated": false,
+  "site_dist_mutated": false,
+  "master_index_mutated": false
+}

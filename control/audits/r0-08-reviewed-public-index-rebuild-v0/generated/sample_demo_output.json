@@ -1,0 +1,224 @@
+{
+  "absence_report": {
+    "checked_sources": [
+      "source.example.metadata"
+    ],
+    "created_at": "2026-05-12T08:12:19Z",
+    "limitations": [
+      "local reviewed index only",
+      "absence does not prove no matching source exists",
+      "absence does not inspect live sources"
+    ],
+    "query": "not-present-query",
+    "result_count": 0,
+    "warnings": []
+  },
+  "evidence_candidate_record": {
+    "evidence_id": "evc_539adc078a70acf6",
+    "source_cache_entry_id": "sce_22596cca8e4b42f5",
+    "status": "candidate"
+  },
+  "input_stores_mutated": false,
+  "integrity": {
+    "applied_migrations": [
+      {
+        "applied_at": "2026-05-12T08:12:14Z",
+        "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+        "id": "public_index_initial_schema",
+        "version": "public_index_store.v0"
+      }
+    ],
+    "missing_tables": [],
+    "schema_version": "public_index_store.v0",
+    "sqlite_integrity": "ok",
+    "status": "pass"
+  },
+  "master_index_mutated": false,
+  "public_index_records": [
+    {
+      "created_at": "2026-05-12T08:12:14Z",
+      "description": "Synthetic metadata for source cache validation",
+      "evidence_id": "evc_539adc078a70acf6",
+      "id": "pir_ed1e7468696037dc",
+      "limitations": [
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "local review state only"
+      ],
+      "normalized_fields": {
+        "name": "demo-project",
+        "summary": "Synthetic metadata for source cache validation",
+        "version": "1.0.0"
+      },
+      "record_id": "pir_ed1e7468696037dc",
+      "review_decision_id": "rvd_3584280ee57b41af9760df6a0655c943",
+      "review_item_id": "rvi_541cb4884ea5f047",
+      "searchable_text": "demo-project synthetic metadata for source cache validation source.example.metadata package_registry metadata source.example.metadata name demo-project summary synthetic metadata for source cache validation version 1.0.0 fields name demo-project summary synthetic metadata for source cache validation version 1.0.0 source_family package_registry",
+      "source_cache_entry_id": "sce_22596cca8e4b42f5",
+      "source_family": "package_registry",
+      "source_id": "source.example.metadata",
+      "title": "demo-project",
+      "trust_lane": "synthetic",
+      "updated_at": "2026-05-12T08:12:14Z",
+      "warnings": []
+    }
+  ],
+  "public_index_summary": {
+    "evidence_ref_count": 1,
+    "rebuild_count": 1,
+    "record_count": 1,
+    "review_ref_count": 1,
+    "source_counts": {
+      "source.example.metadata": 1
+    },
+    "source_ref_count": 1
+  },
+  "rebuild_report": {
+    "excluded": [],
+    "excluded_count": 0,
+    "included_count": 1,
+    "input_stores_mutated": false,
+    "master_index_mutated": false,
+    "rebuild": {
+      "created_at": "2026-05-12T08:12:14Z",
+      "dry_run": false,
+      "evidence_ledger_db": "control\\audits\\r0-08-reviewed-public-index-rebuild-v0\\generated\\evidence_ledger_demo.sqlite",
+      "excluded_count": 0,
+      "include_statuses": [
+        "accepted"
+      ],
+      "included_count": 1,
+      "limitations": [
+        "local reviewed projection only",
+        "does not mutate input stores"
+      ],
+      "public_index_db": "control\\audits\\r0-08-reviewed-public-index-rebuild-v0\\generated\\public_index_demo.sqlite",
+      "rebuild_id": "pireb_e50ce84ecc782706",
+      "review_queue_db": "control\\audits\\r0-08-reviewed-public-index-rebuild-v0\\generated\\review_queue_demo.sqlite",
+      "source_cache_db": "control\\audits\\r0-08-reviewed-public-index-rebuild-v0\\generated\\source_cache_demo.sqlite",
+      "status": "applied",
+      "warnings": []
+    },
+    "records": [
+      {
+        "created_at": "2026-05-12T08:12:14Z",
+        "description": "Synthetic metadata for source cache validation",
+        "evidence_id": "evc_539adc078a70acf6",
+        "id": "pir_ed1e7468696037dc",
+        "limitations": [
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate",
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate",
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate",
+          "no durable evidence write",
+          "no live request",
+          "synthetic payload only",
+          "metadata remains a cached candidate",
+          "local review state only"
+        ],
+        "normalized_fields": {
+          "name": "demo-project",
+          "summary": "Synthetic metadata for source cache validation",
+          "version": "1.0.0"
+        },
+        "record_id": "pir_ed1e7468696037dc",
+        "review_decision_id": "rvd_3584280ee57b41af9760df6a0655c943",
+        "review_item_id": "rvi_541cb4884ea5f047",
+        "searchable_text": "demo-project synthetic metadata for source cache validation source.example.metadata package_registry metadata source.example.metadata name demo-project summary synthetic metadata for source cache validation version 1.0.0 fields name demo-project summary synthetic metadata for source cache validation version 1.0.0 source_family package_registry",
+        "source_cache_entry_id": "sce_22596cca8e4b42f5",
+        "source_family": "package_registry",
+        "source_id": "source.example.metadata",
+        "title": "demo-project",
+        "trust_lane": "synthetic",
+        "updated_at": "2026-05-12T08:12:14Z",
+        "warnings": []
+      }
+    ],
+    "schema_version": "public_index_rebuild_report.v0",
+    "site_dist_mutated": false,
+    "status": "applied"
+  },
+  "review_decision": {
+    "decision_id": "rvd_3584280ee57b41af9760df6a0655c943",
+    "decision_kind": "accept",
+    "decision_status": "accepted"
+  },
+  "review_item": {
+    "evidence_id": "evc_539adc078a70acf6",
+    "queue_status": "accepted",
+    "review_item_id": "rvi_541cb4884ea5f047",
+    "source_cache_entry_id": "sce_22596cca8e4b42f5"
+  },
+  "schema_version": "reviewed_public_index_demo_output.v0",
+  "search_results": [
+    {
+      "description": "Synthetic metadata for source cache validation",
+      "limitations": [
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "no durable evidence write",
+        "no live request",
+        "synthetic payload only",
+        "metadata remains a cached candidate",
+        "local review state only"
+      ],
+      "matched_terms": [
+        "demo",
+        "project"
+      ],
+      "record_id": "pir_ed1e7468696037dc",
+      "score": 1.0,
+      "source_id": "source.example.metadata",
+      "title": "demo-project",
+      "warnings": []
+    }
+  ],
+  "site_dist_mutated": false,
+  "source_cache_entry": {
+    "entry_id": "sce_22596cca8e4b42f5",
+    "source_id": "source.example.metadata",
+    "status": "cached"
+  },
+  "status": "pass"
+}

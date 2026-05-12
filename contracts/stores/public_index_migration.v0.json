@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_migration.v0.json",
+  "title": "Reviewed Public Index Migration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "checksum",
+    "applied_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "const": "public_index_store.v0"
+    },
+    "checksum": {
+      "type": "string"
+    },
+    "applied_at": {
+      "type": "string"
+    }
+  }
+}

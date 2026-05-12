@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/public_index_record.v0.json",
+  "title": "Reviewed Public Index Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "source_id",
+    "source_cache_entry_id",
+    "evidence_id",
+    "review_item_id",
+    "review_decision_id",
+    "title",
+    "description",
+    "normalized_fields",
+    "searchable_text",
+    "source_family",
+    "trust_lane",
+    "limitations",
+    "warnings",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^pir_[a-f0-9]{16}$"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^pir_[a-f0-9]{16}$"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_cache_entry_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "normalized_fields": {
+      "type": "object"
+    },
+    "searchable_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_family": {
+      "type": "string"
+    },
+    "trust_lane": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}
