@@ -1,0 +1,31 @@
+{
+  "databases": [
+    {
+      "exists": true,
+      "path": "control/audits/r0-09-one-source-live-test-v0/generated/source_cache_live.sqlite",
+      "sha256": "90528178c150376e88a89311526e3416cb54e17acb44ae84a43a242fd70f8c50",
+      "size_bytes": 139264
+    },
+    {
+      "exists": true,
+      "path": "control/audits/r0-09-one-source-live-test-v0/generated/evidence_live.sqlite",
+      "sha256": "0e8c1d37c91aef74ee8a9f71e4851e397c544a0d5b8be31de7f911d2b087d919",
+      "size_bytes": 106496
+    },
+    {
+      "exists": true,
+      "path": "control/audits/r0-09-one-source-live-test-v0/generated/review_live.sqlite",
+      "sha256": "beabc694e8e354c7d2a3cb7f2cf8c95de8fef522fc0a46199e791d73cb4b1171",
+      "size_bytes": 102400
+    },
+    {
+      "exists": true,
+      "path": "control/audits/r0-09-one-source-live-test-v0/generated/public_index_live.sqlite",
+      "sha256": "f6f887f2f419b66d494a89d8979ef8238781aa7d7242ebf829def697670d5441",
+      "size_bytes": 131072
+    }
+  ],
+  "master_index_mutated": false,
+  "schema_version": "one_source_live_test_sqlite_manifest.v0",
+  "site_dist_mutated": false
+}

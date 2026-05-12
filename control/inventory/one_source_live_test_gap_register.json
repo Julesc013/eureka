@@ -1,0 +1,20 @@
+{
+  "schema_version": "one_source_live_test_gap_register.v0",
+  "task": "R0-09",
+  "gaps": [
+    {
+      "gap_id": "R0-LIVE-GAP-001",
+      "severity": "medium",
+      "area": "source_coverage",
+      "finding": "Only PyPI sampleproject metadata is exercised; no additional sources are approved by this gate.",
+      "recommended_next_task": "R0-10 \u2014 Dev-to-main production review"
+    },
+    {
+      "gap_id": "R0-LIVE-GAP-002",
+      "severity": "low",
+      "area": "review_scope",
+      "finding": "The accepted decision is local workflow state and does not establish global truth, legal approval, or production readiness.",
+      "recommended_next_task": "R0-10 \u2014 Dev-to-main production review"
+    }
+  ]
+}

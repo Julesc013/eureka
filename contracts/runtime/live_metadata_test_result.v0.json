@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/live_metadata_test_result.v0.json",
+  "title": "Live Metadata Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "operation_scope",
+    "package_name",
+    "live_requested",
+    "network_used",
+    "request_count",
+    "download_count",
+    "install_count",
+    "source_sync_used",
+    "response_fingerprint",
+    "source_cache_entry_id",
+    "evidence_id",
+    "review_item_id",
+    "public_index_record_id",
+    "search_query",
+    "search_hit_count",
+    "absence_query",
+    "limitations",
+    "warnings"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "const": "pypi_json_metadata"
+    },
+    "operation_scope": {
+      "type": "string",
+      "const": "metadata_only"
+    },
+    "package_name": {
+      "type": "string",
+      "const": "sampleproject"
+    },
+    "live_requested": {
+      "type": "boolean"
+    },
+    "network_used": {
+      "type": "boolean"
+    },
+    "request_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "download_count": {
+      "type": "integer",
+      "const": 0
+    },
+    "install_count": {
+      "type": "integer",
+      "const": 0
+    },
+    "source_sync_used": {
+      "type": "boolean",
+      "const": false
+    },
+    "response_fingerprint": {
+      "type": "string"
+    },
+    "source_cache_entry_id": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "review_item_id": {
+      "type": "string"
+    },
+    "public_index_record_id": {
+      "type": "string"
+    },
+    "search_query": {
+      "type": "string"
+    },
+    "search_hit_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "absence_query": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

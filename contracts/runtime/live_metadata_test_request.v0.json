@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/live_metadata_test_request.v0.json",
+  "title": "Live Metadata Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "operation_scope",
+    "package_name",
+    "live_requested",
+    "request_count"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "const": "pypi_json_metadata"
+    },
+    "operation_scope": {
+      "type": "string",
+      "const": "metadata_only"
+    },
+    "package_name": {
+      "type": "string",
+      "const": "sampleproject"
+    },
+    "live_requested": {
+      "type": "boolean"
+    },
+    "request_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

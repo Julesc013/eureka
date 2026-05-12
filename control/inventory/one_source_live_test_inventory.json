@@ -1,0 +1,30 @@
+{
+  "schema_version": "one_source_live_test_inventory.v0",
+  "task": "R0-09",
+  "source_id": "pypi_json_metadata",
+  "package_name": "sampleproject",
+  "runtime_module": "runtime/source_observation/sources/pypi_json_metadata.py",
+  "scripts": [
+    "scripts/run_one_source_live_test.py",
+    "scripts/validate_one_source_live_test.py"
+  ],
+  "contracts": [
+    "contracts/runtime/live_metadata_test_request.v0.json",
+    "contracts/runtime/live_metadata_test_result.v0.json"
+  ],
+  "policies": [
+    "control/policies/r0_one_source_live_test_policy.json",
+    "control/policies/r0_pypi_metadata_source_policy.json"
+  ],
+  "tests": [
+    "tests/runtime/test_one_source_live_test.py",
+    "tests/runtime/test_pypi_json_metadata_source.py"
+  ],
+  "max_requests_per_run": 1,
+  "package_downloads_enabled": false,
+  "install_execution_enabled": false,
+  "source_sync_enabled": false,
+  "site_dist_writes_enabled": false,
+  "master_index_writes_enabled": false,
+  "ready_for_r0_10": true
+}

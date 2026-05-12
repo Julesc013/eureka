@@ -1,0 +1,18 @@
+{
+  "schema_version": "r0_pypi_metadata_source_policy.v0",
+  "source_id": "pypi_json_metadata",
+  "operation_scope": "metadata_only",
+  "approved_package_names": [
+    "sampleproject"
+  ],
+  "approved_endpoint_template": "https://pypi.org/pypi/{package_name}/json",
+  "max_requests_per_run": 1,
+  "timeout_seconds": 10,
+  "user_agent_required": true,
+  "contact_required_or_documented": true,
+  "download_urls_must_not_be_fetched": true,
+  "release_files_must_not_be_downloaded": true,
+  "dependency_resolution_enabled": false,
+  "source_sync_enabled": false,
+  "truth_acceptance_enabled": false
+}

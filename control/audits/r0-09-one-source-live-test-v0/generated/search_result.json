@@ -1,0 +1,43 @@
+{
+  "description": "A sample Python project",
+  "limitations": [
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "one-source metadata policy",
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation",
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation",
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation",
+    "local review state only"
+  ],
+  "matched_terms": [
+    "sampleproject"
+  ],
+  "record_id": "pir_607aab9426e7a240",
+  "score": 1.0,
+  "source_id": "pypi_json_metadata",
+  "title": "sampleproject",
+  "warnings": []
+}

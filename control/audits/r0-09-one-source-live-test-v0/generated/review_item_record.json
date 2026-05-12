@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-05-12T08:59:50Z",
+  "evidence_id": "evc_c5ac1081e684f6ad",
+  "limitations": [
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation"
+  ],
+  "payload": {
+    "claim_kind": "metadata",
+    "claim_payload": {
+      "fields": {
+        "metadata_limitations": [
+          "metadata observation is not source truth",
+          "package files are not fetched",
+          "dependencies are not resolved"
+        ],
+        "name": "sampleproject",
+        "project_urls": {
+          "Bug Reports": "https://github.com/pypa/sampleproject/issues",
+          "Funding": "https://donate.pypi.org",
+          "Homepage": "https://github.com/pypa/sampleproject",
+          "Say Thanks!": "http://saythanks.io/to/example",
+          "Source": "https://github.com/pypa/sampleproject/"
+        },
+        "release_count": 7,
+        "summary": "A sample Python project",
+        "version": "4.0.0"
+      },
+      "source_family": "package_registry"
+    },
+    "claim_subject": "pypi_json_metadata"
+  },
+  "priority": 100,
+  "queue_status": "accepted",
+  "review_item_id": "rvi_3c028490496c321e",
+  "source_cache_entry_id": "sce_cd6ee714d74ef1a6",
+  "subject_id": "evc_c5ac1081e684f6ad",
+  "subject_kind": "evidence_candidate",
+  "summary": "review evidence candidate evc_c5ac1081e684f6ad",
+  "updated_at": "2026-05-12T08:59:52Z",
+  "warnings": []
+}

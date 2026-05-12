@@ -1,0 +1,42 @@
+{
+  "claim_kind": "metadata",
+  "claim_payload": {
+    "fields": {
+      "metadata_limitations": [
+        "metadata observation is not source truth",
+        "package files are not fetched",
+        "dependencies are not resolved"
+      ],
+      "name": "sampleproject",
+      "project_urls": {
+        "Bug Reports": "https://github.com/pypa/sampleproject/issues",
+        "Funding": "https://donate.pypi.org",
+        "Homepage": "https://github.com/pypa/sampleproject",
+        "Say Thanks!": "http://saythanks.io/to/example",
+        "Source": "https://github.com/pypa/sampleproject/"
+      },
+      "release_count": 7,
+      "summary": "A sample Python project",
+      "version": "4.0.0"
+    },
+    "source_family": "package_registry"
+  },
+  "claim_subject": "pypi_json_metadata",
+  "created_at": "2026-05-12T08:59:49Z",
+  "evidence_id": "evc_c5ac1081e684f6ad",
+  "limitations": [
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation"
+  ],
+  "normalized_observation_id": "norm_11805c5e95569b67",
+  "observation_id": "obs_f77c00bfcd973758",
+  "source_cache_entry_id": "sce_cd6ee714d74ef1a6",
+  "source_id": "pypi_json_metadata",
+  "status": "candidate",
+  "updated_at": "2026-05-12T08:59:49Z",
+  "warnings": []
+}

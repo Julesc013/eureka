@@ -1,0 +1,39 @@
+{
+  "confidence": 0.7,
+  "limitations": [
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "one-source metadata policy"
+  ],
+  "observation_id": "obs_f77c00bfcd973758",
+  "observation_kind": "json",
+  "observed_fields": {
+    "metadata_limitations": [
+      "metadata observation is not source truth",
+      "package files are not fetched",
+      "dependencies are not resolved"
+    ],
+    "name": "sampleproject",
+    "project_urls": {
+      "Bug Reports": "https://github.com/pypa/sampleproject/issues",
+      "Funding": "https://donate.pypi.org",
+      "Homepage": "https://github.com/pypa/sampleproject",
+      "Say Thanks!": "http://saythanks.io/to/example",
+      "Source": "https://github.com/pypa/sampleproject/"
+    },
+    "release_count": 7,
+    "summary": "A sample Python project",
+    "version": "4.0.0"
+  },
+  "request_id": "req_43563b36fdd82736",
+  "response_fingerprint": {
+    "algorithm": "sha256",
+    "value": "6ee00d032baa75980020c38ea5cc6031b438076d897f868c29a62f05b5e1b801"
+  },
+  "response_id": "res_3a728e50347cd38e",
+  "source_id": "pypi_json_metadata",
+  "warnings": []
+}

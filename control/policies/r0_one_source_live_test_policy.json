@@ -1,0 +1,25 @@
+{
+  "schema_version": "r0_one_source_live_test_policy.v0",
+  "task": "R0-09",
+  "live_test_default_enabled": false,
+  "live_requires_explicit_flag": true,
+  "allowed_source_ids": [
+    "pypi_json_metadata"
+  ],
+  "allowed_operations": [
+    "metadata_only"
+  ],
+  "max_sources_per_run": 1,
+  "max_requests_per_run": 1,
+  "max_package_names_per_run": 1,
+  "package_downloads_enabled": false,
+  "dependency_resolution_enabled": false,
+  "install_execution_enabled": false,
+  "source_sync_enabled": false,
+  "scraping_enabled": false,
+  "crawling_enabled": false,
+  "model_provider_enabled": false,
+  "site_dist_writes_enabled": false,
+  "master_index_writes_enabled": false,
+  "public_index_db_writes_require_explicit_path": true
+}

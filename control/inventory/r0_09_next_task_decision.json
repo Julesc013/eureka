@@ -1,0 +1,9 @@
+{
+  "schema_version": "r0_09_next_task_decision.v0",
+  "task": "R0-09",
+  "status": "pass",
+  "ready_for_r0_10": true,
+  "f0_should_remain_blocked": true,
+  "dev_to_main_should_remain_blocked": true,
+  "recommended_next_task": "R0-10 \u2014 Dev-to-main production review"
+}

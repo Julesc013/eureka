@@ -1,0 +1,26 @@
+{
+  "schema_version": "one_source_live_test_result.v0",
+  "task": "R0-09",
+  "status": "pass",
+  "source_id": "pypi_json_metadata",
+  "package_name": "sampleproject",
+  "live_requested": true,
+  "network_used": true,
+  "request_count": 1,
+  "download_count": 0,
+  "install_execution_count": 0,
+  "source_sync_used": false,
+  "source_cache_entry_created": true,
+  "evidence_candidate_created": true,
+  "review_item_created": true,
+  "review_decision_recorded": true,
+  "public_index_rebuilt": true,
+  "search_hit_count": 1,
+  "absence_hit_count": 0,
+  "site_dist_mutated": false,
+  "master_index_mutated": false,
+  "limitations": [
+    "Reviewed local record is not global source truth, rights clearance, malware safety, or production readiness."
+  ],
+  "warnings": []
+}

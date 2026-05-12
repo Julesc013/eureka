@@ -1,0 +1,34 @@
+{
+  "confidence": 0.7,
+  "limitations": [
+    "registry metadata is not source truth",
+    "package files are not downloaded",
+    "install and execution are not performed",
+    "metadata endpoint only",
+    "package files are not fetched",
+    "metadata-only observation"
+  ],
+  "normalized_fields": {
+    "metadata_limitations": [
+      "metadata observation is not source truth",
+      "package files are not fetched",
+      "dependencies are not resolved"
+    ],
+    "name": "sampleproject",
+    "project_urls": {
+      "Bug Reports": "https://github.com/pypa/sampleproject/issues",
+      "Funding": "https://donate.pypi.org",
+      "Homepage": "https://github.com/pypa/sampleproject",
+      "Say Thanks!": "http://saythanks.io/to/example",
+      "Source": "https://github.com/pypa/sampleproject/"
+    },
+    "release_count": 7,
+    "summary": "A sample Python project",
+    "version": "4.0.0"
+  },
+  "normalized_observation_id": "norm_11805c5e95569b67",
+  "observation_id": "obs_f77c00bfcd973758",
+  "source_family": "package_registry",
+  "source_id": "pypi_json_metadata",
+  "warnings": []
+}

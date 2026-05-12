@@ -1,5 +1,5 @@
 {
-  "contract_count": 637,
+  "contract_count": 639,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -6073,6 +6073,46 @@
       "current_root": "contracts/runtime/",
       "maturity": "stable_boundary_candidate",
       "notes": [],
+      "path": "contracts/runtime/live_metadata_test_request.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/runtime/live_metadata_test_request.v0.json",
+        "scripts/validate_one_source_live_test.py"
+      ],
+      "risks": [],
+      "signals": [
+        "runtime_contract_path",
+        "size:989",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/runtime/live_metadata_test_request.v0.json",
+      "target_root": "contracts/runtime/"
+    },
+    {
+      "contract_class": "product_runtime_contract",
+      "current_root": "contracts/runtime/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/runtime/live_metadata_test_result.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/runtime/live_metadata_test_result.v0.json",
+        "scripts/validate_one_source_live_test.py"
+      ],
+      "risks": [],
+      "signals": [
+        "runtime_contract_path",
+        "size:2049",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/runtime/live_metadata_test_result.v0.json",
+      "target_root": "contracts/runtime/"
+    },
+    {
+      "contract_class": "product_runtime_contract",
+      "current_root": "contracts/runtime/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
       "path": "contracts/runtime/metadata_request.v0.json",
       "recommended_action": "keep",
       "references": [
@@ -7623,7 +7663,7 @@
       "risks": [],
       "signals": [
         "durable_store_path",
-        "size:1711",
+        "size:1799",
         "suffix:.json"
       ],
       "target_path": "contracts/stores/public_index_record.v0.json",
@@ -19948,7 +19988,7 @@
       "native_contract": 15,
       "preview_schema": 171,
       "product_domain_contract": 15,
-      "product_runtime_contract": 50,
+      "product_runtime_contract": 52,
       "public_api_contract": 90,
       "snapshot_contract": 16,
       "source_policy_contract": 55,
@@ -19958,11 +19998,11 @@
     "maturity": {
       "control_schema_candidate": 312,
       "placeholder": 18,
-      "stable_boundary_candidate": 307
+      "stable_boundary_candidate": 309
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 407,
+      "keep": 409,
       "move": 216,
       "move_and_rename": 11
     }
