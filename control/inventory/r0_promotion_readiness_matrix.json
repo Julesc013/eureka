@@ -1,0 +1,107 @@
+{
+  "checks": [
+    {
+      "area": "R0 task reports",
+      "check_id": "r0_reports",
+      "evidence": [
+        "control/audits/r0-01-dev-production-reality-inventory-v0/r0_01_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/r0_02_report.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/r0_03a_report.json",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/r0_03b_1_report.json",
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/r0_03b_2_report.json",
+        "control/audits/r0-04-source-observation-production-seam-v0/r0_04_report.json",
+        "control/audits/r0-05-durable-source-cache-store-v0/r0_05_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-07-review-queue-product-seam-v0/r0_07_report.json",
+        "control/audits/r0-08-reviewed-public-index-rebuild-v0/r0_08_report.json",
+        "control/audits/r0-09-one-source-live-test-v0/r0_09_report.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "source observation",
+      "check_id": "source_observation",
+      "evidence": [
+        "control/inventory/source_observation_seam_inventory.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "source cache",
+      "check_id": "source_cache",
+      "evidence": [
+        "control/inventory/source_cache_store_inventory.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "evidence ledger",
+      "check_id": "evidence_ledger",
+      "evidence": [
+        "control/inventory/evidence_ledger_store_inventory.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "review queue",
+      "check_id": "review_queue",
+      "evidence": [
+        "control/inventory/review_queue_store_inventory.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "reviewed public index",
+      "check_id": "reviewed_public_index",
+      "evidence": [
+        "control/inventory/public_index_store_inventory.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "architecture leakage gate",
+      "check_id": "architecture_leakage_gate",
+      "evidence": [
+        "control/inventory/runtime_architecture_leakage_gate_report.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "area": "contract taxonomy",
+      "check_id": "contract_taxonomy",
+      "evidence": [
+        "control/inventory/r0_03b_2_final_contract_taxonomy.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "fail"
+    },
+    {
+      "area": "one-source live test",
+      "check_id": "one_source_live_test",
+      "evidence": [
+        "control/inventory/one_source_live_test_result.json"
+      ],
+      "notes": [],
+      "required": true,
+      "status": "pass"
+    }
+  ],
+  "overall_promotion_status": "blocked",
+  "schema_version": "r0_promotion_readiness_matrix.v0",
+  "task": "R0-10"
+}

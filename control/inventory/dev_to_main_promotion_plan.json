@@ -1,0 +1,84 @@
+{
+  "branch_mutation_performed": false,
+  "operator_action_required": true,
+  "promotion_plan_only": true,
+  "promotion_steps": [
+    "Confirm R0 production review has no blockers.",
+    "Push dev after operator approval.",
+    "Open a dev-to-main review with validation evidence attached.",
+    "Merge to main only after explicit human approval."
+  ],
+  "ready": false,
+  "required_checks": [
+    {
+      "check_id": "current_branch_dev",
+      "evidence": [
+        "branch=dev"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "working_tree_clean",
+      "evidence": [],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "main_ref_available",
+      "evidence": [
+        "main"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "dev_contains_main",
+      "evidence": [
+        "dev contains main"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "r0_review_promotes",
+      "evidence": [
+        "control\\inventory\\r0_production_review_result.json"
+      ],
+      "notes": [],
+      "status": "fail"
+    },
+    {
+      "check_id": "branch_mutation_default",
+      "evidence": [],
+      "notes": [
+        "Default mode is promotion-plan-only and performs no merge."
+      ],
+      "status": "pass"
+    },
+    {
+      "check_id": "unpushed_dev_commits",
+      "evidence": [
+        "ahead=3",
+        "upstream=origin/dev"
+      ],
+      "notes": [
+        "Operator must push dev before any remote promotion review."
+      ],
+      "status": "warn"
+    }
+  ],
+  "risks": [
+    "R0-10 found remaining contract taxonomy blockers.",
+    "Local dev is ahead of origin/dev."
+  ],
+  "rollback_plan": [
+    "Do not rewrite main history.",
+    "If promotion is approved and later reverted, use a normal revert commit on main.",
+    "Keep R0 audit evidence attached to the revert decision."
+  ],
+  "schema_version": "dev_to_main_promotion_plan.v0",
+  "source_branch": "dev",
+  "target_branch": "main",
+  "task": "R0-10"
+}

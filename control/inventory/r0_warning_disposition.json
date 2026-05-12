@@ -1,0 +1,116 @@
+{
+  "schema_version": "r0_warning_disposition.v0",
+  "task": "R0-10",
+  "warnings": [
+    {
+      "area": "architecture_leakage",
+      "disposition": "assigned_to_next_task",
+      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
+      "notes": [
+        "No new production-path leakage blockers were reported."
+      ],
+      "warning": "29015 known allowlisted legacy violations remain",
+      "warning_id": "R0-WARN-001"
+    },
+    {
+      "area": "contract_taxonomy",
+      "disposition": "assigned_to_next_task",
+      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
+      "notes": [
+        "contracts_root_status=partial"
+      ],
+      "warning": "19 compatibility shims remain",
+      "warning_id": "R0-WARN-002"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-02 - Runtime architecture leakage gate"
+      ],
+      "warning": "R0-01 completed with warnings",
+      "warning_id": "R0-WARN-003"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "assigned_to_next_task",
+      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
+      "notes": [
+        "Evidence: R0-03 \u2014 Contract taxonomy refactor"
+      ],
+      "warning": "R0-02 completed with warnings",
+      "warning_id": "R0-WARN-004"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-03B \u2014 Contract taxonomy refactor execution"
+      ],
+      "warning": "R0-03A completed with warnings",
+      "warning_id": "R0-WARN-005"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-03B-2 \u2014 Contract reference update and product contract cleanup"
+      ],
+      "warning": "R0-03B-1 completed with warnings",
+      "warning_id": "R0-WARN-006"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "assigned_to_next_task",
+      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
+      "notes": [
+        "Evidence: R0-03C \u2014 Resolve remaining contract taxonomy blockers"
+      ],
+      "warning": "R0-03B-2 completed with warnings",
+      "warning_id": "R0-WARN-007"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-05 \u2014 Durable source cache store"
+      ],
+      "warning": "R0-04 completed with warnings",
+      "warning_id": "R0-WARN-008"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-06 \u2014 Durable evidence ledger store"
+      ],
+      "warning": "R0-05 completed with warnings",
+      "warning_id": "R0-WARN-009"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-07 \u2014 Review queue product seam"
+      ],
+      "warning": "R0-06 completed with warnings",
+      "warning_id": "R0-WARN-010"
+    },
+    {
+      "area": "r0_prior_task",
+      "disposition": "harmless",
+      "next_task": "",
+      "notes": [
+        "Evidence: R0-08 \u2014 Reviewed public index rebuild"
+      ],
+      "warning": "R0-07 completed with warnings",
+      "warning_id": "R0-WARN-011"
+    }
+  ]
+}
