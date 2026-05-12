@@ -1,0 +1,30 @@
+{
+  "deferred": [
+    {
+      "path_or_plan": "F0 extraction runtime implementation",
+      "reason": "Outside R0 closeout scope."
+    },
+    {
+      "path_or_plan": "I/J/K/L/E tracks",
+      "reason": "Outside R0 closeout scope."
+    },
+    {
+      "path_or_plan": "native and hosted surfaces",
+      "reason": "Outside R0 closeout scope."
+    },
+    {
+      "path_or_plan": "site/dist generation",
+      "reason": "Outside R0 closeout scope."
+    },
+    {
+      "path_or_plan": "pack import/export/sign/publish",
+      "reason": "Outside R0 closeout scope."
+    },
+    {
+      "path_or_plan": "connector expansion and broad live source access",
+      "reason": "Outside R0 closeout scope."
+    }
+  ],
+  "schema_version": "r0_deferred_paths_register.v0",
+  "task": "R0-11"
+}

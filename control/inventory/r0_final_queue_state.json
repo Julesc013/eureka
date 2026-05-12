@@ -1,0 +1,13 @@
+{
+  "completed_queue_item_after": "R0-11",
+  "current_queue_item_after": "R0-REMEDIATION \u2014 Resolve final R0 blockers",
+  "current_queue_item_before": "F0-BUNDLE-01",
+  "f0_state": "remediation_required",
+  "notes": [
+    "Queue index was read but not mutated by R0-11."
+  ],
+  "queue_updated": false,
+  "remediation_state": "created",
+  "schema_version": "r0_final_queue_state.v0",
+  "task": "R0-11"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "r0_child_remediation_tasks.v0",
+  "task": "R0-11",
+  "tasks": [
+    {
+      "allowed_scope_summary": "contracts/control schema taxonomy, active references, validators, docs, and audit evidence only.",
+      "blocked_until_complete": [
+        "F0-BUNDLE-01",
+        "dev-to-main promotion"
+      ],
+      "reason": "R0-03B-2 reports unresolved contracts and compatibility shims.",
+      "status": "required",
+      "task_id": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "title": "Resolve remaining contract taxonomy blockers"
+    },
+    {
+      "allowed_scope_summary": "legacy connector/runtime naming remediation after contract taxonomy is resolved.",
+      "blocked_until_complete": [],
+      "reason": "R0-02 reports known allowlisted legacy leakage with no new blockers.",
+      "status": "deferred",
+      "task_id": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
+      "title": "Retire legacy runtime architecture leakage allowlist debt"
+    }
+  ]
+}

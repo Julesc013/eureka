@@ -1,0 +1,12 @@
+{
+  "alternative_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "f0_can_resume": false,
+  "f0_must_not_create_scaffold_only_work": true,
+  "f0_must_use_recovered_runtime_seams": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Contract taxonomy blocker remains and has been child-tasked.",
+  "recommended_next_task": "R0-REMEDIATION \u2014 Resolve final R0 blockers",
+  "schema_version": "r0_final_next_task_decision.v0",
+  "task": "R0-11"
+}

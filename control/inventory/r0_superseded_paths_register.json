@@ -1,0 +1,22 @@
+{
+  "schema_version": "r0_superseded_paths_register.v0",
+  "superseded": [
+    {
+      "path_or_plan": "H-series task-shaped runtime seams as product architecture",
+      "superseded_by": "Recovered R0 product runtime seams."
+    },
+    {
+      "path_or_plan": "scaffold-only task completion standard",
+      "superseded_by": "Recovered R0 product runtime seams."
+    },
+    {
+      "path_or_plan": "public index mutation before local review projection",
+      "superseded_by": "Recovered R0 product runtime seams."
+    },
+    {
+      "path_or_plan": "evidence acceptance without explicit review",
+      "superseded_by": "Recovered R0 product runtime seams."
+    }
+  ],
+  "task": "R0-11"
+}

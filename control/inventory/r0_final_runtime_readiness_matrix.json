@@ -1,0 +1,78 @@
+{
+  "schema_version": "r0_final_runtime_readiness_matrix.v0",
+  "seams": [
+    {
+      "behavior_tests": [
+        "tests/runtime/test_source_observation_seam.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "source_observation",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_source_observation_seam.py"
+      ]
+    },
+    {
+      "behavior_tests": [
+        "tests/runtime/test_source_cache_store.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "source_cache",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_source_cache_store.py"
+      ]
+    },
+    {
+      "behavior_tests": [
+        "tests/runtime/test_evidence_ledger_store.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "evidence_ledger",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_evidence_ledger_store.py"
+      ]
+    },
+    {
+      "behavior_tests": [
+        "tests/runtime/test_review_queue_store.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "review_queue",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_review_queue_store.py"
+      ]
+    },
+    {
+      "behavior_tests": [
+        "tests/runtime/test_public_index_integration.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "reviewed_public_index",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_reviewed_public_index.py"
+      ]
+    },
+    {
+      "behavior_tests": [
+        "tests/runtime/test_one_source_live_test.py"
+      ],
+      "blocks_f0": false,
+      "known_limitations": [],
+      "seam": "one_source_live_pipeline",
+      "status": "ready",
+      "validators": [
+        "scripts/validate_one_source_live_test.py"
+      ]
+    }
+  ],
+  "task": "R0-11"
+}

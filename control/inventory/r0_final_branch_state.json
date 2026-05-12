@@ -1,0 +1,17 @@
+{
+  "branch_mutation_performed": false,
+  "current_branch": "dev",
+  "current_branch_is_dev": true,
+  "current_branch_is_main": false,
+  "dev_detected": true,
+  "main_detected": true,
+  "notes": [
+    "No branch merge, push, rebase, or checkout was performed by R0-11."
+  ],
+  "operator_action_required": true,
+  "promotion_ready": false,
+  "promotion_required": true,
+  "schema_version": "r0_final_branch_state.v0",
+  "task": "R0-11",
+  "working_tree_clean_after_commit": true
+}
