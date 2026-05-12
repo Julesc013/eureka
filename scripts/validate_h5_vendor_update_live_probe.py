@@ -26,10 +26,10 @@ from runtime.connectors.h5_vendor_update_driver.live_probe_common import (  # no
 )
 
 CONTRACTS = (
-    "contracts/connectors/h5_vendor_update_live_probe_request.v0.json",
-    "contracts/connectors/h5_vendor_update_live_probe_result.v0.json",
-    "contracts/connectors/h5_vendor_update_live_probe_output_bundle.v0.json",
-    "contracts/connectors/h5_vendor_update_connector_health_summary.v0.json",
+    "control/schemas/previews/h5/connectors/vendor_update_live_probe_request.v0.json",
+    "control/schemas/previews/h5/connectors/vendor_update_live_probe_result.v0.json",
+    "control/schemas/previews/h5/connectors/vendor_update_live_probe_output_bundle.v0.json",
+    "control/schemas/previews/h5/connectors/vendor_update_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h5_vendor_update_live_probe_policy.json",

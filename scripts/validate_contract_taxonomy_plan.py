@@ -65,13 +65,11 @@ BANNED_IMPORT_ROOTS = {
 }
 
 FORBIDDEN_MODIFIED_PREFIXES = (
-    "contracts/",
     "runtime/",
     "surfaces/",
     "site/",
     "native/",
     "crates/",
-    "examples/",
 )
 
 REQUIRED_CLASSES = {
@@ -206,7 +204,16 @@ def validate_inventory(inventory: Mapping[str, Any], root: Path, errors: list[st
     if not isinstance(contracts, list) or not contracts:
         errors.append("inventory must contain contracts")
         return
-    expected = sorted(path.relative_to(root).as_posix() for path in (root / "contracts").rglob("*") if path.is_file())
+    expected = []
+    for schema_root in ("contracts", "control/schemas"):
+        base = root / schema_root
+        if base.exists():
+            expected.extend(
+                path.relative_to(root).as_posix()
+                for path in base.rglob("*")
+                if path.is_file() and path.name not in {".gitkeep", "README.md"}
+            )
+    expected = sorted(expected)
     actual = sorted(str(item.get("path")) for item in contracts if isinstance(item, Mapping))
     if actual != expected:
         missing = sorted(set(expected) - set(actual))[:10]

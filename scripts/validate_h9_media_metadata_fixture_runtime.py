@@ -27,16 +27,16 @@ from runtime.connectors.h9_media_metadata.normalizer_common import (  # noqa: E4
 )
 
 CONTRACT_FILES = (
-    "contracts/connectors/h9_media_metadata_fixture.v0.json",
-    "contracts/connectors/h9_media_metadata_normalized_record.v0.json",
-    "contracts/connectors/h9_media_object_identity_candidate.v0.json",
-    "contracts/connectors/h9_music_work_recording_release_candidate.v0.json",
-    "contracts/connectors/h9_image_video_map_identity_candidate.v0.json",
-    "contracts/connectors/h9_media_creator_collection_relation_candidate.v0.json",
-    "contracts/connectors/h9_media_fingerprint_candidate.v0.json",
-    "contracts/connectors/h9_media_rights_license_candidate.v0.json",
-    "contracts/connectors/h9_media_safety_privacy_candidate.v0.json",
-    "contracts/connectors/h9_media_metadata_fixture_replay_result.v0.json",
+    "control/schemas/fixtures/h9/connectors/media_metadata_fixture.v0.json",
+    "control/schemas/previews/h9/connectors/media_metadata_normalized_record.v0.json",
+    "control/schemas/previews/h9/connectors/media_object_identity_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/image_video_map_identity_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/media_creator_collection_relation_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/media_fingerprint_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/media_rights_license_candidate.v0.json",
+    "control/schemas/previews/h9/connectors/media_safety_privacy_candidate.v0.json",
+    "control/schemas/fixtures/h9/connectors/media_metadata_fixture_replay_result.v0.json",
 )
 POLICY_FILES = (
     "control/inventory/connectors/h9_media_metadata_fixture_runtime_policy.json",

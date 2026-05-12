@@ -1,0 +1,105 @@
+{
+  "$id": "https://eureka.local/control/schemas/audits/h8/connectors/manuals_docs_quality_delta_report.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "access_rights_candidate_count": {
+      "description": "H8 review/quality field: access_rights_candidate_count"
+    },
+    "blocked_sources_count": {
+      "description": "H8 review/quality field: blocked_sources_count"
+    },
+    "blocker_count": {
+      "description": "H8 review/quality field: blocker_count"
+    },
+    "comparison_scope": {
+      "description": "H8 review/quality field: comparison_scope"
+    },
+    "coverage_preview_count": {
+      "description": "H8 review/quality field: coverage_preview_count"
+    },
+    "datasheet_device_identity_candidate_count": {
+      "description": "H8 review/quality field: datasheet_device_identity_candidate_count"
+    },
+    "evidence_candidate_preview_count": {
+      "description": "H8 review/quality field: evidence_candidate_preview_count"
+    },
+    "fixture_sources_count": {
+      "description": "H8 review/quality field: fixture_sources_count"
+    },
+    "forbidden_claims": {
+      "description": "H8 review/quality field: forbidden_claims"
+    },
+    "install_requirement_claim_candidate_count": {
+      "description": "H8 review/quality field: install_requirement_claim_candidate_count"
+    },
+    "known_gap_count": {
+      "description": "H8 review/quality field: known_gap_count"
+    },
+    "limitations": {
+      "description": "H8 review/quality field: limitations"
+    },
+    "live_probe_sources_count": {
+      "description": "H8 review/quality field: live_probe_sources_count"
+    },
+    "manual_artifact_relation_candidate_count": {
+      "description": "H8 review/quality field: manual_artifact_relation_candidate_count"
+    },
+    "normalized_record_count": {
+      "description": "H8 review/quality field: normalized_record_count"
+    },
+    "notes": {
+      "description": "H8 review/quality field: notes"
+    },
+    "per_source_deltas": {
+      "description": "H8 review/quality field: per_source_deltas"
+    },
+    "product_boundary": {
+      "description": "H8 review/quality field: product_boundary"
+    },
+    "quality_delta_id": {
+      "description": "H8 review/quality field: quality_delta_id"
+    },
+    "repair_service_safety_candidate_count": {
+      "description": "H8 review/quality field: repair_service_safety_candidate_count"
+    },
+    "review_seed_count": {
+      "description": "H8 review/quality field: review_seed_count"
+    },
+    "schema_version": {
+      "description": "H8 review/quality field: schema_version"
+    },
+    "scorecard_update_count": {
+      "description": "H8 review/quality field: scorecard_update_count"
+    },
+    "source_cache_candidate_count": {
+      "description": "H8 review/quality field: source_cache_candidate_count"
+    },
+    "source_count": {
+      "description": "H8 review/quality field: source_count"
+    },
+    "standards_specification_identity_candidate_count": {
+      "description": "H8 review/quality field: standards_specification_identity_candidate_count"
+    },
+    "technical_document_identity_candidate_count": {
+      "description": "H8 review/quality field: technical_document_identity_candidate_count"
+    },
+    "truth_boundary": {
+      "description": "H8 review/quality field: truth_boundary"
+    },
+    "wave_id": {
+      "description": "H8 review/quality field: wave_id"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "h8_manuals_docs_quality_delta_report",
+  "type": "object",
+  "x_eureka": {
+    "product_behavior_change": false,
+    "scope": "manuals_docs_standards_review_quality",
+    "track": "H8",
+    "truth_acceptance": false
+  }
+}

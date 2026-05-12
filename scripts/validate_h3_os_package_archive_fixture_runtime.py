@@ -27,13 +27,13 @@ from runtime.connectors.h3_os_package_archives.normalizer_common import (  # noq
 
 
 CONTRACTS = (
-    "contracts/connectors/h3_os_package_fixture.v0.json",
-    "contracts/connectors/h3_os_package_normalized_record.v0.json",
-    "contracts/connectors/h3_os_package_identity_candidate.v0.json",
-    "contracts/connectors/h3_os_platform_compatibility_candidate.v0.json",
-    "contracts/connectors/h3_os_package_dependency_candidate.v0.json",
-    "contracts/connectors/h3_os_package_file_candidate.v0.json",
-    "contracts/connectors/h3_os_package_fixture_replay_result.v0.json",
+    "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+    "control/schemas/previews/h3/connectors/os_platform_compatibility_candidate.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+    "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h3_os_package_fixture_runtime_policy.json",

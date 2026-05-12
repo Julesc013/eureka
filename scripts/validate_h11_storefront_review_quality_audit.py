@@ -24,10 +24,10 @@ from runtime.connectors.h11_storefront.review_integration import (  # noqa: E402
 AUDIT_DIR = Path("control/audits/h11-bundle-04-storefront-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h11_storefront/review_integration")
 REQUIRED_JSON = (
-    "contracts/connectors/h11_storefront_review_integration_result.v0.json",
-    "contracts/connectors/h11_storefront_quality_delta_report.v0.json",
-    "contracts/connectors/h11_storefront_connector_wave_postmortem.v0.json",
-    "contracts/connectors/h11_storefront_integration_audit.v0.json",
+    "control/schemas/audits/h11/connectors/storefront_review_integration_result.v0.json",
+    "control/schemas/audits/h11/connectors/storefront_quality_delta_report.v0.json",
+    "control/schemas/audits/h11/connectors/storefront_connector_wave_postmortem.v0.json",
+    "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
     "contracts/connectors/h11_storefront_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h11_storefront_review_integration_policy.json",
     "control/inventory/connectors/h11_storefront_review_output_policy.json",

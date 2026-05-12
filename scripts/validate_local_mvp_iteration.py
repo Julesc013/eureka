@@ -22,11 +22,11 @@ REQUIRED_OPTIONS = {
     "MVP-ALPHA-REMEDIATION-01",
 }
 REQUIRED_CONTRACTS = [
-    "contracts/audits/local_mvp_iteration_plan.v0.json",
+    "control/schemas/audits/audits/local_mvp_iteration_plan.v0.json",
     "contracts/audits/local_mvp_next_wave_option.v0.json",
     "contracts/audits/local_mvp_next_task_decision.v0.json",
-    "contracts/audits/local_mvp_deployment_deferral.v0.json",
-    "contracts/audits/local_mvp_expansion_gate.v0.json",
+    "control/schemas/audits/audits/local_mvp_deployment_deferral.v0.json",
+    "control/schemas/audits/audits/local_mvp_expansion_gate.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/audits/local_mvp_iteration_policy.json",

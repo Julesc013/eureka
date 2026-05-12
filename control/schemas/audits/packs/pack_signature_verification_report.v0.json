@@ -1,0 +1,58 @@
+{
+  "$id": "https://eureka.local/control/schemas/audits/packs/pack_signature_verification_report.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Review-gated pack quarantine contract. This schema defines local preview records only and does not permit pack import, submission, publication, acceptance, public index mutation, master index mutation, rights clearance, malware safety, verified installability, private keys, or real signing.",
+  "properties": {
+    "limitations": {},
+    "private_key_used": {
+      "const": false
+    },
+    "product_boundary": {},
+    "real_signature_created": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "pack_signature_verification_report.v0"
+    },
+    "signature_envelope_ref": {},
+    "signature_verification_report_id": {},
+    "truth_boundary": {},
+    "verification_method": {},
+    "verification_performed": {
+      "const": false
+    },
+    "verification_status": {},
+    "warnings": {}
+  },
+  "required": [
+    "schema_version",
+    "signature_verification_report_id",
+    "signature_envelope_ref",
+    "verification_status",
+    "verification_performed",
+    "verification_method",
+    "private_key_used",
+    "real_signature_created",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "PackSignatureVerificationReportV0",
+  "type": "object",
+  "x-non_goals": [
+    "pack import",
+    "pack submission",
+    "pack publication",
+    "hosted upload",
+    "pack acceptance",
+    "evidence acceptance",
+    "candidate acceptance",
+    "public index mutation",
+    "master index mutation",
+    "private signing keys",
+    "real signing"
+  ],
+  "x-status": "stable_draft"
+}

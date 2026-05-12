@@ -26,10 +26,10 @@ from runtime.connectors.h2_package_registries.live_probe_common import (  # noqa
 
 
 CONTRACTS = (
-    "contracts/connectors/h2_package_live_probe_request.v0.json",
-    "contracts/connectors/h2_package_live_probe_result.v0.json",
-    "contracts/connectors/h2_package_live_probe_output_bundle.v0.json",
-    "contracts/connectors/h2_package_connector_health_summary.v0.json",
+    "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+    "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+    "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+    "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h2_package_live_probe_policy.json",

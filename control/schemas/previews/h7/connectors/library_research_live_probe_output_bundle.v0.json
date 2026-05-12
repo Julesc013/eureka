@@ -1,0 +1,63 @@
+{
+  "$id": "control/schemas/previews/h7/connectors/library_research_live_probe_output_bundle.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "access_rights_availability_candidate": {
+      "type": "object"
+    },
+    "bibliographic_identity_candidate": {
+      "type": "object"
+    },
+    "citation_relation_candidate": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "connector_health_summary": {
+      "type": "object"
+    },
+    "cultural_object_identity_candidate": {
+      "type": "object"
+    },
+    "dataset_identity_candidate": {
+      "type": "object"
+    },
+    "evidence_candidate_preview": {
+      "type": "object"
+    },
+    "live_probe_result": {
+      "type": "object"
+    },
+    "normalized_record": {
+      "type": "object"
+    },
+    "patent_identity_candidate": {
+      "type": "object"
+    },
+    "research_work_identity_candidate": {
+      "type": "object"
+    },
+    "review_queue_seed_preview": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "h7_library_research_live_probe_output_bundle.v0"
+    },
+    "source_cache_candidate_preview": {
+      "type": "object"
+    },
+    "validation_summary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_result",
+    "connector_health_summary",
+    "validation_summary"
+  ],
+  "title": "h7_library_research_live_probe_output_bundle.v0",
+  "type": "object"
+}

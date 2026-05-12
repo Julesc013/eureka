@@ -1,0 +1,58 @@
+{
+  "$id": "control/schemas/previews/h7/connectors/library_research_connector_health_summary.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "connector_family": {
+      "type": "string"
+    },
+    "health_summary_id": {
+      "type": "string"
+    },
+    "live_probe_status": {
+      "type": "string"
+    },
+    "next_recommended_action": {
+      "type": "string"
+    },
+    "policy_blockers": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "request_count": {
+      "type": "integer"
+    },
+    "response_status_summary": {
+      "type": "string"
+    },
+    "restricted_source_status": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "h7_library_research_connector_health_summary.v0"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_limitations": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "health_summary_id",
+    "source_id",
+    "live_probe_status",
+    "request_count"
+  ],
+  "title": "h7_library_research_connector_health_summary.v0",
+  "type": "object"
+}

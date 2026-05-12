@@ -24,10 +24,10 @@ from runtime.connectors.h10_games_emulation.review_integration import (  # noqa:
 AUDIT_DIR = Path("control/audits/h10-bundle-04-games-emulation-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h10_games_emulation/review_integration")
 REQUIRED_JSON = (
-    "contracts/connectors/h10_games_emulation_review_integration_result.v0.json",
-    "contracts/connectors/h10_games_emulation_quality_delta_report.v0.json",
-    "contracts/connectors/h10_games_emulation_connector_wave_postmortem.v0.json",
-    "contracts/connectors/h10_games_emulation_integration_audit.v0.json",
+    "control/schemas/audits/h10/connectors/games_emulation_review_integration_result.v0.json",
+    "control/schemas/audits/h10/connectors/games_emulation_quality_delta_report.v0.json",
+    "control/schemas/audits/h10/connectors/games_emulation_connector_wave_postmortem.v0.json",
+    "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
     "contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h10_games_emulation_review_integration_policy.json",
     "control/inventory/connectors/h10_games_emulation_review_output_policy.json",

@@ -35,7 +35,7 @@ CONTRACTS = (
     "contracts/sources/source_coverage_ledger.v0.json",
     "contracts/sources/source_coverage_manifest.v0.json",
     "contracts/connectors/connector_scorecard.v0.json",
-    "contracts/connectors/connector_quality_delta.v0.json",
+    "control/schemas/audits/connectors/connector_quality_delta.v0.json",
     "contracts/packs/source_pack_manifest.v0.json",
     "contracts/packs/source_pack_export.v0.json",
 )

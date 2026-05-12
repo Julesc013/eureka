@@ -30,11 +30,11 @@ REQUIRED_COMPONENTS = [
     "obs_side_lane_status",
 ]
 REQUIRED_CONTRACTS = [
-    "contracts/audits/mvp_alpha_readiness_audit.v0.json",
-    "contracts/audits/mvp_alpha_gate_decision.v0.json",
-    "contracts/audits/mvp_alpha_integration_matrix.v0.json",
-    "contracts/audits/mvp_alpha_remediation_plan.v0.json",
-    "contracts/audits/mvp_alpha_operator_review_packet.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_gate_decision.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_integration_matrix.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_remediation_plan.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_operator_review_packet.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/audits/mvp_alpha_readiness_policy.json",

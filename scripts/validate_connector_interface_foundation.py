@@ -27,7 +27,7 @@ from runtime.connectors.core.policy_evaluator import evaluate_connector_policy  
 CONTRACTS = (
     "contracts/connectors/source_connector_interface.v0.json",
     "contracts/connectors/source_connector_capability.v0.json",
-    "contracts/connectors/source_connector_fixture_replay.v0.json",
+    "control/schemas/fixtures/connectors/source_connector_fixture_replay.v0.json",
     "contracts/connectors/source_connector_output_envelope.v0.json",
     "contracts/connectors/live_probe_request.v0.json",
     "contracts/connectors/live_probe_result.v0.json",

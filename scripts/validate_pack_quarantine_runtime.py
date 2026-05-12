@@ -28,12 +28,12 @@ from runtime.local_foundry import (  # noqa: E402
 CONTRACTS = (
     "contracts/packs/pack_quarantine_request.v0.json",
     "contracts/packs/pack_quarantine_result.v0.json",
-    "contracts/packs/pack_fixity_report.v0.json",
+    "control/schemas/audits/packs/pack_fixity_report.v0.json",
     "contracts/packs/pack_signature_envelope.v0.json",
-    "contracts/packs/pack_signature_verification_report.v0.json",
-    "contracts/packs/pack_import_preview.v0.json",
+    "control/schemas/audits/packs/pack_signature_verification_report.v0.json",
+    "control/schemas/previews/packs/pack_import_preview.v0.json",
     "contracts/packs/contribution_review_seed.v0.json",
-    "contracts/packs/pack_trust_revocation_preview.v0.json",
+    "control/schemas/previews/packs/pack_trust_revocation_preview.v0.json",
 )
 POLICIES = (
     "control/inventory/packs/pack_quarantine_policy.json",

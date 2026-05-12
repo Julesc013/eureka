@@ -241,8 +241,8 @@
       "exists": true,
       "files": [
         "contracts/query/candidate_promotion_assessment.v0.json",
-        "contracts/query/candidate_promotion_decision.v0.json",
-        "contracts/query/candidate_promotion_policy.v0.json",
+        "control/schemas/previews/query/candidate_promotion_decision.v0.json",
+        "control/schemas/previews/query/candidate_promotion_policy.v0.json",
         "control/audits/candidate-promotion-policy-v0/COMMAND_RESULTS.md",
         "control/audits/candidate-promotion-policy-v0/CONFIDENCE_AND_REVIEW_MODEL.md",
         "control/audits/candidate-promotion-policy-v0/CONFLICT_AND_DUPLICATE_GATES.md",

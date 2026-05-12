@@ -44,7 +44,7 @@ REQUIRED_CONTRACTS = [
     "contracts/hosting/public_alpha_non_claims.v0.json",
     "contracts/hosting/host_profile.v0.json",
     "contracts/hosting/deployment_environment.v0.json",
-    "contracts/hosting/hosting_readiness_report.v0.json",
+    "control/schemas/audits/hosting/hosting_readiness_report.v0.json",
     "contracts/hosting/runtime_config_boundary.v0.json",
     "contracts/hosting/rate_limit_policy.v0.json",
     "contracts/hosting/secrets_policy.v0.json",

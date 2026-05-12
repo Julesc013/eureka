@@ -23,11 +23,11 @@ CONTRACTS = (
     "contracts/query/ranking_shadow_result.v0.json",
     "contracts/query/ranking_factor.v0.json",
     "contracts/query/ranking_input_bundle.v0.json",
-    "contracts/query/ranking_output_bundle.v0.json",
+    "control/schemas/previews/query/ranking_output_bundle.v0.json",
     "contracts/query/identity_merge_shadow.v0.json",
     "contracts/query/dedup_shadow_result.v0.json",
     "contracts/query/search_quality_query_set.v0.json",
-    "contracts/query/search_quality_regression_report.v0.json",
+    "control/schemas/audits/query/search_quality_regression_report.v0.json",
     "contracts/query/public_ranking_gate.v0.json",
 )
 POLICIES = (

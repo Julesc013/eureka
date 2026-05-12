@@ -26,10 +26,10 @@ from runtime.connectors.h3_os_package_archives.live_probe_common import (  # noq
 
 
 CONTRACTS = (
-    "contracts/connectors/h3_os_package_live_probe_request.v0.json",
-    "contracts/connectors/h3_os_package_live_probe_result.v0.json",
-    "contracts/connectors/h3_os_package_live_probe_output_bundle.v0.json",
-    "contracts/connectors/h3_os_package_connector_health_summary.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+    "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h3_os_package_live_probe_policy.json",

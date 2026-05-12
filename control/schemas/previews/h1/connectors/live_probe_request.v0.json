@@ -1,0 +1,33 @@
+{
+  "$id": "https://eureka.local/control/schemas/previews/h1/connectors/live_probe_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "h1_live_probe_request.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_request_id",
+    "source_id",
+    "connector_family",
+    "operation_scope",
+    "endpoint_class",
+    "request_shape",
+    "approved_request_key",
+    "approval_refs",
+    "policy_refs",
+    "live_requested",
+    "dry_run_only",
+    "output_policy_ref",
+    "review_policy_ref",
+    "truth_policy_ref",
+    "product_boundary",
+    "truth_boundary",
+    "limitations",
+    "notes"
+  ],
+  "title": "Eureka h1_live_probe_request.v0",
+  "type": "object"
+}

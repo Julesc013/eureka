@@ -27,12 +27,12 @@ from runtime.connectors.h2_package_registries.normalizer_common import (  # noqa
 
 
 CONTRACTS = (
-    "contracts/connectors/h2_package_fixture.v0.json",
-    "contracts/connectors/h2_package_normalized_record.v0.json",
-    "contracts/connectors/h2_package_identity_candidate.v0.json",
-    "contracts/connectors/h2_package_dependency_candidate.v0.json",
-    "contracts/connectors/h2_package_file_candidate.v0.json",
-    "contracts/connectors/h2_package_fixture_replay_result.v0.json",
+    "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+    "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+    "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+    "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+    "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+    "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h2_package_fixture_runtime_policy.json",

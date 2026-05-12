@@ -6,9 +6,9 @@ downloads, scraping, source sync, or public/master index mutations were used.
 
 ## H1 Fixture Runtime
 
-- `python -m json.tool contracts/connectors/h1_metadata_fixture.v0.json`: PASS
-- `python -m json.tool contracts/connectors/h1_metadata_normalized_record.v0.json`: PASS
-- `python -m json.tool contracts/connectors/h1_metadata_fixture_replay_result.v0.json`: PASS
+- `python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json`: PASS
+- `python -m json.tool control/schemas/previews/h1/connectors/metadata_normalized_record.v0.json`: PASS
+- `python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json`: PASS
 - `python -m json.tool control/inventory/connectors/h1_metadata_fixture_runtime_policy.json`: PASS
 - `python -m json.tool control/inventory/connectors/h1_metadata_normalization_policy.json`: PASS
 - `python -m json.tool control/inventory/connectors/h1_metadata_fixture_output_policy.json`: PASS

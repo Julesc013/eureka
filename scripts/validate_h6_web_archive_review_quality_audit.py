@@ -24,10 +24,10 @@ from runtime.connectors.h6_web_archive_news_event.review_integration import (  #
 AUDIT_DIR = Path("control/audits/h6-bundle-04-web-archive-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h6_web_archive_news_event/review_integration")
 REQUIRED_JSON = (
-    "contracts/connectors/h6_web_archive_review_integration_result.v0.json",
-    "contracts/connectors/h6_web_archive_quality_delta_report.v0.json",
-    "contracts/connectors/h6_web_archive_connector_wave_postmortem.v0.json",
-    "contracts/connectors/h6_web_archive_integration_audit.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_review_integration_result.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_quality_delta_report.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_connector_wave_postmortem.v0.json",
+    "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
     "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h6_web_archive_review_integration_policy.json",
     "control/inventory/connectors/h6_web_archive_review_output_policy.json",

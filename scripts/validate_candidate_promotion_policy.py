@@ -18,8 +18,8 @@ from scripts.validate_candidate_promotion_assessment import validate_all_example
 
 
 CONTRACT_PATH = REPO_ROOT / "contracts" / "query" / "candidate_promotion_assessment.v0.json"
-DECISION_PATH = REPO_ROOT / "contracts" / "query" / "candidate_promotion_decision.v0.json"
-POLICY_CONTRACT_PATH = REPO_ROOT / "contracts" / "query" / "candidate_promotion_policy.v0.json"
+DECISION_PATH = REPO_ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_decision.v0.json"
+POLICY_CONTRACT_PATH = REPO_ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_policy.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_promotion_policy.json"
 CANDIDATE_INDEX_POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_index_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "candidate-promotion-policy-v0"
@@ -194,11 +194,11 @@ def validate_candidate_promotion_policy() -> dict[str, Any]:
     if contract:
         _validate_assessment_contract(contract, errors)
 
-    decision = _read_json_object(DECISION_PATH, errors, "contracts/query/candidate_promotion_decision.v0.json")
+    decision = _read_json_object(DECISION_PATH, errors, "control/schemas/previews/query/candidate_promotion_decision.v0.json")
     if decision:
         _validate_auxiliary_contract(decision, "candidate_promotion_decision.v0.json", errors)
 
-    policy_contract = _read_json_object(POLICY_CONTRACT_PATH, errors, "contracts/query/candidate_promotion_policy.v0.json")
+    policy_contract = _read_json_object(POLICY_CONTRACT_PATH, errors, "control/schemas/previews/query/candidate_promotion_policy.v0.json")
     if policy_contract:
         _validate_auxiliary_contract(policy_contract, "candidate_promotion_policy.v0.json", errors)
 

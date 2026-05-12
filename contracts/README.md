@@ -34,6 +34,6 @@ references, allowed fixture modes, forbidden current modes, and boundary
 booleans only; it does not approve live source access, downloads, scraping,
 public-index mutation, master-index mutation, or evidence acceptance.
 
-`contracts/connectors/source_connector_fixture.v0.json` defines the shared
+`control/schemas/fixtures/connectors/source_connector_fixture.v0.json` defines the shared
 fixture manifest shape for connector tests. It requires committed public-safe
 fixtures and false live-call, network, and external API flags.

@@ -49,11 +49,11 @@ FORBIDDEN_CLAIMS = {
     "master_index_mutated",
 }
 REQUIRED_CONTRACTS = [
-    "contracts/audits/mvp_alpha_operator_decision.v0.json",
-    "contracts/audits/mvp_alpha_operator_signoff_packet.v0.json",
-    "contracts/audits/mvp_alpha_launch_blocker_register.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_operator_decision.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_operator_signoff_packet.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_launch_blocker_register.v0.json",
     "contracts/audits/mvp_alpha_launch_decision_options.v0.json",
-    "contracts/audits/mvp_alpha_public_claim_review.v0.json",
+    "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
     "contracts/audits/mvp_alpha_operator_next_task.v0.json",
 ]
 REQUIRED_POLICIES = [

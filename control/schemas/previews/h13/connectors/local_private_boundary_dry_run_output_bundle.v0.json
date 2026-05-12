@@ -1,0 +1,29 @@
+{
+  "$id": "https://eureka.local/control/schemas/previews/h13/connectors/local_private_boundary_dry_run_output_bundle.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authenticated_source_boundary_candidate": {},
+    "boundary_dry_run_result": {},
+    "boundary_health_summary": {},
+    "evidence_candidate_preview": {},
+    "local_cas_import_boundary_candidate": {},
+    "local_private_rights_safety_candidate": {},
+    "local_source_identity_candidate": {},
+    "normalized_record": {},
+    "pack_export_import_boundary_candidate": {},
+    "privacy_redaction_candidate": {},
+    "private_source_boundary_candidate": {},
+    "restricted_source_manifest_candidate": {},
+    "review_queue_seed_preview": {},
+    "source_cache_candidate_preview": {},
+    "user_supplied_url_boundary_candidate": {},
+    "validation_summary": {}
+  },
+  "required": [
+    "boundary_dry_run_result",
+    "validation_summary"
+  ],
+  "title": "h13_local_private_boundary_dry_run_output_bundle.v0.json",
+  "type": "object"
+}

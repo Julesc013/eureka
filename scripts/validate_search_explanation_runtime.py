@@ -25,7 +25,7 @@ CONTRACTS = (
     "contracts/query/known_absence_record.v0.json",
     "contracts/query/search_gap_explanation.v0.json",
     "contracts/query/explanation_input_bundle.v0.json",
-    "contracts/query/explanation_output_bundle.v0.json",
+    "control/schemas/previews/query/explanation_output_bundle.v0.json",
 )
 POLICIES = (
     "control/inventory/search_quality/search_explanation_policy.json",

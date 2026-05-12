@@ -46,7 +46,7 @@ NORMALIZED_NAMES = (
 )
 REQUIRED_JSON_PATHS = (
     "contracts/connectors/internet_archive_metadata_connector.v0.json",
-    "contracts/connectors/source_connector_fixture.v0.json",
+    "control/schemas/fixtures/connectors/source_connector_fixture.v0.json",
     "control/inventory/connectors/internet_archive_source_policy.json",
     "control/inventory/connectors/internet_archive_endpoint_policy.json",
     "control/inventory/connectors/internet_archive_rate_limit_policy.json",

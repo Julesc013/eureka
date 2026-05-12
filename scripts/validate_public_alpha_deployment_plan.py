@@ -43,7 +43,7 @@ REQUIRED_CONTRACTS = [
     "contracts/hosting/public_alpha_provider_profile.v0.json",
     "contracts/hosting/public_alpha_rollout_gate.v0.json",
     "contracts/hosting/public_alpha_operator_checklist.v0.json",
-    "contracts/hosting/public_alpha_deployment_noop_report.v0.json",
+    "control/schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/hosting/public_alpha_deployment_plan_policy.json",

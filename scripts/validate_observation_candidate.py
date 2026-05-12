@@ -10,7 +10,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CANDIDATE_CONTRACT = "contracts/query/observation_candidate.v0.json"
+CANDIDATE_CONTRACT = "control/schemas/previews/query/observation_candidate.v0.json"
 REVIEW_CONTRACT = "contracts/query/observation_review_decision.v0.json"
 CANDIDATE_EXAMPLES = (
     "examples/observation_candidates/local_eval_extraction_gap_candidate_v0.json",

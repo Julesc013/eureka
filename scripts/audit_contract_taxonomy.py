@@ -18,6 +18,7 @@ TASK_ID = "R0-03A"
 AUDIT_DIR = Path("control/audits/r0-03a-contract-taxonomy-refactor-plan-v0")
 TAXONOMY_POLICY = Path("control/policies/contract_taxonomy_policy.json")
 MIGRATION_POLICY = Path("control/policies/contract_migration_policy.json")
+SCHEMA_ROOTS = (Path("contracts"), Path("control/schemas"))
 
 TEXT_SUFFIXES = {
     "",
@@ -270,13 +271,16 @@ def load_json_if_exists(path: Path, errors: list[str]) -> dict[str, Any]:
 
 
 def iter_contract_files(root: Path) -> Iterable[Path]:
-    contracts_root = root / "contracts"
-    if not contracts_root.exists():
-        return []
     files = []
-    for path in sorted(contracts_root.rglob("*")):
-        if path.is_file() and not any(part in IGNORED_DIRS for part in path.relative_to(root).parts):
-            files.append(path)
+    for schema_root in SCHEMA_ROOTS:
+        base = root / schema_root
+        if not base.exists():
+            continue
+        for path in sorted(base.rglob("*")):
+            if path.is_file() and not any(part in IGNORED_DIRS for part in path.relative_to(root).parts):
+                if path.name in {".gitkeep", "README.md"}:
+                    continue
+                files.append(path)
     return files
 
 
@@ -326,6 +330,33 @@ def classify_contract(path: Path, root: Path) -> dict[str, Any]:
 
 def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: list[str]) -> str:
     lowered = rel.casefold()
+    if lowered.startswith("control/schemas/audits/"):
+        signals.append("control_schema_audit_path")
+        return "audit_schema"
+    if lowered.startswith("control/schemas/fixtures/"):
+        signals.append("control_schema_fixture_path")
+        return "fixture_schema"
+    if lowered.startswith("control/schemas/previews/"):
+        signals.append("control_schema_preview_path")
+        return "preview_schema"
+    if lowered.startswith("control/schemas/policies/"):
+        signals.append("control_schema_policy_path")
+        return "control_schema"
+    if lowered.startswith("control/schemas/validators/"):
+        signals.append("control_schema_validator_path")
+        return "validator_schema"
+    if lowered.startswith("control/schemas/tasks/"):
+        signals.append("control_schema_task_path")
+        return "task_queue_schema"
+    if lowered.startswith("control/schemas/deprecated/"):
+        signals.append("control_schema_deprecated_path")
+        return "deprecated_schema"
+    if lowered.startswith("contracts/api/") or lowered.startswith("contracts/gateway/public_api/"):
+        signals.append("public_api_path")
+        return "public_api_contract"
+    if lowered.startswith("contracts/pages/") or lowered.startswith("contracts/search/") or lowered.startswith("contracts/views/") or lowered.startswith("contracts/ui/"):
+        signals.append("public_surface_contract_path")
+        return "public_api_contract"
     if any(token in name for token in ("next_phase", "next_task", "queue", "task_decision", "decision_option")):
         signals.append("task_queue_signal")
         return "task_queue_schema"
@@ -355,9 +386,6 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
     if any(token in name for token in ("deprecated", "legacy", "obsolete")):
         signals.append("deprecated_signal")
         return "deprecated_schema"
-    if lowered.startswith("contracts/api/") or lowered.startswith("contracts/gateway/public_api/"):
-        signals.append("public_api_path")
-        return "public_api_contract"
     if lowered.startswith("contracts/domain/") or lowered.startswith("contracts/identity/") or lowered.startswith("contracts/representations/"):
         signals.append("domain_contract_path")
         return "product_domain_contract"
@@ -390,9 +418,6 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
             return "source_policy_contract"
         signals.append("control_or_hosting_schema_path")
         return "control_schema"
-    if lowered.startswith("contracts/pages/") or lowered.startswith("contracts/search/") or lowered.startswith("contracts/views/") or lowered.startswith("contracts/ui/"):
-        signals.append("public_surface_contract_path")
-        return "public_api_contract"
     if "\"type\"" in content_lower or "$schema" in content_lower:
         signals.append("json_schema_like")
         return "product_domain_contract"
@@ -432,12 +457,16 @@ def is_near_empty(content: str) -> bool:
 
 def current_root(rel: str) -> str:
     parts = rel.split("/")
+    if len(parts) >= 3 and parts[0] == "control" and parts[1] == "schemas":
+        return "/".join(parts[:3]) + "/"
     if len(parts) >= 2:
         return "/".join(parts[:2]) + "/"
     return parts[0] + "/"
 
 
 def propose_target_path(rel: str, contract_class: str, target_root: str) -> str:
+    if rel.startswith(target_root):
+        return rel
     if contract_class in product_classes():
         if rel.startswith(target_root):
             return rel
@@ -611,7 +640,7 @@ def build_reference_graph(root: Path, contract_paths: Sequence[Path]) -> dict[st
     basename_map: dict[str, list[str]] = defaultdict(list)
     for rel in contract_rels:
         basename_map[Path(rel).name].append(rel)
-    scan_roots = ("contracts", "control/audits", "examples", "scripts", "tests", "runtime")
+    scan_roots = ("contracts", "control/schemas", "control/audits", "examples", "scripts", "tests", "runtime")
     edges: list[dict[str, Any]] = []
     seen_edges: set[tuple[str, str, str]] = set()
     for path in iter_reference_files(root, scan_roots):
@@ -665,7 +694,7 @@ def iter_reference_files(root: Path, scan_roots: Sequence[str]) -> Iterable[Path
 
 
 def find_contract_path_literals(text: str) -> Iterable[str]:
-    pattern = re.compile(r"contracts[/\\][A-Za-z0-9_./\\-]+")
+    pattern = re.compile(r"(?:contracts|control[/\\]schemas)[/\\][A-Za-z0-9_./\\-]+")
     for match in pattern.finditer(text):
         yield match.group(0).strip("`'\"),.;:")
 

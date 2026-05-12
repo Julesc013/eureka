@@ -35,9 +35,9 @@ def make_fixture_repo(root: Path) -> None:
     write(root / "control/policies/contract_taxonomy_policy.json", TAXONOMY_POLICY.read_text(encoding="utf-8"))
     write(root / "control/policies/contract_migration_policy.json", MIGRATION_POLICY.read_text(encoding="utf-8"))
     write(root / "contracts/domain/source_record.v0.json", '{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object"}\n')
-    write(root / "contracts/connectors/h14_source_discovery_quality_delta_report.v0.json", '{"type":"object"}\n')
-    write(root / "contracts/connectors/h1_metadata_fixture_replay_result.v0.json", '{"type":"object"}\n')
-    write(root / "contracts/native/native_release_candidate_preview.v0.json", '{"type":"object"}\n')
+    write(root / "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", '{"type":"object"}\n')
+    write(root / "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json", '{"type":"object"}\n')
+    write(root / "control/schemas/previews/native/native_release_candidate_preview.v0.json", '{"type":"object"}\n')
     write(root / "contracts/domain/h14_bundle_quality_delta.v0.json", '{"type":"object"}\n')
     write(root / "contracts/domain/empty_contract.v0.json", "")
     write(root / "scripts/validate_source_record.py", "PATH = 'contracts/domain/source_record.v0.json'\n")
@@ -94,7 +94,7 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "contracts/connectors/h14_source_discovery_quality_delta_report.v0.json"
+                "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
             ]
             self.assertEqual("audit_schema", item["contract_class"])
             self.assertTrue(item["target_path"].startswith("control/schemas/audits/h14/"))
@@ -105,10 +105,10 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "contracts/connectors/h1_metadata_fixture_replay_result.v0.json"
+                "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json"
             ]
             self.assertEqual("fixture_schema", item["contract_class"])
-            self.assertIn("fixture_schema_signal", item["signals"])
+            self.assertIn("control_schema_fixture_path", item["signals"])
 
     def test_classifies_preview_schema_fixture(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -116,7 +116,7 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "contracts/native/native_release_candidate_preview.v0.json"
+                "control/schemas/previews/native/native_release_candidate_preview.v0.json"
             ]
             self.assertEqual("preview_schema", item["contract_class"])
             self.assertTrue(item["target_path"].startswith("control/schemas/previews/"))
@@ -158,7 +158,7 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "contracts/connectors/h14_source_discovery_quality_delta_report.v0.json"
+                "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
             ]
             self.assertEqual("control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", item["target_path"])
 

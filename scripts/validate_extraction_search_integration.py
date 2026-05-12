@@ -24,7 +24,7 @@ CONTRACTS = (
     "contracts/extraction/extraction_search_gap.v0.json",
     "contracts/extraction/extraction_review_seed.v0.json",
     "contracts/extraction/extraction_workunit_seed.v0.json",
-    "contracts/extraction/extraction_usefulness_report.v0.json",
+    "control/schemas/audits/extraction/extraction_usefulness_report.v0.json",
 )
 POLICIES = (
     "control/inventory/extraction/extraction_search_integration_policy.json",

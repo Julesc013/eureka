@@ -94,7 +94,7 @@ mutation.
 
 ## Relation To Candidate Index
 
-P64 adds `contracts/query/candidate_index_record.v0.json` as the contract-only
+P64 adds `control/schemas/previews/query/candidate_index_record.v0.json` as the contract-only
 provisional candidate layer. Query observations may later be referenced as
 privacy-filtered inputs to candidate records, but P64 adds no runtime candidate
 index, no candidate promotion runtime, no public search candidate injection, no

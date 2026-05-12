@@ -490,7 +490,7 @@
         "control/audits/track-b-12-candidate-store-runtime-v0/track_b_12_report.json"
       ],
       "contract_paths": [
-        "contracts/query/candidate_index_record.v0.json"
+        "control/schemas/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/candidates/candidate_store_runtime_policy.json",
@@ -817,7 +817,7 @@
         "control/audits/track-b-19-candidate-promotion-dry-run-v0/track_b_19_report.json"
       ],
       "contract_paths": [
-        "contracts/query/candidate_index_record.v0.json"
+        "control/schemas/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/review/candidate_promotion_dry_run_policy.json",

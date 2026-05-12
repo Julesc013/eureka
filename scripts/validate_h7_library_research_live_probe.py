@@ -29,10 +29,10 @@ from runtime.connectors.h7_library_research.live_probe_common import (  # noqa: 
 
 EXPECTED_SOURCES = H7_SOURCE_IDS
 CONTRACTS = (
-    "contracts/connectors/h7_library_research_live_probe_request.v0.json",
-    "contracts/connectors/h7_library_research_live_probe_result.v0.json",
-    "contracts/connectors/h7_library_research_live_probe_output_bundle.v0.json",
-    "contracts/connectors/h7_library_research_connector_health_summary.v0.json",
+    "control/schemas/previews/h7/connectors/library_research_live_probe_request.v0.json",
+    "control/schemas/previews/h7/connectors/library_research_live_probe_result.v0.json",
+    "control/schemas/previews/h7/connectors/library_research_live_probe_output_bundle.v0.json",
+    "control/schemas/previews/h7/connectors/library_research_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h7_library_research_live_probe_policy.json",

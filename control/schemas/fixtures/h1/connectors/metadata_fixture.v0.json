@@ -1,0 +1,39 @@
+{
+  "$id": "https://eureka.local/control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "external_api_used": {
+      "const": false
+    },
+    "live_call_used": {
+      "const": false
+    },
+    "network_used": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "h1_metadata_fixture.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "fixture_id",
+    "source_id",
+    "connector_family",
+    "fixture_kind",
+    "fixture_status",
+    "fixture_public_safe",
+    "live_call_used",
+    "network_used",
+    "external_api_used",
+    "fixture_payload",
+    "expected_normalized_ref",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "title": "Eureka H1 Metadata Fixture v0",
+  "type": "object"
+}

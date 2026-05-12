@@ -1,0 +1,2043 @@
+{
+  "schema_version": "r0_03b_1_compatibility_shim_report.v0",
+  "shims": [
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/actions/action_result_preview.v0.json",
+      "old_path": "contracts/actions/action_result_preview.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/actions/blocked_action_report.v0.json",
+      "old_path": "contracts/actions/blocked_action_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/local_mvp_deployment_deferral.v0.json",
+      "old_path": "contracts/audits/local_mvp_deployment_deferral.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/local_mvp_expansion_gate.v0.json",
+      "old_path": "contracts/audits/local_mvp_expansion_gate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/local_mvp_iteration_plan.v0.json",
+      "old_path": "contracts/audits/local_mvp_iteration_plan.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_gate_decision.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_gate_decision.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_integration_matrix.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_integration_matrix.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_launch_blocker_register.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_launch_blocker_register.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_operator_decision.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_operator_decision.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_operator_review_packet.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_operator_review_packet.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_operator_signoff_packet.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_operator_signoff_packet.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_public_claim_review.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_readiness_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/audits/mvp_alpha_remediation_plan.v0.json",
+      "old_path": "contracts/audits/mvp_alpha_remediation_plan.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/connectors/connector_quality_delta.v0.json",
+      "old_path": "contracts/connectors/connector_quality_delta.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/emulator_action_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_emulator_action_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/emulator_compatibility_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_emulator_compatibility_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/game_relation_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_game_relation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/game_software_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_game_software_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_emulation_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h10/connectors/games_emulation_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h10/connectors/games_emulation_fixture.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h10/connectors/games_emulation_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_emulation_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_emulation_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_emulation_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_emulation_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h10/connectors/games_emulation_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h10/connectors/games_emulation_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h10_games_emulation_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/games_rights_safety_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_games_rights_safety_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_platform_release_edition_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/preservation_hashset_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_preservation_hashset_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h10/connectors/rom_disc_media_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h10_rom_disc_media_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/account_entitlement_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_account_entitlement_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/acquisition_path_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_acquisition_path_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/app_product_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_app_product_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/price_availability_region_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_price_availability_region_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/review_rating_metadata_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_review_rating_metadata_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h11/connectors/storefront_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h11/connectors/storefront_fixture.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h11/connectors/storefront_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_listing_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_listing_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h11/connectors/storefront_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h11/connectors/storefront_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/storefront_rights_safety_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_storefront_rights_safety_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "old_path": "contracts/connectors/h11_version_release_channel_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/archive_item_member_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_archive_item_member_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/community_review_comment_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_community_review_comment_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_compatibility_install_note_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/gated_source_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_gated_source_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_hash_checksum_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/ia_wayback_corroboration_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_ia_wayback_corroboration_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/platform_version_edition_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_platform_version_edition_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_community_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h12/connectors/retro_community_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h12/connectors/retro_community_fixture.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h12/connectors/retro_community_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_community_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_community_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_community_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_community_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h12/connectors/retro_community_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h12/connectors/retro_community_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h12_retro_community_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_rights_safety_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_retro_rights_safety_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h12/connectors/retro_software_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h12_retro_software_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/authenticated_source_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_authenticated_source_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_local_cas_import_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_boundary_dry_run_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_boundary_dry_run_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_boundary_dry_run_request.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_boundary_dry_run_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_boundary_dry_run_result.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_boundary_dry_run_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_boundary_health_summary.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_boundary_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h13/connectors/local_private_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h13/connectors/local_private_fixture.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h13/connectors/local_private_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h13/connectors/local_private_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h13/connectors/local_private_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_private_rights_safety_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_local_private_rights_safety_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/local_source_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_local_source_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_pack_export_import_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/privacy_redaction_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_privacy_redaction_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/private_source_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_private_source_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/restricted_source_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_restricted_source_manifest_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h13/connectors/user_supplied_url_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h13_user_supplied_url_boundary_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h14/connectors/source_discovery_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h14/connectors/source_discovery_fixture.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h14/connectors/source_discovery_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h14/connectors/source_discovery_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_rollup_dry_run_request.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_rollup_dry_run_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_rollup_dry_run_result.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_rollup_dry_run_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_rollup_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_rollup_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h14/connectors/source_os_rollup_health_summary.v0.json",
+      "old_path": "contracts/connectors/h14_source_os_rollup_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h1/connectors/connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h1_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h1/connectors/integration_audit.v0.json",
+      "old_path": "contracts/connectors/h1_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h1/connectors/live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h1_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h1_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h1_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
+      "old_path": "contracts/connectors/h1_metadata_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h1_metadata_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h1_metadata_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h1/connectors/quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h1_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h1/connectors/review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h1_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h2_package_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h2_package_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "old_path": "contracts/connectors/h2_package_dependency_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "old_path": "contracts/connectors/h2_package_file_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "old_path": "contracts/connectors/h2_package_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h2_package_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h2_package_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h2_package_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h2_package_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h2_package_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h2_package_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h2_package_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h2_package_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h2_package_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_dependency_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_file_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h3_os_package_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h3/connectors/os_platform_compatibility_candidate.v0.json",
+      "old_path": "contracts/connectors/h3_os_platform_compatibility_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/code_source_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h4/connectors/code_source_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h4/connectors/code_source_fixture.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h4/connectors/code_source_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/code_source_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/code_source_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/code_source_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/code_source_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h4/connectors/code_source_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h4/connectors/code_source_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h4_code_source_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "old_path": "contracts/connectors/h4_release_asset_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h4_release_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/source_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h4_source_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h4/connectors/source_to_binary_relation_candidate.v0.json",
+      "old_path": "contracts/connectors/h4_source_to_binary_relation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/driver_device_compatibility_candidate.v0.json",
+      "old_path": "contracts/connectors/h5_driver_device_compatibility_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/firmware_update_candidate.v0.json",
+      "old_path": "contracts/connectors/h5_firmware_update_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/runtime_redistributable_candidate.v0.json",
+      "old_path": "contracts/connectors/h5_runtime_redistributable_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_payload_metadata_candidate.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_payload_metadata_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_update_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h5/connectors/vendor_update_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h5/connectors/vendor_update_fixture.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h5/connectors/vendor_update_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_update_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_update_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_update_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h5/connectors/vendor_update_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h5/connectors/vendor_update_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h5/connectors/vendor_update_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h5_vendor_update_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/archived_url_time_state_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_archived_url_time_state_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/dead_link_trace_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_dead_link_trace_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/media_transcript_metadata_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_media_transcript_metadata_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/news_event_mention_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_news_event_mention_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_public_document_trace_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_archive_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h6/connectors/web_archive_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h6/connectors/web_archive_fixture.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h6/connectors/web_archive_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_archive_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_archive_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_archive_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_archive_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h6/connectors/web_archive_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h6/connectors/web_archive_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h6_web_archive_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h6/connectors/web_capture_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h6_web_capture_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/access_rights_availability_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_access_rights_availability_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/bibliographic_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_bibliographic_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/citation_relation_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_citation_relation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/cultural_object_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_cultural_object_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/dataset_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_dataset_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/library_research_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h7/connectors/library_research_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h7/connectors/library_research_fixture.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h7/connectors/library_research_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/library_research_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/library_research_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/library_research_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/library_research_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h7/connectors/library_research_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h7/connectors/library_research_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h7_library_research_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/patent_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_patent_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h7/connectors/research_work_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h7_research_work_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/access_rights_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_access_rights_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/datasheet_device_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_datasheet_device_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_install_requirement_claim_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manual_artifact_relation_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_manual_artifact_relation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manuals_docs_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h8/connectors/manuals_docs_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h8/connectors/manuals_docs_fixture.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h8/connectors/manuals_docs_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manuals_docs_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manuals_docs_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manuals_docs_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/manuals_docs_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h8/connectors/manuals_docs_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h8/connectors/manuals_docs_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h8_manuals_docs_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/repair_service_safety_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_repair_service_safety_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/standards_specification_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_standards_specification_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h8/connectors/technical_document_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h8_technical_document_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/image_video_map_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_image_video_map_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_creator_collection_relation_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_media_creator_collection_relation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_fingerprint_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_media_fingerprint_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_metadata_connector_health_summary.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_connector_health_summary.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h9/connectors/media_metadata_connector_wave_postmortem.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_connector_wave_postmortem.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h9/connectors/media_metadata_fixture.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/h9/connectors/media_metadata_fixture_replay_result.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_fixture_replay_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_metadata_live_probe_output_bundle.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_live_probe_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_metadata_live_probe_request.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_live_probe_request.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_metadata_live_probe_result.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_live_probe_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_metadata_normalized_record.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_normalized_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h9/connectors/media_metadata_quality_delta_report.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_quality_delta_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/h9/connectors/media_metadata_review_integration_result.v0.json",
+      "old_path": "contracts/connectors/h9_media_metadata_review_integration_result.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_object_identity_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_media_object_identity_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_rights_license_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_media_rights_license_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/media_safety_privacy_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_media_safety_privacy_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "old_path": "contracts/connectors/h9_music_work_recording_release_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/connectors/source_connector_fixture.v0.json",
+      "old_path": "contracts/connectors/source_connector_fixture.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/connectors/source_connector_fixture_replay.v0.json",
+      "old_path": "contracts/connectors/source_connector_fixture_replay.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/extraction/extraction_candidate_effect.v0.json",
+      "old_path": "contracts/extraction/extraction_candidate_effect.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/extraction/extraction_manifest_candidate.v0.json",
+      "old_path": "contracts/extraction/extraction_manifest_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/extraction/extraction_safety_report.v0.json",
+      "old_path": "contracts/extraction/extraction_safety_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/extraction/extraction_usefulness_report.v0.json",
+      "old_path": "contracts/extraction/extraction_usefulness_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/hosted_wrapper_smoke_report.v0.json",
+      "old_path": "contracts/hosting/hosted_wrapper_smoke_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/hosting_readiness_report.v0.json",
+      "old_path": "contracts/hosting/hosting_readiness_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+      "old_path": "contracts/hosting/public_alpha_blocked_request_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
+      "old_path": "contracts/hosting/public_alpha_deployment_noop_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+      "old_path": "contracts/hosting/public_alpha_status_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
+      "old_path": "contracts/hosting/public_launch_operator_signoff.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "old_path": "contracts/hosting/public_launch_readiness_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "old_path": "contracts/native/native_first_wave_integration_audit.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/native/native_release_candidate_preview.v0.json",
+      "old_path": "contracts/native/native_release_candidate_preview.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/native/native_smoke_report.v0.json",
+      "old_path": "contracts/native/native_smoke_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/packs/pack_fixity_report.v0.json",
+      "old_path": "contracts/packs/pack_fixity_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/packs/pack_import_preview.v0.json",
+      "old_path": "contracts/packs/pack_import_preview.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/packs/pack_import_report.v0.json",
+      "old_path": "contracts/packs/pack_import_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/packs/pack_signature_verification_report.v0.json",
+      "old_path": "contracts/packs/pack_signature_verification_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/packs/pack_trust_revocation_preview.v0.json",
+      "old_path": "contracts/packs/pack_trust_revocation_preview.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/candidate_index_record.v0.json",
+      "old_path": "contracts/query/candidate_index_record.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/candidate_lifecycle.v0.json",
+      "old_path": "contracts/query/candidate_lifecycle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/candidate_promotion_decision.v0.json",
+      "old_path": "contracts/query/candidate_promotion_decision.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/candidate_promotion_policy.v0.json",
+      "old_path": "contracts/query/candidate_promotion_policy.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/explanation_output_bundle.v0.json",
+      "old_path": "contracts/query/explanation_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/observation_candidate.v0.json",
+      "old_path": "contracts/query/observation_candidate.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/previews/query/ranking_output_bundle.v0.json",
+      "old_path": "contracts/query/ranking_output_bundle.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/query/search_quality_regression_report.v0.json",
+      "old_path": "contracts/query/search_quality_regression_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/fixtures/relay/native_fixture_endpoint.v0.json",
+      "old_path": "contracts/relay/native_fixture_endpoint.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/snapshots/snapshot_consumer_report.v0.json",
+      "old_path": "contracts/snapshots/snapshot_consumer_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/snapshots/snapshot_fixity_report.v0.json",
+      "old_path": "contracts/snapshots/snapshot_fixity_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "never",
+      "new_path": "control/schemas/audits/snapshots/snapshot_verification_report.v0.json",
+      "old_path": "contracts/snapshots/snapshot_verification_report.v0.json",
+      "reason": "Path mapping is recorded for validators and audit readers; no compatibility schema file was left under contracts/.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/fixtures/archive/synthetic_resolution_fixture.json",
+      "old_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    },
+    {
+      "expires_after_task": "R0-03B-2",
+      "new_path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "old_path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "reason": "Move was blocked, so the original contract path remains in place.",
+      "shim_kind": "none"
+    }
+  ],
+  "task": "R0-03B-1"
+}

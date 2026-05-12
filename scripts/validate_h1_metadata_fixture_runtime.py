@@ -27,9 +27,9 @@ from runtime.connectors.h1_metadata_wave.normalizer_common import (  # noqa: E40
 
 
 CONTRACTS = (
-    "contracts/connectors/h1_metadata_fixture.v0.json",
-    "contracts/connectors/h1_metadata_normalized_record.v0.json",
-    "contracts/connectors/h1_metadata_fixture_replay_result.v0.json",
+    "control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
+    "control/schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
+    "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h1_metadata_fixture_runtime_policy.json",

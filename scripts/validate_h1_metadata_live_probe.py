@@ -26,9 +26,9 @@ from runtime.connectors.h1_metadata_wave.live_probe_common import (  # noqa: E40
 
 
 CONTRACTS = (
-    "contracts/connectors/h1_live_probe_request.v0.json",
-    "contracts/connectors/h1_live_probe_result.v0.json",
-    "contracts/connectors/h1_live_probe_output_bundle.v0.json",
+    "control/schemas/previews/h1/connectors/live_probe_request.v0.json",
+    "control/schemas/previews/h1/connectors/live_probe_result.v0.json",
+    "control/schemas/previews/h1/connectors/live_probe_output_bundle.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h1_metadata_live_probe_policy.json",

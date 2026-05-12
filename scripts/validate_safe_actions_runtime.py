@@ -27,12 +27,12 @@ CONTRACTS = (
     "contracts/actions/action_taxonomy.v0.json",
     "contracts/actions/action_policy.v0.json",
     "contracts/actions/action_manifest.v0.json",
-    "contracts/actions/action_result_preview.v0.json",
+    "control/schemas/previews/actions/action_result_preview.v0.json",
     "contracts/actions/acquisition_manifest.v0.json",
     "contracts/actions/citation_bundle.v0.json",
     "contracts/actions/export_manifest.v0.json",
     "contracts/actions/preservation_manifest.v0.json",
-    "contracts/actions/blocked_action_report.v0.json",
+    "control/schemas/audits/actions/blocked_action_report.v0.json",
     "contracts/actions/compare_action_manifest.v0.json",
 )
 POLICIES = (

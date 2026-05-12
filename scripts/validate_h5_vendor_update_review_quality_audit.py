@@ -24,10 +24,10 @@ from runtime.connectors.h5_vendor_update_driver.review_integration import (  # n
 AUDIT_DIR = Path("control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h5_vendor_update_driver/review_integration")
 REQUIRED_JSON = (
-    "contracts/connectors/h5_vendor_update_review_integration_result.v0.json",
-    "contracts/connectors/h5_vendor_update_quality_delta_report.v0.json",
-    "contracts/connectors/h5_vendor_update_connector_wave_postmortem.v0.json",
-    "contracts/connectors/h5_vendor_update_integration_audit.v0.json",
+    "control/schemas/audits/h5/connectors/vendor_update_review_integration_result.v0.json",
+    "control/schemas/audits/h5/connectors/vendor_update_quality_delta_report.v0.json",
+    "control/schemas/audits/h5/connectors/vendor_update_connector_wave_postmortem.v0.json",
+    "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
     "contracts/connectors/h5_vendor_update_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h5_vendor_update_review_integration_policy.json",
     "control/inventory/connectors/h5_vendor_update_review_output_policy.json",

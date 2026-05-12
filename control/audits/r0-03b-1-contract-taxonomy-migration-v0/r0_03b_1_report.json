@@ -1,0 +1,24 @@
+{
+  "compatibility_shims_added": 0,
+  "dev_to_main_should_remain_blocked": true,
+  "f0_should_remain_blocked": true,
+  "moves_blocked": 13,
+  "moves_completed": 278,
+  "product_behavior_changed": false,
+  "product_contracts_moved": 0,
+  "purpose": "contract_taxonomy_migration_batch_1",
+  "recommended_next_task": "R0-03B-2 \u2014 Contract reference update and product contract cleanup",
+  "reference_updates_completed": 438,
+  "runtime_modified": false,
+  "schema_version": "r0_03b_1_report.v0",
+  "schemas_deleted": 0,
+  "status": "pass_with_warnings",
+  "task": "R0-03B-1",
+  "unknown_contracts_moved": 0,
+  "validation": {
+    "git_status_short_post_commit": "pass_clean",
+    "python_scripts_validate_runtime_architecture_leakage_py": "pass",
+    "py_3_aide_scripts_aide_lite_py_commit_check_latest": "pass",
+    "python_m_unittest_discover_s_tests_t_dot": "pass_3815_tests"
+  }
+}

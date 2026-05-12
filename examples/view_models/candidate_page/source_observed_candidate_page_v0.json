@@ -350,7 +350,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/query/candidate_index_record.v0.json",
+      "control/schemas/previews/query/candidate_index_record.v0.json",
       "contracts/views/source_page.v0.json"
     ],
     "policy_inventory": "control/inventory/publication/candidate_page_view_model_policy.json",

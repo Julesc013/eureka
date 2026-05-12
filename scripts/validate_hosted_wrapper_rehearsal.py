@@ -17,12 +17,12 @@ if str(REPO_ROOT) not in sys.path:
 
 REQUIRED_CONTRACTS = [
     "contracts/hosting/hosted_wrapper_rehearsal.v0.json",
-    "contracts/hosting/hosted_wrapper_smoke_report.v0.json",
+    "control/schemas/audits/hosting/hosted_wrapper_smoke_report.v0.json",
     "contracts/hosting/public_alpha_smoke_matrix.v0.json",
-    "contracts/hosting/public_alpha_blocked_request_report.v0.json",
-    "contracts/hosting/public_alpha_status_report.v0.json",
-    "contracts/hosting/public_launch_readiness_audit.v0.json",
-    "contracts/hosting/public_launch_operator_signoff.v0.json",
+    "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+    "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+    "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+    "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
     "contracts/hosting/post_launch_remediation_plan.v0.json",
 ]
 REQUIRED_POLICIES = [

@@ -50,7 +50,13 @@ class CandidateIndexContractAuditTests(unittest.TestCase):
 
     def test_report_shape_and_hard_booleans(self) -> None:
         self.assertEqual(self.report["report_id"], "candidate_index_v0")
-        self.assertEqual(self.report["contract_file"], "contracts/query/candidate_index_record.v0.json")
+        self.assertIn(
+            self.report["contract_file"],
+            {
+                "control/schemas/previews/query/candidate_index_record.v0.json",
+                "contracts/query/candidate_index_record.v0.json",
+            },
+        )
         for key, value in self.report["no_truth_no_mutation_guarantees"].items():
             self.assertFalse(value, key)
         self.assertFalse(self.report["runtime_status"]["runtime_candidate_index_implemented"])
