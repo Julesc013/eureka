@@ -1,0 +1,68 @@
+{
+  "do_not_do": [
+    "do not rename or move runtime paths inside R0-02",
+    "do not silently bless known leaks forever",
+    "do not resume F0 until at least the R0-02 gate is active and downstream remediation is scheduled",
+    "do not promote dev to main while production-path task vocabulary remains unresolved"
+  ],
+  "moves": [
+    {
+      "from": "audit, fixture, or preview contracts under production contract paths",
+      "task": "R0-03",
+      "to": "control/audit_schemas, control/fixture_schemas, or control/preview_schemas"
+    }
+  ],
+  "quarantines": [
+    {
+      "path": "runtime/connectors/h14_source_discovery/rollup_dry_run_common.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h3_os_package_archives/review_integration.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h4_code_source_release/live_probe_common.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h6_web_archive_news_event/live_probe_common.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h13_local_private/boundary_dry_run_common.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h4_code_source_release/review_integration.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h14_source_discovery/review_integration.py",
+      "task": "R0-03 or R0-04"
+    },
+    {
+      "path": "runtime/connectors/h3_os_package_archives/live_probe_common.py",
+      "task": "R0-03 or R0-04"
+    }
+  ],
+  "recommended_sequence": [
+    "R0-03 \u2014 Contract taxonomy refactor",
+    "R0-04 \u2014 Source observation production seam",
+    "R0-05 \u2014 Durable source cache store"
+  ],
+  "renames": [
+    {
+      "from": "task/phase-named runtime symbols",
+      "task": "R0-04",
+      "to": "domain role names such as source_observation, evidence_ledger, review_queue, and connector_health"
+    }
+  ],
+  "rewrites": [
+    {
+      "scope": "runtime connector modules with H-series names or truth/product boundary symbols",
+      "task": "R0-04"
+    }
+  ],
+  "schema_version": "runtime_architecture_leakage_remediation_plan.v0"
+}

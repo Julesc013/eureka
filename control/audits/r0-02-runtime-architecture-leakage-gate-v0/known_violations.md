@@ -1,0 +1,205 @@
+# Known Temporary Violations
+
+Known allowlisted violations: 29015
+
+- contracts/actions/acquisition_manifest.v0.json:23:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/acquisition_manifest.v0.json:24:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/acquisition_manifest.v0.json:30:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_manifest.v0.json:21:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_manifest.v0.json:22:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_manifest.v0.json:57:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_manifest.v0.json:68:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_policy.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_policy.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_policy.v0.json:37:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_policy.v0.json:38:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_result_preview.v0.json:15:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_result_preview.v0.json:16:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_result_preview.v0.json:21:35 `preview_only` -> Replace preview_only with candidate preview outside product paths or move the artifact to control/test scope.
+- contracts/actions/action_taxonomy.v0.json:12:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_taxonomy.v0.json:13:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/action_taxonomy.v0.json:70:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/action_taxonomy.v0.json:71:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/blocked_action_report.v0.json:17:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/blocked_action_report.v0.json:18:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:0:28 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:3:59 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:4:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:8:15 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:23:44 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/citation_bundle.v0.json:28:19 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/actions/compare_action_manifest.v0.json:15:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/compare_action_manifest.v0.json:16:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/export_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/export_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/export_manifest.v0.json:26:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/preservation_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/actions/preservation_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/actions/preservation_manifest.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:156:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:163:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:313:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:321:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:463:6 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_task_request.v0.json:5:123 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/README.md:8:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_article_segment.v0.json:65:17 `fixture_only` -> Replace fixture_only with fixture helper outside product paths or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:47:45 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:60:25 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:61:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:62:28 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:64:17 `fixture_only` -> Replace fixture_only with fixture helper outside product paths or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_documentation_only.v0.json:93:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json:66:26 `fixture_only` -> Replace fixture_only with fixture helper outside product paths or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:39:60 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:40:77 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:50:13 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:53:52 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:67:25 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:68:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:69:28 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:71:17 `fixture_only` -> Replace fixture_only with fixture helper outside product paths or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:101:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:124:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:140:30 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:142:31 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:152:35 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:156:32 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:158:33 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:164:29 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/api/examples/search_result_card_member_driver.v0.json:171:8 `fixture_only` -> Replace fixture_only with fixture helper outside product paths or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:20:53 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:32:61 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:35:89 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:36:45 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:94:53 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:119:53 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:155:53 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/fixtures/software/synthetic_resolution_fixture.json:188:53 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:0:27 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:2:45 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:4:8 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:11:53 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:14:24 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:17:42 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/README.md:15:37 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:0:24 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:2:34 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:31:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:38:23 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:40:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:53:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:54:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_deployment_deferral.v0.json:56:26 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:0:24 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:2:34 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:15:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:25:23 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:33:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:49:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:50:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_expansion_gate.v0.json:52:26 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:0:24 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:2:34 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:12:14 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:36:31 `BUNDLE` -> Replace BUNDLE with domain capability name or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:42:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:52:23 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:54:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:65:14 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:70:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:71:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_iteration_plan.v0.json:73:26 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:0:24 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:2:34 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:43:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:47:23 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:55:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:70:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:71:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_task_decision.v0.json:73:26 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:0:24 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:2:34 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:44:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:57:23 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:59:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:79:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:80:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/local_mvp_next_wave_option.v0.json:82:26 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:38:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:56:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:58:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:73:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:74:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_gate_decision.v0.json:76:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:19:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:26:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:28:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:37:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:38:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_integration_matrix.v0.json:40:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:30:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:40:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:45:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:57:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:58:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_blocker_register.v0.json:60:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_decision_options.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_decision_options.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_decision_options.v0.json:20:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_launch_decision_options.v0.json:29:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:63:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:70:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:83:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:96:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:97:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_decision.v0.json:99:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_next_task.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_next_task.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_next_task.v0.json:31:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_next_task.v0.json:44:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:18:12 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:30:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:49:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:54:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:68:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:69:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_review_packet.v0.json:71:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:18:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:37:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:64:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:78:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:79:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_operator_signoff_packet.v0.json:81:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:15:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:31:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:33:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:47:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:48:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_public_claim_review.v0.json:50:20 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:0:18 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:2:28 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:52:12 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:64:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:74:17 `MVP` -> Replace MVP with product capability stage or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:79:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:99:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/audits/mvp_alpha_readiness_audit.v0.json:100:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- ... 28815 additional allowlisted findings are in the JSON reports.

@@ -1,0 +1,178 @@
+{
+  "schema_version": "runtime_architecture_leakage_policy.v0",
+  "policy_id": "runtime_architecture_leakage_policy",
+  "status": "active",
+  "enforcement_mode": "report_then_block_new",
+  "production_paths": [
+    "runtime/**",
+    "surfaces/**",
+    "site/**",
+    "native/**",
+    "crates/**",
+    "contracts/**",
+    "contracts/domain/**",
+    "contracts/runtime/**",
+    "contracts/api/**",
+    "contracts/snapshot/**",
+    "contracts/native/**"
+  ],
+  "control_paths": [
+    ".aide/**",
+    "control/audits/**",
+    "control/inventory/**",
+    "control/policies/**",
+    "docs/operations/**",
+    "examples/**",
+    "tests/**",
+    "scripts/audit_*.py",
+    "scripts/validate_*.py"
+  ],
+  "test_fixture_paths": [
+    "examples/**",
+    "tests/**",
+    "control/audits/**/generated/**"
+  ],
+  "forbidden_terms": [
+    "H0",
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8",
+    "H9",
+    "H10",
+    "H11",
+    "H12",
+    "H13",
+    "H14",
+    "BUNDLE",
+    "IA-BUNDLE",
+    "F-BUNDLE",
+    "G-BUNDLE",
+    "MVP",
+    "LOCAL-MVP",
+    "AIDE",
+    "prompt",
+    "agent",
+    "human_obs",
+    "fixture_only",
+    "preview_only",
+    "truth_boundary",
+    "product_boundary",
+    "review_seed",
+    "next_phase",
+    "quality_delta",
+    "integration_audit"
+  ],
+  "forbidden_regexes": [
+    {
+      "id": "phase_bundle_identifier",
+      "pattern": "(?i)(?<![A-Za-z0-9])(?:h(?:[0-9]|1[0-4])|ia|f|g)[_-]?bundle(?:[_-]|$)",
+      "recommended_replacement": "Name the artifact by domain role, not task bundle."
+    },
+    {
+      "id": "phase_named_runtime_symbol",
+      "pattern": "(?i)(?<![A-Za-z0-9])h(?:[0-9]|1[0-4])[_-][A-Za-z0-9_-]+",
+      "recommended_replacement": "Use source_observation, evidence_ledger, review_queue, or another domain name."
+    },
+    {
+      "id": "review_seed_identifier",
+      "pattern": "(?i)(?<![A-Za-z0-9])review[_-]seed(?:[_-]|$)",
+      "recommended_replacement": "Use review_item or review_candidate."
+    }
+  ],
+  "high_risk_terms": [
+    "truth_boundary",
+    "product_boundary",
+    "review_seed",
+    "fixture_only",
+    "preview_only",
+    "BUNDLE",
+    "AIDE",
+    "prompt",
+    "agent"
+  ],
+  "allowed_terms_by_path": [
+    {
+      "path": ".aide/**",
+      "terms": ["*"],
+      "reason": "AIDE owns repo operating metadata, task routing, and queue packets."
+    },
+    {
+      "path": "control/audits/**",
+      "terms": ["*"],
+      "reason": "Audit packs may describe task IDs, bundle IDs, and boundary assertions."
+    },
+    {
+      "path": "control/inventory/**",
+      "terms": ["*"],
+      "reason": "Inventory files may report leakage findings and remediation debt."
+    },
+    {
+      "path": "control/policies/**",
+      "terms": ["*"],
+      "reason": "Policy files define and document forbidden vocabulary."
+    },
+    {
+      "path": "docs/operations/**",
+      "terms": ["*"],
+      "reason": "Operations docs may discuss task gates and audit vocabulary."
+    },
+    {
+      "path": "examples/**",
+      "terms": ["*"],
+      "reason": "Examples may retain fixture/test vocabulary outside production paths."
+    },
+    {
+      "path": "tests/**",
+      "terms": ["*"],
+      "reason": "Tests may contain leakage fixtures and negative assertions."
+    },
+    {
+      "path": "scripts/audit_*.py",
+      "terms": ["*"],
+      "reason": "Audit scripts may search for forbidden vocabulary."
+    },
+    {
+      "path": "scripts/validate_*.py",
+      "terms": ["*"],
+      "reason": "Validators may enforce forbidden vocabulary rules."
+    }
+  ],
+  "known_temporary_violations_policy": {
+    "source": "R0-01 runtime_architecture_leakage_report plus R0-02 baseline scan",
+    "allowed_only_when_exact": true,
+    "required_fields": ["path", "term", "reason", "expires_after_task", "owner", "replacement", "severity_after_expiry"],
+    "recommended_expiry": "R0-04",
+    "new_unallowlisted_production_leaks_fail_check": true,
+    "expired_entries_fail_enforce": true
+  },
+  "failure_rules": {
+    "check": {
+      "fail_on_new_unallowlisted_production_violation": true,
+      "fail_on_malformed_policy": true,
+      "fail_on_forbidden_output_root": true
+    },
+    "enforce": {
+      "fail_on_new_unallowlisted_production_violation": true,
+      "fail_on_expired_allowlist": true,
+      "fail_on_malformed_policy": true,
+      "fail_on_forbidden_output_root": true
+    }
+  },
+  "no_goals": [
+    "no runtime refactor",
+    "no contract moves",
+    "no product behavior changes",
+    "no live source calls",
+    "no network/API/model/provider calls",
+    "no source cache runtime mutation",
+    "no evidence ledger runtime mutation",
+    "no review queue runtime mutation",
+    "no public index mutation",
+    "no dev-to-main merge"
+  ]
+}

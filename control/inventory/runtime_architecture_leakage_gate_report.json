@@ -1,0 +1,109 @@
+{
+  "blocker_count": 0,
+  "control_path_count": 11554,
+  "dev_to_main_should_remain_blocked": true,
+  "expired_allowlist_count": 0,
+  "f0_should_remain_blocked": true,
+  "high_count": 0,
+  "known_allowlisted_violation_count": 29015,
+  "low_count": 0,
+  "medium_count": 0,
+  "new_violation_count": 0,
+  "production_path_count": 2004,
+  "recommended_next_task": "R0-03 \u2014 Contract taxonomy refactor",
+  "scan_scope": [
+    "runtime/**",
+    "surfaces/**",
+    "site/**",
+    "native/**",
+    "crates/**",
+    "contracts/**"
+  ],
+  "schema_version": "runtime_architecture_leakage_gate_report.v0",
+  "status": "pass_with_warnings",
+  "task": "R0-02",
+  "top_paths": [
+    {
+      "count": 447,
+      "value": "runtime/connectors/h14_source_discovery/rollup_dry_run_common.py"
+    },
+    {
+      "count": 354,
+      "value": "runtime/connectors/h3_os_package_archives/review_integration.py"
+    },
+    {
+      "count": 332,
+      "value": "runtime/connectors/h4_code_source_release/live_probe_common.py"
+    },
+    {
+      "count": 327,
+      "value": "runtime/connectors/h6_web_archive_news_event/live_probe_common.py"
+    },
+    {
+      "count": 322,
+      "value": "runtime/connectors/h13_local_private/boundary_dry_run_common.py"
+    },
+    {
+      "count": 316,
+      "value": "runtime/connectors/h4_code_source_release/review_integration.py"
+    },
+    {
+      "count": 315,
+      "value": "runtime/connectors/h14_source_discovery/review_integration.py"
+    },
+    {
+      "count": 315,
+      "value": "runtime/connectors/h3_os_package_archives/live_probe_common.py"
+    },
+    {
+      "count": 311,
+      "value": "runtime/connectors/h10_games_emulation/live_probe_common.py"
+    },
+    {
+      "count": 308,
+      "value": "runtime/connectors/h7_library_research/live_probe_common.py"
+    }
+  ],
+  "top_terms": [
+    {
+      "count": 6693,
+      "value": "phase_named_runtime_symbol"
+    },
+    {
+      "count": 4469,
+      "value": "BUNDLE"
+    },
+    {
+      "count": 2352,
+      "value": "truth_boundary"
+    },
+    {
+      "count": 2303,
+      "value": "product_boundary"
+    },
+    {
+      "count": 1185,
+      "value": "review_seed"
+    },
+    {
+      "count": 985,
+      "value": "H9"
+    },
+    {
+      "count": 951,
+      "value": "H2"
+    },
+    {
+      "count": 807,
+      "value": "H10"
+    },
+    {
+      "count": 782,
+      "value": "H8"
+    },
+    {
+      "count": 742,
+      "value": "H7"
+    }
+  ]
+}

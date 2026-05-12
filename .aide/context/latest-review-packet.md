@@ -33,19 +33,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `control/audits/r0-01-dev-production-reality-inventory-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/artifact_taxonomy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/production_gap_register.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_report.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_maturity_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/scaffold_to_runtime_map.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/DEV_PRODUCTION_REALITY_INVENTORY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/R0_PRODUCTION_RECOVERY_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `scripts/audit_dev_production_reality.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_dev_production_reality.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_dev_production_reality.py` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_blockers.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_gate_report.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_remediation_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/policies` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/RUNTIME_NAMING_BOUNDARY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/R0_RUNTIME_LEAKAGE_GATE.md` (??; does not match active task allowed paths)
+- unknown: `scripts/audit_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_runtime_architecture_leakage.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -55,8 +53,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5353
-- approx_tokens: 1339
+- chars: 5168
+- approx_tokens: 1292
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
