@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/review_queue_store.v0.json",
+  "title": "Review Queue Store",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sqlite_tables",
+    "append_only_events",
+    "evidence_ledger_linking_enabled",
+    "source_cache_linking_enabled",
+    "explicit_review_decisions_enabled",
+    "public_index_writes_enabled",
+    "master_index_writes_enabled"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "review_queue_store.v0"
+    },
+    "sqlite_tables": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "review_queue_meta",
+          "review_queue_migrations",
+          "review_items",
+          "review_events",
+          "review_evidence_links",
+          "review_source_cache_links",
+          "review_decisions"
+        ]
+      }
+    },
+    "append_only_events": {
+      "type": "boolean",
+      "const": true
+    },
+    "evidence_ledger_linking_enabled": {
+      "type": "boolean",
+      "const": true
+    },
+    "source_cache_linking_enabled": {
+      "type": "boolean",
+      "const": true
+    },
+    "explicit_review_decisions_enabled": {
+      "type": "boolean",
+      "const": true
+    },
+    "public_index_writes_enabled": {
+      "type": "boolean",
+      "const": false
+    },
+    "master_index_writes_enabled": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

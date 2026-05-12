@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/review_item_record.v0.json",
+  "title": "Review Item Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_item_id",
+    "subject_kind",
+    "subject_id",
+    "queue_status",
+    "priority",
+    "payload",
+    "limitations",
+    "warnings",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "review_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "queue_status": {
+      "$ref": "review_queue_status.v0.json"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "evidence_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_cache_entry_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

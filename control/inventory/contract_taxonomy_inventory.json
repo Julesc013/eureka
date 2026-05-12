@@ -1,5 +1,5 @@
 {
-  "contract_count": 625,
+  "contract_count": 631,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -3397,6 +3397,7 @@
         "contracts/master_index/README.md",
         "contracts/master_index/review_decision.v0.json",
         "contracts/query/observation_review_decision.v0.json",
+        "contracts/stores/review_decision.v0.json",
         "control/audits/master-index-review-queue-contract-v0/master_index_review_queue_contract_report.json",
         "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
@@ -3410,6 +3411,7 @@
         "examples/work_units/observation_candidate_review_v0/work_unit.json",
         "scripts/validate_master_index_review_queue.py",
         "scripts/validate_observation_candidate.py",
+        "scripts/validate_review_queue_store.py",
         "tests/operations/test_master_index_review_queue_contract.py"
       ],
       "risks": [
@@ -7412,6 +7414,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/evidence_candidate_record.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7432,6 +7436,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/evidence_conflict.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7452,6 +7458,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/evidence_event.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7472,6 +7480,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/evidence_ledger_migration.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7492,6 +7502,8 @@
       "recommended_action": "keep",
       "references": [
         "contracts/stores/evidence_ledger_store.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7514,6 +7526,8 @@
         "contracts/stores/evidence_candidate_record.v0.json",
         "contracts/stores/evidence_conflict.v0.json",
         "contracts/stores/evidence_review_status.v0.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/r0_06_report.json",
+        "control/audits/r0-06-durable-evidence-ledger-store-v0/validation.md",
         "scripts/validate_evidence_ledger_store.py"
       ],
       "risks": [],
@@ -7523,6 +7537,145 @@
         "suffix:.json"
       ],
       "target_path": "contracts/stores/evidence_review_status.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_decision.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/master_index/README.md",
+        "contracts/master_index/review_decision.v0.json",
+        "contracts/query/observation_review_decision.v0.json",
+        "contracts/stores/review_decision.v0.json",
+        "control/audits/master-index-review-queue-contract-v0/master_index_review_queue_contract_report.json",
+        "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "examples/view_models/review_page/defer_review_page_v0.json",
+        "examples/view_models/review_page/promotion_requirements_review_page_v0.json",
+        "examples/view_models/review_page/reject_review_page_v0.json",
+        "examples/work_unit_results/observation_candidate_review_partial_v0/work_unit_result.json",
+        "examples/work_units/observation_candidate_review_v0/work_unit.json",
+        "scripts/validate_master_index_review_queue.py",
+        "scripts/validate_observation_candidate.py",
+        "scripts/validate_review_queue_store.py",
+        "tests/operations/test_master_index_review_queue_contract.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1392",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_decision.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_event.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/review_event.v0.json",
+        "scripts/validate_review_queue_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1074",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_event.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_item_record.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/review_item_record.v0.json",
+        "scripts/validate_review_queue_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1388",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_item_record.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_queue_migration.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/review_queue_migration.v0.json",
+        "scripts/validate_review_queue_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:658",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_queue_migration.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_queue_status.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/review_decision.v0.json",
+        "contracts/stores/review_item_record.v0.json",
+        "contracts/stores/review_queue_status.v0.json",
+        "scripts/validate_review_queue_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:338",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_queue_status.v0.json",
+      "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "durable_store_contract",
+      "current_root": "contracts/stores/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [],
+      "path": "contracts/stores/review_queue_store.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/stores/review_queue_store.v0.json",
+        "scripts/validate_review_queue_store.py"
+      ],
+      "risks": [],
+      "signals": [
+        "durable_store_path",
+        "size:1512",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/stores/review_queue_store.v0.json",
       "target_root": "contracts/stores/"
     },
     {
@@ -19660,7 +19813,7 @@
       "audit_schema": 88,
       "connector_interface_contract": 21,
       "control_schema": 31,
-      "durable_store_contract": 17,
+      "durable_store_contract": 23,
       "fixture_schema": 32,
       "native_contract": 15,
       "preview_schema": 171,
@@ -19675,11 +19828,11 @@
     "maturity": {
       "control_schema_candidate": 312,
       "placeholder": 18,
-      "stable_boundary_candidate": 295
+      "stable_boundary_candidate": 301
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 395,
+      "keep": 401,
       "move": 216,
       "move_and_rename": 11
     }

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/review_queue_status.v0.json",
+  "title": "Review Queue Status",
+  "type": "string",
+  "enum": [
+    "queued",
+    "needs_review",
+    "accepted",
+    "rejected",
+    "blocked",
+    "superseded",
+    "needs_more_evidence"
+  ]
+}

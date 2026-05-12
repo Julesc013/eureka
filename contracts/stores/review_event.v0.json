@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/stores/review_event.v0.json",
+  "title": "Review Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "review_item_id",
+    "event_kind",
+    "event_payload",
+    "created_at"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_item_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_kind": {
+      "type": "string",
+      "enum": [
+        "item_created",
+        "evidence_linked",
+        "source_cache_linked",
+        "decision_recorded",
+        "status_changed",
+        "blocked",
+        "superseded",
+        "note_added"
+      ]
+    },
+    "event_payload": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}

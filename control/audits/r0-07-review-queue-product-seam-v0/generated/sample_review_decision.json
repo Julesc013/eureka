@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-05-12T07:12:12Z",
+  "decision_actor": "operator:local",
+  "decision_id": "rvd_96f9020b75f04aa891c5a1e777ae1bbe",
+  "decision_kind": "accept",
+  "decision_status": "accepted",
+  "limitations": [
+    "local review state only"
+  ],
+  "payload": {
+    "scope": "local_review_flow"
+  },
+  "reason": null,
+  "review_item_id": "rvi_541cb4884ea5f047",
+  "warnings": []
+}

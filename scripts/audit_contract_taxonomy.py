@@ -357,6 +357,9 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
     if lowered.startswith("contracts/pages/") or lowered.startswith("contracts/search/") or lowered.startswith("contracts/views/") or lowered.startswith("contracts/ui/"):
         signals.append("public_surface_contract_path")
         return "public_api_contract"
+    if any(lowered.startswith(prefix) for prefix in ("contracts/evidence_ledger/", "contracts/source_cache/", "contracts/master_index/", "contracts/stores/")):
+        signals.append("durable_store_path")
+        return "durable_store_contract"
     if any(token in name for token in ("next_phase", "next_task", "queue", "task_decision", "decision_option")):
         signals.append("task_queue_signal")
         return "task_queue_schema"
@@ -375,9 +378,6 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
         signals.append("runtime_contract_path")
         signals.append("candidate_named_product_contract_exception")
         return "product_runtime_contract"
-    if any(lowered.startswith(prefix) for prefix in ("contracts/evidence_ledger/", "contracts/source_cache/", "contracts/master_index/", "contracts/stores/")):
-        signals.append("durable_store_path")
-        return "durable_store_contract"
     if any(token in name for token in ("preview", "candidate", "output_bundle", "normalized_record")):
         signals.append("preview_schema_signal")
         return "preview_schema"
