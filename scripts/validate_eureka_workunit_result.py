@@ -22,7 +22,7 @@ from scripts.validate_eureka_workunit import FORBIDDEN_ACTIONS
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_PATH = "contracts/node/work_unit_result.v0.json"
+SCHEMA_PATH = "control/schemas/policies/node/work_unit_result.v0.json"
 RESULT_POLICY_PATH = "control/inventory/nodes/workunit_result_policy.json"
 STATUS_REGISTRY_PATH = "control/inventory/nodes/workunit_result_status_registry.json"
 OUTPUT_POLICY_PATH = "control/inventory/nodes/workunit_result_output_policy.json"

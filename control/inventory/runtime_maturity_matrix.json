@@ -186,7 +186,7 @@
       "files": [
         "control/schemas/tasks/master_index/review_queue_entry.v0.json",
         "control/schemas/tasks/master_index/review_queue_manifest.v0.json",
-        "contracts/query/observation_candidate_review_queue.v0.json",
+        "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
         "control/audits/h1-bundle-03-metadata-live-probes-v0/generated/sample_h1_review_queue_seed_from_probe.json",
         "control/audits/h1-bundle-03-metadata-live-probes-v0/review_queue_seed_preview.md",
         "control/audits/h10-bundle-03-games-emulation-live-probes-v0/generated/sample_h10_review_queue_seed_from_probe.json",
@@ -240,7 +240,7 @@
       ],
       "exists": true,
       "files": [
-        "contracts/query/candidate_promotion_assessment.v0.json",
+        "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
         "control/schemas/previews/query/candidate_promotion_decision.v0.json",
         "control/schemas/previews/query/candidate_promotion_policy.v0.json",
         "control/audits/candidate-promotion-policy-v0/COMMAND_RESULTS.md",

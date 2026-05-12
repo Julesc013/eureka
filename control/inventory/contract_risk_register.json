@@ -114,59 +114,11 @@
         "F0-BUNDLE-01",
         "DEV-TO-MAIN-PRODUCTION-REVIEW"
       ],
-      "finding": "unknown recommends investigate",
-      "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
-      "recommended_fix": "Review manually and assign a concrete target class before moving.",
-      "risk_id": "R0-CONTRACT-RISK-010",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "unknown recommends investigate",
-      "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
-      "recommended_fix": "Review manually and assign a concrete target class before moving.",
-      "risk_id": "R0-CONTRACT-RISK-011",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "fixture_schema recommends move",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/fixtures/archive/synthetic_resolution_fixture.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-012",
-      "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "unknown recommends investigate",
-      "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
-      "recommended_fix": "Review manually and assign a concrete target class before moving.",
-      "risk_id": "R0-CONTRACT-RISK-013",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
       "finding": "source_policy_contract recommends move",
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/absence_memory.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/absence_memory.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-014",
+      "risk_id": "R0-CONTRACT-RISK-010",
       "severity": "medium"
     },
     {
@@ -178,7 +130,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/access_path.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/access_path.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-015",
+      "risk_id": "R0-CONTRACT-RISK-011",
       "severity": "medium"
     },
     {
@@ -190,7 +142,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/action_recipe.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/action_recipe.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-016",
+      "risk_id": "R0-CONTRACT-RISK-012",
       "severity": "medium"
     },
     {
@@ -202,7 +154,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/agent.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/agent.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-017",
+      "risk_id": "R0-CONTRACT-RISK-013",
       "severity": "medium"
     },
     {
@@ -214,7 +166,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/claim.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/claim.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-018",
+      "risk_id": "R0-CONTRACT-RISK-014",
       "severity": "medium"
     },
     {
@@ -226,7 +178,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/compatibility_evidence.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/compatibility_evidence.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-019",
+      "risk_id": "R0-CONTRACT-RISK-015",
       "severity": "medium"
     },
     {
@@ -238,7 +190,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/evidence.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/evidence.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-020",
+      "risk_id": "R0-CONTRACT-RISK-016",
       "severity": "medium"
     },
     {
@@ -250,7 +202,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/index_record.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/index_record.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-021",
+      "risk_id": "R0-CONTRACT-RISK-017",
       "severity": "medium"
     },
     {
@@ -262,7 +214,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/local_task.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/local_task.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-022",
+      "risk_id": "R0-CONTRACT-RISK-018",
       "severity": "medium"
     },
     {
@@ -274,7 +226,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/member_record.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/member_record.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-023",
+      "risk_id": "R0-CONTRACT-RISK-019",
       "severity": "medium"
     },
     {
@@ -286,7 +238,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/object.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/object.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-024",
+      "risk_id": "R0-CONTRACT-RISK-020",
       "severity": "medium"
     },
     {
@@ -298,7 +250,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/representation.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/representation.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-025",
+      "risk_id": "R0-CONTRACT-RISK-021",
       "severity": "medium"
     },
     {
@@ -310,7 +262,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/resolution_memory.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/resolution_memory.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-026",
+      "risk_id": "R0-CONTRACT-RISK-022",
       "severity": "medium"
     },
     {
@@ -322,7 +274,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/resolution_task.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/resolution_task.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-027",
+      "risk_id": "R0-CONTRACT-RISK-023",
       "severity": "medium"
     },
     {
@@ -334,7 +286,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/result_lane.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/result_lane.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-028",
+      "risk_id": "R0-CONTRACT-RISK-024",
       "severity": "medium"
     },
     {
@@ -346,7 +298,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/snapshot_manifest.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/snapshot_manifest.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-029",
+      "risk_id": "R0-CONTRACT-RISK-025",
       "severity": "medium"
     },
     {
@@ -358,7 +310,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/state.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/state.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-030",
+      "risk_id": "R0-CONTRACT-RISK-026",
       "severity": "medium"
     },
     {
@@ -370,7 +322,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/synthetic_record.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/synthetic_record.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-031",
+      "risk_id": "R0-CONTRACT-RISK-027",
       "severity": "medium"
     },
     {
@@ -382,140 +334,8 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/archive/schemas/user_cost.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/schemas/user_cost.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-032",
+      "risk_id": "R0-CONTRACT-RISK-028",
       "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-033",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-034",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-035",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-036",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-037",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-038",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-039",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-040",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_need_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_need_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-041",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-042",
-      "severity": "high"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move_and_rename",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move_and_rename to control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-043",
-      "severity": "high"
     },
     {
       "blocks": [
@@ -526,7 +346,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/evidence/evidence_contract_index.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/evidence_contract_index.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-044",
+      "risk_id": "R0-CONTRACT-RISK-029",
       "severity": "medium"
     },
     {
@@ -538,7 +358,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/evidence_ledger/evidence_ledger_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/evidence_ledger_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-045",
+      "risk_id": "R0-CONTRACT-RISK-030",
       "severity": "medium"
     },
     {
@@ -550,7 +370,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/evidence_ledger_record.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-046",
+      "risk_id": "R0-CONTRACT-RISK-031",
       "severity": "medium"
     },
     {
@@ -562,7 +382,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/deep_extraction_request.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/deep_extraction_request.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-047",
+      "risk_id": "R0-CONTRACT-RISK-032",
       "severity": "medium"
     },
     {
@@ -574,7 +394,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_member.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_member.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-048",
+      "risk_id": "R0-CONTRACT-RISK-033",
       "severity": "medium"
     },
     {
@@ -586,7 +406,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-049",
+      "risk_id": "R0-CONTRACT-RISK-034",
       "severity": "medium"
     },
     {
@@ -598,7 +418,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_result.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_result.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-050",
+      "risk_id": "R0-CONTRACT-RISK-035",
       "severity": "medium"
     },
     {
@@ -610,7 +430,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_result_summary.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_result_summary.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-051",
+      "risk_id": "R0-CONTRACT-RISK-036",
       "severity": "medium"
     },
     {
@@ -622,7 +442,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_review_seed.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_review_seed.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-052",
+      "risk_id": "R0-CONTRACT-RISK-037",
       "severity": "medium"
     },
     {
@@ -634,7 +454,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_sandbox.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_sandbox.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-053",
+      "risk_id": "R0-CONTRACT-RISK-038",
       "severity": "medium"
     },
     {
@@ -646,7 +466,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_search_gap.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_search_gap.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-054",
+      "risk_id": "R0-CONTRACT-RISK-039",
       "severity": "medium"
     },
     {
@@ -658,7 +478,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_search_integration.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_search_integration.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-055",
+      "risk_id": "R0-CONTRACT-RISK-040",
       "severity": "medium"
     },
     {
@@ -670,7 +490,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_target.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_target.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-056",
+      "risk_id": "R0-CONTRACT-RISK-041",
       "severity": "medium"
     },
     {
@@ -682,7 +502,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/extraction/extraction_workunit_seed.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/extraction_workunit_seed.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-057",
+      "risk_id": "R0-CONTRACT-RISK-042",
       "severity": "medium"
     },
     {
@@ -694,7 +514,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/gateway/public_api/openapi.placeholder.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/public_api/openapi.placeholder.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-058",
+      "risk_id": "R0-CONTRACT-RISK-043",
       "severity": "medium"
     },
     {
@@ -706,7 +526,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/host_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/host_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-059",
+      "risk_id": "R0-CONTRACT-RISK-044",
       "severity": "medium"
     },
     {
@@ -718,7 +538,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/observability_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/observability_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-060",
+      "risk_id": "R0-CONTRACT-RISK-045",
       "severity": "medium"
     },
     {
@@ -730,7 +550,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/public_alpha_config_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/public_alpha_config_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-061",
+      "risk_id": "R0-CONTRACT-RISK-046",
       "severity": "medium"
     },
     {
@@ -742,7 +562,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/public_alpha_provider_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/public_alpha_provider_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-062",
+      "risk_id": "R0-CONTRACT-RISK-047",
       "severity": "medium"
     },
     {
@@ -754,7 +574,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/rate_limit_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/rate_limit_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-063",
+      "risk_id": "R0-CONTRACT-RISK-048",
       "severity": "medium"
     },
     {
@@ -766,7 +586,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/runtime_config_boundary.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/runtime_config_boundary.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-064",
+      "risk_id": "R0-CONTRACT-RISK-049",
       "severity": "medium"
     },
     {
@@ -778,7 +598,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/hosting/secrets_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/secrets_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-065",
+      "risk_id": "R0-CONTRACT-RISK-050",
       "severity": "medium"
     },
     {
@@ -790,7 +610,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/identity/identity_cluster.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/identity_cluster.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-066",
+      "risk_id": "R0-CONTRACT-RISK-051",
       "severity": "medium"
     },
     {
@@ -802,7 +622,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/identity/identity_relation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/identity_relation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-067",
+      "risk_id": "R0-CONTRACT-RISK-052",
       "severity": "medium"
     },
     {
@@ -814,7 +634,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/identity/identity_resolution_assessment.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/identity_resolution_assessment.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-068",
+      "risk_id": "R0-CONTRACT-RISK-053",
       "severity": "medium"
     },
     {
@@ -826,7 +646,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/master_index/review_decision.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/review_decision.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-069",
+      "risk_id": "R0-CONTRACT-RISK-054",
       "severity": "medium"
     },
     {
@@ -838,7 +658,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/reviewed_public_index_rebuild.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-070",
+      "risk_id": "R0-CONTRACT-RISK-055",
       "severity": "medium"
     },
     {
@@ -850,7 +670,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/master_index/reviewed_public_record_proposal.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/reviewed_public_record_proposal.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-071",
+      "risk_id": "R0-CONTRACT-RISK-056",
       "severity": "medium"
     },
     {
@@ -862,7 +682,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/node/eureka_node_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/eureka_node_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-072",
+      "risk_id": "R0-CONTRACT-RISK-057",
       "severity": "medium"
     },
     {
@@ -874,31 +694,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/node/node_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/node_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-073",
-      "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "control_schema recommends move",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/node/work_unit.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/policies/node/work_unit.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-074",
-      "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "control_schema recommends move",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/node/work_unit_result.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/policies/node/work_unit_result.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-075",
+      "risk_id": "R0-CONTRACT-RISK-058",
       "severity": "medium"
     },
     {
@@ -910,7 +706,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/packs/local_staging_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/local_staging_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-076",
+      "risk_id": "R0-CONTRACT-RISK-059",
       "severity": "medium"
     },
     {
@@ -922,7 +718,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/packs/pack_signature_envelope.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/pack_signature_envelope.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-077",
+      "risk_id": "R0-CONTRACT-RISK-060",
       "severity": "medium"
     },
     {
@@ -934,7 +730,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/packs/source_pack_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_pack_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-078",
+      "risk_id": "R0-CONTRACT-RISK-061",
       "severity": "medium"
     },
     {
@@ -946,7 +742,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/comparison_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/comparison_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-079",
+      "risk_id": "R0-CONTRACT-RISK-062",
       "severity": "medium"
     },
     {
@@ -958,7 +754,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/comparison_page_section.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/comparison_page_section.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-080",
+      "risk_id": "R0-CONTRACT-RISK-063",
       "severity": "medium"
     },
     {
@@ -970,7 +766,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/object_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/object_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-081",
+      "risk_id": "R0-CONTRACT-RISK-064",
       "severity": "medium"
     },
     {
@@ -982,7 +778,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/object_page_section.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/object_page_section.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-082",
+      "risk_id": "R0-CONTRACT-RISK-065",
       "severity": "medium"
     },
     {
@@ -994,7 +790,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/source_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/source_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-083",
+      "risk_id": "R0-CONTRACT-RISK-066",
       "severity": "medium"
     },
     {
@@ -1006,7 +802,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/pages/source_page_section.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/source_page_section.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-084",
+      "risk_id": "R0-CONTRACT-RISK-067",
       "severity": "medium"
     },
     {
@@ -1018,19 +814,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/cache_key.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/cache_key.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-085",
-      "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "preview_schema recommends move",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/query/candidate_promotion_assessment.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/previews/query/candidate_promotion_assessment.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-086",
+      "risk_id": "R0-CONTRACT-RISK-068",
       "severity": "medium"
     },
     {
@@ -1042,7 +826,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/dedup_shadow_result.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/dedup_shadow_result.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-087",
+      "risk_id": "R0-CONTRACT-RISK-069",
       "severity": "medium"
     },
     {
@@ -1054,7 +838,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/demand_dashboard_snapshot.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/demand_dashboard_snapshot.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-088",
+      "risk_id": "R0-CONTRACT-RISK-070",
       "severity": "medium"
     },
     {
@@ -1066,7 +850,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/demand_signal.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/demand_signal.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-089",
+      "risk_id": "R0-CONTRACT-RISK-071",
       "severity": "medium"
     },
     {
@@ -1078,7 +862,7 @@
       "impact": "Task vocabulary can leak into product API or runtime semantics.",
       "path": "contracts/query/explanation_input_bundle.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/explanation_input_bundle.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-090",
+      "risk_id": "R0-CONTRACT-RISK-072",
       "severity": "medium"
     },
     {
@@ -1090,7 +874,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/identity_merge_shadow.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/identity_merge_shadow.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-091",
+      "risk_id": "R0-CONTRACT-RISK-073",
       "severity": "medium"
     },
     {
@@ -1102,7 +886,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/known_absence_gap.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/known_absence_gap.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-092",
+      "risk_id": "R0-CONTRACT-RISK-074",
       "severity": "medium"
     },
     {
@@ -1114,7 +898,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/known_absence_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/known_absence_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-093",
+      "risk_id": "R0-CONTRACT-RISK-075",
       "severity": "medium"
     },
     {
@@ -1126,7 +910,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/known_absence_record.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/known_absence_record.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-094",
+      "risk_id": "R0-CONTRACT-RISK-076",
       "severity": "medium"
     },
     {
@@ -1138,19 +922,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/near_miss_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/near_miss_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-095",
-      "severity": "medium"
-    },
-    {
-      "blocks": [
-        "F0-BUNDLE-01",
-        "DEV-TO-MAIN-PRODUCTION-REVIEW"
-      ],
-      "finding": "task_queue_schema recommends move",
-      "impact": "References and validators can break if R0-03B moves the file without updates.",
-      "path": "contracts/query/observation_candidate_review_queue.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/tasks/query/observation_candidate_review_queue.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-096",
+      "risk_id": "R0-CONTRACT-RISK-077",
       "severity": "medium"
     },
     {
@@ -1162,7 +934,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/observation_review_decision.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/observation_review_decision.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-097",
+      "risk_id": "R0-CONTRACT-RISK-078",
       "severity": "medium"
     },
     {
@@ -1174,7 +946,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/probe_kind.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/probe_kind.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-098",
+      "risk_id": "R0-CONTRACT-RISK-079",
       "severity": "medium"
     },
     {
@@ -1186,7 +958,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/public_ranking_gate.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/public_ranking_gate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-099",
+      "risk_id": "R0-CONTRACT-RISK-080",
       "severity": "medium"
     },
     {
@@ -1198,7 +970,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/query_guard_decision.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/query_guard_decision.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-100",
+      "risk_id": "R0-CONTRACT-RISK-081",
       "severity": "medium"
     },
     {
@@ -1210,7 +982,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/query_observation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/query_observation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-101",
+      "risk_id": "R0-CONTRACT-RISK-082",
       "severity": "medium"
     },
     {
@@ -1222,7 +994,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/query_poisoning_risk.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/query_poisoning_risk.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-102",
+      "risk_id": "R0-CONTRACT-RISK-083",
       "severity": "medium"
     },
     {
@@ -1234,7 +1006,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/query_privacy_risk.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/query_privacy_risk.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-103",
+      "risk_id": "R0-CONTRACT-RISK-084",
       "severity": "medium"
     },
     {
@@ -1246,7 +1018,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/ranking_factor.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/ranking_factor.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-104",
+      "risk_id": "R0-CONTRACT-RISK-085",
       "severity": "medium"
     },
     {
@@ -1258,7 +1030,7 @@
       "impact": "Task vocabulary can leak into product API or runtime semantics.",
       "path": "contracts/query/ranking_input_bundle.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/ranking_input_bundle.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-105",
+      "risk_id": "R0-CONTRACT-RISK-086",
       "severity": "medium"
     },
     {
@@ -1270,7 +1042,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/ranking_shadow_result.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/ranking_shadow_result.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-106",
+      "risk_id": "R0-CONTRACT-RISK-087",
       "severity": "medium"
     },
     {
@@ -1282,7 +1054,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_gap_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_gap_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-107",
+      "risk_id": "R0-CONTRACT-RISK-088",
       "severity": "medium"
     },
     {
@@ -1294,7 +1066,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_miss_classification.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_miss_classification.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-108",
+      "risk_id": "R0-CONTRACT-RISK-089",
       "severity": "medium"
     },
     {
@@ -1306,7 +1078,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_miss_ledger_entry.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_miss_ledger_entry.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-109",
+      "risk_id": "R0-CONTRACT-RISK-090",
       "severity": "medium"
     },
     {
@@ -1318,7 +1090,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_need_lifecycle.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_need_lifecycle.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-110",
+      "risk_id": "R0-CONTRACT-RISK-091",
       "severity": "medium"
     },
     {
@@ -1330,7 +1102,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_need_record.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_need_record.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-111",
+      "risk_id": "R0-CONTRACT-RISK-092",
       "severity": "medium"
     },
     {
@@ -1342,7 +1114,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_need_seed.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_need_seed.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-112",
+      "risk_id": "R0-CONTRACT-RISK-093",
       "severity": "medium"
     },
     {
@@ -1354,7 +1126,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_need_seed_conversion.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_need_seed_conversion.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-113",
+      "risk_id": "R0-CONTRACT-RISK-094",
       "severity": "medium"
     },
     {
@@ -1366,7 +1138,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_quality_query_set.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_quality_query_set.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-114",
+      "risk_id": "R0-CONTRACT-RISK-095",
       "severity": "medium"
     },
     {
@@ -1378,7 +1150,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_result_cache_entry.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_result_cache_entry.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-115",
+      "risk_id": "R0-CONTRACT-RISK-096",
       "severity": "medium"
     },
     {
@@ -1390,7 +1162,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/search_result_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/search_result_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-116",
+      "risk_id": "R0-CONTRACT-RISK-097",
       "severity": "medium"
     },
     {
@@ -1402,7 +1174,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/workunit_seed.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/workunit_seed.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-117",
+      "risk_id": "R0-CONTRACT-RISK-098",
       "severity": "medium"
     },
     {
@@ -1414,7 +1186,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/query/workunit_seed_conversion.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/runtime/workunit_seed_conversion.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-118",
+      "risk_id": "R0-CONTRACT-RISK-099",
       "severity": "medium"
     },
     {
@@ -1426,7 +1198,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/old_browser_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/old_browser_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-119",
+      "risk_id": "R0-CONTRACT-RISK-100",
       "severity": "medium"
     },
     {
@@ -1438,7 +1210,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-120",
+      "risk_id": "R0-CONTRACT-RISK-101",
       "severity": "medium"
     },
     {
@@ -1450,7 +1222,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-121",
+      "risk_id": "R0-CONTRACT-RISK-102",
       "severity": "medium"
     },
     {
@@ -1462,7 +1234,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_request.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_request.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-122",
+      "risk_id": "R0-CONTRACT-RISK-103",
       "severity": "medium"
     },
     {
@@ -1474,7 +1246,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_response.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_response.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-123",
+      "risk_id": "R0-CONTRACT-RISK-104",
       "severity": "medium"
     },
     {
@@ -1486,7 +1258,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_route.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_route.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-124",
+      "risk_id": "R0-CONTRACT-RISK-105",
       "severity": "medium"
     },
     {
@@ -1498,7 +1270,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_security_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_security_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-125",
+      "risk_id": "R0-CONTRACT-RISK-106",
       "severity": "medium"
     },
     {
@@ -1510,7 +1282,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/relay_status.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/relay_status.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-126",
+      "risk_id": "R0-CONTRACT-RISK-107",
       "severity": "medium"
     },
     {
@@ -1522,7 +1294,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/relay/terminal_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/terminal_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-127",
+      "risk_id": "R0-CONTRACT-RISK-108",
       "severity": "medium"
     },
     {
@@ -1534,7 +1306,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/capability_negotiation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/capability_negotiation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-128",
+      "risk_id": "R0-CONTRACT-RISK-109",
       "severity": "medium"
     },
     {
@@ -1546,7 +1318,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/host_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/host_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-129",
+      "risk_id": "R0-CONTRACT-RISK-110",
       "severity": "medium"
     },
     {
@@ -1558,7 +1330,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/renderer_parity_harness.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/renderer_parity_harness.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-130",
+      "risk_id": "R0-CONTRACT-RISK-111",
       "severity": "medium"
     },
     {
@@ -1570,7 +1342,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/representation_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/representation_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-131",
+      "risk_id": "R0-CONTRACT-RISK-112",
       "severity": "medium"
     },
     {
@@ -1582,7 +1354,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/route_view_representation_matrix.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/route_view_representation_matrix.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-132",
+      "risk_id": "R0-CONTRACT-RISK-113",
       "severity": "medium"
     },
     {
@@ -1594,7 +1366,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/representations/semantic_renderer_parity.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/domain/semantic_renderer_parity.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-133",
+      "risk_id": "R0-CONTRACT-RISK-114",
       "severity": "medium"
     },
     {
@@ -1606,7 +1378,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/compatibility_aware_ranking_assessment.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/compatibility_aware_ranking_assessment.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-134",
+      "risk_id": "R0-CONTRACT-RISK-115",
       "severity": "medium"
     },
     {
@@ -1618,7 +1390,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/compatibility_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/compatibility_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-135",
+      "risk_id": "R0-CONTRACT-RISK-116",
       "severity": "medium"
     },
     {
@@ -1630,7 +1402,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/compatibility_factor.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/compatibility_factor.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-136",
+      "risk_id": "R0-CONTRACT-RISK-117",
       "severity": "medium"
     },
     {
@@ -1642,7 +1414,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/compatibility_target_profile.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/compatibility_target_profile.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-137",
+      "risk_id": "R0-CONTRACT-RISK-118",
       "severity": "medium"
     },
     {
@@ -1654,7 +1426,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/deduplication_assessment.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/deduplication_assessment.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-138",
+      "risk_id": "R0-CONTRACT-RISK-119",
       "severity": "medium"
     },
     {
@@ -1666,7 +1438,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/evidence_weighted_ranking_assessment.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/evidence_weighted_ranking_assessment.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-139",
+      "risk_id": "R0-CONTRACT-RISK-120",
       "severity": "medium"
     },
     {
@@ -1678,7 +1450,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/ranking_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ranking_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-140",
+      "risk_id": "R0-CONTRACT-RISK-121",
       "severity": "medium"
     },
     {
@@ -1690,7 +1462,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/ranking_factor.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ranking_factor.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-141",
+      "risk_id": "R0-CONTRACT-RISK-122",
       "severity": "medium"
     },
     {
@@ -1702,7 +1474,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/result_merge_group.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/result_merge_group.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-142",
+      "risk_id": "R0-CONTRACT-RISK-123",
       "severity": "medium"
     },
     {
@@ -1714,7 +1486,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/result_merge_relation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/result_merge_relation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-143",
+      "risk_id": "R0-CONTRACT-RISK-124",
       "severity": "medium"
     },
     {
@@ -1726,7 +1498,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/search_result_explanation.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/search_result_explanation.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-144",
+      "risk_id": "R0-CONTRACT-RISK-125",
       "severity": "medium"
     },
     {
@@ -1738,7 +1510,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/search_result_explanation_component.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/search_result_explanation_component.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-145",
+      "risk_id": "R0-CONTRACT-RISK-126",
       "severity": "medium"
     },
     {
@@ -1750,7 +1522,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search/search_result_explanation_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/search_result_explanation_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-146",
+      "risk_id": "R0-CONTRACT-RISK-127",
       "severity": "medium"
     },
     {
@@ -1762,7 +1534,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_envelope.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_envelope.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-147",
+      "risk_id": "R0-CONTRACT-RISK-128",
       "severity": "medium"
     },
     {
@@ -1774,7 +1546,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_file_tree_index.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_file_tree_index.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-148",
+      "risk_id": "R0-CONTRACT-RISK-129",
       "severity": "medium"
     },
     {
@@ -1786,7 +1558,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-149",
+      "risk_id": "R0-CONTRACT-RISK-130",
       "severity": "medium"
     },
     {
@@ -1798,7 +1570,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_record.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_record.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-150",
+      "risk_id": "R0-CONTRACT-RISK-131",
       "severity": "medium"
     },
     {
@@ -1810,7 +1582,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_render_request.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_render_request.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-151",
+      "risk_id": "R0-CONTRACT-RISK-132",
       "severity": "medium"
     },
     {
@@ -1822,7 +1594,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_render_result.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_render_result.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-152",
+      "risk_id": "R0-CONTRACT-RISK-133",
       "severity": "medium"
     },
     {
@@ -1834,7 +1606,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/snapshots/snapshot_signature_envelope.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/snapshot/snapshot_signature_envelope.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-153",
+      "risk_id": "R0-CONTRACT-RISK-134",
       "severity": "medium"
     },
     {
@@ -1846,7 +1618,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_cache/source_cache_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/source_cache_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-154",
+      "risk_id": "R0-CONTRACT-RISK-135",
       "severity": "medium"
     },
     {
@@ -1858,7 +1630,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_cache/source_cache_record.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/stores/source_cache_record.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-155",
+      "risk_id": "R0-CONTRACT-RISK-136",
       "severity": "medium"
     },
     {
@@ -1870,7 +1642,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_registry/source_capability.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_capability.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-156",
+      "risk_id": "R0-CONTRACT-RISK-137",
       "severity": "medium"
     },
     {
@@ -1882,7 +1654,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_registry/source_coverage.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_coverage.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-157",
+      "risk_id": "R0-CONTRACT-RISK-138",
       "severity": "medium"
     },
     {
@@ -1894,7 +1666,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_registry/source_record.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_record.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-158",
+      "risk_id": "R0-CONTRACT-RISK-139",
       "severity": "medium"
     },
     {
@@ -1906,7 +1678,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_registry/source_registry.schema.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_registry.schema.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-159",
+      "risk_id": "R0-CONTRACT-RISK-140",
       "severity": "medium"
     },
     {
@@ -1918,7 +1690,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_sync/source_sync_job_kind.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_sync_job_kind.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-160",
+      "risk_id": "R0-CONTRACT-RISK-141",
       "severity": "medium"
     },
     {
@@ -1930,7 +1702,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_sync/source_sync_worker_job.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_sync_worker_job.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-161",
+      "risk_id": "R0-CONTRACT-RISK-142",
       "severity": "medium"
     },
     {
@@ -1942,7 +1714,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/source_sync/source_sync_worker_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_sync_worker_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-162",
+      "risk_id": "R0-CONTRACT-RISK-143",
       "severity": "medium"
     },
     {
@@ -1954,7 +1726,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_approval_gate.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_approval_gate.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-163",
+      "risk_id": "R0-CONTRACT-RISK-144",
       "severity": "medium"
     },
     {
@@ -1966,7 +1738,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_capability.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_capability.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-164",
+      "risk_id": "R0-CONTRACT-RISK-145",
       "severity": "medium"
     },
     {
@@ -1978,7 +1750,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_coverage_ledger.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_coverage_ledger.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-165",
+      "risk_id": "R0-CONTRACT-RISK-146",
       "severity": "medium"
     },
     {
@@ -1990,7 +1762,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_coverage_manifest.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_coverage_manifest.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-166",
+      "risk_id": "R0-CONTRACT-RISK-147",
       "severity": "medium"
     },
     {
@@ -2002,7 +1774,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_family.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_family.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-167",
+      "risk_id": "R0-CONTRACT-RISK-148",
       "severity": "medium"
     },
     {
@@ -2014,7 +1786,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_index_depth.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_index_depth.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-168",
+      "risk_id": "R0-CONTRACT-RISK-149",
       "severity": "medium"
     },
     {
@@ -2026,7 +1798,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_operation_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_operation_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-169",
+      "risk_id": "R0-CONTRACT-RISK-150",
       "severity": "medium"
     },
     {
@@ -2038,7 +1810,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_policy.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_policy.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-170",
+      "risk_id": "R0-CONTRACT-RISK-151",
       "severity": "medium"
     },
     {
@@ -2050,7 +1822,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_record.v2.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_record.v2.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-171",
+      "risk_id": "R0-CONTRACT-RISK-152",
       "severity": "medium"
     },
     {
@@ -2062,7 +1834,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_registry.v2.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_registry.v2.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-172",
+      "risk_id": "R0-CONTRACT-RISK-153",
       "severity": "medium"
     },
     {
@@ -2074,7 +1846,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/sources/source_trust_lane.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/connectors/source_trust_lane.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-173",
+      "risk_id": "R0-CONTRACT-RISK-154",
       "severity": "medium"
     },
     {
@@ -2086,7 +1858,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/design_tokens.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/design_tokens.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-174",
+      "risk_id": "R0-CONTRACT-RISK-155",
       "severity": "medium"
     },
     {
@@ -2098,7 +1870,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/temporal_minimal_search.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/temporal_minimal_search.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-175",
+      "risk_id": "R0-CONTRACT-RISK-156",
       "severity": "medium"
     },
     {
@@ -2110,7 +1882,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/absence_report.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/absence_report.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-176",
+      "risk_id": "R0-CONTRACT-RISK-157",
       "severity": "medium"
     },
     {
@@ -2122,7 +1894,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/acquisition.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/acquisition.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-177",
+      "risk_id": "R0-CONTRACT-RISK-158",
       "severity": "medium"
     },
     {
@@ -2134,7 +1906,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/action_plan.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/action_plan.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-178",
+      "risk_id": "R0-CONTRACT-RISK-159",
       "severity": "medium"
     },
     {
@@ -2146,7 +1918,7 @@
       "impact": "Task vocabulary can leak into product API or runtime semantics.",
       "path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/bundle_inspection.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-179",
+      "risk_id": "R0-CONTRACT-RISK-160",
       "severity": "medium"
     },
     {
@@ -2158,7 +1930,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/comparison.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/comparison.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-180",
+      "risk_id": "R0-CONTRACT-RISK-161",
       "severity": "medium"
     },
     {
@@ -2170,7 +1942,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/compatibility.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/compatibility.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-181",
+      "risk_id": "R0-CONTRACT-RISK-162",
       "severity": "medium"
     },
     {
@@ -2182,7 +1954,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/decomposition.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/decomposition.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-182",
+      "risk_id": "R0-CONTRACT-RISK-163",
       "severity": "medium"
     },
     {
@@ -2194,7 +1966,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/local_index.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/local_index.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-183",
+      "risk_id": "R0-CONTRACT-RISK-164",
       "severity": "medium"
     },
     {
@@ -2206,7 +1978,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/local_task.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/local_task.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-184",
+      "risk_id": "R0-CONTRACT-RISK-165",
       "severity": "medium"
     },
     {
@@ -2218,7 +1990,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/member_access.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/member_access.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-185",
+      "risk_id": "R0-CONTRACT-RISK-166",
       "severity": "medium"
     },
     {
@@ -2230,7 +2002,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/query_plan.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/query_plan.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-186",
+      "risk_id": "R0-CONTRACT-RISK-167",
       "severity": "medium"
     },
     {
@@ -2242,7 +2014,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/representation_selection.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/representation_selection.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-187",
+      "risk_id": "R0-CONTRACT-RISK-168",
       "severity": "medium"
     },
     {
@@ -2254,7 +2026,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/representations.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/representations.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-188",
+      "risk_id": "R0-CONTRACT-RISK-169",
       "severity": "medium"
     },
     {
@@ -2266,7 +2038,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/resolution_actions.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-189",
+      "risk_id": "R0-CONTRACT-RISK-170",
       "severity": "medium"
     },
     {
@@ -2278,7 +2050,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/resolution_memory.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-190",
+      "risk_id": "R0-CONTRACT-RISK-171",
       "severity": "medium"
     },
     {
@@ -2290,7 +2062,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/resolution_run.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/resolution_run.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-191",
+      "risk_id": "R0-CONTRACT-RISK-172",
       "severity": "medium"
     },
     {
@@ -2302,7 +2074,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/resolution_workspace.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-192",
+      "risk_id": "R0-CONTRACT-RISK-173",
       "severity": "medium"
     },
     {
@@ -2314,7 +2086,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/search_results.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/search_results.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-193",
+      "risk_id": "R0-CONTRACT-RISK-174",
       "severity": "medium"
     },
     {
@@ -2326,7 +2098,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/source_registry.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/source_registry.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-194",
+      "risk_id": "R0-CONTRACT-RISK-175",
       "severity": "medium"
     },
     {
@@ -2338,7 +2110,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/stored_exports.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-195",
+      "risk_id": "R0-CONTRACT-RISK-176",
       "severity": "medium"
     },
     {
@@ -2350,7 +2122,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/ui_contracts/subject_states.ui_contract.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/ui_contracts/subject_states.ui_contract.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-196",
+      "risk_id": "R0-CONTRACT-RISK-177",
       "severity": "medium"
     },
     {
@@ -2362,7 +2134,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/absence_report.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/absence_report.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-197",
+      "risk_id": "R0-CONTRACT-RISK-178",
       "severity": "medium"
     },
     {
@@ -2374,7 +2146,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/acquisition.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/acquisition.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-198",
+      "risk_id": "R0-CONTRACT-RISK-179",
       "severity": "medium"
     },
     {
@@ -2386,7 +2158,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/action_plan.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/action_plan.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-199",
+      "risk_id": "R0-CONTRACT-RISK-180",
       "severity": "medium"
     },
     {
@@ -2398,7 +2170,7 @@
       "impact": "Task vocabulary can leak into product API or runtime semantics.",
       "path": "contracts/ui/view_models/bundle_inspection.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/bundle_inspection.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-200",
+      "risk_id": "R0-CONTRACT-RISK-181",
       "severity": "medium"
     },
     {
@@ -2410,7 +2182,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/comparison.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/comparison.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-201",
+      "risk_id": "R0-CONTRACT-RISK-182",
       "severity": "medium"
     },
     {
@@ -2422,7 +2194,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/compatibility.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/compatibility.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-202",
+      "risk_id": "R0-CONTRACT-RISK-183",
       "severity": "medium"
     },
     {
@@ -2434,7 +2206,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/decomposition.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/decomposition.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-203",
+      "risk_id": "R0-CONTRACT-RISK-184",
       "severity": "medium"
     },
     {
@@ -2446,7 +2218,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/local_index.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/local_index.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-204",
+      "risk_id": "R0-CONTRACT-RISK-185",
       "severity": "medium"
     },
     {
@@ -2458,7 +2230,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/local_task.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/local_task.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-205",
+      "risk_id": "R0-CONTRACT-RISK-186",
       "severity": "medium"
     },
     {
@@ -2470,7 +2242,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/member_access.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/member_access.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-206",
+      "risk_id": "R0-CONTRACT-RISK-187",
       "severity": "medium"
     },
     {
@@ -2482,7 +2254,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/query_plan.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/query_plan.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-207",
+      "risk_id": "R0-CONTRACT-RISK-188",
       "severity": "medium"
     },
     {
@@ -2494,7 +2266,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/representation_selection.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/representation_selection.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-208",
+      "risk_id": "R0-CONTRACT-RISK-189",
       "severity": "medium"
     },
     {
@@ -2506,7 +2278,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/representations.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/representations.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-209",
+      "risk_id": "R0-CONTRACT-RISK-190",
       "severity": "medium"
     },
     {
@@ -2518,7 +2290,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/resolution_actions.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/resolution_actions.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-210",
+      "risk_id": "R0-CONTRACT-RISK-191",
       "severity": "medium"
     },
     {
@@ -2530,7 +2302,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/resolution_memory.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/resolution_memory.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-211",
+      "risk_id": "R0-CONTRACT-RISK-192",
       "severity": "medium"
     },
     {
@@ -2542,7 +2314,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/resolution_run.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/resolution_run.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-212",
+      "risk_id": "R0-CONTRACT-RISK-193",
       "severity": "medium"
     },
     {
@@ -2554,7 +2326,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/search_results.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/search_results.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-213",
+      "risk_id": "R0-CONTRACT-RISK-194",
       "severity": "medium"
     },
     {
@@ -2566,7 +2338,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/source_registry.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/source_registry.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-214",
+      "risk_id": "R0-CONTRACT-RISK-195",
       "severity": "medium"
     },
     {
@@ -2578,7 +2350,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/stored_exports.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/stored_exports.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-215",
+      "risk_id": "R0-CONTRACT-RISK-196",
       "severity": "medium"
     },
     {
@@ -2590,7 +2362,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/subject_states.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/subject_states.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-216",
+      "risk_id": "R0-CONTRACT-RISK-197",
       "severity": "medium"
     },
     {
@@ -2602,7 +2374,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/ui/view_models/workbench_session.view_model.yaml",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_models/workbench_session.view_model.yaml and update references.",
-      "risk_id": "R0-CONTRACT-RISK-217",
+      "risk_id": "R0-CONTRACT-RISK-198",
       "severity": "medium"
     },
     {
@@ -2614,7 +2386,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/absence_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/absence_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-218",
+      "risk_id": "R0-CONTRACT-RISK-199",
       "severity": "medium"
     },
     {
@@ -2626,7 +2398,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/candidate_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/candidate_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-219",
+      "risk_id": "R0-CONTRACT-RISK-200",
       "severity": "medium"
     },
     {
@@ -2638,7 +2410,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/compare_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/compare_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-220",
+      "risk_id": "R0-CONTRACT-RISK-201",
       "severity": "medium"
     },
     {
@@ -2650,7 +2422,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/download_manifest_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/download_manifest_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-221",
+      "risk_id": "R0-CONTRACT-RISK-202",
       "severity": "medium"
     },
     {
@@ -2662,7 +2434,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/evidence_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/evidence_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-222",
+      "risk_id": "R0-CONTRACT-RISK-203",
       "severity": "medium"
     },
     {
@@ -2674,7 +2446,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/need_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/need_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-223",
+      "risk_id": "R0-CONTRACT-RISK-204",
       "severity": "medium"
     },
     {
@@ -2686,7 +2458,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/object_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/object_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-224",
+      "risk_id": "R0-CONTRACT-RISK-205",
       "severity": "medium"
     },
     {
@@ -2698,7 +2470,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/pack_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/pack_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-225",
+      "risk_id": "R0-CONTRACT-RISK-206",
       "severity": "medium"
     },
     {
@@ -2710,7 +2482,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/review_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/review_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-226",
+      "risk_id": "R0-CONTRACT-RISK-207",
       "severity": "medium"
     },
     {
@@ -2722,7 +2494,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/search_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/search_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-227",
+      "risk_id": "R0-CONTRACT-RISK-208",
       "severity": "medium"
     },
     {
@@ -2734,7 +2506,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/source_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/source_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-228",
+      "risk_id": "R0-CONTRACT-RISK-209",
       "severity": "medium"
     },
     {
@@ -2746,7 +2518,7 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/task_page.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/task_page.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-229",
+      "risk_id": "R0-CONTRACT-RISK-210",
       "severity": "medium"
     },
     {
@@ -2758,8 +2530,44 @@
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/views/view_model_policy_index.v0.json",
       "recommended_fix": "Apply R0-03B plan: move to contracts/api/view_model_policy_index.v0.json and update references.",
-      "risk_id": "R0-CONTRACT-RISK-230",
+      "risk_id": "R0-CONTRACT-RISK-211",
       "severity": "medium"
+    },
+    {
+      "blocks": [
+        "F0-BUNDLE-01",
+        "DEV-TO-MAIN-PRODUCTION-REVIEW"
+      ],
+      "finding": "unknown recommends investigate",
+      "impact": "Execution cannot safely move or keep this artifact without human review.",
+      "path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "recommended_fix": "Review manually and assign a concrete target class before moving.",
+      "risk_id": "R0-CONTRACT-RISK-212",
+      "severity": "high"
+    },
+    {
+      "blocks": [
+        "F0-BUNDLE-01",
+        "DEV-TO-MAIN-PRODUCTION-REVIEW"
+      ],
+      "finding": "unknown recommends investigate",
+      "impact": "Execution cannot safely move or keep this artifact without human review.",
+      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "recommended_fix": "Review manually and assign a concrete target class before moving.",
+      "risk_id": "R0-CONTRACT-RISK-213",
+      "severity": "high"
+    },
+    {
+      "blocks": [
+        "F0-BUNDLE-01",
+        "DEV-TO-MAIN-PRODUCTION-REVIEW"
+      ],
+      "finding": "unknown recommends investigate",
+      "impact": "Execution cannot safely move or keep this artifact without human review.",
+      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "recommended_fix": "Review manually and assign a concrete target class before moving.",
+      "risk_id": "R0-CONTRACT-RISK-214",
+      "severity": "high"
     }
   ],
   "schema_version": "contract_risk_register.v0"

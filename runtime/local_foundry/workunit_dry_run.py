@@ -815,7 +815,7 @@ def _outputs_proposed(workunit: Mapping[str, Any], status: str) -> list[dict[str
                 "output_id": record.get("output_id", f"dry_run_output_{len(outputs) + 1}"),
                 "output_type": output_type,
                 "output_status": output_status,
-                "output_contract_ref": record.get("output_contract_ref", "contracts/node/work_unit_result.v0.json"),
+                "output_contract_ref": record.get("output_contract_ref", "control/schemas/policies/node/work_unit_result.v0.json"),
                 "output_ref": None,
                 "output_summary": f"Dry-run proposed {output_type}; no artifact was created.",
                 "output_public_safe": record.get("output_public_safe") is not False,
@@ -835,7 +835,7 @@ def _outputs_proposed(workunit: Mapping[str, Any], status: str) -> list[dict[str
                 "output_id": "dry_run_report",
                 "output_type": "dry_run_report",
                 "output_status": "validated" if status == "pass" else "needs_review",
-                "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+                "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
                 "output_ref": None,
                 "output_summary": "Dry-run WorkUnitResult envelope.",
                 "output_public_safe": True,
@@ -860,7 +860,7 @@ def _outputs_rejected(workunit: Mapping[str, Any], status: str) -> list[dict[str
                 "output_id": f"reject_{_slug(output_type)}",
                 "output_type": output_type if output_type in ALLOWED_OUTPUT_TYPES else "workunit_report",
                 "output_status": "rejected",
-                "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+                "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
                 "output_ref": None,
                 "output_summary": f"Forbidden output {output_type} was rejected by dry-run policy.",
                 "output_public_safe": True,
@@ -878,7 +878,7 @@ def _outputs_rejected(workunit: Mapping[str, Any], status: str) -> list[dict[str
 
 
 def _output_contract_refs(workunit: Mapping[str, Any]) -> list[str]:
-    refs = {"contracts/node/work_unit_result.v0.json"}
+    refs = {"control/schemas/policies/node/work_unit_result.v0.json"}
     refs.update(_string_items(workunit.get("output_contract_refs")))
     return sorted(refs)
 

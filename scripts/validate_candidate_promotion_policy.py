@@ -17,7 +17,7 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_candidate_promotion_assessment import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "query" / "candidate_promotion_assessment.v0.json"
+CONTRACT_PATH = REPO_ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_assessment.v0.json"
 DECISION_PATH = REPO_ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_decision.v0.json"
 POLICY_CONTRACT_PATH = REPO_ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_policy.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_promotion_policy.json"
@@ -190,7 +190,7 @@ def validate_candidate_promotion_policy() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/query/candidate_promotion_assessment.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "control/schemas/previews/query/candidate_promotion_assessment.v0.json")
     if contract:
         _validate_assessment_contract(contract, errors)
 
@@ -228,7 +228,7 @@ def validate_candidate_promotion_policy() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "candidate_promotion_policy_validator_v0",
-        "contract_file": "contracts/query/candidate_promotion_assessment.v0.json",
+        "contract_file": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -344,8 +344,8 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
         return
     if report.get("report_id") != "candidate_promotion_policy_v0":
         errors.append("report_id must be candidate_promotion_policy_v0.")
-    if report.get("contract_file") != "contracts/query/candidate_promotion_assessment.v0.json":
-        errors.append("report contract_file must point to contracts/query/candidate_promotion_assessment.v0.json.")
+    if report.get("contract_file") != "control/schemas/previews/query/candidate_promotion_assessment.v0.json":
+        errors.append("report contract_file must point to control/schemas/previews/query/candidate_promotion_assessment.v0.json.")
 
     hard = report.get("no_auto_promotion_no_mutation_guarantees")
     if not isinstance(hard, Mapping):

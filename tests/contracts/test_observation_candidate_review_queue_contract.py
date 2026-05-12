@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 class ObservationCandidateReviewQueueContractTest(unittest.TestCase):
     def test_contract_json_is_valid_and_declares_boundaries(self) -> None:
-        payload = _read_json(REPO_ROOT / "contracts/query/observation_candidate_review_queue.v0.json")
+        payload = _read_json(REPO_ROOT / "control/schemas/tasks/query/observation_candidate_review_queue.v0.json")
 
         errors = validate_contract_payload(payload, "contract")
 

@@ -1,12 +1,12 @@
 {
-  "compatibility_shim_count": 19,
-  "contracts_clean_enough_for_r0_04": false,
-  "contracts_root_status": "partial",
-  "control_schema_count": 327,
+  "compatibility_shim_count": 0,
+  "contracts_clean_enough_for_r0_04": true,
+  "contracts_root_status": "clean_with_warnings",
+  "control_schema_count": 353,
   "control_schemas_root_status": "clean_with_warnings",
-  "product_contract_count": 260,
-  "recommended_next_task": "R0-03C \u2014 Resolve remaining contract taxonomy blockers",
+  "product_contract_count": 293,
+  "recommended_next_task": "R0-04 \u2014 Source observation production seam",
   "schema_version": "r0_03b_2_final_contract_taxonomy.v0",
   "task": "R0-03B-2",
-  "unresolved_contract_count": 19
+  "unresolved_contract_count": 0
 }

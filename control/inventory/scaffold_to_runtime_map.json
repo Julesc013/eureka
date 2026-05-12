@@ -3328,7 +3328,7 @@
         "contract path appears to contain control, audit, fixture, policy, or preview schema",
         "empty, near-empty, or placeholder artifact"
       ],
-      "scaffold_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "scaffold_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "target_role": "fixture oracle",
       "target_runtime_seam": "unknown"
     },
@@ -3338,7 +3338,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "scaffold_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "target_role": "fixture oracle",
       "target_runtime_seam": "actions"
     },
@@ -3348,7 +3348,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "scaffold_path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "target_role": "fixture oracle",
       "target_runtime_seam": "unknown"
     },
@@ -4428,7 +4428,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4438,7 +4438,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4448,7 +4448,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4458,7 +4458,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4468,7 +4468,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4478,7 +4478,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4598,7 +4598,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4608,7 +4608,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4618,7 +4618,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4638,7 +4638,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -4648,7 +4648,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "scaffold_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "source_cache"
     },
@@ -6588,7 +6588,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/node/work_unit.v0.json",
+      "scaffold_path": "control/schemas/policies/node/work_unit.v0.json",
       "target_role": "control/audit schema or policy",
       "target_runtime_seam": "actions"
     },
@@ -6598,7 +6598,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/node/work_unit_result.v0.json",
+      "scaffold_path": "control/schemas/policies/node/work_unit_result.v0.json",
       "target_role": "control/audit schema or policy",
       "target_runtime_seam": "public_index"
     },
@@ -6758,7 +6758,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "scaffold_path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "governance"
     },
@@ -6848,7 +6848,7 @@
       "notes": [
         "contract path appears to contain control, audit, fixture, policy, or preview schema"
       ],
-      "scaffold_path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "scaffold_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "target_role": "preview/quarantine scaffold",
       "target_runtime_seam": "review_queue"
     },

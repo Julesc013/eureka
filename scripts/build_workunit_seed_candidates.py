@@ -27,8 +27,8 @@ SEARCH_NEED_MANIFEST_PATH = "control/inventory/observations/search_need_seed_man
 OBS01_MANIFEST_PATH = "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json"
 OBS02_MANIFEST_PATH = "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json"
 OBS04_AUDIT_MANIFEST_PATH = "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json"
-TRACK_B_WORKUNIT_CONTRACT_PATH = "contracts/node/work_unit.v0.json"
-TRACK_B_WORKUNIT_RESULT_CONTRACT_PATH = "contracts/node/work_unit_result.v0.json"
+TRACK_B_WORKUNIT_CONTRACT_PATH = "control/schemas/policies/node/work_unit.v0.json"
+TRACK_B_WORKUNIT_RESULT_CONTRACT_PATH = "control/schemas/policies/node/work_unit_result.v0.json"
 
 WORKUNIT_SEED_EXAMPLES = (
     "examples/workunit_seeds/minimal_workunit_seed_v0.json",

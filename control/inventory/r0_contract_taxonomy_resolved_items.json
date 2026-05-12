@@ -1,0 +1,158 @@
+{
+  "resolved": [
+    {
+      "classification": "fixture_schema",
+      "original_reason": "",
+      "rationale": "Synthetic archive payload fixture does not belong in product contracts.",
+      "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "status": "already_moved",
+      "target_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip"
+    },
+    {
+      "classification": "fixture_schema",
+      "original_reason": "",
+      "rationale": "Synthetic archive payload fixture does not belong in product contracts.",
+      "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "status": "already_moved",
+      "target_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle"
+    },
+    {
+      "classification": "fixture_schema",
+      "original_reason": "",
+      "rationale": "Synthetic resolution fixture is control fixture evidence.",
+      "source_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
+    },
+    {
+      "classification": "deprecated_schema",
+      "original_reason": "",
+      "rationale": "Archive lifecycle protocol is contract-adjacent historical protocol documentation.",
+      "source_path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
+      "status": "already_moved",
+      "target_path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
+      "source_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
+    },
+    {
+      "classification": "control_schema",
+      "original_reason": "",
+      "rationale": "Work-unit scaffolding is a control policy schema, not current product runtime.",
+      "source_path": "contracts/node/work_unit.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/policies/node/work_unit.v0.json"
+    },
+    {
+      "classification": "control_schema",
+      "original_reason": "",
+      "rationale": "Work-unit result scaffolding is a control policy schema, not current product runtime.",
+      "source_path": "contracts/node/work_unit_result.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/policies/node/work_unit_result.v0.json"
+    },
+    {
+      "classification": "preview_schema",
+      "original_reason": "",
+      "rationale": "Candidate promotion assessment is preview/review control evidence.",
+      "source_path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json"
+    },
+    {
+      "classification": "task_queue_schema",
+      "original_reason": "",
+      "rationale": "Observation candidate review queue is task queue control schema.",
+      "source_path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "status": "already_moved",
+      "target_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json"
+    }
+  ],
+  "schema_version": "r0_contract_taxonomy_resolved_items.v0",
+  "task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01"
+}

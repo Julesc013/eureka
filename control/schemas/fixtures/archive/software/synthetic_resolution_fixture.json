@@ -22,7 +22,7 @@
       "access_path": {
         "id": "access.synthetic-demo-app.fixture",
         "kind": "fixture_path",
-        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+        "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
       },
       "representations": [
         {
@@ -32,13 +32,13 @@
           "content_type": "application/vnd.eureka.synthetic.bundle",
           "byte_length": 4096,
           "payload_fixture": {
-            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+            "locator": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
             "filename": "synthetic-demo-app.bundle"
           },
           "access_path": {
             "id": "access.synthetic-demo-app.fixture",
             "kind": "inspect",
-            "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
             "is_direct": false
           }
         },
@@ -51,7 +51,7 @@
           "access_path": {
             "id": "access.synthetic-demo-app.fixture-record",
             "kind": "view",
-            "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+            "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
             "is_direct": false
           }
         },
@@ -62,13 +62,13 @@
           "content_type": "application/zip",
           "byte_length": 501,
           "payload_fixture": {
-            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+            "locator": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
             "filename": "synthetic-demo-app-package.zip"
           },
           "access_path": {
             "id": "access.synthetic-demo-app.package",
             "kind": "download",
-            "locator": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+            "locator": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
             "is_direct": true
           }
         }
@@ -96,7 +96,7 @@
       "access_path": {
         "id": "access.synthetic-demo-suite.fixture",
         "kind": "fixture_path",
-        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+        "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
       }
     },
     {
@@ -121,7 +121,7 @@
       "access_path": {
         "id": "access.compatibility-lab.fixture",
         "kind": "fixture_path",
-        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+        "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
       },
       "compatibility": {
         "required_os_families": [
@@ -157,7 +157,7 @@
       "access_path": {
         "id": "access.archive-viewer.fixture",
         "kind": "fixture_path",
-        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+        "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
       },
       "compatibility": {
         "required_os_families": [
@@ -190,7 +190,7 @@
       "access_path": {
         "id": "access.archivebox.synthetic.fixture",
         "kind": "fixture_path",
-        "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+        "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
       }
     }
   ]

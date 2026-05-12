@@ -21,7 +21,7 @@
       "references": [
         "scripts/build_workunit_seed_candidates.py"
       ],
-      "source_path": "contracts/node/work_unit.v0.json",
+      "source_path": "control/schemas/policies/node/work_unit.v0.json",
       "target_path": "control/schemas/policies/node/work_unit.v0.json"
     },
     {
@@ -46,7 +46,7 @@
         "runtime/local_foundry/workunit_dry_run.py",
         "scripts/build_workunit_seed_candidates.py"
       ],
-      "source_path": "contracts/node/work_unit_result.v0.json",
+      "source_path": "control/schemas/policies/node/work_unit_result.v0.json",
       "target_path": "control/schemas/policies/node/work_unit_result.v0.json"
     },
     {
@@ -68,7 +68,7 @@
       "references": [
         "scripts/build_observation_candidate_review_queue.py"
       ],
-      "source_path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "source_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "target_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json"
     }
   ],
@@ -19223,169 +19223,169 @@
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/obs_track_b_sync_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/obs_track_b_sync_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/obs-agent-03-observation-candidate-review-queue-v0/obs_agent_03_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/obs-agent-03-observation-candidate-review-queue-v0/observation_candidate_review_queue.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     }
@@ -20418,25 +20418,25 @@
   "unresolved_references": [
     {
       "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit.v0.json",
       "path": "scripts/build_workunit_seed_candidates.py",
       "reason": "References require forbidden or unsupported path updates in R0-03B-2."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "runtime/local_foundry/workunit_dry_run.py",
       "reason": "References require forbidden or unsupported path updates in R0-03B-2."
     },
     {
       "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "old_reference": "control/schemas/policies/node/work_unit_result.v0.json",
       "path": "scripts/build_workunit_seed_candidates.py",
       "reason": "References require forbidden or unsupported path updates in R0-03B-2."
     },
     {
       "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
-      "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
+      "old_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "path": "scripts/build_observation_candidate_review_queue.py",
       "reason": "References require forbidden or unsupported path updates in R0-03B-2."
     }

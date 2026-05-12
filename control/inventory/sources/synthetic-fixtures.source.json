@@ -35,7 +35,7 @@
     "status": "fixture_backed"
   },
   "fixture_paths": [
-    "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+    "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
   ],
   "live_access": {
     "mode": "none",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://eureka.local/contracts/query/candidate_promotion_assessment.v0.json",
+  "$id": "https://eureka.local/control/schemas/previews/query/candidate_promotion_assessment.v0.json",
   "title": "EurekaCandidatePromotionAssessmentV0",
   "description": "Candidate Promotion Policy v0 assessment contract. Contract/example/validation only; no promotion runtime, automatic acceptance, source/evidence/index mutation, telemetry, external calls, or live probes.",
   "type": "object",

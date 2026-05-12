@@ -33,8 +33,8 @@ TRACK_B_FILES = [
     REPO_ROOT / "contracts/node/eureka_node_manifest.v0.json",
     REPO_ROOT / "contracts/node/node_policy.v0.json",
     REPO_ROOT / "control/schemas/policies/node/node_capability.v0.json",
-    REPO_ROOT / "contracts/node/work_unit.v0.json",
-    REPO_ROOT / "contracts/node/work_unit_result.v0.json",
+    REPO_ROOT / "control/schemas/policies/node/work_unit.v0.json",
+    REPO_ROOT / "control/schemas/policies/node/work_unit_result.v0.json",
     REPO_ROOT / "control/schemas/policies/node/local_foundry_state.v0.json",
 ]
 OBSERVATION_DIRS = [

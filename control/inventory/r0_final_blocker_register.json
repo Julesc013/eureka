@@ -1,20 +1,5 @@
 {
-  "blockers": [
-    {
-      "area": "contract_taxonomy",
-      "blocker_id": "R0-FINAL-BLOCKER-001",
-      "blocks_f0": true,
-      "blocks_main_promotion": true,
-      "child_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
-      "evidence": [
-        "control/inventory/r0_03b_2_final_contract_taxonomy.json"
-      ],
-      "finding": "Contract taxonomy is not clean enough for promotion.",
-      "fixed_in_r0_11": false,
-      "safe_to_fix_in_r0_11": false,
-      "severity": "blocker"
-    }
-  ],
+  "blockers": [],
   "schema_version": "r0_final_blocker_register.v0",
   "task": "R0-11"
 }

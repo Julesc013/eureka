@@ -15,3 +15,7 @@ Required seams:
 - `runtime/public_index`
 
 Current handoff state: F0 is not released yet. R0-11 child-tasked the remaining contract taxonomy blocker, so F0 remains blocked until remediation passes.
+
+## Taxonomy Gate Update
+
+The contract taxonomy remediation moved the final fixture, preview, task, and control schemas out of `contracts/`. F0 must continue to use the recovered source observation, cache, evidence, review, and reviewed index seams.

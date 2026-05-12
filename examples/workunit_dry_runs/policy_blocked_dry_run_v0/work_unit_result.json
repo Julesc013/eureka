@@ -119,7 +119,7 @@
       "output_id": "policy_block_report",
       "output_type": "workunit_report",
       "output_status": "blocked",
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_ref": null,
       "output_summary": "Blocked report only; it cannot authorize the blocked work.",
       "output_public_safe": true,
@@ -136,7 +136,7 @@
     }
   ],
   "output_contract_refs": [
-    "contracts/node/work_unit_result.v0.json"
+    "control/schemas/policies/node/work_unit_result.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

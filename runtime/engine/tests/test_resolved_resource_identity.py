@@ -11,7 +11,7 @@ class ResolvedResourceIdentityTestCase(unittest.TestCase):
         record = NormalizedResolutionRecord(
             target_ref="fixture:software/synthetic-demo-app@1.0.0",
             source_name="synthetic_software_fixture",
-            source_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            source_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
             object_id="obj.synthetic-demo-app",
             object_kind="software",
             object_label="Synthetic Demo App",
@@ -21,7 +21,7 @@ class ResolvedResourceIdentityTestCase(unittest.TestCase):
             representation_kind="source_archive",
             access_path_id="access.synthetic-demo-app.fixture",
             access_path_kind="fixture_path",
-            access_path_locator="contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            access_path_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
         )
 
         first = resolved_resource_id_for_record(record)

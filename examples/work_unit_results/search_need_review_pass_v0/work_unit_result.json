@@ -115,7 +115,7 @@
       "output_id": "search_need_seed_future_example",
       "output_type": "search_need_seed_future",
       "output_status": "proposed",
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_ref": null,
       "output_summary": "Reviewable SearchNeed seed proposal.",
       "output_public_safe": true,
@@ -133,7 +133,7 @@
   ],
   "outputs_rejected": [],
   "output_contract_refs": [
-    "contracts/node/work_unit_result.v0.json"
+    "control/schemas/policies/node/work_unit_result.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

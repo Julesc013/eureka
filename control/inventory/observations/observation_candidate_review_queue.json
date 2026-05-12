@@ -26,7 +26,7 @@
   },
   "description": "Deterministic OBS side-lane review queue over repo-local ObservationCandidate records.",
   "generated_from": [
-    "contracts/query/observation_candidate_review_queue.v0.json",
+    "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
     "control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json",
     "control/audits/obs-agent-02-source-gap-candidate-generation-v0/source_gap_candidate_manifest.json",
     "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json",

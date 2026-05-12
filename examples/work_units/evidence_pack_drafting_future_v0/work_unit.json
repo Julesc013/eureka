@@ -136,7 +136,7 @@
     {
       "output_id": "evidence_pack_draft",
       "output_type": "contribution_pack_draft_future",
-      "output_contract_ref": "contracts/node/work_unit.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit.v0.json",
       "output_status": "future_draft_requires_review",
       "output_public_safe": true,
       "output_requires_review": true,
@@ -163,7 +163,7 @@
     "production_readiness_claim"
   ],
   "output_contract_refs": [
-    "contracts/node/work_unit.v0.json"
+    "control/schemas/policies/node/work_unit.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

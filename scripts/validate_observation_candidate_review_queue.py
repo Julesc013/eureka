@@ -22,7 +22,7 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_observation_candidate import validate_candidate_record  # noqa: E402
 
 
-CONTRACT_PATH = "contracts/query/observation_candidate_review_queue.v0.json"
+CONTRACT_PATH = "control/schemas/tasks/query/observation_candidate_review_queue.v0.json"
 POLICY_PATH = "control/inventory/observations/observation_candidate_review_queue_policy.json"
 TRIAGE_RULES_PATH = "control/inventory/observations/observation_candidate_triage_rules.json"
 QUEUE_PATH = "control/inventory/observations/observation_candidate_review_queue.json"

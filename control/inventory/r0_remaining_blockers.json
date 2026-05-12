@@ -1,18 +1,5 @@
 {
-  "blockers": [
-    {
-      "area": "contract_taxonomy",
-      "blocker_id": "R0-PROD-BLOCKER-001",
-      "blocks_f0": true,
-      "blocks_main_promotion": true,
-      "evidence": [
-        "control/inventory/r0_03b_2_final_contract_taxonomy.json"
-      ],
-      "finding": "Contract taxonomy is not clean enough for promotion.",
-      "required_fix": "Resolve unresolved contract taxonomy items before F0 or main promotion.",
-      "severity": "blocker"
-    }
-  ],
+  "blockers": [],
   "schema_version": "r0_remaining_blockers.v0",
   "task": "R0-10"
 }

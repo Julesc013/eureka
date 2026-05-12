@@ -7,8 +7,8 @@
     "Node capability and local state requirements remain future/deferred."
   ],
   "generated_from": [
-    "contracts/node/work_unit.v0.json",
-    "contracts/node/work_unit_result.v0.json",
+    "control/schemas/policies/node/work_unit.v0.json",
+    "control/schemas/policies/node/work_unit_result.v0.json",
     "contracts/query/workunit_seed.v0.json",
     "contracts/query/workunit_seed_conversion.v0.json",
     "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",

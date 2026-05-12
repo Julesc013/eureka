@@ -379,13 +379,13 @@
     "out_of_order_detected": false
   },
   "output_contract_refs": [
-    "contracts/node/work_unit.v0.json",
-    "contracts/node/work_unit_result.v0.json"
+    "control/schemas/policies/node/work_unit.v0.json",
+    "control/schemas/policies/node/work_unit_result.v0.json"
   ],
   "outputs_proposed": [
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit.v0.json",
       "output_id": "search_need_seed_review_item",
       "output_limitations": [
         "A seed is not an accepted SearchNeed.",
@@ -407,7 +407,7 @@
   "outputs_rejected": [
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_observed_baseline_truth",
       "output_limitations": [
         "Rejected output was not created."
@@ -426,7 +426,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_accepted_evidence_truth",
       "output_limitations": [
         "Rejected output was not created."
@@ -445,7 +445,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_accepted_public_record",
       "output_limitations": [
         "Rejected output was not created."
@@ -464,7 +464,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_master_index_mutation",
       "output_limitations": [
         "Rejected output was not created."
@@ -483,7 +483,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_rights_clearance",
       "output_limitations": [
         "Rejected output was not created."
@@ -502,7 +502,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_malware_safety",
       "output_limitations": [
         "Rejected output was not created."
@@ -521,7 +521,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_verified_installability",
       "output_limitations": [
         "Rejected output was not created."
@@ -540,7 +540,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_exhaustive_global_search_proof",
       "output_limitations": [
         "Rejected output was not created."
@@ -559,7 +559,7 @@
     },
     {
       "notes": [],
-      "output_contract_ref": "contracts/node/work_unit_result.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
       "output_id": "reject_production_readiness_claim",
       "output_limitations": [
         "Rejected output was not created."

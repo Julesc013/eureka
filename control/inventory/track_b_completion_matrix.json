@@ -139,7 +139,7 @@
         "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json"
       ],
       "contract_paths": [
-        "contracts/node/work_unit.v0.json"
+        "control/schemas/policies/node/work_unit.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_policy.json",
@@ -181,7 +181,7 @@
         "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json"
       ],
       "contract_paths": [
-        "contracts/node/work_unit_result.v0.json"
+        "control/schemas/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_result_policy.json",
@@ -398,8 +398,8 @@
         "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
       ],
       "contract_paths": [
-        "contracts/node/work_unit.v0.json",
-        "contracts/node/work_unit_result.v0.json"
+        "control/schemas/policies/node/work_unit.v0.json",
+        "control/schemas/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_dry_run_policy.json",

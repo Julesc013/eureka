@@ -18,3 +18,7 @@ R0-11 does not implement F0, does not merge branches, does not deploy, and does 
 ## Closeout Decision
 
 F0 remains blocked until the final contract taxonomy blocker is resolved. Dev-to-main promotion also remains blocked. The blocker is child-tasked as `R0-REMEDIATION-CONTRACT-TAXONOMY-01`.
+
+## Contract Taxonomy Remediation
+
+R0-REMEDIATION-CONTRACT-TAXONOMY-01 resolved the remaining R0-03B-2 contract taxonomy blocker. F0 may resume through the recovered runtime seams; dev-to-main remains an operator promotion action rather than an automatic merge.

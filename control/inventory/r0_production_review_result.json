@@ -1,24 +1,11 @@
 {
   "all_required_r0_tasks_passed": true,
   "architecture_leakage_gate_ready": true,
-  "blockers": [
-    {
-      "area": "contract_taxonomy",
-      "blocker_id": "R0-PROD-BLOCKER-001",
-      "blocks_f0": true,
-      "blocks_main_promotion": true,
-      "evidence": [
-        "control/inventory/r0_03b_2_final_contract_taxonomy.json"
-      ],
-      "finding": "Contract taxonomy is not clean enough for promotion.",
-      "required_fix": "Resolve unresolved contract taxonomy items before F0 or main promotion.",
-      "severity": "blocker"
-    }
-  ],
-  "contract_taxonomy_ready": false,
-  "dev_can_promote_to_main": false,
+  "blockers": [],
+  "contract_taxonomy_ready": true,
+  "dev_can_promote_to_main": true,
   "evidence_ledger_ready": true,
-  "f0_can_resume": false,
+  "f0_can_resume": true,
   "one_source_live_test_ready": true,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
@@ -40,7 +27,7 @@
   "schema_version": "r0_production_review_result.v0",
   "source_cache_ready": true,
   "source_observation_ready": true,
-  "status": "blocked",
+  "status": "pass_with_warnings",
   "task": "R0-10",
   "warnings": [
     {
@@ -51,15 +38,6 @@
         "No new production-path leakage blockers were reported."
       ],
       "warning": "29015 known allowlisted legacy violations remain"
-    },
-    {
-      "area": "contract_taxonomy",
-      "disposition": "assigned_to_next_task",
-      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
-      "notes": [
-        "contracts_root_status=partial"
-      ],
-      "warning": "19 compatibility shims remain"
     },
     {
       "area": "r0_prior_task",

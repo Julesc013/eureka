@@ -6302,7 +6302,7 @@
       "artifact_kind": "fixture_contract",
       "maturity": "empty_or_zero_byte",
       "notes": [],
-      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "product_role": "unknown",
       "recommended_action": "investigate",
       "risks": [
@@ -6321,7 +6321,7 @@
       "artifact_kind": "fixture_contract",
       "maturity": "fixture_only",
       "notes": [],
-      "path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "product_role": "actions",
       "recommended_action": "move_to_control",
       "risks": [
@@ -6339,7 +6339,7 @@
       "artifact_kind": "fixture_contract",
       "maturity": "fixture_only",
       "notes": [],
-      "path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "product_role": "unknown",
       "recommended_action": "move_to_control",
       "risks": [
@@ -6370,7 +6370,7 @@
       "artifact_kind": "domain_contract",
       "maturity": "unknown",
       "notes": [],
-      "path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
+      "path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "product_role": "connector_runtime",
       "recommended_action": "keep",
       "risks": [],
@@ -8506,7 +8506,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8523,7 +8523,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8540,7 +8540,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8557,7 +8557,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8574,7 +8574,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8591,7 +8591,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8802,7 +8802,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8819,7 +8819,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8836,7 +8836,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8871,7 +8871,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -8888,7 +8888,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "product_role": "source_cache",
       "recommended_action": "move_to_control",
       "risks": [
@@ -13081,7 +13081,7 @@
       "artifact_kind": "audit_contract",
       "maturity": "audit_only",
       "notes": [],
-      "path": "contracts/node/work_unit.v0.json",
+      "path": "control/schemas/policies/node/work_unit.v0.json",
       "product_role": "actions",
       "recommended_action": "move_to_control",
       "risks": [
@@ -13097,7 +13097,7 @@
       "artifact_kind": "audit_contract",
       "maturity": "audit_only",
       "notes": [],
-      "path": "contracts/node/work_unit_result.v0.json",
+      "path": "control/schemas/policies/node/work_unit_result.v0.json",
       "product_role": "public_index",
       "recommended_action": "move_to_control",
       "risks": [
@@ -13546,7 +13546,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
       "product_role": "governance",
       "recommended_action": "move_to_control",
       "risks": [
@@ -13765,7 +13765,7 @@
       "artifact_kind": "preview_contract",
       "maturity": "preview_only",
       "notes": [],
-      "path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "product_role": "review_queue",
       "recommended_action": "move_to_control",
       "risks": [

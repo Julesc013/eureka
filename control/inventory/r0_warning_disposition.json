@@ -14,10 +14,10 @@
     },
     {
       "area": "contract_taxonomy",
-      "disposition": "assigned_to_next_task",
-      "next_task": "R0-REMEDIATION \u2014 Resolve remaining production blockers",
+      "disposition": "fixed",
+      "next_task": "",
       "notes": [
-        "contracts_root_status=partial"
+        "Resolved by R0-REMEDIATION-CONTRACT-TAXONOMY-01."
       ],
       "warning": "19 compatibility shims remain",
       "warning_id": "R0-WARN-002"

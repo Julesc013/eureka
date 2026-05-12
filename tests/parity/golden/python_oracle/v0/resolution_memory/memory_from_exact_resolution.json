@@ -116,15 +116,15 @@
             "claim_kind": "label",
             "claim_value": "Synthetic Demo App",
             "evidence_kind": "recorded_fixture",
-            "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+            "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
           },
           {
             "asserted_by_family": "synthetic_fixture",
             "asserted_by_label": "Synthetic Fixture",
             "claim_kind": "source_locator",
-            "claim_value": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+            "claim_value": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
             "evidence_kind": "recorded_fixture",
-            "evidence_locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json"
+            "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
           }
         ],
         "invalidation_hints": {
@@ -160,7 +160,7 @@
             "source": {
               "family": "synthetic_fixture",
               "label": "Synthetic Fixture",
-              "locator": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+              "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
               "source_id": "synthetic-fixtures"
             },
             "target_ref": "fixture:software/synthetic-demo-app@1.0.0"

@@ -123,3 +123,7 @@ Good product contract:
 
 R0-03A plans this taxonomy only. R0-03B performs the moves and reference
 updates in reviewed batches.
+
+## R0 Remediation Closeout
+
+The R0 remediation task retired the remaining unresolved contract taxonomy items by moving non-product fixtures, H14 preview schemas, work-unit control schemas, and query preview/task schemas into `control/schemas/`. Historical audit references remain historical evidence.

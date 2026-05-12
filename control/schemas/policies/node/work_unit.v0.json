@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://eureka.local/contracts/node/work_unit.v0.json",
+  "$id": "https://eureka.local/control/schemas/policies/node/work_unit.v0.json",
   "title": "EurekaWorkUnitV0",
   "description": "Contract-only WorkUnit record for replay-safe, policy-scoped future node work. A WorkUnit describes bounded work; it does not grant runtime permission or accepted truth.",
   "type": "object",

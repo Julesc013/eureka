@@ -1,0 +1,142 @@
+{
+  "compatibility_shims_after": 0,
+  "compatibility_shims_before": 19,
+  "remaining": [],
+  "retired": [
+    {
+      "new_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "old_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    },
+    {
+      "new_path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "old_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    },
+    {
+      "new_path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "old_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "old_path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_need_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "old_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/policies/node/work_unit.v0.json",
+      "old_path": "contracts/node/work_unit.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    },
+    {
+      "new_path": "control/schemas/policies/node/work_unit_result.v0.json",
+      "old_path": "contracts/node/work_unit_result.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    },
+    {
+      "new_path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "old_path": "contracts/query/candidate_promotion_assessment.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_1_compatibility_shim_report"
+    },
+    {
+      "new_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "old_path": "contracts/query/observation_candidate_review_queue.v0.json",
+      "retired": "true",
+      "shim_kind": "none",
+      "source": "r0_03b_2_unresolved_contracts"
+    }
+  ],
+  "schema_version": "r0_contract_taxonomy_shim_retirement_report.v0",
+  "task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01"
+}

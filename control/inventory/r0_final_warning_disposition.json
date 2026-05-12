@@ -14,10 +14,10 @@
     },
     {
       "area": "contract_taxonomy",
-      "child_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
-      "disposition": "child_task_created",
+      "child_task": "",
+      "disposition": "fixed",
       "notes": [
-        "contracts_root_status=partial"
+        "Resolved by R0-REMEDIATION-CONTRACT-TAXONOMY-01."
       ],
       "warning": "19 compatibility shims remain",
       "warning_id": "R0-FINAL-WARN-002"

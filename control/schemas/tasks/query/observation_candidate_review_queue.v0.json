@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://eureka.local/contracts/query/observation_candidate_review_queue.v0.json",
+  "$id": "https://eureka.local/control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
   "title": "EurekaObservationCandidateReviewQueueV0",
   "description": "Review queue over ObservationCandidate records. Queue entries are governance items only and do not approve candidates, create observed baselines, create evidence truth, approve source access, or mutate the master index.",
   "type": "object",

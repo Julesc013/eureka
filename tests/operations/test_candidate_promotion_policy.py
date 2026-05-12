@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CONTRACT = ROOT / "contracts" / "query" / "candidate_promotion_assessment.v0.json"
+CONTRACT = ROOT / "control" / "schemas" / "previews" / "query" / "candidate_promotion_assessment.v0.json"
 POLICY = ROOT / "control" / "inventory" / "query_intelligence" / "candidate_promotion_policy.json"
 REPORT = ROOT / "control" / "audits" / "candidate-promotion-policy-v0" / "candidate_promotion_policy_report.json"
 EXAMPLES = ROOT / "examples" / "candidate_promotion"

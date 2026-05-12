@@ -57,7 +57,7 @@ class DeterministicComparisonServiceTestCase(unittest.TestCase):
                 ("source_family", "synthetic_fixture", "github_releases"),
                 (
                     "source_locator",
-                    "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+                    "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                     "https://github.com/archivebox/archivebox/releases/tag/v0.8.5",
                 ),
             ],

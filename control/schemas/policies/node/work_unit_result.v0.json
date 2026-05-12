@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://eureka.local/contracts/node/work_unit_result.v0.json",
+  "$id": "https://eureka.local/control/schemas/policies/node/work_unit_result.v0.json",
   "title": "EurekaWorkUnitResultV0",
   "description": "Contract-only WorkUnit result envelope for replay-safe, reviewable future WorkUnit outcomes. A result records what happened or what would happen; it is not accepted truth.",
   "type": "object",

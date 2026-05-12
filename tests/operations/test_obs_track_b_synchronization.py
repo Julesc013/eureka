@@ -32,8 +32,8 @@ TRACK_B_FILES = [
     REPO_ROOT / "contracts/node/eureka_node_manifest.v0.json",
     REPO_ROOT / "contracts/node/node_policy.v0.json",
     REPO_ROOT / "control/schemas/policies/node/node_capability.v0.json",
-    REPO_ROOT / "contracts/node/work_unit.v0.json",
-    REPO_ROOT / "contracts/node/work_unit_result.v0.json",
+    REPO_ROOT / "control/schemas/policies/node/work_unit.v0.json",
+    REPO_ROOT / "control/schemas/policies/node/work_unit_result.v0.json",
     REPO_ROOT / "control/schemas/policies/node/local_foundry_state.v0.json",
 ]
 OBSERVATION_DIRS = [
@@ -74,7 +74,7 @@ class ObsTrackBSynchronizationTest(unittest.TestCase):
         self.assertEqual(result, 0)
         lines = [line for line in output.getvalue().splitlines() if line.strip()]
         self.assertGreater(len(lines), 20)
-        self.assertIn("contracts/node/work_unit.v0.json", lines)
+        self.assertIn("control/schemas/policies/node/work_unit.v0.json", lines)
 
     def test_audit_script_check_passes(self) -> None:
         output = io.StringIO()

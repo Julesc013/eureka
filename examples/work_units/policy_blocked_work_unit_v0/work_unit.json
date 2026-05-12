@@ -129,7 +129,7 @@
     {
       "output_id": "policy_block_report",
       "output_type": "workunit_report",
-      "output_contract_ref": "contracts/node/work_unit.v0.json",
+      "output_contract_ref": "control/schemas/policies/node/work_unit.v0.json",
       "output_status": "blocked_report_only",
       "output_public_safe": true,
       "output_requires_review": true,
@@ -156,7 +156,7 @@
     "production_readiness_claim"
   ],
   "output_contract_refs": [
-    "contracts/node/work_unit.v0.json"
+    "control/schemas/policies/node/work_unit.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

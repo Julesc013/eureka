@@ -1,0 +1,14 @@
+{
+  "compatibility_shim_count": 0,
+  "contracts_clean_enough_for_f0": true,
+  "contracts_clean_enough_for_r0_04": true,
+  "contracts_root_status": "clean_with_warnings",
+  "control_schema_count": 353,
+  "control_schemas_root_status": "clean_with_warnings",
+  "product_contract_count": 293,
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "schema_version": "r0_contract_taxonomy_final_state.v0",
+  "status": "pass",
+  "task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+  "unresolved_contract_count": 0
+}
