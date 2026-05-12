@@ -118982,7 +118982,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "c7567c45f566a9e12af545aab97ef79559fbabe3502f96eeff82c7b07168afd4",
+      "file_sha256": "d6b8968d300ad65f1fa316b7828a6e1420f87999ef13b5a9488659f78bfd8aec",
       "finding_count": 2,
       "owner": "repo",
       "path": "runtime/engine/actions/tests/test_resolution_manifest.py",
@@ -119001,7 +119001,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -120456,7 +120458,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "13b57d3ac7fca3c0af970eff6727a2e78c3fe780139506015f940efd90a61b13",
+      "file_sha256": "696c22e3d3095ba0c70ff64620fc17d56a40185635dc3b4316957850c3cfc18b",
       "finding_count": 7,
       "owner": "repo",
       "path": "runtime/engine/store/tests/test_export_store.py",
@@ -120495,7 +120497,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -120674,7 +120678,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "4d681b8a596a9cb1a9242f213e0f16c42f2c26cabb5438bdf5d31700acb82154",
+      "file_sha256": "c5491a2ea4b39d79ed5977ebd0b17d77f78cc45ce52a3282087bcf80b8a8333e",
       "finding_count": 1,
       "owner": "repo",
       "path": "runtime/engine/tests/test_exact_match_resolution_service.py",
@@ -120689,7 +120693,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -123046,7 +123052,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "eff3abd31febf4313870688918a0121cd1a488f73ce649fcc36e4e95c30e67b8",
+      "file_sha256": "363ac61d987fb1e8645a2a6eb955bd9b36ec87949242e137fdc6b817cf501856",
       "finding_count": 2,
       "owner": "repo",
       "path": "runtime/gateway/tests/test_workbench_sessions.py",
@@ -123065,7 +123071,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -125863,7 +125871,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b57b27cf800aed0d3455ec97ee2ee2babfa04960a84699f1989641f03021f16c",
+      "file_sha256": "ccd2512064d185b1b6d304d9ca34b2c59651f1aa360cb9bfffd46217ae0f63d6",
       "finding_count": 1,
       "owner": "repo",
       "path": "runtime/local_foundry/workunit_dry_run.py",
@@ -125878,13 +125886,15 @@
         }
       ],
       "severity_after_expiry": "high",
-      "term": "agent"
+      "term": "agent",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b57b27cf800aed0d3455ec97ee2ee2babfa04960a84699f1989641f03021f16c",
+      "file_sha256": "ccd2512064d185b1b6d304d9ca34b2c59651f1aa360cb9bfffd46217ae0f63d6",
       "finding_count": 10,
       "owner": "repo",
       "path": "runtime/local_foundry/workunit_dry_run.py",
@@ -125927,13 +125937,15 @@
         }
       ],
       "severity_after_expiry": "high",
-      "term": "product_boundary"
+      "term": "product_boundary",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b57b27cf800aed0d3455ec97ee2ee2babfa04960a84699f1989641f03021f16c",
+      "file_sha256": "ccd2512064d185b1b6d304d9ca34b2c59651f1aa360cb9bfffd46217ae0f63d6",
       "finding_count": 1,
       "owner": "repo",
       "path": "runtime/local_foundry/workunit_dry_run.py",
@@ -125948,13 +125960,15 @@
         }
       ],
       "severity_after_expiry": "high",
-      "term": "prompt"
+      "term": "prompt",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b57b27cf800aed0d3455ec97ee2ee2babfa04960a84699f1989641f03021f16c",
+      "file_sha256": "ccd2512064d185b1b6d304d9ca34b2c59651f1aa360cb9bfffd46217ae0f63d6",
       "finding_count": 17,
       "owner": "repo",
       "path": "runtime/local_foundry/workunit_dry_run.py",
@@ -125997,7 +126011,9 @@
         }
       ],
       "severity_after_expiry": "high",
-      "term": "truth_boundary"
+      "term": "truth_boundary",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -129030,7 +129046,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "359233131c7f90e74e8d3981359b7c9644ab6d3f58ba906ee0a55d0ea6059fbf",
+      "file_sha256": "6275db2f7bc5c2aef0ddf2905c38024aa72f6454064a7d9b088017839b381d22",
       "finding_count": 1,
       "owner": "repo",
       "path": "site/dist/data/public_index_summary.json",
@@ -129045,13 +129061,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "1ee7eb66099d5117bdce67afbf3441f997e2f74e81d0493bc9e2cb6790344111",
+      "file_sha256": "04faf7d0eaf7e3957aacb4496e7561b0591575e096b8f403dcd6aa39b6b5c3e0",
       "finding_count": 5,
       "owner": "repo",
       "path": "site/dist/data/source_summary.json",
@@ -129082,13 +129100,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "12f80ea9408859bde86a939a5db90ff897e87b68c20136dbadf05c443b388da7",
+      "file_sha256": "4142a76a9049e0aafe8e55c3351f359203bbb8b6c85304cce94c5b8c9c235cde",
       "finding_count": 3,
       "owner": "repo",
       "path": "site/dist/demo-queries.html",
@@ -129111,13 +129131,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "12f80ea9408859bde86a939a5db90ff897e87b68c20136dbadf05c443b388da7",
+      "file_sha256": "4142a76a9049e0aafe8e55c3351f359203bbb8b6c85304cce94c5b8c9c235cde",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/demo-queries.html",
@@ -129136,13 +129158,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "12f80ea9408859bde86a939a5db90ff897e87b68c20136dbadf05c443b388da7",
+      "file_sha256": "4142a76a9049e0aafe8e55c3351f359203bbb8b6c85304cce94c5b8c9c235cde",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/demo-queries.html",
@@ -129161,7 +129185,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -130310,7 +130336,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "726119fe5fb9b6f74f55e40f55dad329a01fa7980d1aac96b09707c97ac81553",
+      "file_sha256": "c59c65e1d5486581839cf9f3e9853b8a89905fc36d5a76c45cf9c15bb5781809",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/evals.html",
@@ -130329,13 +130355,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "726119fe5fb9b6f74f55e40f55dad329a01fa7980d1aac96b09707c97ac81553",
+      "file_sha256": "c59c65e1d5486581839cf9f3e9853b8a89905fc36d5a76c45cf9c15bb5781809",
       "finding_count": 8,
       "owner": "repo",
       "path": "site/dist/evals.html",
@@ -130378,7 +130406,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -130409,7 +130439,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b5192b84318a426a829cca4ca1693bea040f834f649d57bba362e69daf6f41ca",
+      "file_sha256": "8f05e4e9e7d66e96f01dceb8807eb75226442bc09d454cc8597c35d93c6f139c",
       "finding_count": 1,
       "owner": "repo",
       "path": "site/dist/index.html",
@@ -130424,13 +130454,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b5192b84318a426a829cca4ca1693bea040f834f649d57bba362e69daf6f41ca",
+      "file_sha256": "8f05e4e9e7d66e96f01dceb8807eb75226442bc09d454cc8597c35d93c6f139c",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/index.html",
@@ -130449,13 +130481,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "b5192b84318a426a829cca4ca1693bea040f834f649d57bba362e69daf6f41ca",
+      "file_sha256": "8f05e4e9e7d66e96f01dceb8807eb75226442bc09d454cc8597c35d93c6f139c",
       "finding_count": 8,
       "owner": "repo",
       "path": "site/dist/index.html",
@@ -130498,13 +130532,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "0de458ede7f032690500d8adedd28bb37242d7f29bc8ccd3a85eb3f685f44da3",
+      "file_sha256": "47825ad6a4c1c06734bf80e3760994b50645872036e42ba1337df2a846c32dd4",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/limitations.html",
@@ -130523,7 +130559,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
@@ -130729,7 +130767,7 @@
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "8ee460d3803d632e1425ba3a6f45c5489701c3e2a4b2c55d945cc81a3a2401d5",
+      "file_sha256": "299e8e654201b77c0e035671809ae5ff91c79ee0daf36a944c45fd01576c3943",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/local-quickstart.html",
@@ -130748,13 +130786,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "8ee460d3803d632e1425ba3a6f45c5489701c3e2a4b2c55d945cc81a3a2401d5",
+      "file_sha256": "299e8e654201b77c0e035671809ae5ff91c79ee0daf36a944c45fd01576c3943",
       "finding_count": 10,
       "owner": "repo",
       "path": "site/dist/local-quickstart.html",
@@ -130797,13 +130837,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "e2304538ec98878a96a8357084490582e34f6cd502b992b47771c29ac7866e7f",
+      "file_sha256": "88df297e13bbec5285098ef689b7c65d7aaef5e40fa025f835523eb804a3ac1c",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/roadmap.html",
@@ -130822,13 +130864,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "e2304538ec98878a96a8357084490582e34f6cd502b992b47771c29ac7866e7f",
+      "file_sha256": "88df297e13bbec5285098ef689b7c65d7aaef5e40fa025f835523eb804a3ac1c",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/roadmap.html",
@@ -130847,13 +130891,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "634aed4458475aff8c2ffb42e854e9f296ded1613f0c93cdc7f1ee0ba0e2e1e5",
+      "file_sha256": "03382773586e939dd99edb6d4f2c574491223691eb1eff68653bd8b619ff942f",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/search.html",
@@ -130872,13 +130918,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "634aed4458475aff8c2ffb42e854e9f296ded1613f0c93cdc7f1ee0ba0e2e1e5",
+      "file_sha256": "03382773586e939dd99edb6d4f2c574491223691eb1eff68653bd8b619ff942f",
       "finding_count": 14,
       "owner": "repo",
       "path": "site/dist/search.html",
@@ -130921,13 +130969,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "28d37ebb9e8a7edc09086110cc6e3e575fd71d441c646507e219aa198a827a7c",
+      "file_sha256": "52997868895094e9cc1d1d6b983eb892bc39c235854c01007fbda6d867882905",
       "finding_count": 5,
       "owner": "repo",
       "path": "site/dist/sources.html",
@@ -130958,13 +131008,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "BUNDLE"
+      "term": "BUNDLE",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "28d37ebb9e8a7edc09086110cc6e3e575fd71d441c646507e219aa198a827a7c",
+      "file_sha256": "52997868895094e9cc1d1d6b983eb892bc39c235854c01007fbda6d867882905",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/sources.html",
@@ -130983,13 +131035,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "28d37ebb9e8a7edc09086110cc6e3e575fd71d441c646507e219aa198a827a7c",
+      "file_sha256": "52997868895094e9cc1d1d6b983eb892bc39c235854c01007fbda6d867882905",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/sources.html",
@@ -131008,13 +131062,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "ad4b1f7581644e3f4da94450452356eed91b1dae47b0a3902e7930a422d9661d",
+      "file_sha256": "a3da68bd1fecd971cbc0b6263667162084dd46db8c89a9be172b1b092f9b7f25",
       "finding_count": 2,
       "owner": "repo",
       "path": "site/dist/status.html",
@@ -131033,13 +131089,15 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H1"
+      "term": "H1",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",
       "created_for_task": "R0-02",
       "expires_after_task": "R0-04",
-      "file_sha256": "ad4b1f7581644e3f4da94450452356eed91b1dae47b0a3902e7930a422d9661d",
+      "file_sha256": "a3da68bd1fecd971cbc0b6263667162084dd46db8c89a9be172b1b092f9b7f25",
       "finding_count": 16,
       "owner": "repo",
       "path": "site/dist/status.html",
@@ -131082,7 +131140,9 @@
         }
       ],
       "severity_after_expiry": "blocker",
-      "term": "H2"
+      "term": "H2",
+      "refreshed_for_task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01",
+      "refresh_reason": "Reference-only contract taxonomy path updates changed file hashes; legacy vocabulary remains remediation debt."
     },
     {
       "baseline_source": "R0-02 static leakage scan",

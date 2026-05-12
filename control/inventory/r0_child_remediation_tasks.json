@@ -17,6 +17,17 @@
       "status": "deferred",
       "task_id": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
       "title": "Retire legacy runtime architecture leakage allowlist debt"
+    },
+    {
+      "task_id": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+      "title": "Reconcile generated artifact drift before F0/main promotion",
+      "status": "created",
+      "reason": "Full unittest discovery fails on stale generated public/search/site/dashboard artifacts; this remediation cannot mutate site/dist or public index outputs.",
+      "allowed_scope_summary": "generated artifact drift inventory, public search index regeneration policy, static site checksum repair, demand dashboard snapshot refresh, and validation evidence.",
+      "blocked_until_complete": [
+        "F0-BUNDLE-01",
+        "DEV-TO-MAIN-PROMOTION"
+      ]
     }
   ]
 }

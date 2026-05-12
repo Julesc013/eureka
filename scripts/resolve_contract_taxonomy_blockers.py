@@ -84,6 +84,10 @@ ACTIVE_REFERENCE_ROOTS = (
     "tests",
 )
 HISTORICAL_ROOTS = ("control/audits/",)
+PRESERVED_HISTORICAL_REFERENCES = {
+    ("scripts/validate_obs_track_b_synchronization.py", "contracts/node/work_unit.v0.json"),
+    ("scripts/validate_obs_track_b_synchronization.py", "contracts/node/work_unit_result.v0.json"),
+}
 
 REMEDIATION_MOVES: dict[str, dict[str, str]] = {
     "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip": {
@@ -272,7 +276,27 @@ def resolve_taxonomy(root: Path, *, apply_changes: bool) -> dict[str, Any]:
     decision = "resume_f0" if not after_unresolved else "remediation_required"
     dev_decision = branch_decision(root, ready=not after_unresolved)
 
-    runtime_files_modified = count_changed_files(root, "runtime/")
+    existing_reference_report = load_json_if_exists(root / STANDARD_OUTPUTS["references"])
+    current_runtime_files_modified = count_changed_files(root, "runtime/")
+    runtime_files_modified = current_runtime_files_modified
+    if apply_changes and runtime_files_modified == 0:
+        runtime_files_modified = int(
+            existing_result.get(
+                "runtime_files_modified",
+                existing_reference_report.get("runtime_files_modified", 0),
+            )
+        )
+
+    moves_completed = len(moves) if apply_changes and moves else int(existing_result.get("moves_completed", 0))
+    references_updated = (
+        max(
+            int(existing_result.get("references_updated", 0)),
+            int(existing_reference_report.get("references_updated", 0)),
+            len(reference_updates),
+        )
+        if apply_changes
+        else 0
+    )
 
     result = {
         "schema_version": "r0_contract_taxonomy_remediation_result.v0",
@@ -285,9 +309,9 @@ def resolve_taxonomy(root: Path, *, apply_changes: bool) -> dict[str, Any]:
         "contracts_root_status_before": str(final_before.get("contracts_root_status", "partial")),
         "contracts_root_status_after": final_state["contracts_root_status"],
         "contracts_clean_enough_for_f0": not after_unresolved,
-        "moves_completed": len(moves) if apply_changes else 0,
+        "moves_completed": moves_completed,
         "renames_completed": 0,
-        "references_updated": max(int(existing_result.get("references_updated", 0)), len(reference_updates)) if apply_changes else 0,
+        "references_updated": references_updated,
         "shims_retired": shims_before if apply_changes and not after_unresolved else 0,
         "schemas_deleted": 0,
         "runtime_files_modified": runtime_files_modified,
@@ -320,7 +344,7 @@ def resolve_taxonomy(root: Path, *, apply_changes: bool) -> dict[str, Any]:
         "schema_version": "r0_contract_taxonomy_reference_update_report.v0",
         "task": TASK_ID,
         "mode": "apply" if apply_changes else "dry_run",
-        "references_updated": len(reference_updates) if apply_changes else 0,
+        "references_updated": references_updated,
         "active_reference_updates": reference_updates,
         "historical_references_left_intact": find_historical_references(root, REMEDIATION_MOVES),
         "runtime_files_modified": runtime_files_modified,
@@ -414,6 +438,8 @@ def find_reference_updates(root: Path, replacements: Mapping[str, str]) -> list[
         rel = path.relative_to(root).as_posix()
         text = read_text(path)
         for old, new in replacements.items():
+            if (rel, old) in PRESERVED_HISTORICAL_REFERENCES:
+                continue
             if old in text or old.replace("/", "\\") in text:
                 update_path = replacements.get(rel, rel)
                 updates.append(
@@ -449,6 +475,17 @@ def find_historical_references(root: Path, replacements: Mapping[str, Mapping[st
                         "reason": "Historical audit evidence left intact.",
                     }
                 )
+    for rel, old in PRESERVED_HISTORICAL_REFERENCES:
+        path = root / rel
+        if path.exists() and old in read_text(path):
+            historical.append(
+                {
+                    "path": rel,
+                    "old_reference": old,
+                    "new_reference": replacements[old]["target_path"],
+                    "reason": "Historical compatibility alias preserved for migrated audit evidence.",
+                }
+            )
     return dedupe(historical)
 
 

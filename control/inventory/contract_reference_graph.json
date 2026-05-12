@@ -22691,6 +22691,11 @@
       "to_path": "control/schemas/policies/node/work_unit.v0.json"
     },
     {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_obs_track_b_synchronization.py",
+      "to_path": "control/schemas/policies/node/work_unit.v0.json"
+    },
+    {
       "edge_kind": "validates",
       "from_path": "tests/operations/test_contract_taxonomy_remediation.py",
       "to_path": "control/schemas/policies/node/work_unit.v0.json"
@@ -22878,6 +22883,11 @@
     {
       "edge_kind": "imports",
       "from_path": "scripts/validate_eureka_workunit_result.py",
+      "to_path": "control/schemas/policies/node/work_unit_result.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_obs_track_b_synchronization.py",
       "to_path": "control/schemas/policies/node/work_unit_result.v0.json"
     },
     {

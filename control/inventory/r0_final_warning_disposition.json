@@ -111,6 +111,17 @@
       ],
       "warning": "R0-07 completed with warnings",
       "warning_id": "R0-FINAL-WARN-011"
+    },
+    {
+      "warning_id": "R0-FINAL-WARN-012",
+      "area": "generated_artifact_drift",
+      "warning": "Generated public/search/site/dashboard artifacts are stale or validation-order sensitive.",
+      "disposition": "child_task_created",
+      "child_task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+      "notes": [
+        "This task did not regenerate site/dist or mutate public index outputs by design.",
+        "Full unittest discovery remains failing until the generated artifact drift is reconciled."
+      ]
     }
   ]
 }

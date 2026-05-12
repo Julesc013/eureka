@@ -4,12 +4,6 @@
     {
       "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
-      "path": "control/audits/candidate-promotion-policy-v0/candidate_promotion_policy_report.json",
-      "reason": "Historical audit evidence left intact."
-    },
-    {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
-      "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/github-releases-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
@@ -1682,18 +1676,6 @@
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
-      "old_reference": "contracts/node/work_unit.v0.json",
-      "path": "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_result.json",
-      "reason": "Historical audit evidence left intact."
-    },
-    {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
-      "old_reference": "contracts/node/work_unit_result.v0.json",
-      "path": "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_result.json",
-      "reason": "Historical audit evidence left intact."
-    },
-    {
       "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
@@ -1704,10 +1686,22 @@
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/wayback-cdx-memento-connector-approval-v0/wayback_cdx_memento_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
+    },
+    {
+      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "old_reference": "contracts/node/work_unit_result.v0.json",
+      "path": "scripts/validate_obs_track_b_synchronization.py",
+      "reason": "Historical compatibility alias preserved for migrated audit evidence."
+    },
+    {
+      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "old_reference": "contracts/node/work_unit.v0.json",
+      "path": "scripts/validate_obs_track_b_synchronization.py",
+      "reason": "Historical compatibility alias preserved for migrated audit evidence."
     }
   ],
   "mode": "apply",
-  "references_updated": 0,
+  "references_updated": 37,
   "runtime_files_modified": 12,
   "schema_version": "r0_contract_taxonomy_reference_update_report.v0",
   "task": "R0-REMEDIATION-CONTRACT-TAXONOMY-01"

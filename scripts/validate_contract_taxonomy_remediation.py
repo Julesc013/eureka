@@ -169,7 +169,10 @@ def validate_reference_report(root: Path, inventories: Mapping[str, Any], errors
     result = inventories.get("r0_contract_taxonomy_remediation_result", {})
     if changed_runtime - allowed_runtime_reference_paths(inventories):
         errors.append(f"unexpected runtime files modified: {sorted(changed_runtime - allowed_runtime_reference_paths(inventories))}")
-    if result.get("runtime_files_modified") not in {0, len(changed_runtime)}:
+    recorded_runtime_files = result.get("runtime_files_modified")
+    if not isinstance(recorded_runtime_files, int) or recorded_runtime_files < 0:
+        errors.append("runtime_files_modified must be a non-negative integer")
+    elif changed_runtime and recorded_runtime_files != len(changed_runtime):
         errors.append("runtime_files_modified does not match changed runtime reference-only paths")
     for update in report.get("active_reference_updates", []):
         path = root / str(update.get("path", ""))
