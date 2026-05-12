@@ -1,0 +1,1161 @@
+{
+  "artifact_count": 75,
+  "artifacts": [
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/README.md",
+      "product_role": "hosting",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:595",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/targets.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "preview_signal",
+        "root:.aide",
+        "size:4190",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/AGENTS.md.template",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:940",
+        "suffix:.template"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/CLAUDE.md.template",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:795",
+        "suffix:.template"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/aider.conf.yml.template",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:613",
+        "suffix:.template"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/clinerules.template",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:634",
+        "suffix:.template"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/continue-checks.template.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:634",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/cursor-rule.template.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:693",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/adapters/templates/windsurf-rule.template.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:617",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/cache/README.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:552",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/cache/key-policy.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "policy_signal",
+        "root:.aide",
+        "size:1012",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/cache/latest-cache-keys.json",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:8031",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/cache/latest-cache-keys.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:2861",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/commands/catalog.yaml",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1451",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/commands/ci.yaml",
+      "product_role": "connector_runtime",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "fixture_signal",
+        "preview_signal",
+        "root:.aide",
+        "size:91149",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/commands/dev.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "fixture_signal",
+        "preview_signal",
+        "root:.aide",
+        "size:124250",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/compat/migrations/README.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:189",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/compat/profile-version.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:234",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/app-native.yaml",
+      "product_role": "native",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:331",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/archive-contracts.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:241",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/connectors.yaml",
+      "product_role": "connector_runtime",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:251",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/engine.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:224",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/gateway.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:303",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/components/workbench-web.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:228",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/compiler.yaml",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1720",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/context-index.json",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1006",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/excerpt-policy.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "policy_signal",
+        "root:.aide",
+        "size:808",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/ignore.yaml",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:933",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/latest-context-packet.md",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1828",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/latest-review-packet.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:5353",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/latest-task-packet.md",
+      "product_role": "connector_runtime",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:4249",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/priority.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1371",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/repo-map.json",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "preview_signal",
+        "root:.aide",
+        "size:1809485",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/repo-map.md",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:10687",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/repo-snapshot.json",
+      "product_role": "snapshot",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "preview_signal",
+        "root:.aide",
+        "size:1196954",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/context/test-map.json",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "preview_signal",
+        "root:.aide",
+        "size:1042890",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/controller/latest-outcome-report.md",
+      "product_role": "actions",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:906",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/controller/outcome-ledger.jsonl",
+      "product_role": "actions",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:2449",
+        "suffix:.jsonl"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/README.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1280",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:199",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:369",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/catalog.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:5259",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:369",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:472",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:277",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:403",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:360",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/compact_task_packet_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:515",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:209",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:503",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/acceptance.md",
+      "product_role": "connector_runtime",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:370",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/eureka_architecture_context_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:495",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:368",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/evidence_review_packet_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:537",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "generated_signal",
+        "root:.aide",
+        "size:314",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "generated_signal",
+        "root:.aide",
+        "size:474",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:285",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:538",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:300",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/repo_boundary_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:386",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:225",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:411",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:384",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:550",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:223",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:443",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:212",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "fixture_signal",
+        "root:.aide",
+        "size:192",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:423",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/integration.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:258",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/runs/latest-golden-tasks.json",
+      "product_role": "actions",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:7717",
+        "suffix:.json"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/runs/latest-golden-tasks.md",
+      "product_role": "actions",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:5363",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/evals/smoke.yaml",
+      "product_role": "governance",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:242",
+        "suffix:.yaml"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/gateway/README.md",
+      "product_role": "search_quality",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1081",
+        "suffix:.md"
+      ]
+    },
+    {
+      "artifact_kind": "queue_or_task_control",
+      "maturity": "audit_only",
+      "notes": [],
+      "path": ".aide/gateway/architecture.md",
+      "product_role": "search_quality",
+      "recommended_action": "keep_as_control",
+      "risks": [],
+      "signals": [
+        "root:.aide",
+        "size:1828",
+        "suffix:.md"
+      ]
+    }
+  ],
+  "branch_assumption": "dev",
+  "counts": {
+    "artifact_kind": {
+      "artifact_existence_test": 383,
+      "audit_contract": 189,
+      "audit_evidence": 4225,
+      "documentation": 1993,
+      "domain_contract": 189,
+      "fixture_contract": 2174,
+      "fixture_runtime": 272,
+      "generated_scaffold": 1,
+      "integration_test": 84,
+      "operator_script": 267,
+      "policy_contract": 1009,
+      "preview_contract": 1795,
+      "preview_runtime": 146,
+      "production_runtime": 403,
+      "prototype_runtime": 620,
+      "public_api_contract": 33,
+      "queue_or_task_control": 389,
+      "runtime_contract": 1,
+      "unit_test": 312,
+      "unknown": 20,
+      "validator": 318
+    },
+    "maturity": {
+      "audit_only": 7447,
+      "behavior_implemented": 1214,
+      "empty_or_zero_byte": 20,
+      "fixture_only": 2669,
+      "live_test_ready": 1,
+      "placeholder": 90,
+      "policy_only": 1708,
+      "preview_only": 1330,
+      "unknown": 344
+    },
+    "product_role": {
+      "actions": 521,
+      "connector_runtime": 4693,
+      "evidence_ledger": 307,
+      "extraction": 327,
+      "governance": 1220,
+      "hosting": 540,
+      "native": 268,
+      "packs": 109,
+      "public_index": 2297,
+      "relay": 81,
+      "review_queue": 823,
+      "search_quality": 428,
+      "snapshot": 461,
+      "source_cache": 2158,
+      "source_observation": 31,
+      "unknown": 559
+    },
+    "recommended_action": {
+      "delete_if_unreferenced": 69,
+      "investigate": 3624,
+      "keep": 2951,
+      "keep_as_control": 4931,
+      "keep_as_fixture_oracle": 2133,
+      "move_to_control": 409,
+      "quarantine": 390,
+      "refactor": 283,
+      "rewrite": 33
+    },
+    "root": {
+      ".aide": 405,
+      "contracts": 633,
+      "control": 5225,
+      "crates": 12,
+      "docs": 1214,
+      "examples": 4540,
+      "native": 91,
+      "runtime": 1148,
+      "scripts": 585,
+      "site": 70,
+      "surfaces": 121,
+      "tests": 779
+    }
+  },
+  "generated_for": "R0-01",
+  "limitations": [
+    "Static classification uses path, file-name, extension, and content hints; it does not execute product code.",
+    "Findings prove artifact posture, not product correctness or production readiness.",
+    "The audit intentionally avoids network, model/provider, source discovery, registry, cache, evidence, review, and index mutations.",
+    "Sample file contains the first 75 sorted artifacts; control/inventory/artifact_taxonomy.json contains the full inventory."
+  ],
+  "schema_version": "r0.artifact_taxonomy.v0",
+  "warnings": [
+    "4347 architecture leakage findings in production-looking paths",
+    "110 placeholder or empty artifacts found",
+    "runtime contains fixture or preview artifacts that should not be treated as product completion"
+  ]
+}

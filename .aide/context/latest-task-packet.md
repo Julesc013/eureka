@@ -8,6 +8,8 @@ UNSPECIFIED - F0-BUNDLE-01 - Deep extraction source-family and extraction-bounda
 
 F0-BUNDLE-01 - Deep extraction source-family and extraction-boundary policy packs
 
+Compatibility note: F0-BUNDLE-01 is the current successor to the earlier F-BUNDLE-01 lane; HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+
 ## WHY
 
 Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.

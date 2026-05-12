@@ -1,0 +1,53 @@
+{
+  "architecture_leak_count": 4347,
+  "artifact_count": 14823,
+  "artifact_existence_validator_count": 681,
+  "behavior_test_count": 396,
+  "blocking_gaps": [
+    "R0-GAP-001",
+    "R0-GAP-002",
+    "R0-GAP-007"
+  ],
+  "branch_assumption": "dev",
+  "contract_file_count": 633,
+  "dev_to_main_should_remain_blocked": true,
+  "f0_should_remain_blocked": true,
+  "fixture_runtime_count": 272,
+  "major_findings": [
+    "F0 remains blocked because production_readiness is false and product write/live gates remain closed.",
+    "Runtime contains fixture/preview/task-phase artifacts that should not be promoted as production runtime.",
+    "Contracts include audit, fixture, policy, and preview schemas that need taxonomy separation.",
+    "Validation includes many artifact-existence/control checks; behavior proof remains future R0 work."
+  ],
+  "placeholder_or_empty_count": 110,
+  "preview_runtime_count": 146,
+  "production_runtime_count": 403,
+  "purpose": "dev_production_reality_inventory",
+  "recommended_next_task": "R0-02 - Runtime architecture leakage gate",
+  "runtime_file_count": 1148,
+  "schema_version": "r0_01_report.v0",
+  "status": "pass_with_warnings",
+  "task": "R0-01",
+  "validation": {
+    "aide_lite_doctor": "pass",
+    "aide_lite_review_pack": "pass",
+    "aide_lite_selftest": "pass",
+    "aide_lite_test": "pass",
+    "aide_lite_validate": "pass",
+    "aide_lite_verify": "warn_no_errors",
+    "architecture_boundaries": "pass",
+    "audit_script_static_only": "pass",
+    "evidence_ledger_runtime_mutation": "not_used",
+    "git_diff_check": "pass",
+    "network_api_model_provider_calls": "not_used",
+    "public_or_master_index_mutation": "not_used",
+    "r0_audit_check_json": "pass",
+    "r0_sample_outputs": "pass",
+    "r0_unit_tests": "pass",
+    "r0_validator": "pass",
+    "review_queue_runtime_mutation": "not_used",
+    "source_cache_runtime_mutation": "not_used",
+    "standard_outputs_generated": "pass_when_written",
+    "unittest_discover": "pass"
+  }
+}

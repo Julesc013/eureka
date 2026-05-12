@@ -1,0 +1,24 @@
+{
+  "architecture_leak_count": 4347,
+  "blocking_gap_ids": [
+    "R0-GAP-001",
+    "R0-GAP-002",
+    "R0-GAP-007"
+  ],
+  "decision": "freeze_f0_run_r0_02_next",
+  "dev_to_main_should_remain_blocked": true,
+  "f0_should_remain_blocked": true,
+  "generated_for": "R0-01",
+  "next_ready_when": [
+    "R0-01 outputs are reviewed.",
+    "R0-02 validator scope is accepted.",
+    "No product paths are modified by the R0-01 audit task."
+  ],
+  "rationale": [
+    "R0-01 is an audit/classification task and does not implement or refactor product behavior.",
+    "Architecture leakage findings must become an enforceable gate before source-observation work.",
+    "Artifact existence and H/Audit bundle completion are not product completion."
+  ],
+  "recommended_next_task": "R0-02 - Runtime architecture leakage gate",
+  "schema_version": "r0.next_task_decision.v0"
+}

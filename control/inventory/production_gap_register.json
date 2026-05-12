@@ -1,0 +1,165 @@
+{
+  "gaps": [
+    {
+      "area": "task_sequence",
+      "blocks": [
+        "F0-BUNDLE-01",
+        "dev-to-main promotion"
+      ],
+      "evidence_paths": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/queue/index.yaml",
+        ".aide/reports/eureka-repo-health.json"
+      ],
+      "finding": "Repo-local state routes to F0 while production readiness and live/write gates remain false.",
+      "gap_id": "R0-GAP-001",
+      "impact": "Feature work would continue a scaffold track without first proving product seams.",
+      "recommended_fix": "Run R0-02 through R0-09 before any F0 continuation.",
+      "severity": "blocker"
+    },
+    {
+      "area": "runtime_architecture",
+      "blocks": [
+        "F0-BUNDLE-01",
+        "dev-to-main promotion"
+      ],
+      "evidence_paths": [
+        "runtime/connectors/h10_games_emulation/live_probe_common.py",
+        "runtime/connectors/h14_source_discovery/rollup_dry_run_common.py",
+        "runtime/connectors/h1_metadata_wave/live_probe_common.py",
+        "runtime/connectors/h2_package_registries/live_probe_common.py",
+        "runtime/connectors/h2_package_registries/review_integration.py",
+        "runtime/connectors/h3_os_package_archives/live_probe_common.py",
+        "runtime/connectors/h3_os_package_archives/review_integration.py",
+        "runtime/connectors/h4_code_source_release/live_probe_common.py",
+        "runtime/connectors/h4_code_source_release/review_integration.py",
+        "runtime/connectors/h5_vendor_update_driver/live_probe_common.py",
+        "runtime/connectors/h6_web_archive_news_event/live_probe_common.py",
+        "runtime/connectors/h7_library_research/live_probe_common.py"
+      ],
+      "finding": "Detected 4347 task/phase vocabulary leaks in production-looking paths.",
+      "gap_id": "R0-GAP-002",
+      "impact": "Runtime/product paths still expose agent-task vocabulary and cannot be promoted unchanged.",
+      "recommended_fix": "Create R0-02 leakage gate, quarantine phase-shaped runtime modules, and define clean production seams.",
+      "severity": "blocker"
+    },
+    {
+      "area": "runtime_maturity",
+      "blocks": [
+        "F0-BUNDLE-01"
+      ],
+      "evidence_paths": [
+        "runtime/actions/action_manifest.py",
+        "runtime/connectors/README.md",
+        "runtime/connectors/article_scan_recorded/fixtures/article_scan_fixture.json",
+        "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_issue_manifest.json",
+        "runtime/connectors/article_scan_recorded/fixtures/payloads/pc_magazine_1994_ray_tracing_ocr.txt",
+        "runtime/connectors/core/connector_scorecard.py",
+        "runtime/connectors/core/coverage_ledger.py",
+        "runtime/connectors/core/fixture_replay.py",
+        "runtime/connectors/core/live_probe_envelope.py",
+        "runtime/connectors/core/policy_evaluator.py",
+        "runtime/connectors/core/source_pack.py",
+        "runtime/connectors/github_releases/fixtures/github_releases_fixture.json"
+      ],
+      "finding": "Runtime contains fixture and preview runtime artifacts that are useful oracles but not production behavior.",
+      "gap_id": "R0-GAP-003",
+      "impact": "Artifact existence can be mistaken for implemented source/evidence/review/index behavior.",
+      "recommended_fix": "Use R0-04 through R0-08 to rebuild product seams from the useful scaffold.",
+      "severity": "high"
+    },
+    {
+      "area": "product_loop",
+      "blocks": [
+        "F0-BUNDLE-01",
+        "public launch claims"
+      ],
+      "evidence_paths": [
+        "contracts/actions/action_result_preview.v0.json",
+        "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
+        "contracts/archive/fixtures/README.md",
+        "contracts/archive/fixtures/software/README.md",
+        "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+        "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+        "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+        "contracts/connectors/connector_quality_delta.v0.json",
+        "contracts/connectors/h10_emulator_action_candidate.v0.json",
+        "contracts/connectors/h10_emulator_compatibility_candidate.v0.json",
+        "contracts/connectors/h10_game_relation_candidate.v0.json",
+        "contracts/connectors/h10_game_software_identity_candidate.v0.json"
+      ],
+      "finding": "The observed product loop remains dominated by fixture-only and preview-only outputs.",
+      "gap_id": "R0-GAP-004",
+      "impact": "No source observation to durable evidence to review to public index loop is proven.",
+      "recommended_fix": "Implement durable source cache, evidence ledger, review queue, and reviewed public index rebuild in R0.",
+      "severity": "high"
+    },
+    {
+      "area": "contract_taxonomy",
+      "blocks": [
+        "dev-to-main promotion"
+      ],
+      "evidence_paths": [
+        "contracts/README.md",
+        "contracts/actions/action_policy.v0.json",
+        "contracts/actions/action_result_preview.v0.json",
+        "contracts/actions/citation_bundle.v0.json",
+        "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
+        "contracts/archive/README.md",
+        "contracts/archive/fixtures/README.md",
+        "contracts/archive/fixtures/software/README.md",
+        "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
+        "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
+        "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
+        "contracts/archive/schemas/README.md"
+      ],
+      "finding": "Contracts include audit, fixture, preview, and H-series schemas alongside product-shaped contracts.",
+      "gap_id": "R0-GAP-005",
+      "impact": "The contracts tree is overloaded and no longer clearly means stable product/domain boundary.",
+      "recommended_fix": "Run R0-03 contract taxonomy refactor after the leakage gate.",
+      "severity": "high"
+    },
+    {
+      "area": "verification",
+      "blocks": [
+        "future product acceptance claims"
+      ],
+      "evidence_paths": [
+        "scripts/audit_dev_production_reality.py",
+        "scripts/audit_h0_integration.py",
+        "scripts/audit_h10_games_emulation_wave.py",
+        "scripts/audit_h11_storefront_wave.py",
+        "scripts/audit_h12_retro_community_wave.py",
+        "scripts/audit_h13_local_private_wave.py",
+        "scripts/audit_h14_source_discovery_wave.py",
+        "scripts/audit_h1_metadata_wave.py",
+        "scripts/audit_h2_package_registry_wave.py",
+        "scripts/audit_h3_os_package_archive_wave.py",
+        "scripts/audit_h4_code_source_release_wave.py",
+        "scripts/audit_h5_vendor_update_driver_wave.py"
+      ],
+      "finding": "Detected 681 validators/tests that mainly prove artifact existence or guardrails.",
+      "gap_id": "R0-GAP-006",
+      "impact": "Validation is valuable control-plane evidence but does not prove product runtime behavior.",
+      "recommended_fix": "For future product-scoped tasks, require a command, persisted state where applicable, behavior test, audit record, and next-task readiness check.",
+      "severity": "medium"
+    },
+    {
+      "area": "promotion",
+      "blocks": [
+        "dev-to-main promotion"
+      ],
+      "evidence_paths": [
+        ".aide/reports/eureka-repo-health.json",
+        "control/audits/h14-bundle-04-source-discovery-review-quality-audit-v0/h14_bundle_04_report.json"
+      ],
+      "finding": "H14 closed with warnings and repo health records production_readiness=false.",
+      "gap_id": "R0-GAP-007",
+      "impact": "dev is coherent as a control-plane branch but not as canonical production truth.",
+      "recommended_fix": "Keep dev quarantined until R0-10 production review chooses promotion, squash, cherry-pick, or quarantine.",
+      "severity": "blocker"
+    }
+  ],
+  "generated_for": "R0-01",
+  "schema_version": "r0.production_gap_register.v0"
+}

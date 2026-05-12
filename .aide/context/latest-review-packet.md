@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4107 chars, 1027 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4249 chars, 1063 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `contracts/connectors/h14_source_discovery_connector_wave_postmortem.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_integration_audit.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_quality_delta_report.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/connectors/h14_source_discovery_review_integration_result.v0.json` (??; does not match active task allowed paths)
-- unknown: `control/audits/h14-bundle-04-source-discovery-review-quality-audit-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_connector_wave_postmortem_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_integration_audit_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_next_phase_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_quality_delta_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_review_integration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_review_output_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_review_path_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/connectors/h14_source_discovery_review_truth_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/H14_SOURCE_DISCOVERY_REVIEW_INTEGRATION_MODEL.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H14_SOURCE_DISCOVERY_WAVE_POSTMORTEM.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/H14_SOURCE_DISCOVERY_WAVE_QUALITY_DELTA.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 16; see task evidence changed-files report
+- unknown: `control/audits/r0-01-dev-production-reality-inventory-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/artifact_taxonomy.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/production_gap_register.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_report.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_maturity_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/scaffold_to_runtime_map.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/DEV_PRODUCTION_REALITY_INVENTORY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/R0_PRODUCTION_RECOVERY_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `scripts/audit_dev_production_reality.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_dev_production_reality.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_dev_production_reality.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +55,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6952
-- approx_tokens: 1738
+- chars: 5353
+- approx_tokens: 1339
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
