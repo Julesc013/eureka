@@ -1,0 +1,21 @@
+{
+  "ad_hoc_store_paths_forbidden": true,
+  "allowed_stores": [
+    "source_cache",
+    "evidence_ledger",
+    "review_queue",
+    "public_index"
+  ],
+  "connector_registry_mutation_forbidden": true,
+  "direct_master_index_mutation_forbidden": true,
+  "direct_public_index_mutation_forbidden": true,
+  "hidden_store_paths_forbidden": true,
+  "open_mode_default": "read_write_local",
+  "policy_id": "local_runtime_store_access_policy",
+  "read_only_mode_supported": true,
+  "schema_version": "local_runtime_store_access_policy.v0",
+  "source_registry_mutation_forbidden": true,
+  "status": "active",
+  "store_paths_must_come_from_manifest": true,
+  "task": "LOCAL-03"
+}

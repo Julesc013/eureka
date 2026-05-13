@@ -1,0 +1,30 @@
+{
+  "gaps": [
+    {
+      "deferred_to": "LOCAL-04",
+      "gap_id": "local-runtime-http-service",
+      "status": "deferred",
+      "summary": "Read-only localhost HTTP service has not been implemented yet."
+    },
+    {
+      "deferred_to": "LOCAL-05",
+      "gap_id": "local-runtime-html-workbench",
+      "status": "deferred",
+      "summary": "HTML workbench has not been implemented yet."
+    },
+    {
+      "deferred_to": "LOCAL-06",
+      "gap_id": "local-runtime-workunit-queue",
+      "status": "deferred",
+      "summary": "WorkUnit queue runtime has not been implemented yet."
+    },
+    {
+      "deferred_to": "LOCAL-LEAKAGE-01",
+      "gap_id": "pre-existing-runtime-leakage-gate",
+      "status": "open",
+      "summary": "Runtime architecture leakage gate still has pre-existing findings outside LOCAL-03 scope."
+    }
+  ],
+  "schema_version": "local_runtime_gap_register.v0",
+  "task": "LOCAL-03"
+}

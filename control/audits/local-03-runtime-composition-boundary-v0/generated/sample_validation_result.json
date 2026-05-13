@@ -1,0 +1,16 @@
+{
+  "deployment_performed": false,
+  "errors": [],
+  "lan_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_runtime_composition_validation.v0",
+  "server_enabled": false,
+  "status": "pass_with_warnings",
+  "task": "LOCAL-03",
+  "warnings": [
+    "pre-existing runtime leakage gate still fails",
+    "audit report records pre-existing runtime leakage gate failure",
+    "runtime leakage gate fails with pre-existing findings"
+  ]
+}

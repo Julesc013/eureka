@@ -1,0 +1,21 @@
+id: LOCAL-04
+title: Read-only localhost HTTP service over reviewed index
+status: queued
+source_packet: .aide/context/latest-task-packet.md
+purpose: Add a read-only localhost HTTP service over the reviewed public index through the local runtime composition boundary.
+allowed_scope_summary: Localhost-only read-only service routes, runtime status, reviewed-index read access, validators, tests, docs, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-03 completed with local runtime composition boundary
+  - service must use runtime/local_appliance
+  - read-only localhost only
+  - no HTML workbench implementation
+  - no LAN binding
+  - no write routes
+  - no source probe execution
+  - no index rebuild behavior
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-03
+recommended_next: LOCAL-05

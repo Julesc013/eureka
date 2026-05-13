@@ -73,3 +73,14 @@ The default `eureka-instance/` root is ignored by git. Operators may choose anot
 `config/store_manifest.json` is the local store manifest. It lists the required R0 stores: `source_cache`, `evidence_ledger`, `review_queue`, and `public_index`.
 
 `config/migration_state.json` is the migration guard state. It records whether a migration is needed, whether migration apply is allowed, whether a backup is required, rollback metadata posture, blockers, warnings, and history.
+
+## Runtime Composition
+
+LOCAL-03 adds `runtime/local_appliance` as the supported way to open an initialized instance:
+
+```bash
+python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json
+python scripts/demo_local_runtime_composition.py --instance ./eureka-instance --json
+```
+
+The runtime composition boundary loads the three config files above and opens the four SQLite stores from `config/store_manifest.json`. Future service, workbench, worker, and test code should use that boundary rather than hard-coding paths under `db/`.
