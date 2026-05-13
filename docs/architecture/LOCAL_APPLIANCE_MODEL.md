@@ -11,3 +11,11 @@ The model has five layers:
 - Workbench: an HTML operator surface for search, sessions, WorkUnits, evidence review, index rebuilds, smoke tests, and evals.
 
 LOCAL-00 does not implement any of those runtime layers. It makes them mandatory before F0 and later tracks claim completion.
+
+## LOCAL-03 Runtime Kernel
+
+LOCAL-03 adds the local runtime composition boundary in `runtime/local_appliance`. This is the first runtime kernel for the appliance route. It opens an explicit initialized instance, validates config/schema/migration state, opens the four existing R0 stores from the store manifest, exposes one `LocalApplianceRuntime`, and reports unified status.
+
+Future service, worker, workbench, and tests must use this boundary instead of opening SQLite paths ad hoc.
+
+LOCAL-03 still does not implement an HTTP server, HTML workbench, WorkUnit runtime, LAN mode, deployment, production readiness, or public launch readiness.

@@ -1,0 +1,10 @@
+{
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start": false,
+  "reason": "Local runtime composition boundary exists; read-only localhost HTTP service is next.",
+  "recommended_next_task": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index",
+  "schema_version": "local_03_next_task_decision.v0",
+  "server_can_start": true,
+  "task": "LOCAL-03"
+}

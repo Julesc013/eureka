@@ -40,3 +40,16 @@ The migration status command is read-only. It reports whether migration is neede
 ## Boundaries
 
 LOCAL-02 does not create an HTTP server, HTML workbench, WorkUnit runtime, Search Hunt Session runtime, source probe runner, LAN binding, deployment, or F0 extraction path. LOCAL-03 is the next step and owns the local runtime composition boundary.
+
+## Runtime Composition
+
+After initialization and validation, inspect the composed runtime with:
+
+```bash
+python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json
+python scripts/demo_local_runtime_composition.py --instance ./eureka-instance --json
+```
+
+These commands open `LocalApplianceRuntime`, validate supported instance schema and migration state, open the source cache, evidence ledger, review queue, and reviewed public index through manifest paths, run status/integrity checks, and close the runtime.
+
+They do not start a server, enable LAN, deploy, run source probes, create review decisions, or rebuild indexes.

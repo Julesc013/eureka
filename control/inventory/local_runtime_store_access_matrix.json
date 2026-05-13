@@ -1,0 +1,42 @@
+{
+  "schema_version": "local_runtime_store_access_matrix.v0",
+  "stores": [
+    {
+      "direct_mutation_allowed_current_task": false,
+      "integrity_check_supported": true,
+      "manifest_key": "source_cache",
+      "open_supported": true,
+      "read_only_supported": true,
+      "relative_path": "db/source_cache.sqlite",
+      "store_id": "source_cache"
+    },
+    {
+      "direct_mutation_allowed_current_task": false,
+      "integrity_check_supported": true,
+      "manifest_key": "evidence_ledger",
+      "open_supported": true,
+      "read_only_supported": true,
+      "relative_path": "db/evidence_ledger.sqlite",
+      "store_id": "evidence_ledger"
+    },
+    {
+      "direct_mutation_allowed_current_task": false,
+      "integrity_check_supported": true,
+      "manifest_key": "review_queue",
+      "open_supported": true,
+      "read_only_supported": true,
+      "relative_path": "db/review_queue.sqlite",
+      "store_id": "review_queue"
+    },
+    {
+      "direct_mutation_allowed_current_task": false,
+      "integrity_check_supported": true,
+      "manifest_key": "public_index",
+      "open_supported": true,
+      "read_only_supported": true,
+      "relative_path": "db/public_index.sqlite",
+      "store_id": "public_index"
+    }
+  ],
+  "task": "LOCAL-03"
+}
