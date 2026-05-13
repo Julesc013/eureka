@@ -3,20 +3,21 @@
 ## Current Compact Packet
 
 - Latest task packet: `.aide/context/latest-task-packet.md`.
-- Task: `EUREKA-AIDE-SELFTEST-01 - Repair imported AIDE Lite selftest fixture fallback`.
-- Chars: 5767.
-- Approx tokens: 1442.
+- Task: `LOCAL-04 - Read-only localhost HTTP service over reviewed index`.
+- Chars: 6157.
+- Approx tokens: 1540.
 - Method: `chars / 4`, rounded up.
 - Budget status: PASS / within budget.
 
-Optional compact surfaces after Q26 regeneration:
+Optional compact surfaces after Q26 revalidation:
 
-- `.aide/context/latest-context-packet.md`: 1827 chars / 457 approx tokens.
-- `.aide/context/latest-review-packet.md`: 4169 chars / 1043 approx tokens.
+- `.aide/context/latest-context-packet.md`: 1832 chars / 458 approx tokens.
+- `.aide/context/latest-review-packet.md`: 6717 chars / 1680 approx tokens.
 
-Previous Q22 packet:
+Previous packets:
 
-- `.aide/context/latest-task-packet.md`: 3792 chars / 948 approximate tokens.
+- Q22 generic packet: 3792 chars / 948 approx tokens.
+- Earlier Q26 selftest repair packet: 5767 chars / 1442 approx tokens.
 
 ## Baseline
 
@@ -39,14 +40,14 @@ Historical Q22 baseline approx tokens: 68647.
 
 ## Result
 
-- Compact packet approx tokens: 1442.
+- Compact packet approx tokens: 1540.
 - Current same-file naive baseline approx tokens: 68683.
-- Estimated reduction against current same-file baseline: 97.9%.
-- Estimated reduction against historical Q22 baseline: 97.9%.
+- Estimated reduction against current same-file baseline: 97.8%.
+- Estimated reduction against historical Q22 baseline: 97.8%.
 
-Q26's packet is larger than the Q22 generic audit packet because it contains a
-concrete first-task handoff with allowed paths, forbidden paths, validation,
-evidence, acceptance, and output schema. The reduction remains material.
+The current packet is larger than the Q22 pilot packet because it contains a
+concrete LOCAL-04 handoff plus the newly discovered validation preflight blocker.
+The reduction remains material.
 
 This is an approximate prompt-size estimate only. It does not claim exact
 tokenizer behavior, provider billing reduction, cached-token discounts,

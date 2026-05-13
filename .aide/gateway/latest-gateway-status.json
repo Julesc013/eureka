@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide.gateway-status.v0",
+  "generated_by": "Q26 Eureka handover revalidation",
+  "status": "report_only",
+  "gateway_enabled": false,
+  "provider_forwarding_enabled": false,
+  "model_execution_enabled": false,
+  "network_calls_made": false,
+  "raw_prompt_storage": false,
+  "raw_response_storage": false,
+  "notes": [
+    "Eureka AIDE Lite carries Gateway policy metadata only.",
+    "No local server, provider proxy, model call, or outbound network behavior is enabled by Q26."
+  ]
+}
+

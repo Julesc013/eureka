@@ -1,22 +1,23 @@
 # Quality Readiness
 
-## Command Readiness
+## AIDE Lite Readiness
 
 - `doctor`: PASS.
 - `validate`: PASS.
 - `snapshot`: PASS.
 - `index`: PASS.
 - `context`: PASS.
-- `verify`: WARN, 4 warnings, 0 errors after the final sweep.
-- `review-pack`: PASS, generated `.aide/context/latest-review-packet.md` at
-  4169 chars / 1043 approximate tokens.
-- `ledger scan/report`: PASS with one near-budget cache report warning.
-- `eval run`: PASS, 6/6 imported generic golden tasks.
+- `verify`: PASS after commit with 0 warnings and 0 errors.
+- `review-pack`: PASS, generated `.aide/context/latest-review-packet.md` at 6717 chars / 1680 approximate tokens.
+- `ledger scan/report`: PASS with one near-budget cache-report warning.
+- `eval run`: PASS, 14/14 golden tasks.
 - `route explain`: PASS, advisory only, no provider/model/network calls.
 - `adapter validate`: PASS.
-- `scripts/check_architecture_boundaries.py`: PASS.
-- `test` and `selftest`: FAIL after refresh with the same temp-fixture fallback
-  import error; this is the selected next bounded task.
+- `test`: PASS.
+- `selftest`: PASS.
+
+The older Q26 limitation where imported `test` and `selftest` failed has been
+resolved by later Eureka AIDE work.
 
 ## Packet Quality
 
@@ -43,19 +44,34 @@ The packet avoids:
 - `.aide.local/` contents;
 - provider/model/network-call authorization.
 
+## Product Validation Readiness
+
+The current handoff packet targets `LOCAL-04 - Read-only localhost HTTP service
+over reviewed index`, but LOCAL-04 is not cleanly executable until the runtime
+leakage preflight is reconciled or explicitly accepted.
+
+Current blocker:
+
+- `py -3 scripts/validate_local_runtime_composition.py`: FAIL because the
+  current leakage scan exceeds the recorded LOCAL-03 baseline.
+- `py -3 scripts/validate_runtime_architecture_leakage.py --json`: FAIL with
+  2620 new unallowlisted production-path leakage findings in the sampled
+  summary.
+- `py -3 scripts/validate_legacy_runtime_leakage_remediation.py --json`: FAIL
+  because fresh leakage audit results no longer match older remediation output.
+
 ## Readiness Verdict
 
-Eureka is ready to use AIDE Lite for one controlled follow-up task:
-`EUREKA-AIDE-SELFTEST-01`. That task is intentionally a substrate reliability
-repair, not product implementation. Broader implementation work should wait
-until `test` and `selftest` pass or the failure is explicitly accepted by
-review.
+Eureka is ready to use AIDE Lite as a compact, deterministic handoff layer. The
+next product task still needs a validation preflight repair or explicit review
+acceptance before LOCAL-04 can be treated as clean.
 
 ## Limitations
 
 - No exact tokenizer or provider billing proof.
 - No provider-backed review or LLM-as-judge.
 - No proof of arbitrary Eureka coding quality.
-- Eureka-specific golden tasks are still future work after the selftest repair.
-- Verifier remains WARN because the handoff packet references future queue
-  paths and optional status files that are intentionally not present yet.
+- Route classification remains conservative because the current packet does not
+  map to a known AIDE task class.
+- The runtime leakage blocker is outside Q26's allowed edit scope and remains
+  a Eureka product-governance issue for the next task.

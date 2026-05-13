@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide.provider-status.v0",
+  "generated_by": "Q26 Eureka handover revalidation",
+  "status": "offline_contracts_only",
+  "provider_calls_made": false,
+  "model_calls_made": false,
+  "network_calls_made": false,
+  "credentials_present": false,
+  "raw_prompt_storage": false,
+  "raw_response_storage": false,
+  "notes": [
+    "Provider adapter metadata is imported for advisory routing only.",
+    "No credentials, provider probes, model calls, or Gateway forwarding are enabled by Q26."
+  ]
+}
+

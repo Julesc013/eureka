@@ -1,15 +1,19 @@
 schema_version: aide.queue-status.v0
 task_id: EUREKA-AIDE-HANDOVER-01
 status: needs_review
-updated: 2026-05-07
+updated: 2026-05-14
 summary: >
-  Q26 reviewed the Q22 import, refreshed safe portable files from the repaired
-  Q25 source pack, regenerated Eureka-local context/review/task packets, and
-  produced the first bounded follow-up task packet.
+  Q26 was revalidated after syncing Eureka dev to origin/dev. The repaired Q25
+  source pack is available and checksum-valid, Eureka AIDE Lite doctor,
+  validate, test, selftest, and golden tasks now pass, and the current compact
+  handoff packet targets LOCAL-04 with the product validation preflight blocker
+  recorded explicitly.
 known_limitations:
   - The current handoff packet is approximate-token evidence only, not exact billing proof.
-  - `test` and `selftest` still fail in the imported pack temp fixture and are the selected next repair task.
-  - Eureka-specific golden tasks remain future quality-hardening work.
+  - Q25 source-pack refresh was not applied in this pass because the target has evolved and safe import now reports 15 conflicts rather than a clean update.
+  - Eureka target `pack-status` remains not applicable because target repos do not carry the source export pack under `.aide/export/aide-lite-pack-v0`.
+  - `scripts/validate_local_runtime_composition.py` currently fails because the broader runtime leakage scan exceeds the older LOCAL-03 baseline.
+  - The git task-state guard warns that this revalidation ran on `dev`, not an `EUREKA-AIDE-HANDOVER-01` task branch.
 next:
   - Review Q26 evidence.
-  - Run EUREKA-AIDE-SELFTEST-01 using `.aide/context/latest-task-packet.md`.
+  - Use `.aide/context/latest-task-packet.md` for LOCAL-04 only after the recorded leakage preflight is reconciled or explicitly accepted.

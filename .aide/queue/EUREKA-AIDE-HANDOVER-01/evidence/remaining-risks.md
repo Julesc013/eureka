@@ -1,16 +1,23 @@
 # Remaining Risks
 
-- Q26 proves readiness for the next bounded Eureka task, not broad autonomous
+- Q26 proves readiness for compact AIDE Lite handoff, not broad autonomous
   implementation quality.
 - The token estimate uses chars/4 and is not an exact tokenizer or provider
   billing measurement.
 - Provider routing, Gateway execution, live model calls, and enforcement remain
   out of scope and disabled.
-- `test` and `selftest` still fail in the imported temp-fixture path after the
-  Q25 portable refresh; this is the selected next bounded task.
-- Eureka-specific golden tasks are still pending until after the selected
-  selftest repair task.
-- The repaired Q25 importer is safe-scoped, but Eureka still needs review of
-  any future full-mode import before broad roots are copied.
-- Broader product implementation should wait until the Q26 handover review
-  accepts this limitation or the next task fixes it.
+- Safe import from the Q25 AIDE source pack now reports target conflicts because
+  Eureka's imported AIDE state has evolved; future pack sync needs a reviewed
+  target task.
+- Target `pack-status` is not applicable because Eureka does not carry the
+  source export pack under `.aide/export/aide-lite-pack-v0`.
+- LOCAL-04 has a product validation preflight blocker:
+  `scripts/validate_local_runtime_composition.py` fails because the current
+  leakage scan exceeds the recorded LOCAL-03 baseline.
+- The broader runtime architecture leakage and legacy remediation validators
+  also fail against current `dev`; those product-governance findings are outside
+  Q26's allowed edit scope.
+- The git task-state guard warns that Q26 revalidation ran on `dev` rather than
+  a same-named task branch.
+- Route classification remains conservative (`frontier` / human review fallback)
+  because the current packet is not mapped to a known AIDE task class.

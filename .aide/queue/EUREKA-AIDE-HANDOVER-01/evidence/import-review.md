@@ -32,8 +32,8 @@ Reviewed files:
   and `.aide.local/**`, and the directory was absent during inspection.
 - `.env` copied or committed: no evidence found. `.env` and `.env.*` are
   ignored.
-- Provider keys or secrets copied: no evidence in Q22 reports; targeted scan is
-  pending for Q26 final validation.
+- Provider keys or secrets copied: no evidence in Q22 reports; Q26 targeted
+  secret scan remains part of final validation.
 - AGENTS manual content preserved: yes. Manual Eureka repo identity, component
   boundaries, dependency law, and working rules remain outside AIDE-managed
   sections.
@@ -48,4 +48,12 @@ Reviewed files:
   repaired Q25 importer now defaults to safe scope and does not copy broad
   source roots.
 - Q22 recorded imported `test` and `selftest` failures in the pack temp fixture;
-  Q26 must recheck those after the Q25 refresh.
+  later Eureka AIDE work repaired these, and Q26 revalidation confirms both
+  commands now pass.
+
+## 2026-05-14 Revalidation Note
+
+The imported `.aide/` tree remains target-specific. Source AIDE queue history,
+source memory, generated source context/reports, `.aide.local/`, `.env`, raw
+prompt logs, raw response logs, and provider credentials were not copied during
+this revalidation.

@@ -1,0 +1,27 @@
+schema_version: aide.controller-failure-taxonomy.v0
+status: active
+purpose: Deterministic local classification for advisory AIDE controller reports.
+failure_classes:
+  - context_missing
+  - packet_too_large
+  - token_budget_exceeded
+  - token_regression
+  - adapter_drift
+  - verifier_gap
+  - verifier_fail
+  - review_packet_incomplete
+  - golden_task_fail
+  - unclear_acceptance
+  - validation_failure
+  - policy_violation
+  - stale_artifact
+  - missing_evidence
+  - secret_risk
+  - unknown
+non_goals:
+  - no_provider_calls
+  - no_model_calls
+  - no_network_calls
+  - no_autonomous_loop
+  - no_automatic_repair
+

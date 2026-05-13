@@ -2,74 +2,86 @@
 
 ## Recommended Task
 
-Title: `EUREKA-AIDE-SELFTEST-01 - Repair imported AIDE Lite selftest fixture fallback`
+Title: `LOCAL-04 - Read-only localhost HTTP service over reviewed index`
 
 Packet path: `.aide/context/latest-task-packet.md`
 
 ## Objective
 
-Make the imported Eureka-local AIDE Lite `test` and `selftest` aliases pass
-without copying optional source `core/**` roots, mutating the AIDE source repo,
-or changing Eureka product code.
+Add a read-only localhost HTTP service over the reviewed public index through
+the LOCAL-03 `runtime/local_appliance` composition boundary.
 
 ## Why This Task
 
-Q26 confirms the main AIDE Lite workflow works in Eureka, but `test` and
-`selftest` still fail in the temporary fixture path. This is the smallest
-current reliability gap and directly improves confidence in the imported pack
-before broader AIDE-guided Eureka work.
+The Eureka queue currently recommends LOCAL-04 after LOCAL-03 completed the
+runtime composition boundary. LOCAL-04 is the next small product-facing step in
+the local appliance track and remains bounded by localhost-only, read-only, and
+no-deployment gates.
+
+## Current Preflight Blocker
+
+`py -3 scripts/validate_local_runtime_composition.py` currently fails because
+the fresh runtime leakage scan exceeds the older LOCAL-03 baseline. The LOCAL-04
+packet records this directly. LOCAL-04 should not be accepted until the leakage
+drift is reconciled or explicitly reviewed and accepted.
 
 ## Context Refs
 
 - `.aide/context/latest-task-packet.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/LOCAL-03/task.yaml`
+- `.aide/queue/LOCAL-04/task.yaml`
 - `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md`
-- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md`
 - `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_export_import.py`
-- `.aide/scripts/tests/test_aide_lite.py`
-- `AGENTS.md`
+- `runtime/local_appliance/`
+- `docs/architecture/LOCAL_RUNTIME_COMPOSITION_BOUNDARY.md`
+- `docs/reference/LOCAL_APPLIANCE_RUNTIME_API.md`
+- `docs/operations/LOCAL_RUNTIME_COMPOSITION.md`
+- `control/inventory/local_03_next_task_decision.json`
 
 ## Allowed Paths
 
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_aide_lite.py`
-- `.aide/scripts/tests/test_gateway_commands.py`
-- `.aide/scripts/tests/test_provider_adapter.py`
-- `.aide/scripts/tests/test_export_import.py`
-- `.aide/queue/EUREKA-AIDE-SELFTEST-01/**`
-- `.aide/context/**`
-- `.aide/reports/**`
-- `.aide/evals/runs/**`
+See `.aide/context/latest-task-packet.md`. The packet allows the LOCAL-04 queue
+packet, generated AIDE context, `runtime/local_appliance/**`, explicitly scoped
+localhost-only service module paths, focused validators/tests, LOCAL-04 docs,
+and LOCAL-04 control/audit evidence.
 
 ## Forbidden Paths
 
-- Eureka product source paths: `runtime/**`, `contracts/**`, `surfaces/**`,
-  `site/**`, `crates/**`, `native/**`, and non-AIDE `tests/**`.
-- Broad optional AIDE roots: `core/**` and source `docs/reference/**`.
-- `.env`, `.aide.local/**`, `secrets/**`, raw prompts, raw responses,
-  provider keys, live provider/model/network-call code.
+See `.aide/context/latest-task-packet.md`. The packet forbids secrets,
+`.aide.local/**`, broad product areas outside the LOCAL-04 boundary, write
+routes, source probes, index rebuilds, WorkUnit runtime, HTML workbench, LAN
+binding, deployment, provider/model calls, and production/public launch claims.
 
 ## Validation Commands
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/check_architecture_boundaries.py`
+- `py -3 scripts/validate_local_runtime_composition.py`
+- LOCAL-04 focused validator and tests when defined
 - `git diff --check`
 
 ## Acceptance Criteria
 
-- `test` and `selftest` exit 0 in Eureka.
-- No `core/**` or source `docs/reference/**` files are added to Eureka.
-- Safe import mode still skips broad roots.
-- Product source files are unchanged.
+- LOCAL-03 runtime composition validation is passing again, or remaining
+  leakage drift is separately reviewed and explicitly accepted.
+- LOCAL-04 acceptance criteria are met.
+- Service code uses the LOCAL-03 runtime composition boundary.
+- HTTP service is localhost-only and read-only.
+- No write routes, source probes, index rebuilds, HTML workbench, LAN,
+  deployment, production readiness claim, or public launch claim are added.
 - Validation and evidence are recorded.
-- Queue status ends `needs_review`.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are
+  committed.
 
 ## Review Packet Guidance
 
@@ -78,6 +90,6 @@ Q26 evidence only. Do not paste long repo history or the entire source tree.
 
 ## Token Estimate
 
-- Latest task packet: 5767 chars / 1442 approximate tokens.
+- Latest task packet: 6157 chars / 1540 approximate tokens.
 - Method: `chars / 4`.
 - Budget status: within budget.

@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4026 chars, 1007 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6157 chars, 1540 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1828 chars, 457 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1832 chars, 458 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/LOCAL-02/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/LOCAL-03` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- unknown: `control/audits/local-02-instance-configuration-migration-guard-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_02_leakage_baseline.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_02_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_config_schema.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_layout.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_migration_gap_register.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_migration_guard_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_migration_state_schema.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_schema_version.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_instance_store_manifest_schema.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/local_instance_migration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/local_instance_schema_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/LOCAL_INSTANCE_MODEL.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_INSTANCE_BOOTSTRAP.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_INSTANCE_MIGRATION_POLICY.md` (??; does not match active task allowed paths)
-- allowed: `docs/reference/LOCAL_INSTANCE_CONFIG_SCHEMA.md` (??; matches active task allowed path)
-- allowed: `docs/reference/LOCAL_INSTANCE_LAYOUT.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 8; see task evidence changed-files report
+- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
+- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- allowed: `.aide/controller/README.md` (??; matches active task allowed path)
+- allowed: `.aide/controller/failure-taxonomy.yaml` (??; matches active task allowed path)
+- allowed: `.aide/controller/latest-recommendations.md` (??; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/gateway/latest-gateway-status.json` (??; matches active task allowed path)
+- allowed: `.aide/gateway/latest-gateway-status.md` (??; matches active task allowed path)
+- allowed: `.aide/providers/latest-provider-status.json` (??; matches active task allowed path)
+- allowed: `.aide/providers/latest-provider-status.md` (??; matches active task allowed path)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/changed-files.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/local-runtime-composition-validation.json` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/next-task-handoff.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/remaining-risks.md` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6564
-- approx_tokens: 1641
+- chars: 6717
+- approx_tokens: 1680
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -79,7 +79,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - outcome_report: `.aide/controller/latest-outcome-report.md`
 - outcome_result: WARN
-- recommendations: `.aide/controller/latest-recommendations.md` (missing)
+- recommendations: `.aide/controller/latest-recommendations.md`
+- recommendation_count: 0
 - applies_automatically: false
 
 ## Route Decision Summary
@@ -102,15 +103,26 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Gateway Skeleton Summary
 
-- gateway_status: `.aide/gateway/latest-gateway-status.json` (missing; run gateway status)
-- local_skeleton: true
-- provider_or_model_calls: none
+- gateway_status: `.aide/gateway/latest-gateway-status.json`
+- service: aide-gateway-skeleton
+- mode: local_skeleton_report_only
+- route_class: unknown
+- verifier_status: unknown
+- golden_task_status: unknown
+- provider_calls_enabled: false
+- model_calls_enabled: false
+- outbound_network_enabled: false
 
 ## Provider Adapter Summary
 
-- provider_status: `.aide/providers/latest-provider-status.json` (missing; run provider status)
-- offline_metadata_only: true
+- provider_status: `.aide/providers/latest-provider-status.json`
+- provider_family_count: 0
+- validation_result: unknown
 - live_provider_calls: false
+- live_model_calls: false
+- network_calls: false
+- credentials_configured: false
+- metadata_only: true
 
 ## Risk Summary
 
