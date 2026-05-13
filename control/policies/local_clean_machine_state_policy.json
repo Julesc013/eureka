@@ -1,0 +1,20 @@
+{
+  "allowed_write_roots": [
+    "explicit_temp_checkout",
+    "explicit_temp_instance",
+    "explicit_audit_generated_output"
+  ],
+  "committed_local_db_log_run_tmp_files_forbidden": true,
+  "forbidden_state_roots": [
+    "home directory implicit cache",
+    ".cache",
+    ".local",
+    ".aide.local",
+    "repo root instance",
+    "site/dist",
+    "system-level install paths"
+  ],
+  "hidden_state_roots_forbidden": true,
+  "schema_version": "local_clean_machine_state_policy.v0",
+  "working_tree_clean_after_proof_required": true
+}

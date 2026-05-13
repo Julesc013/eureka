@@ -42,3 +42,10 @@ LOCAL-10 does not execute workers from the service. Its harness inspects the
 deterministic worker registry and verifies `source_probe_worker`,
 `extraction_worker`, and `ai_model_worker` remain blocked. Worker execution
 still requires the explicit LOCAL-09 runner command.
+
+## LOCAL-13 Clean-Machine Boundary
+
+LOCAL-13 proves the runner-era Local Appliance can bootstrap and smoke-test
+from a clean temp checkout without executing unsafe worker kinds. The
+reproducibility proof does not run source probes, extraction, agent research,
+model/provider calls, downloads, installation, LAN mutations, or deployment.

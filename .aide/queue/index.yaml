@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-13
+current_recommended_task: LOCAL-14
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -125,12 +125,21 @@ entries:
     recommended_next: LOCAL-13
   - id: LOCAL-13
     title: Clean-machine bootstrap proof
-    status: queued
+    status: completed
     purpose: Prove the Local Appliance can bootstrap and run validation from a clean local instance after LAN read-only smoke.
     allowed_scope_summary: Clean-machine bootstrap evidence, scripts, docs, tests, inventories, and audit evidence only when explicitly scoped.
     gate: LOCAL-12 passed with read-only LAN smoke; no deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-13/task.yaml
     recommended_after: LOCAL-12
+    recommended_next: LOCAL-14
+  - id: LOCAL-14
+    title: Local appliance closeout and F0/HUNT/SYN handoff
+    status: queued
+    purpose: Close out the Local Appliance track after clean-machine bootstrap proof and hand off to future extraction/search tracks.
+    allowed_scope_summary: closeout evidence, handoff docs, inventories, validators, and audit evidence only when explicitly scoped.
+    gate: LOCAL-13 passed with clean-machine bootstrap proof; no deployment, production readiness claim, public launch claim, source probes, or F0 implementation.
+    task: .aide/queue/LOCAL-14/task.yaml
+    recommended_after: LOCAL-13
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

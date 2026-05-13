@@ -2,45 +2,39 @@
 
 ## PHASE
 
-LOCAL-13 - Clean-machine bootstrap proof
+LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff
 
 ## GOAL
 
-Prepare the next queue item after LOCAL-12 proved explicit read-only LAN smoke.
+Prepare the next queue item after LOCAL-13 proved clean-machine bootstrap.
 
 ## WHY
 
-LOCAL-00 through LOCAL-11 established the Local Appliance track, explicit
+LOCAL-00 through LOCAL-13 now establish the Local Appliance track, explicit
 instance bootstrap, migration guard, runtime composition, localhost service,
 HTML workbench, hardened diagnostic pages, durable WorkUnit queue,
-operator-gated local review/rebuild, deterministic local workers, and the
-measurable auto-test/search harness, plus an explicit read-only LAN safety gate.
+operator-gated review/rebuild, deterministic local workers, auto-test/search,
+LAN safety/smoke, and clean-machine reproducibility proof.
 
-LOCAL-13 is now recommended to prove clean-machine bootstrap under an explicit
-future task prompt.
+LOCAL-14 is recommended to close out the Local Appliance track and hand off to
+future F0/HUNT/SYN work without starting those tracks in LOCAL-13.
 
 ## CONTEXT_REFS
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-13/task.yaml`
-- `runtime/local_network/`
-- `scripts/eureka_lan_smoke.py`
-- `scripts/validate_local_lan_smoke.py`
-- `runtime/local_eval/`
-- `runtime/local_service/`
-- `runtime/local_workbench/`
-- `runtime/local_worker/`
-- `control/inventory/local_12_next_task_decision.json`
-- `control/audits/local-12-lan-read-only-smoke-v0/`
+- `.aide/queue/LOCAL-14/task.yaml`
+- `control/audits/local-13-clean-machine-bootstrap-v0/`
+- `control/inventory/local_13_next_task_decision.json`
+- `docs/operations/LOCAL_APPLIANCE_REPRODUCIBILITY.md`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- LOCAL-13 paths must come from a reviewed LOCAL-13 task prompt before work starts.
+- LOCAL-14 paths must come from a reviewed LOCAL-14 task prompt before work starts.
 - `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-12/task.yaml`
-- LOCAL-13 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
+- `.aide/queue/LOCAL-14/task.yaml`
+- LOCAL-14 docs, validators, inventories, and audit evidence only when explicitly scoped.
 
 ## FORBIDDEN_PATHS
 
@@ -51,23 +45,21 @@ future task prompt.
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- runtime, contracts, surfaces, site, native, crates, examples, and private local files unless a reviewed LOCAL-13 prompt explicitly allows the path.
+- private local files
 
 ## IMPLEMENTATION
 
-- Start from `dev` or an explicit LOCAL-13 task branch from `dev`.
-- Use the LOCAL-10 harness as safety evidence before enabling any LAN behavior.
-- Use the LOCAL-12 LAN smoke evidence before clean-machine proof.
+- Start from `dev` or an explicit LOCAL-14 task branch.
 - Do not deploy.
+- Do not start F0 until a reviewed LOCAL-14 prompt allows the closeout handoff.
 - Do not run source probes, extraction, model/provider calls, or unsafe worker kinds unless a future prompt explicitly enables them.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- LOCAL-13 focused validator and tests when defined
-- `python scripts/validate_local_auto_test_harness.py`
-- `python scripts/validate_local_worker_runner.py`
+- LOCAL-14 focused validator and tests when defined
+- existing LOCAL validators as scoped
 - `python scripts/check_architecture_boundaries.py`
 
 ## EVIDENCE
@@ -78,17 +70,16 @@ future task prompt.
 
 ## NON_GOALS
 
-- No LAN mutation.
 - No deployment.
-- No source probe execution.
-- No extraction execution.
 - No production readiness claim.
 - No public launch readiness claim.
+- No unscoped F0 implementation.
+- No source probe execution.
 
 ## ACCEPTANCE
 
-- LOCAL-13 acceptance criteria must come from a future reviewed LOCAL-13 prompt.
-- F0 remains deferred until LOCAL-14.
+- LOCAL-14 acceptance criteria must come from a future reviewed LOCAL-14 prompt.
+- F0 remains deferred until LOCAL-14 closeout decisions are explicit.
 
 ## OUTPUT_SCHEMA
 
@@ -98,5 +89,5 @@ Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`,
 ## TOKEN_ESTIMATE
 
 - packet_type: compact_task_packet
-- estimated_tokens: 760
+- estimated_tokens: 720
 - budget_status: PASS

@@ -37,3 +37,9 @@ API routes, then verifies mutation routes are rejected or token-gated.
 - no master-index mutation
 - no production readiness claim
 - no public launch claim
+
+## LOCAL-13 Use
+
+LOCAL-13 may cite LOCAL-12 as the LAN smoke proof while focusing on
+clean-machine localhost reproducibility. It must not convert same-machine
+LAN-bind evidence into an actual second-device claim.

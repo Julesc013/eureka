@@ -1,0 +1,10 @@
+{
+  "actual_second_machine_proof_performed": false,
+  "private_network_details_redacted": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Not required for LOCAL-13 automated pass; LOCAL-12/LOCAL-13 provide automated local proof.",
+  "schema_version": "local_clean_machine_external_proof.v0",
+  "status": "not_performed",
+  "task": "LOCAL-13"
+}

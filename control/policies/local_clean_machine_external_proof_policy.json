@@ -1,0 +1,9 @@
+{
+  "evidence_may_redact_private_ip": true,
+  "evidence_must_not_claim_public_deployment": true,
+  "evidence_must_not_include_secrets": true,
+  "external_machine_proof_optional_for_LOCAL_13_PASS_WITH_WARNINGS": true,
+  "external_machine_proof_required_for_full_operational_lan_claim": true,
+  "manual_evidence_allowed": true,
+  "schema_version": "local_clean_machine_external_proof_policy.v0"
+}

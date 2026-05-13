@@ -75,3 +75,13 @@ LAN clients may access read-only status, health, search, object, source, and
 absence routes. Review/rebuild pages and POST mutation routes are localhost-only
 and return fail-closed responses for LAN clients. LOCAL-11 does not perform the
 cross-device LAN smoke; LOCAL-12 owns that proof.
+
+## LOCAL-13 Reproducibility Smoke
+
+LOCAL-13 uses the localhost service as part of clean-machine proof. The smoke
+starts the service on `127.0.0.1`, runs JSON service checks, HTML workbench
+checks, auto-test, and auto-search, then verifies shutdown and instance
+validity.
+
+This is not hosted service readiness and does not change the read-only or
+public-claim boundary.

@@ -43,3 +43,9 @@ used by the service.
 External second-client smoke is preferred but was not performed by the
 automated LOCAL-12 run. That limitation is recorded explicitly and must not be
 described as cross-device proof.
+
+## LOCAL-13 Relationship
+
+LOCAL-13 does not broaden LAN mode. It proves clean-machine localhost
+bootstrap and may reference LOCAL-12 for LAN smoke coverage. Any actual
+second-machine proof remains optional and must not be claimed unless performed.

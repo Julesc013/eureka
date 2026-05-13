@@ -1,0 +1,14 @@
+id: LOCAL-14
+title: Local appliance closeout and F0/HUNT/SYN handoff
+status: queued
+purpose: Close out the Local Appliance track after clean-machine bootstrap proof and prepare the handoff to future extraction and search tracks.
+allowed_scope_summary: Closeout evidence, handoff docs, final readiness matrix, validators, inventories, and audit evidence only when a reviewed LOCAL-14 prompt enables it.
+gate:
+  - LOCAL-13 completed with clean-machine bootstrap proof
+  - no deployment
+  - no production readiness claim
+  - no public launch readiness claim
+  - no source probe execution unless explicitly scoped later
+  - no F0 implementation before LOCAL-14 closeout
+proof_level_required: L2
+recommended_after: LOCAL-13

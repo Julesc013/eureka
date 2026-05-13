@@ -28,3 +28,10 @@ LOCAL-11 uses the auto-test harness as localhost regression evidence before
 actual LAN smoke. The harness remains localhost-only and does not itself bind to
 LAN-facing hosts. LOCAL-12 should run a separate read-only LAN smoke after the
 LAN safety gate is in place.
+
+## LOCAL-13 Use
+
+LOCAL-13 clean-machine smoke runs the auto-test and auto-search harness from a
+fresh explicit instance. The harness remains deterministic and
+local-reviewed-index only; it does not generate synthetic queries, run source
+probes, call model providers, or deploy.

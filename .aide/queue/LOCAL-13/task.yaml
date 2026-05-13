@@ -1,8 +1,8 @@
 id: LOCAL-13
 title: Clean-machine bootstrap proof
-status: queued
-purpose: Prove the Local Appliance can bootstrap and validate from a clean local instance after read-only LAN smoke.
-allowed_scope_summary: Clean-machine bootstrap evidence, instance validation, docs, tests, inventories, and audit evidence only when a future LOCAL-13 prompt enables it.
+status: completed
+purpose: Prove the Local Appliance can bootstrap, validate, serve, smoke-test, auto-test, auto-search, and shut down from clean local state after read-only LAN smoke.
+allowed_scope_summary: Clean-machine bootstrap evidence, instance validation, scripts, docs, tests, inventories, and audit evidence only.
 gate:
   - LOCAL-12 completed with read-only LAN smoke evidence
   - no deployment
@@ -12,3 +12,17 @@ gate:
   - no public launch readiness claim
 proof_level_required: L2
 recommended_after: LOCAL-12
+recommended_next: LOCAL-14
+evidence:
+  - control/audits/local-13-clean-machine-bootstrap-v0/
+  - control/inventory/local_clean_machine_bootstrap_result.json
+  - control/inventory/local_clean_machine_smoke_result.json
+  - control/inventory/local_clean_machine_validation_result.json
+  - control/inventory/local_13_next_task_decision.json
+validation_summary:
+  status: pass_with_warnings
+  notes:
+    - temp checkout/copy proof passed
+    - localhost smoke, workbench smoke, auto-test, and auto-search passed
+    - actual second-machine proof not performed
+    - runtime leakage gate remains pre-existing

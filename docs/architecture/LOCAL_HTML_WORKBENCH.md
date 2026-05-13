@@ -50,3 +50,10 @@ readiness.
 LOCAL-10 checks the workbench pages as server-rendered HTML. The harness
 verifies page availability and safety markers without adding a frontend build,
 JavaScript requirement, external assets, or new workbench controls.
+
+## LOCAL-13 Clean-Machine Role
+
+LOCAL-13 uses the HTML workbench smoke as a reproducibility gate. A clean temp
+checkout must serve the home, status, search, absence, object-not-found, and
+source routes over localhost without external assets, mutation controls, or
+readiness claims.

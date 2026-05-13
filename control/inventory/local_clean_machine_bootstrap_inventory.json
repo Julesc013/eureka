@@ -1,0 +1,14 @@
+{
+  "actual_second_machine_optional": true,
+  "auto_test_required": true,
+  "deployment_performed": false,
+  "explicit_instance_required": true,
+  "local_server_smoke_required": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_clean_machine_bootstrap_inventory.v0",
+  "shutdown_required": true,
+  "task": "LOCAL-13",
+  "temp_checkout_supported": true,
+  "workbench_smoke_required": true
+}

@@ -94,3 +94,14 @@ validated.
 External second-client smoke was not performed in the automated run, so LOCAL-12
 does not claim cross-device LAN proof, deployment, public hosting, production
 readiness, or public launch readiness.
+
+## LOCAL-13 Clean-Machine Bootstrap
+
+LOCAL-13 adds the reproducibility gate before closeout. A filtered temp
+checkout/copy initializes an explicit instance, validates it, opens runtime
+status, serves localhost, runs service/workbench smoke plus auto-test and
+auto-search, and shuts down cleanly.
+
+The proof remains local-only. It does not deploy, mutate `site/dist`, mutate a
+master index, run source probes, implement F0, or claim production/public
+launch readiness.
