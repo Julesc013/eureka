@@ -1,0 +1,11 @@
+{
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start_with_explicit_flag": true,
+  "lan_smoke_ready": true,
+  "reason": "LAN binding safety gate exists; read-only LAN smoke test is next.",
+  "recommended_next_task": "LOCAL-12 \u2014 LAN read-only smoke test",
+  "schema_version": "local_11_next_task_decision.v0",
+  "server_can_start": true,
+  "task": "LOCAL-11"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "local_lan_route_matrix.v0",
+  "task": "LOCAL-11",
+  "summary": {
+    "lan_read_only_allowed_routes": 13,
+    "localhost_only_routes": 7,
+    "lan_mutating_routes_allowed": 0
+  }
+}

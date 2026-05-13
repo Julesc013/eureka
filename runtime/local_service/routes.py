@@ -14,6 +14,13 @@ def route_request(
 ) -> LocalServiceResponse:
     method = request_context.method
     path = request_context.path
+    if not _network().is_route_allowed_for_scope(method, path, request_context.client_scope):
+        return error_response(
+            403,
+            "lan_route_forbidden",
+            "route is not available for this client scope",
+            {"path": path, "method": method, "client_scope": request_context.client_scope},
+        )
     if method != "GET":
         return _mutation_response(runtime, request_context, operator_auth_state)
     if path == "/":
@@ -89,14 +96,22 @@ def _status_response(runtime: Any) -> LocalServiceResponse:
 def _status_payload(runtime: Any) -> dict[str, Any]:
     runtime_status = runtime.status().to_dict()
     summary = runtime.public_index.summarize().to_dict()
+    lan_enabled = bool(getattr(runtime, "lan_enabled", False))
+    lan_read_only = bool(getattr(runtime, "lan_read_only", True))
+    warnings = list(runtime_status.get("warnings", []))
+    if lan_enabled:
+        warnings.extend(_lan_warnings())
     return {
         "schema_version": "local_http_status_response.v0",
         "status": runtime_status.get("status", "pass"),
         "service": {
             "read_only": bool(runtime.read_only),
-            "localhost_only": True,
+            "localhost_only": not lan_enabled,
             "write_routes_enabled": False,
-            "lan_enabled": False,
+            "lan_enabled": lan_enabled,
+            "bind_lan": bool(getattr(runtime, "bind_lan", False)),
+            "lan_read_only": lan_read_only,
+            "lan_mutations_enabled": False,
             "deployment_performed": False,
             "source_probe_execution_enabled": False,
             "workunit_execution_enabled": False,
@@ -107,7 +122,7 @@ def _status_payload(runtime: Any) -> dict[str, Any]:
         },
         "runtime": runtime_status,
         "public_index": summary,
-        "warnings": list(runtime_status.get("warnings", [])),
+        "warnings": warnings,
         "limitations": list(DEFAULT_LIMITATIONS),
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,
@@ -124,14 +139,16 @@ def _status_html_response(runtime: Any) -> LocalServiceResponse:
 
 def _health_response(runtime: Any) -> LocalServiceResponse:
     status = runtime.status().to_dict()
+    lan_enabled = bool(getattr(runtime, "lan_enabled", False))
     payload = {
         "schema_version": "local_http_health_response.v0",
         "status": "pass" if status.get("status") == "pass" else "fail",
         "read_only": True,
-        "localhost_only": True,
-        "lan_enabled": False,
+        "localhost_only": not lan_enabled,
+        "lan_enabled": lan_enabled,
+        "lan_read_only": bool(getattr(runtime, "lan_read_only", True)),
         "deployment_performed": False,
-        "warnings": list(status.get("warnings", [])),
+        "warnings": list(status.get("warnings", [])) + (_lan_warnings() if lan_enabled else []),
         "limitations": list(DEFAULT_LIMITATIONS),
     }
     return json_response(200 if payload["status"] == "pass" else 503, payload)
@@ -248,7 +265,7 @@ def _review_list_response(runtime: Any, request_context: LocalRequestContext) ->
         {
             "review_ui_enabled": True,
             "operator_token_required_for_mutations": True,
-            "lan_enabled": False,
+            "lan_enabled": bool(getattr(runtime, "lan_enabled", False)),
             "deployment_performed": False,
         }
     )
@@ -288,7 +305,8 @@ def _rebuild_status_response(runtime: Any) -> LocalServiceResponse:
         "input_stores_mutated": False,
         "master_index_mutated": False,
         "site_dist_mutated": False,
-        "lan_enabled": False,
+        "lan_enabled": bool(getattr(runtime, "lan_enabled", False)),
+        "lan_mutations_enabled": False,
         "deployment_performed": False,
         "warnings": [],
         "limitations": list(DEFAULT_LIMITATIONS) + ["rebuild writes only to the local reviewed public index store"],
@@ -305,6 +323,13 @@ def _rebuild_html_response(runtime: Any) -> LocalServiceResponse:
 
 
 def _mutation_response(runtime: Any, request_context: LocalRequestContext, operator_auth_state: Any) -> LocalServiceResponse:
+    if request_context.client_scope != "loopback":
+        return error_response(
+            403,
+            "lan_mutation_forbidden",
+            "mutation routes are localhost-only",
+            {"path": request_context.path, "client_scope": request_context.client_scope},
+        )
     if request_context.method != "POST":
         return error_response(405, "method_not_allowed", "method is not enabled for local service route")
     try:
@@ -380,3 +405,12 @@ def _operator_auth_error() -> Any:
 
 def _require_operator_token(request_context: LocalRequestContext, config: Any, operator_auth_state: Any) -> Any:
     return _operator_auth().require_operator_token(request_context, config, operator_auth_state)
+
+
+def _lan_warnings() -> list[str]:
+    module = _network()
+    return [module.build_lan_warning(), module.build_firewall_warning()]
+
+
+def _network() -> Any:
+    return __import__("runtime.local_network", fromlist=["is_route_allowed_for_scope", "build_lan_warning"])

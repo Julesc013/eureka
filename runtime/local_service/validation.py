@@ -15,13 +15,11 @@ MAX_RESULT_LIMIT = 50
 DEFAULT_RESULT_LIMIT = 20
 
 
-def validate_host_allowed(host: str) -> str:
-    value = str(host or "").strip().lower()
-    if value in FORBIDDEN_HOSTS:
-        raise LocalServiceHostError(f"host is forbidden for local service: {host!r}")
-    if value not in ALLOWED_HOSTS:
-        raise LocalServiceHostError(f"host is not an allowed localhost bind: {host!r}")
-    return value
+def validate_host_allowed(host: str, bind_lan: bool = False) -> str:
+    try:
+        return _network().validate_service_host(host, bind_lan=bind_lan)
+    except Exception as exc:
+        raise LocalServiceHostError(str(exc)) from exc
 
 
 def validate_read_only_method(method: str) -> str:
@@ -73,7 +71,7 @@ def is_operator_mutation_route(path: str) -> bool:
 
 
 def validate_no_lan_binding(host: str) -> str:
-    return validate_host_allowed(host)
+    return validate_host_allowed(host, bind_lan=False)
 
 
 def first_param(params: Mapping[str, list[str]], name: str, default: str = "") -> str:
@@ -91,3 +89,7 @@ def parse_limit(value: str | None, default: int = DEFAULT_RESULT_LIMIT) -> int:
     if limit < 1:
         raise LocalServiceValidationError("limit must be positive")
     return min(limit, MAX_RESULT_LIMIT)
+
+
+def _network():
+    return __import__("runtime.local_network", fromlist=["validate_service_host"])

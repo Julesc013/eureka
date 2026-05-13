@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Mapping
 from urllib.parse import parse_qs, unquote, urlsplit
 
-from .validation import validate_host_allowed, validate_no_mutation_route, validate_query_params
+from .validation import validate_no_mutation_route, validate_query_params
 
 
 @dataclass(frozen=True)
@@ -14,6 +14,7 @@ class LocalRequestContext:
     query: str
     params: Mapping[str, list[str]]
     client_host: str
+    client_scope: str
     body: str = ""
     body_params: Mapping[str, list[str]] = None
     headers: Mapping[str, str] = None
@@ -39,12 +40,14 @@ def build_request_context(
     params = parse_qs(query_text, keep_blank_values=True)
     body_text = _body_text(body)
     body_params = parse_qs(body_text, keep_blank_values=True)
-    validate_host_allowed(client_host)
-    validate_no_mutation_route(method, request_path)
+    method_value = str(method or "").strip().upper()
+    scope = _network().classify_client_scope(client_host)
+    if scope.value == "loopback":
+        validate_no_mutation_route(method_value, request_path)
     validate_query_params(params)
     validate_query_params(body_params)
     return LocalRequestContext(
-        method=str(method or "").strip().upper(),
+        method=method_value,
         path=request_path,
         query=query_text,
         params=params,
@@ -52,6 +55,7 @@ def build_request_context(
         body_params=body_params,
         headers={str(key): str(value) for key, value in dict(headers or {}).items()},
         client_host=str(client_host or ""),
+        client_scope=scope.value,
     )
 
 
@@ -78,3 +82,7 @@ def _body_text(body: str | bytes | None) -> str:
     if isinstance(body, bytes):
         return body.decode("utf-8")
     return str(body)
+
+
+def _network():
+    return __import__("runtime.local_network", fromlist=["classify_client_scope"])

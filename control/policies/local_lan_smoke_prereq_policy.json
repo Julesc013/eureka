@@ -1,0 +1,12 @@
+{
+  "actual_lan_smoke_current_task": false,
+  "firewall_operator_warning_visible": true,
+  "lan_smoke_allows_loopback_simulated_report_if_no_second_device": true,
+  "lan_smoke_explicit_bind_lan_required": true,
+  "lan_smoke_mutating_routes_blocked_required": true,
+  "lan_smoke_read_only_required": true,
+  "no_deployment_public_claim_allowed": true,
+  "schema_version": "local_lan_smoke_prereq_policy.v0",
+  "second_client_device_preferred": true,
+  "shutdown_cleanup_command_documented": true
+}

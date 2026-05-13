@@ -21,3 +21,10 @@ search, absence, safety, and latency posture only.
 
 LOCAL-10 does not enable LAN, deployment, source probes, extraction, model
 calls, downloads, installs, or execution.
+
+## LAN Safety Relationship
+
+LOCAL-11 uses the auto-test harness as localhost regression evidence before
+actual LAN smoke. The harness remains localhost-only and does not itself bind to
+LAN-facing hosts. LOCAL-12 should run a separate read-only LAN smoke after the
+LAN safety gate is in place.

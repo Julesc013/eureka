@@ -13,7 +13,8 @@ python scripts/eureka_validate_instance.py --instance ./eureka-instance --json
 python scripts/eureka_local_server.py --instance ./eureka-instance --host 127.0.0.1 --port 8765
 ```
 
-The server refuses missing instances, write mode, `0.0.0.0`, and non-localhost hosts.
+The server refuses missing instances, write mode, and LAN-facing bind hosts
+unless `--bind-lan` is explicit.
 
 ## Smoke
 
@@ -70,3 +71,21 @@ The validator checks policies, routes, runtime imports, app routes, localhost se
 LOCAL-05 implements only the minimal read-only HTML workbench. It still does not implement WorkUnit queue, source probes, review mutation, index rebuilds, LAN mode, deployment, production readiness, or public launch readiness.
 
 LOCAL-06 adds operational page detail only. WorkUnits remain deferred until LOCAL-07, review/rebuild UI until LOCAL-08, and LAN until LOCAL-11/LOCAL-12.
+
+## LOCAL-11 LAN Policy Check
+
+Before any read-only LAN smoke, check the bind policy:
+
+```bash
+python scripts/eureka_lan_policy_check.py --host 0.0.0.0 --json
+python scripts/eureka_lan_policy_check.py --host 0.0.0.0 --bind-lan --json
+```
+
+The service still starts on `127.0.0.1` by default. A LAN-facing host requires:
+
+```bash
+python scripts/eureka_local_server.py --instance ./eureka-instance --host 0.0.0.0 --port 8765 --bind-lan --json-startup
+```
+
+LOCAL-11 does not require cross-device LAN smoke; that proof is deferred to
+LOCAL-12. Stop the service with Ctrl+C and do not commit local instance state.

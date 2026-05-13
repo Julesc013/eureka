@@ -2,43 +2,44 @@
 
 ## PHASE
 
-LOCAL-11 - LAN binding policy and safety gate
+LOCAL-12 - LAN read-only smoke test
 
 ## GOAL
 
-Prepare the next queue item after LOCAL-10 added the deterministic local
-auto-test and auto-search harness.
+Prepare the next queue item after LOCAL-11 added the explicit LAN binding
+safety gate.
 
 ## WHY
 
-LOCAL-00 through LOCAL-10 established the Local Appliance track, explicit
+LOCAL-00 through LOCAL-11 established the Local Appliance track, explicit
 instance bootstrap, migration guard, runtime composition, localhost service,
 HTML workbench, hardened diagnostic pages, durable WorkUnit queue,
 operator-gated local review/rebuild, deterministic local workers, and the
-measurable auto-test/search harness.
+measurable auto-test/search harness, plus an explicit read-only LAN safety gate.
 
-LOCAL-11 is now recommended to define the LAN binding safety policy under an
+LOCAL-12 is now recommended to perform the read-only LAN smoke test under an
 explicit future task prompt.
 
 ## CONTEXT_REFS
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-11/task.yaml`
+- `.aide/queue/LOCAL-12/task.yaml`
+- `runtime/local_network/`
 - `runtime/local_eval/`
 - `runtime/local_service/`
 - `runtime/local_workbench/`
 - `runtime/local_worker/`
-- `control/inventory/local_10_next_task_decision.json`
-- `control/audits/local-10-auto-test-search-harness-v0/`
+- `control/inventory/local_11_next_task_decision.json`
+- `control/audits/local-11-lan-binding-safety-gate-v0/`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- LOCAL-11 paths must come from a reviewed LOCAL-11 task prompt before work starts.
+- LOCAL-12 paths must come from a reviewed LOCAL-12 task prompt before work starts.
 - `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
 - `.aide/queue/LOCAL-11/task.yaml`
-- LOCAL-11 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
+- LOCAL-12 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
 
 ## FORBIDDEN_PATHS
 
@@ -55,7 +56,7 @@ explicit future task prompt.
 
 - Start from `dev` or an explicit LOCAL-11 task branch from `dev`.
 - Use the LOCAL-10 harness as safety evidence before enabling any LAN behavior.
-- Keep LAN disabled until a future LOCAL-11 prompt explicitly scopes the policy and gates.
+- Use the LOCAL-11 LAN safety gate before any read-only LAN smoke.
 - Do not deploy.
 - Do not run source probes, extraction, model/provider calls, or unsafe worker kinds unless a future prompt explicitly enables them.
 
@@ -63,7 +64,7 @@ explicit future task prompt.
 
 - `git status --short`
 - `git diff --check`
-- LOCAL-11 focused validator and tests when defined
+- LOCAL-12 focused validator and tests when defined
 - `python scripts/validate_local_auto_test_harness.py`
 - `python scripts/validate_local_worker_runner.py`
 - `python scripts/check_architecture_boundaries.py`
@@ -76,7 +77,7 @@ explicit future task prompt.
 
 ## NON_GOALS
 
-- No LAN binding without LOCAL-11 policy approval.
+- No LAN mutation.
 - No deployment.
 - No source probe execution.
 - No extraction execution.
@@ -85,10 +86,16 @@ explicit future task prompt.
 
 ## ACCEPTANCE
 
-- LOCAL-11 acceptance criteria must come from a future reviewed LOCAL-11 prompt.
+- LOCAL-12 acceptance criteria must come from a future reviewed LOCAL-12 prompt.
 - F0 remains deferred until LOCAL-14.
 
 ## OUTPUT_SCHEMA
 
 Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`,
 `VALIDATION`, `RISKS`, and `NEXT`.
+
+## TOKEN_ESTIMATE
+
+- packet_type: compact_task_packet
+- estimated_tokens: 760
+- budget_status: PASS

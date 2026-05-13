@@ -1,4 +1,4 @@
-"""Loopback-only server adapter for the local service."""
+"""Loopback-default server adapter with explicit read-only LAN guard."""
 
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler
@@ -17,10 +17,16 @@ class LocalHTTPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
 
+class LocalHTTPServerV6(LocalHTTPServer):
+    address_family = __import__("socket").AF_INET6
+
+
 @dataclass
 class LocalHTTPServiceHandle:
     httpd: LocalHTTPServer
     runtime: Any
+    bind_lan: bool = False
+    warnings: tuple[str, ...] = ()
 
     @property
     def server_port(self) -> int:
@@ -87,13 +93,20 @@ def create_local_http_server(
     port: int = 8765,
     read_only: bool = True,
     operator_token: str | None = None,
+    bind_lan: bool = False,
 ) -> LocalHTTPServiceHandle:
-    validate_host_allowed(host)
+    validate_host_allowed(host, bind_lan=bind_lan)
     runtime = open_local_appliance(Path(instance_path), read_only=read_only and not operator_token)
     try:
+        lan_enabled = host in {"0.0.0.0", "::"} and bind_lan
+        setattr(runtime, "lan_enabled", lan_enabled)
+        setattr(runtime, "bind_lan", bool(bind_lan))
+        setattr(runtime, "lan_read_only", True)
         app = LocalServiceApp(runtime, operator_auth_state=_build_cli_operator_auth_state(operator_token))
-        httpd = LocalHTTPServer((host, int(port)), create_local_http_handler(app))
-        return LocalHTTPServiceHandle(httpd=httpd, runtime=runtime)
+        server_class = LocalHTTPServerV6 if host == "::" else LocalHTTPServer
+        httpd = server_class((host, int(port)), create_local_http_handler(app))
+        warnings = _lan_warnings() if lan_enabled else ()
+        return LocalHTTPServiceHandle(httpd=httpd, runtime=runtime, bind_lan=bool(bind_lan), warnings=warnings)
     except Exception:
         close_local_appliance(runtime)
         raise
@@ -105,8 +118,9 @@ def run_local_http_service(
     port: int = 8765,
     read_only: bool = True,
     operator_token: str | None = None,
+    bind_lan: bool = False,
 ) -> None:
-    handle = create_local_http_server(instance_path, host=host, port=port, read_only=read_only, operator_token=operator_token)
+    handle = create_local_http_server(instance_path, host=host, port=port, read_only=read_only, operator_token=operator_token, bind_lan=bind_lan)
     try:
         handle.httpd.serve_forever()
     finally:
@@ -116,3 +130,8 @@ def run_local_http_service(
 def _build_cli_operator_auth_state(operator_token: str | None) -> Any:
     module = __import__("runtime.local_operator.auth", fromlist=["build_cli_operator_auth_state"])
     return module.build_cli_operator_auth_state(operator_token)
+
+
+def _lan_warnings() -> tuple[str, str]:
+    module = __import__("runtime.local_network", fromlist=["build_lan_warning"])
+    return (module.build_lan_warning(), module.build_firewall_warning())

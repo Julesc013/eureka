@@ -1,0 +1,14 @@
+{
+  "lan_agent_execution_enabled": false,
+  "lan_config_mutation_enabled": false,
+  "lan_download_install_execute_enabled": false,
+  "lan_master_index_mutation_enabled": false,
+  "lan_mutations_enabled": false,
+  "lan_rebuild_enabled": false,
+  "lan_review_decisions_enabled": false,
+  "lan_site_dist_writes_enabled": false,
+  "lan_source_probes_enabled": false,
+  "lan_uploads_enabled": false,
+  "lan_workunit_execution_enabled": false,
+  "schema_version": "local_lan_mutation_policy.v0"
+}

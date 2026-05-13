@@ -1,0 +1,17 @@
+{
+  "allowed_default_host": "127.0.0.1",
+  "allowed_lan_hosts_when_explicit": [
+    "0.0.0.0",
+    "::"
+  ],
+  "bind_lan_requires_explicit_flag": true,
+  "firewall_warning_required": true,
+  "lan_binding_default": false,
+  "lan_mode_read_only_default": true,
+  "localhost_default": true,
+  "operator_warning_required": true,
+  "production_readiness_claim_forbidden": true,
+  "public_deployment_claim_forbidden": true,
+  "schema_version": "local_lan_binding_policy.v0",
+  "shutdown_command_required_before_closeout": true
+}

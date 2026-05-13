@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-11
+current_recommended_task: LOCAL-12
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -107,12 +107,21 @@ entries:
     recommended_next: LOCAL-11
   - id: LOCAL-11
     title: LAN binding policy and safety gate
-    status: queued
+    status: completed
     purpose: Define the LAN binding safety policy after local auto-test and auto-search harness exists.
-    allowed_scope_summary: LAN policy and safety gate only when a future LOCAL-11 prompt enables it.
-    gate: LOCAL-10 passed with auto-test harness; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim until explicitly scoped.
+    allowed_scope_summary: Explicit LAN binding policy, read-only route gate, localhost operator boundary, docs, tests, validator, inventories, and audit evidence only.
+    gate: LOCAL-10 passed with auto-test harness; no actual cross-device LAN smoke, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-11/task.yaml
     recommended_after: LOCAL-10
+    recommended_next: LOCAL-12
+  - id: LOCAL-12
+    title: LAN read-only smoke test
+    status: queued
+    purpose: Perform the read-only LAN smoke test after the LOCAL-11 safety gate.
+    allowed_scope_summary: Read-only LAN smoke evidence, route checks, mutation-block proof, docs, tests, inventories, and audit evidence only when explicitly scoped.
+    gate: LOCAL-11 passed with explicit bind-lan safety gate; no LAN mutations, deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-12/task.yaml
+    recommended_after: LOCAL-11
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

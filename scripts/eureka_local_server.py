@@ -24,6 +24,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--host", default="127.0.0.1", help="Loopback bind host.")
     parser.add_argument("--port", type=int, default=8765, help="Loopback bind port.")
     parser.add_argument("--read-only", action="store_true", help="Accepted for explicit read-only startup.")
+    parser.add_argument("--bind-lan", action="store_true", help="Allow an explicit read-only bind to 0.0.0.0 or ::.")
     parser.add_argument("--operator-token", help="Optional in-memory operator token for LOCAL review mutations.")
     parser.add_argument("--write-mode", action="store_true", help="Rejected; the local service is read-only.")
     parser.add_argument("--json-startup", action="store_true", help="Print startup JSON after binding.")
@@ -38,7 +39,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         emit_startup(result, args.json_startup, stdout, stderr)
         return 2
     try:
-        validate_host_allowed(args.host)
+        validate_host_allowed(args.host, bind_lan=args.bind_lan)
     except LocalServiceError as exc:
         result = fail_result("host_rejected", str(exc), host=args.host, port=args.port)
         emit_startup(result, args.json_startup, stdout, stderr)
@@ -52,7 +53,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             port=args.port,
             read_only=True,
             operator_token=args.operator_token,
+            bind_lan=args.bind_lan,
         )
+        lan_enabled = args.host in {"0.0.0.0", "::"} and args.bind_lan
         startup = {
             "schema_version": "local_http_server_startup.v0",
             "status": "pass",
@@ -61,10 +64,13 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "port": handle.server_port,
             "base_url": f"http://{args.host}:{handle.server_port}",
             "read_only": True,
-            "localhost_only": True,
+            "localhost_only": not lan_enabled,
             "write_routes_enabled": False,
             "operator_token_configured": bool(args.operator_token),
-            "lan_enabled": False,
+            "bind_lan": bool(args.bind_lan),
+            "lan_enabled": lan_enabled,
+            "lan_read_only": True,
+            "lan_mutations_enabled": False,
             "deployment_performed": False,
             "source_probe_execution_enabled": False,
             "workunit_execution_enabled": False,
@@ -74,6 +80,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "index_rebuild_enabled": False,
             "production_readiness_claimed": False,
             "public_launch_readiness_claimed": False,
+            "warnings": list(handle.warnings),
         }
         emit_startup(startup, args.json_startup, stdout, stderr)
         handle.httpd.serve_forever()
@@ -100,7 +107,10 @@ def fail_result(code: str, message: str, *, host: str, port: int) -> dict[str, A
         "read_only": True,
         "localhost_only": True,
         "write_routes_enabled": False,
+        "bind_lan": False,
         "lan_enabled": False,
+        "lan_read_only": True,
+        "lan_mutations_enabled": False,
         "deployment_performed": False,
         "source_probe_execution_enabled": False,
         "workunit_execution_enabled": False,
@@ -117,6 +127,8 @@ def emit_startup(result: dict[str, Any], as_json: bool, stdout: TextIO, stderr: 
         return
     if result.get("status") == "pass":
         print(f"Eureka local service listening on {result['base_url']}", file=stdout, flush=True)
+        for warning in result.get("warnings", []):
+            print(f"WARNING: {warning}", file=stdout, flush=True)
     else:
         print(f"ERROR: {result.get('message', result.get('error'))}", file=stderr, flush=True)
 

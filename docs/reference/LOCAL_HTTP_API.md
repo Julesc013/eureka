@@ -74,4 +74,21 @@ LOCAL-06 hardens the HTML pages without changing these JSON response shapes. Sea
 
 ## Disabled Methods
 
-`POST`, `PUT`, `PATCH`, and `DELETE` are rejected. LOCAL-04 has no write routes.
+`POST`, `PUT`, `PATCH`, and `DELETE` are rejected for read-only routes. LOCAL-08
+adds operator-gated loopback mutation routes for review decisions and local
+reviewed-index rebuilds.
+
+## LOCAL-11 LAN Scope
+
+The following API routes are read-only LAN-allowed when the service is started
+with explicit `--bind-lan`:
+
+- `GET /api/v1/status`
+- `GET /api/v1/health`
+- `GET /api/v1/search`
+- `GET /api/v1/object/<record_id>`
+- `GET /api/v1/source/<source_id>`
+- `GET /api/v1/absence`
+
+Review/rebuild API routes remain localhost-only, and POST mutations are blocked
+from LAN clients.

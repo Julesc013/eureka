@@ -1,8 +1,8 @@
 {
   "auto_test_harness_available": true,
-  "completed_queue_item": "LOCAL-10",
+  "completed_queue_item": "LOCAL-11",
   "current_queue_item": "LOCAL-02",
-  "current_recommended_queue_item": "LOCAL-11",
+  "current_recommended_queue_item": "LOCAL-12",
   "deployment_performed": false,
   "f0_current_status": "deferred",
   "f0_deferred_until": "LOCAL-14",
@@ -19,20 +19,22 @@
   "model_provider_enabled": false,
   "network_access_enabled": false,
   "local_review_rebuild_loop_added": true,
-  "next_recommended_queue_item": "LOCAL-11",
-  "note": "LOCAL-10 adds deterministic local auto-test and auto-search harness evidence with source probes, extraction, model/provider calls, LAN, and deployment still disabled. F0 remains deferred until LOCAL-14.",
+  "next_recommended_queue_item": "LOCAL-12",
+  "note": "LOCAL-11 adds explicit read-only LAN binding safety gates. LAN remains disabled by default, source probes and LAN mutations remain blocked, and F0 remains deferred until LOCAL-14.",
   "production_readiness": false,
   "public_launch_readiness": false,
   "schema_version": "eureka_repo_health.v0",
   "source_sync_enabled": false,
   "status": "planned",
   "warnings": [
-    "runtime leakage gate remains a pre-existing warning and LOCAL-10 does not increase it"
+    "runtime leakage gate remains a pre-existing warning and LOCAL-11 does not increase it"
   ],
   "workunit_runtime_implemented": true,
   "worker_execution_enabled": true,
   "deterministic_worker_runner_available": true,
   "source_probe_workers_enabled": false,
+  "lan_can_start_with_explicit_flag": true,
+  "lan_smoke_ready": true,
   "extraction_execution_enabled": false,
   "ai_model_execution_enabled": false
 }

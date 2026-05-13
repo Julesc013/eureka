@@ -1,0 +1,16 @@
+id: LOCAL-12
+title: LAN read-only smoke test
+status: queued
+purpose: Perform read-only LAN smoke after explicit LOCAL-11 LAN binding safety gate.
+allowed_scope_summary: Read-only LAN smoke evidence, route checks, mutation-block proof, docs, tests, inventories, and audit evidence only when a future LOCAL-12 prompt enables it.
+gate:
+  - LOCAL-11 completed with explicit bind-lan safety gate
+  - LAN smoke must be read-only
+  - LAN mutations remain blocked
+  - no deployment
+  - no source probe execution
+  - no WorkUnit execution from LAN
+  - no production readiness claim
+  - no public launch readiness claim
+proof_level_required: L2
+recommended_after: LOCAL-11

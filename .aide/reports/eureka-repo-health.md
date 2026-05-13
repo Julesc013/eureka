@@ -2,14 +2,14 @@
 
 ## Current Queue
 
-- Completed item: LOCAL-10 - Auto-test and auto-search harness.
-- Current recommended item: LOCAL-11 - LAN binding policy and safety gate.
+- Completed item: LOCAL-11 - LAN binding policy and safety gate.
+- Current recommended item: LOCAL-12 - LAN read-only smoke test.
 - F0 status: deferred until LOCAL-14.
-- Compatibility note: `eureka-repo-health.json` keeps `current_queue_item` at the LOCAL-02 guard-compatible value used by the legacy LOCAL-00 validator; `.aide/queue/index.yaml` is the queue source of truth for LOCAL-11.
+- Compatibility note: `eureka-repo-health.json` keeps `current_queue_item` at the LOCAL-02 guard-compatible value used by the legacy LOCAL-00 validator; `.aide/queue/index.yaml` is the queue source of truth for LOCAL-12.
 
 ## Local Appliance State
 
-LOCAL-00 inserted the Local Appliance track before F0. LOCAL-01 added explicit local instance bootstrap. LOCAL-02 added instance configuration and migration guard. LOCAL-03 added the local runtime composition boundary. LOCAL-04 added the read-only localhost HTTP service. LOCAL-05 added the minimal server-rendered HTML workbench. LOCAL-06 hardened the workbench pages. LOCAL-07 added a durable local WorkUnit queue store, CLI, demo, validator, transition history, and side-effect policy. LOCAL-08 added operator-gated local review decisions and reviewed-index rebuild. LOCAL-09 adds deterministic local worker execution over WorkUnits. LOCAL-10 adds deterministic local auto-test and auto-search harness evidence.
+LOCAL-00 inserted the Local Appliance track before F0. LOCAL-01 added explicit local instance bootstrap. LOCAL-02 added instance configuration and migration guard. LOCAL-03 added the local runtime composition boundary. LOCAL-04 added the read-only localhost HTTP service. LOCAL-05 added the minimal server-rendered HTML workbench. LOCAL-06 hardened the workbench pages. LOCAL-07 added a durable local WorkUnit queue store, CLI, demo, validator, transition history, and side-effect policy. LOCAL-08 added operator-gated local review decisions and reviewed-index rebuild. LOCAL-09 adds deterministic local worker execution over WorkUnits. LOCAL-10 adds deterministic local auto-test and auto-search harness evidence. LOCAL-11 adds explicit read-only LAN binding safety gates.
 
 ## Boundaries
 
@@ -23,11 +23,11 @@ LOCAL-00 inserted the Local Appliance track before F0. LOCAL-01 added explicit l
 - Model/provider calls: not performed.
 - Review mutation: operator-gated local only.
 - Index rebuild UI: operator-gated local only.
-- LAN: disabled.
+- LAN: disabled by default; explicit read-only bind gate available for LOCAL-12 smoke.
 - Deployment: not performed.
 - Production readiness: not claimed.
 - Public launch readiness: not claimed.
 
 ## Warnings
 
-The runtime leakage gate remains a pre-existing warning with no LOCAL-10 increase. F0 remains deferred until LOCAL-14.
+The runtime leakage gate remains a pre-existing warning with no LOCAL-11 increase. F0 remains deferred until LOCAL-14.

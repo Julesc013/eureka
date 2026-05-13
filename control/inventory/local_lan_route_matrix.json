@@ -1,0 +1,153 @@
+{
+  "routes": [
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/status"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/health"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/search"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/object/<record_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/source/<source_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/absence"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/status"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/health"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/search"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/object/<record_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/source/<source_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/absence"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/review"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/review/<review_item_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/rebuild"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/review"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/review/<review_item_id>"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "GET",
+      "mutates_store": false,
+      "route": "/api/v1/rebuild/status"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "POST",
+      "mutates_store": true,
+      "route": "/review/<review_item_id>/decision"
+    },
+    {
+      "client_scope": "lan",
+      "classification": "localhost_only",
+      "method": "POST",
+      "mutates_store": true,
+      "route": "/rebuild"
+    }
+  ],
+  "schema_version": "local_lan_route_matrix.v0",
+  "task": "LOCAL-11"
+}

@@ -73,3 +73,13 @@ safety, and latency smoke evidence.
 The harness remains local reviewed-index only. It does not add synthetic query
 generation, source probes, extraction, model/provider calls, downloads, LAN,
 deployment, `site/dist` writes, or master-index mutation.
+
+## LOCAL-11 LAN Binding Safety Gate
+
+LOCAL-11 defines explicit read-only LAN mode for the Local Appliance.
+
+The default service bind remains `127.0.0.1`. LAN-facing bind hosts are accepted
+only with `--bind-lan`, and LAN clients can inspect only read-only local status,
+health, search, object, source, and absence routes. Operator mutation routes
+remain localhost-only. Actual cross-device LAN smoke remains deferred to
+LOCAL-12.

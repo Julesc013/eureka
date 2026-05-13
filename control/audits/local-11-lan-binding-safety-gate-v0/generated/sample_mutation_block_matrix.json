@@ -1,0 +1,16 @@
+{
+  "blocked_route_classes": [
+    "review_decision_mutation",
+    "reviewed_index_rebuild",
+    "WorkUnit execution",
+    "source_probe_execution",
+    "extraction",
+    "agent_execution",
+    "config_mutation",
+    "uploads",
+    "download_install_execute"
+  ],
+  "lan_mutations_enabled": false,
+  "schema_version": "local_lan_mutation_block_matrix.v0",
+  "task": "LOCAL-11"
+}

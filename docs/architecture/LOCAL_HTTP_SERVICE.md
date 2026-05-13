@@ -9,6 +9,7 @@ The service uses `open_local_appliance(instance_path, read_only=True)` and reads
 The service is allowed to:
 
 - bind to `127.0.0.1` or `localhost`
+- bind to `0.0.0.0` or `::` only when `--bind-lan` is explicit
 - return local appliance status
 - return health status
 - search the reviewed public index
@@ -18,12 +19,12 @@ The service is allowed to:
 
 The service is not allowed to:
 
-- bind to `0.0.0.0`, `::`, or LAN hosts
-- expose write routes
+- bind to LAN-facing hosts by default
+- expose unauthenticated or LAN write routes
 - run source probes
 - create WorkUnits
-- mutate review decisions
-- rebuild indexes
+- mutate review decisions without a loopback operator token
+- rebuild indexes without a loopback operator token
 - write `site/dist`
 - call model/provider APIs
 - claim production or public launch readiness
@@ -64,3 +65,13 @@ LOCAL-10 adds a client-side local eval harness that calls this service through
 loopback URLs. It verifies service health, JSON search, absence responses,
 workbench HTML availability, mutation rejection, and token-gated review/rebuild
 rejection without changing the HTTP route boundary.
+
+## LOCAL-11 LAN Safety Gate
+
+LOCAL-11 adds an explicit read-only LAN gate. The server still defaults to
+`127.0.0.1`; `0.0.0.0` and `::` require `--bind-lan`.
+
+LAN clients may access read-only status, health, search, object, source, and
+absence routes. Review/rebuild pages and POST mutation routes are localhost-only
+and return fail-closed responses for LAN clients. LOCAL-11 does not perform the
+cross-device LAN smoke; LOCAL-12 owns that proof.

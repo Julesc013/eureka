@@ -32,9 +32,15 @@ def render_home_page(view: HomePageView) -> str:
                     ("instance_id", view.instance_id),
                     ("instance_schema_version", view.instance_schema_version),
                     ("reviewed_local_record_count", view.record_count),
+                    ("lan_enabled", view.lan_enabled),
+                    ("lan_read_only", view.lan_read_only),
                 )
             ),
             "</section>",
+            render_notice(
+                "warning" if view.lan_enabled else "scope",
+                "LAN mode is read-only inspection only." if view.lan_enabled else "LAN binding is disabled by default.",
+            ),
             search_form(),
             "<section aria-labelledby=\"links-heading\"><h2 id=\"links-heading\">Links</h2><ul>",
             f"<li>{render_link('/status', 'Status page')}</li>",
@@ -168,7 +174,10 @@ def render_status_page(view: StatusPageView) -> str:
         {"flag": "read_only", "value": view.read_only},
         {"flag": "migration_needed", "value": view.migration_needed},
         {"flag": "server_enabled", "value": view.server_enabled},
+        {"flag": "bind_lan", "value": view.bind_lan},
         {"flag": "lan_enabled", "value": view.lan_enabled},
+        {"flag": "lan_read_only", "value": view.lan_read_only},
+        {"flag": "lan_mutations_enabled", "value": view.lan_mutations_enabled},
         {"flag": "deployment_performed", "value": view.deployment_performed},
         {"flag": "production_readiness_claimed", "value": view.production_readiness_claimed},
         {"flag": "public_launch_readiness_claimed", "value": view.public_launch_readiness_claimed},
@@ -187,6 +196,12 @@ def render_status_page(view: StatusPageView) -> str:
     body = "\n".join(
         [
             "<h1>Status</h1>",
+            render_notice(
+                "warning" if view.lan_enabled else "scope",
+                "Explicit LAN binding is read-only and unsafe routes stay localhost-only."
+                if view.lan_enabled
+                else "LAN binding is disabled by default; explicit bind flag is required.",
+            ),
             "<section aria-labelledby=\"instance-heading\"><h2 id=\"instance-heading\">Instance</h2>",
             f"<p>Instance ID: {escape_html(view.instance_id)}</p>",
             _key_values(

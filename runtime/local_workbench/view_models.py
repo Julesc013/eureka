@@ -78,6 +78,8 @@ class HomePageView:
     instance_id: str
     instance_schema_version: str
     record_count: int
+    lan_enabled: bool
+    lan_read_only: bool
     non_claim_banner: NonClaimBannerView
     unavailable_capabilities: tuple[CapabilityUnavailableView, ...]
     warnings: tuple[str, ...]
@@ -147,6 +149,9 @@ class StatusPageView:
     read_only: bool
     server_enabled: bool
     lan_enabled: bool
+    bind_lan: bool
+    lan_read_only: bool
+    lan_mutations_enabled: bool
     deployment_performed: bool
     production_readiness_claimed: bool
     public_launch_readiness_claimed: bool
@@ -208,13 +213,16 @@ class RebuildPageView:
 def build_home_page_view(status: Mapping[str, Any]) -> HomePageView:
     runtime = _mapping(status.get("runtime"))
     public_index = _mapping(status.get("public_index"))
+    service = _mapping(status.get("service"))
     return HomePageView(
         status=str(status.get("status", runtime.get("status", ""))),
         instance_id=str(runtime.get("instance_id", "")),
         instance_schema_version=str(runtime.get("instance_schema_version", "")),
         record_count=int(public_index.get("record_count", 0) or 0),
+        lan_enabled=bool(service.get("lan_enabled", runtime.get("lan_enabled", False))),
+        lan_read_only=bool(service.get("lan_read_only", True)),
         non_claim_banner=build_non_claim_banner_view(),
-        unavailable_capabilities=build_unavailable_capabilities(),
+        unavailable_capabilities=build_unavailable_capabilities(bool(service.get("lan_enabled", runtime.get("lan_enabled", False)))),
         warnings=_tuple(status.get("warnings")),
         limitations=_unique(_tuple(status.get("limitations")) + (LOCAL_INDEX_LIMITATION,)),
     )
@@ -280,6 +288,7 @@ def build_absence_page_view(query: str, absence_report: Mapping[str, Any]) -> Ab
 
 def build_status_page_view(status: Mapping[str, Any]) -> StatusPageView:
     runtime = _mapping(status.get("runtime"))
+    service = _mapping(status.get("service"))
     stores = _mapping(runtime.get("stores"))
     return StatusPageView(
         instance_id=str(runtime.get("instance_id", "")),
@@ -291,7 +300,10 @@ def build_status_page_view(status: Mapping[str, Any]) -> StatusPageView:
         migration_needed=bool(runtime.get("migration_needed", False)),
         read_only=bool(runtime.get("read_only", True)),
         server_enabled=bool(runtime.get("server_enabled", False)),
-        lan_enabled=bool(runtime.get("lan_enabled", False)),
+        lan_enabled=bool(service.get("lan_enabled", runtime.get("lan_enabled", False))),
+        bind_lan=bool(service.get("bind_lan", False)),
+        lan_read_only=bool(service.get("lan_read_only", True)),
+        lan_mutations_enabled=bool(service.get("lan_mutations_enabled", False)),
         deployment_performed=bool(runtime.get("deployment_performed", False)),
         production_readiness_claimed=bool(runtime.get("production_readiness_claimed", False)),
         public_launch_readiness_claimed=bool(runtime.get("public_launch_readiness_claimed", False)),
@@ -371,14 +383,21 @@ def build_non_claim_banner_view() -> NonClaimBannerView:
     )
 
 
-def build_unavailable_capabilities() -> tuple[CapabilityUnavailableView, ...]:
+def build_unavailable_capabilities(lan_enabled: bool = False) -> tuple[CapabilityUnavailableView, ...]:
+    lan_status = "read-only enabled" if lan_enabled else "disabled"
+    lan_reason = (
+        "Explicit LAN binding is active for read-only inspection only."
+        if lan_enabled
+        else "Only localhost is enabled unless --bind-lan is supplied."
+    )
     return (
         CapabilityUnavailableView("WorkUnits", "queue available", "Durable queue records exist; execution remains disabled."),
         CapabilityUnavailableView("review and index maintenance UI", "operator-gated", "Local review decisions and rebuild require an operator token."),
         CapabilityUnavailableView("source probes", "unavailable", "Live or automated source inspection is not implemented."),
         CapabilityUnavailableView("extraction", "deferred", "Extraction stays deferred until the local appliance track closes."),
         CapabilityUnavailableView("Search Hunt Sessions", "unavailable", "Session runtime is not implemented."),
-        CapabilityUnavailableView("LAN mode", "disabled", "Only localhost is enabled."),
+        CapabilityUnavailableView("LAN mode", lan_status, lan_reason),
+        CapabilityUnavailableView("LAN smoke prerequisite", "deferred", "Cross-device read-only smoke is the next LAN proof step."),
         CapabilityUnavailableView("deployment", "disabled", "No deployment is performed."),
     )
 

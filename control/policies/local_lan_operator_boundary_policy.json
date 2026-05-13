@@ -1,0 +1,8 @@
+{
+  "operator_mutations_localhost_only_current": true,
+  "operator_token_does_not_grant_lan_mutation_current": true,
+  "raw_token_never_exposed_to_lan": true,
+  "schema_version": "local_lan_operator_boundary_policy.v0",
+  "token_logging_forbidden": true,
+  "unsafe_lan_route_returns_403": true
+}
