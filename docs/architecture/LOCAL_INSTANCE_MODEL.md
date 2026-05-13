@@ -14,7 +14,13 @@ The instance has these layers:
 - `run/` stores process/status files only.
 - `tmp/`, `exports/`, and `imports/` are explicit local work areas and are not committed.
 
-LOCAL-01 initializes empty store schemas through the existing R0 runtime store APIs. It does not add product runtime behavior and does not alter runtime code.
+LOCAL-01 initializes empty store schemas through the existing R0 runtime store APIs. LOCAL-02 adds version metadata around that state:
+
+- `config/instance.json` records `instance_schema_version`, timestamps, store references, and policy flags.
+- `config/store_manifest.json` records required stores, relative paths, detected store schema versions, and integrity support.
+- `config/migration_state.json` records whether a migration is needed, whether migration apply is allowed, backup/rollback metadata posture, blockers, warnings, and migration history.
+
+The current instance schema version is `1`. Unsupported versions fail closed. LOCAL-02 does not implement migration apply; it only detects and reports migration state.
 
 ## Boundaries
 
@@ -25,7 +31,8 @@ LOCAL-01 initializes empty store schemas through the existing R0 runtime store A
 - Deployment is not performed.
 - Production readiness is not claimed.
 - Public launch readiness is not claimed.
+- Destructive migration is not allowed.
 
 ## Next
 
-LOCAL-02 adds governed instance configuration and migration guards before any service or workbench work begins.
+LOCAL-03 uses the versioned instance boundary to define local runtime composition before any service or workbench work begins.

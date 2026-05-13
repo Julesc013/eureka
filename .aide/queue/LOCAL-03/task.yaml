@@ -1,0 +1,19 @@
+id: LOCAL-03
+title: Local runtime composition boundary
+status: queued
+source_packet: .aide/context/latest-task-packet.md
+purpose: Define the local service, store, worker, and workbench composition boundary after versioned instance configuration.
+allowed_scope_summary: Local runtime composition boundary docs, policies, validators, tests, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-02 completed with versioned instance config and check-only migration guard
+  - no HTTP server implementation
+  - no HTML workbench implementation
+  - no LAN binding
+  - no hidden state roots
+  - no committed instance state
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-02
+recommended_next: LOCAL-04

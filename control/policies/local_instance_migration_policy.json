@@ -1,0 +1,13 @@
+{
+  "apply_requires_explicit_flag": true,
+  "backup_metadata_required": true,
+  "committed_instance_state_forbidden": true,
+  "destructive_migrations_enabled": false,
+  "migration_default_mode": "check_only",
+  "migration_log_required": true,
+  "missing_store_behavior": "warn_or_block_by_requiredness",
+  "rollback_metadata_required": true,
+  "schema_version": "local_instance_migration_policy.v0",
+  "task": "LOCAL-02",
+  "unknown_store_behavior": "fail_closed"
+}

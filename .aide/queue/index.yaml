@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-13
 repo: julesc013/eureka
-current_recommended_task: LOCAL-02
+current_recommended_task: LOCAL-03
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -21,12 +21,21 @@ entries:
     recommended_after: LOCAL-00
   - id: LOCAL-02
     title: Instance configuration, schema, and migration guard
-    status: queued
+    status: completed
+    previous_current_recommended_task: LOCAL-02
     purpose: Define local instance configuration schema and safe migration guard after explicit instance bootstrap.
     allowed_scope_summary: local instance config schema, migration guard, docs, validators, tests, and audit evidence only until explicitly scoped.
     gate: LOCAL-01 passed with explicit instance root bootstrap; no HTTP server, HTML workbench, LAN binding, deployment, hidden state roots, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-02/task.yaml
     recommended_after: LOCAL-01
+  - id: LOCAL-03
+    title: Local runtime composition boundary
+    status: queued
+    purpose: Define the local service, store, worker, and workbench composition boundary after versioned instance configuration.
+    allowed_scope_summary: local runtime composition boundary docs, policies, validators, tests, and audit evidence only until explicitly scoped.
+    gate: LOCAL-02 passed with check-only migration guard; no HTTP server implementation, HTML workbench implementation, LAN binding, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-03/task.yaml
+    recommended_after: LOCAL-02
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

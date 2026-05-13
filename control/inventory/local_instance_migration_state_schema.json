@@ -1,0 +1,23 @@
+{
+  "fields": [
+    "schema_version",
+    "instance_id",
+    "current_instance_schema_version",
+    "target_instance_schema_version",
+    "migration_needed",
+    "migration_allowed",
+    "destructive_migration_required",
+    "backup_required",
+    "rollback_available",
+    "migration_history",
+    "blockers",
+    "warnings"
+  ],
+  "invariants": {
+    "destructive_migration_required": false,
+    "migration_allowed": false,
+    "target_instance_schema_version": 1
+  },
+  "schema_version": "local_instance_migration_state_schema.v0",
+  "task": "LOCAL-02"
+}

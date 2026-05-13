@@ -44,6 +44,8 @@ def read_status(instance: Path) -> dict[str, Any]:
     instance_root = validate_instance_path(instance)
     manifest = json.loads((instance_root / "config" / "instance.json").read_text(encoding="utf-8"))
     status = json.loads((instance_root / "run" / "status.json").read_text(encoding="utf-8"))
+    migration_state_path = instance_root / "config" / "migration_state.json"
+    migration_state = json.loads(migration_state_path.read_text(encoding="utf-8")) if migration_state_path.exists() else {}
     stores = status.get("stores", {}) if isinstance(status.get("stores"), dict) else {}
     failing = [name for name, payload in stores.items() if isinstance(payload, dict) and payload.get("status") != "pass"]
     return {
@@ -52,7 +54,9 @@ def read_status(instance: Path) -> dict[str, Any]:
         "status": "pass_with_warnings" if failing else "pass",
         "instance_root": str(instance_root),
         "instance_id": manifest.get("instance_id"),
+        "instance_schema_version": manifest.get("instance_schema_version"),
         "appliance_mode": manifest.get("appliance_mode"),
+        "migration_needed": migration_state.get("migration_needed", status.get("migration_needed", False)),
         "store_count": len(stores),
         "stores": stores,
         "warnings": status.get("warnings", []),

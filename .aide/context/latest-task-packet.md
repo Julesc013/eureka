@@ -2,31 +2,34 @@
 
 ## PHASE
 
-LOCAL-02 - Instance configuration, schema, and migration guard
+LOCAL-03 - Local runtime composition boundary
 
 ## GOAL
 
-LOCAL-02 - Define local instance configuration schema and safe migration guard after the explicit LOCAL-01 instance bootstrap.
+LOCAL-03 - Define the local service, store, worker, and workbench composition boundary after versioned instance configuration.
 
 ## WHY
 
-LOCAL-01 adds explicit local instance roots and bootstrap/validation/status commands. LOCAL-02 should make the instance configuration contract governed and add migration refusal/rollback posture before any service or workbench implementation starts.
+LOCAL-02 adds explicit instance schema versioning, store manifests, migration state, and a read-only migration status guard. LOCAL-03 should define how local service, store, worker, and future workbench layers compose without collapsing boundaries or starting the HTTP server yet.
+
+Compatibility note: LOCAL-03 is the current main development lane inside the LOCAL-MVP-FOUNDATION appliance route before F0. HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
 
 ## CONTEXT_REFS
 
-- `control/inventory/local_instance_layout.json`
-- `control/inventory/local_instance_bootstrap_result.json`
-- `control/inventory/local_instance_validation_result.json`
-- `control/inventory/local_instance_gap_register.json`
-- `control/inventory/local_01_leakage_baseline.json`
-- `control/inventory/local_01_next_task_decision.json`
-- `control/policies/local_instance_policy.json`
-- `control/policies/local_instance_path_policy.json`
-- `control/policies/local_instance_state_policy.json`
-- `docs/architecture/LOCAL_INSTANCE_MODEL.md`
-- `docs/reference/LOCAL_INSTANCE_LAYOUT.md`
-- `docs/operations/LOCAL_INSTANCE_BOOTSTRAP.md`
+- `control/inventory/local_instance_schema_version.json`
+- `control/inventory/local_instance_config_schema.json`
+- `control/inventory/local_instance_store_manifest_schema.json`
+- `control/inventory/local_instance_migration_state_schema.json`
+- `control/inventory/local_instance_migration_guard_result.json`
+- `control/inventory/local_02_leakage_baseline.json`
+- `control/inventory/local_02_next_task_decision.json`
+- `control/policies/local_instance_schema_policy.json`
+- `control/policies/local_instance_migration_policy.json`
+- `docs/reference/LOCAL_INSTANCE_CONFIG_SCHEMA.md`
+- `docs/reference/LOCAL_INSTANCE_MIGRATION_GUARD.md`
+- `docs/operations/LOCAL_INSTANCE_MIGRATION_POLICY.md`
 - `.aide/queue/LOCAL-02/task.yaml`
+- `.aide/queue/LOCAL-03/task.yaml`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
@@ -36,8 +39,8 @@ LOCAL-01 adds explicit local instance roots and bootstrap/validation/status comm
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-02/task.yaml`
-- future LOCAL-02 control, docs, scripts, and tests paths explicitly named by a reviewed LOCAL-02 prompt
+- `.aide/queue/LOCAL-03/task.yaml`
+- future LOCAL-03 control, docs, scripts, and tests paths explicitly named by a reviewed LOCAL-03 prompt
 
 ## FORBIDDEN_PATHS
 
@@ -60,9 +63,9 @@ LOCAL-01 adds explicit local instance roots and bootstrap/validation/status comm
 
 ## IMPLEMENTATION
 
-- Start from `dev` or an explicit LOCAL-02 task branch from `dev`.
+- Start from `dev` or an explicit LOCAL-03 task branch from `dev`.
 - Keep F0 deferred until LOCAL-14.
-- Build on LOCAL-01 bootstrap commands without starting a server or workbench.
+- Use the LOCAL-02 versioned instance boundary.
 - Do not implement the HTTP server.
 - Do not implement the HTML workbench.
 - Do not expose LAN.
@@ -73,8 +76,8 @@ LOCAL-01 adds explicit local instance roots and bootstrap/validation/status comm
 
 - `git status --short`
 - `git diff --check`
-- `python scripts/validate_local_instance_bootstrap.py`
-- additional LOCAL-02 validators/tests defined by the reviewed LOCAL-02 task
+- `python scripts/validate_local_instance_migration_guard.py`
+- additional LOCAL-03 validators/tests defined by the reviewed LOCAL-03 task
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
 - `python scripts/check_architecture_boundaries.py`
 - AIDE doctor/validate/test/selftest/verify/review-pack when practical
@@ -86,7 +89,7 @@ LOCAL-01 adds explicit local instance roots and bootstrap/validation/status comm
 
 ## EVIDENCE
 
-- LOCAL-01 audit pack: `control/audits/local-01-local-instance-bootstrap-v0/`
+- LOCAL-02 audit pack: `control/audits/local-02-instance-configuration-migration-guard-v0/`
 - changed files
 - validation commands and results
 - unresolved risks and deferrals
@@ -105,9 +108,9 @@ LOCAL-01 adds explicit local instance roots and bootstrap/validation/status comm
 
 ## ACCEPTANCE
 
-- LOCAL-02 acceptance criteria are met.
+- LOCAL-03 acceptance criteria are met.
 - Local Appliance policies remain in force.
-- No forbidden product/runtime paths are modified unless LOCAL-02 explicitly authorizes them.
+- No forbidden product/runtime paths are modified unless LOCAL-03 explicitly authorizes them.
 - No local instance state is committed.
 - No production readiness or public launch readiness is claimed.
 

@@ -1,0 +1,23 @@
+{
+  "appliance_mode": "local",
+  "created_at": "2026-05-13T00:00:00Z",
+  "deployment_enabled": false,
+  "instance_id": "eureka-local-sample",
+  "instance_root": "./eureka-instance",
+  "instance_schema_version": 1,
+  "lan_enabled": false,
+  "limitations": [
+    "LOCAL-02 initializes explicit versioned local state only"
+  ],
+  "policies": {
+    "destructive_migration_allowed": false,
+    "silent_upgrade_allowed": false
+  },
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "eureka_local_instance.v0",
+  "server_enabled": false,
+  "stores": {},
+  "updated_at": "2026-05-13T00:00:00Z",
+  "warnings": []
+}

@@ -1,0 +1,9 @@
+{
+  "current_instance_schema_version": 1,
+  "destructive_migration_allowed": false,
+  "minimum_supported_instance_schema_version": 1,
+  "schema_version": "local_instance_schema_version.v0",
+  "silent_upgrade_allowed": false,
+  "task": "LOCAL-02",
+  "unsupported_version_behavior": "fail_closed"
+}

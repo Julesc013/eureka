@@ -1,0 +1,21 @@
+{
+  "required_store_entries": [
+    "source_cache",
+    "evidence_ledger",
+    "review_queue",
+    "public_index"
+  ],
+  "schema_version": "local_instance_store_manifest_schema.v0",
+  "store_entry_fields": [
+    "store_id",
+    "store_kind",
+    "relative_path",
+    "required",
+    "initialized",
+    "schema_version",
+    "integrity_check_supported",
+    "migration_supported",
+    "last_checked_at"
+  ],
+  "task": "LOCAL-02"
+}

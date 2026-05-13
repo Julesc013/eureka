@@ -1,0 +1,25 @@
+{
+  "fields": [
+    "schema_version",
+    "instance_id",
+    "instance_schema_version",
+    "created_at",
+    "updated_at",
+    "instance_root",
+    "appliance_mode",
+    "server_enabled",
+    "lan_enabled",
+    "stores",
+    "policies",
+    "warnings",
+    "limitations"
+  ],
+  "invariants": {
+    "lan_enabled": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "server_enabled": false
+  },
+  "schema_version": "local_instance_config_schema.v0",
+  "task": "LOCAL-02"
+}

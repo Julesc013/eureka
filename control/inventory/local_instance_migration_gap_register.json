@@ -1,0 +1,25 @@
+{
+  "gaps": [
+    {
+      "disposition": "planned_for_LOCAL-03",
+      "gap_id": "LOCAL-02-GAP-001",
+      "status": "open",
+      "summary": "Runtime composition boundary is not implemented in LOCAL-02."
+    },
+    {
+      "disposition": "planned_for_future_migration_task",
+      "gap_id": "LOCAL-02-GAP-002",
+      "status": "open",
+      "summary": "Migration apply command is intentionally not implemented; LOCAL-02 is check-only."
+    },
+    {
+      "disposition": "pre_existing_followup",
+      "gap_id": "LOCAL-02-GAP-003",
+      "status": "open",
+      "summary": "Runtime leakage gate still reports pre-existing unallowlisted production findings."
+    }
+  ],
+  "schema_version": "local_instance_migration_gap_register.v0",
+  "status": "open",
+  "task": "LOCAL-02"
+}

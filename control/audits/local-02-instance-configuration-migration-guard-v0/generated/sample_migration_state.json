@@ -1,0 +1,14 @@
+{
+  "backup_required": false,
+  "blockers": [],
+  "current_instance_schema_version": 1,
+  "destructive_migration_required": false,
+  "instance_id": "eureka-local-sample",
+  "migration_allowed": false,
+  "migration_history": [],
+  "migration_needed": false,
+  "rollback_available": false,
+  "schema_version": "eureka_local_migration_state.v0",
+  "target_instance_schema_version": 1,
+  "warnings": []
+}

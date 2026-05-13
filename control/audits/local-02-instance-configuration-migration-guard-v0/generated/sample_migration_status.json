@@ -1,0 +1,18 @@
+{
+  "backup_required": false,
+  "blockers": [],
+  "current_instance_schema_version": 1,
+  "deployment_performed": false,
+  "destructive_migration_required": false,
+  "instance_id": "eureka-local-sample",
+  "lan_enabled": false,
+  "migration_allowed": false,
+  "migration_needed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_instance_migration_status.v0",
+  "server_enabled": false,
+  "status": "pass",
+  "target_instance_schema_version": 1,
+  "warnings": []
+}

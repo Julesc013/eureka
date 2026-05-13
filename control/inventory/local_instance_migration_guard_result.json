@@ -1,0 +1,19 @@
+{
+  "committed_instance_state_found": false,
+  "deployment_performed": false,
+  "destructive_migration_allowed": false,
+  "forbidden_roots_rejected": true,
+  "idempotency_preserves_instance_id": true,
+  "lan_enabled": false,
+  "migration_state_added": true,
+  "migration_status_script_added": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_instance_migration_guard_result.v0",
+  "server_enabled": false,
+  "status": "pass_with_warnings",
+  "store_manifest_added": true,
+  "task": "LOCAL-02",
+  "temp_instance_validation_passed": true,
+  "unsupported_version_fail_closed_passed": true
+}

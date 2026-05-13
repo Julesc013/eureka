@@ -1,0 +1,16 @@
+{
+  "backup_before_migration_required": true,
+  "current_instance_schema_version": 1,
+  "destructive_migration_allowed": false,
+  "lan_enabled": false,
+  "migration_history_required": true,
+  "migration_state_required": true,
+  "minimum_supported_instance_schema_version": 1,
+  "network_access_enabled": false,
+  "schema_version": "local_instance_schema_policy.v0",
+  "server_enabled": false,
+  "silent_upgrade_allowed": false,
+  "store_manifest_required": true,
+  "task": "LOCAL-02",
+  "unsupported_version_behavior": "fail_closed"
+}

@@ -1,0 +1,10 @@
+{
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start": false,
+  "reason": "Instance configuration and migration guard exist; runtime composition boundary is next.",
+  "recommended_next_task": "LOCAL-03 \u2014 Local runtime composition boundary",
+  "schema_version": "local_02_next_task_decision.v0",
+  "server_can_start": false,
+  "task": "LOCAL-02"
+}

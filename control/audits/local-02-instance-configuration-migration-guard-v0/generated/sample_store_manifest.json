@@ -1,0 +1,19 @@
+{
+  "instance_id": "eureka-local-sample",
+  "instance_schema_version": 1,
+  "last_checked_at": "2026-05-13T00:00:00Z",
+  "schema_version": "eureka_local_store_manifest.v0",
+  "stores": {
+    "source_cache": {
+      "initialized": true,
+      "integrity_check_supported": true,
+      "last_checked_at": "2026-05-13T00:00:00Z",
+      "migration_supported": true,
+      "relative_path": "db/source_cache.sqlite",
+      "required": true,
+      "schema_version": "source_cache_store.v0",
+      "store_id": "source_cache",
+      "store_kind": "sqlite_source_cache"
+    }
+  }
+}

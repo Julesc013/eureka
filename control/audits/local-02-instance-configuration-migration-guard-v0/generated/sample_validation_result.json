@@ -1,0 +1,14 @@
+{
+  "committed_instance_state_found": false,
+  "deployment_performed": false,
+  "instance_schema_version": 1,
+  "lan_enabled": false,
+  "migration_needed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_instance_validation_result.v0",
+  "server_enabled": false,
+  "status": "pass",
+  "task": "LOCAL-02",
+  "unsupported_instance_schema_version": false
+}
