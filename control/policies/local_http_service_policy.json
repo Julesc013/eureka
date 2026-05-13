@@ -1,0 +1,25 @@
+{
+  "allowed_hosts_current": [
+    "127.0.0.1",
+    "localhost"
+  ],
+  "default_host": "127.0.0.1",
+  "deployment_enabled": false,
+  "forbidden_hosts_current": [
+    "0.0.0.0",
+    "::"
+  ],
+  "index_rebuild_enabled": false,
+  "lan_binding_default": false,
+  "localhost_default": true,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "read_only_default": true,
+  "review_decision_mutation_enabled": false,
+  "schema_version": "local_http_service_policy.v0",
+  "site_dist_writes_enabled": false,
+  "source_probe_execution_enabled": false,
+  "workunit_execution_enabled": false,
+  "write_routes_enabled": false
+}

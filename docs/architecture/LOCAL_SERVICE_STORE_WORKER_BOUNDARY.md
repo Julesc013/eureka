@@ -24,3 +24,9 @@ LOCAL-03 composes only the current R0 stores:
 - reviewed public index
 
 It does not rebuild indexes or create review decisions. LOCAL-04 may add a read-only localhost service over this boundary.
+
+## LOCAL-04 Service Rule
+
+`runtime/local_service` is now the service adapter for read-only localhost HTTP access. It must receive an explicit instance path, open `LocalApplianceRuntime` in read-only mode, and route reads through that object.
+
+The service boundary rejects write methods and LAN hosts. It does not run WorkUnits, source probes, review mutations, index rebuilds, deployment, or workbench UI behavior.

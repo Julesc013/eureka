@@ -62,3 +62,9 @@ Status includes `instance_id`, `instance_schema_version`, per-store status, `mig
 - `validate_no_forbidden_runtime_flags(status)`
 
 These helpers are intended for future service/workbench/worker startup checks and tests.
+
+## LOCAL-04 Service Consumer
+
+`runtime/local_service` is the first product-facing consumer of this API. It opens the runtime with `read_only=True` and serves status/search/object/source/absence reads over localhost.
+
+The service does not receive a direct database path. Store paths continue to come from the local instance manifest.

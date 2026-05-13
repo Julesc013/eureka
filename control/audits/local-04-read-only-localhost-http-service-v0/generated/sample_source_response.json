@@ -1,0 +1,15 @@
+{
+  "limit": 20,
+  "limitations": [
+    "local reviewed index only",
+    "read-only service",
+    "no live source inspection",
+    "empty result does not prove the source lacks matching records"
+  ],
+  "records": [],
+  "result_count": 0,
+  "schema_version": "local_http_source_response.v0",
+  "source_id": "not-present",
+  "status": "pass",
+  "warnings": []
+}

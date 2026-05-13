@@ -19,3 +19,9 @@ LOCAL-03 adds the local runtime composition boundary in `runtime/local_appliance
 Future service, worker, workbench, and tests must use this boundary instead of opening SQLite paths ad hoc.
 
 LOCAL-03 still does not implement an HTTP server, HTML workbench, WorkUnit runtime, LAN mode, deployment, production readiness, or public launch readiness.
+
+## LOCAL-04 Read-Only Service
+
+LOCAL-04 adds the first service layer in `runtime/local_service`. It is a localhost-only, read-only HTTP adapter over `LocalApplianceRuntime`.
+
+The service exposes status, health, reviewed-index search, object, source, and absence routes. It does not create product truth and does not bypass the instance manifest. The full HTML workbench remains LOCAL-05, and LAN mode remains disabled until a later explicit gate.

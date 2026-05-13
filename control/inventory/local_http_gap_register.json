@@ -1,0 +1,24 @@
+{
+  "gaps": [
+    {
+      "deferred_until": "LOCAL-05",
+      "gap_id": "local_http_html_workbench",
+      "status": "deferred",
+      "summary": "Full HTML workbench is intentionally not implemented in LOCAL-04."
+    },
+    {
+      "deferred_until": "LOCAL-11",
+      "gap_id": "local_http_lan_mode",
+      "status": "deferred",
+      "summary": "LAN binding remains disabled for the localhost-only service."
+    },
+    {
+      "deferred_until": "LOCAL-06",
+      "gap_id": "local_http_write_workflows",
+      "status": "deferred",
+      "summary": "WorkUnit, review mutation, and index rebuild routes remain absent."
+    }
+  ],
+  "schema_version": "local_http_gap_register.v0",
+  "task": "LOCAL-04"
+}

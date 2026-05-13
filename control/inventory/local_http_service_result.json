@@ -1,0 +1,21 @@
+{
+  "absence_route_passed": true,
+  "deployment_performed": false,
+  "index_rebuild_performed": false,
+  "lan_binding_rejected": true,
+  "localhost_service_started_in_validation": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "review_mutation_performed": false,
+  "runtime_package_added": true,
+  "schema_version": "local_http_service_result.v0",
+  "search_route_passed": true,
+  "server_script_added": true,
+  "smoke_script_added": true,
+  "source_probe_executed": false,
+  "status": "pass_with_warnings",
+  "status_route_passed": true,
+  "task": "LOCAL-04",
+  "validator_added": true,
+  "write_methods_rejected": true
+}

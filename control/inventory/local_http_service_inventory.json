@@ -1,0 +1,26 @@
+{
+  "default_host": "127.0.0.1",
+  "deployment_performed": false,
+  "index_rebuild_enabled": false,
+  "lan_enabled": false,
+  "network_dependencies_external": 0,
+  "read_only": true,
+  "review_decision_mutation_enabled": false,
+  "routes": [
+    "/",
+    "/status",
+    "/health",
+    "/api/v1/status",
+    "/api/v1/health",
+    "/api/v1/search",
+    "/api/v1/object/<record_id>",
+    "/api/v1/source/<source_id>",
+    "/api/v1/absence"
+  ],
+  "runtime_package": "runtime/local_service",
+  "schema_version": "local_http_service_inventory.v0",
+  "source_probe_execution_enabled": false,
+  "task": "LOCAL-04",
+  "workunit_execution_enabled": false,
+  "write_routes_enabled": false
+}

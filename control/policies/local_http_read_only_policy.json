@@ -1,0 +1,15 @@
+{
+  "direct_store_mutation_forbidden": true,
+  "index_rebuild_forbidden": true,
+  "lan_binding_forbidden_current_task": true,
+  "mutating_methods_forbidden": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "review_decision_mutation_forbidden": true,
+  "schema_version": "local_http_read_only_policy.v0",
+  "source_probe_forbidden": true,
+  "workunit_creation_forbidden": true
+}

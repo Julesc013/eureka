@@ -1,0 +1,74 @@
+"""Validation helpers for the read-only local service."""
+
+from typing import Mapping
+
+from .errors import LocalServiceHostError, LocalServiceReadOnlyError, LocalServiceValidationError
+
+
+ALLOWED_HOSTS = {"127.0.0.1", "localhost"}
+FORBIDDEN_HOSTS = {"0.0.0.0", "::", "", "*"}
+MUTATING_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
+READ_ONLY_METHODS = {"GET"}
+MAX_QUERY_LENGTH = 256
+MAX_RESULT_LIMIT = 50
+DEFAULT_RESULT_LIMIT = 20
+
+
+def validate_host_allowed(host: str) -> str:
+    value = str(host or "").strip().lower()
+    if value in FORBIDDEN_HOSTS:
+        raise LocalServiceHostError(f"host is forbidden for local service: {host!r}")
+    if value not in ALLOWED_HOSTS:
+        raise LocalServiceHostError(f"host is not an allowed localhost bind: {host!r}")
+    return value
+
+
+def validate_read_only_method(method: str) -> str:
+    value = str(method or "").strip().upper()
+    if value in MUTATING_METHODS:
+        raise LocalServiceReadOnlyError(f"{value} is disabled for the read-only local service")
+    if value not in READ_ONLY_METHODS:
+        raise LocalServiceValidationError(f"{value or '<empty>'} is not supported by the local service")
+    return value
+
+
+def validate_query_params(params: Mapping[str, list[str]]) -> Mapping[str, list[str]]:
+    for key in ("q", "query"):
+        if key in params:
+            query = first_param(params, key)
+            if len(query) > MAX_QUERY_LENGTH:
+                raise LocalServiceValidationError("query exceeds maximum length")
+    if "limit" in params:
+        limit = parse_limit(first_param(params, "limit"))
+        if limit > MAX_RESULT_LIMIT:
+            raise LocalServiceValidationError("limit exceeds maximum result limit")
+    return params
+
+
+def validate_no_mutation_route(method: str, path: str) -> None:
+    validate_read_only_method(method)
+    lowered = str(path or "").lower()
+    for token in ("write", "delete", "update", "review-decision", "rebuild", "probe", "workunit"):
+        if token in lowered:
+            raise LocalServiceReadOnlyError(f"route token is disabled for read-only service: {token}")
+
+
+def validate_no_lan_binding(host: str) -> str:
+    return validate_host_allowed(host)
+
+
+def first_param(params: Mapping[str, list[str]], name: str, default: str = "") -> str:
+    values = params.get(name, [])
+    return str(values[0]) if values else default
+
+
+def parse_limit(value: str | None, default: int = DEFAULT_RESULT_LIMIT) -> int:
+    if value is None or str(value).strip() == "":
+        return default
+    try:
+        limit = int(value)
+    except ValueError as exc:
+        raise LocalServiceValidationError("limit must be an integer") from exc
+    if limit < 1:
+        raise LocalServiceValidationError("limit must be positive")
+    return min(limit, MAX_RESULT_LIMIT)

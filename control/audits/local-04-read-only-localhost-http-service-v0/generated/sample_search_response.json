@@ -1,0 +1,15 @@
+{
+  "limit": 20,
+  "limitations": [
+    "local reviewed index only",
+    "read-only service",
+    "no live source inspection"
+  ],
+  "query": "sampleproject",
+  "result_count": 0,
+  "results": [],
+  "reviewed_public_index_only": true,
+  "schema_version": "local_http_search_response.v0",
+  "status": "pass",
+  "warnings": []
+}

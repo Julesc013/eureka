@@ -52,3 +52,5 @@ Runtime opening fails when:
 ## Next Step
 
 LOCAL-04 should build the read-only localhost HTTP service over this runtime API. LAN, deployment, index rebuilds, WorkUnit execution, and workbench behavior remain disabled until later LOCAL tasks explicitly enable them.
+
+LOCAL-04 now provides that service through `scripts/eureka_local_server.py` and `scripts/eureka_local_service_smoke.py`. Use the service runbook for HTTP operation, and keep this composition runbook for direct runtime status and integrity checks.
