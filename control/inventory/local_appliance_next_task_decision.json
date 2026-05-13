@@ -1,0 +1,12 @@
+{
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "main_dev_aligned": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Local Appliance track must establish the local hosted workbench product proof loop before F0 extraction continues.",
+  "recommended_next_task": "LOCAL-01 \u2014 Local instance layout and bootstrap",
+  "recommended_start_branch": "main",
+  "schema_version": "local_appliance_next_task_decision.v0",
+  "task": "LOCAL-00"
+}

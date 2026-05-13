@@ -1,0 +1,6 @@
+{
+  "next_task": "LOCAL-01",
+  "schema_version": "local_appliance_track_plan.sample.v0",
+  "task": "LOCAL-00",
+  "track_length": 15
+}

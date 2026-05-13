@@ -1,0 +1,17 @@
+{
+  "agent_effects_must_be_typed_store_outputs": true,
+  "agents_execute_workunits_only": true,
+  "agents_may_accept_truth": false,
+  "agents_may_broad_crawl_by_default": false,
+  "agents_may_download_packages": false,
+  "agents_may_execute_packages": false,
+  "agents_may_install_packages": false,
+  "agents_may_mutate_master_index": false,
+  "agents_may_mutate_public_index_directly": false,
+  "model_provider_agents_enabled": false,
+  "policy_id": "local_agent_workunit_policy",
+  "schema_version": "local_agent_workunit_policy.v0",
+  "status": "active",
+  "task": "LOCAL-00",
+  "worker_outputs_route_through_review": true
+}

@@ -1,0 +1,145 @@
+{
+  "main_dev_aligned_at_planning": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_appliance_track_plan.v0",
+  "status": "planned",
+  "task": "LOCAL-00",
+  "track": [
+    {
+      "forbidden_side_effects": ["server implementation", "HTML workbench implementation", "LAN binding", "deployment"],
+      "next_task": "LOCAL-01",
+      "proof_level_required": "L0",
+      "purpose": "Fork the queue plan from F0 to the Local Appliance track.",
+      "required_runtime_behavior": ["none; planning and governance only"],
+      "required_tests": ["validator and policy shape tests"],
+      "task_id": "LOCAL-00"
+    },
+    {
+      "forbidden_side_effects": ["hidden state roots", "committed instance state", "server implementation"],
+      "next_task": "LOCAL-02",
+      "proof_level_required": "L1",
+      "purpose": "Define explicit local instance root layout and bootstrap command posture.",
+      "required_runtime_behavior": ["explicit instance root initialization command"],
+      "required_tests": ["bootstrap command dry run", "negative hidden-state-root test"],
+      "task_id": "LOCAL-01"
+    },
+    {
+      "forbidden_side_effects": ["implicit migrations", "committed user state", "network calls"],
+      "next_task": "LOCAL-03",
+      "proof_level_required": "L2",
+      "purpose": "Define instance configuration schema and migration guard.",
+      "required_runtime_behavior": ["config validation", "migration refusal on unsafe state"],
+      "required_tests": ["schema tests", "migration idempotence tests", "negative unsafe migration tests"],
+      "task_id": "LOCAL-02"
+    },
+    {
+      "forbidden_side_effects": ["runtime/store boundary collapse", "direct index mutation from UI"],
+      "next_task": "LOCAL-04",
+      "proof_level_required": "L2",
+      "purpose": "Compose local service, store, worker, and workbench boundaries.",
+      "required_runtime_behavior": ["composition boundary command", "store interface wiring proof"],
+      "required_tests": ["boundary tests", "store wiring tests"],
+      "task_id": "LOCAL-03"
+    },
+    {
+      "forbidden_side_effects": ["LAN binding", "write endpoints", "deployment"],
+      "next_task": "LOCAL-05",
+      "proof_level_required": "L2",
+      "purpose": "Add read-only localhost HTTP service over the reviewed index.",
+      "required_runtime_behavior": ["localhost-only service start", "read-only reviewed-index routes"],
+      "required_tests": ["localhost smoke test", "write endpoint rejection tests"],
+      "task_id": "LOCAL-04"
+    },
+    {
+      "forbidden_side_effects": ["site/dist regeneration", "hosted UI deployment", "LAN binding"],
+      "next_task": "LOCAL-06",
+      "proof_level_required": "L3",
+      "purpose": "Add HTML workbench v0 for local reviewed-index use.",
+      "required_runtime_behavior": ["open local HTML workbench", "search reviewed index through localhost service"],
+      "required_tests": ["workbench smoke test", "accessibility and no-network tests"],
+      "task_id": "LOCAL-05"
+    },
+    {
+      "forbidden_side_effects": ["truth acceptance", "index mutation", "source sync"],
+      "next_task": "LOCAL-07",
+      "proof_level_required": "L3",
+      "purpose": "Harden status, object, source, and absence pages.",
+      "required_runtime_behavior": ["render status page", "render object/source/absence views"],
+      "required_tests": ["page route tests", "missing object and absence negative tests"],
+      "task_id": "LOCAL-06"
+    },
+    {
+      "forbidden_side_effects": ["agent truth acceptance", "broad crawl", "direct public index mutation"],
+      "next_task": "LOCAL-08",
+      "proof_level_required": "L2",
+      "purpose": "Add operator-gated WorkUnit queue.",
+      "required_runtime_behavior": ["queue WorkUnits", "pause/resume/steer WorkUnits"],
+      "required_tests": ["queue persistence tests", "operator-gate negative tests"],
+      "task_id": "LOCAL-07"
+    },
+    {
+      "forbidden_side_effects": ["automatic truth acceptance", "master index mutation", "unreviewed public index write"],
+      "next_task": "LOCAL-09",
+      "proof_level_required": "L3",
+      "purpose": "Review evidence and rebuild reviewed index from the UI.",
+      "required_runtime_behavior": ["review evidence", "rebuild reviewed index after approval"],
+      "required_tests": ["review flow tests", "index rebuild idempotence tests"],
+      "task_id": "LOCAL-08"
+    },
+    {
+      "forbidden_side_effects": ["provider/model calls", "package download/install/execute", "broad crawl"],
+      "next_task": "LOCAL-10",
+      "proof_level_required": "L2",
+      "purpose": "Add deterministic local worker runner.",
+      "required_runtime_behavior": ["run queued WorkUnits deterministically", "emit typed outputs through stores"],
+      "required_tests": ["worker deterministic replay tests", "forbidden effect tests"],
+      "task_id": "LOCAL-09"
+    },
+    {
+      "forbidden_side_effects": ["unbounded source probes", "downloads", "truth acceptance"],
+      "next_task": "LOCAL-11",
+      "proof_level_required": "L3",
+      "purpose": "Add auto-test and auto-search harness.",
+      "required_runtime_behavior": ["run smoke/eval suites", "run bounded source probe rehearsals"],
+      "required_tests": ["auto-test harness tests", "bounded-search negative tests"],
+      "task_id": "LOCAL-10"
+    },
+    {
+      "forbidden_side_effects": ["LAN enablement by default", "unauthenticated write actions", "deployment"],
+      "next_task": "LOCAL-12",
+      "proof_level_required": "L3",
+      "purpose": "Define LAN binding policy and safety gate.",
+      "required_runtime_behavior": ["explicit LAN flag gate", "operator warning and rollback command"],
+      "required_tests": ["LAN disabled-by-default tests", "unauthenticated mutation rejection tests"],
+      "task_id": "LOCAL-11"
+    },
+    {
+      "forbidden_side_effects": ["LAN writes", "public hosting", "deployment"],
+      "next_task": "LOCAL-13",
+      "proof_level_required": "L4",
+      "purpose": "Run LAN read-only smoke test.",
+      "required_runtime_behavior": ["read-only LAN smoke test with explicit flag"],
+      "required_tests": ["read-only LAN smoke", "LAN write rejection tests"],
+      "task_id": "LOCAL-12"
+    },
+    {
+      "forbidden_side_effects": ["global install", "hidden local state", "network dependency"],
+      "next_task": "LOCAL-14",
+      "proof_level_required": "L4",
+      "purpose": "Prove clean-machine bootstrap.",
+      "required_runtime_behavior": ["clone repo", "initialize instance", "start localhost service", "open workbench"],
+      "required_tests": ["fresh-machine bootstrap script", "rerun/resume tests"],
+      "task_id": "LOCAL-13"
+    },
+    {
+      "forbidden_side_effects": ["production launch claim", "public launch claim", "deployment"],
+      "next_task": "F0-BUNDLE-01",
+      "proof_level_required": "L4",
+      "purpose": "Close Local Appliance track and hand off to F0, HUNT, and SYN.",
+      "required_runtime_behavior": ["complete local appliance smoke/eval evidence", "record F0/HUNT/SYN handoff"],
+      "required_tests": ["closeout validator", "fresh-machine or LAN proof review"],
+      "task_id": "LOCAL-14"
+    }
+  ]
+}

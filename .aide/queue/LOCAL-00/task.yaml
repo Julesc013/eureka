@@ -1,0 +1,52 @@
+id: LOCAL-00
+title: Fork plan from F0 to local hosted workbench
+status: completed
+source_packet: .aide/context/latest-task-packet.md
+allowed_paths:
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/eureka-repo-health.json
+  - .aide/reports/eureka-repo-health.md
+  - .aide/queue/index.yaml
+  - .aide/queue/LOCAL-00/task.yaml
+  - .aide/queue/LOCAL-01/task.yaml
+  - control/policies/local_appliance_policy.json
+  - control/policies/local_network_safety_policy.json
+  - control/policies/local_agent_workunit_policy.json
+  - control/policies/future_task_behavior_gate_policy.json
+  - control/policies/local_track_completion_policy.json
+  - control/inventory/local_appliance_track_plan.json
+  - control/inventory/local_appliance_readiness_matrix.json
+  - control/inventory/local_appliance_next_task_decision.json
+  - control/inventory/f0_deferral_for_local_appliance.json
+  - control/inventory/future_track_local_appliance_dependency_matrix.json
+  - docs/architecture/LOCAL_APPLIANCE_MODEL.md
+  - docs/architecture/LOCAL_WORKBENCH_RUNTIME.md
+  - docs/architecture/LOCAL_SERVICE_STORE_WORKER_BOUNDARY.md
+  - docs/operations/LOCAL_APPLIANCE_TRACK.md
+  - docs/operations/LOCAL_NETWORK_SAFETY_POLICY.md
+  - docs/operations/F0_DEFERRAL_FOR_LOCAL_APPLIANCE.md
+  - docs/operations/FUTURE_TASK_BEHAVIOR_GATE.md
+  - docs/operations/LOCAL_TRACK_COMPLETION_STANDARD.md
+  - scripts/validate_local_appliance_track.py
+  - tests/operations/test_local_appliance_track.py
+  - control/audits/local-00-local-appliance-track-v0/**
+forbidden_paths:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - site/dist/**
+  - native/**
+  - crates/**
+  - examples/**
+  - control/prototypes/**
+gate:
+  - no server implementation
+  - no HTML workbench implementation
+  - no WorkUnit runtime implementation
+  - no LAN binding
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_next: LOCAL-01

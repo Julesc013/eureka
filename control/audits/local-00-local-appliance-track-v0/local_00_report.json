@@ -1,0 +1,27 @@
+{
+  "contracts_modified": false,
+  "current_queue_item": "LOCAL-01",
+  "deployment_performed": false,
+  "f0_deferred": true,
+  "f0_deferred_until": "LOCAL-14",
+  "html_workbench_implemented": false,
+  "lan_enabled": false,
+  "main_dev_aligned": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "purpose": "fork_plan_to_local_appliance_track",
+  "recommended_next_task": "LOCAL-01 \u2014 Local instance layout and bootstrap",
+  "runtime_modified": false,
+  "schema_version": "local_00_report.v0",
+  "server_implemented": false,
+  "status": "pass_with_warnings",
+  "task": "LOCAL-00",
+  "validation": {
+    "architecture_boundaries": "pass",
+    "full_unittest_discovery": "fail_pre_existing_runtime_leakage_gate",
+    "generated_artifact_cleanliness": "expected_to_pass_after_commit",
+    "local_appliance_validator": "pass",
+    "local_appliance_tests": "pass"
+  },
+  "workunit_runtime_implemented": false
+}

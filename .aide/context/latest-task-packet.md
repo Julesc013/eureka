@@ -2,45 +2,40 @@
 
 ## PHASE
 
-UNSPECIFIED - F0-BUNDLE-01 - Deep extraction source-family and extraction-boundary policy packs
+LOCAL-01 - Local instance layout and bootstrap
 
 ## GOAL
 
-F0-BUNDLE-01 - Deep extraction source-family and extraction-boundary policy packs
-
-Compatibility note: F0-BUNDLE-01 is the current successor to the earlier F-BUNDLE-01 lane; HUMAN-OBS-REVIEW-01 remains a parallel side-lane.
+LOCAL-01 - Define explicit local instance root layout and bootstrap posture for the Local Appliance.
 
 ## WHY
 
-Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+LOCAL-00 inserted the Local Appliance / Local Network Workbench track before F0 so future product work proves behavior through a real local hosted system. F0 remains resumable but is deferred until LOCAL-14 closes the Local Appliance track.
 
 ## CONTEXT_REFS
 
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
+- `control/inventory/local_appliance_next_task_decision.json`
+- `control/inventory/local_appliance_track_plan.json`
+- `control/inventory/local_appliance_readiness_matrix.json`
+- `control/inventory/f0_deferral_for_local_appliance.json`
+- `control/policies/local_appliance_policy.json`
+- `control/policies/local_network_safety_policy.json`
+- `control/policies/local_agent_workunit_policy.json`
+- `control/policies/future_task_behavior_gate_policy.json`
+- `control/policies/local_track_completion_policy.json`
+- `docs/operations/LOCAL_APPLIANCE_TRACK.md`
+- `docs/operations/LOCAL_TRACK_COMPLETION_STANDARD.md`
 - `AGENTS.md`
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
-- `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/reports/eureka-repo-health.json`
+- `.aide/reports/eureka-repo-health.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/LOCAL-01/task.yaml`
+- control, docs, scripts, and tests paths explicitly named by the reviewed LOCAL-01 prompt
 
 ## FORBIDDEN_PATHS
 
@@ -48,47 +43,45 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `runtime/**`
-- `contracts/**`
+- `.local/**`
+- `.cache/**`
+- `runtime/**` unless a future LOCAL task explicitly authorizes implementation
+- `contracts/**` unless a future LOCAL task explicitly authorizes contract edits
 - `surfaces/**`
 - `site/**`
+- `site/dist/**`
 - `native/**`
 - `crates/**`
-- `connectors/**`
-- `packaging/**`
-- `third_party/**`
+- `examples/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
-- Read the queue packet and relevant repo refs first.
-- Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
-- Do not inline whole source files unless exact contents are required.
-- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+- Start from `main` or a task branch from `main`.
+- Read the LOCAL-00 policy and inventory refs first.
+- Keep LOCAL-01 focused on explicit instance layout and bootstrap posture.
+- Do not implement the HTTP server.
+- Do not implement the HTML workbench.
+- Do not expose LAN.
+- Do not deploy.
+- Do not claim production readiness or public launch readiness.
 
 ## VALIDATION
 
+- `git status --short`
+- `git diff --check`
+- `python scripts/validate_local_appliance_track.py`
+- `python -m unittest tests.operations.test_local_appliance_track`
+- additional LOCAL-01 validators/tests defined by the reviewed LOCAL-01 task
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- `py -3 .aide/scripts/aide_lite.py route explain`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 scripts/check_architecture_boundaries.py`
-- `py -3 scripts/aide validate`
-- `git diff --check`
 
 ## COMMITS
 
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+- Commit coherent subdeliverables with structured bodies.
+- Do not mutate `main` or `dev` except by an explicit reviewed branch workflow.
 
 ## EVIDENCE
 
@@ -96,32 +89,34 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - validation commands and results
 - verifier result
 - review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
 - unresolved risks and deferrals
 
 ## NON_GOALS
 
-- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No F0 implementation.
+- No extraction runtime implementation.
+- No HTTP server implementation.
+- No HTML workbench implementation.
+- No WorkUnit runtime implementation.
+- No LAN binding.
+- No live source calls.
+- No model/provider calls.
+- No deployment.
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
+- LOCAL-01 acceptance criteria are met.
+- Local Appliance policies remain in force.
+- No forbidden product/runtime paths are modified unless LOCAL-01 explicitly authorizes them.
 - No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `RISKS`, and `NEXT`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4107
-- approx_tokens: 1027
 - budget_status: PASS
 - warnings:
   - none
-- formal ledger: `.aide/reports/token-ledger.jsonl`

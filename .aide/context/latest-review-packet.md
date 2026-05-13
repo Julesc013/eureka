@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4249 chars, 1063 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3769 chars, 943 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,21 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `control/audits/r0-final-promotion-review-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_blockers.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_git_state.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_readiness_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_review_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_final_promotion_warning_disposition.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/DEV_TO_MAIN_R0_PROMOTION_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/F0_START_BRANCH_POLICY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/R0_FINAL_PROMOTION_REVIEW.md` (??; does not match active task allowed paths)
-- unknown: `scripts/audit_r0_final_promotion.py` (??; does not match active task allowed paths)
-- unknown: `scripts/prepare_r0_dev_to_main_merge.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_r0_final_promotion.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_r0_dev_to_main_merge_plan.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_r0_final_promotion.py` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/LOCAL-00/task.yaml` (A; does not match active task allowed paths)
+- unknown: `.aide/queue/LOCAL-01/task.yaml` (A; does not match active task allowed paths)
+- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `control/audits/local-00-local-appliance-track-v0/README.md` (A; matches active task allowed path)
+- unknown: `control/audits/local-00-local-appliance-track-v0/f0_deferral.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/future_task_gate.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/generated/sample_local_appliance_track_plan.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/generated/sample_readiness_matrix.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/generated/sample_summary.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/local_00_report.json` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/readiness_matrix.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/track_plan.md` (A; does not match active task allowed paths)
+- unknown: `control/audits/local-00-local-appliance-track-v0/validation.md` (A; does not match active task allowed paths)
+- unknown: `control/inventory/f0_deferral_for_local_appliance.json` (A; does not match active task allowed paths)
+- unknown: `control/inventory/future_track_local_appliance_dependency_matrix.json` (A; does not match active task allowed paths)
+- unknown: `control/inventory/local_appliance_next_task_decision.json` (A; does not match active task allowed paths)
+- unknown: `control/inventory/local_appliance_readiness_matrix.json` (A; does not match active task allowed paths)
+- unknown: `control/inventory/local_appliance_track_plan.json` (A; does not match active task allowed paths)
+- unknown: `control/policies/future_task_behavior_gate_policy.json` (A; does not match active task allowed paths)
+- unknown: `control/policies/local_agent_workunit_policy.json` (A; does not match active task allowed paths)
+- unknown: `control/policies/local_appliance_policy.json` (A; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 12; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -57,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5604
-- approx_tokens: 1401
+- chars: 6809
+- approx_tokens: 1703
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

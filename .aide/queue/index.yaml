@@ -1,8 +1,24 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-11
 repo: julesc013/eureka
-current_recommended_task: F0-BUNDLE-01
+current_recommended_task: LOCAL-01
 entries:
+  - id: LOCAL-00
+    title: Fork plan from F0 to local hosted workbench
+    status: completed
+    purpose: Insert the Local Appliance / Local Network Workbench track before F0.
+    allowed_scope_summary: AIDE queue/context, LOCAL policies, docs, inventories, validator, tests, and audit evidence only.
+    gate: planning/control only; no server, HTML workbench, runtime implementation, LAN binding, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-00/task.yaml
+    recommended_after: DEV-TO-MAIN-MERGE-R0
+  - id: LOCAL-01
+    title: Local instance layout and bootstrap
+    status: queued
+    purpose: Define explicit local instance root layout and bootstrap posture for the Local Appliance.
+    allowed_scope_summary: local instance layout, bootstrap command posture, config placeholders, docs, validators, and tests only until explicitly scoped.
+    gate: LOCAL-00 passed; no HTTP server, HTML workbench, LAN binding, deployment, hidden state roots, committed instance state, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-01/task.yaml
+    recommended_after: LOCAL-00
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review
@@ -871,8 +887,10 @@ entries:
 
 - id: F0-BUNDLE-01
   title: Deep extraction source-family and extraction-boundary policy packs
-  status: queued
+  status: deferred
   purpose: Start Track F0 with extraction-boundary policy packs after H14 Source OS review closure.
   allowed_scope_summary: F0 extraction-boundary policies, contracts, docs, examples, tests, and audit evidence only; no extraction runtime or live access.
-  gate: H14-BUNDLE-04 passes or passes with warnings and recommends READY_FOR_F0_BUNDLE_01.
+  gate: LOCAL-14 closes the Local Appliance track and confirms F0 must use the local hosted workbench proof loop.
+  deferred_reason: Local hosted workbench required before extraction track continues.
+  deferred_until: LOCAL-14
   recommended_after: H14-BUNDLE-04

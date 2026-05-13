@@ -1,0 +1,19 @@
+{
+  "firewall_operator_warning_required": true,
+  "lan_binding_default": false,
+  "lan_requires_explicit_flag": true,
+  "lan_write_actions_require_local_operator_token": true,
+  "policy_id": "local_network_safety_policy",
+  "read_only_default": true,
+  "schema_version": "local_network_safety_policy.v0",
+  "shutdown_rollback_command_required_before_lan_closeout": true,
+  "status": "active",
+  "task": "LOCAL-00",
+  "unauthenticated_lan_clients_may_mutate": {
+    "config": false,
+    "index": false,
+    "review_decisions": false,
+    "sources": false,
+    "workunits": false
+  }
+}

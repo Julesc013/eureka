@@ -1,0 +1,22 @@
+{
+  "deferred_until": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "f0_must_not_create_scaffold_only_work": true,
+  "f0_must_use_local_appliance": true,
+  "f0_previous_status": "resume_allowed",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Local hosted workbench required before extraction track continues.",
+  "requirements_before_f0": [
+    "explicit local instance root",
+    "localhost read-only service",
+    "HTML workbench",
+    "WorkUnit queue",
+    "review and index rebuild loop",
+    "deterministic worker runner",
+    "smoke/eval harness",
+    "clean-machine bootstrap proof"
+  ],
+  "schema_version": "f0_deferral_for_local_appliance.v0",
+  "task": "LOCAL-00"
+}

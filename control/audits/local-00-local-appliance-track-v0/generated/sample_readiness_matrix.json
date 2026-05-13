@@ -1,0 +1,6 @@
+{
+  "capability_count": 14,
+  "schema_version": "local_appliance_readiness_matrix.sample.v0",
+  "status": "planned",
+  "task": "LOCAL-00"
+}

@@ -1,0 +1,16 @@
+{
+  "committed_instance_state_forbidden": true,
+  "explicit_instance_path_required": true,
+  "hidden_state_roots_forbidden": true,
+  "lan_binding_default": false,
+  "local_appliance_track_required_before_f0": true,
+  "localhost_default": true,
+  "no_deployment": true,
+  "no_production_readiness_claim": true,
+  "no_public_launch_readiness_claim": true,
+  "policy_id": "local_appliance_policy",
+  "read_only_default": true,
+  "schema_version": "local_appliance_policy.v0",
+  "status": "active",
+  "task": "LOCAL-00"
+}

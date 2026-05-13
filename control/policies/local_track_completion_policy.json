@@ -1,0 +1,27 @@
+{
+  "policy_id": "local_track_completion_policy",
+  "proof_levels": {
+    "L0": "scaffold only",
+    "L1": "command/runtime proof",
+    "L2": "persistence/integration proof",
+    "L3": "local workbench proof",
+    "L4": "fresh-machine or LAN proof",
+    "L5": "hosted/public proof"
+  },
+  "required_task_levels": {
+    "LOCAL-01": "L1",
+    "LOCAL-02": "L2",
+    "LOCAL-03": "L2",
+    "LOCAL-04": "L2",
+    "LOCAL-05": "L3",
+    "LOCAL-07": "L2",
+    "LOCAL-08": "L3",
+    "LOCAL-10": "L3",
+    "LOCAL-12": "L4",
+    "LOCAL-13": "L4",
+    "LOCAL-14": "L4"
+  },
+  "schema_version": "local_track_completion_policy.v0",
+  "status": "active",
+  "task": "LOCAL-00"
+}

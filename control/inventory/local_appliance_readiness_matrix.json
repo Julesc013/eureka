@@ -1,0 +1,21 @@
+{
+  "capabilities": [
+    {"capability": "explicit_instance_root", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "instance_config_schema", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "runtime_composition_boundary", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "localhost_read_only_service", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "html_workbench", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "object_source_absence_pages", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "workunit_queue", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "review_rebuild_ui", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "deterministic_worker_runner", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "auto_search_eval_harness", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "lan_safety_policy", "required_before_f0": false, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "lan_read_only_smoke_test", "required_before_f0": false, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "clean_machine_bootstrap", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"},
+    {"capability": "local_appliance_closeout", "required_before_f0": true, "required_before_lan": true, "required_before_public_hosting": true, "status": "planned"}
+  ],
+  "schema_version": "local_appliance_readiness_matrix.v0",
+  "status": "planned",
+  "task": "LOCAL-00"
+}

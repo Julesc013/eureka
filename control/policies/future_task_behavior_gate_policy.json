@@ -1,0 +1,13 @@
+{
+  "contracts_policies_examples_alone_are_sufficient": false,
+  "future_tracks_must_integrate_local_appliance_where_applicable": true,
+  "if_task_too_large_split_before_scaffold_generation": true,
+  "policy_id": "future_task_behavior_gate_policy",
+  "product_tasks_must_prove_runtime_behavior": true,
+  "schema_version": "future_task_behavior_gate_policy.v0",
+  "scaffold_only_product_completion_allowed": false,
+  "status": "active",
+  "task": "LOCAL-00",
+  "validators_alone_are_sufficient": false,
+  "warning_debt_must_be_disposed_before_advancing": true
+}
