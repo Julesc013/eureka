@@ -1,0 +1,11 @@
+{
+  "auto_test_harness_available": true,
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start": false,
+  "reason": "Auto-test and auto-search harness exists; LAN binding safety policy is next.",
+  "recommended_next_task": "LOCAL-11 \u2014 LAN binding policy and safety gate",
+  "schema_version": "local_10_next_task_decision.v0",
+  "server_can_start": true,
+  "task": "LOCAL-10"
+}

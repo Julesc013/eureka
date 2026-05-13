@@ -1,0 +1,9 @@
+{
+  "latency_recorded": true,
+  "per_route_timeout_seconds": 10,
+  "schema_version": "local_latency_smoke_result.v0",
+  "status": "pass",
+  "strict_latency_gate_enabled": false,
+  "suite_timeout_seconds": 60,
+  "task": "LOCAL-10"
+}

@@ -57,3 +57,10 @@ LOCAL-06 hardens the status, object, source, and absence pages. LAN mode remains
 LOCAL-06 does not change the JSON API contract. It strengthens the HTML routes served by this service so operators can inspect store status, reviewed-index status, provenance references, local source scope, and local current-index absence boundaries.
 
 The service remains read-only and localhost-only. It still rejects write methods and does not add WorkUnits, source probes, review mutation, index rebuilds, LAN binding, deployment, production readiness, or public launch readiness.
+
+## LOCAL-10 Eval Harness
+
+LOCAL-10 adds a client-side local eval harness that calls this service through
+loopback URLs. It verifies service health, JSON search, absence responses,
+workbench HTML availability, mutation rejection, and token-gated review/rebuild
+rejection without changing the HTTP route boundary.

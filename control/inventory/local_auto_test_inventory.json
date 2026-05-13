@@ -1,0 +1,22 @@
+{
+  "deployment_performed": false,
+  "external_network_enabled": false,
+  "lan_enabled": false,
+  "model_provider_enabled": false,
+  "runtime_package": "runtime/local_eval",
+  "schema_version": "local_auto_test_inventory.v0",
+  "source_probe_execution_enabled": false,
+  "synthetic_generation_enabled": false,
+  "suites": [
+    "service_health",
+    "json_search",
+    "html_workbench",
+    "absence",
+    "read_only_safety",
+    "worker_queue_safety",
+    "latency_smoke",
+    "local_state_cleanliness"
+  ],
+  "task": "LOCAL-10",
+  "localhost_only": true
+}

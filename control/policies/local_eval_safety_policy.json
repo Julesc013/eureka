@@ -1,0 +1,23 @@
+{
+  "checks_required": [
+    "mutating methods rejected",
+    "operator-gated mutation routes reject missing token",
+    "source probe routes absent or disabled",
+    "download/install/execute routes absent",
+    "LAN disabled",
+    "external assets absent",
+    "no site/dist writes",
+    "no master index mutation",
+    "no model/provider calls"
+  ],
+  "download_install_execute_routes_absent": true,
+  "external_assets_absent": true,
+  "lan_disabled": true,
+  "master_index_mutation_forbidden": true,
+  "model_provider_calls_forbidden": true,
+  "mutating_methods_rejected": true,
+  "operator_gated_mutation_routes_reject_missing_token": true,
+  "schema_version": "local_eval_safety_policy.v0",
+  "site_dist_writes_forbidden": true,
+  "source_probe_routes_absent_or_disabled": true
+}

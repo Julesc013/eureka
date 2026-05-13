@@ -1,0 +1,25 @@
+{
+  "expected_behavior": {
+    "definitely-not-present-local-10": "absence_report_expected",
+    "mac os 9 utility": "local_index_search_only",
+    "old printer driver windows xp": "local_index_search_only",
+    "overlong query": "bounded_rejection_or_error",
+    "query with <unsafe> chars": "safe_escaping_or_handling",
+    "sampleproject": "local_index_search_only",
+    "visual studio 2008 express": "local_index_search_only"
+  },
+  "queries": [
+    "sampleproject",
+    "definitely-not-present-local-10",
+    "visual studio 2008 express",
+    "old printer driver windows xp",
+    "mac os 9 utility",
+    "query with <unsafe> chars",
+    "overlong query generated in code"
+  ],
+  "schema_version": "local_auto_search_suite.v0",
+  "source_probe_enabled": false,
+  "synthetic_generation_enabled": false,
+  "task": "LOCAL-10",
+  "local_reviewed_index_only": true
+}

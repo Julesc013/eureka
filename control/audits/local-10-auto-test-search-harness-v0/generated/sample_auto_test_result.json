@@ -1,0 +1,643 @@
+{
+  "base_url": "http://127.0.0.1:27309",
+  "case_count": 32,
+  "created_at": "2026-05-13T19:43:53Z",
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "external_network_used": false,
+  "extraction_executed": false,
+  "failed_case_count": 0,
+  "lan_enabled": false,
+  "latency": {
+    "average_elapsed_ms": 5.339,
+    "limitations": [
+      "latency values are local smoke estimates only"
+    ],
+    "max_elapsed_ms": 51.87,
+    "route_count": 32,
+    "schema_version": "local_eval_latency_summary.v0",
+    "slowest_routes": [
+      {
+        "case_id": "worker_registry",
+        "elapsed_ms": 51.87,
+        "path": "worker_registry",
+        "suite": "worker_queue_safety"
+      },
+      {
+        "case_id": "status",
+        "elapsed_ms": 27.308,
+        "path": "/api/v1/status",
+        "suite": "latency_smoke"
+      },
+      {
+        "case_id": "health",
+        "elapsed_ms": 25.874,
+        "path": "/health",
+        "suite": "service_health"
+      },
+      {
+        "case_id": "special",
+        "elapsed_ms": 22.107,
+        "path": "/api/v1/search",
+        "suite": "json_search"
+      },
+      {
+        "case_id": "home",
+        "elapsed_ms": 15.498,
+        "path": "/",
+        "suite": "service_health"
+      }
+    ],
+    "status": "pass",
+    "strict_latency_gate_enabled": false,
+    "warnings": []
+  },
+  "limitations": [
+    "fixed local query suite only",
+    "local reviewed index only",
+    "latency values are smoke estimates"
+  ],
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "passed_case_count": 32,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_eval_report.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "pass",
+  "suite_count": 8,
+  "suite_results": [
+    {
+      "case_count": 5,
+      "cases": [
+        {
+          "case_id": "home",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 15.498,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "service_health",
+          "warnings": []
+        },
+        {
+          "case_id": "status_html",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 2.68,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "service_health",
+          "warnings": []
+        },
+        {
+          "case_id": "health",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 25.874,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/health",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "service_health",
+          "warnings": []
+        },
+        {
+          "case_id": "status_json",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 2.5,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "service_health",
+          "warnings": []
+        },
+        {
+          "case_id": "health_json",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 2.073,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/health",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "service_health",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 5,
+      "purpose": "loopback route health",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "service_health",
+      "warnings": []
+    },
+    {
+      "case_count": 5,
+      "cases": [
+        {
+          "case_id": "sample",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.674,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "json_search",
+          "warnings": []
+        },
+        {
+          "case_id": "missing",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.553,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "json_search",
+          "warnings": []
+        },
+        {
+          "case_id": "empty",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.534,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "json_search",
+          "warnings": []
+        },
+        {
+          "case_id": "overlong",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.564,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 400,
+          "suite": "json_search",
+          "warnings": []
+        },
+        {
+          "case_id": "special",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 22.107,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "json_search",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 5,
+      "purpose": "fixed local reviewed-index JSON searches",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "json_search",
+      "warnings": []
+    },
+    {
+      "case_count": 6,
+      "cases": [
+        {
+          "case_id": "home",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 2.44,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "html_workbench",
+          "warnings": []
+        },
+        {
+          "case_id": "status",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 2.285,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "html_workbench",
+          "warnings": []
+        },
+        {
+          "case_id": "search",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 0.689,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "html_workbench",
+          "warnings": []
+        },
+        {
+          "case_id": "absence",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 0.81,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/absence",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "html_workbench",
+          "warnings": []
+        },
+        {
+          "case_id": "object_missing",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 0.588,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/object/nonexistent-local-10",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 404,
+          "suite": "html_workbench",
+          "warnings": []
+        },
+        {
+          "case_id": "source_missing",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 0.598,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/source/nonexistent-local-10",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "html_workbench",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 6,
+      "purpose": "server-rendered workbench availability",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "html_workbench",
+      "warnings": []
+    },
+    {
+      "case_count": 2,
+      "cases": [
+        {
+          "case_id": "absence_json",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.598,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/absence",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "absence",
+          "warnings": []
+        },
+        {
+          "case_id": "absence_html",
+          "content_type": "text/html; charset=utf-8",
+          "elapsed_ms": 0.695,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/absence",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "absence",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 2,
+      "purpose": "local current-index absence semantics",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "absence",
+      "warnings": []
+    },
+    {
+      "case_count": 8,
+      "cases": [
+        {
+          "case_id": "post_search",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.449,
+          "errors": [],
+          "limitations": [],
+          "method": "POST",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 405,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "put_search",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.396,
+          "errors": [],
+          "limitations": [],
+          "method": "PUT",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 405,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "patch_search",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.392,
+          "errors": [],
+          "limitations": [],
+          "method": "PATCH",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 405,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "delete_search",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.372,
+          "errors": [],
+          "limitations": [],
+          "method": "DELETE",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 405,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "review_without_token",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.604,
+          "errors": [],
+          "limitations": [],
+          "method": "POST",
+          "passed": true,
+          "path": "/review/nonexistent-local-10/decision",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 401,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "rebuild_without_token",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.584,
+          "errors": [],
+          "limitations": [],
+          "method": "POST",
+          "passed": true,
+          "path": "/rebuild",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 401,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "probe_absent",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.397,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/source-probe",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 400,
+          "suite": "read_only_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "download_absent",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.383,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/download",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 404,
+          "suite": "read_only_safety",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 8,
+      "purpose": "mutation rejection and local-only safety",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "read_only_safety",
+      "warnings": []
+    },
+    {
+      "case_count": 2,
+      "cases": [
+        {
+          "case_id": "worker_registry",
+          "content_type": "application/json",
+          "elapsed_ms": 51.87,
+          "errors": [],
+          "limitations": [
+            "worker registry was inspected without worker execution"
+          ],
+          "method": "INPROC",
+          "passed": true,
+          "path": "worker_registry",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "worker_queue_safety",
+          "warnings": []
+        },
+        {
+          "case_id": "status_no_execution",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 2.812,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "worker_queue_safety",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 2,
+      "purpose": "deterministic worker registry safety",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "worker_queue_safety",
+      "warnings": []
+    },
+    {
+      "case_count": 3,
+      "cases": [
+        {
+          "case_id": "status",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 27.308,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "latency_smoke",
+          "warnings": []
+        },
+        {
+          "case_id": "search",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.729,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/search",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "latency_smoke",
+          "warnings": []
+        },
+        {
+          "case_id": "absence",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 0.633,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/absence",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "latency_smoke",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 3,
+      "purpose": "bounded route timing",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "latency_smoke",
+      "warnings": []
+    },
+    {
+      "case_count": 1,
+      "cases": [
+        {
+          "case_id": "status_flags",
+          "content_type": "application/json; charset=utf-8",
+          "elapsed_ms": 2.17,
+          "errors": [],
+          "limitations": [],
+          "method": "GET",
+          "passed": true,
+          "path": "/api/v1/status",
+          "schema_version": "local_eval_case_result.v0",
+          "status_code": 200,
+          "suite": "local_state_cleanliness",
+          "warnings": []
+        }
+      ],
+      "failed_case_count": 0,
+      "limitations": [
+        "deterministic localhost suite"
+      ],
+      "passed_case_count": 1,
+      "purpose": "explicit local-state boundary posture",
+      "schema_version": "local_eval_suite_result.v0",
+      "status": "pass",
+      "suite": "local_state_cleanliness",
+      "warnings": []
+    }
+  ],
+  "warnings": []
+}

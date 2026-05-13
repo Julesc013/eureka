@@ -62,3 +62,14 @@ or claim production/public launch readiness.
 LOCAL-09 adds `runtime/local_worker`, a deterministic runner over queued WorkUnits. Enabled workers are local and bounded: noop, review queue summary, token-gated reviewed-index rebuild, absence report, and local status snapshot.
 
 Risky workers remain blocked, including source probes, extraction, research delegation, model calls, downloads, installs, source sync, LAN operations, and deployment. Worker runs record transition history and audit references; they do not accept truth, mutate a master index, expose LAN, deploy, or claim production/public launch readiness.
+
+## LOCAL-10 Auto-Test Harness
+
+LOCAL-10 adds `runtime/local_eval`, a deterministic auto-test and auto-search
+harness over the localhost service and workbench. It records service health,
+fixed local search results, absence semantics, read-only safety, worker-kind
+safety, and latency smoke evidence.
+
+The harness remains local reviewed-index only. It does not add synthetic query
+generation, source probes, extraction, model/provider calls, downloads, LAN,
+deployment, `site/dist` writes, or master-index mutation.

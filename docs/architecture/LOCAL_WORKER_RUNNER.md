@@ -35,3 +35,10 @@ LOCAL-09 may mutate only WorkUnit state/history and worker result references. Th
 ## Relationship
 
 LOCAL-09 builds on LOCAL-07 WorkUnits and LOCAL-08 review/rebuild. LOCAL-10 can use this runner for an auto-test and auto-search harness. Future HUNT/F/H workers must add explicit policies before enabling source probes, extraction, model calls, or broader research behavior.
+
+## LOCAL-10 Harness Use
+
+LOCAL-10 does not execute workers from the service. Its harness inspects the
+deterministic worker registry and verifies `source_probe_worker`,
+`extraction_worker`, and `ai_model_worker` remain blocked. Worker execution
+still requires the explicit LOCAL-09 runner command.

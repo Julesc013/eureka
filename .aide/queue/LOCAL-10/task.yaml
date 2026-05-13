@@ -1,6 +1,6 @@
 id: LOCAL-10
 title: Auto-test and auto-search harness
-status: queued
+status: completed
 purpose: Add the local auto-test and auto-search harness after deterministic worker execution exists.
 allowed_scope_summary: Harness only when a future LOCAL-10 task prompt enables it; no LAN, deployment, broad internet search, source probes, extraction, downloads, installs, or model/provider calls unless explicitly scoped.
 gate:
@@ -11,3 +11,10 @@ gate:
   - no public launch claim
 proof_level_required: L2
 recommended_after: LOCAL-09
+recommended_next: LOCAL-11
+completion_evidence:
+  - runtime/local_eval package added
+  - deterministic local auto-test and auto-search scripts added
+  - latency, safety, service, search, absence, and workbench suites added
+  - LOCAL-10 validator and focused tests added
+  - F0 remains deferred until LOCAL-14

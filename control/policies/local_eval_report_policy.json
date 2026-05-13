@@ -1,0 +1,14 @@
+{
+  "json_report_required": true,
+  "latency_values_required": true,
+  "limitations_required": true,
+  "markdown_summary_required": true,
+  "no_production_readiness_claim": true,
+  "no_public_launch_readiness_claim": true,
+  "per_query_status_required": true,
+  "route_status_required": true,
+  "safety_status_required": true,
+  "schema_version": "local_eval_report_policy.v0",
+  "suite_status_required": true,
+  "warnings_required": true
+}

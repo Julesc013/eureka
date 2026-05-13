@@ -38,3 +38,9 @@ python scripts/validate_local_worker_runner.py
 ## Boundaries
 
 The runner does not run source probes, extraction, AI/model calls, downloads, installs, executable actions, source sync, LAN operations, deployment, site/dist generation, or master-index mutation.
+
+## LOCAL-10 Harness Use
+
+The auto-test harness verifies worker safety by inspecting the enabled and
+blocked worker-kind matrix. It does not run queued workers; explicit worker
+execution remains a separate operator command.

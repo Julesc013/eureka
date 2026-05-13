@@ -44,3 +44,9 @@ pages remain server-rendered and localhost-only. They include POST forms only
 for operator-token-gated local review and rebuild actions. The forms do not
 start source probes, execute queued work, expose LAN, deploy, or claim public
 readiness.
+
+## LOCAL-10 Eval Harness
+
+LOCAL-10 checks the workbench pages as server-rendered HTML. The harness
+verifies page availability and safety markers without adding a frontend build,
+JavaScript requirement, external assets, or new workbench controls.

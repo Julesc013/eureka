@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-10
+current_recommended_task: LOCAL-11
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -98,12 +98,21 @@ entries:
     recommended_next: LOCAL-10
   - id: LOCAL-10
     title: Auto-test and auto-search harness
-    status: queued
+    status: completed
     purpose: Add the local auto-test and auto-search harness after deterministic worker execution exists.
-    allowed_scope_summary: Harness only when a future LOCAL-10 prompt enables it.
+    allowed_scope_summary: Deterministic local auto-test and auto-search harness, scripts, docs, tests, validators, inventories, and audit evidence only.
     gate: LOCAL-09 passed with deterministic local worker runner; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-10/task.yaml
     recommended_after: LOCAL-09
+    recommended_next: LOCAL-11
+  - id: LOCAL-11
+    title: LAN binding policy and safety gate
+    status: queued
+    purpose: Define the LAN binding safety policy after local auto-test and auto-search harness exists.
+    allowed_scope_summary: LAN policy and safety gate only when a future LOCAL-11 prompt enables it.
+    gate: LOCAL-10 passed with auto-test harness; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim until explicitly scoped.
+    task: .aide/queue/LOCAL-11/task.yaml
+    recommended_after: LOCAL-10
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review
