@@ -1,0 +1,35 @@
+{
+  "direct_master_index_mutation_allowed": false,
+  "future_tracks": [
+    "HUNT",
+    "SYN",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "D",
+    "C",
+    "E",
+    "L"
+  ],
+  "hidden_state_allowed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "requirements": [
+    "use explicit local instance where applicable",
+    "use runtime composition boundary",
+    "use WorkUnits for background work",
+    "use review/evidence/index path for accepted results",
+    "use auto-test/auto-search harness for search behavior",
+    "avoid scaffold-only completion",
+    "avoid direct master index mutation",
+    "avoid ad hoc store paths",
+    "avoid hidden state",
+    "avoid unreviewed truth acceptance"
+  ],
+  "scaffold_only_completion_allowed": false,
+  "schema_version": "local_appliance_future_track_gate.v0",
+  "task": "LOCAL-14"
+}

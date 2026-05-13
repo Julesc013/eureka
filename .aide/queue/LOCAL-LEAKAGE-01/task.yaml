@@ -1,0 +1,12 @@
+id: LOCAL-LEAKAGE-01
+title: Reconcile runtime leakage gate after LOCAL track
+status: queued
+purpose: Reconcile the pre-existing runtime leakage gate before main promotion.
+allowed_scope_summary: Leakage audit reconciliation and remediation planning only until explicitly scoped.
+gate:
+  - LOCAL-14 warning disposition complete
+  - no product behavior changes unless separately approved
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: LOCAL-14

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-14
+current_recommended_task: HUNT-00
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -134,12 +134,53 @@ entries:
     recommended_next: LOCAL-14
   - id: LOCAL-14
     title: Local appliance closeout and F0/HUNT/SYN handoff
-    status: queued
+    status: completed
     purpose: Close out the Local Appliance track after clean-machine bootstrap proof and hand off to future extraction/search tracks.
     allowed_scope_summary: closeout evidence, handoff docs, inventories, validators, and audit evidence only when explicitly scoped.
     gate: LOCAL-13 passed with clean-machine bootstrap proof; no deployment, production readiness claim, public launch claim, source probes, or F0 implementation.
     task: .aide/queue/LOCAL-14/task.yaml
     recommended_after: LOCAL-13
+    recommended_next: HUNT-00
+  - id: HUNT-00
+    title: Search Hunt track planning over Local Appliance
+    status: queued
+    purpose: Plan Search Hunt over the completed Local Appliance proof surface without starting runtime implementation.
+    allowed_scope_summary: HUNT planning, task decomposition, policies, docs, and audit evidence only until explicitly scoped.
+    gate: LOCAL-14 pass_with_warnings; use Local Appliance boundaries; no source probes, crawling, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/HUNT-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: SYN-00
+    title: Synthetic Query Foundry planning over Local Appliance
+    status: queued
+    purpose: Plan Synthetic Query Foundry over the completed Local Appliance proof surface.
+    allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped.
+    gate: LOCAL-14 pass_with_warnings; use auto-test/search harness; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/SYN-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: F0-00
+    title: Refresh F0 after Local Appliance
+    status: queued
+    purpose: Refresh extraction-track planning so F0 resumes only through the Local Appliance.
+    allowed_scope_summary: F0 planning and boundary refresh only; no extraction implementation.
+    gate: LOCAL-14 pass_with_warnings and explicit operator choice if F0 is chosen before HUNT/SYN; no extraction runtime, source probes, downloads, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/F0-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: LOCAL-TO-MAIN-PROMOTION-REVIEW
+    title: Review and decide whether LOCAL dev promotes to main
+    status: queued
+    purpose: Plan-only review for promoting the Local Appliance baseline to main.
+    allowed_scope_summary: branch comparison, evidence review, and promotion plan only; no merge or push by default.
+    gate: LOCAL-14 closeout complete; leakage warning disposition reviewed; no deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-PROMOTION-REVIEW/task.yaml
+    recommended_after: LOCAL-14
+  - id: LOCAL-LEAKAGE-01
+    title: Reconcile runtime leakage gate after LOCAL track
+    status: queued
+    purpose: Reconcile the pre-existing runtime leakage gate before main promotion.
+    allowed_scope_summary: leakage audit reconciliation and allowlist/remediation planning only until explicitly scoped.
+    gate: LOCAL-14 warning disposition; no product behavior changes unless separately approved.
+    task: .aide/queue/LOCAL-LEAKAGE-01/task.yaml
+    recommended_after: LOCAL-14
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

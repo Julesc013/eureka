@@ -1,0 +1,14 @@
+id: F0-00
+title: Refresh F0 after Local Appliance
+status: queued
+purpose: Refresh F0 planning so extraction resumes only through the Local Appliance.
+allowed_scope_summary: Planning and boundary refresh only; no extraction implementation.
+gate:
+  - LOCAL-14 completed with pass_with_warnings or better
+  - explicit operator choice if F0 is selected before HUNT/SYN
+  - extraction candidates must use source observation, evidence, review, and index gates
+  - no extraction runtime in F0-00
+  - no source probes
+  - no downloads or execution
+  - no deployment
+recommended_after: LOCAL-14

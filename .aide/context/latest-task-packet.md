@@ -2,39 +2,42 @@
 
 ## PHASE
 
-LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff
+HUNT-00 - Search Hunt track planning over Local Appliance
 
 ## GOAL
 
-Prepare the next queue item after LOCAL-13 proved clean-machine bootstrap.
+Plan the Search Hunt track over the completed Local Appliance proof surface.
 
 ## WHY
 
-LOCAL-00 through LOCAL-13 now establish the Local Appliance track, explicit
-instance bootstrap, migration guard, runtime composition, localhost service,
-HTML workbench, hardened diagnostic pages, durable WorkUnit queue,
-operator-gated review/rebuild, deterministic local workers, auto-test/search,
-LAN safety/smoke, and clean-machine reproducibility proof.
+LOCAL-14 closed the Local Appliance track with pass_with_warnings. The local
+kernel now includes explicit instances, runtime composition, localhost service,
+HTML workbench, WorkUnits, review/rebuild, deterministic workers, auto-test and
+auto-search, read-only LAN proof, and clean-machine bootstrap proof.
 
-LOCAL-14 is recommended to close out the Local Appliance track and hand off to
-future F0/HUNT/SYN work without starting those tracks in LOCAL-13.
+HUNT planning is the preferred next execution spine. SYN planning is an
+available alternative. F0 may resume only through the Local Appliance and is not
+recommended before the search/eval spine is planned unless the operator chooses
+that route explicitly.
 
 ## CONTEXT_REFS
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-14/task.yaml`
-- `control/audits/local-13-clean-machine-bootstrap-v0/`
-- `control/inventory/local_13_next_task_decision.json`
-- `docs/operations/LOCAL_APPLIANCE_REPRODUCIBILITY.md`
+- `.aide/queue/HUNT-00/task.yaml`
+- `control/audits/local-14-local-appliance-closeout-v0/`
+- `control/inventory/local_appliance_closeout_result.json`
+- `control/inventory/local_appliance_future_track_gate.json`
+- `control/inventory/local_appliance_warning_disposition.json`
+- `docs/architecture/LOCAL_APPLIANCE_PRODUCT_KERNEL.md`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- LOCAL-14 paths must come from a reviewed LOCAL-14 task prompt before work starts.
+- HUNT-00 paths must come from a reviewed HUNT-00 task prompt before work starts.
 - `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-14/task.yaml`
-- LOCAL-14 docs, validators, inventories, and audit evidence only when explicitly scoped.
+- `.aide/queue/HUNT-00/task.yaml`
+- HUNT planning docs, validators, inventories, and audit evidence only when explicitly scoped.
 
 ## FORBIDDEN_PATHS
 
@@ -49,18 +52,17 @@ future F0/HUNT/SYN work without starting those tracks in LOCAL-13.
 
 ## IMPLEMENTATION
 
-- Start from `dev` or an explicit LOCAL-14 task branch.
+- Start from `dev` or an explicit HUNT-00 task branch.
+- Use the Local Appliance boundaries for all product proof.
 - Do not deploy.
-- Do not start F0 until a reviewed LOCAL-14 prompt allows the closeout handoff.
-- Do not run source probes, extraction, model/provider calls, or unsafe worker kinds unless a future prompt explicitly enables them.
+- Do not run source probes, crawling, scraping, extraction, or model/provider calls unless a future reviewed prompt explicitly enables them.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- LOCAL-14 focused validator and tests when defined
-- existing LOCAL validators as scoped
-- `python scripts/check_architecture_boundaries.py`
+- HUNT-00 focused validator and tests when defined
+- Local Appliance closeout references as scoped
 
 ## EVIDENCE
 
@@ -78,8 +80,8 @@ future F0/HUNT/SYN work without starting those tracks in LOCAL-13.
 
 ## ACCEPTANCE
 
-- LOCAL-14 acceptance criteria must come from a future reviewed LOCAL-14 prompt.
-- F0 remains deferred until LOCAL-14 closeout decisions are explicit.
+- HUNT-00 acceptance criteria must come from a future reviewed HUNT-00 prompt.
+- Runtime leakage remains a disposed LOCAL warning and blocks automatic main promotion until LOCAL-LEAKAGE-01 or an equivalent review resolves it.
 
 ## OUTPUT_SCHEMA
 
@@ -89,5 +91,5 @@ Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`,
 ## TOKEN_ESTIMATE
 
 - packet_type: compact_task_packet
-- estimated_tokens: 720
+- estimated_tokens: 850
 - budget_status: PASS

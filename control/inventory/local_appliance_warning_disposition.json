@@ -1,0 +1,26 @@
+{
+  "schema_version": "local_appliance_warning_disposition.v0",
+  "summary": {
+    "blocks_f0": false,
+    "blocks_hunt": false,
+    "blocks_main_promotion": true,
+    "blocks_syn": false,
+    "warnings_remaining": 1
+  },
+  "task": "LOCAL-14",
+  "warnings": [
+    {
+      "blocks_f0": false,
+      "blocks_hunt": false,
+      "blocks_main_promotion": true,
+      "blocks_syn": false,
+      "classification": "child_task_required",
+      "count": 1030,
+      "disposition": "Warning-only for HUNT/SYN/F0 planning; blocks main promotion until reconciled.",
+      "recommended_child_task": "LOCAL-LEAKAGE-01",
+      "source_report": "scripts/audit_runtime_architecture_leakage.py --check --json",
+      "warning_id": "pre_existing_runtime_leakage_gate_findings",
+      "why_not_increased_during_LOCAL": "LOCAL leakage baselines stayed at 1030 findings from LOCAL-01 through LOCAL-13."
+    }
+  ]
+}

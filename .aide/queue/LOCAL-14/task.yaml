@@ -1,6 +1,6 @@
 id: LOCAL-14
 title: Local appliance closeout and F0/HUNT/SYN handoff
-status: queued
+status: completed
 purpose: Close out the Local Appliance track after clean-machine bootstrap proof and prepare the handoff to future extraction and search tracks.
 allowed_scope_summary: Closeout evidence, handoff docs, final readiness matrix, validators, inventories, and audit evidence only when a reviewed LOCAL-14 prompt enables it.
 gate:
@@ -12,3 +12,19 @@ gate:
   - no F0 implementation before LOCAL-14 closeout
 proof_level_required: L2
 recommended_after: LOCAL-13
+recommended_next: HUNT-00
+result:
+  status: pass_with_warnings
+  local_track_complete: true
+  hard_blockers_remaining: 0
+  warnings_remaining: 1
+  hunt_can_start: true
+  syn_can_start: true
+  f0_can_resume: true
+  main_promotion_review_required: true
+  leakage_followup: LOCAL-LEAKAGE-01
+evidence:
+  - control/audits/local-14-local-appliance-closeout-v0/
+  - control/inventory/local_appliance_closeout_result.json
+  - control/inventory/local_appliance_capability_matrix.json
+  - control/inventory/local_appliance_warning_disposition.json

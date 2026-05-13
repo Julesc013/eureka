@@ -1,0 +1,112 @@
+{
+  "aide_check_status": "pass_with_warnings",
+  "architecture_boundary_status": "pass_required",
+  "focused_tests": [
+    "tests/operations/test_local_appliance_closeout.py",
+    "tests/operations/test_local_appliance_future_track_gate.py",
+    "tests/operations/test_local_appliance_handoff.py",
+    "tests/operations/test_local_to_main_promotion_review.py"
+  ],
+  "full_discovery_status": "fail_other",
+  "generated_artifact_cleanliness_status": "pass_after_commit_required",
+  "local_result_statuses": {
+    "LOCAL-01": "pass_with_warnings",
+    "LOCAL-02": "pass_with_warnings",
+    "LOCAL-03": "pass_with_warnings",
+    "LOCAL-04": "pass_with_warnings",
+    "LOCAL-05": "pass_with_warnings",
+    "LOCAL-06": "pass_with_warnings",
+    "LOCAL-07": "pass_with_warnings",
+    "LOCAL-08": "pass_with_warnings",
+    "LOCAL-09": "pass_with_warnings",
+    "LOCAL-10": "pass_with_warnings",
+    "LOCAL-11": "pass_with_warnings",
+    "LOCAL-12": "pass_with_warnings",
+    "LOCAL-13": "pass_with_warnings"
+  },
+  "local_validators": [
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_appliance_track.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_instance_bootstrap.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_instance_migration_guard.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_runtime_composition.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_http_service.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_html_workbench.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_workbench_page_hardening.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_workunit_queue.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_review_rebuild.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_worker_runner.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_auto_test_harness.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_lan_safety_gate.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_local_lan_smoke.py"
+    },
+    {
+      "required": true,
+      "status": "present",
+      "validator": "scripts/validate_clean_machine_bootstrap.py"
+    }
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "runtime_leakage_status": "fail",
+  "schema_version": "local_appliance_validation_matrix.v0",
+  "smoke_scripts": [
+    "scripts/eureka_local_service_smoke.py",
+    "scripts/eureka_local_workbench_smoke.py",
+    "scripts/eureka_local_auto_test.py",
+    "scripts/eureka_local_auto_search.py",
+    "scripts/eureka_lan_smoke.py",
+    "scripts/eureka_clean_machine_bootstrap.py"
+  ],
+  "task": "LOCAL-14"
+}

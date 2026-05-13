@@ -1,0 +1,18 @@
+{
+  "auto_test_required_for_search_behavior": true,
+  "local_appliance_required": true,
+  "prerequisites": [
+    "LOCAL-14 pass_with_warnings or better",
+    "explicit instance",
+    "auto-test harness",
+    "WorkUnit queue"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_first_task": "HUNT-00 \u2014 Search Hunt track planning over Local Appliance",
+  "recommended_second_task": "HUNT-01 \u2014 Search Hunt Session runtime",
+  "review_gate_required_for_accepted_results": true,
+  "schema_version": "local_appliance_handoff_to_hunt.v0",
+  "task": "LOCAL-14",
+  "workunits_required_for_background_work": true
+}
