@@ -13,9 +13,11 @@ provenance, evals, and public-alpha safety checks to answer questions like
 See [Bootstrap Status](docs/BOOTSTRAP_STATUS.md) and
 [Roadmap](docs/ROADMAP.md).
 
-Repo-operating note: Eureka now includes a target-scoped AIDE Lite import pilot
-for compact task packets and token-discipline evidence. See
-[AIDE Lite Import](docs/reference/aide-lite-import.md).
+Repo-operating note: Eureka includes a target-scoped AIDE Lite import for
+compact task packets, token-discipline evidence, structured commits, WorkUnit
+recovery, and dry-run Git workflow governance. See
+[AIDE Lite Import](docs/reference/aide-lite-import.md) and
+[AIDE Governance Sync](docs/reference/aide-governance-sync.md).
 
 ## Why Eureka Exists
 
