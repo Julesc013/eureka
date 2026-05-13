@@ -1,0 +1,15 @@
+{
+  "alternative_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "branch_mutation_performed": false,
+  "dev_to_main_decision": "promotion_plan_only",
+  "f0_decision": "resume_f0",
+  "f0_must_not_reintroduce_scaffold_only_completion": true,
+  "f0_must_use_r0_runtime_seams": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "R0 is ready and main remains intentionally behind until an explicit merge/apply action.",
+  "recommended_next_task": "DEV-TO-MAIN-MERGE-R0 \u2014 Promote recovered R0 dev to main",
+  "recommended_start_branch": "dev",
+  "schema_version": "r0_final_promotion_next_task_decision.v0",
+  "task": "R0-FINAL-PROMOTION-REVIEW"
+}

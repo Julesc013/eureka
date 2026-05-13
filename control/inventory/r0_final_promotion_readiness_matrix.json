@@ -1,0 +1,201 @@
+{
+  "branch_mutation_performed": false,
+  "checks": [
+    {
+      "blocks_promotion": false,
+      "category": "git",
+      "check_id": "current_branch_dev",
+      "evidence": [
+        "current_branch=dev"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "git",
+      "check_id": "working_tree_clean",
+      "evidence": [
+        "aide/context/latest-review-packet.md",
+        "control/audits/r0-final-promotion-review-v0/",
+        "control/inventory/r0_final_promotion_blockers.json",
+        "control/inventory/r0_final_promotion_git_state.json",
+        "control/inventory/r0_final_promotion_next_task_decision.json",
+        "control/inventory/r0_final_promotion_readiness_matrix.json",
+        "control/inventory/r0_final_promotion_review_result.json",
+        "control/inventory/r0_final_promotion_warning_disposition.json",
+        "docs/operations/DEV_TO_MAIN_R0_PROMOTION_PLAN.md",
+        "docs/operations/F0_START_BRANCH_POLICY.md",
+        "docs/operations/R0_FINAL_PROMOTION_REVIEW.md",
+        "scripts/audit_r0_final_promotion.py",
+        "scripts/prepare_r0_dev_to_main_merge.py",
+        "scripts/validate_r0_final_promotion.py",
+        "tests/operations/test_r0_dev_to_main_merge_plan.py",
+        "tests/operations/test_r0_final_promotion.py"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "git",
+      "check_id": "dev_synced_to_origin",
+      "evidence": [
+        "local_dev=be01503a76b06c1dc77fee241fb88bcdbc6b1326",
+        "origin_dev=be01503a76b06c1dc77fee241fb88bcdbc6b1326"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "git",
+      "check_id": "dev_contains_main",
+      "evidence": [
+        "origin_main=c5e131da12a67b86259874f6ac7145de4d2d3661",
+        "origin_dev=be01503a76b06c1dc77fee241fb88bcdbc6b1326"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "r0",
+      "check_id": "r0_final_closeout",
+      "evidence": [
+        "control\\inventory\\r0_final_closeout_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "r0",
+      "check_id": "runtime_seams",
+      "evidence": [
+        "source_observation_ready",
+        "source_cache_ready",
+        "evidence_ledger_ready",
+        "review_queue_ready",
+        "reviewed_public_index_ready",
+        "one_source_live_test_ready"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "r0",
+      "check_id": "contract_taxonomy_remediation",
+      "evidence": [
+        "control\\inventory\\r0_contract_taxonomy_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "r0",
+      "check_id": "generated_artifact_drift",
+      "evidence": [
+        "control\\inventory\\r0_generated_artifact_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "r0",
+      "check_id": "legacy_runtime_leakage",
+      "evidence": [
+        "control\\inventory\\legacy_runtime_leakage_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "validation",
+      "check_id": "full_unittest_discovery",
+      "evidence": [
+        "control\\inventory\\r0_final_closeout_result.json",
+        "control\\inventory\\r0_generated_artifact_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "validation",
+      "check_id": "generated_artifact_cleanliness",
+      "evidence": [
+        "control\\inventory\\r0_generated_artifact_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "validation",
+      "check_id": "architecture_boundaries",
+      "evidence": [
+        "control\\inventory\\r0_final_closeout_result.json",
+        "control\\inventory\\r0_generated_artifact_remediation_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "validation",
+      "check_id": "r0_validators",
+      "evidence": [
+        "control\\inventory\\r0_final_closeout_result.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "blockers",
+      "check_id": "no_hard_blockers",
+      "evidence": [
+        "control\\inventory\\r0_final_blocker_register.json",
+        "control\\inventory\\r0_remaining_blockers.json"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "warnings",
+      "check_id": "warning_disposition",
+      "evidence": [
+        "r0_final_promotion_warning_disposition"
+      ],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "claims",
+      "check_id": "no_forbidden_claims",
+      "evidence": [],
+      "required": true,
+      "status": "pass"
+    },
+    {
+      "blocks_promotion": false,
+      "category": "scope",
+      "check_id": "no_forbidden_path_changes",
+      "evidence": [],
+      "required": true,
+      "status": "pass"
+    }
+  ],
+  "overall_status": "ready_with_warnings",
+  "promotion_plan_only": true,
+  "promotion_ready": true,
+  "schema_version": "r0_final_promotion_readiness_matrix.v0",
+  "task": "R0-FINAL-PROMOTION-REVIEW"
+}

@@ -33,19 +33,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/contract_migration_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/contract_reference_graph.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/contract_risk_register.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/contract_taxonomy_inventory.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/r0_03b_execution_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/contract_migration_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/contract_taxonomy_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/architecture/CONTRACT_TAXONOMY.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/R0_CONTRACT_TAXONOMY_REFACTOR_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `scripts/audit_contract_taxonomy.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_contract_taxonomy_plan.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_contract_taxonomy_plan.py` (??; does not match active task allowed paths)
+- unknown: `control/audits/r0-final-promotion-review-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_blockers.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_git_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_readiness_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_review_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/r0_final_promotion_warning_disposition.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/DEV_TO_MAIN_R0_PROMOTION_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/F0_START_BRANCH_POLICY.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/R0_FINAL_PROMOTION_REVIEW.md` (??; does not match active task allowed paths)
+- unknown: `scripts/audit_r0_final_promotion.py` (??; does not match active task allowed paths)
+- unknown: `scripts/prepare_r0_dev_to_main_merge.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_r0_final_promotion.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_r0_dev_to_main_merge_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_r0_final_promotion.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -55,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5361
-- approx_tokens: 1341
+- chars: 5604
+- approx_tokens: 1401
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

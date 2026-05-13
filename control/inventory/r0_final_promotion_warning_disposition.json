@@ -1,0 +1,191 @@
+{
+  "schema_version": "r0_final_promotion_warning_disposition.v0",
+  "task": "R0-FINAL-PROMOTION-REVIEW",
+  "warnings": [
+    {
+      "area": "architecture_leakage",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
+      "classification": "child_task_created",
+      "expiry": "",
+      "notes": [
+        "No new production-path leakage blockers were reported."
+      ],
+      "source_disposition": "child_task_created",
+      "warning": "29015 known allowlisted legacy violations remain",
+      "warning_id": "R0-FINAL-WARN-001"
+    },
+    {
+      "area": "contract_taxonomy",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Resolved by R0-REMEDIATION-CONTRACT-TAXONOMY-01."
+      ],
+      "source_disposition": "fixed",
+      "warning": "19 compatibility shims remain",
+      "warning_id": "R0-FINAL-WARN-002"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-02 - Runtime architecture leakage gate"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-01 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-003"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
+      "classification": "child_task_created",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-03 \u2014 Contract taxonomy refactor"
+      ],
+      "source_disposition": "child_task_created",
+      "warning": "R0-02 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-004"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-03B \u2014 Contract taxonomy refactor execution"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-03A completed with warnings",
+      "warning_id": "R0-FINAL-WARN-005"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-03B-2 \u2014 Contract reference update and product contract cleanup"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-03B-1 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-006"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
+      "classification": "child_task_created",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-03C \u2014 Resolve remaining contract taxonomy blockers"
+      ],
+      "source_disposition": "child_task_created",
+      "warning": "R0-03B-2 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-007"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-05 \u2014 Durable source cache store"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-04 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-008"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-06 \u2014 Durable evidence ledger store"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-05 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-009"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-07 \u2014 Review queue product seam"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-06 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-010"
+    },
+    {
+      "area": "r0_prior_task",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Evidence: R0-08 \u2014 Reviewed public index rebuild"
+      ],
+      "source_disposition": "harmless",
+      "warning": "R0-07 completed with warnings",
+      "warning_id": "R0-FINAL-WARN-011"
+    },
+    {
+      "area": "generated_artifact_drift",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "",
+      "classification": "harmless_for_promotion",
+      "expiry": "",
+      "notes": [
+        "Resolved by R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01.",
+        "Static site generator tests now use temporary output and canonical artifacts were refreshed through documented validators."
+      ],
+      "source_disposition": "fixed",
+      "warning": "Generated public/search/site/dashboard artifacts are stale or validation-order sensitive.",
+      "warning_id": "R0-FINAL-WARN-012"
+    },
+    {
+      "area": "architecture_leakage",
+      "blocks_f0": false,
+      "blocks_promotion": false,
+      "child_task": "R0-REMEDIATION-LEGACY-LEAKAGE-01",
+      "classification": "deferred_with_expiry",
+      "expiry": "before production/public launch readiness review",
+      "notes": [
+        "R0 runtime seams remain clean and no new unallowlisted leaks were reported.",
+        "This is warning-level debt for promotion, not a recovered-baseline blocker."
+      ],
+      "source_disposition": "pass_with_warnings",
+      "warning": "2267 legacy leakage allowlist entries remain after remediation",
+      "warning_id": "R0-FINAL-PROMOTION-WARN-LEGACY-ALLOWLIST"
+    }
+  ],
+  "warnings_fully_disposed": true
+}

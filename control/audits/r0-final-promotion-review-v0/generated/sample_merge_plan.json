@@ -1,0 +1,124 @@
+{
+  "branch_mutation_performed": false,
+  "forbidden_operations": [
+    "git push --force",
+    "history rewrite",
+    "release tag creation",
+    "deployment",
+    "site/dist regeneration"
+  ],
+  "merge_performed": false,
+  "notes": [
+    "No merge, push, tag, deployment, or branch mutation occurs without --apply.",
+    "A pushed main promotion also requires --push-main."
+  ],
+  "operator_action_required": true,
+  "promotion_plan_only": true,
+  "promotion_steps": [
+    "git fetch origin",
+    "git checkout main",
+    "git merge --ff-only origin/main",
+    "git merge --ff-only origin/dev",
+    "run the final promotion validation lane again",
+    "git push origin main only when --push-main is explicitly supplied with --apply",
+    "git checkout dev"
+  ],
+  "push_main_performed": false,
+  "ready": true,
+  "required_checks": [
+    {
+      "check_id": "promotion_review_ready",
+      "evidence": [
+        "control\\inventory\\r0_final_promotion_review_result.json"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "current_branch_dev",
+      "evidence": [
+        "current_branch=dev"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "working_tree_clean",
+      "evidence": [
+        "aide/context/latest-review-packet.md",
+        "control/audits/r0-final-promotion-review-v0/",
+        "control/inventory/r0_final_promotion_blockers.json",
+        "control/inventory/r0_final_promotion_git_state.json",
+        "control/inventory/r0_final_promotion_next_task_decision.json",
+        "control/inventory/r0_final_promotion_readiness_matrix.json",
+        "control/inventory/r0_final_promotion_review_result.json",
+        "control/inventory/r0_final_promotion_warning_disposition.json",
+        "docs/operations/DEV_TO_MAIN_R0_PROMOTION_PLAN.md",
+        "docs/operations/F0_START_BRANCH_POLICY.md",
+        "docs/operations/R0_FINAL_PROMOTION_REVIEW.md",
+        "scripts/audit_r0_final_promotion.py",
+        "scripts/prepare_r0_dev_to_main_merge.py",
+        "scripts/validate_r0_final_promotion.py",
+        "tests/operations/test_r0_dev_to_main_merge_plan.py",
+        "tests/operations/test_r0_final_promotion.py"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "dev_synced_to_origin",
+      "evidence": [
+        "origin_dev=be01503a76b06c1dc77fee241fb88bcdbc6b1326"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "dev_contains_main",
+      "evidence": [
+        "origin_main=c5e131da12a67b86259874f6ac7145de4d2d3661",
+        "origin_dev=be01503a76b06c1dc77fee241fb88bcdbc6b1326"
+      ],
+      "notes": [],
+      "status": "pass"
+    },
+    {
+      "check_id": "branch_mutation_default",
+      "evidence": [],
+      "notes": [
+        "Default mode is plan-only and performs no branch mutation."
+      ],
+      "status": "pass"
+    },
+    {
+      "check_id": "force_push_forbidden",
+      "evidence": [
+        "git push --force is not used"
+      ],
+      "notes": [
+        "History rewrite and force-push operations are forbidden."
+      ],
+      "status": "pass"
+    },
+    {
+      "check_id": "deployment_forbidden",
+      "evidence": [
+        "no deployment step is present"
+      ],
+      "notes": [
+        "Promotion is a git baseline update only, not a deploy or public launch."
+      ],
+      "status": "pass"
+    }
+  ],
+  "rollback_plan": [
+    "Never rewrite main history.",
+    "If an applied fast-forward must be backed out after push, create a normal revert commit on main.",
+    "Record the revert decision in the R0 promotion audit inventories.",
+    "Do not tag a release or deploy as part of rollback."
+  ],
+  "schema_version": "r0_dev_to_main_merge_plan.v0",
+  "source_branch": "dev",
+  "target_branch": "main",
+  "task": "DEV-TO-MAIN-MERGE-R0"
+}
