@@ -1,0 +1,15 @@
+{
+  "direct_public_index_mutation_allowed": false,
+  "download_allowed": false,
+  "index_rebuild_allowed": false,
+  "install_execution_allowed": false,
+  "lan_operations_allowed": false,
+  "master_index_mutation_allowed": false,
+  "model_provider_allowed": false,
+  "queue_mutation_allowed": true,
+  "review_decision_allowed": false,
+  "schema_version": "local_workunit_side_effect_policy.v0",
+  "site_dist_writes_allowed": false,
+  "source_probe_allowed": false,
+  "work_execution_allowed": false
+}

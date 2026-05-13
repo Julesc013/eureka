@@ -20,6 +20,7 @@ class LocalRuntimeStatus:
     deployment_performed: bool
     production_readiness_claimed: bool
     public_launch_readiness_claimed: bool
+    workunit_queue: Mapping[str, Any]
     warnings: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
@@ -38,6 +39,7 @@ class LocalRuntimeStatus:
             "deployment_performed": self.deployment_performed,
             "production_readiness_claimed": self.production_readiness_claimed,
             "public_launch_readiness_claimed": self.public_launch_readiness_claimed,
+            "workunit_queue": dict(self.workunit_queue),
             "warnings": list(self.warnings),
         }
 
@@ -72,5 +74,20 @@ def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
         deployment_performed=False,
         production_readiness_claimed=False,
         public_launch_readiness_claimed=False,
+        workunit_queue=_workunit_queue_status(runtime),
         warnings=tuple(runtime.config.warnings) + tuple(runtime.migration_state.warnings),
     )
+
+
+def _workunit_queue_status(runtime: Any) -> Mapping[str, Any]:
+    summary = runtime.workunit_queue.summarize()
+    payload = summary.to_dict() if hasattr(summary, "to_dict") else dict(summary)
+    payload.update(
+        {
+            "store_id": "workunit_queue",
+            "relative_path": runtime.store_manifest.stores["workunit_queue"].relative_path,
+            "execution_enabled": False,
+            "worker_runner_enabled": False,
+        }
+    )
+    return payload

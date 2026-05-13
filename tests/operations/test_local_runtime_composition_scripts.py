@@ -32,7 +32,8 @@ class LocalRuntimeCompositionScriptTests(unittest.TestCase):
             self.assertEqual(0, completed.returncode, completed.stderr)
             data = payload(completed)
             self.assertEqual("local_runtime_status.v0", data["schema_version"])
-            self.assertEqual(4, data["store_count"])
+            self.assertEqual(5, data["store_count"])
+            self.assertIn("workunit_queue", data["stores"])
             self.assertIs(data["server_enabled"], False)
             self.assertIs(data["lan_enabled"], False)
 

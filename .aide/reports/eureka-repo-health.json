@@ -1,7 +1,7 @@
 {
-  "completed_queue_item": "LOCAL-06",
+  "completed_queue_item": "LOCAL-07",
   "current_queue_item": "LOCAL-02",
-  "current_recommended_queue_item": "LOCAL-07",
+  "current_recommended_queue_item": "LOCAL-08",
   "deployment_performed": false,
   "f0_current_status": "deferred",
   "f0_deferred_until": "LOCAL-14",
@@ -17,15 +17,16 @@
   "local_runtime_composition_added": true,
   "model_provider_enabled": false,
   "network_access_enabled": false,
-  "next_recommended_queue_item": "LOCAL-07",
-  "note": "LOCAL-06 hardens the read-only local workbench pages. F0 remains deferred until LOCAL-14.",
+  "next_recommended_queue_item": "LOCAL-08",
+  "note": "LOCAL-07 adds a durable local WorkUnit queue with no worker execution. F0 remains deferred until LOCAL-14.",
   "production_readiness": false,
   "public_launch_readiness": false,
   "schema_version": "eureka_repo_health.v0",
   "source_sync_enabled": false,
   "status": "planned",
   "warnings": [
-    "runtime leakage gate remains a pre-existing warning and LOCAL-06 does not increase it"
+    "runtime leakage gate remains a pre-existing warning and LOCAL-07 does not increase it"
   ],
-  "workunit_runtime_implemented": false
+  "workunit_runtime_implemented": true,
+  "worker_execution_enabled": false
 }

@@ -1,0 +1,15 @@
+id: LOCAL-08
+title: Review and index rebuild from UI
+status: queued
+purpose: Add operator-facing review and index rebuild controls after the durable local WorkUnit queue.
+allowed_scope_summary: Review/rebuild UI and explicitly scoped local mutations only when a future LOCAL-08 task prompt enables them.
+gate:
+  - LOCAL-07 completed with durable WorkUnit queue records only
+  - no LAN binding
+  - no source probe execution unless explicitly enabled by a future task
+  - no automatic worker execution unless explicitly enabled by a future task
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-07

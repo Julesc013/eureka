@@ -27,7 +27,7 @@ python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --rea
 python scripts/demo_local_runtime_composition.py --instance ./eureka-instance --json
 ```
 
-The demo opens `LocalApplianceRuntime`, checks all four store handles, runs integrity checks, emits unified status, and closes the runtime. It writes no files unless `--output` is provided.
+The demo opens `LocalApplianceRuntime`, checks the composed store handles, runs integrity checks, emits unified status, and closes the runtime. It writes no files unless `--output` is provided.
 
 ## Validator
 
@@ -51,6 +51,14 @@ Runtime opening fails when:
 
 ## Next Step
 
-LOCAL-04 should build the read-only localhost HTTP service over this runtime API. LAN, deployment, index rebuilds, WorkUnit execution, and workbench behavior remain disabled until later LOCAL tasks explicitly enable them.
+LOCAL-04 builds the read-only localhost HTTP service over this runtime API. LOCAL-07 adds the manifest-defined WorkUnit queue store to the composition boundary. LAN, deployment, index rebuild execution, WorkUnit execution, and broader workbench behavior remain disabled until later LOCAL tasks explicitly enable them.
 
 LOCAL-04 now provides that service through `scripts/eureka_local_server.py` and `scripts/eureka_local_service_smoke.py`. Use the service runbook for HTTP operation, and keep this composition runbook for direct runtime status and integrity checks.
+
+## WorkUnit Queue Status
+
+```bash
+python scripts/eureka_workunit_queue.py --instance ./eureka-instance summary --json
+```
+
+The queue summary reports local queue records only. It is not worker execution and does not mutate source cache, evidence ledger, review queue, or public index state.

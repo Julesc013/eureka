@@ -1,0 +1,8 @@
+{
+  "created_count": 5,
+  "idempotency_checked": true,
+  "invalid_transition_rejected": true,
+  "schema_version": "local_workunit_queue_demo_result.v0",
+  "status": "pass",
+  "work_execution_performed": false
+}

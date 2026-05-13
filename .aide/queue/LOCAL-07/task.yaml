@@ -1,6 +1,6 @@
 id: LOCAL-07
 title: Operator-gated WorkUnit queue
-status: queued
+status: completed
 source_packet: .aide/context/latest-task-packet.md
 purpose: Add an operator-gated WorkUnit queue after hardened read-only workbench pages.
 allowed_scope_summary: WorkUnit queue contract, local queue storage boundary, operator-gated creation, docs, tests, validators, and audit evidence only until explicitly scoped.
@@ -16,3 +16,4 @@ gate:
   - no public launch claim
 proof_level_required: L2
 recommended_after: LOCAL-06
+recommended_next: LOCAL-08

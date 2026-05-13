@@ -37,3 +37,11 @@ The workbench renders home, search, object, source, absence, and status pages. I
 LOCAL-06 keeps the same localhost-only, read-only workbench and makes it operationally useful. Pages now show store health, reviewed-index status, provenance references, local-only source scope, current-index absence semantics, warnings, limitations, and unavailable capabilities.
 
 This is still not a WorkUnit runtime, review/rebuild UI, source probe runner, LAN mode, deployment, production readiness claim, or public launch claim.
+
+## LOCAL-07 WorkUnit Queue
+
+LOCAL-07 adds the durable local WorkUnit queue as a fifth manifest-defined store: `workunit_queue` at `db/workunit_queue.sqlite`.
+
+The queue records operator-gated work proposals and state transitions. It supports search needs, source probe proposals, evidence review follow-up, index rebuild proposals, regression checks, extraction tasks, and agent-task records as queue entries only.
+
+LOCAL-07 still does not execute workers, run source probes, create review decisions, rebuild indexes, expose LAN, deploy, or claim production/public launch readiness.

@@ -2,38 +2,38 @@
 
 ## PHASE
 
-LOCAL-07 - Operator-gated WorkUnit queue
+LOCAL-08 - Review and index rebuild from UI
 
 ## GOAL
 
-Add the first operator-gated WorkUnit queue after LOCAL-06 hardened the read-only local workbench pages.
+Prepare the next queue item after LOCAL-07 added the durable local WorkUnit queue.
 
 ## WHY
 
-LOCAL-01 established explicit instance bootstrap. LOCAL-02 added instance configuration, schema, and migration guard. LOCAL-03 added the local runtime composition boundary. LOCAL-04 added the read-only localhost HTTP service over the reviewed public index. LOCAL-05 added the minimal server-rendered HTML workbench.
+LOCAL-00 through LOCAL-06 established the Local Appliance track, explicit instance bootstrap, migration guard, runtime composition, read-only localhost service, HTML workbench, and hardened diagnostic pages. LOCAL-07 adds the durable WorkUnit queue as a manifest-defined local store and CLI/demo/validator boundary, while keeping worker execution disabled.
 
-LOCAL-06 hardened status, search, object, source, absence, and home pages with store status, provenance, local-only scope, current-index absence semantics, non-claims, and unavailable capability markers. LOCAL-07 is now recommended so WorkUnit queue work can start from that read-only operational surface.
+LOCAL-08 is now recommended to add review and index rebuild UI under an explicit future task prompt.
 
 ## CONTEXT_REFS
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-07/task.yaml`
-- `runtime/local_workbench/`
-- `runtime/local_service/`
+- `.aide/queue/LOCAL-08/task.yaml`
+- `runtime/workunit_queue/`
 - `runtime/local_appliance/`
-- `docs/architecture/LOCAL_HTML_WORKBENCH.md`
-- `docs/reference/LOCAL_HTML_ROUTES.md`
-- `docs/operations/LOCAL_HTML_WORKBENCH_RUNBOOK.md`
-- `control/inventory/local_06_next_task_decision.json`
+- `docs/architecture/LOCAL_WORKUNIT_QUEUE.md`
+- `docs/reference/LOCAL_WORKUNIT_QUEUE_RUNTIME.md`
+- `docs/reference/LOCAL_WORKUNIT_STATE_MACHINE.md`
+- `docs/operations/LOCAL_WORKUNIT_QUEUE_RUNBOOK.md`
+- `control/inventory/local_07_next_task_decision.json`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- LOCAL-07 paths must come from a reviewed LOCAL-07 task prompt before work starts.
+- LOCAL-08 paths must come from a reviewed LOCAL-08 task prompt before work starts.
 - `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-07/task.yaml`
-- LOCAL-07 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
+- `.aide/queue/LOCAL-08/task.yaml`
+- LOCAL-08 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
 
 ## FORBIDDEN_PATHS
 
@@ -44,23 +44,22 @@ LOCAL-06 hardened status, search, object, source, absence, and home pages with s
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- runtime, contracts, surfaces, site, native, crates, examples, and private local files unless a reviewed LOCAL-07 prompt explicitly allows the path.
+- runtime, contracts, surfaces, site, native, crates, examples, and private local files unless a reviewed LOCAL-08 prompt explicitly allows the path.
 
 ## IMPLEMENTATION
 
-- Start from `dev` or an explicit LOCAL-07 task branch from `dev`.
-- Use the LOCAL-04 HTTP service boundary for workbench reads.
-- Keep the workbench read-only unless a future task explicitly enables writes.
-- Do not expose LAN.
+- Start from `dev` or an explicit LOCAL-08 task branch from `dev`.
+- Use `runtime/local_appliance` and `runtime/workunit_queue` instead of ad hoc store paths.
+- Keep LAN disabled.
 - Do not deploy.
-- Do not run source probes or agents.
+- Do not run source probes, workers, agents, extraction, or model/provider calls unless a future prompt explicitly enables them.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- LOCAL-07 focused validator and tests when defined
-- `python scripts/validate_local_html_workbench.py`
+- LOCAL-08 focused validator and tests when defined
+- `python scripts/validate_workunit_queue.py`
 - `python scripts/check_architecture_boundaries.py`
 
 ## EVIDENCE
@@ -74,15 +73,13 @@ LOCAL-06 hardened status, search, object, source, absence, and home pages with s
 - No LAN binding.
 - No deployment.
 - No source probe execution.
-- No WorkUnit execution.
-- No review mutation.
-- No index rebuild behavior.
+- No worker execution unless future scoped.
 - No production readiness claim.
 - No public launch readiness claim.
 
 ## ACCEPTANCE
 
-- LOCAL-07 acceptance criteria are met after a future reviewed LOCAL-07 prompt.
+- LOCAL-08 acceptance criteria must come from a future reviewed LOCAL-08 prompt.
 - F0 remains deferred until LOCAL-14.
 
 ## OUTPUT_SCHEMA

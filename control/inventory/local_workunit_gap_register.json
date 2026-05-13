@@ -1,0 +1,26 @@
+{
+  "gaps": [
+    {
+      "deferred_until": "LOCAL-08",
+      "gap": "review_and_index_rebuild_ui",
+      "status": "deferred"
+    },
+    {
+      "deferred_until": "LOCAL-09",
+      "gap": "worker_execution",
+      "status": "deferred"
+    },
+    {
+      "deferred_until": "LOCAL-09+",
+      "gap": "source_probe_execution",
+      "status": "deferred"
+    },
+    {
+      "deferred_until": "LOCAL-14",
+      "gap": "F0_extraction_resume",
+      "status": "deferred"
+    }
+  ],
+  "schema_version": "local_workunit_gap_register.v0",
+  "task": "LOCAL-07"
+}

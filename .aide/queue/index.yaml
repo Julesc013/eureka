@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-07
+current_recommended_task: LOCAL-08
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -70,12 +70,22 @@ entries:
     recommended_next: LOCAL-07
   - id: LOCAL-07
     title: Operator-gated WorkUnit queue
-    status: queued
+    status: completed
+    previous_current_recommended_task: LOCAL-07
     purpose: Add the first operator-gated WorkUnit queue after hardened read-only workbench pages.
     allowed_scope_summary: WorkUnit queue contract, local read/write governance, operator-gated creation, docs, tests, validators, and audit evidence only until explicitly scoped.
     gate: LOCAL-06 passed with read-only hardened workbench pages; no LAN binding, deployment, source probe execution, automatic agent execution, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-07/task.yaml
     recommended_after: LOCAL-06
+    recommended_next: LOCAL-08
+  - id: LOCAL-08
+    title: Review and index rebuild from UI
+    status: queued
+    purpose: Add operator-facing review and index rebuild controls after the durable WorkUnit queue.
+    allowed_scope_summary: Review/rebuild UI and explicitly scoped local mutations only when a future LOCAL-08 prompt enables them.
+    gate: LOCAL-07 passed with durable queue records only; no LAN binding, deployment, source probe execution, automatic worker execution, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-08/task.yaml
+    recommended_after: LOCAL-07
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review
