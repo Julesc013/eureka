@@ -90,7 +90,7 @@
 - result: PASS
 - checks_run: 25
 - passed_checks: 25
-- approx_tokens_if_applicable: 1593
+- approx_tokens_if_applicable: 1152
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-review-packet.md, .aide/context/latest-task-packet.md, .aide/verification/latest-verification-report.md
 - notes: Checks review packets stay compact, evidence-oriented, and secret-free.
 
@@ -243,7 +243,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1593
+- approx_tokens_if_applicable: 1152
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
