@@ -1,0 +1,22 @@
+{
+  "architecture_boundary_checks_pass": true,
+  "blockers": [],
+  "full_unittest_discovery_pass": true,
+  "generated_artifact_cleanliness_pass": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "r0_validators_pass": true,
+  "schema_version": "dev_to_main_r0_validation_result.v0",
+  "status": "pass_with_warnings",
+  "task": "DEV-TO-MAIN-MERGE-R0",
+  "warnings": [
+    {
+      "classification": "harmless_for_promotion",
+      "warning": "Product-contract-tree warnings remained warning-only with 0 errors."
+    },
+    {
+      "classification": "harmless_for_promotion",
+      "warning": "AIDE verify warnings were optional report-reference/diff-scope warnings with 0 errors."
+    }
+  ]
+}

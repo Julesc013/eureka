@@ -1,0 +1,17 @@
+{
+  "deployment_performed": false,
+  "dev_resynced_after_main": true,
+  "f0_decision": "resume_f0",
+  "force_push_performed": false,
+  "history_rewrite_performed": false,
+  "merge_method": "fast_forward",
+  "merge_performed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "push_dev_performed": true,
+  "push_main_performed": true,
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "schema_version": "dev_to_main_r0_merge_result.v0",
+  "status": "pass_with_warnings",
+  "task": "DEV-TO-MAIN-MERGE-R0"
+}

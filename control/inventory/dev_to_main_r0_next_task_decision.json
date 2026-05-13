@@ -1,0 +1,10 @@
+{
+  "f0_can_resume": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Recovered R0 baseline promoted to main and validated.",
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "recommended_start_branch": "main",
+  "schema_version": "dev_to_main_r0_next_task_decision.v0",
+  "task": "DEV-TO-MAIN-MERGE-R0"
+}

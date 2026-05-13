@@ -1,0 +1,16 @@
+{
+  "current_branch_after": "dev",
+  "current_branch_before": "dev",
+  "dev_contains_main_before": true,
+  "dev_synced_before_merge": true,
+  "head_after": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "head_before": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "origin_dev_after": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "origin_dev_before": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "origin_main_after": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "origin_main_before": "c5e131da12a67b86259874f6ac7145de4d2d3661",
+  "origin_main_equals_origin_dev_after": true,
+  "schema_version": "dev_to_main_r0_git_state.v0",
+  "task": "DEV-TO-MAIN-MERGE-R0",
+  "working_tree_clean_after": true
+}

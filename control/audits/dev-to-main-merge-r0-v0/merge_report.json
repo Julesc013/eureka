@@ -1,0 +1,23 @@
+{
+  "current_branch_before": "dev",
+  "deployment_performed": false,
+  "dev_push_performed_before_merge": true,
+  "dev_resynced_after_main": true,
+  "force_push_performed": false,
+  "history_rewrite_performed": false,
+  "merge_method": "fast_forward",
+  "merge_performed": true,
+  "origin_dev_before": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+  "origin_main_before": "c5e131da12a67b86259874f6ac7145de4d2d3661",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "purpose": "promote_recovered_r0_dev_to_main",
+  "push_main_performed": true,
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "schema_version": "dev_to_main_r0_merge_report.v0",
+  "status": "pass_with_warnings",
+  "task": "DEV-TO-MAIN-MERGE-R0",
+  "validation": {},
+  "validation_passed_before_merge": true,
+  "working_tree_clean_after": true
+}
