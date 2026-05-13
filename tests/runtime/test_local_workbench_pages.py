@@ -84,6 +84,7 @@ class LocalWorkbenchPageTests(unittest.TestCase):
         self.assertIn("&lt;needle&gt;", html)
         self.assertNotIn("<needle>", html)
         self.assertIn("Reviewed result count", html)
+        self.assertIn("Reviewed results are from the local reviewed public index only", html)
 
     def test_object_page_renders_found_and_missing_states(self) -> None:
         found = render_object_page(build_object_page_view("pir_0123456789abcdef", sample_record()))
@@ -91,6 +92,7 @@ class LocalWorkbenchPageTests(unittest.TestCase):
         self.assert_valid_page(found)
         self.assert_valid_page(missing)
         self.assertIn("Evidence and review references", found)
+        self.assertIn("Normalized fields", found)
         self.assertIn("Object not found", missing)
 
     def test_source_page_renders_empty_state(self) -> None:
@@ -99,6 +101,7 @@ class LocalWorkbenchPageTests(unittest.TestCase):
         )
         self.assert_valid_page(html)
         self.assertIn("No local reviewed index records", html)
+        self.assertIn("Source coverage shown here is local", html)
 
     def test_absence_page_states_local_absence_only(self) -> None:
         html = render_absence_page(
@@ -110,11 +113,13 @@ class LocalWorkbenchPageTests(unittest.TestCase):
         self.assert_valid_page(html)
         self.assertIn("local current-index absence only, not global proof", html)
         self.assertIn("Checked local layers", html)
+        self.assertIn("Unchecked and deferred layers", html)
 
     def test_status_page_renders_flags(self) -> None:
         html = render_status_page(build_status_page_view(sample_status()))
         self.assert_valid_page(html)
         self.assertIn("Instance ID", html)
+        self.assertIn("Store status", html)
         self.assertIn("lan_enabled", html)
         self.assertIn("deployment_performed", html)
 

@@ -62,9 +62,12 @@ class LocalWorkbenchScriptTests(unittest.TestCase):
                 data = payload(workbench)
                 self.assertEqual("pass", data["status"])
                 self.assertIs(data["home_page_passed"], True)
+                self.assertIs(data["object_not_found_passed"], True)
+                self.assertIs(data["source_empty_passed"], True)
                 self.assertIs(data["json_api_still_passed"], True)
                 self.assertIs(data["mutation_controls_found"], False)
                 self.assertIs(data["external_assets_found"], False)
+                self.assertIs(data["forbidden_claims_found"], False)
             finally:
                 process.terminate()
                 try:

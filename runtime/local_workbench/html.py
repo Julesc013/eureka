@@ -6,7 +6,7 @@ from typing import Any, Mapping, Sequence
 
 NON_CLAIM_BANNER = (
     "Local appliance prototype. Localhost only. Not production. "
-    "Not public launch. Read-only."
+    "Not public launch. Read-only. Reviewed local projection, not global truth."
 )
 
 

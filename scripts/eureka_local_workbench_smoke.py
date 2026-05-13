@@ -16,10 +16,12 @@ from urllib.error import HTTPError, URLError
 ALLOWED_HOSTS = {"127.0.0.1", "localhost"}
 FORBIDDEN_HOSTS = {"0.0.0.0", "::", "", "*"}
 HTML_CHECKS = {
-    "/": ("Eureka Local Appliance", "Local appliance prototype", "<form"),
-    "/status": ("Status", "Store status", "JSON status"),
-    "/search": ("Search", "Submitted query", "Reviewed result count"),
-    "/absence": ("Absence", "local current-index absence only", "Checked local layers"),
+    "/": ("Eureka Local Appliance", "Local appliance prototype", "<form", "Unavailable capabilities"),
+    "/status": ("Status", "Store status", "Runtime and non-claim flags", "JSON health"),
+    "/search": ("Search", "Submitted query", "Reviewed result count", "Reviewed results are from the local reviewed public index only"),
+    "/object/not-present": ("Object not found", "local reviewed index"),
+    "/source/not-present": ("Source", "Source coverage shown here is local", "No local reviewed index records"),
+    "/absence": ("Absence", "local current-index absence only", "Checked local layers", "Unchecked and deferred layers"),
 }
 FORBIDDEN_HTML = ("<script", "javascript:", "method=\"post\"", "formmethod=\"post\"", "https://", "http://example")
 
@@ -52,6 +54,8 @@ def run_smoke(base_url: str) -> dict[str, Any]:
         "/": fetch_html(base_url, "/"),
         "/status": fetch_html(base_url, "/status"),
         "/search": fetch_html(base_url, "/search", {"q": "sampleproject"}),
+        "/object/not-present": fetch_html(base_url, "/object/not-present", expected_statuses=(200, 404)),
+        "/source/not-present": fetch_html(base_url, "/source/not-present"),
         "/absence": fetch_html(base_url, "/absence", {"q": "definitely-not-present-local-05"}),
     }
     api_status = fetch_json(base_url, "/api/v1/status")
@@ -76,10 +80,13 @@ def run_smoke(base_url: str) -> dict[str, Any]:
         "home_page_passed": bool(routes["/"].get("ok")),
         "status_page_passed": bool(routes["/status"].get("ok")),
         "search_page_passed": bool(routes["/search"].get("ok")),
+        "object_not_found_passed": bool(routes["/object/not-present"].get("ok")),
+        "source_empty_passed": bool(routes["/source/not-present"].get("ok")),
         "absence_page_passed": bool(routes["/absence"].get("ok")),
         "json_api_still_passed": bool(api_status.get("ok") and api_search.get("ok")),
         "mutation_controls_found": any(item.get("mutation_controls_found") for item in routes.values()),
         "external_assets_found": any(item.get("external_assets_found") for item in routes.values()),
+        "forbidden_claims_found": any(item.get("forbidden_claims_found") for item in routes.values()),
         "lan_enabled": False,
         "deployment_performed": False,
         "source_probe_executed": False,
@@ -92,7 +99,12 @@ def run_smoke(base_url: str) -> dict[str, Any]:
     }
 
 
-def fetch_html(base_url: str, path: str, params: dict[str, str] | None = None) -> dict[str, Any]:
+def fetch_html(
+    base_url: str,
+    path: str,
+    params: dict[str, str] | None = None,
+    expected_statuses: tuple[int, ...] = (200,),
+) -> dict[str, Any]:
     result = fetch(base_url, path, params, accept="text/html")
     body = str(result.get("body", ""))
     expected = HTML_CHECKS.get(path, ())
@@ -100,12 +112,31 @@ def fetch_html(base_url: str, path: str, params: dict[str, str] | None = None) -
     lowered = body.lower()
     mutation = any(item in lowered for item in ("method=\"post\"", "formmethod=\"post\"", "review mutation", "rebuild index", "enable lan"))
     external = any(item in lowered for item in ("src=\"http://", "src=\"https://", "href=\"http://", "href=\"https://"))
+    forbidden_claim = any(
+        item in lowered
+        for item in (
+            "production ready",
+            "public launch ready",
+            "globally complete",
+            "exhaustive coverage",
+            "legal approval",
+            "rights cleared",
+            "malware safe",
+            "installability certified",
+        )
+    )
     result.update(
         {
-            "ok": bool(result.get("ok")) and "text/html" in str(result.get("content_type", "")) and marker_ok and not mutation and not external,
+            "ok": int(result.get("status_code", 0)) in expected_statuses
+            and "text/html" in str(result.get("content_type", ""))
+            and marker_ok
+            and not mutation
+            and not external
+            and not forbidden_claim,
             "marker_ok": marker_ok,
             "mutation_controls_found": mutation,
             "external_assets_found": external,
+            "forbidden_claims_found": forbidden_claim,
         }
     )
     result.pop("body", None)

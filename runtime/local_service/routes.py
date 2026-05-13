@@ -115,7 +115,7 @@ def _health_response(runtime: Any) -> LocalServiceResponse:
 def _search_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
     limit = parse_limit(first_param(request_context.params, "limit", ""))
-    results = [item.to_dict() for item in runtime.public_index.search(query, limit=limit)]
+    results = [_search_result_payload(runtime, item.to_dict()) for item in runtime.public_index.search(query, limit=limit)]
     payload = {
         "schema_version": "local_http_search_response.v0",
         "status": "pass",
@@ -217,6 +217,20 @@ def _absence_html_response(runtime: Any, request_context: LocalRequestContext) -
 
 def _wants_json(request_context: LocalRequestContext) -> bool:
     return first_param(request_context.params, "format", "").lower() == "json"
+
+
+def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, Any]:
+    record = runtime.public_index.get_record(str(result.get("record_id", "")))
+    if record is None:
+        return result
+    payload = record.to_dict()
+    payload.update(
+        {
+            "score": result.get("score"),
+            "matched_terms": result.get("matched_terms", []),
+        }
+    )
+    return payload
 
 
 def _workbench() -> Any:

@@ -22,6 +22,20 @@ FORBIDDEN_CONTROL_WORDS = (
     "upload",
     "download",
 )
+FORBIDDEN_CLAIMS = (
+    "production ready",
+    "public launch ready",
+    "globally complete",
+    "exhaustive coverage",
+    "legal approval",
+    "rights cleared",
+    "malware safe",
+    "installability certified",
+    "source truth accepted",
+    "evidence truth accepted",
+    "master index mutated",
+    "deployment performed",
+)
 
 
 def validate_html_safe(text: str) -> str:
@@ -59,9 +73,18 @@ def validate_required_accessibility_markers(html: str) -> str:
     return html
 
 
+def validate_no_forbidden_claims(html: str) -> str:
+    lowered = html.lower()
+    for claim in FORBIDDEN_CLAIMS:
+        if claim in lowered:
+            raise LocalWorkbenchValidationError(f"forbidden claim: {claim}")
+    return html
+
+
 def validate_local_workbench_page(html: str) -> str:
     validate_html_safe(html)
     validate_no_mutation_controls(html)
     validate_no_external_assets(html)
+    validate_no_forbidden_claims(html)
     validate_required_accessibility_markers(html)
     return html

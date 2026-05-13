@@ -1,0 +1,18 @@
+id: LOCAL-07
+title: Operator-gated WorkUnit queue
+status: queued
+source_packet: .aide/context/latest-task-packet.md
+purpose: Add an operator-gated WorkUnit queue after hardened read-only workbench pages.
+allowed_scope_summary: WorkUnit queue contract, local queue storage boundary, operator-gated creation, docs, tests, validators, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-06 completed with hardened read-only local workbench pages
+  - no LAN binding
+  - no automatic source probe execution
+  - no agent execution
+  - no review mutation without future explicit gate
+  - no index rebuild behavior without future explicit gate
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-06

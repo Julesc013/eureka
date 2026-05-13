@@ -43,6 +43,8 @@ The workbench smoke checks the LOCAL-05 HTML routes:
 
 It also verifies JSON API compatibility.
 
+After LOCAL-06 the same smoke also checks page hardening markers: non-claim banner, store status, local index limitation, object not-found state, source empty state, checked/unchecked absence layers, no mutation controls, no external assets, and JSON API compatibility.
+
 ## Validate
 
 ```bash
@@ -66,3 +68,5 @@ The validator checks policies, routes, runtime imports, app routes, localhost se
 ## Explicit Deferrals
 
 LOCAL-05 implements only the minimal read-only HTML workbench. It still does not implement WorkUnit queue, source probes, review mutation, index rebuilds, LAN mode, deployment, production readiness, or public launch readiness.
+
+LOCAL-06 adds operational page detail only. WorkUnits remain deferred until LOCAL-07, review/rebuild UI until LOCAL-08, and LAN until LOCAL-11/LOCAL-12.

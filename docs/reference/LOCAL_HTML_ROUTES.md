@@ -32,3 +32,16 @@ The LOCAL-04 JSON API remains available under `/api/v1/*`. HTML routes that alre
 ## Accessibility
 
 Pages use semantic HTML, document titles, `lang="en"`, labels for search forms, ordinary links, and no JavaScript dependency. They are readable without CSS.
+
+## LOCAL-06 Operational Markers
+
+The route set is unchanged, but pages now include stronger operational markers:
+
+| Route | Added markers |
+| --- | --- |
+| `/` | local appliance status card, unavailable capabilities |
+| `/search?q=<query>` | local index limitation, provenance references on result cards |
+| `/object/<record_id>` | normalized fields, searchable text excerpt, provenance references, not-found state |
+| `/source/<source_id>` | source-local record count and local-only source scope |
+| `/absence?q=<query>` | checked layer list, unchecked/deferred layer list, absence non-claim |
+| `/status` | store status, reviewed public index status, migration and disabled runtime flags |

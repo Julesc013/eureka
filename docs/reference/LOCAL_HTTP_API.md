@@ -70,6 +70,8 @@ LOCAL-05 adds read-only HTML routes for browser use:
 
 The JSON API remains under `/api/v1/*`.
 
+LOCAL-06 hardens the HTML pages without changing these JSON response shapes. Search JSON may carry full public-index record fields for result cards, while preserving the existing result fields.
+
 ## Disabled Methods
 
 `POST`, `PUT`, `PATCH`, and `DELETE` are rejected. LOCAL-04 has no write routes.

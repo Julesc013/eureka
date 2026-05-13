@@ -31,3 +31,9 @@ The service exposes status, health, reviewed-index search, object, source, and a
 LOCAL-05 adds the first browser workbench in `runtime/local_workbench`. It is server-rendered through the LOCAL-04 service, requires no frontend build and no JavaScript, and stays read-only over the reviewed public index.
 
 The workbench renders home, search, object, source, absence, and status pages. It does not add review decision controls, WorkUnits, source probes, index rebuild behavior, LAN mode, deployment, production readiness, or public launch readiness.
+
+## LOCAL-06 Page Hardening
+
+LOCAL-06 keeps the same localhost-only, read-only workbench and makes it operationally useful. Pages now show store health, reviewed-index status, provenance references, local-only source scope, current-index absence semantics, warnings, limitations, and unavailable capabilities.
+
+This is still not a WorkUnit runtime, review/rebuild UI, source probe runner, LAN mode, deployment, production readiness claim, or public launch claim.

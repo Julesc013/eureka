@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-06
+current_recommended_task: LOCAL-07
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -60,12 +60,22 @@ entries:
     recommended_next: LOCAL-06
   - id: LOCAL-06
     title: Status, object, source, and absence page hardening
-    status: queued
+    status: completed
+    previous_current_recommended_task: LOCAL-06
     purpose: Harden the first local HTML workbench pages after the minimal read-only workbench.
     allowed_scope_summary: Page hardening, accessibility polish, empty/error states, docs, tests, validators, and audit evidence only until explicitly scoped.
     gate: LOCAL-05 passed with minimal read-only HTML workbench; no LAN binding, deployment, write routes, source probes, WorkUnit execution, index rebuilds, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-06/task.yaml
     recommended_after: LOCAL-05
+    recommended_next: LOCAL-07
+  - id: LOCAL-07
+    title: Operator-gated WorkUnit queue
+    status: queued
+    purpose: Add the first operator-gated WorkUnit queue after hardened read-only workbench pages.
+    allowed_scope_summary: WorkUnit queue contract, local read/write governance, operator-gated creation, docs, tests, validators, and audit evidence only until explicitly scoped.
+    gate: LOCAL-06 passed with read-only hardened workbench pages; no LAN binding, deployment, source probe execution, automatic agent execution, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-07/task.yaml
+    recommended_after: LOCAL-06
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

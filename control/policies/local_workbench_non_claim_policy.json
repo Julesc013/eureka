@@ -1,0 +1,25 @@
+{
+  "forbidden_claims": [
+    "production_ready",
+    "public_launch_ready",
+    "globally_complete",
+    "exhaustive_coverage",
+    "legal_approval",
+    "rights_cleared",
+    "malware_safe",
+    "installability_certified",
+    "source_truth_accepted",
+    "evidence_truth_accepted",
+    "master_index_mutated",
+    "deployment_performed"
+  ],
+  "required_wording_classes": [
+    "local_only",
+    "current_index_only",
+    "reviewed_local_projection",
+    "candidate_or_reviewed_state",
+    "limitations_visible",
+    "warnings_visible"
+  ],
+  "schema_version": "local_workbench_non_claim_policy.v0"
+}

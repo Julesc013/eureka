@@ -40,6 +40,7 @@ python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --
 
 ```bash
 python scripts/validate_local_html_workbench.py
+python scripts/validate_local_workbench_page_hardening.py
 ```
 
 The validator checks policies, workbench renderers, localhost smoke behavior, JSON API compatibility, read-only HTML, no external assets, no mutation controls, queue handoff, and leakage baseline.
@@ -47,3 +48,5 @@ The validator checks policies, workbench renderers, localhost smoke behavior, JS
 ## Deferrals
 
 LOCAL-05 does not add review decision controls, WorkUnits, Search Hunt Sessions, source probes, index rebuild UI, LAN, deployment, production readiness, or public launch readiness.
+
+LOCAL-06 hardens the same routes with store status, provenance, source-local scope, current-index absence semantics, and unavailable capability markers. WorkUnits remain next, review/rebuild remains later, LAN remains disabled, and no deployment occurs.

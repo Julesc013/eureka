@@ -1,0 +1,21 @@
+{
+  "absence_layers_visible": true,
+  "deployment_performed": false,
+  "external_assets_enabled": false,
+  "lan_enabled": false,
+  "mutation_controls_enabled": false,
+  "non_claim_banner_enabled": true,
+  "pages_hardened": [
+    "home",
+    "search",
+    "object",
+    "source",
+    "absence",
+    "status"
+  ],
+  "provenance_visible": true,
+  "schema_version": "local_workbench_page_hardening_inventory.v0",
+  "store_status_visible": true,
+  "task": "LOCAL-06",
+  "unavailable_capabilities_visible": true
+}

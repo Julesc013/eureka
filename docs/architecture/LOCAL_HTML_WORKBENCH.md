@@ -30,3 +30,9 @@ All pages include a non-claim banner: local appliance prototype, localhost only,
 ## Handoff
 
 LOCAL-06 hardens status, object, source, and absence page behavior. Review decisions remain deferred until LOCAL-08, WorkUnits until LOCAL-07, and LAN until later LOCAL gates.
+
+## LOCAL-06 Page Hardening
+
+LOCAL-06 makes the pages diagnostic rather than merely navigational. The status page shows instance, store, index, migration, server, LAN, deployment, and non-claim flags. Search and object pages show provenance references when the reviewed public index record has source cache, evidence, review item, or review decision IDs. Source pages state local source scope only. Absence pages show checked and unchecked layers and say that absence is not proof that an artifact does not exist.
+
+The hardening keeps the LOCAL-05 posture: server-rendered HTML, no frontend build, no JavaScript requirement, no external assets, no mutation controls, no source probes, no WorkUnits, no review mutation, no index rebuild, no LAN, and no deployment.

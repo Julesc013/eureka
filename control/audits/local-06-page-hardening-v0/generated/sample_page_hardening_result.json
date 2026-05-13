@@ -1,0 +1,21 @@
+{
+  "absence_checked_layers_visible": true,
+  "absence_page_hardened": true,
+  "absence_unchecked_layers_visible": true,
+  "external_assets_found": false,
+  "forbidden_claims_found": false,
+  "home_page_hardened": true,
+  "json_api_still_passed": true,
+  "mutation_controls_found": false,
+  "non_claim_banner_present": true,
+  "object_page_hardened": true,
+  "provenance_fields_visible": true,
+  "schema_version": "local_workbench_page_hardening_result.v0",
+  "search_page_hardened": true,
+  "source_page_hardened": true,
+  "status": "pass_with_warnings",
+  "status_page_hardened": true,
+  "store_status_visible": true,
+  "task": "LOCAL-06",
+  "workbench_smoke_passed": true
+}

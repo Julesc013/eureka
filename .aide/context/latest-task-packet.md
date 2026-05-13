@@ -2,38 +2,38 @@
 
 ## PHASE
 
-LOCAL-06 - Status, object, source, and absence page hardening
+LOCAL-07 - Operator-gated WorkUnit queue
 
 ## GOAL
 
-Harden the first LOCAL-05 HTML workbench pages while preserving the LOCAL-04 read-only localhost service and LOCAL-03 runtime composition boundary.
+Add the first operator-gated WorkUnit queue after LOCAL-06 hardened the read-only local workbench pages.
 
 ## WHY
 
 LOCAL-01 established explicit instance bootstrap. LOCAL-02 added instance configuration, schema, and migration guard. LOCAL-03 added the local runtime composition boundary. LOCAL-04 added the read-only localhost HTTP service over the reviewed public index. LOCAL-05 added the minimal server-rendered HTML workbench.
 
-LOCAL-06 should improve the status, object, source, and absence page behavior without enabling LAN, writes, source probes, WorkUnits, index rebuilds, deployment, production readiness, or public launch readiness.
+LOCAL-06 hardened status, search, object, source, absence, and home pages with store status, provenance, local-only scope, current-index absence semantics, non-claims, and unavailable capability markers. LOCAL-07 is now recommended so WorkUnit queue work can start from that read-only operational surface.
 
 ## CONTEXT_REFS
 
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-06/task.yaml`
+- `.aide/queue/LOCAL-07/task.yaml`
 - `runtime/local_workbench/`
 - `runtime/local_service/`
 - `runtime/local_appliance/`
 - `docs/architecture/LOCAL_HTML_WORKBENCH.md`
 - `docs/reference/LOCAL_HTML_ROUTES.md`
 - `docs/operations/LOCAL_HTML_WORKBENCH_RUNBOOK.md`
-- `control/inventory/local_05_next_task_decision.json`
+- `control/inventory/local_06_next_task_decision.json`
 - `AGENTS.md`
 
 ## ALLOWED_PATHS
 
-- LOCAL-06 paths must come from a reviewed LOCAL-06 task prompt before work starts.
+- LOCAL-07 paths must come from a reviewed LOCAL-07 task prompt before work starts.
 - `.aide/context/latest-task-packet.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/LOCAL-06/task.yaml`
-- LOCAL-06 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
+- `.aide/queue/LOCAL-07/task.yaml`
+- LOCAL-07 docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
 
 ## FORBIDDEN_PATHS
 
@@ -44,22 +44,22 @@ LOCAL-06 should improve the status, object, source, and absence page behavior wi
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- runtime, contracts, surfaces, site, native, crates, examples, and private local files unless a reviewed LOCAL-06 prompt explicitly allows the path.
+- runtime, contracts, surfaces, site, native, crates, examples, and private local files unless a reviewed LOCAL-07 prompt explicitly allows the path.
 
 ## IMPLEMENTATION
 
-- Start from `dev` or an explicit LOCAL-06 task branch from `dev`.
+- Start from `dev` or an explicit LOCAL-07 task branch from `dev`.
 - Use the LOCAL-04 HTTP service boundary for workbench reads.
 - Keep the workbench read-only unless a future task explicitly enables writes.
 - Do not expose LAN.
 - Do not deploy.
-- Do not run source probes or WorkUnits.
+- Do not run source probes or agents.
 
 ## VALIDATION
 
 - `git status --short`
 - `git diff --check`
-- LOCAL-06 focused validator and tests when defined
+- LOCAL-07 focused validator and tests when defined
 - `python scripts/validate_local_html_workbench.py`
 - `python scripts/check_architecture_boundaries.py`
 
@@ -82,7 +82,7 @@ LOCAL-06 should improve the status, object, source, and absence page behavior wi
 
 ## ACCEPTANCE
 
-- LOCAL-06 acceptance criteria are met after a future reviewed LOCAL-06 prompt.
+- LOCAL-07 acceptance criteria are met after a future reviewed LOCAL-07 prompt.
 - F0 remains deferred until LOCAL-14.
 
 ## OUTPUT_SCHEMA

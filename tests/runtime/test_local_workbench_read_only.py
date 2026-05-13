@@ -13,6 +13,7 @@ from runtime.local_workbench.errors import LocalWorkbenchValidationError
 from runtime.local_workbench.validation import (
     validate_local_workbench_page,
     validate_no_external_assets,
+    validate_no_forbidden_claims,
     validate_no_mutation_controls,
     validate_no_mutation_controls as validate_controls,
 )
@@ -53,6 +54,8 @@ class LocalWorkbenchReadOnlyTests(unittest.TestCase):
             validate_no_mutation_controls("<button>create WorkUnit</button>")
         with self.assertRaises(LocalWorkbenchValidationError):
             validate_no_external_assets('<link href="https://example.invalid/style.css">')
+        with self.assertRaises(LocalWorkbenchValidationError):
+            validate_no_forbidden_claims("production ready")
 
     def test_html_routes_preserve_json_api_routes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

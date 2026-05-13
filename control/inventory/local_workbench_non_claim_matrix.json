@@ -1,0 +1,54 @@
+{
+  "claims": [
+    {
+      "claim": "production_ready",
+      "found": false
+    },
+    {
+      "claim": "public_launch_ready",
+      "found": false
+    },
+    {
+      "claim": "globally_complete",
+      "found": false
+    },
+    {
+      "claim": "exhaustive_coverage",
+      "found": false
+    },
+    {
+      "claim": "legal_approval",
+      "found": false
+    },
+    {
+      "claim": "rights_cleared",
+      "found": false
+    },
+    {
+      "claim": "malware_safe",
+      "found": false
+    },
+    {
+      "claim": "installability_certified",
+      "found": false
+    },
+    {
+      "claim": "source_truth_accepted",
+      "found": false
+    },
+    {
+      "claim": "evidence_truth_accepted",
+      "found": false
+    },
+    {
+      "claim": "master_index_mutated",
+      "found": false
+    },
+    {
+      "claim": "deployment_performed",
+      "found": false
+    }
+  ],
+  "schema_version": "local_workbench_non_claim_matrix.v0",
+  "task": "LOCAL-06"
+}
