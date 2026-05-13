@@ -4,8 +4,6 @@ This is a deterministic preview only. It does not publish a release.
 
 ## Added
 
-- durable review queue store package and governed store contracts.
-- init, demo, validator, docs, inventory, and audit pack for R0-07.
 - reviewed public index store and rebuild pipeline.
 - public index store schemas.
 - store, rebuild, search, absence, and integration tests.
@@ -24,12 +22,10 @@ This is a deterministic preview only. It does not publish a release.
 - store manifest, migration state, schema-version inventories, audit pack, validator, migration status command, and focused tests.
 - runtime status, composition demo, and LOCAL-03 validator scripts.
 - LOCAL-03 policies, inventories, tests, docs, queue handoff, and audit evidence.
+- target-local Git workflow detection and helper planning reports.
 
 ## Changed
 
-- contract taxonomy classification now treats contracts/stores as durable store contracts before task-queue filename heuristics.
-- integrate remote dev cleanup commit into local dev history.
-- merge R0 recovery branch into dev.
 - refreshed exact runtime leakage allowlist hashes after reference-only path updates.
 - refreshed governed generated artifacts and R0 closeout decision evidence.
 - quarantine legacy H-series connector prototype runtime and update references.
@@ -38,10 +34,11 @@ This is a deterministic preview only. It does not publish a release.
 - init, validate, and status scripts now understand versioned instance metadata.
 - refreshed AIDE handover evidence and compact task/review artifacts.
 - imported canonical AIDE governance and validation tooling into Eureka.
+- regenerated Eureka-local AIDE packets and governance reports.
+- refreshed agent guidance for structured commits, task recovery, and Git plan usage.
 
 ## Fixed
 
-- preserve candidate-index historical contract path compatibility during merge.
 - moved unresolved contract taxonomy artifacts to control/schemas
 - updated active schema references and audit evidence needed by validators
 - retired remaining contract taxonomy blockers and shims.
@@ -50,4 +47,4 @@ This is a deterministic preview only. It does not publish a release.
 
 ## Notes
 
-- 18 malformed commits were excluded from release-note grouping.
+- 15 malformed commits were excluded from release-note grouping.

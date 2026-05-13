@@ -2,16 +2,6 @@
   "categories": {
     "Added": [
       {
-        "commit": "0eea9c54c65a",
-        "entry": "durable review queue store package and governed store contracts.",
-        "subject": "runtime(r0): add review queue store"
-      },
-      {
-        "commit": "0eea9c54c65a",
-        "entry": "init, demo, validator, docs, inventory, and audit pack for R0-07.",
-        "subject": "runtime(r0): add review queue store"
-      },
-      {
         "commit": "f9d7fc25f9fd",
         "entry": "reviewed public index store and rebuild pipeline.",
         "subject": "runtime(r0): add reviewed public index"
@@ -100,24 +90,14 @@
         "commit": "ac9f5b8de4f6",
         "entry": "LOCAL-03 policies, inventories, tests, docs, queue handoff, and audit evidence.",
         "subject": "runtime(local): add appliance composition boundary"
+      },
+      {
+        "commit": "3e5302ea9a36",
+        "entry": "target-local Git workflow detection and helper planning reports.",
+        "subject": "aide(eureka): sync Git workflow policy and reports"
       }
     ],
     "Changed": [
-      {
-        "commit": "0eea9c54c65a",
-        "entry": "contract taxonomy classification now treats contracts/stores as durable store contracts before task-queue filename heuristics.",
-        "subject": "runtime(r0): add review queue store"
-      },
-      {
-        "commit": "ce1ab9685222",
-        "entry": "integrate remote dev cleanup commit into local dev history.",
-        "subject": "chore(dev): integrate origin dev"
-      },
-      {
-        "commit": "9cda6e786c25",
-        "entry": "merge R0 recovery branch into dev.",
-        "subject": "chore(dev): merge R0 recovery branch"
-      },
       {
         "commit": "d15eb701b478",
         "entry": "refreshed exact runtime leakage allowlist hashes after reference-only path updates.",
@@ -157,6 +137,16 @@
         "commit": "21e4f766300d",
         "entry": "imported canonical AIDE governance and validation tooling into Eureka.",
         "subject": "aide(eureka): sync portable commit and WorkUnit policies"
+      },
+      {
+        "commit": "5d955486e323",
+        "entry": "regenerated Eureka-local AIDE packets and governance reports.",
+        "subject": "aide(eureka): regenerate packets and validation evidence"
+      },
+      {
+        "commit": "4c954e516a20",
+        "entry": "refreshed agent guidance for structured commits, task recovery, and Git plan usage.",
+        "subject": "docs(eureka): record canonical AIDE governance sync"
       }
     ],
     "Docs": [
@@ -184,14 +174,14 @@
         "commit": "5d31441b87f5",
         "entry": "recorded source-pack and baseline validation evidence.",
         "subject": "aide(eureka): add canonical governance sync packet"
+      },
+      {
+        "commit": "4c954e516a20",
+        "entry": "documented canonical AIDE governance sync for Eureka.",
+        "subject": "docs(eureka): record canonical AIDE governance sync"
       }
     ],
     "Fixed": [
-      {
-        "commit": "ce1ab9685222",
-        "entry": "preserve candidate-index historical contract path compatibility during merge.",
-        "subject": "chore(dev): integrate origin dev"
-      },
       {
         "commit": "ede77d3cb101",
         "entry": "moved unresolved contract taxonomy artifacts to control/schemas",
@@ -245,14 +235,19 @@
         "commit": "5d31441b87f5",
         "entry": "added Eureka-local Q32 governance sync queue state.",
         "subject": "aide(eureka): add canonical governance sync packet"
+      },
+      {
+        "commit": "3e5302ea9a36",
+        "entry": "preserved dry-run branch helper behavior for Q32.",
+        "subject": "aide(eureka): sync Git workflow policy and reports"
+      },
+      {
+        "commit": "5d955486e323",
+        "entry": "refreshed token and changelog previews for Q32 evidence.",
+        "subject": "aide(eureka): regenerate packets and validation evidence"
       }
     ],
     "Tests": [
-      {
-        "commit": "0eea9c54c65a",
-        "entry": "review queue behavior, migration, and integration coverage.",
-        "subject": "runtime(r0): add review queue store"
-      },
       {
         "commit": "90695310dc30",
         "entry": "added offline and mocked-live coverage for the one-source gate.",
@@ -308,21 +303,6 @@
   "commit_count": 20,
   "generated_by": "aide-lite",
   "malformed_commits": [
-    {
-      "commit": "0eea9c54c65a30d69db8ff2b3f3d22b6af539bea",
-      "reason": "commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
-      "subject": "runtime(r0): add review queue store"
-    },
-    {
-      "commit": "ce1ab9685222c79565d5407b334a55ed5611c824",
-      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
-      "subject": "chore(dev): integrate origin dev"
-    },
-    {
-      "commit": "9cda6e786c25892ef7184a71d5efe1c422ccdc5c",
-      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
-      "subject": "chore(dev): merge R0 recovery branch"
-    },
     {
       "commit": "f9d7fc25f9fdb6f31a995155ff132bd3da89afb7",
       "reason": "commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",

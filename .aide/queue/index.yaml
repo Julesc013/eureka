@@ -55,7 +55,7 @@ entries:
     recommended_after: EUREKA-AIDE-GOLDEN-01
   - id: EUREKA-AIDE-SYNC-01
     title: Sync canonical AIDE governance into Eureka
-    status: running
+    status: needs_review
     purpose: Import portable Q31 AIDE Lite commit, WorkUnit, changelog, and Git workflow governance while preserving Eureka-specific state.
     allowed_scope_summary: .aide governance, queue/evidence, context/reports, adapter guidance, and compact docs only; no product behavior.
     gate: Q31 source pack reviewed; no source AIDE queue/history/generated state, branch mutation, provider/model/network call, or hook auto-install.

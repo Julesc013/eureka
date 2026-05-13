@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 id: EUREKA-AIDE-SYNC-01
 title: Eureka sync from canonical AIDE Lite Pack
-status: running
+status: needs_review
 created_at: 2026-05-14
 owner: Codex
 purpose: >

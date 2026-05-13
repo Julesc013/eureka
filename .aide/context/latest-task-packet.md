@@ -118,8 +118,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4132
-- approx_tokens: 1033
+- chars: 4133
+- approx_tokens: 1034
 - budget_status: PASS
 - warnings:
   - none

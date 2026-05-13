@@ -15,7 +15,7 @@
 
 - branch: dev
 - role: integration
-- commit: 21e4f766300d9b55498fca1b3edc1cace51b0776
+- commit: 4c954e516a20fd8be59e925d175759daa80d2a93
 - dirty_tree: true
 - upstream: origin/dev
 - policy_ready: true

@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: EUREKA-AIDE-SYNC-01
-status: running
-planning_state: running
+status: needs_review
+planning_state: complete
 owner: Codex
 created_at: 2026-05-14
 started_at: 2026-05-14
-completed_at:
+completed_at: 2026-05-14
 review_gate:
   required: true
   status: open
@@ -16,5 +16,6 @@ review_gate:
 evidence_path: .aide/queue/EUREKA-AIDE-SYNC-01/evidence/
 recommended_next: Select the next bounded Eureka task after canonical AIDE governance sync
 notes: >
-  Baseline validation shows Eureka's pre-Q31 AIDE Lite is healthy but lacks the
-  canonical Q31 changelog and Git command families.
+  Q32 synced portable Q31 governance from the canonical AIDE Lite Pack,
+  preserved Eureka-specific state, regenerated target-local reports, and stopped
+  at needs_review without product changes or branch mutation.
