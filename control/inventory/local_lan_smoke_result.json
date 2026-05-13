@@ -1,0 +1,23 @@
+{
+  "bind_lan_used": true,
+  "deployment_performed": false,
+  "external_client_smoke_performed": false,
+  "external_client_smoke_status": "not_performed",
+  "lan_warning_visible": true,
+  "master_index_mutated": false,
+  "mutation_routes_blocked": true,
+  "operator_mutations_localhost_only": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "read_only_mode": true,
+  "read_only_routes_passed": true,
+  "rebuild_mutation_from_lan": false,
+  "review_mutation_from_lan": false,
+  "same_machine_lan_bind_smoke_passed": true,
+  "schema_version": "local_lan_smoke_result.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "pass_with_warnings",
+  "task": "LOCAL-12",
+  "workunit_execution_from_lan": false
+}

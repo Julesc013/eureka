@@ -1,0 +1,14 @@
+{
+  "evidence_must_record": [
+    "client_device_type",
+    "client_network_scope",
+    "tested_routes",
+    "mutation_block_checks",
+    "timestamp"
+  ],
+  "external_client_optional_for_pass_with_warnings": true,
+  "external_client_required_for_full_lan_operational_claim": true,
+  "no_precise_private_network_topology_required": true,
+  "private_ip_address_may_be_redacted": true,
+  "schema_version": "local_lan_external_client_evidence_policy.v0"
+}

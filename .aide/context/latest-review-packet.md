@@ -2,7 +2,7 @@
 
 ## Review Objective
 
-Review LOCAL-11 compact evidence and decide whether the LAN binding safety gate is ready to hand off to LOCAL-12.
+Review LOCAL-12 compact evidence and decide whether the read-only LAN smoke proof is ready to hand off to LOCAL-13.
 
 ## Decision Requested
 
@@ -14,49 +14,49 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/queue/LOCAL-11/task.yaml`
+- `.aide/queue/LOCAL-12/task.yaml`
 
 ## Verification Report Reference
 
-- `control/audits/local-11-lan-binding-safety-gate-v0/validation.md`
-- `control/inventory/local_lan_safety_gate_result.json`
-- `control/inventory/local_11_leakage_baseline.json`
+- `control/audits/local-12-lan-read-only-smoke-v0/validation.md`
+- `control/inventory/local_lan_smoke_result.json`
+- `control/inventory/local_12_leakage_baseline.json`
 
 ## Evidence Packet References
 
 - `.aide/queue/index.yaml`
-- `control/audits/local-11-lan-binding-safety-gate-v0/`
+- `control/audits/local-12-lan-read-only-smoke-v0/`
 - `docs/architecture/LOCAL_LAN_MODE.md`
 - `docs/reference/LOCAL_LAN_ROUTE_MATRIX.md`
-- `docs/operations/LOCAL_LAN_SAFETY_GATE.md`
+- `docs/operations/LOCAL_LAN_READ_ONLY_SMOKE_TEST.md`
 
 ## Changed Files Summary
 
-LOCAL-11 changes are scoped to the LAN network safety package, local service bind/client-scope gates, policy check/validator scripts, focused tests, policies, inventories, docs, audit evidence, and AIDE queue/context files.
+LOCAL-12 changes are scoped to LAN smoke/probe/shutdown scripts, focused tests, policies, inventories, docs, audit evidence, and AIDE queue/context files.
 
 ## Validation Summary
 
 Primary validators:
 
-- `python scripts/validate_local_lan_safety_gate.py`
-- focused LOCAL-11 LAN safety tests
+- `python scripts/validate_local_lan_smoke.py`
+- focused LOCAL-12 LAN smoke tests
 - existing LOCAL validators
 
 Known warning:
 
-- Runtime leakage gate has pre-existing findings and LOCAL-11 does not increase them.
+- Runtime leakage gate has pre-existing findings and LOCAL-12 does not increase them.
 
 ## Risk Summary
 
-- LAN mode can bind only with `--bind-lan`.
-- LAN clients are read-only and blocked from review/rebuild mutations.
-- Actual cross-device LAN smoke remains deferred to LOCAL-12.
+- Same-machine explicit LAN-bind smoke passed.
+- LAN clients are read-only and blocked from review/rebuild mutations by route-gate simulation.
+- External second-client smoke was not performed and is recorded as a limitation.
 - F0 remains deferred to LOCAL-14.
 
 ## Non-Goals / Scope Guard
 
 - Do not treat LAN mode as public hosting.
-- Do not approve LAN mutations, source probes, WorkUnit execution from LAN, deployment, production readiness, or public launch readiness in LOCAL-11.
+- Do not approve LAN mutations, source probes, WorkUnit execution from LAN, deployment, production readiness, or public launch readiness in LOCAL-12.
 
 ## Token Summary
 
@@ -66,4 +66,4 @@ Known warning:
 ## Reviewer Instructions
 
 - Review only repo-local evidence.
-- Confirm queue transition history, invalid-transition rejection, idempotent terminal transitions, and disabled side-effect flags.
+- Confirm same-machine LAN-bind evidence, mutation blocking, shutdown cleanup, external-client limitation, and disabled side-effect flags.

@@ -1,6 +1,6 @@
 id: LOCAL-12
 title: LAN read-only smoke test
-status: queued
+status: completed
 purpose: Perform read-only LAN smoke after explicit LOCAL-11 LAN binding safety gate.
 allowed_scope_summary: Read-only LAN smoke evidence, route checks, mutation-block proof, docs, tests, inventories, and audit evidence only when a future LOCAL-12 prompt enables it.
 gate:
@@ -14,3 +14,12 @@ gate:
   - no public launch readiness claim
 proof_level_required: L2
 recommended_after: LOCAL-11
+recommended_next: LOCAL-13
+evidence:
+  - control/audits/local-12-lan-read-only-smoke-v0/
+  - control/inventory/local_lan_smoke_result.json
+  - scripts/validate_local_lan_smoke.py
+completion:
+  status: pass_with_warnings
+  external_client_smoke_performed: false
+  limitation: Same-machine LAN-bind smoke passed; no second client device was claimed.

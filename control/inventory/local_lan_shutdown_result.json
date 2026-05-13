@@ -1,0 +1,18 @@
+{
+  "committed_local_state_forbidden": true,
+  "committed_local_state_found": false,
+  "graceful_shutdown_required": true,
+  "instance_left_valid_after_shutdown": true,
+  "instance_valid": true,
+  "logs_may_be_written_only_under_instance": true,
+  "port_reuse_or_cleanup_checked": true,
+  "port_reusable": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_lan_shutdown_result.v0",
+  "server_process_cleanup_required": true,
+  "server_stopped": true,
+  "status": "pass",
+  "task": "LOCAL-12",
+  "working_tree_clean_after_shutdown": true
+}

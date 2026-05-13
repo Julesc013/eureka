@@ -17,3 +17,7 @@ Prerequisites:
 
 If no second device is available, LOCAL-12 may record a loopback-simulated report
 with the limitation stated explicitly.
+
+LOCAL-12 records the automated run as same-machine LAN-bind smoke. External
+second-client smoke was not performed in that run and remains optional evidence
+for a later operator pass.

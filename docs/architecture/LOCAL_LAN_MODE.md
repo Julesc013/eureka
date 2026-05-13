@@ -33,4 +33,13 @@ WorkUnits, run source probes, run extraction, run agents, mutate config, upload
 files, download/install/execute anything, mutate master index state, write
 `site/dist`, or deploy.
 
-Actual cross-device LAN smoke is deferred to LOCAL-12.
+## LOCAL-12 Smoke Result
+
+LOCAL-12 adds same-machine LAN-bind smoke. The service is started with
+`--bind-lan` on `0.0.0.0`, probed through a local client URL, and then shut
+down. LAN mutation blocking is checked through the same client-scope route gate
+used by the service.
+
+External second-client smoke is preferred but was not performed by the
+automated LOCAL-12 run. That limitation is recorded explicitly and must not be
+described as cross-device proof.

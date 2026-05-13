@@ -16,3 +16,9 @@ Loopback clients still follow the LOCAL-08 behavior:
 LAN clients cannot use source probe, WorkUnit execution, extraction, agent,
 config mutation, upload, download, install, execute, deployment, or master-index
 mutation routes.
+
+LOCAL-12 verifies this boundary with two checks:
+
+- HTTP read-only probing against the explicit LAN-bound server.
+- LAN-scope route-gate simulation for mutation attempts, which must return a
+  fail-closed rejection before operator token handling.

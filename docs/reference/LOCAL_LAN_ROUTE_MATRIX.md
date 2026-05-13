@@ -33,3 +33,21 @@
 Future route classes for source probes, WorkUnit execution, extraction, agents,
 config mutation, uploads, downloads, and install/execute actions remain blocked
 from LAN clients.
+
+## LOCAL-12 Smoke Coverage
+
+The read-only smoke probes:
+
+- `/`
+- `/status`
+- `/health`
+- `/search?q=sampleproject`
+- `/absence?q=definitely-not-present-local-12`
+- `/api/v1/status`
+- `/api/v1/health`
+- `/api/v1/search?q=sampleproject`
+- `/api/v1/absence?q=definitely-not-present-local-12`
+
+Mutation-block checks cover `POST /rebuild`,
+`POST /review/<review_item_id>/decision`, WorkUnit execution route classes, and
+source probe route classes.

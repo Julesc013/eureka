@@ -1,0 +1,14 @@
+id: LOCAL-13
+title: Clean-machine bootstrap proof
+status: queued
+purpose: Prove the Local Appliance can bootstrap and validate from a clean local instance after read-only LAN smoke.
+allowed_scope_summary: Clean-machine bootstrap evidence, instance validation, docs, tests, inventories, and audit evidence only when a future LOCAL-13 prompt enables it.
+gate:
+  - LOCAL-12 completed with read-only LAN smoke evidence
+  - no deployment
+  - no source probe execution
+  - no WorkUnit execution from LAN
+  - no production readiness claim
+  - no public launch readiness claim
+proof_level_required: L2
+recommended_after: LOCAL-12

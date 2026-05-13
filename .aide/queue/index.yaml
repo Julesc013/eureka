@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-12
+current_recommended_task: LOCAL-13
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -116,12 +116,21 @@ entries:
     recommended_next: LOCAL-12
   - id: LOCAL-12
     title: LAN read-only smoke test
-    status: queued
+    status: completed
     purpose: Perform the read-only LAN smoke test after the LOCAL-11 safety gate.
     allowed_scope_summary: Read-only LAN smoke evidence, route checks, mutation-block proof, docs, tests, inventories, and audit evidence only when explicitly scoped.
     gate: LOCAL-11 passed with explicit bind-lan safety gate; no LAN mutations, deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-12/task.yaml
     recommended_after: LOCAL-11
+    recommended_next: LOCAL-13
+  - id: LOCAL-13
+    title: Clean-machine bootstrap proof
+    status: queued
+    purpose: Prove the Local Appliance can bootstrap and run validation from a clean local instance after LAN read-only smoke.
+    allowed_scope_summary: Clean-machine bootstrap evidence, scripts, docs, tests, inventories, and audit evidence only when explicitly scoped.
+    gate: LOCAL-12 passed with read-only LAN smoke; no deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-13/task.yaml
+    recommended_after: LOCAL-12
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

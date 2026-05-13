@@ -1,12 +1,12 @@
 {
   "gaps": [
     {
-      "deferred_to": "LOCAL-12",
-      "gap": "actual_cross_device_lan_smoke",
-      "status": "deferred",
-      "why": "LOCAL-11 defines and validates the safety gate only."
+      "deferred_to": "LOCAL-12 manual optional evidence or later operator run",
+      "finding": "External second-client LAN smoke was not performed in the automated run.",
+      "severity": "warning",
+      "status": "open"
     }
   ],
   "schema_version": "local_lan_gap_register.v0",
-  "task": "LOCAL-11"
+  "task": "LOCAL-12"
 }

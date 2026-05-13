@@ -83,3 +83,14 @@ only with `--bind-lan`, and LAN clients can inspect only read-only local status,
 health, search, object, source, and absence routes. Operator mutation routes
 remain localhost-only. Actual cross-device LAN smoke remains deferred to
 LOCAL-12.
+
+## LOCAL-12 LAN Read-Only Smoke
+
+LOCAL-12 proves explicit LAN-bind startup and read-only route availability
+through a same-machine smoke script. Mutation route classes remain blocked for
+LAN scope, operator mutation remains localhost-only, and shutdown cleanup is
+validated.
+
+External second-client smoke was not performed in the automated run, so LOCAL-12
+does not claim cross-device LAN proof, deployment, public hosting, production
+readiness, or public launch readiness.

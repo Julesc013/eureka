@@ -1,0 +1,14 @@
+{
+  "bind_lan_required": true,
+  "external_client_smoke_preferred": true,
+  "false_cross_device_claim_forbidden": true,
+  "no_deployment": true,
+  "no_production_readiness_claim": true,
+  "no_public_hosting_claim": true,
+  "no_public_launch_readiness_claim": true,
+  "operator_firewall_warning_required": true,
+  "read_only_required": true,
+  "same_machine_lan_bind_smoke_allowed": true,
+  "schema_version": "local_lan_smoke_policy.v0",
+  "shutdown_check_required": true
+}

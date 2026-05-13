@@ -1,0 +1,8 @@
+{
+  "instance_left_valid_after_shutdown": true,
+  "port_reuse_or_cleanup_checked": true,
+  "schema_version": "local_lan_shutdown_result.v0",
+  "server_stopped": true,
+  "status": "pass",
+  "working_tree_clean_after_shutdown": true
+}

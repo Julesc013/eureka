@@ -89,3 +89,16 @@ python scripts/eureka_local_server.py --instance ./eureka-instance --host 0.0.0.
 
 LOCAL-11 does not require cross-device LAN smoke; that proof is deferred to
 LOCAL-12. Stop the service with Ctrl+C and do not commit local instance state.
+
+## LOCAL-12 LAN Smoke
+
+```bash
+python scripts/eureka_lan_smoke.py --instance ./eureka-instance --host 0.0.0.0 --port 8765 --bind-lan --read-only --json
+python scripts/eureka_lan_read_only_probe.py --base-url http://127.0.0.1:8765 --json
+python scripts/eureka_lan_shutdown_check.py --instance ./eureka-instance --port 8765 --json
+```
+
+Use the smoke script for an automated same-machine LAN-bind run. Use the probe
+script against a private LAN URL only when a LAN client or safe local target is
+available. Do not treat same-machine smoke as public hosting or cross-device
+proof.

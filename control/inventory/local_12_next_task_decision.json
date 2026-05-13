@@ -1,0 +1,12 @@
+{
+  "external_client_smoke_performed": false,
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start_with_explicit_flag": true,
+  "lan_read_only_smoke_passed": true,
+  "reason": "Read-only LAN smoke gate passed; clean-machine bootstrap proof is next.",
+  "recommended_next_task": "LOCAL-13 \u2014 Clean-machine bootstrap proof",
+  "schema_version": "local_12_next_task_decision.v0",
+  "server_can_start": true,
+  "task": "LOCAL-12"
+}

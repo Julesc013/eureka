@@ -30,3 +30,14 @@ Use Ctrl+C to stop the service. Confirm no local instance state is committed.
 - LAN clients are read-only
 - operator mutations remain localhost-only
 - no source probes, WorkUnit execution, extraction, agents, deployment, or public hosting claim
+
+## LOCAL-12 Smoke
+
+```powershell
+python scripts/eureka_lan_smoke.py --instance ./eureka-instance --host 0.0.0.0 --port 8765 --bind-lan --read-only --json
+python scripts/validate_local_lan_smoke.py
+```
+
+The automated smoke is same-machine LAN-bind proof. It does not claim a second
+client device reached the service unless separate external-client evidence is
+recorded.
