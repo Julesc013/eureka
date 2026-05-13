@@ -1,0 +1,32 @@
+{
+  "branch_role_for_current_branch": "integration",
+  "canonical_branch": "main",
+  "confidence": "high",
+  "current_branch": "dev",
+  "current_commit": "21e4f766300d9b55498fca1b3edc1cace51b0776",
+  "detected_workflow": "trunk_with_dev_integration",
+  "generated_by": "aide-lite",
+  "integration_branch": "dev",
+  "integration_branch_detected": true,
+  "local_branches": [
+    "dev",
+    "main"
+  ],
+  "non_mutating": true,
+  "recommended_next_action": "classify dirty tree before branch-sensitive work",
+  "remote_branches": [
+    "origin/dev",
+    "origin/main"
+  ],
+  "remote_url_summary": "Julesc013/eureka",
+  "repo_id": "Julesc013/eureka",
+  "schema_version": "aide.git-workflow-detection.v0",
+  "tags_summary": {
+    "count": 0,
+    "tags": []
+  },
+  "warnings": [
+    "dirty_tree_detected"
+  ],
+  "worktree_dirty": true
+}
