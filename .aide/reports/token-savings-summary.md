@@ -10,39 +10,41 @@
 
 ## Latest Compact Surfaces
 
-- `.aide/context/latest-task-packet.md`: 6157 chars / 1540 approx tokens / within_budget
+- `.aide/context/latest-task-packet.md`: 4133 chars / 1034 approx tokens / within_budget
 - `.aide/context/latest-context-packet.md`: 1832 chars / 458 approx tokens / within_budget
-- `.aide/context/latest-review-packet.md`: 6240 chars / 1560 approx tokens / within_budget
+- `.aide/context/latest-review-packet.md`: 6369 chars / 1593 approx tokens / within_budget
 - `.aide/verification/latest-verification-report.md`: 4572 chars / 1143 approx tokens / within_budget
 
 ## Named Baselines
 
-- `root_history_baseline`: 275993 chars / 68999 approx tokens
-- `review_baseline`: 23191 chars / 5798 approx tokens
-- `repo_context_baseline`: 243382 chars / 60846 approx tokens
+- `root_history_baseline`: 276460 chars / 69115 approx tokens
+- `review_baseline`: 21504 chars / 5376 approx tokens
+- `repo_context_baseline`: 243862 chars / 60966 approx tokens
 
 ## Compact-To-Baseline Comparisons
 
-- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 97.8% estimated reduction (1540 vs 68999 approx tokens)
-- `.aide/context/latest-review-packet.md` vs `review_baseline`: 73.1% estimated reduction (1560 vs 5798 approx tokens)
-- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.2% estimated reduction (458 vs 60846 approx tokens)
+- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 98.5% estimated reduction (1034 vs 69115 approx tokens)
+- `.aide/context/latest-review-packet.md` vs `review_baseline`: 70.4% estimated reduction (1593 vs 5376 approx tokens)
+- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.2% estimated reduction (458 vs 60966 approx tokens)
 
 ## Largest Ledger Surfaces
 
+- `.aide/evals/runs/latest-golden-tasks.json` (eval_report): 3914 approx tokens
+- `.aide/evals/runs/latest-golden-tasks.md` (eval_report): 2687 approx tokens
 - `.aide/cache/latest-cache-keys.json` (cache_report): 2008 approx tokens
-- `.aide/evals/runs/latest-golden-tasks.json` (eval_report): 1871 approx tokens
-- `AGENTS.md` (generated_adapter): 1703 approx tokens
+- `AGENTS.md` (generated_adapter): 1788 approx tokens
+- `.aide/context/latest-review-packet.md` (review_packet): 1593 approx tokens
 - `.aide/prompts/codex-token-mode.md` (baseline_surface): 1593 approx tokens
-- `.aide/context/latest-review-packet.md` (review_packet): 1560 approx tokens
-- `.aide/context/latest-task-packet.md` (task_packet): 1540 approx tokens
-- `.aide/evals/runs/latest-golden-tasks.md` (eval_report): 1305 approx tokens
 - `.aide/verification/latest-verification-report.md` (verification_report): 1143 approx tokens
+- `.aide/context/latest-task-packet.md` (task_packet): 1034 approx tokens
 - `.aide/prompts/compact-task.md` (baseline_surface): 1000 approx tokens
 - `.aide/prompts/evidence-review.md` (baseline_surface): 856 approx tokens
 
 ## Budget Warnings
 
 - near budget: cache_report `.aide/cache/latest-cache-keys.json` 2008/2400
+- over budget: eval_report `.aide/evals/runs/latest-golden-tasks.json` 3914/2400
+- over budget: eval_report `.aide/evals/runs/latest-golden-tasks.md` 2687/2400
 
 ## Regression Warnings
 

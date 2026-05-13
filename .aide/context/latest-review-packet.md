@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6157 chars, 1540 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4133 chars, 1034 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,6 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- unknown: `.aide/changelog` (??; does not match active task allowed paths)
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
@@ -41,23 +42,22 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/controller/README.md` (??; matches active task allowed path)
-- allowed: `.aide/controller/failure-taxonomy.yaml` (??; matches active task allowed path)
-- allowed: `.aide/controller/latest-recommendations.md` (??; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/gateway/latest-gateway-status.json` (??; matches active task allowed path)
-- allowed: `.aide/gateway/latest-gateway-status.md` (??; matches active task allowed path)
-- allowed: `.aide/providers/latest-provider-status.json` (??; matches active task allowed path)
-- allowed: `.aide/providers/latest-provider-status.md` (??; matches active task allowed path)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/changed-files.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/local-runtime-composition-validation.json` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/next-task-handoff.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/remaining-risks.md` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- allowed: `AGENTS.md` (M; matches active task allowed path)
+- allowed: `README.md` (M; matches active task allowed path)
+- allowed: `docs/reference/aide-governance-sync.md` (??; matches active task allowed path)
+- allowed: `docs/reference/aide-handover.md` (M; matches active task allowed path)
+- allowed: `docs/reference/aide-lite-test-runner.md` (??; matches active task allowed path)
+- allowed: `docs/reference/aide-lite.md` (??; matches active task allowed path)
+- allowed: `docs/reference/branch-roles.md` (??; matches active task allowed path)
+- allowed: `docs/reference/cache-local-state-boundary.md` (??; matches active task allowed path)
+- allowed: `docs/reference/changelog-preview.md` (??; matches active task allowed path)
+- allowed: `docs/reference/commit-discipline.md` (??; matches active task allowed path)
+- allowed: `docs/reference/cross-repo-pack-export-import.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6717
-- approx_tokens: 1680
+- chars: 6370
+- approx_tokens: 1593
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

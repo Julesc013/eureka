@@ -1,0 +1,407 @@
+{
+  "categories": {
+    "Added": [
+      {
+        "commit": "0eea9c54c65a",
+        "entry": "durable review queue store package and governed store contracts.",
+        "subject": "runtime(r0): add review queue store"
+      },
+      {
+        "commit": "0eea9c54c65a",
+        "entry": "init, demo, validator, docs, inventory, and audit pack for R0-07.",
+        "subject": "runtime(r0): add review queue store"
+      },
+      {
+        "commit": "f9d7fc25f9fd",
+        "entry": "reviewed public index store and rebuild pipeline.",
+        "subject": "runtime(r0): add reviewed public index"
+      },
+      {
+        "commit": "f9d7fc25f9fd",
+        "entry": "public index store schemas.",
+        "subject": "runtime(r0): add reviewed public index"
+      },
+      {
+        "commit": "f9d7fc25f9fd",
+        "entry": "store, rebuild, search, absence, and integration tests.",
+        "subject": "runtime(r0): add reviewed public index"
+      },
+      {
+        "commit": "f9d7fc25f9fd",
+        "entry": "reviewed public index architecture, reference, and operations docs.",
+        "subject": "runtime(r0): add reviewed public index"
+      },
+      {
+        "commit": "90695310dc30",
+        "entry": "one-source PyPI live metadata pipeline and audit evidence.",
+        "subject": "test(r0): run one source live pipeline"
+      },
+      {
+        "commit": "6eeae5b324a5",
+        "entry": "R0-10 production recovery review evidence and scripts.",
+        "subject": "audit(r0): complete production recovery review"
+      },
+      {
+        "commit": "0da3111215d2",
+        "entry": "R0 final closeout evidence and scripts.",
+        "subject": "audit(r0): close production recovery"
+      },
+      {
+        "commit": "ede77d3cb101",
+        "entry": "R0 contract taxonomy remediation scripts, tests, inventories, docs, and audit pack",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "dbc4e72ccf63",
+        "entry": "generated artifact drift policy and validation tooling.",
+        "subject": "fix(r0): reconcile generated artifact drift"
+      },
+      {
+        "commit": "be01503a76b0",
+        "entry": "legacy leakage remediation scripts, tests, inventories, docs, and audit pack.",
+        "subject": "fix(r0): retire legacy runtime leakage debt"
+      },
+      {
+        "commit": "4cde57bd1004",
+        "entry": "final R0 promotion review inventories, audit pack, docs, and merge plan.",
+        "subject": "audit(r0): review dev main promotion"
+      },
+      {
+        "commit": "387a307d0397",
+        "entry": "dev-to-main R0 promotion evidence and F0 start decision.",
+        "subject": "audit(r0): record dev main promotion"
+      },
+      {
+        "commit": "a140304235d7",
+        "entry": "Local Appliance track policies, inventories, docs, audit pack, validator, and tests.",
+        "subject": "ops(local): insert appliance track before f0"
+      },
+      {
+        "commit": "7f373983b227",
+        "entry": "LOCAL-01 local instance bootstrap controls and commands.",
+        "subject": "ops(local): add instance bootstrap"
+      },
+      {
+        "commit": "9bdad0968762",
+        "entry": "local instance schema and migration policies.",
+        "subject": "ops(local): add instance migration guard"
+      },
+      {
+        "commit": "9bdad0968762",
+        "entry": "store manifest, migration state, schema-version inventories, audit pack, validator, migration status command, and focused tests.",
+        "subject": "ops(local): add instance migration guard"
+      },
+      {
+        "commit": "ac9f5b8de4f6",
+        "entry": "runtime status, composition demo, and LOCAL-03 validator scripts.",
+        "subject": "runtime(local): add appliance composition boundary"
+      },
+      {
+        "commit": "ac9f5b8de4f6",
+        "entry": "LOCAL-03 policies, inventories, tests, docs, queue handoff, and audit evidence.",
+        "subject": "runtime(local): add appliance composition boundary"
+      }
+    ],
+    "Changed": [
+      {
+        "commit": "0eea9c54c65a",
+        "entry": "contract taxonomy classification now treats contracts/stores as durable store contracts before task-queue filename heuristics.",
+        "subject": "runtime(r0): add review queue store"
+      },
+      {
+        "commit": "ce1ab9685222",
+        "entry": "integrate remote dev cleanup commit into local dev history.",
+        "subject": "chore(dev): integrate origin dev"
+      },
+      {
+        "commit": "9cda6e786c25",
+        "entry": "merge R0 recovery branch into dev.",
+        "subject": "chore(dev): merge R0 recovery branch"
+      },
+      {
+        "commit": "d15eb701b478",
+        "entry": "refreshed exact runtime leakage allowlist hashes after reference-only path updates.",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "dbc4e72ccf63",
+        "entry": "refreshed governed generated artifacts and R0 closeout decision evidence.",
+        "subject": "fix(r0): reconcile generated artifact drift"
+      },
+      {
+        "commit": "be01503a76b0",
+        "entry": "quarantine legacy H-series connector prototype runtime and update references.",
+        "subject": "fix(r0): retire legacy runtime leakage debt"
+      },
+      {
+        "commit": "a140304235d7",
+        "entry": "AIDE queue, task packet, review packet, and repo health now route to LOCAL-01 before F0.",
+        "subject": "ops(local): insert appliance track before f0"
+      },
+      {
+        "commit": "7f373983b227",
+        "entry": "queue state advances to LOCAL-02 while F0 remains deferred.",
+        "subject": "ops(local): add instance bootstrap"
+      },
+      {
+        "commit": "9bdad0968762",
+        "entry": "init, validate, and status scripts now understand versioned instance metadata.",
+        "subject": "ops(local): add instance migration guard"
+      },
+      {
+        "commit": "cf0c53a41d93",
+        "entry": "refreshed AIDE handover evidence and compact task/review artifacts.",
+        "subject": "chore(aide): revalidate Q26 Eureka handover"
+      },
+      {
+        "commit": "21e4f766300d",
+        "entry": "imported canonical AIDE governance and validation tooling into Eureka.",
+        "subject": "aide(eureka): sync portable commit and WorkUnit policies"
+      }
+    ],
+    "Docs": [
+      {
+        "commit": "6eeae5b324a5",
+        "entry": "added R0 production review, dev-to-main promotion review, and F0 resumption gate notes.",
+        "subject": "audit(r0): complete production recovery review"
+      },
+      {
+        "commit": "0da3111215d2",
+        "entry": "added final closeout, limitations, F0 handoff, branch/queue, future completion, and recovered seam docs.",
+        "subject": "audit(r0): close production recovery"
+      },
+      {
+        "commit": "d15eb701b478",
+        "entry": "recorded generated artifact drift as a child remediation blocker.",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "387a307d0397",
+        "entry": "branch state, rollback, and non-claim evidence.",
+        "subject": "audit(r0): record dev main promotion"
+      },
+      {
+        "commit": "5d31441b87f5",
+        "entry": "recorded source-pack and baseline validation evidence.",
+        "subject": "aide(eureka): add canonical governance sync packet"
+      }
+    ],
+    "Fixed": [
+      {
+        "commit": "ce1ab9685222",
+        "entry": "preserve candidate-index historical contract path compatibility during merge.",
+        "subject": "chore(dev): integrate origin dev"
+      },
+      {
+        "commit": "ede77d3cb101",
+        "entry": "moved unresolved contract taxonomy artifacts to control/schemas",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "ede77d3cb101",
+        "entry": "updated active schema references and audit evidence needed by validators",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "d15eb701b478",
+        "entry": "retired remaining contract taxonomy blockers and shims.",
+        "subject": "fix(r0): resolve contract taxonomy blockers"
+      },
+      {
+        "commit": "dbc4e72ccf63",
+        "entry": "isolated static site JSON build test from site/dist.",
+        "subject": "fix(r0): reconcile generated artifact drift"
+      },
+      {
+        "commit": "dbc4e72ccf63",
+        "entry": "classified HTML heading tags and local-bundle fixture wording as leakage false positives.",
+        "subject": "fix(r0): reconcile generated artifact drift"
+      }
+    ],
+    "Follow-up": [
+      {
+        "commit": "cf0c53a41d93",
+        "entry": "LOCAL-04 requires leakage preflight reconciliation or explicit acceptance.",
+        "subject": "chore(aide): revalidate Q26 Eureka handover"
+      }
+    ],
+    "Internal": [
+      {
+        "commit": "90695310dc30",
+        "entry": "refreshed contract taxonomy inventory for the new runtime contracts.",
+        "subject": "test(r0): run one source live pipeline"
+      },
+      {
+        "commit": "4cde57bd1004",
+        "entry": "AIDE review packet refreshed by review-pack.",
+        "subject": "audit(r0): review dev main promotion"
+      },
+      {
+        "commit": "cf0c53a41d93",
+        "entry": "added no-call metadata status surfaces for validation.",
+        "subject": "chore(aide): revalidate Q26 Eureka handover"
+      },
+      {
+        "commit": "5d31441b87f5",
+        "entry": "added Eureka-local Q32 governance sync queue state.",
+        "subject": "aide(eureka): add canonical governance sync packet"
+      }
+    ],
+    "Tests": [
+      {
+        "commit": "0eea9c54c65a",
+        "entry": "review queue behavior, migration, and integration coverage.",
+        "subject": "runtime(r0): add review queue store"
+      },
+      {
+        "commit": "90695310dc30",
+        "entry": "added offline and mocked-live coverage for the one-source gate.",
+        "subject": "test(r0): run one source live pipeline"
+      },
+      {
+        "commit": "6eeae5b324a5",
+        "entry": "added production review and promotion-plan operation tests.",
+        "subject": "audit(r0): complete production recovery review"
+      },
+      {
+        "commit": "0da3111215d2",
+        "entry": "added final closeout, safe repair, and future task gate tests.",
+        "subject": "audit(r0): close production recovery"
+      },
+      {
+        "commit": "dbc4e72ccf63",
+        "entry": "added focused generated-artifact drift and isolation tests.",
+        "subject": "fix(r0): reconcile generated artifact drift"
+      },
+      {
+        "commit": "4cde57bd1004",
+        "entry": "promotion audit and dev-to-main merge plan operation coverage.",
+        "subject": "audit(r0): review dev main promotion"
+      },
+      {
+        "commit": "387a307d0397",
+        "entry": "merge evidence validator coverage.",
+        "subject": "audit(r0): record dev main promotion"
+      },
+      {
+        "commit": "7f373983b227",
+        "entry": "focused local instance bootstrap and policy tests.",
+        "subject": "ops(local): add instance bootstrap"
+      },
+      {
+        "commit": "9bdad0968762",
+        "entry": "added LOCAL-02 migration guard and schema-version operation tests.",
+        "subject": "ops(local): add instance migration guard"
+      },
+      {
+        "commit": "ac9f5b8de4f6",
+        "entry": "focused runtime and operations coverage for composition, status, read-only mode, close idempotency, forbidden roots, unsupported schema fail-closed, and scripts.",
+        "subject": "runtime(local): add appliance composition boundary"
+      },
+      {
+        "commit": "21e4f766300d",
+        "entry": "added portable governance tests and golden tasks.",
+        "subject": "aide(eureka): sync portable commit and WorkUnit policies"
+      }
+    ]
+  },
+  "commit_count": 20,
+  "generated_by": "aide-lite",
+  "malformed_commits": [
+    {
+      "commit": "0eea9c54c65a30d69db8ff2b3f3d22b6af539bea",
+      "reason": "commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "runtime(r0): add review queue store"
+    },
+    {
+      "commit": "ce1ab9685222c79565d5407b334a55ed5611c824",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "chore(dev): integrate origin dev"
+    },
+    {
+      "commit": "9cda6e786c25892ef7184a71d5efe1c422ccdc5c",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "chore(dev): merge R0 recovery branch"
+    },
+    {
+      "commit": "f9d7fc25f9fdb6f31a995155ff132bd3da89afb7",
+      "reason": "commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "runtime(r0): add reviewed public index"
+    },
+    {
+      "commit": "90695310dc300dcf5244b7bada3d4f30c272658c",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "test(r0): run one source live pipeline"
+    },
+    {
+      "commit": "6eeae5b324a5b2894dc20219d47821f397b367c3",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "audit(r0): complete production recovery review"
+    },
+    {
+      "commit": "0da3111215d25683076182b83d83718515a45257",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "audit(r0): close production recovery"
+    },
+    {
+      "commit": "ede77d3cb10174cf9ede6d5a8385c9fbe31950e4",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "fix(r0): resolve contract taxonomy blockers"
+    },
+    {
+      "commit": "d15eb701b478a6b5615b8c0ba83c0d4d2c07a856",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "fix(r0): resolve contract taxonomy blockers"
+    },
+    {
+      "commit": "dbc4e72ccf6352d431e2554294954a1dbaf7ad09",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "fix(r0): reconcile generated artifact drift"
+    },
+    {
+      "commit": "be01503a76b06c1dc77fee241fb88bcdbc6b1326",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "fix(r0): retire legacy runtime leakage debt"
+    },
+    {
+      "commit": "4cde57bd1004a384d7b0c9f83f73ced209bdc742",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "audit(r0): review dev main promotion"
+    },
+    {
+      "commit": "387a307d03979216766a3abae50646f061badc1d",
+      "reason": "commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "audit(r0): record dev main promotion"
+    },
+    {
+      "commit": "a140304235d774bbd937b66f21610f42eb55c555",
+      "reason": "commit type is allowed: ops; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "ops(local): insert appliance track before f0"
+    },
+    {
+      "commit": "7f373983b2271b6ee49e3c57d21494865ebe1c4a",
+      "reason": "commit type is allowed: ops; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "ops(local): add instance bootstrap"
+    },
+    {
+      "commit": "9bdad0968762bb81b6de0239c641d2e906b34e57",
+      "reason": "commit type is allowed: ops; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "ops(local): add instance migration guard"
+    },
+    {
+      "commit": "ac9f5b8de4f606a4a1a33e7955b6536bf41a302a",
+      "reason": "commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate",
+      "subject": "runtime(local): add appliance composition boundary"
+    },
+    {
+      "commit": "cf0c53a41d9374b3758fe1c12b08f4a7a50c54b8",
+      "reason": "commit trailer present: AIDE-Token-Impact",
+      "subject": "chore(aide): revalidate Q26 Eureka handover"
+    }
+  ],
+  "network_calls": "none",
+  "provider_or_model_calls": "none",
+  "release_publishing": false,
+  "schema_version": "aide.changelog-preview.v0",
+  "source_range": "HEAD~20..HEAD"
+}

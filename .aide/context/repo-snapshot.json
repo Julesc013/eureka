@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 15483,
+  "file_count": 15576,
   "files": [
     {
       "extension": ".md",
@@ -52,10 +52,10 @@
     },
     {
       "extension": ".template",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/adapters/templates/AGENTS.md.template",
-      "sha256": "663b2e6c19f5f1fb237a0e6d8400cda71a55f599222cc482f2b324d8513826d5",
-      "size": 958,
+      "sha256": "671ccda5dc4bd8d10f4950a6a16c02a0ad9e1f3388a4e6d58b9d5fdc3805085b",
+      "size": 1287,
       "type": "unknown"
     },
     {
@@ -107,11 +107,43 @@
       "type": "document"
     },
     {
+      "extension": ".md",
+      "mtime": 1778701534,
+      "path": ".aide/changelog/CHANGELOG.preview.md",
+      "sha256": "f2067c368b2d6e9e5b98855e52541057bec3f1559e5d249fe1e078002be6b31b",
+      "size": 12689,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778701534,
+      "path": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "sha256": "0493d396e8d7c4b15a0d710654338196196f6bc649fee185c039bfdd5c8c868d",
+      "size": 2820,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1778701534,
+      "path": ".aide/changelog/changelog.preview.json",
+      "sha256": "8793d8dbb27d53539120bbdaedb4a60511a7652c368494ba2f1d09fa87ecf936",
+      "size": 18985,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778701534,
+      "path": ".aide/changelog/malformed-commits.md",
+      "sha256": "9b08919a564734377cebcbe53ba4223d5ab00a6800b7e80c6d220dcf7087d90e",
+      "size": 5164,
+      "type": "document"
+    },
+    {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "1b17e1671dd77f8679c4d473caa0fa396d4237fdb64b245b2ca302d815b0202d",
-      "size": 1479,
+      "sha256": "99404250ed0f3744c6100d41b8f2153b0f5f6ed419485345ce80a38d73ea801e",
+      "size": 2754,
       "type": "source-or-config"
     },
     {
@@ -276,7 +308,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md",
       "sha256": "0b726477e621f86478a3896599fb96bab5c6ed8d5f413ddbdd30504708c76b58",
       "size": 204,
@@ -284,39 +316,71 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml",
       "sha256": "1b9852421e8db49cdd8163ae65cef57916d4ffd795064c1de4db9813fb711c57",
       "size": 378,
       "type": "source-or-config"
     },
     {
-      "extension": ".yaml",
-      "mtime": 1778235448,
-      "path": ".aide/evals/golden-tasks/catalog.yaml",
-      "sha256": "d3a8460e7d041d82c6ee610ee05136b0984a6d1852c69b52566960077f1fdb30",
-      "size": 5377,
-      "type": "source-or-config"
-    },
-    {
       "extension": ".md",
-      "mtime": 1778235448,
-      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md",
-      "sha256": "12654c674c27881df48146df88c4a31fb5f6f097893e43987c23a63c6825a60a",
-      "size": 378,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md",
+      "sha256": "9e35961bd41935bb018d770b03faadabc72eff28d5192e423e951e68996bf15e",
+      "size": 371,
       "type": "document"
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
-      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/task.yaml",
-      "sha256": "c1920557f0ded7c986e6fbe66ba7b8637c77b24ec2c7101d00a3e4510355ac0d",
-      "size": 484,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/branch_role_detection_golden/task.yaml",
+      "sha256": "b0ccd7347165719a7b1428c0d570ede3614cceba3155e097f4009d5a389251f5",
+      "size": 406,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778700739,
+      "path": ".aide/evals/golden-tasks/catalog.yaml",
+      "sha256": "6fb879d5ee06c7ab67c49d123b6f9807fc1cb67301092e810f45da3e012470b1",
+      "size": 10794,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/changelog_preview_golden/acceptance.md",
+      "sha256": "372f078cb3184c9bc78d887aba74aa6beb87d9a8041081f03f2125f582726a23",
+      "size": 202,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/changelog_preview_golden/task.yaml",
+      "sha256": "718450854d95c425fe707a58d391f6c1e5f5d10c290fd1a071a25c311a50ff78",
+      "size": 390,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md",
+      "sha256": "e461eee18cc9b4fc16e733e744faa9f9b0c25845d6b89db1eb451c0a396b63b2",
+      "size": 239,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/task.yaml",
+      "sha256": "d029718e88e8d251fd7e4ce9f98fc2b7f2b7e1f9824d56eabbec528e54a6b229",
+      "size": 439,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md",
       "sha256": "fa157cb1c14237148d4f54d6a3f9c8f1b35ef75082d7f80e3d9dcb00f38251cb",
       "size": 284,
@@ -324,7 +388,7 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml",
       "sha256": "78b612b4eeccb9503ea1b1a65de2a02c641a77523d89c45ea9aa679a706f5e0b",
       "size": 412,
@@ -348,7 +412,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
       "sha256": "d6277184041694591389bdf534e8109237916956caaf6814d7d55691d15a3ec6",
       "size": 215,
@@ -356,7 +420,7 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
       "sha256": "1dac59565f06cd4ede2f85ad2629578922e4a2ac02623bced257cdd98d360ded",
       "size": 515,
@@ -396,6 +460,86 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/acceptance.md",
+      "sha256": "eebfc84acc3754c496d0f8a8e574a2dfd3b0e4246bda65fa994a0a4988f221cf",
+      "size": 311,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/task.yaml",
+      "sha256": "60094c9a8a2ba0e725a81c80287fde65fe5468c846edcc115fa71e5c37792e1d",
+      "size": 401,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/acceptance.md",
+      "sha256": "60c32c10597d1d53ea6c1f5cd762aea648551565a4b7f84388bfc25820ed7aa6",
+      "size": 377,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/task.yaml",
+      "sha256": "104f58fcaf9de3c59a5826b1a35b886e7fbffbf74a08e875575d36f8b4ec0d37",
+      "size": 408,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/acceptance.md",
+      "sha256": "7556b96f05c79e5c2bed5177a8251f56b6415f14f0a7aaebf827237f79055252",
+      "size": 360,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/task.yaml",
+      "sha256": "adf0bf5075f2d65ac3aa499adc3bf2814eedf50d76fa6e9e65dd341b37228bef",
+      "size": 378,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/acceptance.md",
+      "sha256": "3f07e832118249c3ba7e4279726379ffe398840e413bb7b76732f7f0575010ae",
+      "size": 277,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/task.yaml",
+      "sha256": "44f5065d3c392ae1ae89ca0605efd71902e59fed41e2e0e1d83972b08e712c49",
+      "size": 368,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md",
+      "sha256": "a9e28a9ae82ca3b098bb0956a991296ac9455895e40c49bb9a227fcd22a0bbdb",
+      "size": 359,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml",
+      "sha256": "460d3c9e1c47d794f5a8b501ffbbcc18f3e9b3a976f9b746b186e1333a349fd6",
+      "size": 381,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778235448,
       "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md",
       "sha256": "82469c8f22efe3cdf46181947800296c9b13679ce7319ab9ccbfc1fd73712fdd",
@@ -408,6 +552,102 @@
       "path": ".aide/evals/golden-tasks/generated_agent_guidance_golden/task.yaml",
       "sha256": "a5f01b858fccaab543056fd54fb4139bd99cc10b3bf3e44619e255b14c3f5e6c",
       "size": 485,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md",
+      "sha256": "9125a96a562611366b87a7fd752626de24409fc555559de4dea906501b95a231",
+      "size": 240,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_helper_policy_golden/task.yaml",
+      "sha256": "80ad38a588c8c103801b7236f14be71e0a941498c1242c8a1947ad92d51b4c8b",
+      "size": 453,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_land_plan_golden/acceptance.md",
+      "sha256": "38951ee53f25684d5ecfece89ea68af3d853cba77b4b5ef1f534b06483d0f4e4",
+      "size": 230,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_land_plan_golden/task.yaml",
+      "sha256": "bf73067bf37bb7b8211f3ccd18a608247101f8e2a0ae0fd43bb9c98066ced719",
+      "size": 369,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md",
+      "sha256": "bf7773a29d59e98c658f186dbfb7478ca8a8c5207b49f6fc451e8a5d0d277eec",
+      "size": 198,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml",
+      "sha256": "6bee1310705e9a4d07a047fa0906a3a38b65e79f8eec180e1d7094a04df924bf",
+      "size": 428,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md",
+      "sha256": "e6bed6633cd9f8b18d55c487040eb4a51cb09a69049d41bcd7864709fb59ad65",
+      "size": 214,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_promote_plan_golden/task.yaml",
+      "sha256": "2ddbfc694f99b3e863b529e8e819b35bb43d3c5c8dfb5497731a4e7049651d18",
+      "size": 409,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md",
+      "sha256": "d1348889559c432e077dfedcd8a8051bdec216e5ece919bc22f42a79219168e0",
+      "size": 194,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_prune_guard_golden/task.yaml",
+      "sha256": "0488c021d9fe2d1166c20c34394fe0f80e20f3e51f92a9acf1edde75a9038b9a",
+      "size": 404,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md",
+      "sha256": "d60fa40bd1293585b27aeda12c680e58bb71fc70eb311f0b87605e9d18413c67",
+      "size": 350,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml",
+      "sha256": "e1a4ff1be0248a3b9d87d0a2abcea53ad01c7e63c7390845339e9fadb49645de",
+      "size": 449,
       "type": "source-or-config"
     },
     {
@@ -428,6 +668,38 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/promotion_rules_golden/acceptance.md",
+      "sha256": "d0c069bdfb280084aa18c98e983c218067db47ec5a64afb42dbccad70dc166ec",
+      "size": 388,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/promotion_rules_golden/task.yaml",
+      "sha256": "58aa65f0fc420993438ee23fedb8b6bf5dd88a7550dd80ebca81af39dcb7b926",
+      "size": 414,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/prune_policy_golden/acceptance.md",
+      "sha256": "bd707630246b0ab43dc525afda8c1dce4e0d277cf0f556cd7fa432d8116af321",
+      "size": 244,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/prune_policy_golden/task.yaml",
+      "sha256": "a12185c21485afc902b6ee10be0bcfd9bb9409d2a0abbb13b0218191aadf2618",
+      "size": 395,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778235448,
       "path": ".aide/evals/golden-tasks/repo_boundary_golden/acceptance.md",
       "sha256": "8d6520f05d980e9f2faf64978ef1579b1ece816951a2732569b2cc641d751144",
@@ -444,7 +716,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md",
       "sha256": "46a21672e966699b0dde9c8d4b645223bf99237ecdcc0c00e07ae7eac5583888",
       "size": 231,
@@ -452,7 +724,7 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
       "sha256": "de33a417bfe1eaee270fba8632ab9f4fe2b3ad32c23d7a22f103e540601a5212",
       "size": 421,
@@ -460,23 +732,39 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
-      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md",
-      "sha256": "fbba6e95c7395636e92c1dcfbbf11395bbb4a924368c54dc391222d0e04a8532",
-      "size": 391,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/sync_policy_golden/acceptance.md",
+      "sha256": "0cab270e27b175eee7e7459db3e8a1f74bcbcfc3b6ad13e66703fe545a92fb55",
+      "size": 291,
       "type": "document"
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
-      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml",
-      "sha256": "80a1380f4ccbf4247dfd78f76176b8237b81f2a39888b0286a24f6935e4c92f0",
-      "size": 563,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/sync_policy_golden/task.yaml",
+      "sha256": "965c07cea40a07da69f2d7f1deb32bf8f887d7a5f34740d14116a95c1a06008a",
+      "size": 379,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md",
+      "sha256": "c25b5915f705a7d863ae4a97b07f651f080764b344207af1e911eb4b0b221eb7",
+      "size": 249,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml",
+      "sha256": "4f4767dbddad877741355263502b82e569d3b8a466242c57c6f8bc14cc23d7b2",
+      "size": 440,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md",
       "sha256": "1f557344ca08bf53dc3e24e3a039ec95186e4ca7922259296af6d6456c9b8530",
       "size": 229,
@@ -484,7 +772,7 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/token-ledger-budget-check/task.yaml",
       "sha256": "661a9893be543f2f75de52297546d438d6d77f9d61f2e9e5a684e0f801fffc5c",
       "size": 454,
@@ -492,7 +780,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md",
       "sha256": "d6468a260dc54216863e261ce18617bb5ea12efe53303cd6eb737a40a9d8fb62",
       "size": 217,
@@ -500,7 +788,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md",
       "sha256": "fa725bda648e58d83b4a9a660e8a03e984addce32d25439840454f07711c9cba",
       "size": 197,
@@ -508,10 +796,26 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
       "sha256": "5bc8272e591b8e240dc10d784ee1520cb0473e45491a5b94c38008bc86317370",
       "size": 432,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/workunit_idempotency_golden/acceptance.md",
+      "sha256": "47a059838c365982f47fb77dbdf4490eacb7895dd4c2747e8aba085853c76a24",
+      "size": 230,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml",
+      "sha256": "fbfb8807ead38e4d2ac70da1189c773cb40c0281082787b20531c83bf355f3fd",
+      "size": 384,
       "type": "source-or-config"
     },
     {
@@ -524,18 +828,18 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778685764,
+      "mtime": 1778701466,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
-      "sha256": "30315ccf44327ad788ce97887e0ee98cc966e1f10920fa49edb9822d30329799",
-      "size": 7482,
+      "sha256": "b6acf5bb1d42177957d76f467fd03c63af40cfecd35824ee47161f103abc4c84",
+      "size": 15656,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778685764,
+      "mtime": 1778701466,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
-      "sha256": "ce116b864f87f8df698f956a665f19176e3c8d7b30a68aa75005a908c7e92de6",
-      "size": 5217,
+      "sha256": "6e3431fd377eedea26500ae67e508700c933204b8a74e9013499ee5955ca03c4",
+      "size": 10746,
       "type": "document"
     },
     {
@@ -675,11 +979,115 @@
       "type": "document"
     },
     {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/README.md",
+      "sha256": "3b129d7e54369b042bf704494efe13a61d671e4f9754e3f7647bf5e0bd23f083",
+      "size": 936,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/branch-roles.md",
+      "sha256": "c750d16b19b3edf610357ead2fcb4e3a56b3f51fb744eac8201d304bbf4f178d",
+      "size": 940,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/commit-template.md",
+      "sha256": "29ab32bf1fa2ae55bd251da6eb53bc0286be9e02884ff7f4248eaec7b6537493",
+      "size": 1072,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/helper-commands.md",
+      "sha256": "5515a7eb27b648b31578846b2b5866ad68022c4ff7336e130feaa6b935c7233f",
+      "size": 2924,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/git/helper-policy.yaml",
+      "sha256": "cf9f7af62f44bd8f0b0a57c109fb2489add2cc18df5b18e92b3d954460754b40",
+      "size": 2507,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1778701555,
+      "path": ".aide/git/latest-helper-plan.json",
+      "sha256": "0a1500558277293333a4a54047fc6c2580be4ea6c9ddd3df2808e690117b6312",
+      "size": 2192,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778701555,
+      "path": ".aide/git/latest-helper-plan.md",
+      "sha256": "632baa67f98e60e688ffd091da5c02bf606f8359c1aa6fa9f1d5a94b9b028492",
+      "size": 859,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/git/project-profiles.yaml",
+      "sha256": "aaafe5213324070a17c8209b4f110d6ee407d6ba856370e204454af46f09abfd",
+      "size": 5165,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/promotion-rules.md",
+      "sha256": "081737125b00930901b8e253ded9dc48688e5aead50af6f545669729e5e04d78",
+      "size": 806,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/prune-policy.md",
+      "sha256": "23ac0559e55fc8b6d6a303ae844a3eb1aa4ebb16c1aa68db585288c0d1f59cfa",
+      "size": 573,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/git/sync-policy.md",
+      "sha256": "7afbf00c01667c6d5728847df66314f2a04433e12087643a13c9be61577e6b89",
+      "size": 558,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1778701542,
+      "path": ".aide/git/workflow-detection.json",
+      "sha256": "7298674e998e7440c414aa5af7a115a9c3112a4c1d3ad0293c6bed60ce756bdc",
+      "size": 831,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778701542,
+      "path": ".aide/git/workflow-detection.md",
+      "sha256": "abea2844c6c31984756948fc2f98c317a47582a40e458b93d7fed11c70587c6d",
+      "size": 724,
+      "type": "document"
+    },
+    {
       "extension": "",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/hooks/commit-msg",
-      "sha256": "1f975675c6c1d8baaa0430d88004d34a8ed73228cb971db540d6d50801b9b69f",
-      "size": 307,
+      "sha256": "2ed3a2a7deca28ccbc8a48113db266a655d0bd4008b92588a94349da053e140a",
+      "size": 771,
       "type": "unknown"
     },
     {
@@ -812,6 +1220,14 @@
     },
     {
       "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/branch-roles.yaml",
+      "sha256": "7ad257b65ad23f8aa33b1addd34c48dcd1111c7de8053b2a9f4b84e7754c2698",
+      "size": 8635,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
       "mtime": 1778235448,
       "path": ".aide/policies/cache.yaml",
       "sha256": "77fdc3a67ea9d9cfa07cefe2088d45c32bae1a38d390a2024067593e0ee76949",
@@ -828,10 +1244,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778550843,
+      "mtime": 1778701188,
       "path": ".aide/policies/commit-messages.yaml",
-      "sha256": "32e9133a3b958c6f3bed0303a43a6578f8b60b83a062c9eb07c7b100092a837e",
-      "size": 1944,
+      "sha256": "e9663bf671d105856482fc8d2d6a2c129b847afed0f8e76d0d37769b8cf7d980",
+      "size": 3063,
       "type": "source-or-config"
     },
     {
@@ -868,10 +1284,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/policies/export-import.yaml",
-      "sha256": "b2b2afa31b80ee000235d59dbaaf0791fc84f61b755fa4aacced84cd8d7d8e80",
-      "size": 2416,
+      "sha256": "9ff9f9973dab9e4def0f2cbe0bfdfc683d5fb03d2d125bc73f9665f298068936",
+      "size": 2980,
       "type": "source-or-config"
     },
     {
@@ -880,6 +1296,14 @@
       "path": ".aide/policies/gateway.yaml",
       "sha256": "97f879b22fb8e33c1994169418abc7b5062a3d8bac5090b07c5d1bc1c5d918df",
       "size": 1995,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/git-workflow.yaml",
+      "sha256": "41bf7bcc170dc4d91ef93dc7140afb2fb7b471c5343f460bfc9d2fcb8ecb955b",
+      "size": 1449,
       "type": "source-or-config"
     },
     {
@@ -900,10 +1324,34 @@
     },
     {
       "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/promotion-rules.yaml",
+      "sha256": "e7cfae52fbbaff062cddbbb78050c74b08a27efb72a32a44cc2047943af83502",
+      "size": 6260,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
       "mtime": 1778235448,
       "path": ".aide/policies/provider-adapters.yaml",
       "sha256": "eb904e43fd0f7c767f6bada94584298fc5e02b2471145c8aa40d615dd8776e37",
       "size": 2115,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/prune-policy.yaml",
+      "sha256": "3dda27992ce1278cedb28e9bc84b94f1fbe6c2d5627c1d98dbc8b1b065f811fd",
+      "size": 1514,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/recovery.yaml",
+      "sha256": "bcf9176ad4ebc99c4d36b353f9bf78347154e8fed8c5a6ba0d5ad684cf0bbdb9",
+      "size": 3646,
       "type": "source-or-config"
     },
     {
@@ -924,10 +1372,18 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
+      "path": ".aide/policies/sync-policy.yaml",
+      "sha256": "729d0c2d093edcae5ad77238d7c9d51d0795c0c8c5d47f5d66d9791696ae9216",
+      "size": 1763,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
       "path": ".aide/policies/task-resumption.yaml",
-      "sha256": "6f60eb8d71a3a171a5da53380cecf276c2edea15e48c5b68cdc04099c3c6d349",
-      "size": 1637,
+      "sha256": "378c86e6bc657f27cd8492a5e375d70c90b0168fffa9e68b9a978f05c5f16633",
+      "size": 2164,
       "type": "source-or-config"
     },
     {
@@ -952,6 +1408,14 @@
       "path": ".aide/policies/verification.yaml",
       "sha256": "85baca462aa0d8f9ab83e1dcb038f6f80d74bb8a1fa4efb04cfc75d40b7c4ea5",
       "size": 1977,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778699941,
+      "path": ".aide/policies/work-units.yaml",
+      "sha256": "5adc500255a5b331f617ae790758a6563905e6c8a908f5bcff38fb033a4c1be7",
+      "size": 2650,
       "type": "source-or-config"
     },
     {
@@ -1388,10 +1852,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778685896,
+      "mtime": 1778686331,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md",
-      "sha256": "814b482d4e5d9ac9ba92170cc10d2c34a752037605e9237c6ff04f87cd8f9c47",
-      "size": 2558,
+      "sha256": "74e7a013d369c65f5ffed7c51b0716ba87e624b3d2a50a4935080d9302159b97",
+      "size": 2505,
       "type": "document"
     },
     {
@@ -1404,18 +1868,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778685896,
+      "mtime": 1778686027,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/token-savings-confirmation.md",
-      "sha256": "ee6a2badcc7d17dd59bbb69371ff769f0661d2e2959446c883b233a01ea01dd8",
+      "sha256": "5cc790f55566f1811d049c7adecc85167e7d2e7ff096f4ebccb55555beb9c74e",
       "size": 1765,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778685896,
+      "mtime": 1778686340,
       "path": ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md",
-      "sha256": "b3cdc0ef7caa40158ff2dcf400f39c0a2303ffbcb83592ecd425380f7a4a7d85",
-      "size": 4210,
+      "sha256": "bc30312a96bcb23fccf236b781f3200aea4e512bc4245286c6986f44c28697f6",
+      "size": 5312,
       "type": "document"
     },
     {
@@ -1640,6 +2104,94 @@
       "path": ".aide/queue/EUREKA-AIDE-SELFTEST-01/task.yaml",
       "sha256": "59b1461a0956e01dda2d11d442eb85bc158ccd9d65e01ec27afcc92d5f25e835",
       "size": 1520,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/ExecPlan.md",
+      "sha256": "fe9e62a46b49f00ad6c41a4e65a1e3e43d0df32e8b7f7be7ba7be621cce93672",
+      "size": 1969,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/changed-files.md",
+      "sha256": "cf4df194f39b4b7a2499cd1eeaccdaf50876e15f922736f7477f5cc0d07d1a7a",
+      "size": 52,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/commit-workunit-git-governance.md",
+      "sha256": "52b529b8168260d1e210b77bfdd8f7a05f31a420f56391470f9c24eb71088140",
+      "size": 75,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/remaining-risks.md",
+      "sha256": "245b2a95a144811f76d04d08154fc98cf99c2ed1de9ae9102ee172a725a5d62a",
+      "size": 54,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/source-pack-review.md",
+      "sha256": "14d6e5583f19bb8ec5064c67ff4ebdc823cadbd7c3e82d4f296fe82fa906cadc",
+      "size": 1911,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/sync-report.md",
+      "sha256": "7623ec00103e9df361e4bf07d1f89a1cb649223e626756c2e6c14d60828e46b8",
+      "size": 50,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/token-quality-confirmation.md",
+      "sha256": "f3a11c1b8e20a70ef6489be66ceb99a9960f63c61d6fc3f18549a3fb853c8976",
+      "size": 69,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/validation.md",
+      "sha256": "129cc1fef186a8a33b00f16b0289f65e3759a10a682a73be55af79419073bd16",
+      "size": 1339,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/prompt.md",
+      "sha256": "cf0103f887ec7a20949e4de0f152870f318f2765bd9f75ccf349a1af4f2f48e5",
+      "size": 907,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/status.yaml",
+      "sha256": "29c5edc88a48bfd42434664ef5020aacd9348edc3f80fa87556738fa171ecec1",
+      "size": 681,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778700589,
+      "path": ".aide/queue/EUREKA-AIDE-SYNC-01/task.yaml",
+      "sha256": "22033cd485fd9736060b5b6ca013405bf03680ed7bfa0c59910b90fe5df82fdb",
+      "size": 1257,
       "type": "source-or-config"
     },
     {
@@ -2924,10 +3476,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778684409,
+      "mtime": 1778700589,
       "path": ".aide/queue/index.yaml",
-      "sha256": "71280efe2c585a99e0ca6de1d2bbfe5b81e97fe454c65b001bde04f938088a6f",
-      "size": 72676,
+      "sha256": "7de58a6e40f1617f18e3d1603b7b7d8798d50e50bcb168556865dc9525706803",
+      "size": 73306,
       "type": "source-or-config"
     },
     {
@@ -2936,6 +3488,30 @@
       "path": ".aide/reports/README.md",
       "sha256": "bb3c1759f45cee1208fef54d58554ac9688e2cc153da6a91705f0bab7e9da26c",
       "size": 31739,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/reports/aide-commit-message-standard.md",
+      "sha256": "1c79d802cdc73adebe76f2be45d607550b03330641f6c52741a2088c37a9c034",
+      "size": 2523,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/reports/aide-task-resumption-standard.md",
+      "sha256": "78153ba226e4d1a668af6dee0d3136efea9dd5b2c318de73da9d49cf15263a48",
+      "size": 1242,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": ".aide/reports/aide-workunit-recovery-standard.md",
+      "sha256": "48dcefd0ec76d628892eaaa32b9ef32fa5e31eb4cb05027007c6dcfe18c98e32",
+      "size": 1094,
       "type": "document"
     },
     {
@@ -3092,10 +3668,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778550843,
+      "mtime": 1778701423,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "ca7d7cc74e96bf3539b663e24130abb4f0f82966c298817b193166c685515423",
-      "size": 441598,
+      "sha256": "c8f5c237aa0ffb121cdd55c8fc3e756ad19ba7764e0dc708d21fa15a2c42ad07",
+      "size": 571796,
       "type": "source-or-config"
     },
     {
@@ -3124,10 +3700,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778235448,
+      "mtime": 1778699941,
       "path": ".aide/scripts/tests/test_export_import.py",
-      "sha256": "51eacfd72baa6e1f6d348d3c7859c75d2c40cc6220f4b32e4bfb43d9e00c3fa1",
-      "size": 12613,
+      "sha256": "a64bb8e42c340edfe61ec6fc0bbbdddad8f76c9100fba2d84a36551f9d93150a",
+      "size": 15065,
       "type": "source-or-config"
     },
     {
@@ -3160,6 +3736,38 @@
       "path": ".aide/scripts/tests/test_provider_adapter.py",
       "sha256": "001eeb099623d1815fb11553a837aaaa3fa4470f1e7fa2ef09e90d8ba82f37d2",
       "size": 5688,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778699941,
+      "path": ".aide/scripts/tests/test_q27_commit_recovery.py",
+      "sha256": "1296696832591de0246463268c1af91d470ea132cd558c37d3c9a51c8bfdb436",
+      "size": 7169,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778699941,
+      "path": ".aide/scripts/tests/test_q28_git_workflow.py",
+      "sha256": "a236211910a30da4e747401aa2695cd58a90724ddce7f5184c14803604b291ce",
+      "size": 6413,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778699941,
+      "path": ".aide/scripts/tests/test_q29_git_helper.py",
+      "sha256": "ce62fadc0653691b70b82af72137dea3421d1ffb73fbdc62863b91cc3485031d",
+      "size": 11281,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778699941,
+      "path": ".aide/scripts/tests/test_q31_export_pack_governance.py",
+      "sha256": "201edea2ac37a174f9384b06fe7a138b3880d5573eae06d4fdf93f8accd0b80b",
+      "size": 8764,
       "type": "source-or-config"
     },
     {
@@ -3300,18 +3908,18 @@
     },
     {
       "extension": "",
-      "mtime": 1778684409,
+      "mtime": 1778701284,
       "path": ".gitignore",
-      "sha256": "9eaf39421bc5ee630953d61aa1e07b8f947e80f28a4ef0eeaa31beaf3ae74c5d",
-      "size": 628,
+      "sha256": "c70f33dee7cf2e6d4cb8d8c861a86f31d4141fa73d73305fd7cb4c920ca5692e",
+      "size": 657,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778323166,
+      "mtime": 1778700752,
       "path": "AGENTS.md",
-      "sha256": "f44a08ba7121c730737d4742206d5422a4c34bf208e665a3185a5c7633944a0c",
-      "size": 6899,
+      "sha256": "8f7b6778666df1462f232d25b2d2c86ea7e4cbd3bb3e2d2f981ce0c055c77469",
+      "size": 7149,
       "type": "document"
     },
     {
@@ -3340,10 +3948,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235448,
+      "mtime": 1778701599,
       "path": "README.md",
-      "sha256": "2702992a6e3ef6bdbb33bc53c42b475ef85e6ee7502488e0192b839fd7b9f750",
-      "size": 51390,
+      "sha256": "942ceb98df88cc969d401dd8a566930fa46c3053e49b683e87035619f96706ce",
+      "size": 51517,
       "type": "document"
     },
     {
@@ -68700,10 +69308,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778235450,
+      "mtime": 1778701621,
+      "path": "docs/reference/aide-governance-sync.md",
+      "sha256": "e304886409781a20dc4347e506b0cfe80a89b6babdc0fa403ef9886c746af77a",
+      "size": 1738,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778701609,
       "path": "docs/reference/aide-handover.md",
-      "sha256": "473c5c87a3ed4c0c7cec8f5fe1409cf35b17bf7d96f2a75c0e4f6e3c09b667fb",
-      "size": 1661,
+      "sha256": "3a4f07a7b116bd8325a8a32277d72b2a27d4a51b669de4cbdc2dafb461834c06",
+      "size": 1833,
       "type": "document"
     },
     {
@@ -68712,6 +69328,134 @@
       "path": "docs/reference/aide-lite-import.md",
       "sha256": "d0e03b409a7e7d777e9957fb00849228b9ac0568bc588d5b8c5b3efa6b613e9b",
       "size": 1520,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/aide-lite-test-runner.md",
+      "sha256": "a9faf8a9d2eb8ffa06c3ced735697cdb787896705bd3b92328b8ef91cadea2db",
+      "size": 1712,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/aide-lite.md",
+      "sha256": "a7fb5e6f046eff167c93c2f4b92a5ef4e597c2c095a607da4872f9decb725157",
+      "size": 9713,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/branch-roles.md",
+      "sha256": "dc008b7bd8e49ef5f9331a5fd7c99c6a69f0fc091cc1b6094543c3a48b969d6d",
+      "size": 2294,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/cache-local-state-boundary.md",
+      "sha256": "5d121b06df173408189a7f521027dd70311653b30003ddd1c024df6b30124f39",
+      "size": 3471,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/changelog-preview.md",
+      "sha256": "88830b4663baf250fe382205ff3a060e397c249f76155d08db79af686f1458c0",
+      "size": 854,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/commit-discipline.md",
+      "sha256": "5585288b6647faf84ed280fc727593b3f2c02b09fabc16aaba3e7c52e7ef4aa2",
+      "size": 1229,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/cross-repo-pack-export-import.md",
+      "sha256": "45008cdb5686973925d0e9ca62f54e0bf261bffbb1a2194290e97467e9630731",
+      "size": 6847,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/existing-tool-adapter-compiler-v0.md",
+      "sha256": "e9a53c7c40c832d1bd06e402caaf2a3d7a5e91604db56a20026a4d55caeb190d",
+      "size": 4106,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/gateway-skeleton.md",
+      "sha256": "90a587274229c827601a04fa552b3e50caca7b2831b2eda383ca80aebc1f99e0",
+      "size": 3083,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/git-helper-workflow.md",
+      "sha256": "78aeb85b1e3c98868b6d99258bbf6844dda546c60e07a86d033d5c73a780bd8c",
+      "size": 3045,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/git-workflow-policy.md",
+      "sha256": "cd47ec2ac810385cf486f925f40c5d9d9b1d535871493cd89dd656669378c42d",
+      "size": 3795,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/outcome-controller-v0.md",
+      "sha256": "df5eebd099911005fa036b4d5d95df4734ea8267142a1e7f122b500654b1fb19",
+      "size": 2570,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/promotion-policy.md",
+      "sha256": "3fb32d88abaaae321682800da169777ded4576e662441a4d7cf0b78fde092b78",
+      "size": 2186,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/provider-adapter-v0.md",
+      "sha256": "dd690bb7a426af7a1cc8336035a94e27926867112c43f997aee778b805b2f944",
+      "size": 4166,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/router-profile-v0.md",
+      "sha256": "70e11d7cf80a7760a0acb8dde26c390c2cee98f744dc12613ff02d45cfa2c50b",
+      "size": 3177,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778699941,
+      "path": "docs/reference/workunit-idempotency.md",
+      "sha256": "d1e60e3d64131fbeb2f02f37412744db1b2fed17b345de27a4669009f7b44177",
+      "size": 1157,
       "type": "document"
     },
     {
@@ -123915,12 +124659,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 44505371,
-    "file_count": 15483,
-    "total_size": 178021482,
+    "aggregate_approx_tokens": 44594662,
+    "file_count": 15576,
+    "total_size": 178378645,
     "type_counts": {
-      "document": 5000,
-      "source-or-config": 10201,
+      "document": 5058,
+      "source-or-config": 10236,
       "unknown": 282
     }
   }

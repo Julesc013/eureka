@@ -140,6 +140,48 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/changelog/CHANGELOG.preview.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/changelog/malformed-commits.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/commands/catalog.yaml",
       "source_role": "config"
     },
@@ -448,7 +490,63 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/branch_role_detection_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/catalog.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/changelog_preview_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/changelog_preview_golden/task.yaml",
       "source_role": "aide_contract"
     },
     {
@@ -630,6 +728,146 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md",
       "source_role": "aide_contract"
     },
@@ -658,6 +896,174 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_helper_policy_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_land_plan_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_land_plan_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_promote_plan_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_prune_guard_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/acceptance.md",
       "source_role": "aide_contract"
     },
@@ -673,6 +1079,62 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/no_secret_or_local_state_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/promotion_rules_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/promotion_rules_golden/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/prune_policy_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/prune_policy_golden/task.yaml",
       "source_role": "aide_contract"
     },
     {
@@ -729,6 +1191,34 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/sync_policy_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/sync_policy_golden/task.yaml",
       "source_role": "aide_contract"
     },
     {
@@ -827,6 +1317,34 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/workunit_idempotency_golden/acceptance.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml",
       "source_role": "aide_contract"
     },
     {
@@ -953,6 +1471,160 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/gateway/security-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/branch-roles.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/commit-template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/helper-commands.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/helper-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/latest-helper-plan.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/project-profiles.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/promotion-rules.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/prune-policy.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/sync-policy.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/git/workflow-detection.md",
       "source_role": "docs"
     },
     {
@@ -1190,6 +1862,20 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/branch-roles.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/cache.yaml",
       "source_role": "aide_policy"
     },
@@ -1316,6 +2002,20 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/git-workflow.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/local-state.yaml",
       "source_role": "aide_policy"
     },
@@ -1344,7 +2044,49 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/promotion-rules.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/provider-adapters.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/prune-policy.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/recovery.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -1373,6 +2115,20 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/source-comment-policy.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/sync-policy.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -1429,6 +2185,20 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/verification.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/work-units.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -2591,6 +3361,160 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/EUREKA-AIDE-SELFTEST-01/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/commit-workunit-git-governance.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/source-pack-review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/sync-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/token-quality-confirmation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/EUREKA-AIDE-SYNC-01/task.yaml",
       "source_role": "aide_queue"
     },
     {
@@ -4859,6 +5783,48 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/reports/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/reports/aide-commit-message-standard.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/reports/aide-task-resumption-standard.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/reports/aide-workunit-recovery-standard.md",
       "source_role": "docs"
     },
     {
@@ -69335,6 +70301,20 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/aide-governance-sync.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/aide-handover.md",
       "source_role": "docs"
     },
@@ -69350,6 +70330,230 @@
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/aide-lite-import.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/aide-lite-test-runner.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/aide-lite.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/branch-roles.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/cache-local-state-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/changelog-preview.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/commit-discipline.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/cross-repo-pack-export-import.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/existing-tool-adapter-compiler-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/gateway-skeleton.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/git-helper-workflow.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/git-workflow-policy.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/outcome-controller-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/promotion-policy.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/provider-adapter-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/router-profile-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": false,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": false,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/workunit-idempotency.md",
       "source_role": "docs"
     },
     {
@@ -82347,8 +83551,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 5882,
+    "mapping_count": 5968,
     "with_existing_candidate": 1,
-    "without_existing_candidate": 5881
+    "without_existing_candidate": 5967
   }
 }
