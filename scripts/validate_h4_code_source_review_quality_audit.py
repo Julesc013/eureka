@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.quality_delta import detect_h4_quality_overclaim  # noqa: E402
-from runtime.connectors.h4_code_source_release.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.quality_delta import detect_h4_quality_overclaim  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.review_integration import (  # noqa: E402
     detect_h4_review_product_boundary_violations,
     detect_h4_review_truth_boundary_violations,
 )
@@ -88,9 +88,9 @@ REQUIRED_DOCS = (
     "docs/operations/H4_TO_J1_K_L_DEFERRAL.md",
 )
 PYTHON_SCAN_PATHS = (
-    "runtime/connectors/h4_code_source_release/review_integration.py",
-    "runtime/connectors/h4_code_source_release/quality_delta.py",
-    "runtime/connectors/h4_code_source_release/wave_postmortem.py",
+    "control/prototypes/legacy_runtime/connectors/h4_code_source_release/review_integration.py",
+    "control/prototypes/legacy_runtime/connectors/h4_code_source_release/quality_delta.py",
+    "control/prototypes/legacy_runtime/connectors/h4_code_source_release/wave_postmortem.py",
     "scripts/integrate_h4_code_source_review.py",
     "scripts/summarize_h4_code_source_quality_delta.py",
     "scripts/audit_h4_code_source_release_wave.py",

@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h8_manuals_docs_standards.normalizer_common import H8_SOURCE_IDS
-from runtime.connectors.h8_manuals_docs_standards.quality_delta import build_h8_quality_delta
-from runtime.connectors.h8_manuals_docs_standards.review_integration import build_h8_review_integration_result, load_h8_manuals_docs_outputs
-from runtime.connectors.h8_manuals_docs_standards.wave_postmortem import (
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.normalizer_common import H8_SOURCE_IDS
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.quality_delta import build_h8_quality_delta
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.review_integration import build_h8_review_integration_result, load_h8_manuals_docs_outputs
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.wave_postmortem import (
     apply_missing_source_gate,
     build_h8_connector_wave_postmortem,
     build_h8_integration_audit,

@@ -4,9 +4,9 @@ import copy
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
-from runtime.connectors.h8_manuals_docs_standards.bitsavers_docs import normalize
-from runtime.connectors.h8_manuals_docs_standards.normalizer_common import detect_h8_truth_boundary_violations
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.bitsavers_docs import normalize
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.normalizer_common import detect_h8_truth_boundary_violations
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

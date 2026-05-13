@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_common import (  # noqa: E402
     H4CodeSourceLiveProbeBlocked,
     SOURCE_CONFIGS,
     build_h4_code_source_live_probe_blocked_result,

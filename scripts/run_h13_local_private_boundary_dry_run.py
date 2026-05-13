@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h13_local_private.boundary_dry_run_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.boundary_dry_run_common import (  # noqa: E402
     BOUNDARY_REQUEST_KEYS,
     H13_SOURCE_IDS,
     build_h13_boundary_dry_run_blocked_result,
@@ -26,7 +26,7 @@ from runtime.connectors.h13_local_private.boundary_dry_run_common import (  # no
     summarize_h13_boundary_dry_run_result,
     validate_h13_boundary_dry_run_request,
 )
-from runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture  # noqa: E402
 
 ALLOWED_PREFIXES = (
     "examples/connectors/h13_local_private/boundary_dry_run_results",
@@ -175,7 +175,7 @@ def _load_request(args: argparse.Namespace, bundle: Mapping[str, Any]) -> dict[s
     if not args.source_id:
         raise ValueError("--source-id is required when --input is not provided")
     request_key = args.request_key or BOUNDARY_REQUEST_KEYS[args.source_id]
-    module = importlib.import_module(f"runtime.connectors.h13_local_private.boundary_dry_run_{args.source_id}")
+    module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h13_local_private.boundary_dry_run_{args.source_id}")
     return module.build_boundary_request(build_h13_local_private_boundary_dry_run_request(args.source_id, request_key, bundle), bundle)
 
 

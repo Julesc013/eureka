@@ -16,8 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture  # noqa: E402
-from runtime.connectors.h1_metadata_wave.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.normalizer_common import (  # noqa: E402
     H1_SOURCE_IDS,
     build_h1_evidence_candidate_preview,
     build_h1_source_cache_candidate_preview,
@@ -84,7 +84,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
 
 
 def _normalizer(source_id: str):
-    module = importlib.import_module(f"runtime.connectors.h1_metadata_wave.{source_id}")
+    module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h1_metadata_wave.{source_id}")
     return module.normalize
 
 

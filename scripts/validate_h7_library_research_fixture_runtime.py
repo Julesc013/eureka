@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture  # noqa: E402
-from runtime.connectors.h7_library_research.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import (  # noqa: E402
     H7_FIXTURE_KINDS,
     H7_SOURCE_IDS,
     build_h7_fixture_replay_result,
@@ -116,18 +116,18 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
             required_paths.append(str(FIXTURE_ROOT / source_id / filename))
         required_paths.append(str(NORMALIZED_ROOT / f"{source_id}_normalized.json"))
         required_paths.append(str(REPLAY_ROOT / f"{source_id}_replay_result.json"))
-        required_paths.append(f"runtime/connectors/h7_library_research/{source_id}.py")
+        required_paths.append(f"control/prototypes/legacy_runtime/connectors/h7_library_research/{source_id}.py")
     required_paths.extend([
-        "runtime/connectors/h7_library_research/__init__.py",
-        "runtime/connectors/h7_library_research/fixture_loader.py",
-        "runtime/connectors/h7_library_research/normalizer_common.py",
-        "runtime/connectors/h7_library_research/bibliographic_identity.py",
-        "runtime/connectors/h7_library_research/research_work_identity.py",
-        "runtime/connectors/h7_library_research/dataset_identity.py",
-        "runtime/connectors/h7_library_research/cultural_object_identity.py",
-        "runtime/connectors/h7_library_research/patent_identity.py",
-        "runtime/connectors/h7_library_research/citation_relation.py",
-        "runtime/connectors/h7_library_research/access_rights_availability.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/__init__.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/fixture_loader.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/normalizer_common.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/bibliographic_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/research_work_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/dataset_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/cultural_object_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/patent_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/citation_relation.py",
+        "control/prototypes/legacy_runtime/connectors/h7_library_research/access_rights_availability.py",
     ])
     for rel in required_paths:
         path = root / rel
@@ -156,7 +156,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
 
 def validate_fixtures(root: Path, errors: list[str]) -> None:
     for source_id in H7_SOURCE_IDS:
-        normalizer = importlib.import_module(f"runtime.connectors.h7_library_research.{source_id}").normalize
+        normalizer = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h7_library_research.{source_id}").normalize
         for kind in H7_FIXTURE_KINDS:
             filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
             rel = FIXTURE_ROOT / source_id / filename
@@ -229,13 +229,13 @@ def validate_candidate_boundary(candidate: Mapping[str, Any]) -> list[str]:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H7_SOURCE_IDS:
-        importlib.import_module(f"runtime.connectors.h7_library_research.{source_id}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h7_library_research.{source_id}")
     for module in ("fixture_loader", "normalizer_common", "bibliographic_identity", "research_work_identity", "dataset_identity", "cultural_object_identity", "patent_identity", "citation_relation", "access_rights_availability"):
-        importlib.import_module(f"runtime.connectors.h7_library_research.{module}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h7_library_research.{module}")
 
 
 def validate_python_safety(root: Path, errors: list[str]) -> None:
-    runtime_dir = root / "runtime/connectors/h7_library_research"
+    runtime_dir = root / "control/prototypes/legacy_runtime/connectors/h7_library_research"
     for path in runtime_dir.glob("*.py"):
         if path.name.startswith("live_probe_"):
             continue

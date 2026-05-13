@@ -26,7 +26,7 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".local/eureka", ".cache/eureka",
 )
 
-from runtime.connectors.h12_retro_community.quality_delta import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.quality_delta import (  # noqa: E402
     build_h12_quality_delta,
     detect_h12_quality_overclaim,
     summarize_h12_quality_delta,

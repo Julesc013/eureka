@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.rollup_dry_run_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.rollup_dry_run_common import (  # noqa: E402
     H14_SOURCE_IDS,
     ROLLUP_REQUEST_KEYS,
     build_h14_rollup_blocked_result,

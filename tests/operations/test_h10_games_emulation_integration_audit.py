@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 
 from scripts.audit_h10_games_emulation_wave import build_wave_audit
-from runtime.connectors.h10_games_emulation.wave_postmortem import apply_missing_source_gate, build_h10_next_phase_recommendation
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.wave_postmortem import apply_missing_source_gate, build_h10_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h3_os_package_archives.quality_delta import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.quality_delta import (  # noqa: E402
     build_h3_quality_delta,
     detect_h3_quality_overclaim,
     summarize_h3_quality_delta,

@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture, validate_h2_package_fixture  # noqa: E402
-from runtime.connectors.h2_package_registries.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture, validate_h2_package_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.normalizer_common import (  # noqa: E402
     H2_SOURCE_IDS,
     build_h2_fixture_replay_result,
     detect_h2_package_product_boundary_violations,
@@ -79,18 +79,18 @@ AUDIT_FILES = (
     "control/audits/h2-bundle-02-package-fixture-runtime-v0/generated/sample_h2_fixture_summary.md",
 )
 PYTHON_FILES = (
-    "runtime/connectors/h2_package_registries/__init__.py",
-    "runtime/connectors/h2_package_registries/fixture_loader.py",
-    "runtime/connectors/h2_package_registries/normalizer_common.py",
-    "runtime/connectors/h2_package_registries/package_identity.py",
-    "runtime/connectors/h2_package_registries/maven_central.py",
-    "runtime/connectors/h2_package_registries/nuget.py",
-    "runtime/connectors/h2_package_registries/crates_io.py",
-    "runtime/connectors/h2_package_registries/rubygems.py",
-    "runtime/connectors/h2_package_registries/cpan.py",
-    "runtime/connectors/h2_package_registries/cran.py",
-    "runtime/connectors/h2_package_registries/conda_forge.py",
-    "runtime/connectors/h2_package_registries/oci_registry_metadata.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/__init__.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/fixture_loader.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/normalizer_common.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/maven_central.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/nuget.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/crates_io.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/rubygems.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/cpan.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/cran.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/conda_forge.py",
+    "control/prototypes/legacy_runtime/connectors/h2_package_registries/oci_registry_metadata.py",
     "scripts/normalize_h2_package_fixture.py",
     "scripts/replay_h2_package_fixtures.py",
     "scripts/validate_h2_package_registry_fixture_runtime.py",
@@ -275,7 +275,7 @@ def validate_replay_result(result: Mapping[str, Any], expected_source_id: str | 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H2_SOURCE_IDS:
         try:
-            module = importlib.import_module(f"runtime.connectors.h2_package_registries.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h2_package_registries.{source_id}")
         except Exception as exc:  # noqa: BLE001
             errors.append(f"failed to import normalizer {source_id}: {exc}")
             continue

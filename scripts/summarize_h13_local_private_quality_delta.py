@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta, summarize_h13_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta, summarize_h13_quality_delta  # noqa: E402
 
 FORBIDDEN_OUTPUT_ROOTS = (
     "site/dist", "data/public_index", "runtime", "contracts", "control/inventory/sources",

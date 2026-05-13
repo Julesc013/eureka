@@ -1,0 +1,21 @@
+"""Source-specific H5 live-probe metadata wrapper for dell_support_downloads."""
+
+from __future__ import annotations
+
+from typing import Any, Mapping
+
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.live_probe_common import build_metadata_request, normalize_h5_vendor_update_live_probe_result, parse_metadata_response
+
+SOURCE_ID = "dell_support_downloads"
+
+
+def build_request_url_or_metadata_request(request: Mapping[str, Any], policy_bundle: Mapping[str, Any]) -> dict[str, Any]:
+    return build_metadata_request(SOURCE_ID, request, policy_bundle)
+
+
+def parse_response_payload(response_payload: Mapping[str, Any], policy_bundle: Mapping[str, Any]) -> dict[str, Any]:
+    return parse_metadata_response(SOURCE_ID, response_payload, policy_bundle)
+
+
+def normalize_response_payload(response_payload: Mapping[str, Any], policy_bundle: Mapping[str, Any]) -> dict[str, Any]:
+    return normalize_h5_vendor_update_live_probe_result({"source_id": SOURCE_ID, "response_payload": parse_response_payload(response_payload, policy_bundle), "response_metadata": {"network_used": False}}, policy_bundle)

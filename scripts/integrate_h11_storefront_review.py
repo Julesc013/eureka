@@ -26,15 +26,15 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".local/eureka", ".cache/eureka",
 )
 
-from runtime.connectors.h11_storefront.quality_delta import build_h11_quality_delta  # noqa: E402
-from runtime.connectors.h11_storefront.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.quality_delta import build_h11_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.review_integration import (  # noqa: E402
     build_h11_review_integration_result,
     detect_h11_review_product_boundary_violations,
     detect_h11_review_truth_boundary_violations,
     load_h11_storefront_outputs,
     summarize_h11_review_integration,
 )
-from runtime.connectors.h11_storefront.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.wave_postmortem import (  # noqa: E402
     build_h11_connector_wave_postmortem,
     build_h11_integration_audit,
     build_h11_next_phase_recommendation,

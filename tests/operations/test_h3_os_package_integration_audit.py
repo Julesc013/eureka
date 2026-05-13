@@ -8,7 +8,7 @@ import sys
 import unittest
 
 from scripts.audit_h3_os_package_archive_wave import build_wave_audit
-from runtime.connectors.h3_os_package_archives.wave_postmortem import apply_missing_source_gate
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.wave_postmortem import apply_missing_source_gate
 
 ROOT = Path(__file__).resolve().parents[2]
 

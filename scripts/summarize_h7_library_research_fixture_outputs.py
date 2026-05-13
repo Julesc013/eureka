@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h7_library_research.normalizer_common import H7_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import H7_SOURCE_IDS  # noqa: E402
 from scripts.normalize_h7_library_research_fixture import safe_output_path  # noqa: E402
 
 ALLOWED_PREFIXES = ("control/audits/h7-bundle-02-library-research-fixture-runtime-v0/generated",)

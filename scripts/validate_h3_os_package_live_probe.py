@@ -16,7 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h3_os_package_archives.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.live_probe_common import (  # noqa: E402
     H3_SOURCE_IDS,
     detect_h3_os_package_live_probe_product_boundary_violations,
     detect_h3_os_package_live_probe_truth_boundary_violations,
@@ -86,8 +86,8 @@ AUDIT_FILES = (
     "generated/sample_h3_live_probe_summary.md",
 )
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h3_os_package_archives/live_probe_common.py"]
-    + [f"runtime/connectors/h3_os_package_archives/live_probe_{source_id}.py" for source_id in H3_SOURCE_IDS]
+    ["control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_{source_id}.py" for source_id in H3_SOURCE_IDS]
     + [
         "scripts/run_h3_os_package_live_probe.py",
         "scripts/validate_h3_os_package_live_probe.py",

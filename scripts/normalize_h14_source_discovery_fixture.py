@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
-from runtime.connectors.h14_source_discovery.normalizer_common import H14_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.normalizer_common import H14_SOURCE_IDS  # noqa: E402
 
 SOURCE_MODULES = {
     "source_need_registry": "source_need_registry",
@@ -68,7 +68,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     try:
         fixture = load_h14_source_discovery_fixture(args.input)
-        module = importlib.import_module(f"runtime.connectors.h14_source_discovery.{SOURCE_MODULES[args.source_id]}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h14_source_discovery.{SOURCE_MODULES[args.source_id]}")
         normalized = module.normalize(fixture)
         outputs: list[tuple[str | None, Any]] = [
             (args.output, normalized),

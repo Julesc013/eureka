@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h10_games_emulation.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.live_probe_common import (  # noqa: E402
     H10_SOURCE_IDS,
     detect_h10_games_emulation_live_probe_product_boundary_violations,
     detect_h10_games_emulation_live_probe_truth_boundary_violations,
@@ -34,8 +34,8 @@ DOCS = tuple(['docs/reference/H10_GAMES_EMULATION_LIVE_PROBE.md', 'docs/referenc
 AUDIT_DIR = Path("control/audits/h10-bundle-03-games-emulation-live-probes-v0")
 AUDIT_FILES = tuple(['README.md', 'h10_bundle_03_report.json', 'live_probe_policy_review.md', 'live_probe_execution_report.md', 'game_software_identity_candidate_preview.md', 'platform_release_edition_candidate_preview.md', 'emulator_compatibility_candidate_preview.md', 'preservation_hashset_candidate_preview.md', 'rom_disc_media_identity_candidate_preview.md', 'game_relation_candidate_preview.md', 'emulator_action_candidate_preview.md', 'games_rights_safety_candidate_preview.md', 'source_cache_candidate_preview.md', 'evidence_candidate_preview.md', 'review_queue_seed_preview.md', 'connector_health_summary.md', 'no_download_execute_report.md', 'restricted_source_policy_report.md', 'h10_live_probe_blocked_or_completed_summary.md', 'validation.md', 'generated/sample_h10_live_probe_result.json', 'generated/sample_h10_game_software_identity_candidate_from_probe.json', 'generated/sample_h10_platform_release_edition_candidate_from_probe.json', 'generated/sample_h10_emulator_compatibility_candidate_from_probe.json', 'generated/sample_h10_preservation_hashset_candidate_from_probe.json', 'generated/sample_h10_rom_disc_media_identity_candidate_from_probe.json', 'generated/sample_h10_game_relation_candidate_from_probe.json', 'generated/sample_h10_emulator_action_candidate_from_probe.json', 'generated/sample_h10_games_rights_safety_candidate_from_probe.json', 'generated/sample_h10_source_cache_candidate_from_probe.json', 'generated/sample_h10_evidence_candidate_preview_from_probe.json', 'generated/sample_h10_review_queue_seed_from_probe.json', 'generated/sample_h10_connector_health_summary.json', 'generated/sample_h10_live_probe_summary.md'])
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h10_games_emulation/live_probe_common.py"]
-    + [f"runtime/connectors/h10_games_emulation/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
+    ["control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
     + [
         "scripts/run_h10_games_emulation_live_probe.py",
         "scripts/validate_h10_games_emulation_live_probe.py",
@@ -285,9 +285,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     try:
-        importlib.import_module("runtime.connectors.h10_games_emulation.live_probe_common")
+        importlib.import_module("control.prototypes.legacy_runtime.connectors.h10_games_emulation.live_probe_common")
         for source_id in EXPECTED_SOURCES:
-            importlib.import_module(f"runtime.connectors.h10_games_emulation.live_probe_{source_id}")
+            importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h10_games_emulation.live_probe_{source_id}")
         importlib.import_module("scripts.run_h10_games_emulation_live_probe")
         importlib.import_module("scripts.summarize_h10_games_emulation_live_probe_outputs")
     except Exception as exc:  # noqa: BLE001

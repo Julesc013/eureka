@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture
-from runtime.connectors.h7_library_research.normalizer_common import H7_FIXTURE_KINDS, H7_SOURCE_IDS
+from control.prototypes.legacy_runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture
+from control.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import H7_FIXTURE_KINDS, H7_SOURCE_IDS
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 class H7LibraryResearchFixtureRuntimeTests(unittest.TestCase):
     def test_all_normalizers_handle_all_fixture_kinds(self) -> None:
         for source_id in H7_SOURCE_IDS:
-            module = importlib.import_module(f"runtime.connectors.h7_library_research.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h7_library_research.{source_id}")
             for kind in H7_FIXTURE_KINDS:
                 filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
                 fixture = load_h7_library_research_fixture(REPO_ROOT / "examples/connectors/h7_library_research/fixtures" / source_id / filename)
@@ -28,7 +28,7 @@ class H7LibraryResearchFixtureRuntimeTests(unittest.TestCase):
 
     def test_missing_optional_fields_produce_limitations(self) -> None:
         fixture = load_h7_library_research_fixture(REPO_ROOT / "examples/connectors/h7_library_research/fixtures/openalex/minimal_record.json")
-        normalized = importlib.import_module("runtime.connectors.h7_library_research.openalex").normalize(fixture)
+        normalized = importlib.import_module("control.prototypes.legacy_runtime.connectors.h7_library_research.openalex").normalize(fixture)
         self.assertTrue(any("optional field absent or unknown" in item for item in normalized["source_limitations"]))
         self.assertEqual(normalized["doi_candidate"], "unknown")
 

@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h11_storefront.fixture_loader import load_h11_storefront_fixture  # noqa: E402
-from runtime.connectors.h11_storefront.normalizer_common import H11_SOURCE_IDS, build_h11_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.fixture_loader import load_h11_storefront_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.normalizer_common import H11_SOURCE_IDS, build_h11_fixture_replay_result  # noqa: E402
 from scripts.normalize_h11_storefront_fixture import safe_output_path  # noqa: E402
 
 FIXTURE_FILES = {'minimal': 'minimal_record.json', 'listing_identity': 'listing_identity_record.json', 'app_product_identity': 'app_product_identity_record.json', 'version_release_channel': 'version_release_channel_record.json', 'price_availability_region': 'price_availability_region_record.json', 'acquisition_path_blocked': 'acquisition_path_blocked_record.json', 'review_rating_metadata': 'review_rating_metadata_record.json', 'account_entitlement_boundary': 'account_entitlement_boundary_record.json', 'rights_safety': 'rights_safety_record.json', 'policy_blocked': 'policy_blocked_record.json'}
@@ -34,7 +34,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         results = []
         normalized_count = 0
         for source_id in source_ids:
-            module = importlib.import_module(f"runtime.connectors.h11_storefront.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h11_storefront.{source_id}")
             source_dir = REPO_ROOT / args.fixture_root / source_id
             for kind, filename in FIXTURE_FILES.items():
                 fixture = load_h11_storefront_fixture(source_dir / filename)

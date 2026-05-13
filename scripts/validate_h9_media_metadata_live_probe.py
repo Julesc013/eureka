@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h9_media_metadata.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.live_probe_common import (  # noqa: E402
     H9_SOURCE_IDS,
     detect_h9_media_metadata_live_probe_product_boundary_violations,
     detect_h9_media_metadata_live_probe_truth_boundary_violations,
@@ -33,8 +33,8 @@ DOCS = tuple(['docs/reference/H9_MEDIA_METADATA_LIVE_PROBE.md', 'docs/reference/
 AUDIT_DIR = Path("control/audits/h9-bundle-03-media-metadata-live-probes-v0")
 AUDIT_FILES = tuple(['README.md', 'h9_bundle_03_report.json', 'live_probe_policy_review.md', 'live_probe_execution_report.md', 'media_object_identity_candidate_preview.md', 'music_work_recording_release_candidate_preview.md', 'image_video_map_identity_candidate_preview.md', 'media_creator_collection_relation_candidate_preview.md', 'media_fingerprint_candidate_preview.md', 'media_rights_license_candidate_preview.md', 'media_safety_privacy_candidate_preview.md', 'source_cache_candidate_preview.md', 'evidence_candidate_preview.md', 'review_queue_seed_preview.md', 'connector_health_summary.md', 'no_download_upload_report.md', 'restricted_source_policy_report.md', 'h9_live_probe_blocked_or_completed_summary.md', 'validation.md', 'generated/sample_h9_live_probe_result.json', 'generated/sample_h9_media_object_identity_candidate_from_probe.json', 'generated/sample_h9_music_work_recording_release_candidate_from_probe.json', 'generated/sample_h9_image_video_map_identity_candidate_from_probe.json', 'generated/sample_h9_media_creator_collection_relation_candidate_from_probe.json', 'generated/sample_h9_media_fingerprint_candidate_from_probe.json', 'generated/sample_h9_media_rights_license_candidate_from_probe.json', 'generated/sample_h9_media_safety_privacy_candidate_from_probe.json', 'generated/sample_h9_source_cache_candidate_from_probe.json', 'generated/sample_h9_evidence_candidate_preview_from_probe.json', 'generated/sample_h9_review_queue_seed_from_probe.json', 'generated/sample_h9_connector_health_summary.json', 'generated/sample_h9_live_probe_summary.md'])
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h9_media_metadata/live_probe_common.py"]
-    + [f"runtime/connectors/h9_media_metadata/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
+    ["control/prototypes/legacy_runtime/connectors/h9_media_metadata/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h9_media_metadata/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
     + [
         "scripts/run_h9_media_metadata_live_probe.py",
         "scripts/validate_h9_media_metadata_live_probe.py",
@@ -171,9 +171,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     try:
-        importlib.import_module("runtime.connectors.h9_media_metadata.live_probe_common")
+        importlib.import_module("control.prototypes.legacy_runtime.connectors.h9_media_metadata.live_probe_common")
         for source_id in EXPECTED_SOURCES:
-            importlib.import_module(f"runtime.connectors.h9_media_metadata.live_probe_{source_id}")
+            importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h9_media_metadata.live_probe_{source_id}")
         importlib.import_module("scripts.run_h9_media_metadata_live_probe")
         importlib.import_module("scripts.summarize_h9_media_metadata_live_probe_outputs")
     except Exception as exc:  # noqa: BLE001

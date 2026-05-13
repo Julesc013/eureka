@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
-from runtime.connectors.h13_local_private import restricted_source_manifest_only, local_disk_image_metadata, local_package_cache_metadata
+from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
+from control.prototypes.legacy_runtime.connectors.h13_local_private import restricted_source_manifest_only, local_disk_image_metadata, local_package_cache_metadata
 from scripts import validate_h13_local_private_fixture_runtime as validator
 
 

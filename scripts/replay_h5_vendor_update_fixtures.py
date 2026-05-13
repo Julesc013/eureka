@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h5_vendor_update_driver.fixture_loader import load_h5_vendor_update_fixture  # noqa: E402
-from runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS, build_h5_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.fixture_loader import load_h5_vendor_update_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS, build_h5_fixture_replay_result  # noqa: E402
 
 
 from pathlib import Path
@@ -132,7 +132,7 @@ def replay_fixtures(fixture_root: str | Path, source_id: str | None = None) -> l
         source_dir = root / item
         if not source_dir.is_dir():
             raise ValueError(f"missing fixture directory: {source_dir}")
-        module = importlib.import_module(f"runtime.connectors.h5_vendor_update_driver.{item}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.{item}")
         for fixture_path in sorted(source_dir.glob("*.json")):
             fixture = load_h5_vendor_update_fixture(fixture_path)
             normalized = module.normalize(fixture)

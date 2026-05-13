@@ -22,16 +22,16 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".cache/eureka", "local_sources", "private_sources",
 )
 
-from runtime.connectors.h14_source_discovery.normalizer_common import H14_SOURCE_IDS  # noqa: E402
-from runtime.connectors.h14_source_discovery.quality_delta import build_h14_quality_delta  # noqa: E402
-from runtime.connectors.h14_source_discovery.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.normalizer_common import H14_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.quality_delta import build_h14_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.review_integration import (  # noqa: E402
     build_h14_review_integration_result,
     detect_h14_review_product_boundary_violations,
     detect_h14_review_registry_or_pack_mutation_violations,
     detect_h14_review_truth_boundary_violations,
     load_h14_source_discovery_outputs,
 )
-from runtime.connectors.h14_source_discovery.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.wave_postmortem import (  # noqa: E402
     build_h14_connector_wave_postmortem,
     build_h14_integration_audit,
     build_h14_next_phase_recommendation,

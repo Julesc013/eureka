@@ -1,0 +1,10 @@
+{
+  "alternative_next_task": "R0-FINAL-PROMOTION-REVIEW \u2014 Final dev-to-main promotion review",
+  "f0_can_resume": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Legacy H-series connector runtime was quarantined out of production runtime scope; remaining allowlist debt is non-R0-seam warning debt.",
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "schema_version": "r0_legacy_leakage_next_task_decision.v0",
+  "task": "R0-REMEDIATION-LEGACY-LEAKAGE-01"
+}

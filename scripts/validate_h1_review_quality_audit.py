@@ -16,8 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h1_metadata_wave.quality_delta import detect_h1_quality_overclaim  # noqa: E402
-from runtime.connectors.h1_metadata_wave.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.quality_delta import detect_h1_quality_overclaim  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.review_integration import (  # noqa: E402
     detect_h1_review_product_boundary_violations,
     detect_h1_review_truth_boundary_violations,
 )
@@ -79,9 +79,9 @@ REQUIRED_DOCS = (
     "docs/operations/H1_TO_EXTRACTION_HANDOFF.md",
 )
 PYTHON_SCAN_PATHS = (
-    "runtime/connectors/h1_metadata_wave/review_integration.py",
-    "runtime/connectors/h1_metadata_wave/quality_delta.py",
-    "runtime/connectors/h1_metadata_wave/wave_postmortem.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/review_integration.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/quality_delta.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/wave_postmortem.py",
     "scripts/integrate_h1_metadata_review.py",
     "scripts/summarize_h1_quality_delta.py",
     "scripts/audit_h1_metadata_wave.py",

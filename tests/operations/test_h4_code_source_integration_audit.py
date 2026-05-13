@@ -5,9 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h4_code_source_release.quality_delta import build_h4_quality_delta
-from runtime.connectors.h4_code_source_release.review_integration import build_h4_review_integration_result, load_h4_code_source_outputs
-from runtime.connectors.h4_code_source_release.wave_postmortem import build_h4_connector_wave_postmortem, build_h4_integration_audit, build_h4_next_phase_recommendation
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.quality_delta import build_h4_quality_delta
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.review_integration import build_h4_review_integration_result, load_h4_code_source_outputs
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.wave_postmortem import build_h4_connector_wave_postmortem, build_h4_integration_audit, build_h4_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

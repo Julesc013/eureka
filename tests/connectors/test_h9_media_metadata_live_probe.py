@@ -5,7 +5,7 @@ import importlib
 from unittest import mock
 import unittest
 
-from runtime.connectors.h9_media_metadata.live_probe_common import (
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.live_probe_common import (
     H9_SOURCE_IDS,
     SOURCE_CONFIGS,
     build_h9_media_metadata_live_probe_request,
@@ -105,7 +105,7 @@ class H9MediaMetadataLiveProbeTests(unittest.TestCase):
 
     def test_source_modules_normalize_payloads(self) -> None:
         for source_id in H9_SOURCE_IDS:
-            module = importlib.import_module(f"runtime.connectors.h9_media_metadata.live_probe_{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h9_media_metadata.live_probe_{source_id}")
             record = module.normalize_response_payload(self._payload(source_id), self.bundle)
             self.assertEqual(record["source_id"], source_id)
 

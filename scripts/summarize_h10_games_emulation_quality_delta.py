@@ -44,7 +44,7 @@ FORBIDDEN_OUTPUT_ROOTS = (
 )
 
 
-from runtime.connectors.h10_games_emulation.quality_delta import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.quality_delta import (  # noqa: E402
     build_h10_quality_delta,
     detect_h10_quality_overclaim,
     summarize_h10_quality_delta,

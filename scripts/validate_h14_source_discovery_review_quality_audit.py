@@ -16,8 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.quality_delta import detect_h14_quality_overclaim  # noqa: E402
-from runtime.connectors.h14_source_discovery.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.quality_delta import detect_h14_quality_overclaim  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.review_integration import (  # noqa: E402
     detect_h14_review_product_boundary_violations,
     detect_h14_review_registry_or_pack_mutation_violations,
     detect_h14_review_truth_boundary_violations,
@@ -100,9 +100,9 @@ REQUIRED_DOCS = (
     "docs/operations/H14_TO_I_J_K_L_DEFERRAL.md",
 )
 PYTHON_SCAN_PATHS = (
-    "runtime/connectors/h14_source_discovery/review_integration.py",
-    "runtime/connectors/h14_source_discovery/quality_delta.py",
-    "runtime/connectors/h14_source_discovery/wave_postmortem.py",
+    "control/prototypes/legacy_runtime/connectors/h14_source_discovery/review_integration.py",
+    "control/prototypes/legacy_runtime/connectors/h14_source_discovery/quality_delta.py",
+    "control/prototypes/legacy_runtime/connectors/h14_source_discovery/wave_postmortem.py",
     "scripts/integrate_h14_source_discovery_review.py",
     "scripts/summarize_h14_source_discovery_quality_delta.py",
     "scripts/audit_h14_source_discovery_wave.py",
@@ -259,7 +259,7 @@ def validate_python_imports(root: Path, errors: list[str]) -> None:
 def validate_runtime_imports(errors: list[str]) -> None:
     for module in ("review_integration", "quality_delta", "wave_postmortem"):
         try:
-            importlib.import_module(f"runtime.connectors.h14_source_discovery.{module}")
+            importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h14_source_discovery.{module}")
         except Exception as exc:  # noqa: BLE001
             errors.append(f"runtime module import failed {module}: {exc}")
 

@@ -3,8 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
-from runtime.connectors.h8_manuals_docs_standards import bitsavers_docs, semiconductor_datasheets
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards import bitsavers_docs, semiconductor_datasheets
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture  # noqa: E402
-from runtime.connectors.h4_code_source_release.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import (  # noqa: E402
     H4_FIXTURE_KINDS,
     H4_SOURCE_IDS,
     build_h4_fixture_replay_result,
@@ -94,14 +94,14 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
             required_paths.append(str(FIXTURE_ROOT / source_id / filename))
         required_paths.append(str(NORMALIZED_ROOT / f"{source_id}_normalized.json"))
         required_paths.append(str(REPLAY_ROOT / f"{source_id}_replay_result.json"))
-        required_paths.append(f"runtime/connectors/h4_code_source_release/{source_id}.py")
+        required_paths.append(f"control/prototypes/legacy_runtime/connectors/h4_code_source_release/{source_id}.py")
     required_paths.extend([
-        "runtime/connectors/h4_code_source_release/__init__.py",
-        "runtime/connectors/h4_code_source_release/fixture_loader.py",
-        "runtime/connectors/h4_code_source_release/normalizer_common.py",
-        "runtime/connectors/h4_code_source_release/source_identity.py",
-        "runtime/connectors/h4_code_source_release/release_identity.py",
-        "runtime/connectors/h4_code_source_release/source_to_binary_relation.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/__init__.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/fixture_loader.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/normalizer_common.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/source_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/source_to_binary_relation.py",
     ])
     for rel in required_paths:
         path = root / rel
@@ -134,7 +134,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
 
 def validate_fixtures(root: Path, errors: list[str]) -> None:
     for source_id in H4_SOURCE_IDS:
-        normalizer = importlib.import_module(f"runtime.connectors.h4_code_source_release.{source_id}").normalize
+        normalizer = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h4_code_source_release.{source_id}").normalize
         for kind in H4_FIXTURE_KINDS:
             filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
             rel = FIXTURE_ROOT / source_id / filename
@@ -204,12 +204,12 @@ def validate_candidate_boundary(candidate: Mapping[str, Any]) -> list[str]:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     modules = [
-        "runtime.connectors.h4_code_source_release.fixture_loader",
-        "runtime.connectors.h4_code_source_release.normalizer_common",
-        "runtime.connectors.h4_code_source_release.source_identity",
-        "runtime.connectors.h4_code_source_release.release_identity",
-        "runtime.connectors.h4_code_source_release.source_to_binary_relation",
-    ] + [f"runtime.connectors.h4_code_source_release.{source_id}" for source_id in H4_SOURCE_IDS]
+        "control.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader",
+        "control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common",
+        "control.prototypes.legacy_runtime.connectors.h4_code_source_release.source_identity",
+        "control.prototypes.legacy_runtime.connectors.h4_code_source_release.release_identity",
+        "control.prototypes.legacy_runtime.connectors.h4_code_source_release.source_to_binary_relation",
+    ] + [f"control.prototypes.legacy_runtime.connectors.h4_code_source_release.{source_id}" for source_id in H4_SOURCE_IDS]
     for module_name in modules:
         try:
             importlib.import_module(module_name)
@@ -219,7 +219,7 @@ def validate_runtime_imports(errors: list[str]) -> None:
 
 def validate_python_safety(root: Path, errors: list[str]) -> None:
     python_paths = [root / rel for rel in PYTHON_FILES]
-    python_paths.extend((root / "runtime/connectors/h4_code_source_release").glob("*.py"))
+    python_paths.extend((root / "control/prototypes/legacy_runtime/connectors/h4_code_source_release").glob("*.py"))
     for path in python_paths:
         if not path.is_file():
             continue

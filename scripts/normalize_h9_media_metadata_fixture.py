@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h9_media_metadata.fixture_loader import load_h9_media_metadata_fixture  # noqa: E402
-from runtime.connectors.h9_media_metadata.normalizer_common import H9_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.fixture_loader import load_h9_media_metadata_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.normalizer_common import H9_SOURCE_IDS  # noqa: E402
 
 FORBIDDEN_OUTPUT_ROOTS = (
     "site/dist",
@@ -96,7 +96,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     try:
         fixture = load_h9_media_metadata_fixture(args.input)
-        module = importlib.import_module(f"runtime.connectors.h9_media_metadata.{args.source_id}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h9_media_metadata.{args.source_id}")
         normalized = module.normalize(fixture)
         outputs: list[tuple[str | None, Any]] = [
             (args.output, normalized),

@@ -16,8 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture  # noqa: E402
-from runtime.connectors.h2_package_registries.normalizer_common import H2_SOURCE_IDS, build_h2_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.normalizer_common import H2_SOURCE_IDS, build_h2_fixture_replay_result  # noqa: E402
 
 
 FORBIDDEN_OUTPUT_ROOTS = (
@@ -102,7 +102,7 @@ def replay_fixtures(fixture_root: str | Path, source_id: str | None = None) -> l
 
 
 def _normalizer(source_id: str):
-    module = importlib.import_module(f"runtime.connectors.h2_package_registries.{source_id}")
+    module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h2_package_registries.{source_id}")
     return module.normalize
 
 

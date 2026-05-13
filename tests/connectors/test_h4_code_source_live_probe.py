@@ -3,7 +3,7 @@ import importlib
 from unittest import mock
 import unittest
 
-from runtime.connectors.h4_code_source_release.live_probe_common import (
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_common import (
     H4_SOURCE_IDS,
     SOURCE_CONFIGS,
     build_h4_code_source_live_probe_request,
@@ -87,7 +87,7 @@ class H4CodeSourceLiveProbeTests(unittest.TestCase):
 
     def test_source_modules_normalize_payloads(self):
         for source_id in H4_SOURCE_IDS:
-            module = importlib.import_module(f"runtime.connectors.h4_code_source_release.live_probe_{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_{source_id}")
             record = module.normalize_response_payload(self._payload(source_id), self.bundle)
             self.assertEqual(record["source_id"], source_id)
 

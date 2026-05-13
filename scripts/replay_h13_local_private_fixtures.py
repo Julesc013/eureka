@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture  # noqa: E402
-from runtime.connectors.h13_local_private.normalizer_common import H13_SOURCE_IDS, build_h13_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.normalizer_common import H13_SOURCE_IDS, build_h13_fixture_replay_result  # noqa: E402
 from scripts.normalize_h13_local_private_fixture import safe_output_path  # noqa: E402
 
 FIXTURE_FILES = {'minimal': 'minimal_record.json', 'local_source_identity': 'local_source_identity_record.json', 'private_source_boundary': 'private_source_boundary_record.json', 'user_supplied_url_boundary': 'user_supplied_url_boundary_record.json', 'authenticated_source_boundary': 'authenticated_source_boundary_record.json', 'restricted_source_manifest': 'restricted_source_manifest_record.json', 'local_cas_import_boundary': 'local_cas_import_boundary_record.json', 'pack_export_import_boundary': 'pack_export_import_boundary_record.json', 'privacy_redaction': 'privacy_redaction_record.json', 'rights_safety': 'rights_safety_record.json', 'policy_blocked': 'policy_blocked_record.json'}
@@ -36,7 +36,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         results = []
         normalized_count = 0
         for source_id in source_ids:
-            module = importlib.import_module(f"runtime.connectors.h13_local_private.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h13_local_private.{source_id}")
             source_dir = fixture_root / source_id
             representative = None
             representative_replay = None

@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h7_library_research.normalizer_common import H7_SOURCE_IDS
-from runtime.connectors.h7_library_research.quality_delta import build_h7_quality_delta
-from runtime.connectors.h7_library_research.review_integration import build_h7_review_integration_result, load_h7_library_research_outputs
-from runtime.connectors.h7_library_research.wave_postmortem import (
+from control.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import H7_SOURCE_IDS
+from control.prototypes.legacy_runtime.connectors.h7_library_research.quality_delta import build_h7_quality_delta
+from control.prototypes.legacy_runtime.connectors.h7_library_research.review_integration import build_h7_review_integration_result, load_h7_library_research_outputs
+from control.prototypes.legacy_runtime.connectors.h7_library_research.wave_postmortem import (
     apply_missing_source_gate,
     build_h7_connector_wave_postmortem,
     build_h7_integration_audit,

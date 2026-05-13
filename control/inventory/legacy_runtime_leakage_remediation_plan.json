@@ -1,0 +1,35 @@
+{
+  "allowlist_entries_to_retire": 1866,
+  "leak_count_before": 22727,
+  "legacy_connector_names": [
+    "h10_games_emulation",
+    "h11_storefront",
+    "h12_retro_community",
+    "h13_local_private",
+    "h14_source_discovery",
+    "h1_metadata_wave",
+    "h2_package_registries",
+    "h3_os_package_archives",
+    "h4_code_source_release",
+    "h5_vendor_update_driver",
+    "h6_web_archive_news_event",
+    "h7_library_research",
+    "h8_manuals_docs_standards",
+    "h9_media_metadata"
+  ],
+  "legacy_runtime_findings_before": 19248,
+  "moves_planned": 14,
+  "notes": [
+    "Move task-shaped connector prototypes out of runtime production scope.",
+    "Preserve legacy behavior for tests by updating active imports to the quarantine namespace.",
+    "Do not modify recovered R0 runtime seams."
+  ],
+  "quarantine_root": "control/prototypes/legacy_runtime/connectors",
+  "quarantines_planned": 14,
+  "references_to_update": 517,
+  "renames_planned": 0,
+  "safe_to_apply": true,
+  "schema_version": "legacy_runtime_leakage_remediation_plan.v0",
+  "strategy": "quarantine_task_shaped_connector_runtime",
+  "task": "R0-REMEDIATION-LEGACY-LEAKAGE-01"
+}

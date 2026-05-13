@@ -16,7 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_common import (  # noqa: E402
     H4_SOURCE_IDS,
     detect_h4_code_source_live_probe_product_boundary_violations,
     detect_h4_code_source_live_probe_truth_boundary_violations,
@@ -82,8 +82,8 @@ AUDIT_FILES = (
     "generated/sample_h4_live_probe_summary.md",
 )
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h4_code_source_release/live_probe_common.py"]
-    + [f"runtime/connectors/h4_code_source_release/live_probe_{source_id}.py" for source_id in H4_SOURCE_IDS]
+    ["control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_{source_id}.py" for source_id in H4_SOURCE_IDS]
     + [
         "scripts/run_h4_code_source_live_probe.py",
         "scripts/validate_h4_code_source_live_probe.py",
@@ -266,8 +266,8 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_imports(errors: list[str]) -> None:
-    modules = ["runtime.connectors.h4_code_source_release.live_probe_common"] + [
-        f"runtime.connectors.h4_code_source_release.live_probe_{source_id}" for source_id in H4_SOURCE_IDS
+    modules = ["control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_common"] + [
+        f"control.prototypes.legacy_runtime.connectors.h4_code_source_release.live_probe_{source_id}" for source_id in H4_SOURCE_IDS
     ]
     for module_name in modules:
         try:

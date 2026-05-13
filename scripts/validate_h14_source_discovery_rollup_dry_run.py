@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.rollup_dry_run_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.rollup_dry_run_common import (  # noqa: E402
     H14_SOURCE_IDS,
     REQUEST_FORBIDDEN_TRUE_KEYS,
     build_h14_rollup_blocked_result,
@@ -143,13 +143,13 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
             errors.append(f"missing required artifact: {rel}")
         elif path.suffix == ".json":
             _scan_json_boundaries(_load_json(path, errors), rel, errors)
-    runtime_root = root / "runtime/connectors/h14_source_discovery"
+    runtime_root = root / "control/prototypes/legacy_runtime/connectors/h14_source_discovery"
     for module in RUNTIME_MODULES:
         if not (runtime_root / module).exists():
             errors.append(f"missing runtime module: {module}")
     for module_name in [name[:-3] for name in RUNTIME_MODULES]:
         try:
-            importlib.import_module(f"runtime.connectors.h14_source_discovery.{module_name}")
+            importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h14_source_discovery.{module_name}")
         except Exception as exc:  # noqa: BLE001
             errors.append(f"runtime module import failed {module_name}: {exc}")
     bundle = load_h14_rollup_policy_bundle(root)
@@ -210,7 +210,7 @@ def _validate_policies(bundle: Mapping[str, Any], errors: list[str]) -> None:
 
 
 def _scan_runtime(root: Path, errors: list[str]) -> None:
-    runtime_root = root / "runtime/connectors/h14_source_discovery"
+    runtime_root = root / "control/prototypes/legacy_runtime/connectors/h14_source_discovery"
     for path in runtime_root.glob("rollup_*.py"):
         text = path.read_text(encoding="utf-8")
         if BANNED_IMPORT_RE.search(text):

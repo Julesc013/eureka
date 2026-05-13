@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h12_retro_community.fixture_loader import load_h12_retro_community_fixture  # noqa: E402
-from runtime.connectors.h12_retro_community.normalizer_common import H12_SOURCE_IDS, build_h12_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.fixture_loader import load_h12_retro_community_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.normalizer_common import H12_SOURCE_IDS, build_h12_fixture_replay_result  # noqa: E402
 from scripts.normalize_h12_retro_community_fixture import safe_output_path  # noqa: E402
 
 FIXTURE_FILES = {'minimal': 'minimal_record.json', 'retro_software_identity': 'retro_software_identity_record.json', 'platform_version_edition': 'platform_version_edition_record.json', 'archive_item_member': 'archive_item_member_record.json', 'compatibility_install_note': 'compatibility_install_note_record.json', 'community_review_comment': 'community_review_comment_record.json', 'hash_checksum': 'hash_checksum_record.json', 'ia_wayback_corroboration': 'ia_wayback_corroboration_record.json', 'gated_source_boundary': 'gated_source_boundary_record.json', 'rights_safety': 'rights_safety_record.json', 'policy_blocked': 'policy_blocked_record.json'}
@@ -34,7 +34,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         results = []
         normalized_count = 0
         for source_id in source_ids:
-            module = importlib.import_module(f"runtime.connectors.h12_retro_community.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h12_retro_community.{source_id}")
             source_dir = REPO_ROOT / args.fixture_root / source_id
             representative = None
             representative_replay = None

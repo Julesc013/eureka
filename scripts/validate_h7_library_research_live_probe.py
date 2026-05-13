@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h7_library_research.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.live_probe_common import (  # noqa: E402
     H7_SOURCE_IDS,
     SOURCE_CONFIGS,
     detect_h7_library_research_live_probe_product_boundary_violations,
@@ -95,8 +95,8 @@ AUDIT_FILES = (
     "generated/sample_h7_live_probe_summary.md",
 )
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h7_library_research/live_probe_common.py"]
-    + [f"runtime/connectors/h7_library_research/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
+    ["control/prototypes/legacy_runtime/connectors/h7_library_research/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h7_library_research/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
     + [
         "scripts/run_h7_library_research_live_probe.py",
         "scripts/validate_h7_library_research_live_probe.py",
@@ -360,9 +360,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     try:
-        importlib.import_module("runtime.connectors.h7_library_research.live_probe_common")
+        importlib.import_module("control.prototypes.legacy_runtime.connectors.h7_library_research.live_probe_common")
         for source_id in EXPECTED_SOURCES:
-            importlib.import_module(f"runtime.connectors.h7_library_research.live_probe_{source_id}")
+            importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h7_library_research.live_probe_{source_id}")
         importlib.import_module("scripts.run_h7_library_research_live_probe")
         importlib.import_module("scripts.summarize_h7_library_research_live_probe_outputs")
     except Exception as exc:  # noqa: BLE001

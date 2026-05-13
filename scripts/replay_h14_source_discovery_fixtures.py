@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
-from runtime.connectors.h14_source_discovery.normalizer_common import H14_FIXTURE_FILES, H14_SOURCE_IDS, build_h14_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.normalizer_common import H14_FIXTURE_FILES, H14_SOURCE_IDS, build_h14_fixture_replay_result  # noqa: E402
 from scripts.normalize_h14_source_discovery_fixture import SOURCE_MODULES, safe_output_path  # noqa: E402
 
 SAFE_FIXTURE_ROOT = (REPO_ROOT / "examples/connectors/h14_source_discovery/fixtures").resolve()
@@ -35,7 +35,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         results = []
         normalized_count = 0
         for source_id in source_ids:
-            module = importlib.import_module(f"runtime.connectors.h14_source_discovery.{SOURCE_MODULES[source_id]}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h14_source_discovery.{SOURCE_MODULES[source_id]}")
             source_dir = fixture_root / source_id
             representative = None
             representative_replay = None

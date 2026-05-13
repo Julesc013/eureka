@@ -15,15 +15,15 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h3_os_package_archives.normalizer_common import H3_SOURCE_IDS  # noqa: E402
-from runtime.connectors.h3_os_package_archives.quality_delta import build_h3_quality_delta  # noqa: E402
-from runtime.connectors.h3_os_package_archives.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.normalizer_common import H3_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.quality_delta import build_h3_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.review_integration import (  # noqa: E402
     build_h3_review_integration_result,
     detect_h3_review_product_boundary_violations,
     detect_h3_review_truth_boundary_violations,
     load_h3_os_package_outputs,
 )
-from runtime.connectors.h3_os_package_archives.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.wave_postmortem import (  # noqa: E402
     build_h3_connector_wave_postmortem,
     build_h3_integration_audit,
     build_h3_next_phase_recommendation,

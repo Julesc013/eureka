@@ -2,12 +2,12 @@ import copy
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h4_code_source_release.normalizer_common import (
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import (
     build_h4_source_identity_candidate,
     detect_h4_truth_boundary_violations,
 )
-from runtime.connectors.h4_code_source_release.github_repository import normalize
-from runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.github_repository import normalize
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

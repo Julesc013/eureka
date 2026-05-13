@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h12_retro_community.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_common import (  # noqa: E402
     H12_SOURCE_IDS,
     detect_h12_retro_community_live_probe_product_boundary_violations,
     detect_h12_retro_community_live_probe_truth_boundary_violations,
@@ -33,8 +33,8 @@ DOCS = tuple(('docs/reference/H12_RETRO_COMMUNITY_LIVE_PROBE.md', 'docs/referenc
 AUDIT_DIR = Path("control/audits/h12-bundle-03-retro-community-live-probes-v0")
 AUDIT_FILES = tuple(('README.md', 'h12_bundle_03_report.json', 'live_probe_policy_review.md', 'live_probe_execution_report.md', 'retro_software_identity_candidate_preview.md', 'platform_version_edition_candidate_preview.md', 'archive_item_member_candidate_preview.md', 'compatibility_install_note_candidate_preview.md', 'community_review_comment_candidate_preview.md', 'hash_checksum_candidate_preview.md', 'ia_wayback_corroboration_candidate_preview.md', 'gated_source_boundary_candidate_preview.md', 'retro_rights_safety_candidate_preview.md', 'source_cache_candidate_preview.md', 'evidence_candidate_preview.md', 'review_queue_seed_preview.md', 'connector_health_summary.md', 'no_download_execute_report.md', 'restricted_source_policy_report.md', 'h12_live_probe_blocked_or_completed_summary.md', 'validation.md', 'generated/sample_h12_live_probe_result.json', 'generated/sample_h12_retro_software_identity_candidate_from_probe.json', 'generated/sample_h12_platform_version_edition_candidate_from_probe.json', 'generated/sample_h12_archive_item_member_candidate_from_probe.json', 'generated/sample_h12_compatibility_install_note_candidate_from_probe.json', 'generated/sample_h12_community_review_comment_candidate_from_probe.json', 'generated/sample_h12_hash_checksum_candidate_from_probe.json', 'generated/sample_h12_ia_wayback_corroboration_candidate_from_probe.json', 'generated/sample_h12_gated_source_boundary_candidate_from_probe.json', 'generated/sample_h12_retro_rights_safety_candidate_from_probe.json', 'generated/sample_h12_source_cache_candidate_from_probe.json', 'generated/sample_h12_evidence_candidate_preview_from_probe.json', 'generated/sample_h12_review_queue_seed_from_probe.json', 'generated/sample_h12_connector_health_summary.json', 'generated/sample_h12_live_probe_summary.md'))
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h12_retro_community/live_probe_common.py"]
-    + [f"runtime/connectors/h12_retro_community/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
+    ["control/prototypes/legacy_runtime/connectors/h12_retro_community/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h12_retro_community/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
     + [
         "scripts/run_h12_retro_community_live_probe.py",
         "scripts/validate_h12_retro_community_live_probe.py",
@@ -297,9 +297,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     try:
-        importlib.import_module("runtime.connectors.h12_retro_community.live_probe_common")
+        importlib.import_module("control.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_common")
         for source_id in EXPECTED_SOURCES:
-            module = importlib.import_module(f"runtime.connectors.h12_retro_community.live_probe_{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_{source_id}")
             for name in ("build_request_url_or_metadata_request", "parse_response_payload", "normalize_response_payload"):
                 if not hasattr(module, name):
                     errors.append(f"missing {name} in live_probe_{source_id}")

@@ -39,15 +39,15 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".cache/eureka",
 )
 
-from runtime.connectors.h7_library_research.quality_delta import build_h7_quality_delta  # noqa: E402
-from runtime.connectors.h7_library_research.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.quality_delta import build_h7_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.review_integration import (  # noqa: E402
     build_h7_review_integration_result,
     detect_h7_review_product_boundary_violations,
     detect_h7_review_truth_boundary_violations,
     load_h7_library_research_outputs,
     summarize_h7_review_integration,
 )
-from runtime.connectors.h7_library_research.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h7_library_research.wave_postmortem import (  # noqa: E402
     build_h7_connector_wave_postmortem,
     build_h7_integration_audit,
     build_h7_next_phase_recommendation,

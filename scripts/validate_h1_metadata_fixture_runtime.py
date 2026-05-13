@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture, validate_h1_fixture  # noqa: E402
-from runtime.connectors.h1_metadata_wave.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture, validate_h1_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.normalizer_common import (  # noqa: E402
     H1_SOURCE_IDS,
     build_h1_fixture_replay_result,
     detect_h1_product_boundary_violations,
@@ -63,16 +63,16 @@ AUDIT_FILES = (
     "control/audits/h1-bundle-02-metadata-fixture-runtime-v0/generated/sample_h1_fixture_summary.md",
 )
 PYTHON_FILES = (
-    "runtime/connectors/h1_metadata_wave/__init__.py",
-    "runtime/connectors/h1_metadata_wave/fixture_loader.py",
-    "runtime/connectors/h1_metadata_wave/normalizer_common.py",
-    "runtime/connectors/h1_metadata_wave/wayback_cdx_memento.py",
-    "runtime/connectors/h1_metadata_wave/github_releases.py",
-    "runtime/connectors/h1_metadata_wave/pypi.py",
-    "runtime/connectors/h1_metadata_wave/npm_registry.py",
-    "runtime/connectors/h1_metadata_wave/software_heritage.py",
-    "runtime/connectors/h1_metadata_wave/repology.py",
-    "runtime/connectors/h1_metadata_wave/osv.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/__init__.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/fixture_loader.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/normalizer_common.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/wayback_cdx_memento.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/pypi.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/npm_registry.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/software_heritage.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/repology.py",
+    "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/osv.py",
     "scripts/normalize_h1_metadata_fixture.py",
     "scripts/replay_h1_metadata_fixtures.py",
     "scripts/validate_h1_metadata_fixture_runtime.py",
@@ -245,7 +245,7 @@ def validate_replay_result(result: Mapping[str, Any], expected_source_id: str | 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H1_SOURCE_IDS:
         try:
-            module = importlib.import_module(f"runtime.connectors.h1_metadata_wave.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h1_metadata_wave.{source_id}")
         except Exception as exc:  # noqa: BLE001
             errors.append(f"failed to import normalizer {source_id}: {exc}")
             continue

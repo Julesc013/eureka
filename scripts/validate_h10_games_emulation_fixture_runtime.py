@@ -16,8 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture  # noqa: E402
-from runtime.connectors.h10_games_emulation.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.normalizer_common import (  # noqa: E402
     H10_FIXTURE_KINDS,
     H10_SOURCE_IDS,
     detect_h10_product_boundary_violations,
@@ -107,7 +107,7 @@ SCRIPTS = [
     "scripts/replay_h10_games_emulation_fixtures.py",
     "scripts/summarize_h10_games_emulation_fixture_outputs.py",
 ]
-RUNTIME_DIR = "runtime/connectors/h10_games_emulation"
+RUNTIME_DIR = "control/prototypes/legacy_runtime/connectors/h10_games_emulation"
 BANNED_IMPORT_RE = re.compile(r"\b(requests|httpx|aiohttp|urllib|socket|ftplib|smtplib|webbrowser|selenium|playwright|openai|anthropic)\b")
 FORBIDDEN_PAYLOAD_KEY_RE = re.compile(r"(downloaded|upload(ed)?|payload_body|binary_body|execution_log|acquisition_output|scraping_output|crawling_output)", re.IGNORECASE)
 SECRET_KEY_RE = re.compile(r"(^|_)(api_key|api_token|access_token|auth_token|client_secret|password|private_key|cookie)($|_)", re.IGNORECASE)
@@ -186,7 +186,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         if not source_dir.is_dir():
             errors.append(f"missing fixture directory: {source_id}")
             continue
-        module = importlib.import_module(f"runtime.connectors.h10_games_emulation.{source_id}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h10_games_emulation.{source_id}")
         for kind, filename in FIXTURE_FILES.items():
             fixture_path = source_dir / filename
             if not fixture_path.exists():

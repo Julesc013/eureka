@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS
-from runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta
-from runtime.connectors.h5_vendor_update_driver.review_integration import build_h5_review_integration_result, load_h5_vendor_update_outputs
-from runtime.connectors.h5_vendor_update_driver.wave_postmortem import (
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.review_integration import build_h5_review_integration_result, load_h5_vendor_update_outputs
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.wave_postmortem import (
     apply_missing_source_gate,
     build_h5_connector_wave_postmortem,
     build_h5_integration_audit,

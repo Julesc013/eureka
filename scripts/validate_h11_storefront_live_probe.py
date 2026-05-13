@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h11_storefront.live_probe_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_common import (  # noqa: E402
     H11_SOURCE_IDS,
     detect_h11_storefront_live_probe_product_boundary_violations,
     detect_h11_storefront_live_probe_truth_boundary_violations,
@@ -33,8 +33,8 @@ DOCS = tuple(['docs/reference/H11_STOREFRONT_LIVE_PROBE.md', 'docs/reference/H11
 AUDIT_DIR = Path("control/audits/h11-bundle-03-storefront-live-probes-v0")
 AUDIT_FILES = tuple(['README.md', 'h11_bundle_03_report.json', 'live_probe_policy_review.md', 'live_probe_execution_report.md', 'storefront_listing_identity_candidate_preview.md', 'app_product_identity_candidate_preview.md', 'version_release_channel_candidate_preview.md', 'price_availability_region_candidate_preview.md', 'acquisition_path_candidate_preview.md', 'review_rating_metadata_candidate_preview.md', 'account_entitlement_boundary_candidate_preview.md', 'storefront_rights_safety_candidate_preview.md', 'source_cache_candidate_preview.md', 'evidence_candidate_preview.md', 'review_queue_seed_preview.md', 'connector_health_summary.md', 'no_purchase_download_account_report.md', 'restricted_source_policy_report.md', 'h11_live_probe_blocked_or_completed_summary.md', 'validation.md', 'generated/sample_h11_live_probe_result.json', 'generated/sample_h11_storefront_listing_identity_candidate_from_probe.json', 'generated/sample_h11_app_product_identity_candidate_from_probe.json', 'generated/sample_h11_version_release_channel_candidate_from_probe.json', 'generated/sample_h11_price_availability_region_candidate_from_probe.json', 'generated/sample_h11_acquisition_path_candidate_from_probe.json', 'generated/sample_h11_review_rating_metadata_candidate_from_probe.json', 'generated/sample_h11_account_entitlement_boundary_candidate_from_probe.json', 'generated/sample_h11_storefront_rights_safety_candidate_from_probe.json', 'generated/sample_h11_source_cache_candidate_from_probe.json', 'generated/sample_h11_evidence_candidate_preview_from_probe.json', 'generated/sample_h11_review_queue_seed_from_probe.json', 'generated/sample_h11_connector_health_summary.json', 'generated/sample_h11_live_probe_summary.md'])
 PYTHON_FILES = tuple(
-    ["runtime/connectors/h11_storefront/live_probe_common.py"]
-    + [f"runtime/connectors/h11_storefront/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
+    ["control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_common.py"]
+    + [f"control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_{source_id}.py" for source_id in EXPECTED_SOURCES]
     + [
         "scripts/run_h11_storefront_live_probe.py",
         "scripts/validate_h11_storefront_live_probe.py",
@@ -303,9 +303,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     try:
-        importlib.import_module("runtime.connectors.h11_storefront.live_probe_common")
+        importlib.import_module("control.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_common")
         for source_id in EXPECTED_SOURCES:
-            module = importlib.import_module(f"runtime.connectors.h11_storefront.live_probe_{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_{source_id}")
             for name in ("build_request_url_or_metadata_request", "parse_response_payload", "normalize_response_payload"):
                 if not hasattr(module, name):
                     errors.append(f"missing {name} in live_probe_{source_id}")

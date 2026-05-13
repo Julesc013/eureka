@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
-from runtime.connectors.h13_local_private import rights_sensitive_source_policy_blocked
+from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
+from control.prototypes.legacy_runtime.connectors.h13_local_private import rights_sensitive_source_policy_blocked
 from scripts import validate_h13_local_private_fixture_runtime as validator
 
 

@@ -3,11 +3,11 @@ import re
 import unittest
 from pathlib import Path
 
-from runtime.connectors.h1_metadata_wave.quality_delta import (
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.quality_delta import (
     build_h1_quality_delta,
     detect_h1_quality_overclaim,
 )
-from runtime.connectors.h1_metadata_wave.review_integration import (
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.review_integration import (
     build_h1_candidate_promotion_preview,
     build_h1_evidence_candidate_review_seed,
     build_h1_review_integration_result,
@@ -17,7 +17,7 @@ from runtime.connectors.h1_metadata_wave.review_integration import (
     detect_h1_review_truth_boundary_violations,
     load_h1_outputs,
 )
-from runtime.connectors.h1_metadata_wave.wave_postmortem import (
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.wave_postmortem import (
     build_h1_connector_wave_postmortem,
     build_h1_integration_audit,
 )
@@ -27,9 +27,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 REPLAY_DIR = REPO_ROOT / "examples/connectors/h1_metadata_wave/replay_results"
 LIVE_DIR = REPO_ROOT / "examples/connectors/h1_metadata_wave/live_probe_results"
 RUNTIME_FILES = (
-    REPO_ROOT / "runtime/connectors/h1_metadata_wave/review_integration.py",
-    REPO_ROOT / "runtime/connectors/h1_metadata_wave/quality_delta.py",
-    REPO_ROOT / "runtime/connectors/h1_metadata_wave/wave_postmortem.py",
+    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/review_integration.py",
+    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/quality_delta.py",
+    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/wave_postmortem.py",
 )
 
 

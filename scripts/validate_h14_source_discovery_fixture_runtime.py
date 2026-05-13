@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
-from runtime.connectors.h14_source_discovery.normalizer_common import H14_FIXTURE_FILES, H14_SOURCE_IDS, detect_h14_product_boundary_violations, detect_h14_registry_or_pack_mutation_violations, detect_h14_truth_boundary_violations  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.normalizer_common import H14_FIXTURE_FILES, H14_SOURCE_IDS, detect_h14_product_boundary_violations, detect_h14_registry_or_pack_mutation_violations, detect_h14_truth_boundary_violations  # noqa: E402
 from scripts.normalize_h14_source_discovery_fixture import SOURCE_MODULES  # noqa: E402
 
 CONTRACTS = ['control/schemas/fixtures/h14/connectors/source_discovery_fixture.v0.json', 'control/schemas/previews/h14/connectors/source_discovery_normalized_record.v0.json', 'control/schemas/previews/h14/connectors/source_need_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json', 'control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json', 'control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json', 'control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json', 'control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json', 'control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json', 'control/schemas/fixtures/h14/connectors/source_discovery_fixture_replay_result.v0.json']
@@ -59,7 +59,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         elif path.suffix == ".json":
             payload = _load_json(path, errors)
             _scan_json_boundaries(payload, rel, errors, scan_strings=False)
-    runtime_root = root / "runtime/connectors/h14_source_discovery"
+    runtime_root = root / "control/prototypes/legacy_runtime/connectors/h14_source_discovery"
     for module in RUNTIME_MODULES:
         if not (runtime_root / module).exists():
             errors.append(f"missing runtime module: {module}")
@@ -68,7 +68,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         if not source_dir.is_dir():
             errors.append(f"missing fixture directory: {source_id}")
             continue
-        module = importlib.import_module(f"runtime.connectors.h14_source_discovery.{SOURCE_MODULES[source_id]}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h14_source_discovery.{SOURCE_MODULES[source_id]}")
         for kind, filename in H14_FIXTURE_FILES.items():
             fixture_path = source_dir / filename
             if not fixture_path.exists():
@@ -123,7 +123,7 @@ def main() -> int:
 
 
 def _scan_runtime(root: Path, errors: list[str]) -> None:
-    runtime_root = root / "runtime/connectors/h14_source_discovery"
+    runtime_root = root / "control/prototypes/legacy_runtime/connectors/h14_source_discovery"
     for path in runtime_root.glob("*.py"):
         text = path.read_text(encoding="utf-8")
         if BANNED_IMPORT_RE.search(text):

@@ -31,7 +31,7 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".cache/eureka",
 )
 
-from runtime.connectors.h5_vendor_update_driver.quality_delta import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.quality_delta import (  # noqa: E402
     build_h5_quality_delta,
     detect_h5_quality_overclaim,
     summarize_h5_quality_delta,

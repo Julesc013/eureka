@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture, validate_h3_os_package_fixture  # noqa: E402
-from runtime.connectors.h3_os_package_archives.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture, validate_h3_os_package_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.normalizer_common import (  # noqa: E402
     H3_SOURCE_IDS,
     build_h3_fixture_replay_result,
     detect_h3_product_boundary_violations,
@@ -85,12 +85,12 @@ AUDIT_FILES = (
     "control/audits/h3-bundle-02-os-package-fixture-runtime-v0/generated/sample_h3_fixture_summary.md",
 )
 PYTHON_FILES = (
-    "runtime/connectors/h3_os_package_archives/__init__.py",
-    "runtime/connectors/h3_os_package_archives/fixture_loader.py",
-    "runtime/connectors/h3_os_package_archives/normalizer_common.py",
-    "runtime/connectors/h3_os_package_archives/os_package_identity.py",
-    "runtime/connectors/h3_os_package_archives/os_platform_compatibility.py",
-    *(f"runtime/connectors/h3_os_package_archives/{source_id}.py" for source_id in H3_SOURCE_IDS),
+    "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/__init__.py",
+    "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/fixture_loader.py",
+    "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/normalizer_common.py",
+    "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+    "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_platform_compatibility.py",
+    *(f"control/prototypes/legacy_runtime/connectors/h3_os_package_archives/{source_id}.py" for source_id in H3_SOURCE_IDS),
     "scripts/normalize_h3_os_package_fixture.py",
     "scripts/replay_h3_os_package_fixtures.py",
     "scripts/validate_h3_os_package_archive_fixture_runtime.py",
@@ -294,7 +294,7 @@ def validate_replay_result(result: Mapping[str, Any], expected_source_id: str | 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H3_SOURCE_IDS:
         try:
-            module = importlib.import_module(f"runtime.connectors.h3_os_package_archives.{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h3_os_package_archives.{source_id}")
         except Exception as exc:  # noqa: BLE001
             errors.append(f"failed to import normalizer {source_id}: {exc}")
             continue

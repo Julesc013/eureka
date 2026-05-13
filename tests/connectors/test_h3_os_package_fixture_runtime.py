@@ -2,8 +2,8 @@ import copy
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture
-from runtime.connectors.h3_os_package_archives.normalizer_common import (
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture
+from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.normalizer_common import (
     H3_SOURCE_IDS,
     build_h3_fixture_replay_result,
     detect_h3_product_boundary_violations,
@@ -16,7 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def normalizer(source_id):
-    module = __import__(f"runtime.connectors.h3_os_package_archives.{source_id}", fromlist=["normalize"])
+    module = __import__(f"control.prototypes.legacy_runtime.connectors.h3_os_package_archives.{source_id}", fromlist=["normalize"])
     return module.normalize
 
 

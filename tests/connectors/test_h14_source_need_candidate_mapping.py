@@ -3,9 +3,9 @@ from __future__ import annotations
 import copy
 import unittest
 
-from runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture
-from runtime.connectors.h14_source_discovery.source_need_registry import normalize
-from runtime.connectors.h14_source_discovery.normalizer_common import detect_h14_truth_boundary_violations
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.fixture_loader import load_h14_source_discovery_fixture
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.source_need_registry import normalize
+from control.prototypes.legacy_runtime.connectors.h14_source_discovery.normalizer_common import detect_h14_truth_boundary_violations
 from scripts import validate_h14_source_discovery_fixture_runtime as validator
 
 

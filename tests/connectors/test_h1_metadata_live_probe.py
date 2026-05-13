@@ -3,7 +3,7 @@ import importlib
 from unittest import mock
 import unittest
 
-from runtime.connectors.h1_metadata_wave.live_probe_common import (
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.live_probe_common import (
     H1_SOURCE_IDS,
     SOURCE_CONFIGS,
     build_h1_live_probe_request,
@@ -113,7 +113,7 @@ class H1MetadataLiveProbeTests(unittest.TestCase):
 
     def test_source_modules_normalize_payloads(self):
         for source_id in H1_SOURCE_IDS:
-            module = importlib.import_module(f"runtime.connectors.h1_metadata_wave.live_probe_{source_id}")
+            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h1_metadata_wave.live_probe_{source_id}")
             record = module.normalize_response_payload(self._payload(source_id), self.bundle)
             self.assertEqual(record["source_id"], source_id)
 

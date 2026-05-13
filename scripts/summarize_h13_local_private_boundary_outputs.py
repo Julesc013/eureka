@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h13_local_private.boundary_dry_run_common import H13_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h13_local_private.boundary_dry_run_common import H13_SOURCE_IDS  # noqa: E402
 
 ALLOWED_INPUT_PREFIXES = (
     "examples/connectors/h13_local_private/boundary_dry_run_results",

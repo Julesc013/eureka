@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h11_storefront.quality_delta import detect_h11_quality_overclaim  # noqa: E402
-from runtime.connectors.h11_storefront.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.quality_delta import detect_h11_quality_overclaim  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h11_storefront.review_integration import (  # noqa: E402
     detect_h11_review_product_boundary_violations,
     detect_h11_review_truth_boundary_violations,
 )
@@ -93,9 +93,9 @@ REQUIRED_DOCS = (
     "docs/operations/H11_TO_J1_K_L_DEFERRAL.md",
 )
 PYTHON_SCAN_PATHS = (
-    "runtime/connectors/h11_storefront/review_integration.py",
-    "runtime/connectors/h11_storefront/quality_delta.py",
-    "runtime/connectors/h11_storefront/wave_postmortem.py",
+    "control/prototypes/legacy_runtime/connectors/h11_storefront/review_integration.py",
+    "control/prototypes/legacy_runtime/connectors/h11_storefront/quality_delta.py",
+    "control/prototypes/legacy_runtime/connectors/h11_storefront/wave_postmortem.py",
     "scripts/integrate_h11_storefront_review.py",
     "scripts/summarize_h11_storefront_quality_delta.py",
     "scripts/audit_h11_storefront_wave.py",

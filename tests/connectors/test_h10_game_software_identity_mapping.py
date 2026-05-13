@@ -3,8 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
-from runtime.connectors.h10_games_emulation.mobygames import normalize
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.mobygames import normalize
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

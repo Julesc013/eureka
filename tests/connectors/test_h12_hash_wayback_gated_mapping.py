@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.connectors.h12_retro_community.fixture_loader import load_h12_retro_community_fixture
-from runtime.connectors.h12_retro_community import winworld_metadata
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.fixture_loader import load_h12_retro_community_fixture
+from control.prototypes.legacy_runtime.connectors.h12_retro_community import winworld_metadata
 from scripts import validate_h12_retro_community_fixture_runtime as validator
 
 

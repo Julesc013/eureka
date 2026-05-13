@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture  # noqa: E402
-from runtime.connectors.h4_code_source_release.normalizer_common import H4_SOURCE_IDS, build_h4_fixture_replay_result  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import H4_SOURCE_IDS, build_h4_fixture_replay_result  # noqa: E402
 
 FORBIDDEN_OUTPUT_ROOTS = (
     "site/dist",
@@ -111,7 +111,7 @@ def replay_fixtures(fixture_root: str | Path, source_id: str | None = None) -> l
 
 
 def _normalizer(source_id: str):
-    module = importlib.import_module(f"runtime.connectors.h4_code_source_release.{source_id}")
+    module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h4_code_source_release.{source_id}")
     return module.normalize
 
 

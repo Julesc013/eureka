@@ -3,8 +3,8 @@ from __future__ import annotations
 import copy
 import unittest
 
-from runtime.connectors.h6_web_archive_news_event.archived_url_time_state import build_h6_archived_url_time_state_candidate
-from runtime.connectors.h6_web_archive_news_event.normalizer_common import detect_h6_truth_boundary_violations
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.archived_url_time_state import build_h6_archived_url_time_state_candidate
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import detect_h6_truth_boundary_violations
 
 
 class H6ArchivedUrlTimeStateMappingTests(unittest.TestCase):

@@ -5,14 +5,14 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h9_media_metadata.quality_delta import build_h9_quality_delta, detect_h9_quality_overclaim
-from runtime.connectors.h9_media_metadata.review_integration import (
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.quality_delta import build_h9_quality_delta, detect_h9_quality_overclaim
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.review_integration import (
     build_h9_review_integration_result,
     detect_h9_review_product_boundary_violations,
     detect_h9_review_truth_boundary_violations,
     load_h9_media_metadata_outputs,
 )
-from runtime.connectors.h9_media_metadata.wave_postmortem import build_h9_connector_wave_postmortem, build_h9_next_phase_recommendation
+from control.prototypes.legacy_runtime.connectors.h9_media_metadata.wave_postmortem import build_h9_connector_wave_postmortem, build_h9_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

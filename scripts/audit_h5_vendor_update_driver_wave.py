@@ -31,15 +31,15 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".cache/eureka",
 )
 
-from runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS  # noqa: E402
-from runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta  # noqa: E402
-from runtime.connectors.h5_vendor_update_driver.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import H5_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.review_integration import (  # noqa: E402
     build_h5_review_integration_result,
     detect_h5_review_product_boundary_violations,
     detect_h5_review_truth_boundary_violations,
     load_h5_vendor_update_outputs,
 )
-from runtime.connectors.h5_vendor_update_driver.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.wave_postmortem import (  # noqa: E402
     build_h5_connector_wave_postmortem,
     build_h5_integration_audit,
     build_h5_next_phase_recommendation,

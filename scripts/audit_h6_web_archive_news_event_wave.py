@@ -37,15 +37,15 @@ FORBIDDEN_OUTPUT_ROOTS = (
     ".cache/eureka",
 )
 
-from runtime.connectors.h6_web_archive_news_event.normalizer_common import H6_SOURCE_IDS  # noqa: E402
-from runtime.connectors.h6_web_archive_news_event.quality_delta import build_h6_quality_delta  # noqa: E402
-from runtime.connectors.h6_web_archive_news_event.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import H6_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.quality_delta import build_h6_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.review_integration import (  # noqa: E402
     build_h6_review_integration_result,
     detect_h6_review_product_boundary_violations,
     detect_h6_review_truth_boundary_violations,
     load_h6_web_archive_outputs,
 )
-from runtime.connectors.h6_web_archive_news_event.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.wave_postmortem import (  # noqa: E402
     build_h6_connector_wave_postmortem,
     build_h6_integration_audit,
     build_h6_next_phase_recommendation,

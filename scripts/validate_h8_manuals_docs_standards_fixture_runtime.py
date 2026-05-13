@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture  # noqa: E402
-from runtime.connectors.h8_manuals_docs_standards.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.normalizer_common import (  # noqa: E402
     H8_FIXTURE_KINDS,
     H8_SOURCE_IDS,
     build_h8_fixture_replay_result,
@@ -88,18 +88,18 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
             required_paths.append(str(FIXTURE_ROOT / source_id / filename))
         required_paths.append(str(NORMALIZED_ROOT / f"{source_id}_normalized.json"))
         required_paths.append(str(REPLAY_ROOT / f"{source_id}_replay_result.json"))
-        required_paths.append(f"runtime/connectors/h8_manuals_docs_standards/{source_id}.py")
+        required_paths.append(f"control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/{source_id}.py")
     required_paths.extend([
-        "runtime/connectors/h8_manuals_docs_standards/__init__.py",
-        "runtime/connectors/h8_manuals_docs_standards/fixture_loader.py",
-        "runtime/connectors/h8_manuals_docs_standards/normalizer_common.py",
-        "runtime/connectors/h8_manuals_docs_standards/technical_document_identity.py",
-        "runtime/connectors/h8_manuals_docs_standards/manual_artifact_relation.py",
-        "runtime/connectors/h8_manuals_docs_standards/datasheet_device_identity.py",
-        "runtime/connectors/h8_manuals_docs_standards/standards_specification_identity.py",
-        "runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
-        "runtime/connectors/h8_manuals_docs_standards/repair_service_safety.py",
-        "runtime/connectors/h8_manuals_docs_standards/access_rights.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/__init__.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/fixture_loader.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/normalizer_common.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/technical_document_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/manual_artifact_relation.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/datasheet_device_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/standards_specification_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/repair_service_safety.py",
+        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/access_rights.py",
     ])
     for rel in required_paths:
         path = root / rel
@@ -128,7 +128,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
 
 def validate_fixtures(root: Path, errors: list[str]) -> None:
     for source_id in H8_SOURCE_IDS:
-        normalizer = importlib.import_module(f"runtime.connectors.h8_manuals_docs_standards.{source_id}").normalize
+        normalizer = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.{source_id}").normalize
         for kind in H8_FIXTURE_KINDS:
             filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
             rel = FIXTURE_ROOT / source_id / filename
@@ -201,13 +201,13 @@ def validate_candidate_boundary(candidate: Mapping[str, Any]) -> list[str]:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H8_SOURCE_IDS:
-        importlib.import_module(f"runtime.connectors.h8_manuals_docs_standards.{source_id}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.{source_id}")
     for module in ("fixture_loader", "normalizer_common", "technical_document_identity", "manual_artifact_relation", "datasheet_device_identity", "standards_specification_identity", "install_requirement_claim", "repair_service_safety", "access_rights"):
-        importlib.import_module(f"runtime.connectors.h8_manuals_docs_standards.{module}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.{module}")
 
 
 def validate_python_safety(root: Path, errors: list[str]) -> None:
-    runtime_dir = root / "runtime/connectors/h8_manuals_docs_standards"
+    runtime_dir = root / "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards"
     for path in runtime_dir.glob("*.py"):
         text = path.read_text(encoding="utf-8")
         if BANNED_RUNTIME_IMPORT_RE.search(text):

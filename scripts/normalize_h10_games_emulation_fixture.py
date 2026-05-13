@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture  # noqa: E402
-from runtime.connectors.h10_games_emulation.normalizer_common import H10_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h10_games_emulation.normalizer_common import H10_SOURCE_IDS  # noqa: E402
 
 ALLOWED_PREFIXES = (
     "examples/connectors/h10_games_emulation/normalized",
@@ -71,7 +71,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     try:
         fixture = load_h10_games_emulation_fixture(args.input)
-        module = importlib.import_module(f"runtime.connectors.h10_games_emulation.{args.source_id}")
+        module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h10_games_emulation.{args.source_id}")
         normalized = module.normalize(fixture)
         outputs: list[tuple[str | None, Any]] = [
             (args.output, normalized),

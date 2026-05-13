@@ -14,15 +14,15 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h4_code_source_release.normalizer_common import H4_SOURCE_IDS  # noqa: E402
-from runtime.connectors.h4_code_source_release.quality_delta import build_h4_quality_delta  # noqa: E402
-from runtime.connectors.h4_code_source_release.review_integration import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import H4_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.quality_delta import build_h4_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.review_integration import (  # noqa: E402
     build_h4_review_integration_result,
     detect_h4_review_product_boundary_violations,
     detect_h4_review_truth_boundary_violations,
     load_h4_code_source_outputs,
 )
-from runtime.connectors.h4_code_source_release.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h4_code_source_release.wave_postmortem import (  # noqa: E402
     build_h4_connector_wave_postmortem,
     build_h4_integration_audit,
     build_h4_next_phase_recommendation,

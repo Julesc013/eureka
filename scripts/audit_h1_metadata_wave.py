@@ -15,9 +15,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h1_metadata_wave.quality_delta import build_h1_quality_delta, summarize_h1_quality_delta  # noqa: E402
-from runtime.connectors.h1_metadata_wave.review_integration import summarize_h1_review_integration  # noqa: E402
-from runtime.connectors.h1_metadata_wave.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.quality_delta import build_h1_quality_delta, summarize_h1_quality_delta  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.review_integration import summarize_h1_review_integration  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.wave_postmortem import (  # noqa: E402
     build_h1_connector_wave_postmortem,
     build_h1_integration_audit,
 )

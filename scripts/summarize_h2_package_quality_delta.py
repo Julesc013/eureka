@@ -15,12 +15,12 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h2_package_registries.quality_delta import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.quality_delta import (  # noqa: E402
     build_h2_quality_delta,
     detect_h2_quality_overclaim,
     summarize_h2_quality_delta,
 )
-from runtime.connectors.h2_package_registries.wave_postmortem import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h2_package_registries.wave_postmortem import (  # noqa: E402
     build_h2_connector_wave_postmortem,
     build_h2_next_phase_recommendation,
 )

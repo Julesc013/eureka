@@ -17,8 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h6_web_archive_news_event.fixture_loader import load_h6_web_archive_fixture  # noqa: E402
-from runtime.connectors.h6_web_archive_news_event.normalizer_common import (  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.fixture_loader import load_h6_web_archive_fixture  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import (  # noqa: E402
     H6_FIXTURE_KINDS,
     H6_SOURCE_IDS,
     build_h6_fixture_replay_result,
@@ -67,17 +67,17 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
             required_paths.append(str(FIXTURE_ROOT / source_id / filename))
         required_paths.append(str(NORMALIZED_ROOT / f"{source_id}_normalized.json"))
         required_paths.append(str(REPLAY_ROOT / f"{source_id}_replay_result.json"))
-        required_paths.append(f"runtime/connectors/h6_web_archive_news_event/{source_id}.py")
+        required_paths.append(f"control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/{source_id}.py")
     required_paths.extend([
-        "runtime/connectors/h6_web_archive_news_event/__init__.py",
-        "runtime/connectors/h6_web_archive_news_event/fixture_loader.py",
-        "runtime/connectors/h6_web_archive_news_event/normalizer_common.py",
-        "runtime/connectors/h6_web_archive_news_event/web_capture_identity.py",
-        "runtime/connectors/h6_web_archive_news_event/archived_url_time_state.py",
-        "runtime/connectors/h6_web_archive_news_event/news_event_mention.py",
-        "runtime/connectors/h6_web_archive_news_event/dead_link_trace.py",
-        "runtime/connectors/h6_web_archive_news_event/public_document_trace.py",
-        "runtime/connectors/h6_web_archive_news_event/media_transcript_metadata.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/__init__.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/fixture_loader.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/normalizer_common.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/web_capture_identity.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/archived_url_time_state.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/news_event_mention.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/dead_link_trace.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/public_document_trace.py",
+        "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event/media_transcript_metadata.py",
     ])
     for rel in required_paths:
         path = root / rel
@@ -106,7 +106,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
 
 def validate_fixtures(root: Path, errors: list[str]) -> None:
     for source_id in H6_SOURCE_IDS:
-        normalizer = importlib.import_module(f"runtime.connectors.h6_web_archive_news_event.{source_id}").normalize
+        normalizer = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.{source_id}").normalize
         for kind in H6_FIXTURE_KINDS:
             filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
             rel = FIXTURE_ROOT / source_id / filename
@@ -176,13 +176,13 @@ def validate_candidate_boundary(candidate: Mapping[str, Any]) -> list[str]:
 
 def validate_runtime_imports(errors: list[str]) -> None:
     for source_id in H6_SOURCE_IDS:
-        importlib.import_module(f"runtime.connectors.h6_web_archive_news_event.{source_id}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.{source_id}")
     for module in ("fixture_loader", "normalizer_common", "web_capture_identity", "archived_url_time_state", "news_event_mention", "dead_link_trace", "public_document_trace", "media_transcript_metadata"):
-        importlib.import_module(f"runtime.connectors.h6_web_archive_news_event.{module}")
+        importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.{module}")
 
 
 def validate_python_safety(root: Path, errors: list[str]) -> None:
-    runtime_dir = root / "runtime/connectors/h6_web_archive_news_event"
+    runtime_dir = root / "control/prototypes/legacy_runtime/connectors/h6_web_archive_news_event"
     for path in runtime_dir.glob("*.py"):
         if path.name.startswith("live_probe_"):
             continue

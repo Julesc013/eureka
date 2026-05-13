@@ -5,14 +5,14 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta, detect_h5_quality_overclaim
-from runtime.connectors.h5_vendor_update_driver.review_integration import (
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.quality_delta import build_h5_quality_delta, detect_h5_quality_overclaim
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.review_integration import (
     build_h5_review_integration_result,
     detect_h5_review_product_boundary_violations,
     detect_h5_review_truth_boundary_violations,
     load_h5_vendor_update_outputs,
 )
-from runtime.connectors.h5_vendor_update_driver.wave_postmortem import build_h5_connector_wave_postmortem, build_h5_next_phase_recommendation
+from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.wave_postmortem import build_h5_connector_wave_postmortem, build_h5_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

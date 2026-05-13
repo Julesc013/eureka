@@ -4,7 +4,7 @@ import copy
 import importlib
 import unittest
 
-from runtime.connectors.h13_local_private.boundary_dry_run_common import (
+from control.prototypes.legacy_runtime.connectors.h13_local_private.boundary_dry_run_common import (
     BOUNDARY_REQUEST_KEYS,
     OPERATION_CLASSES,
     build_h13_boundary_dry_run_blocked_result,
@@ -78,7 +78,7 @@ class H13LocalPrivateBoundaryDryRunTests(unittest.TestCase):
         payload = {"source_native_id": "mock-boundary", "metadata_summary": "mock boundary only"}
         for source_id in ("local_folder_metadata", "user_supplied_url_metadata_boundary", "restricted_source_manifest_only"):
             with self.subTest(source_id=source_id):
-                module = importlib.import_module(f"runtime.connectors.h13_local_private.boundary_dry_run_{source_id}")
+                module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h13_local_private.boundary_dry_run_{source_id}")
                 normalized = module.normalize_boundary_payload(payload, self.bundle)
                 self.assertEqual(source_id, normalized["source_id"])
                 result = build_h13_boundary_dry_run_result(source_id, payload, {"result_status": "boundary_dry_run_completed", "operation_count": 1}, self.bundle)

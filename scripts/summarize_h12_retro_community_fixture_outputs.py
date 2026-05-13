@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.connectors.h12_retro_community.normalizer_common import H12_SOURCE_IDS  # noqa: E402
+from control.prototypes.legacy_runtime.connectors.h12_retro_community.normalizer_common import H12_SOURCE_IDS  # noqa: E402
 
 FORBIDDEN_OUTPUT_ROOTS = (
     "site/dist",
