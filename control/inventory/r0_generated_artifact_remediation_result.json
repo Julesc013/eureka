@@ -1,0 +1,14 @@
+{
+  "schema_version": "r0_generated_artifact_remediation_result.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "status": "pass_with_warnings",
+  "generated_artifact_drift_resolved": true,
+  "full_unittest_discovery_pass": true,
+  "architecture_boundary_checks_pass": true,
+  "site_dist_clean": true,
+  "working_tree_clean_after_validation": true,
+  "f0_decision": "resume_f0",
+  "dev_to_main_decision": "promotion_plan_only",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -214,6 +214,20 @@ class RuntimeArchitectureLeakageTests(unittest.TestCase):
             self.assertEqual(0, payload["summary"]["new_violation_count"])
             self.assertGreaterEqual(payload["summary"]["false_positive_candidate_count"], 1)
 
+    def test_ignores_html_heading_tags_and_domain_bundle_words(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            make_repo(repo)
+            write(
+                repo / "site/dist/index.html",
+                "<h1>Eureka</h1>\n<h2>Status</h2>\n<p>Local bundle fixture record.</p>\n",
+            )
+            proc = self.run_script(repo, "--check", "--json")
+            self.assertEqual(0, proc.returncode, proc.stdout + proc.stderr)
+            payload = json.loads(proc.stdout)
+            self.assertEqual(0, payload["summary"]["new_violation_count"])
+            self.assertGreaterEqual(payload["summary"]["false_positive_candidate_count"], 3)
+
     def test_reports_path_line_severity_and_recommendation(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)

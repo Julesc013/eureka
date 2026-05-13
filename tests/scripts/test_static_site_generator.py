@@ -27,17 +27,19 @@ class StaticSiteGeneratorScriptTest(unittest.TestCase):
         self.assertIn("deploy_artifact_current: site/dist", completed.stdout)
 
     def test_build_json_parses(self) -> None:
-        completed = subprocess.run(
-            [sys.executable, str(BUILD), "--json"],
-            cwd=REPO_ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        payload = json.loads(completed.stdout)
-        self.assertEqual(payload["status"], "valid")
-        self.assertEqual(payload["output_dir"], "site/dist")
-        self.assertFalse(payload["generated_output_deployed"])
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = Path(temp_dir) / "json-build"
+            completed = subprocess.run(
+                [sys.executable, str(BUILD), "--output", str(output), "--json"],
+                cwd=REPO_ROOT,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            payload = json.loads(completed.stdout)
+            self.assertEqual(payload["status"], "valid")
+            self.assertEqual(Path(payload["output_dir"]).resolve(), output.resolve())
+            self.assertFalse(payload["generated_output_deployed"])
 
     def test_build_to_temp_output_produces_valid_static_site(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

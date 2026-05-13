@@ -1,22 +1,5 @@
 {
   "schema_version": "r0_final_blocker_register.v0",
   "task": "R0-11",
-  "blockers": [
-    {
-      "blocker_id": "R0-FINAL-BLOCKER-001",
-      "severity": "blocker",
-      "area": "generated_artifact_drift",
-      "finding": "Full unittest discovery fails because generated/public artifacts are stale or mutate forbidden site/dist outputs during validation.",
-      "evidence": [
-        "python -m unittest discover -s tests -t . failed",
-        "python scripts/validate_r0_final_closeout.py failed at full unittest discovery",
-        "Failures include public search index drift, static site checksum drift, public alpha rehearsal evidence drift, and demand dashboard snapshot checksum drift."
-      ],
-      "safe_to_fix_in_r0_11": false,
-      "fixed_in_r0_11": false,
-      "child_task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
-      "blocks_f0": true,
-      "blocks_main_promotion": true
-    }
-  ]
+  "blockers": []
 }

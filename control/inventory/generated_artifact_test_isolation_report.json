@@ -1,0 +1,11 @@
+{
+  "schema_version": "generated_artifact_test_isolation_report.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "tests_checked": 3,
+  "tests_fixed": 1,
+  "tests_still_mutating_generated_artifacts": [],
+  "site_dist_mutation_tests": [],
+  "tempdir_isolation_added": [
+    "tests/scripts/test_static_site_generator.py::StaticSiteGeneratorScriptTest.test_build_json_parses"
+  ]
+}

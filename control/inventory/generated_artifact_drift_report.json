@@ -1,0 +1,184 @@
+{
+  "command_result": null,
+  "dashboard_snapshot_drift": true,
+  "drift_detected": true,
+  "drift_paths": [
+    {
+      "artifact_class": "canonical_generated",
+      "change_kind": "modified",
+      "path": "data/public_index/checksums.sha256",
+      "recommended_fix": "regenerate canonical artifact through owning repo generator and record validation",
+      "suspected_source": "public search index generator"
+    },
+    {
+      "artifact_class": "canonical_generated",
+      "change_kind": "modified",
+      "path": "data/public_index/search_documents.ndjson",
+      "recommended_fix": "regenerate canonical artifact through owning repo generator and record validation",
+      "suspected_source": "public search index generator"
+    },
+    {
+      "artifact_class": "fixture_generated",
+      "change_kind": "modified",
+      "path": "examples/demand_dashboard/minimal_dashboard_snapshot_v0/CHECKSUMS.SHA256",
+      "recommended_fix": "refresh fixture checksums or move test output to tempdir",
+      "suspected_source": "demand dashboard snapshot checksum validation"
+    },
+    {
+      "artifact_class": "fixture_generated",
+      "change_kind": "modified",
+      "path": "examples/demand_dashboard/minimal_source_gap_dashboard_v0/CHECKSUMS.SHA256",
+      "recommended_fix": "refresh fixture checksums or move test output to tempdir",
+      "suspected_source": "demand dashboard snapshot checksum validation"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/.eureka-static-site-generated",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/build_manifest.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/eval_summary.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/page_registry.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/public_index_summary.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/route_summary.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/search_config.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/search_handoff.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/site_manifest.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/data/source_summary.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/demo-queries.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/evals.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/index.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/limitations.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/local-quickstart.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/roadmap.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/search.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/site_manifest.json",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/sources.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    },
+    {
+      "artifact_class": "deployment_generated",
+      "change_kind": "modified",
+      "path": "site/dist/status.html",
+      "recommended_fix": "isolate ordinary tests to temp output; regenerate canonical site/dist only through documented generator",
+      "suspected_source": "static site generator or test using default deployment output"
+    }
+  ],
+  "model_provider_used": false,
+  "network_used": false,
+  "public_alpha_evidence_drift": false,
+  "public_search_index_drift": true,
+  "schema_version": "generated_artifact_drift_report.v0",
+  "site_dist_mutated": true,
+  "status": "partial",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "test_order_sensitive": true
+}

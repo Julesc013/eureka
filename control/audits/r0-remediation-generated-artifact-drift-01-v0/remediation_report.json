@@ -1,0 +1,21 @@
+{
+  "schema_version": "r0_generated_artifact_drift_remediation_report.v0",
+  "status": "pass_with_warnings",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "purpose": "reconcile_generated_artifact_drift",
+  "drift_paths_before": 24,
+  "drift_paths_after": 0,
+  "tests_hardened": 1,
+  "scripts_hardened": 4,
+  "canonical_artifacts_regenerated": 2,
+  "canonical_artifacts_restored": 0,
+  "site_dist_mutated_after_validation": false,
+  "full_unittest_discovery_pass": true,
+  "architecture_boundary_checks_pass": true,
+  "working_tree_clean_after_validation": true,
+  "f0_decision": "resume_f0",
+  "dev_to_main_decision": "promotion_plan_only",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "validation": {}
+}

@@ -9,7 +9,7 @@
     "No branch merge, push, rebase, or checkout was performed by R0-11."
   ],
   "operator_action_required": true,
-  "promotion_ready": false,
+  "promotion_ready": true,
   "promotion_required": true,
   "schema_version": "r0_final_branch_state.v0",
   "task": "R0-11",

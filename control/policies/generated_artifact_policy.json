@@ -1,0 +1,74 @@
+{
+  "schema_version": "generated_artifact_policy.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "purpose": "classify generated artifact roots for deterministic drift checks",
+  "classes": [
+    "canonical_generated",
+    "deployment_generated",
+    "audit_generated",
+    "fixture_generated",
+    "temp_test_generated",
+    "historical_evidence",
+    "source_input",
+    "unknown"
+  ],
+  "classifiers": [
+    {
+      "path": "data/public_index",
+      "artifact_class": "canonical_generated",
+      "policy": "Regenerate only through scripts/build_public_search_index.py with explicit rebuild intent."
+    },
+    {
+      "path": "site/dist",
+      "artifact_class": "deployment_generated",
+      "policy": "Ordinary tests must not mutate this root; canonical regeneration must be explicit and recorded."
+    },
+    {
+      "path": "control/audits/r0-remediation-generated-artifact-drift-01-v0/generated",
+      "artifact_class": "audit_generated",
+      "policy": "Allowed only as explicit remediation audit output."
+    },
+    {
+      "path": "control/audits",
+      "artifact_class": "audit_generated",
+      "policy": "Audit generated outputs are evidence, not product runtime state."
+    },
+    {
+      "path": "examples/demand_dashboard",
+      "artifact_class": "fixture_generated",
+      "policy": "Example checksum manifests may be refreshed only when example contents are intentionally current."
+    },
+    {
+      "path": "docs/operations/public_alpha_rehearsal_evidence_v0",
+      "artifact_class": "historical_evidence",
+      "policy": "Historical rehearsal evidence may be updated only through the owning evidence generator."
+    },
+    {
+      "path": "temp",
+      "artifact_class": "temp_test_generated",
+      "policy": "Temporary test output must stay outside committed canonical roots."
+    },
+    {
+      "path": "docs",
+      "artifact_class": "source_input",
+      "policy": "Documentation is source input unless a narrower classifier applies."
+    },
+    {
+      "path": "unknown",
+      "artifact_class": "unknown",
+      "policy": "Unknown generated-looking output must be classified or child-tasked before promotion."
+    }
+  ],
+  "canonical_regeneration_requires": [
+    "documented generator command",
+    "recorded validation command",
+    "no unrelated generated output mutation"
+  ],
+  "ordinary_tests_must_not_mutate": [
+    "site/dist",
+    "data/public_index",
+    "docs/operations/public_alpha_rehearsal_evidence_v0"
+  ],
+  "network_used": false,
+  "model_provider_used": false
+}

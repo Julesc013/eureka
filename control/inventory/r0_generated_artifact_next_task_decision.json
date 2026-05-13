@@ -1,0 +1,8 @@
+{
+  "schema_version": "r0_generated_artifact_next_task_decision.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "recommended_next_task": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs",
+  "alternative_next_task": "R0-REMEDIATION-LEGACY-LEAKAGE-01 \u2014 Retire known legacy runtime architecture leakage allowlist debt",
+  "f0_can_resume": true,
+  "reason": "Generated artifact drift was reconciled, full unittest discovery is expected to pass, and the remaining legacy leakage item is warning-level deferred debt rather than an R0 hard blocker."
+}

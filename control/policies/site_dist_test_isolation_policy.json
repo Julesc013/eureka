@@ -1,0 +1,23 @@
+{
+  "schema_version": "site_dist_test_isolation_policy.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "site_dist_role": "deployment_generated",
+  "ordinary_tests_must_use_tempdir": true,
+  "ordinary_tests_must_not_write_site_dist": true,
+  "canonical_site_dist_regeneration_requires_explicit_command": true,
+  "allowed_canonical_generator": "python site/build.py --clean --json",
+  "allowed_validation_commands": [
+    "python site/validate.py",
+    "python scripts/generate_compatibility_surfaces.py --check",
+    "python scripts/check_github_pages_static_artifact.py --path site/dist"
+  ],
+  "test_expectations": [
+    "Use tempfile.TemporaryDirectory for generated static-site output.",
+    "Do not rely on test order.",
+    "Do not leave generated files after test completion.",
+    "Do not mutate site/dist unless the test explicitly validates canonical regeneration."
+  ],
+  "site_dist_writes_enabled_by_default": false,
+  "network_used": false,
+  "model_provider_used": false
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "generated_artifact_canonical_state.v0",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "canonical_generated_paths": [
+    "data/public_index/search_documents.ndjson",
+    "data/public_index/checksums.sha256"
+  ],
+  "deployment_generated_paths": [
+    "site/dist"
+  ],
+  "checksum_manifests": [
+    "data/public_index/checksums.sha256",
+    "site/dist/files/SHA256SUMS",
+    "examples/demand_dashboard/minimal_dashboard_snapshot_v0/CHECKSUMS.SHA256",
+    "examples/demand_dashboard/minimal_source_gap_dashboard_v0/CHECKSUMS.SHA256"
+  ],
+  "last_verified_clean": true,
+  "verification_commands": [
+    "python scripts/build_public_search_index.py --check",
+    "python site/validate.py",
+    "python scripts/generate_compatibility_surfaces.py --check",
+    "python scripts/check_github_pages_static_artifact.py --path site/dist",
+    "python scripts/validate_demand_dashboard_contract.py --json",
+    "python scripts/validate_demand_dashboard_snapshot.py --all-examples --json"
+  ]
+}

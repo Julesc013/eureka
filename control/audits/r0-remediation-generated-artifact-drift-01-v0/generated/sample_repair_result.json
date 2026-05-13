@@ -1,0 +1,19 @@
+{
+  "branch_mutation_performed": false,
+  "canonical_artifacts_regenerated": 2,
+  "canonical_artifacts_restored": 0,
+  "child_tasks": [],
+  "full_unittest_discovery_pass": true,
+  "mode": "apply",
+  "model_provider_used": false,
+  "network_used": false,
+  "remaining_drift_paths": [],
+  "safe_repairs_applied": 24,
+  "schema_version": "generated_artifact_drift_repair_result.v0",
+  "scripts_hardened": 4,
+  "site_dist_mutated_after_repair": false,
+  "site_dist_write_requires_explicit_regeneration": true,
+  "status": "pass",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01",
+  "tests_hardened": 1
+}

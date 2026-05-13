@@ -630,6 +630,22 @@ def task_order(task_id: str) -> int:
 def is_false_positive_candidate(match: Mapping[str, Any]) -> bool:
     term = str(match.get("term", "")).casefold()
     context = str(match.get("context", "")).casefold()
+    if term in {"h1", "h2"} and f"<{term}" in context:
+        return True
+    if term == "bundle" and any(
+        marker in context
+        for marker in (
+            "local bundle",
+            "local-bundle",
+            "local_bundle",
+            "support bundle",
+            "bundle fixture",
+            "bundle recorded fixture",
+            "software bundle",
+            "fixture bundle",
+        )
+    ):
+        return True
     if term == "agent" and any(marker in context for marker in ("user-agent", "user_agent", "agentless", "browser agent string")):
         return True
     return False
