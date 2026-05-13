@@ -1,0 +1,24 @@
+{
+  "deployment_performed": false,
+  "external_assets": 0,
+  "frontend_build_required": false,
+  "index_rebuild_ui_enabled": false,
+  "javascript_required": false,
+  "lan_enabled": false,
+  "read_only": true,
+  "review_decision_ui_enabled": false,
+  "routes": [
+    "/",
+    "/status",
+    "/search",
+    "/object/<record_id>",
+    "/source/<source_id>",
+    "/absence"
+  ],
+  "runtime_package": "runtime/local_workbench",
+  "schema_version": "local_html_workbench_inventory.v0",
+  "server_rendered": true,
+  "source_probe_ui_enabled": false,
+  "task": "LOCAL-05",
+  "workunit_ui_enabled": false
+}

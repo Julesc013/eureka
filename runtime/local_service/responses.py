@@ -80,6 +80,21 @@ def text_response(
     )
 
 
+def html_response(
+    status_code: int,
+    html: str,
+    payload: Mapping[str, Any] | None = None,
+    headers: Mapping[str, str] | None = None,
+) -> LocalServiceResponse:
+    return LocalServiceResponse(
+        status_code=status_code,
+        content_type="text/html; charset=utf-8",
+        body=html,
+        headers=_headers(headers),
+        payload=_normalize_payload(payload or {"schema_version": "local_http_html_response.v0"}, status_code=status_code),
+    )
+
+
 def _normalize_payload(payload: Mapping[str, Any], *, status_code: int) -> dict[str, Any]:
     normalized = dict(payload)
     normalized.setdefault("schema_version", "local_http_response.v0")

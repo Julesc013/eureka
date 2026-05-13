@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-05
+current_recommended_task: LOCAL-06
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -50,12 +50,22 @@ entries:
     recommended_next: LOCAL-05
   - id: LOCAL-05
     title: HTML workbench v0
-    status: queued
+    status: completed
+    previous_current_recommended_task: LOCAL-05
     purpose: Add the minimal local HTML workbench over the LOCAL-04 read-only localhost service.
     allowed_scope_summary: HTML workbench shell and read-only service consumption only until explicitly scoped.
     gate: LOCAL-04 passed with read-only localhost service; no LAN binding, deployment, write routes, source probes, WorkUnit execution, index rebuilds, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-05/task.yaml
     recommended_after: LOCAL-04
+    recommended_next: LOCAL-06
+  - id: LOCAL-06
+    title: Status, object, source, and absence page hardening
+    status: queued
+    purpose: Harden the first local HTML workbench pages after the minimal read-only workbench.
+    allowed_scope_summary: Page hardening, accessibility polish, empty/error states, docs, tests, validators, and audit evidence only until explicitly scoped.
+    gate: LOCAL-05 passed with minimal read-only HTML workbench; no LAN binding, deployment, write routes, source probes, WorkUnit execution, index rebuilds, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-06/task.yaml
+    recommended_after: LOCAL-05
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

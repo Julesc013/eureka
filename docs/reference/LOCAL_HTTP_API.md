@@ -16,7 +16,7 @@ python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --
 
 ## Status
 
-`GET /status` and `GET /api/v1/status` return `local_http_status_response.v0`.
+`GET /api/v1/status` returns `local_http_status_response.v0`. `GET /status?format=json` returns the same JSON shape; `GET /status` returns the LOCAL-05 HTML status page by default.
 
 The response includes:
 
@@ -56,6 +56,19 @@ An empty result is a bounded local-index result. It is not a source-truth claim.
 `GET /api/v1/absence?q=<query>` returns `local_http_absence_response.v0`.
 
 Absence reports check the local reviewed index only and do not inspect live sources.
+
+## HTML Workbench Routes
+
+LOCAL-05 adds read-only HTML routes for browser use:
+
+- `GET /`
+- `GET /search?q=<query>`
+- `GET /object/<record_id>`
+- `GET /source/<source_id>`
+- `GET /absence?q=<query>`
+- `GET /status`
+
+The JSON API remains under `/api/v1/*`.
 
 ## Disabled Methods
 

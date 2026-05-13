@@ -25,3 +25,9 @@ LOCAL-03 still does not implement an HTTP server, HTML workbench, WorkUnit runti
 LOCAL-04 adds the first service layer in `runtime/local_service`. It is a localhost-only, read-only HTTP adapter over `LocalApplianceRuntime`.
 
 The service exposes status, health, reviewed-index search, object, source, and absence routes. It does not create product truth and does not bypass the instance manifest. The full HTML workbench remains LOCAL-05, and LAN mode remains disabled until a later explicit gate.
+
+## LOCAL-05 HTML Workbench
+
+LOCAL-05 adds the first browser workbench in `runtime/local_workbench`. It is server-rendered through the LOCAL-04 service, requires no frontend build and no JavaScript, and stays read-only over the reviewed public index.
+
+The workbench renders home, search, object, source, absence, and status pages. It does not add review decision controls, WorkUnits, source probes, index rebuild behavior, LAN mode, deployment, production readiness, or public launch readiness.

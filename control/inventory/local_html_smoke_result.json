@@ -1,0 +1,24 @@
+{
+  "base_url": "http://127.0.0.1:<validation-port>",
+  "deployment_performed": false,
+  "external_assets_found": false,
+  "absence_page_passed": true,
+  "home_page_passed": true,
+  "index_rebuild_performed": false,
+  "json_api_still_passed": true,
+  "lan_enabled": false,
+  "limitations": [
+    "sample smoke result records route availability, not public readiness"
+  ],
+  "mutation_controls_found": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "review_mutation_performed": false,
+  "schema_version": "local_html_smoke_result.v0",
+  "search_page_passed": true,
+  "source_probe_executed": false,
+  "status": "pass",
+  "status_page_passed": true,
+  "task": "LOCAL-05",
+  "warnings": []
+}

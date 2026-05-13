@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/"
+    },
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/status"
+    },
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/search"
+    },
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/object/<record_id>"
+    },
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/source/<source_id>"
+    },
+    {
+      "has_accessible_title": true,
+      "has_navigation": true,
+      "html_enabled": true,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "route": "/absence"
+    }
+  ],
+  "schema_version": "local_html_route_matrix.v0",
+  "task": "LOCAL-05"
+}

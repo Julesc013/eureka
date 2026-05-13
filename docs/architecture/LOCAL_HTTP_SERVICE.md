@@ -30,7 +30,7 @@ The service is not allowed to:
 
 ## Routes
 
-The LOCAL-04 route set is:
+The service route set now includes the LOCAL-04 JSON API and the LOCAL-05 HTML workbench:
 
 - `GET /`
 - `GET /status`
@@ -41,9 +41,13 @@ The LOCAL-04 route set is:
 - `GET /api/v1/object/<record_id>`
 - `GET /api/v1/source/<source_id>`
 - `GET /api/v1/absence?q=<query>`
+- `GET /search?q=<query>`
+- `GET /object/<record_id>`
+- `GET /source/<source_id>`
+- `GET /absence?q=<query>`
 
-All routes are read-only and return JSON except `/`, which returns minimal plain text. The full HTML workbench starts in LOCAL-05.
+All routes are read-only. `/api/v1/*` routes return JSON. Non-API workbench routes return server-rendered HTML by default, with `?format=json` available where a JSON equivalent already exists.
 
 ## Handoff
 
-LOCAL-05 can build the HTML workbench on top of this service boundary. LAN mode remains deferred until later LOCAL tasks.
+LOCAL-06 hardens the status, object, source, and absence pages. LAN mode remains deferred until later LOCAL tasks.

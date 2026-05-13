@@ -1,0 +1,24 @@
+{
+  "gaps": [
+    {
+      "deferred_until": "LOCAL-06",
+      "gap_id": "local_html_page_hardening",
+      "status": "deferred",
+      "summary": "Status, object, source, and absence pages need hardening after the minimal workbench."
+    },
+    {
+      "deferred_until": "LOCAL-07",
+      "gap_id": "local_html_work_items",
+      "status": "deferred",
+      "summary": "Work item UI remains absent."
+    },
+    {
+      "deferred_until": "LOCAL-11",
+      "gap_id": "local_html_lan_mode",
+      "status": "deferred",
+      "summary": "LAN controls remain disabled."
+    }
+  ],
+  "schema_version": "local_html_gap_register.v0",
+  "task": "LOCAL-05"
+}

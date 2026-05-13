@@ -21,6 +21,7 @@ In another shell:
 
 ```bash
 python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --json
+python scripts/eureka_local_workbench_smoke.py --base-url http://127.0.0.1:8765 --json
 ```
 
 The smoke script checks:
@@ -32,6 +33,15 @@ The smoke script checks:
 - `/api/v1/absence?q=definitely-not-present-local-04`
 
 It refuses non-localhost URLs before opening any request.
+
+The workbench smoke checks the LOCAL-05 HTML routes:
+
+- `/`
+- `/status`
+- `/search?q=sampleproject`
+- `/absence?q=definitely-not-present-local-05`
+
+It also verifies JSON API compatibility.
 
 ## Validate
 
@@ -55,4 +65,4 @@ The validator checks policies, routes, runtime imports, app routes, localhost se
 
 ## Explicit Deferrals
 
-LOCAL-04 does not implement the HTML workbench, WorkUnit queue, source probes, review mutation, index rebuilds, LAN mode, deployment, production readiness, or public launch readiness.
+LOCAL-05 implements only the minimal read-only HTML workbench. It still does not implement WorkUnit queue, source probes, review mutation, index rebuilds, LAN mode, deployment, production readiness, or public launch readiness.

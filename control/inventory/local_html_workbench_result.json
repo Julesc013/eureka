@@ -1,0 +1,21 @@
+{
+  "absence_page_added": true,
+  "deployment_performed": false,
+  "external_assets_found": false,
+  "home_page_added": true,
+  "index_rebuild_performed": false,
+  "json_api_still_passed": true,
+  "lan_enabled": false,
+  "mutation_controls_found": false,
+  "object_page_added": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "runtime_package_added": true,
+  "schema_version": "local_html_workbench_result.v0",
+  "search_page_added": true,
+  "source_page_added": true,
+  "status": "pass_with_warnings",
+  "status_page_added": true,
+  "task": "LOCAL-05",
+  "workbench_smoke_passed": true
+}

@@ -1,6 +1,6 @@
 id: LOCAL-05
 title: HTML workbench v0
-status: queued
+status: completed
 source_packet: .aide/context/latest-task-packet.md
 purpose: Add the first local HTML workbench over the LOCAL-04 read-only localhost service.
 allowed_scope_summary: Minimal HTML workbench shell, read-only status/search use, docs, tests, validators, and audit evidence only until explicitly scoped.
