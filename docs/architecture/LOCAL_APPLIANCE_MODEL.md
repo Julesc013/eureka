@@ -56,3 +56,9 @@ review projections to the local `public_index`.
 Raw operator tokens are not persisted. The loop does not execute queued work,
 run source probes, mutate a master index, write `site/dist`, expose LAN, deploy,
 or claim production/public launch readiness.
+
+## LOCAL-09 Deterministic Worker Runner
+
+LOCAL-09 adds `runtime/local_worker`, a deterministic runner over queued WorkUnits. Enabled workers are local and bounded: noop, review queue summary, token-gated reviewed-index rebuild, absence report, and local status snapshot.
+
+Risky workers remain blocked, including source probes, extraction, research delegation, model calls, downloads, installs, source sync, LAN operations, and deployment. Worker runs record transition history and audit references; they do not accept truth, mutate a master index, expose LAN, deploy, or claim production/public launch readiness.

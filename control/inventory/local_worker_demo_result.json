@@ -1,0 +1,15 @@
+{
+  "blocked_disabled_worker_kind": true,
+  "created_workunit_count": 5,
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "external_network_used": false,
+  "extraction_executed": false,
+  "lan_enabled": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "schema_version": "local_worker_demo_result.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "pass"
+}

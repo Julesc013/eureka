@@ -1,0 +1,26 @@
+{
+  "deferred": [
+    {
+      "capability": "source_probe_worker",
+      "deferred_until": "future source-probe task",
+      "status": "blocked"
+    },
+    {
+      "capability": "extraction_worker",
+      "deferred_until": "F0 after LOCAL-14",
+      "status": "blocked"
+    },
+    {
+      "capability": "agent_research_worker",
+      "deferred_until": "future reviewed operator gate",
+      "status": "blocked"
+    },
+    {
+      "capability": "LAN worker operations",
+      "deferred_until": "LOCAL-11/LOCAL-12",
+      "status": "blocked"
+    }
+  ],
+  "schema_version": "local_worker_gap_register.v0",
+  "task": "LOCAL-09"
+}

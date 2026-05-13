@@ -1,0 +1,12 @@
+{
+  "deterministic_worker_runner_available": true,
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start": false,
+  "reason": "Deterministic local worker runner exists; auto-test and auto-search harness is next.",
+  "recommended_next_task": "LOCAL-10 \u2014 Auto-test and auto-search harness",
+  "schema_version": "local_09_next_task_decision.v0",
+  "server_can_start": true,
+  "source_probe_workers_enabled": false,
+  "task": "LOCAL-09"
+}

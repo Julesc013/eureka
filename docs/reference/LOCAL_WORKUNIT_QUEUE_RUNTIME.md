@@ -9,6 +9,7 @@ The runtime API lives in `runtime/workunit_queue`.
 - `WorkUnitState`
 - `WorkUnitPriority`
 - `WorkUnitTransition`
+- `WorkUnitPayloadRef`
 - `WorkUnitSummary`
 
 `WorkUnit` fields include `id`, `kind`, `state`, `title`, `payload`, `priority`, `created_at`, `updated_at`, `idempotency_key`, `parent_id`, `blocked_reason`, `warnings`, and `limitations`.
@@ -30,6 +31,8 @@ Supported operations:
 - `complete_workunit(workunit_id, reason=None)`
 - `fail_workunit(workunit_id, reason)`
 - `list_transitions(workunit_id=None, limit=100)`
+- `record_payload_ref(workunit_id, ref_kind, ref_id)`
+- `list_payload_refs(workunit_id=None, limit=100)`
 - `summarize()`
 - `check_integrity()`
 
@@ -38,3 +41,5 @@ Supported operations:
 `open_local_appliance(instance_path)` exposes `runtime.workunit_queue` alongside source cache, evidence ledger, review queue, and public index. Read-only runtime mode blocks queue mutation helpers.
 
 The queue store may mutate only queue tables. It does not mutate review decisions or rebuild indexes.
+
+LOCAL-09 worker runs use payload refs to attach worker result and audit identifiers to a WorkUnit without storing external files, opening hidden paths, or mutating reviewed-index truth directly.

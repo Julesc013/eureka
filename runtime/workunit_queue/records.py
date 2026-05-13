@@ -156,6 +156,33 @@ class WorkUnitTransition:
 
 
 @dataclass(frozen=True)
+class WorkUnitPayloadRef:
+    id: str
+    workunit_id: str
+    ref_kind: str
+    ref_id: str
+    created_at: str = field(default_factory=utc_now)
+
+    @classmethod
+    def new(cls, workunit_id: str, ref_kind: str, ref_id: str) -> "WorkUnitPayloadRef":
+        return cls(
+            id="wpr_" + uuid.uuid4().hex,
+            workunit_id=workunit_id,
+            ref_kind=str(ref_kind),
+            ref_id=str(ref_id),
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "workunit_id": self.workunit_id,
+            "ref_kind": self.ref_kind,
+            "ref_id": self.ref_id,
+            "created_at": self.created_at,
+        }
+
+
+@dataclass(frozen=True)
 class WorkUnitSummary:
     total: int
     by_state: Mapping[str, int]

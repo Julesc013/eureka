@@ -6,8 +6,8 @@ from typing import Any, Iterator
 import sqlite3
 
 from .errors import WorkUnitNotFoundError, WorkUnitQueueClosedError, WorkUnitQueueError
-from .queries import encode_json, row_to_transition, row_to_workunit
-from .records import WorkUnit, WorkUnitState, WorkUnitSummary, WorkUnitTransition
+from .queries import encode_json, row_to_payload_ref, row_to_transition, row_to_workunit
+from .records import WorkUnit, WorkUnitPayloadRef, WorkUnitState, WorkUnitSummary, WorkUnitTransition
 from .schema import REQUIRED_TABLES, SCHEMA_VERSION, apply_schema, get_schema_events
 from .transitions import apply_transition
 from .validation import require_reason, validate_limit, validate_queue_path, validate_workunit
@@ -157,6 +157,28 @@ class WorkUnitQueueStore:
         sql += " ORDER BY sequence LIMIT ?"
         params.append(validate_limit(limit))
         return [row_to_transition(row) for row in self.connection.execute(sql, params).fetchall()]
+
+    def record_payload_ref(self, workunit_id: str, ref_kind: str, ref_id: str) -> WorkUnitPayloadRef:
+        self._ensure_open()
+        self._require_workunit(workunit_id)
+        ref = WorkUnitPayloadRef.new(workunit_id, ref_kind, ref_id)
+        with self.transaction():
+            self.connection.execute(
+                "INSERT INTO workunit_payload_refs (id, workunit_id, ref_kind, ref_id, created_at) VALUES (?, ?, ?, ?, ?)",
+                (ref.id, ref.workunit_id, ref.ref_kind, ref.ref_id, ref.created_at),
+            )
+        return ref
+
+    def list_payload_refs(self, workunit_id: str | None = None, limit: int = 100) -> list[WorkUnitPayloadRef]:
+        self._ensure_open()
+        sql = "SELECT * FROM workunit_payload_refs"
+        params: list[Any] = []
+        if workunit_id:
+            sql += " WHERE workunit_id = ?"
+            params.append(workunit_id)
+        sql += " ORDER BY created_at, id LIMIT ?"
+        params.append(validate_limit(limit))
+        return [row_to_payload_ref(row) for row in self.connection.execute(sql, params).fetchall()]
 
     def summarize(self) -> WorkUnitSummary:
         self._ensure_open()

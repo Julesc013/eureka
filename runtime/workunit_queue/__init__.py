@@ -7,7 +7,7 @@ from .errors import (
     WorkUnitTransitionError,
     WorkUnitValidationError,
 )
-from .records import WorkUnit, WorkUnitPriority, WorkUnitState, WorkUnitSummary, WorkUnitTransition, WorkUnitType
+from .records import WorkUnit, WorkUnitPayloadRef, WorkUnitPriority, WorkUnitState, WorkUnitSummary, WorkUnitTransition, WorkUnitType
 from .store import WorkUnitQueueStore
 from .transitions import ALLOWED_TRANSITIONS, apply_transition, validate_transition
 from .validation import (
@@ -30,6 +30,7 @@ __all__ = [
     "ALLOWED_WORKUNIT_TYPES",
     "WorkUnit",
     "WorkUnitNotFoundError",
+    "WorkUnitPayloadRef",
     "WorkUnitPriority",
     "WorkUnitQueueClosedError",
     "WorkUnitQueueError",

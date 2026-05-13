@@ -1,0 +1,25 @@
+{
+  "finished_at": "2026-05-13T18:54:23Z",
+  "inputs": {
+    "workunit_id": "wku_sample"
+  },
+  "limitations": [
+    "local deterministic noop only"
+  ],
+  "outputs": {
+    "message": "noop completed"
+  },
+  "policy_decision": {
+    "allowed": true,
+    "worker_kind": "noop_worker"
+  },
+  "schema_version": "local_worker_audit_event.v0",
+  "started_at": "2026-05-13T18:54:23Z",
+  "status": "complete",
+  "store_mutations": [],
+  "warnings": [],
+  "worker_audit_event_id": "lwa_sample",
+  "worker_kind": "noop_worker",
+  "worker_run_id": "lwr_sample",
+  "workunit_id": "wku_sample"
+}

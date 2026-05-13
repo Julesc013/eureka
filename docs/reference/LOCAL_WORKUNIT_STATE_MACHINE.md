@@ -10,7 +10,7 @@
 - `extraction_task`
 - `agent_task`
 
-These are queue record types only. They do not enable execution in LOCAL-07.
+These are queue record types only. They do not enable execution in LOCAL-07. LOCAL-09 adds deterministic execution for policy-approved queued records, but the state machine still rejects invalid transitions and records history.
 
 ## States
 
@@ -37,3 +37,5 @@ Allowed transitions:
 Invalid transitions fail closed and leave the current record state unchanged. Terminal repeats are idempotent where practical.
 
 Every create and accepted transition is recorded in append-only transition history.
+
+LOCAL-09 workers use `queued` to `running` to `complete`, `failed`, or `blocked`. Disabled worker kinds are blocked before execution and do not run source probes, extraction, model calls, downloads, LAN operations, deployment, or master-index mutation.

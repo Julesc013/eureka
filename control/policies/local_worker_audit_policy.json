@@ -1,0 +1,18 @@
+{
+  "required_fields": [
+    "worker_run_id",
+    "workunit_id",
+    "worker_kind",
+    "started_at",
+    "finished_at",
+    "status",
+    "policy_decision",
+    "inputs",
+    "outputs",
+    "store_mutations",
+    "warnings",
+    "limitations"
+  ],
+  "schema_version": "local_worker_audit_policy.v0",
+  "worker_run_audit_required": true
+}

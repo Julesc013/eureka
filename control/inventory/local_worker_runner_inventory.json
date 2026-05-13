@@ -1,0 +1,32 @@
+{
+  "blocked_worker_kinds": [
+    "source_probe_worker",
+    "extraction_worker",
+    "agent_research_worker",
+    "ai_model_worker",
+    "download_worker",
+    "install_execute_worker",
+    "source_sync_worker",
+    "lan_worker",
+    "deployment_worker"
+  ],
+  "deployment_performed": false,
+  "download_install_execute_enabled": false,
+  "enabled_worker_kinds": [
+    "noop_worker",
+    "review_queue_checker",
+    "reviewed_index_rebuild_worker",
+    "absence_report_worker",
+    "local_status_snapshot_worker"
+  ],
+  "external_network_enabled": false,
+  "extraction_execution_enabled": false,
+  "ai_model_execution_enabled": false,
+  "lan_enabled": false,
+  "runtime_package": "runtime/local_worker",
+  "schema_version": "local_worker_runner_inventory.v0",
+  "source_probe_execution_enabled": false,
+  "task": "LOCAL-09",
+  "worker_execution_enabled": true,
+  "workunit_queue_required": true
+}

@@ -3,7 +3,7 @@
 import json
 from typing import Any, Mapping
 
-from .records import WorkUnit, WorkUnitPriority, WorkUnitState, WorkUnitTransition, WorkUnitType
+from .records import WorkUnit, WorkUnitPayloadRef, WorkUnitPriority, WorkUnitState, WorkUnitTransition, WorkUnitType
 
 
 def encode_json(value: Any) -> str:
@@ -42,6 +42,16 @@ def row_to_transition(row: Mapping[str, Any]) -> WorkUnitTransition:
         from_state=str(row["from_state"]),
         to_state=WorkUnitState(str(row["to_state"])),
         reason=_optional(row["reason"]),
+        created_at=str(row["created_at"]),
+    )
+
+
+def row_to_payload_ref(row: Mapping[str, Any]) -> WorkUnitPayloadRef:
+    return WorkUnitPayloadRef(
+        id=str(row["id"]),
+        workunit_id=str(row["workunit_id"]),
+        ref_kind=str(row["ref_kind"]),
+        ref_id=str(row["ref_id"]),
         created_at=str(row["created_at"]),
     )
 

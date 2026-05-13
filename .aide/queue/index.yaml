@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-09
+current_recommended_task: LOCAL-10
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -89,12 +89,21 @@ entries:
     recommended_next: LOCAL-09
   - id: LOCAL-09
     title: Deterministic local worker runner
-    status: queued
+    status: completed
     purpose: Add deterministic local worker execution after operator-gated review/rebuild exists.
-    allowed_scope_summary: Worker runner only when a future LOCAL-09 prompt enables it.
-    gate: LOCAL-08 passed with operator-gated review/rebuild; no LAN binding, deployment, production readiness claim, or public launch claim.
+    allowed_scope_summary: Deterministic worker runner, worker registry, CLI, docs, tests, validators, inventories, and audit evidence only.
+    gate: LOCAL-08 passed with operator-gated review/rebuild; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-09/task.yaml
     recommended_after: LOCAL-08
+    recommended_next: LOCAL-10
+  - id: LOCAL-10
+    title: Auto-test and auto-search harness
+    status: queued
+    purpose: Add the local auto-test and auto-search harness after deterministic worker execution exists.
+    allowed_scope_summary: Harness only when a future LOCAL-10 prompt enables it.
+    gate: LOCAL-09 passed with deterministic local worker runner; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-10/task.yaml
+    recommended_after: LOCAL-09
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

@@ -47,8 +47,15 @@ Validate:
 python scripts/validate_workunit_queue.py
 ```
 
+Run deterministic local workers after LOCAL-09:
+
+```bash
+python scripts/eureka_worker_runner.py --instance ./eureka-instance list-workers --json
+python scripts/eureka_worker_runner.py --instance ./eureka-instance run-next --kind noop_worker --json
+```
+
 ## Boundaries
 
-LOCAL-07 queue commands record local queue state only. They do not run workers, probes, extraction, review mutation, index rebuilds, downloads, installs, executable actions, model/provider calls, LAN operations, deployment, production readiness checks, or public launch checks.
+LOCAL-07 queue commands record local queue state only. LOCAL-09 worker commands may execute only enabled deterministic local workers. They still do not run source probes, extraction, downloads, installs, executable actions, model/provider calls, LAN operations, deployment, production readiness checks, or public launch checks.
 
 Queue state under `eureka-instance/` is local state and must not be committed.

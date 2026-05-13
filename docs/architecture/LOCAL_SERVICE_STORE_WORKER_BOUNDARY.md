@@ -36,3 +36,9 @@ The service boundary rejects write methods and LAN hosts. It does not run WorkUn
 The local runtime now composes a fifth store, `workunit_queue`, from the instance manifest. The queue is the only durable place for proposed background/local work, but LOCAL-07 keeps it as records and transition history only.
 
 Workers added later must consume WorkUnits through the runtime boundary and emit typed outputs through governed stores. A WorkUnit does not accept truth, mutate review decisions, mutate the public/master index, authorize downloads or installs, call providers, or start LAN/deployment behavior.
+
+## LOCAL-09 Worker Rule
+
+`runtime/local_worker` now executes only enabled deterministic worker kinds from queued WorkUnits. The runner records policy decisions, transition history, worker result references, and audit references.
+
+The only LOCAL-09 worker allowed to mutate a product store is `reviewed_index_rebuild_worker`, and it is operator-token gated with mutation limited to the local reviewed `public_index`. Source probe, extraction, model/provider, download, install/execute, source sync, LAN, deployment, and master-index workers remain blocked.

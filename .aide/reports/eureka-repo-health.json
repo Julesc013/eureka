@@ -1,7 +1,7 @@
 {
-  "completed_queue_item": "LOCAL-08",
+  "completed_queue_item": "LOCAL-09",
   "current_queue_item": "LOCAL-02",
-  "current_recommended_queue_item": "LOCAL-09",
+  "current_recommended_queue_item": "LOCAL-10",
   "deployment_performed": false,
   "f0_current_status": "deferred",
   "f0_deferred_until": "LOCAL-14",
@@ -18,16 +18,20 @@
   "model_provider_enabled": false,
   "network_access_enabled": false,
   "local_review_rebuild_loop_added": true,
-  "next_recommended_queue_item": "LOCAL-09",
-  "note": "LOCAL-08 adds operator-gated local review/rebuild with no worker execution, LAN, or deployment. F0 remains deferred until LOCAL-14.",
+  "next_recommended_queue_item": "LOCAL-10",
+  "note": "LOCAL-09 adds deterministic local worker execution with source probes, extraction, model/provider calls, LAN, and deployment still disabled. F0 remains deferred until LOCAL-14.",
   "production_readiness": false,
   "public_launch_readiness": false,
   "schema_version": "eureka_repo_health.v0",
   "source_sync_enabled": false,
   "status": "planned",
   "warnings": [
-    "runtime leakage gate remains a pre-existing warning and LOCAL-08 does not increase it"
+    "runtime leakage gate remains a pre-existing warning and LOCAL-09 does not increase it"
   ],
   "workunit_runtime_implemented": true,
-  "worker_execution_enabled": false
+  "worker_execution_enabled": true,
+  "deterministic_worker_runner_available": true,
+  "source_probe_workers_enabled": false,
+  "extraction_execution_enabled": false,
+  "ai_model_execution_enabled": false
 }
