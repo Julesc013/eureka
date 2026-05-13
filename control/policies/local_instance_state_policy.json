@@ -1,0 +1,13 @@
+{
+  "committed_local_state_forbidden": true,
+  "exports_imports_forbidden_by_default": true,
+  "generated_instance_state_must_be_explicit": true,
+  "logs_forbidden_in_git": true,
+  "policy_id": "local_instance_state_policy",
+  "run_locks_forbidden_in_git": true,
+  "schema_version": "local_instance_state_policy.v0",
+  "sqlite_db_files_forbidden_in_git": true,
+  "status": "active",
+  "task": "LOCAL-01",
+  "tmp_files_forbidden_in_git": true
+}

@@ -1,0 +1,24 @@
+{
+  "allowed_instance_dirs": [
+    "config",
+    "db",
+    "logs",
+    "run",
+    "tmp",
+    "exports",
+    "imports"
+  ],
+  "forbidden_instance_roots": [
+    ".cache",
+    ".local",
+    ".aide.local",
+    "home directory implicit path",
+    "system temp implicit path unless explicitly passed by test",
+    "site/dist",
+    "repo root as instance path"
+  ],
+  "policy_id": "local_instance_path_policy",
+  "schema_version": "local_instance_path_policy.v0",
+  "status": "active",
+  "task": "LOCAL-01"
+}

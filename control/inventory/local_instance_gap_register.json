@@ -1,0 +1,31 @@
+{
+  "gaps": [
+    {
+      "disposition": "planned_for_LOCAL-02",
+      "gap_id": "LOCAL-01-GAP-001",
+      "status": "open",
+      "summary": "Instance configuration schema and migration guard are not implemented in LOCAL-01."
+    },
+    {
+      "disposition": "planned_for_LOCAL-04",
+      "gap_id": "LOCAL-01-GAP-002",
+      "status": "open",
+      "summary": "No localhost HTTP service exists in LOCAL-01."
+    },
+    {
+      "disposition": "planned_for_LOCAL-05",
+      "gap_id": "LOCAL-01-GAP-003",
+      "status": "open",
+      "summary": "No HTML workbench exists in LOCAL-01."
+    },
+    {
+      "disposition": "pre_existing_followup",
+      "gap_id": "LOCAL-01-GAP-004",
+      "status": "open",
+      "summary": "Runtime leakage gate still reports pre-existing unallowlisted production findings."
+    }
+  ],
+  "schema_version": "local_instance_gap_register.v0",
+  "status": "open",
+  "task": "LOCAL-01"
+}

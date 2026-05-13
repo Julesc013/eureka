@@ -23,9 +23,15 @@ def load_json(rel: str) -> dict:
 
 
 class LocalApplianceTrackTests(unittest.TestCase):
-    def test_queue_points_to_local_01(self) -> None:
+    def test_queue_points_to_local_track_successor(self) -> None:
         text = (ROOT / ".aide/queue/index.yaml").read_text(encoding="utf-8")
-        self.assertIn("current_recommended_task: LOCAL-01", text)
+        self.assertTrue(
+            "current_recommended_task: LOCAL-01" in text or "current_recommended_task: LOCAL-02" in text,
+            text,
+        )
+        if "current_recommended_task: LOCAL-02" in text:
+            self.assertIn("id: LOCAL-01", text)
+            self.assertIn("status: completed", text)
 
     def test_f0_deferred_until_local_14(self) -> None:
         payload = load_json("control/inventory/f0_deferral_for_local_appliance.json")

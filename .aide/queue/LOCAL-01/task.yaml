@@ -1,6 +1,6 @@
 id: LOCAL-01
 title: Local instance layout and bootstrap
-status: queued
+status: completed
 source_packet: .aide/context/latest-task-packet.md
 purpose: Define explicit local instance root layout and bootstrap posture for the Local Appliance.
 allowed_scope_summary: Local instance layout, bootstrap command posture, config placeholders, docs, validators, tests, and audit evidence only until explicitly scoped.
@@ -17,3 +17,7 @@ gate:
 proof_level_required: L1
 recommended_after: LOCAL-00
 recommended_next: LOCAL-02
+completion_evidence:
+  - control/audits/local-01-local-instance-bootstrap-v0/local_01_report.json
+  - control/inventory/local_instance_bootstrap_result.json
+  - scripts/validate_local_instance_bootstrap.py

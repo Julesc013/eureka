@@ -1,0 +1,12 @@
+{
+  "appliance_mode": "local",
+  "created_at": "2026-05-13T00:00:00Z",
+  "deployment_enabled": false,
+  "instance_id": "eureka-local-sample",
+  "instance_root": "./eureka-instance",
+  "lan_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "eureka_local_instance.v0",
+  "server_enabled": false
+}

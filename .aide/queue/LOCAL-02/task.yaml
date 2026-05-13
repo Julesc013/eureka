@@ -1,0 +1,19 @@
+id: LOCAL-02
+title: Instance configuration, schema, and migration guard
+status: queued
+source_packet: .aide/context/latest-task-packet.md
+purpose: Define local instance configuration schema and safe migration guard after explicit instance bootstrap.
+allowed_scope_summary: Local instance config schema, migration guard, docs, validators, tests, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-01 completed with explicit instance bootstrap commands
+  - no HTTP server implementation
+  - no HTML workbench implementation
+  - no LAN binding
+  - no hidden state roots
+  - no committed instance state
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-01
+recommended_next: LOCAL-03

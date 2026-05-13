@@ -1,0 +1,16 @@
+{
+  "committed_instance_state_forbidden": true,
+  "default_instance_name": "eureka-instance",
+  "deployment_enabled": false,
+  "explicit_instance_path_required": true,
+  "hidden_state_roots_forbidden": true,
+  "instance_init_idempotent": true,
+  "instance_validation_required": true,
+  "lan_enabled": false,
+  "network_access_enabled": false,
+  "policy_id": "local_instance_policy",
+  "schema_version": "local_instance_policy.v0",
+  "server_enabled": false,
+  "status": "active",
+  "task": "LOCAL-01"
+}

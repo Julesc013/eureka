@@ -14,6 +14,7 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK_ID = "LOCAL-00"
 NEXT_TASK = "LOCAL-01"
+ADVANCED_NEXT_TASK = "LOCAL-02"
 F0_TASK = "F0-BUNDLE-01"
 LOCAL_CLOSEOUT = "LOCAL-14"
 
@@ -347,22 +348,28 @@ def validate_report(report: Mapping[str, Any], errors: list[str]) -> None:
 def validate_queue_and_context(root: Path, errors: list[str]) -> None:
     queue_text = read_text(root / QUEUE_INDEX, errors)
     packet_text = read_text(root / TASK_PACKET, errors)
-    if f"current_recommended_task: {NEXT_TASK}" not in queue_text:
-        errors.append("queue index must point to LOCAL-01")
-    if "id: LOCAL-00" not in queue_text or "id: LOCAL-01" not in queue_text:
-        errors.append("queue index must include LOCAL-00 and LOCAL-01")
+    queue_points_to_local_01 = f"current_recommended_task: {NEXT_TASK}" in queue_text
+    queue_points_to_local_02 = f"current_recommended_task: {ADVANCED_NEXT_TASK}" in queue_text
+    if not (queue_points_to_local_01 or queue_points_to_local_02):
+        errors.append("queue index must point to LOCAL-01 or the completed LOCAL-01 successor LOCAL-02")
+    if "id: LOCAL-00" not in queue_text or "id: LOCAL-01" not in queue_text or "id: LOCAL-02" not in queue_text:
+        errors.append("queue index must include LOCAL-00, LOCAL-01, and LOCAL-02")
+    if queue_points_to_local_02 and "id: LOCAL-01" in queue_text and "status: completed" not in queue_text:
+        errors.append("queue index must mark LOCAL-01 completed before pointing to LOCAL-02")
     if F0_TASK not in queue_text or "deferred_until: LOCAL-14" not in queue_text:
         errors.append("queue index must record F0 deferral until LOCAL-14")
-    if NEXT_TASK not in packet_text:
+    if queue_points_to_local_01 and NEXT_TASK not in packet_text:
         errors.append("latest task packet must point to LOCAL-01")
+    if queue_points_to_local_02 and ADVANCED_NEXT_TASK not in packet_text:
+        errors.append("latest task packet must point to LOCAL-02 after LOCAL-01 completes")
     if "<fill from the next reviewed queue packet>" in packet_text:
         errors.append("latest task packet still contains placeholder allowed paths")
 
 
 def validate_health(root: Path, errors: list[str]) -> None:
     health = load_json(root / HEALTH_JSON, "eureka_repo_health.v0", errors)
-    if health.get("current_queue_item") != NEXT_TASK:
-        errors.append("repo health current_queue_item must be LOCAL-01")
+    if health.get("current_queue_item") not in {NEXT_TASK, ADVANCED_NEXT_TASK}:
+        errors.append("repo health current_queue_item must be LOCAL-01 or completed successor LOCAL-02")
     if health.get("f0_current_status") != "deferred":
         errors.append("repo health must record F0 deferred")
     if health.get("f0_deferred_until") != LOCAL_CLOSEOUT:
@@ -375,9 +382,19 @@ def validate_health(root: Path, errors: list[str]) -> None:
 def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
     main = git(root, "rev-parse", "origin/main")
     dev = git(root, "rev-parse", "origin/dev")
-    if main and dev and main != dev:
-        errors.append("origin/main and origin/dev are not aligned")
-    elif not main or not dev:
+    if main and dev:
+        ancestor = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", "origin/main", "origin/dev"],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if ancestor.returncode != 0:
+            errors.append("origin/dev must contain origin/main")
+        elif main != dev:
+            warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
+    else:
         warnings.append("could not verify origin/main and origin/dev alignment")
     if report.get("main_dev_aligned") is not True:
         errors.append("report does not record main/dev alignment")

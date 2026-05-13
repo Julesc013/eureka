@@ -1,0 +1,18 @@
+{
+  "committed_instance_state_found": false,
+  "deployment_performed": false,
+  "forbidden_roots_rejected": true,
+  "idempotency_passed": true,
+  "init_script_added": true,
+  "lan_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_instance_bootstrap_result.v0",
+  "server_enabled": false,
+  "status": "pass_with_warnings",
+  "status_script_added": true,
+  "task": "LOCAL-01",
+  "temp_instance_init_passed": true,
+  "temp_instance_validation_passed": true,
+  "validate_script_added": true
+}

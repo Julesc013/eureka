@@ -1,0 +1,36 @@
+{
+  "deployment_performed": false,
+  "instance_id": "eureka-local-sample",
+  "lan_enabled": false,
+  "limitations": [
+    "LOCAL-01 initializes explicit local state only",
+    "HTTP service is not implemented",
+    "HTML workbench is not implemented",
+    "LAN mode is disabled",
+    "deployment is disabled"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "eureka_local_instance_status.v0",
+  "server_enabled": false,
+  "status": "initialized",
+  "stores": {
+    "evidence_ledger": {
+      "initialization_method": "runtime_store_api",
+      "status": "pass"
+    },
+    "public_index": {
+      "initialization_method": "runtime_store_api",
+      "status": "pass"
+    },
+    "review_queue": {
+      "initialization_method": "runtime_store_api",
+      "status": "pass"
+    },
+    "source_cache": {
+      "initialization_method": "runtime_store_api",
+      "status": "pass"
+    }
+  },
+  "warnings": []
+}
