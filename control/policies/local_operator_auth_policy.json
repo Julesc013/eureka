@@ -1,0 +1,12 @@
+{
+  "default_token_forbidden": true,
+  "deployment_enabled": false,
+  "lan_operator_access_enabled": false,
+  "localhost_only_mutations": true,
+  "operator_token_required_for_mutations": true,
+  "raw_token_storage_forbidden": true,
+  "schema_version": "local_operator_auth_policy.v0",
+  "token_logging_forbidden": true,
+  "token_may_be_provided_by_cli": true,
+  "token_may_be_stored_as_hash_in_instance_config": true
+}

@@ -1,0 +1,78 @@
+{
+  "routes": [
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "html",
+      "route": "/review"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "html",
+      "route": "/review/<review_item_id>"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "html",
+      "route": "/rebuild"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "json",
+      "route": "/api/v1/review"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "json",
+      "route": "/api/v1/review/<review_item_id>"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "GET",
+      "mutates_store": false,
+      "operator_token_required": false,
+      "read_only": true,
+      "response_kind": "json",
+      "route": "/api/v1/rebuild/status"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "POST",
+      "mutates_store": true,
+      "operator_token_required": true,
+      "read_only": false,
+      "response_kind": "json",
+      "route": "/review/<review_item_id>/decision"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "method": "POST",
+      "mutates_store": true,
+      "operator_token_required": true,
+      "read_only": false,
+      "response_kind": "json",
+      "route": "/rebuild"
+    }
+  ],
+  "schema_version": "local_review_route_matrix.v0",
+  "task": "LOCAL-08"
+}

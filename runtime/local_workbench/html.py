@@ -6,7 +6,7 @@ from typing import Any, Mapping, Sequence
 
 NON_CLAIM_BANNER = (
     "Local appliance prototype. Localhost only. Not production. "
-    "Not public launch. Read-only. Reviewed local projection, not global truth."
+    "Not public launch. Operator-gated local review only. Reviewed local projection, not global proof."
 )
 
 
@@ -42,6 +42,8 @@ def render_navigation() -> str:
         render_link("/status", "Status"),
         render_link("/search", "Search"),
         render_link("/absence?q=sampleproject", "Absence example"),
+        render_link("/review", "Review"),
+        render_link("/rebuild", "Rebuild"),
         render_link("/api/v1/status", "JSON status"),
     )
     return "<nav aria-label=\"Primary\"><ul>" + "".join(f"<li>{item}</li>" for item in links) + "</ul></nav>"

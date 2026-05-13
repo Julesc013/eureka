@@ -6,11 +6,8 @@ from .errors import LocalWorkbenchValidationError
 FORBIDDEN_SNIPPETS = (
     "<script",
     "javascript:",
-    "method=\"post\"",
-    "formmethod=\"post\"",
-    "method='post'",
-    "formmethod='post'",
 )
+MUTATION_FORM_SNIPPETS = ("method=\"post\"", "formmethod=\"post\"", "method='post'", "formmethod='post'")
 FORBIDDEN_CONTROL_WORDS = (
     "review mutation",
     "create workunit",
@@ -46,8 +43,12 @@ def validate_html_safe(text: str) -> str:
     return text
 
 
-def validate_no_mutation_controls(html: str) -> str:
+def validate_no_mutation_controls(html: str, *, allow_operator_mutation_forms: bool = False) -> str:
     lowered = html.lower()
+    if not allow_operator_mutation_forms:
+        for snippet in MUTATION_FORM_SNIPPETS:
+            if snippet in lowered:
+                raise LocalWorkbenchValidationError(f"forbidden html snippet: {snippet}")
     for word in FORBIDDEN_CONTROL_WORDS:
         if word in lowered:
             raise LocalWorkbenchValidationError(f"forbidden mutation control: {word}")
@@ -81,9 +82,9 @@ def validate_no_forbidden_claims(html: str) -> str:
     return html
 
 
-def validate_local_workbench_page(html: str) -> str:
+def validate_local_workbench_page(html: str, *, allow_operator_mutation_forms: bool = False) -> str:
     validate_html_safe(html)
-    validate_no_mutation_controls(html)
+    validate_no_mutation_controls(html, allow_operator_mutation_forms=allow_operator_mutation_forms)
     validate_no_external_assets(html)
     validate_no_forbidden_claims(html)
     validate_required_accessibility_markers(html)

@@ -1,4 +1,4 @@
-"""Loopback-only server adapter for the read-only local service."""
+"""Loopback-only server adapter for the local service."""
 
 from dataclasses import dataclass
 from http.server import BaseHTTPRequestHandler
@@ -42,7 +42,7 @@ def create_local_http_handler(app: LocalServiceApp) -> type[BaseHTTPRequestHandl
             self._send(app.handle("GET", self.path, None, self._client_host()))
 
         def do_POST(self) -> None:  # noqa: N802
-            self._send(app.handle("POST", self.path, None, self._client_host()))
+            self._send(app.handle("POST", self.path, None, self._client_host(), headers=self._headers(), body=self._body()))
 
         def do_PUT(self) -> None:  # noqa: N802
             self._send(app.handle("PUT", self.path, None, self._client_host()))
@@ -58,6 +58,15 @@ def create_local_http_handler(app: LocalServiceApp) -> type[BaseHTTPRequestHandl
 
         def _client_host(self) -> str:
             return str(self.client_address[0])
+
+        def _headers(self) -> dict[str, str]:
+            return {str(key): str(value) for key, value in self.headers.items()}
+
+        def _body(self) -> bytes:
+            length = int(self.headers.get("Content-Length", "0") or "0")
+            if length <= 0:
+                return b""
+            return self.rfile.read(length)
 
         def _send(self, response: LocalServiceResponse) -> None:
             body = response.body.encode("utf-8")
@@ -77,13 +86,12 @@ def create_local_http_server(
     host: str = "127.0.0.1",
     port: int = 8765,
     read_only: bool = True,
+    operator_token: str | None = None,
 ) -> LocalHTTPServiceHandle:
     validate_host_allowed(host)
-    if not read_only:
-        raise ValueError("local service only supports read-only mode")
-    runtime = open_local_appliance(Path(instance_path), read_only=True)
+    runtime = open_local_appliance(Path(instance_path), read_only=read_only and not operator_token)
     try:
-        app = LocalServiceApp(runtime)
+        app = LocalServiceApp(runtime, operator_auth_state=_build_cli_operator_auth_state(operator_token))
         httpd = LocalHTTPServer((host, int(port)), create_local_http_handler(app))
         return LocalHTTPServiceHandle(httpd=httpd, runtime=runtime)
     except Exception:
@@ -96,9 +104,15 @@ def run_local_http_service(
     host: str = "127.0.0.1",
     port: int = 8765,
     read_only: bool = True,
+    operator_token: str | None = None,
 ) -> None:
-    handle = create_local_http_server(instance_path, host=host, port=port, read_only=read_only)
+    handle = create_local_http_server(instance_path, host=host, port=port, read_only=read_only, operator_token=operator_token)
     try:
         handle.httpd.serve_forever()
     finally:
         handle.close()
+
+
+def _build_cli_operator_auth_state(operator_token: str | None) -> Any:
+    module = __import__("runtime.local_operator.auth", fromlist=["build_cli_operator_auth_state"])
+    return module.build_cli_operator_auth_state(operator_token)

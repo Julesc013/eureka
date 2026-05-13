@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-08
+current_recommended_task: LOCAL-09
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -80,12 +80,21 @@ entries:
     recommended_next: LOCAL-08
   - id: LOCAL-08
     title: Review and index rebuild from UI
-    status: queued
+    status: completed
     purpose: Add operator-facing review and index rebuild controls after the durable WorkUnit queue.
     allowed_scope_summary: Review/rebuild UI and explicitly scoped local mutations only when a future LOCAL-08 prompt enables them.
     gate: LOCAL-07 passed with durable queue records only; no LAN binding, deployment, source probe execution, automatic worker execution, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-08/task.yaml
     recommended_after: LOCAL-07
+    recommended_next: LOCAL-09
+  - id: LOCAL-09
+    title: Deterministic local worker runner
+    status: queued
+    purpose: Add deterministic local worker execution after operator-gated review/rebuild exists.
+    allowed_scope_summary: Worker runner only when a future LOCAL-09 prompt enables it.
+    gate: LOCAL-08 passed with operator-gated review/rebuild; no LAN binding, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-09/task.yaml
+    recommended_after: LOCAL-08
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

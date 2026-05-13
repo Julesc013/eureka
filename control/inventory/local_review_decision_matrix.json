@@ -1,0 +1,31 @@
+{
+  "decisions": [
+    {
+      "decision": "accept",
+      "local_only_confirmation_required": true,
+      "reason_required": false
+    },
+    {
+      "decision": "reject",
+      "local_only_confirmation_required": false,
+      "reason_required": true
+    },
+    {
+      "decision": "block",
+      "local_only_confirmation_required": false,
+      "reason_required": true
+    },
+    {
+      "decision": "request_more_evidence",
+      "local_only_confirmation_required": false,
+      "reason_required": true
+    },
+    {
+      "decision": "note_only",
+      "local_only_confirmation_required": false,
+      "reason_required": false
+    }
+  ],
+  "schema_version": "local_review_decision_matrix.v0",
+  "task": "LOCAL-08"
+}

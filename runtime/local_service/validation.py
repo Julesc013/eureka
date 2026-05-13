@@ -9,6 +9,7 @@ ALLOWED_HOSTS = {"127.0.0.1", "localhost"}
 FORBIDDEN_HOSTS = {"0.0.0.0", "::", "", "*"}
 MUTATING_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 READ_ONLY_METHODS = {"GET"}
+OPERATOR_MUTATION_METHODS = {"POST"}
 MAX_QUERY_LENGTH = 256
 MAX_RESULT_LIMIT = 50
 DEFAULT_RESULT_LIMIT = 20
@@ -32,6 +33,17 @@ def validate_read_only_method(method: str) -> str:
     return value
 
 
+def validate_supported_method_for_path(method: str, path: str) -> str:
+    value = str(method or "").strip().upper()
+    if value == "GET":
+        return value
+    if value in OPERATOR_MUTATION_METHODS and is_operator_mutation_route(path):
+        return value
+    if value in MUTATING_METHODS:
+        raise LocalServiceReadOnlyError(f"{value} is disabled for this local service route")
+    raise LocalServiceValidationError(f"{value or '<empty>'} is not supported by the local service")
+
+
 def validate_query_params(params: Mapping[str, list[str]]) -> Mapping[str, list[str]]:
     for key in ("q", "query"):
         if key in params:
@@ -46,11 +58,18 @@ def validate_query_params(params: Mapping[str, list[str]]) -> Mapping[str, list[
 
 
 def validate_no_mutation_route(method: str, path: str) -> None:
-    validate_read_only_method(method)
+    validate_supported_method_for_path(method, path)
     lowered = str(path or "").lower()
-    for token in ("write", "delete", "update", "review-decision", "rebuild", "probe", "workunit"):
+    for token in ("write", "delete", "update", "review-decision", "probe", "workunit"):
         if token in lowered:
             raise LocalServiceReadOnlyError(f"route token is disabled for read-only service: {token}")
+
+
+def is_operator_mutation_route(path: str) -> bool:
+    value = str(path or "")
+    if value == "/rebuild":
+        return True
+    return value.startswith("/review/") and value.endswith("/decision")
 
 
 def validate_no_lan_binding(host: str) -> str:

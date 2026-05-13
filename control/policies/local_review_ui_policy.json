@@ -1,0 +1,14 @@
+{
+  "get_routes_read_only": true,
+  "lan_enabled": false,
+  "localhost_only": true,
+  "no_agent_controls": true,
+  "no_download_install_execute_controls": true,
+  "no_source_probe_controls": true,
+  "no_workunit_execution_controls": true,
+  "operator_token_required_for_mutations": true,
+  "post_routes_mutating_operator_only": true,
+  "rebuild_ui_enabled": true,
+  "review_ui_enabled": true,
+  "schema_version": "local_review_ui_policy.v0"
+}

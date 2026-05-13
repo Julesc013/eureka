@@ -1,0 +1,11 @@
+{
+  "decision": "accept",
+  "decision_id": "rvd_sample",
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "review_decision_persisted": true,
+  "review_item_id": "rvi_sample",
+  "review_status": "accepted",
+  "schema_version": "local_review_decision_result.v0",
+  "status": "pass"
+}

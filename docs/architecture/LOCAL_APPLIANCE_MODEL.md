@@ -45,3 +45,14 @@ LOCAL-07 adds the durable local WorkUnit queue as a fifth manifest-defined store
 The queue records operator-gated work proposals and state transitions. It supports search needs, source probe proposals, evidence review follow-up, index rebuild proposals, regression checks, extraction tasks, and agent-task records as queue entries only.
 
 LOCAL-07 still does not execute workers, run source probes, create review decisions, rebuild indexes, expose LAN, deploy, or claim production/public launch readiness.
+
+## LOCAL-08 Review And Rebuild Loop
+
+LOCAL-08 adds localhost-only operator-gated review decisions and reviewed-index
+rebuild. Review decisions are stored in the local `review_queue`; rebuild reads
+`source_cache`, `evidence_ledger`, and `review_queue`, then writes accepted
+review projections to the local `public_index`.
+
+Raw operator tokens are not persisted. The loop does not execute queued work,
+run source probes, mutate a master index, write `site/dist`, expose LAN, deploy,
+or claim production/public launch readiness.

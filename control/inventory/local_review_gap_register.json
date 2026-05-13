@@ -1,0 +1,18 @@
+{
+  "gaps": [
+    {
+      "deferred_until": "LOCAL-09",
+      "gap": "deterministic local worker execution remains disabled"
+    },
+    {
+      "deferred_until": "LOCAL-14",
+      "gap": "F0 extraction remains deferred"
+    },
+    {
+      "deferred_until": "LOCAL-11/LOCAL-12",
+      "gap": "LAN mode remains disabled"
+    }
+  ],
+  "schema_version": "local_review_gap_register.v0",
+  "task": "LOCAL-08"
+}

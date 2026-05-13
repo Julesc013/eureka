@@ -36,3 +36,11 @@ LOCAL-06 hardens status, object, source, and absence page behavior. Review decis
 LOCAL-06 makes the pages diagnostic rather than merely navigational. The status page shows instance, store, index, migration, server, LAN, deployment, and non-claim flags. Search and object pages show provenance references when the reviewed public index record has source cache, evidence, review item, or review decision IDs. Source pages state local source scope only. Absence pages show checked and unchecked layers and say that absence is not proof that an artifact does not exist.
 
 The hardening keeps the LOCAL-05 posture: server-rendered HTML, no frontend build, no JavaScript requirement, no external assets, no mutation controls, no source probes, no WorkUnits, no review mutation, no index rebuild, no LAN, and no deployment.
+
+## LOCAL-08 Review Pages
+
+LOCAL-08 adds review queue, review item, and reviewed-index rebuild pages. These
+pages remain server-rendered and localhost-only. They include POST forms only
+for operator-token-gated local review and rebuild actions. The forms do not
+start source probes, execute queued work, expose LAN, deploy, or claim public
+readiness.

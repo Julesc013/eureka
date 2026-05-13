@@ -155,6 +155,56 @@ class StatusPageView:
     limitations: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class ReviewQueueItemView:
+    review_item_id: str
+    subject_kind: str
+    subject_id: str
+    queue_status: str
+    evidence_id: str
+    source_cache_entry_id: str
+    summary: str
+    priority: int
+
+
+@dataclass(frozen=True)
+class ReviewQueuePageView:
+    result_count: int
+    review_items: tuple[ReviewQueueItemView, ...]
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class ReviewItemPageView:
+    review_item_id: str
+    found: bool
+    queue_status: str
+    subject_kind: str
+    subject_id: str
+    summary: str
+    evidence_id: str
+    source_cache_entry_id: str
+    evidence: tuple[Mapping[str, Any], ...]
+    source_cache_entry: tuple[Mapping[str, Any], ...]
+    decisions: tuple[Mapping[str, Any], ...]
+    events: tuple[Mapping[str, Any], ...]
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class RebuildPageView:
+    record_count: int
+    rebuild_count: int
+    operator_token_required: bool
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
 def build_home_page_view(status: Mapping[str, Any]) -> HomePageView:
     runtime = _mapping(status.get("runtime"))
     public_index = _mapping(status.get("public_index"))
@@ -251,6 +301,64 @@ def build_status_page_view(status: Mapping[str, Any]) -> StatusPageView:
     )
 
 
+def build_review_queue_page_view(payload: Mapping[str, Any]) -> ReviewQueuePageView:
+    items = []
+    for value in _sequence(payload.get("review_items")):
+        item = _mapping(value)
+        items.append(
+            ReviewQueueItemView(
+                review_item_id=str(item.get("review_item_id", "")),
+                subject_kind=str(item.get("subject_kind", "")),
+                subject_id=str(item.get("subject_id", "")),
+                queue_status=str(item.get("queue_status", "")),
+                evidence_id=str(item.get("evidence_id", "") or ""),
+                source_cache_entry_id=str(item.get("source_cache_entry_id", "") or ""),
+                summary=str(item.get("summary", "")),
+                priority=int(item.get("priority", 0) or 0),
+            )
+        )
+    return ReviewQueuePageView(
+        result_count=int(payload.get("result_count", len(items)) or 0),
+        review_items=tuple(items),
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(payload.get("warnings")),
+        limitations=_unique(_tuple(payload.get("limitations")) + ("local review state only",)),
+    )
+
+
+def build_review_item_page_view(review_item_id: str, payload: Mapping[str, Any]) -> ReviewItemPageView:
+    item = _mapping(payload.get("review_item"))
+    return ReviewItemPageView(
+        review_item_id=review_item_id,
+        found=bool(payload.get("found", False)),
+        queue_status=str(item.get("queue_status", "")),
+        subject_kind=str(item.get("subject_kind", "")),
+        subject_id=str(item.get("subject_id", "")),
+        summary=str(item.get("summary", "")),
+        evidence_id=str(item.get("evidence_id", "") or ""),
+        source_cache_entry_id=str(item.get("source_cache_entry_id", "") or ""),
+        evidence=_mapping_rows(payload.get("evidence")),
+        source_cache_entry=_mapping_rows(payload.get("source_cache_entry")),
+        decisions=tuple(_mapping(value) for value in _sequence(payload.get("decisions"))),
+        events=tuple(_mapping(value) for value in _sequence(payload.get("events"))),
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(payload.get("warnings")),
+        limitations=_unique(_tuple(payload.get("limitations")) + ("local review state only",)),
+    )
+
+
+def build_rebuild_page_view(payload: Mapping[str, Any]) -> RebuildPageView:
+    index = _mapping(payload.get("public_index"))
+    return RebuildPageView(
+        record_count=int(index.get("record_count", 0) or 0),
+        rebuild_count=int(index.get("rebuild_count", 0) or 0),
+        operator_token_required=bool(payload.get("operator_token_required_for_mutations", True)),
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(payload.get("warnings")),
+        limitations=_unique(_tuple(payload.get("limitations")) + ("rebuild writes only to the local reviewed public index store",)),
+    )
+
+
 def build_non_claim_banner_view() -> NonClaimBannerView:
     return NonClaimBannerView(
         messages=(
@@ -265,8 +373,8 @@ def build_non_claim_banner_view() -> NonClaimBannerView:
 
 def build_unavailable_capabilities() -> tuple[CapabilityUnavailableView, ...]:
     return (
-        CapabilityUnavailableView("WorkUnits", "unavailable", "Operator-gated queue is not implemented yet."),
-        CapabilityUnavailableView("review and index maintenance UI", "unavailable", "Review actions and index maintenance are future work."),
+        CapabilityUnavailableView("WorkUnits", "queue available", "Durable queue records exist; execution remains disabled."),
+        CapabilityUnavailableView("review and index maintenance UI", "operator-gated", "Local review decisions and rebuild require an operator token."),
         CapabilityUnavailableView("source probes", "unavailable", "Live or automated source inspection is not implemented."),
         CapabilityUnavailableView("extraction", "deferred", "Extraction stays deferred until the local appliance track closes."),
         CapabilityUnavailableView("Search Hunt Sessions", "unavailable", "Session runtime is not implemented."),
@@ -337,6 +445,13 @@ def _normalized_rows(fields: Any) -> tuple[Mapping[str, Any], ...]:
     if not isinstance(fields, Mapping) or not fields:
         return ({"field": "none", "value": ""},)
     return tuple({"field": str(key), "value": _safe_value(value)} for key, value in sorted(fields.items()))
+
+
+def _mapping_rows(value: Any) -> tuple[Mapping[str, Any], ...]:
+    payload = _mapping(value)
+    if not payload:
+        return ({"field": "none", "value": ""},)
+    return tuple({"field": str(key), "value": _safe_value(item)} for key, item in sorted(payload.items()))
 
 
 def _excerpt(value: Any) -> str:

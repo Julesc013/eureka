@@ -1,0 +1,23 @@
+{
+  "deployment_enabled": false,
+  "excludes_review_statuses": [
+    "rejected",
+    "blocked",
+    "superseded",
+    "queued",
+    "needs_review",
+    "needs_more_evidence"
+  ],
+  "includes_review_statuses": [
+    "accepted"
+  ],
+  "input_stores_mutated": false,
+  "master_index_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_store_mutated": true,
+  "public_launch_readiness_claimed": false,
+  "rebuild_requires_operator_token": true,
+  "rebuild_source": "local_review_queue",
+  "schema_version": "local_review_rebuild_policy.v0",
+  "site_dist_writes_enabled": false
+}

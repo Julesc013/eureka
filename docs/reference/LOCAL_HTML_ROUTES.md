@@ -45,3 +45,14 @@ The route set is unchanged, but pages now include stronger operational markers:
 | `/source/<source_id>` | source-local record count and local-only source scope |
 | `/absence?q=<query>` | checked layer list, unchecked/deferred layer list, absence non-claim |
 | `/status` | store status, reviewed public index status, migration and disabled runtime flags |
+
+## LOCAL-08 Review Routes
+
+| Route | Method | Purpose |
+| --- | --- | --- |
+| `/review` | GET | Local review queue |
+| `/review/<review_item_id>` | GET | Review item details and operator-gated decision form |
+| `/rebuild` | GET | Reviewed-index rebuild status and operator-gated rebuild form |
+
+JSON equivalents are `/api/v1/review`, `/api/v1/review/<review_item_id>`, and
+`/api/v1/rebuild/status`.

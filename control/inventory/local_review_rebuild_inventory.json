@@ -1,0 +1,18 @@
+{
+  "agent_execution_enabled": false,
+  "deployment_performed": false,
+  "lan_enabled": false,
+  "master_index_mutation_enabled": false,
+  "operator_token_required": true,
+  "rebuild_ui_enabled": true,
+  "review_ui_enabled": true,
+  "runtime_packages": [
+    "runtime/local_operator",
+    "runtime/local_review"
+  ],
+  "schema_version": "local_review_rebuild_inventory.v0",
+  "site_dist_writes_enabled": false,
+  "source_probe_execution_enabled": false,
+  "task": "LOCAL-08",
+  "workunit_execution_enabled": false
+}

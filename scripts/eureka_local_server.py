@@ -24,6 +24,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--host", default="127.0.0.1", help="Loopback bind host.")
     parser.add_argument("--port", type=int, default=8765, help="Loopback bind port.")
     parser.add_argument("--read-only", action="store_true", help="Accepted for explicit read-only startup.")
+    parser.add_argument("--operator-token", help="Optional in-memory operator token for LOCAL review mutations.")
     parser.add_argument("--write-mode", action="store_true", help="Rejected; the local service is read-only.")
     parser.add_argument("--json-startup", action="store_true", help="Print startup JSON after binding.")
     args = parser.parse_args(argv)
@@ -45,7 +46,13 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     handle = None
     try:
-        handle = create_local_http_server(Path(args.instance), host=args.host, port=args.port, read_only=True)
+        handle = create_local_http_server(
+            Path(args.instance),
+            host=args.host,
+            port=args.port,
+            read_only=True,
+            operator_token=args.operator_token,
+        )
         startup = {
             "schema_version": "local_http_server_startup.v0",
             "status": "pass",
@@ -56,10 +63,13 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "read_only": True,
             "localhost_only": True,
             "write_routes_enabled": False,
+            "operator_token_configured": bool(args.operator_token),
             "lan_enabled": False,
             "deployment_performed": False,
             "source_probe_execution_enabled": False,
             "workunit_execution_enabled": False,
+            "operator_gated_review_decisions_enabled": True,
+            "operator_gated_rebuild_enabled": True,
             "review_decision_mutation_enabled": False,
             "index_rebuild_enabled": False,
             "production_readiness_claimed": False,
