@@ -1,7 +1,8 @@
 # Promotion Result
 
 - Promotion allowed after full sweep: true.
-- Dev pushed: pending final commit.
-- Main promoted: pending fast-forward procedure.
+- Dev pushed: true.
+- Main promoted: true.
+- Origin main equals origin dev: true.
 - Force push performed: false.
 - History rewrite performed: false.
