@@ -273,7 +273,7 @@ def run_smoke_command(root: Path, errors: list[str]) -> dict[str, Any]:
             text=True,
             capture_output=True,
             check=False,
-            timeout=180,
+            timeout=300,
         )
     if completed.returncode != 0:
         errors.append(f"LAN smoke script failed: {completed.stderr or completed.stdout}")
@@ -381,14 +381,18 @@ def validate_external_client_evidence(payload: Mapping[str, Any], errors: list[s
 def validate_leakage(root: Path, baseline: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
     if baseline.get("local_12_increased_leakage") is not False:
         errors.append("LOCAL-12 leakage baseline must state no increase")
-    scan = subprocess.run(
-        [sys.executable, "scripts/audit_runtime_architecture_leakage.py", "--check", "--json"],
-        cwd=root,
-        text=True,
-        capture_output=True,
-        check=False,
-        timeout=180,
-    )
+    try:
+        scan = subprocess.run(
+            [sys.executable, "scripts/audit_runtime_architecture_leakage.py", "--check", "--json"],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=360,
+        )
+    except subprocess.TimeoutExpired:
+        errors.append("runtime leakage scan timed out during LOCAL-12 validation")
+        return
     try:
         payload = json.loads(scan.stdout)
         new_count = int(payload.get("summary", {}).get("new_violation_count", 0))

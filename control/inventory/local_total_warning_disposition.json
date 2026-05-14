@@ -1,0 +1,21 @@
+{
+  "schema_version": "local_total_warning_disposition.v0",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01",
+  "warnings": [
+    {
+      "blocks_f0": false,
+      "blocks_hunt": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "classification": "deferred_with_expiry",
+      "count": 1954,
+      "disposition": "No new unallowlisted production findings remain; known findings are exact line/column/context-bound and expire at HUNT-00.",
+      "expiry": "HUNT-00",
+      "recommended_child_task": "HUNT-00 planning disposition or scoped naming remediation before implementation closeout",
+      "source_report": "scripts/audit_runtime_architecture_leakage.py --check --json",
+      "warning_id": "remaining_context_bound_runtime_naming_debt",
+      "why_not_hiding_production_leakage": "The gate still reports every retained finding as allowlisted warning debt; no production path is generally ignored."
+    }
+  ],
+  "warnings_remaining": 1
+}

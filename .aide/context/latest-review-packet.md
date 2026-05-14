@@ -33,19 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `scripts/local_queue_progress.py` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_clean_machine_bootstrap.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_ia_readiness_polish.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_appliance_track.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_auto_test_harness.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_instance_bootstrap.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_instance_migration_guard.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_lan_safety_gate.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_lan_smoke.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_review_rebuild.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_local_worker_runner.py` (M; does not match active task allowed paths)
-- unknown: `scripts/validate_workunit_queue.py` (M; does not match active task allowed paths)
-- unknown: `tests/runtime/test_local_workbench_page_hardening.py` (M; does not match active task allowed paths)
+- unknown: `control/audits/local-leakage-total-remediation-01-v0` (??; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/allowlist_summary.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_gate_report.json` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/leakage_policy_summary.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/r0_02_report.json` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/validation.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/r0-remediation-legacy-leakage-01-v0/remediation_report.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/legacy_runtime_leakage_remaining_allowlist.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/legacy_runtime_leakage_remediation_result.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_blocker_register.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_leakage_diagnosis.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_leakage_remediation_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_promotion_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_smoke_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_solution_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_validation_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_total_warning_disposition.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_gate_report.json` (M; does not match active task allowed paths)
+- unknown: `control/inventory/runtime_architecture_leakage_remediation_plan.json` (M; does not match active task allowed paths)
+- unknown: `control/policies/runtime_architecture_leakage_allowlist.json` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 14; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -55,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5285
-- approx_tokens: 1322
+- chars: 7101
+- approx_tokens: 1776
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -42,7 +42,8 @@ class CleanMachineSmokeScriptTests(unittest.TestCase):
         self.assertFalse(payload["master_index_mutated"])
 
     def test_validator_passes_with_known_warning(self) -> None:
-        completed = run_cmd("scripts/validate_clean_machine_bootstrap.py", "--json", timeout=420)
+        completed = run_cmd("scripts/validate_clean_machine_bootstrap.py", "--json", timeout=600)
+        self.assertEqual(0, completed.returncode, completed.stderr or completed.stdout)
         payload = json.loads(completed.stdout)
         self.assertIn(payload["status"], {"pass", "pass_with_warnings"})
         self.assertTrue(payload["temp_checkout_created"])

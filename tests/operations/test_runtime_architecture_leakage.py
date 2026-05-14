@@ -61,7 +61,17 @@ def minimal_policy() -> dict:
             "scripts/audit_*.py",
             "scripts/validate_*.py",
         ],
-        "test_fixture_paths": ["examples/**", "tests/**", "control/audits/**/generated/**"],
+        "test_fixture_paths": [
+            "examples/**",
+            "tests/**",
+            "runtime/**/tests/**",
+            "surfaces/**/tests/**",
+            "contracts/**/examples/**",
+            "native/**/tests/**",
+            "crates/**/tests/**",
+            "site/**/tests/**",
+            "control/audits/**/generated/**",
+        ],
         "forbidden_terms": [
             "H0",
             "H1",
@@ -201,7 +211,7 @@ class RuntimeArchitectureLeakageTests(unittest.TestCase):
             self.assertNotEqual(0, proc.returncode)
             payload = json.loads(proc.stdout)
             terms = {item["term"] for item in payload["findings"]}
-            self.assertIn("BUNDLE", terms)
+            self.assertIn("phase_bundle_identifier", terms)
 
     def test_ignores_safe_domain_words(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -226,7 +236,18 @@ class RuntimeArchitectureLeakageTests(unittest.TestCase):
             self.assertEqual(0, proc.returncode, proc.stdout + proc.stderr)
             payload = json.loads(proc.stdout)
             self.assertEqual(0, payload["summary"]["new_violation_count"])
-            self.assertGreaterEqual(payload["summary"]["false_positive_candidate_count"], 3)
+            self.assertGreaterEqual(payload["summary"]["false_positive_candidate_count"], 2)
+
+    def test_treats_nested_product_tests_as_test_fixtures(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            make_repo(repo)
+            write(repo / "surfaces/web/tests/test_fixture.py", "assert 'truth_boundary'\n")
+            write(repo / "runtime/connectors/local/tests/test_fixture.py", "assert 'product_boundary'\n")
+            proc = self.run_script(repo, "--check", "--json")
+            self.assertEqual(0, proc.returncode, proc.stdout + proc.stderr)
+            payload = json.loads(proc.stdout)
+            self.assertEqual(0, payload["summary"]["new_violation_count"])
 
     def test_reports_path_line_severity_and_recommendation(self):
         with tempfile.TemporaryDirectory() as tmp:

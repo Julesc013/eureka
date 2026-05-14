@@ -6,4 +6,4 @@
 - control path patterns: 9
 - forbidden terms: 33
 - forbidden regexes: 3
-- allowlist entries: 4133
+- allowlist entries: 1954

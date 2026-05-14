@@ -1,0 +1,159 @@
+{
+  "allowlisted_findings_before": 2477,
+  "false_positives": [
+    "Nested product tests are test fixtures, not production runtime.",
+    "Lowercase domain word bundle is not the same as uppercase task token BUNDLE."
+  ],
+  "findings_by_path_prefix": [
+    {
+      "count": 1613,
+      "prefix": "runtime"
+    },
+    {
+      "count": 409,
+      "prefix": "surfaces"
+    },
+    {
+      "count": 374,
+      "prefix": "contracts"
+    },
+    {
+      "count": 242,
+      "prefix": "site"
+    },
+    {
+      "count": 31,
+      "prefix": "native"
+    }
+  ],
+  "findings_by_term": [
+    {
+      "count": 757,
+      "term": "truth_boundary"
+    },
+    {
+      "count": 641,
+      "term": "product_boundary"
+    },
+    {
+      "count": 550,
+      "term": "H2"
+    },
+    {
+      "count": 134,
+      "term": "H1"
+    },
+    {
+      "count": 132,
+      "term": "BUNDLE"
+    },
+    {
+      "count": 81,
+      "term": "review_seed"
+    },
+    {
+      "count": 77,
+      "term": "fixture_only"
+    },
+    {
+      "count": 50,
+      "term": "agent"
+    },
+    {
+      "count": 49,
+      "term": "review_seed_identifier"
+    },
+    {
+      "count": 36,
+      "term": "quality_delta"
+    },
+    {
+      "count": 34,
+      "term": "H3"
+    },
+    {
+      "count": 30,
+      "term": "phase_bundle_identifier"
+    },
+    {
+      "count": 23,
+      "term": "H0"
+    },
+    {
+      "count": 16,
+      "term": "IA-BUNDLE"
+    },
+    {
+      "count": 13,
+      "term": "phase_named_runtime_symbol"
+    },
+    {
+      "count": 12,
+      "term": "prompt"
+    },
+    {
+      "count": 12,
+      "term": "H4"
+    },
+    {
+      "count": 11,
+      "term": "preview_only"
+    },
+    {
+      "count": 4,
+      "term": "next_phase"
+    },
+    {
+      "count": 3,
+      "term": "F-BUNDLE"
+    }
+  ],
+  "leakage_gate_status_before": "fail",
+  "legacy_quarantine_findings": [
+    {
+      "count": 54,
+      "path": "runtime/local_foundry/pack_builder.py"
+    },
+    {
+      "count": 53,
+      "path": "runtime/local_foundry/pack_export.py"
+    },
+    {
+      "count": 53,
+      "path": "runtime/local_foundry/source_cache.py"
+    },
+    {
+      "count": 49,
+      "path": "runtime/local_foundry/evidence_ledger.py"
+    },
+    {
+      "count": 47,
+      "path": "runtime/extraction/usefulness.py"
+    },
+    {
+      "count": 46,
+      "path": "runtime/local_foundry/candidate_store.py"
+    },
+    {
+      "count": 45,
+      "path": "runtime/local_foundry/pack_quarantine.py"
+    }
+  ],
+  "new_unallowlisted_production_findings_before": 1030,
+  "recommended_repairs": [
+    "Keep exact allowlist debt expiring at HUNT-00 unless renamed earlier.",
+    "Do not broaden production-path ignores.",
+    "Use future scoped tasks for large domain renames outside the Local Appliance runtime."
+  ],
+  "schema_version": "local_total_leakage_diagnosis.v0",
+  "status": "pass_with_warnings",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01",
+  "test_doc_control_findings": [
+    "surfaces/**/tests/** and runtime/**/tests/** are classified as test fixtures after remediation.",
+    "contracts/**/examples/** is classified as example/test evidence after remediation."
+  ],
+  "total_findings_before": 4682,
+  "true_production_leaks": [
+    "Remaining production-path naming debt is retained only as exact line and context-bound warning debt."
+  ]
+}

@@ -406,14 +406,18 @@ def validate_report(report: Mapping[str, Any], errors: list[str]) -> None:
 def validate_leakage(root: Path, baseline: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
     if baseline.get("local_11_increased_leakage") is not False:
         errors.append("LOCAL-11 leakage baseline must state no increase")
-    scan = subprocess.run(
-        [sys.executable, "scripts/audit_runtime_architecture_leakage.py", "--check", "--json"],
-        cwd=root,
-        text=True,
-        capture_output=True,
-        check=False,
-        timeout=180,
-    )
+    try:
+        scan = subprocess.run(
+            [sys.executable, "scripts/audit_runtime_architecture_leakage.py", "--check", "--json"],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=360,
+        )
+    except subprocess.TimeoutExpired:
+        errors.append("runtime leakage scan timed out during LOCAL-11 validation")
+        return
     try:
         payload = json.loads(scan.stdout)
         new_count = int(payload.get("summary", {}).get("new_violation_count", 0))

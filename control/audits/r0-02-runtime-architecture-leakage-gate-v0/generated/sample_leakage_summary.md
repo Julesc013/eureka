@@ -1,8 +1,8 @@
 # R0-02 Runtime Architecture Leakage Gate
 
 - status: pass_with_warnings
-- production paths scanned: 2004
-- known allowlisted violations: 29015
+- production paths scanned: 1033
+- known allowlisted violations: 1954
 - new violations: 0
 - expired allowlist entries: 0
 - F0 remains blocked: true
@@ -10,16 +10,16 @@
 
 ## Top Terms
 
-- phase_named_runtime_symbol: 6693
-- BUNDLE: 4469
-- truth_boundary: 2352
-- product_boundary: 2303
-- review_seed: 1185
-- H9: 985
-- H2: 951
-- H10: 807
-- H8: 782
-- H7: 742
+- truth_boundary: 757
+- product_boundary: 641
+- H2: 550
+- H1: 134
+- BUNDLE: 132
+- review_seed: 81
+- fixture_only: 77
+- agent: 50
+- review_seed_identifier: 49
+- quality_delta: 36
 
 ## New Violations
 
@@ -38,17 +38,17 @@
 - contracts/actions/action_policy.v0.json:20:6 product_boundary (medium)
 - contracts/actions/action_policy.v0.json:37:6 truth_boundary (medium)
 - contracts/actions/action_policy.v0.json:38:6 product_boundary (medium)
-- contracts/actions/action_result_preview.v0.json:15:6 truth_boundary (medium)
-- contracts/actions/action_result_preview.v0.json:16:6 product_boundary (medium)
-- contracts/actions/action_result_preview.v0.json:21:35 preview_only (medium)
-- contracts/actions/action_taxonomy.v0.json:12:6 truth_boundary (medium)
-- contracts/actions/action_taxonomy.v0.json:13:6 product_boundary (medium)
-- contracts/actions/action_taxonomy.v0.json:70:6 truth_boundary (medium)
-- contracts/actions/action_taxonomy.v0.json:71:6 product_boundary (medium)
-- contracts/actions/blocked_action_report.v0.json:17:6 truth_boundary (medium)
-- contracts/actions/blocked_action_report.v0.json:18:6 product_boundary (medium)
-- contracts/actions/citation_bundle.v0.json:0:28 BUNDLE (medium)
-- contracts/actions/citation_bundle.v0.json:3:59 BUNDLE (medium)
-- contracts/actions/citation_bundle.v0.json:4:29 BUNDLE (medium)
-- contracts/actions/citation_bundle.v0.json:8:15 BUNDLE (medium)
-- contracts/actions/citation_bundle.v0.json:19:6 truth_boundary (medium)
+- contracts/actions/compare_action_manifest.v0.json:15:6 truth_boundary (medium)
+- contracts/actions/compare_action_manifest.v0.json:16:6 product_boundary (medium)
+- contracts/actions/export_manifest.v0.json:19:6 truth_boundary (medium)
+- contracts/actions/export_manifest.v0.json:20:6 product_boundary (medium)
+- contracts/actions/export_manifest.v0.json:26:6 truth_boundary (medium)
+- contracts/actions/preservation_manifest.v0.json:19:6 truth_boundary (medium)
+- contracts/actions/preservation_manifest.v0.json:20:6 product_boundary (medium)
+- contracts/actions/preservation_manifest.v0.json:25:6 truth_boundary (medium)
+- contracts/ai/ai_provider_manifest.v0.json:156:10 prompt (medium)
+- contracts/ai/ai_provider_manifest.v0.json:163:10 prompt (medium)
+- contracts/ai/ai_provider_manifest.v0.json:313:10 prompt (medium)
+- contracts/ai/ai_provider_manifest.v0.json:321:10 prompt (medium)
+- contracts/ai/ai_provider_manifest.v0.json:463:6 prompt (medium)
+- contracts/ai/ai_task_request.v0.json:5:123 prompt (medium)

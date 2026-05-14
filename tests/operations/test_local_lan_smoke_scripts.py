@@ -45,7 +45,8 @@ class LocalLanSmokeScriptTests(unittest.TestCase):
         self.assertFalse(payload["external_client_smoke_performed"])
 
     def test_validator_passes(self) -> None:
-        completed = run_cmd("scripts/validate_local_lan_smoke.py", "--json", timeout=300)
+        completed = run_cmd("scripts/validate_local_lan_smoke.py", "--json", timeout=600)
+        self.assertEqual(0, completed.returncode, completed.stderr or completed.stdout)
         payload = json.loads(completed.stdout)
         self.assertIn(payload["status"], {"pass", "pass_with_warnings"})
         self.assertTrue(payload["same_machine_lan_bind_smoke_passed"])

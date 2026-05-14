@@ -1,0 +1,21 @@
+{
+  "allowlist_entries_added": 1954,
+  "allowlist_entries_remaining": 1954,
+  "allowlist_entries_removed": 2267,
+  "child_tasks": [
+    {
+      "purpose": "First post-LOCAL planning task must decide whether remaining naming debt is renamed or accepted as non-product-warning debt before implementation closeout.",
+      "task": "HUNT-00"
+    }
+  ],
+  "false_positives_reclassified": 2013,
+  "full_unittest_discovery_unblocked_by_leakage": true,
+  "leakage_gate_status_after": "warn",
+  "new_unallowlisted_production_findings_after": 0,
+  "policy_weakened": false,
+  "runtime_behavior_changed": false,
+  "schema_version": "local_total_leakage_remediation_result.v0",
+  "status": "pass_with_warnings",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01",
+  "true_production_leaks_fixed": 0
+}

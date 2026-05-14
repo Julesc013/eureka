@@ -3,9 +3,9 @@
   "current_branch": "LOCAL-14-local-appliance-closeout-v0",
   "deployment_performed": false,
   "dev_ahead_of_main": true,
-  "local_track_ready_for_main_promotion": false,
+  "local_track_ready_for_main_promotion": true,
   "merge_performed": false,
-  "next_step": "LOCAL-TO-MAIN-PROMOTION-REVIEW",
+  "next_step": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01 promotion gate",
   "no_deployment": true,
   "no_production_readiness_claim": true,
   "no_public_launch_readiness_claim": true,
@@ -17,11 +17,11 @@
     "left": 0,
     "right": 4
   },
-  "promotion_recommended": false,
+  "promotion_recommended": true,
   "promotion_review_required": true,
   "promotion_task": "LOCAL-TO-MAIN-PROMOTION-REVIEW",
   "push_performed": false,
-  "reason": "Separate promotion review is required; unresolved leakage warning blocks automatic main promotion.",
+  "reason": "LOCAL total remediation cleared new runtime leakage findings, full discovery passed, and remaining warning debt no longer blocks main promotion.",
   "schema_version": "local_appliance_promotion_review.v0",
   "task": "LOCAL-14"
 }

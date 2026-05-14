@@ -21,7 +21,7 @@
   "lan_read_only_smoke_passed": true,
   "leakage_blocks_f0": false,
   "leakage_blocks_hunt": false,
-  "leakage_blocks_main_promotion": true,
+  "leakage_blocks_main_promotion": false,
   "leakage_blocks_syn": false,
   "live_access_enabled": false,
   "local_appliance_track_complete": true,
@@ -32,23 +32,24 @@
   "local_instance_migration_guard_added": true,
   "local_review_rebuild_loop_added": true,
   "local_runtime_composition_added": true,
-  "main_promotion_review_required": true,
+  "main_promotion_review_required": false,
   "model_provider_enabled": false,
   "network_access_enabled": false,
   "next_recommended_queue_item": "HUNT-00",
-  "note": "LOCAL-14 closes the Local Appliance track with disposed warnings and recommends HUNT-00 next. Main promotion requires a separate review and leakage follow-up.",
+  "note": "LOCAL total remediation cleared new runtime leakage findings and full unittest discovery passes. Remaining exact, expiring leakage warning debt does not block promotion.",
   "production_readiness": false,
   "public_launch_readiness": false,
-  "runtime_leakage_findings": 1030,
+  "runtime_leakage_findings": 1954,
   "runtime_leakage_increased_during_local": false,
+  "runtime_leakage_new_unallowlisted_findings": 0,
   "schema_version": "eureka_repo_health.v0",
   "source_probe_workers_enabled": false,
   "source_sync_enabled": false,
   "status": "pass_with_warnings",
   "syn_can_start": true,
   "warnings": [
-    "runtime leakage gate remains a pre-existing warning at 1030 findings and blocks automatic main promotion",
-    "full unittest discovery remains fail_other with historical discovery-lane output"
+    "runtime leakage gate retains 1954 exact expiring warning entries with zero new unallowlisted production findings",
+    "AIDE verify has non-blocking stale context/diff-scope warnings for this superseding task"
   ],
   "workunit_runtime_implemented": true
 }

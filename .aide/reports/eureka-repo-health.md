@@ -2,7 +2,7 @@
 
 ## Current Queue
 
-- Completed item: LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff.
+- Completed item: LOCAL-LEAKAGE-TOTAL-REMEDIATION-01 - Total leakage remediation and final green gate.
 - Current recommended item: HUNT-00 - Search Hunt track planning over Local Appliance.
 - Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
 - F0 status: resumable through the Local Appliance, but not recommended before HUNT/SYN unless explicitly chosen.
@@ -10,14 +10,14 @@
 
 ## Local Appliance State
 
-LOCAL-00 through LOCAL-14 now form the Local Appliance product kernel: explicit instance root, migration guard, runtime composition, localhost service, HTML workbench, hardened pages, WorkUnit queue, review/rebuild, deterministic workers, auto-test/search, LAN safety and smoke, clean-machine bootstrap, and closeout handoff.
+LOCAL-00 through LOCAL-14 are present and the total remediation sweep reran the LOCAL validators, local smokes, LAN smoke, clean-machine proof, architecture checks, generated-artifact gate, runtime leakage gate, and full unittest discovery.
 
 ## Boundaries
 
 - HUNT can start planning over the Local Appliance.
 - SYN can start planning over the Local Appliance.
 - F0 can resume only through the Local Appliance and is not recommended immediately.
-- Main promotion requires a separate LOCAL-TO-MAIN-PROMOTION-REVIEW task.
+- Main promotion is allowed only through the explicit fast-forward promotion procedure.
 - Source probes: not executed.
 - Extraction: not executed.
 - Model/provider calls: not performed.
@@ -29,4 +29,4 @@ LOCAL-00 through LOCAL-14 now form the Local Appliance product kernel: explicit 
 
 ## Warnings
 
-The runtime leakage gate remains a pre-existing warning at 1030 findings. LOCAL did not increase leakage. The warning does not block HUNT/SYN/F0 planning but blocks automatic main promotion until LOCAL-LEAKAGE-01 or an equivalent review resolves it.
+The runtime leakage gate has zero new unallowlisted production findings and 1954 exact, expiring warning entries. The remaining warning debt does not block HUNT/SYN/F0 or main promotion. AIDE verify still reports non-blocking stale context/diff-scope warnings for this superseding task.

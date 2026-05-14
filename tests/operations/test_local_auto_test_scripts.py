@@ -59,7 +59,8 @@ class LocalAutoTestScriptTests(unittest.TestCase):
                 stop_server(process)
 
     def test_validator_passes(self) -> None:
-        completed = run_cmd("scripts/validate_local_auto_test_harness.py", "--json", timeout=240)
+        completed = run_cmd("scripts/validate_local_auto_test_harness.py", "--json", timeout=480)
+        self.assertEqual(0, completed.returncode, completed.stderr or completed.stdout)
         payload = json.loads(completed.stdout)
         self.assertIn(payload["status"], {"pass", "pass_with_warnings"})
         self.assertTrue(payload["service_health_suite_passed"])

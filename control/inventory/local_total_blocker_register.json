@@ -1,0 +1,8 @@
+{
+  "blockers": [],
+  "hard_blockers_remaining": 0,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_total_blocker_register.v0",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01"
+}
