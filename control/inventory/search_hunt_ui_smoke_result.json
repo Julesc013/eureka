@@ -1,0 +1,12 @@
+{
+  "external_assets_found": false,
+  "forbidden_claims_found": false,
+  "hunt_detail_page_passed": true,
+  "hunt_json_routes_passed": true,
+  "hunt_list_page_passed": true,
+  "hunt_not_found_state_passed": true,
+  "mutation_controls_found": false,
+  "schema_version": "search_hunt_ui_smoke_result.v0",
+  "status": "pass",
+  "task": "HUNT-02"
+}

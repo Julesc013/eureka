@@ -1,0 +1,14 @@
+{
+  "ai_escalation_controls_enabled": false,
+  "create_hunt_ui_enabled": false,
+  "deployment_performed": false,
+  "hunt_detail_page_enabled": true,
+  "hunt_json_api_enabled": true,
+  "hunt_list_page_enabled": true,
+  "schema_version": "search_hunt_ui_inventory.v0",
+  "source_probe_controls_enabled": false,
+  "steering_controls_enabled": false,
+  "task": "HUNT-02",
+  "transition_controls_enabled": false,
+  "workunit_creation_enabled": false
+}

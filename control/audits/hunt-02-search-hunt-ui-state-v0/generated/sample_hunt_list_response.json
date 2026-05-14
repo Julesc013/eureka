@@ -1,0 +1,12 @@
+{
+  "hunt_count": 1,
+  "hunts": [
+    {
+      "id": "shs_sample",
+      "query": "sampleproject",
+      "state": "created"
+    }
+  ],
+  "schema_version": "search_hunt_ui_hunts_response.v0",
+  "status": "pass"
+}

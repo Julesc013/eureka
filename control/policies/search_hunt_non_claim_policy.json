@@ -1,0 +1,23 @@
+{
+  "forbidden_claims": {
+    "ai_verified_result": true,
+    "exhaustive_search_performed": true,
+    "hunt_absence_is_global_proof": true,
+    "hunt_candidate_is_verified": true,
+    "hunt_result_is_truth": true,
+    "malware_safe": true,
+    "production_ready": true,
+    "public_launch_ready": true,
+    "rights_cleared": true,
+    "source_safety_cleared": true
+  },
+  "required_wording_classes": [
+    "local_reviewed_index_first",
+    "local_current_index_absence",
+    "unchecked_layers_visible",
+    "deferred_actions_visible",
+    "limitations_visible",
+    "warnings_visible"
+  ],
+  "schema_version": "search_hunt_non_claim_policy.v0"
+}

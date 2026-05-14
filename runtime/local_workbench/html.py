@@ -42,6 +42,7 @@ def render_navigation() -> str:
         render_link("/status", "Status"),
         render_link("/search", "Search"),
         render_link("/absence?q=sampleproject", "Absence example"),
+        render_link("/hunts", "Search Hunts"),
         render_link("/review", "Review"),
         render_link("/rebuild", "Rebuild"),
         render_link("/api/v1/status", "JSON status"),

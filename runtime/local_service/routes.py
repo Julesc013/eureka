@@ -59,6 +59,19 @@ def route_request(
         return _absence_html_response(runtime, request_context)
     if path == "/api/v1/absence":
         return _absence_response(runtime, request_context)
+    if path == "/hunts":
+        if _wants_json(request_context):
+            return _hunt_list_response(runtime, request_context)
+        return _hunt_list_html_response(runtime, request_context)
+    if path == "/api/v1/hunts":
+        return _hunt_list_response(runtime, request_context)
+    if path.startswith("/hunt/"):
+        hunt_id = path.removeprefix("/hunt/")
+        if _wants_json(request_context):
+            return _hunt_detail_response(runtime, hunt_id)
+        return _hunt_detail_html_response(runtime, hunt_id)
+    if path.startswith("/api/v1/hunt/"):
+        return _hunt_detail_response(runtime, path.removeprefix("/api/v1/hunt/"))
     if path == "/review":
         if _wants_json(request_context):
             return _review_list_response(runtime, request_context)
@@ -257,6 +270,105 @@ def _absence_html_response(runtime: Any, request_context: LocalRequestContext) -
     return html_response(200, html, response.payload)
 
 
+def _hunt_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
+    sessions = [item.to_dict() for item in runtime.search_hunt.list_sessions(limit=limit)]
+    payload = {
+        "schema_version": "search_hunt_ui_hunts_response.v0",
+        "status": "pass",
+        "hunt_count": len(sessions),
+        "hunts": sessions,
+        "unavailable_actions": _search_hunt_unavailable_actions_payload(),
+        "read_only": True,
+        "hunt_creation_enabled": False,
+        "hunt_transition_enabled": False,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + [
+            "Search Hunt Sessions are local investigation state only",
+            "read-only UI does not add hunts or change hunt state",
+        ],
+    }
+    return json_response(200, payload)
+
+
+def _hunt_list_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    workbench = _workbench()
+    response = _hunt_list_response(runtime, request_context)
+    html = workbench.render_search_hunt_list_page(workbench.build_search_hunt_list_page_view(response.payload["hunts"], response.payload))
+    workbench.validate_local_workbench_page(html)
+    return html_response(200, html, response.payload)
+
+
+def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return json_response(
+            404,
+            {
+                "schema_version": "search_hunt_ui_hunt_response.v0",
+                "status": "not_found",
+                "hunt_id": hunt_id,
+                "hunt": None,
+                "warnings": [],
+                "limitations": list(DEFAULT_LIMITATIONS) + ["missing hunts are not created implicitly"],
+            },
+        )
+    transitions = [item.to_dict() for item in runtime.search_hunt.list_transitions(hunt_id, limit=100)]
+    summaries = [item.to_dict() for item in runtime.search_hunt.list_summaries(hunt_id, limit=100)]
+    payload = {
+        "schema_version": "search_hunt_ui_hunt_response.v0",
+        "status": "pass",
+        "hunt_id": hunt_id,
+        "hunt": session.to_dict(),
+        "transitions": transitions,
+        "summaries": summaries,
+        "unavailable_actions": _search_hunt_unavailable_actions_payload(),
+        "read_only": True,
+        "hunt_creation_enabled": False,
+        "hunt_transition_enabled": False,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "review_mutation_enabled": False,
+        "public_index_mutation_enabled": False,
+        "master_index_mutation_enabled": False,
+        "warnings": list(session.warnings),
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + list(session.limitations)
+        + [
+            "Search Hunt Sessions are local investigation state only",
+            "local absence is current-index absence only",
+        ],
+    }
+    return json_response(200, payload)
+
+
+def _hunt_detail_html_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    workbench = _workbench()
+    response = _hunt_detail_response(runtime, hunt_id)
+    if response.status_code == 404:
+        html = workbench.render_search_hunt_not_found_page(workbench.build_search_hunt_not_found_page_view(hunt_id))
+        workbench.validate_local_workbench_page(html)
+        return html_response(404, html, response.payload)
+    if response.status_code != 200:
+        return response
+    html = workbench.render_search_hunt_detail_page(
+        workbench.build_search_hunt_detail_page_view(
+            response.payload["hunt"],
+            response.payload["transitions"],
+            {"summaries": response.payload["summaries"], "warnings": response.payload["warnings"], "limitations": response.payload["limitations"]},
+        )
+    )
+    workbench.validate_local_workbench_page(html)
+    return html_response(response.status_code, html, response.payload)
+
+
 def _review_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     status = first_param(request_context.params, "status", "")
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
@@ -385,6 +497,56 @@ def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, An
         }
     )
     return payload
+
+
+def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
+    return [
+        {
+            "action": "pause/resume/steer",
+            "status": "deferred",
+            "reason": "Command controls are added in a later Search Hunt command phase.",
+        },
+        {
+            "action": "exhaustion report",
+            "status": "deferred",
+            "reason": "Exhaustion reports are not generated by this read-only UI.",
+        },
+        {
+            "action": "SearchNeed pipeline",
+            "status": "deferred",
+            "reason": "Need persistence is a later pipeline step.",
+        },
+        {
+            "action": "WorkUnit pipeline",
+            "status": "deferred",
+            "reason": "WorkUnit creation from hunts is not enabled.",
+        },
+        {
+            "action": "background runner",
+            "status": "deferred",
+            "reason": "Background hunt execution is not enabled.",
+        },
+        {
+            "action": "source probes",
+            "status": "disabled",
+            "reason": "Source-probe execution remains behind a future source gate.",
+        },
+        {
+            "action": "extraction",
+            "status": "deferred",
+            "reason": "Extraction remains outside this UI state layer.",
+        },
+        {
+            "action": "AI escalation",
+            "status": "disabled",
+            "reason": "Model/provider calls are disabled.",
+        },
+        {
+            "action": "sync",
+            "status": "disabled",
+            "reason": "Sync requires a future reviewed policy gate.",
+        },
+    ]
 
 
 def _workbench() -> Any:

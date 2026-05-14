@@ -1,0 +1,11 @@
+{
+  "hunt": {
+    "id": "shs_sample",
+    "query": "sampleproject",
+    "state": "created"
+  },
+  "schema_version": "search_hunt_ui_hunt_response.v0",
+  "status": "pass",
+  "summaries": [],
+  "transitions": []
+}

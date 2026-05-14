@@ -1,0 +1,21 @@
+{
+  "gaps": [
+    {
+      "deferred_to": "HUNT-03",
+      "gap": "pause, resume, cancel, and steer commands",
+      "status": "planned"
+    },
+    {
+      "deferred_to": "HUNT-06",
+      "gap": "WorkUnit creation from hunts",
+      "status": "disabled"
+    },
+    {
+      "deferred_to": "future source gate",
+      "gap": "source-probe execution",
+      "status": "disabled"
+    }
+  ],
+  "schema_version": "search_hunt_ui_gap_register.v0",
+  "task": "HUNT-02"
+}

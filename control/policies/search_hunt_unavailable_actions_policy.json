@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_hunt_unavailable_actions_policy.v0",
+  "unavailable_actions": {
+    "ai_escalation": "HUNT-11/K",
+    "background_runner": "HUNT-07",
+    "exhaustion_report": "HUNT-04",
+    "extraction": "F0+",
+    "pause_resume_steer": "HUNT-03",
+    "search_need_pipeline": "HUNT-05",
+    "source_probes": "future H/source gate",
+    "sync": "future policy gate",
+    "workunit_pipeline": "HUNT-06"
+  }
+}

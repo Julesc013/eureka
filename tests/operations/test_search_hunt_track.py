@@ -26,7 +26,7 @@ class SearchHuntTrackTests(unittest.TestCase):
         decision = load_json("control/inventory/search_hunt_next_task_decision.json")
         self.assertEqual("HUNT-01 \u2014 Search Hunt Session runtime", decision["recommended_next_task"])
         queue = (ROOT / ".aide/queue/index.yaml").read_text(encoding="utf-8")
-        self.assertRegex(queue, r"current_recommended_task: HUNT-0[12]\b")
+        self.assertRegex(queue, r"current_recommended_task: HUNT-(0[1-9]|1[0-2])\b")
 
     def test_local_appliance_and_workunit_dependencies_are_required(self) -> None:
         dependency = load_json("control/inventory/search_hunt_local_appliance_dependency.json")

@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import os
+import signal
 import subprocess
 import sys
 from pathlib import Path
@@ -264,7 +266,42 @@ def classify_command_results(
 
 
 def run_command(root: Path, command: Sequence[str], timeout: int) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(command, cwd=root, text=True, capture_output=True, check=False, timeout=timeout)
+    kwargs: dict[str, Any] = {}
+    if sys.platform == "win32":
+        kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
+    else:
+        kwargs["start_new_session"] = True
+    process = subprocess.Popen(
+        command,
+        cwd=root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        **kwargs,
+    )
+    try:
+        stdout, stderr = process.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        if sys.platform == "win32":
+            subprocess.run(
+                ["taskkill", "/F", "/T", "/PID", str(process.pid)],
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+        else:
+            try:
+                os.killpg(process.pid, signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+        try:
+            stdout, stderr = process.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            stdout, stderr = process.communicate()
+        timeout_note = f"command timed out after {timeout}s"
+        return subprocess.CompletedProcess(command, 124, stdout or "", ((stderr or "") + "\n" + timeout_note).strip())
+    return subprocess.CompletedProcess(command, process.returncode or 0, stdout or "", stderr or "")
 
 
 def load_json(path: Path, schema: str, errors: list[str]) -> dict[str, Any]:

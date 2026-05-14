@@ -1,0 +1,13 @@
+{
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "hunt_transition_controls_enabled": false,
+  "hunt_ui_available": true,
+  "model_provider_enabled": false,
+  "reason": "Search Hunt state is visible in the local workbench; command controls are next.",
+  "recommended_next_task": "HUNT-03 \u2014 Pause, resume, cancel, and steer commands",
+  "schema_version": "hunt_02_next_task_decision.v0",
+  "source_probe_execution_enabled": false,
+  "task": "HUNT-02",
+  "workunit_creation_enabled": false
+}

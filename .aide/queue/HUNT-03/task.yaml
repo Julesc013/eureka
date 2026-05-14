@@ -1,0 +1,17 @@
+id: HUNT-03
+title: Pause, resume, cancel, and steer commands
+status: queued
+purpose: Add explicit Search Hunt command controls after read-only UI visibility exists.
+allowed_scope_summary: Search Hunt command/state transitions, policy-gated local controls, tests, docs, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-02 completed
+  - use explicit local instance
+  - use runtime/search_hunt state machine
+  - no WorkUnit creation
+  - no source probes
+  - no AI/model/provider calls
+  - no extraction runtime
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-02

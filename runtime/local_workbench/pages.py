@@ -13,6 +13,12 @@ from .view_models import (
     RebuildPageView,
     ReviewItemPageView,
     ReviewQueuePageView,
+    SearchHuntDetailPageView,
+    SearchHuntLayerView,
+    SearchHuntListPageView,
+    SearchHuntNotFoundPageView,
+    SearchHuntTransitionView,
+    SearchHuntUnavailableActionView,
     SearchPageView,
     SearchResultCardView,
     SourcePageView,
@@ -45,6 +51,7 @@ def render_home_page(view: HomePageView) -> str:
             "<section aria-labelledby=\"links-heading\"><h2 id=\"links-heading\">Links</h2><ul>",
             f"<li>{render_link('/status', 'Status page')}</li>",
             f"<li>{render_link('/absence?q=sampleproject', 'Sample absence page')}</li>",
+            f"<li>{render_link('/hunts', 'Search Hunts')}</li>",
             f"<li>{render_link('/review', 'Review queue')}</li>",
             f"<li>{render_link('/rebuild', 'Reviewed-index rebuild')}</li>",
             f"<li>{render_link('/api/v1/status', 'JSON API status')}</li>",
@@ -345,6 +352,116 @@ def render_rebuild_page(view: RebuildPageView) -> str:
     return render_document("Reviewed-index rebuild - Eureka Local Appliance", body)
 
 
+def render_search_hunt_list_page(view: SearchHuntListPageView) -> str:
+    rows = tuple(
+        {
+            "hunt_id": render_link(item.detail_href, item.hunt_id),
+            "query": item.query,
+            "state": item.state,
+            "created_at": item.created_at,
+            "updated_at": item.updated_at,
+            "reviewed_result_count": item.reviewed_result_count,
+            "checked_layers": item.checked_layer_summary,
+            "warning_count": item.warning_count,
+            "limitation_count": item.limitation_count,
+        }
+        for item in view.hunts
+    )
+    body = "\n".join(
+        [
+            "<h1>Search Hunts</h1>",
+            render_notice("scope", "Search Hunt Sessions are local investigation state, not reviewed results."),
+            _key_values((("hunt_count", view.hunt_count), ("read_only", True), ("adds_hunts", False), ("state_changes_enabled", False))),
+            _render_html_table(
+                rows,
+                headers=(
+                    "hunt_id",
+                    "query",
+                    "state",
+                    "created_at",
+                    "updated_at",
+                    "reviewed_result_count",
+                    "checked_layers",
+                    "warning_count",
+                    "limitation_count",
+                ),
+            )
+            if rows
+            else render_notice("empty", "No Search Hunt Sessions are stored in this local instance."),
+            _search_hunt_unavailable_actions(view.unavailable_actions),
+            "<p>" + render_link("/search", "Search reviewed index") + " | " + render_link("/status", "Status") + "</p>",
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("Search Hunts - Eureka Local Appliance", body)
+
+
+def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
+    if not view.found:
+        return render_search_hunt_not_found_page(
+            SearchHuntNotFoundPageView(
+                hunt_id=view.hunt_id,
+                non_claim_banner=view.non_claim_banner,
+                warnings=view.warnings,
+                limitations=view.limitations,
+            )
+        )
+    body = "\n".join(
+        [
+            "<h1>Search Hunt Session</h1>",
+            render_notice("scope", "This hunt records local investigation state only; it is not accepted evidence."),
+            render_notice("scope", "Local absence is current-index absence only."),
+            _key_values(
+                (
+                    ("hunt_id", view.hunt_id),
+                    ("query", view.query),
+                    ("normalized_query", view.normalized_query),
+                    ("state", view.state),
+                    ("intent", view.intent),
+                    ("destination", view.destination),
+                    ("created_at", view.created_at),
+                    ("updated_at", view.updated_at),
+                    ("reviewed_result_count", view.reviewed_result_count),
+                    ("candidate_result_count", view.candidate_result_count),
+                    ("creates_workunits", False),
+                    ("source_probe_ran", False),
+                    ("model_provider_used", False),
+                )
+            ),
+            "<p>" + render_link(view.related_search_href, "Related local search") + " | " + render_link(view.related_absence_href, "Related local absence") + " | " + render_link("/hunts", "Back to hunts") + "</p>",
+            "<section aria-labelledby=\"hunt-search-summary-heading\"><h2 id=\"hunt-search-summary-heading\">Reviewed-index search summary</h2>",
+            render_table(view.reviewed_index_search_summary, headers=("field", "value")),
+            "</section>",
+            "<section aria-labelledby=\"hunt-absence-summary-heading\"><h2 id=\"hunt-absence-summary-heading\">Local absence summary</h2>",
+            render_table(view.local_absence_summary, headers=("field", "value")),
+            "</section>",
+            _search_hunt_layers("checked-layers-heading", "Checked layers", view.checked_layers),
+            _search_hunt_layers("unchecked-layers-heading", "Unchecked and deferred layers", view.unchecked_layers),
+            _search_hunt_transitions(view.transitions),
+            _search_hunt_unavailable_actions(view.unavailable_actions),
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("Search Hunt Session - Eureka Local Appliance", body)
+
+
+def render_search_hunt_not_found_page(view: SearchHuntNotFoundPageView) -> str:
+    body = "\n".join(
+        [
+            "<h1>Search Hunt not found</h1>",
+            _key_values((("hunt_id", view.hunt_id), ("created_implicitly", False))),
+            render_notice("empty", "The Search Hunt Session was not found in this local instance."),
+            render_notice("scope", "Missing hunt IDs are never created implicitly by the read-only UI."),
+            "<p>" + render_link("/hunts", "Back to Search Hunts") + " | " + render_link("/search", "Search reviewed index") + "</p>",
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("Search Hunt not found - Eureka Local Appliance", body)
+
+
 def _result_card(result: SearchResultCardView) -> str:
     return (
         "<article>"
@@ -384,6 +501,48 @@ def _unavailable_capabilities(capabilities: Sequence[CapabilityUnavailableView])
         [
             "<section aria-labelledby=\"unavailable-heading\"><h2 id=\"unavailable-heading\">Unavailable capabilities</h2>",
             render_table(rows, headers=("capability", "status", "reason")),
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_layers(section_id: str, title: str, layers: Sequence[SearchHuntLayerView]) -> str:
+    rows = tuple({"layer": item.layer_id, "status": item.status, "note": item.note} for item in layers)
+    return "\n".join(
+        [
+            f'<section aria-labelledby="{escape_html(section_id)}"><h2 id="{escape_html(section_id)}">{escape_html(title)}</h2>',
+            render_table(rows, headers=("layer", "status", "note")),
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_transitions(transitions: Sequence[SearchHuntTransitionView]) -> str:
+    rows = tuple(
+        {
+            "transition_id": item.transition_id,
+            "from_state": item.from_state,
+            "to_state": item.to_state,
+            "reason": item.reason,
+            "created_at": item.created_at,
+        }
+        for item in transitions
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="transition-history-heading"><h2 id="transition-history-heading">Transition history</h2>',
+            render_table(rows, headers=("transition_id", "from_state", "to_state", "reason", "created_at")) if rows else "<p>No transition history recorded.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_unavailable_actions(actions: Sequence[SearchHuntUnavailableActionView]) -> str:
+    rows = tuple({"action": item.action, "status": item.status, "reason": item.reason} for item in actions)
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-unavailable-actions-heading"><h2 id="hunt-unavailable-actions-heading">Unavailable next actions</h2>',
+            render_table(rows, headers=("action", "status", "reason")),
             "</section>",
         ]
     )

@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+import re
 from typing import Any, Mapping, Sequence, TextIO
 
 
@@ -528,12 +529,12 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     task = read_text(root / ".aide/queue/HUNT-01/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/HUNT-02/task.yaml", errors)
-    if "current_recommended_task: HUNT-02" not in queue:
-        errors.append("queue must point to HUNT-02")
+    if not re.search(r"current_recommended_task: HUNT-(0[2-9]|1[0-2])\b", queue):
+        errors.append("queue must point to HUNT-02 or a later HUNT task")
     if "id: HUNT-01" not in queue or "status: completed" not in queue:
         errors.append("queue must mark HUNT-01 completed")
-    if "id: HUNT-02" not in queue or "status: queued" not in queue:
-        errors.append("queue must include HUNT-02 queued")
+    if "id: HUNT-02" not in queue:
+        errors.append("queue must include HUNT-02")
     if "recommended_next: HUNT-02" not in task:
         errors.append("HUNT-01 task must recommend HUNT-02")
     if "Search Hunt UI state in Local Workbench" not in next_task:

@@ -1,6 +1,6 @@
 id: HUNT-02
 title: Search Hunt UI state in Local Workbench
-status: queued
+status: completed
 purpose: Expose Search Hunt Session state through the Local Workbench after durable sessions exist.
 allowed_scope_summary: Local Workbench hunt visibility, read-only views, focused smoke tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -15,3 +15,4 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-01
+recommended_next: HUNT-03

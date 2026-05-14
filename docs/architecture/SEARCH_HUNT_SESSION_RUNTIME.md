@@ -23,4 +23,4 @@ The state machine supports `created`, `running`, `paused`, `waiting_for_user`, `
 
 ## HUNT-02
 
-Workbench visibility is deliberately deferred to HUNT-02. HUNT-01 gives that UI a durable runtime surface to read from.
+Workbench visibility reads this store through the Local Appliance runtime. HUNT-02 adds list/detail pages and JSON routes only; it does not add creation, command, WorkUnit, source-probe, extraction, AI, review, or index mutation behavior.

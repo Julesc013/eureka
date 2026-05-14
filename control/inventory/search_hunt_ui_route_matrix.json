@@ -1,0 +1,46 @@
+{
+  "routes": [
+    {
+      "creates_hunt": false,
+      "creates_workunit": false,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "response_kind": "html",
+      "route": "/hunts",
+      "transitions_hunt": false
+    },
+    {
+      "creates_hunt": false,
+      "creates_workunit": false,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "response_kind": "html",
+      "route": "/hunt/<hunt_id>",
+      "transitions_hunt": false
+    },
+    {
+      "creates_hunt": false,
+      "creates_workunit": false,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "response_kind": "json",
+      "route": "/api/v1/hunts",
+      "transitions_hunt": false
+    },
+    {
+      "creates_hunt": false,
+      "creates_workunit": false,
+      "method": "GET",
+      "mutates_store": false,
+      "read_only": true,
+      "response_kind": "json",
+      "route": "/api/v1/hunt/<hunt_id>",
+      "transitions_hunt": false
+    }
+  ],
+  "schema_version": "search_hunt_ui_route_matrix.v0",
+  "task": "HUNT-02"
+}

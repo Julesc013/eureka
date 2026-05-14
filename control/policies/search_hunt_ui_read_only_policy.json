@@ -1,0 +1,12 @@
+{
+  "get_routes_only": true,
+  "hunt_creation_forbidden_current_task": true,
+  "hunt_state_mutation_forbidden_current_task": true,
+  "master_index_mutation_forbidden": true,
+  "model_provider_forbidden_current_task": true,
+  "post_routes_for_hunt_forbidden_current_task": true,
+  "public_index_mutation_forbidden": true,
+  "schema_version": "search_hunt_ui_read_only_policy.v0",
+  "source_probe_forbidden_current_task": true,
+  "workunit_creation_forbidden_current_task": true
+}
