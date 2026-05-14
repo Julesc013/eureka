@@ -35,7 +35,8 @@
     "architecture_boundaries": "pass",
     "runtime_architecture_leakage_audit": "fail_pre_existing_leakage",
     "runtime_architecture_leakage_validation": "fail_pre_existing_leakage",
-    "full_unittest_discovery": "fail_runtime_leakage_and_precommit_dirty_artifact_tests"
+    "public_search_index_drift": "repaired",
+    "full_unittest_discovery": "fail_runtime_leakage_gate"
   },
   "aide_checks": {
     "doctor": "pass",

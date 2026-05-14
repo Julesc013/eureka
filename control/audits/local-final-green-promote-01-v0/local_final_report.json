@@ -5,7 +5,7 @@
   "all_local_tasks_reviewed": true,
   "missing_local_outputs_repaired": 0,
   "missing_tests_run": 31,
-  "safe_repairs_applied": 13,
+  "safe_repairs_applied": 14,
   "hard_blockers_remaining": 1,
   "warnings_remaining": 1,
   "full_unittest_discovery_pass": false,

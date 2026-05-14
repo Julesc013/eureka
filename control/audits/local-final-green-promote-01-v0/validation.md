@@ -12,6 +12,7 @@ Commands run included:
 - generated artifact cleanliness
 - architecture boundary check
 - runtime leakage audit and validation
+- public search index rebuild and generated artifact drift verification
 - AIDE doctor/validate/test/selftest/verify/review-pack
 
 Full discovery and leakage gates failed, so main promotion was not attempted.

@@ -10,7 +10,7 @@
       "evidence": [
         "python scripts/audit_runtime_architecture_leakage.py --check --json returned 1",
         "python scripts/validate_runtime_architecture_leakage.py returned 1",
-        "full unittest discovery returned 1"
+        "full unittest discovery returned 1 after public search generated artifact drift was repaired"
       ],
       "runtime_leakage_increased_during_local": false,
       "blocks_main_promotion": true,
