@@ -14,6 +14,11 @@ import time
 from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
+try:
+    from local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
+    from scripts.local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -393,12 +398,12 @@ def validate_scripts_against_server(root: Path, errors: list[str]) -> dict[str, 
 
 def validate_queue_state(root: Path, errors: list[str]) -> None:
     index = (root / ".aide/queue/index.yaml").read_text(encoding="utf-8")
-    if f"current_recommended_task: {NEXT_TASK}" not in index:
+    if not queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to LOCAL-11 after LOCAL-10")
-    if "id: LOCAL-10" not in index or "status: completed" not in index:
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue index must include completed LOCAL-10 entry")
     next_path = root / ".aide/queue/LOCAL-11/task.yaml"
-    if not next_path.is_file():
+    if not next_path.is_file() or not queue_task_available(root, NEXT_TASK):
         errors.append("LOCAL-11 queue item is missing")
     f0 = json.loads((root / "control/inventory/f0_deferral_for_local_appliance.json").read_text(encoding="utf-8"))
     if f0.get("deferred_until") != "LOCAL-14":

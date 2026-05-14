@@ -1,0 +1,14 @@
+{
+  "schema_version": "local_final_missing_tests_report.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "missing_tests_run": 31,
+  "missing_validators_repaired": [
+    "LOCAL validators now accept completed LOCAL queue progress after LOCAL-14",
+    "IA readiness validator now accepts post-LOCAL/HUNT queue packets",
+    "workbench hardening test now reflects the implemented WorkUnit queue"
+  ],
+  "not_run": [],
+  "limitations": [
+    "Full discovery was run and failed before final commit because runtime leakage remains and cleanliness-style tests see in-progress uncommitted changes."
+  ]
+}

@@ -13,6 +13,11 @@ import threading
 from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
+try:
+    from local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
+    from scripts.local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -582,11 +587,11 @@ def validate_queue_state(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     task = read_text(root / ".aide/queue/LOCAL-08/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/LOCAL-09/task.yaml", errors)
-    if "current_recommended_task: LOCAL-09" not in queue:
+    if not queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to LOCAL-09")
-    if "id: LOCAL-08" not in queue or "status: completed" not in queue:
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue index must mark LOCAL-08 completed")
-    if "id: LOCAL-09" not in queue or "status: queued" not in queue:
+    if not queue_task_available(root, NEXT_TASK):
         errors.append("queue index must include queued LOCAL-09")
     if "deferred_until: LOCAL-14" not in queue:
         errors.append("queue index must keep F0 deferred until LOCAL-14")

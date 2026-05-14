@@ -11,6 +11,11 @@ import tempfile
 from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
+try:
+    from local_queue_progress import latest_packet_current_or_advanced, queue_current_or_advanced, queue_task_available, queue_task_completed
+except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
+    from scripts.local_queue_progress import latest_packet_current_or_advanced, queue_current_or_advanced, queue_task_available, queue_task_completed
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK_ID = "LOCAL-02"
@@ -236,15 +241,15 @@ def validate_audit_pack(root: Path, errors: list[str]) -> None:
 def validate_queue_and_context(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     task_packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
-    if "current_recommended_task: LOCAL-03" not in queue:
+    if not queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to LOCAL-03")
-    if "id: LOCAL-02" not in queue or "status: completed" not in queue:
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue index must mark LOCAL-02 completed")
-    if "id: LOCAL-03" not in queue:
+    if not queue_task_available(root, NEXT_TASK):
         errors.append("queue index must include LOCAL-03")
     if "deferred_until: LOCAL-14" not in queue:
         errors.append("queue index must keep F0 deferred until LOCAL-14")
-    if "LOCAL-03" not in task_packet:
+    if not latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("latest task packet must point to LOCAL-03")
 
 

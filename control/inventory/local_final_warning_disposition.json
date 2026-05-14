@@ -1,0 +1,19 @@
+{
+  "schema_version": "local_final_warning_disposition.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "warnings_remaining": 1,
+  "warnings": [
+    {
+      "id": "LOCAL-FINAL-WARN-001",
+      "title": "External second-device LAN smoke not performed in automated VS Code run",
+      "classification": "deferred_with_expiry",
+      "status": "disposed",
+      "reason": "Same-machine LAN-bind smoke passed; no cross-device proof is claimed.",
+      "blocks_hunt": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "followup": "Run external-client LAN checklist only when an operator has a second LAN client available."
+    }
+  ]
+}

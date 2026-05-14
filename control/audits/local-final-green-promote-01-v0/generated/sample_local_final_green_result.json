@@ -1,0 +1,8 @@
+{
+  "schema_version": "local_final_green_result.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "status": "blocked",
+  "hard_blockers_remaining": 1,
+  "main_promoted": false,
+  "recommended_next_task": "LOCAL-LEAKAGE-01 \u2014 Reconcile runtime leakage gate after LOCAL track"
+}

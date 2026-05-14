@@ -2,75 +2,130 @@
 
 ## Review Objective
 
-Review LOCAL-14 closeout evidence and decide whether the Local Appliance track
-is ready to hand off to HUNT-00 with disposed warnings.
+Review the current AIDE queue phase from compact evidence only and decide whether it is ready to pass its review gate.
 
 ## Decision Requested
 
-Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or
-`BLOCKED`.
-
-## Context Packet Reference
-
-- `.aide/context/latest-task-packet.md`
+Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`.
 
 ## Task Packet Reference
 
-- `.aide/queue/LOCAL-14/task.yaml`
+- `.aide/context/latest-task-packet.md` (2765 chars, 692 approximate tokens)
+
+## Context Packet Reference
+
+- `.aide/context/latest-context-packet.md` (1828 chars, 457 approximate tokens)
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
 
 ## Verification Report Reference
 
-- `control/audits/local-14-local-appliance-closeout-v0/validation.md`
-- `control/inventory/local_appliance_closeout_result.json`
-- `control/inventory/local_14_leakage_baseline.json`
+- `.aide/verification/latest-verification-report.md`
+- verifier_result: WARN
+- report_chars: 4572
+- report_approx_tokens: 1143
 
 ## Evidence Packet References
 
+- `.aide/queue/README.template.md`
 - `.aide/queue/index.yaml`
-- `control/audits/local-14-local-appliance-closeout-v0/`
-- `control/inventory/local_appliance_capability_matrix.json`
-- `control/inventory/local_appliance_warning_disposition.json`
-- `control/inventory/local_appliance_future_track_gate.json`
-- `docs/architecture/LOCAL_APPLIANCE_PRODUCT_KERNEL.md`
 
 ## Changed Files Summary
 
-LOCAL-14 changes are scoped to closeout scripts, handoff scripts, focused
-tests, inventories, docs, audit evidence, and AIDE queue/context files. No
-runtime, contract, surface, site, native, crate, or example files are modified.
+- unknown: `scripts/local_queue_progress.py` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_clean_machine_bootstrap.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_ia_readiness_polish.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_appliance_track.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_auto_test_harness.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_instance_bootstrap.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_instance_migration_guard.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_lan_safety_gate.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_lan_smoke.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_review_rebuild.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_local_worker_runner.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_workunit_queue.py` (M; does not match active task allowed paths)
+- unknown: `tests/runtime/test_local_workbench_page_hardening.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
-Primary validators:
-
-- `python scripts/validate_local_appliance_closeout.py`
-- focused LOCAL-14 operation tests
-- existing LOCAL validators rerun and classified by the closeout validator
-
-Known warnings:
-
-- Runtime leakage gate remains at 1030 pre-existing findings and LOCAL-14 does not increase it.
-- Full unittest discovery remains `fail_other` with historical discovery-lane output.
-- Older LOCAL validators assert historical queue pointers and warn after queue handoff to HUNT-00.
-
-## Risk Summary
-
-- HUNT and SYN can start planning over the Local Appliance.
-- F0 can resume only through the Local Appliance and is not recommended immediately.
-- Main promotion requires a separate promotion review.
-- Runtime leakage blocks automatic main promotion until LOCAL-LEAKAGE-01 or equivalent review resolves it.
-
-## Non-Goals / Scope Guard
-
-- Do not treat LOCAL closeout as deployment, production readiness, public launch readiness, or public hosting.
-- Do not approve source probes, extraction, HUNT runtime, SYN runtime, or F0 implementation in LOCAL-14.
+- validation evidence not found
 
 ## Token Summary
 
-- packet_type: compact_review_packet
+- packet_path: `.aide/context/latest-review-packet.md`
+- method: chars / 4, rounded up
+- chars: 5285
+- approx_tokens: 1322
 - budget_status: PASS
+- max_token_warning: 2400
+- warnings:
+- none
+- formal ledger: `.aide/reports/token-ledger.jsonl`
+
+## Outcome Controller Summary
+
+- outcome_report: `.aide/controller/latest-outcome-report.md`
+- outcome_result: WARN
+- recommendations: `.aide/controller/latest-recommendations.md` (missing)
+- applies_automatically: false
+
+## Route Decision Summary
+
+- route_decision: `.aide/routing/latest-route-decision.json`
+- route_class: frontier
+- task_class: unknown
+- hard_floor_applied: none
+- quality_gate_status: WARN
+- advisory_only: true
+
+## Cache / Local State Summary
+
+- cache_keys: `.aide/cache/latest-cache-keys.json`
+- local_state_ignored: true
+- tracked_local_state_paths: 0
+- raw_prompt_storage: false
+- raw_response_storage: false
+- cache_key_count: 7
+
+## Gateway Skeleton Summary
+
+- gateway_status: `.aide/gateway/latest-gateway-status.json` (missing; run gateway status)
+- local_skeleton: true
+- provider_or_model_calls: none
+
+## Provider Adapter Summary
+
+- provider_status: `.aide/providers/latest-provider-status.json` (missing; run provider status)
+- offline_metadata_only: true
+- live_provider_calls: false
+
+## Risk Summary
+
+- This is the first real target-repo import; target adaptation may expose pack assumptions that were invisible inside AIDE.
+- Eureka-specific golden tasks now exist and pass, but they prove deterministic governance readiness rather than arbitrary product implementation quality.
+- No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
+- Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
+- Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
+- Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
+- Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
+- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.
+
+## Non-Goals / Scope Guard
+
+- Gateway
+- provider calls
+- model routing
+- Runtime/Service/Commander/UI/Mobile
+- MCP/A2A
+- automatic model calls or repair
 
 ## Reviewer Instructions
 
-- Review only repo-local evidence.
-- Confirm every LOCAL capability is represented, warnings are disposed, hard blockers are zero, and no public/deployment claims were made.
+- Review only this packet and the referenced evidence when needed.
+- Do not request full chat history unless the packet is insufficient to judge correctness.
+- Do not re-summarize the whole project.
+- Do not reward scope creep.
+- Do not approve missing validation as a pass.
+- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
+- Decision policy: `.aide/verification/review-decision-policy.yaml`.

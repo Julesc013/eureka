@@ -1,0 +1,23 @@
+{
+  "schema_version": "local_final_blocker_register.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "hard_blockers_remaining": 1,
+  "blockers": [
+    {
+      "id": "LOCAL-FINAL-BLOCKER-001",
+      "title": "Runtime architecture leakage gate blocks main promotion",
+      "status": "open",
+      "evidence": [
+        "python scripts/audit_runtime_architecture_leakage.py --check --json returned 1",
+        "python scripts/validate_runtime_architecture_leakage.py returned 1",
+        "full unittest discovery returned 1"
+      ],
+      "runtime_leakage_increased_during_local": false,
+      "blocks_main_promotion": true,
+      "blocks_hunt": true,
+      "blocks_syn": true,
+      "blocks_f0": true,
+      "recommended_child_task": "LOCAL-LEAKAGE-01 \u2014 Reconcile runtime leakage gate after LOCAL track"
+    }
+  ]
+}

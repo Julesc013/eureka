@@ -1,0 +1,48 @@
+{
+  "schema_version": "local_final_validation_matrix.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "local_validators": {
+    "validate_local_appliance_track.py": "pass_with_warning",
+    "validate_local_instance_bootstrap.py": "pass_with_warning",
+    "validate_local_instance_migration_guard.py": "pass_with_warning",
+    "validate_local_runtime_composition.py": "pass_with_warning",
+    "validate_local_http_service.py": "pass_with_warning",
+    "validate_local_html_workbench.py": "pass_with_warning",
+    "validate_local_workbench_page_hardening.py": "pass_with_warning",
+    "validate_workunit_queue.py": "pass_with_warning",
+    "validate_local_review_rebuild.py": "pass_with_warning",
+    "validate_local_worker_runner.py": "pass_with_warning",
+    "validate_local_auto_test_harness.py": "pass_with_warning",
+    "validate_local_lan_safety_gate.py": "pass_with_warning",
+    "validate_local_lan_smoke.py": "pass_with_warning",
+    "validate_clean_machine_bootstrap.py": "pass_with_warning",
+    "validate_local_appliance_closeout.py": "pass_with_warning"
+  },
+  "smoke": {
+    "instance_init": "pass",
+    "instance_validate": "pass",
+    "runtime_status": "pass",
+    "local_service_smoke": "pass",
+    "local_workbench_smoke": "pass",
+    "auto_test": "pass",
+    "auto_search": "pass",
+    "same_machine_lan_smoke": "pass_with_warning",
+    "clean_machine_bootstrap": "pass_with_warning"
+  },
+  "global_checks": {
+    "git_diff_check": "pass",
+    "generated_artifact_cleanliness": "pass",
+    "architecture_boundaries": "pass",
+    "runtime_architecture_leakage_audit": "fail_pre_existing_leakage",
+    "runtime_architecture_leakage_validation": "fail_pre_existing_leakage",
+    "full_unittest_discovery": "fail_runtime_leakage_and_precommit_dirty_artifact_tests"
+  },
+  "aide_checks": {
+    "doctor": "pass",
+    "validate": "pass_with_warnings",
+    "test": "pass",
+    "selftest": "pass",
+    "verify": "warn",
+    "review_pack": "pass"
+  }
+}

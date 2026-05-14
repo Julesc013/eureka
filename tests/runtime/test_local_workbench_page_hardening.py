@@ -163,7 +163,7 @@ class LocalWorkbenchPageHardeningTests(unittest.TestCase):
         html = render_home_page(build_home_page_view(rich_status()))
         self.assert_hardened_page(html)
         self.assertIn("Unavailable capabilities", html)
-        self.assertIn("Operator-gated queue is not implemented yet", html)
+        self.assertIn("Durable queue records exist; execution remains disabled", html)
         self.assertIn("Only localhost is enabled", html)
 
 
