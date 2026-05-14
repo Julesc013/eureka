@@ -86,6 +86,8 @@ def build_parser() -> argparse.ArgumentParser:
     show.add_argument("--id", required=True)
     show.add_argument("--with-transitions", action="store_true")
     show.add_argument("--with-summaries", action="store_true")
+    show.add_argument("--with-commands", action="store_true")
+    show.add_argument("--with-steering", action="store_true")
     add_output_options(show)
 
     transition = subparsers.add_parser("transition", help="Record a Search Hunt state transition.")
@@ -131,6 +133,10 @@ def dispatch(runtime: Any, args: argparse.Namespace) -> dict[str, Any]:
             payload["transitions"] = [item.to_dict() for item in store.list_transitions(args.id)]
         if args.with_summaries:
             payload["summaries"] = [item.to_dict() for item in store.list_summaries(args.id)]
+        if args.with_commands:
+            payload["commands"] = [item.to_dict() for item in store.list_commands(args.id)]
+        if args.with_steering:
+            payload["steering_preferences"] = [item.to_dict() for item in store.list_steering_preferences(args.id, active_only=False)]
         return ok_result("search_hunt_show", payload)
     if args.command == "transition":
         session = store.transition_session(args.id, args.state, args.reason)

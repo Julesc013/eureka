@@ -14,3 +14,6 @@ The UI shows persisted Search Hunt Sessions from the explicit local instance. It
 
 A Search Hunt Session is investigation state only. Reviewed local index results and local/current-index absence are displayed separately, and unchecked layers remain visible as deferred work.
 
+## HUNT-03 Controls
+
+When the local service is opened with operator-capable localhost state, the hunt detail page also shows token-gated state controls, steering preference forms, command history, and active/inactive steering preferences. These controls submit only to localhost command routes and remain unavailable to LAN clients.

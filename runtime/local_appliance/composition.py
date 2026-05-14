@@ -183,6 +183,25 @@ def _store_class(store_id: str) -> Any:
 
 
 def _is_mutation_name(name: str) -> bool:
-    mutation_prefixes = ("write", "append", "record", "set", "enqueue", "link", "create", "transition", "attach", "pause", "resume", "cancel", "block", "complete", "fail")
+    mutation_prefixes = (
+        "write",
+        "append",
+        "record",
+        "set",
+        "enqueue",
+        "link",
+        "create",
+        "transition",
+        "attach",
+        "apply",
+        "add",
+        "remove",
+        "pause",
+        "resume",
+        "cancel",
+        "block",
+        "complete",
+        "fail",
+    )
     mutation_names = {"transaction", "connection", "init"}
     return name in mutation_names or any(name.startswith(prefix) for prefix in mutation_prefixes)

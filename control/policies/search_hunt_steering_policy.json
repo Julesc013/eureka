@@ -1,0 +1,21 @@
+{
+  "schema_version": "search_hunt_steering_policy.v0",
+  "allowed_steering_command_types": [
+    "include_source_family",
+    "exclude_source_family",
+    "prefer_official_sources",
+    "allow_community_sources",
+    "metadata_only",
+    "allow_extraction_future",
+    "disallow_extraction",
+    "allow_ai_escalation_future",
+    "disallow_ai_escalation",
+    "add_note",
+    "set_priority"
+  ],
+  "steering_preferences_do_not_execute_work": true,
+  "steering_preferences_do_not_approve_sources": true,
+  "steering_preferences_do_not_accept_truth": true,
+  "steering_preferences_do_not_mutate_index": true,
+  "steering_preferences_feed_future_HUNT_06_WORKUNITS": true
+}

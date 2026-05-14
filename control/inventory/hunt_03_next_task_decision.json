@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_03_next_task_decision.v0",
+  "task": "HUNT-03",
+  "recommended_next_task": "HUNT-04 \u2014 Hunt exhaustion report",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "hunt_commands_available": true,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "Pause/resume/cancel/steer commands exist; exhaustion reports are next."
+}

@@ -1,0 +1,17 @@
+id: HUNT-04
+title: Hunt exhaustion report
+status: queued
+purpose: Add structured Search Hunt exhaustion reports after pause/resume/cancel/steer controls exist.
+allowed_scope_summary: Search Hunt exhaustion report records, local visibility, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-03 completed
+  - use explicit local instance
+  - use runtime/search_hunt state machine and command history
+  - no WorkUnit creation
+  - no source probes
+  - no AI/model/provider calls
+  - no extraction runtime
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-03

@@ -1,0 +1,32 @@
+{
+  "schema_version": "search_hunt_command_history_response.v0",
+  "status": "pass",
+  "hunt_id": "sh_sample",
+  "command_count": 2,
+  "commands": [
+    {
+      "command_id": "shc_pause",
+      "hunt_id": "sh_sample",
+      "command_type": "pause",
+      "previous_state": "running",
+      "resulting_state": "paused",
+      "operator_label": "local_operator",
+      "reason": "sample pause",
+      "policy_decision": "allowed_local_operator_command",
+      "side_effects": {},
+      "created_at": "2026-05-15T00:00:00Z"
+    },
+    {
+      "command_id": "shc_resume",
+      "hunt_id": "sh_sample",
+      "command_type": "resume",
+      "previous_state": "paused",
+      "resulting_state": "running",
+      "operator_label": "local_operator",
+      "reason": "sample resume",
+      "policy_decision": "allowed_local_operator_command",
+      "side_effects": {},
+      "created_at": "2026-05-15T00:01:00Z"
+    }
+  ]
+}

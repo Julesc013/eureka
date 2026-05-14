@@ -2,15 +2,15 @@
 
 ## PHASE
 
-HUNT-03 - Pause, resume, cancel, and steer commands
+HUNT-04 - Hunt exhaustion report
 
 ## GOAL
 
-Add explicit Search Hunt command/state controls after HUNT-02 made Search Hunt Sessions visible in the Local Workbench.
+Add structured Search Hunt exhaustion reports after HUNT-03 made local command and steering controls available.
 
 ## WHY
 
-Search Hunt Sessions are now durable and inspectable. The next step is controlled local state transition behavior without creating WorkUnits, running source probes, or treating hunt state as evidence.
+Search Hunt Sessions can now persist state, show state in the workbench, and accept operator-gated pause/resume/cancel/steer commands. The next step is a durable report that explains what was checked, what remained unchecked, why the hunt is exhausted or blocked, and what future work is still deferred.
 
 ## CONTEXT_REFS
 
@@ -19,22 +19,22 @@ Search Hunt Sessions are now durable and inspectable. The next step is controlle
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/queue/index.yaml`
-- `.aide/queue/HUNT-03/task.yaml`
+- `.aide/queue/HUNT-04/task.yaml`
 - `runtime/search_hunt/`
 - `runtime/local_workbench/`
 - `runtime/local_service/`
 - `scripts/eureka_search_hunt.py`
-- `scripts/eureka_search_hunt_ui_smoke.py`
-- `scripts/validate_search_hunt_ui.py`
-- `control/inventory/search_hunt_ui_result.json`
-- `control/inventory/hunt_02_next_task_decision.json`
-- `control/audits/hunt-02-search-hunt-ui-state-v0/`
+- `scripts/eureka_search_hunt_command.py`
+- `scripts/validate_search_hunt_commands.py`
+- `control/inventory/search_hunt_command_result.json`
+- `control/inventory/hunt_03_next_task_decision.json`
+- `control/audits/hunt-03-search-hunt-commands-v0/`
 
 ## ALLOWED_PATHS
 
-- HUNT-03 paths must be taken from a reviewed HUNT-03 task prompt.
-- Search Hunt command/state changes may use `runtime/search_hunt/` only within the reviewed task scope.
-- Local Workbench/service controls may be edited only if the reviewed task explicitly authorizes them.
+- HUNT-04 paths must be taken from a future reviewed HUNT-04 task prompt.
+- Search Hunt exhaustion report changes may use `runtime/search_hunt/` only within the reviewed task scope.
+- Local Workbench/service report visibility may be edited only if the reviewed task explicitly authorizes them.
 - Control, docs, scripts, tests, queue metadata, and audit evidence may be used only within the reviewed task scope.
 
 ## FORBIDDEN_PATHS
@@ -55,15 +55,15 @@ Search Hunt Sessions are now durable and inspectable. The next step is controlle
 
 ## IMPLEMENTATION
 
-- Read HUNT-02 evidence and the HUNT-03 task file first.
+- Read HUNT-03 evidence and the HUNT-04 task file first.
 - Preserve the Local Appliance explicit instance and Search Hunt store boundaries.
-- Implement only reviewed command/state transition behavior.
+- Implement only reviewed exhaustion-report behavior.
 - Keep hunts non-truth and do not mutate review queues, public indexes, master indexes, or generated site outputs.
 
 ## VALIDATION
 
-- `python scripts/validate_search_hunt_ui.py`
-- HUNT-03 focused tests when implemented
+- `python scripts/validate_search_hunt_commands.py`
+- HUNT-04 focused tests when implemented
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
 - `python scripts/check_architecture_boundaries.py`
 - `python -m unittest discover -s tests -t .`
@@ -77,9 +77,9 @@ Search Hunt Sessions are now durable and inspectable. The next step is controlle
 
 ## EVIDENCE
 
-- HUNT-02 audit pack: `control/audits/hunt-02-search-hunt-ui-state-v0/`
-- HUNT-02 UI policies under `control/policies/search_hunt_*_policy.json`
-- HUNT-02 UI inventories under `control/inventory/search_hunt_ui_*`
+- HUNT-03 audit pack: `control/audits/hunt-03-search-hunt-commands-v0/`
+- HUNT-03 command policies under `control/policies/search_hunt_*command*_policy.json`
+- HUNT-03 command inventories under `control/inventory/search_hunt_command_*`
 - Queue state in `.aide/queue/index.yaml`
 
 ## NON_GOALS
@@ -97,10 +97,10 @@ Search Hunt Sessions are now durable and inspectable. The next step is controlle
 
 ## ACCEPTANCE
 
-- HUNT-03 remains bounded to explicit command/state controls.
-- Existing HUNT-02 read-only UI and APIs continue to pass.
+- HUNT-04 remains bounded to explicit exhaustion-report behavior.
+- Existing HUNT-03 command controls continue to pass.
 - No WorkUnits, source probes, model/provider calls, review/index mutation, deployment, or production/public launch claims are introduced.
-- Queue and evidence clearly identify the next task after HUNT-03.
+- Queue and evidence clearly identify the next task after HUNT-04.
 
 ## OUTPUT_SCHEMA
 
@@ -109,13 +109,12 @@ Return a compact final report with:
 - `STATUS`
 - `SUMMARY`
 - `COMMITS`
-- `SEARCH_HUNT_COMMANDS`
+- `SEARCH_HUNT_EXHAUSTION`
 - `BOUNDARIES`
 - `VALIDATION`
 - `NEXT_TASK`
 
 ## TOKEN_ESTIMATE
 
-- latest_task_packet_chars: approximately 4300
-- latest_task_packet_tokens: approximately 1000
-- budget_status: within compact task packet budget
+- latest_task_packet_chars: approximately 4100
+- latest_task_packet_tokens: approximately 1025

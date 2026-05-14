@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+import re
 from typing import Any, Mapping, Sequence, TextIO
 
 
@@ -366,18 +367,18 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     task = read_text(root / ".aide/queue/HUNT-02/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/HUNT-03/task.yaml", errors)
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
-    if "current_recommended_task: HUNT-03" not in queue:
-        errors.append("queue index must point to HUNT-03")
+    if not re.search(r"current_recommended_task: HUNT-(0[3-9]|1[0-2])\b", queue):
+        errors.append("queue index must point to HUNT-03 or a later HUNT task")
     if "id: HUNT-02" not in queue or "status: completed" not in queue:
         errors.append("queue index must mark HUNT-02 completed")
-    if "id: HUNT-03" not in queue or "status: queued" not in queue:
-        errors.append("queue index must include queued HUNT-03")
+    if "id: HUNT-03" not in queue:
+        errors.append("queue index must include HUNT-03")
     if "recommended_next: HUNT-03" not in task:
         errors.append("HUNT-02 task must recommend HUNT-03")
     if "Pause, resume, cancel, and steer commands" not in next_task:
         errors.append("HUNT-03 task title mismatch")
-    if "HUNT-03" not in packet:
-        errors.append("latest task packet must point to HUNT-03")
+    if not re.search(r"HUNT-(0[3-9]|1[0-2])\b", packet):
+        errors.append("latest task packet must point to HUNT-03 or a later HUNT task")
     if "current_recommended_task: F0-00" in queue or "current_recommended_task: SYN-00" in queue:
         errors.append("F0/SYN must not be current")
 

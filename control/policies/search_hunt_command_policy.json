@@ -1,0 +1,17 @@
+{
+  "schema_version": "search_hunt_command_policy.v0",
+  "commands_enabled": true,
+  "command_history_required": true,
+  "operator_token_required_for_mutations": true,
+  "localhost_only_mutations": true,
+  "lan_mutations_enabled": false,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -158,7 +158,17 @@ def fetch_html(
     body = str(result.get("body", ""))
     markers = expected_markers or HTML_MARKERS.get(path, ())
     lowered = body.lower()
-    mutation = any(item in lowered for item in ("method=\"post\"", "formmethod=\"post\"", "create hunt", "transition hunt", "create workunit"))
+    post_form = any(item in lowered for item in ("method=\"post\"", "formmethod=\"post\""))
+    safe_operator_controls = (
+        post_form
+        and "operator state controls" in lowered
+        and "operator token" in lowered
+        and "lan clients cannot use command routes" in lowered
+        and "workunit_creation_enabled" in lowered
+        and "source_probe_execution_enabled" in lowered
+        and "model_provider_enabled" in lowered
+    )
+    mutation = any(item in lowered for item in ("create hunt", "transition hunt", "create workunit")) or (post_form and not safe_operator_controls)
     external = any(item in lowered for item in ("src=\"http://", "src=\"https://", "href=\"http://", "href=\"https://"))
     forbidden_claim = any(item in lowered for item in FORBIDDEN_HTML if item not in {"<script", "javascript:", "method=\"post\"", "formmethod=\"post\"", "src=\"http://", "src=\"https://", "href=\"http://", "href=\"https://"})
     result.update(

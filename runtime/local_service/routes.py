@@ -14,7 +14,7 @@ def route_request(
 ) -> LocalServiceResponse:
     method = request_context.method
     path = request_context.path
-    if not _network().is_route_allowed_for_scope(method, path, request_context.client_scope):
+    if not _route_allowed_for_scope(method, path, request_context.client_scope):
         return error_response(
             403,
             "lan_route_forbidden",
@@ -65,6 +65,21 @@ def route_request(
         return _hunt_list_html_response(runtime, request_context)
     if path == "/api/v1/hunts":
         return _hunt_list_response(runtime, request_context)
+    parsed_hunt_route = _parse_hunt_route(path)
+    if parsed_hunt_route and parsed_hunt_route[1] == "commands":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_commands_response(runtime, hunt_id)
+        if _wants_json(request_context):
+            return _hunt_commands_response(runtime, hunt_id)
+        return _hunt_commands_html_response(runtime, hunt_id)
+    if parsed_hunt_route and parsed_hunt_route[1] == "steering":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_steering_response(runtime, hunt_id)
+        if _wants_json(request_context):
+            return _hunt_steering_response(runtime, hunt_id)
+        return _hunt_steering_html_response(runtime, hunt_id)
     if path.startswith("/hunt/"):
         hunt_id = path.removeprefix("/hunt/")
         if _wants_json(request_context):
@@ -321,6 +336,8 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         )
     transitions = [item.to_dict() for item in runtime.search_hunt.list_transitions(hunt_id, limit=100)]
     summaries = [item.to_dict() for item in runtime.search_hunt.list_summaries(hunt_id, limit=100)]
+    commands = [item.to_dict() for item in runtime.search_hunt.list_commands(hunt_id, limit=100)]
+    steering = [item.to_dict() for item in runtime.search_hunt.list_steering_preferences(hunt_id, active_only=False)]
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
         "status": "pass",
@@ -328,10 +345,17 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "hunt": session.to_dict(),
         "transitions": transitions,
         "summaries": summaries,
+        "commands": commands,
+        "steering_preferences": steering,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
         "hunt_creation_enabled": False,
-        "hunt_transition_enabled": False,
+        "hunt_transition_enabled": True,
+        "command_controls_enabled": not bool(getattr(runtime, "read_only", True)),
+        "steering_controls_enabled": not bool(getattr(runtime, "read_only", True)),
+        "operator_token_required_for_mutations": True,
+        "localhost_only_mutations": True,
+        "lan_command_mutations_enabled": False,
         "workunit_creation_enabled": False,
         "source_probe_execution_enabled": False,
         "model_provider_enabled": False,
@@ -362,11 +386,65 @@ def _hunt_detail_html_response(runtime: Any, hunt_id: str) -> LocalServiceRespon
         workbench.build_search_hunt_detail_page_view(
             response.payload["hunt"],
             response.payload["transitions"],
-            {"summaries": response.payload["summaries"], "warnings": response.payload["warnings"], "limitations": response.payload["limitations"]},
+            response.payload,
         )
     )
-    workbench.validate_local_workbench_page(html)
+    workbench.validate_local_workbench_page(html, allow_operator_mutation_forms=True)
     return html_response(response.status_code, html, response.payload)
+
+
+def _hunt_commands_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    commands = [item.to_dict() for item in runtime.search_hunt.list_commands(hunt_id, limit=100)]
+    payload = {
+        "schema_version": "search_hunt_command_history_response.v0",
+        "status": "pass",
+        "hunt_id": hunt_id,
+        "command_count": len(commands),
+        "commands": commands,
+        "read_only": True,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["command history is local operator state only"],
+    }
+    return json_response(200, payload)
+
+
+def _hunt_commands_html_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    return _hunt_detail_html_response(runtime, hunt_id)
+
+
+def _hunt_steering_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    preferences = [item.to_dict() for item in runtime.search_hunt.list_steering_preferences(hunt_id, active_only=False)]
+    payload = {
+        "schema_version": "search_hunt_steering_response.v0",
+        "status": "pass",
+        "hunt_id": hunt_id,
+        "steering_count": len(preferences),
+        "steering_preferences": preferences,
+        "read_only": True,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["steering preferences record operator intent only"],
+    }
+    return json_response(200, payload)
+
+
+def _hunt_steering_html_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    return _hunt_detail_html_response(runtime, hunt_id)
 
 
 def _review_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
@@ -449,12 +527,40 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
     except _operator_auth_error() as exc:
         return error_response(401, "operator_token_required", str(exc))
     path = request_context.path
+    hunt_mutation = _parse_hunt_mutation_path(path)
+    if hunt_mutation:
+        return _apply_hunt_command_response(runtime, request_context, hunt_mutation[0], hunt_mutation[1])
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
     if path == "/rebuild":
         return _apply_rebuild_response(runtime, request_context)
     return error_response(404, "route_not_found", "operator mutation route was not found", {"path": path})
+
+
+def _apply_hunt_command_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str, action: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    params = request_context.body_params
+    operator_label = first_param(params, "operator_label", "local_operator")
+    reason = first_param(params, "reason", "")
+    value = first_param(params, "value", "")
+    try:
+        if action == "steer":
+            steering_type = first_param(params, "type", first_param(params, "steering_type", ""))
+            remove_id = first_param(params, "steering_id", "")
+            if remove_id:
+                preference = runtime.search_hunt.remove_steering_preference(hunt_id, remove_id, reason=reason, operator_label=operator_label)
+                payload = _hunt_command_payload("search_hunt_steering_removed", hunt_id, {"steering_preference": preference.to_dict()})
+            else:
+                preference = runtime.search_hunt.add_steering_preference(hunt_id, steering_type, value=value, reason=reason, operator_label=operator_label)
+                payload = _hunt_command_payload("search_hunt_steering_recorded", hunt_id, {"steering_preference": preference.to_dict()})
+        else:
+            result = runtime.search_hunt.apply_command(hunt_id, _command_type_for_route(action), value=value, reason=reason, operator_label=operator_label)
+            payload = _hunt_command_payload("search_hunt_command_applied", hunt_id, result.to_dict())
+    except Exception as exc:
+        return error_response(400, "hunt_command_rejected", str(exc), {"hunt_id": hunt_id, "action": action})
+    return json_response(200, payload)
 
 
 def _record_decision_response(runtime: Any, request_context: LocalRequestContext, review_item_id: str) -> LocalServiceResponse:
@@ -483,6 +589,70 @@ def _apply_rebuild_response(runtime: Any, request_context: LocalRequestContext) 
 
 def _wants_json(request_context: LocalRequestContext) -> bool:
     return first_param(request_context.params, "format", "").lower() == "json"
+
+
+def _route_allowed_for_scope(method: str, path: str, client_scope: object) -> bool:
+    if _is_hunt_operator_mutation_path(method, path):
+        return str(getattr(client_scope, "value", client_scope) or "").lower() == "loopback"
+    return _network().is_route_allowed_for_scope(method, path, client_scope)
+
+
+def _is_hunt_operator_mutation_path(method: str, path: str) -> bool:
+    return str(method or "").upper() == "POST" and _parse_hunt_mutation_path(path) is not None
+
+
+def _parse_hunt_route(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering"}:
+        return parts[1], parts[2]
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering"}:
+        return parts[3], parts[4]
+    return None
+
+
+def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer"}
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in actions:
+        return parts[1], parts[2]
+    return None
+
+
+def _command_type_for_route(action: str) -> str:
+    return {
+        "pause": "pause",
+        "resume": "resume",
+        "cancel": "cancel",
+        "block": "block",
+        "wait-for-user": "wait_for_user",
+        "wait-for-policy": "wait_for_policy",
+    }[action]
+
+
+def _hunt_command_payload(action: str, hunt_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "search_hunt_command_route_result.v0",
+        "status": "pass",
+        "action": action,
+        "hunt_id": hunt_id,
+        "operator_token_required": True,
+        "localhost_only_mutations": True,
+        "lan_command_mutations_enabled": False,
+        "workunit_creation_performed": False,
+        "source_probe_executed": False,
+        "external_network_used": False,
+        "model_provider_used": False,
+        "review_mutation_performed": False,
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["command routes mutate Search Hunt state only"],
+    }
+    result.update(payload)
+    return result
 
 
 def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, Any]:

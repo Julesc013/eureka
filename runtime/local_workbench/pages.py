@@ -17,6 +17,9 @@ from .view_models import (
     SearchHuntLayerView,
     SearchHuntListPageView,
     SearchHuntNotFoundPageView,
+    SearchHuntCommandView,
+    SearchHuntStateCommandView,
+    SearchHuntSteeringPreferenceView,
     SearchHuntTransitionView,
     SearchHuntUnavailableActionView,
     SearchPageView,
@@ -438,6 +441,10 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             "</section>",
             _search_hunt_layers("checked-layers-heading", "Checked layers", view.checked_layers),
             _search_hunt_layers("unchecked-layers-heading", "Unchecked and deferred layers", view.unchecked_layers),
+            _search_hunt_command_controls(view) if view.command_controls_enabled else "",
+            _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
+            _search_hunt_command_history(view.commands),
+            _search_hunt_steering_preferences(view.steering_preferences),
             _search_hunt_transitions(view.transitions),
             _search_hunt_unavailable_actions(view.unavailable_actions),
             render_warnings(view.warnings),
@@ -517,6 +524,128 @@ def _search_hunt_layers(section_id: str, title: str, layers: Sequence[SearchHunt
     )
 
 
+def _search_hunt_command_controls(view: SearchHuntDetailPageView) -> str:
+    forms = []
+    for item in view.state_commands:
+        forms.append(_hunt_state_command_form(view.hunt_id, item))
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-command-controls-heading"><h2 id="hunt-command-controls-heading">Operator state controls</h2>',
+            render_notice("scope", "Controls require an operator token and mutate only local Search Hunt state."),
+            render_notice("scope", "LAN clients cannot use command routes."),
+            _key_values(
+                (
+                    ("operator_token_required", view.operator_token_required),
+                    ("localhost_only_mutations", view.localhost_only_mutations),
+                    ("lan_command_mutations_enabled", view.lan_command_mutations_enabled),
+                    ("workunit_creation_enabled", False),
+                    ("source_probe_execution_enabled", False),
+                    ("model_provider_enabled", False),
+                )
+            ),
+            "\n".join(forms),
+            "</section>",
+        ]
+    )
+
+
+def _hunt_state_command_form(hunt_id: str, command: SearchHuntStateCommandView) -> str:
+    action = "/hunt/" + quote(hunt_id) + "/" + quote(command.action)
+    reason_required = " required" if command.requires_reason else ""
+    reason_note = "Required." if command.requires_reason else "Optional."
+    return "\n".join(
+        [
+            f'<form method="post" action="{escape_html(action)}">',
+            f'<p><strong>{escape_html(command.label)}</strong></p>',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            f'<p><label>Reason <textarea name="reason"{reason_required}></textarea></label> {escape_html(reason_note)}</p>',
+            f'<p><button type="submit">{escape_html(command.label)}</button></p>',
+            "</form>",
+        ]
+    )
+
+
+def _search_hunt_steering_controls(view: SearchHuntDetailPageView) -> str:
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-steering-controls-heading"><h2 id="hunt-steering-controls-heading">Steering preferences</h2>',
+            render_notice("scope", "Steering records operator preference only; it is not source approval or evidence."),
+            f'<form method="post" action="/hunt/{escape_html(quote(view.hunt_id))}/steer">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><label>Type <select name="type">',
+            "".join(f'<option value="{escape_html(item)}">{escape_html(item)}</option>' for item in _steering_types()),
+            "</select></label></p>",
+            '<p><label>Value <input name="value"></label></p>',
+            '<p><label>Reason <textarea name="reason"></textarea></label></p>',
+            '<p><button type="submit">Record steering preference</button></p>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_command_history(commands: Sequence[SearchHuntCommandView]) -> str:
+    rows = tuple(
+        {
+            "command_id": item.command_id,
+            "command_type": item.command_type,
+            "previous_state": item.previous_state,
+            "resulting_state": item.resulting_state,
+            "operator_label": item.operator_label,
+            "reason": item.reason,
+            "policy_decision": item.policy_decision,
+            "created_at": item.created_at,
+        }
+        for item in commands
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-command-history-heading"><h2 id="hunt-command-history-heading">Command history</h2>',
+            render_table(rows, headers=("command_id", "command_type", "previous_state", "resulting_state", "operator_label", "reason", "policy_decision", "created_at")) if rows else "<p>No command history recorded.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_steering_preferences(preferences: Sequence[SearchHuntSteeringPreferenceView]) -> str:
+    rows = tuple(
+        {
+            "steering_id": item.steering_id,
+            "command_type": item.command_type,
+            "value": item.value,
+            "reason": item.reason,
+            "operator_label": item.operator_label,
+            "active": item.active,
+            "created_at": item.created_at,
+            "updated_at": item.updated_at,
+        }
+        for item in preferences
+    )
+    removal_forms = "\n".join(_steering_remove_form(item) for item in preferences if item.active)
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-steering-preferences-heading"><h2 id="hunt-steering-preferences-heading">Active and inactive steering preferences</h2>',
+            render_table(rows, headers=("steering_id", "command_type", "value", "reason", "operator_label", "active", "created_at", "updated_at")) if rows else "<p>No steering preferences recorded.</p>",
+            removal_forms,
+            "</section>",
+        ]
+    )
+
+
+def _steering_remove_form(item: SearchHuntSteeringPreferenceView) -> str:
+    action = "/hunt/" + quote(item.hunt_id) + "/steer"
+    return (
+        '<form method="post" action="">'
+        f'<input type="hidden" name="steering_id" value="{escape_html(item.steering_id)}">'
+        '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label> '
+        '<label>Reason <input name="reason"></label> '
+        '<button type="submit">Deactivate steering preference</button></p>'
+        "</form>"
+    ).replace('action=""', f'action="{escape_html(action)}"')
+
+
 def _search_hunt_transitions(transitions: Sequence[SearchHuntTransitionView]) -> str:
     rows = tuple(
         {
@@ -545,6 +674,22 @@ def _search_hunt_unavailable_actions(actions: Sequence[SearchHuntUnavailableActi
             render_table(rows, headers=("action", "status", "reason")),
             "</section>",
         ]
+    )
+
+
+def _steering_types() -> tuple[str, ...]:
+    return (
+        "include_source_family",
+        "exclude_source_family",
+        "prefer_official_sources",
+        "allow_community_sources",
+        "metadata_only",
+        "allow_extraction_future",
+        "disallow_extraction",
+        "allow_ai_escalation_future",
+        "disallow_ai_escalation",
+        "add_note",
+        "set_priority",
     )
 
 

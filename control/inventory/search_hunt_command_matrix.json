@@ -1,0 +1,104 @@
+{
+  "schema_version": "search_hunt_command_matrix.v0",
+  "task": "HUNT-03",
+  "commands": [
+    {
+      "command_type": "pause",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "resume",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "cancel",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "block",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "reason_required": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "wait_for_user",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "wait_for_policy",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "complete",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    },
+    {
+      "command_type": "fail",
+      "enabled": true,
+      "operator_token_required": true,
+      "localhost_only": true,
+      "mutates_hunt_state": true,
+      "records_command_history": true,
+      "reason_required": true,
+      "creates_workunit": false,
+      "runs_source_probe": false,
+      "calls_model_provider": false,
+      "mutates_index": false
+    }
+  ]
+}

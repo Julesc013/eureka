@@ -1,0 +1,10 @@
+{
+  "schema_version": "search_hunt_command_auth_policy.v0",
+  "operator_token_required": true,
+  "raw_token_storage_forbidden": true,
+  "token_logging_forbidden": true,
+  "localhost_only_current_task": true,
+  "lan_command_mutations_forbidden": true,
+  "missing_token_rejected": true,
+  "invalid_token_rejected": true
+}

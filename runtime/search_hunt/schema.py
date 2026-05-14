@@ -13,6 +13,8 @@ REQUIRED_TABLES = (
     "search_hunt_transitions",
     "search_hunt_layers",
     "search_hunt_summaries",
+    "search_hunt_commands",
+    "search_hunt_steering_preferences",
 )
 
 INITIAL_SCHEMA_STATEMENTS = (
@@ -78,12 +80,50 @@ CREATE TABLE IF NOT EXISTS search_hunt_summaries (
   FOREIGN KEY(session_id) REFERENCES search_hunt_sessions(id)
 )
 """,
+    """
+CREATE TABLE IF NOT EXISTS search_hunt_commands (
+  sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+  command_id TEXT NOT NULL UNIQUE,
+  hunt_id TEXT NOT NULL,
+  command_type TEXT NOT NULL,
+  value TEXT,
+  reason TEXT NOT NULL,
+  operator_label TEXT NOT NULL,
+  previous_state TEXT NOT NULL,
+  resulting_state TEXT NOT NULL,
+  policy_decision TEXT NOT NULL,
+  side_effects_json TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  FOREIGN KEY(hunt_id) REFERENCES search_hunt_sessions(id)
+)
+""",
+    """
+CREATE TABLE IF NOT EXISTS search_hunt_steering_preferences (
+  id TEXT PRIMARY KEY,
+  command_id TEXT NOT NULL,
+  hunt_id TEXT NOT NULL,
+  command_type TEXT NOT NULL,
+  value TEXT NOT NULL,
+  reason TEXT NOT NULL,
+  operator_label TEXT NOT NULL,
+  active INTEGER NOT NULL,
+  limitations_json TEXT NOT NULL,
+  warnings_json TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  FOREIGN KEY(hunt_id) REFERENCES search_hunt_sessions(id),
+  FOREIGN KEY(command_id) REFERENCES search_hunt_commands(command_id)
+)
+""",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_state ON search_hunt_sessions(state)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_query ON search_hunt_sessions(normalized_query)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_parent_id ON search_hunt_sessions(parent_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_transitions_session_id ON search_hunt_transitions(session_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_layers_session_id ON search_hunt_layers(session_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_summaries_session_id ON search_hunt_summaries(session_id)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_commands_hunt_id ON search_hunt_commands(hunt_id)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_steering_hunt_id ON search_hunt_steering_preferences(hunt_id)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_steering_active ON search_hunt_steering_preferences(active)",
 )
 
 

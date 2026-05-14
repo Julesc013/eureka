@@ -67,7 +67,24 @@ def is_operator_mutation_route(path: str) -> bool:
     value = str(path or "")
     if value == "/rebuild":
         return True
+    if _is_hunt_command_mutation_route(value):
+        return True
     return value.startswith("/review/") and value.endswith("/decision")
+
+
+def _is_hunt_command_mutation_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) != 3 or parts[0] != "hunt":
+        return False
+    return parts[2] in {
+        "pause",
+        "resume",
+        "cancel",
+        "block",
+        "wait-for-user",
+        "wait-for-policy",
+        "steer",
+    }
 
 
 def validate_no_lan_binding(host: str) -> str:

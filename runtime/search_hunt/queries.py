@@ -3,7 +3,9 @@
 import json
 from typing import Any, Mapping
 
+from .commands import SearchHuntCommand
 from .records import SearchHuntDestination, SearchHuntIntent, SearchHuntSession, SearchHuntState, SearchHuntSummary, SearchHuntTransition
+from .steering import SearchHuntSteeringPreference
 
 
 def encode_json(value: Any) -> str:
@@ -58,6 +60,39 @@ def row_to_summary(row: Mapping[str, Any]) -> SearchHuntSummary:
         summary_type=str(row["summary_type"]),
         payload=dict(decode_json(row["payload_json"], {})),
         created_at=str(row["created_at"]),
+    )
+
+
+def row_to_command(row: Mapping[str, Any]) -> SearchHuntCommand:
+    return SearchHuntCommand(
+        command_id=str(row["command_id"]),
+        hunt_id=str(row["hunt_id"]),
+        command_type=str(row["command_type"]),
+        value=optional(row["value"]),
+        reason=str(row["reason"]),
+        operator_label=str(row["operator_label"]),
+        previous_state=str(row["previous_state"]),
+        resulting_state=str(row["resulting_state"]),
+        policy_decision=str(row["policy_decision"]),
+        side_effects=dict(decode_json(row["side_effects_json"], {})),
+        created_at=str(row["created_at"]),
+    )
+
+
+def row_to_steering_preference(row: Mapping[str, Any]) -> SearchHuntSteeringPreference:
+    return SearchHuntSteeringPreference(
+        id=str(row["id"]),
+        command_id=str(row["command_id"]),
+        hunt_id=str(row["hunt_id"]),
+        command_type=str(row["command_type"]),
+        value=str(row["value"]),
+        reason=str(row["reason"]),
+        operator_label=str(row["operator_label"]),
+        active=bool(int(row["active"])),
+        limitations=tuple_text(decode_json(row["limitations_json"], [])),
+        warnings=tuple_text(decode_json(row["warnings_json"], [])),
+        created_at=str(row["created_at"]),
+        updated_at=str(row["updated_at"]),
     )
 
 

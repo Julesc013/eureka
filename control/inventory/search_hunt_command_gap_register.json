@@ -1,0 +1,20 @@
+{
+  "schema_version": "search_hunt_command_gap_register.v0",
+  "task": "HUNT-03",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap_id": "hunt_exhaustion_report",
+      "status": "deferred",
+      "target_task": "HUNT-04",
+      "blocks_current_task": false
+    },
+    {
+      "gap_id": "hunt_to_workunit_pipeline",
+      "status": "deferred",
+      "target_task": "HUNT-06",
+      "blocks_current_task": false
+    }
+  ],
+  "hard_blockers": []
+}

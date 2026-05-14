@@ -1,0 +1,64 @@
+{
+  "schema_version": "search_hunt_steering_matrix.v0",
+  "task": "HUNT-03",
+  "steering": [
+    {
+      "steering_type": "include_source_family",
+      "enabled": true,
+      "deferred_execution_implication": "future source-family preference only"
+    },
+    {
+      "steering_type": "exclude_source_family",
+      "enabled": true,
+      "deferred_execution_implication": "future source-family constraint only"
+    },
+    {
+      "steering_type": "prefer_official_sources",
+      "enabled": true,
+      "deferred_execution_implication": "future ranking preference only"
+    },
+    {
+      "steering_type": "allow_community_sources",
+      "enabled": true,
+      "deferred_execution_implication": "future candidate allowance only"
+    },
+    {
+      "steering_type": "metadata_only",
+      "enabled": true,
+      "deferred_execution_implication": "future work should remain metadata-only unless a later gate changes it"
+    },
+    {
+      "steering_type": "allow_extraction_future",
+      "enabled": true,
+      "deferred_execution_implication": "future extraction preference only; no extraction is enabled now"
+    },
+    {
+      "steering_type": "disallow_extraction",
+      "enabled": true,
+      "deferred_execution_implication": "future extraction constraint only"
+    },
+    {
+      "steering_type": "allow_ai_escalation_future",
+      "enabled": true,
+      "deferred_execution_implication": "future AI escalation preference only; providers remain disabled"
+    },
+    {
+      "steering_type": "disallow_ai_escalation",
+      "enabled": true,
+      "deferred_execution_implication": "future AI escalation constraint only"
+    },
+    {
+      "steering_type": "add_note",
+      "enabled": true,
+      "deferred_execution_implication": "operator note only"
+    },
+    {
+      "steering_type": "set_priority",
+      "enabled": true,
+      "deferred_execution_implication": "future scheduling preference only"
+    }
+  ],
+  "steering_preferences_do_not_execute_work": true,
+  "steering_preferences_do_not_accept_truth": true,
+  "steering_preferences_do_not_mutate_index": true
+}

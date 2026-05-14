@@ -7,13 +7,30 @@ import sqlite3
 import uuid
 
 from .absence_summary import build_local_absence_summary
-from .errors import SearchHuntClosedError, SearchHuntError, SearchHuntNotFoundError
-from .queries import encode_json, row_to_session, row_to_summary, row_to_transition
+from .commands import (
+    SearchHuntCommand,
+    SearchHuntCommandResult,
+    SearchHuntCommandType,
+    coerce_command_type,
+    command_requires_reason,
+    default_command_side_effects,
+    target_state_for_command,
+)
+from .errors import SearchHuntClosedError, SearchHuntError, SearchHuntNotFoundError, SearchHuntTransitionError
+from .queries import encode_json, row_to_command, row_to_session, row_to_steering_preference, row_to_summary, row_to_transition
 from .records import SearchHuntDestination, SearchHuntIntent, SearchHuntSession, SearchHuntState, SearchHuntSummary, SearchHuntTransition, utc_now
 from .schema import REQUIRED_TABLES, SCHEMA_VERSION, apply_schema, get_schema_events
 from .search_summary import build_reviewed_index_search_summary
+from .steering import SearchHuntSteeringPreference, SearchHuntSteeringType, coerce_steering_type, steering_type_text
 from .transitions import apply_transition
-from .validation import validate_limit, validate_query_text, validate_search_hunt_session, validate_store_path
+from .validation import (
+    validate_limit,
+    validate_query_text,
+    validate_search_hunt_command,
+    validate_search_hunt_session,
+    validate_search_hunt_steering_preference,
+    validate_store_path,
+)
 
 
 class SearchHuntStore:
@@ -174,6 +191,158 @@ class SearchHuntStore:
         params.append(validate_limit(limit))
         return [row_to_summary(row) for row in self.connection.execute(sql, params).fetchall()]
 
+    def record_command(self, command: SearchHuntCommand) -> SearchHuntCommand:
+        self._ensure_open()
+        validate_search_hunt_command(command)
+        self._require_session(command.hunt_id)
+        with self.transaction():
+            self._insert_command(command)
+        return command
+
+    def list_commands(self, hunt_id: str | None = None, limit: int = 100) -> list[SearchHuntCommand]:
+        self._ensure_open()
+        sql = "SELECT * FROM search_hunt_commands"
+        params: list[Any] = []
+        if hunt_id:
+            sql += " WHERE hunt_id = ?"
+            params.append(hunt_id)
+        sql += " ORDER BY sequence LIMIT ?"
+        params.append(validate_limit(limit))
+        return [row_to_command(row) for row in self.connection.execute(sql, params).fetchall()]
+
+    def apply_command(
+        self,
+        hunt_id: str,
+        command_type: SearchHuntCommandType | str,
+        value: str | None = None,
+        reason: str | None = None,
+        operator_label: str | None = None,
+    ) -> SearchHuntCommandResult:
+        self._ensure_open()
+        command_kind = coerce_command_type(command_type)
+        if command_requires_reason(command_kind) and not str(reason or "").strip():
+            raise SearchHuntTransitionError(f"{command_kind.value} requires reason")
+        current = self._require_session(hunt_id)
+        target_state = target_state_for_command(command_kind)
+        side_effects = default_command_side_effects()
+        side_effects["hunt_state_mutated"] = current.state != target_state
+        if current.state == target_state:
+            updated = current
+        else:
+            updated = apply_transition(current, target_state, reason)
+        command = SearchHuntCommand.new(
+            hunt_id,
+            command_kind,
+            previous_state=current.state,
+            resulting_state=updated.state,
+            operator_label=operator_label,
+            reason=reason,
+            value=value,
+            side_effects=side_effects,
+        )
+        validate_search_hunt_command(command)
+        with self.transaction():
+            if updated is not current:
+                self.connection.execute(
+                    "UPDATE search_hunt_sessions SET state = ?, updated_at = ? WHERE id = ?",
+                    (updated.state.value, updated.updated_at, updated.id),
+                )
+                self._insert_transition(SearchHuntTransition.new(updated.id, current.state, updated.state, reason))
+            self._insert_command(command)
+        return SearchHuntCommandResult(command=command, hunt=updated.to_dict())
+
+    def add_steering_preference(
+        self,
+        hunt_id: str,
+        steering_type: SearchHuntSteeringType | str,
+        value: str | None = None,
+        reason: str | None = None,
+        operator_label: str | None = None,
+    ) -> SearchHuntSteeringPreference:
+        self._ensure_open()
+        self._require_session(hunt_id)
+        steering_kind = coerce_steering_type(steering_type)
+        side_effects = default_command_side_effects()
+        side_effects["hunt_steering_mutated"] = True
+        command = SearchHuntCommand.new(
+            hunt_id,
+            steering_type_text(steering_kind),
+            previous_state=None,
+            resulting_state=None,
+            operator_label=operator_label,
+            reason=reason,
+            value=value,
+            policy_decision="allowed_local_operator_steering",
+            side_effects=side_effects,
+        )
+        preference = SearchHuntSteeringPreference.new(
+            hunt_id,
+            steering_kind,
+            command_id=command.command_id,
+            value=value,
+            reason=reason,
+            operator_label=operator_label,
+        )
+        validate_search_hunt_steering_preference(preference)
+        with self.transaction():
+            self._insert_command(command)
+            self._insert_steering_preference(preference)
+        return preference
+
+    def remove_steering_preference(
+        self,
+        hunt_id: str,
+        steering_id: str,
+        reason: str | None = None,
+        operator_label: str | None = None,
+    ) -> SearchHuntSteeringPreference:
+        self._ensure_open()
+        self._require_session(hunt_id)
+        row = self.connection.execute(
+            "SELECT * FROM search_hunt_steering_preferences WHERE id = ? AND hunt_id = ?",
+            (steering_id, hunt_id),
+        ).fetchone()
+        if row is None:
+            raise SearchHuntNotFoundError(f"Search Hunt steering preference not found: {steering_id}")
+        preference = row_to_steering_preference(row)
+        if not preference.active:
+            return preference
+        side_effects = default_command_side_effects()
+        side_effects["hunt_steering_mutated"] = True
+        command = SearchHuntCommand.new(
+            hunt_id,
+            SearchHuntCommandType.REMOVE_STEERING,
+            previous_state=None,
+            resulting_state=None,
+            operator_label=operator_label,
+            reason=reason,
+            value=steering_id,
+            policy_decision="allowed_local_operator_steering_deactivation",
+            side_effects=side_effects,
+        )
+        now = utc_now()
+        with self.transaction():
+            self._insert_command(command)
+            self.connection.execute(
+                "UPDATE search_hunt_steering_preferences SET active = 0, updated_at = ? WHERE id = ? AND hunt_id = ?",
+                (now, steering_id, hunt_id),
+            )
+        row = self.connection.execute(
+            "SELECT * FROM search_hunt_steering_preferences WHERE id = ? AND hunt_id = ?",
+            (steering_id, hunt_id),
+        ).fetchone()
+        return row_to_steering_preference(row)
+
+    def list_steering_preferences(self, hunt_id: str, active_only: bool = True) -> list[SearchHuntSteeringPreference]:
+        self._ensure_open()
+        self._require_session(hunt_id)
+        sql = "SELECT * FROM search_hunt_steering_preferences WHERE hunt_id = ?"
+        params: list[Any] = [hunt_id]
+        if active_only:
+            sql += " AND active = 1"
+        sql += " ORDER BY created_at, id"
+        return [row_to_steering_preference(row) for row in self.connection.execute(sql, params).fetchall()]
+
     def summarize(self) -> dict[str, Any]:
         self._ensure_open()
         total = int(self.connection.execute("SELECT COUNT(*) FROM search_hunt_sessions").fetchone()[0])
@@ -205,7 +374,19 @@ class SearchHuntStore:
         orphan_layers = self.connection.execute(
             "SELECT COUNT(*) FROM search_hunt_layers l LEFT JOIN search_hunt_sessions s ON l.session_id = s.id WHERE s.id IS NULL"
         ).fetchone()
-        orphan_count = int(orphan_transitions[0] or 0) + int(orphan_summaries[0] or 0) + int(orphan_layers[0] or 0)
+        orphan_commands = self.connection.execute(
+            "SELECT COUNT(*) FROM search_hunt_commands c LEFT JOIN search_hunt_sessions s ON c.hunt_id = s.id WHERE s.id IS NULL"
+        ).fetchone()
+        orphan_steering = self.connection.execute(
+            "SELECT COUNT(*) FROM search_hunt_steering_preferences p LEFT JOIN search_hunt_sessions s ON p.hunt_id = s.id WHERE s.id IS NULL"
+        ).fetchone()
+        orphan_count = (
+            int(orphan_transitions[0] or 0)
+            + int(orphan_summaries[0] or 0)
+            + int(orphan_layers[0] or 0)
+            + int(orphan_commands[0] or 0)
+            + int(orphan_steering[0] or 0)
+        )
         return {
             "status": "pass" if integrity == "ok" and not missing and orphan_count == 0 else "fail",
             "sqlite_integrity": str(integrity),
@@ -268,6 +449,48 @@ class SearchHuntStore:
                 transition.to_state.value,
                 transition.reason,
                 transition.created_at,
+            ),
+        )
+
+    def _insert_command(self, command: SearchHuntCommand) -> None:
+        self.connection.execute(
+            "INSERT INTO search_hunt_commands "
+            "(command_id, hunt_id, command_type, value, reason, operator_label, previous_state, resulting_state, "
+            "policy_decision, side_effects_json, created_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (
+                command.command_id,
+                command.hunt_id,
+                command.command_type,
+                command.value,
+                command.reason,
+                command.operator_label,
+                command.previous_state,
+                command.resulting_state,
+                command.policy_decision,
+                encode_json(dict(command.side_effects)),
+                command.created_at,
+            ),
+        )
+
+    def _insert_steering_preference(self, preference: SearchHuntSteeringPreference) -> None:
+        self.connection.execute(
+            "INSERT INTO search_hunt_steering_preferences "
+            "(id, command_id, hunt_id, command_type, value, reason, operator_label, active, limitations_json, warnings_json, created_at, updated_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (
+                preference.id,
+                preference.command_id,
+                preference.hunt_id,
+                preference.command_type,
+                preference.value,
+                preference.reason,
+                preference.operator_label,
+                1 if preference.active else 0,
+                encode_json(list(preference.limitations)),
+                encode_json(list(preference.warnings)),
+                preference.created_at,
+                preference.updated_at,
             ),
         )
 

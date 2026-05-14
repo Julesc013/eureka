@@ -3,7 +3,9 @@
 from typing import Any, Mapping
 
 from .errors import SearchHuntValidationError
+from .commands import SearchHuntCommand, command_requires_reason, coerce_command_type
 from .records import SearchHuntSession
+from .steering import SearchHuntSteeringPreference, coerce_steering_type
 
 
 MAX_QUERY_CHARS = 512
@@ -37,6 +39,33 @@ def validate_search_hunt_session(session: SearchHuntSession) -> SearchHuntSessio
     if session.reviewed_result_count < 0 or session.candidate_result_count < 0:
         raise SearchHuntValidationError("result counts must not be negative")
     return session
+
+
+def validate_search_hunt_command(command: SearchHuntCommand) -> SearchHuntCommand:
+    if not command.command_id:
+        raise SearchHuntValidationError("command_id is required")
+    if not command.hunt_id:
+        raise SearchHuntValidationError("hunt_id is required")
+    try:
+        command_type = coerce_command_type(command.command_type)
+    except ValueError:
+        command_type = None
+    if command_type is not None and command_requires_reason(command_type) and not command.reason.strip():
+        raise SearchHuntValidationError(f"{command.command_type} requires reason")
+    validate_no_forbidden_side_effects(command.side_effects)
+    return command
+
+
+def validate_search_hunt_steering_preference(preference: SearchHuntSteeringPreference) -> SearchHuntSteeringPreference:
+    if not preference.id:
+        raise SearchHuntValidationError("steering preference id is required")
+    if not preference.command_id:
+        raise SearchHuntValidationError("steering command_id is required")
+    if not preference.hunt_id:
+        raise SearchHuntValidationError("hunt_id is required")
+    coerce_steering_type(preference.command_type)
+    validate_no_truth_claims(preference.to_dict())
+    return preference
 
 
 def validate_query_text(query: str) -> str:

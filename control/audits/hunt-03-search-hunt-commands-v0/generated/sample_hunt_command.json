@@ -1,0 +1,23 @@
+{
+  "command_id": "shc_sample",
+  "hunt_id": "sh_sample",
+  "command_type": "pause",
+  "previous_state": "running",
+  "resulting_state": "paused",
+  "operator_label": "local_operator",
+  "reason": "sample",
+  "policy_decision": "allowed_local_operator_command",
+  "side_effects": {
+    "hunt_state_mutated": true,
+    "hunt_command_history_mutated": true,
+    "hunt_steering_mutated": false,
+    "workunit_created": false,
+    "source_probe_executed": false,
+    "external_network_used": false,
+    "model_provider_used": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "deployment_performed": false
+  },
+  "created_at": "2026-05-15T00:00:00Z"
+}

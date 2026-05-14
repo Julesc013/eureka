@@ -15,3 +15,4 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-02
+recommended_next: HUNT-04
