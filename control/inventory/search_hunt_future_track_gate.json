@@ -1,0 +1,12 @@
+{
+  "background_investigation_must_use_hunt_workunit_path_without_exception": true,
+  "exceptions_require_explicit_reviewed_task": true,
+  "f0_extraction_should_consume_hunt_workunits_where_applicable": true,
+  "g_consumes_hunt_exhaustion_and_near_miss_records": true,
+  "h_source_expansion_runs_through_hunt_source_probe_workunits": true,
+  "k_ai_assist_consumes_exhaustion_reports_and_returns_candidate_only_outputs": true,
+  "schema_version": "search_hunt_future_track_gate.v0",
+  "status": "pass",
+  "syn_generates_search_need_and_workunit_seeds_not_fake_evidence": true,
+  "task": "HUNT-00"
+}

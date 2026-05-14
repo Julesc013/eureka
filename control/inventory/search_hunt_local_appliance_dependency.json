@@ -1,0 +1,14 @@
+{
+  "direct_master_index_mutation_forbidden": true,
+  "must_be_visible_in_local_workbench_when_ui_tasks_begin": true,
+  "must_use_explicit_local_instance": true,
+  "must_use_local_auto_test_harness": true,
+  "must_use_local_workers_for_deterministic_execution": true,
+  "must_use_review_evidence_index_path_for_promoted_records": true,
+  "must_use_runtime_local_appliance_composition": true,
+  "must_use_runtime_workunit_queue_for_background_tasks": true,
+  "notes": "HUNT is an investigation spine over the Local Appliance, not an ad hoc search script.",
+  "schema_version": "search_hunt_local_appliance_dependency.v0",
+  "status": "pass",
+  "task": "HUNT-00"
+}

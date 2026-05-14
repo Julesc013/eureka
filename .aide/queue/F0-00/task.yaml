@@ -12,3 +12,5 @@ gate:
   - no downloads or execution
   - no deployment
 recommended_after: LOCAL-14
+recommended_after: HUNT baseline or explicit operator override
+recommended_note: F0 is resumable but not current; extraction remains forbidden until explicitly scoped.

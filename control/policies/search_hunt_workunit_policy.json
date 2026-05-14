@@ -1,0 +1,10 @@
+{
+  "hunt_00_executes_workunits": false,
+  "hunts_create_workunits_only_through_workunit_queue": true,
+  "schema_version": "search_hunt_workunit_policy.v0",
+  "source_probe_workunits_deferred_until_future_gate": true,
+  "source_probe_workunits_enabled_current_task": false,
+  "workunits_equal_truth": false,
+  "workunits_must_have_policy_state": true,
+  "workunits_must_have_transition_history": true
+}

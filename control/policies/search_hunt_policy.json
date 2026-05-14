@@ -1,0 +1,16 @@
+{
+  "absence_may_create_hunt_future": true,
+  "deployment_enabled": false,
+  "direct_master_index_mutation_forbidden": true,
+  "direct_truth_acceptance_forbidden": true,
+  "implementation_deferred_to": "HUNT-01",
+  "local_appliance_required": true,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reviewed_index_first": true,
+  "schema_version": "search_hunt_policy.v0",
+  "search_hunt_sessions_enabled_current_task": false,
+  "source_probe_execution_enabled": false,
+  "weak_result_may_create_hunt_future": true
+}

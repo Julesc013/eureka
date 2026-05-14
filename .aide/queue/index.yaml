@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-14
+updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-00
+current_recommended_task: HUNT-01
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -143,12 +143,20 @@ entries:
     recommended_next: HUNT-00
   - id: HUNT-00
     title: Search Hunt track planning over Local Appliance
-    status: queued
+    status: completed
     purpose: Plan Search Hunt over the completed Local Appliance proof surface without starting runtime implementation.
     allowed_scope_summary: HUNT planning, task decomposition, policies, docs, and audit evidence only until explicitly scoped.
     gate: LOCAL-14 pass_with_warnings; use Local Appliance boundaries; no source probes, crawling, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-00/task.yaml
     recommended_after: LOCAL-14
+  - id: HUNT-01
+    title: Search Hunt Session runtime
+    status: queued
+    purpose: Add persisted Search Hunt Session runtime over the Local Appliance explicit instance and runtime composition boundary.
+    allowed_scope_summary: Search Hunt session records, validation, persistence, docs, tests, and audit evidence only when explicitly scoped.
+    gate: HUNT-00 completed; no source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/HUNT-01/task.yaml
+    recommended_after: HUNT-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

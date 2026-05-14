@@ -2,22 +2,22 @@
 
 ## Current Queue
 
-- Completed item: LOCAL-LEAKAGE-TOTAL-REMEDIATION-01 - Total leakage remediation and final green gate.
-- Current recommended item: HUNT-00 - Search Hunt track planning over Local Appliance.
+- Completed item: HUNT-00 - Search Hunt track planning over Local Appliance.
+- Current recommended item: HUNT-01 - Search Hunt Session runtime.
 - Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
-- F0 status: resumable through the Local Appliance, but not recommended before HUNT/SYN unless explicitly chosen.
-- Compatibility note: `eureka-repo-health.json` keeps `current_queue_item` at the LOCAL-02 guard-compatible value used by the legacy LOCAL-00 validator; `.aide/queue/index.yaml` is the queue source of truth for HUNT-00.
+- F0 status: resumable through the Local Appliance, but deferred behind the HUNT baseline unless explicitly chosen.
 
 ## Local Appliance State
 
-LOCAL-00 through LOCAL-14 are present and the total remediation sweep reran the LOCAL validators, local smokes, LAN smoke, clean-machine proof, architecture checks, generated-artifact gate, runtime leakage gate, and full unittest discovery.
+The final state packet records `main == dev`, zero hard blockers, full unittest discovery passing, and a runnable Local Appliance baseline. HUNT-00 uses that baseline as the required product kernel.
+
+## HUNT State
+
+HUNT-00 is planning/control only. It inserts the Search Hunt sequence, policies, readiness/dependency matrices, Local Appliance dependency, future track gate, docs, validator, tests, and audit evidence. Search Hunt runtime begins in HUNT-01.
 
 ## Boundaries
 
-- HUNT can start planning over the Local Appliance.
-- SYN can start planning over the Local Appliance.
-- F0 can resume only through the Local Appliance and is not recommended immediately.
-- Main promotion is allowed only through the explicit fast-forward promotion procedure.
+- Search Hunt runtime: not implemented in HUNT-00.
 - Source probes: not executed.
 - Extraction: not executed.
 - Model/provider calls: not performed.
@@ -29,4 +29,4 @@ LOCAL-00 through LOCAL-14 are present and the total remediation sweep reran the 
 
 ## Warnings
 
-The runtime leakage gate has zero new unallowlisted production findings and 1954 exact, expiring warning entries. The remaining warning debt does not block HUNT/SYN/F0 or main promotion. AIDE verify still reports non-blocking stale context/diff-scope warnings for this superseding task.
+The final baseline still records non-blocking warning debt: exact runtime leakage warning entries with zero new unallowlisted production findings, AIDE optional-reference warnings, and no external second-device LAN proof. These do not block HUNT-01.

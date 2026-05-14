@@ -1,0 +1,15 @@
+{
+  "future_ui_must_show": [
+    "hunt status",
+    "checked layers",
+    "queued WorkUnits",
+    "blocked sources",
+    "limitations",
+    "pause/resume/steer controls when implemented"
+  ],
+  "hunt_00_adds_ui_routes": false,
+  "lan_behavior_changed_current_task": false,
+  "mutation_controls_enabled_current_task": false,
+  "schema_version": "search_hunt_ui_policy.v0",
+  "workbench_integration_begins_in": "HUNT-02"
+}

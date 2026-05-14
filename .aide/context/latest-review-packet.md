@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4017 chars, 1005 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3378 chars, 845 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,25 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `control/audits/final-state-promotion-plan-01-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_blocker_register.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_chat_alignment_packet.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_future_execution_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_git_state.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_local_state_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_machine_runnable_proof.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_main_promotion_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_not_done_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_r0_state_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_safe_remediation_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_validation_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/final_warning_disposition.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_appliance_promotion_review.json` (M; does not match active task allowed paths)
-- unknown: `docs/operations/FINAL_CHAT_ALIGNMENT_PACKET.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/FINAL_FUTURE_EXECUTION_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_final_chat_alignment_packet.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_final_future_execution_plan.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_final_state_promotion_plan.py` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/F0-00/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/HUNT-00/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/HUNT-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/SYN-00/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- unknown: `control/audits/hunt-00-search-hunt-track-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/hunt_00_final_state_alignment.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_dependency_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_future_track_gate.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_local_appliance_dependency.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_readiness_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/search_hunt_track_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_ai_boundary_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_completion_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_sync_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_ui_policy.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/search_hunt_workunit_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/architecture/SEARCH_HUNT_LOCAL_APPLIANCE_INTEGRATION.md` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -63,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6221
-- approx_tokens: 1556
+- chars: 6512
+- approx_tokens: 1628
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

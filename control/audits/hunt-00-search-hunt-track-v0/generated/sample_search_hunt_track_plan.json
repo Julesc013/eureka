@@ -1,0 +1,448 @@
+{
+  "deployment_performed": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "purpose": "insert_search_hunt_spine_over_local_appliance",
+  "schema_version": "search_hunt_track_plan.v0",
+  "search_hunt_runtime_implemented_current_task": false,
+  "source_probe_execution_enabled": false,
+  "status": "pass",
+  "task": "HUNT-00",
+  "track": [
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-01 — Search Hunt Session runtime",
+      "proof_level_required": "planning/control proof",
+      "purpose": "Define the investigation spine and gates before runtime work.",
+      "required_local_appliance_capabilities": [
+        "final_local_appliance_baseline"
+      ],
+      "required_runtime_behavior": "none; planning/control only",
+      "required_tests": [
+        "python scripts/validate_search_hunt_track.py",
+        "python -m unittest tests.operations.test_search_hunt_track"
+      ],
+      "task_id": "HUNT-00",
+      "title": "Search Hunt track planning over Local Appliance"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-02 — Search Hunt UI state in Local Workbench",
+      "proof_level_required": "runtime/session persistence proof",
+      "purpose": "Persist Search Hunt Session records with explicit lifecycle state.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-01",
+      "title": "Search Hunt Session runtime"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-03 — Pause, resume, cancel, and steer commands",
+      "proof_level_required": "local workbench visibility proof",
+      "purpose": "Expose hunt state in the local workbench without adding unsafe mutation.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-02",
+      "title": "Search Hunt UI state in Local Workbench"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-04 — Hunt exhaustion report",
+      "proof_level_required": "command/state transition proof",
+      "purpose": "Add operator commands for controlled hunt transitions.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-03",
+      "title": "Pause, resume, cancel, and steer commands"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-05 — Hunt-to-SearchNeed pipeline",
+      "proof_level_required": "exhaustion report proof",
+      "purpose": "Record checked layers, near misses, blocked sources, and limitations.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-04",
+      "title": "Hunt exhaustion report"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-06 — Hunt-to-WorkUnit pipeline",
+      "proof_level_required": "SearchNeed persistence proof",
+      "purpose": "Create reviewed SearchNeed candidates from hunt state.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-05",
+      "title": "Hunt-to-SearchNeed pipeline"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-07 — Background hunt runner over deterministic local workers",
+      "proof_level_required": "WorkUnit creation proof",
+      "purpose": "Create bounded WorkUnits from hunt needs through the queue.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-06",
+      "title": "Hunt-to-WorkUnit pipeline"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-08 — Workbench hunt integration and smoke tests",
+      "proof_level_required": "deterministic worker execution proof",
+      "purpose": "Run deterministic local hunt workers without source probes by default.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-07",
+      "title": "Background hunt runner over deterministic local workers"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-09 — Agent research task contract, provider disabled",
+      "proof_level_required": "workbench smoke proof",
+      "purpose": "Smoke-test workbench hunt status and controls.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-08",
+      "title": "Workbench hunt integration and smoke tests"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-10 — Deterministic hunt replay harness",
+      "proof_level_required": "contract-only AI task proof, provider disabled",
+      "purpose": "Define agent research task contract while providers remain disabled.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-09",
+      "title": "Agent research task contract, provider disabled"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-11 — Bounded AI escalation gate, disabled by default",
+      "proof_level_required": "replay proof",
+      "purpose": "Replay hunt sessions deterministically for regression tests.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-10",
+      "title": "Deterministic hunt replay harness"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "HUNT-12 — Search Hunt closeout and SYN/F0 handoff",
+      "proof_level_required": "AI gate disabled-by-default proof",
+      "purpose": "Add disabled-by-default AI escalation gate over exhaustion reports.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-11",
+      "title": "Bounded AI escalation gate, disabled by default"
+    },
+    {
+      "forbidden_side_effects": [
+        "source probe execution",
+        "extraction runtime",
+        "model/provider calls",
+        "downloads",
+        "install/execution",
+        "direct master index mutation",
+        "deployment",
+        "production readiness claim",
+        "public launch readiness claim"
+      ],
+      "next_task": "SYN-00 or F0-00 handoff by operator decision",
+      "proof_level_required": "closeout proof",
+      "purpose": "Close HUNT and hand off to SYN/F0/G/H/K tracks.",
+      "required_local_appliance_capabilities": [
+        "explicit_instance_root",
+        "runtime_composition_boundary",
+        "workunit_queue",
+        "deterministic_worker_runner",
+        "review_queue",
+        "evidence_ledger",
+        "reviewed_public_index",
+        "html_workbench",
+        "auto_test_auto_search_harness"
+      ],
+      "required_runtime_behavior": "implemented in this task and proven by tests/smoke",
+      "required_tests": [
+        "focused runtime/unit tests",
+        "local appliance smoke where applicable"
+      ],
+      "task_id": "HUNT-12",
+      "title": "Search Hunt closeout and SYN/F0 handoff"
+    }
+  ]
+}

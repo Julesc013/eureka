@@ -1,0 +1,91 @@
+{
+  "dependencies": [
+    {
+      "dependency": "Local Appliance",
+      "dependency_kind": "product_kernel",
+      "direction": "upstream_required",
+      "notes": "HUNT must run through explicit instance, service, workbench, stores, workers, and eval harness.",
+      "required_before_task": "HUNT-01"
+    },
+    {
+      "dependency": "WorkUnit queue",
+      "dependency_kind": "store/runtime",
+      "direction": "upstream_required",
+      "notes": "Hunts create background work only through the WorkUnit queue.",
+      "required_before_task": "HUNT-06"
+    },
+    {
+      "dependency": "local worker runner",
+      "dependency_kind": "worker/runtime",
+      "direction": "upstream_required",
+      "notes": "Deterministic workers execute safe local hunt WorkUnits.",
+      "required_before_task": "HUNT-07"
+    },
+    {
+      "dependency": "reviewed public index",
+      "dependency_kind": "store/runtime",
+      "direction": "upstream_required",
+      "notes": "Reviewed-index search is always checked before hunt escalation.",
+      "required_before_task": "HUNT-01"
+    },
+    {
+      "dependency": "evidence ledger",
+      "dependency_kind": "store/runtime",
+      "direction": "upstream_required",
+      "notes": "Candidates must remain evidence candidates until reviewed.",
+      "required_before_task": "HUNT-05"
+    },
+    {
+      "dependency": "review queue",
+      "dependency_kind": "store/runtime",
+      "direction": "upstream_required",
+      "notes": "Promotion requires review decisions.",
+      "required_before_task": "HUNT-05"
+    },
+    {
+      "dependency": "auto-test harness",
+      "dependency_kind": "eval/runtime",
+      "direction": "upstream_required",
+      "notes": "Hunt behavior must be testable as commands.",
+      "required_before_task": "HUNT-08"
+    },
+    {
+      "dependency": "SYN",
+      "dependency_kind": "future_track",
+      "direction": "downstream_consumer",
+      "notes": "SYN may generate SearchNeed and WorkUnit seeds, not evidence.",
+      "required_before_task": "after HUNT-04 or HUNT-06"
+    },
+    {
+      "dependency": "F0",
+      "dependency_kind": "future_track",
+      "direction": "downstream_consumer",
+      "notes": "F0 extraction should consume HUNT WorkUnits where applicable.",
+      "required_before_task": "after HUNT baseline or operator override"
+    },
+    {
+      "dependency": "G",
+      "dependency_kind": "future_track",
+      "direction": "downstream_consumer",
+      "notes": "G consumes exhaustion, near-miss, ranking, and explanation records.",
+      "required_before_task": "after HUNT-04"
+    },
+    {
+      "dependency": "H source expansion",
+      "dependency_kind": "future_track",
+      "direction": "downstream_consumer",
+      "notes": "H source expansion runs through hunt/source-probe WorkUnits.",
+      "required_before_task": "after HUNT-06"
+    },
+    {
+      "dependency": "K AI assist",
+      "dependency_kind": "future_track",
+      "direction": "downstream_consumer",
+      "notes": "K consumes exhaustion reports and returns candidate-only outputs.",
+      "required_before_task": "after HUNT-11"
+    }
+  ],
+  "schema_version": "search_hunt_dependency_matrix.v0",
+  "status": "pass",
+  "task": "HUNT-00"
+}

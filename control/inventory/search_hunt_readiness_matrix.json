@@ -1,0 +1,151 @@
+{
+  "capabilities": [
+    {
+      "capability": "final_local_appliance_baseline",
+      "evidence": "control/inventory/final_chat_alignment_packet.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "explicit_instance_root",
+      "evidence": "control/inventory/final_local_state_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "local_runtime_composition",
+      "evidence": "control/inventory/final_local_state_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "local_http_service",
+      "evidence": "control/inventory/final_machine_runnable_proof.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "html_workbench",
+      "evidence": "control/inventory/final_machine_runnable_proof.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "workunit_queue",
+      "evidence": "control/inventory/final_local_state_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "deterministic_worker_runner",
+      "evidence": "control/inventory/final_local_state_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "review_rebuild_loop",
+      "evidence": "control/inventory/final_local_state_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "auto_test_harness",
+      "evidence": "control/inventory/final_validation_matrix.json",
+      "proof_level_required": "existing LOCAL proof",
+      "required_before_hunt_01": true,
+      "required_before_hunt_closeout": true,
+      "status": "tested"
+    },
+    {
+      "capability": "search_hunt_session_runtime",
+      "evidence": "HUNT-01",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "hunt_ui_state",
+      "evidence": "HUNT-02",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "steering_commands",
+      "evidence": "HUNT-03",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "exhaustion_report",
+      "evidence": "HUNT-04",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "hunt_to_search_need",
+      "evidence": "HUNT-05",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "hunt_to_workunit",
+      "evidence": "HUNT-06",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "background_hunt_runner",
+      "evidence": "HUNT-07",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "deterministic_replay",
+      "evidence": "HUNT-10",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    },
+    {
+      "capability": "ai_escalation_gate_disabled_by_default",
+      "evidence": "HUNT-11",
+      "proof_level_required": "future HUNT proof",
+      "required_before_hunt_01": false,
+      "required_before_hunt_closeout": true,
+      "status": "planned"
+    }
+  ],
+  "schema_version": "search_hunt_readiness_matrix.v0",
+  "status": "pass",
+  "task": "HUNT-00"
+}

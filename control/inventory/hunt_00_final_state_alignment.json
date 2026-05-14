@@ -1,0 +1,12 @@
+{
+  "f0_status_before_hunt": "resumable_but_not_current",
+  "final_state_packet_found": true,
+  "hard_blockers_remaining": 0,
+  "hunt_blocking_warnings_remaining": 0,
+  "local_appliance_runnable": true,
+  "main_dev_aligned": true,
+  "recommended_next_task": "HUNT-01 — Search Hunt Session runtime",
+  "schema_version": "hunt_00_final_state_alignment.v0",
+  "task": "HUNT-00",
+  "warnings_remaining": 3
+}

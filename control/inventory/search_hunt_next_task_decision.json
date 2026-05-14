@@ -1,0 +1,12 @@
+{
+  "alternative_next_task": "SYN-00 — Synthetic Query Foundry planning over Local Appliance",
+  "f0_can_resume_after": "HUNT baseline or explicit operator override",
+  "f0_current_status": "deferred",
+  "local_appliance_required": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Search Hunt sessions should become the active investigation spine before extraction/source expansion.",
+  "recommended_next_task": "HUNT-01 — Search Hunt Session runtime",
+  "schema_version": "search_hunt_next_task_decision.v0",
+  "task": "HUNT-00"
+}

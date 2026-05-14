@@ -1,0 +1,10 @@
+{
+  "ai_can_accept_truth": false,
+  "ai_can_clear_rights_or_safety": false,
+  "ai_can_mutate_master_index": false,
+  "ai_can_mutate_reviewed_index": false,
+  "ai_model_provider_calls_enabled_current_task": false,
+  "ai_must_consume_exhaustion_report_not_only_raw_query": true,
+  "future_ai_output_candidate_material_only": true,
+  "schema_version": "search_hunt_ai_boundary_policy.v0"
+}

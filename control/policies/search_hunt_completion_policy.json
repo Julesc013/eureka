@@ -1,0 +1,19 @@
+{
+  "proof_levels": {
+    "HUNT-00": "planning/control proof",
+    "HUNT-01": "runtime/session persistence proof",
+    "HUNT-02": "local workbench visibility proof",
+    "HUNT-03": "command/state transition proof",
+    "HUNT-04": "exhaustion report proof",
+    "HUNT-05": "SearchNeed persistence proof",
+    "HUNT-06": "WorkUnit creation proof",
+    "HUNT-07": "deterministic worker execution proof",
+    "HUNT-08": "workbench smoke proof",
+    "HUNT-09": "contract-only AI task proof, provider disabled",
+    "HUNT-10": "replay proof",
+    "HUNT-11": "AI gate disabled-by-default proof",
+    "HUNT-12": "closeout proof"
+  },
+  "scaffold_only_completion_allowed": false,
+  "schema_version": "search_hunt_completion_policy.v0"
+}

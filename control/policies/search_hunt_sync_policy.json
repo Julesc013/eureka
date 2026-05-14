@@ -1,0 +1,12 @@
+{
+  "future_sync_classes": [
+    "private_only",
+    "share_need_only",
+    "share_candidates_after_review",
+    "share_packs_after_validation"
+  ],
+  "public_safe_need_summaries_require_policy_gate": true,
+  "raw_private_queries_automatically_public": false,
+  "schema_version": "search_hunt_sync_policy.v0",
+  "sync_enabled_current_task": false
+}
