@@ -1,0 +1,42 @@
+{
+  "schema_version": "final_warning_disposition.v0",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
+  "warnings": [
+    {
+      "blocks_f0": false,
+      "blocks_hunt": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "classification": "deferred_with_expiry",
+      "count": 1954,
+      "disposition": "Runtime leakage gate is valid after total remediation: 0 new unallowlisted production findings, with remaining exact context-bound findings retained as visible warning debt.",
+      "expiry": "HUNT-00",
+      "source": "scripts/audit_runtime_architecture_leakage.py --check --json",
+      "warning_id": "remaining_context_bound_runtime_naming_debt"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_hunt": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "classification": "harmless_for_next_track",
+      "count": 22,
+      "disposition": "AIDE verify exits 0 with WARN only: missing optional status artifacts and diff-scope metadata that does not affect product runtime or promotion gates.",
+      "source": "py -3 .aide/scripts/aide_lite.py verify",
+      "warning_id": "aide_verify_context_and_diff_scope_metadata"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_hunt": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "classification": "deferred_with_expiry",
+      "count": 1,
+      "disposition": "Same-machine LAN-bind smoke passed; no second-device LAN proof is claimed.",
+      "expiry": "first real cross-device LAN operations task",
+      "source": "LOCAL-12 and final same-machine LAN smoke evidence",
+      "warning_id": "external_lan_client_not_performed"
+    }
+  ],
+  "warnings_remaining": 3
+}

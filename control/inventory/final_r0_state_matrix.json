@@ -1,0 +1,133 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "source_observation",
+      "classification": "pass",
+      "evidence_path": "control/inventory/source_observation_seam_inventory.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_source_observation_seam.py"
+    },
+    {
+      "capability_id": "source_cache",
+      "classification": "pass",
+      "evidence_path": "control/inventory/source_cache_store_inventory.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_source_cache_store.py"
+    },
+    {
+      "capability_id": "evidence_ledger",
+      "classification": "pass",
+      "evidence_path": "control/inventory/evidence_ledger_store_inventory.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_evidence_ledger_store.py"
+    },
+    {
+      "capability_id": "review_queue",
+      "classification": "pass",
+      "evidence_path": "control/inventory/review_queue_store_inventory.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_review_queue_store.py"
+    },
+    {
+      "capability_id": "public_index",
+      "classification": "pass",
+      "evidence_path": "control/inventory/public_index_store_inventory.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_reviewed_public_index.py"
+    },
+    {
+      "capability_id": "one_source_live_test",
+      "classification": "pass",
+      "evidence_path": "control/inventory/one_source_live_test_result.json",
+      "implemented": true,
+      "limitations": [],
+      "status": "pass",
+      "tested": true,
+      "validator": "python scripts/validate_one_source_live_test.py"
+    },
+    {
+      "capability_id": "contract_taxonomy_cleanup",
+      "classification": "partial",
+      "evidence_path": "control/inventory/r0_contract_taxonomy_remediation_result.json",
+      "implemented": true,
+      "limitations": [
+        "remaining cleanup is classified in warning disposition"
+      ],
+      "status": "partial",
+      "tested": true,
+      "validator": "python scripts/validate_contract_taxonomy_remediation.py"
+    },
+    {
+      "capability_id": "generated_artifact_drift_remediation",
+      "classification": "pass_with_warnings",
+      "evidence_path": "control/inventory/r0_generated_artifact_remediation_result.json",
+      "implemented": true,
+      "limitations": [
+        "remaining cleanup is classified in warning disposition"
+      ],
+      "status": "pass_with_warnings",
+      "tested": true,
+      "validator": "python scripts/validate_generated_artifact_drift.py"
+    },
+    {
+      "capability_id": "legacy_runtime_leakage_remediation",
+      "classification": "pass_with_warnings",
+      "evidence_path": "control/inventory/legacy_runtime_leakage_remediation_result.json",
+      "implemented": true,
+      "limitations": [
+        "remaining cleanup is classified in warning disposition"
+      ],
+      "status": "pass_with_warnings",
+      "tested": true,
+      "validator": "python scripts/validate_legacy_runtime_leakage_remediation.py"
+    },
+    {
+      "capability_id": "r0_closeout",
+      "classification": "pass_with_warnings",
+      "evidence_path": "control/inventory/r0_final_closeout_result.json",
+      "implemented": true,
+      "limitations": [
+        "remaining cleanup is classified in warning disposition"
+      ],
+      "status": "pass_with_warnings",
+      "tested": true,
+      "validator": ""
+    },
+    {
+      "capability_id": "r0_promotion_to_main",
+      "classification": "pass_with_warnings",
+      "evidence_path": "control/inventory/dev_to_main_r0_merge_result.json",
+      "implemented": true,
+      "limitations": [
+        "remaining cleanup is classified in warning disposition"
+      ],
+      "status": "pass_with_warnings",
+      "tested": true,
+      "validator": ""
+    }
+  ],
+  "schema_version": "final_r0_state_matrix.v0",
+  "status": "pass_with_warnings",
+  "summary": {
+    "implemented_count": 11,
+    "missing_count": 0,
+    "partial_count": 1,
+    "warning_count": 4
+  },
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01"
+}

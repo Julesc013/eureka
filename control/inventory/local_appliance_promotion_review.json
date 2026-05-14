@@ -1,10 +1,10 @@
 {
-  "branch_mutation_performed": true,
+  "branch_mutation_performed": false,
   "current_branch": "LOCAL-14-local-appliance-closeout-v0",
   "deployment_performed": false,
   "dev_ahead_of_main": true,
   "local_track_ready_for_main_promotion": true,
-  "merge_performed": true,
+  "merge_performed": false,
   "next_step": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01 promotion gate",
   "no_deployment": true,
   "no_production_readiness_claim": true,
@@ -17,11 +17,11 @@
     "left": 0,
     "right": 4
   },
-  "promotion_recommended": true,
+  "promotion_recommended": false,
   "promotion_review_required": true,
   "promotion_task": "LOCAL-TO-MAIN-PROMOTION-REVIEW",
-  "push_performed": true,
-  "reason": "LOCAL total remediation cleared new runtime leakage findings, full discovery passed, dev was pushed, and main was fast-forwarded.",
+  "push_performed": false,
+  "reason": "LOCAL-14 promotion review remains plan-only; later total/final promotion evidence records the actual fast-forward.",
   "schema_version": "local_appliance_promotion_review.v0",
   "task": "LOCAL-14"
 }

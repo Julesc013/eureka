@@ -1,0 +1,76 @@
+{
+  "aide_checks": "pass_with_warnings",
+  "all_feasible_validations_run": true,
+  "architecture_boundaries": "pass",
+  "commands": [
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
+      "notes": "Allowed branch-name warning on dev; working tree was clean.",
+      "status": "warn"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "tests": 4323
+    },
+    {
+      "checked_files": 692,
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "notes": "Pre-commit check fails only because this final audit pack is uncommitted; rerun after commit is required.",
+      "status": "pass_after_commit_validation_required"
+    },
+    {
+      "allowlisted_warning_findings": 1954,
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "new_unallowlisted_production_findings": 0,
+      "status": "pass_with_warnings"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass"
+    },
+    {
+      "command": "LOCAL and R0 validator sweep",
+      "notes": "All validators pass or pass_with_warnings; generated-artifact validator is expected to pass after commit.",
+      "status": "pass_with_warnings"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass_with_warnings"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "warn"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass_with_warnings"
+    }
+  ],
+  "full_unittest_discovery": "pass",
+  "generated_artifact_cleanliness": "pass_after_final_commit_validation",
+  "runtime_leakage_gate": "pass_with_warnings",
+  "schema_version": "final_validation_matrix.v0",
+  "status": "pass_with_warnings",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01"
+}

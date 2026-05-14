@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2765 chars, 692 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4017 chars, 1005 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,27 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `control/audits/local-leakage-total-remediation-01-v0` (??; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/allowlist_summary.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_gate_report.json` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/leakage_policy_summary.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/r0_02_report.json` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-02-runtime-architecture-leakage-gate-v0/validation.md` (M; does not match active task allowed paths)
-- unknown: `control/audits/r0-remediation-legacy-leakage-01-v0/remediation_report.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/legacy_runtime_leakage_remaining_allowlist.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/legacy_runtime_leakage_remediation_result.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_blocker_register.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_leakage_diagnosis.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_leakage_remediation_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_promotion_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_smoke_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_solution_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_validation_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/local_total_warning_disposition.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_gate_report.json` (M; does not match active task allowed paths)
-- unknown: `control/inventory/runtime_architecture_leakage_remediation_plan.json` (M; does not match active task allowed paths)
-- unknown: `control/policies/runtime_architecture_leakage_allowlist.json` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 14; see task evidence changed-files report
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `control/audits/final-state-promotion-plan-01-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_blocker_register.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_chat_alignment_packet.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_future_execution_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_git_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_local_state_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_machine_runnable_proof.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_main_promotion_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_not_done_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_r0_state_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_safe_remediation_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_validation_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_warning_disposition.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_appliance_promotion_review.json` (M; does not match active task allowed paths)
+- unknown: `docs/operations/FINAL_CHAT_ALIGNMENT_PACKET.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/FINAL_FUTURE_EXECUTION_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_chat_alignment_packet.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_future_execution_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_state_promotion_plan.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +63,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7101
-- approx_tokens: 1776
+- chars: 6221
+- approx_tokens: 1556
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

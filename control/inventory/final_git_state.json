@@ -1,0 +1,39 @@
+{
+  "current_branch": "dev",
+  "current_branch_after": "dev",
+  "current_branch_before": "dev",
+  "dev_contains_main": true,
+  "dev_needs_push": false,
+  "dev_pushed": true,
+  "force_push_performed": false,
+  "head": "52a73c641d2c6b989933c7101c95344409e502bc",
+  "history_rewrite_performed": false,
+  "latest_commits": [
+    "52a73c64 (HEAD -> dev, origin/main, origin/dev, origin/HEAD, main) audit(local): record appliance promotion result",
+    "cce1d055 (LOCAL-14-local-appliance-closeout-v0) chore(local): integrate remote dev baseline",
+    "4e9ebd74 fix(local): green appliance leakage and promotion gate",
+    "698e3009 build(index): refresh public search artifact",
+    "736a43a5 audit(local): green appliance baseline",
+    "e3910194 audit(local): close appliance track",
+    "d3cf4ea2 (LOCAL-13-clean-machine-bootstrap-v0) test(local): prove clean machine bootstrap",
+    "9bddfc02 (LOCAL-12-lan-read-only-smoke-v0) test(local): prove read only lan smoke",
+    "285d0c4d (LOCAL-11-lan-binding-safety-gate-v0) ops(local): add lan safety gate",
+    "db42e120 (LOCAL-10-auto-test-search-harness-v0) test(local): add auto search harness"
+  ],
+  "main_contains_dev": true,
+  "main_promoted": true,
+  "main_promotion_possible_by_fast_forward": true,
+  "merge_or_promotion_already_happened": true,
+  "origin_dev": "52a73c641d2c6b989933c7101c95344409e502bc",
+  "origin_main": "52a73c641d2c6b989933c7101c95344409e502bc",
+  "origin_main_equals_origin_dev": true,
+  "origin_main_to_origin_dev_count": {
+    "left": 0,
+    "right": 0
+  },
+  "schema_version": "final_git_state.v0",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
+  "working_tree_clean": true,
+  "working_tree_clean_after": true,
+  "working_tree_clean_before": true
+}
