@@ -1,0 +1,36 @@
+{
+  "checked_layers": [
+    "reviewed_public_index",
+    "local_candidate_summary",
+    "local_absence_report"
+  ],
+  "db_path": "db/search_hunt.sqlite",
+  "deployment_performed": false,
+  "model_provider_enabled": false,
+  "runtime_package": "runtime/search_hunt",
+  "schema_version": "search_hunt_runtime_inventory.v0",
+  "source_probe_execution_enabled": false,
+  "states": [
+    "created",
+    "running",
+    "paused",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "blocked",
+    "complete",
+    "failed",
+    "cancelled"
+  ],
+  "store_id": "search_hunt",
+  "sync_enabled": false,
+  "task": "HUNT-01",
+  "unchecked_layers": [
+    "source_probes",
+    "WorkUnits",
+    "extraction",
+    "broader_connectors",
+    "synthetic_query_foundry",
+    "AI_research_escalation"
+  ],
+  "workunit_creation_enabled": false
+}

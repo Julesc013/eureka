@@ -1,0 +1,12 @@
+{
+  "alternative_next_task": "SYN-00 — Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "model_provider_enabled": false,
+  "reason": "Search Hunt Session runtime exists; local workbench hunt visibility is next.",
+  "recommended_next_task": "HUNT-02 — Search Hunt UI state in Local Workbench",
+  "schema_version": "hunt_01_next_task_decision.v0",
+  "search_hunt_session_runtime_available": true,
+  "source_probe_execution_enabled": false,
+  "task": "HUNT-01",
+  "workunit_creation_enabled": false
+}

@@ -1,0 +1,12 @@
+{
+  "current_index_only": true,
+  "external_network_used": false,
+  "layer": "reviewed_public_index",
+  "model_provider_used": false,
+  "query": "sampleproject",
+  "result_count": 0,
+  "reviewed_index_only": true,
+  "schema_version": "search_hunt_reviewed_index_search_summary.v0",
+  "source_probe_executed": false,
+  "workunit_creation_performed": false
+}

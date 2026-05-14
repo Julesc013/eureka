@@ -1,0 +1,16 @@
+{
+  "count": 1,
+  "schema_version": "search_hunt_cli_result.v0",
+  "sessions": [
+    {
+      "id": "shs_sample",
+      "normalized_query": "sampleproject",
+      "query": "sampleproject",
+      "state": "created"
+    }
+  ],
+  "status": "pass",
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "model_provider_used": false
+}

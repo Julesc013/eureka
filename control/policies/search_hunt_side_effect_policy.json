@@ -1,0 +1,18 @@
+{
+  "deployment_allowed": false,
+  "external_network_allowed": false,
+  "extraction_allowed": false,
+  "hunt_state_transition_allowed": true,
+  "hunt_store_mutation_allowed": true,
+  "master_index_mutation_allowed": false,
+  "model_provider_allowed": false,
+  "public_index_mutation_allowed": false,
+  "review_decision_allowed": false,
+  "schema_version": "search_hunt_side_effect_policy.v0",
+  "search_summary_recording_allowed": true,
+  "absence_summary_recording_allowed": true,
+  "site_dist_writes_allowed": false,
+  "source_probe_allowed": false,
+  "sync_allowed": false,
+  "workunit_creation_allowed": false
+}

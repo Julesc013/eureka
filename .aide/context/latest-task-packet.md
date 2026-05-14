@@ -2,31 +2,31 @@
 
 ## PHASE
 
-HUNT-01 - Search Hunt Session runtime
+HUNT-02 - Search Hunt UI state in Local Workbench
 
 ## GOAL
 
-Begin from the HUNT-00 planning/control evidence and implement the first Search Hunt Session runtime only when a future HUNT-01 task explicitly scopes it.
+Expose persisted Search Hunt Session state in the Local Workbench after HUNT-01 added the durable local runtime.
 
 ## WHY
 
-Search should become a governed investigation path when the reviewed local index is weak, absent, ambiguous, stale, or policy-blocked. HUNT-00 inserted the planning spine; HUNT-01 is the next runtime task.
+Search Hunt Sessions are now stored in the explicit Local Appliance instance. The next proof should make those sessions inspectable through the existing local workbench without adding background execution or source probes.
 
 ## CONTEXT_REFS
 
-- `control/inventory/search_hunt_track_plan.json`
-- `control/inventory/search_hunt_readiness_matrix.json`
-- `control/inventory/search_hunt_dependency_matrix.json`
-- `control/inventory/search_hunt_local_appliance_dependency.json`
-- `control/inventory/search_hunt_future_track_gate.json`
-- `control/inventory/search_hunt_next_task_decision.json`
-- `control/inventory/final_chat_alignment_packet.json`
-- `.aide/queue/HUNT-01/task.yaml`
+- `runtime/search_hunt/`
+- `scripts/eureka_search_hunt.py`
+- `scripts/demo_search_hunt_session.py`
+- `scripts/validate_search_hunt_runtime.py`
+- `control/inventory/search_hunt_runtime_result.json`
+- `control/inventory/hunt_01_next_task_decision.json`
+- `control/audits/hunt-01-search-hunt-session-runtime-v0/`
+- `.aide/queue/HUNT-02/task.yaml`
 
 ## ALLOWED_PATHS
 
-- HUNT-01 paths must be taken from the future reviewed HUNT-01 prompt.
-- Local Appliance runtime paths may be edited only when that future prompt explicitly authorizes them.
+- HUNT-02 paths must be taken from the future reviewed HUNT-02 prompt.
+- Local Workbench/service changes may be edited only when that future prompt explicitly authorizes them.
 - Control, docs, scripts, tests, and audit evidence may be used only within the reviewed task scope.
 
 ## FORBIDDEN_PATHS
@@ -43,15 +43,15 @@ Search should become a governed investigation path when the reviewed local index
 
 ## IMPLEMENTATION
 
-- Read HUNT-00 evidence and the HUNT-01 task file first.
-- Use explicit local instance, runtime composition, WorkUnit queue, deterministic worker, review/evidence/index, workbench, and auto-test/search boundaries.
-- Keep Search Hunt Session records non-truth until future review/evidence/index promotion paths accept them.
+- Read HUNT-01 evidence and the HUNT-02 task file first.
+- Use the Local Appliance runtime composition boundary.
+- Keep Search Hunt Sessions non-truth and read-only through workbench views unless a future task explicitly enables mutation.
 - Do not bypass the Local Appliance with ad hoc stores or direct index mutation.
 
 ## VALIDATION
 
-- `python scripts/validate_search_hunt_track.py`
-- HUNT-01 focused tests when implemented
+- `python scripts/validate_search_hunt_runtime.py`
+- HUNT-02 focused tests when implemented
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
 - `python -m unittest discover -s tests -t .`
@@ -63,14 +63,15 @@ Search should become a governed investigation path when the reviewed local index
 
 ## EVIDENCE
 
-- HUNT-00 audit pack: `control/audits/hunt-00-search-hunt-track-v0/`
-- HUNT policies under `control/policies/search_hunt_*.json`
-- HUNT inventories under `control/inventory/search_hunt_*.json`
+- HUNT-01 audit pack: `control/audits/hunt-01-search-hunt-session-runtime-v0/`
+- HUNT runtime policies under `control/policies/search_hunt_*_policy.json`
+- HUNT runtime inventories under `control/inventory/search_hunt_*`
 - Queue state in `.aide/queue/index.yaml`
 
 ## NON_GOALS
 
 - No source probes
+- No WorkUnit creation from hunts
 - No extraction runtime
 - No SYN generation
 - No AI/model/provider calls
@@ -78,22 +79,3 @@ Search should become a governed investigation path when the reviewed local index
 - No deployment
 - No production readiness claim
 - No public launch readiness claim
-
-## ACCEPTANCE
-
-- HUNT-01 starts only after HUNT-00 passes.
-- F0 remains resumable but not current unless explicitly chosen.
-- SYN remains available as an alternative/follow-up.
-- The Local Appliance remains the mandatory proof surface.
-
-## OUTPUT_SCHEMA
-
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `VALIDATION`, `BOUNDARIES`, and `NEXT_TASK`.
-
-## TOKEN_ESTIMATE
-
-- method: chars / 4, rounded up
-- approx_tokens: 650
-- budget_status: PASS
-- warnings:
-  - none

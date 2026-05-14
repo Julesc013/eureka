@@ -1,0 +1,18 @@
+{
+  "external_network_used": false,
+  "layer": "local_absence_report",
+  "local_current_index_absence_only": true,
+  "model_provider_used": false,
+  "query": "definitely-not-present",
+  "schema_version": "search_hunt_local_absence_summary.v0",
+  "source_probe_executed": false,
+  "unchecked_layers": [
+    "source_probes",
+    "WorkUnits",
+    "extraction",
+    "broader_connectors",
+    "synthetic_query_foundry",
+    "AI_research_escalation"
+  ],
+  "workunit_creation_performed": false
+}

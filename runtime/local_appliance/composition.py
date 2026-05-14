@@ -7,6 +7,7 @@ from typing import Any
 from runtime.evidence_ledger.store import EvidenceLedgerStore
 from runtime.public_index.store import PublicIndexStore
 from runtime.review_queue.store import ReviewQueueStore
+from runtime.search_hunt.store import SearchHuntStore
 from runtime.source_cache.store import SourceCacheStore
 
 from .config import LocalInstanceConfig, load_instance_config, validate_instance_config
@@ -26,8 +27,9 @@ STORE_CLASSES = {
     "evidence_ledger": EvidenceLedgerStore,
     "review_queue": ReviewQueueStore,
     "public_index": PublicIndexStore,
+    "search_hunt": SearchHuntStore,
 }
-STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue")
+STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt")
 
 
 @dataclass
@@ -41,6 +43,7 @@ class LocalApplianceRuntime:
     review_queue: Any
     public_index: Any
     workunit_queue: Any
+    search_hunt: Any
     read_only: bool = False
     _closed: bool = False
 
@@ -58,6 +61,7 @@ class LocalApplianceRuntime:
             "review_queue": self.review_queue.check_integrity(),
             "public_index": self.public_index.check_integrity(),
             "workunit_queue": self.workunit_queue.check_integrity(),
+            "search_hunt": self.search_hunt.check_integrity(),
         }
         return {
             "schema_version": "local_runtime_integrity.v0",
@@ -68,7 +72,7 @@ class LocalApplianceRuntime:
     def close(self) -> None:
         if self._closed:
             return
-        for store in (self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
+        for store in (self.search_hunt, self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
             if hasattr(store, "close"):
                 store.close()
         self._closed = True
@@ -128,6 +132,7 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
             review_queue=opened["review_queue"],
             public_index=opened["public_index"],
             workunit_queue=opened["workunit_queue"],
+            search_hunt=opened["search_hunt"],
             read_only=read_only,
         )
     except Exception:
@@ -178,6 +183,6 @@ def _store_class(store_id: str) -> Any:
 
 
 def _is_mutation_name(name: str) -> bool:
-    mutation_prefixes = ("write", "append", "record", "set", "enqueue", "link", "create", "transition", "pause", "resume", "cancel", "block", "complete", "fail")
+    mutation_prefixes = ("write", "append", "record", "set", "enqueue", "link", "create", "transition", "attach", "pause", "resume", "cancel", "block", "complete", "fail")
     mutation_names = {"transaction", "connection", "init"}
     return name in mutation_names or any(name.startswith(prefix) for prefix in mutation_prefixes)

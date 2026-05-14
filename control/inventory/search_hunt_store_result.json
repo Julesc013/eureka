@@ -1,0 +1,10 @@
+{
+  "init_validation_integration_passed": true,
+  "integrity_check_passed": true,
+  "schema_version": "search_hunt_store_result.v0",
+  "sqlite_store_added": true,
+  "status": "pass",
+  "store_added_to_instance_manifest": true,
+  "task": "HUNT-01",
+  "transition_history_recorded": true
+}

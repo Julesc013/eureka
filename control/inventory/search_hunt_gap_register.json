@@ -1,0 +1,21 @@
+{
+  "gaps": [
+    {
+      "deferred_to": "HUNT-02",
+      "gap": "local workbench hunt visibility",
+      "status": "planned"
+    },
+    {
+      "deferred_to": "HUNT-06",
+      "gap": "Search Hunt to WorkUnit creation",
+      "status": "planned"
+    },
+    {
+      "deferred_to": "future source-probe gate",
+      "gap": "source probe execution",
+      "status": "disabled"
+    }
+  ],
+  "schema_version": "search_hunt_gap_register.v0",
+  "task": "HUNT-01"
+}

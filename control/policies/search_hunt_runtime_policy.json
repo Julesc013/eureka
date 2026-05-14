@@ -1,0 +1,19 @@
+{
+  "direct_public_index_mutation_enabled": false,
+  "durable_store_required": true,
+  "explicit_instance_path_required": true,
+  "extraction_execution_enabled": false,
+  "local_appliance_composition_required": true,
+  "master_index_mutation_enabled": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reviewed_index_first": true,
+  "schema_version": "search_hunt_runtime_policy.v0",
+  "session_creation_enabled": true,
+  "source_probe_execution_enabled": false,
+  "sqlite_store_required": true,
+  "sync_enabled": false,
+  "workunit_creation_enabled": false,
+  "deployment_enabled": false
+}

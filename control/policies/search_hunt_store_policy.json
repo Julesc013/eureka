@@ -1,0 +1,11 @@
+{
+  "ad_hoc_store_paths_forbidden": true,
+  "db_path": "db/search_hunt.sqlite",
+  "hidden_store_paths_forbidden": true,
+  "instance_manifest_required": true,
+  "integrity_check_required": true,
+  "schema_version": "search_hunt_store_policy.v0",
+  "schema_version_required": true,
+  "store_id": "search_hunt",
+  "store_paths_must_come_from_manifest": true
+}

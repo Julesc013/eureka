@@ -1,0 +1,18 @@
+{
+  "transitions": [
+    {
+      "from_state": "",
+      "id": "sht_created",
+      "reason": "created",
+      "session_id": "shs_sample",
+      "to_state": "created"
+    },
+    {
+      "from_state": "created",
+      "id": "sht_running",
+      "reason": "demo running",
+      "session_id": "shs_sample",
+      "to_state": "running"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "invalid_transition_rejected": true,
+  "model_provider_used": false,
+  "public_index_mutated": false,
+  "schema_version": "search_hunt_demo_result.v0",
+  "source_probe_executed": false,
+  "status": "pass",
+  "workunit_creation_performed": false,
+  "workunit_queue_unchanged": true
+}

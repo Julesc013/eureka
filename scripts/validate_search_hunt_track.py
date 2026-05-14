@@ -359,21 +359,19 @@ def validate_report(report: Mapping[str, Any], errors: list[str], warnings: list
 def validate_queue(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
-    if "current_recommended_task: HUNT-01" not in queue:
-        errors.append("queue must point to HUNT-01")
+    if "current_recommended_task: HUNT-01" not in queue and "current_recommended_task: HUNT-02" not in queue:
+        errors.append("queue must point to HUNT-01 or a later HUNT task")
     if "id: HUNT-00" not in queue or "status: completed" not in queue:
         errors.append("queue must mark HUNT-00 completed")
-    if "id: HUNT-01" not in queue or "status: queued" not in queue:
-        errors.append("queue must include HUNT-01 queued")
-    if "HUNT-01" not in packet:
-        errors.append("latest task packet must point to HUNT-01")
+    if "id: HUNT-01" not in queue:
+        errors.append("queue must include HUNT-01")
+    if "HUNT-01" not in packet and "HUNT-02" not in packet:
+        errors.append("latest task packet must point to HUNT-01 or a later HUNT task")
     if "F0-00" in queue and "current_recommended_task: F0-00" in queue:
         errors.append("F0 must not be current")
 
 
 def validate_scope(root: Path, errors: list[str]) -> None:
-    if (root / "runtime/search_hunt").exists():
-        errors.append("HUNT-00 must not add runtime/search_hunt")
     status = git(root, "status", "--porcelain=v1")
     for path in parse_status_paths(status.splitlines() if status else []):
         if any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in FORBIDDEN_CHANGED_ROOTS):

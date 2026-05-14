@@ -60,7 +60,7 @@ class LocalApplianceInstanceTests(unittest.TestCase):
             self.assertEqual(config.instance_id, manifest.instance_id)
             self.assertEqual(config.instance_id, migration.instance_id)
             self.assertEqual(
-                ["source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue"],
+                ["source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt"],
                 list(manifest.stores),
             )
             self.assertFalse(migration.destructive_migration_required)
