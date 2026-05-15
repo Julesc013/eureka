@@ -3,7 +3,7 @@
   "canonical_branch": "main",
   "confidence": "high",
   "current_branch": "dev",
-  "current_commit": "4c954e516a20fd8be59e925d175759daa80d2a93",
+  "current_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
   "detected_workflow": "trunk_with_dev_integration",
   "generated_by": "aide-lite",
   "integration_branch": "dev",
@@ -15,6 +15,11 @@
   "non_mutating": true,
   "recommended_next_action": "classify dirty tree before branch-sensitive work",
   "remote_branches": [
+    "origin/HUNT-00-search-hunt-track-v0",
+    "origin/HUNT-01-search-hunt-session-runtime-v0",
+    "origin/HUNT-02-search-hunt-ui-state-v0",
+    "origin/HUNT-03-search-hunt-commands-v0",
+    "origin/HUNT-04-hunt-exhaustion-report-v0",
     "origin/dev",
     "origin/main"
   ],

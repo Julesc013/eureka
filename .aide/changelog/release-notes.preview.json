@@ -1,0 +1,2715 @@
+{
+  "follow_up": [
+    {
+      "commit": "3e6eb757e037",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "3e6eb757e037",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "R0-05 should add the durable source cache store. F0 and dev-to-main promotion remain blocked."
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "R0-05 should add the durable source cache store. F0 and dev-to-main promotion remain blocked."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-06 should add the durable evidence ledger store."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-06 should add the durable evidence ledger store."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-06 should add the durable evidence ledger store."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-07 should add the review queue product seam."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-07 should add the review queue product seam."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-07 should add the review queue product seam."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "R0-08 - Reviewed public index rebuild."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "R0-08 - Reviewed public index rebuild."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "R0-08 - Reviewed public index rebuild."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "R0-08 - Reviewed public index rebuild."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "Merge recovery/r0-04-source-observation into dev and push origin/dev."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "Merge recovery/r0-04-source-observation into dev and push origin/dev."
+    },
+    {
+      "commit": "9cda6e786c25",
+      "summary": "Validate dev and push origin/dev."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "R0-09 - One-source live test."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "R0-09 - One-source live test."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "R0-09 - One-source live test."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "R0-09 - One-source live test."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "R0-10 Dev-to-main production review remains next."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "R0-10 Dev-to-main production review remains next."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "R0-10 Dev-to-main production review remains next."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "R0-REMEDIATION Resolve remaining production blockers is the next safe task."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "R0-REMEDIATION Resolve remaining production blockers is the next safe task."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "R0-REMEDIATION Resolve remaining production blockers is the next safe task."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "R0-REMEDIATION Resolve final R0 blockers is the next safe task."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "R0-REMEDIATION Resolve final R0 blockers is the next safe task."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "R0-REMEDIATION Resolve final R0 blockers is the next safe task."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "Run clean-tree R0 validators after commit."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "Run clean-tree R0 validators after commit."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "Run clean-tree R0 validators after commit."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01 should reconcile generated artifact drift before F0/main promotion."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01 should reconcile generated artifact drift before F0/main promotion."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01 should reconcile generated artifact drift before F0/main promotion."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "Continue with F0 only if the operator accepts the warning-level residual debt."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "Continue with F0 only if the operator accepts the warning-level residual debt."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "Continue with F0 only if the operator accepts the warning-level residual debt."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "Continue with F0 only if the operator accepts the warning-level residual debt."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "Continue with F0 only if the operator accepts the warning-level residual debt."
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "F0-BUNDLE-01 may resume using the recovered runtime seams, or run R0-FINAL-PROMOTION-REVIEW before main promotion."
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "F0-BUNDLE-01 may resume using the recovered runtime seams, or run R0-FINAL-PROMOTION-REVIEW before main promotion."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "DEV-TO-MAIN-MERGE-R0 \u2014 Promote recovered R0 dev to main, or start F0 from dev while main remains intentionally behind."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "DEV-TO-MAIN-MERGE-R0 \u2014 Promote recovered R0 dev to main, or start F0 from dev while main remains intentionally behind."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "DEV-TO-MAIN-MERGE-R0 \u2014 Promote recovered R0 dev to main, or start F0 from dev while main remains intentionally behind."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "F0-BUNDLE-01 \u2014 Deep extraction source-family and extraction-boundary policy packs."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "Follow-up: Run LOCAL-01 - Local instance layout and bootstrap."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "Follow-up: Run LOCAL-01 - Local instance layout and bootstrap."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "LOCAL-02 - Instance configuration, schema, and migration guard."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "LOCAL-02 - Instance configuration, schema, and migration guard."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "LOCAL-02 - Instance configuration, schema, and migration guard."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "LOCAL-03 - Local runtime composition boundary."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "LOCAL-03 - Local runtime composition boundary."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "LOCAL-03 - Local runtime composition boundary."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "LOCAL-03 - Local runtime composition boundary."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "LOCAL-05 \u2014 HTML workbench v0."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "LOCAL-05 \u2014 HTML workbench v0."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "LOCAL-05 \u2014 HTML workbench v0."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "LOCAL-05 \u2014 HTML workbench v0."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "Review Q26."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "Review Q26."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "Review Q26."
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "LOCAL-06: harden status, object, source, and absence pages."
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "LOCAL-06: harden status, object, source, and absence pages."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "LOCAL-07: Operator-gated WorkUnit queue."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "LOCAL-07: Operator-gated WorkUnit queue."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "LOCAL-07: Operator-gated WorkUnit queue."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "LOCAL-07: Operator-gated WorkUnit queue."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "LOCAL-08 -- Review and index rebuild from UI remains the next queue item."
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "Continue with LOCAL-09 deterministic local worker runner."
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "Continue with LOCAL-09 deterministic local worker runner."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "Continue with LOCAL-10 auto-test and auto-search harness."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "Continue with LOCAL-10 auto-test and auto-search harness."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "Continue Q32 by targeted-syncing portable governance files from the Q31 pack and preserving Eureka-local state."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "Continue Q32 by targeted-syncing portable governance files from the Q31 pack and preserving Eureka-local state."
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "Regenerate Eureka-local Git reports, context packets, and Q32 validation evidence."
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "Regenerate Eureka-local Git reports, context packets, and Q32 validation evidence."
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "Regenerate context packets and evidence after final validation."
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "Regenerate context packets and evidence after final validation."
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "Record final Q32 evidence and status as needs_review."
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "Record final Q32 evidence and status as needs_review."
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "Finish Q32 evidence and final validation before review."
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "Finish Q32 evidence and final validation before review."
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "Review Q32, then proceed to the next bounded Eureka queue task or target sync phase."
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "Review Q32, then proceed to the next bounded Eureka queue task or target sync phase."
+    },
+    {
+      "commit": "4207f7863562",
+      "summary": "Use Q32 evidence and final report for review."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "LOCAL-11 - LAN binding policy and safety gate."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "LOCAL-11 - LAN binding policy and safety gate."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "LOCAL-11 - LAN binding policy and safety gate."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "LOCAL-11 - LAN binding policy and safety gate."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "LOCAL-11 - LAN binding policy and safety gate."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "LOCAL-12 - LAN read-only smoke test."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "LOCAL-13 - Clean-machine bootstrap proof."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "LOCAL-13 - Clean-machine bootstrap proof."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "LOCAL-13 - Clean-machine bootstrap proof."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "LOCAL-13 - Clean-machine bootstrap proof."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "LOCAL-14 - Local appliance closeout and F0/HUNT/SYN handoff."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "HUNT-00 - Search Hunt track planning over Local Appliance."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "HUNT-00 - Search Hunt track planning over Local Appliance."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "HUNT-00 - Search Hunt track planning over Local Appliance."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "HUNT-00 - Search Hunt track planning over Local Appliance."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Run LOCAL-LEAKAGE-01 to reconcile the runtime leakage gate."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Run LOCAL-LEAKAGE-01 to reconcile the runtime leakage gate."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Run LOCAL-LEAKAGE-01 to reconcile the runtime leakage gate."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "Run LOCAL-LEAKAGE-01 to reconcile runtime leakage before promotion."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "Run LOCAL-LEAKAGE-01 to reconcile runtime leakage before promotion."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "HUNT-00 should decide whether remaining exact leakage warning entries are renamed or accepted before implementation closeout."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "HUNT-00 should decide whether remaining exact leakage warning entries are renamed or accepted before implementation closeout."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "HUNT-00 should decide whether remaining exact leakage warning entries are renamed or accepted before implementation closeout."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "HUNT-00 should decide whether remaining exact leakage warning entries are renamed or accepted before implementation closeout."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "HUNT-00 should decide whether remaining exact leakage warning entries are renamed or accepted before implementation closeout."
+    },
+    {
+      "commit": "cce1d0557579",
+      "summary": "Run post-merge cleanliness, architecture, leakage, and branch fast-forward checks before pushing or promoting."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "Push this audit commit to dev and fast-forward main again so remote evidence remains aligned."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "Push this audit commit to dev and fast-forward main again so remote evidence remains aligned."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Run post-commit generated-artifact cleanliness and promotion gates."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Run post-commit generated-artifact cleanliness and promotion gates."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Run post-commit generated-artifact cleanliness and promotion gates."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Run post-commit generated-artifact cleanliness and promotion gates."
+    },
+    {
+      "commit": "859923086a7a",
+      "summary": "Re-fetch and inspect origin/dev before any later push or promotion."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "Run Q55 as a local-only upgrade from the validated stable AIDE bundle."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "Run Q55 as a local-only upgrade from the validated stable AIDE bundle."
+    }
+  ],
+  "highlights": [
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3e6eb757e037",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5f5e5bcb22d2",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "compatibility handling for historical candidate/probe/OBS references after schema moves."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "8bb9e4cd0bf5",
+      "subject": "runtime(r0): add source observation seam",
+      "summary": "source observation seam behavior and audit evidence for R0-04."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1a48f6f3fb76",
+      "subject": "runtime(r0): add durable source cache store",
+      "summary": "durable source cache SQLite persistence seam for R0-05."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1a48f6f3fb76",
+      "subject": "runtime(r0): add durable source cache store",
+      "summary": "source cache store contracts, docs, tests, validator, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "a9c536dfe1f9",
+      "subject": "runtime(r0): add durable evidence ledger",
+      "summary": "durable evidence ledger SQLite persistence seam for R0-06."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "a9c536dfe1f9",
+      "subject": "runtime(r0): add durable evidence ledger",
+      "summary": "evidence ledger contracts, docs, tests, validator, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "0eea9c54c65a",
+      "subject": "runtime(r0): add review queue store",
+      "summary": "durable review queue store package and governed store contracts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "0eea9c54c65a",
+      "subject": "runtime(r0): add review queue store",
+      "summary": "init, demo, validator, docs, inventory, and audit pack for R0-07."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "f9d7fc25f9fd",
+      "subject": "runtime(r0): add reviewed public index",
+      "summary": "reviewed public index store and rebuild pipeline."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "f9d7fc25f9fd",
+      "subject": "runtime(r0): add reviewed public index",
+      "summary": "public index store schemas."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "f9d7fc25f9fd",
+      "subject": "runtime(r0): add reviewed public index",
+      "summary": "store, rebuild, search, absence, and integration tests."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "f9d7fc25f9fd",
+      "subject": "runtime(r0): add reviewed public index",
+      "summary": "reviewed public index architecture, reference, and operations docs."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "90695310dc30",
+      "subject": "test(r0): run one source live pipeline",
+      "summary": "one-source PyPI live metadata pipeline and audit evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "6eeae5b324a5",
+      "subject": "audit(r0): complete production recovery review",
+      "summary": "R0-10 production recovery review evidence and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "0da3111215d2",
+      "subject": "audit(r0): close production recovery",
+      "summary": "R0 final closeout evidence and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "ede77d3cb101",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "R0 contract taxonomy remediation scripts, tests, inventories, docs, and audit pack"
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "dbc4e72ccf63",
+      "subject": "fix(r0): reconcile generated artifact drift",
+      "summary": "generated artifact drift policy and validation tooling."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "be01503a76b0",
+      "subject": "fix(r0): retire legacy runtime leakage debt",
+      "summary": "legacy leakage remediation scripts, tests, inventories, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "4cde57bd1004",
+      "subject": "audit(r0): review dev main promotion",
+      "summary": "final R0 promotion review inventories, audit pack, docs, and merge plan."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "387a307d0397",
+      "subject": "audit(r0): record dev main promotion",
+      "summary": "dev-to-main R0 promotion evidence and F0 start decision."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "a140304235d7",
+      "subject": "ops(local): insert appliance track before f0",
+      "summary": "Local Appliance track policies, inventories, docs, audit pack, validator, and tests."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7f373983b227",
+      "subject": "ops(local): add instance bootstrap",
+      "summary": "LOCAL-01 local instance bootstrap controls and commands."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "9bdad0968762",
+      "subject": "ops(local): add instance migration guard",
+      "summary": "local instance schema and migration policies."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "9bdad0968762",
+      "subject": "ops(local): add instance migration guard",
+      "summary": "store manifest, migration state, schema-version inventories, audit pack, validator, migration status command, and focused tests."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "ac9f5b8de4f6",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "runtime status, composition demo, and LOCAL-03 validator scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "ac9f5b8de4f6",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "LOCAL-03 policies, inventories, tests, docs, queue handoff, and audit evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5f9ac9870626",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "runtime/local_appliance runtime composition API."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5f9ac9870626",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "runtime status, composition demo, and LOCAL-03 validator scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5f9ac9870626",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "LOCAL-03 policies, inventories, tests, docs, queue handoff, and audit evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "15a46c118f90",
+      "subject": "runtime(local): add read only localhost service",
+      "summary": "runtime/local_service read-only localhost service API."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "15a46c118f90",
+      "subject": "runtime(local): add read only localhost service",
+      "summary": "local server, smoke, and LOCAL-04 validator scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "15a46c118f90",
+      "subject": "runtime(local): add read only localhost service",
+      "summary": "LOCAL-04 policies, inventories, docs, queue handoff, tests, and audit evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "e0af786e11e0",
+      "subject": "surface(local): add html workbench",
+      "summary": "server-rendered local workbench runtime, smoke script, validator, policies, inventories, docs, tests, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "fb230b12543f",
+      "subject": "surface(local): harden workbench pages",
+      "summary": "LOCAL-06 page hardening policies, inventories, validator, tests, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "durable local WorkUnit queue store, state machine, records, queries, and validation."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "WorkUnit queue CLI, demo, and validator."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "ff941a760345",
+      "subject": "surface(local): add review rebuild loop",
+      "summary": "local operator auth, local review service, review/rebuild routes, scripts, tests, policies, inventories, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "5488d5b29987",
+      "subject": "runtime(local): add deterministic worker runner",
+      "summary": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3e5302ea9a36",
+      "subject": "aide(eureka): sync Git workflow policy and reports",
+      "summary": "target-local Git workflow detection and helper planning reports."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "1e67573e29a1",
+      "subject": "aide(eureka): record canonical governance sync evidence",
+      "summary": "Q32 final evidence and review-gate status."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "db42e120c3f5",
+      "subject": "test(local): add auto search harness",
+      "summary": "deterministic local auto-test and auto-search harness commands."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "db42e120c3f5",
+      "subject": "test(local): add auto search harness",
+      "summary": "machine-readable and Markdown eval reports with latency and safety posture."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "285d0c4dcd4b",
+      "subject": "ops(local): add lan safety gate",
+      "summary": "read-only LAN safety policy package, LAN route/mutation matrices, policy check script, validator, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "9bddfc02d506",
+      "subject": "test(local): prove read only lan smoke",
+      "summary": "LOCAL-12 LAN smoke/probe/shutdown scripts, validator, policies, inventories, tests, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "d3cf4ea25532",
+      "subject": "test(local): prove clean machine bootstrap",
+      "summary": "LOCAL-13 clean-machine scripts, validator, policies, inventories, tests, docs, and audit pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "e39101948499",
+      "subject": "audit(local): close appliance track",
+      "summary": "LOCAL-14 closeout scripts, inventories, docs, tests, audit pack, and task stubs."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "736a43a5a9c5",
+      "subject": "audit(local): green appliance baseline",
+      "summary": "final green inventories and audit evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "4e9ebd7478ae",
+      "subject": "fix(local): green appliance leakage and promotion gate",
+      "summary": "LOCAL total remediation inventories, audit evidence, and promotion gate tests."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7de5c8b708c2",
+      "subject": "audit(final): align state promotion and future plan",
+      "summary": "final state inventories, audit pack, future execution plan, and chat alignment packet."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "3e6eb757e037",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "active schema references now prefer `control/schemas/` for control/task schema classes."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "5f5e5bcb22d2",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "active validators and tests now follow the R0 contract taxonomy for moved control schemas."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "5f5e5bcb22d2",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "R0-03B-2 validation evidence now records the final full-suite pass."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "8bb9e4cd0bf5",
+      "subject": "runtime(r0): add source observation seam",
+      "summary": "contract taxonomy scanner recognizes the required evidence_candidate runtime contract as product runtime."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "1a48f6f3fb76",
+      "subject": "runtime(r0): add durable source cache store",
+      "summary": "contract taxonomy inventory includes the new store contracts."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "a9c536dfe1f9",
+      "subject": "runtime(r0): add durable evidence ledger",
+      "summary": "contract taxonomy durable-store classification handles store contracts before preview naming signals."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "0eea9c54c65a",
+      "subject": "runtime(r0): add review queue store",
+      "summary": "contract taxonomy classification now treats contracts/stores as durable store contracts before task-queue filename heuristics."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "ce1ab9685222",
+      "subject": "chore(dev): integrate origin dev",
+      "summary": "integrate remote dev cleanup commit into local dev history."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "9cda6e786c25",
+      "subject": "chore(dev): merge R0 recovery branch",
+      "summary": "merge R0 recovery branch into dev."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "d15eb701b478",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "refreshed exact runtime leakage allowlist hashes after reference-only path updates."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "dbc4e72ccf63",
+      "subject": "fix(r0): reconcile generated artifact drift",
+      "summary": "refreshed governed generated artifacts and R0 closeout decision evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "be01503a76b0",
+      "subject": "fix(r0): retire legacy runtime leakage debt",
+      "summary": "quarantine legacy H-series connector prototype runtime and update references."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "a140304235d7",
+      "subject": "ops(local): insert appliance track before f0",
+      "summary": "AIDE queue, task packet, review packet, and repo health now route to LOCAL-01 before F0."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "7f373983b227",
+      "subject": "ops(local): add instance bootstrap",
+      "summary": "queue state advances to LOCAL-02 while F0 remains deferred."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "9bdad0968762",
+      "subject": "ops(local): add instance migration guard",
+      "summary": "init, validate, and status scripts now understand versioned instance metadata."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "cf0c53a41d93",
+      "subject": "chore(aide): revalidate Q26 Eureka handover",
+      "summary": "refreshed AIDE handover evidence and compact task/review artifacts."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "e0af786e11e0",
+      "subject": "surface(local): add html workbench",
+      "summary": "local service now serves read-only HTML routes while keeping JSON API routes under /api/v1."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "fb230b12543f",
+      "subject": "surface(local): harden workbench pages",
+      "summary": "local workbench view models and pages now expose operational status, provenance, absence layers, non-claims, and unavailable capabilities."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "fb230b12543f",
+      "subject": "surface(local): harden workbench pages",
+      "summary": "local service search JSON now preserves existing result fields while adding full reviewed record fields when available."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "local instance manifest, runtime composition, and status now include the WorkUnit queue store."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "LOCAL-07 policies, inventories, audit pack, leakage baseline, and queue handoff."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "ff941a760345",
+      "subject": "surface(local): add review rebuild loop",
+      "summary": "local service and workbench routes now expose operator-gated review/rebuild pages and APIs."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "5488d5b29987",
+      "subject": "runtime(local): add deterministic worker runner",
+      "summary": "WorkUnit queue now records worker result and audit payload references."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "21e4f766300d",
+      "subject": "aide(eureka): sync portable commit and WorkUnit policies",
+      "summary": "imported canonical AIDE governance and validation tooling into Eureka."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "5d955486e323",
+      "subject": "aide(eureka): regenerate packets and validation evidence",
+      "summary": "regenerated Eureka-local AIDE packets and governance reports."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "4c954e516a20",
+      "subject": "docs(eureka): record canonical AIDE governance sync",
+      "summary": "refreshed agent guidance for structured commits, task recovery, and Git plan usage."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "1e67573e29a1",
+      "subject": "aide(eureka): record canonical governance sync evidence",
+      "summary": "refreshed final Q32 reports and token metadata."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "285d0c4dcd4b",
+      "subject": "ops(local): add lan safety gate",
+      "summary": "local server now requires explicit --bind-lan for all-interface bind hosts and blocks LAN unsafe routes."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "9bddfc02d506",
+      "subject": "test(local): prove read only lan smoke",
+      "summary": "AIDE queue/context/repo-health to hand off to LOCAL-13."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "d3cf4ea25532",
+      "subject": "test(local): prove clean machine bootstrap",
+      "summary": "AIDE queue/context/repo-health to hand off to LOCAL-14."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "e39101948499",
+      "subject": "audit(local): close appliance track",
+      "summary": "AIDE queue/context/repo-health to hand off from LOCAL-14 to HUNT-00."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "736a43a5a9c5",
+      "subject": "audit(local): green appliance baseline",
+      "summary": "completed LOCAL validators accept advanced queue state."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "698e30097344",
+      "subject": "build(index): refresh public search artifact",
+      "summary": "final green evidence records one additional safe repair."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "4e9ebd7478ae",
+      "subject": "fix(local): green appliance leakage and promotion gate",
+      "summary": "LOCAL closeout warning and promotion evidence now reflect zero new unallowlisted leakage findings."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "52a73c641d2c",
+      "subject": "audit(local): record appliance promotion result",
+      "summary": "promotion evidence now records the completed fast-forward promotion."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "7de5c8b708c2",
+      "subject": "audit(final): align state promotion and future plan",
+      "summary": "LOCAL-14 promotion review evidence restored to plan-only semantics."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ce1ab9685222",
+      "subject": "chore(dev): integrate origin dev",
+      "summary": "preserve candidate-index historical contract path compatibility during merge."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ede77d3cb101",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "moved unresolved contract taxonomy artifacts to control/schemas"
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "ede77d3cb101",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "updated active schema references and audit evidence needed by validators"
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "d15eb701b478",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "retired remaining contract taxonomy blockers and shims."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "dbc4e72ccf63",
+      "subject": "fix(r0): reconcile generated artifact drift",
+      "summary": "isolated static site JSON build test from site/dist."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "dbc4e72ccf63",
+      "subject": "fix(r0): reconcile generated artifact drift",
+      "summary": "classified HTML heading tags and local-bundle fixture wording as leakage false positives."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "285d0c4dcd4b",
+      "subject": "ops(local): add lan safety gate",
+      "summary": "LAN client host handling is separated from service bind-host validation."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "736a43a5a9c5",
+      "subject": "audit(local): green appliance baseline",
+      "summary": "stale IA readiness and local workbench test expectations."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "698e30097344",
+      "subject": "build(index): refresh public search artifact",
+      "summary": "refreshed stale public search generated artifacts."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "4e9ebd7478ae",
+      "subject": "fix(local): green appliance leakage and promotion gate",
+      "summary": "runtime leakage path classification now treats nested product tests as test fixtures before production paths."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "4e9ebd7478ae",
+      "subject": "fix(local): green appliance leakage and promotion gate",
+      "summary": "runtime leakage term matching keeps uppercase governance tokens case-sensitive."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "4e9ebd7478ae",
+      "subject": "fix(local): green appliance leakage and promotion gate",
+      "summary": "runtime leakage glob matching handles mid-pattern ** fixture paths."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "6eeae5b324a5",
+      "subject": "audit(r0): complete production recovery review",
+      "summary": "added R0 production review, dev-to-main promotion review, and F0 resumption gate notes."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "0da3111215d2",
+      "subject": "audit(r0): close production recovery",
+      "summary": "added final closeout, limitations, F0 handoff, branch/queue, future completion, and recovered seam docs."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "d15eb701b478",
+      "subject": "fix(r0): resolve contract taxonomy blockers",
+      "summary": "recorded generated artifact drift as a child remediation blocker."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "387a307d0397",
+      "subject": "audit(r0): record dev main promotion",
+      "summary": "branch state, rollback, and non-claim evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "WorkUnit queue boundary, API, state machine, and runbook."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "5d31441b87f5",
+      "subject": "aide(eureka): add canonical governance sync packet",
+      "summary": "recorded source-pack and baseline validation evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "4c954e516a20",
+      "subject": "docs(eureka): record canonical AIDE governance sync",
+      "summary": "documented canonical AIDE governance sync for Eureka."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "db42e120c3f5",
+      "subject": "test(local): add auto search harness",
+      "summary": "LOCAL auto-test harness, auto-search suites, report format, and runbook."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "285d0c4dcd4b",
+      "subject": "ops(local): add lan safety gate",
+      "summary": "added LAN mode, route matrix, safety gate, operator boundary, and smoke prereq docs."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "9bddfc02d506",
+      "subject": "test(local): prove read only lan smoke",
+      "summary": "LAN smoke test, external-client checklist, shutdown cleanup, limitations, route matrix, and service runbook updates."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "d3cf4ea25532",
+      "subject": "test(local): prove clean machine bootstrap",
+      "summary": "clean-machine bootstrap, smoke, external proof, reproducibility, and clean-state runbooks."
+    },
+    {
+      "breaking": false,
+      "category": "Docs",
+      "commit": "e39101948499",
+      "subject": "audit(local): close appliance track",
+      "summary": "product kernel, capability map, closeout, future task gate, remaining warnings, HUNT/SYN/F0 handoff, promotion review, and post-LOCAL execution spine."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "5f5e5bcb22d2",
+      "subject": "refactor(r0): clean contract references",
+      "summary": "full unittest discovery passes on the final R0-03B-2 tree."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "0eea9c54c65a",
+      "subject": "runtime(r0): add review queue store",
+      "summary": "review queue behavior, migration, and integration coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "90695310dc30",
+      "subject": "test(r0): run one source live pipeline",
+      "summary": "added offline and mocked-live coverage for the one-source gate."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "6eeae5b324a5",
+      "subject": "audit(r0): complete production recovery review",
+      "summary": "added production review and promotion-plan operation tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "0da3111215d2",
+      "subject": "audit(r0): close production recovery",
+      "summary": "added final closeout, safe repair, and future task gate tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "dbc4e72ccf63",
+      "subject": "fix(r0): reconcile generated artifact drift",
+      "summary": "added focused generated-artifact drift and isolation tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "4cde57bd1004",
+      "subject": "audit(r0): review dev main promotion",
+      "summary": "promotion audit and dev-to-main merge plan operation coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "387a307d0397",
+      "subject": "audit(r0): record dev main promotion",
+      "summary": "merge evidence validator coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "7f373983b227",
+      "subject": "ops(local): add instance bootstrap",
+      "summary": "focused local instance bootstrap and policy tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "9bdad0968762",
+      "subject": "ops(local): add instance migration guard",
+      "summary": "added LOCAL-02 migration guard and schema-version operation tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "ac9f5b8de4f6",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "focused runtime and operations coverage for composition, status, read-only mode, close idempotency, forbidden roots, unsupported schema fail-closed, and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "5f9ac9870626",
+      "subject": "runtime(local): add appliance composition boundary",
+      "summary": "focused runtime and operations coverage for composition, status, read-only mode, close idempotency, forbidden roots, unsupported schema fail-closed, and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "15a46c118f90",
+      "subject": "runtime(local): add read only localhost service",
+      "summary": "focused runtime and operations coverage for routes, read-only enforcement, host rejection, smoke, validator, and import hygiene."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "fb230b12543f",
+      "subject": "surface(local): harden workbench pages",
+      "summary": "page hardening focused tests and smoke assertions cover the new markers."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "10b8beb7364a",
+      "subject": "runtime(local): add workunit queue",
+      "summary": "focused runtime and operations tests for queue behavior and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "21e4f766300d",
+      "subject": "aide(eureka): sync portable commit and WorkUnit policies",
+      "summary": "added portable governance tests and golden tasks."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "db42e120c3f5",
+      "subject": "test(local): add auto search harness",
+      "summary": "focused local eval runtime and operation script coverage."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "285d0c4dcd4b",
+      "subject": "ops(local): add lan safety gate",
+      "summary": "added focused runtime and operations tests for LAN hosts, policy, service gate, and scripts."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "9bddfc02d506",
+      "subject": "test(local): prove read only lan smoke",
+      "summary": "focused LAN smoke policy, read-only route, mutation blocking, client scope, and script tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "d3cf4ea25532",
+      "subject": "test(local): prove clean machine bootstrap",
+      "summary": "clean-machine bootstrap, smoke, and report operation tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "e39101948499",
+      "subject": "audit(local): close appliance track",
+      "summary": "LOCAL closeout, future gate, handoff, and promotion review operation tests."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "7de5c8b708c2",
+      "subject": "audit(final): align state promotion and future plan",
+      "summary": "final-state, final-future-plan, and final-chat-alignment guard tests added."
+    }
+  ],
+  "preview_only": true,
+  "risk_summary": [
+    {
+      "commit": "3e6eb757e037",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers."
+    },
+    {
+      "commit": "3e6eb757e037",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers."
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "R0-03B-2 still records unresolved legacy contract taxonomy debt, so this closes as PASS_WITH_WARNINGS."
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "R0-03B-2 still records unresolved legacy contract taxonomy debt, so this closes as PASS_WITH_WARNINGS."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks."
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-06 deliberately leaves review queue persistence and public index rebuild for later tasks."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-06 deliberately leaves review queue persistence and public index rebuild for later tasks."
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "R0-06 deliberately leaves review queue persistence and public index rebuild for later tasks."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "WARN R0-08 still must prove reviewed public index rebuild from accepted local review state."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "WARN R0-08 still must prove reviewed public index rebuild from accepted local review state."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "WARN R0-08 still must prove reviewed public index rebuild from accepted local review state."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "WARN R0-08 still must prove reviewed public index rebuild from accepted local review state."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "WARN Broader validation will run after the recovery branch is merged."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "WARN Broader validation will run after the recovery branch is merged."
+    },
+    {
+      "commit": "9cda6e786c25",
+      "summary": "WARN Final validation and push still pending."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "The index is local and synthetic-tested only; it is not hosted search or a production launch claim."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "The index is local and synthetic-tested only; it is not hosted search or a production launch claim."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "The index is local and synthetic-tested only; it is not hosted search or a production launch claim."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "The index is local and synthetic-tested only; it is not hosted search or a production launch claim."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PyPI metadata can change over time; the gate normalizes stable fields and records limitations."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PyPI metadata can change over time; the gate normalizes stable fields and records limitations."
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PyPI metadata can change over time; the gate normalizes stable fields and records limitations."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "Contract taxonomy remains the hard blocker for F0 and main promotion."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "Contract taxonomy remains the hard blocker for F0 and main promotion."
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "Contract taxonomy remains the hard blocker for F0 and main promotion."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "Contract taxonomy remains a hard blocker for F0 and branch promotion."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "Contract taxonomy remains a hard blocker for F0 and branch promotion."
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "Contract taxonomy remains a hard blocker for F0 and branch promotion."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "WARN runtime files changed only for reference-only path updates proven by full discovery."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "WARN runtime files changed only for reference-only path updates proven by full discovery."
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "WARN runtime files changed only for reference-only path updates proven by full discovery."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "Generated site/search/dashboard artifacts remain stale and block full closeout validation."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "Generated site/search/dashboard artifacts remain stale and block full closeout validation."
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "Generated site/search/dashboard artifacts remain stale and block full closeout validation."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "WARN: legacy architecture leakage debt remains deferred outside this remediation."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "WARN: legacy architecture leakage debt remains deferred outside this remediation."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "WARN: legacy architecture leakage debt remains deferred outside this remediation."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "WARN: legacy architecture leakage debt remains deferred outside this remediation."
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "WARN: legacy architecture leakage debt remains deferred outside this remediation."
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "Remaining allowlist debt is still present outside the quarantined connector runtime and is recorded as warning debt."
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "Remaining allowlist debt is still present outside the quarantined connector runtime and is recorded as warning debt."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "Remaining legacy leakage allowlist debt is warning-level and deferred with expiry before any later production/public-launch readiness review."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "Remaining legacy leakage allowlist debt is warning-level and deferred with expiry before any later production/public-launch readiness review."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "Remaining legacy leakage allowlist debt is warning-level and deferred with expiry before any later production/public-launch readiness review."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "No force push."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "No force push."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "No force push."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "Risks: Full unittest discovery still fails on the pre-existing runtime leakage gate and must be remediated separately."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "Risks: Full unittest discovery still fails on the pre-existing runtime leakage gate and must be remediated separately."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "Boundaries: no server implementation, no runtime changes, no contracts changes, no LAN, no deployment, no production readiness claim, and no public launch claim."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "Boundaries: no server implementation, no runtime changes, no contracts changes, no LAN, no deployment, no production readiness claim, and no public launch claim."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "Boundaries: no server implementation, no runtime changes, no contracts changes, no LAN, no deployment, no production readiness claim, and no public launch claim."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "Boundaries: no server implementation"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "Boundaries: no server implementation"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "Boundaries: no server implementation"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "Boundaries: no server implementation"
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "The Q25 source pack was not applied because safe dry-run reported target-evolved conflicts."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "The Q25 source pack was not applied because safe dry-run reported target-evolved conflicts."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "The Q25 source pack was not applied because safe dry-run reported target-evolved conflicts."
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "Full discovery is not clean because of broader pre-existing repo failures."
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "Full discovery is not clean because of broader pre-existing repo failures."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "WARN: runtime leakage gate remains a pre-existing repository warning; LOCAL-06 records no increase."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "WARN: runtime leakage gate remains a pre-existing repository warning; LOCAL-06 records no increase."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "WARN: runtime leakage gate remains a pre-existing repository warning; LOCAL-06 records no increase."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "WARN: runtime leakage gate remains a pre-existing repository warning; LOCAL-06 records no increase."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "WARN full unittest discovery still fails on pre-existing leakage and legacy validator expectations."
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "Pre-existing runtime leakage gate remains unresolved outside LOCAL-08."
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "Pre-existing runtime leakage gate remains unresolved outside LOCAL-08."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "Pre-existing runtime leakage gate remains unresolved outside LOCAL-09."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "Pre-existing runtime leakage gate remains unresolved outside LOCAL-09."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "Direct import is not applied because the dry-run reported target-local conflicts."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "Direct import is not applied because the dry-run reported target-local conflicts."
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "Older Eureka commits may predate the imported commit-message policy."
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "Older Eureka commits may predate the imported commit-message policy."
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "Reports classify the current dirty tree from Q32 edits and are not promotion evidence."
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "Reports classify the current dirty tree from Q32 edits and are not promotion evidence."
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "Verify still classifies the active dirty tree as WARN until Q32 evidence is finalized."
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "Verify still classifies the active dirty tree as WARN until Q32 evidence is finalized."
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "Hook installation remains opt-in and is not configured automatically."
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "Hook installation remains opt-in and is not configured automatically."
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "Older commits remain malformed for changelog preview under the new policy."
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "Older commits remain malformed for changelog preview under the new policy."
+    },
+    {
+      "commit": "4207f7863562",
+      "summary": "No product behavior changed."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "Pre-existing runtime leakage gate remains unresolved and tracked as LOCAL-LEAKAGE-01."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "Pre-existing runtime leakage gate remains unresolved and tracked as LOCAL-LEAKAGE-01."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "Pre-existing runtime leakage gate remains unresolved and tracked as LOCAL-LEAKAGE-01."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "Pre-existing runtime leakage gate remains unresolved and tracked as LOCAL-LEAKAGE-01."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "Pre-existing runtime leakage gate remains unresolved and tracked as LOCAL-LEAKAGE-01."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "No actual cross-device LAN smoke was performed in LOCAL-11 by design."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "Boundaries: no deployment."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "Decision: next task is HUNT-00."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "Decision: next task is HUNT-00."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "Decision: next task is HUNT-00."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "Decision: next task is HUNT-00."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Runtime leakage still blocks main promotion."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Runtime leakage still blocks main promotion."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "Runtime leakage still blocks main promotion."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "Runtime leakage remains the active hard blocker."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "Runtime leakage remains the active hard blocker."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "Remaining runtime naming debt is still visible as exact expiring warning entries and must be disposed at HUNT-00."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "Remaining runtime naming debt is still visible as exact expiring warning entries and must be disposed at HUNT-00."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "Remaining runtime naming debt is still visible as exact expiring warning entries and must be disposed at HUNT-00."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "Remaining runtime naming debt is still visible as exact expiring warning entries and must be disposed at HUNT-00."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "Remaining runtime naming debt is still visible as exact expiring warning entries and must be disposed at HUNT-00."
+    },
+    {
+      "commit": "cce1d0557579",
+      "summary": "Low: the merge commit has no tree changes compared with the validated remediation commit."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "Low: evidence-only update after successful fast-forward promotion."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "Low: evidence-only update after successful fast-forward promotion."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Remaining runtime leakage findings are warning-only exact allowlist debt and remain visible for HUNT-00 disposition."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Remaining runtime leakage findings are warning-only exact allowlist debt and remain visible for HUNT-00 disposition."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Remaining runtime leakage findings are warning-only exact allowlist debt and remain visible for HUNT-00 disposition."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "Remaining runtime leakage findings are warning-only exact allowlist debt and remain visible for HUNT-00 disposition."
+    },
+    {
+      "commit": "859923086a7a",
+      "summary": "Local dev remains ahead of origin/dev and must not be pushed until the other machine pauses."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "Local dev remains ahead of and behind origin/dev while HUNT work continues remotely."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "Local dev remains ahead of and behind origin/dev while HUNT work continues remotely."
+    }
+  ],
+  "schema_version": "aide.release-notes-preview.v0",
+  "source_head": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_range": "HEAD latest 50 commits",
+  "validation_summary": [
+    {
+      "commit": "3e6eb757e037",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "3e6eb757e037",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "5f5e5bcb22d2",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "PASS: git status --short"
+    },
+    {
+      "commit": "8bb9e4cd0bf5",
+      "summary": "PASS: git status --short"
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "1a48f6f3fb76",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "a9c536dfe1f9",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "0eea9c54c65a",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "ce1ab9685222",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "9cda6e786c25",
+      "summary": "NOT RUN final validation before merge commit; validation runs after merge completion."
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "f9d7fc25f9fd",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "90695310dc30",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "6eeae5b324a5",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "0da3111215d2",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "ede77d3cb101",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "PASS python scripts/validate_contract_taxonomy_remediation.py --json"
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "PASS python scripts/validate_contract_taxonomy_remediation.py --json"
+    },
+    {
+      "commit": "d15eb701b478",
+      "summary": "PASS python scripts/validate_contract_taxonomy_remediation.py --json"
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "dbc4e72ccf63",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "be01503a76b0",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "4cde57bd1004",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "python scripts/validate_r0_final_promotion.py: PASS."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "python scripts/validate_r0_final_promotion.py: PASS."
+    },
+    {
+      "commit": "387a307d0397",
+      "summary": "python scripts/validate_r0_final_promotion.py: PASS."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "a140304235d7",
+      "summary": "PASS git diff --check."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "7f373983b227",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "9bdad0968762",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "ac9f5b8de4f6",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "5f9ac9870626",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "15a46c118f90",
+      "summary": "git diff --check: PASS."
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py doctor"
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py doctor"
+    },
+    {
+      "commit": "cf0c53a41d93",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py doctor"
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "PASS: git diff --check, with CRLF working-copy warnings only."
+    },
+    {
+      "commit": "e0af786e11e0",
+      "summary": "PASS: git diff --check, with CRLF working-copy warnings only."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "PASS: git branch --show-current (LOCAL-06-page-hardening-v0)."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "PASS: git branch --show-current (LOCAL-06-page-hardening-v0)."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "PASS: git branch --show-current (LOCAL-06-page-hardening-v0)."
+    },
+    {
+      "commit": "fb230b12543f",
+      "summary": "PASS: git branch --show-current (LOCAL-06-page-hardening-v0)."
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "10b8beb7364a",
+      "summary": "PASS git diff --check"
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "ff941a760345",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "5488d5b29987",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "PASS: `git status --short` inspected before edits and before commit."
+    },
+    {
+      "commit": "5d31441b87f5",
+      "summary": "PASS: `git status --short` inspected before edits and before commit."
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
+    },
+    {
+      "commit": "21e4f766300d",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git detect"
+    },
+    {
+      "commit": "3e5302ea9a36",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git detect"
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py snapshot"
+    },
+    {
+      "commit": "5d955486e323",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py snapshot"
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py eval run"
+    },
+    {
+      "commit": "4c954e516a20",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py eval run"
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "1e67573e29a1",
+      "summary": "PASS: git diff --check"
+    },
+    {
+      "commit": "4207f7863562",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py test"
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "db42e120c3f5",
+      "summary": "`git diff --check`: PASS."
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "285d0c4dcd4b",
+      "summary": "git diff --check: PASS"
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "9bddfc02d506",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "d3cf4ea25532",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "e39101948499",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "PASS: LOCAL validator sweep after stale queue repairs."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "PASS: LOCAL validator sweep after stale queue repairs."
+    },
+    {
+      "commit": "736a43a5a9c5",
+      "summary": "PASS: LOCAL validator sweep after stale queue repairs."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "PASS: python scripts/build_public_search_index.py --rebuild."
+    },
+    {
+      "commit": "698e30097344",
+      "summary": "PASS: python scripts/build_public_search_index.py --rebuild."
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "PASS: python -m unittest discover -s tests -t . (4314 tests)"
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "PASS: python -m unittest discover -s tests -t . (4314 tests)"
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "PASS: python -m unittest discover -s tests -t . (4314 tests)"
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "PASS: python -m unittest discover -s tests -t . (4314 tests)"
+    },
+    {
+      "commit": "4e9ebd7478ae",
+      "summary": "PASS: python -m unittest discover -s tests -t . (4314 tests)"
+    },
+    {
+      "commit": "cce1d0557579",
+      "summary": "PASS: merge completed without conflicts."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "PASS: python -m json.tool on updated promotion evidence."
+    },
+    {
+      "commit": "52a73c641d2c",
+      "summary": "PASS: python -m json.tool on updated promotion evidence."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "`python -m unittest discover -s tests -t .`: PASS, 4323 tests."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "`python -m unittest discover -s tests -t .`: PASS, 4323 tests."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "`python -m unittest discover -s tests -t .`: PASS, 4323 tests."
+    },
+    {
+      "commit": "7de5c8b708c2",
+      "summary": "`python -m unittest discover -s tests -t .`: PASS, 4323 tests."
+    },
+    {
+      "commit": "859923086a7a",
+      "summary": "git fetch origin dev: PASS."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "python scripts/check_git_task_state.py --mode start-task --task-id EUREKA-AIDE-UPGRADE-PREFLIGHT-01: FAIL recorded as preflight state."
+    },
+    {
+      "commit": "6f2698c6e109",
+      "summary": "python scripts/check_git_task_state.py --mode start-task --task-id EUREKA-AIDE-UPGRADE-PREFLIGHT-01: FAIL recorded as preflight state."
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,227 @@
+{
+  "blocking_count": 18,
+  "conflict_count": 18,
+  "conflicts": [
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-6b18b0c0fdec",
+      "conflict_type": "source_pack_missing",
+      "evidence_refs": [
+        ".aide/export/aide-lite-pack-v0/files"
+      ],
+      "path": ".aide/export/aide-lite-pack-v0/files",
+      "reason": "Source export pack payload is missing; upgrade planning falls back to local files.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-0e0c578a456d",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-commit-message-standard.md"
+      ],
+      "path": ".aide/reports/aide-commit-message-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-c7ac79dbfef2",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-task-resumption-standard.md"
+      ],
+      "path": ".aide/reports/aide-task-resumption-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-d84dbdb960b1",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-workunit-recovery-standard.md"
+      ],
+      "path": ".aide/reports/aide-workunit-recovery-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-beb722d4e5a6",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/file-quality-ledger.schema.json"
+      ],
+      "path": ".aide/reports/file-quality-ledger.schema.json",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-21ea6e6e8ba0",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "contracts/hosting/secrets_policy.v0.json"
+      ],
+      "path": "contracts/hosting/secrets_policy.v0.json",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-440060950f78",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md"
+      ],
+      "path": "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-aad9b722719d",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md"
+      ],
+      "path": "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-eae059406bc3",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md"
+      ],
+      "path": "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-15ead76b4b91",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md"
+      ],
+      "path": "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-2e05c3bf4f1f",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md"
+      ],
+      "path": "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-c334260d5702",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md"
+      ],
+      "path": "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-2b2e6a58a86f",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "control/inventory/hosting/secrets_credential_policy.json"
+      ],
+      "path": "control/inventory/hosting/secrets_credential_policy.json",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-81330e4f5759",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md"
+      ],
+      "path": "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-794140f2c248",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "examples/hosting/security/secrets_policy_example_v0.json"
+      ],
+      "path": "examples/hosting/security/secrets_policy_example_v0.json",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-bc35d5f5445b",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+      ],
+      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-64f44c29970f",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+      ],
+      "path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-38a697b0049e",
+      "conflict_type": "secret_like_path",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+      ],
+      "path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "reason": "Tracked secret-like path blocks safe upgrade apply.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    }
+  ],
+  "no_apply": true,
+  "schema_version": "aide.upgrade-conflict-report.v0",
+  "warnings": [
+    "upgrade conflicts are advisory/blocking evidence; Q45 applies no changes"
+  ]
+}

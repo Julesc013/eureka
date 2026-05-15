@@ -1,0 +1,214 @@
+# Test Coverage Map
+
+- tests_detected: 1089
+
+## Likely Test Targets
+
+- .aide/scripts/tests/test_adapter_compiler.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_aide_lite.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_cache_local_state.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_export_import.py: .aide/policies/export-import.yaml, .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_gateway_commands.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_golden_tasks.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_outcome_controller.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_provider_adapter.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q27_commit_recovery.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q28_git_workflow.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q29_git_helper.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q31_export_pack_governance.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_review_pack.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_router_profile.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_token_ledger.py: .aide/policies/token-ledger.yaml, .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_verifier.py: .aide/scripts/aide_lite.py
+- control/inventory/tests/README.md:
+- control/inventory/tests/command_matrix.json:
+- control/inventory/tests/test_registry.json:
+- native/lib/c89/test/test_eu_c89_contracts.c:
+- native/mac/appkit/test/README.md:
+- native/mac/carbon/test/README.md:
+- native/win/win32/test/README.md:
+- native/win/winforms/test/README.md:
+- runtime/connectors/article_scan_recorded/tests/__init__.py:
+- runtime/connectors/article_scan_recorded/tests/test_connector.py: runtime/connectors/article_scan_recorded/connector.py
+- runtime/connectors/github_releases/tests/__init__.py:
+- runtime/connectors/github_releases/tests/test_connector.py: runtime/connectors/github_releases/connector.py
+- runtime/connectors/internet_archive_recorded/tests/__init__.py:
+- runtime/connectors/internet_archive_recorded/tests/test_connector.py: runtime/connectors/internet_archive_recorded/connector.py
+- runtime/connectors/local_bundle_fixtures/tests/__init__.py:
+- runtime/connectors/local_bundle_fixtures/tests/test_connector.py: runtime/connectors/local_bundle_fixtures/connector.py
+- runtime/connectors/source_expansion_recorded/tests/__init__.py:
+- runtime/connectors/source_expansion_recorded/tests/test_connector.py: runtime/connectors/source_expansion_recorded/connector.py
+- runtime/connectors/synthetic_software/tests/__init__.py:
+- runtime/connectors/synthetic_software/tests/test_fixture_connector.py: runtime/connectors/synthetic_software/fixture_connector.py
+- runtime/connectors/tests/README.md:
+- runtime/engine/absence/tests/__init__.py:
+- runtime/engine/absence/tests/test_absence_report.py: runtime/engine/absence/absence_report.py
+- runtime/engine/acquisition/tests/__init__.py:
+- runtime/engine/acquisition/tests/test_service.py: runtime/engine/acquisition/service.py
+- runtime/engine/action_routing/tests/__init__.py:
+- runtime/engine/action_routing/tests/test_service.py: runtime/engine/action_routing/service.py
+- runtime/engine/actions/tests/__init__.py:
+- runtime/engine/actions/tests/test_resolution_manifest.py: runtime/engine/actions/resolution_manifest.py
+- runtime/engine/ai/tests/__init__.py:
+- runtime/engine/ai/tests/test_typed_output_validator.py: runtime/engine/ai/typed_output_validator.py
+- runtime/engine/compare/tests/__init__.py:
+- runtime/engine/compare/tests/test_comparison.py: runtime/engine/compare/comparison.py
+- runtime/engine/compatibility/tests/__init__.py:
+- runtime/engine/compatibility/tests/test_compatibility_evidence.py: runtime/engine/compatibility/compatibility_evidence.py
+- runtime/engine/compatibility/tests/test_service.py: runtime/engine/compatibility/service.py
+- runtime/engine/decomposition/tests/__init__.py:
+- runtime/engine/decomposition/tests/test_service.py: runtime/engine/decomposition/service.py
+- runtime/engine/evals/tests/__init__.py:
+- runtime/engine/evals/tests/test_archive_resolution_loader.py:
+- runtime/engine/evals/tests/test_archive_resolution_runner.py: runtime/engine/evals/archive_resolution_runner.py
+- runtime/engine/evals/tests/test_search_usefulness_runner.py: runtime/engine/evals/search_usefulness_runner.py
+- runtime/engine/handoff/tests/__init__.py:
+- runtime/engine/handoff/tests/test_service.py: runtime/engine/handoff/service.py
+- runtime/engine/index/tests/__init__.py:
+- runtime/engine/index/tests/test_article_scan_fixture_pack.py:
+- runtime/engine/index/tests/test_index_builder.py: runtime/engine/index/index_builder.py
+- runtime/engine/index/tests/test_member_level_synthetic_records.py:
+- runtime/engine/index/tests/test_real_source_coverage_pack.py:
+- runtime/engine/index/tests/test_source_expansion_v2.py:
+- runtime/engine/index/tests/test_sqlite_index.py: runtime/engine/index/sqlite_index.py
+- runtime/engine/members/tests/__init__.py:
+- runtime/engine/members/tests/test_service.py: runtime/engine/members/service.py
+- runtime/engine/memory/tests/__init__.py:
+- runtime/engine/memory/tests/test_memory_builder.py: runtime/engine/memory/memory_builder.py
+- runtime/engine/memory/tests/test_memory_store.py: runtime/engine/memory/memory_store.py
+- runtime/engine/memory/tests/test_resolution_memory.py: runtime/engine/memory/resolution_memory.py
+- runtime/engine/memory/tests/test_service.py: runtime/engine/memory/service.py
+- runtime/engine/memory/tests/test_support.py:
+- runtime/engine/provenance/tests/__init__.py:
+- runtime/engine/provenance/tests/test_evidence_summary.py: runtime/engine/provenance/evidence_summary.py
+- runtime/engine/query_planner/tests/__init__.py:
+- runtime/engine/query_planner/tests/test_old_platform_planner.py:
+- runtime/engine/query_planner/tests/test_planner.py: runtime/engine/query_planner/planner.py
+- runtime/engine/ranking/tests/__init__.py:
+- runtime/engine/ranking/tests/test_result_lanes.py:
+- runtime/engine/ranking/tests/test_user_cost.py: runtime/engine/ranking/user_cost.py
+- runtime/engine/representations/tests/__init__.py:
+- runtime/engine/representations/tests/test_service.py: runtime/engine/representations/service.py
+- runtime/engine/resolution_runs/tests/__init__.py:
+- runtime/engine/resolution_runs/tests/test_run_store.py: runtime/engine/resolution_runs/run_store.py
+- runtime/engine/resolution_runs/tests/test_service.py: runtime/engine/resolution_runs/service.py
+- runtime/engine/snapshots/tests/__init__.py:
+- runtime/engine/snapshots/tests/test_resolution_bundle.py: runtime/engine/snapshots/resolution_bundle.py
+- runtime/engine/snapshots/tests/test_resolution_bundle_inspector.py: runtime/engine/snapshots/resolution_bundle_inspector.py
+- runtime/engine/states/tests/__init__.py:
+- runtime/engine/states/tests/test_subject_states.py: runtime/engine/states/subject_states.py
+- runtime/engine/store/tests/__init__.py:
+- runtime/engine/store/tests/test_export_store.py: runtime/engine/store/export_store.py
+- runtime/engine/store/tests/test_resolution_export_store_service.py:
+- runtime/engine/strategy/tests/__init__.py:
+- runtime/engine/strategy/tests/test_strategy_profile.py: runtime/engine/strategy/strategy_profile.py
+- runtime/engine/synthetic_records/tests/__init__.py:
+- runtime/engine/synthetic_records/tests/test_member_record_synthesis.py: runtime/engine/synthetic_records/member_record_synthesis.py
+
+## Missing Test Or Validator Candidates
+
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/__init__.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_action_candidate.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_compatibility.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/fixture_loader.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/flashpoint_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/game_relation.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/game_software_identity.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/games_emulation_policy_blocked.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/games_rights_safety.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_emulator_compatibility.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_game_database.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_preservation_hashset.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/gog_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/itchio_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_common.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_flashpoint_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_games_emulation_policy_blocked.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_emulator_compatibility.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_game_database.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_preservation_hashset.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_gog_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_itchio_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_mame_software_lists.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_mobygames.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_no_intro_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_redump_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_scummvm_compatibility.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_steam_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_tosec_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/mame_software_lists.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/mobygames.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/no_intro_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/normalizer_common.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/preservation_hashset.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/quality_delta.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/redump_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/review_integration.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/rom_disc_media_identity.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/scummvm_compatibility.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/steam_game_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/tosec_hash_sets.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h10_games_emulation/wave_postmortem.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/__init__.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/account_entitlement_boundary.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/acquisition_path_candidate.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/app_product_identity.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/apple_app_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/chrome_web_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/epic_games_store_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/fdroid_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/fixture_loader.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/flathub_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/generic_commercial_software_marketplace.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/generic_vendor_product_page.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/gog_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/google_play_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/humble_store_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/itchio_storefront_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_apple_app_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_chrome_web_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_common.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_epic_games_store_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_fdroid_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_flathub_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_generic_commercial_software_marketplace.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_generic_vendor_product_page.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_gog_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_google_play_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_humble_store_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_itchio_storefront_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_mac_app_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_microsoft_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_mozilla_addons_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_snapcraft_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/live_probe_steam_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/mac_app_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/microsoft_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/mozilla_addons_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/normalizer_common.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/price_availability_region.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/quality_delta.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/review_integration.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/review_rating_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/snapcraft_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/steam_store_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/storefront_listing_identity.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/storefront_rights_safety.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h11_storefront/wave_postmortem.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/__init__.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/aminet_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/archive_item_member.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/atarimania_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/betaarchive_public_metadata_policy_limited.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/community_review_comment.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/dos_games_archive_metadata.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/fixture_loader.py (source, unknown)
+- control/prototypes/legacy_runtime/connectors/h12_retro_community/gated_source_boundary.py (source, unknown)
+
+## Caveats
+
+- test targets are heuristic
+- validators are not executed by Q38

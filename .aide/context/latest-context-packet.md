@@ -24,28 +24,28 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 15576
-- source_snapshot_hash: `d7f38e792fc20aeeaf0e62a56987788e77aadadadfc52447e962f5a85cbaa719`
+- file_count: 16637
+- source_snapshot_hash: `2c010b0869c5f05c4adafcaa681db53c99c93b2d46a4b444394ed3bbd1be1e31`
 
 ## ROLE_COUNTS
 
-- aide_contract: 90
-- aide_policy: 44
+- aide_contract: 300
+- aide_policy: 119
 - aide_prompt: 6
 - aide_context: 4
-- aide_queue: 146
-- aide_evidence: 97
-- test: 962
-- docs: 4861
-- script: 637
-- config: 7357
+- aide_queue: 169
+- aide_evidence: 115
+- test: 1036
+- docs: 5083
+- script: 673
+- config: 7681
 - generated: 9
-- unknown: 1363
+- unknown: 1442
 
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 5968
+- mapping_count: 6551
 - mappings_with_existing_candidate: 1
 - complete_coverage_claimed: false
 
@@ -70,6 +70,6 @@
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 1832
-- approx_tokens: 458
+- chars: 1836
+- approx_tokens: 459
 - formal ledger: `.aide/reports/token-ledger.jsonl`

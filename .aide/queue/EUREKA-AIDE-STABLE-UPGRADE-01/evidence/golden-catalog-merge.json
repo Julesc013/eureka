@@ -1,0 +1,40 @@
+{
+  "source_task_count": 130,
+  "target_task_count_before": 31,
+  "merged_task_count": 136,
+  "target_only_preserved": [
+    "compact_task_packet_golden",
+    "eureka_architecture_context_golden",
+    "evidence_review_packet_golden",
+    "generated_agent_guidance_golden",
+    "no_secret_or_local_state_golden",
+    "repo_boundary_golden"
+  ],
+  "source_replaced_existing": [
+    "adapter-managed-section-determinism",
+    "branch_role_detection_golden",
+    "changelog_preview_golden",
+    "commit_message_standard_golden",
+    "compact-task-packet-required-sections",
+    "context-packet-no-full-repo-dump",
+    "export_pack_commit_policy_inclusion_golden",
+    "export_pack_excludes_source_branch_state_golden",
+    "export_pack_git_policy_inclusion_golden",
+    "export_pack_task_recovery_inclusion_golden",
+    "fixture_import_governance_commands_golden",
+    "git_helper_policy_golden",
+    "git_land_plan_golden",
+    "git_live_repo_no_mutation_golden",
+    "git_promote_plan_golden",
+    "git_prune_guard_golden",
+    "git_workflow_policy_golden",
+    "promotion_rules_golden",
+    "prune_policy_golden",
+    "review-packet-evidence-only",
+    "sync_policy_golden",
+    "task_resumption_standard_golden",
+    "token-ledger-budget-check",
+    "verifier-detects-bad-evidence",
+    "workunit_idempotency_golden"
+  ]
+}

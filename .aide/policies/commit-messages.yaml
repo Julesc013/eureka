@@ -10,7 +10,6 @@ subject:
   format: "type(scope): summary"
   subject_max_chars: 72
   allowed_types:
-    - aide
     - feat
     - fix
     - docs

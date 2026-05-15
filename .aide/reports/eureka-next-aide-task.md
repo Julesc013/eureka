@@ -2,29 +2,25 @@
 
 ## Immediate Next
 
-`Q55 Eureka Upgrade from Stable AIDE Pack`
+`Q56 Eureka Existing Tool Absorption`
 
-Recommended status: `READY_FOR_Q55_WITH_WARNINGS`.
+Recommended status: `READY_FOR_Q56_WITH_WARNINGS`.
 
-Mode:
+Use `.aide/context/latest-task-packet.md` as the compact brief.
 
-- local-only;
-- upgrade, not install;
-- observe/compare/plan/dry-run before apply;
-- no push or branch mutation;
-- preserve Eureka target state;
-- no product behavior changes.
+## Scope
 
-Source bundle:
+- Inspect `.aide/tools/latest-tool-inventory.md`, `.aide/tools/latest-tool-classification.md`, and `.aide/tools/latest-tool-wrap-plan.md`.
+- Preserve `scripts/check_architecture_boundaries.py`, `control/inventory/tests/command_matrix.json`, and `docs/operations/TEST_AND_EVAL_LANES.md`.
+- Classify validators and tools without executing unknown commands.
+- Write evidence under a Q56 queue packet.
 
-- `C:/Inbox/Git Repos/aide/.aide/release/dist/`
+## Rule
 
-## After Q55
+`discover -> classify -> wrap -> adapt -> migrate -> retire with evidence`
 
-Recommended AIDE follow-up:
+No product behavior change. No deletion, rename, move, branch mutation, network call, provider/model call, source-cache write, evidence-ledger write, public-index write, CI install, release publish, or remote push.
 
-- Q56 existing tool inventory/wrap/absorption plan for Eureka, using the `discover -> classify -> wrap -> adapt -> migrate -> retire with evidence` rule.
+## Git Note
 
-Product-task rule:
-
-- Do not choose a product task from stale local queue state. Re-sync from the latest `origin/dev` after the other machine pauses. The HUNT series is active on remote; resume from the synchronized queue/evidence state after Q55.
+Do not choose a product task from stale local queue state. Re-sync from the latest `origin/dev` only after the other machine pauses and the operator confirms it is safe.

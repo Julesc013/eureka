@@ -1,0 +1,32 @@
+schema_version: aide.task.v0
+task_id: EUREKA-AIDE-STABLE-UPGRADE-01
+title: Q55 Eureka Upgrade from Stable AIDE Pack
+status: in_progress
+owner: Codex
+created_at: 2026-05-15
+repo: julesc013/eureka
+branch: dev
+phase: target_aide_upgrade
+mode: UPGRADE_EXISTING_AIDE
+source_bundle: C:/Inbox/Git Repos/aide/.aide/release/dist/
+scope:
+  allowed:
+    - .aide/**
+    - AGENTS.md managed AIDE sections only if regenerated safely
+    - .gitignore only if .aide.local ignore repair is required
+  forbidden:
+    - runtime/**
+    - contracts/**
+    - surfaces/**
+    - site/**
+    - snapshots/**
+    - native/**
+    - crates/**
+    - examples/**
+    - evals/**
+    - tests/**
+    - scripts/**
+    - .github/**
+    - .git/**
+    - .aide.local/**
+acceptance_gate: needs_review

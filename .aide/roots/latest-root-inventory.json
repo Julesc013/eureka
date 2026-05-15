@@ -1,0 +1,839 @@
+{
+  "file_count": 16297,
+  "file_deletes": false,
+  "file_moves": false,
+  "generated_at_or_source_ref": ".aide/repo/file-inventory.json",
+  "generated_by": "aide-lite",
+  "next_recommended_phase": "Q41 Existing Tool Absorption v0",
+  "no_apply": true,
+  "reference_rewrites": false,
+  "roots": [
+    {
+      "doc_count": 34,
+      "evidence_count": 298,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 27,
+      "kinds": {
+        "doc": 34,
+        "evidence": 298,
+        "fixture": 65,
+        "generated": 27,
+        "policy": 27,
+        "schema": 1,
+        "template": 15,
+        "test": 16,
+        "tool": 1,
+        "unknown": 56
+      },
+      "owners": {
+        "AIDE Git workflow": 13,
+        "AIDE Lite": 17,
+        "AIDE changelog preview": 4,
+        "AIDE context compiler": 12,
+        "AIDE control plane": 113,
+        "AIDE evals": 69,
+        "AIDE governance": 27,
+        "AIDE repo intelligence": 8,
+        "AIDE self-hosting queue": 275,
+        "compatibility baseline": 2
+      },
+      "policy_count": 27,
+      "reasons": [
+        "identity_sensitive_hint",
+        "build_sensitive_file_hint",
+        "authority_sensitive_hint",
+        "generated_sensitive_content",
+        "generated_source_mix",
+        "unknown_kind_or_owner",
+        "multiple_file_kinds",
+        "multiple_owners"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": ".aide",
+      "root_status": "mixed",
+      "schema_count": 1,
+      "source_count": 0,
+      "statuses": {
+        "active": 144,
+        "evidence_only": 298,
+        "generated": 27,
+        "template_only": 15,
+        "unknown": 56
+      },
+      "test_count": 16,
+      "total_size_bytes": 49232410,
+      "tracked_file_count": 540,
+      "unknown_count": 56
+    },
+    {
+      "doc_count": 4,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 4,
+        "unknown": 1
+      },
+      "owners": {
+        "unknown": 5
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": ".aide.local.example",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 4,
+        "unknown": 1
+      },
+      "test_count": 0,
+      "total_size_bytes": 2606,
+      "tracked_file_count": 5,
+      "unknown_count": 5
+    },
+    {
+      "doc_count": 0,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "unknown": 1
+      },
+      "owners": {
+        "unknown": 1
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": ".github",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "unknown": 1
+      },
+      "test_count": 0,
+      "total_size_bytes": 1890,
+      "tracked_file_count": 1,
+      "unknown_count": 1
+    },
+    {
+      "doc_count": 0,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "contract": 318,
+        "fixture": 2
+      },
+      "owners": {
+        "unknown": 320
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "authority_sensitive_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "contracts",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 320
+      },
+      "test_count": 0,
+      "total_size_bytes": 1157909,
+      "tracked_file_count": 320,
+      "unknown_count": 320
+    },
+    {
+      "doc_count": 3374,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 3374,
+        "fixture": 35,
+        "schema": 3,
+        "source": 589,
+        "test": 3,
+        "unknown": 2945
+      },
+      "owners": {
+        "unknown": 6949
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner",
+        "multiple_file_kinds"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "control",
+      "root_status": "mixed",
+      "schema_count": 3,
+      "source_count": 589,
+      "statuses": {
+        "active": 4004,
+        "unknown": 2945
+      },
+      "test_count": 3,
+      "total_size_bytes": 83477880,
+      "tracked_file_count": 6949,
+      "unknown_count": 6949
+    },
+    {
+      "doc_count": 1,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1,
+        "source": 6,
+        "unknown": 5
+      },
+      "owners": {
+        "unknown": 12
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "crates",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 6,
+      "statuses": {
+        "active": 7,
+        "unknown": 5
+      },
+      "test_count": 0,
+      "total_size_bytes": 73270,
+      "tracked_file_count": 12,
+      "unknown_count": 12
+    },
+    {
+      "doc_count": 0,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "unknown": 5
+      },
+      "owners": {
+        "unknown": 5
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "data",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "unknown": 5
+      },
+      "test_count": 0,
+      "total_size_bytes": 4390335,
+      "tracked_file_count": 5,
+      "unknown_count": 5
+    },
+    {
+      "doc_count": 1,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1,
+        "unknown": 1
+      },
+      "owners": {
+        "unknown": 2
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "deploy",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 1,
+        "unknown": 1
+      },
+      "test_count": 0,
+      "total_size_bytes": 1692,
+      "tracked_file_count": 2,
+      "unknown_count": 2
+    },
+    {
+      "doc_count": 1343,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1343
+      },
+      "owners": {
+        "documentation reference": 553,
+        "unknown": 790
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "keep root; no Q40 mutation",
+      "risk_class": "low",
+      "root": "docs",
+      "root_status": "canonical",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 1343
+      },
+      "test_count": 0,
+      "total_size_bytes": 3224676,
+      "tracked_file_count": 1343,
+      "unknown_count": 790
+    },
+    {
+      "doc_count": 25,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 25,
+        "schema": 1,
+        "unknown": 17
+      },
+      "owners": {
+        "unknown": 43
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "evals",
+      "root_status": "review_required",
+      "schema_count": 1,
+      "source_count": 0,
+      "statuses": {
+        "active": 26,
+        "unknown": 17
+      },
+      "test_count": 0,
+      "total_size_bytes": 161387,
+      "tracked_file_count": 43,
+      "unknown_count": 43
+    },
+    {
+      "doc_count": 149,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 149,
+        "fixture": 1653,
+        "unknown": 2735
+      },
+      "owners": {
+        "unknown": 4537
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "examples",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 1802,
+        "unknown": 2735
+      },
+      "test_count": 0,
+      "total_size_bytes": 65461845,
+      "tracked_file_count": 4537,
+      "unknown_count": 4537
+    },
+    {
+      "doc_count": 1,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1,
+        "unknown": 4
+      },
+      "owners": {
+        "unknown": 5
+      },
+      "policy_count": 0,
+      "reasons": [
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "external",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 1,
+        "unknown": 4
+      },
+      "test_count": 0,
+      "total_size_bytes": 528,
+      "tracked_file_count": 5,
+      "unknown_count": 5
+    },
+    {
+      "doc_count": 23,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "contract": 12,
+        "doc": 23,
+        "source": 38,
+        "test": 5,
+        "unknown": 13
+      },
+      "owners": {
+        "unknown": 91
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "build_sensitive_file_hint",
+        "authority_sensitive_hint",
+        "unknown_kind_or_owner",
+        "multiple_file_kinds"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "native",
+      "root_status": "mixed",
+      "schema_count": 0,
+      "source_count": 38,
+      "statuses": {
+        "active": 78,
+        "unknown": 13
+      },
+      "test_count": 5,
+      "total_size_bytes": 65799,
+      "tracked_file_count": 91,
+      "unknown_count": 91
+    },
+    {
+      "doc_count": 5,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 5,
+        "unknown": 3
+      },
+      "owners": {
+        "documentation reference": 2,
+        "unknown": 6
+      },
+      "policy_count": 0,
+      "reasons": [
+        "authority_sensitive_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "repo-root",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 5,
+        "unknown": 3
+      },
+      "test_count": 0,
+      "total_size_bytes": 64390,
+      "tracked_file_count": 8,
+      "unknown_count": 6
+    },
+    {
+      "doc_count": 50,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 50,
+        "fixture": 16,
+        "source": 458,
+        "test": 137,
+        "unknown": 13
+      },
+      "owners": {
+        "unknown": 674
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner",
+        "multiple_file_kinds"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "runtime",
+      "root_status": "mixed",
+      "schema_count": 0,
+      "source_count": 458,
+      "statuses": {
+        "active": 661,
+        "unknown": 13
+      },
+      "test_count": 137,
+      "total_size_bytes": 3327736,
+      "tracked_file_count": 674,
+      "unknown_count": 674
+    },
+    {
+      "doc_count": 1,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1,
+        "test": 3,
+        "tool": 672
+      },
+      "owners": {
+        "AIDE harness": 1,
+        "unknown": 675
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "scripts",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 0,
+      "statuses": {
+        "active": 676
+      },
+      "test_count": 3,
+      "total_size_bytes": 9535868,
+      "tracked_file_count": 676,
+      "unknown_count": 675
+    },
+    {
+      "doc_count": 2,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 2,
+        "source": 2,
+        "unknown": 65
+      },
+      "owners": {
+        "unknown": 69
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "site",
+      "root_status": "review_required",
+      "schema_count": 0,
+      "source_count": 2,
+      "statuses": {
+        "active": 4,
+        "unknown": 65
+      },
+      "test_count": 0,
+      "total_size_bytes": 345398,
+      "tracked_file_count": 69,
+      "unknown_count": 69
+    },
+    {
+      "doc_count": 1,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 1,
+        "schema": 1,
+        "unknown": 12
+      },
+      "owners": {
+        "unknown": 14
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "snapshots",
+      "root_status": "review_required",
+      "schema_count": 1,
+      "source_count": 0,
+      "statuses": {
+        "active": 2,
+        "unknown": 12
+      },
+      "test_count": 0,
+      "total_size_bytes": 58153,
+      "tracked_file_count": 14,
+      "unknown_count": 14
+    },
+    {
+      "doc_count": 4,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "doc": 4,
+        "source": 58,
+        "test": 44,
+        "unknown": 15
+      },
+      "owners": {
+        "unknown": 121
+      },
+      "policy_count": 0,
+      "reasons": [
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner",
+        "multiple_file_kinds"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "surfaces",
+      "root_status": "mixed",
+      "schema_count": 0,
+      "source_count": 58,
+      "statuses": {
+        "active": 106,
+        "unknown": 15
+      },
+      "test_count": 44,
+      "total_size_bytes": 947544,
+      "tracked_file_count": 121,
+      "unknown_count": 121
+    },
+    {
+      "doc_count": 0,
+      "evidence_count": 0,
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/refactors/latest-refactor-readiness.md"
+      ],
+      "exists": true,
+      "generated_count": 0,
+      "kinds": {
+        "schema": 1,
+        "test": 881
+      },
+      "owners": {
+        "unknown": 882
+      },
+      "policy_count": 0,
+      "reasons": [
+        "identity_sensitive_hint",
+        "build_sensitive_file_hint",
+        "unknown_kind_or_owner"
+      ],
+      "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
+      "risk_class": "high",
+      "root": "tests",
+      "root_status": "review_required",
+      "schema_count": 1,
+      "source_count": 0,
+      "statuses": {
+        "active": 882
+      },
+      "test_count": 881,
+      "total_size_bytes": 4676067,
+      "tracked_file_count": 882,
+      "unknown_count": 882
+    }
+  ],
+  "schema_version": "aide.root-inventory.v0",
+  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_inputs": [
+    {
+      "id": "repo_file_inventory",
+      "path": ".aide/repo/file-inventory.json",
+      "present": true
+    },
+    {
+      "id": "repo_intelligence_summary",
+      "path": ".aide/repo/latest-repo-intelligence.md",
+      "present": true
+    },
+    {
+      "id": "file_quality_ledger",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "present": true
+    },
+    {
+      "id": "file_quality_summary",
+      "path": ".aide/reports/file-quality-summary.md",
+      "present": true
+    },
+    {
+      "id": "refactor_readiness",
+      "path": ".aide/refactors/latest-refactor-readiness.md",
+      "present": true
+    },
+    {
+      "id": "refactor_safety_policy",
+      "path": ".aide/policies/refactor-safety.yaml",
+      "present": true
+    },
+    {
+      "id": "root_recycling_policy",
+      "path": ".aide/policies/root-recycling.yaml",
+      "present": true
+    }
+  ],
+  "source_mode": "repo_intelligence_index_plus_tracked_delta",
+  "target_repo_mutation": false,
+  "warnings": [
+    "unknown_or_unknown-owner_root_candidates: .aide, .aide.local.example, .github, contracts, control, crates, data, deploy, docs, evals, examples, external",
+    "mixed_root_candidates: .aide, control, native, runtime, surfaces",
+    "high_risk_root_candidates: .aide, .aide.local.example, .github, contracts, control, crates, data, deploy, evals, examples, external, native"
+  ]
+}

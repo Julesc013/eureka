@@ -1,0 +1,174 @@
+# Tool Adapter Map
+
+- adapter_map_id: q41-latest-tool-adapter-map
+- source_commit: 6f2698c6e109a3b35d20402bb9871c1e4a674688
+- mapping_count: 1710
+- unmapped_count: 277
+- execution_allowed: false
+- no_apply: true
+
+## Mappings
+
+- `.aide/adapters/templates/continue-checks.template.md` -> future tools wrapper for validate (validate)
+- `.aide/cache/latest-cache-keys.json` -> future tools wrapper for test (test)
+- `.aide/cache/latest-cache-keys.md` -> future tools wrapper for test (test)
+- `.aide/changelog/RELEASE_NOTES.preview.md` -> future tools wrapper for release (release)
+- `.aide/context/latest-context-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/latest-review-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/latest-task-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/test-map.json` -> future tools wrapper for context (context)
+- `.aide/controller/latest-outcome-report.md` -> future tools wrapper for audit (audit)
+- `.aide/controller/latest-recommendations.md` -> future tools wrapper for test (test)
+- `.aide/evals/runs/latest-golden-tasks.json` -> future tools wrapper for test (test)
+- `.aide/evals/runs/latest-golden-tasks.md` -> future tools wrapper for test (test)
+- `.aide/gateway/latest-gateway-status.json` -> future tools wrapper for test (test)
+- `.aide/gateway/latest-gateway-status.md` -> future tools wrapper for test (test)
+- `.aide/git/latest-helper-plan.json` -> future tools wrapper for test (test)
+- `.aide/git/latest-helper-plan.md` -> future tools wrapper for test (test)
+- `.aide/git/sync-policy.md` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/import-policy.template.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/import-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/import-report.template.md` -> future tools wrapper for audit (audit)
+- `.aide/policies/sync-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/providers/latest-provider-status.json` -> future tools wrapper for test (test)
+- `.aide/providers/latest-provider-status.md` -> future tools wrapper for test (test)
+- `.aide/queue/EUREKA-AIDE-PILOT-01/import-report.md` -> future tools wrapper for audit (audit)
+- `.aide/queue/EUREKA-AIDE-SYNC-01/evidence/sync-report.md` -> future tools wrapper for audit (audit)
+- `.aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/evidence/install-upgrade-risk-report.md` -> future tools wrapper for audit (audit)
+- `.aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/evidence/release-bundle-readiness.md` -> future tools wrapper for install (install)
+- `.aide/queue/TRACK-A-11/evidence/track-a-audit-result.md` -> future tools wrapper for audit (audit)
+- `.aide/repo/generated-map.json` -> future tools wrapper for generate (generate)
+- `.aide/repo/latest-repo-intelligence.md` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/repo/test-map.json` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/reports/eureka-fresh-upgrade-preflight.md` -> future tools wrapper for audit (audit)
+- `.aide/reports/eureka-release-bundle-readiness.md` -> future tools wrapper for audit (audit)
+- `.aide/routing/latest-route-decision.json` -> future tools wrapper for test (test)
+- `.aide/routing/latest-route-decision.md` -> future tools wrapper for test (test)
+- `.aide/scripts/aide_lite.py` -> future tools wrapper for context (context)
+- `.aide/tasks/audit_backlog.yaml` -> future tools wrapper for audit (audit)
+- `.aide/verification/latest-verification-report.md` -> future tools wrapper for audit (audit)
+- `contracts/connectors/github_releases_connector_approval.v0.json` -> future tools wrapper for release (release)
+- `contracts/connectors/github_releases_connector_manifest.v0.json` -> future tools wrapper for release (release)
+- `contracts/master_index/reviewed_public_index_rebuild.v0.json` -> future tools wrapper for build (build)
+- `contracts/native/native_build_evidence.v0.json` -> future tools wrapper for build (build)
+- `contracts/native/native_build_log_record.v0.json` -> future tools wrapper for build (build)
+- `contracts/native/native_manual_build_packet.v0.json` -> future tools wrapper for build (build)
+- `contracts/native/native_manual_smoke_checklist.v0.json` -> future tools wrapper for validate (validate)
+- `contracts/runtime/live_metadata_test_request.v0.json` -> future tools wrapper for test (test)
+- `contracts/runtime/live_metadata_test_result.v0.json` -> future tools wrapper for test (test)
+- `contracts/stores/public_index_rebuild.v0.json` -> future tools wrapper for build (build)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/AUDIT_SUMMARY.md` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/BEHAVIOR_AUDIT.md` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/CONTENT_COVERAGE_AUDIT.md` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/HARD_TEST_PROPOSALS.md` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/STRUCTURE_AUDIT.md` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/TEST_BACKLOG.json` -> future tools wrapper for audit (audit)
+- `control/audits/2026-04-25-comprehensive-test-eval-audit/TEST_GAP_AUDIT.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/native_build_evidence_report.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/generated/sample_native_build_evidence_plan.json` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/generated/sample_native_smoke_checklist.json` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_manual_build_evidence_plan.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_smoke_checklist_summary.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/generated/sample_native_release_candidate_preview.json` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/generated/sample_track_c_integration_audit.json` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_build_log_summary.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_first_wave_integration_audit.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_no_release_binary_report.md` -> future tools wrapper for audit (audit)
+- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_release_candidate_preview_summary.md` -> future tools wrapper for audit (audit)
+- `control/audits/comparison-page-contract-v0/NO_DOWNLOAD_INSTALL_EXECUTION_POLICY.md` -> future tools wrapper for audit (audit)
+- `control/audits/comparison-page-contract-v0/VERSION_STATE_RELEASE_COMPARISON_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/compatibility-aware-ranking-contract-v0/ACTION_SAFETY_AND_INSTALLABILITY_CAUTION_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/compatibility-aware-ranking-contract-v0/NO_INSTALLABILITY_WITHOUT_EVIDENCE_POLICY.md` -> future tools wrapper for audit (audit)
+- `control/audits/connector-approval-runtime-planning-audit-v0/GITHUB_RELEASES_REVIEW.md` -> future tools wrapper for audit (audit)
+- `control/audits/connector-approval-runtime-planning-audit-v0/connector_approval_runtime_planning_audit_report.json` -> future tools wrapper for audit (audit)
+- `control/audits/cross-source-identity-resolution-contract-v0/HASH_CHECKSUM_INTRINSIC_ID_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/cross-source-identity-resolution-contract-v0/PACKAGE_REPOSITORY_ARCHIVE_CAPTURE_IDENTITY_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/deep-extraction-contract-v0/PACKAGE_ARCHIVE_ISO_WARC_WACZ_SOURCE_BUNDLE_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/deep-extraction-runtime-planning-v0/FAILURE_ROLLBACK_AND_AUDIT_MODEL.md` -> future tools wrapper for audit (audit)
+- `control/audits/deep-extraction-runtime-planning-v0/PACK_IMPORT_AND_STAGING_BOUNDARY_REVIEW.md` -> future tools wrapper for audit (audit)
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/generated/sample_incident_rollback_summary.md` -> future tools wrapper for audit (audit)
+- `control/audits/e-bundle-01-hosting-ops-readiness-v0/incident_rollback_report.md` -> future tools wrapper for audit (audit)
+- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/generated/sample_public_launch_readiness_audit.json` -> future tools wrapper for audit (audit)
+
+## Unmapped Tools
+
+- `.aide/hooks/commit-msg`
+- `.aide/policies/export-import.yaml`
+- `.aide/prompts/AIDE-SYNC-01.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md`
+- `.github/workflows/pages.yml`
+- `contracts/actions/export_manifest.v0.json`
+- `contracts/source_sync/source_sync_job_kind.v0.json`
+- `contracts/source_sync/source_sync_worker_job.v0.json`
+- `contracts/source_sync/source_sync_worker_manifest.v0.json`
+- `contracts/ui/ui_contracts/stored_exports.ui_contract.yaml`
+- `contracts/ui/view_models/stored_exports.view_model.yaml`
+- `control/inventory/git/sync_workflow_commands.json`
+- `control/inventory/observations/obs_track_b_sync_matrix.json`
+- `control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py`
+- `control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json`
+- `crates/eureka-contracts/src/lib.rs`
+- `crates/eureka-core/src/lib.rs`
+- `crates/eureka-resolver/src/lib.rs`
+- `crates/eureka-store/src/lib.rs`
+- `examples/actions/export/export_manifest_object_v0.json`
+- `examples/actions/export/export_manifest_search_need_v0.json`
+- `examples/actions/manifests/export_manifest_action_v0.json`
+- `examples/connectors/h13_local_private/boundary_dry_run/approved_local_cas_import_boundary_request_v0.json`
+- `examples/connectors/h13_local_private/boundary_dry_run_outputs/local_cas_import_boundary_candidate_from_h13_boundary_v0.json`
+- `examples/connectors/h13_local_private/boundary_dry_run_results/local_cas_import_boundary_dry_run_result_example_v0.json`
+- `examples/connectors/h13_local_private/fixtures/institutional_private_collection_boundary/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/local_archive_file_metadata/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/local_disk_image_metadata/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/local_folder_metadata/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/local_removable_media_metadata/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/private_nas_metadata_boundary/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/private_object_store_metadata_boundary/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/restricted_source_manifest_only/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/user_owned_authenticated_source_boundary/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/fixtures/user_supplied_url_metadata_boundary/local_cas_import_boundary_record.json`
+- `examples/connectors/h13_local_private/identity/local_cas_import_boundary_candidate_v0.json`
+- `examples/connectors/h13_local_private/review_integration/h13_local_cas_import_boundary_review_seed_v0.json`
+- `examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json`
+- `examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json`
+- `examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json`
+- `runtime/actions/export_manifest.py`
+- `runtime/engine/interfaces/service/export_store_service.py`
+- `runtime/engine/store/export_store.py`
+- `runtime/gateway/public_api/stored_exports.py`
+- `runtime/gateway/public_api/stored_exports_view_models.py`
+- `scripts/_p70_contract_common.py`
+- `scripts/aide_merge_task_branch_to_main.py`
+- `scripts/bridge_source_cache_to_evidence.py`
+- `scripts/collect_native_smoke_evidence.py`
+- `scripts/create_external_baseline_observation.py`
+- `scripts/demo_cli_workbench.py`
+- `scripts/demo_evidence_ledger_store.py`
+- `scripts/demo_http_api.py`
+- `scripts/demo_local_runtime_composition.py`
+- `scripts/demo_local_worker_runner.py`
+- `scripts/demo_resolution_slice.py`
+- `scripts/demo_review_queue_store.py`
+- `scripts/demo_reviewed_public_index.py`
+- `scripts/demo_source_cache_store.py`
+- `scripts/demo_source_observation_seam.py`
+- `scripts/demo_web_workbench.py`
+- `scripts/demo_workunit_queue.py`
+- `scripts/dry_run_candidate_index_record.py`
+- `scripts/dry_run_candidate_promotion_assessment.py`
+- `scripts/dry_run_comparison_page.py`
+- `scripts/dry_run_compatibility_aware_ranking.py`
+- `scripts/dry_run_deep_extraction_request.py`
+- `scripts/dry_run_evidence_ledger_record.py`
+- `scripts/dry_run_evidence_weighted_ranking.py`
+- `scripts/dry_run_identity_resolution_assessment.py`
+- `scripts/dry_run_internet_archive_metadata_connector_approval.py`
+- `scripts/dry_run_known_absence_page.py`
+- `scripts/dry_run_npm_metadata_connector_approval.py`
+- `scripts/dry_run_object_page.py`
+- `scripts/dry_run_probe_queue_item.py`
+- `scripts/dry_run_pypi_metadata_connector_approval.py`
+- `scripts/dry_run_query_guard.py`
+- `scripts/dry_run_query_observation.py`
+- `scripts/dry_run_result_merge_group.py`
+- `scripts/dry_run_search_miss_ledger_entry.py`

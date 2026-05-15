@@ -23,9 +23,6 @@ quality_dimensions:
   - verifier_passes
   - token_budget_status
   - deterministic_output
-  - changelog_ready_commits
-  - task_resumability
-  - evidence_before_escalation
 token_quality_rule:
   token_reduction_invalid_if_quality_fails: true
 storage_policy:

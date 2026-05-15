@@ -1,14 +1,9 @@
 # Malformed Commits
 
-- 5488d5b29987 runtime(local): add deterministic worker runner: commit type is allowed: runtime; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- db42e120c3f5 test(local): add auto search harness: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 285d0c4dcd4b ops(local): add lan safety gate: commit type is allowed: ops; commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 9bddfc02d506 test(local): prove read only lan smoke: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- d3cf4ea25532 test(local): prove clean machine bootstrap: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- e39101948499 audit(local): close appliance track: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 736a43a5a9c5 audit(local): green appliance baseline: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 698e30097344 build(index): refresh public search artifact: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 4e9ebd7478ae fix(local): green appliance leakage and promotion gate: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- cce1d0557579 chore(local): integrate remote dev baseline: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 52a73c641d2c audit(local): record appliance promotion result: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
-- 7de5c8b708c2 audit(final): align state promotion and future plan: commit trailer present: AIDE-Task; commit trailer present: AIDE-Phase; commit trailer present: AIDE-Result; commit trailer present: AIDE-Scope; commit trailer present: AIDE-Token-Impact; commit trailer present: AIDE-Quality-Gate
+source_range: HEAD latest 50 commits
+malformed_count: 0
+
+- None.
+
+release_promotion_requires_review: true
+history_rewritten: false

@@ -1,0 +1,217 @@
+{
+  "class_counts": {
+    "invalid_pack_checksum": 1,
+    "secret_like_file": 13
+  },
+  "diagnoses": [
+    {
+      "blocker": false,
+      "diagnosis_id": "diagnosis-d9f05a8682b3",
+      "evidence_refs": [
+        ".aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "issue_id": "repair-d9f05a8682b3",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Export pack checksums are missing; future repair may regenerate pack evidence.",
+      "repair_class": "invalid_pack_checksum",
+      "risk_class": "high",
+      "severity": "warning"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-8e7db9396f4c",
+      "evidence_refs": [
+        "contracts/hosting/secrets_policy.v0.json"
+      ],
+      "issue_id": "repair-8e7db9396f4c",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-659f358a968a",
+      "evidence_refs": [
+        "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-659f358a968a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-2a77fbfddbcf",
+      "evidence_refs": [
+        "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-2a77fbfddbcf",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-58b10f1c6b71",
+      "evidence_refs": [
+        "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md"
+      ],
+      "issue_id": "repair-58b10f1c6b71",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-928de652332a",
+      "evidence_refs": [
+        "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md"
+      ],
+      "issue_id": "repair-928de652332a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-7c032c519429",
+      "evidence_refs": [
+        "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-7c032c519429",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-96a9925c932b",
+      "evidence_refs": [
+        "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-96a9925c932b",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-ce53fcde89ee",
+      "evidence_refs": [
+        "control/inventory/hosting/secrets_credential_policy.json"
+      ],
+      "issue_id": "repair-ce53fcde89ee",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-e00852b9bf11",
+      "evidence_refs": [
+        "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-e00852b9bf11",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-d86f307e4da7",
+      "evidence_refs": [
+        "examples/hosting/security/secrets_policy_example_v0.json"
+      ],
+      "issue_id": "repair-d86f307e4da7",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-4f9e3c13d424",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+      ],
+      "issue_id": "repair-4f9e3c13d424",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-679e14e6da9a",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+      ],
+      "issue_id": "repair-679e14e6da9a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-154537708718",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+      ],
+      "issue_id": "repair-154537708718",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    }
+  ],
+  "generated_by": "aide-lite",
+  "no_apply": true,
+  "risk_counts": {
+    "critical": 13,
+    "high": 1
+  },
+  "schema_version": "aide.repair-diagnosis-report.v0",
+  "severity_counts": {
+    "blocking": 13,
+    "warning": 1
+  },
+  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "target_root": "."
+}

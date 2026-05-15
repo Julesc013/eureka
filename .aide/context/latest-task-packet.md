@@ -2,32 +2,42 @@
 
 ## PHASE
 
-Q55 - Eureka Upgrade from Stable AIDE Pack
+Q56 - Eureka Existing Tool Absorption
 
 ## GOAL
 
-Q55 Eureka Upgrade from Stable AIDE Pack
+Q56 Eureka Existing Tool Absorption
 
 ## WHY
 
-Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
+- `AGENTS.md`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
+- `.aide/reports/eureka-stable-aide-upgrade.md` (present)
+- `.aide/reports/eureka-product-boundary-preservation.md` (present)
 - `.aide/context/repo-snapshot.json` (present)
 - `.aide/context/repo-map.json` (present)
 - `.aide/context/repo-map.md` (present)
 - `.aide/context/test-map.json` (present)
 - `.aide/context/context-index.json` (present)
 - `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/tools/latest-tool-inventory.md` (present)
+- `.aide/tools/latest-tool-wrap-plan.md` (present)
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
 - `.aide/cache/latest-cache-keys.md` (present)
-- `AGENTS.md`
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 - `.aide/policies/cache.yaml`
@@ -35,10 +45,14 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
+- `.aide/queue/EUREKA-AIDE-TOOL-ABSORPTION-01/**`
+- `.aide/tools/**`
+- `.aide/reports/eureka-*`
 - `.aide/context/**`
-- `.aide/queue/q55-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+- `.aide/repo/**`
+- `.aide/quality/**`
+- `.aide/roots/**`
+- root docs only if a reviewed queue packet explicitly requires a compact AIDE pointer
 
 ## FORBIDDEN_PATHS
 
@@ -46,22 +60,26 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `runtime/**`
 - `contracts/**`
+- `runtime/**`
 - `surfaces/**`
 - `site/**`
+- `snapshots/**`
 - `native/**`
 - `crates/**`
-- `connectors/**`
-- `packaging/**`
-- `third_party/**`
+- `examples/**`
+- `evals/**`
+- `tests/**`
+- `scripts/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+- architecture validators, source/evidence/index product state, Gateway/provider/runtime/surface implementation paths unless a later reviewed packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
 - Read the queue packet and relevant repo refs first.
 - Keep changes inside the allowed paths.
+- Use discover -> classify -> wrap -> adapt -> migrate -> retire with evidence.
+- Do not delete, rename, move, rewrite, or execute discovered tools during Q56.
 - Make the smallest coherent diff that satisfies acceptance.
 - Preserve generated/manual boundaries.
 - Do not inline whole source files unless exact contents are required.
@@ -73,14 +91,17 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py repo inventory`
+- `py -3 .aide/scripts/aide_lite.py repo validate`
+- `py -3 .aide/scripts/aide_lite.py tools inventory`
+- `py -3 .aide/scripts/aide_lite.py tools validate`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 scripts/check_architecture_boundaries.py`
-- `py -3 scripts/aide validate`
 - `git diff --check`
 
 ## COMMITS
@@ -100,7 +121,8 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 ## NON_GOALS
 
-- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No Eureka product behavior change.
 
 ## ACCEPTANCE
 
@@ -117,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4004
-- approx_tokens: 1001
+- chars: 4112
+- approx_tokens: 1028
 - budget_status: PASS
 - warnings:
   - none

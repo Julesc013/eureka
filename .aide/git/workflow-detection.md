@@ -4,7 +4,7 @@
 - generated_by: aide-lite
 - non_mutating: true
 - current_branch: dev
-- current_commit: 4c954e516a20fd8be59e925d175759daa80d2a93
+- current_commit: 6f2698c6e109a3b35d20402bb9871c1e4a674688
 - current_branch_role: integration
 - detected_workflow: trunk_with_dev_integration
 - confidence: high
@@ -15,7 +15,7 @@
 ## Branch Summary
 
 - local_branches: 2
-- remote_branches: 2
+- remote_branches: 7
 - tags_count: 0
 
 ## Warnings
