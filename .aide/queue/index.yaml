@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-04
+current_recommended_task: HUNT-05
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -178,12 +178,21 @@ entries:
     recommended_next: HUNT-04
   - id: HUNT-04
     title: Hunt exhaustion report
-    status: queued
+    status: completed
     purpose: Add structured exhaustion reports after operator-gated Search Hunt command controls exist.
     allowed_scope_summary: Search Hunt exhaustion report records, UI/API visibility, docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
     gate: HUNT-03 completed; no WorkUnit creation, source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-04/task.yaml
     recommended_after: HUNT-03
+    recommended_next: HUNT-05
+  - id: HUNT-05
+    title: Hunt-to-SearchNeed pipeline
+    status: queued
+    purpose: Add durable SearchNeed generation from Search Hunt exhaustion reports after local report semantics exist.
+    allowed_scope_summary: SearchNeed planning/persistence from Search Hunt reports only when explicitly scoped.
+    gate: HUNT-04 completed; no WorkUnit creation, source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim unless explicitly enabled by a future reviewed task.
+    task: .aide/queue/HUNT-05/task.yaml
+    recommended_after: HUNT-04
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

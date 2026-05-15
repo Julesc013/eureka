@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_04_next_task_decision.v0",
+  "task": "HUNT-04",
+  "recommended_next_task": "HUNT-05 \u2014 Hunt-to-SearchNeed pipeline",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "exhaustion_reports_available": true,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "Hunt exhaustion reports exist; durable SearchNeed generation is next."
+}

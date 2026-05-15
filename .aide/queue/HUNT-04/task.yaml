@@ -1,6 +1,6 @@
 id: HUNT-04
 title: Hunt exhaustion report
-status: queued
+status: completed
 purpose: Add structured Search Hunt exhaustion reports after pause/resume/cancel/steer controls exist.
 allowed_scope_summary: Search Hunt exhaustion report records, local visibility, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -15,3 +15,4 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-03
+recommended_next: HUNT-05

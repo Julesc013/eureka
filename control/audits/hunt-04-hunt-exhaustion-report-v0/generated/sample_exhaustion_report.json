@@ -1,0 +1,77 @@
+{
+  "schema_version": "search_hunt_exhaustion_report.v0",
+  "report_id": "she_sample",
+  "hunt_id": "shs_sample",
+  "created_at": "2026-05-15T00:00:00Z",
+  "state": "insufficient_local_index",
+  "query_summary": {
+    "hunt_id": "shs_sample",
+    "original_query": "sampleproject",
+    "normalized_query": "sampleproject",
+    "intent": "unknown",
+    "destination": "unknown",
+    "hunt_state": "created"
+  },
+  "checked_layers": [
+    {
+      "layer": "reviewed_public_index",
+      "status": "checked",
+      "summary": "Reviewed public index searched locally.",
+      "details": {
+        "result_count": 0
+      }
+    }
+  ],
+  "result_state": {
+    "reviewed_result_count": 0,
+    "candidate_result_count": 0,
+    "near_miss_count": 0,
+    "absence_state": "local_current_index_absent",
+    "confidence_class": "local_absent"
+  },
+  "unchecked_or_deferred_layers": [
+    {
+      "layer": "source_probes",
+      "status": "unchecked_or_deferred",
+      "reason": "source inspection remains disabled by policy",
+      "future_gate": "future source policy gate"
+    }
+  ],
+  "blocked_by_policy": [
+    {
+      "policy_id": "source_probe_disabled",
+      "status": "blocked",
+      "reason": "source probe disabled"
+    }
+  ],
+  "recommended_next_actions": [
+    {
+      "action": "create_search_need_later",
+      "status": "deferred",
+      "reason": "create SearchNeed later in the need pipeline",
+      "enabled_now": false
+    }
+  ],
+  "limitations": [
+    "local reviewed index only",
+    "local current-index absence only"
+  ],
+  "warnings": [],
+  "non_claims": [
+    {
+      "claim": "artifact_does_not_exist",
+      "allowed": false,
+      "wording": "Report does not prove an artifact does not exist."
+    }
+  ],
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "review_mutation_performed": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

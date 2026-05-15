@@ -1,0 +1,23 @@
+{
+  "schema_version": "search_hunt_exhaustion_non_claim_policy.v0",
+  "forbidden_claims": [
+    "artifact_does_not_exist",
+    "exhaustive_search_performed",
+    "all_sources_checked",
+    "source_truth_accepted",
+    "evidence_truth_accepted",
+    "rights_cleared",
+    "malware_safe",
+    "production_ready",
+    "public_launch_ready",
+    "ai_verified_result"
+  ],
+  "required_wording_classes": [
+    "local_current_index_only",
+    "unchecked_layers_visible",
+    "deferred_actions_visible",
+    "limitations_visible",
+    "warnings_visible",
+    "non_claims_visible"
+  ]
+}

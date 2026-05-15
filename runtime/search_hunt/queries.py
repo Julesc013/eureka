@@ -4,7 +4,15 @@ import json
 from typing import Any, Mapping
 
 from .commands import SearchHuntCommand
-from .records import SearchHuntDestination, SearchHuntIntent, SearchHuntSession, SearchHuntState, SearchHuntSummary, SearchHuntTransition
+from .records import (
+    SearchHuntDestination,
+    SearchHuntExhaustionReport,
+    SearchHuntIntent,
+    SearchHuntSession,
+    SearchHuntState,
+    SearchHuntSummary,
+    SearchHuntTransition,
+)
 from .steering import SearchHuntSteeringPreference
 
 
@@ -94,6 +102,16 @@ def row_to_steering_preference(row: Mapping[str, Any]) -> SearchHuntSteeringPref
         created_at=str(row["created_at"]),
         updated_at=str(row["updated_at"]),
     )
+
+
+def row_to_exhaustion_report(row: Mapping[str, Any]) -> SearchHuntExhaustionReport:
+    payload = dict(decode_json(row["payload_json"], {}))
+    payload.setdefault("report_id", str(row["report_id"]))
+    payload.setdefault("hunt_id", str(row["hunt_id"]))
+    payload.setdefault("schema_version", str(row["report_version"]))
+    payload.setdefault("state", str(row["exhaustion_state"]))
+    payload.setdefault("created_at", str(row["created_at"]))
+    return SearchHuntExhaustionReport.from_dict(payload)
 
 
 def optional(value: Any) -> str | None:

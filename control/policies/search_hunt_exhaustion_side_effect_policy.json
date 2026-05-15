@@ -1,0 +1,15 @@
+{
+  "schema_version": "search_hunt_exhaustion_side_effect_policy.v0",
+  "hunt_exhaustion_record_mutation_allowed": true,
+  "hunt_command_history_mutation_allowed_for_report_generation": true,
+  "workunit_creation_allowed": false,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "external_network_allowed": false,
+  "model_provider_allowed": false,
+  "review_decision_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "site_dist_writes_allowed": false,
+  "deployment_allowed": false
+}

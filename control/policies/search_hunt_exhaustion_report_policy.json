@@ -1,0 +1,19 @@
+{
+  "schema_version": "search_hunt_exhaustion_report_policy.v0",
+  "required_sections": [
+    "query_summary",
+    "checked_layers",
+    "result_state",
+    "unchecked_or_deferred_layers",
+    "blocked_by_policy",
+    "recommended_next_actions",
+    "limitations",
+    "warnings",
+    "non_claims"
+  ],
+  "no_global_absence_claim": true,
+  "local_current_index_absence_only": true,
+  "source_coverage_not_claimed": true,
+  "rights_safety_not_claimed": true,
+  "production_public_not_claimed": true
+}

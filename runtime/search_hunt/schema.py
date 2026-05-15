@@ -5,7 +5,7 @@ import sqlite3
 from typing import Any
 
 
-SCHEMA_VERSION = "search_hunt_store.v0"
+SCHEMA_VERSION = "search_hunt_store.v1"
 
 REQUIRED_TABLES = (
     "search_hunt_meta",
@@ -15,6 +15,7 @@ REQUIRED_TABLES = (
     "search_hunt_summaries",
     "search_hunt_commands",
     "search_hunt_steering_preferences",
+    "search_hunt_exhaustion_reports",
 )
 
 INITIAL_SCHEMA_STATEMENTS = (
@@ -115,6 +116,18 @@ CREATE TABLE IF NOT EXISTS search_hunt_steering_preferences (
   FOREIGN KEY(command_id) REFERENCES search_hunt_commands(command_id)
 )
 """,
+    """
+CREATE TABLE IF NOT EXISTS search_hunt_exhaustion_reports (
+  sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+  report_id TEXT NOT NULL UNIQUE,
+  hunt_id TEXT NOT NULL,
+  report_version TEXT NOT NULL,
+  exhaustion_state TEXT NOT NULL,
+  payload_json TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  FOREIGN KEY(hunt_id) REFERENCES search_hunt_sessions(id)
+)
+""",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_state ON search_hunt_sessions(state)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_query ON search_hunt_sessions(normalized_query)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_parent_id ON search_hunt_sessions(parent_id)",
@@ -124,6 +137,8 @@ CREATE TABLE IF NOT EXISTS search_hunt_steering_preferences (
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_commands_hunt_id ON search_hunt_commands(hunt_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_steering_hunt_id ON search_hunt_steering_preferences(hunt_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_steering_active ON search_hunt_steering_preferences(active)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_exhaustion_hunt_id ON search_hunt_exhaustion_reports(hunt_id)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_exhaustion_created_at ON search_hunt_exhaustion_reports(created_at)",
 )
 
 

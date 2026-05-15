@@ -19,3 +19,7 @@ Steering is not evidence, source approval, rights clearance, safety clearance, t
 ## Auth Boundary
 
 Mutating command routes are localhost-only and operator-token-gated. LAN clients may read hunt pages when LAN read-only mode is enabled, but HUNT-03 command mutations return 403 for LAN clients.
+
+## Exhaustion Report Command History
+
+HUNT-04 records report generation in command history with no state change. That entry documents local report generation only. It does not authorize future work, source access, extraction, model/provider calls, or index mutation.

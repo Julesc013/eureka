@@ -1,0 +1,20 @@
+{
+  "schema_version": "search_hunt_exhaustion_gap_register.v0",
+  "task": "HUNT-04",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap_id": "hunt_to_search_need_deferred",
+      "status": "deferred",
+      "next_task": "HUNT-05",
+      "reason": "Exhaustion reports recommend future SearchNeed categories but do not persist SearchNeeds yet."
+    },
+    {
+      "gap_id": "hunt_to_workunit_deferred",
+      "status": "deferred",
+      "next_task": "HUNT-06",
+      "reason": "HUNT-04 must not create WorkUnits."
+    }
+  ],
+  "hard_blockers": []
+}

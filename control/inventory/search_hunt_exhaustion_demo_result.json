@@ -1,0 +1,19 @@
+{
+  "schema_version": "search_hunt_exhaustion_demo_result.v0",
+  "task": "HUNT-04",
+  "status": "pass",
+  "demo_added": true,
+  "demo_creates_sample_hunt": true,
+  "demo_generates_exhaustion_report": true,
+  "demo_shows_exhaustion_report": true,
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "review_mutation_performed": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

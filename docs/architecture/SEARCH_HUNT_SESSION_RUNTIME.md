@@ -28,3 +28,7 @@ Workbench visibility reads this store through the Local Appliance runtime. HUNT-
 ## HUNT-03
 
 Command support adds append-only command history and steering preference tables to the same manifest-backed store. These commands use the existing state machine and remain limited to local hunt state. WorkUnit creation, source probes, extraction, model/provider calls, review mutation, and index mutation remain disabled.
+
+## HUNT-04
+
+Exhaustion support adds versioned report rows to the same store. Reports inspect session state, reviewed-index summaries, local absence summaries, transition history, and active steering preferences. The report is persisted as local explanation state and does not perform deferred work.

@@ -17,3 +17,7 @@ A Search Hunt Session is investigation state only. Reviewed local index results 
 ## HUNT-03 Controls
 
 When the local service is opened with operator-capable localhost state, the hunt detail page also shows token-gated state controls, steering preference forms, command history, and active/inactive steering preferences. These controls submit only to localhost command routes and remain unavailable to LAN clients.
+
+## HUNT-04 Exhaustion
+
+The hunt detail page now shows the latest exhaustion report, checked layers, deferred layers, blocked-by-policy entries, future action categories, and non-claims. Report generation is token-gated and localhost-only; LAN clients can only read existing report state.

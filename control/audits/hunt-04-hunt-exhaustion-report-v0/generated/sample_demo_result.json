@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_hunt_exhaustion_demo_result.v0",
+  "status": "pass",
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "review_mutation_performed": false,
+  "public_index_mutated": false,
+  "master_index_mutated": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

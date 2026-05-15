@@ -1,0 +1,51 @@
+{
+  "schema_version": "search_hunt_exhaustion_section_matrix.v0",
+  "task": "HUNT-04",
+  "sections": [
+    {
+      "section": "query_summary",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "checked_layers",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "result_state",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "unchecked_or_deferred_layers",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "blocked_by_policy",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "recommended_next_actions",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "limitations",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "warnings",
+      "present": true,
+      "validation_status": "pass"
+    },
+    {
+      "section": "non_claims",
+      "present": true,
+      "validation_status": "pass"
+    }
+  ]
+}

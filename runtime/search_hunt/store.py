@@ -18,7 +18,17 @@ from .commands import (
 )
 from .errors import SearchHuntClosedError, SearchHuntError, SearchHuntNotFoundError, SearchHuntTransitionError
 from .queries import encode_json, row_to_command, row_to_session, row_to_steering_preference, row_to_summary, row_to_transition
-from .records import SearchHuntDestination, SearchHuntIntent, SearchHuntSession, SearchHuntState, SearchHuntSummary, SearchHuntTransition, utc_now
+from .queries import row_to_exhaustion_report
+from .records import (
+    SearchHuntDestination,
+    SearchHuntExhaustionReport,
+    SearchHuntIntent,
+    SearchHuntSession,
+    SearchHuntState,
+    SearchHuntSummary,
+    SearchHuntTransition,
+    utc_now,
+)
 from .schema import REQUIRED_TABLES, SCHEMA_VERSION, apply_schema, get_schema_events
 from .search_summary import build_reviewed_index_search_summary
 from .steering import SearchHuntSteeringPreference, SearchHuntSteeringType, coerce_steering_type, steering_type_text
@@ -27,6 +37,7 @@ from .validation import (
     validate_limit,
     validate_query_text,
     validate_search_hunt_command,
+    validate_search_hunt_exhaustion_report,
     validate_search_hunt_session,
     validate_search_hunt_steering_preference,
     validate_store_path,
@@ -343,6 +354,60 @@ class SearchHuntStore:
         sql += " ORDER BY created_at, id"
         return [row_to_steering_preference(row) for row in self.connection.execute(sql, params).fetchall()]
 
+    def write_exhaustion_report(self, report: SearchHuntExhaustionReport) -> SearchHuntExhaustionReport:
+        self._ensure_open()
+        validate_search_hunt_exhaustion_report(report)
+        self._require_session(report.hunt_id)
+        with self.transaction():
+            self._insert_exhaustion_report(report)
+        return report
+
+    def get_latest_exhaustion_report(self, hunt_id: str) -> SearchHuntExhaustionReport | None:
+        self._ensure_open()
+        self._require_session(hunt_id)
+        row = self.connection.execute(
+            "SELECT * FROM search_hunt_exhaustion_reports WHERE hunt_id = ? ORDER BY sequence DESC LIMIT 1",
+            (hunt_id,),
+        ).fetchone()
+        return row_to_exhaustion_report(row) if row else None
+
+    def list_exhaustion_reports(self, hunt_id: str | None = None, limit: int = 100) -> list[SearchHuntExhaustionReport]:
+        self._ensure_open()
+        sql = "SELECT * FROM search_hunt_exhaustion_reports"
+        params: list[Any] = []
+        if hunt_id:
+            self._require_session(hunt_id)
+            sql += " WHERE hunt_id = ?"
+            params.append(hunt_id)
+        sql += " ORDER BY sequence DESC LIMIT ?"
+        params.append(validate_limit(limit))
+        return [row_to_exhaustion_report(row) for row in self.connection.execute(sql, params).fetchall()]
+
+    def attach_exhaustion_report(self, hunt_id: str, report: SearchHuntExhaustionReport) -> SearchHuntExhaustionReport:
+        self._ensure_open()
+        session = self._require_session(hunt_id)
+        if report.hunt_id != hunt_id:
+            raise SearchHuntError("exhaustion report hunt_id mismatch")
+        validate_search_hunt_exhaustion_report(report)
+        side_effects = default_command_side_effects()
+        side_effects["hunt_state_mutated"] = False
+        side_effects["hunt_exhaustion_report_mutated"] = True
+        command = SearchHuntCommand.new(
+            hunt_id,
+            "generate_exhaustion_report",
+            previous_state=session.state,
+            resulting_state=session.state,
+            operator_label=report.operator_label,
+            reason="deterministic local exhaustion report generated",
+            policy_decision="allowed_local_exhaustion_report_generation",
+            value=report.report_id,
+            side_effects=side_effects,
+        )
+        with self.transaction():
+            self._insert_exhaustion_report(report)
+            self._insert_command(command)
+        return report
+
     def summarize(self) -> dict[str, Any]:
         self._ensure_open()
         total = int(self.connection.execute("SELECT COUNT(*) FROM search_hunt_sessions").fetchone()[0])
@@ -380,12 +445,16 @@ class SearchHuntStore:
         orphan_steering = self.connection.execute(
             "SELECT COUNT(*) FROM search_hunt_steering_preferences p LEFT JOIN search_hunt_sessions s ON p.hunt_id = s.id WHERE s.id IS NULL"
         ).fetchone()
+        orphan_exhaustion = self.connection.execute(
+            "SELECT COUNT(*) FROM search_hunt_exhaustion_reports r LEFT JOIN search_hunt_sessions s ON r.hunt_id = s.id WHERE s.id IS NULL"
+        ).fetchone()
         orphan_count = (
             int(orphan_transitions[0] or 0)
             + int(orphan_summaries[0] or 0)
             + int(orphan_layers[0] or 0)
             + int(orphan_commands[0] or 0)
             + int(orphan_steering[0] or 0)
+            + int(orphan_exhaustion[0] or 0)
         )
         return {
             "status": "pass" if integrity == "ok" and not missing and orphan_count == 0 else "fail",
@@ -491,6 +560,21 @@ class SearchHuntStore:
                 encode_json(list(preference.warnings)),
                 preference.created_at,
                 preference.updated_at,
+            ),
+        )
+
+    def _insert_exhaustion_report(self, report: SearchHuntExhaustionReport) -> None:
+        self.connection.execute(
+            "INSERT INTO search_hunt_exhaustion_reports "
+            "(report_id, hunt_id, report_version, exhaustion_state, payload_json, created_at) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            (
+                report.report_id,
+                report.hunt_id,
+                report.report_version,
+                report.state.value,
+                encode_json(report.to_dict()),
+                report.created_at,
             ),
         )
 

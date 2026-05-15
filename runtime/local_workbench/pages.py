@@ -14,6 +14,7 @@ from .view_models import (
     ReviewItemPageView,
     ReviewQueuePageView,
     SearchHuntDetailPageView,
+    SearchHuntExhaustionRowView,
     SearchHuntLayerView,
     SearchHuntListPageView,
     SearchHuntNotFoundPageView,
@@ -441,6 +442,7 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             "</section>",
             _search_hunt_layers("checked-layers-heading", "Checked layers", view.checked_layers),
             _search_hunt_layers("unchecked-layers-heading", "Unchecked and deferred layers", view.unchecked_layers),
+            _search_hunt_exhaustion_report(view),
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
             _search_hunt_command_history(view.commands),
@@ -584,6 +586,52 @@ def _search_hunt_steering_controls(view: SearchHuntDetailPageView) -> str:
             "</section>",
         ]
     )
+
+
+def _search_hunt_exhaustion_report(view: SearchHuntDetailPageView) -> str:
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-exhaustion-heading"><h2 id="hunt-exhaustion-heading">Exhaustion report</h2>',
+            render_notice("scope", "Exhaustion reports explain local current-index state and deferred work only."),
+            render_table(view.latest_exhaustion_report, headers=("field", "value")),
+            _search_hunt_exhaustion_generation_form(view) if view.exhaustion_generation_enabled else "",
+            '<section aria-labelledby="hunt-exhaustion-checked-heading"><h2 id="hunt-exhaustion-checked-heading">Exhaustion checked layers</h2>',
+            _search_hunt_exhaustion_rows(view.exhaustion_checked_layers),
+            "</section>",
+            '<section aria-labelledby="hunt-exhaustion-deferred-heading"><h2 id="hunt-exhaustion-deferred-heading">Exhaustion deferred layers</h2>',
+            _search_hunt_exhaustion_rows(view.exhaustion_deferred_layers),
+            "</section>",
+            '<section aria-labelledby="hunt-exhaustion-policy-heading"><h2 id="hunt-exhaustion-policy-heading">Blocked-by-policy entries</h2>',
+            _search_hunt_exhaustion_rows(view.exhaustion_blocked_by_policy),
+            "</section>",
+            '<section aria-labelledby="hunt-exhaustion-actions-heading"><h2 id="hunt-exhaustion-actions-heading">Recommended future action categories</h2>',
+            _search_hunt_exhaustion_rows(view.exhaustion_recommended_actions),
+            "</section>",
+            '<section aria-labelledby="hunt-exhaustion-non-claims-heading"><h2 id="hunt-exhaustion-non-claims-heading">Exhaustion non-claims</h2>',
+            _search_hunt_exhaustion_rows(view.exhaustion_non_claims),
+            "</section>",
+            "</section>",
+        ]
+    )
+
+
+def _search_hunt_exhaustion_generation_form(view: SearchHuntDetailPageView) -> str:
+    action = "/hunt/" + quote(view.hunt_id) + "/exhaustion"
+    return "\n".join(
+        [
+            render_notice("scope", "Report generation requires an operator token and is localhost-only."),
+            f'<form method="post" action="{escape_html(action)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><button type="submit">Generate local exhaustion report</button></p>',
+            "</form>",
+        ]
+    )
+
+
+def _search_hunt_exhaustion_rows(rows: Sequence[SearchHuntExhaustionRowView]) -> str:
+    payload = tuple({"name": item.name, "status": item.status, "note": item.note} for item in rows)
+    return render_table(payload, headers=("name", "status", "note"))
 
 
 def _search_hunt_command_history(commands: Sequence[SearchHuntCommandView]) -> str:

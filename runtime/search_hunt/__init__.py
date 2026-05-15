@@ -2,6 +2,13 @@
 
 from .absence_summary import build_local_absence_summary
 from .commands import SearchHuntCommand, SearchHuntCommandResult, SearchHuntCommandType
+from .exhaustion import (
+    build_blocked_policy_reports,
+    build_checked_layer_reports,
+    build_deferred_layer_reports,
+    build_hunt_exhaustion_report,
+    build_recommended_actions,
+)
 from .errors import (
     SearchHuntClosedError,
     SearchHuntError,
@@ -13,6 +20,8 @@ from .errors import (
 from .records import (
     SearchHuntCheckedLayer,
     SearchHuntDestination,
+    SearchHuntExhaustionReport,
+    SearchHuntExhaustionState,
     SearchHuntIntent,
     SearchHuntSession,
     SearchHuntState,
@@ -34,11 +43,13 @@ ALLOWED_SEARCH_HUNT_CHECKED_LAYERS = tuple(item.value for item in SearchHuntChec
 ALLOWED_SEARCH_HUNT_UNCHECKED_LAYERS = tuple(item.value for item in SearchHuntUncheckedLayer)
 ALLOWED_SEARCH_HUNT_COMMAND_TYPES = tuple(item.value for item in SearchHuntCommandType)
 ALLOWED_SEARCH_HUNT_STEERING_TYPES = tuple(item.value for item in SearchHuntSteeringType)
+ALLOWED_SEARCH_HUNT_EXHAUSTION_STATES = tuple(item.value for item in SearchHuntExhaustionState)
 
 __all__ = [
     "ALLOWED_SEARCH_HUNT_CHECKED_LAYERS",
     "ALLOWED_SEARCH_HUNT_COMMAND_TYPES",
     "ALLOWED_SEARCH_HUNT_DESTINATIONS",
+    "ALLOWED_SEARCH_HUNT_EXHAUSTION_STATES",
     "ALLOWED_SEARCH_HUNT_INTENTS",
     "ALLOWED_SEARCH_HUNT_STATES",
     "ALLOWED_SEARCH_HUNT_STEERING_TYPES",
@@ -51,6 +62,8 @@ __all__ = [
     "SearchHuntCommandType",
     "SearchHuntDestination",
     "SearchHuntError",
+    "SearchHuntExhaustionReport",
+    "SearchHuntExhaustionState",
     "SearchHuntIntegrityError",
     "SearchHuntIntent",
     "SearchHuntNotFoundError",
@@ -65,7 +78,12 @@ __all__ = [
     "SearchHuntUncheckedLayer",
     "SearchHuntValidationError",
     "apply_transition",
+    "build_blocked_policy_reports",
+    "build_checked_layer_reports",
+    "build_deferred_layer_reports",
+    "build_hunt_exhaustion_report",
     "build_local_absence_summary",
+    "build_recommended_actions",
     "build_reviewed_index_search_summary",
     "validate_no_forbidden_side_effects",
     "validate_no_truth_claims",

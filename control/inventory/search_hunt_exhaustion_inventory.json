@@ -1,0 +1,23 @@
+{
+  "schema_version": "search_hunt_exhaustion_inventory.v0",
+  "task": "HUNT-04",
+  "exhaustion_reports_enabled": true,
+  "operator_token_required_for_generation": true,
+  "localhost_only_generation": true,
+  "lan_generation_enabled": false,
+  "required_sections": [
+    "query_summary",
+    "checked_layers",
+    "result_state",
+    "unchecked_or_deferred_layers",
+    "blocked_by_policy",
+    "recommended_next_actions",
+    "limitations",
+    "warnings",
+    "non_claims"
+  ],
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false
+}

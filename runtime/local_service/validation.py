@@ -74,17 +74,20 @@ def is_operator_mutation_route(path: str) -> bool:
 
 def _is_hunt_command_mutation_route(path: str) -> bool:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) != 3 or parts[0] != "hunt":
-        return False
-    return parts[2] in {
-        "pause",
-        "resume",
-        "cancel",
-        "block",
-        "wait-for-user",
-        "wait-for-policy",
-        "steer",
-    }
+    if len(parts) == 3 and parts[0] == "hunt":
+        return parts[2] in {
+            "pause",
+            "resume",
+            "cancel",
+            "block",
+            "wait-for-user",
+            "wait-for-policy",
+            "steer",
+            "exhaustion",
+        }
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"]:
+        return parts[4] == "exhaustion"
+    return False
 
 
 def validate_no_lan_binding(host: str) -> str:
