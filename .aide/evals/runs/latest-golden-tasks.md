@@ -63,7 +63,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1459
+- approx_tokens_if_applicable: 1031
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -71,13 +71,14 @@
 
 - result: FAIL
 - checks_run: 31
-- passed_checks: 29
-- approx_tokens_if_applicable: 1459
+- passed_checks: 28
+- approx_tokens_if_applicable: 1031
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-task-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json, AGENTS.md
 - notes: Checks the latest compact packet is target-specific.
 - errors:
   - Eureka packet references AGENTS.md
   - Eureka packet validation includes .aide/scripts/aide_lite.py eval run
+  - Eureka packet validation includes scripts/check_architecture_boundaries.py
 
 ### context-packet-no-full-repo-dump
 
@@ -120,7 +121,7 @@
 - result: PASS
 - checks_run: 25
 - passed_checks: 25
-- approx_tokens_if_applicable: 1660
+- approx_tokens_if_applicable: 1063
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-review-packet.md, .aide/context/latest-task-packet.md, .aide/verification/latest-verification-report.md
 - notes: Checks review packets stay evidence-oriented.
 
@@ -298,7 +299,7 @@
 ### github_release_assets_have_checksums_golden
 
 - result: FAIL
-- checks_run: 14
+- checks_run: 16
 - passed_checks: 5
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/release/dist/SHA256SUMS.txt, .aide/release/dist/aide-lite-pack-v0.checksums.json, .aide/release/github-release-assets.json
@@ -313,6 +314,8 @@
   - required asset missing: .aide/release/dist/install.md
   - required asset missing: .aide/release/dist/CHANGELOG.preview.md
   - required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md
+  - checksum mismatch: .aide/release/dist/release-validation.json
+  - checksum mismatch: .aide/release/dist/release-validation.md
 
 ### github_release_checklist_golden
 
@@ -806,8 +809,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 280
-- passed_checks: 280
+- checks_run: 352
+- passed_checks: 352
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -824,8 +827,8 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 18
-- passed_checks: 18
+- checks_run: 22
+- passed_checks: 22
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
@@ -834,12 +837,19 @@
 
 - result: FAIL
 - checks_run: 34
-- passed_checks: 30
+- passed_checks: 23
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/context/latest-task-packet.md, AGENTS.md
 - notes: Checks Eureka product/AIDE boundaries.
 - errors:
   - forbidden paths include product boundary: runtime/**
+  - forbidden paths include product boundary: contracts/**
+  - forbidden paths include product boundary: surfaces/**
+  - forbidden paths include product boundary: site/**
+  - forbidden paths include product boundary: native/**
+  - forbidden paths include product boundary: crates/**
+  - forbidden paths include product boundary: examples/**
+  - forbidden paths include product boundary: evals/**
   - forbidden paths include product boundary: tests/**
   - forbidden paths include product boundary: scripts/**
   - packet states no Eureka product behavior change
@@ -912,7 +922,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1660
+- approx_tokens_if_applicable: 1063
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -1081,8 +1091,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 30321
-- passed_checks: 30321
+- checks_run: 30643
+- passed_checks: 30643
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1117,8 +1127,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 30325
-- passed_checks: 30325
+- checks_run: 30647
+- passed_checks: 30647
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1126,8 +1136,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 30346
-- passed_checks: 30346
+- checks_run: 30668
+- passed_checks: 30668
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1144,8 +1154,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 17734
-- passed_checks: 17734
+- checks_run: 20911
+- passed_checks: 20911
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1153,8 +1163,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 17738
-- passed_checks: 17738
+- checks_run: 20915
+- passed_checks: 20915
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1171,8 +1181,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 666
-- passed_checks: 666
+- checks_run: 851
+- passed_checks: 851
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.

@@ -89,7 +89,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1459,
+      "approx_tokens_if_applicable": 1031,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -104,14 +104,15 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1459,
+      "approx_tokens_if_applicable": 1031,
       "checks_run": 31,
       "errors": [
         "Eureka packet references AGENTS.md",
-        "Eureka packet validation includes .aide/scripts/aide_lite.py eval run"
+        "Eureka packet validation includes .aide/scripts/aide_lite.py eval run",
+        "Eureka packet validation includes scripts/check_architecture_boundaries.py"
       ],
       "notes": "Checks the latest compact packet is target-specific.",
-      "passed_checks": 29,
+      "passed_checks": 28,
       "related_paths": [
         ".aide/context/latest-context-packet.md",
         ".aide/context/latest-task-packet.md",
@@ -185,7 +186,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1660,
+      "approx_tokens_if_applicable": 1063,
       "checks_run": 25,
       "errors": [],
       "notes": "Checks review packets stay evidence-oriented.",
@@ -492,7 +493,7 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 14,
+      "checks_run": 16,
       "errors": [
         "github release asset hashes match files",
         "required asset missing: .aide/release/dist/aide-lite-pack-v0.zip",
@@ -502,7 +503,9 @@
         "required asset missing: .aide/release/dist/manifest.yaml",
         "required asset missing: .aide/release/dist/install.md",
         "required asset missing: .aide/release/dist/CHANGELOG.preview.md",
-        "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md"
+        "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md",
+        "checksum mismatch: .aide/release/dist/release-validation.json",
+        "checksum mismatch: .aide/release/dist/release-validation.md"
       ],
       "notes": "Checks release draft asset list includes checksums and validates hashes.",
       "passed_checks": 5,
@@ -1289,10 +1292,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 280,
+      "checks_run": 352,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 280,
+      "passed_checks": 352,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1318,10 +1321,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 18,
+      "checks_run": 22,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 18,
+      "passed_checks": 22,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -1335,12 +1338,19 @@
       "checks_run": 34,
       "errors": [
         "forbidden paths include product boundary: runtime/**",
+        "forbidden paths include product boundary: contracts/**",
+        "forbidden paths include product boundary: surfaces/**",
+        "forbidden paths include product boundary: site/**",
+        "forbidden paths include product boundary: native/**",
+        "forbidden paths include product boundary: crates/**",
+        "forbidden paths include product boundary: examples/**",
+        "forbidden paths include product boundary: evals/**",
         "forbidden paths include product boundary: tests/**",
         "forbidden paths include product boundary: scripts/**",
         "packet states no Eureka product behavior change"
       ],
       "notes": "Checks Eureka product/AIDE boundaries.",
-      "passed_checks": 30,
+      "passed_checks": 23,
       "related_paths": [
         ".aide/context/latest-task-packet.md",
         "AGENTS.md"
@@ -1448,7 +1458,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1660,
+      "approx_tokens_if_applicable": 1063,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -1727,10 +1737,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 30321,
+      "checks_run": 30643,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 30321,
+      "passed_checks": 30643,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1783,10 +1793,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 30325,
+      "checks_run": 30647,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 30325,
+      "passed_checks": 30647,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1797,10 +1807,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 30346,
+      "checks_run": 30668,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 30346,
+      "passed_checks": 30668,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1827,10 +1837,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 17734,
+      "checks_run": 20911,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 17734,
+      "passed_checks": 20911,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1841,10 +1851,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 17738,
+      "checks_run": 20915,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 17738,
+      "passed_checks": 20915,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1870,10 +1880,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 666,
+      "checks_run": 851,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 666,
+      "passed_checks": 851,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
