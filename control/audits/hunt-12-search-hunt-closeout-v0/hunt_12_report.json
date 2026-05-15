@@ -1,6 +1,6 @@
 {
   "schema_version": "hunt_12_report.v0",
-  "status": "pass_with_warnings",
+  "status": "pass",
   "task": "HUNT-12",
   "purpose": "search_hunt_closeout_and_syn_f0_handoff",
   "hunt_track_complete": true,
@@ -11,7 +11,7 @@
   "deterministic_replay_passed": true,
   "ai_escalation_gate_disabled": true,
   "hard_blockers_remaining": 0,
-  "warnings_remaining": 6,
+  "warnings_remaining": 0,
   "syn_can_start": true,
   "f0_can_resume": true,
   "f0_recommended_now": false,

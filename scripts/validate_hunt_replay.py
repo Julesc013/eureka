@@ -16,6 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
 from runtime.local_appliance import close_local_appliance, open_local_appliance
 from runtime.local_operator import write_operator_token_record
 from runtime.local_operator.auth import build_cli_operator_auth_state
@@ -389,7 +390,7 @@ def validate_behavior(root: Path, errors: list[str]) -> dict[str, Any]:
 def validate_queue(root: Path, errors: list[str]) -> None:
     index = root / ".aide/queue/index.yaml"
     text = index.read_text(encoding="utf-8") if index.is_file() else ""
-    if "current_recommended_task: HUNT-11" not in text:
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to HUNT-11")
     if not (root / ".aide/queue/HUNT-11/task.yaml").is_file():
         errors.append("missing HUNT-11 queue task")

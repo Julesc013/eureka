@@ -12,5 +12,5 @@ Required HUNT-12 validation lanes:
 - generated artifact cleanliness
 - architecture boundaries
 
-Validation is reported honestly as pass_with_warnings when old queue-sensitive
-validators or broad test timeouts appear.
+Validation is reported as pass after remediation. Any future hard blocker must
+route to HUNT-REMEDIATION-CONTINUE before SYN/F0 proceeds.

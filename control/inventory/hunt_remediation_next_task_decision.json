@@ -1,0 +1,15 @@
+{
+  "alternative_next_task": "F0-00 \u2014 Refresh F0 after Local Appliance and HUNT",
+  "f0_can_resume": true,
+  "f0_recommended_now": false,
+  "hard_blockers_remaining": 0,
+  "main_promotion_review_required": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "reason": "Search Hunt remediation resolved closeout warnings and validation gaps; SYN should generate query and eval pressure before extraction resumes.",
+  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "schema_version": "hunt_remediation_next_task_decision.v0",
+  "status": "pass",
+  "syn_can_start": true,
+  "task": "HUNT-REMEDIATION"
+}

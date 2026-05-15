@@ -1,10 +1,10 @@
 id: HUNT-REMEDIATION
 title: Complete Search Hunt blockers
-status: queued
-purpose: Remediate hard Search Hunt closeout blockers if future validation invalidates HUNT-12.
+status: completed
+purpose: Remediate Search Hunt closeout warning and blocker gaps before SYN/F0 handoff.
 allowed_scope_summary: Remediation planning and explicitly scoped fixes only.
 gate:
-  - only current if closeout or promotion review finds a hard blocker
+  - operator-selected remediation after HUNT-12
   - no source probes
   - no extraction
   - no model/provider calls
@@ -12,3 +12,4 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-12
+recommended_next: SYN-00

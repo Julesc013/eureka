@@ -18,6 +18,11 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import (
+    hunt_latest_packet_current_or_advanced,
+    hunt_queue_current_or_advanced,
+    post_hunt_current_allowed,
+)
 from runtime.local_appliance import close_local_appliance, open_local_appliance
 from runtime.local_operator.auth import build_cli_operator_auth_state
 from runtime.local_service import LocalServiceApp
@@ -524,7 +529,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     task = read_text(root / ".aide/queue/HUNT-03/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/HUNT-04/task.yaml", errors)
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
-    if not re.search(r"current_recommended_task: HUNT-(0[4-9]|1[0-2])\b", queue):
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to HUNT-04 or a later HUNT task")
     if not re.search(r"id: HUNT-03\b[\s\S]*?status: completed", queue):
         errors.append("queue index must mark HUNT-03 completed")
@@ -534,9 +539,11 @@ def validate_queue(root: Path, errors: list[str]) -> None:
         errors.append("HUNT-03 task must recommend HUNT-04")
     if "Hunt exhaustion report" not in next_task:
         errors.append("HUNT-04 task title mismatch")
-    if not re.search(r"HUNT-(0[4-9]|1[0-2])\b", packet):
+    if not hunt_latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("latest task packet must point to HUNT-04 or a later HUNT task")
-    if "current_recommended_task: F0-00" in queue or "current_recommended_task: SYN-00" in queue:
+    if (
+        "current_recommended_task: F0-00" in queue or "current_recommended_task: SYN-00" in queue
+    ) and not post_hunt_current_allowed(root):
         errors.append("F0/SYN must not be current")
 
 

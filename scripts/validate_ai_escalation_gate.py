@@ -16,6 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
 from runtime.ai_escalation import (
     ALLOWED_AI_ESCALATION_FORBIDDEN_ACTIONS,
     ALLOWED_AI_ESCALATION_OUTPUT_CLASSES,
@@ -415,11 +416,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
         errors.append("missing queue index")
         return
     text = queue.read_text(encoding="utf-8")
-    if (
-        "current: HUNT-12" not in text
-        and 'current: "HUNT-12"' not in text
-        and "current_recommended_task: HUNT-12" not in text
-    ):
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue current task must be HUNT-12")
     decision = load_json(root / "control/inventory/hunt_11_next_task_decision.json", "hunt_11_next_task_decision.v0", errors)
     if not str(decision.get("recommended_next_task", "")).startswith("HUNT-12"):

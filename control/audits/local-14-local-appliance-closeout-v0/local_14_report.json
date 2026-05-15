@@ -31,12 +31,12 @@
   "server_implemented": true,
   "site_dist_mutated": false,
   "source_probe_executed": false,
-  "status": "pass_with_warnings",
+  "status": "pass",
   "syn_can_start": true,
   "syn_handoff_created": true,
   "task": "LOCAL-14",
   "validation": {},
-  "warnings_remaining": 1,
+  "warnings_remaining": 0,
   "worker_execution_enabled": true,
   "workunit_runtime_implemented": true
 }

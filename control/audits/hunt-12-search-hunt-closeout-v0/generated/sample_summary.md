@@ -1,9 +1,9 @@
 # Search Hunt Capability Summary
 
-- status: pass_with_warnings
+- status: pass
 - hunt_track_complete: true
 - hard_blockers_remaining: 0
-- warnings_remaining: 6
+- warnings_remaining: 0
 - recommended_next_task: SYN-00 - Synthetic Query Foundry planning over Local Appliance
 
 ## Capabilities

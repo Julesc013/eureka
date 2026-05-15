@@ -14,15 +14,15 @@ from validate_local_appliance_closeout import validate
 
 
 class LocalApplianceCloseoutTests(unittest.TestCase):
-    def test_closeout_records_complete_local_track_with_warning(self) -> None:
+    def test_closeout_records_complete_local_track(self) -> None:
         records = build_closeout_records(ROOT)
         closeout = records["closeout_result"]
-        self.assertEqual("pass_with_warnings", closeout["status"])
+        self.assertEqual("pass", closeout["status"])
         self.assertTrue(closeout["local_track_complete"])
         self.assertTrue(closeout["all_required_capabilities_implemented"])
         self.assertTrue(closeout["all_required_capabilities_tested"])
         self.assertEqual(0, closeout["hard_blockers_remaining"])
-        self.assertGreater(closeout["warnings_remaining"], 0)
+        self.assertEqual(0, closeout["warnings_remaining"])
 
     def test_closeout_blocks_if_required_result_missing(self) -> None:
         blockers = build_blocker_register(ROOT, ["control/inventory/missing.json"], [], {}, False)
@@ -38,9 +38,10 @@ class LocalApplianceCloseoutTests(unittest.TestCase):
         self.assertIn("auto_test_auto_search_harness", capability_ids)
         self.assertIn("clean_machine_bootstrap", capability_ids)
 
-    def test_validator_passes_with_disposed_warnings(self) -> None:
+    def test_validator_completes_without_errors(self) -> None:
         result = validate(ROOT, run_local_validators=False, include_full_discovery=False)
         self.assertIn(result["status"], {"pass", "pass_with_warnings"})
+        self.assertEqual([], result["errors"])
         self.assertTrue(result["local_track_complete"])
 
 

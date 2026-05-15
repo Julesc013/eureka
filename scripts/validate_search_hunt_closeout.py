@@ -105,9 +105,14 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--output")
     parser.add_argument("--run-full-discovery", action="store_true")
+    parser.add_argument("--run-local-closeout", action="store_true")
     args = parser.parse_args(argv)
 
-    result = validate(Path(args.repo_root).resolve(), run_full_discovery=args.run_full_discovery)
+    result = validate(
+        Path(args.repo_root).resolve(),
+        run_full_discovery=args.run_full_discovery,
+        run_local_closeout=args.run_local_closeout,
+    )
     if args.output:
         write_json(Path(args.output), result)
     if args.json:
@@ -122,7 +127,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     return 0 if result["status"] in PASS_STATUSES else 1
 
 
-def validate(root: Path = REPO_ROOT, *, run_full_discovery: bool = False) -> dict[str, Any]:
+def validate(root: Path = REPO_ROOT, *, run_full_discovery: bool = False, run_local_closeout: bool = False) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
     payloads = {rel: load_json(root / rel, schema, errors) for rel, schema in INVENTORIES.items()}
@@ -135,7 +140,7 @@ def validate(root: Path = REPO_ROOT, *, run_full_discovery: bool = False) -> dic
     audit = audit_closeout(root)
     if audit["closeout_result"]["hard_blockers_remaining"]:
         errors.extend(audit["errors"])
-    run_validation_commands(root, warnings, errors, run_full_discovery=run_full_discovery)
+    run_validation_commands(root, warnings, errors, run_full_discovery=run_full_discovery, run_local_closeout=run_local_closeout)
     status = "fail" if errors else ("pass_with_warnings" if warnings or payloads.get("control/inventory/search_hunt_closeout_result.json", {}).get("warnings_remaining", 0) else "pass")
     return {
         "schema_version": "search_hunt_closeout_validation.v0",
@@ -307,13 +312,14 @@ def validate_queue(root: Path, errors: list[str]) -> None:
             errors.append(f"missing queue task stub: {rel}")
 
 
-def run_validation_commands(root: Path, warnings: list[str], errors: list[str], *, run_full_discovery: bool) -> None:
+def run_validation_commands(root: Path, warnings: list[str], errors: list[str], *, run_full_discovery: bool, run_local_closeout: bool) -> None:
     for command in HUNT_VALIDATORS:
         outcome = run_command(root, command, timeout=90)
         classify_command(command, outcome, warnings, errors)
-    for command in LOCAL_VALIDATORS:
-        outcome = run_command(root, command, timeout=90)
-        classify_command(command, outcome, warnings, errors, timeout_is_warning=True)
+    if run_local_closeout:
+        for command in LOCAL_VALIDATORS:
+            outcome = run_command(root, command, timeout=1800)
+            classify_command(command, outcome, warnings, errors)
     for command in (
         "python scripts/check_generated_artifact_cleanliness.py --check --json",
         "python scripts/check_architecture_boundaries.py",

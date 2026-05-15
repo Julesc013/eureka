@@ -1,0 +1,18 @@
+{
+  "agent_research_demo_pass": true,
+  "ai_escalation_demo_pass": true,
+  "api_smoke_pass": true,
+  "demo_search_hunt_workflow_pass": true,
+  "deployment_performed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "hunt_replay_demo_pass": true,
+  "hunt_workbench_smoke_pass": true,
+  "hunt_workflow_smoke_pass": true,
+  "local_auto_test_pass": true,
+  "model_provider_used": false,
+  "schema_version": "hunt_remediation_smoke_result.v0",
+  "source_probe_executed": false,
+  "status": "pass",
+  "task": "HUNT-REMEDIATION"
+}

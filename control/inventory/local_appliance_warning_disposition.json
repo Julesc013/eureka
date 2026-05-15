@@ -5,24 +5,8 @@
     "blocks_hunt": false,
     "blocks_main_promotion": false,
     "blocks_syn": false,
-    "warnings_remaining": 1
+    "warnings_remaining": 0
   },
   "task": "LOCAL-14",
-  "warnings": [
-    {
-      "blocks_f0": false,
-      "blocks_hunt": false,
-      "blocks_main_promotion": false,
-      "blocks_syn": false,
-      "classification": "deferred_with_expiry",
-      "count": 1954,
-      "disposition": "LOCAL total remediation reduced new unallowlisted production findings to zero; remaining findings are exact line/column/context-bound and expire at HUNT-00.",
-      "expiry": "HUNT-00",
-      "recommended_child_task": "HUNT-00 planning disposition or scoped naming remediation before implementation closeout",
-      "source_report": "scripts/audit_runtime_architecture_leakage.py --check --json",
-      "warning_id": "remaining_context_bound_runtime_naming_debt",
-      "why_not_hiding_production_leakage": "The gate still reports retained findings as allowlisted warning debt; runtime and surface paths remain scanned.",
-      "why_not_increased_during_LOCAL": "LOCAL work did not add new unallowlisted production findings after the total remediation gate."
-    }
-  ]
+  "warnings": []
 }

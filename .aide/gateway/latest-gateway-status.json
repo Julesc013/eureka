@@ -1,0 +1,27 @@
+{
+  "schema_version": "aide.gateway-status.v0",
+  "generated_by": "HUNT-REMEDIATION",
+  "service": "aide-gateway-skeleton",
+  "mode": "local_skeleton_report_only",
+  "provider_calls_enabled": false,
+  "model_calls_enabled": false,
+  "outbound_network_enabled": false,
+  "raw_prompt_storage": false,
+  "raw_response_storage": false,
+  "readiness": {
+    "status": "metadata_only",
+    "live_gateway_enabled": false
+  },
+  "signals": {
+    "route": {
+      "route_class": "deterministic_local"
+    },
+    "verifier_status": "pass",
+    "golden_task_status": "pass"
+  },
+  "summaries": {
+    "provider_or_model_calls": "none",
+    "network_calls": "none",
+    "automatic_mutation": false
+  }
+}

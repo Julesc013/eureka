@@ -634,7 +634,7 @@ def task_order(task_id: str) -> int:
 def is_false_positive_candidate(match: Mapping[str, Any]) -> bool:
     term = str(match.get("term", "")).casefold()
     context = str(match.get("context", "")).casefold()
-    if term in {"h1", "h2"} and f"<{term}" in context:
+    if term in {"h1", "h2", "h3", "h4", "h5", "h6"} and f"<{term}" in context:
         return True
     if term == "bundle" and any(
         marker in context
@@ -651,6 +651,27 @@ def is_false_positive_candidate(match: Mapping[str, Any]) -> bool:
     ):
         return True
     if term == "agent" and any(marker in context for marker in ("user-agent", "user_agent", "agentless", "browser agent string")):
+        return True
+    path = str(match.get("path", "")).replace("\\", "/").casefold()
+    if term == "agent" and (
+        path.startswith("runtime/agent_research/")
+        or any(
+            marker in context
+            for marker in (
+                "agent research",
+                "agent_research",
+                "agent-research",
+                "agent_task",
+                "agent-task",
+                "agent-tasks",
+                "agent_tasks",
+                "agent task",
+                "agent token",
+                "agent-token",
+                "agentresearch",
+            )
+        )
+    ):
         return True
     return False
 

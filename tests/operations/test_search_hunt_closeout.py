@@ -12,9 +12,10 @@ class SearchHuntCloseoutTests(unittest.TestCase):
     def test_closeout_audit_reports_complete_track(self):
         result = audit_closeout(Path.cwd())
         closeout = result["closeout_result"]
-        self.assertEqual(closeout["status"], "pass_with_warnings")
+        self.assertEqual(closeout["status"], "pass")
         self.assertTrue(closeout["hunt_track_complete"])
         self.assertEqual(closeout["hard_blockers_remaining"], 0)
+        self.assertEqual(closeout["warnings_remaining"], 0)
         self.assertFalse(closeout["provider_calls_performed"])
         self.assertFalse(closeout["source_probes_executed"])
         self.assertFalse(closeout["extraction_executed"])

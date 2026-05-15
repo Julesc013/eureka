@@ -17,6 +17,6 @@
   "promotion_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
   "push_performed": false,
   "schema_version": "search_hunt_promotion_review.v0",
-  "status": "pass_with_warnings",
+  "status": "pass",
   "task": "HUNT-12"
 }

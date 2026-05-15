@@ -18,6 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import hunt_queue_current_or_advanced, post_hunt_current_allowed
 from runtime.local_appliance import close_local_appliance, open_local_appliance
 from runtime.search_hunt import (
     ALLOWED_SEARCH_HUNT_CHECKED_LAYERS,
@@ -529,7 +530,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     task = read_text(root / ".aide/queue/HUNT-01/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/HUNT-02/task.yaml", errors)
-    if not re.search(r"current_recommended_task: HUNT-(0[2-9]|1[0-2])\b", queue):
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue must point to HUNT-02 or a later HUNT task")
     if "id: HUNT-01" not in queue or "status: completed" not in queue:
         errors.append("queue must mark HUNT-01 completed")
@@ -539,7 +540,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
         errors.append("HUNT-01 task must recommend HUNT-02")
     if "Search Hunt UI state in Local Workbench" not in next_task:
         errors.append("HUNT-02 task title mismatch")
-    if "current_recommended_task: F0-00" in queue:
+    if "current_recommended_task: F0-00" in queue and not post_hunt_current_allowed(root):
         errors.append("F0 must not be current")
 
 

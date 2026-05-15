@@ -2,42 +2,26 @@
 
 ## VERIFIER_RESULT
 
-- result: WARN
+- result: PASS
 - method: deterministic repo-local checks
 - contents_inline: false
 - provider_or_model_calls: none
 
 ## CHECK_COUNTS
 
-- info: 110
-- warnings: 6
+- info: 91
+- warnings: 0
 - errors: 0
-- checked_files: 67
-- changed_files: 12
+- checked_files: 74
+- changed_files: 0
 
 ## CHANGED_FILES
 
-- unknown: `.aide/cache/latest-cache-keys.json` (M; does not match active task allowed paths)
-- unknown: `.aide/cache/latest-cache-keys.md` (M; does not match active task allowed paths)
-- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `README.md` (M; matches active task allowed path)
-- unknown: `.aide/queue/EUREKA-AIDE-PILOT-01` (??; does not match active task allowed paths)
-- allowed: `docs/reference/aide-lite-import.md` (??; matches active task allowed path)
+- none
 
 ## WARNINGS
 
-- file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/controller/latest-recommendations.md`
-- file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/gateway/latest-gateway-status.json`
-- file_references: referenced path does not exist (from .aide/context/latest-review-packet.md) `.aide/providers/latest-provider-status.json`
-- diff_scope: does not match active task allowed paths `.aide/cache/latest-cache-keys.json`
-- diff_scope: does not match active task allowed paths `.aide/cache/latest-cache-keys.md`
-- diff_scope: does not match active task allowed paths `.aide/queue/EUREKA-AIDE-PILOT-01`
+- none
 
 ## ERRORS
 
@@ -65,12 +49,17 @@
 - `.aide/context/repo-map.json`
 - `.aide/context/repo-map.md`
 - `.aide/context/test-map.json`
+- `.aide/controller/README.md`
+- `.aide/controller/failure-taxonomy.yaml`
 - `.aide/controller/latest-outcome-report.md`
+- `.aide/controller/latest-recommendations.md`
 - `.aide/controller/outcome-ledger.jsonl`
 - `.aide/gateway`
 - `.aide/gateway/README.md`
 - `.aide/gateway/architecture.md`
 - `.aide/gateway/endpoints.yaml`
+- `.aide/gateway/latest-gateway-status.json`
+- `.aide/gateway/latest-gateway-status.md`
 - `.aide/gateway/lifecycle.yaml`
 - `.aide/gateway/security-boundary.md`
 - `.aide/memory/decisions.md`
@@ -96,6 +85,8 @@
 - `.aide/providers`
 - `.aide/providers/adapter-contract.yaml`
 - `.aide/providers/capability-matrix.yaml`
+- `.aide/providers/latest-provider-status.json`
+- `.aide/providers/latest-provider-status.md`
 - `.aide/providers/provider-catalog.yaml`
 - `.aide/providers/status.yaml`
 - `.aide/routing/README.md`

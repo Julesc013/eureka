@@ -2,9 +2,9 @@
 
 This audit closes the Search Hunt track from repo-local evidence only.
 
-Status: pass_with_warnings.
+Status: pass.
 
-The Search Hunt spine is complete enough for SYN planning to start. F0 can
+The Search Hunt spine is complete for SYN planning to start. F0 can
 resume after an explicit operator choice, but it is not the recommended next
 task because SYN should create query and eval pressure first.
 

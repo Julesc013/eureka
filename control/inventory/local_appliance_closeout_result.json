@@ -15,8 +15,8 @@
   "recommended_next_task": "HUNT-00 \u2014 Search Hunt track planning over Local Appliance",
   "runtime_leakage_increased_during_local": false,
   "schema_version": "local_appliance_closeout_result.v0",
-  "status": "pass_with_warnings",
+  "status": "pass",
   "syn_can_start": true,
   "task": "LOCAL-14",
-  "warnings_remaining": 1
+  "warnings_remaining": 0
 }

@@ -2,7 +2,7 @@
 
 ## RESULT
 
-- result: WARN
+- result: PASS
 - mode: advisory_only
 - applies_automatically: false
 
@@ -11,18 +11,17 @@
 - adapter_guidance: PASS / unknown / info
 - context_artifacts: PASS / unknown / info
 - golden_tasks: PASS / unknown / info
-- review_packet: WARN / review_packet_incomplete / warning
+- review_packet: PASS / unknown / info
 - token_ledger: PASS / unknown / info
-- verifier: WARN / verifier_fail / warning
+- verifier: PASS / unknown / info
 
 ## FAILURE_CLASSES
 
-- review_packet_incomplete: 1
-- verifier_fail: 1
+- none
 
 ## NEXT_ACTION
 
-- top_recommendation: REC-REVIEW-PACKET: Rerun `review-pack` or repair the review-packet template/evidence refs.
+- top_recommendation: REC-PROCEED-Q17-WITH-GATES: Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.
 - recommendations: `.aide/controller/latest-recommendations.md`
 - outcome_ledger: `.aide/controller/outcome-ledger.jsonl`
 

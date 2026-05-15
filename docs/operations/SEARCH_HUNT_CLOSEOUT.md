@@ -12,6 +12,6 @@ The closeout reads repo-local inventories and audit reports only. It does not
 open source probes, extraction, providers, browser automation, downloads, or
 deployment.
 
-Expected result is `pass_with_warnings`: HUNT is complete, no hard blockers
-remain, SYN can start, F0 can resume, and main promotion is separated into a
-review task.
+Expected result after remediation is `pass`: HUNT is complete, no hard blockers
+or remaining HUNT closeout warnings remain, SYN can start, F0 can resume, and
+main promotion is separated into a review task.

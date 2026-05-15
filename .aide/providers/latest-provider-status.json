@@ -1,0 +1,25 @@
+{
+  "schema_version": "aide.provider-status.v0",
+  "generated_by": "HUNT-REMEDIATION",
+  "provider_adapter_contract": ".aide/providers/adapter-contract.yaml",
+  "live_provider_calls": false,
+  "live_model_calls": false,
+  "network_calls": false,
+  "provider_probe_calls": false,
+  "credentials_configured": false,
+  "gateway_forwarding": false,
+  "raw_prompt_storage": false,
+  "raw_response_storage": false,
+  "provider_family_count": 0,
+  "provider_ids": [],
+  "provider_class_counts": {},
+  "adapter_class_counts": {},
+  "privacy_class_counts": {},
+  "status_counts": {
+    "metadata_only": 1
+  },
+  "validation": {
+    "result": "pass",
+    "live_calls_allowed": false
+  }
+}

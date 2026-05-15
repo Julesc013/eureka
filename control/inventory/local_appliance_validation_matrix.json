@@ -1,5 +1,5 @@
 {
-  "aide_check_status": "pass_with_warnings",
+  "aide_check_status": "pass",
   "architecture_boundary_status": "pass_required",
   "focused_tests": [
     "tests/operations/test_local_appliance_closeout.py",
@@ -8,7 +8,7 @@
     "tests/operations/test_local_to_main_promotion_review.py"
   ],
   "full_discovery_status": "fail_other",
-  "generated_artifact_cleanliness_status": "pass_after_commit_required",
+  "generated_artifact_cleanliness_status": "pass",
   "local_result_statuses": {
     "LOCAL-01": "pass_with_warnings",
     "LOCAL-02": "pass_with_warnings",
@@ -98,7 +98,7 @@
   ],
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
-  "runtime_leakage_status": "fail",
+  "runtime_leakage_status": "pass",
   "schema_version": "local_appliance_validation_matrix.v0",
   "smoke_scripts": [
     "scripts/eureka_local_service_smoke.py",

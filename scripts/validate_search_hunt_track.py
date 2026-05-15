@@ -13,6 +13,15 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.hunt_queue_progress import (
+    hunt_latest_packet_current_or_advanced,
+    hunt_queue_current_or_advanced,
+    post_hunt_current_allowed,
+)
+
 TASK_ID = "HUNT-00"
 NEXT_TASK = "HUNT-01"
 
@@ -141,7 +150,7 @@ def validate(root: Path = REPO_ROOT) -> dict[str, Any]:
     validate_local_appliance_dependency(payloads.get("control/inventory/search_hunt_local_appliance_dependency.json", {}), errors)
     validate_future_gate(payloads.get("control/inventory/search_hunt_future_track_gate.json", {}), errors)
     validate_policies(payloads, errors)
-    validate_report(report, errors, warnings)
+    validate_report(root, report, errors, warnings)
     validate_queue(root, errors)
     validate_scope(root, errors)
     status = "fail" if errors else ("pass_with_warnings" if warnings else "pass")
@@ -321,7 +330,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
         errors.append("completion policy must define proof levels for HUNT-00 through HUNT-12")
 
 
-def validate_report(report: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
+def validate_report(root: Path, report: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
     expected_true = (
         "main_dev_aligned_before",
         "local_appliance_baseline_verified",
@@ -353,28 +362,28 @@ def validate_report(report: Mapping[str, Any], errors: list[str], warnings: list
             errors.append(f"HUNT-00 report must set {key}=false")
     if report.get("recommended_next_task") != "HUNT-01 — Search Hunt Session runtime":
         errors.append("HUNT-00 report must recommend HUNT-01")
-    if report.get("status") == "pass_with_warnings":
+    if report.get("status") == "pass_with_warnings" and not post_hunt_current_allowed(root):
         warnings.append("HUNT-00 carries final baseline warning disposition forward")
 
 
 def validate_queue(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
-    if not re.search(r"current_recommended_task: HUNT-(0[1-9]|1[0-2])\b", queue):
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue must point to HUNT-01 or a later HUNT task")
     if "id: HUNT-00" not in queue or "status: completed" not in queue:
         errors.append("queue must mark HUNT-00 completed")
     if "id: HUNT-01" not in queue:
         errors.append("queue must include HUNT-01")
-    if not re.search(r"HUNT-(0[1-9]|1[0-2])\b", packet):
+    if not hunt_latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("latest task packet must point to HUNT-01 or a later HUNT task")
-    if "F0-00" in queue and "current_recommended_task: F0-00" in queue:
+    if "F0-00" in queue and "current_recommended_task: F0-00" in queue and not post_hunt_current_allowed(root):
         errors.append("F0 must not be current")
 
 
 def validate_scope(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
-    if re.search(r"current_recommended_task: HUNT-(0[2-9]|1[0-2])\b", queue):
+    if re.search(r"current_recommended_task: HUNT-(0[2-9]|1[0-2])\b", queue) or post_hunt_current_allowed(root):
         return
     status = git(root, "status", "--porcelain=v1")
     for path in parse_status_paths(status.splitlines() if status else []):

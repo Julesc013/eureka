@@ -4,8 +4,8 @@ status: queued
 purpose: Refresh F0 planning so extraction resumes only through the Local Appliance and Search Hunt WorkUnit spine.
 allowed_scope_summary: Planning and boundary refresh only; no extraction implementation.
 gate:
-  - LOCAL-14 completed with pass_with_warnings or better
-  - HUNT-12 completed with no hard blockers
+  - LOCAL-14 completed
+  - HUNT remediation completed with no remaining HUNT closeout warnings
   - explicit operator choice if F0 is selected before SYN
   - extraction tasks should be represented as WorkUnits where applicable
   - extraction candidates must use source observation, evidence, review, and index gates
@@ -13,5 +13,5 @@ gate:
   - no source probes
   - no downloads or execution
   - no deployment
-recommended_after: HUNT-12
+recommended_after: HUNT-REMEDIATION
 recommended_note: F0 is resumable but not current; SYN is recommended first unless the operator explicitly prioritizes extraction.

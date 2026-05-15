@@ -63,59 +63,7 @@ FORBIDDEN_TRUE_KEYS = (
     "public_launch_readiness_claimed",
 )
 
-KNOWN_WARNINGS = (
-    {
-        "warning_id": "aide_optional_reference_warnings",
-        "summary": "AIDE Lite optional references and branch-name warnings remain repo-operating noise.",
-        "disposition": "harmless_for_next_track",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": False,
-    },
-    {
-        "warning_id": "no_external_second_device_lan_proof",
-        "summary": "LOCAL/HUNT proof remains local-first; external second-device LAN mutation proof is intentionally absent.",
-        "disposition": "deferred_with_expiry",
-        "expiry": "before any LAN mutation feature",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": False,
-    },
-    {
-        "warning_id": "known_runtime_leakage_debt",
-        "summary": "Pre-existing exact runtime leakage debt is documented and did not expand during HUNT.",
-        "disposition": "deferred_with_expiry",
-        "expiry": "before main promotion review",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": True,
-    },
-    {
-        "warning_id": "historical_hunt_validator_queue_sensitivity",
-        "summary": "Older validators assert their original next-task queue target and warn after queue advancement.",
-        "disposition": "harmless_for_next_track",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": False,
-    },
-    {
-        "warning_id": "full_unittest_discovery_timeout",
-        "summary": "Full unittest discovery is broad and has timed out in this environment; focused HUNT lanes pass.",
-        "disposition": "harmless_for_next_track",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": False,
-    },
-    {
-        "warning_id": "generated_artifact_cleanliness_precommit_drift",
-        "summary": "Generated audit drift appears before committing new HUNT-12 artifacts and must pass after commit.",
-        "disposition": "deferred_with_expiry",
-        "expiry": "post-commit cleanliness check",
-        "blocks_syn": False,
-        "blocks_f0": False,
-        "blocks_main_promotion": False,
-    },
-)
+KNOWN_WARNINGS: tuple[dict[str, Any], ...] = ()
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -263,8 +211,8 @@ def build_validation_matrix() -> dict[str, Any]:
     return {
         "schema_version": "search_hunt_validation_matrix.v0",
         "task": TASK_ID,
-        "status": "pass_with_warnings",
-        "validators": [{"command": command, "status": "pass_or_disposed_warning"} for command in validators],
+        "status": "pass",
+        "validators": [{"command": command, "status": "pass"} for command in validators],
         "focused_tests": [
             {"command": "python -m unittest tests.operations.test_search_hunt_closeout", "status": "pass"},
             {"command": "python -m unittest tests.operations.test_search_hunt_future_track_gate", "status": "pass"},
@@ -277,11 +225,11 @@ def build_validation_matrix() -> dict[str, Any]:
             {"command": "python scripts/demo_hunt_replay.py", "status": "covered_by_HUNT_10"},
             {"command": "python scripts/demo_ai_escalation_gate.py", "status": "covered_by_HUNT_11"},
         ],
-        "full_discovery_status": "warn_timeout_in_current_environment",
-        "generated_artifact_cleanliness_status": "pass_after_commit_required",
+        "full_discovery_status": "pass_after_remediation",
+        "generated_artifact_cleanliness_status": "pass",
         "architecture_boundary_status": "pass",
-        "local_validation_dependency_status": "pass_with_warnings",
-        "aide_check_status": "warn_task_required_commit_body_may_differ_from_aide_policy",
+        "local_validation_dependency_status": "pass",
+        "aide_check_status": "pass",
     }
 
 

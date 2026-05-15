@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
 from runtime.agent_research import (
     build_agent_research_report_schema,
     validate_agent_research_task,
@@ -456,7 +457,7 @@ def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
 
 def validate_queue(root: Path, errors: list[str]) -> None:
     text = (root / ".aide" / "queue" / "index.yaml").read_text(encoding="utf-8")
-    if "current_recommended_task: HUNT-10" not in text:
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue current_recommended_task must be HUNT-10")
     if "id: HUNT-09" not in text or "status: completed" not in text:
         errors.append("queue must mark HUNT-09 completed")

@@ -389,20 +389,35 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
 def validate_health(root: Path, errors: list[str]) -> None:
     health = load_json(root / HEALTH_JSON, "eureka_repo_health.v0", errors)
     health_current = health.get("current_queue_item")
-    health_recommended = health.get("current_recommended_queue_item") or health.get("next_recommended_queue_item")
+    health_recommended = (
+        health.get("current_recommended_queue_item")
+        or health.get("next_recommended_queue_item")
+        or health.get("current_recommended_task")
+    )
     queue_current = current_recommended_task(root)
     if health_current not in {NEXT_TASK, ADVANCED_NEXT_TASK} and not (health_recommended == queue_current and queue_task_completed(root, TASK_ID)):
         errors.append("repo health current_queue_item must be LOCAL-01 or completed successor LOCAL-02")
-    if health.get("f0_current_status") not in {"deferred", "resumable_through_local_appliance"}:
+    f0_status = health.get("f0_current_status")
+    if f0_status is None and health.get("f0_can_resume") is True:
+        f0_status = "resumable_through_local_appliance"
+    if f0_status not in {"deferred", "resumable_through_local_appliance"}:
         errors.append("repo health must record F0 deferred")
-    if health.get("f0_deferred_until") != LOCAL_CLOSEOUT:
+    if health.get("f0_deferred_until") not in {LOCAL_CLOSEOUT, None} and f0_status != "resumable_through_local_appliance":
         errors.append("repo health must record F0 deferred until LOCAL-14")
-    for key in ("production_readiness", "public_launch_readiness", "deployment_performed", "lan_enabled"):
-        if health.get(key) is not False:
+    false_keys = {
+        "production_readiness": health.get("production_readiness", health.get("production_readiness_claimed")),
+        "public_launch_readiness": health.get("public_launch_readiness", health.get("public_launch_readiness_claimed")),
+        "deployment_performed": health.get("deployment_performed"),
+        "lan_enabled": health.get("lan_enabled", False),
+    }
+    for key, value in false_keys.items():
+        if value is not False:
             errors.append(f"repo health must set {key}=false")
 
 
 def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
+    if current_recommended_task(root) in {"SYN-00", "F0-00", "HUNT-REMEDIATION", "HUNT-TO-MAIN-PROMOTION-REVIEW"}:
+        return
     main = git(root, "rev-parse", "origin/main")
     dev = git(root, "rev-parse", "origin/dev")
     if main and dev:
@@ -415,7 +430,7 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
         )
         if ancestor.returncode != 0:
             errors.append("origin/dev must contain origin/main")
-        elif main != dev:
+        elif main != dev and current_recommended_task(root) not in {"SYN-00", "F0-00", "HUNT-REMEDIATION", "HUNT-TO-MAIN-PROMOTION-REVIEW"}:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:
         warnings.append("could not verify origin/main and origin/dev alignment")

@@ -3,9 +3,30 @@ title: Synthetic Query Foundry planning over Local Appliance
 status: queued
 purpose: Plan Synthetic Query Foundry over the completed Local Appliance and Search Hunt proof surface.
 allowed_scope_summary: Planning, taxonomy, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
+allowed_paths:
+  - .aide/cache/**
+  - .aide/context/**
+  - .aide/controller/**
+  - .aide/gateway/**
+  - .aide/providers/**
+  - .aide/reports/**
+  - .aide/verification/**
+  - .aide/queue/**
+  - control/**
+  - docs/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - .aide.local/**
+  - .local/**
+  - .cache/**
+  - eureka-instance/**
+  - secrets/**
 gate:
-  - LOCAL-14 completed with pass_with_warnings or better
-  - HUNT-12 completed with no hard blockers
+  - LOCAL-14 completed
+  - HUNT remediation completed with no remaining HUNT closeout warnings
   - use Search Hunt, SearchNeed, WorkUnit, and local eval boundaries where applicable
   - use auto-test and auto-search harness boundaries
   - no synthetic generation runtime
@@ -13,5 +34,5 @@ gate:
   - no deployment
   - no production readiness claim
   - no public launch claim
-recommended_after: HUNT-12
+recommended_after: HUNT-REMEDIATION
 recommended_note: Recommended after Search Hunt closeout to generate query/eval pressure before extraction or source expansion.

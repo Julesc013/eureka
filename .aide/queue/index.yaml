@@ -262,7 +262,7 @@ entries:
     status: queued
     purpose: Plan Synthetic Query Foundry over the completed Local Appliance and Search Hunt proof surface.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
-    gate: HUNT-12 pass_with_warnings; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    gate: HUNT remediation pass; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/SYN-00/task.yaml
     recommended_after: HUNT-12
   - id: F0-00
@@ -270,7 +270,7 @@ entries:
     status: queued
     purpose: Refresh extraction-track planning so F0 resumes only through the Local Appliance and Search Hunt WorkUnit spine.
     allowed_scope_summary: F0 planning and boundary refresh only; no extraction implementation.
-    gate: HUNT-12 pass_with_warnings and explicit operator choice if F0 is chosen before SYN; no extraction runtime, source probes, downloads, deployment, production readiness claim, or public launch claim.
+    gate: HUNT remediation pass and explicit operator choice if F0 is chosen before SYN; no extraction runtime, source probes, downloads, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/F0-00/task.yaml
     recommended_after: HUNT-12
   - id: HUNT-TO-MAIN-PROMOTION-REVIEW
@@ -278,15 +278,15 @@ entries:
     status: queued
     purpose: Plan-only review for deciding whether the HUNT dev baseline promotes to main.
     allowed_scope_summary: Branch comparison, evidence review, warning disposition, and promotion plan only; no merge, push, deployment, or readiness claim by default.
-    gate: HUNT-12 completed with no hard blockers; generated cleanliness and runtime leakage warning disposition must be rechecked.
+    gate: HUNT remediation completed with no hard blockers or HUNT closeout warnings; generated cleanliness and runtime leakage gates must be rechecked.
     task: .aide/queue/HUNT-PROMOTION-REVIEW/task.yaml
     recommended_after: HUNT-12
   - id: HUNT-REMEDIATION
     title: Complete Search Hunt blockers
-    status: queued
-    purpose: Remediate any hard Search Hunt closeout blocker if future validation invalidates HUNT-12.
+    status: completed
+    purpose: Remediate Search Hunt closeout warning and blocker gaps before SYN/F0 handoff.
     allowed_scope_summary: Remediation planning and explicitly scoped fixes only; no source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
-    gate: Only current if HUNT closeout or future promotion review finds hard blockers.
+    gate: Completed after operator-selected remediation; no source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-REMEDIATION/task.yaml
     recommended_after: HUNT-12
   - id: LOCAL-TO-MAIN-PROMOTION-REVIEW

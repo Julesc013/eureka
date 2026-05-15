@@ -68,6 +68,8 @@ class LocalApplianceInstanceTests(unittest.TestCase):
                     "workunit_queue",
                     "search_hunt",
                     "search_need",
+                    "agent_research",
+                    "ai_escalation",
                 ],
                 list(manifest.stores),
             )
