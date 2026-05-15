@@ -1,0 +1,8 @@
+{
+  "schema_version": "hunt_to_search_need_cli_result.v0",
+  "status": "pass",
+  "action": "search_need_created_from_hunt",
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "model_provider_used": false
+}

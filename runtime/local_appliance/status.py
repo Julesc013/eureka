@@ -22,6 +22,7 @@ class LocalRuntimeStatus:
     public_launch_readiness_claimed: bool
     workunit_queue: Mapping[str, Any]
     search_hunt: Mapping[str, Any]
+    search_need: Mapping[str, Any]
     warnings: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
@@ -42,6 +43,7 @@ class LocalRuntimeStatus:
             "public_launch_readiness_claimed": self.public_launch_readiness_claimed,
             "workunit_queue": dict(self.workunit_queue),
             "search_hunt": dict(self.search_hunt),
+            "search_need": dict(self.search_need),
             "warnings": list(self.warnings),
         }
 
@@ -78,6 +80,7 @@ def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
         public_launch_readiness_claimed=False,
         workunit_queue=_workunit_queue_status(runtime),
         search_hunt=_search_hunt_status(runtime),
+        search_need=_search_need_status(runtime),
         warnings=tuple(runtime.config.warnings) + tuple(runtime.migration_state.warnings),
     )
 
@@ -107,6 +110,23 @@ def _search_hunt_status(runtime: Any) -> Mapping[str, Any]:
             "workunit_creation_enabled": False,
             "source_probe_execution_enabled": False,
             "model_provider_enabled": False,
+        }
+    )
+    return payload
+
+
+def _search_need_status(runtime: Any) -> Mapping[str, Any]:
+    summary = runtime.search_need.summarize()
+    payload = dict(summary)
+    payload.update(
+        {
+            "store_id": "search_need",
+            "relative_path": runtime.store_manifest.stores["search_need"].relative_path,
+            "creation_from_hunt_enabled": True,
+            "workunit_creation_enabled": False,
+            "source_probe_execution_enabled": False,
+            "model_provider_enabled": False,
+            "sync_enabled": False,
         }
     )
     return payload

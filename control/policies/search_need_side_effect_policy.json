@@ -1,0 +1,16 @@
+{
+  "schema_version": "search_need_side_effect_policy.v0",
+  "search_need_store_mutation_allowed": true,
+  "search_need_state_transition_allowed": true,
+  "hunt_link_mutation_allowed": true,
+  "workunit_creation_allowed": false,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "external_network_allowed": false,
+  "model_provider_allowed": false,
+  "review_decision_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "site_dist_writes_allowed": false,
+  "deployment_allowed": false
+}

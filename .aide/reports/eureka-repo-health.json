@@ -1,10 +1,10 @@
 {
   "schema_version": "eureka_repo_health.v0",
   "status": "pass_with_warnings",
-  "completed_queue_item": "HUNT-04",
-  "current_queue_item": "HUNT-05",
-  "current_recommended_queue_item": "HUNT-05",
-  "next_recommended_queue_item": "HUNT-05",
+  "completed_queue_item": "HUNT-05",
+  "current_queue_item": "HUNT-06",
+  "current_recommended_queue_item": "HUNT-06",
+  "next_recommended_queue_item": "HUNT-06",
   "alternative_next_queue_item": "SYN-00",
   "local_appliance_track_complete": true,
   "origin_main_equals_origin_dev": true,
@@ -13,7 +13,10 @@
   "hunt_ui_visible": true,
   "hunt_commands_available": true,
   "hunt_exhaustion_reports_available": true,
+  "search_need_runtime_available": true,
+  "hunt_to_search_need_pipeline_available": true,
   "workunit_creation_from_hunts_enabled": false,
+  "workunit_creation_from_search_needs_enabled": false,
   "source_probe_workers_enabled": false,
   "model_provider_enabled": false,
   "ai_model_execution_enabled": false,
@@ -23,6 +26,7 @@
   "public_launch_readiness": false,
   "f0_current_status": "deferred",
   "f0_deferred_until": "LOCAL-14",
+  "f0_can_resume_after": "HUNT baseline or explicit operator override",
   "lan_enabled": false,
   "syn_can_start": true,
   "f0_can_resume": true,
@@ -32,5 +36,5 @@
     "runtime leakage gate retains exact expiring warning entries with zero new unallowlisted findings",
     "AIDE verify may retain non-blocking stale context/diff-scope warnings"
   ],
-  "note": "HUNT-04 added deterministic local/current-index exhaustion reports. HUNT-05 is next; no WorkUnit creation, source probes, model/provider use, deployment, or production/public launch readiness claim was added."
+  "note": "HUNT-05 added durable SearchNeeds and hunt-to-SearchNeed creation. HUNT-06 is next; no WorkUnit creation, source probes, model/provider use, deployment, or production/public launch readiness claim was added."
 }

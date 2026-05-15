@@ -1,0 +1,18 @@
+{
+  "schema_version": "hunt_to_search_need_result.v0",
+  "task": "HUNT-05",
+  "status": "pass",
+  "hunt_to_need_pipeline_added": true,
+  "operator_auth_required": true,
+  "missing_token_rejected": true,
+  "invalid_token_rejected": true,
+  "lan_creation_blocked": true,
+  "search_need_created_from_hunt": true,
+  "search_need_linked_to_hunt": true,
+  "search_need_linked_to_exhaustion": true,
+  "dedupe_checked": true,
+  "ui_routes_added": true,
+  "api_routes_added": true,
+  "workunit_creation_performed": false,
+  "source_probe_executed": false
+}

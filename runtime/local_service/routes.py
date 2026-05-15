@@ -66,6 +66,13 @@ def route_request(
     if path == "/api/v1/hunts":
         return _hunt_list_response(runtime, request_context)
     parsed_hunt_route = _parse_hunt_route(path)
+    if parsed_hunt_route and parsed_hunt_route[1] == "needs":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_needs_response(runtime, hunt_id, request_context)
+        if _wants_json(request_context):
+            return _hunt_needs_response(runtime, hunt_id, request_context)
+        return _hunt_detail_html_response(runtime, hunt_id)
     if parsed_hunt_route and parsed_hunt_route[1] == "exhaustion":
         hunt_id = parsed_hunt_route[0]
         if path.startswith("/api/v1/"):
@@ -94,6 +101,19 @@ def route_request(
         return _hunt_detail_html_response(runtime, hunt_id)
     if path.startswith("/api/v1/hunt/"):
         return _hunt_detail_response(runtime, path.removeprefix("/api/v1/hunt/"))
+    if path == "/needs":
+        if _wants_json(request_context):
+            return _need_list_response(runtime, request_context)
+        return _need_list_html_response(runtime, request_context)
+    if path == "/api/v1/needs":
+        return _need_list_response(runtime, request_context)
+    if path.startswith("/need/"):
+        need_id = path.removeprefix("/need/")
+        if _wants_json(request_context):
+            return _need_detail_response(runtime, need_id)
+        return _need_detail_html_response(runtime, need_id)
+    if path.startswith("/api/v1/need/"):
+        return _need_detail_response(runtime, path.removeprefix("/api/v1/need/"))
     if path == "/review":
         if _wants_json(request_context):
             return _review_list_response(runtime, request_context)
@@ -346,6 +366,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     commands = [item.to_dict() for item in runtime.search_hunt.list_commands(hunt_id, limit=100)]
     steering = [item.to_dict() for item in runtime.search_hunt.list_steering_preferences(hunt_id, active_only=False)]
     exhaustion = runtime.search_hunt.get_latest_exhaustion_report(hunt_id)
+    linked_needs = [item.to_dict() for item in runtime.search_need.list_needs_for_hunt(hunt_id, limit=100)]
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
         "status": "pass",
@@ -356,6 +377,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "commands": commands,
         "steering_preferences": steering,
         "exhaustion_report": exhaustion.to_dict() if exhaustion else None,
+        "search_needs": linked_needs,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
         "hunt_creation_enabled": False,
@@ -363,6 +385,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "command_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "steering_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "exhaustion_report_generation_enabled": not bool(getattr(runtime, "read_only", True)),
+        "search_need_creation_enabled": not bool(getattr(runtime, "read_only", True)),
         "operator_token_required_for_mutations": True,
         "localhost_only_mutations": True,
         "lan_command_mutations_enabled": False,
@@ -475,6 +498,106 @@ def _hunt_exhaustion_html_response(runtime: Any, hunt_id: str) -> LocalServiceRe
     return _hunt_detail_html_response(runtime, hunt_id)
 
 
+def _hunt_needs_response(runtime: Any, hunt_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
+    needs = [item.to_dict() for item in runtime.search_need.list_needs_for_hunt(hunt_id, limit=limit)]
+    payload = {
+        "schema_version": "search_need_hunt_needs_response.v0",
+        "status": "pass",
+        "hunt_id": hunt_id,
+        "need_count": len(needs),
+        "needs": needs,
+        "read_only": True,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["SearchNeeds are local demand state only"],
+    }
+    return json_response(200, payload)
+
+
+def _need_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
+    state = first_param(request_context.params, "state", "")
+    kind = first_param(request_context.params, "kind", "")
+    needs = [
+        item.to_dict()
+        for item in runtime.search_need.list_needs(state=state or None, kind=kind or None, limit=limit)
+    ]
+    payload = {
+        "schema_version": "search_need_list_response.v0",
+        "status": "pass",
+        "need_count": len(needs),
+        "needs": needs,
+        "search_need_creation_enabled": True,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["SearchNeeds are local demand state only"],
+    }
+    return json_response(200, payload)
+
+
+def _need_list_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    workbench = _workbench()
+    response = _need_list_response(runtime, request_context)
+    html = workbench.render_search_need_list_page(workbench.build_search_need_list_page_view(response.payload["needs"], response.payload))
+    workbench.validate_local_workbench_page(html)
+    return html_response(200, html, response.payload)
+
+
+def _need_detail_response(runtime: Any, need_id: str) -> LocalServiceResponse:
+    if not need_id:
+        return error_response(400, "missing_need_id", "SearchNeed id is required")
+    need = runtime.search_need.get_need(need_id)
+    if need is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    transitions = [item.to_dict() for item in runtime.search_need.list_transitions(need_id, limit=100)]
+    payload = {
+        "schema_version": "search_need_detail_response.v0",
+        "status": "pass",
+        "need_id": need_id,
+        "need": need.to_dict(),
+        "transitions": transitions,
+        "state_transition_enabled": not bool(getattr(runtime, "read_only", True)),
+        "operator_token_required_for_mutations": True,
+        "localhost_only_mutations": True,
+        "lan_mutations_enabled": False,
+        "workunit_creation_enabled": False,
+        "source_probe_execution_enabled": False,
+        "model_provider_enabled": False,
+        "review_mutation_enabled": False,
+        "public_index_mutation_enabled": False,
+        "master_index_mutation_enabled": False,
+        "warnings": list(need.warnings),
+        "limitations": list(DEFAULT_LIMITATIONS) + list(need.policy_limitations),
+    }
+    return json_response(200, payload)
+
+
+def _need_detail_html_response(runtime: Any, need_id: str) -> LocalServiceResponse:
+    workbench = _workbench()
+    response = _need_detail_response(runtime, need_id)
+    if response.status_code != 200:
+        return response
+    html = workbench.render_search_need_detail_page(
+        workbench.build_search_need_detail_page_view(
+            response.payload["need"],
+            response.payload["transitions"],
+            response.payload,
+        )
+    )
+    workbench.validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+    return html_response(response.status_code, html, response.payload)
+
+
 def _review_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     status = first_param(request_context.params, "status", "")
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
@@ -559,7 +682,12 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
     if hunt_mutation:
         if hunt_mutation[1] == "exhaustion":
             return _apply_hunt_exhaustion_response(runtime, request_context, hunt_mutation[0])
+        if hunt_mutation[1] == "search-need":
+            return _apply_hunt_search_need_response(runtime, request_context, hunt_mutation[0])
         return _apply_hunt_command_response(runtime, request_context, hunt_mutation[0], hunt_mutation[1])
+    need_mutation = _parse_need_mutation_path(path)
+    if need_mutation:
+        return _apply_search_need_state_response(runtime, request_context, need_mutation[0])
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
@@ -614,6 +742,45 @@ def _apply_hunt_exhaustion_response(runtime: Any, request_context: LocalRequestC
     return json_response(200, payload)
 
 
+def _apply_hunt_search_need_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    operator_label = first_param(request_context.body_params, "operator_label", "local_operator")
+    idempotency_key = first_param(request_context.body_params, "idempotency_key", "")
+    try:
+        need = runtime.search_need.create_need_from_hunt(
+            runtime,
+            hunt_id,
+            operator_label=operator_label,
+            idempotency_key=idempotency_key or None,
+        )
+    except Exception as exc:
+        return error_response(400, "search_need_creation_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _search_need_mutation_payload(
+        "search_need_created_from_hunt",
+        {"hunt_id": hunt_id, "need": need.to_dict()},
+    )
+    return json_response(200, payload)
+
+
+def _apply_search_need_state_response(runtime: Any, request_context: LocalRequestContext, need_id: str) -> LocalServiceResponse:
+    if runtime.search_need.get_need(need_id) is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    target_state = first_param(request_context.body_params, "state", "")
+    reason = first_param(request_context.body_params, "reason", "")
+    if not target_state:
+        return error_response(400, "missing_search_need_state", "state is required", {"need_id": need_id})
+    try:
+        need = runtime.search_need.transition_need(need_id, target_state, reason=reason)
+    except Exception as exc:
+        return error_response(400, "search_need_transition_rejected", str(exc), {"need_id": need_id})
+    payload = _search_need_mutation_payload(
+        "search_need_state_transitioned",
+        {"need_id": need_id, "need": need.to_dict()},
+    )
+    return json_response(200, payload)
+
+
 def _record_decision_response(runtime: Any, request_context: LocalRequestContext, review_item_id: str) -> LocalServiceResponse:
     params = request_context.body_params
     decision = first_param(params, "decision", "")
@@ -643,30 +810,41 @@ def _wants_json(request_context: LocalRequestContext) -> bool:
 
 
 def _route_allowed_for_scope(method: str, path: str, client_scope: object) -> bool:
-    if _is_hunt_operator_mutation_path(method, path):
+    if _is_operator_mutation_path(method, path):
         return str(getattr(client_scope, "value", client_scope) or "").lower() == "loopback"
     return _network().is_route_allowed_for_scope(method, path, client_scope)
 
 
-def _is_hunt_operator_mutation_path(method: str, path: str) -> bool:
-    return str(method or "").upper() == "POST" and _parse_hunt_mutation_path(path) is not None
+def _is_operator_mutation_path(method: str, path: str) -> bool:
+    return str(method or "").upper() == "POST" and (
+        _parse_hunt_mutation_path(path) is not None or _parse_need_mutation_path(path) is not None
+    )
 
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion"}:
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs"}:
         return parts[3], parts[4]
     return None
 
 
 def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer", "exhaustion"}
+    actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer", "exhaustion", "search-need"}
     if len(parts) == 3 and parts[0] == "hunt" and parts[2] in actions:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "exhaustion":
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need"}:
+        return parts[3], parts[4]
+    return None
+
+
+def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[0] == "need" and parts[2] == "state":
+        return parts[1], parts[2]
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] == "state":
         return parts[3], parts[4]
     return None
 
@@ -708,6 +886,31 @@ def _hunt_command_payload(action: str, hunt_id: str, payload: dict[str, Any]) ->
     return result
 
 
+def _search_need_mutation_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "search_need_mutation_result.v0",
+        "status": "pass",
+        "action": action,
+        "operator_token_required": True,
+        "localhost_only_mutations": True,
+        "lan_mutations_enabled": False,
+        "workunit_creation_performed": False,
+        "source_probe_executed": False,
+        "external_network_used": False,
+        "model_provider_used": False,
+        "review_mutation_performed": False,
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS) + ["SearchNeed routes mutate local demand state only"],
+    }
+    result.update(payload)
+    return result
+
+
 def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, Any]:
     record = runtime.public_index.get_record(str(result.get("record_id", "")))
     if record is None:
@@ -726,8 +929,8 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
     return [
         {
             "action": "pause/resume/steer",
-            "status": "deferred",
-            "reason": "Command controls are added in a later Search Hunt command phase.",
+            "status": "available",
+            "reason": "Operator-gated command controls update local Search Hunt state only.",
         },
         {
             "action": "exhaustion report",
@@ -736,8 +939,8 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
         },
         {
             "action": "SearchNeed pipeline",
-            "status": "deferred",
-            "reason": "Need persistence is a later pipeline step.",
+            "status": "available",
+            "reason": "SearchNeeds can be created from unresolved hunts without creating work.",
         },
         {
             "action": "WorkUnit pipeline",

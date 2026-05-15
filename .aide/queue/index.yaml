@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-05
+current_recommended_task: HUNT-06
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -187,12 +187,21 @@ entries:
     recommended_next: HUNT-05
   - id: HUNT-05
     title: Hunt-to-SearchNeed pipeline
-    status: queued
+    status: completed
     purpose: Add durable SearchNeed generation from Search Hunt exhaustion reports after local report semantics exist.
-    allowed_scope_summary: SearchNeed planning/persistence from Search Hunt reports only when explicitly scoped.
+    allowed_scope_summary: SearchNeed persistence, local visibility, CLI/API/UI, validators, docs, inventories, and audit evidence only when explicitly scoped.
     gate: HUNT-04 completed; no WorkUnit creation, source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim unless explicitly enabled by a future reviewed task.
     task: .aide/queue/HUNT-05/task.yaml
     recommended_after: HUNT-04
+    recommended_next: HUNT-06
+  - id: HUNT-06
+    title: Hunt-to-WorkUnit pipeline
+    status: queued
+    purpose: Add governed WorkUnit generation from SearchNeeds after SearchNeed demand persistence exists.
+    allowed_scope_summary: SearchNeed-to-WorkUnit planning/runtime only when explicitly scoped; source execution remains disabled unless future gates enable it.
+    gate: HUNT-05 completed; no source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/HUNT-06/task.yaml
+    recommended_after: HUNT-05
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

@@ -1,0 +1,15 @@
+{
+  "schema_version": "search_need_non_claim_policy.v0",
+  "forbidden_claims": [
+    "search_need_is_truth",
+    "search_need_is_evidence",
+    "search_need_is_source_approval",
+    "search_need_is_global_absence_proof",
+    "search_need_clears_rights",
+    "search_need_clears_malware_safety",
+    "search_need_authorizes_download",
+    "search_need_authorizes_install_execute",
+    "production_ready",
+    "public_launch_ready"
+  ]
+}

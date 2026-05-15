@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_need_from_hunt_policy.v0",
+  "creation_requires_existing_hunt": true,
+  "creation_prefers_exhaustion_report": true,
+  "creation_requires_operator_token": true,
+  "localhost_only_creation": true,
+  "lan_creation_enabled": false,
+  "dedupe_by_hunt_and_query": true,
+  "public_safe_summary_default": false,
+  "private_notes_allowed_local_only": true,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false
+}

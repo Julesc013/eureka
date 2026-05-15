@@ -17,3 +17,8 @@ The report is not a search result, evidence acceptance, source approval, or abse
 ## Boundary
 
 HUNT-04 persists reports and exposes them through CLI, local API, and the workbench. It does not create WorkUnits, run source probes, execute background workers, call model providers, mutate review decisions, rebuild indexes, or mutate public/master indexes.
+## SearchNeed Handoff
+
+HUNT-05 consumes exhaustion reports to create SearchNeeds. The exhaustion report supplies local result state, checked layers, deferred layers, blocked policy entries, and recommended future work categories.
+
+The handoff does not turn an exhaustion report into proof. It only preserves local/current-index context for future operator-gated work.

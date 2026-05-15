@@ -21,7 +21,7 @@ SEARCH_HUNT_NON_CLAIM = "Search Hunt Sessions are local investigation state, not
 SEARCH_HUNT_ABSENCE_LIMITATION = "Search Hunt absence is local current-index absence only, not a global finding."
 SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("exhaustion report", "available", "Exhaustion reports explain local checked layers and deferred work without executing it."),
-    ("SearchNeed pipeline", "deferred", "Need persistence is a later pipeline step."),
+    ("SearchNeed pipeline", "available", "Need persistence records local demand without creating work."),
     ("WorkUnit pipeline", "deferred", "WorkUnit creation from hunts is not enabled."),
     ("background runner", "deferred", "Background hunt execution is not enabled."),
     ("source probes", "disabled", "Source-probe execution remains behind a future source gate."),
@@ -29,6 +29,7 @@ SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("AI escalation", "disabled", "Model/provider calls are disabled."),
     ("sync", "disabled", "Sync requires a future reviewed policy gate."),
 )
+SEARCH_NEED_NON_CLAIM = "SearchNeeds are local demand records, not evidence, source approval, or reviewed results."
 
 
 @dataclass(frozen=True)
@@ -301,6 +302,31 @@ class SearchHuntCardView:
 
 
 @dataclass(frozen=True)
+class SearchNeedCardView:
+    need_id: str
+    hunt_id: str
+    query: str
+    need_title: str
+    state: str
+    need_kind: str
+    desired_outcome: str
+    priority: int
+    warning_count: int
+    limitation_count: int
+    detail_href: str
+    hunt_href: str
+
+
+@dataclass(frozen=True)
+class SearchNeedTransitionView:
+    transition_id: str
+    from_state: str
+    to_state: str
+    reason: str
+    created_at: str
+
+
+@dataclass(frozen=True)
 class SearchHuntListPageView:
     hunt_count: int
     hunts: tuple[SearchHuntCardView, ...]
@@ -308,6 +334,46 @@ class SearchHuntListPageView:
     non_claim_banner: NonClaimBannerView
     warnings: tuple[str, ...]
     limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class SearchNeedListPageView:
+    need_count: int
+    needs: tuple[SearchNeedCardView, ...]
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class SearchNeedDetailPageView:
+    need_id: str
+    found: bool
+    hunt_id: str
+    exhaustion_report_id: str
+    query: str
+    normalized_query: str
+    need_title: str
+    need_summary: str
+    state: str
+    need_kind: str
+    desired_outcome: str
+    priority: int
+    local_result_state: str
+    checked_layers: tuple[SearchHuntLayerView, ...]
+    deferred_layers: tuple[SearchHuntLayerView, ...]
+    recommended_future_work: tuple[SearchHuntExhaustionRowView, ...]
+    policy_limitations: tuple[SearchHuntExhaustionRowView, ...]
+    transitions: tuple[SearchNeedTransitionView, ...]
+    state_transition_enabled: bool
+    related_hunt_href: str
+    related_exhaustion_href: str
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+    operator_token_required: bool = True
+    localhost_only_mutations: bool = True
+    lan_mutations_enabled: bool = False
 
 
 @dataclass(frozen=True)
@@ -340,6 +406,8 @@ class SearchHuntDetailPageView:
     command_controls_enabled: bool
     steering_controls_enabled: bool
     exhaustion_generation_enabled: bool
+    search_needs: tuple[SearchNeedCardView, ...]
+    search_need_creation_enabled: bool
     unavailable_actions: tuple[SearchHuntUnavailableActionView, ...]
     related_search_href: str
     related_absence_href: str
@@ -547,6 +615,7 @@ def build_search_hunt_detail_page_view(
     steering_controls_enabled = bool(status_payload.get("steering_controls_enabled", False))
     exhaustion_report = _mapping(status_payload.get("exhaustion_report"))
     exhaustion_generation_enabled = bool(status_payload.get("exhaustion_report_generation_enabled", False))
+    linked_needs = tuple(_need_card(_mapping(item)) for item in _sequence(status_payload.get("search_needs")))
     return SearchHuntDetailPageView(
         hunt_id=hunt_id,
         found=bool(payload),
@@ -576,6 +645,8 @@ def build_search_hunt_detail_page_view(
         command_controls_enabled=command_controls_enabled,
         steering_controls_enabled=steering_controls_enabled,
         exhaustion_generation_enabled=exhaustion_generation_enabled,
+        search_needs=linked_needs,
+        search_need_creation_enabled=bool(status_payload.get("search_need_creation_enabled", False)),
         unavailable_actions=build_search_hunt_unavailable_actions(),
         related_search_href="/search?q=" + str(query),
         related_absence_href="/absence?q=" + str(query),
@@ -585,6 +656,59 @@ def build_search_hunt_detail_page_view(
         operator_token_required=bool(status_payload.get("operator_token_required_for_mutations", True)),
         localhost_only_mutations=bool(status_payload.get("localhost_only_mutations", True)),
         lan_command_mutations_enabled=bool(status_payload.get("lan_command_mutations_enabled", False)),
+    )
+
+
+def build_search_need_list_page_view(needs: Sequence[Any], status: Mapping[str, Any] | None = None) -> SearchNeedListPageView:
+    payload = _mapping(status)
+    cards = tuple(_need_card(_mapping(item)) for item in needs)
+    return SearchNeedListPageView(
+        need_count=len(cards),
+        needs=cards,
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(payload.get("warnings")),
+        limitations=_unique(_tuple(payload.get("limitations")) + (SEARCH_NEED_NON_CLAIM,)),
+    )
+
+
+def build_search_need_detail_page_view(
+    need: Any,
+    transitions: Sequence[Any],
+    status: Mapping[str, Any] | None = None,
+) -> SearchNeedDetailPageView:
+    payload = _mapping(need)
+    status_payload = _mapping(status)
+    need_id = str(payload.get("id", ""))
+    hunt_id = str(payload.get("hunt_id", ""))
+    exhaustion_report_id = str(payload.get("exhaustion_report_id", ""))
+    return SearchNeedDetailPageView(
+        need_id=need_id,
+        found=bool(payload),
+        hunt_id=hunt_id,
+        exhaustion_report_id=exhaustion_report_id,
+        query=str(payload.get("query", "")),
+        normalized_query=str(payload.get("normalized_query", "")),
+        need_title=str(payload.get("need_title", "")),
+        need_summary=str(payload.get("need_summary", "")),
+        state=str(payload.get("state", "")),
+        need_kind=str(payload.get("need_kind", "")),
+        desired_outcome=_display_outcome(str(payload.get("desired_outcome", ""))),
+        priority=int(payload.get("priority", 0) or 0),
+        local_result_state=str(payload.get("local_result_state", "")),
+        checked_layers=_layer_views(payload.get("checked_layers"), "checked"),
+        deferred_layers=_layer_views(payload.get("deferred_layers"), "unchecked/deferred"),
+        recommended_future_work=_future_work_rows(payload.get("recommended_future_work")),
+        policy_limitations=_limitation_rows(payload.get("policy_limitations")),
+        transitions=tuple(_need_transition_view(item) for item in transitions),
+        state_transition_enabled=bool(status_payload.get("state_transition_enabled", False)),
+        related_hunt_href="/hunt/" + hunt_id,
+        related_exhaustion_href="/hunt/" + hunt_id + "/exhaustion",
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_unique(_tuple(payload.get("warnings")) + _tuple(status_payload.get("warnings"))),
+        limitations=_unique(_tuple(payload.get("policy_limitations")) + _tuple(status_payload.get("limitations")) + (SEARCH_NEED_NON_CLAIM,)),
+        operator_token_required=bool(status_payload.get("operator_token_required_for_mutations", True)),
+        localhost_only_mutations=bool(status_payload.get("localhost_only_mutations", True)),
+        lan_mutations_enabled=bool(status_payload.get("lan_mutations_enabled", False)),
     )
 
 
@@ -677,6 +801,25 @@ def _hunt_card(item: Mapping[str, Any]) -> SearchHuntCardView:
     )
 
 
+def _need_card(item: Mapping[str, Any]) -> SearchNeedCardView:
+    need_id = str(item.get("id", ""))
+    hunt_id = str(item.get("hunt_id", ""))
+    return SearchNeedCardView(
+        need_id=need_id,
+        hunt_id=hunt_id,
+        query=str(item.get("query", "")),
+        need_title=str(item.get("need_title", need_id)),
+        state=str(item.get("state", "")),
+        need_kind=str(item.get("need_kind", "")),
+        desired_outcome=_display_outcome(str(item.get("desired_outcome", ""))),
+        priority=int(item.get("priority", 0) or 0),
+        warning_count=len(_tuple(item.get("warnings"))),
+        limitation_count=len(_tuple(item.get("policy_limitations"))),
+        detail_href="/need/" + need_id,
+        hunt_href="/hunt/" + hunt_id,
+    )
+
+
 def _transition_view(value: Any) -> SearchHuntTransitionView:
     item = _hunt_mapping(value)
     return SearchHuntTransitionView(
@@ -686,6 +829,37 @@ def _transition_view(value: Any) -> SearchHuntTransitionView:
         reason=str(item.get("reason", "") or ""),
         created_at=str(item.get("created_at", "")),
     )
+
+
+def _need_transition_view(value: Any) -> SearchNeedTransitionView:
+    item = _mapping(value)
+    return SearchNeedTransitionView(
+        transition_id=str(item.get("id", "")),
+        from_state=str(item.get("from_state", "") or ""),
+        to_state=str(item.get("to_state", "")),
+        reason=str(item.get("reason", "") or ""),
+        created_at=str(item.get("created_at", "")),
+    )
+
+
+def _future_work_rows(value: Any) -> tuple[SearchHuntExhaustionRowView, ...]:
+    rows = tuple(SearchHuntExhaustionRowView(str(item), "deferred", "Future work category only; no work was created.") for item in _tuple(value))
+    return rows or (SearchHuntExhaustionRowView("none", "not_recorded", "No future work categories recorded."),)
+
+
+def _limitation_rows(value: Any) -> tuple[SearchHuntExhaustionRowView, ...]:
+    rows = tuple(SearchHuntExhaustionRowView("limitation", "active", str(item)) for item in _tuple(value))
+    return rows or (SearchHuntExhaustionRowView("none", "not_recorded", "No policy limitations recorded."),)
+
+
+def _display_outcome(value: str) -> str:
+    if value == "acquire_or_download_later_policy_gated":
+        return "acquire_later_policy_gated"
+    if value == "install_or_emulate_later_policy_gated":
+        return "emulate_later_policy_gated"
+    if value == "preserve_or_mirror_later_policy_gated":
+        return "preserve_later_policy_gated"
+    return value
 
 
 def _command_view(value: Any) -> SearchHuntCommandView:

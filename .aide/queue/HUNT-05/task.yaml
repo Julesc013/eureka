@@ -1,6 +1,6 @@
 id: HUNT-05
 title: Hunt-to-SearchNeed pipeline
-status: queued
+status: completed
 purpose: Add durable SearchNeed generation from Search Hunt exhaustion reports after local report semantics exist.
 allowed_scope_summary: SearchNeed persistence and local visibility only when explicitly scoped by the HUNT-05 prompt.
 gate:
@@ -15,3 +15,4 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-04
+recommended_next: HUNT-06

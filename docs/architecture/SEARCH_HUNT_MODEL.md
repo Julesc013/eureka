@@ -9,3 +9,8 @@ HUNT-02 exposes that persisted state in the Local Appliance workbench. The UI is
 HUNT-03 adds operator-gated controls for local hunt state. Pause, resume, cancel, block, wait, complete, fail, and steering preferences are command history, not investigation execution. They do not create WorkUnits, run source probes, call models, accept evidence, or mutate indexes.
 
 HUNT-04 adds deterministic exhaustion reports. A report explains local/current-index checked layers, deferred layers, blocked policies, future action categories, limitations, and non-claims. It remains local explanation state and does not create WorkUnits, run source probes, call model providers, accept evidence, or mutate reviewed indexes.
+## HUNT-05 SearchNeeds
+
+Search Hunt Sessions can now produce local SearchNeeds after an operator-gated HUNT-05 pipeline step. A SearchNeed is durable demand state linked to the hunt and its local exhaustion report.
+
+SearchNeeds do not create WorkUnits, execute probes, call model providers, accept evidence, or mutate indexes. They are the handoff from unresolved hunt state into future work planning.

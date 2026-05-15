@@ -2,20 +2,7 @@
 
 ## Review Objective
 
-Review HUNT-04 compact evidence and decide whether Search Hunt exhaustion reports are ready to pass their review gate.
-
-## Context Packet Reference
-
-- `.aide/context/latest-context-packet.md`
-
-## Verification Report Reference
-
-- `.aide/verification/latest-verification-report.md`
-
-## Token Summary
-
-- latest_task_packet: compact HUNT-05 packet
-- latest_review_packet: compact HUNT-04 review packet
+Review HUNT-05 evidence and decide whether the Hunt-to-SearchNeed pipeline is ready to pass its review gate.
 
 ## Decision Requested
 
@@ -23,53 +10,42 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` now points to HUNT-05 after HUNT-04 completion.
+- `.aide/context/latest-task-packet.md`
 
 ## Evidence Packet References
 
-- `control/audits/hunt-04-hunt-exhaustion-report-v0/README.md`
-- `control/audits/hunt-04-hunt-exhaustion-report-v0/hunt_04_report.json`
-- `control/inventory/search_hunt_exhaustion_result.json`
-- `control/inventory/search_hunt_exhaustion_section_matrix.json`
-- `control/inventory/hunt_04_next_task_decision.json`
+- `control/audits/hunt-05-hunt-to-search-need-v0/README.md`
+- `control/audits/hunt-05-hunt-to-search-need-v0/hunt_05_report.json`
+- `control/inventory/search_need_runtime_inventory.json`
+- `control/inventory/search_need_runtime_result.json`
+- `control/inventory/hunt_to_search_need_result.json`
+- `control/inventory/hunt_05_next_task_decision.json`
 - `.aide/queue/index.yaml`
 
 ## Changed Files Summary
 
-- Search Hunt exhaustion runtime and persisted report rows under `runtime/search_hunt/`
-- Local exhaustion routes under `runtime/local_service/`
-- Workbench exhaustion visibility under `runtime/local_workbench/`
-- Exhaustion CLI, demo, validator, tests, policies, inventories, docs, and audit evidence
+- SearchNeed runtime and SQLite store under `runtime/search_need/`.
+- Local Appliance manifest/composition/status validation updated for `search_need`.
+- Local service and workbench routes/pages for SearchNeed list/detail and hunt-linked creation.
+- CLI/demo/validator scripts for SearchNeed and hunt-to-SearchNeed creation.
+- HUNT-05 policies, inventories, docs, tests, and audit evidence.
 
 ## Validation Summary
 
-- HUNT-04 validator: `python scripts/validate_search_hunt_exhaustion.py`
-- HUNT-04 focused tests: exhaustion runtime, records, routes, UI, auth, scripts
-- Existing HUNT validators: HUNT-03 commands, HUNT-02 UI, HUNT-01 runtime, HUNT-00 track
-- LOCAL validators and repo checks per final task report
+- HUNT-05 validator: `python scripts/validate_hunt_to_search_need.py`.
+- Focused SearchNeed tests.
+- Existing HUNT validators.
+- LOCAL validators.
+- Generated-artifact cleanliness.
+- Architecture boundary checks.
+- Full unittest discovery.
 
 ## Risk Summary
 
-- HUNT-04 writes only Search Hunt exhaustion report rows and command-history entries for report generation.
-- WorkUnit creation remains disabled.
-- Source probes, extraction, model/provider calls, review/index mutation, LAN generation, deployment, production readiness claims, and public launch readiness claims remain forbidden.
-- HUNT-05 should add SearchNeed behavior before hunt-to-WorkUnit behavior.
+- SearchNeeds are local demand state only.
+- WorkUnit creation remains disabled until HUNT-06.
+- Source probes, extraction, model/provider calls, review/public/master index mutation, LAN mutation, deployment, production readiness claims, and public launch readiness claims remain forbidden.
 
-## Non-Goals / Scope Guard
+## Next Phase
 
-- No WorkUnit creation
-- No source probes
-- No extraction
-- No SYN or F0 implementation
-- No AI/model/provider calls
-- No LAN generation
-- No deployment
-- No production/public launch readiness claim
-
-## Reviewer Instructions
-
-- Review only this packet and the referenced evidence when needed.
-- Do not request full chat history unless the packet is insufficient to judge correctness.
-- Do not reward scope creep.
-- Do not approve missing validation as a pass.
-- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
+Recommended next task: HUNT-06 - Hunt-to-WorkUnit pipeline.

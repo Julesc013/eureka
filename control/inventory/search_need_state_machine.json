@@ -1,0 +1,37 @@
+{
+  "schema_version": "search_need_state_machine.v0",
+  "task": "HUNT-05",
+  "allowed_states": [
+    "proposed",
+    "open",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "blocked",
+    "satisfied_locally",
+    "superseded",
+    "cancelled"
+  ],
+  "allowed_transitions": [
+    {"from": "proposed", "to": "open"},
+    {"from": "proposed", "to": "blocked"},
+    {"from": "proposed", "to": "cancelled"},
+    {"from": "open", "to": "waiting_for_user"},
+    {"from": "open", "to": "waiting_for_policy"},
+    {"from": "open", "to": "blocked"},
+    {"from": "open", "to": "satisfied_locally"},
+    {"from": "open", "to": "superseded"},
+    {"from": "open", "to": "cancelled"},
+    {"from": "waiting_for_user", "to": "open"},
+    {"from": "waiting_for_user", "to": "cancelled"},
+    {"from": "waiting_for_policy", "to": "open"},
+    {"from": "waiting_for_policy", "to": "blocked"},
+    {"from": "waiting_for_policy", "to": "cancelled"},
+    {"from": "blocked", "to": "open"},
+    {"from": "blocked", "to": "cancelled"},
+    {"from": "satisfied_locally", "to": "satisfied_locally"},
+    {"from": "superseded", "to": "superseded"},
+    {"from": "cancelled", "to": "cancelled"}
+  ],
+  "invalid_transitions_fail_closed": true,
+  "transition_history_required": true
+}

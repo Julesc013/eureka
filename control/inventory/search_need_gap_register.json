@@ -1,0 +1,23 @@
+{
+  "schema_version": "search_need_gap_register.v0",
+  "task": "HUNT-05",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap": "WorkUnit generation from SearchNeeds",
+      "status": "deferred",
+      "target": "HUNT-06"
+    },
+    {
+      "gap": "source probes",
+      "status": "disabled",
+      "target": "future source policy gate"
+    },
+    {
+      "gap": "AI/model escalation",
+      "status": "disabled",
+      "target": "HUNT-11/K"
+    }
+  ],
+  "hard_blockers": []
+}

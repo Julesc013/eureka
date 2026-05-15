@@ -1,0 +1,19 @@
+{
+  "schema_version": "search_need_runtime_policy.v0",
+  "durable_store_required": true,
+  "sqlite_store_required": true,
+  "explicit_instance_path_required": true,
+  "local_appliance_composition_required": true,
+  "search_need_creation_enabled": true,
+  "creation_from_hunt_enabled": true,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "sync_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

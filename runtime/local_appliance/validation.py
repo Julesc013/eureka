@@ -23,7 +23,7 @@ def validate_supported_instance_version(config: LocalInstanceConfig) -> LocalIns
 
 
 def validate_runtime_composition(runtime: Any) -> Any:
-    required = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt")
+    required = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt", "search_need")
     for name in required:
         if getattr(runtime, name, None) is None:
             raise LocalRuntimeCompositionError(f"runtime missing store: {name}")

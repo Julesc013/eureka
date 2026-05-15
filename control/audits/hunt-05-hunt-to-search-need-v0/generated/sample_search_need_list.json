@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_need_list_response.v0",
+  "status": "pass",
+  "need_count": 1,
+  "needs": [
+    {
+      "id": "sn_sample",
+      "hunt_id": "sh_sample",
+      "state": "proposed"
+    }
+  ]
+}

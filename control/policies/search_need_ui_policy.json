@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_need_ui_policy.v0",
+  "search_need_list_page_enabled": true,
+  "search_need_detail_page_enabled": true,
+  "hunt_detail_links_enabled": true,
+  "create_from_hunt_form_enabled": true,
+  "create_from_hunt_requires_operator_token": true,
+  "workunit_creation_controls_enabled": false,
+  "source_probe_controls_enabled": false,
+  "ai_escalation_controls_enabled": false,
+  "lan_mutation_enabled": false
+}

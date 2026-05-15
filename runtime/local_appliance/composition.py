@@ -8,6 +8,7 @@ from runtime.evidence_ledger.store import EvidenceLedgerStore
 from runtime.public_index.store import PublicIndexStore
 from runtime.review_queue.store import ReviewQueueStore
 from runtime.search_hunt.store import SearchHuntStore
+from runtime.search_need.store import SearchNeedStore
 from runtime.source_cache.store import SourceCacheStore
 
 from .config import LocalInstanceConfig, load_instance_config, validate_instance_config
@@ -28,8 +29,9 @@ STORE_CLASSES = {
     "review_queue": ReviewQueueStore,
     "public_index": PublicIndexStore,
     "search_hunt": SearchHuntStore,
+    "search_need": SearchNeedStore,
 }
-STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt")
+STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt", "search_need")
 
 
 @dataclass
@@ -44,6 +46,7 @@ class LocalApplianceRuntime:
     public_index: Any
     workunit_queue: Any
     search_hunt: Any
+    search_need: Any
     read_only: bool = False
     _closed: bool = False
 
@@ -62,6 +65,7 @@ class LocalApplianceRuntime:
             "public_index": self.public_index.check_integrity(),
             "workunit_queue": self.workunit_queue.check_integrity(),
             "search_hunt": self.search_hunt.check_integrity(),
+            "search_need": self.search_need.check_integrity(),
         }
         return {
             "schema_version": "local_runtime_integrity.v0",
@@ -72,7 +76,7 @@ class LocalApplianceRuntime:
     def close(self) -> None:
         if self._closed:
             return
-        for store in (self.search_hunt, self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
+        for store in (self.search_need, self.search_hunt, self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
             if hasattr(store, "close"):
                 store.close()
         self._closed = True
@@ -133,6 +137,7 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
             public_index=opened["public_index"],
             workunit_queue=opened["workunit_queue"],
             search_hunt=opened["search_hunt"],
+            search_need=opened["search_need"],
             read_only=read_only,
         )
     except Exception:

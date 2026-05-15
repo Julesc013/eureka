@@ -1,0 +1,18 @@
+id: HUNT-06
+title: Hunt-to-WorkUnit pipeline
+status: queued
+purpose: Add governed WorkUnit generation from SearchNeeds after durable SearchNeed persistence exists.
+allowed_scope_summary: SearchNeed-to-WorkUnit pipeline only when explicitly scoped by a future HUNT-06 prompt.
+gate:
+  - HUNT-05 completed
+  - use explicit local instance
+  - use SearchNeed runtime as input
+  - WorkUnits may be created only if explicitly scoped by HUNT-06
+  - no source probes unless a future source gate enables them
+  - no AI/model/provider calls
+  - no extraction runtime
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-05
+alternative_next: SYN-00

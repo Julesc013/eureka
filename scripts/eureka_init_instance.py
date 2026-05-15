@@ -43,6 +43,7 @@ PLANNED_DB_FILES = (
     "db/public_index.sqlite",
     "db/workunit_queue.sqlite",
     "db/search_hunt.sqlite",
+    "db/search_need.sqlite",
 )
 FORBIDDEN_ROOT_NAMES = {".cache", ".local", ".aide.local", "secrets"}
 FORBIDDEN_REPO_PATHS = ("runtime", "contracts", "surfaces", "site", "native", "crates", "examples", "control/prototypes")
@@ -64,6 +65,7 @@ STORE_SPECS = (
     StoreSpec("public_index", "db/public_index.sqlite", "runtime.public_index.store", "PublicIndexStore", "sqlite_public_index"),
     StoreSpec("workunit_queue", "db/workunit_queue.sqlite", "runtime.workunit_queue.store", "WorkUnitQueueStore", "sqlite_workunit_queue"),
     StoreSpec("search_hunt", "db/search_hunt.sqlite", "runtime.search_hunt.store", "SearchHuntStore", "sqlite_search_hunt"),
+    StoreSpec("search_need", "db/search_need.sqlite", "runtime.search_need.store", "SearchNeedStore", "sqlite_search_need"),
 )
 
 

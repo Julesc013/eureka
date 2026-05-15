@@ -1,0 +1,44 @@
+{
+  "schema_version": "search_need_runtime_inventory.v0",
+  "task": "HUNT-05",
+  "runtime_package": "runtime/search_need",
+  "store_id": "search_need",
+  "db_path": "db/search_need.sqlite",
+  "states": [
+    "proposed",
+    "open",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "blocked",
+    "satisfied_locally",
+    "superseded",
+    "cancelled"
+  ],
+  "kinds": [
+    "find_exact_artifact",
+    "find_compatible_version",
+    "find_source_or_mirror",
+    "identify_unknown_artifact",
+    "verify_provenance",
+    "extract_hidden_member",
+    "improve_absence_report",
+    "improve_ranking_or_identity",
+    "source_gap",
+    "policy_blocked_need"
+  ],
+  "desired_outcomes": [
+    "view_or_read",
+    "cite_or_reference",
+    "acquire_or_download_later_policy_gated",
+    "install_or_emulate_later_policy_gated",
+    "preserve_or_mirror_later_policy_gated",
+    "verify_only",
+    "improve_index"
+  ],
+  "creation_from_hunt_enabled": true,
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "sync_enabled": false,
+  "deployment_performed": false
+}

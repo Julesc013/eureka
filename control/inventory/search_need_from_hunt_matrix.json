@@ -1,0 +1,17 @@
+{
+  "schema_version": "search_need_from_hunt_matrix.v0",
+  "task": "HUNT-05",
+  "rows": [
+    {"source": "hunt.id", "target": "SearchNeed.hunt_id", "required": true},
+    {"source": "hunt.query", "target": "SearchNeed.query", "required": true},
+    {"source": "hunt.normalized_query", "target": "SearchNeed.normalized_query", "required": true},
+    {"source": "exhaustion.report_id", "target": "SearchNeed.exhaustion_report_id", "required": true},
+    {"source": "exhaustion.result_state.confidence_class", "target": "SearchNeed.local_result_state", "required": true},
+    {"source": "exhaustion.checked_layers", "target": "SearchNeed.checked_layers", "required": true},
+    {"source": "exhaustion.unchecked_or_deferred_layers", "target": "SearchNeed.deferred_layers", "required": true},
+    {"source": "exhaustion.recommended_next_actions", "target": "SearchNeed.recommended_future_work", "required": true}
+  ],
+  "workunit_creation_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false
+}

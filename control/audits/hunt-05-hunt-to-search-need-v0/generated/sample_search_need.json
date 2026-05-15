@@ -1,0 +1,22 @@
+{
+  "schema_version": "search_need_record.v0",
+  "id": "sn_sample",
+  "hunt_id": "sh_sample",
+  "exhaustion_report_id": "sher_sample",
+  "query": "sampleproject",
+  "normalized_query": "sampleproject",
+  "need_title": "Investigate unresolved local search: sampleproject",
+  "need_summary": "Local demand state only.",
+  "need_kind": "improve_absence_report",
+  "desired_outcome": "improve_index",
+  "priority": 70,
+  "state": "proposed",
+  "local_result_state": "local_absent",
+  "checked_layers": ["reviewed_public_index"],
+  "deferred_layers": ["source_probes", "WorkUnits"],
+  "recommended_future_work": ["create_work_items_later"],
+  "policy_limitations": ["SearchNeed is local demand state only"],
+  "warnings": [],
+  "public_safe_summary_allowed": false,
+  "private_notes_allowed": true
+}

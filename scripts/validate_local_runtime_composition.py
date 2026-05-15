@@ -105,6 +105,8 @@ ALLOWED_IMPORTS = {
     "runtime.public_index.store",
     "runtime.search_hunt",
     "runtime.search_hunt.store",
+    "runtime.search_need",
+    "runtime.search_need.store",
     "runtime.source_observation",
 }
 FORBIDDEN_IMPORT_PREFIXES = (

@@ -69,6 +69,8 @@ def is_operator_mutation_route(path: str) -> bool:
         return True
     if _is_hunt_command_mutation_route(value):
         return True
+    if _is_search_need_mutation_route(value):
+        return True
     return value.startswith("/review/") and value.endswith("/decision")
 
 
@@ -84,9 +86,19 @@ def _is_hunt_command_mutation_route(path: str) -> bool:
             "wait-for-policy",
             "steer",
             "exhaustion",
+            "search-need",
         }
     if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"]:
-        return parts[4] == "exhaustion"
+        return parts[4] in {"exhaustion", "search-need"}
+    return False
+
+
+def _is_search_need_mutation_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[0] == "need":
+        return parts[2] == "state"
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"]:
+        return parts[4] == "state"
     return False
 
 

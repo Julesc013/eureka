@@ -2,86 +2,71 @@
 
 ## PHASE
 
-HUNT-05 - Hunt-to-SearchNeed pipeline
+HUNT-06 - Hunt-to-WorkUnit pipeline
 
 ## GOAL
 
-Prepare the next Search Hunt step after HUNT-04 exhaustion reports: durable SearchNeed generation from local/current-index exhaustion evidence.
+Use the HUNT-05 SearchNeed runtime as the starting point for the next reviewed task. HUNT-06 is queued but not implemented in HUNT-05.
 
-## WHY
+## CURRENT STATE
 
-Search Hunt Sessions can now persist state, show workbench state, accept operator-gated commands and steering, and generate local exhaustion reports. The next task should convert those reports into durable SearchNeed records without creating WorkUnits yet unless a future reviewed HUNT-05 prompt explicitly enables it.
+- Latest completed item: HUNT-05 - Hunt-to-SearchNeed pipeline.
+- Current recommended item: HUNT-06 - Hunt-to-WorkUnit pipeline.
+- Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
+- F0 remains deferred unless explicitly selected by the operator.
 
-## CONTEXT_REFS
+## IMPLEMENTED
 
-- `.aide/context/latest-context-packet.md`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/queue/index.yaml`
-- `.aide/queue/HUNT-05/task.yaml`
-- `runtime/search_hunt/`
-- `scripts/eureka_search_hunt_exhaustion.py`
-- `scripts/validate_search_hunt_exhaustion.py`
-- `control/inventory/search_hunt_exhaustion_result.json`
-- `control/inventory/hunt_04_next_task_decision.json`
-- `control/audits/hunt-04-hunt-exhaustion-report-v0/`
+- Durable Search Hunt Sessions.
+- Search Hunt UI state.
+- Operator-gated Search Hunt commands and steering.
+- Deterministic local/current-index exhaustion reports.
+- Durable local SearchNeeds created from hunts and linked exhaustion reports.
 
-## ALLOWED_PATHS
+## BOUNDARIES
 
-- HUNT-05 paths must be taken from a future reviewed HUNT-05 task prompt.
-- SearchNeed generation changes must preserve Local Appliance and Search Hunt boundaries.
-- Control, docs, scripts, tests, queue metadata, and audit evidence may be used only within the reviewed task scope.
-
-## FORBIDDEN_PATHS
-
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
-- `.local/**`
-- `.cache/**`
-- `eureka-instance/**`
-- private local files
-- source probes, WorkUnit creation, extraction, model/provider calls, deployment, production readiness claims, or public launch readiness claims unless a future reviewed task explicitly enables them
-
-## IMPLEMENTATION
-
-- Read HUNT-04 evidence and the future HUNT-05 task file first.
-- Use exhaustion reports as local explanation input.
-- Do not infer truth from a hunt or exhaustion report.
-- Keep SearchNeed records separate from WorkUnits until a future task explicitly connects them.
+- No source probes.
+- No extraction runtime.
+- No AI/model/provider calls.
+- No review/public/master index mutation from SearchNeeds.
+- No deployment.
+- No production readiness claim.
+- No public launch readiness claim.
 
 ## VALIDATION
 
-- `python scripts/validate_search_hunt_exhaustion.py`
-- future HUNT-05 focused tests when implemented
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python scripts/check_architecture_boundaries.py`
-- `python -m unittest discover -s tests -t .`
+Run HUNT-05 validators and focused tests before using this packet as evidence:
 
-## COMMITS
+- `python scripts/validate_hunt_to_search_need.py`
+- `python -m unittest tests.runtime.test_search_need_store`
+- `python -m unittest tests.runtime.test_search_need_records`
+- `python -m unittest tests.runtime.test_search_need_transitions`
+- `python -m unittest tests.runtime.test_hunt_to_search_need`
+- `python -m unittest tests.runtime.test_search_need_routes`
+- `python -m unittest tests.runtime.test_search_need_ui`
+- `python -m unittest tests.runtime.test_search_need_auth`
+- `python -m unittest tests.operations.test_search_need_scripts`
 
-- Commit coherent task outputs with a structured Markdown commit body.
-- Do not merge or promote branches unless a future task explicitly asks for that.
+## EVIDENCE
+
+- `control/audits/hunt-05-hunt-to-search-need-v0/README.md`
+- `control/audits/hunt-05-hunt-to-search-need-v0/hunt_05_report.json`
+- `control/inventory/search_need_runtime_result.json`
+- `control/inventory/hunt_to_search_need_result.json`
+- `control/inventory/hunt_05_next_task_decision.json`
+- `.aide/queue/index.yaml`
 
 ## NON_GOALS
 
-- No WorkUnit creation unless HUNT-05 explicitly scopes it
-- No source probes
-- No extraction runtime
-- No SYN generation
-- No F0 implementation
-- No AI/model/provider calls
-- No deployment
-- No production readiness claim
-- No public launch readiness claim
+HUNT-05 did not implement HUNT-06 WorkUnit generation, source execution, SYN, F0, AI escalation, deployment, production readiness, or public launch readiness.
 
 ## ACCEPTANCE
 
-- HUNT-05 remains bounded to SearchNeed behavior from explicit local Search Hunt evidence.
-- HUNT-04 exhaustion reports remain valid and non-truth.
-- Queue and evidence clearly identify the next task after HUNT-05.
+HUNT-06 may start only from repo-local evidence after HUNT-05 passes or passes with warnings.
 
-## OUTPUT_SCHEMA
+## TOKEN_ESTIMATE
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, task-specific fields, `BOUNDARIES`, `VALIDATION`, and `NEXT_TASK`.
+- method: chars / 4, rounded up
+- chars: 1932
+- approx_tokens: 483
+- budget_status: PASS

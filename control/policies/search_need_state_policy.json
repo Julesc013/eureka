@@ -1,0 +1,37 @@
+{
+  "schema_version": "search_need_state_policy.v0",
+  "allowed_states": [
+    "proposed",
+    "open",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "blocked",
+    "satisfied_locally",
+    "superseded",
+    "cancelled"
+  ],
+  "allowed_transitions": [
+    ["proposed", "open"],
+    ["proposed", "blocked"],
+    ["proposed", "cancelled"],
+    ["open", "waiting_for_user"],
+    ["open", "waiting_for_policy"],
+    ["open", "blocked"],
+    ["open", "satisfied_locally"],
+    ["open", "superseded"],
+    ["open", "cancelled"],
+    ["waiting_for_user", "open"],
+    ["waiting_for_user", "cancelled"],
+    ["waiting_for_policy", "open"],
+    ["waiting_for_policy", "blocked"],
+    ["waiting_for_policy", "cancelled"],
+    ["blocked", "open"],
+    ["blocked", "cancelled"],
+    ["satisfied_locally", "satisfied_locally"],
+    ["superseded", "superseded"],
+    ["cancelled", "cancelled"]
+  ],
+  "invalid_transitions_fail_closed": true,
+  "transition_history_required": true,
+  "idempotent_terminal_transitions": true
+}

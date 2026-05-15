@@ -23,6 +23,10 @@ from .view_models import (
     SearchHuntSteeringPreferenceView,
     SearchHuntTransitionView,
     SearchHuntUnavailableActionView,
+    SearchNeedCardView,
+    SearchNeedDetailPageView,
+    SearchNeedListPageView,
+    SearchNeedTransitionView,
     SearchPageView,
     SearchResultCardView,
     SourcePageView,
@@ -56,6 +60,7 @@ def render_home_page(view: HomePageView) -> str:
             f"<li>{render_link('/status', 'Status page')}</li>",
             f"<li>{render_link('/absence?q=sampleproject', 'Sample absence page')}</li>",
             f"<li>{render_link('/hunts', 'Search Hunts')}</li>",
+            f"<li>{render_link('/needs', 'SearchNeeds')}</li>",
             f"<li>{render_link('/review', 'Review queue')}</li>",
             f"<li>{render_link('/rebuild', 'Reviewed-index rebuild')}</li>",
             f"<li>{render_link('/api/v1/status', 'JSON API status')}</li>",
@@ -443,6 +448,8 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _search_hunt_layers("checked-layers-heading", "Checked layers", view.checked_layers),
             _search_hunt_layers("unchecked-layers-heading", "Unchecked and deferred layers", view.unchecked_layers),
             _search_hunt_exhaustion_report(view),
+            _search_hunt_linked_needs(view.search_needs),
+            _search_need_creation_form(view) if view.search_need_creation_enabled else "",
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
             _search_hunt_command_history(view.commands),
@@ -469,6 +476,96 @@ def render_search_hunt_not_found_page(view: SearchHuntNotFoundPageView) -> str:
         ]
     )
     return render_document("Search Hunt not found - Eureka Local Appliance", body)
+
+
+def render_search_need_list_page(view: SearchNeedListPageView) -> str:
+    rows = tuple(
+        {
+            "need_id": render_link(item.detail_href, item.need_id),
+            "query": item.query,
+            "state": item.state,
+            "kind": item.need_kind,
+            "desired_outcome": item.desired_outcome,
+            "priority": item.priority,
+            "linked_hunt": render_link(item.hunt_href, item.hunt_id) if item.hunt_id else "",
+            "warning_count": item.warning_count,
+            "limitation_count": item.limitation_count,
+        }
+        for item in view.needs
+    )
+    body = "\n".join(
+        [
+            "<h1>SearchNeeds</h1>",
+            render_notice("scope", "SearchNeeds are local demand records, not evidence or reviewed results."),
+            _key_values((("need_count", view.need_count), ("creates_workunits", False), ("source_probe_ran", False), ("model_provider_used", False))),
+            _render_html_table(
+                rows,
+                headers=("need_id", "query", "state", "kind", "desired_outcome", "priority", "linked_hunt", "warning_count", "limitation_count"),
+            )
+            if rows
+            else render_notice("empty", "No SearchNeeds are stored in this local instance."),
+            "<p>" + render_link("/hunts", "Search Hunts") + " | " + render_link("/status", "Status") + "</p>",
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("SearchNeeds - Eureka Local Appliance", body)
+
+
+def render_search_need_detail_page(view: SearchNeedDetailPageView) -> str:
+    if not view.found:
+        body = "\n".join(
+            [
+                "<h1>SearchNeed not found</h1>",
+                _key_values((("need_id", view.need_id), ("created_implicitly", False))),
+                render_notice("empty", "The SearchNeed was not found in this local instance."),
+                "<p>" + render_link("/needs", "Back to SearchNeeds") + "</p>",
+                render_warnings(view.warnings),
+                render_limitations(view.limitations),
+            ]
+        )
+        return render_document("SearchNeed not found - Eureka Local Appliance", body)
+    body = "\n".join(
+        [
+            "<h1>SearchNeed</h1>",
+            render_notice("scope", "This SearchNeed records local demand only; it is not evidence, source approval, or reviewed truth."),
+            _key_values(
+                (
+                    ("need_id", view.need_id),
+                    ("hunt_id", view.hunt_id),
+                    ("exhaustion_report_id", view.exhaustion_report_id),
+                    ("query", view.query),
+                    ("normalized_query", view.normalized_query),
+                    ("state", view.state),
+                    ("need_kind", view.need_kind),
+                    ("desired_outcome", view.desired_outcome),
+                    ("priority", view.priority),
+                    ("local_result_state", view.local_result_state),
+                    ("creates_workunits", False),
+                    ("source_probe_ran", False),
+                    ("model_provider_used", False),
+                )
+            ),
+            "<p>" + render_link(view.related_hunt_href, "Linked hunt") + " | " + render_link(view.related_exhaustion_href, "Linked exhaustion report") + " | " + render_link("/needs", "Back to SearchNeeds") + "</p>",
+            "<section aria-labelledby=\"need-summary-heading\"><h2 id=\"need-summary-heading\">Need summary</h2>",
+            _key_values((("need_title", view.need_title), ("need_summary", view.need_summary))),
+            "</section>",
+            _search_hunt_layers("need-checked-layers-heading", "Checked layers", view.checked_layers),
+            _search_hunt_layers("need-deferred-layers-heading", "Deferred layers", view.deferred_layers),
+            '<section aria-labelledby="need-future-work-heading"><h2 id="need-future-work-heading">Recommended future work categories</h2>',
+            _search_hunt_exhaustion_rows(view.recommended_future_work),
+            "</section>",
+            '<section aria-labelledby="need-limitations-heading"><h2 id="need-limitations-heading">Policy limitations</h2>',
+            _search_hunt_exhaustion_rows(view.policy_limitations),
+            "</section>",
+            _search_need_state_form(view) if view.state_transition_enabled else "",
+            _search_need_transitions(view.transitions),
+            _search_need_unavailable_actions(),
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("SearchNeed - Eureka Local Appliance", body)
 
 
 def _result_card(result: SearchResultCardView) -> str:
@@ -634,6 +731,44 @@ def _search_hunt_exhaustion_rows(rows: Sequence[SearchHuntExhaustionRowView]) ->
     return render_table(payload, headers=("name", "status", "note"))
 
 
+def _search_hunt_linked_needs(needs: Sequence[SearchNeedCardView]) -> str:
+    rows = tuple(
+        {
+            "need_id": render_link(item.detail_href, item.need_id),
+            "state": item.state,
+            "kind": item.need_kind,
+            "desired_outcome": item.desired_outcome,
+            "priority": item.priority,
+        }
+        for item in needs
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-search-needs-heading"><h2 id="hunt-search-needs-heading">Linked SearchNeeds</h2>',
+            render_table(rows, headers=("need_id", "state", "kind", "desired_outcome", "priority")) if rows else "<p>No SearchNeeds are linked to this hunt.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _search_need_creation_form(view: SearchHuntDetailPageView) -> str:
+    action = "/hunt/" + quote(view.hunt_id) + "/search-need"
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-search-need-create-heading"><h2 id="hunt-search-need-create-heading">Create SearchNeed</h2>',
+            render_notice("scope", "SearchNeed creation requires an operator token and records local demand only."),
+            render_notice("scope", "WorkUnit generation is disabled until the next pipeline; source inspection, extraction, and model escalation remain disabled."),
+            f'<form method="post" action="{escape_html(action)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><label>Idempotency key <input name="idempotency_key"></label></p>',
+            '<p><button type="submit">Create local SearchNeed</button></p>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
 def _search_hunt_command_history(commands: Sequence[SearchHuntCommandView]) -> str:
     rows = tuple(
         {
@@ -711,6 +846,74 @@ def _search_hunt_transitions(transitions: Sequence[SearchHuntTransitionView]) ->
             render_table(rows, headers=("transition_id", "from_state", "to_state", "reason", "created_at")) if rows else "<p>No transition history recorded.</p>",
             "</section>",
         ]
+    )
+
+
+def _search_need_state_form(view: SearchNeedDetailPageView) -> str:
+    action = "/need/" + quote(view.need_id) + "/state"
+    options = "".join(f'<option value="{escape_html(item)}">{escape_html(item)}</option>' for item in _search_need_states())
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-state-form-heading"><h2 id="need-state-form-heading">Operator state update</h2>',
+            render_notice("scope", "State updates require an operator token and mutate only local SearchNeed state."),
+            f'<form method="post" action="{escape_html(action)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            f'<p><label>State <select name="state">{options}</select></label></p>',
+            '<p><label>Reason <textarea name="reason"></textarea></label></p>',
+            '<p><button type="submit">Update local state</button></p>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _search_need_transitions(transitions: Sequence[SearchNeedTransitionView]) -> str:
+    rows = tuple(
+        {
+            "transition_id": item.transition_id,
+            "from_state": item.from_state,
+            "to_state": item.to_state,
+            "reason": item.reason,
+            "created_at": item.created_at,
+        }
+        for item in transitions
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-transition-history-heading"><h2 id="need-transition-history-heading">Transition history</h2>',
+            render_table(rows, headers=("transition_id", "from_state", "to_state", "reason", "created_at")) if rows else "<p>No transition history recorded.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _search_need_unavailable_actions() -> str:
+    rows = (
+        {"action": "WorkUnit pipeline", "status": "deferred", "reason": "Background work generation is enabled only in the next pipeline."},
+        {"action": "source probes", "status": "disabled", "reason": "Source inspection requires a future source policy gate."},
+        {"action": "extraction", "status": "deferred", "reason": "Extraction requires a later safety gate."},
+        {"action": "AI escalation", "status": "disabled", "reason": "Model/provider calls are disabled."},
+        {"action": "public sync", "status": "disabled", "reason": "Sync requires a future policy gate."},
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-unavailable-actions-heading"><h2 id="need-unavailable-actions-heading">Unavailable future actions</h2>',
+            render_table(rows, headers=("action", "status", "reason")),
+            "</section>",
+        ]
+    )
+
+
+def _search_need_states() -> tuple[str, ...]:
+    return (
+        "proposed",
+        "open",
+        "waiting_for_user",
+        "waiting_for_policy",
+        "blocked",
+        "satisfied_locally",
+        "superseded",
+        "cancelled",
     )
 
 

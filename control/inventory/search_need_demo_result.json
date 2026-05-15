@@ -1,0 +1,15 @@
+{
+  "schema_version": "search_need_demo_result.v0",
+  "task": "HUNT-05",
+  "status": "pass",
+  "demo_added": true,
+  "hunt_created": true,
+  "search_need_created_from_hunt": true,
+  "search_need_list_show_passed": true,
+  "state_transition_passed": true,
+  "workunit_creation_performed": false,
+  "source_probe_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}
