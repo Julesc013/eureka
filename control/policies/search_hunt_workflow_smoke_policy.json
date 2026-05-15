@@ -1,0 +1,20 @@
+{
+  "schema_version": "search_hunt_workflow_smoke_policy.v0",
+  "required_workflow_stages": [
+    "create_hunt",
+    "apply_command",
+    "add_steering",
+    "generate_exhaustion",
+    "create_search_need",
+    "plan_workunits",
+    "create_workunits",
+    "run_safe_background_worker",
+    "inspect_workbench",
+    "inspect_api",
+    "verify_safety_boundaries"
+  ],
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false
+}

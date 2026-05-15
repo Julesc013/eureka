@@ -21,3 +21,6 @@ HUNT-06 adds the Hunt-to-WorkUnit pipeline. HUNT-07 remains next for background 
 HUNT-07 adds a background hunt runner over deterministic local workers. The next recommended task is HUNT-08 for full workbench integration and smoke tests.
 
 Current boundary remains: no source probes, extraction, agent research, model/provider calls, acquisition actions, LAN worker mutation, deployment, review mutation, master index mutation, production readiness claim, or public launch readiness claim.
+## HUNT-08 Result
+
+HUNT-08 adds integrated workflow, workbench, and API smoke scripts for the local Search Hunt loop. The next recommended task is HUNT-09, the agent research task contract with providers disabled; SYN remains an alternative/follow-up and F0 remains deferred.

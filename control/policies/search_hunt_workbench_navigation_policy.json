@@ -1,0 +1,17 @@
+{
+  "schema_version": "search_hunt_workbench_navigation_policy.v0",
+  "required_links": [
+    "home",
+    "status",
+    "search",
+    "hunts",
+    "SearchNeeds",
+    "WorkUnits",
+    "auto-test/search",
+    "no-claims/limitations"
+  ],
+  "source_probe_controls_enabled": false,
+  "extraction_controls_enabled": false,
+  "ai_controls_enabled": false,
+  "deployment_controls_enabled": false
+}

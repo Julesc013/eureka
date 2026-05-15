@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_hunt_workbench_integration_policy.v0",
+  "integrated_workflow_smoke_required": true,
+  "local_appliance_required": true,
+  "localhost_only_mutations": true,
+  "operator_token_required_for_mutations": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "external_network_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -2,16 +2,16 @@
 
 ## PHASE
 
-HUNT-08 - Workbench hunt integration and smoke tests
+HUNT-09 - Agent research task contract, provider disabled
 
 ## GOAL
 
-Use the HUNT-07 background hunt runner as the starting point for the next reviewed task. HUNT-08 is queued but not implemented in HUNT-07.
+Use the HUNT-08 workbench integration smoke as the starting point for the next reviewed task. HUNT-09 is queued and providers remain disabled.
 
 ## CURRENT STATE
 
-- Latest completed item: HUNT-07 - Background hunt runner over deterministic local workers.
-- Current recommended item: HUNT-08 - Workbench hunt integration and smoke tests.
+- Latest completed item: HUNT-08 - Workbench hunt integration and smoke tests.
+- Current recommended item: HUNT-09 - Agent research task contract, provider disabled.
 - Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
 - F0 remains deferred unless explicitly selected by the operator.
 
@@ -24,10 +24,11 @@ Use the HUNT-07 background hunt runner as the starting point for the next review
 - Durable local SearchNeeds created from hunts and linked exhaustion reports.
 - SearchNeed-to-WorkUnit plan generation and local WorkUnit creation.
 - Background hunt runner over deterministic local workers.
+- End-to-end local Search Hunt workflow smoke through CLI/API/workbench.
 
 ## BOUNDARIES
 
-- HUNT-07 runs only deterministic local workers allowed by LOCAL-09 policy.
+- HUNT-08 runs only deterministic local workers allowed by LOCAL-09 policy.
 - No source probes.
 - No extraction runtime.
 - No AI/model/provider calls.
@@ -38,26 +39,25 @@ Use the HUNT-07 background hunt runner as the starting point for the next review
 
 ## VALIDATION
 
-Use HUNT-07 evidence before starting HUNT-08:
+Use HUNT-08 evidence before starting HUNT-09:
 
-- `python scripts/validate_background_hunt_runner.py`
-- `python -m unittest tests.runtime.test_background_hunt_runner_plan`
-- `python -m unittest tests.runtime.test_background_hunt_runner_execution`
-- `python -m unittest tests.runtime.test_background_hunt_runner_policy`
-- `python -m unittest tests.runtime.test_background_hunt_runner_routes`
-- `python -m unittest tests.runtime.test_background_hunt_runner_ui`
-- `python -m unittest tests.runtime.test_background_hunt_runner_auth`
-- `python -m unittest tests.operations.test_background_hunt_runner_scripts`
+- `python scripts/validate_search_hunt_workbench_integration.py`
+- `python -m unittest tests.runtime.test_search_hunt_workflow_integration`
+- `python -m unittest tests.runtime.test_search_hunt_workbench_integration`
+- `python -m unittest tests.runtime.test_search_hunt_api_integration`
+- `python -m unittest tests.runtime.test_search_hunt_safety_integration`
+- `python -m unittest tests.operations.test_search_hunt_workflow_smoke_scripts`
+- `python -m unittest tests.operations.test_search_hunt_workbench_smoke_scripts`
 
 ## EVIDENCE
 
-- `control/audits/hunt-07-background-hunt-runner-v0/README.md`
-- `control/audits/hunt-07-background-hunt-runner-v0/hunt_07_report.json`
-- `control/inventory/background_hunt_runner_result.json`
-- `control/inventory/background_hunt_worker_matrix.json`
-- `control/inventory/hunt_07_next_task_decision.json`
+- `control/audits/hunt-08-workbench-integration-smoke-v0/README.md`
+- `control/audits/hunt-08-workbench-integration-smoke-v0/hunt_08_report.json`
+- `control/inventory/search_hunt_workbench_integration_result.json`
+- `control/inventory/search_hunt_workflow_smoke_result.json`
+- `control/inventory/hunt_08_next_task_decision.json`
 - `.aide/queue/index.yaml`
 
 ## NON_GOALS
 
-HUNT-07 did not implement source probes, extraction, SYN, F0, AI escalation, deployment, production readiness, or public launch readiness.
+HUNT-08 did not implement source probes, extraction, SYN, F0, AI escalation, deployment, production readiness, or public launch readiness.

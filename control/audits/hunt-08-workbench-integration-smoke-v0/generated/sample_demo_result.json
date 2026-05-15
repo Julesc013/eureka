@@ -1,0 +1,9 @@
+{
+  "schema_version": "search_hunt_workflow_smoke_result.v0",
+  "task": "HUNT-08",
+  "status": "pass",
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

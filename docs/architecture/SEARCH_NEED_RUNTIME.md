@@ -10,3 +10,6 @@ HUNT-05 supports creation from a hunt, list/show, and state transitions. WorkUni
 ## WorkUnit Generation Boundary
 
 HUNT-06 adds SearchNeed-to-WorkUnit planning and persistence. SearchNeed records remain local demand records. The new pipeline creates linked WorkUnit queue records only, with execution disabled and risky future-action kinds blocked by policy.
+## Workbench Smoke Integration
+
+SearchNeeds participate in the HUNT-08 end-to-end local workflow as durable demand records between exhaustion reports and WorkUnit planning. They remain non-evidence, local-only records and do not authorize source access, extraction, model calls, downloads, or index mutation.

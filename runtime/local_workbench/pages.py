@@ -63,6 +63,9 @@ def render_home_page(view: HomePageView) -> str:
             f"<li>{render_link('/absence?q=sampleproject', 'Sample absence page')}</li>",
             f"<li>{render_link('/hunts', 'Search Hunts')}</li>",
             f"<li>{render_link('/needs', 'SearchNeeds')}</li>",
+            f"<li>{render_link('/needs', 'WorkUnits via SearchNeeds')}</li>",
+            f"<li>{render_link('/status', 'Auto-test/search runbook status')}</li>",
+            f"<li>{render_link('/status#limitations-heading', 'No-claims and limitations')}</li>",
             f"<li>{render_link('/review', 'Review queue')}</li>",
             f"<li>{render_link('/rebuild', 'Reviewed-index rebuild')}</li>",
             f"<li>{render_link('/api/v1/status', 'JSON API status')}</li>",
@@ -92,6 +95,17 @@ def render_search_page(view: SearchPageView) -> str:
             f"<p>Submitted query: {escape_html(view.query)}</p>",
             f"<p>Reviewed result count: {escape_html(view.result_count)}</p>",
             _key_values((("query", view.query), ("reviewed_local_result_count", view.result_count))),
+            "<p>"
+            + " | ".join(
+                (
+                    render_link("/hunts", "Search Hunts"),
+                    render_link("/needs", "SearchNeeds"),
+                    render_link("/needs", "WorkUnits via SearchNeeds"),
+                    render_link("/status", "Auto-test/search"),
+                    render_link("#limitations-heading", "Limitations"),
+                )
+            )
+            + "</p>",
             empty,
             cards,
             render_warnings(view.warnings),
@@ -250,6 +264,11 @@ def render_status_page(view: StatusPageView) -> str:
             render_table(flags, headers=("flag", "value")),
             "</section>",
             "<section aria-labelledby=\"status-links-heading\"><h2 id=\"status-links-heading\">Machine-readable status</h2><ul>",
+            f"<li>{render_link('/hunts', 'Search Hunts')}</li>",
+            f"<li>{render_link('/needs', 'SearchNeeds')}</li>",
+            f"<li>{render_link('/needs', 'WorkUnits via SearchNeeds')}</li>",
+            f"<li>{render_link('/status', 'Auto-test/search')}</li>",
+            f"<li>{render_link('#limitations-heading', 'No-claims and limitations')}</li>",
             f"<li>{render_link('/api/v1/status', 'JSON status')}</li>",
             f"<li>{render_link('/api/v1/health', 'JSON health')}</li>",
             "</ul></section>",
@@ -1034,7 +1053,7 @@ def _search_need_transitions(transitions: Sequence[SearchNeedTransitionView]) ->
 def _search_need_unavailable_actions() -> str:
     rows = (
         {"action": "WorkUnit pipeline", "status": "available", "reason": "SearchNeeds can persist linked queue records without running them."},
-        {"action": "background runner", "status": "deferred", "reason": "Runner scheduling is handled by the next pipeline."},
+        {"action": "background runner", "status": "available", "reason": "Safe deterministic linked WorkUnits can be selected from the hunt runner."},
         {"action": "source probes", "status": "disabled", "reason": "Source inspection requires a future source policy gate."},
         {"action": "extraction", "status": "deferred", "reason": "Extraction requires a later safety gate."},
         {"action": "AI escalation", "status": "disabled", "reason": "Model/provider calls are disabled."},

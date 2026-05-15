@@ -1,0 +1,8 @@
+{
+  "schema_version": "search_hunt_workbench_smoke_result.v0",
+  "task": "HUNT-08",
+  "status": "pass",
+  "workbench_pages_passed": true,
+  "navigation_links_passed": true,
+  "no_forbidden_execution_controls": true
+}

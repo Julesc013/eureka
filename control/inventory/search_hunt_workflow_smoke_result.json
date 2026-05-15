@@ -1,0 +1,20 @@
+{
+  "schema_version": "search_hunt_workflow_smoke_result.v0",
+  "task": "HUNT-08",
+  "status": "pass",
+  "create_hunt_stage_passed": true,
+  "command_steering_stage_passed": true,
+  "exhaustion_stage_passed": true,
+  "search_need_stage_passed": true,
+  "workunit_creation_stage_passed": true,
+  "safe_worker_stage_passed": true,
+  "policy_blocked_workunits_remained_blocked": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "master_index_mutated": false,
+  "site_dist_mutated": false,
+  "deployment_performed": false
+}

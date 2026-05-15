@@ -1,0 +1,19 @@
+{
+  "schema_version": "search_hunt_api_smoke_result.v0",
+  "task": "HUNT-08",
+  "status": "pass",
+  "api_routes_passed": true,
+  "status_route_passed": true,
+  "hunts_route_passed": true,
+  "hunt_route_passed": true,
+  "exhaustion_route_passed": true,
+  "hunt_needs_route_passed": true,
+  "need_route_passed": true,
+  "need_workunits_route_passed": true,
+  "runner_route_passed": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

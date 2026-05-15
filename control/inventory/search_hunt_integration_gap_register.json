@@ -1,0 +1,17 @@
+{
+  "schema_version": "search_hunt_integration_gap_register.v0",
+  "task": "HUNT-08",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap_id": "hunt_08_future_source_probe_gate",
+      "status": "deferred",
+      "reason": "Source probes remain disabled until a future source policy gate."
+    },
+    {
+      "gap_id": "hunt_08_future_agent_contract",
+      "status": "next",
+      "reason": "Agent research task contract is planned next with providers disabled."
+    }
+  ]
+}

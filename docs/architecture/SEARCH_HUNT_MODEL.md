@@ -23,3 +23,6 @@ SearchNeeds can now produce deterministic WorkUnit plans and local queue records
 Search Hunt Sessions can now drive bounded background progress through deterministic local workers already allowed by LOCAL-09. The runner plans linked WorkUnits, runs only safe local worker kinds, records worker results, and preserves policy-blocked WorkUnits as blocked.
 
 The runner does not run source probes, extraction, agent research, model/provider calls, acquisition actions, source sync, LAN workers, deployment, review mutation, or master-index mutation. A worker result remains local run state, not accepted truth or evidence.
+## Workbench Integration Smoke
+
+HUNT-08 proves the local Search Hunt loop through CLI, JSON API, and HTML workbench surfaces. The proof remains local and deterministic: Hunt command state, steering, exhaustion, SearchNeed creation, WorkUnit planning/creation, and safe background worker execution are visible without source probes, extraction, AI/model calls, deployment, or production/public launch claims.

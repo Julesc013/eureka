@@ -16,3 +16,6 @@ SearchNeed kind mapping lives in `runtime/search_need/workunit_plan.py` and is s
 HUNT-07 adds that deterministic background runner integration. It consumes linked WorkUnits from the HUNT-06 pipeline, runs only safe local worker kinds, and leaves policy-gated future work blocked.
 
 The HUNT-06 contract remains intact: WorkUnit creation is separate from running workers, and source probe, extraction, model/provider, acquisition, deployment, and review/index mutation gates remain closed unless a later reviewed task explicitly opens them.
+## Workbench Smoke Integration
+
+HUNT-08 uses the Hunt-to-WorkUnit pipeline as part of the local workflow smoke. WorkUnit records are created and linked back to SearchNeeds, Hunts, and exhaustion reports, while execution remains limited to safe deterministic local workers through the background runner.

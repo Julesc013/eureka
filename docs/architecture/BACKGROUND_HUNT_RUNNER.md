@@ -38,4 +38,7 @@ Source probes, extraction, model/provider calls, acquisition actions, source syn
 ## Relationship
 
 HUNT-07 proves the hunt loop can make safe local progress before HUNT-08 workbench smoke integration and before any future source, extraction, AI, SYN, or F0 gates.
+## HUNT-08 Integration
+
+The background hunt runner is exercised by the workbench integration smoke as one safe deterministic worker execution. Policy-blocked source-probe, extraction, and AI/model worker records remain blocked and visible.
 

@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_hunt_workbench_integration_inventory.v0",
+  "task": "HUNT-08",
+  "integrated_workflow_smoke_enabled": true,
+  "workbench_smoke_enabled": true,
+  "api_smoke_enabled": true,
+  "local_appliance_required": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false
+}

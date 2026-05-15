@@ -1,0 +1,17 @@
+{
+  "schema_version": "search_hunt_workflow_smoke_matrix.v0",
+  "task": "HUNT-08",
+  "rows": [
+    {"stage": "create_hunt", "status": "pass", "side_effect": "local hunt records only"},
+    {"stage": "apply_command", "status": "pass", "side_effect": "local command history only"},
+    {"stage": "add_steering", "status": "pass", "side_effect": "local steering preferences only"},
+    {"stage": "generate_exhaustion", "status": "pass", "side_effect": "local exhaustion report only"},
+    {"stage": "create_search_need", "status": "pass", "side_effect": "local SearchNeed record only"},
+    {"stage": "plan_workunits", "status": "pass", "side_effect": "no persistence"},
+    {"stage": "create_workunits", "status": "pass", "side_effect": "local WorkUnit queue records only"},
+    {"stage": "run_safe_background_worker", "status": "pass", "side_effect": "safe deterministic worker result only"},
+    {"stage": "inspect_workbench", "status": "pass", "side_effect": "read-only page inspection"},
+    {"stage": "inspect_api", "status": "pass", "side_effect": "read-only JSON inspection"},
+    {"stage": "verify_safety_boundaries", "status": "pass", "side_effect": "none"}
+  ]
+}

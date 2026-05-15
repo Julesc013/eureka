@@ -1,6 +1,6 @@
 id: HUNT-08
 title: Workbench hunt integration and smoke tests
-status: queued
+status: completed
 purpose: Integrate and smoke-test the Search Hunt workbench loop after background runner support exists.
 allowed_scope_summary: Workbench integration, smoke tests, docs, validators, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -13,4 +13,5 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: HUNT-07
+recommended_next: HUNT-09
 alternative_next: SYN-00

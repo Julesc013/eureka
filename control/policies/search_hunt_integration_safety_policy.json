@@ -1,0 +1,13 @@
+{
+  "schema_version": "search_hunt_integration_safety_policy.v0",
+  "source_probe_execution_forbidden": true,
+  "extraction_execution_forbidden": true,
+  "ai_model_execution_forbidden": true,
+  "external_network_forbidden": true,
+  "download_install_execute_forbidden": true,
+  "master_index_mutation_forbidden": true,
+  "site_dist_writes_forbidden": true,
+  "deployment_forbidden": true,
+  "public_launch_claim_forbidden": true,
+  "production_readiness_claim_forbidden": true
+}
