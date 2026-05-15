@@ -1,0 +1,10 @@
+{
+  "schema_version": "search_need_workunit_link_result.v0",
+  "task": "HUNT-06",
+  "status": "pass",
+  "workunits_linked_to_need": true,
+  "workunits_linked_to_hunt": true,
+  "workunits_linked_to_exhaustion": true,
+  "payload_refs_recorded": true,
+  "idempotency_checked": true
+}

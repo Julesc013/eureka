@@ -1,0 +1,11 @@
+{
+  "schema_version": "hunt_to_workunit_policy_matrix.v0",
+  "task": "HUNT-06",
+  "rows": [
+    {"workunit_kind": "regression_test", "created_state": "queued", "policy_state": "queued_local_safe", "execution_enabled": false},
+    {"workunit_kind": "evidence_review", "created_state": "queued_or_blocked", "policy_state": "queued_local_safe_or_blocked_until_evidence", "execution_enabled": false},
+    {"workunit_kind": "source_probe", "created_state": "blocked", "policy_state": "blocked_by_policy", "execution_enabled": false},
+    {"workunit_kind": "extraction_task", "created_state": "blocked", "policy_state": "blocked_by_policy", "execution_enabled": false},
+    {"workunit_kind": "agent_task", "created_state": "blocked", "policy_state": "blocked_by_policy", "execution_enabled": false}
+  ]
+}

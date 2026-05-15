@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_06_next_task_decision.v0",
+  "task": "HUNT-06",
+  "recommended_next_task": "HUNT-07 \u2014 Background hunt runner over deterministic local workers",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "workunit_creation_from_search_need_available": true,
+  "workunit_execution_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "SearchNeeds can create linked WorkUnits; deterministic background runner is next."
+}

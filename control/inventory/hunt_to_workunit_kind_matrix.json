@@ -1,0 +1,16 @@
+{
+  "schema_version": "hunt_to_workunit_kind_matrix.v0",
+  "task": "HUNT-06",
+  "rows": [
+    {"search_need_kind": "find_exact_artifact", "plan": ["regression_test:queued", "source_probe:blocked_by_policy", "evidence_review:blocked_until_evidence"]},
+    {"search_need_kind": "find_compatible_version", "plan": ["regression_test:queued", "source_probe:blocked_by_policy", "evidence_review:blocked_until_evidence"]},
+    {"search_need_kind": "find_source_or_mirror", "plan": ["source_probe:blocked_by_policy", "evidence_review:blocked_until_evidence"]},
+    {"search_need_kind": "identify_unknown_artifact", "plan": ["regression_test:queued", "source_probe:blocked_by_policy", "agent_task:blocked_by_policy"]},
+    {"search_need_kind": "verify_provenance", "plan": ["evidence_review:queued", "source_probe:blocked_by_policy"]},
+    {"search_need_kind": "extract_hidden_member", "plan": ["extraction_task:blocked_by_policy"]},
+    {"search_need_kind": "improve_absence_report", "plan": ["regression_test:queued", "source_probe:blocked_by_policy"]},
+    {"search_need_kind": "improve_ranking_or_identity", "plan": ["regression_test:queued", "evidence_review:queued"]},
+    {"search_need_kind": "source_gap", "plan": ["source_probe:blocked_by_policy"]},
+    {"search_need_kind": "policy_blocked_need", "plan": ["evidence_review:blocked_by_policy"]}
+  ]
+}

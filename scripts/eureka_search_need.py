@@ -16,7 +16,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
 from runtime.local_operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
-from runtime.search_need import ALLOWED_SEARCH_NEED_KINDS, ALLOWED_SEARCH_NEED_STATES, SearchNeedError
+from runtime.search_need import ALLOWED_SEARCH_NEED_KINDS, ALLOWED_SEARCH_NEED_STATES, SearchNeedError, list_workunits_for_need
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -84,6 +84,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     summary = subparsers.add_parser("summary", help="Summarize the SearchNeed store.")
     add_output_options(summary)
+
+    workunits = subparsers.add_parser("workunits", help="List WorkUnits linked to a SearchNeed.")
+    workunits.add_argument("--id", required=True)
+    workunits.add_argument("--limit", type=int, default=100)
+    add_output_options(workunits)
     return parser
 
 
@@ -120,6 +125,11 @@ def dispatch(runtime: Any, args: argparse.Namespace) -> dict[str, Any]:
         return ok_result("search_need_transitioned", {"need": need.to_dict()})
     if args.command == "summary":
         return ok_result("search_need_summary", {"summary": store.summarize()})
+    if args.command == "workunits":
+        if store.get_need(args.id) is None:
+            return fail_result("search_need_not_found", f"SearchNeed not found: {args.id}")
+        workunits = list_workunits_for_need(runtime, args.id, limit=args.limit)
+        return ok_result("search_need_workunits", {"need_id": args.id, "workunit_count": len(workunits), "workunits": workunits})
     raise ValueError(f"unsupported command: {args.command}")
 
 

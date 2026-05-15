@@ -1,0 +1,18 @@
+{
+  "schema_version": "hunt_to_workunit_gap_register.v0",
+  "task": "HUNT-06",
+  "gaps": [
+    {
+      "gap": "background_hunt_runner",
+      "status": "deferred",
+      "target": "HUNT-07",
+      "reason": "HUNT-06 persists WorkUnits but does not run them."
+    },
+    {
+      "gap": "source_probe_execution",
+      "status": "policy_blocked",
+      "target": "future source gate",
+      "reason": "Source probes are local blocked queue records only."
+    }
+  ]
+}

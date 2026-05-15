@@ -1,0 +1,22 @@
+{
+  "schema_version": "hunt_to_workunit_inventory.v0",
+  "task": "HUNT-06",
+  "workunit_creation_from_search_need_enabled": true,
+  "workunit_execution_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "kinds_planned": [
+    "regression_test",
+    "source_probe",
+    "evidence_review",
+    "extraction_task",
+    "agent_task"
+  ],
+  "policy_blocked_kinds": [
+    "source_probe",
+    "extraction_task",
+    "agent_task"
+  ],
+  "deployment_performed": false
+}

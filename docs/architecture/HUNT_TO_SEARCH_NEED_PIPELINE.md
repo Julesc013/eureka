@@ -14,3 +14,6 @@ The pipeline links:
 The pipeline deduplicates by idempotency key when supplied, and by hunt plus normalized query otherwise.
 
 HUNT-05 stops at demand persistence. HUNT-06 is responsible for the separate WorkUnit pipeline.
+## Downstream WorkUnit Pipeline
+
+HUNT-06 consumes SearchNeeds created by this pipeline and can persist linked local WorkUnits. The handoff remains local-only: no source probe, extraction, AI/model call, or index mutation is authorized by SearchNeed creation.

@@ -38,3 +38,6 @@ The local runtime status includes queue integrity and a queue summary. The HTTP 
 ## Future Relationship
 
 LOCAL-08 may add review/rebuild UI over the existing boundaries. LOCAL-09 adds the first worker relationship: workers consume queued records, emit typed results, and record audit references. HUNT, F, G, and H tracks should use WorkUnits as coordination records, not as truth acceptance.
+## SearchNeed-Derived WorkUnits
+
+HUNT-06 may create WorkUnits from SearchNeeds. The queue records include SearchNeed, Search Hunt, exhaustion report, generated-from, and policy-state payload fields. Queue creation is not execution; the deterministic runner remains a later governed step for this track.

@@ -1,0 +1,11 @@
+{
+  "schema_version": "search_need_workunit_ui_policy.v0",
+  "workunit_plan_preview_enabled": true,
+  "workunit_creation_ui_enabled": true,
+  "execution_controls_enabled": false,
+  "source_probe_controls_enabled": false,
+  "extraction_controls_enabled": false,
+  "ai_controls_enabled": false,
+  "lan_mutation_enabled": false,
+  "blocked_policy_indicators_required": true
+}

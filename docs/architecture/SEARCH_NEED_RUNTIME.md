@@ -7,3 +7,6 @@ SearchNeeds are not truth, evidence, source approval, rights clearance, malware 
 The runtime store is `search_need` at `db/search_need.sqlite` under the explicit Local Appliance instance manifest. It is opened through `runtime/local_appliance` composition, not by ad hoc paths.
 
 HUNT-05 supports creation from a hunt, list/show, and state transitions. WorkUnit creation remains disabled until HUNT-06. Source probes, extraction, sync, model/provider calls, review mutation, public index mutation, and master index mutation remain disabled.
+## WorkUnit Generation Boundary
+
+HUNT-06 adds SearchNeed-to-WorkUnit planning and persistence. SearchNeed records remain local demand records. The new pipeline creates linked WorkUnit queue records only, with execution disabled and risky future-action kinds blocked by policy.

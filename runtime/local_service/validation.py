@@ -58,6 +58,8 @@ def validate_query_params(params: Mapping[str, list[str]]) -> Mapping[str, list[
 def validate_no_mutation_route(method: str, path: str) -> None:
     validate_supported_method_for_path(method, path)
     lowered = str(path or "").lower()
+    if _is_search_need_workunit_route(path):
+        return
     for token in ("write", "delete", "update", "review-decision", "probe", "workunit"):
         if token in lowered:
             raise LocalServiceReadOnlyError(f"route token is disabled for read-only service: {token}")
@@ -96,9 +98,30 @@ def _is_hunt_command_mutation_route(path: str) -> bool:
 def _is_search_need_mutation_route(path: str) -> bool:
     parts = [part for part in str(path or "").split("/") if part]
     if len(parts) == 3 and parts[0] == "need":
-        return parts[2] == "state"
+        return parts[2] in {"state", "workunits"}
+    if len(parts) == 4 and parts[0] == "need":
+        return parts[2:] == ["workunits", "plan"]
     if len(parts) == 5 and parts[:3] == ["api", "v1", "need"]:
-        return parts[4] == "state"
+        return parts[4] in {"state", "workunits"}
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "need"]:
+        return parts[4:] == ["workunits", "plan"]
+    return False
+
+
+def _is_search_need_workunit_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[0] == "need" and parts[2] == "workunits":
+        return True
+    if len(parts) == 4 and parts[0] == "need" and parts[2:] == ["workunits", "plan"]:
+        return True
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] == "workunits":
+        return True
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "need"] and parts[4:] == ["workunits", "plan"]:
+        return True
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] == "workunits":
+        return True
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "workunits":
+        return True
     return False
 
 

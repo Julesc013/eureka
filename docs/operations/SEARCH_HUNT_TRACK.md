@@ -12,3 +12,6 @@ After HUNT-04, exhaustion reports are available through CLI, local JSON API, and
 HUNT-05 adds durable SearchNeeds and the hunt-to-SearchNeed pipeline. The next recommended task is HUNT-06, which may add the separate Hunt-to-WorkUnit pipeline.
 
 Current boundary remains: no WorkUnit creation, source probes, extraction execution, model/provider calls, review mutation, public/master index mutation, deployment, production readiness claim, or public launch readiness claim.
+## HUNT-06 Status
+
+HUNT-06 adds the Hunt-to-WorkUnit pipeline. HUNT-07 remains next for background runner integration. F0 stays deferred, and SYN remains the alternative/follow-up planning track.

@@ -22,7 +22,7 @@ SEARCH_HUNT_ABSENCE_LIMITATION = "Search Hunt absence is local current-index abs
 SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("exhaustion report", "available", "Exhaustion reports explain local checked layers and deferred work without executing it."),
     ("SearchNeed pipeline", "available", "Need persistence records local demand without creating work."),
-    ("WorkUnit pipeline", "deferred", "WorkUnit creation from hunts is not enabled."),
+    ("WorkUnit pipeline", "available", "SearchNeeds can create linked WorkUnits without executing them."),
     ("background runner", "deferred", "Background hunt execution is not enabled."),
     ("source probes", "disabled", "Source-probe execution remains behind a future source gate."),
     ("extraction", "deferred", "Extraction remains outside this Search Hunt UI state layer."),
@@ -327,6 +327,30 @@ class SearchNeedTransitionView:
 
 
 @dataclass(frozen=True)
+class SearchNeedWorkUnitPlanItemView:
+    plan_item_id: str
+    kind: str
+    title: str
+    policy_state: str
+    reason: str
+    priority: str
+    blocked_reason: str
+
+
+@dataclass(frozen=True)
+class SearchNeedWorkUnitView:
+    workunit_id: str
+    kind: str
+    state: str
+    title: str
+    policy_state: str
+    search_need_id: str
+    search_hunt_id: str
+    exhaustion_report_id: str
+    execution_enabled: bool
+
+
+@dataclass(frozen=True)
 class SearchHuntListPageView:
     hunt_count: int
     hunts: tuple[SearchHuntCardView, ...]
@@ -365,7 +389,10 @@ class SearchNeedDetailPageView:
     recommended_future_work: tuple[SearchHuntExhaustionRowView, ...]
     policy_limitations: tuple[SearchHuntExhaustionRowView, ...]
     transitions: tuple[SearchNeedTransitionView, ...]
+    workunit_plan: tuple[SearchNeedWorkUnitPlanItemView, ...]
+    workunits: tuple[SearchNeedWorkUnitView, ...]
     state_transition_enabled: bool
+    workunit_creation_enabled: bool
     related_hunt_href: str
     related_exhaustion_href: str
     non_claim_banner: NonClaimBannerView
@@ -407,6 +434,7 @@ class SearchHuntDetailPageView:
     steering_controls_enabled: bool
     exhaustion_generation_enabled: bool
     search_needs: tuple[SearchNeedCardView, ...]
+    workunits: tuple[SearchNeedWorkUnitView, ...]
     search_need_creation_enabled: bool
     unavailable_actions: tuple[SearchHuntUnavailableActionView, ...]
     related_search_href: str
@@ -616,6 +644,7 @@ def build_search_hunt_detail_page_view(
     exhaustion_report = _mapping(status_payload.get("exhaustion_report"))
     exhaustion_generation_enabled = bool(status_payload.get("exhaustion_report_generation_enabled", False))
     linked_needs = tuple(_need_card(_mapping(item)) for item in _sequence(status_payload.get("search_needs")))
+    linked_workunits = tuple(_workunit_view(_mapping(item)) for item in _sequence(status_payload.get("workunits")))
     return SearchHuntDetailPageView(
         hunt_id=hunt_id,
         found=bool(payload),
@@ -646,6 +675,7 @@ def build_search_hunt_detail_page_view(
         steering_controls_enabled=steering_controls_enabled,
         exhaustion_generation_enabled=exhaustion_generation_enabled,
         search_needs=linked_needs,
+        workunits=linked_workunits,
         search_need_creation_enabled=bool(status_payload.get("search_need_creation_enabled", False)),
         unavailable_actions=build_search_hunt_unavailable_actions(),
         related_search_href="/search?q=" + str(query),
@@ -681,6 +711,7 @@ def build_search_need_detail_page_view(
     need_id = str(payload.get("id", ""))
     hunt_id = str(payload.get("hunt_id", ""))
     exhaustion_report_id = str(payload.get("exhaustion_report_id", ""))
+    workunit_plan = _mapping(status_payload.get("workunit_plan"))
     return SearchNeedDetailPageView(
         need_id=need_id,
         found=bool(payload),
@@ -700,7 +731,10 @@ def build_search_need_detail_page_view(
         recommended_future_work=_future_work_rows(payload.get("recommended_future_work")),
         policy_limitations=_limitation_rows(payload.get("policy_limitations")),
         transitions=tuple(_need_transition_view(item) for item in transitions),
+        workunit_plan=tuple(_workunit_plan_item_view(_mapping(item)) for item in _sequence(workunit_plan.get("items"))),
+        workunits=tuple(_workunit_view(_mapping(item)) for item in _sequence(status_payload.get("workunits"))),
         state_transition_enabled=bool(status_payload.get("state_transition_enabled", False)),
+        workunit_creation_enabled=bool(status_payload.get("workunit_creation_enabled", False)),
         related_hunt_href="/hunt/" + hunt_id,
         related_exhaustion_href="/hunt/" + hunt_id + "/exhaustion",
         non_claim_banner=build_non_claim_banner_view(),
@@ -839,6 +873,33 @@ def _need_transition_view(value: Any) -> SearchNeedTransitionView:
         to_state=str(item.get("to_state", "")),
         reason=str(item.get("reason", "") or ""),
         created_at=str(item.get("created_at", "")),
+    )
+
+
+def _workunit_plan_item_view(value: Mapping[str, Any]) -> SearchNeedWorkUnitPlanItemView:
+    return SearchNeedWorkUnitPlanItemView(
+        plan_item_id=str(value.get("plan_item_id", "")),
+        kind=str(value.get("kind", "")),
+        title=str(value.get("title", "")),
+        policy_state=str(value.get("policy_state", "")),
+        reason=str(value.get("reason", "")),
+        priority=str(value.get("priority", "")),
+        blocked_reason=str(value.get("blocked_reason", "") or ""),
+    )
+
+
+def _workunit_view(value: Mapping[str, Any]) -> SearchNeedWorkUnitView:
+    payload = _mapping(value.get("payload"))
+    return SearchNeedWorkUnitView(
+        workunit_id=str(value.get("id", "")),
+        kind=str(value.get("kind", "")),
+        state=str(value.get("state", "")),
+        title=str(value.get("title", "")),
+        policy_state=str(value.get("policy_state", payload.get("policy_state", ""))),
+        search_need_id=str(value.get("search_need_id", payload.get("search_need_id", ""))),
+        search_hunt_id=str(value.get("search_hunt_id", payload.get("search_hunt_id", ""))),
+        exhaustion_report_id=str(value.get("exhaustion_report_id", payload.get("exhaustion_report_id", ""))),
+        execution_enabled=bool(value.get("execution_enabled", payload.get("execution_enabled", False))),
     )
 
 

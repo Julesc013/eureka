@@ -14,3 +14,6 @@ HUNT-04 adds deterministic exhaustion reports. A report explains local/current-i
 Search Hunt Sessions can now produce local SearchNeeds after an operator-gated HUNT-05 pipeline step. A SearchNeed is durable demand state linked to the hunt and its local exhaustion report.
 
 SearchNeeds do not create WorkUnits, execute probes, call model providers, accept evidence, or mutate indexes. They are the handoff from unresolved hunt state into future work planning.
+## HUNT-06 WorkUnit Link
+
+SearchNeeds can now produce deterministic WorkUnit plans and local queue records. These WorkUnits are local tasks, not truth or evidence. HUNT-06 queues local-safe work and blocks policy-gated future work; it does not run WorkUnits, source probes, extraction, or model/provider calls.

@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_need_workunit_policy.v0",
+  "workunits_require_existing_search_need": true,
+  "workunits_link_to_hunt_when_available": true,
+  "workunits_link_to_exhaustion_when_available": true,
+  "generation_requires_operator_token": true,
+  "localhost_only_generation": true,
+  "lan_generation_enabled": false,
+  "idempotency_required": true,
+  "duplicate_workunits_prevented_where_practical": true,
+  "risky_workunit_kinds_blocked_by_policy": true
+}

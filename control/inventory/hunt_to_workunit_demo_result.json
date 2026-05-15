@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_to_workunit_demo_result.v0",
+  "task": "HUNT-06",
+  "status": "pass",
+  "demo_added": true,
+  "plan_preview_passed": true,
+  "workunit_creation_passed": true,
+  "workunit_execution_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "search_need_workunit_plan.v0",
+  "need_id": "sn_sample",
+  "search_hunt_id": "shs_sample",
+  "exhaustion_report_id": "she_sample",
+  "generated_from": "search_need_workunit_pipeline",
+  "item_count": 2,
+  "items": [
+    {
+      "plan_item_id": "regression_test_1",
+      "kind": "regression_test",
+      "policy_state": "queued_local_safe",
+      "execution_enabled": false
+    },
+    {
+      "plan_item_id": "source_probe_2",
+      "kind": "source_probe",
+      "policy_state": "blocked_by_policy",
+      "execution_enabled": false
+    }
+  ]
+}

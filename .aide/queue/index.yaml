@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-06
+current_recommended_task: HUNT-07
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -196,12 +196,21 @@ entries:
     recommended_next: HUNT-06
   - id: HUNT-06
     title: Hunt-to-WorkUnit pipeline
-    status: queued
+    status: completed
     purpose: Add governed WorkUnit generation from SearchNeeds after SearchNeed demand persistence exists.
     allowed_scope_summary: SearchNeed-to-WorkUnit planning/runtime only when explicitly scoped; source execution remains disabled unless future gates enable it.
     gate: HUNT-05 completed; no source probes, model/provider calls, extraction runtime, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-06/task.yaml
     recommended_after: HUNT-05
+    recommended_next: HUNT-07
+  - id: HUNT-07
+    title: Background hunt runner over deterministic local workers
+    status: queued
+    purpose: Add deterministic background runner integration after SearchNeeds can create linked WorkUnits.
+    allowed_scope_summary: Runner scheduling over existing deterministic local workers only when explicitly scoped; no source probes, extraction, model/provider calls, or deployment.
+    gate: HUNT-06 completed; WorkUnits exist as local queue records and execution remains disabled until this reviewed task.
+    task: .aide/queue/HUNT-07/task.yaml
+    recommended_after: HUNT-06
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

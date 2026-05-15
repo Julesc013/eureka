@@ -1,0 +1,13 @@
+{
+  "schema_version": "search_need_workunit_creation_result.v0",
+  "need_id": "sn_sample",
+  "search_hunt_id": "shs_sample",
+  "exhaustion_report_id": "she_sample",
+  "created_count": 2,
+  "workunits": [
+    {"id": "wku_regression", "kind": "regression_test", "state": "queued", "policy_state": "queued_local_safe"},
+    {"id": "wku_source_probe", "kind": "source_probe", "state": "blocked", "policy_state": "blocked_by_policy"}
+  ],
+  "workunit_execution_performed": false,
+  "source_probe_executed": false
+}

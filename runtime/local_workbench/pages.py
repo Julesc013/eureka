@@ -27,6 +27,8 @@ from .view_models import (
     SearchNeedDetailPageView,
     SearchNeedListPageView,
     SearchNeedTransitionView,
+    SearchNeedWorkUnitPlanItemView,
+    SearchNeedWorkUnitView,
     SearchPageView,
     SearchResultCardView,
     SourcePageView,
@@ -433,7 +435,8 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
                     ("updated_at", view.updated_at),
                     ("reviewed_result_count", view.reviewed_result_count),
                     ("candidate_result_count", view.candidate_result_count),
-                    ("creates_workunits", False),
+                    ("workunit_creation_available", True),
+                    ("workunit_execution_enabled", False),
                     ("source_probe_ran", False),
                     ("model_provider_used", False),
                 )
@@ -449,6 +452,7 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _search_hunt_layers("unchecked-layers-heading", "Unchecked and deferred layers", view.unchecked_layers),
             _search_hunt_exhaustion_report(view),
             _search_hunt_linked_needs(view.search_needs),
+            _search_hunt_linked_workunits(view.workunits),
             _search_need_creation_form(view) if view.search_need_creation_enabled else "",
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
@@ -497,7 +501,7 @@ def render_search_need_list_page(view: SearchNeedListPageView) -> str:
         [
             "<h1>SearchNeeds</h1>",
             render_notice("scope", "SearchNeeds are local demand records, not evidence or reviewed results."),
-            _key_values((("need_count", view.need_count), ("creates_workunits", False), ("source_probe_ran", False), ("model_provider_used", False))),
+            _key_values((("need_count", view.need_count), ("workunit_creation_available", True), ("workunit_execution_enabled", False), ("source_probe_ran", False), ("model_provider_used", False))),
             _render_html_table(
                 rows,
                 headers=("need_id", "query", "state", "kind", "desired_outcome", "priority", "linked_hunt", "warning_count", "limitation_count"),
@@ -541,7 +545,8 @@ def render_search_need_detail_page(view: SearchNeedDetailPageView) -> str:
                     ("desired_outcome", view.desired_outcome),
                     ("priority", view.priority),
                     ("local_result_state", view.local_result_state),
-                    ("creates_workunits", False),
+                    ("workunit_creation_available", view.workunit_creation_enabled),
+                    ("workunit_execution_enabled", False),
                     ("source_probe_ran", False),
                     ("model_provider_used", False),
                 )
@@ -558,6 +563,9 @@ def render_search_need_detail_page(view: SearchNeedDetailPageView) -> str:
             '<section aria-labelledby="need-limitations-heading"><h2 id="need-limitations-heading">Policy limitations</h2>',
             _search_hunt_exhaustion_rows(view.policy_limitations),
             "</section>",
+            _search_need_workunit_plan(view.workunit_plan),
+            _search_need_linked_workunits(view.workunits),
+            _search_need_workunit_form(view) if view.workunit_creation_enabled else "",
             _search_need_state_form(view) if view.state_transition_enabled else "",
             _search_need_transitions(view.transitions),
             _search_need_unavailable_actions(),
@@ -751,13 +759,35 @@ def _search_hunt_linked_needs(needs: Sequence[SearchNeedCardView]) -> str:
     )
 
 
+def _search_hunt_linked_workunits(workunits: Sequence[SearchNeedWorkUnitView]) -> str:
+    rows = tuple(
+        {
+            "workunit_id": item.workunit_id,
+            "kind": item.kind,
+            "state": item.state,
+            "policy_state": item.policy_state,
+            "linked_need": render_link("/need/" + quote(item.search_need_id), item.search_need_id) if item.search_need_id else "",
+            "execution_enabled": item.execution_enabled,
+        }
+        for item in workunits
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-workunits-heading"><h2 id="hunt-workunits-heading">Linked WorkUnits</h2>',
+            render_table(rows, headers=("workunit_id", "kind", "state", "policy_state", "linked_need", "execution_enabled")) if rows else "<p>No linked WorkUnits are recorded for this hunt.</p>",
+            render_notice("scope", "WorkUnits shown here are local queue records only; this page has no execution controls."),
+            "</section>",
+        ]
+    )
+
+
 def _search_need_creation_form(view: SearchHuntDetailPageView) -> str:
     action = "/hunt/" + quote(view.hunt_id) + "/search-need"
     return "\n".join(
         [
             '<section aria-labelledby="hunt-search-need-create-heading"><h2 id="hunt-search-need-create-heading">Create SearchNeed</h2>',
             render_notice("scope", "SearchNeed creation requires an operator token and records local demand only."),
-            render_notice("scope", "WorkUnit generation is disabled until the next pipeline; source inspection, extraction, and model escalation remain disabled."),
+            render_notice("scope", "WorkUnit generation is handled from SearchNeed detail pages; source inspection, extraction, and model escalation remain disabled."),
             f'<form method="post" action="{escape_html(action)}">',
             '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
             '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
@@ -867,6 +897,69 @@ def _search_need_state_form(view: SearchNeedDetailPageView) -> str:
     )
 
 
+def _search_need_workunit_plan(items: Sequence[SearchNeedWorkUnitPlanItemView]) -> str:
+    rows = tuple(
+        {
+            "plan_item_id": item.plan_item_id,
+            "kind": item.kind,
+            "title": item.title,
+            "policy_state": item.policy_state,
+            "priority": item.priority,
+            "blocked_reason": item.blocked_reason,
+            "reason": item.reason,
+        }
+        for item in items
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-workunit-plan-heading"><h2 id="need-workunit-plan-heading">WorkUnit plan preview</h2>',
+            render_notice("scope", "Plan preview is deterministic and does not persist queue records."),
+            render_table(rows, headers=("plan_item_id", "kind", "title", "policy_state", "priority", "blocked_reason", "reason")) if rows else "<p>No WorkUnit plan items are available.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _search_need_linked_workunits(workunits: Sequence[SearchNeedWorkUnitView]) -> str:
+    rows = tuple(
+        {
+            "workunit_id": item.workunit_id,
+            "kind": item.kind,
+            "state": item.state,
+            "title": item.title,
+            "policy_state": item.policy_state,
+            "linked_hunt": render_link("/hunt/" + quote(item.search_hunt_id), item.search_hunt_id) if item.search_hunt_id else "",
+            "execution_enabled": item.execution_enabled,
+        }
+        for item in workunits
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-workunits-heading"><h2 id="need-workunits-heading">Linked WorkUnits</h2>',
+            render_table(rows, headers=("workunit_id", "kind", "state", "title", "policy_state", "linked_hunt", "execution_enabled")) if rows else "<p>No linked WorkUnits are recorded for this SearchNeed.</p>",
+            render_notice("scope", "Policy-gated WorkUnits stay blocked; this page has no execution controls."),
+            "</section>",
+        ]
+    )
+
+
+def _search_need_workunit_form(view: SearchNeedDetailPageView) -> str:
+    action = "/need/" + quote(view.need_id) + "/workunits"
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-workunit-form-heading"><h2 id="need-workunit-form-heading">Persist WorkUnit plan</h2>',
+            render_notice("scope", "Persisting the plan requires an operator token and writes only local queue records."),
+            f'<form method="post" action="{escape_html(action)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><label>Idempotency key <input name="idempotency_key"></label></p>',
+            '<p><button type="submit">Persist planned WorkUnits</button></p>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
 def _search_need_transitions(transitions: Sequence[SearchNeedTransitionView]) -> str:
     rows = tuple(
         {
@@ -889,7 +982,8 @@ def _search_need_transitions(transitions: Sequence[SearchNeedTransitionView]) ->
 
 def _search_need_unavailable_actions() -> str:
     rows = (
-        {"action": "WorkUnit pipeline", "status": "deferred", "reason": "Background work generation is enabled only in the next pipeline."},
+        {"action": "WorkUnit pipeline", "status": "available", "reason": "SearchNeeds can persist linked queue records without running them."},
+        {"action": "background runner", "status": "deferred", "reason": "Runner scheduling is handled by the next pipeline."},
         {"action": "source probes", "status": "disabled", "reason": "Source inspection requires a future source policy gate."},
         {"action": "extraction", "status": "deferred", "reason": "Extraction requires a later safety gate."},
         {"action": "AI escalation", "status": "disabled", "reason": "Model/provider calls are disabled."},

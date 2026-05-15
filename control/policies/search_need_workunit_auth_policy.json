@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_need_workunit_auth_policy.v0",
+  "generation_requires_operator_token": true,
+  "plan_preview_requires_token": false,
+  "persist_requires_token": true,
+  "raw_token_storage_forbidden": true,
+  "token_logging_forbidden": true,
+  "localhost_only_mutation": true,
+  "lan_mutation_forbidden": true,
+  "missing_token_rejected": true,
+  "invalid_token_rejected": true
+}

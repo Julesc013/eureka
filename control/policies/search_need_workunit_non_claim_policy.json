@@ -1,0 +1,16 @@
+{
+  "schema_version": "search_need_workunit_non_claim_policy.v0",
+  "forbidden_claims": [
+    "workunit_is_truth",
+    "workunit_is_evidence",
+    "workunit_approves_source_access",
+    "workunit_executes_source_probe",
+    "workunit_executes_extraction",
+    "workunit_executes_ai",
+    "workunit_clears_rights",
+    "workunit_clears_malware_safety",
+    "workunit_updates_index_directly",
+    "production_ready",
+    "public_launch_ready"
+  ]
+}

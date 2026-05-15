@@ -1,0 +1,13 @@
+{
+  "schema_version": "hunt_to_workunit_policy.v0",
+  "workunit_creation_from_search_need_enabled": true,
+  "workunit_execution_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}
