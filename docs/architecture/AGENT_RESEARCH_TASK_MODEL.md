@@ -12,3 +12,7 @@ Required disabled flags:
 - browser/network research disabled by policy
 
 The task model exists so a later reviewed gate can reason over a stable input packet shape without changing the local hunt workflow.
+
+## Replay Relationship
+
+HUNT-10 may draft an agent research task as part of replay, but the task remains provider-disabled and non-executable. Replay records that the disabled draft can be reproduced; it does not call a provider or create a candidate report.

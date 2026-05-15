@@ -2,7 +2,7 @@
 
 ## Review Objective
 
-Review HUNT-09: Agent research task contract, provider disabled.
+Review HUNT-10: Deterministic hunt replay harness.
 
 ## Decision Requested
 
@@ -10,7 +10,7 @@ PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED
 
 ## Task Packet Reference
 
-`.aide/queue/HUNT-09/task.yaml`
+`.aide/queue/HUNT-10/task.yaml`
 
 ## Context Packet Reference
 
@@ -22,30 +22,27 @@ PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED
 
 ## Evidence Packet References
 
-- `control/audits/hunt-09-agent-research-task-contract-v0/`
-- `control/inventory/agent_research_task_result.json`
-- `control/inventory/agent_research_disabled_boundary_result.json`
-- `control/inventory/agent_research_report_schema_inventory.json`
-- `control/inventory/hunt_09_next_task_decision.json`
-- `scripts/validate_agent_research_task_contract.py`
+- `control/audits/hunt-10-deterministic-replay-v0/`
+- `control/inventory/hunt_replay_result.json`
+- `control/inventory/hunt_replay_demo_result.json`
+- `control/inventory/hunt_replay_step_matrix.json`
+- `control/inventory/hunt_replay_blocked_step_matrix.json`
+- `control/inventory/hunt_10_next_task_decision.json`
+- `scripts/validate_hunt_replay.py`
 
 ## Changed Files Summary
 
-- Added `runtime/agent_research/` records, schema, store, task builder, report schema, validation, and queries.
-- Added local appliance store integration for `db/agent_research.sqlite`.
-- Added CLI, demo, validator, policies, inventories, audit pack, docs, and focused tests.
-- Added API/workbench visibility for disabled agent research task drafts on hunt and SearchNeed pages.
-- Advanced queue metadata to HUNT-10.
+- Added deterministic Search Hunt replay records, fixtures, diffing, validation, and store support.
+- Added replay CLI, demo, validator, policies, inventories, audit pack, docs, and focused tests.
+- Added API/workbench visibility and localhost/token-gated replay run controls.
+- Advanced queue metadata to HUNT-11.
 
 ## Validation Summary
 
-- `python scripts/validate_agent_research_task_contract.py --json`: PASS.
-- Agent research focused runtime and operations tests: PASS.
-- JSON syntax checks for HUNT-09 policy, inventory, and audit report files: PASS.
-- `git diff --check`: PASS with line-ending warnings.
-- `python scripts/check_architecture_boundaries.py`: PASS.
-- Generated artifact cleanliness is expected to pass after commit; pre-commit drift is the new audit pack.
-- Broad `python -m unittest discover -s tests -t .` timed out and should be treated as a validation warning.
+- `python scripts/validate_hunt_replay.py --json`: expected PASS for HUNT-10.
+- Hunt replay focused runtime and operations tests cover plan, replay-local, verify-existing, routes, UI, policy, diff, and scripts.
+- JSON syntax checks cover HUNT-10 policy, inventory, and audit report files.
+- Broad validation status should be reported in the final HUNT-10 response.
 
 ## Token Summary
 
@@ -53,14 +50,14 @@ Compact packet only; full historical HUNT prompts are intentionally not copied h
 
 ## Risk Summary
 
-- Provider and task execution remain disabled.
-- HUNT-06 through HUNT-08 validators are queue-position sensitive and fail after the queue advances to HUNT-10.
-- LOCAL validators carry pre-existing runtime leakage warnings.
+- Replay-local records deterministic local replay effects in the explicit local instance; validators use disposable temp instances for isolation.
+- HUNT validators from earlier queue phases may be queue-position sensitive after the queue advances to HUNT-11.
+- LOCAL validators may retain pre-existing runtime leakage warnings.
 
 ## Non-Goals / Scope Guard
 
-HUNT-09 did not add model/provider calls, browser calls, source probes, extraction, agent execution, review/index mutation, deployment, production readiness, or public launch readiness.
+HUNT-10 did not add source probes, extraction, AI/model/provider calls, browser calls, artifact acquisition, artifact launch, master-index mutation, site output mutation, deployment, production readiness, or public launch readiness.
 
 ## Reviewer Instructions
 
-Review against repo-local files and HUNT-09 evidence. Treat agent research output as candidate-only contract scaffolding, not truth, evidence acceptance, provider approval, or execution readiness.
+Review against repo-local files and HUNT-10 evidence. Treat replay output as local reproducibility/audit data, not truth, evidence acceptance, source approval, or global absence proof.

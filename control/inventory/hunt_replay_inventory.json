@@ -1,0 +1,14 @@
+{
+  "schema_version": "hunt_replay_inventory.v0",
+  "task": "HUNT-10",
+  "replay_enabled": true,
+  "plan_only_enabled": true,
+  "replay_local_enabled": true,
+  "verify_existing_enabled": true,
+  "operator_token_required_for_run": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "external_network_enabled": false,
+  "deployment_performed": false
+}

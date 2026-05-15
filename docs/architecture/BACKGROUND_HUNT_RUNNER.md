@@ -45,3 +45,6 @@ The background hunt runner is exercised by the workbench integration smoke as on
 
 Background hunt runner work remains deterministic and local. HUNT-09 agent research task drafts are visible beside Hunt and SearchNeed state, but they are not runnable WorkUnits and do not enable model providers, browsers, source probes, or extraction.
 
+## Replay Relationship
+
+HUNT-10 reuses the safe deterministic runner in replay-local mode to reproduce local workflow state. Policy-blocked WorkUnits remain blocked during replay, and replay records the worker result as local run state rather than evidence acceptance.

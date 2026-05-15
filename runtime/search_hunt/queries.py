@@ -14,6 +14,7 @@ from .records import (
     SearchHuntTransition,
 )
 from .run_records import BackgroundHuntRun
+from .replay_records import HuntReplayRecord
 from .steering import SearchHuntSteeringPreference
 
 
@@ -123,6 +124,17 @@ def row_to_background_hunt_run(row: Mapping[str, Any]) -> BackgroundHuntRun:
     payload.setdefault("started_at", str(row["started_at"]))
     payload.setdefault("finished_at", optional(row["finished_at"]))
     return BackgroundHuntRun.from_dict(payload)
+
+
+def row_to_hunt_replay_record(row: Mapping[str, Any]) -> HuntReplayRecord:
+    payload = dict(decode_json(row["payload_json"], {}))
+    payload.setdefault("replay_id", str(row["replay_id"]))
+    payload.setdefault("hunt_id", str(row["hunt_id"]))
+    payload.setdefault("replay_source", str(row["replay_source"]))
+    payload.setdefault("status", str(row["status"]))
+    payload.setdefault("started_at", str(row["started_at"]))
+    payload.setdefault("finished_at", optional(row["finished_at"]))
+    return HuntReplayRecord.from_dict(payload)
 
 
 def optional(value: Any) -> str | None:

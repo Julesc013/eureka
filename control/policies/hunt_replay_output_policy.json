@@ -1,0 +1,16 @@
+{
+  "schema_version": "hunt_replay_output_policy.v0",
+  "required_outputs": [
+    "JSON replay report",
+    "replay step list",
+    "blocked step list",
+    "expected-vs-actual summary",
+    "limitations",
+    "warnings",
+    "no-claim section",
+    "reproducibility notes"
+  ],
+  "structured_json_required": true,
+  "replay_diff_required": true,
+  "blocked_step_reporting_required": true
+}

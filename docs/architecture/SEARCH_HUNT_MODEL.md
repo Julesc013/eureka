@@ -29,3 +29,9 @@ HUNT-08 proves the local Search Hunt loop through CLI, JSON API, and HTML workbe
 ## HUNT-09 Agent Research Boundary
 
 Search Hunt Sessions may now produce disabled agent research task drafts through the local task contract. Drafts require an existing exhaustion report plus local context. They do not run providers, browsers, source probes, extraction, or review/index mutation. Their future output schema is candidate-only and review-required.
+
+## HUNT-10 Replay Harness
+
+Search Hunt Sessions can now be converted into deterministic local replay fixtures and replay results. Replay covers the local workflow state from query and commands through exhaustion, SearchNeeds, WorkUnits, one safe deterministic worker run, disabled agent task drafting, and final summaries.
+
+Replay is audit machinery only. It does not run source probes, extraction, AI/model providers, browser research, artifact acquisition, artifact launch, deployment, or master-index mutation, and it does not prove truth or broad absence.

@@ -1,0 +1,17 @@
+{
+  "schema_version": "hunt_replay_demo_result.v0",
+  "task": "HUNT-10",
+  "status": "pass",
+  "demo_added": true,
+  "plan_only_passed": true,
+  "replay_local_passed": true,
+  "verify_existing_passed": true,
+  "blocked_source_probe_remained_blocked": true,
+  "blocked_extraction_remained_blocked": true,
+  "blocked_ai_model_remained_blocked": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

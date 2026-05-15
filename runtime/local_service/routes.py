@@ -66,6 +66,13 @@ def route_request(
     if path == "/api/v1/hunts":
         return _hunt_list_response(runtime, request_context)
     parsed_hunt_route = _parse_hunt_route(path)
+    if parsed_hunt_route and parsed_hunt_route[1] == "replay":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_replay_response(runtime, hunt_id)
+        if _wants_json(request_context):
+            return _hunt_replay_response(runtime, hunt_id)
+        return _hunt_detail_html_response(runtime, hunt_id)
     if parsed_hunt_route and parsed_hunt_route[1] == "runner":
         hunt_id = parsed_hunt_route[0]
         if path.startswith("/api/v1/"):
@@ -408,6 +415,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     linked_workunits = _search_need_runtime().list_workunits_for_hunt(runtime, hunt_id, limit=100)
     runner_summary = _search_hunt().summarize_background_hunt(runtime, hunt_id)
     agent_tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(hunt_id=hunt_id, limit=100)]
+    replay_summary = _hunt_replay_summary(runtime, hunt_id)
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
         "status": "pass",
@@ -422,6 +430,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "workunits": linked_workunits,
         "background_runner": runner_summary,
         "agent_research_tasks": agent_tasks,
+        "hunt_replay": replay_summary,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
         "hunt_creation_enabled": False,
@@ -436,6 +445,8 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "workunit_creation_enabled": True,
         "workunit_execution_enabled": False,
         "background_hunt_runner_enabled": True,
+        "hunt_replay_enabled": True,
+        "replay_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "agent_research_task_draft_enabled": not bool(getattr(runtime, "read_only", True)),
         "agent_research_provider_enabled": False,
         "agent_research_execution_enabled": False,
@@ -617,6 +628,24 @@ def _hunt_runner_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
             "read_only": True,
             "workunit_execution_enabled_for_safe_workers": True,
             "runner_execution_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _hunt_replay_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    payload = _hunt_replay_payload(
+        "hunt_replay_status",
+        {
+            "hunt_id": hunt_id,
+            "replay": _hunt_replay_summary(runtime, hunt_id),
+            "read_only": True,
+            "replay_run_performed": False,
         },
     )
     return json_response(200, payload)
@@ -878,6 +907,10 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return error_response(401, "operator_token_required", str(exc))
     hunt_mutation = _parse_hunt_mutation_path(path)
     if hunt_mutation:
+        if hunt_mutation[1] == "replay-plan":
+            return _apply_hunt_replay_plan_response(runtime, request_context, hunt_mutation[0])
+        if hunt_mutation[1] == "replay-run":
+            return _apply_hunt_replay_run_response(runtime, request_context, hunt_mutation[0])
         if hunt_mutation[1] == "runner-plan":
             return _apply_hunt_runner_plan_response(runtime, request_context, hunt_mutation[0])
         if hunt_mutation[1] == "runner-run-next":
@@ -1135,6 +1168,53 @@ def _apply_hunt_runner_run_response(runtime: Any, request_context: LocalRequestC
     return json_response(200, payload)
 
 
+def _apply_hunt_replay_plan_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    try:
+        fixture = _search_hunt().build_replay_plan_from_hunt(runtime, hunt_id)
+        result = _search_hunt().run_hunt_replay(runtime, fixture, mode="plan_only")
+    except Exception as exc:
+        return error_response(400, "hunt_replay_plan_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _hunt_replay_payload(
+        "hunt_replay_plan",
+        {
+            "hunt_id": hunt_id,
+            "fixture": fixture.to_dict(),
+            "plan": result.to_dict(),
+            "replay_run_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _apply_hunt_replay_run_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    operator_label = first_param(request_context.body_params, "operator_label", "local_operator")
+    context = {
+        "authorized": True,
+        "operator_label": operator_label,
+        "raw_token_stored": False,
+    }
+    try:
+        fixture = _search_hunt().build_replay_fixture_from_hunt(runtime, hunt_id)
+        result = _search_hunt().run_hunt_replay(runtime, fixture, operator_context=context, mode="replay_local")
+    except Exception as exc:
+        return error_response(400, "hunt_replay_run_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _hunt_replay_payload(
+        "hunt_replay_run",
+        {
+            "hunt_id": hunt_id,
+            "fixture": fixture.to_dict(),
+            "result": result.to_dict(),
+            "record": result.record.to_dict(),
+            "replay_run_performed": True,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _record_decision_response(runtime: Any, request_context: LocalRequestContext, review_item_id: str) -> LocalServiceResponse:
     params = request_context.body_params
     decision = first_param(params, "decision", "")
@@ -1177,9 +1257,9 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks"}:
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay"}:
         return parts[3], parts[4]
     return None
 
@@ -1191,16 +1271,20 @@ def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
         return parts[1], parts[2]
     if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "runner" and parts[3] in {"plan", "run-next", "run-batch"}:
         return parts[1], "runner-" + parts[3]
+    if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "replay" and parts[3] in {"plan", "run"}:
+        return parts[1], "replay-" + parts[3]
     if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need", "agent-task-draft"}:
         return parts[3], parts[4]
     if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "runner" and parts[5] in {"plan", "run-next", "run-batch"}:
         return parts[3], "runner-" + parts[5]
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "replay" and parts[5] in {"plan", "run"}:
+        return parts[3], "replay-" + parts[5]
     return None
 
 
 def _mutation_route_allows_missing_token(path: str) -> bool:
     parsed = _parse_hunt_mutation_path(path)
-    return bool(parsed and parsed[1] == "runner-plan")
+    return bool(parsed and parsed[1] in {"runner-plan", "replay-plan"})
 
 
 def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
@@ -1395,6 +1479,11 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
             "reason": "Disabled task records are visible, but providers and execution are not enabled.",
         },
         {
+            "action": "hunt replay",
+            "status": "available",
+            "reason": "Replay can plan and rerun deterministic local workflow steps while future actions remain blocked.",
+        },
+        {
             "action": "source probes",
             "status": "disabled",
             "reason": "Source-probe execution remains behind a future source gate.",
@@ -1512,6 +1601,62 @@ def _background_hunt_runner_payload(action: str, payload: dict[str, Any]) -> dic
         + [
             "background hunt runner uses deterministic local workers only",
             "policy-blocked WorkUnits remain blocked",
+        ],
+    }
+    result.update(payload)
+    return result
+
+
+def _hunt_replay_summary(runtime: Any, hunt_id: str) -> dict[str, Any]:
+    fixture = _search_hunt().build_replay_plan_from_hunt(runtime, hunt_id)
+    plan = _search_hunt().run_hunt_replay(runtime, fixture, mode="plan_only")
+    records = [item.to_dict() for item in runtime.search_hunt.list_replay_results(hunt_id=hunt_id, limit=20)]
+    latest = records[0] if records else None
+    return {
+        "schema_version": "hunt_replay_summary.v0",
+        "hunt_id": hunt_id,
+        "fixture": fixture.to_dict(),
+        "plan": plan.to_dict(),
+        "latest_result": latest,
+        "results": records,
+        "result_count": len(records),
+        "blocked_step_count": len(fixture.blocked_steps),
+        "expected_step_count": len(fixture.expected_steps),
+        "source_probe_executed": False,
+        "extraction_executed": False,
+        "external_network_used": False,
+        "model_provider_used": False,
+        "deployment_performed": False,
+    }
+
+
+def _hunt_replay_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "hunt_replay_response.v0",
+        "status": "pass",
+        "action": action,
+        "operator_token_required_for_run": True,
+        "localhost_only_run": True,
+        "lan_replay_run_enabled": False,
+        "plan_only_enabled": True,
+        "replay_local_enabled": True,
+        "verify_existing_enabled": True,
+        "source_probe_executed": False,
+        "extraction_executed": False,
+        "external_network_used": False,
+        "model_provider_used": False,
+        "download_install_execute_performed": False,
+        "master_index_mutated": False,
+        "site_dist_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + [
+            "hunt replay is for local reproducibility and audit only",
+            "blocked future actions remain blocked",
+            "replay is not truth, evidence acceptance, or broad absence proof",
         ],
     }
     result.update(payload)

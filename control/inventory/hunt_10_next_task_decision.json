@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_10_next_task_decision.v0",
+  "task": "HUNT-10",
+  "recommended_next_task": "HUNT-11 \u2014 Bounded AI escalation gate, disabled by default",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "hunt_replay_available": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "Deterministic hunt replay exists; disabled-by-default AI escalation gate is next."
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "hunt_replay_step_matrix.v0",
+  "task": "HUNT-10",
+  "enabled_steps": [
+    {
+      "kind": "create_hunt",
+      "side_effect": "local replay hunt record"
+    },
+    {
+      "kind": "apply_hunt_command",
+      "side_effect": "local command history"
+    },
+    {
+      "kind": "add_steering_preference",
+      "side_effect": "local steering history"
+    },
+    {
+      "kind": "generate_exhaustion_report",
+      "side_effect": "local exhaustion report"
+    },
+    {
+      "kind": "create_search_need",
+      "side_effect": "local SearchNeed record"
+    },
+    {
+      "kind": "create_workunit_plan",
+      "side_effect": "plan only"
+    },
+    {
+      "kind": "create_workunits",
+      "side_effect": "local queue records"
+    },
+    {
+      "kind": "run_safe_deterministic_worker",
+      "side_effect": "safe local worker result and WorkUnit transition"
+    },
+    {
+      "kind": "draft_agent_research_task_disabled",
+      "side_effect": "provider-disabled draft record"
+    },
+    {
+      "kind": "summarize_final_state",
+      "side_effect": "replay result summary"
+    }
+  ],
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false
+}

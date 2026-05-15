@@ -6,6 +6,8 @@ from .errors import SearchHuntValidationError
 from .commands import SearchHuntCommand, command_requires_reason, coerce_command_type
 from .records import SearchHuntExhaustionReport, SearchHuntSession
 from .run_records import BackgroundHuntRun
+from .replay_records import HuntReplayRecord
+from .replay_validation import validate_replay_record
 from .steering import SearchHuntSteeringPreference, coerce_steering_type
 
 
@@ -122,6 +124,10 @@ def validate_background_hunt_run(run: BackgroundHuntRun) -> BackgroundHuntRun:
         if payload.get(key) is True:
             raise SearchHuntValidationError(f"forbidden background runner flag set: {key}")
     return run
+
+
+def validate_hunt_replay_record(record: HuntReplayRecord) -> HuntReplayRecord:
+    return validate_replay_record(record)
 
 
 def validate_query_text(query: str) -> str:

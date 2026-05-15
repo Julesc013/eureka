@@ -27,3 +27,7 @@ HUNT-08 adds integrated workflow, workbench, and API smoke scripts for the local
 ## HUNT-09 Result
 
 HUNT-09 adds disabled agent research task records and a candidate-only future report schema. The next recommended task is HUNT-10, deterministic hunt replay. F0 remains deferred and SYN remains an alternative follow-up.
+
+## HUNT-10 Result
+
+HUNT-10 adds deterministic local replay for the Search Hunt workflow. Replay can plan, run local deterministic steps, verify existing state, and report expected-vs-actual diffs while keeping source probes, extraction, AI/model calls, artifact acquisition or launch, deployment, production readiness, and public launch readiness disabled.

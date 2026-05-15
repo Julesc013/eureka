@@ -472,6 +472,7 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _search_hunt_exhaustion_report(view),
             _search_hunt_linked_needs(view.search_needs),
             _search_hunt_linked_workunits(view.workunits),
+            _hunt_replay_section(view),
             _background_hunt_runner_section(view),
             _agent_research_boundary_section(view.agent_research_boundary),
             _agent_research_tasks_section(view.agent_research_tasks),
@@ -824,6 +825,66 @@ def _background_hunt_runner_section(view: SearchHuntDetailPageView) -> str:
             "<h3>Latest runner history</h3>",
             render_table(run_rows, headers=("run_id", "status", "worker_kinds", "workunit_ids", "started_at", "finished_at")) if run_rows else "<p>No background hunt runs are recorded.</p>",
             controls,
+            "</section>",
+        ]
+    )
+
+
+def _hunt_replay_section(view: SearchHuntDetailPageView) -> str:
+    plan_rows = tuple(
+        {"step": item.kind, "status": item.status, "label": item.label, "reason": item.reason}
+        for item in view.replay_plan_steps
+    )
+    blocked_rows = tuple(
+        {"step": item.kind, "status": item.status, "label": item.label, "reason": item.reason}
+        for item in view.replay_blocked_steps
+    )
+    result_rows = tuple(
+        {
+            "replay_id": item.replay_id,
+            "status": item.status,
+            "diff_status": item.diff_status,
+            "matched": item.matched,
+            "started_at": item.started_at,
+            "finished_at": item.finished_at,
+        }
+        for item in view.replay_results
+    )
+    controls = _hunt_replay_controls(view) if view.replay_controls_enabled else ""
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-replay-heading"><h2 id="hunt-replay-heading">Deterministic hunt replay</h2>',
+            render_notice("scope", "Replay is for local reproducibility and audit; replay is not truth or accepted evidence."),
+            render_notice("scope", "Source probes, extraction, AI/model calls, artifact acquisition, launch actions, and deployment are not replayed."),
+            "<h3>Replay plan preview</h3>",
+            render_table(plan_rows, headers=("step", "status", "label", "reason")) if plan_rows else "<p>No replay plan is available.</p>",
+            "<h3>Blocked replay steps</h3>",
+            render_table(blocked_rows, headers=("step", "status", "label", "reason")) if blocked_rows else "<p>No blocked replay steps are listed.</p>",
+            "<h3>Latest replay diff</h3>",
+            render_table(view.replay_diff_summary, headers=("field", "value")) if view.replay_diff_summary else "<p>No replay result has been recorded.</p>",
+            "<h3>Replay history</h3>",
+            render_table(result_rows, headers=("replay_id", "status", "diff_status", "matched", "started_at", "finished_at")) if result_rows else "<p>No replay runs are recorded.</p>",
+            controls,
+            "</section>",
+        ]
+    )
+
+
+def _hunt_replay_controls(view: SearchHuntDetailPageView) -> str:
+    plan = "/hunt/" + quote(view.hunt_id) + "/replay/plan"
+    run = "/hunt/" + quote(view.hunt_id) + "/replay/run"
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-replay-controls-heading"><h3 id="hunt-replay-controls-heading">Replay controls</h3>',
+            render_notice("scope", "Plan preview does not replay workflow steps. Local replay requires an operator token and localhost access."),
+            f'<form method="post" action="{escape_html(plan)}">',
+            '<p><button type="submit">Refresh replay plan</button></p>',
+            "</form>",
+            f'<form method="post" action="{escape_html(run)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><button type="submit">Run local replay</button></p>',
+            "</form>",
             "</section>",
         ]
     )

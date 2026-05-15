@@ -1,0 +1,46 @@
+{
+  "schema_version": "hunt_replay_record.v0",
+  "replay_id": "shrpl_sample",
+  "replay_source": "local_hunt_record",
+  "hunt_id": "shs_sample",
+  "query": "sampleproject",
+  "instance_schema_version": "1",
+  "index_snapshot_id": "local-current",
+  "expected_steps": [
+    {
+      "kind": "create_hunt",
+      "status": "planned"
+    }
+  ],
+  "executed_steps": [
+    {
+      "kind": "create_hunt",
+      "status": "executed"
+    }
+  ],
+  "blocked_steps": [
+    {
+      "kind": "run_source_probe",
+      "status": "blocked"
+    }
+  ],
+  "skipped_steps": [],
+  "expected_outputs": {
+    "hunt_created": true
+  },
+  "actual_outputs": {
+    "hunt_created": true
+  },
+  "diff_summary": {
+    "status": "matched",
+    "matched": true,
+    "differences": []
+  },
+  "status": "pass",
+  "warnings": [],
+  "limitations": [
+    "local deterministic replay only"
+  ],
+  "started_at": "2026-05-15T00:00:00Z",
+  "finished_at": "2026-05-15T00:00:00Z"
+}

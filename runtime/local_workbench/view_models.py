@@ -25,6 +25,7 @@ SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("WorkUnit pipeline", "available", "SearchNeeds can create linked WorkUnits without executing them."),
     ("background runner", "available", "Safe deterministic local workers can process linked WorkUnits."),
     ("agent research task drafts", "disabled", "Disabled task records are visible, but providers and execution are not enabled."),
+    ("hunt replay", "available", "Replay can plan and rerun deterministic local workflow steps while future actions remain blocked."),
     ("source probes", "disabled", "Source-probe execution remains behind a future source gate."),
     ("extraction", "deferred", "Extraction remains outside this Search Hunt UI state layer."),
     ("AI escalation", "disabled", "Model/provider calls are disabled."),
@@ -387,6 +388,24 @@ class AgentResearchDisabledBoundaryView:
 
 
 @dataclass(frozen=True)
+class HuntReplayStepView:
+    kind: str
+    status: str
+    label: str
+    reason: str
+
+
+@dataclass(frozen=True)
+class HuntReplayResultView:
+    replay_id: str
+    status: str
+    started_at: str
+    finished_at: str
+    diff_status: str
+    matched: bool
+
+
+@dataclass(frozen=True)
 class SearchHuntListPageView:
     hunt_count: int
     hunts: tuple[SearchHuntCardView, ...]
@@ -476,6 +495,11 @@ class SearchHuntDetailPageView:
     workunits: tuple[SearchNeedWorkUnitView, ...]
     agent_research_tasks: tuple[AgentResearchTaskCardView, ...]
     agent_research_boundary: AgentResearchDisabledBoundaryView
+    replay_plan_steps: tuple[HuntReplayStepView, ...]
+    replay_blocked_steps: tuple[HuntReplayStepView, ...]
+    replay_results: tuple[HuntReplayResultView, ...]
+    replay_diff_summary: tuple[Mapping[str, Any], ...]
+    replay_controls_enabled: bool
     background_runner_plan: tuple[Mapping[str, Any], ...]
     background_runner_blocked_workunits: tuple[Mapping[str, Any], ...]
     background_runner_runs: tuple[Mapping[str, Any], ...]
@@ -726,6 +750,11 @@ def build_search_hunt_detail_page_view(
         workunits=linked_workunits,
         agent_research_tasks=tuple(_agent_task_card(_mapping(item)) for item in _sequence(status_payload.get("agent_research_tasks"))),
         agent_research_boundary=build_agent_research_disabled_boundary_view(),
+        replay_plan_steps=tuple(_replay_step_view(_mapping(item)) for item in _sequence(_mapping(_mapping(status_payload.get("hunt_replay")).get("fixture")).get("expected_steps"))),
+        replay_blocked_steps=tuple(_replay_step_view(_mapping(item)) for item in _sequence(_mapping(_mapping(status_payload.get("hunt_replay")).get("fixture")).get("blocked_steps"))),
+        replay_results=tuple(_replay_result_view(_mapping(item)) for item in _sequence(_mapping(status_payload.get("hunt_replay")).get("results"))),
+        replay_diff_summary=_replay_diff_rows(_mapping(_mapping(status_payload.get("hunt_replay")).get("latest_result")).get("diff_summary")),
+        replay_controls_enabled=bool(status_payload.get("replay_controls_enabled", not bool(status_payload.get("read_only", True)))),
         background_runner_plan=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("runnable_workunits"))),
         background_runner_blocked_workunits=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("blocked_workunits"))),
         background_runner_runs=tuple(_background_runner_run_row(_mapping(item)) for item in _sequence(runner_summary.get("runs"))),
@@ -987,6 +1016,55 @@ def _agent_task_card(value: Mapping[str, Any]) -> AgentResearchTaskCardView:
         report_candidate_only=bool(schema.get("candidate_only", True)),
         review_required=bool(schema.get("review_required", True)),
     )
+
+
+def _replay_step_view(value: Mapping[str, Any]) -> HuntReplayStepView:
+    policy = _mapping(value.get("policy_decision"))
+    display_kind = _display_replay_step_kind(str(value.get("kind", "")))
+    return HuntReplayStepView(
+        kind=display_kind,
+        status=str(value.get("status", "")),
+        label=display_kind.replace("_", " "),
+        reason=str(policy.get("reason", "")),
+    )
+
+
+def _replay_result_view(value: Mapping[str, Any]) -> HuntReplayResultView:
+    diff = _mapping(value.get("diff_summary"))
+    return HuntReplayResultView(
+        replay_id=str(value.get("replay_id", "")),
+        status=str(value.get("status", "")),
+        started_at=str(value.get("started_at", "")),
+        finished_at=str(value.get("finished_at", "")),
+        diff_status=str(diff.get("status", "")),
+        matched=bool(diff.get("matched", False)),
+    )
+
+
+def _replay_diff_rows(value: Any) -> tuple[Mapping[str, Any], ...]:
+    diff = _mapping(value)
+    if not diff:
+        return ()
+    return (
+        {"field": "status", "value": str(diff.get("status", ""))},
+        {"field": "matched", "value": bool(diff.get("matched", False))},
+        {"field": "difference_count", "value": len(_sequence(diff.get("differences")))},
+    )
+
+
+def _display_replay_step_kind(value: str) -> str:
+    replacements = {
+        "create_hunt": "record hunt",
+        "create_workunit_plan": "plan queue records",
+        "create_workunits": "persist queue records",
+        "run_source_probe": "source probe action",
+        "run_extraction": "extraction action",
+        "download_artifact": "artifact acquisition",
+        "install_or_execute_artifact": "artifact launch",
+        "run_ai_model": "model provider action",
+        "run_agent_research": "agent research action",
+    }
+    return replacements.get(value, value)
 
 
 def _background_runner_plan_row(value: Mapping[str, Any]) -> Mapping[str, Any]:

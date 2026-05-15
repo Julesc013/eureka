@@ -1,0 +1,15 @@
+id: HUNT-11
+title: Bounded AI escalation gate, disabled by default
+status: queued
+purpose: Define a bounded AI escalation gate after deterministic hunt replay exists, while keeping provider execution disabled by default.
+allowed_scope_summary: AI escalation gate policy, contracts, validation, docs, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-10 completed
+  - source probes remain disabled unless separately gated
+  - extraction remains disabled unless separately gated
+  - model providers remain disabled by default
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-10
+alternative_next: SYN-00

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-10
+current_recommended_task: HUNT-11
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -232,12 +232,21 @@ entries:
     recommended_next: HUNT-10
   - id: HUNT-10
     title: Deterministic hunt replay harness
-    status: queued
+    status: completed
     purpose: Add deterministic replay for local Search Hunt workflows after disabled agent research task contracts exist.
     allowed_scope_summary: Replay harness, fixtures, validation, docs, inventories, and audit evidence only when explicitly scoped.
     gate: HUNT-09 completed; providers, source probes, extraction, deployment, production readiness, and public launch remain disabled.
     task: .aide/queue/HUNT-10/task.yaml
     recommended_after: HUNT-09
+    recommended_next: HUNT-11
+  - id: HUNT-11
+    title: Bounded AI escalation gate, disabled by default
+    status: queued
+    purpose: Define the disabled-by-default AI escalation gate after deterministic hunt replay exists.
+    allowed_scope_summary: AI escalation gate contracts, policies, docs, validators, inventories, and audit evidence only when explicitly scoped.
+    gate: HUNT-10 completed; model providers, source probes, extraction, deployment, production readiness, and public launch remain disabled by default.
+    task: .aide/queue/HUNT-11/task.yaml
+    recommended_after: HUNT-10
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

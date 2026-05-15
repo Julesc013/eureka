@@ -1,0 +1,13 @@
+{
+  "schema_version": "hunt_replay_diff.v0",
+  "status": "matched",
+  "matched": true,
+  "differences": [],
+  "expected_summary": {
+    "hunt_created": true
+  },
+  "actual_summary": {
+    "hunt_created": true
+  },
+  "warnings": []
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "hunt_replay_policy.v0",
+  "replay_enabled": true,
+  "deterministic_local_replay_only": true,
+  "plan_only_enabled": true,
+  "replay_local_enabled": true,
+  "verify_existing_enabled": true,
+  "operator_token_required_for_replay_run": true,
+  "localhost_only_replay_run": true,
+  "lan_replay_run_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "ai_model_execution_enabled": false,
+  "agent_research_execution_enabled": false,
+  "external_network_enabled": false,
+  "download_install_execute_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

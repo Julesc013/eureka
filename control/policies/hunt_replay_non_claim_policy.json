@@ -1,0 +1,16 @@
+{
+  "schema_version": "hunt_replay_non_claim_policy.v0",
+  "forbidden_claims": [
+    "replay_proves_truth",
+    "replay_proves_global_absence",
+    "replay_ran_source_probe",
+    "replay_ran_extraction",
+    "replay_ran_ai",
+    "replay_exhausted_internet",
+    "replay_clears_rights",
+    "replay_clears_malware_safety",
+    "production_ready",
+    "public_launch_ready"
+  ],
+  "review_required_for_interpretation": true
+}

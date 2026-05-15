@@ -1,0 +1,17 @@
+{
+  "schema_version": "hunt_replay_gap_register.v0",
+  "task": "HUNT-10",
+  "status": "pass",
+  "gaps": [
+    {
+      "id": "hunt_replay_temp_instance_is_implementation_scoped",
+      "status": "accepted_for_v0",
+      "summary": "The replay-local path records deterministic replay effects in the explicit local instance; validators use disposable instances for isolation."
+    },
+    {
+      "id": "live_source_replay_not_enabled",
+      "status": "deferred",
+      "summary": "Source, extraction, and AI replay steps remain blocked until future gates."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "hunt_replay_side_effect_policy.v0",
+  "replay_store_mutation_allowed": true,
+  "temp_instance_mutation_allowed": true,
+  "existing_instance_mutation_allowed_only_with_operator_token": true,
+  "workunit_state_mutation_allowed_for_safe_worker_replay": true,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "external_network_allowed": false,
+  "model_provider_allowed": false,
+  "download_allowed": false,
+  "install_execution_allowed": false,
+  "source_sync_allowed": false,
+  "lan_operations_allowed": false,
+  "deployment_allowed": false,
+  "site_dist_writes_allowed": false,
+  "master_index_mutation_allowed": false
+}

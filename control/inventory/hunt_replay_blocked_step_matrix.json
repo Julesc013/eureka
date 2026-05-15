@@ -1,0 +1,19 @@
+{
+  "schema_version": "hunt_replay_blocked_step_matrix.v0",
+  "task": "HUNT-10",
+  "blocked_steps": [
+    "run_source_probe",
+    "run_extraction",
+    "run_ai_model",
+    "run_agent_research",
+    "download_artifact",
+    "install_or_execute_artifact",
+    "mutate_master_index",
+    "deploy_service"
+  ],
+  "blocked_steps_remain_blocked": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

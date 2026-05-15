@@ -1,0 +1,15 @@
+{
+  "schema_version": "hunt_replay_result_payload.v0",
+  "mode": "replay_local",
+  "replay_id": "shrpl_sample",
+  "hunt_id": "shs_sample",
+  "status": "pass",
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "master_index_mutated": false,
+  "site_dist_mutated": false,
+  "deployment_performed": false
+}
