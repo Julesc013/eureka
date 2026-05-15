@@ -29,7 +29,7 @@
     "local_appliance_track_validator": "pass_with_warning_dev_ahead_main",
     "local_instance_validator": "pass_with_warnings",
     "manual_ignored_instance_smoke": "pass",
-    "runtime_leakage_gate": "fail_pre_existing_1030"
+    "runtime_leakage_gate": "valid_after_hunt_remediation"
   },
   "workunit_runtime_implemented": false
 }

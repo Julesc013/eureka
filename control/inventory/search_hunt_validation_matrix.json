@@ -17,10 +17,23 @@
     {
       "command": "python -m unittest tests.operations.test_hunt_to_main_promotion_review",
       "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_gate",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_handoff",
+      "status": "pass"
     }
   ],
   "full_discovery_status": "pass_after_remediation",
   "generated_artifact_cleanliness_status": "pass",
+  "hunt_remediation_continue_status": "pass",
   "local_validation_dependency_status": "pass",
   "schema_version": "search_hunt_validation_matrix.v0",
   "smoke_scripts": [
@@ -90,6 +103,10 @@
     },
     {
       "command": "python scripts/validate_ai_escalation_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_hunt_remediation_continue.py",
       "status": "pass"
     }
   ]

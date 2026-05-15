@@ -2,22 +2,19 @@
 
 ## Review Objective
 
-Review the completed HUNT remediation and SYN/F0 handoff readiness state.
+Review the current AIDE queue phase from compact evidence only and decide whether it is ready to pass its review gate.
 
 ## Decision Requested
 
-- PASS
-- PASS_WITH_NOTES
-- REQUEST_CHANGES
-- BLOCKED
+Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`.
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-task-packet.md` (5355 chars, 1339 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md`
+- `.aide/context/latest-context-packet.md` (1828 chars, 457 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -25,53 +22,110 @@ Review the completed HUNT remediation and SYN/F0 handoff readiness state.
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
+- verifier_result: PASS
+- report_chars: 3187
+- report_approx_tokens: 797
 
 ## Evidence Packet References
 
-- `control/inventory/hunt_remediation_result.json`
-- `control/inventory/hunt_remediation_validation_matrix.json`
-- `control/inventory/hunt_remediation_smoke_result.json`
-- `control/inventory/search_hunt_closeout_result.json`
-- `control/audits/hunt-remediation-v0/`
-- `.aide/verification/review-decision-policy.yaml`
+- `.aide/queue/README.template.md`
+- `.aide/queue/index.yaml`
 
 ## Changed Files Summary
 
-- Added HUNT remediation inventories, audit evidence, validator, and focused tests.
-- Updated HUNT closeout and LOCAL closeout evidence to zero remaining warnings.
-- Updated queue, task packet, and repo health so SYN-00 is the recommended next task.
+- none
 
 ## Validation Summary
 
-- HUNT remediation validator: PASS.
-- HUNT validator sweep: PASS.
-- LOCAL closeout validator: PASS.
-- Full unittest discovery: PASS.
-- Generated artifact cleanliness: PASS.
-- Architecture boundaries: PASS.
-- Runtime leakage validator: PASS.
-- AIDE validate and doctor: PASS.
+- validation evidence not found
 
 ## Token Summary
 
-- latest task packet: small
-- latest context packet: small
-- review packet: small
+- packet_path: `.aide/context/latest-review-packet.md`
+- method: chars / 4, rounded up
+- chars: 4254
+- approx_tokens: 1064
+- budget_status: PASS
+- max_token_warning: 2400
+- warnings:
+- none
+- formal ledger: `.aide/reports/token-ledger.jsonl`
+
+## Outcome Controller Summary
+
+- outcome_report: `.aide/controller/latest-outcome-report.md`
+- outcome_result: PASS
+- recommendations: `.aide/controller/latest-recommendations.md`
+- recommendation_count: 0
+- applies_automatically: false
+
+## Route Decision Summary
+
+- route_decision: `.aide/routing/latest-route-decision.json`
+- route_class: frontier
+- task_class: unknown
+- hard_floor_applied: none
+- quality_gate_status: WARN
+- advisory_only: true
+
+## Cache / Local State Summary
+
+- cache_keys: `.aide/cache/latest-cache-keys.json`
+- local_state_ignored: true
+- tracked_local_state_paths: 0
+- raw_prompt_storage: false
+- raw_response_storage: false
+- cache_key_count: 7
+
+## Gateway Skeleton Summary
+
+- gateway_status: `.aide/gateway/latest-gateway-status.json`
+- service: aide-gateway-skeleton
+- mode: local_skeleton_report_only
+- route_class: deterministic_local
+- verifier_status: pass
+- golden_task_status: pass
+- provider_calls_enabled: false
+- model_calls_enabled: false
+- outbound_network_enabled: false
+
+## Provider Adapter Summary
+
+- provider_status: `.aide/providers/latest-provider-status.json`
+- provider_family_count: 0
+- validation_result: pass
+- live_provider_calls: false
+- live_model_calls: false
+- network_calls: false
+- credentials_configured: false
+- metadata_only: true
 
 ## Risk Summary
 
-- No hard HUNT blockers remain.
-- No HUNT closeout warnings remain.
-- Existing legacy runtime leakage remains allowlisted with zero new HUNT violations.
+- This is the first real target-repo import; target adaptation may expose pack assumptions that were invisible inside AIDE.
+- Eureka-specific golden tasks now exist and pass, but they prove deterministic governance readiness rather than arbitrary product implementation quality.
+- No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
+- Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
+- Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
+- Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
+- Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
+- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.
 
 ## Non-Goals / Scope Guard
 
-- No SYN implementation.
-- No F0 implementation.
-- No source probes, extraction, model/provider calls, downloads/install/execution, or deployment.
-- No production readiness or public launch readiness claim.
+- Gateway
+- provider calls
+- model routing
+- Runtime/Service/Commander/UI/Mobile
+- MCP/A2A
+- automatic model calls or repair
 
 ## Reviewer Instructions
 
-- Verify the remediation evidence and clean-tree validators before accepting.
-- Treat SYN-00 as the recommended next planning track unless an explicit operator decision prioritizes F0.
+- Review only this packet and the referenced evidence when needed.
+- Do not request full chat history unless the packet is insufficient to judge correctness.
+- Do not re-summarize the whole project.
+- Do not reward scope creep.
+- Do not approve missing validation as a pass.
+- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
+- Decision policy: `.aide/verification/review-decision-policy.yaml`.

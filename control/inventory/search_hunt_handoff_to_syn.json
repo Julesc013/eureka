@@ -1,5 +1,6 @@
 {
   "implementation_started": false,
+  "last_remediation_continue_status": "pass",
   "next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
   "schema_version": "search_hunt_handoff_to_syn.v0",
   "status": "pass",

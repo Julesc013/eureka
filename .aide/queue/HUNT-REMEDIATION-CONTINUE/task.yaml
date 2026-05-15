@@ -1,0 +1,15 @@
+id: HUNT-REMEDIATION-CONTINUE
+title: Finish Search Hunt remediation continuation
+status: completed
+purpose: Confirm no remaining Search Hunt remediation blockers or warnings before SYN/F0 handoff.
+allowed_scope_summary: Continuation evidence, focused tests, validator, queue/context metadata, and safe closeout/handoff updates only.
+gate:
+  - operator-selected continuation after HUNT-REMEDIATION
+  - no source probes
+  - no extraction
+  - no model/provider calls
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-REMEDIATION
+recommended_next: SYN-00

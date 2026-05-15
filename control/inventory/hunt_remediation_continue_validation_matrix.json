@@ -1,0 +1,164 @@
+{
+  "schema_version": "hunt_remediation_continue_validation_matrix.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "status": "pass",
+  "all_hunt_validators_pass": true,
+  "all_local_dependency_validators_pass": true,
+  "hunt_workflow_smoke_pass": true,
+  "full_unittest_discovery_pass": true,
+  "generated_artifact_cleanliness_pass": true,
+  "architecture_boundaries_pass": true,
+  "runtime_leakage_gate_pass": true,
+  "focused_tests": [
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_gate",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_handoff",
+      "status": "pass"
+    }
+  ],
+  "hunt_validators": [
+    {
+      "command": "python scripts/validate_search_hunt_closeout.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_ai_escalation_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_hunt_replay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_agent_research_task_contract.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_workbench_integration.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_background_hunt_runner.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_hunt_to_workunits.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_hunt_to_search_need.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_exhaustion.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_commands.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_ui.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_runtime.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_track.py",
+      "status": "pass"
+    }
+  ],
+  "local_dependency_validators": [
+    {
+      "command": "python scripts/validate_local_appliance_closeout.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_clean_machine_bootstrap.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_lan_smoke.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_lan_safety_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_auto_test_harness.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_worker_runner.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_review_rebuild.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workunit_queue.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_workbench_page_hardening.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_html_workbench.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_http_service.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_runtime_composition.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_instance_migration_guard.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_instance_bootstrap.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_appliance_track.py",
+      "status": "pass"
+    }
+  ],
+  "full_validation": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass"
+    }
+  ]
+}

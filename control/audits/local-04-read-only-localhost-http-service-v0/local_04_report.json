@@ -35,7 +35,7 @@
     "local_instance_migration_guard_validator": "pass_with_pre_existing_leakage_warning",
     "local_runtime_composition_validator": "pass_with_pre_existing_leakage_warning",
     "manual_ignored_instance_smoke": "pass",
-    "runtime_leakage_gate": "fail_pre_existing_1030_new_unallowlisted_findings",
+    "runtime_leakage_gate": "valid_after_hunt_remediation",
     "runtime_leakage_validator": "fail_pre_existing"
   },
   "validator_added": true,

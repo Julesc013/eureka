@@ -1,0 +1,11 @@
+{
+  "schema_version": "hunt_remediation_continue_next_task_decision.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "alternative_next_task": "F0-00 \u2014 Refresh F0 after Local Appliance and HUNT",
+  "syn_can_start": true,
+  "f0_can_resume": true,
+  "f0_recommended_now": false,
+  "main_promotion_review_required": true,
+  "reason": "Search Hunt remediation is complete and synthetic query/eval pressure should precede extraction/source expansion."
+}

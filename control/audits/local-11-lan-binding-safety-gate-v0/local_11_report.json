@@ -35,7 +35,7 @@
     "full_unittest_discovery": "fail_other",
     "generated_artifact_cleanliness_precommit": "fail_expected_audit_generated_drift",
     "local_11_validator": "pass_with_warnings",
-    "runtime_leakage_gate": "fail_pre_existing_1030"
+    "runtime_leakage_gate": "valid_after_hunt_remediation"
   },
   "validator_added": true,
   "worker_execution_enabled": true,

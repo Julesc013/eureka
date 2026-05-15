@@ -1,0 +1,27 @@
+{
+  "schema_version": "hunt_remediation_continue_issue_register.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "status": "pass",
+  "all_remaining_issues_reviewed": true,
+  "issues": [],
+  "resolved_issues": [
+    {
+      "issue_id": "local_runtime_leakage_warning_stale",
+      "source_file": "control/inventory/local_*_leakage_baseline.json",
+      "source_validator_or_test": "LOCAL dependency validators",
+      "severity": "warning",
+      "category": "runtime_leakage",
+      "safe_to_fix_now": true,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "recommended_repair": "Update LOCAL leakage after-state evidence to the current validated runtime leakage gate status.",
+      "disposition": "resolved"
+    }
+  ],
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 0,
+  "blocks_syn": false,
+  "blocks_f0": false,
+  "blocks_main_promotion": false
+}

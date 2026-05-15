@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_remediation_continue_issue_register.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "status": "pass",
+  "all_remaining_issues_reviewed": true,
+  "issues": [],
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 0,
+  "blocks_syn": false,
+  "blocks_f0": false,
+  "blocks_main_promotion": false
+}

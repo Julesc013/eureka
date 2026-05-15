@@ -2,27 +2,44 @@
 
 ## PHASE
 
-SYN-00 - Synthetic Query Foundry planning over Local Appliance
+HUNT-REMEDIATION-CONTINUE - Finish remaining Search Hunt remediation
 
 ## GOAL
 
-Plan the Synthetic Query Foundry track after HUNT remediation closed the Search
-Hunt spine with no hard blockers or remaining HUNT closeout warnings.
+Close the remaining Search Hunt remediation continuation evidence, verify that
+all HUNT and LOCAL dependency gates are green, and leave the handoff ready for
+SYN-00 with F0 resumable but not recommended first.
 
 ## WHY
 
-Search Hunt now provides the active local investigation spine: Search Hunt
-Sessions, exhaustion reports, SearchNeeds, WorkUnits, deterministic workers,
-replay, agent-task contracts, and a disabled AI escalation gate. SYN should
-create query and eval pressure before extraction/source expansion resumes.
+The previous remediation pass returned Search Hunt to a green closeout state,
+but the continuation pass must prove that no child blockers, stale validation
+records, or warning-gated gaps remain before SYN/F0 handoff.
 
 ## CONTEXT_REFS
 
+- `control/inventory/hunt_remediation_result.json`
+- `control/inventory/hunt_remediation_blocker_register.json`
+- `control/inventory/hunt_remediation_warning_disposition.json`
+- `control/inventory/hunt_remediation_validation_matrix.json`
+- `control/inventory/hunt_remediation_next_task_decision.json`
+- `control/inventory/hunt_remediation_continue_input_state.json`
+- `control/inventory/hunt_remediation_continue_issue_register.json`
+- `control/inventory/hunt_remediation_continue_repair_result.json`
+- `control/inventory/hunt_remediation_continue_validation_matrix.json`
+- `control/inventory/hunt_remediation_continue_smoke_result.json`
+- `control/inventory/hunt_remediation_continue_boundary_audit.json`
+- `control/inventory/hunt_remediation_continue_result.json`
+- `control/inventory/hunt_remediation_continue_next_task_decision.json`
 - `control/inventory/search_hunt_closeout_result.json`
 - `control/inventory/search_hunt_capability_matrix.json`
+- `control/inventory/search_hunt_validation_matrix.json`
+- `control/inventory/search_hunt_warning_disposition.json`
+- `control/inventory/search_hunt_blocker_register.json`
 - `control/inventory/search_hunt_handoff_to_syn.json`
-- `control/inventory/hunt_remediation_next_task_decision.json`
-- `control/inventory/hunt_12_next_task_decision.json`
+- `control/inventory/search_hunt_handoff_to_f0.json`
+- `control/inventory/search_hunt_handoff_to_g_h_k.json`
+- `control/audits/hunt-remediation-continue-v0/`
 - `control/audits/hunt-remediation-v0/`
 - `control/audits/hunt-12-search-hunt-closeout-v0/`
 - `.aide/queue/index.yaml`
@@ -30,29 +47,27 @@ create query and eval pressure before extraction/source expansion resumes.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
+- `.aide/reports/eureka-repo-health.json`
+- `.aide/reports/eureka-repo-health.md`
 
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- `.aide/cache/**`
-- `.aide/context/**`
-- `.aide/controller/**`
-- `.aide/gateway/**`
-- `.aide/providers/**`
-- `.aide/reports/**`
-- `.aide/verification/**`
 - `control/**`
 - `docs/**`
 - `scripts/**`
 - `tests/**`
-- `runtime/local_appliance/**`
-- `runtime/local_eval/**`
-- `runtime/local_operator/**`
-- `runtime/local_service/**`
-- `runtime/local_workbench/**`
 - `runtime/search_hunt/**`
 - `runtime/search_need/**`
 - `runtime/workunit_queue/**`
+- `runtime/local_worker/**`
+- `runtime/agent_research/**`
+- `runtime/ai_escalation/**`
+- `runtime/local_appliance/**`
+- `runtime/local_service/**`
+- `runtime/local_workbench/**`
+- `runtime/local_operator/**`
+- `runtime/local_eval/**`
 
 ## FORBIDDEN_PATHS
 
@@ -70,45 +85,75 @@ create query and eval pressure before extraction/source expansion resumes.
 
 ## IMPLEMENTATION
 
-- Start from the remediation and closeout evidence, not chat history.
-- Keep SYN planning local and deterministic.
-- Use HUNT/WorkUnit/Local Appliance boundaries for query pressure planning.
-- Do not implement SYN runtime, F0 extraction, source probes, AI execution, or deployment.
-
-## VALIDATION
-
-- Run the task-state guard before substantive work.
-- Use HUNT remediation, closeout, generated artifact cleanliness, architecture
-  boundary, and relevant AIDE checks before handoff.
-- Report every command actually run and its outcome.
-
-## EVIDENCE
-
-- `control/inventory/hunt_remediation_result.json`
-- `control/inventory/hunt_remediation_validation_matrix.json`
-- `control/inventory/search_hunt_closeout_result.json`
-- `control/inventory/search_hunt_handoff_to_syn.json`
-- `control/audits/hunt-remediation-v0/`
-
-## ACCEPTANCE
-
-- SYN-00 remains the recommended next task.
-- F0-00 remains resumable but not recommended before SYN unless explicitly chosen.
-- No source probes, extraction, provider/model calls, deployment, production
-  readiness claim, or public launch readiness claim are introduced.
-
-## OUTPUT_SCHEMA
-
-- STATUS: PASS / PASS_WITH_WARNINGS / PARTIAL / BLOCKED / FAIL
-- SUMMARY: concise bullets
-- VALIDATION: commands and outcomes
-- NEXT_TASK: SYN-00 or explicit blocked/remediation alternative
-
-## TOKEN_ESTIMATE
-
-- small
+- Inspect repo-local remediation, closeout, validation, warning, and blocker evidence.
+- Classify remaining HUNT issues and repair only safe evidence or validation drift.
+- Update continuation inventories, audit pack, queue state, and repo-health.
+- Keep the next task decision pointed at SYN-00 when validation remains green.
 
 ## NON_GOALS
 
-Do not start F0 implementation, source probes, extraction, model/provider
-calls, deployment, production readiness, or public launch readiness.
+- Do not implement SYN.
+- Do not implement F0 extraction.
+- Do not enable or run source probes.
+- Do not run extraction.
+- Do not call model or provider APIs.
+- Do not browse the internet.
+- Do not deploy.
+- Do not claim production or public launch readiness.
+
+## VALIDATION
+
+- `python scripts/validate_hunt_remediation_continue.py --json`
+- `python -m unittest tests.operations.test_hunt_remediation_continue`
+- `python -m unittest tests.operations.test_hunt_remediation_continue_gate`
+- `python -m unittest tests.operations.test_hunt_remediation_continue_handoff`
+- all HUNT validators
+- LOCAL dependency validators
+- integrated local HUNT smoke
+- `python -m unittest discover -s tests -t .`
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python scripts/audit_runtime_architecture_leakage.py --check --json`
+- `python scripts/validate_runtime_architecture_leakage.py`
+
+## EVIDENCE
+
+- Continuation input state, issue register, repair result, boundary audit,
+  validation matrix, smoke result, final result, and next-task decision are under
+  `control/inventory/`.
+- Continuation audit evidence and generated samples are under
+  `control/audits/hunt-remediation-continue-v0/`.
+- Focused continuation tests live under `tests/operations/`.
+- The continuation validator is `scripts/validate_hunt_remediation_continue.py`.
+- Queue and repo-health metadata keep SYN-00 as the recommended next task.
+
+## ACCEPTANCE
+
+- All remaining issues are reviewed.
+- Hard blockers remaining is zero.
+- Warnings remaining is zero.
+- All HUNT validators pass.
+- LOCAL dependency validators pass.
+- HUNT workflow smoke passes.
+- Full unittest discovery passes.
+- Generated artifact cleanliness passes after commit.
+- Architecture and runtime leakage gates pass.
+- SYN can start.
+- F0 can resume but is not recommended before SYN.
+- Main promotion remains a separate review task.
+
+## OUTPUT_SCHEMA
+
+- status
+- summary
+- commits
+- remediation_continue
+- validation
+- boundaries
+- handoff
+- next_task
+
+## TOKEN_ESTIMATE
+
+- method: chars / 4 rounded up
+- budget_status: pass

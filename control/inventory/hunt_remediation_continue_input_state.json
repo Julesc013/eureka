@@ -1,0 +1,10 @@
+{
+  "schema_version": "hunt_remediation_continue_input_state.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "previous_remediation_found": true,
+  "previous_status": "pass",
+  "previous_hard_blockers": 0,
+  "previous_warnings": 0,
+  "child_tasks_detected": [],
+  "state_reconstructed": false
+}

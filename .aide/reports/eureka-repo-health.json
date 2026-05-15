@@ -2,7 +2,7 @@
   "schema_version": "eureka_repo_health.v0",
   "updated": "2026-05-16",
   "current_recommended_task": "SYN-00",
-  "last_completed_task": "HUNT-REMEDIATION",
+  "last_completed_task": "HUNT-REMEDIATION-CONTINUE",
   "last_completed_status": "pass",
   "hunt_track_complete": true,
   "hard_blockers_remaining": 0,

@@ -22,6 +22,7 @@
   "status": "pass",
   "syn_can_start": true,
   "task": "HUNT-12",
+  "last_remediation_continue_status": "pass",
   "warnings_remaining": 0,
   "workbench_workflow_smoke_passed": true
 }

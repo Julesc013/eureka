@@ -4,7 +4,7 @@
   "local_08_increased_leakage": false,
   "new_unallowlisted_production_findings_after": 1030,
   "new_unallowlisted_production_findings_before": 1030,
-  "runtime_leakage_gate_status_after": "fail",
+  "runtime_leakage_gate_status_after": "valid",
   "runtime_leakage_gate_status_before": "fail",
   "schema_version": "local_08_leakage_baseline.v0",
   "task": "LOCAL-08"

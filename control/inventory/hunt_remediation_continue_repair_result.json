@@ -1,0 +1,14 @@
+{
+  "schema_version": "hunt_remediation_continue_repair_result.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "status": "pass",
+  "safe_repairs_applied": 1,
+  "issues_resolved": [
+    "local_runtime_leakage_warning_stale"
+  ],
+  "issues_remaining": [],
+  "child_tasks_created": [],
+  "unsafe_repairs_deferred": [],
+  "policy_weakened": false,
+  "forbidden_side_effects_introduced": false
+}

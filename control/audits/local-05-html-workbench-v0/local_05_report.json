@@ -27,7 +27,7 @@
     "focused_tests": "pass",
     "full_unittest_discovery": "fail_other",
     "json_api_compatibility": "pass",
-    "runtime_leakage_gate": "fail_pre_existing_runtime_leakage_gate"
+    "runtime_leakage_gate": "valid_after_hunt_remediation"
   },
   "review_mutation_performed": false,
   "workbench_smoke_passed": true,

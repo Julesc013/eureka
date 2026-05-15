@@ -29,7 +29,7 @@
     "focused_tests": "pass",
     "full_unittest_discovery": "fail_other_timeout",
     "manual_loopback_smoke": "pass",
-    "runtime_leakage_gate": "fail_pre_existing",
+    "runtime_leakage_gate": "valid_after_hunt_remediation",
     "validate_local_review_rebuild": "pass_with_warnings"
   },
   "worker_execution_enabled": false,

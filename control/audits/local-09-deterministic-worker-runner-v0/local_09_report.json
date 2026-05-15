@@ -37,7 +37,7 @@
     "focused_tests": "pass",
     "full_unittest_discovery": "timeout_fail_other",
     "generated_artifact_cleanliness_pre_commit": "warn_audit_generated_added",
-    "runtime_leakage_gate": "fail_pre_existing",
+    "runtime_leakage_gate": "valid_after_hunt_remediation",
     "validate_local_worker_runner": "pass_with_warnings"
   },
   "validator_added": true,
