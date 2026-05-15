@@ -1,0 +1,288 @@
+{
+  "absence_metadata": {
+    "checked_index": "isolated_fixture_reviewed_index",
+    "checked_sources": [
+      "source.fixture.local.metadata"
+    ],
+    "does_not_prove_global_absence": true,
+    "query": "zzznomatch",
+    "result_count": 0,
+    "scope": "local fixture reviewed index only"
+  },
+  "artifact_hash": "sha256:8c96ea8acf85da7c4ce1b40cc3dcd95edd6fa6c54105f75665f6ca79ec3ede23",
+  "artifact_id": "ria_fixture_demo_project_v0",
+  "artifact_kind": "local_reviewed_fixture_index_candidate",
+  "evidence_refs": {
+    "claim_subject": "source.fixture.local.metadata",
+    "claim_type": "metadata",
+    "evidence_id": "evc_7a58fa86edc377ef"
+  },
+  "fixture_only": true,
+  "generated_at": "2026-05-12T00:00:01Z",
+  "generated_by": "eureka.fixture_reviewed_index_persistence.v0",
+  "limitations": [
+    "fixture-only reviewed index artifact",
+    "not a production public index",
+    "not live-source support"
+  ],
+  "local_only": true,
+  "no_live": {
+    "live_source_probes": false,
+    "network_calls": false,
+    "provider_model_calls": false,
+    "source_sync": false
+  },
+  "production_public_index": false,
+  "public_index_mutation": false,
+  "record_count": 1,
+  "records": [
+    {
+      "artifact_id": "fixture.demo-project",
+      "created_at": "2026-05-12T00:00:01Z",
+      "description": "Synthetic local metadata used by the Q58 fixture vertical slice",
+      "evidence_id": "evc_7a58fa86edc377ef",
+      "fixture_only": true,
+      "limitations": [
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "fixture payload only",
+        "no network request performed",
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "fixture payload only",
+        "no network request performed",
+        "fixture/local-only source observation",
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "fixture payload only",
+        "no network request performed",
+        "fixture/local-only source observation",
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "fixture payload only",
+        "no network request performed",
+        "fixture/local-only source observation",
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "fixture payload only",
+        "no network request performed",
+        "fixture/local-only source observation",
+        "local fixture decision only",
+        "not a production or hosted review"
+      ],
+      "local_only": true,
+      "normalized_fields": {
+        "artifact_id": "fixture.demo-project",
+        "name": "demo-project",
+        "provenance": {
+          "external_call_performed": false,
+          "kind": "repo_local_fixture",
+          "observed_at": "2026-05-12T00:00:01Z"
+        },
+        "quality_flags": {
+          "fixture_only": true,
+          "requires_local_review": true
+        },
+        "source_reference": "fixture://q58/demo-project",
+        "summary": "Synthetic local metadata used by the Q58 fixture vertical slice",
+        "title": "Demo Project",
+        "version": "1.0.0"
+      },
+      "object_id": "pir_f4453ae8f3ab6d41",
+      "record_id": "pir_f4453ae8f3ab6d41",
+      "review_decision_id": "rvd_fixture_demo_project_accept_v0",
+      "review_item_id": "rvi_eba5b8afd11a4cf4",
+      "review_status": "accepted",
+      "searchable_text": "demo project synthetic local metadata used by the q58 fixture vertical slice source.fixture.local.metadata local_fixture metadata source.fixture.local.metadata artifact_id fixture.demo-project name demo-project provenance external_call_performed false kind repo_local_fixture observed_at 2026-05-12t00:00:01z quality_flags fixture_only true requires_local_review true source_reference fixture://q58/demo-project summary synthetic local metadata used by the q58 fixture vertical slice title demo project version 1.0.0 fields artifact_id fixture.demo-project name demo-project provenance external_call_performed false kind repo_local_fixture observed_at 2026-05-12t00:00:01z quality_flags fixture_only true requires_local_review true source_reference fixture://q58/demo-project summary synthetic local metadata used by the q58 fixture vertical slice title demo project version 1.0.0 source_family local_fixture",
+      "source_cache_entry_id": "sce_166f90a6738492c5",
+      "source_family": "local_fixture",
+      "source_id": "source.fixture.local.metadata",
+      "status": "reviewed_local_fixture_index_candidate",
+      "title": "Demo Project",
+      "trust_lane": "synthetic_fixture",
+      "updated_at": "2026-05-12T00:00:01Z",
+      "version": "1.0.0",
+      "warnings": []
+    }
+  ],
+  "review_refs": {
+    "review_decision_id": "rvd_fixture_demo_project_accept_v0",
+    "review_decision_kind": "accept",
+    "review_item_id": "rvi_eba5b8afd11a4cf4",
+    "review_status": "accepted"
+  },
+  "schema_version": "eureka.fixture_reviewed_index_artifact.v0",
+  "source_fixture_id": "fixture://q58/demo-project",
+  "source_fixture_name": "demo-project",
+  "source_refs": {
+    "normalized_observation_id": "norm_c8d2a070b535533a",
+    "source_cache_entry_id": "sce_166f90a6738492c5",
+    "source_family": "local_fixture",
+    "source_id": "source.fixture.local.metadata",
+    "source_observation_id": "obs_f784e76abbff8837"
+  },
+  "surface_packet_refs": {
+    "absence_packet_id": "ap_fixture_zzznomatch_v0",
+    "evidence_summary_packet_id": "esp_fixture_demo_project_v0",
+    "object_detail_packet_id": "odp_fixture_demo_project_v0",
+    "result_packet_id": "srp_fixture_demo_project_v0",
+    "source_provenance_packet_id": "spp_fixture_local_metadata_v0"
+  },
+  "surface_packets": {
+    "absence_packet": {
+      "checked_index": "isolated_fixture_reviewed_index",
+      "checked_sources": [
+        "source.fixture.local.metadata"
+      ],
+      "fixture_only": true,
+      "known_gaps": [
+        "local fixture index only",
+        "does not inspect live sources",
+        "does not prove global absence"
+      ],
+      "limitations": [
+        "local reviewed index only",
+        "absence does not prove no matching source exists",
+        "absence does not inspect live sources"
+      ],
+      "local_only": true,
+      "next_actions": [
+        "inspect_checked_sources",
+        "broaden_source_scope_in_future_reviewed_task"
+      ],
+      "packet_id": "ap_fixture_zzznomatch_v0",
+      "query": "zzznomatch",
+      "reason": "no local reviewed fixture record matched the query",
+      "result_count": 0,
+      "schema_version": "eureka.absence_packet.v0"
+    },
+    "evidence_summary_packet": {
+      "claim_subject": "source.fixture.local.metadata",
+      "claim_type": "metadata",
+      "confidence": 0.7,
+      "evidence_id": "evc_7a58fa86edc377ef",
+      "fixture_only": true,
+      "gaps": [],
+      "local_only": true,
+      "normalized_observation_id": "norm_c8d2a070b535533a",
+      "observation_id": "obs_f784e76abbff8837",
+      "packet_id": "esp_fixture_demo_project_v0",
+      "review": {
+        "accepted_for_local_index": true,
+        "actor": "operator:fixture-q58",
+        "decision_id": "rvd_fixture_demo_project_accept_v0",
+        "decision_kind": "accept",
+        "decision_status": "accepted"
+      },
+      "schema_version": "eureka.evidence_summary_packet.v0",
+      "source_cache_entry_id": "sce_166f90a6738492c5",
+      "source_id": "source.fixture.local.metadata",
+      "source_reference": "fixture://q58/demo-project",
+      "subject_id": "fixture.demo-project",
+      "warnings": []
+    },
+    "object_detail_packet": {
+      "display": {
+        "description": "Synthetic local metadata used by the Q58 fixture vertical slice",
+        "title": "Demo Project",
+        "version": "1.0.0"
+      },
+      "fixture_only": true,
+      "identity": {
+        "artifact_id": "fixture.demo-project",
+        "name": "demo-project",
+        "source_id": "source.fixture.local.metadata"
+      },
+      "index_inclusion_reason": "accepted local fixture review decision",
+      "limitations": [
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only",
+        "no network request performed",
+        "fixture/local-only source observation",
+        "local fixture decision only",
+        "not a production or hosted review"
+      ],
+      "local_only": true,
+      "object_id": "pir_f4453ae8f3ab6d41",
+      "packet_id": "odp_fixture_demo_project_v0",
+      "refs": {
+        "evidence_id": "evc_7a58fa86edc377ef",
+        "evidence_summary_id": "esp_fixture_demo_project_v0",
+        "normalized_observation_id": "norm_c8d2a070b535533a",
+        "public_index_record_id": "pir_f4453ae8f3ab6d41",
+        "review_decision_id": "rvd_fixture_demo_project_accept_v0",
+        "review_item_id": "rvi_eba5b8afd11a4cf4",
+        "source_cache_entry_id": "sce_166f90a6738492c5",
+        "source_observation_id": "obs_f784e76abbff8837",
+        "source_provenance_packet_id": "spp_fixture_local_metadata_v0"
+      },
+      "schema_version": "eureka.object_detail_packet.v0"
+    },
+    "result_packet": {
+      "fixture_only": true,
+      "local_only": true,
+      "packet_id": "srp_fixture_demo_project_v0",
+      "query": "demo project",
+      "result_count": 1,
+      "results": [
+        {
+          "actions": [
+            "inspect_object",
+            "inspect_evidence",
+            "inspect_source",
+            "inspect_absence_scope"
+          ],
+          "artifact_id": "fixture.demo-project",
+          "confidence": 0.7,
+          "evidence_id": "evc_7a58fa86edc377ef",
+          "evidence_summary_id": "esp_fixture_demo_project_v0",
+          "fixture_only": true,
+          "local_only": true,
+          "matched_terms": [
+            "demo",
+            "project"
+          ],
+          "object_id": "pir_f4453ae8f3ab6d41",
+          "result_id": "pir_f4453ae8f3ab6d41",
+          "review_decision_id": "rvd_fixture_demo_project_accept_v0",
+          "review_status": "accepted",
+          "source_id": "source.fixture.local.metadata",
+          "source_reference": "fixture://q58/demo-project",
+          "title": "Demo Project",
+          "version": "1.0.0",
+          "warnings": []
+        }
+      ],
+      "schema_version": "eureka.search_result_packet.v0"
+    },
+    "schema_version": "eureka.fixture_object_absence_surface.v0",
+    "source_provenance_packet": {
+      "fixture_only": true,
+      "limitations": [
+        "fixture payload only",
+        "no live request",
+        "isolated local stores only"
+      ],
+      "local_only": true,
+      "no_live": {
+        "live_source_probes": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "source_sync": false
+      },
+      "observed_at": "2026-05-12T00:00:01Z",
+      "packet_id": "spp_fixture_local_metadata_v0",
+      "schema_version": "eureka.source_provenance_packet.v0",
+      "source_family": "local_fixture",
+      "source_id": "source.fixture.local.metadata",
+      "source_reference": "fixture://q58/demo-project",
+      "trust_lane": "synthetic_fixture"
+    }
+  }
+}

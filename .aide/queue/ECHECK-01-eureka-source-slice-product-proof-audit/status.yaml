@@ -1,0 +1,28 @@
+schema_version: aide.queue-status.v0
+task_id: ECHECK-01-eureka-source-slice-product-proof-audit
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-05-16
+review_required: true
+audit_complete: true
+product_implementation_performed: false
+live_network_used: false
+provider_model_calls_used: false
+production_source_cache_mutated: false
+production_evidence_ledger_mutated: false
+production_public_index_mutated: false
+registry_mutated: false
+site_deployed: false
+branch_mutated: false
+readiness: READY_FOR_NEXT_PRODUCT_WAVE_WITH_WARNINGS
+global_next: XCHECK-01 Cross-Repo AIDE Adoption Audit
+eureka_next: Q62 Eureka Second Fixture Source Slice v0
+warnings:
+  - Worktree is dirty with cumulative Q56-Q61 local artifacts and product/test files.
+  - Git task-state guard blocks normal product work until dirty/sync state is classified.
+  - AIDE eval remains warning-prone; latest recorded result is 127 pass / 9 fail or timeout.
+  - AIDE release validate fails because Eureka is not carrying target-local release dist artifacts.
+  - Refactor map validation fails because no current move/salvage/path-alias maps are generated.
+  - Repo and quality surfaces retain many unknown classifications.
+  - ECHECK-01 was not committed because the current worktree is not safely separable.
+

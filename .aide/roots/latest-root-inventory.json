@@ -1,5 +1,5 @@
 {
-  "file_count": 16297,
+  "file_count": 16843,
   "file_deletes": false,
   "file_moves": false,
   "generated_at_or_source_ref": ".aide/repo/file-inventory.json",
@@ -9,40 +9,45 @@
   "reference_rewrites": false,
   "roots": [
     {
-      "doc_count": 34,
-      "evidence_count": 298,
+      "doc_count": 94,
+      "evidence_count": 333,
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
         ".aide/reports/file-quality-ledger.json",
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 27,
+      "generated_count": 37,
       "kinds": {
-        "doc": 34,
-        "evidence": 298,
-        "fixture": 65,
-        "generated": 27,
-        "policy": 27,
-        "schema": 1,
-        "template": 15,
-        "test": 16,
-        "tool": 1,
-        "unknown": 56
+        "doc": 94,
+        "evidence": 333,
+        "fixture": 275,
+        "generated": 37,
+        "policy": 101,
+        "schema": 102,
+        "template": 17,
+        "test": 29,
+        "tool": 5,
+        "unknown": 93
       },
       "owners": {
         "AIDE Git workflow": 13,
-        "AIDE Lite": 17,
-        "AIDE changelog preview": 4,
+        "AIDE GitHub advisory": 8,
+        "AIDE Lite": 32,
+        "AIDE changelog preview": 10,
         "AIDE context compiler": 12,
-        "AIDE control plane": 113,
-        "AIDE evals": 69,
-        "AIDE governance": 27,
-        "AIDE repo intelligence": 8,
-        "AIDE self-hosting queue": 275,
+        "AIDE control plane": 254,
+        "AIDE evals": 279,
+        "AIDE governance": 77,
+        "AIDE intent compiler": 11,
+        "AIDE refactor control plane": 35,
+        "AIDE repo intelligence": 21,
+        "AIDE root recycling framework": 14,
+        "AIDE self-hosting queue": 294,
+        "AIDE tool absorption framework": 24,
         "compatibility baseline": 2
       },
-      "policy_count": 27,
+      "policy_count": 101,
       "reasons": [
         "identity_sensitive_hint",
         "build_sensitive_file_hint",
@@ -57,19 +62,19 @@
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed",
-      "schema_count": 1,
+      "schema_count": 102,
       "source_count": 0,
       "statuses": {
-        "active": 144,
-        "evidence_only": 298,
-        "generated": 27,
-        "template_only": 15,
-        "unknown": 56
+        "active": 606,
+        "evidence_only": 333,
+        "generated": 37,
+        "template_only": 17,
+        "unknown": 93
       },
-      "test_count": 16,
-      "total_size_bytes": 49232410,
-      "tracked_file_count": 540,
-      "unknown_count": 56
+      "test_count": 29,
+      "total_size_bytes": 138966064,
+      "tracked_file_count": 1086,
+      "unknown_count": 93
     },
     {
       "doc_count": 4,
@@ -791,7 +796,7 @@
     }
   ],
   "schema_version": "aide.root-inventory.v0",
-  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

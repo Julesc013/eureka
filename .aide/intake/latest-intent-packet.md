@@ -3,15 +3,15 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: e836c9103804120ce96663c82db2158d76822230ef58a40a847d9efa50527186
-- raw_prompt_excerpt: Plan Q56 Eureka Existing Tool Absorption
-- interpreted_goal: Normalize prompt into a bounded adapter WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: 01a01b6d5bd6eb8f3eeeb4a8aa4d89b891910580008e3030f748fe5976216707
+- raw_prompt_excerpt: Plan the next bounded Eureka product task from ECHECK-01 evidence
+- interpreted_goal: Normalize prompt into a bounded evidence WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: adapter
+- task_class: evidence
 - risk_class: external_side_effect
-- sizing_class: two_shot
+- sizing_class: audit_only
 - safe_to_execute: false
-- requires_split: true
+- requires_split: false
 - blocked: false
 - blocker_reason: none
 - next_action: draft the smallest safe WorkUnit after repo-state preflight
@@ -31,8 +31,12 @@
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/Q55/status.yaml`
+- `.aide/queue/Q62/status.yaml`
 - `.aide/queue/index.yaml`
+- `.aide/repo/file-inventory.json`
+- `.aide/repo/latest-repo-intelligence.md`
+- `.aide/reports/file-quality-ledger.json`
+- `.aide/reports/file-quality-summary.md`
 
 ## Branch State Refs
 

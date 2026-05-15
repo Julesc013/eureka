@@ -33,6 +33,9 @@ coverage/
 target/
 tmp/
 
+# Native/.NET local build outputs
+native/win/winforms/src/Eureka/obj/
+
 # Future Eureka local/private state (must not be committed)
 .aide.local/
 .aide.local/**

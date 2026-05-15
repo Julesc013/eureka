@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-SOURCE-SLICE-01
+status: needs_review
+result: ready_for_review_with_warnings
+review_gate: required
+implemented: true
+fixture_only: true
+local_only: true
+live_network_used: false
+provider_model_calls_used: false
+production_source_cache_mutated: false
+production_evidence_ledger_mutated: false
+production_public_index_mutated: false
+registry_mutated: false
+site_deployed: false
+branch_mutated: false
+warnings:
+  - AIDE eval run exited 1 without diagnostic output after a longer rerun.
+  - Git task-state guard reported expected dirty/sync warnings from existing local Q56/Q57 artifacts and branch drift.
+  - Git index writes are blocked in the current sandbox; Q58 commit creation failed at git add with .git/index.lock permission denied.

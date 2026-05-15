@@ -19,8 +19,8 @@
   "source": "",
   "state": {
     "ahead_behind": {
-      "ahead": 10,
-      "behind": 6,
+      "ahead": 11,
+      "behind": 13,
       "error": "",
       "known": true
     },
@@ -38,7 +38,7 @@
       "origin/main": "canonical"
     },
     "current_branch": "dev",
-    "current_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+    "current_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
     "current_role": "integration",
     "detached_head": false,
     "local_branches": [
@@ -76,8 +76,8 @@
     "schema_version": "aide.git-helper-state.v0",
     "unpushed_protected_branches": [
       {
-        "ahead": 10,
-        "behind": 6,
+        "ahead": 11,
+        "behind": 13,
         "branch": "dev",
         "error": "",
         "known": true,

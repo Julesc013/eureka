@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4976 chars, 1244 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4124 chars, 1031 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,30 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - unknown: `.aide/changelog/CHANGELOG.preview.md` (M; does not match active task allowed paths)
-- allowed: `.aide/changelog/README.md` (??; matches active task allowed path)
 - unknown: `.aide/changelog/RELEASE_NOTES.preview.md` (M; does not match active task allowed paths)
 - unknown: `.aide/changelog/changelog.preview.json` (M; does not match active task allowed paths)
-- unknown: `.aide/changelog/config.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/changelog/latest-changelog-report.md` (??; does not match active task allowed paths)
-- unknown: `.aide/changelog/malformed-commits.md` (M; does not match active task allowed paths)
-- unknown: `.aide/changelog/release-notes.preview.json` (??; does not match active task allowed paths)
-- unknown: `.aide/changelog/templates` (??; does not match active task allowed paths)
-- unknown: `.aide/commands/catalog.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/changelog/latest-changelog-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/changelog/release-notes.preview.json` (M; does not match active task allowed paths)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/README.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/changelog_json_shape_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/changelog_preview_golden/acceptance.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/changelog_preview_golden/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/docs_consistency_report_golden` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 240; see task evidence changed-files report
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- unknown: `.aide/git/latest-helper-plan.json` (M; does not match active task allowed paths)
+- unknown: `.aide/git/latest-helper-plan.md` (M; does not match active task allowed paths)
+- unknown: `.aide/git/workflow-detection.json` (M; does not match active task allowed paths)
+- unknown: `.aide/git/workflow-detection.md` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-intent-packet.json` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-intent-packet.md` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-workunit-draft.json` (M; does not match active task allowed paths)
+- unknown: `.aide/intake/latest-workunit-draft.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/ECHECK-01-eureka-source-slice-product-proof-audit` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-AIDE-TOOL-ABSORPTION-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-OBJECT-ABSENCE-SURFACE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-SOURCE-OBSERVATION-PLAN-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-SOURCE-SLICE-01` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/EUREKA-SOURCE-SLICE-HARDENING-01` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 54; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6562
-- approx_tokens: 1641
+- chars: 6704
+- approx_tokens: 1676
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

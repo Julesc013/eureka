@@ -1,9 +1,9 @@
 # Tool Adapter Map
 
 - adapter_map_id: q41-latest-tool-adapter-map
-- source_commit: 6f2698c6e109a3b35d20402bb9871c1e4a674688
-- mapping_count: 1710
-- unmapped_count: 277
+- source_commit: df6a6967afdb510de46651f70e21541f20b6741b
+- mapping_count: 1879
+- unmapped_count: 285
 - execution_allowed: false
 - no_apply: true
 
@@ -13,6 +13,9 @@
 - `.aide/cache/latest-cache-keys.json` -> future tools wrapper for test (test)
 - `.aide/cache/latest-cache-keys.md` -> future tools wrapper for test (test)
 - `.aide/changelog/RELEASE_NOTES.preview.md` -> future tools wrapper for release (release)
+- `.aide/changelog/latest-changelog-report.md` -> future tools wrapper for audit (audit)
+- `.aide/changelog/release-notes.preview.json` -> future tools wrapper for release (release)
+- `.aide/changelog/templates/release-notes.md.template` -> future tools wrapper for release (release)
 - `.aide/context/latest-context-packet.md` -> future tools wrapper for context (context)
 - `.aide/context/latest-review-packet.md` -> future tools wrapper for context (context)
 - `.aide/context/latest-task-packet.md` -> future tools wrapper for context (context)
@@ -26,69 +29,66 @@
 - `.aide/git/latest-helper-plan.json` -> future tools wrapper for test (test)
 - `.aide/git/latest-helper-plan.md` -> future tools wrapper for test (test)
 - `.aide/git/sync-policy.md` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/github/latest-github-status.md` -> future tools wrapper for test (test)
 - `.aide/import-policy.template.yaml` -> future tools wrapper for repo_policy (repo_policy)
 - `.aide/import-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
 - `.aide/import-report.template.md` -> future tools wrapper for audit (audit)
+- `.aide/install/install-dry-run.schema.json` -> future tools wrapper for install (install)
+- `.aide/install/install-observation.schema.json` -> future tools wrapper for install (install)
+- `.aide/install/install-operation.schema.json` -> future tools wrapper for install (install)
+- `.aide/install/install-plan.schema.json` -> future tools wrapper for install (install)
+- `.aide/install/install-verification.schema.json` -> future tools wrapper for install (install)
+- `.aide/install/latest-conflict-report.json` -> future tools wrapper for audit (audit)
+- `.aide/install/latest-conflict-report.md` -> future tools wrapper for audit (audit)
+- `.aide/install/latest-install-dry-run.json` -> future tools wrapper for install (install)
+- `.aide/install/latest-install-dry-run.md` -> future tools wrapper for install (install)
+- `.aide/install/latest-install-observation.json` -> future tools wrapper for install (install)
+- `.aide/install/latest-install-observation.md` -> future tools wrapper for install (install)
+- `.aide/install/latest-install-plan.json` -> future tools wrapper for install (install)
+- `.aide/install/latest-install-plan.md` -> future tools wrapper for install (install)
+- `.aide/install/latest-ownership-ledger.example.json` -> future tools wrapper for install (install)
+- `.aide/install/latest-preservation-report.md` -> future tools wrapper for audit (audit)
+- `.aide/install/latest-verification-plan.md` -> future tools wrapper for install (install)
+- `.aide/intake/latest-intent-packet.json` -> future tools wrapper for context (context)
+- `.aide/intake/latest-intent-packet.md` -> future tools wrapper for context (context)
+- `.aide/intake/latest-workunit-draft.json` -> future tools wrapper for test (test)
+- `.aide/intake/latest-workunit-draft.md` -> future tools wrapper for test (test)
+- `.aide/policies/doctor.yaml` -> future tools wrapper for validate (validate)
+- `.aide/policies/github-release-draft.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/install-conflicts.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/install-migrations.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/install-ownership.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/install-preservation.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/install-verification.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/install.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/release-artifacts.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-bundle.yaml` -> future tools wrapper for package (package)
+- `.aide/policies/release-checklist.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-provenance.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-publication-boundary.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-upload-plan.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-validation.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/release-versioning.yaml` -> future tools wrapper for release (release)
+- `.aide/policies/rollback-classes.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/rollback-safety.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/rollback-verification.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/rollback.yaml` -> future tools wrapper for install (install)
 - `.aide/policies/sync-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/policies/test-map.yaml` -> future tools wrapper for test (test)
+- `.aide/policies/uninstall-classes.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/uninstall-safety.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/uninstall-verification.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/uninstall.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade-compatibility.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade-conflicts.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade-migrations.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade-preservation.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade-verification.yaml` -> future tools wrapper for install (install)
+- `.aide/policies/upgrade.yaml` -> future tools wrapper for install (install)
 - `.aide/providers/latest-provider-status.json` -> future tools wrapper for test (test)
 - `.aide/providers/latest-provider-status.md` -> future tools wrapper for test (test)
+- `.aide/quality/test-coverage-map.schema.json` -> future tools wrapper for test (test)
 - `.aide/queue/EUREKA-AIDE-PILOT-01/import-report.md` -> future tools wrapper for audit (audit)
-- `.aide/queue/EUREKA-AIDE-SYNC-01/evidence/sync-report.md` -> future tools wrapper for audit (audit)
-- `.aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/evidence/install-upgrade-risk-report.md` -> future tools wrapper for audit (audit)
-- `.aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/evidence/release-bundle-readiness.md` -> future tools wrapper for install (install)
-- `.aide/queue/TRACK-A-11/evidence/track-a-audit-result.md` -> future tools wrapper for audit (audit)
-- `.aide/repo/generated-map.json` -> future tools wrapper for generate (generate)
-- `.aide/repo/latest-repo-intelligence.md` -> future tools wrapper for repo_policy (repo_policy)
-- `.aide/repo/test-map.json` -> future tools wrapper for repo_policy (repo_policy)
-- `.aide/reports/eureka-fresh-upgrade-preflight.md` -> future tools wrapper for audit (audit)
-- `.aide/reports/eureka-release-bundle-readiness.md` -> future tools wrapper for audit (audit)
-- `.aide/routing/latest-route-decision.json` -> future tools wrapper for test (test)
-- `.aide/routing/latest-route-decision.md` -> future tools wrapper for test (test)
-- `.aide/scripts/aide_lite.py` -> future tools wrapper for context (context)
-- `.aide/tasks/audit_backlog.yaml` -> future tools wrapper for audit (audit)
-- `.aide/verification/latest-verification-report.md` -> future tools wrapper for audit (audit)
-- `contracts/connectors/github_releases_connector_approval.v0.json` -> future tools wrapper for release (release)
-- `contracts/connectors/github_releases_connector_manifest.v0.json` -> future tools wrapper for release (release)
-- `contracts/master_index/reviewed_public_index_rebuild.v0.json` -> future tools wrapper for build (build)
-- `contracts/native/native_build_evidence.v0.json` -> future tools wrapper for build (build)
-- `contracts/native/native_build_log_record.v0.json` -> future tools wrapper for build (build)
-- `contracts/native/native_manual_build_packet.v0.json` -> future tools wrapper for build (build)
-- `contracts/native/native_manual_smoke_checklist.v0.json` -> future tools wrapper for validate (validate)
-- `contracts/runtime/live_metadata_test_request.v0.json` -> future tools wrapper for test (test)
-- `contracts/runtime/live_metadata_test_result.v0.json` -> future tools wrapper for test (test)
-- `contracts/stores/public_index_rebuild.v0.json` -> future tools wrapper for build (build)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/AUDIT_SUMMARY.md` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/BEHAVIOR_AUDIT.md` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/CONTENT_COVERAGE_AUDIT.md` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/HARD_TEST_PROPOSALS.md` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/STRUCTURE_AUDIT.md` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/TEST_BACKLOG.json` -> future tools wrapper for audit (audit)
-- `control/audits/2026-04-25-comprehensive-test-eval-audit/TEST_GAP_AUDIT.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-01-native-skeleton-matrix-winforms-v0/native_build_evidence_report.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/generated/sample_native_build_evidence_plan.json` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/generated/sample_native_smoke_checklist.json` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_manual_build_evidence_plan.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-02-native-first-wave-skeletons-v0/native_smoke_checklist_summary.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/generated/sample_native_release_candidate_preview.json` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/generated/sample_track_c_integration_audit.json` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_build_log_summary.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_first_wave_integration_audit.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_no_release_binary_report.md` -> future tools wrapper for audit (audit)
-- `control/audits/c-bundle-03-native-smoke-packaging-v0/native_release_candidate_preview_summary.md` -> future tools wrapper for audit (audit)
-- `control/audits/comparison-page-contract-v0/NO_DOWNLOAD_INSTALL_EXECUTION_POLICY.md` -> future tools wrapper for audit (audit)
-- `control/audits/comparison-page-contract-v0/VERSION_STATE_RELEASE_COMPARISON_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/compatibility-aware-ranking-contract-v0/ACTION_SAFETY_AND_INSTALLABILITY_CAUTION_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/compatibility-aware-ranking-contract-v0/NO_INSTALLABILITY_WITHOUT_EVIDENCE_POLICY.md` -> future tools wrapper for audit (audit)
-- `control/audits/connector-approval-runtime-planning-audit-v0/GITHUB_RELEASES_REVIEW.md` -> future tools wrapper for audit (audit)
-- `control/audits/connector-approval-runtime-planning-audit-v0/connector_approval_runtime_planning_audit_report.json` -> future tools wrapper for audit (audit)
-- `control/audits/cross-source-identity-resolution-contract-v0/HASH_CHECKSUM_INTRINSIC_ID_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/cross-source-identity-resolution-contract-v0/PACKAGE_REPOSITORY_ARCHIVE_CAPTURE_IDENTITY_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/deep-extraction-contract-v0/PACKAGE_ARCHIVE_ISO_WARC_WACZ_SOURCE_BUNDLE_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/deep-extraction-runtime-planning-v0/FAILURE_ROLLBACK_AND_AUDIT_MODEL.md` -> future tools wrapper for audit (audit)
-- `control/audits/deep-extraction-runtime-planning-v0/PACK_IMPORT_AND_STAGING_BOUNDARY_REVIEW.md` -> future tools wrapper for audit (audit)
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/generated/sample_incident_rollback_summary.md` -> future tools wrapper for audit (audit)
-- `control/audits/e-bundle-01-hosting-ops-readiness-v0/incident_rollback_report.md` -> future tools wrapper for audit (audit)
-- `control/audits/e-bundle-02-hosted-wrapper-rehearsal-v0/generated/sample_public_launch_readiness_audit.json` -> future tools wrapper for audit (audit)
 
 ## Unmapped Tools
 
@@ -96,6 +96,14 @@
 - `.aide/policies/export-import.yaml`
 - `.aide/prompts/AIDE-SYNC-01.md`
 - `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md`
+- `.aide/tools/tool-adapter-map.schema.json`
+- `.aide/tools/tool-capability.schema.json`
+- `.aide/tools/tool-evidence.schema.json`
+- `.aide/tools/tool-inventory.schema.json`
+- `.aide/tools/tool-record.schema.json`
+- `.aide/tools/tool-retirement.schema.json`
+- `.aide/tools/tool-risk.schema.json`
+- `.aide/tools/tool-wrap-plan.schema.json`
 - `.github/workflows/pages.yml`
 - `contracts/actions/export_manifest.v0.json`
 - `contracts/source_sync/source_sync_job_kind.v0.json`
@@ -164,11 +172,3 @@
 - `scripts/dry_run_identity_resolution_assessment.py`
 - `scripts/dry_run_internet_archive_metadata_connector_approval.py`
 - `scripts/dry_run_known_absence_page.py`
-- `scripts/dry_run_npm_metadata_connector_approval.py`
-- `scripts/dry_run_object_page.py`
-- `scripts/dry_run_probe_queue_item.py`
-- `scripts/dry_run_pypi_metadata_connector_approval.py`
-- `scripts/dry_run_query_guard.py`
-- `scripts/dry_run_query_observation.py`
-- `scripts/dry_run_result_merge_group.py`
-- `scripts/dry_run_search_miss_ledger_entry.py`

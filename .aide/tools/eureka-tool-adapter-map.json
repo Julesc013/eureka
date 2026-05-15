@@ -1,0 +1,354 @@
+﻿{
+    "schema_version":  "eureka.tool-adapter-map.v0",
+    "generated_by":  "Q56 Eureka Existing Tool Absorption",
+    "source_commit":  "df6a6967afdb510de46651f70e21541f20b6741b",
+    "source_inputs":  [
+                          ".aide/tools/latest-tool-inventory.json",
+                          ".aide/tools/latest-tool-classification.json",
+                          ".aide/tools/latest-tool-wrap-plan.json",
+                          ".aide/tools/latest-tool-adapter-map.json"
+                      ],
+    "execution_allowed":  false,
+    "apply_allowed":  false,
+    "mappings":  [
+                     {
+                         "wrapper_id":  "eureka.validate.architecture",
+                         "source_tool_path":  "scripts/check_architecture_boundaries.py",
+                         "proposed_aide_command":  "eureka.validate.architecture",
+                         "command_hint":  "python scripts/check_architecture_boundaries.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "architecture_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "authority_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.source_cache_contract",
+                         "source_tool_path":  "scripts/validate_source_cache_contract.py",
+                         "proposed_aide_command":  "eureka.validate.source_cache_contract",
+                         "command_hint":  "python scripts/validate_source_cache_contract.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "source_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "source_mutation_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.source_cache_to_evidence",
+                         "source_tool_path":  "scripts/validate_source_cache_evidence_ledger_contract.py",
+                         "proposed_aide_command":  "eureka.validate.source_cache_to_evidence",
+                         "command_hint":  "python scripts/validate_source_cache_evidence_ledger_contract.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "source_policy",
+                                                     "evidence_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "source_mutation_sensitive",
+                                            "evidence_mutation_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.evidence_ledger_contract",
+                         "source_tool_path":  "scripts/validate_evidence_ledger_contract.py",
+                         "proposed_aide_command":  "eureka.validate.evidence_ledger_contract",
+                         "command_hint":  "python scripts/validate_evidence_ledger_contract.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "evidence_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "evidence_mutation_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.public_search_index",
+                         "source_tool_path":  "scripts/validate_public_search_index.py",
+                         "proposed_aide_command":  "eureka.validate.public_search_index",
+                         "command_hint":  "python scripts/validate_public_search_index.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "index_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "index_mutation_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.reviewed_public_index",
+                         "source_tool_path":  "scripts/validate_reviewed_public_index.py",
+                         "proposed_aide_command":  "eureka.validate.reviewed_public_index",
+                         "command_hint":  "python scripts/validate_reviewed_public_index.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "index_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "index_mutation_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.static_site",
+                         "source_tool_path":  "site/validate.py",
+                         "proposed_aide_command":  "eureka.validate.static_site",
+                         "command_hint":  "python site/validate.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "site_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "build_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.public_static_site",
+                         "source_tool_path":  "scripts/validate_public_static_site.py",
+                         "proposed_aide_command":  "eureka.validate.public_static_site",
+                         "command_hint":  "python scripts/validate_public_static_site.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "site_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "build_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.static_snapshot",
+                         "source_tool_path":  "scripts/validate_static_snapshot.py",
+                         "proposed_aide_command":  "eureka.validate.static_snapshot",
+                         "command_hint":  "python scripts/validate_static_snapshot.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "snapshot_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "build_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.snapshot_runtime",
+                         "source_tool_path":  "scripts/validate_snapshot_runtime.py",
+                         "proposed_aide_command":  "eureka.validate.snapshot_runtime",
+                         "command_hint":  "python scripts/validate_snapshot_runtime.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "snapshot_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "build_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.pack_set",
+                         "source_tool_path":  "scripts/validate_pack_set.py",
+                         "proposed_aide_command":  "eureka.validate.pack_set",
+                         "command_hint":  "python scripts/validate_pack_set.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "package"
+                                                 ],
+                         "risk_notes":  [
+                                            "authority_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.validate.connector_approval",
+                         "source_tool_path":  "scripts/validate_connector_approval_runtime_planning_audit.py",
+                         "proposed_aide_command":  "eureka.validate.connector_approval",
+                         "command_hint":  "python scripts/validate_connector_approval_runtime_planning_audit.py",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "connector_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "network_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.audit.test_lanes",
+                         "source_tool_path":  "docs/operations/TEST_AND_EVAL_LANES.md",
+                         "proposed_aide_command":  "eureka.audit.test_lanes",
+                         "command_hint":  "review-only",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "repo_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "authority_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     },
+                     {
+                         "wrapper_id":  "eureka.audit.command_matrix",
+                         "source_tool_path":  "control/inventory/tests/command_matrix.json",
+                         "proposed_aide_command":  "eureka.audit.command_matrix",
+                         "command_hint":  "review-only",
+                         "input_contract_hint":  "future wrapper must read existing docs/contracts and execute only after reviewed authorization",
+                         "output_contract_hint":  "structured evidence under .aide/queue/\u003cTASK-ID\u003e/evidence/ without mutating product state",
+                         "validation_requirement":  [
+                                                        "tools validate",
+                                                        "repo validate",
+                                                        "quality validate",
+                                                        "architecture boundary validation where applicable"
+                                                    ],
+                         "capability_families":  [
+                                                     "repo_policy"
+                                                 ],
+                         "risk_notes":  [
+                                            "authority_sensitive"
+                                        ],
+                         "source_tool_fate":  "wrap",
+                         "execution_allowed":  false,
+                         "apply_allowed":  false,
+                         "future_phase_required":  true
+                     }
+                 ],
+    "preservation_rule":  "discover -\u003e classify -\u003e wrap -\u003e adapt -\u003e migrate -\u003e retire with evidence; no deletion in Q56"
+}

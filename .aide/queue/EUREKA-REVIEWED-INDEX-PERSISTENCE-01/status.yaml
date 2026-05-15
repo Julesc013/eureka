@@ -1,0 +1,13 @@
+schema_version: aide.task-status.v0
+task_id: EUREKA-REVIEWED-INDEX-PERSISTENCE-01
+status: needs_review
+result: pass_with_warnings
+updated_at: 2026-05-16
+review_required: true
+implementation_complete: true
+validation_complete: true
+warnings:
+  - Git task-state guard fails because the worktree contains cumulative Q56-Q61 local work and branch dev is both ahead of and behind origin/dev.
+  - AIDE eval run previously timed out or reported existing golden-task failures unrelated to Q61 product persistence behavior.
+  - Q61-only commit was not created because prior Q58-Q60 product/test files are untracked with Q61 changes and are not safely separable in the current worktree.
+

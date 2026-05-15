@@ -41,6 +41,33 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/latest-changelog-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-changelog-latest-changelog-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/release-notes.preview.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-changelog-release-notes-preview-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/templates/release-notes.md.template",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-changelog-templates-release-notes-md-template"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
@@ -158,6 +185,15 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/github/latest-github-status.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-github-latest-github-status-md"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "repo_policy",
       "execution_allowed": false,
       "recommended_fate": "wrap",
@@ -185,12 +221,471 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/install-dry-run.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-install-dry-run-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/install-observation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-install-observation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/install-operation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-install-operation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/install-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-install-plan-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/install-verification.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-install-verification-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-conflict-report.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-install-latest-conflict-report-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-conflict-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-install-latest-conflict-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-dry-run.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-dry-run-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-observation.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-observation.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-plan.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-install-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-install-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-ownership-ledger.example.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-ownership-ledger-example-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-preservation-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-install-latest-preservation-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/install/latest-verification-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-install-latest-verification-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-intent-packet.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-intake-latest-intent-packet-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-intent-packet.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-intake-latest-intent-packet-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-workunit-draft.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-intake-latest-workunit-draft-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-workunit-draft.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-intake-latest-workunit-draft-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/doctor.yaml",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-aide-policies-doctor-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/github-release-draft.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-github-release-draft-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install-conflicts.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-conflicts-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install-migrations.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-migrations-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install-ownership.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-ownership-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install-preservation.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-preservation-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install-verification.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-verification-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/install.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-install-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-artifacts.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-artifacts-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "package",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-bundle.yaml",
+      "target_aide_command_hint": "future tools wrapper for package",
+      "tool_id": "tool-aide-policies-release-bundle-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-checklist.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-checklist-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-provenance.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-provenance-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-publication-boundary.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-publication-boundary-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-upload-plan.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-upload-plan-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-validation.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-validation-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/release-versioning.yaml",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-policies-release-versioning-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/rollback-classes.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-rollback-classes-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/rollback-safety.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-rollback-safety-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/rollback-verification.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-rollback-verification-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/rollback.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-rollback-yaml"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "repo_policy",
       "execution_allowed": false,
       "recommended_fate": "wrap",
       "source_tool": ".aide/policies/sync-policy.yaml",
       "target_aide_command_hint": "future tools wrapper for repo_policy",
       "tool_id": "tool-aide-policies-sync-policy-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/test-map.yaml",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-policies-test-map-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/uninstall-classes.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-uninstall-classes-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/uninstall-safety.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-uninstall-safety-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/uninstall-verification.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-uninstall-verification-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/uninstall.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-uninstall-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade-compatibility.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-compatibility-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade-conflicts.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-conflicts-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade-migrations.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-migrations-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade-preservation.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-preservation-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade-verification.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-verification-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/upgrade.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-policies-upgrade-yaml"
     },
     {
       "apply_allowed": false,
@@ -212,12 +707,84 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/quality/test-coverage-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-quality-test-coverage-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
       "source_tool": ".aide/queue/EUREKA-AIDE-PILOT-01/import-report.md",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-aide-queue-eureka-aide-pilot-01-import-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/generated-target-state.md",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-generated-target-state-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/install-upgrade-decision.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-install-upgrade-decision-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/post-sync-validation.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-post-sync-validation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/pre-sync-preservation-snapshot.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-pre-sync-preservation-snapshot-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/sync-application.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-sync-application-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/sync-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-sync-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/sync-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-eureka-aide-stable-upgrade-01-evidence-sync-report-md"
     },
     {
       "apply_allowed": false,
@@ -257,6 +824,402 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-plan-example-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-plan-example-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-readiness.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-readiness-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-readiness.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/rollback-notes.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-refactors-rollback-notes-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-asset.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-asset-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-assets.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-assets-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-checklist.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-checklist-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-checklist.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-checklist-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft-validation.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-validation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft-validation.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-validation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft-validation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-validation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-draft.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-draft-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-publication-boundary.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-publication-boundary-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-publication-boundary.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-publication-boundary-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-upload-plan.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-upload-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-upload-plan.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-upload-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/github-release-upload-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-github-release-upload-plan-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/latest-github-release-draft.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-latest-github-release-draft-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/latest-github-release-draft.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-latest-github-release-draft-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/latest-release-validation.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-latest-release-validation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-asset.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-release-asset-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-bundle-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-release-release-bundle-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "package",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-bundle.schema.json",
+      "target_aide_command_hint": "future tools wrapper for package",
+      "tool_id": "tool-aide-release-release-bundle-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-checksums.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-release-checksums-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-install-notes.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-release-release-install-notes-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-manifest.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-release-manifest-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-provenance.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-release-provenance-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/release/release-validation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-release-release-validation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/doctor-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-repair-doctor-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-doctor-repair-report.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-repair-latest-doctor-repair-report-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-doctor-repair-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-repair-latest-doctor-repair-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-diagnosis.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-diagnosis-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-diagnosis.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-diagnosis-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-dry-run.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-dry-run-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-observation.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-observation.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-plan.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-plan.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repair/latest-repair-verification-plan.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-repair-latest-repair-verification-plan-md"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "generate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
@@ -284,6 +1247,15 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repo/test-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-repo-test-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
@@ -299,6 +1271,195 @@
       "source_tool": ".aide/reports/eureka-release-bundle-readiness.md",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-aide-reports-eureka-release-bundle-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/reports/eureka-stable-aide-upgrade.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-reports-eureka-stable-aide-upgrade-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/reports/test-coverage-map.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-reports-test-coverage-map-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-dry-run.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-dry-run-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-observation.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-observation.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-plan.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/latest-rollback-verification-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-latest-rollback-verification-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-dry-run.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-rollback-dry-run-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-observation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-rollback-observation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-operation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-rollback-operation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-rollback-plan-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-rollback-rollback-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/rollback/rollback-verification.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-rollback-rollback-verification-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-classification.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-classification-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-classification.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-classification-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-inventory.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-inventory-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-inventory.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-inventory-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-recycling-plan.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-recycling-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-recycling-plan.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-recycling-plan-md"
     },
     {
       "apply_allowed": false,
@@ -329,12 +1490,372 @@
     },
     {
       "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/scripts/tests/test_q44_repair_doctor.py",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-scripts-tests-test-q44-repair-doctor-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/scripts/tests/test_q46_rollback_uninstall.py",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-scripts-tests-test-q46-rollback-uninstall-py"
+    },
+    {
+      "apply_allowed": false,
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
       "source_tool": ".aide/tasks/audit_backlog.yaml",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-aide-tasks-audit-backlog-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/tools/README.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-aide-tools-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-dry-run.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-dry-run-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-observation.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-observation.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-plan.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/latest-uninstall-verification-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-latest-uninstall-verification-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-dry-run.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-uninstall-dry-run-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-observation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-uninstall-observation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-operation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-uninstall-operation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-uninstall-plan-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-uninstall-uninstall-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/uninstall/uninstall-verification.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-uninstall-uninstall-verification-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/current-install-observation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-current-install-observation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-current-install-observation.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-current-install-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-current-install-observation.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-current-install-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-source-pack-observation.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-upgrade-latest-source-pack-observation-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-source-pack-observation.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-upgrade-latest-source-pack-observation-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-comparison.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-comparison-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-comparison.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-comparison-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-compatibility-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-compatibility-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-conflict-report.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-conflict-report-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-conflict-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-conflict-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-dry-run.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-dry-run-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-dry-run.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-dry-run-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-migration-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-migration-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-plan.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/latest-upgrade-verification-plan.md",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-latest-upgrade-verification-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-comparison.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-upgrade-comparison-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-compatibility-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-upgrade-compatibility-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-conflict-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-upgrade-conflict-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-dry-run.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-upgrade-dry-run-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-migration-report.schema.json",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-upgrade-upgrade-migration-report-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-operation.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-upgrade-operation-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-upgrade-plan-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/upgrade/upgrade-verification.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-upgrade-upgrade-verification-schema-json"
     },
     {
       "apply_allowed": false,
@@ -15396,12 +16917,20 @@
   ],
   "no_apply": true,
   "schema_version": "aide.tool-adapter-map.v0",
-  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
   "unmapped_tools": [
     ".aide/hooks/commit-msg",
     ".aide/policies/export-import.yaml",
     ".aide/prompts/AIDE-SYNC-01.md",
     ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md",
+    ".aide/tools/tool-adapter-map.schema.json",
+    ".aide/tools/tool-capability.schema.json",
+    ".aide/tools/tool-evidence.schema.json",
+    ".aide/tools/tool-inventory.schema.json",
+    ".aide/tools/tool-record.schema.json",
+    ".aide/tools/tool-retirement.schema.json",
+    ".aide/tools/tool-risk.schema.json",
+    ".aide/tools/tool-wrap-plan.schema.json",
     ".github/workflows/pages.yml",
     "contracts/actions/export_manifest.v0.json",
     "contracts/source_sync/source_sync_job_kind.v0.json",
@@ -15681,6 +17210,14 @@
     ".aide/policies/export-import.yaml",
     ".aide/prompts/AIDE-SYNC-01.md",
     ".aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md",
+    ".aide/tools/tool-adapter-map.schema.json",
+    ".aide/tools/tool-capability.schema.json",
+    ".aide/tools/tool-evidence.schema.json",
+    ".aide/tools/tool-inventory.schema.json",
+    ".aide/tools/tool-record.schema.json",
+    ".aide/tools/tool-retirement.schema.json",
+    ".aide/tools/tool-risk.schema.json",
+    ".aide/tools/tool-wrap-plan.schema.json",
     ".github/workflows/pages.yml",
     "contracts/actions/export_manifest.v0.json",
     "contracts/source_sync/source_sync_job_kind.v0.json",
@@ -15956,7 +17493,7 @@
     "scripts/verify_public_hosted_deployment.py"
   ],
   "warnings": [
-    "unknown_tool_candidates: .aide/hooks/commit-msg, .aide/policies/export-import.yaml, .aide/prompts/AIDE-SYNC-01.md, .aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md, .github/workflows/pages.yml, contracts/actions/export_manifest.v0.json, contracts/source_sync/source_sync_job_kind.v0.json, contracts/source_sync/source_sync_worker_job.v0.json, contracts/source_sync/source_sync_worker_manifest.v0.json, contracts/ui/ui_contracts/stored_exports.ui_contract.yaml, contracts/ui/view_models/stored_exports.view_model.yaml, control/inventory/git/sync_workflow_commands.json",
-    "high_risk_tool_candidates: .aide/changelog/RELEASE_NOTES.preview.md, .aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/evidence/release-bundle-readiness.md, .aide/reports/eureka-release-bundle-readiness.md, contracts/connectors/github_releases_connector_approval.v0.json, contracts/connectors/github_releases_connector_manifest.v0.json, contracts/runtime/live_metadata_test_request.v0.json, contracts/runtime/live_metadata_test_result.v0.json, control/audits/c-bundle-03-native-smoke-packaging-v0/generated/sample_native_release_candidate_preview.json, control/audits/c-bundle-03-native-smoke-packaging-v0/native_no_release_binary_report.md, control/audits/c-bundle-03-native-smoke-packaging-v0/native_release_candidate_preview_summary.md, control/audits/comparison-page-contract-v0/VERSION_STATE_RELEASE_COMPARISON_MODEL.md, control/audits/connector-approval-runtime-planning-audit-v0/GITHUB_RELEASES_REVIEW.md"
+    "unknown_tool_candidates: .aide/hooks/commit-msg, .aide/policies/export-import.yaml, .aide/prompts/AIDE-SYNC-01.md, .aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/import-review.md, .aide/tools/tool-adapter-map.schema.json, .aide/tools/tool-capability.schema.json, .aide/tools/tool-evidence.schema.json, .aide/tools/tool-inventory.schema.json, .aide/tools/tool-record.schema.json, .aide/tools/tool-retirement.schema.json, .aide/tools/tool-risk.schema.json, .aide/tools/tool-wrap-plan.schema.json",
+    "high_risk_tool_candidates: .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/release-notes.preview.json, .aide/changelog/templates/release-notes.md.template, .aide/policies/github-release-draft.yaml, .aide/policies/release-artifacts.yaml, .aide/policies/release-bundle.yaml, .aide/policies/release-checklist.yaml, .aide/policies/release-provenance.yaml, .aide/policies/release-publication-boundary.yaml, .aide/policies/release-upload-plan.yaml, .aide/policies/release-validation.yaml, .aide/policies/release-versioning.yaml"
   ]
 }

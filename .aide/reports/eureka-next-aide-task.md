@@ -1,26 +1,43 @@
-# Next AIDE Task
+# Next AIDE Task: Q62 Eureka Second Fixture Source Slice v0
 
-## Immediate Next
+Recommended next task: `Q62 Eureka Second Fixture Source Slice v0`
 
-`Q56 Eureka Existing Tool Absorption`
+Readiness: `READY_FOR_Q62_WITH_WARNINGS`
 
-Recommended status: `READY_FOR_Q56_WITH_WARNINGS`.
+## Why
 
-Use `.aide/context/latest-task-packet.md` as the compact brief.
+Q58-Q61 prove one local fixture source can move through observation, evidence, review, reviewed-index candidate, search/object/absence packets, and deterministic reviewed-index artifact persistence.
 
-## Scope
+The next weakest product step is source diversity: prove the same bounded local-only loop works for a second committed fixture source without live access or broad connector work.
 
-- Inspect `.aide/tools/latest-tool-inventory.md`, `.aide/tools/latest-tool-classification.md`, and `.aide/tools/latest-tool-wrap-plan.md`.
-- Preserve `scripts/check_architecture_boundaries.py`, `control/inventory/tests/command_matrix.json`, and `docs/operations/TEST_AND_EVAL_LANES.md`.
-- Classify validators and tools without executing unknown commands.
-- Write evidence under a Q56 queue packet.
+## Use
 
-## Rule
+- `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/evidence/q62-readiness.md`
+- `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/evidence/persistent-index-artifact-proof.md`
+- `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/evidence/rebuild-determinism-proof.md`
+- `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/evidence/search-object-absence-from-persisted-index.md`
+- `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/evidence/no-live-no-mutation-proof.md`
 
-`discover -> classify -> wrap -> adapt -> migrate -> retire with evidence`
+## Allowed Scope
 
-No product behavior change. No deletion, rename, move, branch mutation, network call, provider/model call, source-cache write, evidence-ledger write, public-index write, CI install, release publish, or remote push.
+- Keep source data fixture/local-only.
+- Reuse the existing Q58-Q61 fixture slice and tests.
+- Add one second committed fixture record/source path only if it stays local and deterministic.
+- Preserve accepted-only reviewed index inclusion.
+- Use temp or Q62 evidence-local paths only.
+
+## Keep Disabled
+
+- live probes;
+- network/source sync;
+- provider/model calls;
+- production source-cache/evidence-ledger/public-index writes;
+- registry mutation;
+- site deploy;
+- release publishing;
+- branch mutation;
+- remote push.
 
 ## Git Note
 
-Do not choose a product task from stale local queue state. Re-sync from the latest `origin/dev` only after the other machine pauses and the operator confirms it is safe.
+Do not integrate, pull, push, merge, rebase, or promote until the other machine pauses and the operator confirms it is safe.

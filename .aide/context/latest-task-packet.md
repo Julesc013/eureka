@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q56 - Eureka Existing Tool Absorption
+Q62 - Eureka Second Fixture Source Slice v0
 
 ## GOAL
 
-Q56 Eureka Existing Tool Absorption
+Q62 Eureka Second Fixture Source Slice v0
 
 ## WHY
 
@@ -14,12 +14,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
-- `AGENTS.md`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
-- `.aide/reports/eureka-stable-aide-upgrade.md` (present)
-- `.aide/reports/eureka-product-boundary-preservation.md` (present)
 - `.aide/context/repo-snapshot.json` (present)
 - `.aide/context/repo-map.json` (present)
 - `.aide/context/repo-map.md` (present)
@@ -32,8 +29,6 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/reports/file-quality-ledger.json` (present)
 - `.aide/refactors/latest-refactor-readiness.md` (present)
 - `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/tools/latest-tool-inventory.md` (present)
-- `.aide/tools/latest-tool-wrap-plan.md` (present)
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
@@ -45,14 +40,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/EUREKA-AIDE-TOOL-ABSORPTION-01/**`
-- `.aide/tools/**`
-- `.aide/reports/eureka-*`
+- `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/repo/**`
-- `.aide/quality/**`
-- `.aide/roots/**`
-- root docs only if a reviewed queue packet explicitly requires a compact AIDE pointer
+- `.aide/queue/q62-*` if this task becomes a queue item
+- root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
 
@@ -60,26 +51,13 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- `contracts/**`
-- `runtime/**`
-- `surfaces/**`
-- `site/**`
-- `snapshots/**`
-- `native/**`
-- `crates/**`
-- `examples/**`
-- `evals/**`
-- `tests/**`
-- `scripts/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
-- architecture validators, source/evidence/index product state, Gateway/provider/runtime/surface implementation paths unless a later reviewed packet explicitly authorizes them
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
 - Read the queue packet and relevant repo refs first.
 - Keep changes inside the allowed paths.
-- Use discover -> classify -> wrap -> adapt -> migrate -> retire with evidence.
-- Do not delete, rename, move, rewrite, or execute discovered tools during Q56.
 - Make the smallest coherent diff that satisfies acceptance.
 - Preserve generated/manual boundaries.
 - Do not inline whole source files unless exact contents are required.
@@ -93,15 +71,12 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py repo inventory`
 - `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py tools inventory`
-- `py -3 .aide/scripts/aide_lite.py tools validate`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- `py -3 scripts/check_architecture_boundaries.py`
+- `py -3 scripts/aide validate`
 - `git diff --check`
 
 ## COMMITS
@@ -122,7 +97,6 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## NON_GOALS
 
 - No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
-- No Eureka product behavior change.
 
 ## ACCEPTANCE
 
@@ -139,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4112
-- approx_tokens: 1028
+- chars: 4124
+- approx_tokens: 1031
 - budget_status: PASS
 - warnings:
   - none

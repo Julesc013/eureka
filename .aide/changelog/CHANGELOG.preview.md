@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 6f2698c6e109a3b35d20402bb9871c1e4a674688
+source_head: df6a6967afdb510de46651f70e21541f20b6741b
 commit_count: 50
 malformed_count: 0
 preview_only: true
@@ -11,7 +11,7 @@ release_publishing: false
 
 ## Summary
 
-- Added: 50
+- Added: 49
 - Changed: 36
 - Fixed: 12
 - Docs: 12
@@ -21,7 +21,6 @@ release_publishing: false
 
 ## Added
 
-- R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack. (3e6eb757e037 refactor(r0): clean contract references)
 - compatibility handling for historical candidate/probe/OBS references after schema moves. (5f5e5bcb22d2 refactor(r0): clean contract references)
 - source observation seam behavior and audit evidence for R0-04. (8bb9e4cd0bf5 runtime(r0): add source observation seam)
 - durable source cache SQLite persistence seam for R0-05. (1a48f6f3fb76 runtime(r0): add durable source cache store)
@@ -74,7 +73,6 @@ release_publishing: false
 
 ## Changed
 
-- active schema references now prefer `control/schemas/` for control/task schema classes. (3e6eb757e037 refactor(r0): clean contract references)
 - active validators and tests now follow the R0 contract taxonomy for moved control schemas. (5f5e5bcb22d2 refactor(r0): clean contract references)
 - R0-03B-2 validation evidence now records the final full-suite pass. (5f5e5bcb22d2 refactor(r0): clean contract references)
 - contract taxonomy scanner recognizes the required evidence_candidate runtime contract as product runtime. (8bb9e4cd0bf5 runtime(r0): add source observation seam)
@@ -110,6 +108,7 @@ release_publishing: false
 - LOCAL closeout warning and promotion evidence now reflect zero new unallowlisted leakage findings. (4e9ebd7478ae fix(local): green appliance leakage and promotion gate)
 - promotion evidence now records the completed fast-forward promotion. (52a73c641d2c audit(local): record appliance promotion result)
 - LOCAL-14 promotion review evidence restored to plan-only semantics. (7de5c8b708c2 audit(final): align state promotion and future plan)
+- local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated. (df6a6967afdb chore(pack): sync stable control plane)
 
 ## Fixed
 

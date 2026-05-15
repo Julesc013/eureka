@@ -29,13 +29,13 @@
   "file_classifications": [
     {
       "fate_counts": {
-        "keep": 485,
-        "unknown": 57
+        "keep": 993,
+        "unknown": 93
       },
-      "file_count": 542,
+      "file_count": 1086,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 542,
+      "review_required_file_count": 1086,
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed"
@@ -314,13 +314,13 @@
   "root_plans": [
     {
       "fate_counts": {
-        "keep": 485,
-        "unknown": 57
+        "keep": 993,
+        "unknown": 93
       },
-      "file_count": 542,
+      "file_count": 1086,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 542,
+      "review_required_file_count": 1086,
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed"
@@ -558,7 +558,7 @@
     }
   ],
   "schema_version": "aide.root-recycling-plan.v0",
-  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

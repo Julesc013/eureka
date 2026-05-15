@@ -1,14 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "3e6eb757e037",
-      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
-    },
-    {
-      "commit": "3e6eb757e037",
-      "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
-    },
-    {
       "commit": "5f5e5bcb22d2",
       "summary": "Run R0-03C to resolve remaining contract taxonomy blockers before R0-04."
     },
@@ -591,16 +583,13 @@
     {
       "commit": "6f2698c6e109",
       "summary": "Run Q55 as a local-only upgrade from the validated stable AIDE bundle."
+    },
+    {
+      "commit": "df6a6967afdb",
+      "summary": "Run Q56 Eureka Existing Tool Absorption as a report-only discover/classify/wrap planning task."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "3e6eb757e037",
-      "subject": "refactor(r0): clean contract references",
-      "summary": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -947,13 +936,6 @@
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "3e6eb757e037",
-      "subject": "refactor(r0): clean contract references",
-      "summary": "active schema references now prefer `control/schemas/` for control/task schema classes."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
       "commit": "5f5e5bcb22d2",
       "subject": "refactor(r0): clean contract references",
       "summary": "active validators and tests now follow the R0 contract taxonomy for moved control schemas."
@@ -1195,6 +1177,13 @@
       "commit": "7de5c8b708c2",
       "subject": "audit(final): align state promotion and future plan",
       "summary": "LOCAL-14 promotion review evidence restored to plan-only semantics."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "df6a6967afdb",
+      "subject": "chore(pack): sync stable control plane",
+      "summary": "local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated."
     },
     {
       "breaking": false,
@@ -1521,14 +1510,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "3e6eb757e037",
-      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers."
-    },
-    {
-      "commit": "3e6eb757e037",
-      "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers."
-    },
     {
       "commit": "5f5e5bcb22d2",
       "summary": "Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers."
@@ -2112,20 +2093,16 @@
     {
       "commit": "6f2698c6e109",
       "summary": "Local dev remains ahead of and behind origin/dev while HUNT work continues remotely."
+    },
+    {
+      "commit": "df6a6967afdb",
+      "summary": "Local dev remains intentionally ahead/behind origin/dev while another machine works there."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_head": "df6a6967afdb510de46651f70e21541f20b6741b",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "3e6eb757e037",
-      "summary": "PASS: `git diff --check`."
-    },
-    {
-      "commit": "3e6eb757e037",
-      "summary": "PASS: `git diff --check`."
-    },
     {
       "commit": "5f5e5bcb22d2",
       "summary": "`git diff --check`: PASS."
@@ -2709,6 +2686,10 @@
     {
       "commit": "6f2698c6e109",
       "summary": "python scripts/check_git_task_state.py --mode start-task --task-id EUREKA-AIDE-UPGRADE-PREFLIGHT-01: FAIL recorded as preflight state."
+    },
+    {
+      "commit": "df6a6967afdb",
+      "summary": "PASS: doctor, validate, test, selftest, review-pack, architecture boundary check, git diff --check, and .aide.local ignore check."
     }
   ],
   "warnings": []

@@ -143,6 +143,149 @@
         "test_prefix_filename",
         "aide_lite_test_path"
       ],
+      "test_path": ".aide/scripts/tests/test_q34_changelog_release.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q35_github_advisory.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q36_intent_compiler.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q37_repo_intelligence.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q38_file_quality.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q39_refactor_control.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q40_root_recycling.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q41_tool_absorption.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q42_move_map_aliases.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q43_install_plan.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q45_upgrade_model.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q47_release_bundle.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q48_github_release_draft.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
       "test_path": ".aide/scripts/tests/test_review_pack.py"
     },
     {
@@ -8847,5 +8990,5 @@
     }
   ],
   "schema_version": "aide.test-map.v0",
-  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688"
+  "source_commit": "df6a6967afdb510de46651f70e21541f20b6741b"
 }

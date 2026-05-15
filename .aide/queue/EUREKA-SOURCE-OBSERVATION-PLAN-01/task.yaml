@@ -1,0 +1,48 @@
+task_id: EUREKA-SOURCE-OBSERVATION-PLAN-01
+phase: Q57
+title: Eureka Source Observation Vertical Slice Plan
+repo: julesc013/eureka
+branch: dev
+mode: product_readiness_planning_only
+status: needs_review
+depends_on:
+  - EUREKA-AIDE-STABLE-UPGRADE-01
+  - EUREKA-AIDE-TOOL-ABSORPTION-01
+selected_next_task: Q58 Eureka Fixture Source Observation Vertical Slice v0
+readiness: READY_FOR_Q58_WITH_WARNINGS
+selected_slice:
+  title: Fixture Observation/Evidence/Review/Index/Search Loop
+  source_data: synthetic package metadata fixture/local-only data
+  risk_class: medium_local_fixture_only
+  sizing: one_shot
+allowed_writes:
+  - .aide/queue/EUREKA-SOURCE-OBSERVATION-PLAN-01/**
+  - .aide/reports/eureka-source-observation-vertical-slice-plan.md
+  - .aide/reports/eureka-source-evidence-index-readiness.md
+  - .aide/reports/eureka-product-boundary-preservation.md
+  - .aide/reports/eureka-next-aide-task.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/intake/latest-*
+  - .aide/tools/latest-*
+  - .aide/repo/**
+  - .aide/quality/**
+  - .aide/roots/**
+forbidden_writes:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - snapshots/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - tests/**
+  - scripts/**
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+review_gate: needs_review

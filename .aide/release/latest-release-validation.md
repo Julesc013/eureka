@@ -17,8 +17,6 @@
 - release artifact exists: .aide/release/dist/install.md
 - release artifact exists: .aide/release/dist/CHANGELOG.preview.md
 - release artifact exists: .aide/release/dist/RELEASE_NOTES.preview.md
-- release artifact exists: .aide/release/dist/release-validation.json
-- release artifact exists: .aide/release/dist/release-validation.md
 - release artifact exists: .aide/release/dist/release-provenance.json
 - release artifact exists: .aide/release/dist/release-assets.json
 - release checksum problem: missing release checksums JSON

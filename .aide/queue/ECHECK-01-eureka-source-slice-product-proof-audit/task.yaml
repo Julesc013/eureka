@@ -1,0 +1,47 @@
+schema_version: aide.task.v0
+task_id: ECHECK-01-eureka-source-slice-product-proof-audit
+title: ECHECK-01 Eureka Source Slice Product Proof Audit
+phase: ECHECK-01
+task_class: audit
+risk_class: local_only_report
+status: needs_review
+owner: Codex
+created_at: 2026-05-16
+objective: >
+  Verify Eureka Q54 through Q61 evidence, validation, product-slice behavior,
+  no-live boundaries, product-boundary preservation, and readiness for the next
+  Eureka product wave.
+allowed_paths:
+  - .aide/queue/ECHECK-01-eureka-source-slice-product-proof-audit/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/intake/latest-*
+  - .aide/reports/**
+  - .aide/repo/**
+  - .aide/quality/**
+  - .aide/roots/**
+  - .aide/tools/**
+forbidden_paths:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - snapshots/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - tests/**
+  - scripts/**
+  - .github/**
+  - .git/**
+  - .aide.local/**
+non_goals:
+  - product implementation
+  - live source execution
+  - provider or model calls
+  - public index publication
+  - source registry mutation
+  - branch, tag, release, deploy, or GitHub mutation
+evidence_path: .aide/queue/ECHECK-01-eureka-source-slice-product-proof-audit/
+

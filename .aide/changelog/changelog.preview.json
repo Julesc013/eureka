@@ -6,31 +6,6 @@
         "aide_result": "",
         "breaking": false,
         "category": "Added",
-        "commit": "3e6eb757e037",
-        "commit_sha": "3e6eb757e03722dd4df5fc631d3fb2e66263a4c0",
-        "entry": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack.",
-        "follow_up": "- Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.",
-        "risks": "- Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.\n- Historical audit evidence intentionally retains old paths and must not be read as current product taxonomy.",
-        "scope": "r0",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "refactor(r0): clean contract references",
-        "summary": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack.",
-        "type": "refactor",
-        "validation": "- PASS: `git diff --check`.\n- PASS: R0-03B-2 JSON shape checks.\n- PASS: `python scripts/update_contract_schema_references.py --dry-run --json`.\n- PASS: `python scripts/validate_product_contract_tree.py` with expected warnings for unresolved contract debt.\n- PASS: `python scripts/validate_contract_taxonomy_migration.py`.\n- PASS: `python scripts/audit_contract_taxonomy.py --check --json`.\n- PASS: `python scripts/validate_contract_taxonomy_plan.py`.\n- PASS: `python -m unittest tests.operations.test_contract_reference_updates tests.operations.test_product_contract_tree`.\n- PASS: `python -m unittest tests.operations.test_contract_taxonomy_migration tests.operations.test_contract_taxonomy_plan`.\n- PASS: `python scripts/check_architecture_boundaries.py`.\n- PASS: AIDE doctor, validate, test, and selftest; validate retains pre-existing stale review-packet warnings.\n- PENDING: clean-tree runtime leakage validation and full unittest discovery after commit."
-      },
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "category": "Added",
         "commit": "5f5e5bcb22d2",
         "commit_sha": "5f5e5bcb22d24f30f4aeecc16a2b1e5089478048",
         "entry": "compatibility handling for historical candidate/probe/OBS references after schema moves.",
@@ -1258,31 +1233,6 @@
         "aide_result": "",
         "breaking": false,
         "category": "Changed",
-        "commit": "3e6eb757e037",
-        "commit_sha": "3e6eb757e03722dd4df5fc631d3fb2e66263a4c0",
-        "entry": "active schema references now prefer `control/schemas/` for control/task schema classes.",
-        "follow_up": "- Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.",
-        "risks": "- Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.\n- Historical audit evidence intentionally retains old paths and must not be read as current product taxonomy.",
-        "scope": "r0",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "refactor(r0): clean contract references",
-        "summary": "active schema references now prefer `control/schemas/` for control/task schema classes.",
-        "type": "refactor",
-        "validation": "- PASS: `git diff --check`.\n- PASS: R0-03B-2 JSON shape checks.\n- PASS: `python scripts/update_contract_schema_references.py --dry-run --json`.\n- PASS: `python scripts/validate_product_contract_tree.py` with expected warnings for unresolved contract debt.\n- PASS: `python scripts/validate_contract_taxonomy_migration.py`.\n- PASS: `python scripts/audit_contract_taxonomy.py --check --json`.\n- PASS: `python scripts/validate_contract_taxonomy_plan.py`.\n- PASS: `python -m unittest tests.operations.test_contract_reference_updates tests.operations.test_product_contract_tree`.\n- PASS: `python -m unittest tests.operations.test_contract_taxonomy_migration tests.operations.test_contract_taxonomy_plan`.\n- PASS: `python scripts/check_architecture_boundaries.py`.\n- PASS: AIDE doctor, validate, test, and selftest; validate retains pre-existing stale review-packet warnings.\n- PENDING: clean-tree runtime leakage validation and full unittest discovery after commit."
-      },
-      {
-        "aide_phase": "",
-        "aide_result": "",
-        "breaking": false,
-        "category": "Changed",
         "commit": "5f5e5bcb22d2",
         "commit_sha": "5f5e5bcb22d24f30f4aeecc16a2b1e5089478048",
         "entry": "active validators and tests now follow the R0 contract taxonomy for moved control schemas.",
@@ -2152,6 +2102,31 @@
         "summary": "LOCAL-14 promotion review evidence restored to plan-only semantics.",
         "type": "audit",
         "validation": "- `python -m unittest discover -s tests -t .`: PASS, 4323 tests.\n- `python scripts/check_architecture_boundaries.py`: PASS.\n- `python scripts/validate_runtime_architecture_leakage.py`: PASS.\n- `python scripts/audit_runtime_architecture_leakage.py --check --json`: WARN, 0 new unallowlisted production findings and known exact warning debt remains.\n- `local machine proof, local service smoke, workbench smoke, auto-test/search, LAN same-machine smoke, clean-machine proof`: PASS/WARN, bounded warnings only.\n- `py -3 .aide/scripts/aide_lite.py verify`: WARN, metadata/diff-scope warnings only.\n- `python scripts/check_generated_artifact_cleanliness.py --check --json`: WARN, rerun after this commit because the final audit pack itself is generated output."
+      },
+      {
+        "aide_phase": "Q55",
+        "aide_result": "PASS_WITH_WARNINGS",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "df6a6967afdb",
+        "commit_sha": "df6a6967afdb510de46651f70e21541f20b6741b",
+        "entry": "local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated.",
+        "follow_up": "- Run Q56 Eureka Existing Tool Absorption as a report-only discover/classify/wrap planning task.\n- Re-sync with origin/dev only after the other machine pauses and operator confirms it is safe.\n\nAIDE-Task: EUREKA-AIDE-STABLE-UPGRADE-01\nAIDE-Phase: Q55\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: pack\nAIDE-Token-Impact: lower-future-context-cost\nAIDE-Quality-Gate: needs-review",
+        "risks": "- Local dev remains intentionally ahead/behind origin/dev while another machine works there.\n- Pre-existing native obj output remains untracked and outside this commit.\n- Target-local release publication validation is intentionally blocked because release dist artifacts were not copied into Eureka.",
+        "scope": "pack",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "chore(pack): sync stable control plane",
+        "summary": "local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated.",
+        "type": "chore",
+        "validation": "- PASS: doctor, validate, test, selftest, review-pack, architecture boundary check, git diff --check, and .aide.local ignore check.\n- PASS: intent, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, changelog, GitHub advisory, and adapter validation.\n- WARN: repo validate has unknown classifications; verify warns on Q55 broad diff scope and pre-existing native obj; full eval run exited abnormally, targeted critical golden tasks passed."
       }
     ],
     "Docs": [
@@ -3716,7 +3691,7 @@
     ]
   },
   "category_counts": {
-    "Added": 50,
+    "Added": 49,
     "Changed": 36,
     "Docs": 12,
     "Fixed": 12,
@@ -3726,56 +3701,6 @@
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "category": "Added",
-      "commit": "3e6eb757e037",
-      "commit_sha": "3e6eb757e03722dd4df5fc631d3fb2e66263a4c0",
-      "entry": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack.",
-      "follow_up": "- Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.",
-      "risks": "- Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.\n- Historical audit evidence intentionally retains old paths and must not be read as current product taxonomy.",
-      "scope": "r0",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "refactor(r0): clean contract references",
-      "summary": "R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack.",
-      "type": "refactor",
-      "validation": "- PASS: `git diff --check`.\n- PASS: R0-03B-2 JSON shape checks.\n- PASS: `python scripts/update_contract_schema_references.py --dry-run --json`.\n- PASS: `python scripts/validate_product_contract_tree.py` with expected warnings for unresolved contract debt.\n- PASS: `python scripts/validate_contract_taxonomy_migration.py`.\n- PASS: `python scripts/audit_contract_taxonomy.py --check --json`.\n- PASS: `python scripts/validate_contract_taxonomy_plan.py`.\n- PASS: `python -m unittest tests.operations.test_contract_reference_updates tests.operations.test_product_contract_tree`.\n- PASS: `python -m unittest tests.operations.test_contract_taxonomy_migration tests.operations.test_contract_taxonomy_plan`.\n- PASS: `python scripts/check_architecture_boundaries.py`.\n- PASS: AIDE doctor, validate, test, and selftest; validate retains pre-existing stale review-packet warnings.\n- PENDING: clean-tree runtime leakage validation and full unittest discovery after commit."
-    },
-    {
-      "aide_phase": "",
-      "aide_result": "",
-      "breaking": false,
-      "category": "Changed",
-      "commit": "3e6eb757e037",
-      "commit_sha": "3e6eb757e03722dd4df5fc631d3fb2e66263a4c0",
-      "entry": "active schema references now prefer `control/schemas/` for control/task schema classes.",
-      "follow_up": "- Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.",
-      "risks": "- Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.\n- Historical audit evidence intentionally retains old paths and must not be read as current product taxonomy.",
-      "scope": "r0",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "refactor(r0): clean contract references",
-      "summary": "active schema references now prefer `control/schemas/` for control/task schema classes.",
-      "type": "refactor",
-      "validation": "- PASS: `git diff --check`.\n- PASS: R0-03B-2 JSON shape checks.\n- PASS: `python scripts/update_contract_schema_references.py --dry-run --json`.\n- PASS: `python scripts/validate_product_contract_tree.py` with expected warnings for unresolved contract debt.\n- PASS: `python scripts/validate_contract_taxonomy_migration.py`.\n- PASS: `python scripts/audit_contract_taxonomy.py --check --json`.\n- PASS: `python scripts/validate_contract_taxonomy_plan.py`.\n- PASS: `python -m unittest tests.operations.test_contract_reference_updates tests.operations.test_product_contract_tree`.\n- PASS: `python -m unittest tests.operations.test_contract_taxonomy_migration tests.operations.test_contract_taxonomy_plan`.\n- PASS: `python scripts/check_architecture_boundaries.py`.\n- PASS: AIDE doctor, validate, test, and selftest; validate retains pre-existing stale review-packet warnings.\n- PENDING: clean-tree runtime leakage validation and full unittest discovery after commit."
-    },
     {
       "aide_phase": "",
       "aide_result": "",
@@ -7425,6 +7350,31 @@
       "summary": "documented Q55 preservation, conflict, and absorption rules.",
       "type": "aide",
       "validation": "- python scripts/check_git_task_state.py --mode start-task --task-id EUREKA-AIDE-UPGRADE-PREFLIGHT-01: FAIL recorded as preflight state.\n\n- git diff --check and git diff --cached --check: PASS.\n\n- git check-ignore .aide.local/: PASS.\n\n- py -3 .aide/scripts/aide_lite.py doctor, validate, test, selftest, eval run, adapter validate, commit check --latest: PASS.\n\n- py -3 scripts/check_architecture_boundaries.py: PASS.\n\n- release bundle checksum/listing/forbidden-path checks: PASS.\n\n- Q54 verifier: WARN with zero errors."
+    },
+    {
+      "aide_phase": "Q55",
+      "aide_result": "PASS_WITH_WARNINGS",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "df6a6967afdb",
+      "commit_sha": "df6a6967afdb510de46651f70e21541f20b6741b",
+      "entry": "local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated.",
+      "follow_up": "- Run Q56 Eureka Existing Tool Absorption as a report-only discover/classify/wrap planning task.\n- Re-sync with origin/dev only after the other machine pauses and operator confirms it is safe.\n\nAIDE-Task: EUREKA-AIDE-STABLE-UPGRADE-01\nAIDE-Phase: Q55\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: pack\nAIDE-Token-Impact: lower-future-context-cost\nAIDE-Quality-Gate: needs-review",
+      "risks": "- Local dev remains intentionally ahead/behind origin/dev while another machine works there.\n- Pre-existing native obj output remains untracked and outside this commit.\n- Target-local release publication validation is intentionally blocked because release dist artifacts were not copied into Eureka.",
+      "scope": "pack",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "chore(pack): sync stable control plane",
+      "summary": "local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated.",
+      "type": "chore",
+      "validation": "- PASS: doctor, validate, test, selftest, review-pack, architecture boundary check, git diff --check, and .aide.local ignore check.\n- PASS: intent, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, changelog, GitHub advisory, and adapter validation.\n- WARN: repo validate has unknown classifications; verify warns on Q55 broad diff scope and pre-existing native obj; full eval run exited abnormally, targeted critical golden tasks passed."
     }
   ],
   "generated_by": "aide-lite",
@@ -7435,7 +7385,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_head": "df6a6967afdb510de46651f70e21541f20b6741b",
   "source_range": "HEAD latest 50 commits",
   "warnings": []
 }

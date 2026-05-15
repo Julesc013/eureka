@@ -1,0 +1,90 @@
+﻿[
+    {
+        "name":  "eval run",
+        "command":  "python .aide/scripts/aide_lite.py eval run",
+        "exit_code":  1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  0.84,
+        "summary":  "python.exe : Traceback (most recent call last):\r\nAt line:7 char:13\r\n+   $output = \u0026 $Exe @ArgList 2\u003e\u00261\r\n+             ~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n  File \".aide/scripts/aide_lite.py\", line 28992, in \u003cmodule\u003e\r\n    raise SystemExit(main())\r\n  File \".aide/scripts/aide_lite.py\", line 28985, in main\r\n    return int(args.handler(args))\r\n  File \".aide/scripts/aide_lite.py\", line 25680, in command_eval_run\r\n    run = run_golden_tasks(args.repo_root, task_id=args.task)\r\n  File \".aide/scripts/aide_lite.py\", line 20480, in run_golden_tasks\r\n    tasks = [run_golden_task(repo_root, definition.task_id) for definition in definitions]\r\n  File \".aide/scripts/aide_lite.py\", line 20480, in \u003clistcomp\u003e\r\n    tasks = [run_golden_task(repo_root, definition.task_id) for definition in definitions]\r\n  File \".aide/scripts/aide_lite.py\", line 17080, in run_golden_task\r\n    return run_golden_adapter_determinism(repo_root)\r\n  File \".aide/scripts/aide_lite.py\", line 17478, in run_golden_adapter_determinism\r\n    _write_minimal_repo(temp_root)\r\n  File \".aide/scripts/aide_lite.py\", line 27879, in _write_minimal_repo\r\n    write_text(root / \".gitignore\", read_text(source_root / \".gitignore\"))\r\n  File \".aide/scripts/aide_lite.py\", line 3083, in write_text\r\n    write_text_if_changed(path, text)\r\n  File \".aide/scripts/aide_lite.py\", line 3078, in write_text_if_changed\r\n    path.write_text(normalized, encoding=\"utf-8\", newline=\"\\n\")\r\nTypeError: write_text() got an unexpected keyword argument \u0027newline\u0027"
+    },
+    {
+        "name":  "review-pack",
+        "command":  "python .aide/scripts/aide_lite.py review-pack",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  2.88,
+        "summary":  "AIDE Lite review-pack\r\npath: .aide/context/latest-review-packet.md\r\naction: unchanged\r\nchars: 6622\r\napprox_tokens: 1656\r\nbudget_status: PASS\r\nverifier_result: PASS\r\ncontents_inline: false"
+    },
+    {
+        "name":  "intent compile Q57",
+        "command":  "python .aide/scripts/aide_lite.py intent compile --prompt Plan Eureka source observation vertical slice without live mutation",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.38,
+        "summary":  "AIDE Lite intent compile\r\nresult: PASS\r\ngenerated_from: inline_prompt\r\nraw_prompt_hash: b7981c77cd1e1bd562ff52aa502cc910e04782cfe32efd55b8b0bc9d9ad0bd7e\r\ntask_class: unknown\r\nrisk_class: external_side_effect\r\nsizing_class: live_test_gate\r\nsafe_to_execute: false\r\nrequires_split: true\r\nblocked: false\r\nnext_action: require behavior proof and live-test validation plan before implementation\r\nintent_json: .aide/intake/latest-intent-packet.json (unchanged)\r\nintent_md: .aide/intake/latest-intent-packet.md (unchanged)\r\nworkunit_json: .aide/intake/latest-workunit-draft.json (unchanged)\r\nworkunit_md: .aide/intake/latest-workunit-draft.md (unchanged)\r\ntask_execution: false\r\nprovider_or_model_calls: none\r\nnetwork_calls: none\r\nraw_long_prompt_storage: false"
+    },
+    {
+        "name":  "repo inventory",
+        "command":  "python .aide/scripts/aide_lite.py repo inventory",
+        "exit_code":  1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  125.14,
+        "summary":  "python.exe : error: [WinError 123] The filename, directory name, or volume label syntax is incorrect: \u0027C:\\\\Inbox\\\\Git \r\nRepos\\\\eureka\\\\contracts\\\\**\u0027\r\nAt line:7 char:13\r\n+   $output = \u0026 $Exe @ArgList 2\u003e\u00261\r\n+             ~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (error: [WinErro...\\contracts\\\\**\u0027:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError"
+    },
+    {
+        "name":  "repo status",
+        "command":  "python .aide/scripts/aide_lite.py repo status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.27,
+        "summary":  "AIDE Lite repo status\r\nresult: PASS\r\nfile_count: 16843\r\nunknown_count: 5928\r\ngenerated_count: 37\r\nevidence_count: 333\r\norphan_candidate_count: 15503\r\ncounts_by_kind:\r\n- contract: 330\r\n- doc: 5078\r\n- evidence: 333\r\n- fixture: 1981\r\n- generated: 37\r\n- policy: 101\r\n- schema: 108\r\n- source: 1151\r\n- template: 17\r\n- test: 1102\r\n- tool: 677\r\n- unknown: 5928\r\ncounts_by_status:\r\n- active: 10528\r\n- evidence_only: 333\r\n- generated: 37\r\n- template_only: 17\r\n- unknown: 5928\r\nowner_counts:\r\n- AIDE Git workflow: 13\r\n- AIDE GitHub advisory: 8\r\n- AIDE Lite: 32\r\n- AIDE changelog preview: 10\r\n- AIDE context compiler: 12\r\n- AIDE control plane: 254\r\n- AIDE evals: 279\r\n- AIDE governance: 77\r\n- AIDE harness: 1\r\n- AIDE intent compiler: 11\r\n- AIDE refactor control plane: 35\r\n- AIDE repo intelligence: 21\r\n- AIDE root recycling framework: 14\r\n- AIDE self-hosting queue: 294\r\n- AIDE tool absorption framework: 24\r\n- compatibility baseline: 2\r\n- documentation reference: 555\r\n- unknown: 15201\r\ninventory: .aide/repo/file-inventory.json\r\nlatest_markdown: .aide/repo/latest-repo-intelligence.md\r\nquality_ledger: .aide/reports/file-quality-ledger.json\r\nrefactor_readiness: .aide/refactors/latest-refactor-readiness.json"
+    },
+    {
+        "name":  "quality ledger",
+        "command":  "python .aide/scripts/aide_lite.py quality ledger",
+        "exit_code":  -1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  7.91,
+        "summary":  ""
+    },
+    {
+        "name":  "tools status",
+        "command":  "python .aide/scripts/aide_lite.py tools status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.64,
+        "summary":  "AIDE Lite tools status\r\nresult: PASS\r\ntool_inventory: .aide/tools/latest-tool-inventory.json\r\ntool_classification: .aide/tools/latest-tool-classification.json\r\ntool_wrap_plan: .aide/tools/latest-tool-wrap-plan.json\r\ntool_adapter_map: .aide/tools/latest-tool-adapter-map.json\r\ntool_count: 2164\r\nhigh_risk_tool_count: 448\r\nunknown_tool_count: 285\r\ncapability_counts:\r\n- audit: 484\r\n- build: 107\r\n- context: 574\r\n- docs: 244\r\n- format: 14\r\n- generate: 130\r\n- install: 184\r\n- package: 425\r\n- release: 293\r\n- repo_policy: 412\r\n- security: 2\r\n- test: 148\r\n- unknown: 285\r\n- validate: 559\r\nexecution_allowed: false\r\nno_apply: true"
+    },
+    {
+        "name":  "roots status",
+        "command":  "python .aide/scripts/aide_lite.py roots status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.69,
+        "summary":  "AIDE Lite roots status\r\nresult: PASS\r\nroot_inventory: .aide/roots/latest-root-inventory.json\r\nroot_classification: .aide/roots/latest-root-classification.json\r\nroot_plan: .aide/roots/latest-root-recycling-plan.json\r\nroot_count: 20\r\nfile_count: 16843\r\nmixed_root_count: 5\r\nunknown_root_count: 20\r\nhigh_risk_root_count: 19\r\nfate_counts:\r\n- keep: 1549\r\n- unknown: 15294\r\nno_apply: true"
+    },
+    {
+        "name":  "git plan",
+        "command":  "python .aide/scripts/aide_lite.py git plan",
+        "exit_code":  1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  1.56,
+        "summary":  "python.exe : Traceback (most recent call last):\r\nAt line:7 char:13\r\n+   $output = \u0026 $Exe @ArgList 2\u003e\u00261\r\n+             ~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n  File \".aide/scripts/aide_lite.py\", line 28992, in \u003cmodule\u003e\r\n    raise SystemExit(main())\r\n  File \".aide/scripts/aide_lite.py\", line 28985, in main\r\n    return int(args.handler(args))\r\n  File \".aide/scripts/aide_lite.py\", line 26219, in command_git_plan\r\n    json_result, md_result = write_git_helper_plan(args.repo_root, plan)\r\n  File \".aide/scripts/aide_lite.py\", line 16384, in write_git_helper_plan\r\n    json_result = write_text_if_changed(repo_root / GIT_HELPER_PLAN_JSON_PATH, stable_json_text(plan))\r\n  File \".aide/scripts/aide_lite.py\", line 3078, in write_text_if_changed\r\n    path.write_text(normalized, encoding=\"utf-8\", newline=\"\\n\")\r\nTypeError: write_text() got an unexpected keyword argument \u0027newline\u0027"
+    },
+    {
+        "name":  "changelog preview",
+        "command":  "python .aide/scripts/aide_lite.py changelog preview",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.8,
+        "summary":  "AIDE Lite changelog preview\r\nresult: PASS\r\nrange: HEAD latest 50 commits\r\nsource_head: df6a6967afdb510de46651f70e21541f20b6741b\r\ncommit_count: 50\r\nchangelog: .aide/changelog/CHANGELOG.preview.md\r\nchangelog_json: .aide/changelog/changelog.preview.json\r\nrelease_notes: .aide/changelog/RELEASE_NOTES.preview.md\r\nrelease_notes_json: .aide/changelog/release-notes.preview.json\r\ncategories: 7\r\nmalformed_commits: 0\r\nrelease_highlights: 131\r\nrelease_publishing: false"
+    },
+    {
+        "name":  "changelog validate",
+        "command":  "python .aide/scripts/aide_lite.py changelog validate",
+        "exit_code":  1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  0.75,
+        "summary":  "python.exe : Traceback (most recent call last):\r\nAt line:7 char:13\r\n+   $output = \u0026 $Exe @ArgList 2\u003e\u00261\r\n+             ~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n  File \".aide/scripts/aide_lite.py\", line 28992, in \u003cmodule\u003e\r\n    raise SystemExit(main())\r\n  File \".aide/scripts/aide_lite.py\", line 28985, in main\r\n    return int(args.handler(args))\r\n  File \".aide/scripts/aide_lite.py\", line 25846, in command_changelog_validate\r\n    checks = validate_changelog_outputs(args.repo_root, output_dir=getattr(args, \"output_dir\", None))\r\n  File \".aide/scripts/aide_lite.py\", line 4298, in validate_changelog_outputs\r\n    check_pass(checks, path.exists(), f\"changelog output exists: {path.relative_to(repo_root) if \r\npath.is_relative_to(repo_root) else path}\")\r\nAttributeError: \u0027WindowsPath\u0027 object has no attribute \u0027is_relative_to\u0027"
+    }
+]

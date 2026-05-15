@@ -3,12 +3,11 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 6f2698c6e109a3b35d20402bb9871c1e4a674688
+source_head: df6a6967afdb510de46651f70e21541f20b6741b
 preview_only: true
 
 ## Highlights
 
-- Added: R0-03B-2 reference updater, product-tree validator, tests, docs, and audit pack. (3e6eb757e037)
 - Added: compatibility handling for historical candidate/probe/OBS references after schema moves. (5f5e5bcb22d2)
 - Added: source observation seam behavior and audit evidence for R0-04. (8bb9e4cd0bf5)
 - Added: durable source cache SQLite persistence seam for R0-05. (1a48f6f3fb76)
@@ -58,7 +57,6 @@ preview_only: true
 - Added: final green inventories and audit evidence. (736a43a5a9c5)
 - Added: LOCAL total remediation inventories, audit evidence, and promotion gate tests. (4e9ebd7478ae)
 - Added: final state inventories, audit pack, future execution plan, and chat alignment packet. (7de5c8b708c2)
-- Changed: active schema references now prefer `control/schemas/` for control/task schema classes. (3e6eb757e037)
 - Changed: active validators and tests now follow the R0 contract taxonomy for moved control schemas. (5f5e5bcb22d2)
 - Changed: R0-03B-2 validation evidence now records the final full-suite pass. (5f5e5bcb22d2)
 - Changed: contract taxonomy scanner recognizes the required evidence_candidate runtime contract as product runtime. (8bb9e4cd0bf5)
@@ -94,6 +92,7 @@ preview_only: true
 - Changed: LOCAL closeout warning and promotion evidence now reflect zero new unallowlisted leakage findings. (4e9ebd7478ae)
 - Changed: promotion evidence now records the completed fast-forward promotion. (52a73c641d2c)
 - Changed: LOCAL-14 promotion review evidence restored to plan-only semantics. (7de5c8b708c2)
+- Changed: local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated. (df6a6967afdb)
 - Fixed: preserve candidate-index historical contract path compatibility during merge. (ce1ab9685222)
 - Fixed: moved unresolved contract taxonomy artifacts to control/schemas (ede77d3cb101)
 - Fixed: updated active schema references and audit evidence needed by validators (ede77d3cb101)
@@ -143,8 +142,6 @@ preview_only: true
 
 ## Validation Summary
 
-- 3e6eb757e037: PASS: `git diff --check`.
-- 3e6eb757e037: PASS: `git diff --check`.
 - 5f5e5bcb22d2: `git diff --check`: PASS.
 - 5f5e5bcb22d2: `git diff --check`: PASS.
 - 5f5e5bcb22d2: `git diff --check`: PASS.
@@ -153,11 +150,11 @@ preview_only: true
 - 8bb9e4cd0bf5: PASS: git status --short
 - 1a48f6f3fb76: PASS: git diff --check
 - 1a48f6f3fb76: PASS: git diff --check
+- 1a48f6f3fb76: PASS: git diff --check
+- a9c536dfe1f9: PASS: git diff --check
 
 ## Known Risks
 
-- 3e6eb757e037: Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.
-- 3e6eb757e037: Remaining unresolved contracts block R0-04 until R0-03C or an allowed runtime/script cleanup handles active consumers.
 - 5f5e5bcb22d2: Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers.
 - 5f5e5bcb22d2: Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers.
 - 5f5e5bcb22d2: Remaining unresolved contracts block R0-04 until R0-03C or an allowed cleanup handles active consumers.
@@ -166,11 +163,11 @@ preview_only: true
 - 8bb9e4cd0bf5: R0-03B-2 still records unresolved legacy contract taxonomy debt, so this closes as PASS_WITH_WARNINGS.
 - 1a48f6f3fb76: R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks.
 - 1a48f6f3fb76: R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks.
+- 1a48f6f3fb76: R0-05 deliberately leaves evidence ledger persistence, review queue persistence, and public index rebuild for later tasks.
+- a9c536dfe1f9: R0-06 deliberately leaves review queue persistence and public index rebuild for later tasks.
 
 ## Follow-up
 
-- 3e6eb757e037: Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.
-- 3e6eb757e037: Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.
 - 5f5e5bcb22d2: Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.
 - 5f5e5bcb22d2: Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.
 - 5f5e5bcb22d2: Run R0-03C to resolve remaining contract taxonomy blockers before R0-04.
@@ -179,6 +176,8 @@ preview_only: true
 - 8bb9e4cd0bf5: R0-05 should add the durable source cache store. F0 and dev-to-main promotion remain blocked.
 - 1a48f6f3fb76: R0-06 should add the durable evidence ledger store.
 - 1a48f6f3fb76: R0-06 should add the durable evidence ledger store.
+- 1a48f6f3fb76: R0-06 should add the durable evidence ledger store.
+- a9c536dfe1f9: R0-07 should add the review queue product seam.
 
 ## Warnings
 

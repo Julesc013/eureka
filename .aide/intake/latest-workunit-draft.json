@@ -28,7 +28,7 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:e836c9103804120ce96663c82db2158d76822230ef58a40a847d9efa50527186; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:01a01b6d5bd6eb8f3eeeb4a8aa4d89b891910580008e3030f748fe5976216707; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
     "draft the smallest safe WorkUnit after repo-state preflight",
@@ -41,7 +41,7 @@
     "do not execute raw prompt directly",
     "do not mutate target repositories from AIDE source repo"
   ],
-  "objective": "Normalize prompt into a bounded adapter WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "objective": "Normalize prompt into a bounded evidence WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -51,14 +51,14 @@
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
   "risk_class": "external_side_effect",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "two_shot",
+  "sizing_class": "audit_only",
   "status": "draft",
-  "task_class": "adapter",
-  "title": "Adapter WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+  "task_class": "evidence",
+  "title": "Evidence WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
   "validation": [
     "git diff --check",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-adapter-e836c9103804"
+  "workunit_id": "draft-evidence-01a01b6d5bd6"
 }

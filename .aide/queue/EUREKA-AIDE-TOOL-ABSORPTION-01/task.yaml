@@ -1,0 +1,50 @@
+task_id: EUREKA-AIDE-TOOL-ABSORPTION-01
+phase: Q56
+title: Eureka Existing Tool Absorption
+repo: julesc013/eureka
+branch: dev
+mode: target_analysis_classification_wrap_plan
+status: needs_review
+depends_on:
+  - EUREKA-AIDE-UPGRADE-PREFLIGHT-01
+  - EUREKA-AIDE-STABLE-UPGRADE-01
+allowed_writes:
+  - .aide/queue/EUREKA-AIDE-TOOL-ABSORPTION-01/**
+  - .aide/tools/**
+  - .aide/reports/eureka-*
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/intake/latest-*
+  - .aide/repo/**
+  - .aide/quality/**
+  - .aide/roots/**
+forbidden_writes:
+  - contracts/**
+  - runtime/**
+  - surfaces/**
+  - site/**
+  - snapshots/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - tests/**
+  - scripts/**
+  - .github/**
+  - .git/**
+  - .aide.local/**
+forbidden_operations:
+  - delete_tools
+  - rename_tools
+  - move_tools
+  - execute_unknown_tools
+  - live_source_probes
+  - provider_or_model_calls
+  - source_cache_writes
+  - evidence_ledger_writes
+  - public_index_writes
+  - registry_mutation
+  - branch_mutation
+  - network_or_github_api_mutation
+result: READY_FOR_Q57_WITH_WARNINGS
+review_gate: needs_review
