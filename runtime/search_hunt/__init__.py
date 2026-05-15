@@ -29,6 +29,21 @@ from .records import (
     SearchHuntTransition,
     SearchHuntUncheckedLayer,
 )
+from .run_records import (
+    BackgroundHuntPlan,
+    BackgroundHuntPlanItem,
+    BackgroundHuntRun,
+    BackgroundHuntRunResult,
+    BackgroundHuntRunStatus,
+    BackgroundHuntWorkerPolicyDecision,
+)
+from .runner import (
+    build_background_hunt_plan,
+    list_background_hunt_runs,
+    run_background_hunt_batch,
+    run_next_hunt_workunit,
+    summarize_background_hunt,
+)
 from .search_summary import build_reviewed_index_search_summary
 from .steering import SearchHuntSteeringPreference, SearchHuntSteeringType
 from .store import SearchHuntStore
@@ -55,6 +70,12 @@ __all__ = [
     "ALLOWED_SEARCH_HUNT_STEERING_TYPES",
     "ALLOWED_SEARCH_HUNT_UNCHECKED_LAYERS",
     "ALLOWED_TRANSITIONS",
+    "BackgroundHuntPlan",
+    "BackgroundHuntPlanItem",
+    "BackgroundHuntRun",
+    "BackgroundHuntRunResult",
+    "BackgroundHuntRunStatus",
+    "BackgroundHuntWorkerPolicyDecision",
     "SearchHuntCheckedLayer",
     "SearchHuntClosedError",
     "SearchHuntCommand",
@@ -78,6 +99,7 @@ __all__ = [
     "SearchHuntUncheckedLayer",
     "SearchHuntValidationError",
     "apply_transition",
+    "build_background_hunt_plan",
     "build_blocked_policy_reports",
     "build_checked_layer_reports",
     "build_deferred_layer_reports",
@@ -85,6 +107,10 @@ __all__ = [
     "build_local_absence_summary",
     "build_recommended_actions",
     "build_reviewed_index_search_summary",
+    "list_background_hunt_runs",
+    "run_background_hunt_batch",
+    "run_next_hunt_workunit",
+    "summarize_background_hunt",
     "validate_no_forbidden_side_effects",
     "validate_no_truth_claims",
     "validate_query_text",

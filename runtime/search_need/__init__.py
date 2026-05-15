@@ -41,7 +41,7 @@ from .workunit_plan import (
     map_need_kind_to_workunit_plan,
     validate_workunit_plan,
 )
-from .workunits import create_workunits_from_need, list_workunits_for_hunt, list_workunits_for_need
+from .workunits import create_workunits_from_need, list_runnable_workunits_for_hunt, list_workunits_for_hunt, list_workunits_for_need
 
 
 ALLOWED_SEARCH_NEED_STATES = tuple(item.value for item in SearchNeedState)
@@ -80,6 +80,7 @@ __all__ = [
     "derive_need_kind",
     "list_workunits_for_hunt",
     "list_workunits_for_need",
+    "list_runnable_workunits_for_hunt",
     "map_need_kind_to_workunit_plan",
     "validate_need_creation_from_hunt",
     "validate_no_forbidden_side_effects",

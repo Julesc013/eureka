@@ -16,6 +16,7 @@ REQUIRED_TABLES = (
     "search_hunt_commands",
     "search_hunt_steering_preferences",
     "search_hunt_exhaustion_reports",
+    "search_hunt_runner_runs",
 )
 
 INITIAL_SCHEMA_STATEMENTS = (
@@ -128,6 +129,18 @@ CREATE TABLE IF NOT EXISTS search_hunt_exhaustion_reports (
   FOREIGN KEY(hunt_id) REFERENCES search_hunt_sessions(id)
 )
 """,
+    """
+CREATE TABLE IF NOT EXISTS search_hunt_runner_runs (
+  sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+  run_id TEXT NOT NULL UNIQUE,
+  hunt_id TEXT NOT NULL,
+  status TEXT NOT NULL,
+  payload_json TEXT NOT NULL,
+  started_at TEXT NOT NULL,
+  finished_at TEXT,
+  FOREIGN KEY(hunt_id) REFERENCES search_hunt_sessions(id)
+)
+""",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_state ON search_hunt_sessions(state)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_query ON search_hunt_sessions(normalized_query)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_sessions_parent_id ON search_hunt_sessions(parent_id)",
@@ -139,6 +152,8 @@ CREATE TABLE IF NOT EXISTS search_hunt_exhaustion_reports (
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_steering_active ON search_hunt_steering_preferences(active)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_exhaustion_hunt_id ON search_hunt_exhaustion_reports(hunt_id)",
     "CREATE INDEX IF NOT EXISTS idx_search_hunt_exhaustion_created_at ON search_hunt_exhaustion_reports(created_at)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_runner_runs_hunt_id ON search_hunt_runner_runs(hunt_id)",
+    "CREATE INDEX IF NOT EXISTS idx_search_hunt_runner_runs_started_at ON search_hunt_runner_runs(started_at)",
 )
 
 

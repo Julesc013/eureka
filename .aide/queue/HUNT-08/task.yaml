@@ -1,0 +1,16 @@
+id: HUNT-08
+title: Workbench hunt integration and smoke tests
+status: queued
+purpose: Integrate and smoke-test the Search Hunt workbench loop after background runner support exists.
+allowed_scope_summary: Workbench integration, smoke tests, docs, validators, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-07 completed
+  - background runner limited to deterministic local workers
+  - source probes remain disabled
+  - extraction remains disabled
+  - AI/model/provider calls remain disabled
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-07
+alternative_next: SYN-00

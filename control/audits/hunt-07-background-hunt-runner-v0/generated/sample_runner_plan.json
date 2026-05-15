@@ -1,0 +1,25 @@
+{
+  "schema_version": "background_hunt_plan.v0",
+  "hunt_id": "hunt_sample",
+  "limit": 10,
+  "runnable_count": 1,
+  "blocked_count": 3,
+  "items": [
+    {
+      "workunit_id": "wu_safe",
+      "worker_kind": "noop_worker",
+      "state": "queued",
+      "policy_state": "queued_local_safe",
+      "runnable": true,
+      "blocked_reason": ""
+    },
+    {
+      "workunit_id": "wu_source_probe",
+      "worker_kind": "source_probe_worker",
+      "state": "blocked",
+      "policy_state": "blocked_by_policy",
+      "runnable": false,
+      "blocked_reason": "worker_kind_disabled"
+    }
+  ]
+}

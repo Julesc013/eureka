@@ -1,0 +1,20 @@
+{
+  "schema_version": "background_hunt_side_effect_policy.v0",
+  "workunit_state_mutation_allowed": true,
+  "worker_result_recording_allowed": true,
+  "hunt_runner_history_mutation_allowed": true,
+  "public_index_rebuild_allowed_only_for_reviewed_index_rebuild_worker": true,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "external_network_allowed": false,
+  "model_provider_allowed": false,
+  "download_allowed": false,
+  "install_execution_allowed": false,
+  "source_sync_allowed": false,
+  "lan_operations_allowed": false,
+  "deployment_allowed": false,
+  "site_dist_writes_allowed": false,
+  "master_index_mutation_allowed": false,
+  "source_registry_mutation_allowed": false,
+  "connector_registry_mutation_allowed": false
+}

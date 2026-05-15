@@ -13,6 +13,7 @@ from .records import (
     SearchHuntSummary,
     SearchHuntTransition,
 )
+from .run_records import BackgroundHuntRun
 from .steering import SearchHuntSteeringPreference
 
 
@@ -112,6 +113,16 @@ def row_to_exhaustion_report(row: Mapping[str, Any]) -> SearchHuntExhaustionRepo
     payload.setdefault("state", str(row["exhaustion_state"]))
     payload.setdefault("created_at", str(row["created_at"]))
     return SearchHuntExhaustionReport.from_dict(payload)
+
+
+def row_to_background_hunt_run(row: Mapping[str, Any]) -> BackgroundHuntRun:
+    payload = dict(decode_json(row["payload_json"], {}))
+    payload.setdefault("run_id", str(row["run_id"]))
+    payload.setdefault("hunt_id", str(row["hunt_id"]))
+    payload.setdefault("status", str(row["status"]))
+    payload.setdefault("started_at", str(row["started_at"]))
+    payload.setdefault("finished_at", optional(row["finished_at"]))
+    return BackgroundHuntRun.from_dict(payload)
 
 
 def optional(value: Any) -> str | None:

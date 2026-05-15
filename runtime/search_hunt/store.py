@@ -17,7 +17,7 @@ from .commands import (
     target_state_for_command,
 )
 from .errors import SearchHuntClosedError, SearchHuntError, SearchHuntNotFoundError, SearchHuntTransitionError
-from .queries import encode_json, row_to_command, row_to_session, row_to_steering_preference, row_to_summary, row_to_transition
+from .queries import encode_json, row_to_background_hunt_run, row_to_command, row_to_session, row_to_steering_preference, row_to_summary, row_to_transition
 from .queries import row_to_exhaustion_report
 from .records import (
     SearchHuntDestination,
@@ -29,6 +29,7 @@ from .records import (
     SearchHuntTransition,
     utc_now,
 )
+from .run_records import BackgroundHuntRun
 from .schema import REQUIRED_TABLES, SCHEMA_VERSION, apply_schema, get_schema_events
 from .search_summary import build_reviewed_index_search_summary
 from .steering import SearchHuntSteeringPreference, SearchHuntSteeringType, coerce_steering_type, steering_type_text
@@ -38,6 +39,7 @@ from .validation import (
     validate_query_text,
     validate_search_hunt_command,
     validate_search_hunt_exhaustion_report,
+    validate_background_hunt_run,
     validate_search_hunt_session,
     validate_search_hunt_steering_preference,
     validate_store_path,
@@ -408,6 +410,37 @@ class SearchHuntStore:
             self._insert_command(command)
         return report
 
+    def record_background_hunt_run(self, run: BackgroundHuntRun) -> BackgroundHuntRun:
+        self._ensure_open()
+        validate_background_hunt_run(run)
+        self._require_session(run.hunt_id)
+        with self.transaction():
+            self.connection.execute(
+                "INSERT INTO search_hunt_runner_runs "
+                "(run_id, hunt_id, status, payload_json, started_at, finished_at) VALUES (?, ?, ?, ?, ?, ?)",
+                (
+                    run.run_id,
+                    run.hunt_id,
+                    run.status.value,
+                    encode_json(run.to_dict()),
+                    run.started_at,
+                    run.finished_at,
+                ),
+            )
+        return run
+
+    def list_background_hunt_runs(self, hunt_id: str | None = None, limit: int = 100) -> list[BackgroundHuntRun]:
+        self._ensure_open()
+        sql = "SELECT * FROM search_hunt_runner_runs"
+        params: list[Any] = []
+        if hunt_id:
+            self._require_session(hunt_id)
+            sql += " WHERE hunt_id = ?"
+            params.append(hunt_id)
+        sql += " ORDER BY sequence DESC LIMIT ?"
+        params.append(validate_limit(limit))
+        return [row_to_background_hunt_run(row) for row in self.connection.execute(sql, params).fetchall()]
+
     def summarize(self) -> dict[str, Any]:
         self._ensure_open()
         total = int(self.connection.execute("SELECT COUNT(*) FROM search_hunt_sessions").fetchone()[0])
@@ -448,6 +481,11 @@ class SearchHuntStore:
         orphan_exhaustion = self.connection.execute(
             "SELECT COUNT(*) FROM search_hunt_exhaustion_reports r LEFT JOIN search_hunt_sessions s ON r.hunt_id = s.id WHERE s.id IS NULL"
         ).fetchone()
+        orphan_runner_runs = (0,)
+        if "search_hunt_runner_runs" in tables:
+            orphan_runner_runs = self.connection.execute(
+                "SELECT COUNT(*) FROM search_hunt_runner_runs r LEFT JOIN search_hunt_sessions s ON r.hunt_id = s.id WHERE s.id IS NULL"
+            ).fetchone()
         orphan_count = (
             int(orphan_transitions[0] or 0)
             + int(orphan_summaries[0] or 0)
@@ -455,6 +493,7 @@ class SearchHuntStore:
             + int(orphan_commands[0] or 0)
             + int(orphan_steering[0] or 0)
             + int(orphan_exhaustion[0] or 0)
+            + int(orphan_runner_runs[0] or 0)
         )
         return {
             "status": "pass" if integrity == "ok" and not missing and orphan_count == 0 else "fail",

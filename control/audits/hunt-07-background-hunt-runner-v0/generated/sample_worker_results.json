@@ -1,0 +1,13 @@
+{
+  "schema_version": "background_hunt_worker_results.v0",
+  "worker_results": [
+    {
+      "workunit_id": "wu_safe",
+      "worker_kind": "noop_worker",
+      "status": "complete",
+      "source_probe_executed": false,
+      "extraction_executed": false,
+      "model_provider_used": false
+    }
+  ]
+}

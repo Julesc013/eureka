@@ -1,0 +1,23 @@
+{
+  "schema_version": "background_hunt_non_claim_policy.v0",
+  "forbidden_claims": [
+    "worker_result_is_truth",
+    "workunit_completion_is_evidence_acceptance",
+    "background_hunt_exhausts_internet",
+    "source_probe_was_run",
+    "extraction_was_run",
+    "ai_verified_result",
+    "rights_cleared",
+    "malware_safe",
+    "production_ready",
+    "public_launch_ready"
+  ],
+  "worker_result_is_truth": false,
+  "workunit_completion_is_evidence_acceptance": false,
+  "background_hunt_exhausts_internet": false,
+  "source_probe_was_run": false,
+  "extraction_was_run": false,
+  "ai_verified_result": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

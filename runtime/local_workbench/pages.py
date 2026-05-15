@@ -453,6 +453,7 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _search_hunt_exhaustion_report(view),
             _search_hunt_linked_needs(view.search_needs),
             _search_hunt_linked_workunits(view.workunits),
+            _background_hunt_runner_section(view),
             _search_need_creation_form(view) if view.search_need_creation_enabled else "",
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
@@ -775,7 +776,57 @@ def _search_hunt_linked_workunits(workunits: Sequence[SearchNeedWorkUnitView]) -
         [
             '<section aria-labelledby="hunt-workunits-heading"><h2 id="hunt-workunits-heading">Linked WorkUnits</h2>',
             render_table(rows, headers=("workunit_id", "kind", "state", "policy_state", "linked_need", "execution_enabled")) if rows else "<p>No linked WorkUnits are recorded for this hunt.</p>",
-            render_notice("scope", "WorkUnits shown here are local queue records only; this page has no execution controls."),
+            render_notice("scope", "WorkUnits shown here are local queue records only; this page has no runner controls."),
+            "</section>",
+        ]
+    )
+
+
+def _background_hunt_runner_section(view: SearchHuntDetailPageView) -> str:
+    runnable_rows = tuple(dict(item) for item in view.background_runner_plan)
+    blocked_rows = tuple(dict(item) for item in view.background_runner_blocked_workunits)
+    run_rows = tuple(dict(item) for item in view.background_runner_runs)
+    controls = _background_hunt_runner_controls(view) if view.runner_controls_enabled else ""
+    return "\n".join(
+        [
+            '<section aria-labelledby="background-hunt-runner-heading"><h2 id="background-hunt-runner-heading">Background hunt runner</h2>',
+            render_notice("scope", "The runner is limited to safe deterministic local workers."),
+            render_notice("scope", "Source probes, extraction, AI/model providers, acquisition or launch actions, and deployment remain disabled."),
+            "<h3>Runnable WorkUnits</h3>",
+            render_table(runnable_rows, headers=("workunit_id", "worker_kind", "state", "policy_state", "runnable", "blocked_reason")) if runnable_rows else "<p>No safe runnable WorkUnits are currently available.</p>",
+            "<h3>Policy-blocked WorkUnits</h3>",
+            render_table(blocked_rows, headers=("workunit_id", "worker_kind", "state", "policy_state", "runnable", "blocked_reason")) if blocked_rows else "<p>No policy-blocked linked WorkUnits are recorded.</p>",
+            "<h3>Latest runner history</h3>",
+            render_table(run_rows, headers=("run_id", "status", "worker_kinds", "workunit_ids", "started_at", "finished_at")) if run_rows else "<p>No background hunt runs are recorded.</p>",
+            controls,
+            "</section>",
+        ]
+    )
+
+
+def _background_hunt_runner_controls(view: SearchHuntDetailPageView) -> str:
+    run_next = "/hunt/" + quote(view.hunt_id) + "/runner/run-next"
+    run_batch = "/hunt/" + quote(view.hunt_id) + "/runner/run-batch"
+    plan = "/hunt/" + quote(view.hunt_id) + "/runner/plan"
+    return "\n".join(
+        [
+            '<section aria-labelledby="background-hunt-controls-heading"><h3 id="background-hunt-controls-heading">Runner controls</h3>',
+            render_notice("scope", "Run controls require an operator token and localhost access."),
+            f'<form method="post" action="{escape_html(plan)}">',
+            '<p><label>Batch limit <input name="limit" value="10"></label></p>',
+            '<p><button type="submit">Refresh plan preview</button></p>',
+            "</form>",
+            f'<form method="post" action="{escape_html(run_next)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><button type="submit">Run next safe worker</button></p>',
+            "</form>",
+            f'<form method="post" action="{escape_html(run_batch)}">',
+            '<p><label>Operator token <input name="operator_token" type="password" autocomplete="off"></label></p>',
+            '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
+            '<p><label>Batch limit <input name="limit" value="1"></label></p>',
+            '<p><button type="submit">Run safe batch</button></p>',
+            "</form>",
             "</section>",
         ]
     )

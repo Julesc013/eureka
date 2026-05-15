@@ -84,6 +84,14 @@ def list_workunits_for_hunt(runtime: Any, hunt_id: str, limit: int = 100) -> lis
     return results
 
 
+def list_runnable_workunits_for_hunt(runtime: Any, hunt_id: str, limit: int = 100) -> list[dict[str, Any]]:
+    return [
+        item
+        for item in list_workunits_for_hunt(runtime, hunt_id, limit=limit)
+        if item.get("state") == "queued" and item.get("policy_state") == "queued_local_safe"
+    ]
+
+
 def _record_links(runtime: Any, workunit_id: str, plan: SearchNeedWorkUnitPlan) -> int:
     count = 0
     existing = {

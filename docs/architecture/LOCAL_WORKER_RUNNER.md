@@ -49,3 +49,9 @@ LOCAL-13 proves the runner-era Local Appliance can bootstrap and smoke-test
 from a clean temp checkout without executing unsafe worker kinds. The
 reproducibility proof does not run source probes, extraction, agent research,
 model/provider calls, downloads, installation, LAN mutations, or deployment.
+
+## HUNT-07 Background Hunt Use
+
+HUNT-07 uses the LOCAL-09 runner from Search Hunt state. It lists WorkUnits linked through SearchNeeds, chooses only enabled deterministic worker kinds, runs bounded batches, records worker results, and records Search Hunt run history.
+
+Policy-blocked WorkUnits remain blocked. Source probe, extraction, agent research, model/provider, acquisition, source sync, LAN, and deployment workers remain disabled.

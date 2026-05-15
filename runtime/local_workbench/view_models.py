@@ -23,7 +23,7 @@ SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("exhaustion report", "available", "Exhaustion reports explain local checked layers and deferred work without executing it."),
     ("SearchNeed pipeline", "available", "Need persistence records local demand without creating work."),
     ("WorkUnit pipeline", "available", "SearchNeeds can create linked WorkUnits without executing them."),
-    ("background runner", "deferred", "Background hunt execution is not enabled."),
+    ("background runner", "available", "Safe deterministic local workers can process linked WorkUnits."),
     ("source probes", "disabled", "Source-probe execution remains behind a future source gate."),
     ("extraction", "deferred", "Extraction remains outside this Search Hunt UI state layer."),
     ("AI escalation", "disabled", "Model/provider calls are disabled."),
@@ -435,6 +435,10 @@ class SearchHuntDetailPageView:
     exhaustion_generation_enabled: bool
     search_needs: tuple[SearchNeedCardView, ...]
     workunits: tuple[SearchNeedWorkUnitView, ...]
+    background_runner_plan: tuple[Mapping[str, Any], ...]
+    background_runner_blocked_workunits: tuple[Mapping[str, Any], ...]
+    background_runner_runs: tuple[Mapping[str, Any], ...]
+    runner_controls_enabled: bool
     search_need_creation_enabled: bool
     unavailable_actions: tuple[SearchHuntUnavailableActionView, ...]
     related_search_href: str
@@ -645,6 +649,8 @@ def build_search_hunt_detail_page_view(
     exhaustion_generation_enabled = bool(status_payload.get("exhaustion_report_generation_enabled", False))
     linked_needs = tuple(_need_card(_mapping(item)) for item in _sequence(status_payload.get("search_needs")))
     linked_workunits = tuple(_workunit_view(_mapping(item)) for item in _sequence(status_payload.get("workunits")))
+    runner_summary = _mapping(status_payload.get("background_runner"))
+    runner_plan = _mapping(runner_summary.get("plan"))
     return SearchHuntDetailPageView(
         hunt_id=hunt_id,
         found=bool(payload),
@@ -676,6 +682,10 @@ def build_search_hunt_detail_page_view(
         exhaustion_generation_enabled=exhaustion_generation_enabled,
         search_needs=linked_needs,
         workunits=linked_workunits,
+        background_runner_plan=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("runnable_workunits"))),
+        background_runner_blocked_workunits=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("blocked_workunits"))),
+        background_runner_runs=tuple(_background_runner_run_row(_mapping(item)) for item in _sequence(runner_summary.get("runs"))),
+        runner_controls_enabled=bool(status_payload.get("runner_controls_enabled", False)),
         search_need_creation_enabled=bool(status_payload.get("search_need_creation_enabled", False)),
         unavailable_actions=build_search_hunt_unavailable_actions(),
         related_search_href="/search?q=" + str(query),
@@ -901,6 +911,28 @@ def _workunit_view(value: Mapping[str, Any]) -> SearchNeedWorkUnitView:
         exhaustion_report_id=str(value.get("exhaustion_report_id", payload.get("exhaustion_report_id", ""))),
         execution_enabled=bool(value.get("execution_enabled", payload.get("execution_enabled", False))),
     )
+
+
+def _background_runner_plan_row(value: Mapping[str, Any]) -> Mapping[str, Any]:
+    return {
+        "workunit_id": str(value.get("workunit_id", "")),
+        "worker_kind": str(value.get("worker_kind", "")),
+        "state": str(value.get("state", "")),
+        "policy_state": str(value.get("policy_state", "")),
+        "runnable": bool(value.get("runnable", False)),
+        "blocked_reason": str(value.get("blocked_reason", "") or ""),
+    }
+
+
+def _background_runner_run_row(value: Mapping[str, Any]) -> Mapping[str, Any]:
+    return {
+        "run_id": str(value.get("run_id", "")),
+        "status": str(value.get("status", "")),
+        "worker_kinds": ", ".join(_tuple(value.get("worker_kinds"))),
+        "workunit_ids": ", ".join(_tuple(value.get("workunit_ids"))),
+        "started_at": str(value.get("started_at", "")),
+        "finished_at": str(value.get("finished_at", "") or ""),
+    }
 
 
 def _future_work_rows(value: Any) -> tuple[SearchHuntExhaustionRowView, ...]:

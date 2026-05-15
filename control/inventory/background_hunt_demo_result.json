@@ -1,0 +1,19 @@
+{
+  "schema_version": "background_hunt_demo_result.v0",
+  "task": "HUNT-07",
+  "status": "pass",
+  "demo_added": true,
+  "sample_hunt_created": true,
+  "sample_search_need_created": true,
+  "sample_workunits_created": true,
+  "plan_preview_passed": true,
+  "safe_workunit_execution_passed": true,
+  "blocked_source_probe_remained_blocked": true,
+  "blocked_extraction_remained_blocked": true,
+  "blocked_ai_model_remained_blocked": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "external_network_used": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

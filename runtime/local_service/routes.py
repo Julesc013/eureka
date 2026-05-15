@@ -66,6 +66,13 @@ def route_request(
     if path == "/api/v1/hunts":
         return _hunt_list_response(runtime, request_context)
     parsed_hunt_route = _parse_hunt_route(path)
+    if parsed_hunt_route and parsed_hunt_route[1] == "runner":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_runner_response(runtime, hunt_id)
+        if _wants_json(request_context):
+            return _hunt_runner_response(runtime, hunt_id)
+        return _hunt_detail_html_response(runtime, hunt_id)
     if parsed_hunt_route and parsed_hunt_route[1] == "workunits":
         hunt_id = parsed_hunt_route[0]
         if path.startswith("/api/v1/"):
@@ -383,6 +390,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     exhaustion = runtime.search_hunt.get_latest_exhaustion_report(hunt_id)
     linked_needs = [item.to_dict() for item in runtime.search_need.list_needs_for_hunt(hunt_id, limit=100)]
     linked_workunits = _search_need_runtime().list_workunits_for_hunt(runtime, hunt_id, limit=100)
+    runner_summary = _search_hunt().summarize_background_hunt(runtime, hunt_id)
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
         "status": "pass",
@@ -395,6 +403,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "exhaustion_report": exhaustion.to_dict() if exhaustion else None,
         "search_needs": linked_needs,
         "workunits": linked_workunits,
+        "background_runner": runner_summary,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
         "hunt_creation_enabled": False,
@@ -408,7 +417,11 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "lan_command_mutations_enabled": False,
         "workunit_creation_enabled": True,
         "workunit_execution_enabled": False,
+        "background_hunt_runner_enabled": True,
+        "workunit_execution_enabled_for_safe_workers": True,
+        "runner_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "source_probe_execution_enabled": False,
+        "extraction_execution_enabled": False,
         "model_provider_enabled": False,
         "review_mutation_enabled": False,
         "public_index_mutation_enabled": False,
@@ -562,6 +575,29 @@ def _hunt_workunits_response(runtime: Any, hunt_id: str, request_context: LocalR
         "warnings": [],
         "limitations": list(DEFAULT_LIMITATIONS) + ["WorkUnits are local queue records and are not executed by this route"],
     }
+    return json_response(200, payload)
+
+
+def _hunt_runner_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    summary = _search_hunt().summarize_background_hunt(runtime, hunt_id)
+    payload = _background_hunt_runner_payload(
+        "background_hunt_runner_status",
+        {
+            "hunt_id": hunt_id,
+            "runner": summary,
+            "plan": summary.get("plan"),
+            "latest_run": summary.get("latest_run"),
+            "runs": summary.get("runs", []),
+            "read_only": True,
+            "workunit_execution_enabled_for_safe_workers": True,
+            "runner_execution_performed": False,
+        },
+    )
     return json_response(200, payload)
 
 
@@ -749,13 +785,20 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
         )
     if request_context.method != "POST":
         return error_response(405, "method_not_allowed", "method is not enabled for local service route")
-    try:
-        _require_operator_token(request_context, runtime.config, operator_auth_state)
-    except _operator_auth_error() as exc:
-        return error_response(401, "operator_token_required", str(exc))
     path = request_context.path
+    if not _mutation_route_allows_missing_token(path):
+        try:
+            _require_operator_token(request_context, runtime.config, operator_auth_state)
+        except _operator_auth_error() as exc:
+            return error_response(401, "operator_token_required", str(exc))
     hunt_mutation = _parse_hunt_mutation_path(path)
     if hunt_mutation:
+        if hunt_mutation[1] == "runner-plan":
+            return _apply_hunt_runner_plan_response(runtime, request_context, hunt_mutation[0])
+        if hunt_mutation[1] == "runner-run-next":
+            return _apply_hunt_runner_run_response(runtime, request_context, hunt_mutation[0], mode="run_next")
+        if hunt_mutation[1] == "runner-run-batch":
+            return _apply_hunt_runner_run_response(runtime, request_context, hunt_mutation[0], mode="run_batch")
         if hunt_mutation[1] == "exhaustion":
             return _apply_hunt_exhaustion_response(runtime, request_context, hunt_mutation[0])
         if hunt_mutation[1] == "search-need":
@@ -909,6 +952,55 @@ def _apply_search_need_workunit_create_response(runtime: Any, request_context: L
     return json_response(200, payload)
 
 
+def _apply_hunt_runner_plan_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    limit = parse_limit(first_param(request_context.body_params, "limit", ""), default=10)
+    try:
+        plan = _search_hunt().build_background_hunt_plan(runtime, hunt_id, limit=limit)
+    except Exception as exc:
+        return error_response(400, "background_hunt_plan_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _background_hunt_runner_payload(
+        "background_hunt_runner_plan",
+        {
+            "hunt_id": hunt_id,
+            "plan": plan.to_dict(),
+            "runner_execution_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _apply_hunt_runner_run_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str, *, mode: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    limit = parse_limit(first_param(request_context.body_params, "limit", ""), default=1)
+    operator_label = first_param(request_context.body_params, "operator_label", "local_operator")
+    context = {
+        "authorized": True,
+        "operator_label": operator_label,
+        "raw_token_stored": False,
+    }
+    try:
+        if mode == "run_next":
+            result = _search_hunt().run_next_hunt_workunit(runtime, hunt_id, operator_context=context)
+        else:
+            result = _search_hunt().run_background_hunt_batch(runtime, hunt_id, limit=limit, operator_context=context)
+    except Exception as exc:
+        return error_response(400, "background_hunt_run_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _background_hunt_runner_payload(
+        "background_hunt_runner_" + mode,
+        {
+            "hunt_id": hunt_id,
+            "result": result.to_dict(),
+            "run": result.run.to_dict(),
+            "plan": result.plan.to_dict(),
+            "runner_execution_performed": True,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _record_decision_response(runtime: Any, request_context: LocalRequestContext, review_item_id: str) -> LocalServiceResponse:
     params = request_context.body_params
     decision = first_param(params, "decision", "")
@@ -951,9 +1043,9 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits"}:
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner"}:
         return parts[3], parts[4]
     return None
 
@@ -963,9 +1055,18 @@ def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
     actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer", "exhaustion", "search-need"}
     if len(parts) == 3 and parts[0] == "hunt" and parts[2] in actions:
         return parts[1], parts[2]
+    if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "runner" and parts[3] in {"plan", "run-next", "run-batch"}:
+        return parts[1], "runner-" + parts[3]
     if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need"}:
         return parts[3], parts[4]
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "runner" and parts[5] in {"plan", "run-next", "run-batch"}:
+        return parts[3], "runner-" + parts[5]
     return None
+
+
+def _mutation_route_allows_missing_token(path: str) -> bool:
+    parsed = _parse_hunt_mutation_path(path)
+    return bool(parsed and parsed[1] == "runner-plan")
 
 
 def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
@@ -1120,8 +1221,8 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
         },
         {
             "action": "background runner",
-            "status": "deferred",
-            "reason": "Background hunt execution is not enabled.",
+            "status": "available",
+            "reason": "The runner can process safe deterministic local WorkUnits only.",
         },
         {
             "action": "source probes",
@@ -1176,7 +1277,7 @@ def _network() -> Any:
 
 
 def _search_hunt() -> Any:
-    return __import__("runtime.search_hunt", fromlist=["build_hunt_exhaustion_report"])
+    return __import__("runtime.search_hunt", fromlist=["build_hunt_exhaustion_report", "build_background_hunt_plan"])
 
 
 def _search_need_runtime() -> Any:
@@ -1210,3 +1311,34 @@ def _hunt_exhaustion_payload(hunt_id: str, report: dict[str, Any] | None) -> dic
             "exhaustion reports do not create background work",
         ],
     }
+
+
+def _background_hunt_runner_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "background_hunt_runner_response.v0",
+        "status": "pass",
+        "action": action,
+        "operator_token_required_for_execution": True,
+        "localhost_only_execution": True,
+        "lan_execution_enabled": False,
+        "workunit_execution_enabled_for_safe_workers": True,
+        "source_probe_executed": False,
+        "extraction_executed": False,
+        "external_network_used": False,
+        "model_provider_used": False,
+        "download_install_execute_performed": False,
+        "review_mutation_performed": False,
+        "public_index_mutated_except_allowed_rebuild_worker": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + [
+            "background hunt runner uses deterministic local workers only",
+            "policy-blocked WorkUnits remain blocked",
+        ],
+    }
+    result.update(payload)
+    return result

@@ -17,3 +17,9 @@ SearchNeeds do not create WorkUnits, execute probes, call model providers, accep
 ## HUNT-06 WorkUnit Link
 
 SearchNeeds can now produce deterministic WorkUnit plans and local queue records. These WorkUnits are local tasks, not truth or evidence. HUNT-06 queues local-safe work and blocks policy-gated future work; it does not run WorkUnits, source probes, extraction, or model/provider calls.
+
+## HUNT-07 Background Runner
+
+Search Hunt Sessions can now drive bounded background progress through deterministic local workers already allowed by LOCAL-09. The runner plans linked WorkUnits, runs only safe local worker kinds, records worker results, and preserves policy-blocked WorkUnits as blocked.
+
+The runner does not run source probes, extraction, agent research, model/provider calls, acquisition actions, source sync, LAN workers, deployment, review mutation, or master-index mutation. A worker result remains local run state, not accepted truth or evidence.

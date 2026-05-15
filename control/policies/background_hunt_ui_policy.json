@@ -1,0 +1,13 @@
+{
+  "schema_version": "background_hunt_ui_policy.v0",
+  "runner_status_visible": true,
+  "runner_plan_visible": true,
+  "run_next_control_enabled": true,
+  "run_batch_control_enabled": true,
+  "operator_token_required_for_run_controls": true,
+  "source_probe_controls_enabled": false,
+  "extraction_controls_enabled": false,
+  "ai_controls_enabled": false,
+  "download_install_execute_controls_enabled": false,
+  "lan_execution_controls_enabled": false
+}

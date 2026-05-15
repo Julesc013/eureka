@@ -1,0 +1,31 @@
+{
+  "schema_version": "background_hunt_runner_inventory.v0",
+  "task": "HUNT-07",
+  "runner_enabled": true,
+  "deterministic_local_workers_only": true,
+  "enabled_worker_kinds": [
+    "noop_worker",
+    "review_queue_checker",
+    "absence_report_worker",
+    "local_status_snapshot_worker",
+    "reviewed_index_rebuild_worker"
+  ],
+  "blocked_worker_kinds": [
+    "source_probe_worker",
+    "extraction_worker",
+    "agent_research_worker",
+    "ai_model_worker",
+    "download_worker",
+    "install_execute_worker",
+    "source_sync_worker",
+    "lan_worker",
+    "deployment_worker"
+  ],
+  "max_workunits_per_run_default": 1,
+  "max_workunits_per_batch": 10,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "external_network_enabled": false,
+  "deployment_performed": false
+}

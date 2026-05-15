@@ -1,0 +1,20 @@
+{
+  "schema_version": "background_hunt_runner_policy.v0",
+  "background_hunt_runner_enabled": true,
+  "deterministic_local_workers_only": true,
+  "workunit_execution_enabled_for_safe_workers": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "ai_model_execution_enabled": false,
+  "agent_research_execution_enabled": false,
+  "external_network_enabled": false,
+  "download_install_execute_enabled": false,
+  "source_sync_enabled": false,
+  "lan_worker_execution_enabled": false,
+  "deployment_enabled": false,
+  "max_workunits_per_run_default": 1,
+  "max_workunits_per_batch": 10,
+  "operator_token_required_for_execution": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

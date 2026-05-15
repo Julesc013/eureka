@@ -1,0 +1,27 @@
+{
+  "schema_version": "background_hunt_gap_register.v0",
+  "task": "HUNT-07",
+  "status": "pass",
+  "gaps": [
+    {
+      "id": "background_hunt_smoke_depth",
+      "status": "deferred",
+      "description": "Full browser smoke and richer integration coverage are deferred to HUNT-08."
+    },
+    {
+      "id": "source_probe_execution",
+      "status": "blocked_by_policy",
+      "description": "Source probe workers remain disabled until a future source policy gate."
+    },
+    {
+      "id": "extraction_execution",
+      "status": "blocked_by_policy",
+      "description": "Extraction workers remain disabled until F0 safety gates."
+    },
+    {
+      "id": "model_provider_execution",
+      "status": "blocked_by_policy",
+      "description": "AI/model workers remain disabled until a future reviewed gate."
+    }
+  ]
+}

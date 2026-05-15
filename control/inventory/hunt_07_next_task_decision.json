@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_07_next_task_decision.v0",
+  "task": "HUNT-07",
+  "recommended_next_task": "HUNT-08 \u2014 Workbench hunt integration and smoke tests",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "background_hunt_runner_available": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "Background hunt runner can process deterministic local WorkUnits; full workbench integration smoke is next."
+}

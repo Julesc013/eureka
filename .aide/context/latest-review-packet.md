@@ -2,18 +2,19 @@
 
 ## Latest Review State
 
-HUNT-06 is complete locally and recommends HUNT-07.
+HUNT-07 is complete locally and recommends HUNT-08.
 
 ## Review Focus
 
-- Confirm WorkUnit creation from SearchNeeds remains operator-gated and localhost-only.
-- Confirm WorkUnits are linked to SearchNeed, Search Hunt, and exhaustion report IDs.
-- Confirm blocked policy WorkUnits remain blocked.
-- Confirm no WorkUnit execution, source probes, extraction, model/provider calls, review/index mutation, deployment, or public launch claim occurred.
+- Confirm the background hunt runner processes only deterministic local workers.
+- Confirm run-next and run-batch are operator-gated and localhost-only.
+- Confirm worker transition history and audit refs are recorded.
+- Confirm blocked source probe, extraction, and AI/model WorkUnits remain blocked.
+- Confirm no source probes, extraction, external network calls, model/provider calls, review/master index mutation, deployment, or public launch claim occurred.
 
 ## Evidence
 
-- `control/audits/hunt-06-hunt-to-workunit-v0/`
-- `control/inventory/hunt_to_workunit_result.json`
-- `scripts/validate_hunt_to_workunits.py`
-- HUNT-06 focused tests
+- `control/audits/hunt-07-background-hunt-runner-v0/`
+- `control/inventory/background_hunt_runner_result.json`
+- `scripts/validate_background_hunt_runner.py`
+- HUNT-07 focused tests

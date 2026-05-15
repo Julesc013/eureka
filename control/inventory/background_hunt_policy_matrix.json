@@ -1,0 +1,48 @@
+{
+  "schema_version": "background_hunt_policy_matrix.v0",
+  "task": "HUNT-07",
+  "rows": [
+    {
+      "workunit_kind": "regression_test",
+      "default_worker_kind": "noop_worker",
+      "runner_policy": "runnable",
+      "result_state": "queued_or_complete",
+      "reason": "deterministic local worker"
+    },
+    {
+      "workunit_kind": "evidence_review",
+      "default_worker_kind": "review_queue_checker",
+      "runner_policy": "runnable",
+      "result_state": "queued_or_complete",
+      "reason": "local reviewed queue inspection only"
+    },
+    {
+      "workunit_kind": "source_probe",
+      "default_worker_kind": "source_probe_worker",
+      "runner_policy": "blocked",
+      "result_state": "blocked",
+      "reason": "source probe worker remains disabled"
+    },
+    {
+      "workunit_kind": "extraction_task",
+      "default_worker_kind": "extraction_worker",
+      "runner_policy": "blocked",
+      "result_state": "blocked",
+      "reason": "extraction remains disabled"
+    },
+    {
+      "workunit_kind": "agent_task",
+      "default_worker_kind": "agent_research_worker",
+      "runner_policy": "blocked",
+      "result_state": "blocked",
+      "reason": "agent and model workers remain disabled"
+    },
+    {
+      "workunit_kind": "index_rebuild",
+      "default_worker_kind": "reviewed_index_rebuild_worker",
+      "runner_policy": "runnable_when_token_gated",
+      "result_state": "queued_or_complete",
+      "reason": "local reviewed-index rebuild worker is separately token-gated"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 id: HUNT-07
 title: Background hunt runner over deterministic local workers
-status: queued
+status: completed
 purpose: Add background runner integration after SearchNeeds can create linked WorkUnits.
-allowed_scope_summary: Deterministic local runner scheduling only when explicitly scoped by a future HUNT-07 prompt.
+allowed_scope_summary: Deterministic local runner scheduling over safe worker kinds only.
 gate:
   - HUNT-06 completed
   - use explicit local instance
@@ -15,3 +15,4 @@ gate:
   - no public launch claim
 recommended_after: HUNT-06
 alternative_next: SYN-00
+recommended_next: HUNT-08

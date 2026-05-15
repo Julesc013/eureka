@@ -5,6 +5,7 @@ from typing import Any, Mapping
 from .errors import SearchHuntValidationError
 from .commands import SearchHuntCommand, command_requires_reason, coerce_command_type
 from .records import SearchHuntExhaustionReport, SearchHuntSession
+from .run_records import BackgroundHuntRun
 from .steering import SearchHuntSteeringPreference, coerce_steering_type
 
 
@@ -99,6 +100,28 @@ def validate_search_hunt_exhaustion_report(report: SearchHuntExhaustionReport) -
     validate_no_forbidden_side_effects(payload)
     validate_no_truth_claims(payload)
     return report
+
+
+def validate_background_hunt_run(run: BackgroundHuntRun) -> BackgroundHuntRun:
+    if not run.run_id:
+        raise SearchHuntValidationError("background run id is required")
+    if not run.hunt_id:
+        raise SearchHuntValidationError("hunt_id is required")
+    payload = run.to_dict()
+    for key in (
+        "source_probe_executed",
+        "extraction_executed",
+        "external_network_used",
+        "model_provider_used",
+        "download_install_execute_performed",
+        "master_index_mutated",
+        "deployment_performed",
+        "production_readiness_claimed",
+        "public_launch_readiness_claimed",
+    ):
+        if payload.get(key) is True:
+            raise SearchHuntValidationError(f"forbidden background runner flag set: {key}")
+    return run
 
 
 def validate_query_text(query: str) -> str:

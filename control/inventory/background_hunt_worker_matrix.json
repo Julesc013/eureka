@@ -1,0 +1,90 @@
+{
+  "schema_version": "background_hunt_worker_matrix.v0",
+  "task": "HUNT-07",
+  "rows": [
+    {
+      "worker_kind": "noop_worker",
+      "enabled": true,
+      "requires_operator_token": false,
+      "side_effects": "workunit_state_and_worker_result_only"
+    },
+    {
+      "worker_kind": "review_queue_checker",
+      "enabled": true,
+      "requires_operator_token": false,
+      "side_effects": "local_review_queue_count_snapshot"
+    },
+    {
+      "worker_kind": "absence_report_worker",
+      "enabled": true,
+      "requires_operator_token": false,
+      "side_effects": "local_absence_summary_snapshot"
+    },
+    {
+      "worker_kind": "local_status_snapshot_worker",
+      "enabled": true,
+      "requires_operator_token": false,
+      "side_effects": "local_status_snapshot"
+    },
+    {
+      "worker_kind": "reviewed_index_rebuild_worker",
+      "enabled": true,
+      "requires_operator_token": true,
+      "side_effects": "token_gated_local_reviewed_index_rebuild"
+    },
+    {
+      "worker_kind": "source_probe_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_source_probe"
+    },
+    {
+      "worker_kind": "extraction_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_extraction"
+    },
+    {
+      "worker_kind": "agent_research_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_agent_research"
+    },
+    {
+      "worker_kind": "ai_model_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_ai_model"
+    },
+    {
+      "worker_kind": "download_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_acquisition"
+    },
+    {
+      "worker_kind": "install_execute_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_install_or_launch"
+    },
+    {
+      "worker_kind": "source_sync_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_source_sync"
+    },
+    {
+      "worker_kind": "lan_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_lan_worker"
+    },
+    {
+      "worker_kind": "deployment_worker",
+      "enabled": false,
+      "requires_operator_token": true,
+      "side_effects": "blocked_deployment"
+    }
+  ]
+}

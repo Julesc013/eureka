@@ -1,0 +1,29 @@
+{
+  "schema_version": "background_hunt_run.v0",
+  "run_id": "bhr_sample",
+  "hunt_id": "hunt_sample",
+  "search_need_ids": [
+    "need_sample"
+  ],
+  "workunit_ids": [
+    "wu_safe"
+  ],
+  "worker_kinds": [
+    "noop_worker"
+  ],
+  "status": "complete",
+  "policy_decision": "safe_deterministic_local_workers_only",
+  "worker_results": [
+    {
+      "workunit_id": "wu_safe",
+      "status": "complete"
+    }
+  ],
+  "blocked_workunits": [
+    "wu_source_probe"
+  ],
+  "warnings": [],
+  "limitations": [
+    "background hunt runner is local and deterministic only"
+  ]
+}
