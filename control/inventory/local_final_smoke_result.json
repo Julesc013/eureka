@@ -1,0 +1,23 @@
+{
+  "schema_version": "local_final_smoke_result.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "status": "pass_with_warnings",
+  "instance_initialized": true,
+  "instance_validated": true,
+  "runtime_status_passed": true,
+  "localhost_server_started": true,
+  "local_service_smoke_passed": true,
+  "local_workbench_smoke_passed": true,
+  "auto_test_passed": true,
+  "auto_search_passed": true,
+  "server_shutdown_clean": true,
+  "same_machine_lan_smoke_passed": true,
+  "external_client_smoke_performed": false,
+  "external_client_smoke_status": "not_performed",
+  "external_client_smoke_reason": "No second client device used in automated VS Code run.",
+  "source_probe_executed": false,
+  "workunit_execution_from_lan": false,
+  "review_mutation_from_lan": false,
+  "rebuild_mutation_from_lan": false,
+  "deployment_performed": false
+}

@@ -1,0 +1,36 @@
+{
+  "limitations": [
+    "local reviewed index only",
+    "read-only service",
+    "no live source inspection"
+  ],
+  "production_readiness_claimed": false,
+  "public_index": {
+    "evidence_ref_count": 0,
+    "rebuild_count": 0,
+    "record_count": 0,
+    "review_ref_count": 0,
+    "source_counts": {},
+    "source_ref_count": 0
+  },
+  "public_launch_readiness_claimed": false,
+  "runtime": {
+    "lan_enabled": false,
+    "read_only": true,
+    "status": "pass"
+  },
+  "schema_version": "local_http_status_response.v0",
+  "service": {
+    "deployment_performed": false,
+    "index_rebuild_enabled": false,
+    "lan_enabled": false,
+    "localhost_only": true,
+    "read_only": true,
+    "review_decision_mutation_enabled": false,
+    "source_probe_execution_enabled": false,
+    "workunit_execution_enabled": false,
+    "write_routes_enabled": false
+  },
+  "status": "pass",
+  "warnings": []
+}

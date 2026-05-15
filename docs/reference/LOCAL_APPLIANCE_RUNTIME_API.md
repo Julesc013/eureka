@@ -26,7 +26,7 @@ Config validation requires local appliance mode, supported instance schema versi
 - `load_store_manifest(instance_path)`
 - `validate_store_manifest(manifest)`
 
-The manifest is the only source for store paths. The required manifest keys are `source_cache`, `evidence_ledger`, `review_queue`, and `public_index`.
+The manifest is the only source for store paths. The required manifest keys are `source_cache`, `evidence_ledger`, `review_queue`, `public_index`, and `workunit_queue`.
 
 ## Migration API
 
@@ -44,15 +44,23 @@ Runtime opening fails closed when migration state records blockers or destructiv
 - `close_local_appliance(runtime)`
 
 `LocalApplianceRuntime.status()` returns `LocalRuntimeStatus`.
-`LocalApplianceRuntime.check_integrity()` returns one status object for all four stores.
+`LocalApplianceRuntime.check_integrity()` returns one status object for all composed stores.
 `LocalApplianceRuntime.close()` is idempotent.
+
+`LocalApplianceRuntime` exposes:
+
+- `source_cache`
+- `evidence_ledger`
+- `review_queue`
+- `public_index`
+- `workunit_queue`
 
 ## Status API
 
 - `LocalRuntimeStatus`
 - `build_local_runtime_status(runtime)`
 
-Status includes `instance_id`, `instance_schema_version`, per-store status, `migration_needed`, `read_only`, and disabled server/LAN/deployment/readiness flags.
+Status includes `instance_id`, `instance_schema_version`, per-store status, WorkUnit queue summary, `migration_needed`, `read_only`, and disabled server/LAN/deployment/readiness flags.
 
 ## Validation API
 
@@ -62,3 +70,13 @@ Status includes `instance_id`, `instance_schema_version`, per-store status, `mig
 - `validate_no_forbidden_runtime_flags(status)`
 
 These helpers are intended for future service/workbench/worker startup checks and tests.
+
+## LOCAL-04 Service Consumer
+
+`runtime/local_service` is the first product-facing consumer of this API. It opens the runtime with `read_only=True` and serves status/search/object/source/absence reads over localhost.
+
+The service does not receive a direct database path. Store paths continue to come from the local instance manifest.
+
+## LOCAL-07 Queue Consumer
+
+`scripts/eureka_workunit_queue.py` and future worker runtimes use `LocalApplianceRuntime.workunit_queue`. The CLI is allowed to mutate queue records only. Read-only service/workbench runtime mode blocks queue mutation helpers.

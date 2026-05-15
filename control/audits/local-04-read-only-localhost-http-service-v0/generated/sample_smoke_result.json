@@ -1,0 +1,18 @@
+{
+  "absence_route_passed": true,
+  "base_url": "http://127.0.0.1:<validation-port>",
+  "deployment_performed": false,
+  "index_rebuild_performed": false,
+  "lan_enabled": false,
+  "localhost_only": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "read_only": true,
+  "review_mutation_performed": false,
+  "schema_version": "local_http_service_smoke_result.v0",
+  "search_route_passed": true,
+  "source_probe_executed": false,
+  "status": "pass",
+  "status_route_passed": true,
+  "warnings": []
+}

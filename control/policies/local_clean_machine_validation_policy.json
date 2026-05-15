@@ -1,0 +1,27 @@
+{
+  "architecture_boundary_check_required": true,
+  "auto_search_required": true,
+  "auto_test_required": true,
+  "generated_artifact_cleanliness_required": true,
+  "gates": [
+    "init_instance",
+    "validate_instance",
+    "runtime_status",
+    "service_smoke",
+    "workbench_smoke",
+    "auto_test",
+    "auto_search",
+    "generated_artifact_cleanliness",
+    "architecture_boundary_check",
+    "shutdown_cleanup",
+    "no_production_public_claim"
+  ],
+  "init_instance_required": true,
+  "no_production_public_claim_required": true,
+  "runtime_status_required": true,
+  "schema_version": "local_clean_machine_validation_policy.v0",
+  "service_smoke_required": true,
+  "shutdown_cleanup_required": true,
+  "validate_instance_required": true,
+  "workbench_smoke_required": true
+}

@@ -1,0 +1,15 @@
+{
+  "auto_search_passed": true,
+  "auto_test_passed": true,
+  "deployment_performed": false,
+  "instance_valid_after_shutdown": true,
+  "localhost_server_started": true,
+  "master_index_mutated": false,
+  "schema_version": "local_clean_machine_smoke_result.v0",
+  "server_shutdown_clean": true,
+  "service_smoke_passed": true,
+  "site_dist_mutated": false,
+  "status": "pass",
+  "task": "LOCAL-13",
+  "workbench_smoke_passed": true
+}

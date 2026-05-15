@@ -1,0 +1,26 @@
+{
+  "blocked_reason": "none",
+  "branch_mutation_performed": true,
+  "deployment_performed": false,
+  "dev_pushed": true,
+  "force_push_performed": false,
+  "history_rewrite_performed": false,
+  "main_promoted": true,
+  "origin_main_equals_origin_dev": true,
+  "production_readiness_claimed": false,
+  "promotion_allowed_after_full_sweep": true,
+  "public_launch_readiness_claimed": false,
+  "required_gates": [
+    "hard_blockers_remaining == 0",
+    "runtime_leakage_gate_pass == true",
+    "new_unallowlisted_production_findings == 0",
+    "full_unittest_discovery_pass == true",
+    "generated_artifact_cleanliness_pass == true after commit",
+    "architecture_boundaries_pass == true",
+    "local smoke pass",
+    "clean-machine proof pass",
+    "working tree clean"
+  ],
+  "schema_version": "local_total_promotion_plan.v0",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01"
+}

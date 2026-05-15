@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4133 chars, 1034 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4017 chars, 1005 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,9 +34,26 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
-- allowed: `.aide/verification/latest-verification-report.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `control/audits/final-state-promotion-plan-01-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_blocker_register.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_chat_alignment_packet.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_future_execution_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_git_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_local_state_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_machine_runnable_proof.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_main_promotion_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_not_done_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_r0_state_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_safe_remediation_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_validation_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/final_warning_disposition.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/local_appliance_promotion_review.json` (M; does not match active task allowed paths)
+- unknown: `docs/operations/FINAL_CHAT_ALIGNMENT_PACKET.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/FINAL_FUTURE_EXECUTION_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_chat_alignment_packet.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_future_execution_plan.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_final_state_promotion_plan.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -46,8 +63,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4607
-- approx_tokens: 1152
+- chars: 6221
+- approx_tokens: 1556
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

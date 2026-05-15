@@ -1,0 +1,20 @@
+id: LOCAL-06
+title: Status, object, source, and absence page hardening
+status: completed
+source_packet: .aide/context/latest-task-packet.md
+purpose: Harden the first local HTML workbench pages after LOCAL-05.
+allowed_scope_summary: Status, object, source, and absence page hardening, accessibility polish, empty/error state refinement, focused validators, tests, docs, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-05 completed with minimal read-only HTML workbench
+  - use the LOCAL-04 service boundary
+  - no LAN binding
+  - no write routes
+  - no source probe execution
+  - no WorkUnit execution
+  - no index rebuild behavior
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+proof_level_required: L2
+recommended_after: LOCAL-05
+recommended_next: LOCAL-07

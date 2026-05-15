@@ -1,0 +1,197 @@
+{
+  "results": [
+    {
+      "command": "python scripts/validate_local_appliance_track.py",
+      "elapsed_seconds": 0.24,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-00 Local Appliance track validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_local_instance_bootstrap.py",
+      "elapsed_seconds": 0.944,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-01 local instance bootstrap validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_local_instance_migration_guard.py",
+      "elapsed_seconds": 1.15,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-02 local instance migration guard validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_local_runtime_composition.py",
+      "elapsed_seconds": 93.703,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-03 local runtime composition validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_local_http_service.py",
+      "elapsed_seconds": 93.256,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-04 local HTTP service validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\nWARN: audit report records pre-existing runtime leakage gate failure\n"
+    },
+    {
+      "command": "python scripts/validate_local_html_workbench.py",
+      "elapsed_seconds": 93.463,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-05 local HTML workbench validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\nWARN: audit report records pre-existing runtime leakage gate failure\n"
+    },
+    {
+      "command": "python scripts/validate_local_workbench_page_hardening.py",
+      "elapsed_seconds": 93.274,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-06 workbench page hardening validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_workunit_queue.py",
+      "elapsed_seconds": 100.091,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-07 workunit queue validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_local_review_rebuild.py",
+      "elapsed_seconds": 95.039,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-08 review/rebuild validation\nstatus: pass_with_warnings\nWARN: pre-existing runtime leakage gate still fails\n"
+    },
+    {
+      "command": "python scripts/validate_local_worker_runner.py",
+      "elapsed_seconds": 94.038,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-09 deterministic worker runner validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_local_auto_test_harness.py",
+      "elapsed_seconds": 93.909,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-10 local auto-test harness validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_local_lan_safety_gate.py",
+      "elapsed_seconds": 180.997,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-11 LAN safety gate validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_local_lan_smoke.py",
+      "elapsed_seconds": 95.069,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-12 LAN smoke validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_clean_machine_bootstrap.py",
+      "elapsed_seconds": 108.475,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "LOCAL-13 clean-machine validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_local_appliance_closeout.py",
+      "elapsed_seconds": 1200.022,
+      "returncode": null,
+      "status": "timeout",
+      "stderr_excerpt": "",
+      "stdout_excerpt": ""
+    },
+    {
+      "command": "python scripts/validate_source_observation_seam.py",
+      "elapsed_seconds": 0.103,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0-04 source observation seam validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_source_cache_store.py",
+      "elapsed_seconds": 0.14,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0-05 source cache store validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_evidence_ledger_store.py",
+      "elapsed_seconds": 0.189,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0-06 evidence ledger store validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_review_queue_store.py",
+      "elapsed_seconds": 0.21,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0-07 review queue store validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_reviewed_public_index.py",
+      "elapsed_seconds": 0.868,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "{\n  \"checks\": [\n    {\n      \"errors\": [],\n      \"name\": \"contracts\",\n      \"status\": \"pass\"\n    },\n    {\n      \"errors\": [],\n      \"name\": \"runtime_vocabulary\",\n      \"status\": \"pass\"\n    },\n    {\n      \"errors\": [],\n      \"name\": \"runtime_imports\",\n      \"status\": \"pass\"\n    },\n    {\n      \"errors\": [],\n      \"name\": \"in_memory_store\",\n      \"status\": \"pass\"\n    },\n    {\n      \"errors\": [],\n      \"name\": \"file_backed_rebuild\",\n      \"status\": \"pass\"\n    },\n    {\n      \"errors\": [],\n      \"name\": \"decision_exclusions\",\n      \"status\": \"pass\"\n    },\n    {\n      \"dev_to_main_should_remain_blocked\": true,\n      \"f0_should_remain_blocked\": true,\n      \"name\": \"blockers\",\n      \"status\": \"pass\"\n    }\n  ],\n  \"dev_to_main_should_remain_blocked\": true,\n  \"f0_should_remain_blocked\": true,\n  \"h_series_dependencies\": 0,\n  \"network_dependencies\": 0,\n  \"schema_version\": \"reviewed_public_index_validation.v0\",\n  \"status\": \"pass\"\n}\n"
+    },
+    {
+      "command": "python scripts/validate_one_source_live_test.py",
+      "elapsed_seconds": 0.564,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0-09 one-source live test validation\nstatus: pass\n"
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy_remediation.py",
+      "elapsed_seconds": 39.776,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0 contract taxonomy remediation validation\nstatus: pass\nWARN: command has warnings: python scripts/validate_product_contract_tree.py\n"
+    },
+    {
+      "command": "python scripts/validate_generated_artifact_drift.py",
+      "elapsed_seconds": 0.164,
+      "returncode": 1,
+      "status": "fail",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "Generated artifact drift remediation validation\nstatus: fail\nERROR: generated artifact cleanliness check failed\n"
+    },
+    {
+      "command": "python scripts/validate_legacy_runtime_leakage_remediation.py",
+      "elapsed_seconds": 92.674,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_excerpt": "",
+      "stdout_excerpt": "R0 legacy runtime leakage remediation validation\nstatus: valid\nerror_count: 0\n"
+    }
+  ],
+  "schema_version": "final_validator_run.v0"
+}

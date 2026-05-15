@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-13
+updated: 2026-05-14
 repo: julesc013/eureka
-current_recommended_task: LOCAL-04
+current_recommended_task: HUNT-00
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -40,12 +40,147 @@ entries:
     recommended_next: LOCAL-04
   - id: LOCAL-04
     title: Read-only localhost HTTP service over reviewed index
-    status: queued
+    status: completed
+    previous_current_recommended_task: LOCAL-04
     purpose: Add a read-only localhost HTTP service over the reviewed public index through the local runtime composition boundary.
     allowed_scope_summary: localhost-only read-only service, runtime status and reviewed-index read routes, focused validators, tests, docs, and audit evidence only until explicitly scoped.
     gate: LOCAL-03 passed with runtime composition boundary; no HTML workbench implementation, LAN binding, deployment, write routes, source probes, index rebuilds, production readiness claim, or public launch claim.
     task: .aide/queue/LOCAL-04/task.yaml
     recommended_after: LOCAL-03
+    recommended_next: LOCAL-05
+  - id: LOCAL-05
+    title: HTML workbench v0
+    status: completed
+    previous_current_recommended_task: LOCAL-05
+    purpose: Add the minimal local HTML workbench over the LOCAL-04 read-only localhost service.
+    allowed_scope_summary: HTML workbench shell and read-only service consumption only until explicitly scoped.
+    gate: LOCAL-04 passed with read-only localhost service; no LAN binding, deployment, write routes, source probes, WorkUnit execution, index rebuilds, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-05/task.yaml
+    recommended_after: LOCAL-04
+    recommended_next: LOCAL-06
+  - id: LOCAL-06
+    title: Status, object, source, and absence page hardening
+    status: completed
+    previous_current_recommended_task: LOCAL-06
+    purpose: Harden the first local HTML workbench pages after the minimal read-only workbench.
+    allowed_scope_summary: Page hardening, accessibility polish, empty/error states, docs, tests, validators, and audit evidence only until explicitly scoped.
+    gate: LOCAL-05 passed with minimal read-only HTML workbench; no LAN binding, deployment, write routes, source probes, WorkUnit execution, index rebuilds, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-06/task.yaml
+    recommended_after: LOCAL-05
+    recommended_next: LOCAL-07
+  - id: LOCAL-07
+    title: Operator-gated WorkUnit queue
+    status: completed
+    previous_current_recommended_task: LOCAL-07
+    purpose: Add the first operator-gated WorkUnit queue after hardened read-only workbench pages.
+    allowed_scope_summary: WorkUnit queue contract, local read/write governance, operator-gated creation, docs, tests, validators, and audit evidence only until explicitly scoped.
+    gate: LOCAL-06 passed with read-only hardened workbench pages; no LAN binding, deployment, source probe execution, automatic agent execution, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-07/task.yaml
+    recommended_after: LOCAL-06
+    recommended_next: LOCAL-08
+  - id: LOCAL-08
+    title: Review and index rebuild from UI
+    status: completed
+    purpose: Add operator-facing review and index rebuild controls after the durable WorkUnit queue.
+    allowed_scope_summary: Review/rebuild UI and explicitly scoped local mutations only when a future LOCAL-08 prompt enables them.
+    gate: LOCAL-07 passed with durable queue records only; no LAN binding, deployment, source probe execution, automatic worker execution, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-08/task.yaml
+    recommended_after: LOCAL-07
+    recommended_next: LOCAL-09
+  - id: LOCAL-09
+    title: Deterministic local worker runner
+    status: completed
+    purpose: Add deterministic local worker execution after operator-gated review/rebuild exists.
+    allowed_scope_summary: Deterministic worker runner, worker registry, CLI, docs, tests, validators, inventories, and audit evidence only.
+    gate: LOCAL-08 passed with operator-gated review/rebuild; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-09/task.yaml
+    recommended_after: LOCAL-08
+    recommended_next: LOCAL-10
+  - id: LOCAL-10
+    title: Auto-test and auto-search harness
+    status: completed
+    purpose: Add the local auto-test and auto-search harness after deterministic worker execution exists.
+    allowed_scope_summary: Deterministic local auto-test and auto-search harness, scripts, docs, tests, validators, inventories, and audit evidence only.
+    gate: LOCAL-09 passed with deterministic local worker runner; no LAN binding, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-10/task.yaml
+    recommended_after: LOCAL-09
+    recommended_next: LOCAL-11
+  - id: LOCAL-11
+    title: LAN binding policy and safety gate
+    status: completed
+    purpose: Define the LAN binding safety policy after local auto-test and auto-search harness exists.
+    allowed_scope_summary: Explicit LAN binding policy, read-only route gate, localhost operator boundary, docs, tests, validator, inventories, and audit evidence only.
+    gate: LOCAL-10 passed with auto-test harness; no actual cross-device LAN smoke, deployment, source probes, extraction, model/provider calls, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-11/task.yaml
+    recommended_after: LOCAL-10
+    recommended_next: LOCAL-12
+  - id: LOCAL-12
+    title: LAN read-only smoke test
+    status: completed
+    purpose: Perform the read-only LAN smoke test after the LOCAL-11 safety gate.
+    allowed_scope_summary: Read-only LAN smoke evidence, route checks, mutation-block proof, docs, tests, inventories, and audit evidence only when explicitly scoped.
+    gate: LOCAL-11 passed with explicit bind-lan safety gate; no LAN mutations, deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-12/task.yaml
+    recommended_after: LOCAL-11
+    recommended_next: LOCAL-13
+  - id: LOCAL-13
+    title: Clean-machine bootstrap proof
+    status: completed
+    purpose: Prove the Local Appliance can bootstrap and run validation from a clean local instance after LAN read-only smoke.
+    allowed_scope_summary: Clean-machine bootstrap evidence, scripts, docs, tests, inventories, and audit evidence only when explicitly scoped.
+    gate: LOCAL-12 passed with read-only LAN smoke; no deployment, source probes, WorkUnit execution from LAN, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-13/task.yaml
+    recommended_after: LOCAL-12
+    recommended_next: LOCAL-14
+  - id: LOCAL-14
+    title: Local appliance closeout and F0/HUNT/SYN handoff
+    status: completed
+    purpose: Close out the Local Appliance track after clean-machine bootstrap proof and hand off to future extraction/search tracks.
+    allowed_scope_summary: closeout evidence, handoff docs, inventories, validators, and audit evidence only when explicitly scoped.
+    gate: LOCAL-13 passed with clean-machine bootstrap proof; no deployment, production readiness claim, public launch claim, source probes, or F0 implementation.
+    task: .aide/queue/LOCAL-14/task.yaml
+    recommended_after: LOCAL-13
+    recommended_next: HUNT-00
+  - id: HUNT-00
+    title: Search Hunt track planning over Local Appliance
+    status: queued
+    purpose: Plan Search Hunt over the completed Local Appliance proof surface without starting runtime implementation.
+    allowed_scope_summary: HUNT planning, task decomposition, policies, docs, and audit evidence only until explicitly scoped.
+    gate: LOCAL-14 pass_with_warnings; use Local Appliance boundaries; no source probes, crawling, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/HUNT-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: SYN-00
+    title: Synthetic Query Foundry planning over Local Appliance
+    status: queued
+    purpose: Plan Synthetic Query Foundry over the completed Local Appliance proof surface.
+    allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped.
+    gate: LOCAL-14 pass_with_warnings; use auto-test/search harness; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/SYN-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: F0-00
+    title: Refresh F0 after Local Appliance
+    status: queued
+    purpose: Refresh extraction-track planning so F0 resumes only through the Local Appliance.
+    allowed_scope_summary: F0 planning and boundary refresh only; no extraction implementation.
+    gate: LOCAL-14 pass_with_warnings and explicit operator choice if F0 is chosen before HUNT/SYN; no extraction runtime, source probes, downloads, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/F0-00/task.yaml
+    recommended_after: LOCAL-14
+  - id: LOCAL-TO-MAIN-PROMOTION-REVIEW
+    title: Review and decide whether LOCAL dev promotes to main
+    status: queued
+    purpose: Plan-only review for promoting the Local Appliance baseline to main.
+    allowed_scope_summary: branch comparison, evidence review, and promotion plan only; no merge or push by default.
+    gate: LOCAL-14 closeout complete; leakage warning disposition reviewed; no deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/LOCAL-PROMOTION-REVIEW/task.yaml
+    recommended_after: LOCAL-14
+  - id: LOCAL-LEAKAGE-01
+    title: Reconcile runtime leakage gate after LOCAL track
+    status: queued
+    purpose: Reconcile the pre-existing runtime leakage gate before main promotion.
+    allowed_scope_summary: leakage audit reconciliation and allowlist/remediation planning only until explicitly scoped.
+    gate: LOCAL-14 warning disposition; no product behavior changes unless separately approved.
+    task: .aide/queue/LOCAL-LEAKAGE-01/task.yaml
+    recommended_after: LOCAL-14
   - id: EUREKA-AIDE-FINAL-HANDOFF-01
     title: Make Eureka self-sufficient for future AIDE Lite / Codex work
     status: needs_review

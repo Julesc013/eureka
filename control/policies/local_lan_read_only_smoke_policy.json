@@ -1,0 +1,27 @@
+{
+  "must_verify": {
+    "no_external_assets_required": true,
+    "no_mutation_controls_exposed": true,
+    "no_production_public_launch_claim": true,
+    "response_contains_local_or_read_only_boundary": true,
+    "status_code_acceptable": true
+  },
+  "optional_if_records_exist": [
+    "/object/<record_id>",
+    "/source/<source_id>",
+    "/api/v1/object/<record_id>",
+    "/api/v1/source/<source_id>"
+  ],
+  "read_only_routes": [
+    "/",
+    "/status",
+    "/health",
+    "/search?q=sampleproject",
+    "/absence?q=definitely-not-present-local-12",
+    "/api/v1/status",
+    "/api/v1/health",
+    "/api/v1/search?q=sampleproject",
+    "/api/v1/absence?q=definitely-not-present-local-12"
+  ],
+  "schema_version": "local_lan_read_only_smoke_policy.v0"
+}

@@ -1,0 +1,14 @@
+{
+  "absence_reports_checked": true,
+  "built_in_query_count": 7,
+  "external_network_used": false,
+  "live_source_search_enabled": false,
+  "local_reviewed_index_only": true,
+  "model_provider_used": false,
+  "no_global_absence_claim": true,
+  "schema_version": "local_auto_search_result.v0",
+  "source_probe_executed": false,
+  "status": "pass",
+  "synthetic_generation_enabled": false,
+  "task": "LOCAL-10"
+}

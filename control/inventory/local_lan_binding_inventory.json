@@ -1,0 +1,12 @@
+{
+  "bind_lan_explicit_flag_required": true,
+  "deployment_performed": false,
+  "lan_binding_default": false,
+  "lan_read_only_default": true,
+  "localhost_default": true,
+  "operator_mutations_localhost_only_current": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_lan_binding_inventory.v0",
+  "task": "LOCAL-11"
+}

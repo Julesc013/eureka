@@ -1,0 +1,127 @@
+{
+  "base_url": "http://127.0.0.1:27309",
+  "external_network_used": false,
+  "failed_query_count": 0,
+  "limitations": [
+    "auto-search uses fixed local queries only"
+  ],
+  "live_source_search_enabled": false,
+  "local_reviewed_index_only": true,
+  "model_provider_used": false,
+  "passed_query_count": 7,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "queries": [
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "sampleproject",
+      "query_length": 13,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "definitely-not-present-local-10",
+      "query_length": 31,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "visual studio 2008 express",
+      "query_length": 26,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "old printer driver windows xp",
+      "query_length": 29,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "mac os 9 utility",
+      "query_length": 16,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": true,
+      "absence_status_code": 200,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "query with <unsafe> chars",
+      "query_length": 25,
+      "result_count": 0,
+      "search_status_code": 200,
+      "warnings": []
+    },
+    {
+      "absence_checked": false,
+      "absence_status_code": null,
+      "limitations": [
+        "query checked against local reviewed index only"
+      ],
+      "local_reviewed_index_only": true,
+      "no_global_absence_claim": true,
+      "passed": true,
+      "query": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...",
+      "query_length": 300,
+      "result_count": 0,
+      "search_status_code": 400,
+      "warnings": []
+    }
+  ],
+  "query_count": 7,
+  "schema_version": "local_auto_search_result.v0",
+  "source_probe_executed": false,
+  "status": "pass",
+  "synthetic_generation_enabled": false,
+  "warnings": []
+}

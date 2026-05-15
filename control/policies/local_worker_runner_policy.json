@@ -1,0 +1,20 @@
+{
+  "agent_research_workers_enabled": false,
+  "ai_model_workers_enabled": false,
+  "deployment_workers_enabled": false,
+  "deterministic_workers_only_current_task": true,
+  "download_workers_enabled": false,
+  "extraction_workers_enabled": false,
+  "install_execute_workers_enabled": false,
+  "lan_workers_enabled": false,
+  "max_workunits_per_run_default": 1,
+  "no_production_readiness_claim": true,
+  "no_public_launch_readiness_claim": true,
+  "operator_token_required_for_mutating_workers": true,
+  "schema_version": "local_worker_runner_policy.v0",
+  "source_probe_workers_enabled": false,
+  "source_sync_workers_enabled": false,
+  "worker_run_audit_required": true,
+  "workers_execute_workunits_only": true,
+  "workunit_transition_history_required": true
+}

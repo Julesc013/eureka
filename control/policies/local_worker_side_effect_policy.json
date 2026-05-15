@@ -1,0 +1,19 @@
+{
+  "connector_registry_mutation_allowed": false,
+  "deployment_allowed": false,
+  "download_allowed": false,
+  "external_network_allowed": false,
+  "extraction_allowed": false,
+  "install_execution_allowed": false,
+  "lan_operations_allowed": false,
+  "master_index_mutation_allowed": false,
+  "model_provider_allowed": false,
+  "public_index_rebuild_allowed_for_reviewed_index_rebuild_worker": true,
+  "schema_version": "local_worker_side_effect_policy.v0",
+  "site_dist_writes_allowed": false,
+  "source_probe_allowed": false,
+  "source_registry_mutation_allowed": false,
+  "source_sync_allowed": false,
+  "worker_result_recording_allowed": true,
+  "workunit_state_mutation_allowed": true
+}

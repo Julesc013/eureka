@@ -1,0 +1,17 @@
+{
+  "deterministic_suites_only": true,
+  "download_install_execute_enabled": false,
+  "external_network_enabled": false,
+  "generated_artifact_cleanliness_required": true,
+  "lan_enabled": false,
+  "master_index_mutation_enabled": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "report_outputs_required": true,
+  "schema_version": "local_auto_test_policy.v0",
+  "site_dist_writes_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "localhost_only": true
+}

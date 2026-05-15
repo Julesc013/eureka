@@ -1,0 +1,22 @@
+{
+  "all_required_capabilities_implemented": true,
+  "all_required_capabilities_tested": true,
+  "auto_test_harness_passed": true,
+  "clean_machine_bootstrap_passed": true,
+  "deployment_performed": false,
+  "f0_can_resume": true,
+  "f0_deferred_until_local_14": true,
+  "hard_blockers_remaining": 0,
+  "hunt_can_start": true,
+  "lan_read_only_smoke_passed": true,
+  "local_track_complete": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "HUNT-00 \u2014 Search Hunt track planning over Local Appliance",
+  "runtime_leakage_increased_during_local": false,
+  "schema_version": "local_appliance_closeout_result.v0",
+  "status": "pass_with_warnings",
+  "syn_can_start": true,
+  "task": "LOCAL-14",
+  "warnings_remaining": 1
+}

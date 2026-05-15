@@ -1,0 +1,12 @@
+{
+  "form_labels_required": true,
+  "keyboard_navigation_required": true,
+  "lang_attribute_required": true,
+  "no_js_required_for_core_flow": true,
+  "old_browser_friendly": true,
+  "page_title_required": true,
+  "readable_without_css": true,
+  "schema_version": "local_html_accessibility_policy.v0",
+  "semantic_html_required": true,
+  "wcag_target": "WCAG 2.2 AA where practical for local prototype"
+}

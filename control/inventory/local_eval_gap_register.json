@@ -1,0 +1,18 @@
+{
+  "gaps": [
+    {
+      "deferred_to": "future local eval expansion",
+      "gap_id": "LOCAL-EVAL-GAP-001",
+      "status": "deferred",
+      "summary": "Synthetic query generation is not enabled."
+    },
+    {
+      "deferred_to": "future source probe work",
+      "gap_id": "LOCAL-EVAL-GAP-002",
+      "status": "deferred",
+      "summary": "Live source search and probing remain disabled."
+    }
+  ],
+  "schema_version": "local_eval_gap_register.v0",
+  "task": "LOCAL-10"
+}

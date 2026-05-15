@@ -1,0 +1,13 @@
+id: LOCAL-TO-MAIN-PROMOTION-REVIEW
+title: Review and decide whether LOCAL dev promotes to main
+status: queued
+purpose: Review Local Appliance closeout evidence before any dev-to-main promotion.
+allowed_scope_summary: Branch comparison, evidence review, and promotion plan only; no merge or push by default.
+gate:
+  - LOCAL-14 closeout complete
+  - runtime leakage warning disposition reviewed
+  - no automatic merge
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: LOCAL-14

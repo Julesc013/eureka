@@ -1,0 +1,168 @@
+{
+  "aide_checks": "pass_with_non_blocking_warnings",
+  "architecture_boundaries": "pass",
+  "full_sweep": [
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass_after_commit"
+    },
+    {
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass_with_reference_warnings"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "warn_diff_scope_and_reference_packet"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass_with_verify_warnings"
+    }
+  ],
+  "full_unittest_discovery": "pass",
+  "generated_artifact_cleanliness": "pass_after_commit",
+  "limitations": [
+    "Generated artifact cleanliness fails before this remediation commit because refreshed audit outputs are intentionally dirty; it must pass after commit.",
+    "External second-device LAN smoke was not performed; same-machine LAN-bind smoke passed and external proof is recorded as not performed."
+  ],
+  "local_validators": [
+    {
+      "command": "python scripts/validate_local_appliance_track.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_instance_bootstrap.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_instance_migration_guard.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_runtime_composition.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_http_service.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_html_workbench.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_workbench_page_hardening.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_workunit_queue.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_review_rebuild.py",
+      "status": "pass_with_historical_warning"
+    },
+    {
+      "command": "python scripts/validate_local_worker_runner.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_auto_test_harness.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_lan_safety_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_lan_smoke.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_clean_machine_bootstrap.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_appliance_closeout.py",
+      "status": "pass_with_disposed_warning"
+    }
+  ],
+  "runtime_leakage": "pass_with_warnings",
+  "schema_version": "local_total_validation_matrix.v0",
+  "smoke_commands": [
+    {
+      "command": "python scripts/eureka_init_instance.py --instance ./eureka-instance --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_validate_instance.py --instance ./eureka-instance --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_local_workbench_smoke.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_local_auto_test.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_local_auto_search.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_lan_smoke.py --instance ./eureka-instance --host 0.0.0.0 --port 8765 --bind-lan --read-only --json",
+      "status": "pass_with_external_client_not_performed"
+    },
+    {
+      "command": "python scripts/eureka_clean_machine_bootstrap.py --repo . --json",
+      "status": "pass_with_forbidden_state_skipped"
+    },
+    {
+      "command": "python scripts/eureka_clean_machine_smoke.py --repo . --instance ./eureka-instance --json",
+      "status": "pass"
+    }
+  ],
+  "status": "pass_with_warnings",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01"
+}

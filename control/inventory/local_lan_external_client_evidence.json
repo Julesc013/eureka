@@ -1,0 +1,10 @@
+{
+  "external_client_smoke_performed": false,
+  "mutation_checks": [],
+  "private_network_details_redacted": true,
+  "reason": "No second client device available in automated run.",
+  "routes_checked": [],
+  "schema_version": "local_lan_external_client_evidence.v0",
+  "status": "not_performed",
+  "task": "LOCAL-12"
+}

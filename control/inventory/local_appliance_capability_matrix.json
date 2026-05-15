@@ -1,0 +1,260 @@
+{
+  "capabilities": [
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "explicit_instance_root",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-01",
+      "proof_level": "L1",
+      "smoke_commands": [
+        "python scripts/eureka_init_instance.py --instance ./eureka-instance --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_instance_bootstrap.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "instance_schema_and_migration_guard",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-02",
+      "proof_level": "L2",
+      "smoke_commands": [
+        "python scripts/eureka_validate_instance.py --instance ./eureka-instance --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_instance_migration_guard.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "runtime_composition_boundary",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-03",
+      "proof_level": "L2",
+      "smoke_commands": [
+        "python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_runtime_composition.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "read_only_localhost_service",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-04",
+      "proof_level": "L2",
+      "smoke_commands": [
+        "python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_http_service.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "html_workbench",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-05",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/eureka_local_workbench_smoke.py --base-url http://127.0.0.1:8765 --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_html_workbench.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "hardened_status_object_source_absence_pages",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-06",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/validate_local_workbench_page_hardening.py"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_workbench_page_hardening.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "workunit_queue",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-07",
+      "proof_level": "L2",
+      "smoke_commands": [
+        "python scripts/eureka_workunit_queue.py --instance ./eureka-instance list --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_workunit_queue.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "review_decision_loop",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-08",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/eureka_review_queue.py --instance ./eureka-instance list --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_review_rebuild.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "reviewed_index_rebuild",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-08",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/eureka_rebuild_reviewed_index.py --instance ./eureka-instance --dry-run --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_review_rebuild.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "deterministic_worker_runner",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-09",
+      "proof_level": "L2",
+      "smoke_commands": [
+        "python scripts/eureka_worker_runner.py --instance ./eureka-instance list-workers --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_worker_runner.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "auto_test_auto_search_harness",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-10",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/eureka_local_auto_test.py --base-url http://127.0.0.1:8765 --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_auto_test_harness.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "lan_binding_safety_gate",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-11",
+      "proof_level": "L3",
+      "smoke_commands": [
+        "python scripts/eureka_lan_policy_check.py --host 0.0.0.0 --bind-lan --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_lan_safety_gate.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "lan_read_only_smoke",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-12",
+      "proof_level": "L4",
+      "smoke_commands": [
+        "python scripts/eureka_lan_smoke.py --instance ./eureka-instance --host 0.0.0.0 --bind-lan --read-only --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_local_lan_smoke.py"
+      ]
+    },
+    {
+      "blocks_future_tracks_if_missing": true,
+      "capability_id": "clean_machine_bootstrap",
+      "implemented": true,
+      "limitations": [
+        "Local Appliance proof is not production readiness.",
+        "Live source probes, extraction, and model/provider calls remain disabled."
+      ],
+      "primary_task": "LOCAL-13",
+      "proof_level": "L4",
+      "smoke_commands": [
+        "python scripts/eureka_clean_machine_bootstrap.py --repo . --json"
+      ],
+      "tested": true,
+      "validators": [
+        "scripts/validate_clean_machine_bootstrap.py"
+      ]
+    }
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_appliance_capability_matrix.v0",
+  "task": "LOCAL-14"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "local_final_missing_tests_report.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "missing_tests_run": 31,
+  "missing_validators_repaired": [
+    "LOCAL validators now accept completed LOCAL queue progress after LOCAL-14",
+    "IA readiness validator now accepts post-LOCAL/HUNT queue packets",
+    "workbench hardening test now reflects the implemented WorkUnit queue",
+    "public search index generated artifacts were rebuilt after checksum drift was proven by generated artifact drift checks"
+  ],
+  "not_run": [],
+  "limitations": [
+    "Full discovery remains blocked by the runtime leakage gate after generated artifact drift repair."
+  ]
+}

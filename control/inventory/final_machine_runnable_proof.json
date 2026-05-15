@@ -1,0 +1,32 @@
+{
+  "auto_test_search": "pass",
+  "clean_machine_bootstrap": "pass_with_warnings",
+  "commands": [
+    "python scripts/eureka_init_instance.py --instance ./eureka-instance --json",
+    "python scripts/eureka_validate_instance.py --instance ./eureka-instance --json",
+    "python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json",
+    "python scripts/eureka_local_server.py --instance ./eureka-instance --host 127.0.0.1 --port 8765",
+    "python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --json",
+    "python scripts/eureka_local_workbench_smoke.py --base-url http://127.0.0.1:8765 --json",
+    "python scripts/eureka_local_auto_test.py --base-url http://127.0.0.1:8765 --json",
+    "python scripts/eureka_local_auto_search.py --base-url http://127.0.0.1:8765 --json",
+    "python scripts/eureka_lan_smoke.py --instance ./eureka-instance --host 0.0.0.0 --port 8765 --bind-lan --read-only --json",
+    "python scripts/eureka_clean_machine_bootstrap.py --repo . --json",
+    "python scripts/eureka_clean_machine_smoke.py --repo . --instance ./eureka-instance --json"
+  ],
+  "deterministic_worker_runner": "runnable",
+  "html_workbench": "pass",
+  "lan_read_only": "pass_with_warnings",
+  "limitations": [
+    "External second-device LAN proof was not performed or claimed."
+  ],
+  "local_clone_validation": "pass",
+  "local_instance_bootstrap": "pass",
+  "local_search": "pass",
+  "localhost_service": "pass",
+  "review_rebuild": "runnable_by_operator_token_on_localhost",
+  "schema_version": "final_machine_runnable_proof.v0",
+  "status": "pass_with_warnings",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
+  "workunit_queue": "runnable"
+}

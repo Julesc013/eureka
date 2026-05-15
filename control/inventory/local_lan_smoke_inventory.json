@@ -1,0 +1,28 @@
+{
+  "bind_lan_required": true,
+  "deployment_performed": false,
+  "external_client_smoke_preferred": true,
+  "lan_mutations_allowed": false,
+  "mutation_routes_tested": [
+    "POST /rebuild",
+    "POST /review/<review_item_id>/decision",
+    "POST /workers/run",
+    "POST /api/v1/source-probe"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "read_only_routes_tested": [
+    "/",
+    "/status",
+    "/health",
+    "/search?q=sampleproject",
+    "/absence?q=definitely-not-present-local-12",
+    "/api/v1/status",
+    "/api/v1/health",
+    "/api/v1/search?q=sampleproject",
+    "/api/v1/absence?q=definitely-not-present-local-12"
+  ],
+  "same_machine_lan_bind_smoke_supported": true,
+  "schema_version": "local_lan_smoke_inventory.v0",
+  "task": "LOCAL-12"
+}

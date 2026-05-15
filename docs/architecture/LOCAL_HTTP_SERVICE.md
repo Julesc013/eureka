@@ -1,0 +1,87 @@
+# Local HTTP Service
+
+LOCAL-04 adds the first HTTP adapter for the Local Appliance. It is a read-only localhost service over `runtime/local_appliance`.
+
+## Boundary
+
+The service uses `open_local_appliance(instance_path, read_only=True)` and reads the reviewed public index through the runtime composition object. It does not open SQLite paths directly.
+
+The service is allowed to:
+
+- bind to `127.0.0.1` or `localhost`
+- bind to `0.0.0.0` or `::` only when `--bind-lan` is explicit
+- return local appliance status
+- return health status
+- search the reviewed public index
+- return one reviewed record by record id
+- list reviewed records for one source id
+- return a known-absence style report over the checked local index state
+
+The service is not allowed to:
+
+- bind to LAN-facing hosts by default
+- expose unauthenticated or LAN write routes
+- run source probes
+- create WorkUnits
+- mutate review decisions without a loopback operator token
+- rebuild indexes without a loopback operator token
+- write `site/dist`
+- call model/provider APIs
+- claim production or public launch readiness
+
+## Routes
+
+The service route set now includes the LOCAL-04 JSON API and the LOCAL-05 HTML workbench:
+
+- `GET /`
+- `GET /status`
+- `GET /health`
+- `GET /api/v1/status`
+- `GET /api/v1/health`
+- `GET /api/v1/search?q=<query>`
+- `GET /api/v1/object/<record_id>`
+- `GET /api/v1/source/<source_id>`
+- `GET /api/v1/absence?q=<query>`
+- `GET /search?q=<query>`
+- `GET /object/<record_id>`
+- `GET /source/<source_id>`
+- `GET /absence?q=<query>`
+
+All routes are read-only. `/api/v1/*` routes return JSON. Non-API workbench routes return server-rendered HTML by default, with `?format=json` available where a JSON equivalent already exists.
+
+## Handoff
+
+LOCAL-06 hardens the status, object, source, and absence pages. LAN mode remains deferred until later LOCAL tasks.
+
+## LOCAL-06 HTML Surface Hardening
+
+LOCAL-06 does not change the JSON API contract. It strengthens the HTML routes served by this service so operators can inspect store status, reviewed-index status, provenance references, local source scope, and local current-index absence boundaries.
+
+The service remains read-only and localhost-only. It still rejects write methods and does not add WorkUnits, source probes, review mutation, index rebuilds, LAN binding, deployment, production readiness, or public launch readiness.
+
+## LOCAL-10 Eval Harness
+
+LOCAL-10 adds a client-side local eval harness that calls this service through
+loopback URLs. It verifies service health, JSON search, absence responses,
+workbench HTML availability, mutation rejection, and token-gated review/rebuild
+rejection without changing the HTTP route boundary.
+
+## LOCAL-11 LAN Safety Gate
+
+LOCAL-11 adds an explicit read-only LAN gate. The server still defaults to
+`127.0.0.1`; `0.0.0.0` and `::` require `--bind-lan`.
+
+LAN clients may access read-only status, health, search, object, source, and
+absence routes. Review/rebuild pages and POST mutation routes are localhost-only
+and return fail-closed responses for LAN clients. LOCAL-11 does not perform the
+cross-device LAN smoke; LOCAL-12 owns that proof.
+
+## LOCAL-13 Reproducibility Smoke
+
+LOCAL-13 uses the localhost service as part of clean-machine proof. The smoke
+starts the service on `127.0.0.1`, runs JSON service checks, HTML workbench
+checks, auto-test, and auto-search, then verifies shutdown and instance
+validity.
+
+This is not hosted service readiness and does not change the read-only or
+public-claim boundary.

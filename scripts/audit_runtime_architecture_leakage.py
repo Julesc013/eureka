@@ -445,29 +445,33 @@ def file_sha256(path: Path) -> str:
 def match_path_pattern(rel: str, pattern: str) -> bool:
     normalized = rel.replace("\\", "/")
     pattern = pattern.replace("\\", "/")
-    if pattern.endswith("/**"):
+    if pattern.endswith("/**") and not any(char in pattern[:-3] for char in "*?["):
         prefix = pattern[:-3]
         return normalized == prefix.rstrip("/") or normalized.startswith(prefix)
     return fnmatch.fnmatchcase(normalized, pattern)
 
 
 def classify_path(rel: str, production_paths: Sequence[str], control_paths: Sequence[str], test_fixture_paths: Sequence[str]) -> str:
-    if any(match_path_pattern(rel, pattern) for pattern in production_paths):
-        return "production"
     if any(match_path_pattern(rel, pattern) for pattern in test_fixture_paths):
         return "allowed_test_fixture_usage"
     if any(match_path_pattern(rel, pattern) for pattern in control_paths):
         return "allowed_control_usage"
+    if any(match_path_pattern(rel, pattern) for pattern in production_paths):
+        return "production"
     return "outside_scope"
 
 
 def compile_term_patterns(terms: Sequence[Any]) -> list[dict[str, Any]]:
-    canonical_terms = sorted({str(term) for term in terms}, key=len, reverse=True)
-    if not canonical_terms:
-        return []
-    alternatives = "|".join(re.escape(term) for term in canonical_terms)
-    pattern = re.compile(rf"(?<![A-Za-z0-9])({alternatives})(?![A-Za-z0-9])", re.IGNORECASE)
-    return [{"term": "forbidden_term", "pattern": pattern, "source": "term", "canonical_terms": canonical_terms}]
+    patterns: list[dict[str, Any]] = []
+    for term in sorted({str(term) for term in terms}, key=len, reverse=True):
+        flags = 0 if is_case_sensitive_forbidden_term(term) else re.IGNORECASE
+        pattern = re.compile(rf"(?<![A-Za-z0-9])({re.escape(term)})(?![A-Za-z0-9])", flags)
+        patterns.append({"term": "forbidden_term", "pattern": pattern, "source": "term", "canonical_term": term})
+    return patterns
+
+
+def is_case_sensitive_forbidden_term(term: str) -> bool:
+    return term in {"BUNDLE", "IA-BUNDLE", "F-BUNDLE", "G-BUNDLE", "MVP", "LOCAL-MVP", "AIDE"}
 
 
 def compile_regex_patterns(regexes: Sequence[Any], errors: list[str]) -> list[dict[str, Any]]:

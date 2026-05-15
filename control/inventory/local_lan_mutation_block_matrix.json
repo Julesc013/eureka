@@ -1,0 +1,51 @@
+{
+  "blocked_route_classes": [
+    {
+      "blocked_for_lan": true,
+      "class": "review_decision_mutation",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "reviewed_index_rebuild",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "WorkUnit execution",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "source_probe_execution",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "extraction",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "agent_execution",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "config_mutation",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "uploads",
+      "returns": 403
+    },
+    {
+      "blocked_for_lan": true,
+      "class": "download_install_execute",
+      "returns": 403
+    }
+  ],
+  "schema_version": "local_lan_mutation_block_matrix.v0",
+  "task": "LOCAL-11"
+}

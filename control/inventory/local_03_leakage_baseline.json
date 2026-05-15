@@ -1,6 +1,6 @@
 {
   "followup_required": "LOCAL-LEAKAGE-01",
-  "full_unittest_discovery_status": "not_run",
+  "full_unittest_discovery_status": "fail_other",
   "local_03_increased_leakage": false,
   "new_unallowlisted_production_findings_after": 1030,
   "new_unallowlisted_production_findings_before": 1030,

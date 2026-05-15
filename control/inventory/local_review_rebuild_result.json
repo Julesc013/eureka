@@ -1,0 +1,23 @@
+{
+  "accepted_review_included_in_rebuild": true,
+  "agent_execution_performed": false,
+  "deployment_performed": false,
+  "lan_enabled": false,
+  "master_index_mutated": false,
+  "operator_auth_added": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rebuild_requires_token": true,
+  "rebuild_ui_added": true,
+  "rejected_blocked_reviews_excluded": true,
+  "review_decision_persisted": true,
+  "review_decision_requires_token": true,
+  "review_service_added": true,
+  "review_ui_added": true,
+  "schema_version": "local_review_rebuild_result.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "pass_with_warnings",
+  "task": "LOCAL-08",
+  "workunit_execution_performed": false
+}

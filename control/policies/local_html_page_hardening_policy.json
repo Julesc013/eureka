@@ -1,0 +1,14 @@
+{
+  "absence_limitations_required": true,
+  "non_claim_banner_required": true,
+  "no_deployment_controls": true,
+  "no_external_assets": true,
+  "no_javascript_required": true,
+  "no_lan_controls": true,
+  "no_mutation_controls": true,
+  "object_provenance_required": true,
+  "schema_version": "local_html_page_hardening_policy.v0",
+  "search_result_provenance_required": true,
+  "source_page_local_scope_required": true,
+  "status_page_store_health_required": true
+}

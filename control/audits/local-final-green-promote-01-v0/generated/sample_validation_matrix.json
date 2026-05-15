@@ -1,0 +1,10 @@
+{
+  "schema_version": "local_final_validation_matrix_sample.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "local_validators": "pass_with_warnings",
+  "local_smoke": "pass",
+  "generated_artifact_cleanliness": "pass",
+  "architecture_boundaries": "pass",
+  "runtime_leakage": "fail",
+  "full_unittest_discovery": "fail"
+}

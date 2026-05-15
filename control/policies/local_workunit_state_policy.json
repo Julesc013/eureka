@@ -1,0 +1,90 @@
+{
+  "allowed_states": [
+    "queued",
+    "running",
+    "paused",
+    "blocked",
+    "complete",
+    "failed",
+    "cancelled"
+  ],
+  "allowed_transitions": [
+    {
+      "from": "queued",
+      "to": "running"
+    },
+    {
+      "from": "queued",
+      "to": "paused"
+    },
+    {
+      "from": "queued",
+      "to": "blocked"
+    },
+    {
+      "from": "queued",
+      "to": "cancelled"
+    },
+    {
+      "from": "running",
+      "to": "paused"
+    },
+    {
+      "from": "running",
+      "to": "complete"
+    },
+    {
+      "from": "running",
+      "to": "failed"
+    },
+    {
+      "from": "running",
+      "to": "blocked"
+    },
+    {
+      "from": "running",
+      "to": "cancelled"
+    },
+    {
+      "from": "paused",
+      "to": "queued"
+    },
+    {
+      "from": "paused",
+      "to": "cancelled"
+    },
+    {
+      "from": "blocked",
+      "to": "queued"
+    },
+    {
+      "from": "blocked",
+      "to": "cancelled"
+    },
+    {
+      "from": "failed",
+      "to": "queued"
+    },
+    {
+      "from": "complete",
+      "to": "complete"
+    },
+    {
+      "from": "cancelled",
+      "to": "cancelled"
+    }
+  ],
+  "allowed_types": [
+    "search_need",
+    "source_probe",
+    "evidence_review",
+    "index_rebuild",
+    "regression_test",
+    "extraction_task",
+    "agent_task"
+  ],
+  "idempotent_terminal_transitions": true,
+  "invalid_transitions_fail_closed": true,
+  "schema_version": "local_workunit_state_policy.v0",
+  "transition_history_required": true
+}

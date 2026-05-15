@@ -1,0 +1,13 @@
+{
+  "count": 1,
+  "schema_version": "local_workunit_queue_cli_result.v0",
+  "status": "pass",
+  "workunits": [
+    {
+      "id": "wku_sample",
+      "kind": "search_need",
+      "state": "queued",
+      "title": "Sample local search need"
+    }
+  ]
+}

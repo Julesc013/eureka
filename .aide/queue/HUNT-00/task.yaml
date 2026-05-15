@@ -1,0 +1,14 @@
+id: HUNT-00
+title: Search Hunt track planning over Local Appliance
+status: queued
+purpose: Plan the Search Hunt track over the completed Local Appliance proof surface.
+allowed_scope_summary: Planning, policies, docs, task decomposition, and audit evidence only until explicitly scoped.
+gate:
+  - LOCAL-14 completed with pass_with_warnings or better
+  - use explicit local instance and WorkUnit boundaries
+  - no source probes
+  - no crawling or scraping
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: LOCAL-14

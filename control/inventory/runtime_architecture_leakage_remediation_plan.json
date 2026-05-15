@@ -14,35 +14,35 @@
   ],
   "quarantines": [
     {
-      "path": "runtime/connectors/h14_source_discovery/rollup_dry_run_common.py",
+      "path": "runtime/connectors/internet_archive/quality_delta.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h3_os_package_archives/review_integration.py",
+      "path": "runtime/local_foundry/pack_builder.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h4_code_source_release/live_probe_common.py",
+      "path": "runtime/local_foundry/pack_export.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h6_web_archive_news_event/live_probe_common.py",
+      "path": "runtime/local_foundry/source_cache.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h13_local_private/boundary_dry_run_common.py",
+      "path": "runtime/connectors/internet_archive/review_integration.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h4_code_source_release/review_integration.py",
+      "path": "runtime/local_foundry/evidence_ledger.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h14_source_discovery/review_integration.py",
+      "path": "runtime/extraction/usefulness.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/connectors/h3_os_package_archives/live_probe_common.py",
+      "path": "runtime/local_foundry/candidate_store.py",
       "task": "R0-03 or R0-04"
     }
   ],

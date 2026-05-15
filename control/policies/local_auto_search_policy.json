@@ -1,0 +1,13 @@
+{
+  "absence_report_required_for_missing_queries": true,
+  "live_source_search_enabled": false,
+  "local_reviewed_index_only": true,
+  "no_global_absence_claim": true,
+  "query_max_length": 256,
+  "query_suite_fixed_current_task": true,
+  "result_limit_default": 20,
+  "result_limit_max": 50,
+  "schema_version": "local_auto_search_policy.v0",
+  "source_probe_enabled": false,
+  "synthetic_generation_enabled": false
+}

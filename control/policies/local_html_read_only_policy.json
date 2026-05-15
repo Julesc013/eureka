@@ -1,0 +1,17 @@
+{
+  "download_install_execute_controls_forbidden": true,
+  "forms_get_only": true,
+  "index_rebuild_controls_forbidden_current_task": true,
+  "lan_controls_forbidden_current_task": true,
+  "mutating_methods_forbidden": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "review_decision_controls_forbidden_current_task": true,
+  "schema_version": "local_html_read_only_policy.v0",
+  "source_probe_controls_forbidden_current_task": true,
+  "upload_controls_forbidden": true,
+  "workunit_creation_controls_forbidden_current_task": true
+}

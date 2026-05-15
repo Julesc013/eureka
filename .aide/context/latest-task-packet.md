@@ -2,15 +2,15 @@
 
 ## PHASE
 
-UNSPECIFIED - Select the next bounded Eureka task after canonical AIDE governance sync
+UNSPECIFIED - EUREKA-FINAL-STATE-PROMOTION-PLAN-01
 
 ## GOAL
 
-Select the next bounded Eureka task after canonical AIDE governance sync
+EUREKA-FINAL-STATE-PROMOTION-PLAN-01
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Continue AIDE token survival for the Eureka target repo by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
@@ -23,11 +23,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/context/test-map.json` (present)
 - `.aide/context/context-index.json` (present)
 - `.aide/context/latest-context-packet.md` (present)
-- `AGENTS.md`
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
 - `.aide/cache/latest-cache-keys.md` (present)
+- `AGENTS.md`
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 - `.aide/policies/cache.yaml`
@@ -75,10 +75,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 scripts/check_architecture_boundaries.py`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -100,12 +100,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No Eureka product behavior change, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
 
 ## ACCEPTANCE
 
 - Task-specific acceptance criteria are met.
-- The selected next task preserves Eureka product boundaries without changing Eureka product behavior.
 - Validation is run and recorded.
 - Evidence is written.
 - No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
@@ -118,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4133
-- approx_tokens: 1034
+- chars: 4017
+- approx_tokens: 1005
 - budget_status: PASS
 - warnings:
   - none

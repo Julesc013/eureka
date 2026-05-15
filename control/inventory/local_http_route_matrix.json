@@ -1,0 +1,105 @@
+{
+  "routes": [
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "text"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/status",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/health",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/status",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/health",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": 256,
+      "max_result_limit": 50,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/search",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/object/<record_id>",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": null,
+      "max_result_limit": 50,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/source/<source_id>",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    },
+    {
+      "allowed_in_lan_mode": false,
+      "max_query_length": 256,
+      "max_result_limit": null,
+      "method": "GET",
+      "mutates_store": false,
+      "path": "/api/v1/absence",
+      "read_only": true,
+      "requires_operator_token": false,
+      "response_kind": "json"
+    }
+  ],
+  "schema_version": "local_http_route_matrix.v0",
+  "task": "LOCAL-04"
+}

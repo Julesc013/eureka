@@ -1,0 +1,343 @@
+{
+  "items": [
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Search Hunt Session runtime",
+      "contract_only": false,
+      "not_started": true,
+      "partially_scaffolded": false,
+      "planned": false,
+      "prerequisite_local_capability": "auto_test_auto_search_harness",
+      "recommended_track": "HUNT-01",
+      "runtime_missing": true,
+      "state": "not_started"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "pause/resume/steer",
+      "contract_only": false,
+      "not_started": true,
+      "partially_scaffolded": false,
+      "planned": false,
+      "prerequisite_local_capability": "workunit_queue",
+      "recommended_track": "HUNT-02",
+      "runtime_missing": true,
+      "state": "not_started"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Hunt-to-SearchNeed pipeline",
+      "contract_only": false,
+      "not_started": true,
+      "partially_scaffolded": false,
+      "planned": false,
+      "prerequisite_local_capability": "review_decision_loop",
+      "recommended_track": "HUNT-03",
+      "runtime_missing": true,
+      "state": "not_started"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Hunt-to-WorkUnit pipeline",
+      "contract_only": false,
+      "not_started": true,
+      "partially_scaffolded": false,
+      "planned": false,
+      "prerequisite_local_capability": "workunit_queue",
+      "recommended_track": "HUNT-04",
+      "runtime_missing": true,
+      "state": "not_started"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "background hunt runner",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "deterministic_worker_runner",
+      "recommended_track": "HUNT",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "AI research escalation",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "local_worker",
+      "recommended_track": "HUNT/FUTURE-AI",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Synthetic Query Foundry",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "auto_test_auto_search_harness",
+      "recommended_track": "SYN-00",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "deep extraction runtime",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "local_appliance",
+      "recommended_track": "F0-01",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "container/member extraction",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "local_appliance",
+      "recommended_track": "F0",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "extraction-to-index integration",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "review_decision_loop",
+      "recommended_track": "F0",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "ranking/explanation/identity merge",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": true,
+      "planned": true,
+      "prerequisite_local_capability": "html_workbench",
+      "recommended_track": "G0",
+      "runtime_missing": true,
+      "state": "partially_scaffolded"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "broad source expansion",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "future_track_gate",
+      "recommended_track": "H",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Internet Archive connector pattern",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": true,
+      "planned": true,
+      "prerequisite_local_capability": "review_queue",
+      "recommended_track": "H-IA",
+      "runtime_missing": true,
+      "state": "partially_scaffolded"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "Wayback connector",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "connector_approval",
+      "recommended_track": "H-WAYBACK",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "GitHub Releases connector",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "connector_approval",
+      "recommended_track": "H-GITHUB",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "PyPI beyond sampleproject",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "connector_approval",
+      "recommended_track": "H-PACKAGE",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "npm/crates/NuGet/Maven/etc.",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "connector_approval",
+      "recommended_track": "H-PACKAGE",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "packs/federation",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": true,
+      "planned": true,
+      "prerequisite_local_capability": "review_queue",
+      "recommended_track": "H/PACKS",
+      "runtime_missing": true,
+      "state": "partially_scaffolded"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "actions/download/mirror/preservation",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "operator_policy",
+      "recommended_track": "ACTIONS",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "semantic retrieval/embedding/AI",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "auto_test_auto_search_harness",
+      "recommended_track": "AI-SEARCH",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "snapshot/relay",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": true,
+      "planned": true,
+      "prerequisite_local_capability": "reviewed_index_rebuild",
+      "recommended_track": "SNAPSHOT/RELAY",
+      "runtime_missing": true,
+      "state": "partially_scaffolded"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "native clients",
+      "contract_only": true,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "local_http_service",
+      "recommended_track": "NATIVE",
+      "runtime_missing": true,
+      "state": "contract_only"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "hosted public alpha",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "main_promotion_review",
+      "recommended_track": "HOSTED",
+      "runtime_missing": true,
+      "state": "planned"
+    },
+    {
+      "blocked_by": [
+        "future reviewed task scope"
+      ],
+      "capability": "production ops",
+      "contract_only": false,
+      "not_started": false,
+      "partially_scaffolded": false,
+      "planned": true,
+      "prerequisite_local_capability": "all_local_capabilities",
+      "recommended_track": "OPS",
+      "runtime_missing": true,
+      "state": "planned"
+    }
+  ],
+  "schema_version": "final_not_done_matrix.v0",
+  "status": "pass",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01"
+}

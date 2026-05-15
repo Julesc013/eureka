@@ -1,0 +1,9 @@
+{
+  "dry_run": false,
+  "excluded_count": 2,
+  "included_count": 1,
+  "master_index_mutated": false,
+  "schema_version": "local_reviewed_index_rebuild_result.v0",
+  "site_dist_mutated": false,
+  "status": "pass"
+}

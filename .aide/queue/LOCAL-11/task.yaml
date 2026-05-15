@@ -1,0 +1,24 @@
+id: LOCAL-11
+title: LAN binding policy and safety gate
+status: completed
+purpose: Define LAN binding policy and safety gate after the local auto-test harness exists.
+allowed_scope_summary: LAN policy, safety gates, tests, docs, inventories, and audit evidence only when a future LOCAL-11 prompt enables it.
+gate:
+  - LOCAL-10 completed with deterministic local auto-test and auto-search harness
+  - no LAN binding until explicitly enabled by LOCAL-11 policy
+  - no deployment
+  - no source probe execution
+  - no extraction execution
+  - no production readiness claim
+  - no public launch readiness claim
+proof_level_required: L2
+recommended_after: LOCAL-10
+recommended_next: LOCAL-12
+completion_evidence:
+  - runtime/local_network package added
+  - explicit --bind-lan policy and host validation added
+  - LAN read-only route policy and mutation block matrix added
+  - local service client-scope gate blocks LAN review/rebuild mutation
+  - LAN policy check script and validator added
+  - focused LAN safety tests added
+  - F0 remains deferred until LOCAL-14

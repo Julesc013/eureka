@@ -1,0 +1,23 @@
+{
+  "all_required_states_supported": true,
+  "all_required_types_supported": true,
+  "cli_added": true,
+  "demo_added": true,
+  "deployment_performed": false,
+  "idempotency_checked": true,
+  "index_rebuild_performed": false,
+  "invalid_transitions_rejected": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "review_mutation_performed": false,
+  "runtime_package_added": true,
+  "schema_version": "local_workunit_queue_result.v0",
+  "source_probe_executed": false,
+  "sqlite_store_added": true,
+  "status": "pass_with_warnings",
+  "task": "LOCAL-07",
+  "transition_history_recorded": true,
+  "valid_transitions_passed": true,
+  "validator_added": true,
+  "worker_execution_performed": false
+}

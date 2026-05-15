@@ -1,0 +1,16 @@
+{
+  "actual_second_machine_optional": true,
+  "auto_test_required": true,
+  "committed_instance_state_forbidden": true,
+  "explicit_instance_path_required": true,
+  "generated_artifact_cleanliness_required": true,
+  "hidden_state_roots_forbidden": true,
+  "html_workbench_smoke_required": true,
+  "local_server_smoke_required": true,
+  "no_deployment": true,
+  "no_production_readiness_claim": true,
+  "no_public_launch_readiness_claim": true,
+  "schema_version": "local_clean_machine_bootstrap_policy.v0",
+  "shutdown_required": true,
+  "temp_checkout_required": true
+}

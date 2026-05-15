@@ -1,0 +1,19 @@
+{
+  "accept_requires_local_only_confirmation": true,
+  "allowed_decisions": [
+    "accept",
+    "reject",
+    "block",
+    "request_more_evidence",
+    "note_only"
+  ],
+  "block_requires_reason": true,
+  "decisions_are_local_review_state_only": true,
+  "decisions_do_not_accept_global_truth": true,
+  "decisions_do_not_certify_malware_safety": true,
+  "decisions_do_not_clear_rights": true,
+  "decisions_do_not_mutate_index_directly": true,
+  "reject_requires_reason": true,
+  "request_more_evidence_requires_reason": true,
+  "schema_version": "local_review_decision_policy.v0"
+}

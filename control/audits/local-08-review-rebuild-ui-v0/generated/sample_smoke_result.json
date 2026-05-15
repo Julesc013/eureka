@@ -1,0 +1,10 @@
+{
+  "rebuild_page_passed": true,
+  "rebuild_requires_token": true,
+  "rebuild_with_token_passed": true,
+  "review_api_passed": true,
+  "review_decision_requires_token": true,
+  "review_page_passed": true,
+  "schema_version": "local_review_smoke_result.v0",
+  "status": "pass"
+}

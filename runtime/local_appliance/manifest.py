@@ -10,12 +10,13 @@ from .instance import resolve_instance_paths
 
 
 STORE_MANIFEST_SCHEMA_VERSION = "eureka_local_store_manifest.v0"
-REQUIRED_STORE_KEYS = ("source_cache", "evidence_ledger", "review_queue", "public_index")
+REQUIRED_STORE_KEYS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue")
 EXPECTED_RELATIVE_PATHS = {
     "source_cache": "db/source_cache.sqlite",
     "evidence_ledger": "db/evidence_ledger.sqlite",
     "review_queue": "db/review_queue.sqlite",
     "public_index": "db/public_index.sqlite",
+    "workunit_queue": "db/workunit_queue.sqlite",
 }
 
 

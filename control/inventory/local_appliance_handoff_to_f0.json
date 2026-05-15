@@ -1,0 +1,20 @@
+{
+  "auto_test_required_for_search_behavior": true,
+  "extraction_candidates_go_through_evidence_review_index": true,
+  "extraction_results_become_source_observations": true,
+  "f0_can_resume_only_through_local_appliance": true,
+  "f0_must_be_visible_testable_through_workbench_before_closeout": true,
+  "local_appliance_required": true,
+  "prerequisites": [
+    "LOCAL-14 pass_with_warnings or better",
+    "future explicit operator choice if before HUNT/SYN"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_first_task": "F0-00 \u2014 Refresh F0 after Local Appliance",
+  "recommended_second_task": "F0-01 \u2014 Extraction policy and sandbox limits",
+  "review_gate_required_for_accepted_results": true,
+  "schema_version": "local_appliance_handoff_to_f0.v0",
+  "task": "LOCAL-14",
+  "workunits_required_for_background_work": true
+}

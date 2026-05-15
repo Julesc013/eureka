@@ -1,0 +1,118 @@
+{
+  "rows": [
+    {
+      "allowed_mutation": "none",
+      "enabled": true,
+      "external_network_allowed": false,
+      "kind": "noop_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": true,
+      "external_network_allowed": false,
+      "kind": "review_queue_checker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "public_index_store_only",
+      "enabled": true,
+      "external_network_allowed": false,
+      "kind": "reviewed_index_rebuild_worker",
+      "mutates_stores": true,
+      "requires_operator_token": true
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": true,
+      "external_network_allowed": false,
+      "kind": "absence_report_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": true,
+      "external_network_allowed": false,
+      "kind": "local_status_snapshot_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "source_probe_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "extraction_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "agent_research_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "ai_model_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "download_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "install_execute_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "source_sync_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "lan_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    },
+    {
+      "allowed_mutation": "none",
+      "enabled": false,
+      "external_network_allowed": false,
+      "kind": "deployment_worker",
+      "mutates_stores": false,
+      "requires_operator_token": false
+    }
+  ],
+  "schema_version": "local_worker_kind_matrix.v0",
+  "task": "LOCAL-09"
+}

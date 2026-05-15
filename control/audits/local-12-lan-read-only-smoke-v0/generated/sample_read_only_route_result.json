@@ -1,0 +1,7 @@
+{
+  "external_assets_found": false,
+  "forbidden_claims_found": false,
+  "mutation_controls_found": false,
+  "read_only_routes_passed": true,
+  "schema_version": "local_lan_read_only_route_result.v0"
+}

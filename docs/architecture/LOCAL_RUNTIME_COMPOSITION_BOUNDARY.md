@@ -66,3 +66,5 @@ LOCAL-03 does not implement:
 ## Handoff
 
 LOCAL-04 can build the read-only localhost HTTP service over `LocalApplianceRuntime`. That service should receive an explicit instance path and call this boundary for status and reviewed-index reads.
+
+LOCAL-04 implements that read-only service as `runtime/local_service`. Future workbench and worker routes should continue to use the composition boundary instead of opening store paths ad hoc.

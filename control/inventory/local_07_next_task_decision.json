@@ -1,0 +1,12 @@
+{
+  "f0_can_resume_after": "LOCAL-14",
+  "f0_current_status": "deferred",
+  "lan_can_start": false,
+  "reason": "Operator-gated WorkUnit queue exists; review/rebuild UI is next.",
+  "recommended_next_task": "LOCAL-08 \u2014 Review and index rebuild from UI",
+  "schema_version": "local_07_next_task_decision.v0",
+  "server_can_start": true,
+  "task": "LOCAL-07",
+  "worker_execution_enabled": false,
+  "workunit_queue_available": true
+}

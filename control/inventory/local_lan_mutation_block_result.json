@@ -1,0 +1,28 @@
+{
+  "lan_mutation_routes_blocked": true,
+  "mutation_checks": [
+    {
+      "blocked": true,
+      "route": "POST /rebuild"
+    },
+    {
+      "blocked": true,
+      "route": "POST /review/<review_item_id>/decision"
+    },
+    {
+      "blocked": true,
+      "route": "POST /workers/run"
+    },
+    {
+      "blocked": true,
+      "route": "POST /api/v1/source-probe"
+    }
+  ],
+  "operator_mutations_localhost_only": true,
+  "rebuild_mutation_from_lan": false,
+  "review_mutation_from_lan": false,
+  "schema_version": "local_lan_mutation_block_result.v0",
+  "source_probe_executed": false,
+  "task": "LOCAL-12",
+  "workunit_execution_from_lan": false
+}

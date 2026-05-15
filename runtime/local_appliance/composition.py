@@ -27,6 +27,7 @@ STORE_CLASSES = {
     "review_queue": ReviewQueueStore,
     "public_index": PublicIndexStore,
 }
+STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue")
 
 
 @dataclass
@@ -39,6 +40,7 @@ class LocalApplianceRuntime:
     evidence_ledger: Any
     review_queue: Any
     public_index: Any
+    workunit_queue: Any
     read_only: bool = False
     _closed: bool = False
 
@@ -55,6 +57,7 @@ class LocalApplianceRuntime:
             "evidence_ledger": self.evidence_ledger.check_integrity(),
             "review_queue": self.review_queue.check_integrity(),
             "public_index": self.public_index.check_integrity(),
+            "workunit_queue": self.workunit_queue.check_integrity(),
         }
         return {
             "schema_version": "local_runtime_integrity.v0",
@@ -65,7 +68,7 @@ class LocalApplianceRuntime:
     def close(self) -> None:
         if self._closed:
             return
-        for store in (self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
+        for store in (self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
             if hasattr(store, "close"):
                 store.close()
         self._closed = True
@@ -109,7 +112,8 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
 
     opened: dict[str, Any] = {}
     try:
-        for store_id, store_class in STORE_CLASSES.items():
+        for store_id in STORE_IDS:
+            store_class = _store_class(store_id)
             store_path = manifest.store_path(store_id)
             _require_manifest_store_path(paths.instance_root, store_path, store_id)
             store = store_class.open(store_path)
@@ -123,6 +127,7 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
             evidence_ledger=opened["evidence_ledger"],
             review_queue=opened["review_queue"],
             public_index=opened["public_index"],
+            workunit_queue=opened["workunit_queue"],
             read_only=read_only,
         )
     except Exception:
@@ -165,7 +170,14 @@ def _require_manifest_store_path(instance_root: Path, store_path: Path, store_id
         raise LocalRuntimeCompositionError(f"{store_id} store file is required before runtime opening")
 
 
+def _store_class(store_id: str) -> Any:
+    if store_id == "workunit_queue":
+        module = __import__("runtime.workunit_queue.store", fromlist=["WorkUnitQueueStore"])
+        return getattr(module, "WorkUnitQueueStore")
+    return STORE_CLASSES[store_id]
+
+
 def _is_mutation_name(name: str) -> bool:
-    mutation_prefixes = ("write", "append", "record", "set", "enqueue", "link")
+    mutation_prefixes = ("write", "append", "record", "set", "enqueue", "link", "create", "transition", "pause", "resume", "cancel", "block", "complete", "fail")
     mutation_names = {"transaction", "connection", "init"}
     return name in mutation_names or any(name.startswith(prefix) for prefix in mutation_prefixes)

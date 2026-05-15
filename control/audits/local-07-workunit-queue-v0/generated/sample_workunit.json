@@ -1,0 +1,19 @@
+{
+  "blocked_reason": null,
+  "created_at": "2026-05-13T00:00:00Z",
+  "id": "wku_sample",
+  "idempotency_key": "sample",
+  "kind": "search_need",
+  "limitations": [
+    "sample record only"
+  ],
+  "parent_id": null,
+  "payload": {
+    "query": "sampleproject"
+  },
+  "priority": "normal",
+  "state": "queued",
+  "title": "Sample local search need",
+  "updated_at": "2026-05-13T00:00:00Z",
+  "warnings": []
+}

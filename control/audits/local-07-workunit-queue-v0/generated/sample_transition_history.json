@@ -1,0 +1,20 @@
+{
+  "transitions": [
+    {
+      "created_at": "2026-05-13T00:00:00Z",
+      "from_state": "",
+      "id": "wut_created",
+      "reason": "created",
+      "to_state": "queued",
+      "workunit_id": "wku_sample"
+    },
+    {
+      "created_at": "2026-05-13T00:00:01Z",
+      "from_state": "queued",
+      "id": "wut_started",
+      "reason": "operator selected",
+      "to_state": "running",
+      "workunit_id": "wku_sample"
+    }
+  ]
+}

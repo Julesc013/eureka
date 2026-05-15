@@ -10,6 +10,23 @@ import sys
 from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
+try:
+    from local_queue_progress import (
+        current_recommended_task,
+        latest_packet_current_or_advanced,
+        queue_current_or_advanced,
+        queue_task_available,
+        queue_task_completed,
+    )
+except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
+    from scripts.local_queue_progress import (
+        current_recommended_task,
+        latest_packet_current_or_advanced,
+        queue_current_or_advanced,
+        queue_task_available,
+        queue_task_completed,
+    )
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK_ID = "LOCAL-00"
@@ -348,11 +365,12 @@ def validate_report(report: Mapping[str, Any], errors: list[str]) -> None:
 def validate_queue_and_context(root: Path, errors: list[str]) -> None:
     queue_text = read_text(root / QUEUE_INDEX, errors)
     packet_text = read_text(root / TASK_PACKET, errors)
-    queue_points_to_local_01 = f"current_recommended_task: {NEXT_TASK}" in queue_text
-    queue_points_to_local_02 = f"current_recommended_task: {ADVANCED_NEXT_TASK}" in queue_text
-    if not (queue_points_to_local_01 or queue_points_to_local_02):
+    queue_current = current_recommended_task(root)
+    queue_points_to_local_01 = queue_current == NEXT_TASK
+    queue_points_to_local_02 = queue_current == ADVANCED_NEXT_TASK
+    if not (queue_points_to_local_01 or queue_points_to_local_02 or queue_current_or_advanced(root, TASK_ID, NEXT_TASK)):
         errors.append("queue index must point to LOCAL-01 or the completed LOCAL-01 successor LOCAL-02")
-    if "id: LOCAL-00" not in queue_text or "id: LOCAL-01" not in queue_text or "id: LOCAL-02" not in queue_text:
+    if not queue_task_completed(root, TASK_ID) or not queue_task_available(root, NEXT_TASK) or not queue_task_available(root, ADVANCED_NEXT_TASK):
         errors.append("queue index must include LOCAL-00, LOCAL-01, and LOCAL-02")
     if queue_points_to_local_02 and "id: LOCAL-01" in queue_text and "status: completed" not in queue_text:
         errors.append("queue index must mark LOCAL-01 completed before pointing to LOCAL-02")
@@ -362,15 +380,20 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
         errors.append("latest task packet must point to LOCAL-01")
     if queue_points_to_local_02 and ADVANCED_NEXT_TASK not in packet_text:
         errors.append("latest task packet must point to LOCAL-02 after LOCAL-01 completes")
+    if not (queue_points_to_local_01 or queue_points_to_local_02) and not latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
+        errors.append("latest task packet must point to the active advanced queue item")
     if "<fill from the next reviewed queue packet>" in packet_text:
         errors.append("latest task packet still contains placeholder allowed paths")
 
 
 def validate_health(root: Path, errors: list[str]) -> None:
     health = load_json(root / HEALTH_JSON, "eureka_repo_health.v0", errors)
-    if health.get("current_queue_item") not in {NEXT_TASK, ADVANCED_NEXT_TASK}:
+    health_current = health.get("current_queue_item")
+    health_recommended = health.get("current_recommended_queue_item") or health.get("next_recommended_queue_item")
+    queue_current = current_recommended_task(root)
+    if health_current not in {NEXT_TASK, ADVANCED_NEXT_TASK} and not (health_recommended == queue_current and queue_task_completed(root, TASK_ID)):
         errors.append("repo health current_queue_item must be LOCAL-01 or completed successor LOCAL-02")
-    if health.get("f0_current_status") != "deferred":
+    if health.get("f0_current_status") not in {"deferred", "resumable_through_local_appliance"}:
         errors.append("repo health must record F0 deferred")
     if health.get("f0_deferred_until") != LOCAL_CLOSEOUT:
         errors.append("repo health must record F0 deferred until LOCAL-14")

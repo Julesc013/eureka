@@ -1,0 +1,17 @@
+{
+  "error": {
+    "code": "record_not_found",
+    "details": {
+      "record_id": "not-present"
+    },
+    "message": "record was not found in the reviewed public index"
+  },
+  "limitations": [
+    "local reviewed index only",
+    "read-only service",
+    "no live source inspection"
+  ],
+  "schema_version": "local_http_error_response.v0",
+  "status": "fail",
+  "warnings": []
+}

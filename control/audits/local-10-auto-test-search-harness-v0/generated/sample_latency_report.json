@@ -1,0 +1,44 @@
+{
+  "average_elapsed_ms": 5.339,
+  "limitations": [
+    "latency values are local smoke estimates only"
+  ],
+  "max_elapsed_ms": 51.87,
+  "route_count": 32,
+  "schema_version": "local_eval_latency_summary.v0",
+  "slowest_routes": [
+    {
+      "case_id": "worker_registry",
+      "elapsed_ms": 51.87,
+      "path": "worker_registry",
+      "suite": "worker_queue_safety"
+    },
+    {
+      "case_id": "status",
+      "elapsed_ms": 27.308,
+      "path": "/api/v1/status",
+      "suite": "latency_smoke"
+    },
+    {
+      "case_id": "health",
+      "elapsed_ms": 25.874,
+      "path": "/health",
+      "suite": "service_health"
+    },
+    {
+      "case_id": "special",
+      "elapsed_ms": 22.107,
+      "path": "/api/v1/search",
+      "suite": "json_search"
+    },
+    {
+      "case_id": "home",
+      "elapsed_ms": 15.498,
+      "path": "/",
+      "suite": "service_health"
+    }
+  ],
+  "status": "pass",
+  "strict_latency_gate_enabled": false,
+  "warnings": []
+}

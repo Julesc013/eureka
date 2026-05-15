@@ -1,0 +1,21 @@
+{
+  "auto_search_passed": true,
+  "auto_test_passed": true,
+  "clean_machine_bootstrap_passed": true,
+  "clean_machine_smoke_passed": true,
+  "deployment_performed": false,
+  "external_client_smoke_performed": false,
+  "external_client_smoke_reason": "no second client device used in automated VS Code run",
+  "external_client_smoke_status": "not_performed",
+  "instance_init_passed": true,
+  "instance_validate_passed": true,
+  "lan_smoke_passed": true,
+  "local_service_smoke_passed": true,
+  "local_workbench_smoke_passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "runtime_status_passed": true,
+  "schema_version": "local_total_smoke_result.v0",
+  "status": "pass_with_warnings",
+  "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01"
+}

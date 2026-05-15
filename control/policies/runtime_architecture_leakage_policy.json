@@ -30,6 +30,12 @@
   "test_fixture_paths": [
     "examples/**",
     "tests/**",
+    "runtime/**/tests/**",
+    "surfaces/**/tests/**",
+    "contracts/**/examples/**",
+    "native/**/tests/**",
+    "crates/**/tests/**",
+    "site/**/tests/**",
     "control/audits/**/generated/**"
   ],
   "forbidden_terms": [

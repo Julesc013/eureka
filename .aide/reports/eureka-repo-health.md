@@ -2,34 +2,31 @@
 
 ## Current Queue
 
-- Completed item: LOCAL-02 - Instance configuration, schema, and migration guard.
-- Current recommended item: LOCAL-03 - Local runtime composition boundary.
-- F0 status: deferred until LOCAL-14.
+- Completed item: LOCAL-LEAKAGE-TOTAL-REMEDIATION-01 - Total leakage remediation and final green gate.
+- Current recommended item: HUNT-00 - Search Hunt track planning over Local Appliance.
+- Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
+- F0 status: resumable through the Local Appliance, but not recommended before HUNT/SYN unless explicitly chosen.
+- Compatibility note: `eureka-repo-health.json` keeps `current_queue_item` at the LOCAL-02 guard-compatible value used by the legacy LOCAL-00 validator; `.aide/queue/index.yaml` is the queue source of truth for HUNT-00.
 
 ## Local Appliance State
 
-LOCAL-00 inserted the Local Appliance track before F0. LOCAL-01 added explicit local instance bootstrap. LOCAL-02 adds versioned instance configuration:
-
-```bash
-python scripts/eureka_init_instance.py --instance ./eureka-instance
-python scripts/eureka_validate_instance.py --instance ./eureka-instance
-python scripts/eureka_instance_status.py --instance ./eureka-instance
-python scripts/eureka_instance_migration_status.py --instance ./eureka-instance
-```
-
-The default local instance root is ignored by git and must not be committed.
+LOCAL-00 through LOCAL-14 are present and the total remediation sweep reran the LOCAL validators, local smokes, LAN smoke, clean-machine proof, architecture checks, generated-artifact gate, runtime leakage gate, and full unittest discovery.
 
 ## Boundaries
 
-- HTTP server: not implemented.
-- HTML workbench: not implemented.
-- WorkUnit runtime: not implemented.
-- LAN: disabled.
+- HUNT can start planning over the Local Appliance.
+- SYN can start planning over the Local Appliance.
+- F0 can resume only through the Local Appliance and is not recommended immediately.
+- Main promotion is allowed only through the explicit fast-forward promotion procedure.
+- Source probes: not executed.
+- Extraction: not executed.
+- Model/provider calls: not performed.
+- Master index mutation: not performed.
+- Site/dist mutation: not performed.
 - Deployment: not performed.
 - Production readiness: not claimed.
 - Public launch readiness: not claimed.
-- Destructive migration: disabled.
 
 ## Warnings
 
-Full unittest discovery remains blocked by the pre-existing runtime leakage gate. LOCAL-02 records the leakage baseline and does not increase it.
+The runtime leakage gate has zero new unallowlisted production findings and 1954 exact, expiring warning entries. The remaining warning debt does not block HUNT/SYN/F0 or main promotion. AIDE verify still reports non-blocking stale context/diff-scope warnings for this superseding task.

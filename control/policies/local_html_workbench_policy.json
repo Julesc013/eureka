@@ -1,0 +1,19 @@
+{
+  "deployment_enabled": false,
+  "frontend_build_required": false,
+  "index_rebuild_ui_enabled": false,
+  "javascript_required": false,
+  "lan_enabled": false,
+  "localhost_only": true,
+  "mutation_routes_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "read_only": true,
+  "review_decision_ui_enabled": false,
+  "schema_version": "local_html_workbench_policy.v0",
+  "search_hunt_ui_enabled": false,
+  "server_rendered": true,
+  "site_dist_writes_enabled": false,
+  "source_probe_ui_enabled": false,
+  "workunit_ui_enabled": false
+}

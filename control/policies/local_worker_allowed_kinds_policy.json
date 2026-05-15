@@ -1,0 +1,56 @@
+{
+  "blocked_worker_kinds": {
+    "agent_research_worker": {
+      "enabled": false
+    },
+    "ai_model_worker": {
+      "enabled": false
+    },
+    "deployment_worker": {
+      "enabled": false
+    },
+    "download_worker": {
+      "enabled": false
+    },
+    "extraction_worker": {
+      "enabled": false
+    },
+    "install_execute_worker": {
+      "enabled": false
+    },
+    "lan_worker": {
+      "enabled": false
+    },
+    "source_probe_worker": {
+      "enabled": false
+    },
+    "source_sync_worker": {
+      "enabled": false
+    }
+  },
+  "enabled_worker_kinds": {
+    "absence_report_worker": {
+      "enabled": true,
+      "mutates_stores": false
+    },
+    "local_status_snapshot_worker": {
+      "enabled": true,
+      "mutates_stores": false
+    },
+    "noop_worker": {
+      "enabled": true,
+      "mutates_stores": false
+    },
+    "review_queue_checker": {
+      "enabled": true,
+      "mutates_stores": false
+    },
+    "reviewed_index_rebuild_worker": {
+      "allowed_mutation": "public_index_store_only",
+      "enabled": true,
+      "mutates_stores": true,
+      "requires_operator_token": true
+    }
+  },
+  "schema_version": "local_worker_allowed_kinds_policy.v0"
+}

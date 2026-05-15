@@ -1,0 +1,10 @@
+{
+  "committed_local_state_forbidden": true,
+  "graceful_shutdown_required": true,
+  "instance_left_valid_after_shutdown": true,
+  "logs_may_be_written_only_under_instance": true,
+  "port_reuse_or_cleanup_checked": true,
+  "schema_version": "local_lan_shutdown_policy.v0",
+  "server_process_cleanup_required": true,
+  "working_tree_clean_after_shutdown": true
+}

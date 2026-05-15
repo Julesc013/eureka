@@ -1,0 +1,15 @@
+{
+  "schema_version": "local_final_promotion_result.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "status": "blocked",
+  "dev_pushed": false,
+  "main_promoted": false,
+  "origin_main_equals_origin_dev": false,
+  "promotion_gate_passed": false,
+  "blocking_reason": "Runtime architecture leakage remains open and blocks main promotion; full unittest discovery is not green.",
+  "force_push_performed": false,
+  "history_rewrite_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

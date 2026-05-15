@@ -1,0 +1,18 @@
+{
+  "gaps": [
+    {
+      "deferred_to": "manual_optional_external_proof",
+      "id": "LOCAL-13-GAP-001",
+      "reason": "Actual second-machine proof was not performed in the automated LOCAL-13 run.",
+      "status": "accepted_warning"
+    },
+    {
+      "deferred_to": "LOCAL-LEAKAGE-01",
+      "id": "LOCAL-13-GAP-002",
+      "reason": "Runtime leakage gate remains a pre-existing repository-wide warning.",
+      "status": "known_pre_existing"
+    }
+  ],
+  "schema_version": "local_clean_machine_gap_register.v0",
+  "task": "LOCAL-13"
+}

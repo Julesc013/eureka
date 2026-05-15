@@ -1,0 +1,16 @@
+{
+  "schema_version": "local_final_next_task_decision.v0",
+  "task": "LOCAL-FINAL-GREEN-PROMOTE-01",
+  "recommended_next_task": "LOCAL-LEAKAGE-01 \u2014 Reconcile runtime leakage gate after LOCAL track",
+  "alternatives": [
+    "LOCAL-REMEDIATION \u2014 Complete Local Appliance blockers"
+  ],
+  "hunt_can_start": false,
+  "syn_can_start": false,
+  "f0_can_resume": false,
+  "main_promotion_allowed": false,
+  "reason": "Local appliance runtime smokes pass, but main promotion gates fail on runtime leakage and full unittest discovery.",
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

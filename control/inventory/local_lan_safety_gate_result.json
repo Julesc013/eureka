@@ -1,0 +1,19 @@
+{
+  "bind_lan_required_for_lan_hosts": true,
+  "deployment_performed": false,
+  "lan_mutations_blocked": true,
+  "lan_policy_check_script_added": true,
+  "lan_read_only_default": true,
+  "lan_review_rebuild_mutation_blocked": true,
+  "lan_source_probe_routes_blocked": true,
+  "lan_workunit_execution_blocked": true,
+  "localhost_default_confirmed": true,
+  "localhost_operator_mutations_remain_token_gated": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "runtime_package_added": true,
+  "schema_version": "local_lan_safety_gate_result.v0",
+  "status": "pass_with_warnings",
+  "task": "LOCAL-11",
+  "validator_added": true
+}

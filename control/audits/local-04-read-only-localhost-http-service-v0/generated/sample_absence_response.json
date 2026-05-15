@@ -1,0 +1,16 @@
+{
+  "absence": {
+    "checked_sources": [],
+    "query": "definitely-not-present-local-04",
+    "result_count": 0
+  },
+  "limitations": [
+    "local reviewed index only",
+    "read-only service",
+    "no live source inspection",
+    "absence does not prove no matching source exists"
+  ],
+  "schema_version": "local_http_absence_response.v0",
+  "status": "pass",
+  "warnings": []
+}

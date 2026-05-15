@@ -1,0 +1,16 @@
+{
+  "created_count": 5,
+  "deployment_performed": false,
+  "idempotency_checked": true,
+  "index_rebuild_performed": false,
+  "invalid_transition_rejected": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "review_mutation_performed": false,
+  "schema_version": "local_workunit_queue_demo_result.v0",
+  "source_probe_executed": false,
+  "status": "pass",
+  "task": "LOCAL-07",
+  "transition_history_recorded": true,
+  "work_execution_performed": false
+}

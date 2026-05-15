@@ -41,6 +41,7 @@ PLANNED_DB_FILES = (
     "db/evidence_ledger.sqlite",
     "db/review_queue.sqlite",
     "db/public_index.sqlite",
+    "db/workunit_queue.sqlite",
 )
 FORBIDDEN_ROOT_NAMES = {".cache", ".local", ".aide.local", "secrets"}
 FORBIDDEN_REPO_PATHS = ("runtime", "contracts", "surfaces", "site", "native", "crates", "examples", "control/prototypes")
@@ -60,6 +61,7 @@ STORE_SPECS = (
     StoreSpec("evidence_ledger", "db/evidence_ledger.sqlite", "runtime.evidence_ledger.store", "EvidenceLedgerStore", "sqlite_evidence_ledger"),
     StoreSpec("review_queue", "db/review_queue.sqlite", "runtime.review_queue.store", "ReviewQueueStore", "sqlite_review_queue"),
     StoreSpec("public_index", "db/public_index.sqlite", "runtime.public_index.store", "PublicIndexStore", "sqlite_public_index"),
+    StoreSpec("workunit_queue", "db/workunit_queue.sqlite", "runtime.workunit_queue.store", "WorkUnitQueueStore", "sqlite_workunit_queue"),
 )
 
 
@@ -435,6 +437,7 @@ def default_limitations() -> list[str]:
         "LAN mode is disabled",
         "deployment is disabled",
         "destructive migration is disabled",
+        "Work queue records do not execute background work",
     ]
 
 

@@ -1,0 +1,22 @@
+{
+  "bind_lan": true,
+  "deployment_performed": false,
+  "host": "0.0.0.0",
+  "host_allowed": true,
+  "lan_bind_host": true,
+  "lan_mutations_enabled": false,
+  "lan_read_only": true,
+  "limitations": [
+    "policy check only; no server start and no network call"
+  ],
+  "message": "host accepted by local network policy",
+  "normalized_host": "0.0.0.0",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_lan_policy_check.v0",
+  "status": "pass",
+  "warnings": [
+    "LAN mode is explicit and read-only; it is local network inspection, not hosting.",
+    "Check the operating system firewall before binding to all interfaces, and stop the service when finished."
+  ]
+}

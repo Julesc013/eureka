@@ -1,0 +1,8 @@
+{
+  "per_route_timeout_seconds": 10,
+  "record_elapsed_ms": true,
+  "report_slowest_routes": true,
+  "schema_version": "local_eval_latency_policy.v0",
+  "strict_latency_gate_enabled": false,
+  "suite_timeout_seconds": 60
+}

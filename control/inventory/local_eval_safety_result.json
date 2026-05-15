@@ -1,0 +1,14 @@
+{
+  "download_install_execute_routes_absent": true,
+  "external_network_used": false,
+  "lan_enabled": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutating_methods_rejected": true,
+  "operator_gated_routes_reject_missing_token": true,
+  "schema_version": "local_eval_safety_result.v0",
+  "site_dist_mutated": false,
+  "source_probe_routes_absent_or_disabled": true,
+  "status": "pass",
+  "task": "LOCAL-10"
+}

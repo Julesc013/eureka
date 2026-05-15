@@ -1,0 +1,8 @@
+{
+  "lan_mutation_routes_blocked": true,
+  "operator_mutations_localhost_only": true,
+  "rebuild_mutation_from_lan": false,
+  "review_mutation_from_lan": false,
+  "schema_version": "local_lan_mutation_block_result.v0",
+  "workunit_execution_from_lan": false
+}

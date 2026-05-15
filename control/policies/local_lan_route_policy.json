@@ -1,0 +1,120 @@
+{
+  "future_forbidden_route_classes": [
+    "source probes",
+    "WorkUnit execution",
+    "extraction",
+    "agents",
+    "config mutation",
+    "uploads",
+    "downloads",
+    "install/execute"
+  ],
+  "routes": [
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/status"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/health"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/search"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/object/<record_id>"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/source/<source_id>"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/absence"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/status"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/health"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/search"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/object/<record_id>"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/source/<source_id>"
+    },
+    {
+      "classification": "lan_read_only_allowed",
+      "method": "GET",
+      "route": "/api/v1/absence"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/review"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/review/<review_item_id>"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/rebuild"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/api/v1/review"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/api/v1/review/<review_item_id>"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "GET",
+      "route": "/api/v1/rebuild/status"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "POST",
+      "route": "/review/<review_item_id>/decision"
+    },
+    {
+      "classification": "localhost_only",
+      "method": "POST",
+      "route": "/rebuild"
+    }
+  ],
+  "schema_version": "local_lan_route_policy.v0"
+}

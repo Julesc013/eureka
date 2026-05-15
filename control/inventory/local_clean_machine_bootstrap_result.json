@@ -1,0 +1,14 @@
+{
+  "committed_instance_state_found": false,
+  "deployment_performed": false,
+  "hidden_state_copied": false,
+  "instance_initialized": true,
+  "instance_validated": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "runtime_status_passed": true,
+  "schema_version": "local_clean_machine_bootstrap_result.v0",
+  "status": "pass_with_warnings",
+  "task": "LOCAL-13",
+  "temp_checkout_created": true
+}

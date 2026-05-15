@@ -1,0 +1,22 @@
+{
+  "hard_blockers_created": 0,
+  "repairs": [
+    {
+      "path": "control/inventory/local_appliance_promotion_review.json",
+      "reason": "Restore LOCAL-14 promotion review to plan-only evidence after later promotion evidence changed it."
+    },
+    {
+      "path": ".aide/context/latest-task-packet.md and .aide/context/latest-review-packet.md",
+      "reason": "Refresh AIDE context to the active final state audit task."
+    },
+    {
+      "path": "control/inventory/final_r0_state_matrix.json",
+      "reason": "Correct R0 store/seam capabilities from missing to validated using inventories and validator results."
+    }
+  ],
+  "safe_repairs_applied": 3,
+  "schema_version": "final_safe_remediation_result.v0",
+  "status": "pass",
+  "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
+  "unsafe_repairs_deferred": []
+}
