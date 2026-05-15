@@ -2,13 +2,13 @@
 
 Status: pass_with_warnings
 
-Current queue item: HUNT-08 - Workbench hunt integration and smoke tests.
+Current queue item: HUNT-10 - Deterministic hunt replay harness.
 
-Completed latest item: HUNT-07 - Background hunt runner over deterministic local workers.
+Completed latest item: HUNT-09 - Agent research task contract, provider disabled.
 
 F0 deferral remains recorded against the Local Appliance closeout gate (`LOCAL-14`), with later resume only after the HUNT baseline or explicit operator override.
 
-HUNT-07 added a background hunt runner over deterministic local workers.
+HUNT-09 added disabled agent research task records and a candidate-only report schema.
 
 Boundaries remain closed outside safe local worker scope: no source probes, extraction, model/provider calls, review/master index mutation, LAN mutation, deployment, production readiness claim, or public launch claim.
 

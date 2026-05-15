@@ -1,0 +1,15 @@
+{
+  "schema_version": "agent_research_non_claim_policy.v0",
+  "forbidden_claims": [
+    "ai_output_is_truth",
+    "ai_output_is_evidence_acceptance",
+    "ai_output_clears_rights",
+    "ai_output_clears_malware_safety",
+    "ai_output_mutates_index",
+    "agent_browsed_web_current_task",
+    "agent_called_model_current_task",
+    "source_probe_was_run",
+    "production_ready",
+    "public_launch_ready"
+  ]
+}

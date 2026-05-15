@@ -1,0 +1,14 @@
+{
+  "schema_version": "agent_research_demo_result.v0",
+  "task": "HUNT-09",
+  "status": "pass",
+  "demo_added": true,
+  "draft_from_hunt_passed": true,
+  "draft_from_need_passed": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false,
+  "deployment_performed": false
+}

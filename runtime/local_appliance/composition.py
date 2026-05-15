@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from runtime.evidence_ledger.store import EvidenceLedgerStore
+from runtime.agent_research.store import AgentResearchStore
 from runtime.public_index.store import PublicIndexStore
 from runtime.review_queue.store import ReviewQueueStore
 from runtime.search_hunt.store import SearchHuntStore
@@ -30,8 +31,18 @@ STORE_CLASSES = {
     "public_index": PublicIndexStore,
     "search_hunt": SearchHuntStore,
     "search_need": SearchNeedStore,
+    "agent_research": AgentResearchStore,
 }
-STORE_IDS = ("source_cache", "evidence_ledger", "review_queue", "public_index", "workunit_queue", "search_hunt", "search_need")
+STORE_IDS = (
+    "source_cache",
+    "evidence_ledger",
+    "review_queue",
+    "public_index",
+    "workunit_queue",
+    "search_hunt",
+    "search_need",
+    "agent_research",
+)
 
 
 @dataclass
@@ -47,6 +58,7 @@ class LocalApplianceRuntime:
     workunit_queue: Any
     search_hunt: Any
     search_need: Any
+    agent_research: Any
     read_only: bool = False
     _closed: bool = False
 
@@ -66,6 +78,7 @@ class LocalApplianceRuntime:
             "workunit_queue": self.workunit_queue.check_integrity(),
             "search_hunt": self.search_hunt.check_integrity(),
             "search_need": self.search_need.check_integrity(),
+            "agent_research": self.agent_research.check_integrity(),
         }
         return {
             "schema_version": "local_runtime_integrity.v0",
@@ -76,7 +89,16 @@ class LocalApplianceRuntime:
     def close(self) -> None:
         if self._closed:
             return
-        for store in (self.search_need, self.search_hunt, self.workunit_queue, self.public_index, self.review_queue, self.evidence_ledger, self.source_cache):
+        for store in (
+            self.agent_research,
+            self.search_need,
+            self.search_hunt,
+            self.workunit_queue,
+            self.public_index,
+            self.review_queue,
+            self.evidence_ledger,
+            self.source_cache,
+        ):
             if hasattr(store, "close"):
                 store.close()
         self._closed = True
@@ -138,6 +160,7 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
             workunit_queue=opened["workunit_queue"],
             search_hunt=opened["search_hunt"],
             search_need=opened["search_need"],
+            agent_research=opened["agent_research"],
             read_only=read_only,
         )
     except Exception:
@@ -196,6 +219,7 @@ def _is_mutation_name(name: str) -> bool:
         "enqueue",
         "link",
         "create",
+        "draft",
         "transition",
         "attach",
         "apply",

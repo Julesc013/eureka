@@ -2,62 +2,84 @@
 
 ## PHASE
 
-HUNT-09 - Agent research task contract, provider disabled
+HUNT-10 - Deterministic hunt replay harness
 
 ## GOAL
 
-Use the HUNT-08 workbench integration smoke as the starting point for the next reviewed task. HUNT-09 is queued and providers remain disabled.
+Prepare the next task packet around deterministic replay of the completed local Search Hunt workflow, starting from the HUNT-09 disabled agent research contract evidence.
 
-## CURRENT STATE
+## WHY
 
-- Latest completed item: HUNT-08 - Workbench hunt integration and smoke tests.
-- Current recommended item: HUNT-09 - Agent research task contract, provider disabled.
-- Alternative next item: SYN-00 - Synthetic Query Foundry planning over Local Appliance.
-- F0 remains deferred unless explicitly selected by the operator.
+HUNT-09 completed the disabled agent research task contract. The next bounded task is deterministic replay over the local Search Hunt workflow, with providers, browser use, source probes, extraction, deployment, and public launch claims still disabled.
 
-## IMPLEMENTED
+## CONTEXT_REFS
 
-- Durable Search Hunt Sessions.
-- Search Hunt UI state.
-- Operator-gated Search Hunt commands and steering.
-- Deterministic local/current-index exhaustion reports.
-- Durable local SearchNeeds created from hunts and linked exhaustion reports.
-- SearchNeed-to-WorkUnit plan generation and local WorkUnit creation.
-- Background hunt runner over deterministic local workers.
-- End-to-end local Search Hunt workflow smoke through CLI/API/workbench.
+- `.aide/context/latest-context-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `control/audits/hunt-09-agent-research-task-contract-v0/`
+- `control/inventory/agent_research_task_result.json`
+- `control/inventory/agent_research_disabled_boundary_result.json`
+- `control/inventory/hunt_09_next_task_decision.json`
+- `.aide/queue/index.yaml`
 
-## BOUNDARIES
+## ALLOWED_PATHS
 
-- HUNT-08 runs only deterministic local workers allowed by LOCAL-09 policy.
-- No source probes.
-- No extraction runtime.
-- No AI/model/provider calls.
-- No review/master index mutation.
-- No deployment.
-- No production readiness claim.
-- No public launch readiness claim.
+- HUNT-10 queue, audit, inventory, policy, docs, scripts, tests, and runtime paths from the reviewed HUNT-10 task packet.
+- Existing local Search Hunt, SearchNeed, WorkUnit, background runner, local service, local workbench, and local appliance paths needed for deterministic replay.
+
+## FORBIDDEN_PATHS
+
+- `runtime/connectors/**`
+- `runtime/local_foundry/**`
+- `runtime/extraction/**`
+- `runtime/search_quality/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `site/dist/**`
+- `native/**`
+- `crates/**`
+- private local files, provider credentials, and ignored local instances.
+
+## IMPLEMENTATION
+
+- Start from HUNT-09 evidence and queue state.
+- Keep replay deterministic and local.
+- Reuse existing Search Hunt, SearchNeed, WorkUnit, background runner, CLI/API/workbench smoke surfaces.
+- Preserve disabled provider and execution boundaries unless the HUNT-10 packet explicitly permits a deterministic local action.
+
+## ACCEPTANCE
+
+- HUNT-10 queue item is current.
+- Replay harness records local deterministic workflow inputs and outputs.
+- Provider/model calls remain disabled.
+- Source probes, extraction, browser/network execution, deployment, review mutation, public/master index mutation, production readiness, and public launch claims remain absent.
+- Validation evidence is written under the HUNT-10 audit/inventory paths.
 
 ## VALIDATION
 
-Use HUNT-08 evidence before starting HUNT-09:
+Before starting HUNT-10, use the HUNT-09 evidence lane:
 
-- `python scripts/validate_search_hunt_workbench_integration.py`
-- `python -m unittest tests.runtime.test_search_hunt_workflow_integration`
-- `python -m unittest tests.runtime.test_search_hunt_workbench_integration`
-- `python -m unittest tests.runtime.test_search_hunt_api_integration`
-- `python -m unittest tests.runtime.test_search_hunt_safety_integration`
-- `python -m unittest tests.operations.test_search_hunt_workflow_smoke_scripts`
-- `python -m unittest tests.operations.test_search_hunt_workbench_smoke_scripts`
+- `python scripts/validate_agent_research_task_contract.py`
+- focused `tests.runtime.test_agent_research_*`
+- `python -m unittest tests.operations.test_agent_research_scripts`
 
 ## EVIDENCE
 
-- `control/audits/hunt-08-workbench-integration-smoke-v0/README.md`
-- `control/audits/hunt-08-workbench-integration-smoke-v0/hunt_08_report.json`
-- `control/inventory/search_hunt_workbench_integration_result.json`
-- `control/inventory/search_hunt_workflow_smoke_result.json`
-- `control/inventory/hunt_08_next_task_decision.json`
+- `control/audits/hunt-09-agent-research-task-contract-v0/hunt_09_report.json`
+- `control/inventory/agent_research_task_result.json`
+- `control/inventory/agent_research_disabled_boundary_result.json`
+- `control/inventory/hunt_09_next_task_decision.json`
 - `.aide/queue/index.yaml`
 
 ## NON_GOALS
 
-HUNT-08 did not implement source probes, extraction, SYN, F0, AI escalation, deployment, production readiness, or public launch readiness.
+HUNT-10 prep does not enable provider/model calls, browser calls, source probes, extraction, SYN, F0, deployment, production readiness, or public launch readiness.
+
+## OUTPUT_SCHEMA
+
+Final reports should include status, summary, commits, replay capability fields, boundary fields, validation results, and next-task decision.
+
+## TOKEN_ESTIMATE
+
+Approximately 450 words. Use `.aide/context/latest-context-packet.md` for compact repo references instead of expanding historical HUNT task text.

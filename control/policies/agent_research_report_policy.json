@@ -1,0 +1,27 @@
+{
+  "schema_version": "agent_research_report_policy.v0",
+  "required_fields": [
+    "candidate_aliases",
+    "candidate_source_leads",
+    "candidate_dead_urls",
+    "candidate_wayback_paths",
+    "candidate_extraction_targets",
+    "candidate_workunits",
+    "absence_explanation_draft",
+    "confidence_notes",
+    "limitations",
+    "forbidden_claims_absent",
+    "review_required"
+  ],
+  "forbidden_claims": [
+    "verified_truth_claims",
+    "rights_clearance",
+    "malware_safety_certification",
+    "automatic_index_mutation",
+    "automatic_source_approval"
+  ],
+  "output_candidate_only": true,
+  "review_required": true,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false
+}

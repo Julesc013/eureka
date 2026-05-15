@@ -1,0 +1,15 @@
+{
+  "schema_version": "agent_research_task_state_machine.v0",
+  "task": "HUNT-09",
+  "states": [
+    "drafted",
+    "queued_disabled",
+    "blocked_by_policy",
+    "waiting_for_provider_gate",
+    "cancelled",
+    "superseded"
+  ],
+  "task_execution_enabled": false,
+  "provider_enabled": false,
+  "invalid_execution_attempts_fail_closed": true
+}

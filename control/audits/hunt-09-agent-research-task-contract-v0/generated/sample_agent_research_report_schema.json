@@ -1,0 +1,26 @@
+{
+  "schema_version": "agent_research_report_schema.v0",
+  "required_fields": [
+    "report_id",
+    "task_id",
+    "search_hunt_id",
+    "search_need_id",
+    "candidate_aliases",
+    "candidate_source_leads",
+    "candidate_dead_urls",
+    "candidate_wayback_paths",
+    "candidate_extraction_targets",
+    "candidate_workunits",
+    "absence_explanation_draft",
+    "confidence_notes",
+    "limitations",
+    "forbidden_claims_absent",
+    "review_required",
+    "public_index_mutation_performed",
+    "master_index_mutation_performed"
+  ],
+  "review_required": true,
+  "candidate_only": true,
+  "public_index_mutation_performed": false,
+  "master_index_mutation_performed": false
+}

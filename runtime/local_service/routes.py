@@ -73,6 +73,13 @@ def route_request(
         if _wants_json(request_context):
             return _hunt_runner_response(runtime, hunt_id)
         return _hunt_detail_html_response(runtime, hunt_id)
+    if parsed_hunt_route and parsed_hunt_route[1] == "agent-tasks":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_agent_tasks_response(runtime, hunt_id, request_context)
+        if _wants_json(request_context):
+            return _hunt_agent_tasks_response(runtime, hunt_id, request_context)
+        return _hunt_detail_html_response(runtime, hunt_id)
     if parsed_hunt_route and parsed_hunt_route[1] == "workunits":
         hunt_id = parsed_hunt_route[0]
         if path.startswith("/api/v1/"):
@@ -122,6 +129,13 @@ def route_request(
     if path == "/api/v1/needs":
         return _need_list_response(runtime, request_context)
     parsed_need_route = _parse_need_route(path)
+    if parsed_need_route and parsed_need_route[1] == "agent-tasks":
+        need_id = parsed_need_route[0]
+        if path.startswith("/api/v1/"):
+            return _need_agent_tasks_response(runtime, need_id, request_context)
+        if _wants_json(request_context):
+            return _need_agent_tasks_response(runtime, need_id, request_context)
+        return _need_detail_html_response(runtime, need_id)
     if parsed_need_route and parsed_need_route[1] == "workunits":
         need_id = parsed_need_route[0]
         if path.startswith("/api/v1/"):
@@ -129,6 +143,8 @@ def route_request(
         if _wants_json(request_context):
             return _need_workunits_response(runtime, need_id, request_context)
         return _need_detail_html_response(runtime, need_id)
+    if path == "/api/v1/agent-research/report-schema":
+        return _agent_research_report_schema_response(runtime)
     if path.startswith("/need/"):
         need_id = path.removeprefix("/need/")
         if _wants_json(request_context):
@@ -391,6 +407,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     linked_needs = [item.to_dict() for item in runtime.search_need.list_needs_for_hunt(hunt_id, limit=100)]
     linked_workunits = _search_need_runtime().list_workunits_for_hunt(runtime, hunt_id, limit=100)
     runner_summary = _search_hunt().summarize_background_hunt(runtime, hunt_id)
+    agent_tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(hunt_id=hunt_id, limit=100)]
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
         "status": "pass",
@@ -404,6 +421,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "search_needs": linked_needs,
         "workunits": linked_workunits,
         "background_runner": runner_summary,
+        "agent_research_tasks": agent_tasks,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
         "hunt_creation_enabled": False,
@@ -418,6 +436,9 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "workunit_creation_enabled": True,
         "workunit_execution_enabled": False,
         "background_hunt_runner_enabled": True,
+        "agent_research_task_draft_enabled": not bool(getattr(runtime, "read_only", True)),
+        "agent_research_provider_enabled": False,
+        "agent_research_execution_enabled": False,
         "workunit_execution_enabled_for_safe_workers": True,
         "runner_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "source_probe_execution_enabled": False,
@@ -601,6 +622,28 @@ def _hunt_runner_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     return json_response(200, payload)
 
 
+def _hunt_agent_tasks_response(runtime: Any, hunt_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
+    tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(hunt_id=hunt_id, limit=limit)]
+    payload = _agent_research_payload(
+        "agent_research_tasks_for_hunt",
+        {
+            "hunt_id": hunt_id,
+            "task_count": len(tasks),
+            "agent_research_tasks": tasks,
+            "read_only": True,
+            "draft_creation_enabled": not bool(getattr(runtime, "read_only", True)),
+            "task_execution_enabled": False,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _need_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
     state = first_param(request_context.params, "state", "")
@@ -643,6 +686,7 @@ def _need_detail_response(runtime: Any, need_id: str) -> LocalServiceResponse:
     workunit_module = _search_need_runtime()
     plan = workunit_module.build_workunit_plan_for_need(runtime, need_id)
     workunits = workunit_module.list_workunits_for_need(runtime, need_id, limit=100)
+    agent_tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(need_id=need_id, limit=100)]
     payload = {
         "schema_version": "search_need_detail_response.v0",
         "status": "pass",
@@ -651,8 +695,12 @@ def _need_detail_response(runtime: Any, need_id: str) -> LocalServiceResponse:
         "transitions": transitions,
         "workunit_plan": plan.to_dict(),
         "workunits": workunits,
+        "agent_research_tasks": agent_tasks,
         "state_transition_enabled": not bool(getattr(runtime, "read_only", True)),
         "workunit_creation_enabled": not bool(getattr(runtime, "read_only", True)),
+        "agent_research_task_draft_enabled": not bool(getattr(runtime, "read_only", True)),
+        "agent_research_provider_enabled": False,
+        "agent_research_execution_enabled": False,
         "workunit_execution_enabled": False,
         "operator_token_required_for_mutations": True,
         "localhost_only_mutations": True,
@@ -691,6 +739,43 @@ def _need_workunits_response(runtime: Any, need_id: str, request_context: LocalR
         "warnings": [],
         "limitations": list(DEFAULT_LIMITATIONS) + ["WorkUnits linked to a SearchNeed are local queue records only"],
     }
+    return json_response(200, payload)
+
+
+def _need_agent_tasks_response(runtime: Any, need_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    if not need_id:
+        return error_response(400, "missing_need_id", "SearchNeed id is required")
+    need = runtime.search_need.get_need(need_id)
+    if need is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
+    tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(need_id=need_id, limit=limit)]
+    payload = _agent_research_payload(
+        "agent_research_tasks_for_need",
+        {
+            "need_id": need_id,
+            "hunt_id": need.hunt_id,
+            "task_count": len(tasks),
+            "agent_research_tasks": tasks,
+            "read_only": True,
+            "draft_creation_enabled": not bool(getattr(runtime, "read_only", True)),
+            "task_execution_enabled": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _agent_research_report_schema_response(runtime: Any) -> LocalServiceResponse:
+    schema = _agent_research().build_agent_research_report_schema().to_dict()
+    payload = _agent_research_payload(
+        "agent_research_report_schema",
+        {
+            "report_schema": schema,
+            "read_only": True,
+            "report_output_candidate_only": True,
+            "review_required": True,
+        },
+    )
     return json_response(200, payload)
 
 
@@ -803,6 +888,8 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return _apply_hunt_exhaustion_response(runtime, request_context, hunt_mutation[0])
         if hunt_mutation[1] == "search-need":
             return _apply_hunt_search_need_response(runtime, request_context, hunt_mutation[0])
+        if hunt_mutation[1] == "agent-task-draft":
+            return _apply_hunt_agent_task_draft_response(runtime, request_context, hunt_mutation[0])
         return _apply_hunt_command_response(runtime, request_context, hunt_mutation[0], hunt_mutation[1])
     need_mutation = _parse_need_mutation_path(path)
     if need_mutation:
@@ -812,6 +899,8 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return _apply_search_need_workunit_plan_response(runtime, request_context, need_mutation[0])
         if need_mutation[1] == "workunits":
             return _apply_search_need_workunit_create_response(runtime, request_context, need_mutation[0])
+        if need_mutation[1] == "agent-task-draft":
+            return _apply_need_agent_task_draft_response(runtime, request_context, need_mutation[0])
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
@@ -952,6 +1041,51 @@ def _apply_search_need_workunit_create_response(runtime: Any, request_context: L
     return json_response(200, payload)
 
 
+def _apply_hunt_agent_task_draft_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    try:
+        task = runtime.agent_research.draft_task_from_hunt(
+            runtime,
+            hunt_id,
+            operator_label=first_param(request_context.body_params, "operator_label", "local_operator"),
+        )
+    except Exception as exc:
+        return error_response(400, "agent_research_task_draft_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _agent_research_payload(
+        "agent_research_task_drafted_from_hunt",
+        {
+            "hunt_id": hunt_id,
+            "agent_research_task": task.to_dict(),
+            "task_execution_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _apply_need_agent_task_draft_response(runtime: Any, request_context: LocalRequestContext, need_id: str) -> LocalServiceResponse:
+    if runtime.search_need.get_need(need_id) is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    try:
+        task = runtime.agent_research.draft_task_from_need(
+            runtime,
+            need_id,
+            operator_label=first_param(request_context.body_params, "operator_label", "local_operator"),
+        )
+    except Exception as exc:
+        return error_response(400, "agent_research_task_draft_rejected", str(exc), {"need_id": need_id})
+    payload = _agent_research_payload(
+        "agent_research_task_drafted_from_need",
+        {
+            "need_id": need_id,
+            "hunt_id": task.search_hunt_id,
+            "agent_research_task": task.to_dict(),
+            "task_execution_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _apply_hunt_runner_plan_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
     if runtime.search_hunt.get_session(hunt_id) is None:
         return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
@@ -1043,21 +1177,21 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner"}:
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks"}:
         return parts[3], parts[4]
     return None
 
 
 def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer", "exhaustion", "search-need"}
+    actions = {"pause", "resume", "cancel", "block", "wait-for-user", "wait-for-policy", "steer", "exhaustion", "search-need", "agent-task-draft"}
     if len(parts) == 3 and parts[0] == "hunt" and parts[2] in actions:
         return parts[1], parts[2]
     if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "runner" and parts[3] in {"plan", "run-next", "run-batch"}:
         return parts[1], "runner-" + parts[3]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need", "agent-task-draft"}:
         return parts[3], parts[4]
     if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "runner" and parts[5] in {"plan", "run-next", "run-batch"}:
         return parts[3], "runner-" + parts[5]
@@ -1071,15 +1205,11 @@ def _mutation_route_allows_missing_token(path: str) -> bool:
 
 def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "need" and parts[2] == "state":
-        return parts[1], parts[2]
-    if len(parts) == 3 and parts[0] == "need" and parts[2] == "workunits":
+    if len(parts) == 3 and parts[0] == "need" and parts[2] in {"state", "workunits", "agent-task-draft"}:
         return parts[1], parts[2]
     if len(parts) == 4 and parts[0] == "need" and parts[2:] == ["workunits", "plan"]:
         return parts[1], "workunits-plan"
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] == "state":
-        return parts[3], parts[4]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] == "workunits":
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] in {"state", "workunits", "agent-task-draft"}:
         return parts[3], parts[4]
     if len(parts) == 6 and parts[:3] == ["api", "v1", "need"] and parts[4:] == ["workunits", "plan"]:
         return parts[3], "workunits-plan"
@@ -1088,9 +1218,9 @@ def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
 
 def _parse_need_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "need" and parts[2] == "workunits":
+    if len(parts) == 3 and parts[0] == "need" and parts[2] in {"workunits", "agent-tasks"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] == "workunits":
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] in {"workunits", "agent-tasks"}:
         return parts[3], parts[4]
     return None
 
@@ -1183,6 +1313,41 @@ def _search_need_workunit_payload(action: str, payload: dict[str, Any]) -> dict[
     return result
 
 
+def _agent_research_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "agent_research_route_result.v0",
+        "status": "pass",
+        "action": action,
+        "operator_token_required_for_drafts": True,
+        "localhost_only_mutations": True,
+        "lan_mutations_enabled": False,
+        "provider_enabled": False,
+        "execution_enabled": False,
+        "browser_enabled": False,
+        "source_probe_enabled": False,
+        "output_candidate_only": True,
+        "review_required": True,
+        "model_provider_used": False,
+        "external_network_used": False,
+        "source_probe_executed": False,
+        "review_mutation_performed": False,
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + [
+            "agent research task records are disabled future escalation contracts",
+            "agent research reports would be candidate material only",
+            "no provider, browser, source probe, review, or index mutation is performed",
+        ],
+    }
+    result.update(payload)
+    return result
+
+
 def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, Any]:
     record = runtime.public_index.get_record(str(result.get("record_id", "")))
     if record is None:
@@ -1223,6 +1388,11 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
             "action": "background runner",
             "status": "available",
             "reason": "The runner can process safe deterministic local WorkUnits only.",
+        },
+        {
+            "action": "agent research task drafts",
+            "status": "disabled",
+            "reason": "Disabled task records are visible, but providers and execution are not enabled.",
         },
         {
             "action": "source probes",
@@ -1282,6 +1452,10 @@ def _search_hunt() -> Any:
 
 def _search_need_runtime() -> Any:
     return __import__("runtime.search_need", fromlist=["build_workunit_plan_for_need"])
+
+
+def _agent_research() -> Any:
+    return __import__("runtime.agent_research", fromlist=["build_agent_research_report_schema"])
 
 
 def _hunt_exhaustion_payload(hunt_id: str, report: dict[str, Any] | None) -> dict[str, Any]:

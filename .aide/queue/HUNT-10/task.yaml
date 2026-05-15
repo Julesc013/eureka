@@ -1,0 +1,15 @@
+id: HUNT-10
+title: Deterministic hunt replay harness
+status: queued
+purpose: Add deterministic replay for local Search Hunt workflows after disabled agent research task contracts exist.
+allowed_scope_summary: Replay harness, fixtures, validation, docs, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-09 completed
+  - providers remain disabled
+  - source probes remain disabled
+  - extraction remains disabled
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-09
+alternative_next: SYN-00

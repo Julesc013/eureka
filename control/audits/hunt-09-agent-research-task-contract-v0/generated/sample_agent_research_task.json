@@ -1,0 +1,54 @@
+{
+  "schema_version": "agent_research_task.v0",
+  "task_id": "art_sample",
+  "search_hunt_id": "shs_sample",
+  "search_need_id": "sn_sample",
+  "exhaustion_report_id": "she_sample",
+  "query": "sampleproject",
+  "normalized_query": "sampleproject",
+  "intent": "unknown",
+  "destination": "unknown",
+  "checked_layers": [
+    "reviewed_public_index",
+    "local_absence_report"
+  ],
+  "deferred_layers": [
+    "source_probes",
+    "extraction",
+    "AI_research_escalation"
+  ],
+  "blocked_by_policy": [
+    "model_provider_disabled",
+    "source_probe_disabled"
+  ],
+  "known_candidates": [],
+  "known_absence_state": "local_current_index_absent",
+  "steering_preferences": [],
+  "allowed_source_families": [],
+  "blocked_source_families": [],
+  "research_goals": [
+    "alias_hypotheses",
+    "source_lead_candidates",
+    "absence_explanation_draft"
+  ],
+  "forbidden_actions": [
+    "accept_truth",
+    "mutate_public_index",
+    "call_model_provider_current_task",
+    "run_source_probe_current_task"
+  ],
+  "output_schema": {
+    "schema_version": "agent_research_report_schema.v0",
+    "candidate_only": true,
+    "review_required": true
+  },
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "created_at": "2026-05-15T00:00:00Z",
+  "updated_at": "2026-05-15T00:00:00Z",
+  "state": "drafted",
+  "warnings": [],
+  "limitations": [
+    "candidate material only"
+  ]
+}

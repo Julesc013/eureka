@@ -35,6 +35,9 @@ from .validation import (
 )
 from .view_models import (
     AbsencePageView,
+    AgentResearchDisabledBoundaryView,
+    AgentResearchTaskCardView,
+    AgentResearchTaskDetailView,
     CapabilityUnavailableView,
     HomePageView,
     IndexStatusView,
@@ -67,6 +70,7 @@ from .view_models import (
     StoreStatusView,
     StatusPageView,
     build_absence_page_view,
+    build_agent_research_disabled_boundary_view,
     build_home_page_view,
     build_object_page_view,
     build_rebuild_page_view,
@@ -85,6 +89,9 @@ from .view_models import (
 
 __all__ = [
     "AbsencePageView",
+    "AgentResearchDisabledBoundaryView",
+    "AgentResearchTaskCardView",
+    "AgentResearchTaskDetailView",
     "CapabilityUnavailableView",
     "HomePageView",
     "IndexStatusView",
@@ -117,6 +124,7 @@ __all__ = [
     "StoreStatusView",
     "StatusPageView",
     "build_absence_page_view",
+    "build_agent_research_disabled_boundary_view",
     "build_home_page_view",
     "build_object_page_view",
     "build_rebuild_page_view",

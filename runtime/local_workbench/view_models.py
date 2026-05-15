@@ -24,12 +24,14 @@ SEARCH_HUNT_UNAVAILABLE_ACTIONS = (
     ("SearchNeed pipeline", "available", "Need persistence records local demand without creating work."),
     ("WorkUnit pipeline", "available", "SearchNeeds can create linked WorkUnits without executing them."),
     ("background runner", "available", "Safe deterministic local workers can process linked WorkUnits."),
+    ("agent research task drafts", "disabled", "Disabled task records are visible, but providers and execution are not enabled."),
     ("source probes", "disabled", "Source-probe execution remains behind a future source gate."),
     ("extraction", "deferred", "Extraction remains outside this Search Hunt UI state layer."),
     ("AI escalation", "disabled", "Model/provider calls are disabled."),
     ("sync", "disabled", "Sync requires a future reviewed policy gate."),
 )
 SEARCH_NEED_NON_CLAIM = "SearchNeeds are local demand records, not evidence, source approval, or reviewed results."
+AGENT_RESEARCH_NON_CLAIM = "Agent research task drafts are disabled future escalation contracts, not evidence or model output."
 
 
 @dataclass(frozen=True)
@@ -351,6 +353,40 @@ class SearchNeedWorkUnitView:
 
 
 @dataclass(frozen=True)
+class AgentResearchTaskCardView:
+    task_id: str
+    search_hunt_id: str
+    search_need_id: str
+    exhaustion_report_id: str
+    query: str
+    state: str
+    provider_enabled: bool
+    execution_enabled: bool
+    report_candidate_only: bool
+    review_required: bool
+
+
+@dataclass(frozen=True)
+class AgentResearchTaskDetailView:
+    task_id: str
+    state: str
+    research_goals: tuple[str, ...]
+    forbidden_actions: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class AgentResearchDisabledBoundaryView:
+    provider_enabled: bool
+    execution_enabled: bool
+    browser_enabled: bool
+    source_probe_enabled: bool
+    candidate_only_output: bool
+    review_required: bool
+    gate_required: str
+
+
+@dataclass(frozen=True)
 class SearchHuntListPageView:
     hunt_count: int
     hunts: tuple[SearchHuntCardView, ...]
@@ -391,6 +427,9 @@ class SearchNeedDetailPageView:
     transitions: tuple[SearchNeedTransitionView, ...]
     workunit_plan: tuple[SearchNeedWorkUnitPlanItemView, ...]
     workunits: tuple[SearchNeedWorkUnitView, ...]
+    agent_research_tasks: tuple[AgentResearchTaskCardView, ...]
+    agent_research_boundary: AgentResearchDisabledBoundaryView
+    agent_research_task_draft_enabled: bool
     state_transition_enabled: bool
     workunit_creation_enabled: bool
     related_hunt_href: str
@@ -435,11 +474,14 @@ class SearchHuntDetailPageView:
     exhaustion_generation_enabled: bool
     search_needs: tuple[SearchNeedCardView, ...]
     workunits: tuple[SearchNeedWorkUnitView, ...]
+    agent_research_tasks: tuple[AgentResearchTaskCardView, ...]
+    agent_research_boundary: AgentResearchDisabledBoundaryView
     background_runner_plan: tuple[Mapping[str, Any], ...]
     background_runner_blocked_workunits: tuple[Mapping[str, Any], ...]
     background_runner_runs: tuple[Mapping[str, Any], ...]
     runner_controls_enabled: bool
     search_need_creation_enabled: bool
+    agent_research_task_draft_enabled: bool
     unavailable_actions: tuple[SearchHuntUnavailableActionView, ...]
     related_search_href: str
     related_absence_href: str
@@ -682,11 +724,14 @@ def build_search_hunt_detail_page_view(
         exhaustion_generation_enabled=exhaustion_generation_enabled,
         search_needs=linked_needs,
         workunits=linked_workunits,
+        agent_research_tasks=tuple(_agent_task_card(_mapping(item)) for item in _sequence(status_payload.get("agent_research_tasks"))),
+        agent_research_boundary=build_agent_research_disabled_boundary_view(),
         background_runner_plan=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("runnable_workunits"))),
         background_runner_blocked_workunits=tuple(_background_runner_plan_row(_mapping(item)) for item in _sequence(runner_plan.get("blocked_workunits"))),
         background_runner_runs=tuple(_background_runner_run_row(_mapping(item)) for item in _sequence(runner_summary.get("runs"))),
         runner_controls_enabled=bool(status_payload.get("runner_controls_enabled", False)),
         search_need_creation_enabled=bool(status_payload.get("search_need_creation_enabled", False)),
+        agent_research_task_draft_enabled=bool(status_payload.get("agent_research_task_draft_enabled", False)),
         unavailable_actions=build_search_hunt_unavailable_actions(),
         related_search_href="/search?q=" + str(query),
         related_absence_href="/absence?q=" + str(query),
@@ -743,6 +788,9 @@ def build_search_need_detail_page_view(
         transitions=tuple(_need_transition_view(item) for item in transitions),
         workunit_plan=tuple(_workunit_plan_item_view(_mapping(item)) for item in _sequence(workunit_plan.get("items"))),
         workunits=tuple(_workunit_view(_mapping(item)) for item in _sequence(status_payload.get("workunits"))),
+        agent_research_tasks=tuple(_agent_task_card(_mapping(item)) for item in _sequence(status_payload.get("agent_research_tasks"))),
+        agent_research_boundary=build_agent_research_disabled_boundary_view(),
+        agent_research_task_draft_enabled=bool(status_payload.get("agent_research_task_draft_enabled", False)),
         state_transition_enabled=bool(status_payload.get("state_transition_enabled", False)),
         workunit_creation_enabled=bool(status_payload.get("workunit_creation_enabled", False)),
         related_hunt_href="/hunt/" + hunt_id,
@@ -762,6 +810,18 @@ def build_search_hunt_not_found_page_view(hunt_id: str) -> SearchHuntNotFoundPag
         non_claim_banner=build_non_claim_banner_view(),
         warnings=(),
         limitations=(SEARCH_HUNT_NON_CLAIM, "Missing hunt IDs are not created implicitly."),
+    )
+
+
+def build_agent_research_disabled_boundary_view() -> AgentResearchDisabledBoundaryView:
+    return AgentResearchDisabledBoundaryView(
+        provider_enabled=False,
+        execution_enabled=False,
+        browser_enabled=False,
+        source_probe_enabled=False,
+        candidate_only_output=True,
+        review_required=True,
+        gate_required="future provider gate",
     )
 
 
@@ -910,6 +970,22 @@ def _workunit_view(value: Mapping[str, Any]) -> SearchNeedWorkUnitView:
         search_hunt_id=str(value.get("search_hunt_id", payload.get("search_hunt_id", ""))),
         exhaustion_report_id=str(value.get("exhaustion_report_id", payload.get("exhaustion_report_id", ""))),
         execution_enabled=bool(value.get("execution_enabled", payload.get("execution_enabled", False))),
+    )
+
+
+def _agent_task_card(value: Mapping[str, Any]) -> AgentResearchTaskCardView:
+    schema = _mapping(value.get("output_schema"))
+    return AgentResearchTaskCardView(
+        task_id=str(value.get("task_id", "")),
+        search_hunt_id=str(value.get("search_hunt_id", "")),
+        search_need_id=str(value.get("search_need_id", "")),
+        exhaustion_report_id=str(value.get("exhaustion_report_id", "")),
+        query=str(value.get("query", "")),
+        state=str(value.get("state", "")),
+        provider_enabled=bool(value.get("provider_enabled", False)),
+        execution_enabled=bool(value.get("execution_enabled", False)),
+        report_candidate_only=bool(schema.get("candidate_only", True)),
+        review_required=bool(schema.get("review_required", True)),
     )
 
 

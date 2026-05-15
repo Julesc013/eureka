@@ -41,4 +41,7 @@ HUNT-07 proves the hunt loop can make safe local progress before HUNT-08 workben
 ## HUNT-08 Integration
 
 The background hunt runner is exercised by the workbench integration smoke as one safe deterministic worker execution. Policy-blocked source-probe, extraction, and AI/model worker records remain blocked and visible.
+## Agent Research Boundary
+
+Background hunt runner work remains deterministic and local. HUNT-09 agent research task drafts are visible beside Hunt and SearchNeed state, but they are not runnable WorkUnits and do not enable model providers, browsers, source probes, or extraction.
 

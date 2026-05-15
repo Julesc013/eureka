@@ -1,0 +1,17 @@
+{
+  "schema_version": "agent_research_task_policy.v0",
+  "task_records_enabled": true,
+  "task_execution_enabled": false,
+  "provider_enabled": false,
+  "browser_enabled": false,
+  "source_probe_enabled": false,
+  "input_requires_exhaustion_report": true,
+  "input_requires_local_context": true,
+  "output_candidate_only": true,
+  "review_required": true,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

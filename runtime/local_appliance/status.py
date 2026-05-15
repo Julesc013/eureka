@@ -23,6 +23,7 @@ class LocalRuntimeStatus:
     workunit_queue: Mapping[str, Any]
     search_hunt: Mapping[str, Any]
     search_need: Mapping[str, Any]
+    agent_research: Mapping[str, Any]
     warnings: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
@@ -44,6 +45,7 @@ class LocalRuntimeStatus:
             "workunit_queue": dict(self.workunit_queue),
             "search_hunt": dict(self.search_hunt),
             "search_need": dict(self.search_need),
+            "agent_research": dict(self.agent_research),
             "warnings": list(self.warnings),
         }
 
@@ -81,6 +83,7 @@ def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
         workunit_queue=_workunit_queue_status(runtime),
         search_hunt=_search_hunt_status(runtime),
         search_need=_search_need_status(runtime),
+        agent_research=_agent_research_status(runtime),
         warnings=tuple(runtime.config.warnings) + tuple(runtime.migration_state.warnings),
     )
 
@@ -127,6 +130,24 @@ def _search_need_status(runtime: Any) -> Mapping[str, Any]:
             "source_probe_execution_enabled": False,
             "model_provider_enabled": False,
             "sync_enabled": False,
+        }
+    )
+    return payload
+
+
+def _agent_research_status(runtime: Any) -> Mapping[str, Any]:
+    summary = runtime.agent_research.summarize()
+    payload = dict(summary)
+    payload.update(
+        {
+            "store_id": "agent_research",
+            "relative_path": runtime.store_manifest.stores["agent_research"].relative_path,
+            "task_records_enabled": True,
+            "provider_enabled": False,
+            "execution_enabled": False,
+            "browser_enabled": False,
+            "source_probe_enabled": False,
+            "candidate_only_output": True,
         }
     )
     return payload

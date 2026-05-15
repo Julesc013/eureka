@@ -1,6 +1,6 @@
 id: HUNT-09
 title: Agent research task contract, provider disabled
-status: queued
+status: completed
 purpose: Define the future agent research task contract after local Search Hunt workflow smoke passes.
 allowed_scope_summary: Agent research contract and provider-disabled boundary evidence only when explicitly scoped.
 gate:
@@ -14,3 +14,5 @@ gate:
   - no public launch claim
 recommended_after: HUNT-08
 alternative_next: SYN-00
+recommended_next: HUNT-10
+completed_by: HUNT-09 implementation

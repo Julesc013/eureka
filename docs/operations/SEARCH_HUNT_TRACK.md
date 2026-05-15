@@ -24,3 +24,6 @@ Current boundary remains: no source probes, extraction, agent research, model/pr
 ## HUNT-08 Result
 
 HUNT-08 adds integrated workflow, workbench, and API smoke scripts for the local Search Hunt loop. The next recommended task is HUNT-09, the agent research task contract with providers disabled; SYN remains an alternative/follow-up and F0 remains deferred.
+## HUNT-09 Result
+
+HUNT-09 adds disabled agent research task records and a candidate-only future report schema. The next recommended task is HUNT-10, deterministic hunt replay. F0 remains deferred and SYN remains an alternative follow-up.

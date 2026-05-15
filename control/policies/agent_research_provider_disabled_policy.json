@@ -1,0 +1,9 @@
+{
+  "schema_version": "agent_research_provider_disabled_policy.v0",
+  "model_provider_calls_enabled": false,
+  "provider_credentials_allowed": false,
+  "network_browser_calls_enabled": false,
+  "execution_attempts_fail_closed": true,
+  "disabled_until": "HUNT-11_OR_K_GATE",
+  "provider_output_is_candidate_only": true
+}

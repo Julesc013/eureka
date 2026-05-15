@@ -1,0 +1,17 @@
+{
+  "schema_version": "agent_research_side_effect_policy.v0",
+  "task_record_creation_allowed": true,
+  "task_execution_allowed": false,
+  "provider_call_allowed": false,
+  "browser_call_allowed": false,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "external_network_allowed": false,
+  "download_allowed": false,
+  "install_execution_allowed": false,
+  "review_decision_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "site_dist_writes_allowed": false,
+  "deployment_allowed": false
+}

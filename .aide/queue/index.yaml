@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-09
+current_recommended_task: HUNT-10
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -223,12 +223,21 @@ entries:
     recommended_next: HUNT-09
   - id: HUNT-09
     title: Agent research task contract, provider disabled
-    status: queued
+    status: completed
     purpose: Define the future agent research task contract after local hunt workflow smoke passes, with providers still disabled.
     allowed_scope_summary: Agent research contract, provider-disabled governance, docs, tests, validators, inventories, and audit evidence only when explicitly scoped.
     gate: HUNT-08 completed; no provider execution, source probes, extraction, downloads, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-09/task.yaml
     recommended_after: HUNT-08
+    recommended_next: HUNT-10
+  - id: HUNT-10
+    title: Deterministic hunt replay harness
+    status: queued
+    purpose: Add deterministic replay for local Search Hunt workflows after disabled agent research task contracts exist.
+    allowed_scope_summary: Replay harness, fixtures, validation, docs, inventories, and audit evidence only when explicitly scoped.
+    gate: HUNT-09 completed; providers, source probes, extraction, deployment, production readiness, and public launch remain disabled.
+    task: .aide/queue/HUNT-10/task.yaml
+    recommended_after: HUNT-09
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

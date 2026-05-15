@@ -1,0 +1,15 @@
+{
+  "schema_version": "agent_research_task_inventory.v0",
+  "task": "HUNT-09",
+  "runtime_package": "runtime/agent_research",
+  "store_id": "agent_research",
+  "db_path": "db/agent_research.sqlite",
+  "task_records_enabled": true,
+  "task_execution_enabled": false,
+  "provider_enabled": false,
+  "browser_enabled": false,
+  "source_probe_enabled": false,
+  "report_schema_enabled": true,
+  "candidate_only_output": true,
+  "deployment_performed": false
+}

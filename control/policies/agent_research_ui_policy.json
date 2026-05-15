@@ -1,0 +1,11 @@
+{
+  "schema_version": "agent_research_ui_policy.v0",
+  "agent_task_visibility_enabled": true,
+  "agent_task_draft_creation_enabled": true,
+  "agent_task_execution_controls_enabled": false,
+  "provider_status_visible": true,
+  "disabled_boundary_visible": true,
+  "candidate_only_output_visible": true,
+  "review_required_visible": true,
+  "lan_mutation_enabled": false
+}

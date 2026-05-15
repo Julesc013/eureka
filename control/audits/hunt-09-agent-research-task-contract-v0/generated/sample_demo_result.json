@@ -1,0 +1,9 @@
+{
+  "schema_version": "agent_research_demo_result.v0",
+  "status": "pass",
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false
+}

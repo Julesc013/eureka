@@ -473,6 +473,9 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _search_hunt_linked_needs(view.search_needs),
             _search_hunt_linked_workunits(view.workunits),
             _background_hunt_runner_section(view),
+            _agent_research_boundary_section(view.agent_research_boundary),
+            _agent_research_tasks_section(view.agent_research_tasks),
+            _hunt_agent_research_form(view) if view.agent_research_task_draft_enabled else "",
             _search_need_creation_form(view) if view.search_need_creation_enabled else "",
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
@@ -585,6 +588,9 @@ def render_search_need_detail_page(view: SearchNeedDetailPageView) -> str:
             "</section>",
             _search_need_workunit_plan(view.workunit_plan),
             _search_need_linked_workunits(view.workunits),
+            _agent_research_boundary_section(view.agent_research_boundary),
+            _agent_research_tasks_section(view.agent_research_tasks),
+            _need_agent_research_form(view) if view.agent_research_task_draft_enabled else "",
             _search_need_workunit_form(view) if view.workunit_creation_enabled else "",
             _search_need_state_form(view) if view.state_transition_enabled else "",
             _search_need_transitions(view.transitions),
@@ -845,6 +851,90 @@ def _background_hunt_runner_controls(view: SearchHuntDetailPageView) -> str:
             '<p><label>Operator label <input name="operator_label" value="local_operator"></label></p>',
             '<p><label>Batch limit <input name="limit" value="1"></label></p>',
             '<p><button type="submit">Run safe batch</button></p>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _agent_research_boundary_section(boundary: Any) -> str:
+    rows = (
+        {"field": "agent_research_disabled", "value": True},
+        {"field": "provider_enabled", "value": boundary.provider_enabled},
+        {"field": "execution_enabled", "value": boundary.execution_enabled},
+        {"field": "browser_enabled", "value": boundary.browser_enabled},
+        {"field": "source_probe_enabled", "value": boundary.source_probe_enabled},
+        {"field": "candidate_only_output", "value": boundary.candidate_only_output},
+        {"field": "review_required", "value": boundary.review_required},
+        {"field": "gate_required", "value": boundary.gate_required},
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="agent-research-boundary-heading"><h2 id="agent-research-boundary-heading">Agent research disabled boundary</h2>',
+            render_notice("scope", "Agent research drafts are future escalation contracts only; provider use is disabled and report output would be candidate-only."),
+            render_table(rows, headers=("field", "value")),
+            "</section>",
+        ]
+    )
+
+
+def _agent_research_tasks_section(tasks: Sequence[Any]) -> str:
+    rows = tuple(
+        {
+            "task_id": item.task_id,
+            "state": item.state,
+            "query": item.query,
+            "linked_hunt": item.search_hunt_id,
+            "linked_need": item.search_need_id,
+            "provider_enabled": item.provider_enabled,
+            "execution_enabled": item.execution_enabled,
+            "candidate_only": item.report_candidate_only,
+            "review_required": item.review_required,
+        }
+        for item in tasks
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="agent-research-tasks-heading"><h2 id="agent-research-tasks-heading">Agent research task drafts</h2>',
+            render_table(
+                rows,
+                headers=("task_id", "state", "query", "linked_hunt", "linked_need", "provider_enabled", "execution_enabled", "candidate_only", "review_required"),
+            )
+            if rows
+            else "<p>No agent research task drafts are recorded.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _hunt_agent_research_form(view: SearchHuntDetailPageView) -> str:
+    action = "/hunt/" + quote(view.hunt_id) + "/agent-task-draft"
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-agent-research-form-heading"><h2 id="hunt-agent-research-form-heading">Draft disabled agent research task</h2>',
+            render_notice("scope", "Draft creation stores a disabled local task record only; providers, browser use, and source probes remain disabled."),
+            f'<form action="{escape_html(action)}" method="post">',
+            '<label for="hunt-agent-token">Operator token</label> ',
+            '<input id="hunt-agent-token" name="operator_token" type="password" autocomplete="off"> ',
+            '<input type="hidden" name="operator_label" value="local_operator">',
+            '<button type="submit">Draft task</button>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _need_agent_research_form(view: SearchNeedDetailPageView) -> str:
+    action = "/need/" + quote(view.need_id) + "/agent-task-draft"
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-agent-research-form-heading"><h2 id="need-agent-research-form-heading">Draft disabled agent research task</h2>',
+            render_notice("scope", "Draft creation stores a disabled local task record only; providers, browser use, and source probes remain disabled."),
+            f'<form action="{escape_html(action)}" method="post">',
+            '<label for="need-agent-token">Operator token</label> ',
+            '<input id="need-agent-token" name="operator_token" type="password" autocomplete="off"> ',
+            '<input type="hidden" name="operator_label" value="local_operator">',
+            '<button type="submit">Draft task</button>',
             "</form>",
             "</section>",
         ]

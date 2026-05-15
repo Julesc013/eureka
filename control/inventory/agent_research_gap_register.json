@@ -1,0 +1,17 @@
+{
+  "schema_version": "agent_research_gap_register.v0",
+  "task": "HUNT-09",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap": "provider execution",
+      "status": "deferred",
+      "next_gate": "HUNT-11_OR_K_GATE"
+    },
+    {
+      "gap": "agent report review ingestion",
+      "status": "deferred",
+      "next_gate": "future reviewed task"
+    }
+  ]
+}

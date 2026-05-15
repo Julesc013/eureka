@@ -1,0 +1,13 @@
+{
+  "schema_version": "hunt_09_next_task_decision.v0",
+  "task": "HUNT-09",
+  "recommended_next_task": "HUNT-10 \u2014 Deterministic hunt replay harness",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "agent_research_task_contract_available": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "source_probe_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "Agent research task contracts exist with providers disabled; deterministic replay is next."
+}

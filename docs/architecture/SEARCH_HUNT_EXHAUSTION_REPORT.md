@@ -22,3 +22,6 @@ HUNT-04 persists reports and exposes them through CLI, local API, and the workbe
 HUNT-05 consumes exhaustion reports to create SearchNeeds. The exhaustion report supplies local result state, checked layers, deferred layers, blocked policy entries, and recommended future work categories.
 
 The handoff does not turn an exhaustion report into proof. It only preserves local/current-index context for future operator-gated work.
+## Agent Research Input
+
+The exhaustion report is the required local context source for disabled agent research task drafts. A draft may copy checked layers, deferred layers, blocked policy entries, local absence state, steering preferences, and query summary fields. The draft remains non-executable and cannot be treated as evidence or truth.

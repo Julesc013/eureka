@@ -26,3 +26,6 @@ The runner does not run source probes, extraction, agent research, model/provide
 ## Workbench Integration Smoke
 
 HUNT-08 proves the local Search Hunt loop through CLI, JSON API, and HTML workbench surfaces. The proof remains local and deterministic: Hunt command state, steering, exhaustion, SearchNeed creation, WorkUnit planning/creation, and safe background worker execution are visible without source probes, extraction, AI/model calls, deployment, or production/public launch claims.
+## HUNT-09 Agent Research Boundary
+
+Search Hunt Sessions may now produce disabled agent research task drafts through the local task contract. Drafts require an existing exhaustion report plus local context. They do not run providers, browsers, source probes, extraction, or review/index mutation. Their future output schema is candidate-only and review-required.
