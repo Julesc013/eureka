@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_hunt_closeout_result.v0",
+  "task": "HUNT-12",
+  "status": "pass_with_warnings",
+  "hunt_track_complete": true,
+  "all_required_capabilities_implemented": true,
+  "all_required_capabilities_tested": true,
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 6,
+  "syn_can_start": true,
+  "f0_can_resume": true,
+  "f0_recommended_now": false,
+  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance"
+}

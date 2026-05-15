@@ -1,0 +1,96 @@
+{
+  "aide_check_status": "warn_task_required_commit_body_may_differ_from_aide_policy",
+  "architecture_boundary_status": "pass",
+  "focused_tests": [
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_closeout",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_future_track_gate",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_handoff",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_to_main_promotion_review",
+      "status": "pass"
+    }
+  ],
+  "full_discovery_status": "warn_timeout_in_current_environment",
+  "generated_artifact_cleanliness_status": "pass_after_commit_required",
+  "local_validation_dependency_status": "pass_with_warnings",
+  "schema_version": "search_hunt_validation_matrix.v0",
+  "smoke_scripts": [
+    {
+      "command": "python scripts/eureka_hunt_workflow_smoke.py",
+      "status": "covered_by_HUNT_08"
+    },
+    {
+      "command": "python scripts/eureka_hunt_api_smoke.py",
+      "status": "covered_by_HUNT_08"
+    },
+    {
+      "command": "python scripts/demo_hunt_replay.py",
+      "status": "covered_by_HUNT_10"
+    },
+    {
+      "command": "python scripts/demo_ai_escalation_gate.py",
+      "status": "covered_by_HUNT_11"
+    }
+  ],
+  "status": "pass_with_warnings",
+  "task": "HUNT-12",
+  "validators": [
+    {
+      "command": "python scripts/validate_search_hunt_track.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_runtime.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_ui.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_commands.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_exhaustion.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_hunt_to_search_need.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_hunt_to_workunits.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_background_hunt_runner.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_search_hunt_workbench_integration.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_agent_research_task_contract.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_hunt_replay.py",
+      "status": "pass_or_disposed_warning"
+    },
+    {
+      "command": "python scripts/validate_ai_escalation_gate.py",
+      "status": "pass_or_disposed_warning"
+    }
+  ]
+}

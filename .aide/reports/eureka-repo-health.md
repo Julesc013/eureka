@@ -1,15 +1,16 @@
 # Eureka Repo Health
 
-Status: pass_with_warnings
+Updated: 2026-05-15
 
-Current queue item: HUNT-12 - Search Hunt closeout and SYN/F0 handoff.
+Current recommended task: SYN-00.
 
-Completed latest item: HUNT-11 - Bounded AI escalation gate, disabled by default.
+Last completed task: HUNT-12 - Search Hunt closeout and SYN/F0 handoff.
 
-F0 deferral remains recorded against the Local Appliance closeout gate (`LOCAL-14`), with later resume only after the HUNT baseline or explicit operator override.
+Status: pass_with_warnings.
 
-HUNT-11 added disabled AI escalation gate records, eligibility/preflight, UI/API/CLI visibility, and provider/execution disabled proof.
+HUNT is complete with no hard blockers. SYN can start. F0 can resume by
+explicit operator choice, but SYN is recommended first to generate query and
+eval pressure. Main promotion requires a separate review task.
 
-Boundaries remain closed outside safe local worker scope: no source probes, extraction, model/provider calls, browser calls, master-index mutation, site output mutation, LAN mutation, deployment, production readiness claim, or public launch claim.
-
-Known warning posture remains inherited from the final baseline: existing leakage findings are allowlisted/disposed with zero new unallowlisted findings.
+Providers, source probes, extraction, deployment, production readiness, and
+public launch readiness remain disabled/not claimed.

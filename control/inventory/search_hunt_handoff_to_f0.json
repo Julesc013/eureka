@@ -1,0 +1,12 @@
+{
+  "f0_can_resume": true,
+  "f0_must_be_visible_testable_through_workbench": true,
+  "f0_outputs_must_flow_through_source_observation_evidence_review_index": true,
+  "f0_recommended_now": false,
+  "f0_should_use_workunits_for_extraction_tasks": true,
+  "implementation_started": false,
+  "next_task": "F0-00 \u2014 Refresh F0 after Local Appliance and HUNT",
+  "schema_version": "search_hunt_handoff_to_f0.v0",
+  "status": "pass",
+  "task": "HUNT-12"
+}

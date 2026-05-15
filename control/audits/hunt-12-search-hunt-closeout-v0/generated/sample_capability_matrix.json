@@ -1,0 +1,8 @@
+{
+  "schema_version": "search_hunt_capability_matrix.v0",
+  "task": "HUNT-12",
+  "status": "pass",
+  "capability_count": 13,
+  "all_required_capabilities_implemented": true,
+  "all_required_capabilities_tested": true
+}

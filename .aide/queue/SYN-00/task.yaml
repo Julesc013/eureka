@@ -1,16 +1,17 @@
 id: SYN-00
 title: Synthetic Query Foundry planning over Local Appliance
 status: queued
-purpose: Plan Synthetic Query Foundry over the completed Local Appliance proof surface.
-allowed_scope_summary: Planning, taxonomy, policies, docs, and audit evidence only until explicitly scoped.
+purpose: Plan Synthetic Query Foundry over the completed Local Appliance and Search Hunt proof surface.
+allowed_scope_summary: Planning, taxonomy, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
 gate:
   - LOCAL-14 completed with pass_with_warnings or better
+  - HUNT-12 completed with no hard blockers
+  - use Search Hunt, SearchNeed, WorkUnit, and local eval boundaries where applicable
   - use auto-test and auto-search harness boundaries
   - no synthetic generation runtime
   - no model/provider calls
   - no deployment
   - no production readiness claim
   - no public launch claim
-recommended_after: LOCAL-14
-recommended_after: HUNT-00
-recommended_note: Available after HUNT-00; recommended after HUNT-04 or HUNT-06 unless the operator prioritizes SYN.
+recommended_after: HUNT-12
+recommended_note: Recommended after Search Hunt closeout to generate query/eval pressure before extraction or source expansion.

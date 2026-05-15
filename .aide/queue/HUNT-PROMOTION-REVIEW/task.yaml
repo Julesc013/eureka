@@ -1,0 +1,14 @@
+id: HUNT-TO-MAIN-PROMOTION-REVIEW
+title: Review/promote HUNT baseline to main
+status: queued
+purpose: Decide whether the completed HUNT baseline on dev should promote to main.
+allowed_scope_summary: Branch comparison, closeout evidence review, warning disposition, and promotion plan only.
+gate:
+  - HUNT-12 completed with no hard blockers
+  - generated artifact cleanliness rechecked after commit
+  - runtime leakage warning disposition reviewed
+  - no merge or push unless explicitly requested by the promotion task
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-12

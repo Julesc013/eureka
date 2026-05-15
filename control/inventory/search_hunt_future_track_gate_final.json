@@ -1,0 +1,13 @@
+{
+  "exceptions_require_explicit_reviewed_task": true,
+  "f0_extraction_tasks_must_be_generated_as_workunits_where_applicable": true,
+  "f0_outputs_are_candidates_not_direct_truth": true,
+  "future_tracks_may_not_bypass_hunt_workunit_review_index_without_exception": true,
+  "g_must_consume_hunt_exhaustion_near_miss_and_absence_state": true,
+  "h_source_expansion_starts_from_policy_gated_source_probe_workunits": true,
+  "k_ai_assist_must_use_ai_escalation_gate_candidate_only": true,
+  "schema_version": "search_hunt_future_track_gate_final.v0",
+  "status": "pass",
+  "syn_must_use_hunt_and_local_appliance_for_query_pressure": true,
+  "task": "HUNT-12"
+}

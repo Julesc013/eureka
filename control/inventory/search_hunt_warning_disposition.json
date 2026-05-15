@@ -1,0 +1,62 @@
+{
+  "all_warnings_disposed": true,
+  "schema_version": "search_hunt_warning_disposition.v0",
+  "status": "pass_with_warnings",
+  "task": "HUNT-12",
+  "warnings": [
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "disposition": "harmless_for_next_track",
+      "summary": "AIDE Lite optional references and branch-name warnings remain repo-operating noise.",
+      "warning_id": "aide_optional_reference_warnings"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "disposition": "deferred_with_expiry",
+      "expiry": "before any LAN mutation feature",
+      "summary": "LOCAL/HUNT proof remains local-first; external second-device LAN mutation proof is intentionally absent.",
+      "warning_id": "no_external_second_device_lan_proof"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": true,
+      "blocks_syn": false,
+      "disposition": "deferred_with_expiry",
+      "expiry": "before main promotion review",
+      "summary": "Pre-existing exact runtime leakage debt is documented and did not expand during HUNT.",
+      "warning_id": "known_runtime_leakage_debt"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "disposition": "harmless_for_next_track",
+      "summary": "Older validators assert their original next-task queue target and warn after queue advancement.",
+      "warning_id": "historical_hunt_validator_queue_sensitivity"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "disposition": "harmless_for_next_track",
+      "summary": "Full unittest discovery is broad and has timed out in this environment; focused HUNT lanes pass.",
+      "warning_id": "full_unittest_discovery_timeout"
+    },
+    {
+      "blocks_f0": false,
+      "blocks_main_promotion": false,
+      "blocks_syn": false,
+      "disposition": "deferred_with_expiry",
+      "expiry": "post-commit cleanliness check",
+      "summary": "Generated audit drift appears before committing new HUNT-12 artifacts and must pass after commit.",
+      "warning_id": "generated_artifact_cleanliness_precommit_drift"
+    }
+  ],
+  "warnings_blocking_f0": 0,
+  "warnings_blocking_main_promotion": 1,
+  "warnings_blocking_syn": 0
+}

@@ -1,0 +1,7 @@
+{
+  "blockers": [],
+  "hard_blockers_remaining": 0,
+  "schema_version": "search_hunt_blocker_register.v0",
+  "status": "pass",
+  "task": "HUNT-12"
+}

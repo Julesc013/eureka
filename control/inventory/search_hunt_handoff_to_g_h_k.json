@@ -1,0 +1,10 @@
+{
+  "g_consumes_hunt_explanations_exhaustion_absence": true,
+  "h_source_expansion_consumes_source_probe_workunits_and_policy_gates": true,
+  "implementation_started": false,
+  "k_consumes_ai_escalation_gate_and_agent_research_task_contract": true,
+  "outputs_candidate_only_until_reviewed": true,
+  "schema_version": "search_hunt_handoff_to_g_h_k.v0",
+  "status": "pass",
+  "task": "HUNT-12"
+}

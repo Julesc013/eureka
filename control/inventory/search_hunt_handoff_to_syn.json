@@ -1,0 +1,13 @@
+{
+  "implementation_started": false,
+  "next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "schema_version": "search_hunt_handoff_to_syn.v0",
+  "status": "pass",
+  "syn_must_not_generate_fake_evidence": true,
+  "syn_must_not_generate_verified_records": true,
+  "syn_must_use_hunt_absence_exhaustion_structures": true,
+  "syn_should_generate_query_pressure": true,
+  "syn_should_generate_search_need_seeds": true,
+  "syn_should_generate_workunit_seeds": true,
+  "task": "HUNT-12"
+}
