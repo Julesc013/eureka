@@ -31,3 +31,6 @@ HUNT-09 adds disabled agent research task records and a candidate-only future re
 ## HUNT-10 Result
 
 HUNT-10 adds deterministic local replay for the Search Hunt workflow. Replay can plan, run local deterministic steps, verify existing state, and report expected-vs-actual diffs while keeping source probes, extraction, AI/model calls, artifact acquisition or launch, deployment, production readiness, and public launch readiness disabled.
+## HUNT-11 Status
+
+The track now includes a bounded AI escalation gate with providers disabled by default. The next task is HUNT-12 closeout and SYN/F0 handoff.

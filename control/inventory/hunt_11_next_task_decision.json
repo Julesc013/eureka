@@ -1,0 +1,14 @@
+{
+  "schema_version": "hunt_11_next_task_decision.v0",
+  "task": "HUNT-11",
+  "recommended_next_task": "HUNT-12 \u2014 Search Hunt closeout and SYN/F0 handoff",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
+  "f0_current_status": "deferred",
+  "ai_escalation_gate_available": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "reason": "AI escalation gate exists and is disabled by default; HUNT closeout is next."
+}

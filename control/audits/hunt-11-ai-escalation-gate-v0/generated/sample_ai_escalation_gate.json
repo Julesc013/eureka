@@ -1,0 +1,19 @@
+{
+  "schema_version": "ai_escalation_gate.v0",
+  "gate_id": "aig_sample",
+  "search_hunt_id": "shs_sample",
+  "search_need_id": "sn_sample",
+  "exhaustion_report_id": "she_sample",
+  "agent_research_task_id": "art_sample",
+  "query": "sampleproject",
+  "normalized_query": "sampleproject",
+  "state": "eligible_but_disabled",
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "candidate_only_output": true,
+  "review_required": true,
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false
+}

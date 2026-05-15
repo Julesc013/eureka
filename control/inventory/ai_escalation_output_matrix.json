@@ -1,0 +1,21 @@
+{
+  "schema_version": "ai_escalation_output_matrix.v0",
+  "task": "HUNT-11",
+  "future_output_classes": [
+    "alias_hypotheses",
+    "source_lead_candidates",
+    "dead_url_trace_plan",
+    "wayback_trace_plan",
+    "compatibility_clues",
+    "provenance_questions",
+    "extraction_targets",
+    "candidate_workunits",
+    "absence_explanation_draft"
+  ],
+  "candidate_only": true,
+  "review_required": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false
+}

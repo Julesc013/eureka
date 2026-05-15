@@ -2,7 +2,7 @@
 
 ## Review Objective
 
-Review HUNT-10: Deterministic hunt replay harness.
+Review HUNT-11: Bounded AI escalation gate, disabled by default.
 
 ## Decision Requested
 
@@ -10,7 +10,7 @@ PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED
 
 ## Task Packet Reference
 
-`.aide/queue/HUNT-10/task.yaml`
+`.aide/queue/HUNT-11/task.yaml`
 
 ## Context Packet Reference
 
@@ -22,27 +22,26 @@ PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED
 
 ## Evidence Packet References
 
-- `control/audits/hunt-10-deterministic-replay-v0/`
-- `control/inventory/hunt_replay_result.json`
-- `control/inventory/hunt_replay_demo_result.json`
-- `control/inventory/hunt_replay_step_matrix.json`
-- `control/inventory/hunt_replay_blocked_step_matrix.json`
-- `control/inventory/hunt_10_next_task_decision.json`
-- `scripts/validate_hunt_replay.py`
+- `control/audits/hunt-11-ai-escalation-gate-v0/`
+- `control/inventory/ai_escalation_gate_result.json`
+- `control/inventory/ai_escalation_demo_result.json`
+- `control/inventory/ai_escalation_disabled_boundary_result.json`
+- `control/inventory/hunt_11_next_task_decision.json`
+- `scripts/validate_ai_escalation_gate.py`
 
 ## Changed Files Summary
 
-- Added deterministic Search Hunt replay records, fixtures, diffing, validation, and store support.
-- Added replay CLI, demo, validator, policies, inventories, audit pack, docs, and focused tests.
-- Added API/workbench visibility and localhost/token-gated replay run controls.
-- Advanced queue metadata to HUNT-11.
+- Added disabled AI escalation gate records, preflight, eligibility, validation, and store support.
+- Added AI escalation CLI, demo, validator, policies, inventories, audit pack, docs, and focused tests.
+- Added API/workbench visibility and localhost/token-gated preflight controls.
+- Advanced queue metadata to HUNT-12.
 
 ## Validation Summary
 
-- `python scripts/validate_hunt_replay.py --json`: expected PASS for HUNT-10.
-- Hunt replay focused runtime and operations tests cover plan, replay-local, verify-existing, routes, UI, policy, diff, and scripts.
-- JSON syntax checks cover HUNT-10 policy, inventory, and audit report files.
-- Broad validation status should be reported in the final HUNT-10 response.
+- `python scripts/validate_ai_escalation_gate.py --json`: expected PASS for HUNT-11.
+- AI escalation focused runtime and operations tests cover records, store, eligibility, preflight, routes, UI, disabled boundary, and scripts.
+- JSON syntax checks cover HUNT-11 policy, inventory, and audit report files.
+- Broad validation status should be reported in the final HUNT-11 response.
 
 ## Token Summary
 
@@ -50,14 +49,14 @@ Compact packet only; full historical HUNT prompts are intentionally not copied h
 
 ## Risk Summary
 
-- Replay-local records deterministic local replay effects in the explicit local instance; validators use disposable temp instances for isolation.
-- HUNT validators from earlier queue phases may be queue-position sensitive after the queue advances to HUNT-11.
+- AI escalation preflight writes local gate-readiness records only; validators use disposable temp instances for isolation.
+- HUNT validators from earlier queue phases may be queue-position sensitive after the queue advances to HUNT-12.
 - LOCAL validators may retain pre-existing runtime leakage warnings.
 
 ## Non-Goals / Scope Guard
 
-HUNT-10 did not add source probes, extraction, AI/model/provider calls, browser calls, artifact acquisition, artifact launch, master-index mutation, site output mutation, deployment, production readiness, or public launch readiness.
+HUNT-11 did not add source probes, extraction, AI/model/provider calls, browser calls, agent research execution, artifact acquisition, artifact launch, review/index mutation, deployment, production readiness, or public launch readiness.
 
 ## Reviewer Instructions
 
-Review against repo-local files and HUNT-10 evidence. Treat replay output as local reproducibility/audit data, not truth, evidence acceptance, source approval, or global absence proof.
+Review against repo-local files and HUNT-11 evidence. Treat AI escalation output as future candidate material only; providers and execution remain disabled.

@@ -87,6 +87,13 @@ def route_request(
         if _wants_json(request_context):
             return _hunt_agent_tasks_response(runtime, hunt_id, request_context)
         return _hunt_detail_html_response(runtime, hunt_id)
+    if parsed_hunt_route and parsed_hunt_route[1] == "ai-escalation":
+        hunt_id = parsed_hunt_route[0]
+        if path.startswith("/api/v1/"):
+            return _hunt_ai_escalation_response(runtime, hunt_id)
+        if _wants_json(request_context):
+            return _hunt_ai_escalation_response(runtime, hunt_id)
+        return _hunt_detail_html_response(runtime, hunt_id)
     if parsed_hunt_route and parsed_hunt_route[1] == "workunits":
         hunt_id = parsed_hunt_route[0]
         if path.startswith("/api/v1/"):
@@ -142,6 +149,13 @@ def route_request(
             return _need_agent_tasks_response(runtime, need_id, request_context)
         if _wants_json(request_context):
             return _need_agent_tasks_response(runtime, need_id, request_context)
+        return _need_detail_html_response(runtime, need_id)
+    if parsed_need_route and parsed_need_route[1] == "ai-escalation":
+        need_id = parsed_need_route[0]
+        if path.startswith("/api/v1/"):
+            return _need_ai_escalation_response(runtime, need_id)
+        if _wants_json(request_context):
+            return _need_ai_escalation_response(runtime, need_id)
         return _need_detail_html_response(runtime, need_id)
     if parsed_need_route and parsed_need_route[1] == "workunits":
         need_id = parsed_need_route[0]
@@ -415,6 +429,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
     linked_workunits = _search_need_runtime().list_workunits_for_hunt(runtime, hunt_id, limit=100)
     runner_summary = _search_hunt().summarize_background_hunt(runtime, hunt_id)
     agent_tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(hunt_id=hunt_id, limit=100)]
+    ai_escalation = _ai_escalation_summary(runtime, hunt_id=hunt_id)
     replay_summary = _hunt_replay_summary(runtime, hunt_id)
     payload = {
         "schema_version": "search_hunt_ui_hunt_response.v0",
@@ -430,6 +445,7 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "workunits": linked_workunits,
         "background_runner": runner_summary,
         "agent_research_tasks": agent_tasks,
+        "ai_escalation": ai_escalation,
         "hunt_replay": replay_summary,
         "unavailable_actions": _search_hunt_unavailable_actions_payload(),
         "read_only": True,
@@ -450,6 +466,9 @@ def _hunt_detail_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
         "agent_research_task_draft_enabled": not bool(getattr(runtime, "read_only", True)),
         "agent_research_provider_enabled": False,
         "agent_research_execution_enabled": False,
+        "ai_escalation_preflight_enabled": not bool(getattr(runtime, "read_only", True)),
+        "ai_escalation_provider_enabled": False,
+        "ai_escalation_execution_enabled": False,
         "workunit_execution_enabled_for_safe_workers": True,
         "runner_controls_enabled": not bool(getattr(runtime, "read_only", True)),
         "source_probe_execution_enabled": False,
@@ -673,6 +692,23 @@ def _hunt_agent_tasks_response(runtime: Any, hunt_id: str, request_context: Loca
     return json_response(200, payload)
 
 
+def _hunt_ai_escalation_response(runtime: Any, hunt_id: str) -> LocalServiceResponse:
+    if not hunt_id:
+        return error_response(400, "missing_hunt_id", "hunt id is required")
+    session = runtime.search_hunt.get_session(hunt_id)
+    if session is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    payload = _ai_escalation_payload(
+        "ai_escalation_for_hunt",
+        {
+            "hunt_id": hunt_id,
+            "ai_escalation": _ai_escalation_summary(runtime, hunt_id=hunt_id),
+            "read_only": True,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _need_list_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=100)
     state = first_param(request_context.params, "state", "")
@@ -716,6 +752,7 @@ def _need_detail_response(runtime: Any, need_id: str) -> LocalServiceResponse:
     plan = workunit_module.build_workunit_plan_for_need(runtime, need_id)
     workunits = workunit_module.list_workunits_for_need(runtime, need_id, limit=100)
     agent_tasks = [item.to_dict() for item in runtime.agent_research.list_tasks(need_id=need_id, limit=100)]
+    ai_escalation = _ai_escalation_summary(runtime, hunt_id=need.hunt_id, need_id=need_id)
     payload = {
         "schema_version": "search_need_detail_response.v0",
         "status": "pass",
@@ -725,11 +762,15 @@ def _need_detail_response(runtime: Any, need_id: str) -> LocalServiceResponse:
         "workunit_plan": plan.to_dict(),
         "workunits": workunits,
         "agent_research_tasks": agent_tasks,
+        "ai_escalation": ai_escalation,
         "state_transition_enabled": not bool(getattr(runtime, "read_only", True)),
         "workunit_creation_enabled": not bool(getattr(runtime, "read_only", True)),
         "agent_research_task_draft_enabled": not bool(getattr(runtime, "read_only", True)),
         "agent_research_provider_enabled": False,
         "agent_research_execution_enabled": False,
+        "ai_escalation_preflight_enabled": not bool(getattr(runtime, "read_only", True)),
+        "ai_escalation_provider_enabled": False,
+        "ai_escalation_execution_enabled": False,
         "workunit_execution_enabled": False,
         "operator_token_required_for_mutations": True,
         "localhost_only_mutations": True,
@@ -789,6 +830,24 @@ def _need_agent_tasks_response(runtime: Any, need_id: str, request_context: Loca
             "read_only": True,
             "draft_creation_enabled": not bool(getattr(runtime, "read_only", True)),
             "task_execution_enabled": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _need_ai_escalation_response(runtime: Any, need_id: str) -> LocalServiceResponse:
+    if not need_id:
+        return error_response(400, "missing_need_id", "SearchNeed id is required")
+    need = runtime.search_need.get_need(need_id)
+    if need is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    payload = _ai_escalation_payload(
+        "ai_escalation_for_need",
+        {
+            "need_id": need_id,
+            "hunt_id": need.hunt_id,
+            "ai_escalation": _ai_escalation_summary(runtime, hunt_id=need.hunt_id, need_id=need_id),
+            "read_only": True,
         },
     )
     return json_response(200, payload)
@@ -923,6 +982,8 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return _apply_hunt_search_need_response(runtime, request_context, hunt_mutation[0])
         if hunt_mutation[1] == "agent-task-draft":
             return _apply_hunt_agent_task_draft_response(runtime, request_context, hunt_mutation[0])
+        if hunt_mutation[1] == "ai-escalation-preflight":
+            return _apply_hunt_ai_escalation_preflight_response(runtime, request_context, hunt_mutation[0])
         return _apply_hunt_command_response(runtime, request_context, hunt_mutation[0], hunt_mutation[1])
     need_mutation = _parse_need_mutation_path(path)
     if need_mutation:
@@ -934,6 +995,8 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return _apply_search_need_workunit_create_response(runtime, request_context, need_mutation[0])
         if need_mutation[1] == "agent-task-draft":
             return _apply_need_agent_task_draft_response(runtime, request_context, need_mutation[0])
+        if need_mutation[1] == "ai-escalation-preflight":
+            return _apply_need_ai_escalation_preflight_response(runtime, request_context, need_mutation[0])
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
@@ -1119,6 +1182,52 @@ def _apply_need_agent_task_draft_response(runtime: Any, request_context: LocalRe
     return json_response(200, payload)
 
 
+def _apply_hunt_ai_escalation_preflight_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
+    if runtime.search_hunt.get_session(hunt_id) is None:
+        return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
+    operator_label = first_param(request_context.body_params, "operator_label", "local_operator")
+    try:
+        preflight = _ai_escalation().build_ai_escalation_preflight(runtime, hunt_id=hunt_id, operator_label=operator_label)
+        written = runtime.ai_escalation.write_preflight(preflight)
+    except Exception as exc:
+        return error_response(400, "ai_escalation_preflight_rejected", str(exc), {"hunt_id": hunt_id})
+    payload = _ai_escalation_payload(
+        "ai_escalation_preflight_from_hunt",
+        {
+            "hunt_id": hunt_id,
+            "preflight": written.to_dict(),
+            "ai_escalation": _ai_escalation_summary(runtime, hunt_id=hunt_id),
+            "preflight_written": True,
+            "provider_call_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
+def _apply_need_ai_escalation_preflight_response(runtime: Any, request_context: LocalRequestContext, need_id: str) -> LocalServiceResponse:
+    need = runtime.search_need.get_need(need_id)
+    if need is None:
+        return error_response(404, "search_need_not_found", "SearchNeed was not found", {"need_id": need_id})
+    operator_label = first_param(request_context.body_params, "operator_label", "local_operator")
+    try:
+        preflight = _ai_escalation().build_ai_escalation_preflight(runtime, need_id=need_id, operator_label=operator_label)
+        written = runtime.ai_escalation.write_preflight(preflight)
+    except Exception as exc:
+        return error_response(400, "ai_escalation_preflight_rejected", str(exc), {"need_id": need_id})
+    payload = _ai_escalation_payload(
+        "ai_escalation_preflight_from_need",
+        {
+            "need_id": need_id,
+            "hunt_id": need.hunt_id,
+            "preflight": written.to_dict(),
+            "ai_escalation": _ai_escalation_summary(runtime, hunt_id=need.hunt_id, need_id=need_id),
+            "preflight_written": True,
+            "provider_call_performed": False,
+        },
+    )
+    return json_response(200, payload)
+
+
 def _apply_hunt_runner_plan_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str) -> LocalServiceResponse:
     if runtime.search_hunt.get_session(hunt_id) is None:
         return error_response(404, "hunt_not_found", "Search Hunt session was not found", {"hunt_id": hunt_id})
@@ -1257,9 +1366,9 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay"}:
+    if len(parts) == 3 and parts[0] == "hunt" and parts[2] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay", "ai-escalation"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"commands", "steering", "exhaustion", "needs", "workunits", "runner", "agent-tasks", "replay", "ai-escalation"}:
         return parts[3], parts[4]
     return None
 
@@ -1273,12 +1382,16 @@ def _parse_hunt_mutation_path(path: str) -> tuple[str, str] | None:
         return parts[1], "runner-" + parts[3]
     if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "replay" and parts[3] in {"plan", "run"}:
         return parts[1], "replay-" + parts[3]
+    if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "ai-escalation" and parts[3] == "preflight":
+        return parts[1], "ai-escalation-preflight"
     if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] in {"exhaustion", "search-need", "agent-task-draft"}:
         return parts[3], parts[4]
     if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "runner" and parts[5] in {"plan", "run-next", "run-batch"}:
         return parts[3], "runner-" + parts[5]
     if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "replay" and parts[5] in {"plan", "run"}:
         return parts[3], "replay-" + parts[5]
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "ai-escalation" and parts[5] == "preflight":
+        return parts[3], "ai-escalation-preflight"
     return None
 
 
@@ -1291,10 +1404,14 @@ def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
     if len(parts) == 3 and parts[0] == "need" and parts[2] in {"state", "workunits", "agent-task-draft"}:
         return parts[1], parts[2]
+    if len(parts) == 4 and parts[0] == "need" and parts[2] == "ai-escalation" and parts[3] == "preflight":
+        return parts[1], "ai-escalation-preflight"
     if len(parts) == 4 and parts[0] == "need" and parts[2:] == ["workunits", "plan"]:
         return parts[1], "workunits-plan"
     if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] in {"state", "workunits", "agent-task-draft"}:
         return parts[3], parts[4]
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "need"] and parts[4] == "ai-escalation" and parts[5] == "preflight":
+        return parts[3], "ai-escalation-preflight"
     if len(parts) == 6 and parts[:3] == ["api", "v1", "need"] and parts[4:] == ["workunits", "plan"]:
         return parts[3], "workunits-plan"
     return None
@@ -1302,9 +1419,9 @@ def _parse_need_mutation_path(path: str) -> tuple[str, str] | None:
 
 def _parse_need_route(path: str) -> tuple[str, str] | None:
     parts = [part for part in str(path or "").split("/") if part]
-    if len(parts) == 3 and parts[0] == "need" and parts[2] in {"workunits", "agent-tasks"}:
+    if len(parts) == 3 and parts[0] == "need" and parts[2] in {"workunits", "agent-tasks", "ai-escalation"}:
         return parts[1], parts[2]
-    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] in {"workunits", "agent-tasks"}:
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "need"] and parts[4] in {"workunits", "agent-tasks", "ai-escalation"}:
         return parts[3], parts[4]
     return None
 
@@ -1432,6 +1549,45 @@ def _agent_research_payload(action: str, payload: dict[str, Any]) -> dict[str, A
     return result
 
 
+def _ai_escalation_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]:
+    result = {
+        "schema_version": "ai_escalation_route_result.v0",
+        "status": "pass",
+        "action": action,
+        "operator_token_required_for_preflight": True,
+        "localhost_only_mutations": True,
+        "lan_mutations_enabled": False,
+        "provider_enabled": False,
+        "execution_enabled": False,
+        "browser_enabled": False,
+        "source_probe_enabled": False,
+        "extraction_enabled": False,
+        "output_candidate_only": True,
+        "review_required": True,
+        "execute_route_exists": False,
+        "model_provider_used": False,
+        "external_network_used": False,
+        "source_probe_executed": False,
+        "extraction_executed": False,
+        "review_mutation_performed": False,
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "warnings": [],
+        "limitations": list(DEFAULT_LIMITATIONS)
+        + [
+            "AI escalation is a disabled future gate",
+            "preflight records local readiness only",
+            "future output would be candidate material only and review-required",
+            "provider, browser, source probe, extraction, review, and index mutation are disabled",
+        ],
+    }
+    result.update(payload)
+    return result
+
+
 def _search_result_payload(runtime: Any, result: dict[str, Any]) -> dict[str, Any]:
     record = runtime.public_index.get_record(str(result.get("record_id", "")))
     if record is None:
@@ -1545,6 +1701,10 @@ def _search_need_runtime() -> Any:
 
 def _agent_research() -> Any:
     return __import__("runtime.agent_research", fromlist=["build_agent_research_report_schema"])
+
+
+def _ai_escalation() -> Any:
+    return __import__("runtime.ai_escalation", fromlist=["build_ai_escalation_preflight"])
 
 
 def _hunt_exhaustion_payload(hunt_id: str, report: dict[str, Any] | None) -> dict[str, Any]:
@@ -1661,3 +1821,31 @@ def _hunt_replay_payload(action: str, payload: dict[str, Any]) -> dict[str, Any]
     }
     result.update(payload)
     return result
+
+
+def _ai_escalation_summary(runtime: Any, *, hunt_id: str | None = None, need_id: str | None = None) -> dict[str, Any]:
+    eligibility = _ai_escalation().evaluate_ai_escalation_eligibility(runtime, hunt_id=hunt_id, need_id=need_id)
+    gates = [item.to_dict() for item in runtime.ai_escalation.list_gates(hunt_id=hunt_id, need_id=need_id, limit=20)]
+    latest_preflight = runtime.ai_escalation.get_latest_preflight(hunt_id=hunt_id, need_id=need_id)
+    return {
+        "schema_version": "ai_escalation_summary.v0",
+        "hunt_id": str(hunt_id or eligibility.input_packet.search_hunt_id),
+        "need_id": str(need_id or eligibility.input_packet.search_need_id),
+        "eligibility": eligibility.to_dict(),
+        "gates": gates,
+        "gate_count": len(gates),
+        "latest_preflight": latest_preflight.to_dict() if latest_preflight else None,
+        "provider_enabled": False,
+        "execution_enabled": False,
+        "candidate_only_output": True,
+        "review_required": True,
+        "execute_route_exists": False,
+        "model_provider_used": False,
+        "external_network_used": False,
+        "source_probe_executed": False,
+        "extraction_executed": False,
+        "review_mutation_performed": False,
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "deployment_performed": False,
+    }

@@ -1,0 +1,39 @@
+{
+  "schema_version": "ai_escalation_output_policy.v0",
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "provider_credentials_allowed": false,
+  "output_candidate_only": true,
+  "review_required": true,
+  "allowed_future_output_classes": [
+    "alias_hypotheses",
+    "source_lead_candidates",
+    "dead_url_trace_plan",
+    "wayback_trace_plan",
+    "compatibility_clues",
+    "provenance_questions",
+    "extraction_targets",
+    "candidate_workunits",
+    "absence_explanation_draft"
+  ],
+  "forbidden_output_claims": [
+    "truth",
+    "evidence_acceptance",
+    "source_approval",
+    "rights_clearance",
+    "malware_safety",
+    "automatic_ranking_authority",
+    "public_index_mutation",
+    "master_index_mutation"
+  ],
+  "model_provider_calls_enabled": false,
+  "browser_calls_enabled": false,
+  "external_network_enabled": false,
+  "source_probe_enabled": false,
+  "extraction_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

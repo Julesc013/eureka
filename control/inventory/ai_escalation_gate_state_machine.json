@@ -1,0 +1,18 @@
+{
+  "schema_version": "ai_escalation_gate_state_machine.v0",
+  "task": "HUNT-11",
+  "states": [
+    "disabled_by_default",
+    "eligible_but_disabled",
+    "blocked_missing_exhaustion_report",
+    "blocked_missing_search_need",
+    "blocked_by_policy",
+    "waiting_for_operator_approval",
+    "waiting_for_provider_gate",
+    "cancelled",
+    "superseded"
+  ],
+  "initial_state": "disabled_by_default",
+  "provider_enabled": false,
+  "execution_enabled": false
+}

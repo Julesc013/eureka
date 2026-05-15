@@ -1,0 +1,16 @@
+{
+  "schema_version": "ai_escalation_demo_result.v0",
+  "task": "HUNT-11",
+  "status": "pass",
+  "demo_added": true,
+  "preflight_from_hunt_passed": true,
+  "preflight_from_need_passed": true,
+  "disabled_gate_created": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "deployment_performed": false
+}

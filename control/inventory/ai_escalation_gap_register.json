@@ -1,0 +1,19 @@
+{
+  "schema_version": "ai_escalation_gap_register.v0",
+  "task": "HUNT-11",
+  "status": "pass",
+  "gaps": [
+    {
+      "gap_id": "ai_escalation_provider_gate",
+      "status": "deferred",
+      "reason": "Provider execution remains disabled until a future reviewed gate."
+    },
+    {
+      "gap_id": "ai_escalation_execution_worker",
+      "status": "deferred",
+      "reason": "No agent research execution worker is enabled in this task."
+    }
+  ],
+  "provider_enabled": false,
+  "execution_enabled": false
+}

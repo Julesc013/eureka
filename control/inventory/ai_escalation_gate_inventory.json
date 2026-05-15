@@ -1,0 +1,17 @@
+{
+  "schema_version": "ai_escalation_gate_inventory.v0",
+  "task": "HUNT-11",
+  "runtime_package": "runtime/ai_escalation",
+  "store_id": "ai_escalation",
+  "db_path": "db/ai_escalation.sqlite",
+  "gate_records_enabled": true,
+  "preflight_enabled": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "browser_enabled": false,
+  "source_probe_enabled": false,
+  "extraction_enabled": false,
+  "output_candidate_only": true,
+  "review_required": true,
+  "deployment_performed": false
+}

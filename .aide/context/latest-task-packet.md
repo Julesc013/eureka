@@ -2,25 +2,24 @@
 
 ## PHASE
 
-HUNT-11 - Bounded AI escalation gate, disabled by default
+HUNT-12 - Search Hunt closeout and SYN/F0 handoff
 
 ## GOAL
 
-Prepare the next task packet around a disabled-by-default AI escalation gate after deterministic Search Hunt replay exists.
+Prepare the next task packet around Search Hunt closeout and handoff after the disabled AI escalation gate exists.
 
 ## WHY
 
-HUNT-10 completed deterministic local replay for the Search Hunt workflow. The next bounded task is an AI escalation gate that must remain disabled by default until an explicit reviewed gate enables providers.
+HUNT-11 completed the bounded AI escalation gate with providers disabled by default. The next bounded task is Search Hunt closeout and SYN/F0 handoff without enabling providers, source probes, extraction, or deployment.
 
 ## CONTEXT_REFS
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `control/audits/hunt-10-deterministic-replay-v0/`
-- `control/inventory/hunt_replay_result.json`
-- `control/inventory/hunt_replay_step_matrix.json`
-- `control/inventory/hunt_replay_blocked_step_matrix.json`
-- `control/inventory/hunt_10_next_task_decision.json`
+- `control/audits/hunt-11-ai-escalation-gate-v0/`
+- `control/inventory/ai_escalation_gate_result.json`
+- `control/inventory/ai_escalation_disabled_boundary_result.json`
+- `control/inventory/hunt_11_next_task_decision.json`
 - `.aide/queue/index.yaml`
 
 ## ALLOWED_PATHS
@@ -49,25 +48,25 @@ HUNT-10 completed deterministic local replay for the Search Hunt workflow. The n
 
 ## ACCEPTANCE
 
-- HUNT-11 queue item is current.
-- HUNT-10 evidence remains available and replay validation passes.
-- Provider/model calls remain disabled until a reviewed HUNT-11 gate says otherwise.
+- HUNT-12 queue item is current.
+- HUNT-11 evidence remains available and AI escalation validation passes.
+- Provider/model calls remain disabled until a later reviewed gate says otherwise.
 - No production readiness or public launch readiness claim is made.
 
 ## VALIDATION
 
-Before starting HUNT-11, use the HUNT-10 evidence lane:
+Before starting HUNT-12, use the HUNT-11 evidence lane:
 
-- `python scripts/validate_hunt_replay.py`
-- focused `tests.runtime.test_hunt_replay_*`
-- `python -m unittest tests.operations.test_hunt_replay_scripts`
+- `python scripts/validate_ai_escalation_gate.py`
+- focused `tests.runtime.test_ai_escalation_*`
+- `python -m unittest tests.operations.test_ai_escalation_scripts`
 
 ## EVIDENCE
 
-- `control/audits/hunt-10-deterministic-replay-v0/hunt_10_report.json`
-- `control/inventory/hunt_replay_result.json`
-- `control/inventory/hunt_replay_demo_result.json`
-- `control/inventory/hunt_10_next_task_decision.json`
+- `control/audits/hunt-11-ai-escalation-gate-v0/hunt_11_report.json`
+- `control/inventory/ai_escalation_gate_result.json`
+- `control/inventory/ai_escalation_demo_result.json`
+- `control/inventory/hunt_11_next_task_decision.json`
 - `.aide/queue/index.yaml`
 
 ## NON_GOALS

@@ -45,6 +45,7 @@ PLANNED_DB_FILES = (
     "db/search_hunt.sqlite",
     "db/search_need.sqlite",
     "db/agent_research.sqlite",
+    "db/ai_escalation.sqlite",
 )
 FORBIDDEN_ROOT_NAMES = {".cache", ".local", ".aide.local", "secrets"}
 FORBIDDEN_REPO_PATHS = ("runtime", "contracts", "surfaces", "site", "native", "crates", "examples", "control/prototypes")
@@ -68,6 +69,7 @@ STORE_SPECS = (
     StoreSpec("search_hunt", "db/search_hunt.sqlite", "runtime.search_hunt.store", "SearchHuntStore", "sqlite_search_hunt"),
     StoreSpec("search_need", "db/search_need.sqlite", "runtime.search_need.store", "SearchNeedStore", "sqlite_search_need"),
     StoreSpec("agent_research", "db/agent_research.sqlite", "runtime.agent_research.store", "AgentResearchStore", "sqlite_agent_research"),
+    StoreSpec("ai_escalation", "db/ai_escalation.sqlite", "runtime.ai_escalation.store", "AIEscalationStore", "sqlite_ai_escalation"),
 )
 
 

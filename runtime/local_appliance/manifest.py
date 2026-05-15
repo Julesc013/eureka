@@ -19,6 +19,7 @@ REQUIRED_STORE_KEYS = (
     "search_hunt",
     "search_need",
     "agent_research",
+    "ai_escalation",
 )
 EXPECTED_RELATIVE_PATHS = {
     "source_cache": "db/source_cache.sqlite",
@@ -29,6 +30,7 @@ EXPECTED_RELATIVE_PATHS = {
     "search_hunt": "db/search_hunt.sqlite",
     "search_need": "db/search_need.sqlite",
     "agent_research": "db/agent_research.sqlite",
+    "ai_escalation": "db/ai_escalation.sqlite",
 }
 
 

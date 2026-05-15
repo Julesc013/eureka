@@ -91,6 +91,8 @@ def _is_hunt_command_mutation_route(path: str) -> bool:
             "search-need",
             "agent-task-draft",
         }
+    if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "ai-escalation":
+        return parts[3] == "preflight"
     if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "runner":
         return parts[3] in {"plan", "run-next", "run-batch"}
     if len(parts) == 4 and parts[0] == "hunt" and parts[2] == "replay":
@@ -101,6 +103,8 @@ def _is_hunt_command_mutation_route(path: str) -> bool:
         return parts[5] in {"plan", "run-next", "run-batch"}
     if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "replay":
         return parts[5] in {"plan", "run"}
+    if len(parts) == 6 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "ai-escalation":
+        return parts[5] == "preflight"
     return False
 
 
@@ -109,10 +113,14 @@ def _is_search_need_mutation_route(path: str) -> bool:
     if len(parts) == 3 and parts[0] == "need":
         return parts[2] in {"state", "workunits", "agent-task-draft"}
     if len(parts) == 4 and parts[0] == "need":
+        if parts[2] == "ai-escalation":
+            return parts[3] == "preflight"
         return parts[2:] == ["workunits", "plan"]
     if len(parts) == 5 and parts[:3] == ["api", "v1", "need"]:
         return parts[4] in {"state", "workunits", "agent-task-draft"}
     if len(parts) == 6 and parts[:3] == ["api", "v1", "need"]:
+        if parts[4] == "ai-escalation":
+            return parts[5] == "preflight"
         return parts[4:] == ["workunits", "plan"]
     return False
 

@@ -1,0 +1,15 @@
+id: HUNT-12
+title: Search Hunt closeout and SYN/F0 handoff
+status: queued
+purpose: Close out the Search Hunt track after the disabled AI escalation gate and prepare SYN/F0 handoff decisions.
+allowed_scope_summary: Search Hunt closeout evidence, handoff docs, inventories, validators, and audit evidence only when explicitly scoped.
+gate:
+  - HUNT-11 completed
+  - provider execution remains disabled
+  - source probes remain disabled unless separately gated
+  - extraction remains disabled unless separately gated
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: HUNT-11
+alternative_next: SYN-00

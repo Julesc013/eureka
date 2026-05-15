@@ -1,0 +1,21 @@
+{
+  "schema_version": "ai_escalation_gate_policy.v0",
+  "gate_records_enabled": true,
+  "eligibility_preflight_enabled": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "provider_credentials_allowed": false,
+  "model_provider_calls_enabled": false,
+  "browser_calls_enabled": false,
+  "external_network_enabled": false,
+  "source_probe_enabled": false,
+  "extraction_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "output_candidate_only": true,
+  "review_required": true,
+  "operator_approval_required_before_future_execution": true,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

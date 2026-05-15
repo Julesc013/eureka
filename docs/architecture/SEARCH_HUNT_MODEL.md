@@ -35,3 +35,6 @@ Search Hunt Sessions may now produce disabled agent research task drafts through
 Search Hunt Sessions can now be converted into deterministic local replay fixtures and replay results. Replay covers the local workflow state from query and commands through exhaustion, SearchNeeds, WorkUnits, one safe deterministic worker run, disabled agent task drafting, and final summaries.
 
 Replay is audit machinery only. It does not run source probes, extraction, AI/model providers, browser research, artifact acquisition, artifact launch, deployment, or master-index mutation, and it does not prove truth or broad absence.
+## AI Escalation Gate
+
+HUNT-11 adds a disabled AI escalation gate to the Search Hunt model. The gate can evaluate local readiness from a hunt, exhaustion report, SearchNeed, and disabled agent research task, but provider execution remains disabled. Gate output is candidate-only and review-required.

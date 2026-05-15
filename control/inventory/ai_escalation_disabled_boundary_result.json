@@ -1,0 +1,17 @@
+{
+  "schema_version": "ai_escalation_disabled_boundary_result.v0",
+  "task": "HUNT-11",
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "browser_enabled": false,
+  "source_probe_enabled": false,
+  "extraction_enabled": false,
+  "execute_route_exists": false,
+  "execute_attempt_rejected": true,
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "index_mutation_performed": false,
+  "review_mutation_performed": false
+}

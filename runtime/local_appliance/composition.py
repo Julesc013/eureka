@@ -4,8 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from runtime.evidence_ledger.store import EvidenceLedgerStore
 from runtime.agent_research.store import AgentResearchStore
+from runtime.ai_escalation.store import AIEscalationStore
+from runtime.evidence_ledger.store import EvidenceLedgerStore
 from runtime.public_index.store import PublicIndexStore
 from runtime.review_queue.store import ReviewQueueStore
 from runtime.search_hunt.store import SearchHuntStore
@@ -32,6 +33,7 @@ STORE_CLASSES = {
     "search_hunt": SearchHuntStore,
     "search_need": SearchNeedStore,
     "agent_research": AgentResearchStore,
+    "ai_escalation": AIEscalationStore,
 }
 STORE_IDS = (
     "source_cache",
@@ -42,6 +44,7 @@ STORE_IDS = (
     "search_hunt",
     "search_need",
     "agent_research",
+    "ai_escalation",
 )
 
 
@@ -59,6 +62,7 @@ class LocalApplianceRuntime:
     search_hunt: Any
     search_need: Any
     agent_research: Any
+    ai_escalation: Any
     read_only: bool = False
     _closed: bool = False
 
@@ -79,6 +83,7 @@ class LocalApplianceRuntime:
             "search_hunt": self.search_hunt.check_integrity(),
             "search_need": self.search_need.check_integrity(),
             "agent_research": self.agent_research.check_integrity(),
+            "ai_escalation": self.ai_escalation.check_integrity(),
         }
         return {
             "schema_version": "local_runtime_integrity.v0",
@@ -91,6 +96,7 @@ class LocalApplianceRuntime:
             return
         for store in (
             self.agent_research,
+            self.ai_escalation,
             self.search_need,
             self.search_hunt,
             self.workunit_queue,
@@ -161,6 +167,7 @@ def open_local_appliance(instance_path: str | Path, read_only: bool = False) -> 
             search_hunt=opened["search_hunt"],
             search_need=opened["search_need"],
             agent_research=opened["agent_research"],
+            ai_escalation=opened["ai_escalation"],
             read_only=read_only,
         )
     except Exception:

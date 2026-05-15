@@ -477,6 +477,8 @@ def render_search_hunt_detail_page(view: SearchHuntDetailPageView) -> str:
             _agent_research_boundary_section(view.agent_research_boundary),
             _agent_research_tasks_section(view.agent_research_tasks),
             _hunt_agent_research_form(view) if view.agent_research_task_draft_enabled else "",
+            _ai_escalation_section(view.ai_escalation),
+            _hunt_ai_escalation_form(view) if view.ai_escalation_preflight_enabled else "",
             _search_need_creation_form(view) if view.search_need_creation_enabled else "",
             _search_hunt_command_controls(view) if view.command_controls_enabled else "",
             _search_hunt_steering_controls(view) if view.steering_controls_enabled else "",
@@ -592,6 +594,8 @@ def render_search_need_detail_page(view: SearchNeedDetailPageView) -> str:
             _agent_research_boundary_section(view.agent_research_boundary),
             _agent_research_tasks_section(view.agent_research_tasks),
             _need_agent_research_form(view) if view.agent_research_task_draft_enabled else "",
+            _ai_escalation_section(view.ai_escalation),
+            _need_ai_escalation_form(view) if view.ai_escalation_preflight_enabled else "",
             _search_need_workunit_form(view) if view.workunit_creation_enabled else "",
             _search_need_state_form(view) if view.state_transition_enabled else "",
             _search_need_transitions(view.transitions),
@@ -996,6 +1000,86 @@ def _need_agent_research_form(view: SearchNeedDetailPageView) -> str:
             '<input id="need-agent-token" name="operator_token" type="password" autocomplete="off"> ',
             '<input type="hidden" name="operator_label" value="local_operator">',
             '<button type="submit">Draft task</button>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _ai_escalation_section(view: Any) -> str:
+    gate_rows = tuple(
+        {
+            "gate_id": item.gate_id,
+            "state": item.state,
+            "linked_hunt": item.search_hunt_id,
+            "linked_need": item.search_need_id,
+            "provider_enabled": item.provider_enabled,
+            "execution_enabled": item.execution_enabled,
+            "candidate_only": item.candidate_only_output,
+            "review_required": item.review_required,
+        }
+        for item in view.gates
+    )
+    status_rows = (
+        {"field": "state", "value": view.state},
+        {"field": "eligible", "value": view.eligible},
+        {"field": "provider_enabled", "value": view.provider_enabled},
+        {"field": "execution_enabled", "value": view.execution_enabled},
+        {"field": "candidate_only_output", "value": view.candidate_only_output},
+        {"field": "review_required", "value": view.review_required},
+        {"field": "latest_preflight_id", "value": view.latest_preflight_id},
+        {"field": "gate_count", "value": view.gate_count},
+    )
+    requirement_rows = tuple({"input_requirement": item, "status": "missing"} for item in view.missing_requirements)
+    output_rows = tuple({"future_output_class": item, "candidate_only": True} for item in view.output_classes)
+    forbidden_rows = tuple({"forbidden_action": item, "allowed_now": False} for item in view.forbidden_actions)
+    return "\n".join(
+        [
+            '<section aria-labelledby="ai-escalation-heading"><h2 id="ai-escalation-heading">AI escalation gate</h2>',
+            render_notice("scope", "AI escalation is disabled by default; provider use and runtime action are disabled."),
+            render_notice("scope", "Future output would be candidate-only and requires review before local state can rely on it."),
+            render_table(status_rows, headers=("field", "value")),
+            "<h3>Input requirements</h3>",
+            render_table(requirement_rows, headers=("input_requirement", "status")) if requirement_rows else "<p>Required local context is present for a disabled preflight.</p>",
+            "<h3>Future output classes</h3>",
+            render_table(output_rows, headers=("future_output_class", "candidate_only")) if output_rows else "<p>No future output classes are listed.</p>",
+            "<h3>Forbidden actions</h3>",
+            render_table(forbidden_rows, headers=("forbidden_action", "allowed_now")) if forbidden_rows else "<p>No forbidden actions are listed.</p>",
+            "<h3>Gate records</h3>",
+            render_table(gate_rows, headers=("gate_id", "state", "linked_hunt", "linked_need", "provider_enabled", "execution_enabled", "candidate_only", "review_required")) if gate_rows else "<p>No AI escalation gate records are stored.</p>",
+            "</section>",
+        ]
+    )
+
+
+def _hunt_ai_escalation_form(view: SearchHuntDetailPageView) -> str:
+    action = "/hunt/" + quote(view.hunt_id) + "/ai-escalation/preflight"
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-ai-escalation-form-heading"><h2 id="hunt-ai-escalation-form-heading">AI escalation preflight</h2>',
+            render_notice("scope", "Preflight stores a local gate-readiness record only; provider use remains disabled."),
+            f'<form action="{escape_html(action)}" method="post">',
+            '<label for="hunt-ai-token">Operator token</label> ',
+            '<input id="hunt-ai-token" name="operator_token" type="password" autocomplete="off"> ',
+            '<input type="hidden" name="operator_label" value="local_operator">',
+            '<button type="submit">Run preflight</button>',
+            "</form>",
+            "</section>",
+        ]
+    )
+
+
+def _need_ai_escalation_form(view: SearchNeedDetailPageView) -> str:
+    action = "/need/" + quote(view.need_id) + "/ai-escalation/preflight"
+    return "\n".join(
+        [
+            '<section aria-labelledby="need-ai-escalation-form-heading"><h2 id="need-ai-escalation-form-heading">AI escalation preflight</h2>',
+            render_notice("scope", "Preflight stores a local gate-readiness record only; provider use remains disabled."),
+            f'<form action="{escape_html(action)}" method="post">',
+            '<label for="need-ai-token">Operator token</label> ',
+            '<input id="need-ai-token" name="operator_token" type="password" autocomplete="off"> ',
+            '<input type="hidden" name="operator_label" value="local_operator">',
+            '<button type="submit">Run preflight</button>',
             "</form>",
             "</section>",
         ]

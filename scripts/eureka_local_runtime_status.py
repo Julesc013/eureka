@@ -61,6 +61,8 @@ def fail_result(code: str, message: str, *, instance: str | None = None) -> dict
         "message": message,
         "server_enabled": False,
         "lan_enabled": False,
+        "ai_escalation_provider_enabled": False,
+        "ai_escalation_execution_enabled": False,
         "deployment_performed": False,
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,

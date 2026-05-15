@@ -11,3 +11,6 @@ Replay modes:
 Replay is not truth, evidence acceptance, source approval, rights clearance, malware safety, or global absence proof. Source probes, extraction, AI/model providers, browser research, artifact acquisition, artifact launch, master-index mutation, site output writes, and deployment remain disabled.
 
 HUNT-11 may add a disabled-by-default AI escalation gate. SYN and F0 remain separate follow-up tracks.
+## AI Gate Boundary
+
+Replay remains deterministic and local after the AI escalation gate is added. Replay may inspect disabled gate records, but it does not call providers or execute agent research.

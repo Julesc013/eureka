@@ -1,0 +1,18 @@
+{
+  "schema_version": "ai_escalation_preflight.v0",
+  "preflight_id": "aip_sample",
+  "search_hunt_id": "shs_sample",
+  "search_need_id": "sn_sample",
+  "state": "eligible_but_disabled",
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "safety_checks": {
+    "provider_enabled": false,
+    "execution_enabled": false,
+    "preflight_only": true
+  },
+  "model_provider_used": false,
+  "external_network_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false
+}

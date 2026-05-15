@@ -388,6 +388,34 @@ class AgentResearchDisabledBoundaryView:
 
 
 @dataclass(frozen=True)
+class AIEscalationGateView:
+    gate_id: str
+    state: str
+    search_hunt_id: str
+    search_need_id: str
+    provider_enabled: bool
+    execution_enabled: bool
+    candidate_only_output: bool
+    review_required: bool
+
+
+@dataclass(frozen=True)
+class AIEscalationView:
+    state: str
+    eligible: bool
+    missing_requirements: tuple[str, ...]
+    provider_enabled: bool
+    execution_enabled: bool
+    candidate_only_output: bool
+    review_required: bool
+    latest_preflight_id: str
+    gate_count: int
+    gates: tuple[AIEscalationGateView, ...]
+    output_classes: tuple[str, ...]
+    forbidden_actions: tuple[str, ...]
+
+
+@dataclass(frozen=True)
 class HuntReplayStepView:
     kind: str
     status: str
@@ -448,7 +476,9 @@ class SearchNeedDetailPageView:
     workunits: tuple[SearchNeedWorkUnitView, ...]
     agent_research_tasks: tuple[AgentResearchTaskCardView, ...]
     agent_research_boundary: AgentResearchDisabledBoundaryView
+    ai_escalation: AIEscalationView
     agent_research_task_draft_enabled: bool
+    ai_escalation_preflight_enabled: bool
     state_transition_enabled: bool
     workunit_creation_enabled: bool
     related_hunt_href: str
@@ -495,6 +525,7 @@ class SearchHuntDetailPageView:
     workunits: tuple[SearchNeedWorkUnitView, ...]
     agent_research_tasks: tuple[AgentResearchTaskCardView, ...]
     agent_research_boundary: AgentResearchDisabledBoundaryView
+    ai_escalation: AIEscalationView
     replay_plan_steps: tuple[HuntReplayStepView, ...]
     replay_blocked_steps: tuple[HuntReplayStepView, ...]
     replay_results: tuple[HuntReplayResultView, ...]
@@ -506,6 +537,7 @@ class SearchHuntDetailPageView:
     runner_controls_enabled: bool
     search_need_creation_enabled: bool
     agent_research_task_draft_enabled: bool
+    ai_escalation_preflight_enabled: bool
     unavailable_actions: tuple[SearchHuntUnavailableActionView, ...]
     related_search_href: str
     related_absence_href: str
@@ -750,6 +782,7 @@ def build_search_hunt_detail_page_view(
         workunits=linked_workunits,
         agent_research_tasks=tuple(_agent_task_card(_mapping(item)) for item in _sequence(status_payload.get("agent_research_tasks"))),
         agent_research_boundary=build_agent_research_disabled_boundary_view(),
+        ai_escalation=_ai_escalation_view(_mapping(status_payload.get("ai_escalation"))),
         replay_plan_steps=tuple(_replay_step_view(_mapping(item)) for item in _sequence(_mapping(_mapping(status_payload.get("hunt_replay")).get("fixture")).get("expected_steps"))),
         replay_blocked_steps=tuple(_replay_step_view(_mapping(item)) for item in _sequence(_mapping(_mapping(status_payload.get("hunt_replay")).get("fixture")).get("blocked_steps"))),
         replay_results=tuple(_replay_result_view(_mapping(item)) for item in _sequence(_mapping(status_payload.get("hunt_replay")).get("results"))),
@@ -761,6 +794,7 @@ def build_search_hunt_detail_page_view(
         runner_controls_enabled=bool(status_payload.get("runner_controls_enabled", False)),
         search_need_creation_enabled=bool(status_payload.get("search_need_creation_enabled", False)),
         agent_research_task_draft_enabled=bool(status_payload.get("agent_research_task_draft_enabled", False)),
+        ai_escalation_preflight_enabled=bool(status_payload.get("ai_escalation_preflight_enabled", False)),
         unavailable_actions=build_search_hunt_unavailable_actions(),
         related_search_href="/search?q=" + str(query),
         related_absence_href="/absence?q=" + str(query),
@@ -819,7 +853,9 @@ def build_search_need_detail_page_view(
         workunits=tuple(_workunit_view(_mapping(item)) for item in _sequence(status_payload.get("workunits"))),
         agent_research_tasks=tuple(_agent_task_card(_mapping(item)) for item in _sequence(status_payload.get("agent_research_tasks"))),
         agent_research_boundary=build_agent_research_disabled_boundary_view(),
+        ai_escalation=_ai_escalation_view(_mapping(status_payload.get("ai_escalation"))),
         agent_research_task_draft_enabled=bool(status_payload.get("agent_research_task_draft_enabled", False)),
+        ai_escalation_preflight_enabled=bool(status_payload.get("ai_escalation_preflight_enabled", False)),
         state_transition_enabled=bool(status_payload.get("state_transition_enabled", False)),
         workunit_creation_enabled=bool(status_payload.get("workunit_creation_enabled", False)),
         related_hunt_href="/hunt/" + hunt_id,
@@ -1016,6 +1052,76 @@ def _agent_task_card(value: Mapping[str, Any]) -> AgentResearchTaskCardView:
         report_candidate_only=bool(schema.get("candidate_only", True)),
         review_required=bool(schema.get("review_required", True)),
     )
+
+
+def _ai_escalation_view(value: Mapping[str, Any]) -> AIEscalationView:
+    eligibility = _mapping(value.get("eligibility"))
+    input_packet = _mapping(eligibility.get("input_packet"))
+    latest = _mapping(value.get("latest_preflight"))
+    gates = tuple(_ai_gate_view(_mapping(item)) for item in _sequence(value.get("gates")))
+    output_schema = _mapping(input_packet.get("desired_output_schema"))
+    return AIEscalationView(
+        state=str(eligibility.get("state", "disabled_by_default")),
+        eligible=bool(eligibility.get("eligible", False)),
+        missing_requirements=_tuple(eligibility.get("missing_requirements")),
+        provider_enabled=False,
+        execution_enabled=False,
+        candidate_only_output=True,
+        review_required=True,
+        latest_preflight_id=str(latest.get("preflight_id", "")),
+        gate_count=int(value.get("gate_count", len(gates)) or 0),
+        gates=gates,
+        output_classes=tuple(_display_ai_output_class(item) for item in _tuple(output_schema.get("output_classes"))),
+        forbidden_actions=tuple(_display_ai_action(item) for item in _tuple(input_packet.get("forbidden_actions"))),
+    )
+
+
+def _ai_gate_view(value: Mapping[str, Any]) -> AIEscalationGateView:
+    return AIEscalationGateView(
+        gate_id=str(value.get("gate_id", "")),
+        state=str(value.get("state", "")),
+        search_hunt_id=str(value.get("search_hunt_id", "")),
+        search_need_id=str(value.get("search_need_id", "")),
+        provider_enabled=False,
+        execution_enabled=False,
+        candidate_only_output=bool(value.get("candidate_only_output", True)),
+        review_required=bool(value.get("review_required", True)),
+    )
+
+
+def _display_ai_output_class(value: str) -> str:
+    mapping = {
+        "alias_hypotheses": "alias hypotheses",
+        "source_lead_candidates": "source lead candidates",
+        "dead_url_trace_plan": "dead URL trace plan",
+        "wayback_trace_plan": "archived URL trace plan",
+        "compatibility_clues": "compatibility clues",
+        "provenance_questions": "provenance questions",
+        "extraction_targets": "extraction targets",
+        "candidate_workunits": "candidate WorkUnits",
+        "absence_explanation_draft": "absence explanation draft",
+    }
+    return mapping.get(str(value), str(value).replace("_", " "))
+
+
+def _display_ai_action(value: str) -> str:
+    mapping = {
+        "accept_truth": "truth acceptance",
+        "mutate_public_index": "public index change",
+        "mutate_master_index": "master index change",
+        "clear_rights": "rights clearance",
+        "certify_malware_safety": "safety certification",
+        "download_artifact": "artifact acquisition",
+        "install_or_execute_artifact": "artifact runtime step",
+        "bypass_authentication": "authentication bypass",
+        "bypass_captcha": "captcha bypass",
+        "scrape_restricted_platform": "restricted platform scraping",
+        "call_model_provider_current_task": "provider use in this task",
+        "run_browser_current_task": "browser use in this task",
+        "run_source_probe_current_task": "source probe use in this task",
+        "run_extraction_current_task": "extraction use in this task",
+    }
+    return mapping.get(str(value), str(value).replace("_", " "))
 
 
 def _replay_step_view(value: Mapping[str, Any]) -> HuntReplayStepView:

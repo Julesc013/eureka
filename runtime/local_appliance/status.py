@@ -24,6 +24,7 @@ class LocalRuntimeStatus:
     search_hunt: Mapping[str, Any]
     search_need: Mapping[str, Any]
     agent_research: Mapping[str, Any]
+    ai_escalation: Mapping[str, Any]
     warnings: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
@@ -46,6 +47,7 @@ class LocalRuntimeStatus:
             "search_hunt": dict(self.search_hunt),
             "search_need": dict(self.search_need),
             "agent_research": dict(self.agent_research),
+            "ai_escalation": dict(self.ai_escalation),
             "warnings": list(self.warnings),
         }
 
@@ -84,6 +86,7 @@ def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
         search_hunt=_search_hunt_status(runtime),
         search_need=_search_need_status(runtime),
         agent_research=_agent_research_status(runtime),
+        ai_escalation=_ai_escalation_status(runtime),
         warnings=tuple(runtime.config.warnings) + tuple(runtime.migration_state.warnings),
     )
 
@@ -148,6 +151,27 @@ def _agent_research_status(runtime: Any) -> Mapping[str, Any]:
             "browser_enabled": False,
             "source_probe_enabled": False,
             "candidate_only_output": True,
+        }
+    )
+    return payload
+
+
+def _ai_escalation_status(runtime: Any) -> Mapping[str, Any]:
+    summary = runtime.ai_escalation.summarize()
+    payload = dict(summary)
+    payload.update(
+        {
+            "store_id": "ai_escalation",
+            "relative_path": runtime.store_manifest.stores["ai_escalation"].relative_path,
+            "gate_records_enabled": True,
+            "preflight_enabled": True,
+            "provider_enabled": False,
+            "execution_enabled": False,
+            "browser_enabled": False,
+            "source_probe_enabled": False,
+            "extraction_enabled": False,
+            "candidate_only_output": True,
+            "review_required": True,
         }
     )
     return payload

@@ -1,0 +1,25 @@
+{
+  "schema_version": "ai_escalation_input_matrix.v0",
+  "task": "HUNT-11",
+  "required_inputs": [
+    "search_hunt_id",
+    "search_need_id",
+    "exhaustion_report_id",
+    "agent_research_task_id",
+    "query",
+    "normalized_query",
+    "checked_layers",
+    "deferred_layers",
+    "blocked_by_policy",
+    "steering_preferences",
+    "candidate_context",
+    "absence_context",
+    "forbidden_actions",
+    "desired_output_schema",
+    "provider_enabled:false",
+    "execution_enabled:false"
+  ],
+  "raw_query_only_forbidden": true,
+  "provider_enabled": false,
+  "execution_enabled": false
+}

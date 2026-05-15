@@ -1,0 +1,22 @@
+{
+  "schema_version": "ai_escalation_side_effect_policy.v0",
+  "gate_record_creation_allowed": true,
+  "preflight_record_creation_allowed": true,
+  "provider_enabled": false,
+  "execution_enabled": false,
+  "provider_credentials_allowed": false,
+  "model_provider_calls_enabled": false,
+  "browser_calls_enabled": false,
+  "external_network_enabled": false,
+  "source_probe_enabled": false,
+  "extraction_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "review_decision_mutation_enabled": false,
+  "site_dist_writes_enabled": false,
+  "deployment_enabled": false,
+  "output_candidate_only": true,
+  "review_required": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

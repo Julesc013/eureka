@@ -32,6 +32,7 @@ def validate_runtime_composition(runtime: Any) -> Any:
         "search_hunt",
         "search_need",
         "agent_research",
+        "ai_escalation",
     )
     for name in required:
         if getattr(runtime, name, None) is None:

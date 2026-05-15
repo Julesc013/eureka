@@ -16,3 +16,6 @@ The task model exists so a later reviewed gate can reason over a stable input pa
 ## Replay Relationship
 
 HUNT-10 may draft an agent research task as part of replay, but the task remains provider-disabled and non-executable. Replay records that the disabled draft can be reproduced; it does not call a provider or create a candidate report.
+## AI Escalation Gate Relationship
+
+Agent research task records are now one required input to the disabled AI escalation gate. HUNT-11 does not execute those tasks; it only validates that the future escalation packet includes local hunt, need, exhaustion, and candidate context.
