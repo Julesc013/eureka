@@ -19,8 +19,8 @@
   "source": "",
   "state": {
     "ahead_behind": {
-      "ahead": 6,
-      "behind": 0,
+      "ahead": 9,
+      "behind": 6,
       "error": "",
       "known": true
     },
@@ -29,11 +29,16 @@
     "branch_roles": {
       "dev": "integration",
       "main": "canonical",
+      "origin/HUNT-00-search-hunt-track-v0": "unknown",
+      "origin/HUNT-01-search-hunt-session-runtime-v0": "unknown",
+      "origin/HUNT-02-search-hunt-ui-state-v0": "unknown",
+      "origin/HUNT-03-search-hunt-commands-v0": "unknown",
+      "origin/HUNT-04-hunt-exhaustion-report-v0": "unknown",
       "origin/dev": "integration",
       "origin/main": "canonical"
     },
     "current_branch": "dev",
-    "current_commit": "4c954e516a20fd8be59e925d175759daa80d2a93",
+    "current_commit": "859923086a7a8471c2d837e4bbae71aeedb64a46",
     "current_role": "integration",
     "detached_head": false,
     "local_branches": [
@@ -57,6 +62,11 @@
       "release"
     ],
     "remote_branches": [
+      "origin/HUNT-00-search-hunt-track-v0",
+      "origin/HUNT-01-search-hunt-session-runtime-v0",
+      "origin/HUNT-02-search-hunt-ui-state-v0",
+      "origin/HUNT-03-search-hunt-commands-v0",
+      "origin/HUNT-04-hunt-exhaustion-report-v0",
       "origin/dev",
       "origin/main"
     ],
@@ -66,8 +76,8 @@
     "schema_version": "aide.git-helper-state.v0",
     "unpushed_protected_branches": [
       {
-        "ahead": 6,
-        "behind": 0,
+        "ahead": 9,
+        "behind": 6,
         "branch": "dev",
         "error": "",
         "known": true,

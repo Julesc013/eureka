@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-FINAL-STATE-PROMOTION-PLAN-01
+Q55 - Eureka Upgrade from Stable AIDE Pack
 
 ## GOAL
 
-EUREKA-FINAL-STATE-PROMOTION-PLAN-01
+Q55 Eureka Upgrade from Stable AIDE Pack
 
 ## WHY
 
@@ -37,7 +37,7 @@ Continue AIDE token survival for the Eureka target repo by using repo-local cont
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
+- `.aide/queue/q55-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -117,8 +117,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4017
-- approx_tokens: 1005
+- chars: 4004
+- approx_tokens: 1001
 - budget_status: PASS
 - warnings:
   - none
