@@ -18,4 +18,4 @@
 | `reason` | `"Current dev contains origin/main and promotion is fast-forwardable; no force push, rebase, squash, or history rewrite is allowed."` |
 | `origin_main_before` | `"73d8e9eb590f43a5554abe35f99345c57d4ec06c"` |
 | `origin_dev_before` | `"be9a23c6a49415fbdceafd03a68555026a77b5bf"` |
-| `local_head_before` | `"8fd97fbfe275339070f4dbfc399d45d34c9ad5ec"` |
+| `local_head_before` | `"c4583b31507aa81fad591ada5d51eb0a9aa72058"` |
