@@ -6,6 +6,8 @@ Review HUNT-TO-MAIN-PROMOTION-REVIEW from promotion evidence.
 
 ## Decision Requested
 
+`PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED`
+
 Confirm whether fast-forward-only promotion evidence is acceptable.
 
 ## Task Packet Reference
@@ -19,6 +21,8 @@ Confirm whether fast-forward-only promotion evidence is acceptable.
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
+
+- `.aide/verification/review-decision-policy.yaml`
 
 ## Evidence Packet References
 
