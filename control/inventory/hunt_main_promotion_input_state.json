@@ -1,0 +1,16 @@
+{
+  "aide_eval_green_found": true,
+  "aide_ledger_size_result_found": true,
+  "branch_before": "dev",
+  "dev_main_divergence_before": "0\t19",
+  "head_before": "c4defda9de9666fa2c40e70b05c349e02a94a1bb",
+  "hunt_perfect_closeout_found": true,
+  "hunt_warning_zero_result_found": true,
+  "merge_state_active": false,
+  "origin_dev_before": "be9a23c6a49415fbdceafd03a68555026a77b5bf",
+  "origin_main_before": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "repo_health_found": true,
+  "schema_version": "hunt_main_promotion_input_state.v0",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "working_tree_clean_before": true
+}

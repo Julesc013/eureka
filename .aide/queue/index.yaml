@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW
+current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local Appliance
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -1234,3 +1234,12 @@ entries:
   deferred_reason: Local hosted workbench required before extraction track continues.
   deferred_until: LOCAL-14
   recommended_after: H14-BUNDLE-04
+  - id: HUNT-PERFECT-CLOSEOUT-CONTINUE
+    title: Continue HUNT perfect closeout if promotion blocks
+    status: fallback
+    purpose: promotion/next-task queue state
+    allowed_scope_summary: queue metadata only
+    gate: no source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim
+    task: .aide/queue/HUNT-PERFECT-CLOSEOUT-CONTINUE/task.yaml
+    recommended_after: HUNT-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW

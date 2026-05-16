@@ -1,0 +1,7 @@
+{
+  "schema_version": "hunt_main_promotion_warning_disposition.v0",
+  "status": "pass",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "warnings": [],
+  "warnings_remaining": 0
+}

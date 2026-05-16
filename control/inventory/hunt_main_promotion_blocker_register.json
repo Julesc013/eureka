@@ -1,0 +1,7 @@
+{
+  "blockers": [],
+  "hard_blockers_remaining": 0,
+  "schema_version": "hunt_main_promotion_blocker_register.v0",
+  "status": "pass",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW"
+}

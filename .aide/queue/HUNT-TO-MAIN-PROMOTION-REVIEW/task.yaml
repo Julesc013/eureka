@@ -1,6 +1,6 @@
-id: F0-00
-title: Refresh F0 after Local Appliance and HUNT
-status: deferred
+id: HUNT-TO-MAIN-PROMOTION-REVIEW
+title: Promote perfected Search Hunt baseline to main under updated AIDE
+status: completed
 scope: control-plane planning metadata only
 forbidden:
   - source probes

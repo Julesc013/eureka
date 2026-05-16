@@ -1,6 +1,6 @@
-id: F0-00
-title: Refresh F0 after Local Appliance and HUNT
-status: deferred
+id: HUNT-PERFECT-CLOSEOUT-CONTINUE
+title: Continue HUNT perfect closeout if promotion blocks
+status: fallback
 scope: control-plane planning metadata only
 forbidden:
   - source probes

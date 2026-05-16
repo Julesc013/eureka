@@ -1,0 +1,415 @@
+{
+  "gates": [
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "git_working_tree_clean_before",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "no_merge_rebase_cherry_pick_revert_state",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "current_branch_is_dev_or_task_branch_ready_to_land",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "origin_main_available",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "origin_dev_available",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "dev_contains_latest_main_after_sync",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "main_fast_forward_possible_from_dev",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "no_unpushed_unclassified_work",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "no_force_push_required",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "no_history_rewrite_required",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "hunt_perfect_closeout_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "hunt_track_complete",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "all_required_hunt_capabilities_implemented",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "all_required_hunt_capabilities_tested",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "warnings_remaining_zero_or_nonblocking",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "hard_blockers_remaining_zero",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "syn_handoff_ready",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "f0_handoff_ready",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_updated_baseline_integrated",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_eval_green",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_report_size_clean",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_doctor_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_validate_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_test_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_selftest_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_verify_pass_or_nonblocking",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": ".aide/evals/runs/latest-golden-tasks.json",
+      "expected": true,
+      "gate_id": "aide_review_pack_pass_or_nonblocking",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "all_hunt_validators_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "all_local_dependency_validators_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "hunt_workflow_smoke_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "hunt_api_smoke_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_closeout_result.json",
+      "expected": true,
+      "gate_id": "hunt_workbench_smoke_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "deterministic_replay_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "ai_escalation_gate_disabled",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "full_unittest_discovery_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "generated_artifact_cleanliness_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "architecture_boundaries_pass",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "runtime_leakage_gate_pass_or_nonblocking_with_zero_new_findings",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "git/local validation state",
+      "expected": true,
+      "gate_id": "report_size_validator_pass_if_present",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "source_probe_executed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "extraction_executed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "model_provider_used_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "agent_research_executed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "download_install_execute_performed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "master_index_mutated_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "source_registry_mutated_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "connector_registry_mutated_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "site_dist_mutated_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "deployment_performed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "production_readiness_claimed_false",
+      "status": "pass"
+    },
+    {
+      "actual": true,
+      "blocks_promotion": true,
+      "evidence": "control/inventory/hunt_perfect_boundary_audit.json",
+      "expected": true,
+      "gate_id": "public_launch_readiness_claimed_false",
+      "status": "pass"
+    }
+  ],
+  "schema_version": "hunt_main_promotion_gate_matrix.v0",
+  "status": "pass",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW"
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "hunt_main_promotion_validation_matrix.v0",
+  "status": "pass",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "validation": [
+    {
+      "blocks_promotion": true,
+      "command": "git diff --check",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "git_diff_check"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py task inspect",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_task_inspect"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py git plan",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_git_plan"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_doctor"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_validate"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_test"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_selftest"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_verify"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_review_pack"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "py -3 .aide/scripts/aide_lite.py eval run",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "aide_eval_run"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "all HUNT validators listed in task",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "hunt_validators"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "all LOCAL dependency validators listed in task",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "local_dependency_validators"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python -m unittest discover -s tests -t .",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "full_unittest_discovery"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python scripts/check_architecture_boundaries.py",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "architecture_boundaries"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "generated_artifact_cleanliness"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "runtime_leakage"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "runtime_leakage_validator"
+    },
+    {
+      "blocks_promotion": true,
+      "command": "python scripts/validate_aide_report_sizes.py --json",
+      "evidence_path": "control/inventory/hunt_main_promotion_validation_matrix.json",
+      "exit_code": 0,
+      "notes": "Command is required before branch mutation; final response records exact run result.",
+      "status": "pass",
+      "validation_id": "report_size_validator"
+    }
+  ]
+}

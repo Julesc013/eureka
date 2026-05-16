@@ -1,18 +1,18 @@
 # AIDE Latest Task Packet
 
-phase: HUNT-PERFECT-CLOSEOUT-01
+phase: HUNT-TO-MAIN-PROMOTION-REVIEW
 
 ## PHASE
 
-HUNT-PERFECT-CLOSEOUT-01
+HUNT-TO-MAIN-PROMOTION-REVIEW
 
 ## GOAL
 
-Final zero-blocker Search Hunt closeout under the updated AIDE baseline.
+Fast-forward the perfected Search Hunt baseline from dev to main only after promotion gates pass.
 
 ## WHY
 
-Search Hunt closeout needs a compact AIDE handoff packet that points to repo-local evidence without redefining Eureka product behavior.
+Search Hunt is ready to become canonical repo truth while preserving no-production, no-provider, and no-live-source boundaries.
 
 ## CONTEXT_REFS
 
@@ -22,11 +22,8 @@ Search Hunt closeout needs a compact AIDE handoff packet that points to repo-loc
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
-- `.aide/queue/index.yaml`
-- `.aide/reports/eureka-repo-health.json`
-- `control/inventory/hunt_perfect_closeout_result.json`
-- `control/inventory/hunt_perfect_validation_matrix.json`
-- `control/audits/hunt-perfect-closeout-01-v0/`
+- `control/inventory/hunt_main_promotion_result.json`
+- `control/audits/hunt-to-main-promotion-review-v0/`
 
 ## ALLOWED_PATHS
 
@@ -58,8 +55,8 @@ Search Hunt closeout needs a compact AIDE handoff packet that points to repo-loc
 
 ## IMPLEMENTATION
 
-- Read final HUNT/AIDE/LOCAL evidence from committed control-plane records.
-- Write compact closeout, warning, blocker, handoff, and queue evidence under `.aide/queue/` and `control/`.
+- Record promotion gates and branch plan in control-plane evidence.
+- Use fast-forward-only branch mutation after validation.
 - Do not change Eureka product behavior.
 
 ## VALIDATION
@@ -71,35 +68,28 @@ Search Hunt closeout needs a compact AIDE handoff packet that points to repo-loc
 - `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `python scripts/check_architecture_boundaries.py`
-- HUNT validators
-- LOCAL validators
-- integrated HUNT smoke
-- full unittest discovery
-- generated artifact cleanliness
-- runtime leakage
+- HUNT validators, LOCAL validators, full unittest discovery, generated cleanliness, runtime leakage, and report-size validator.
 
 ## EVIDENCE
 
-- `.aide/queue/HUNT-PERFECT-CLOSEOUT-01/evidence/`
-- `control/inventory/hunt_perfect_closeout_result.json`
-- `control/inventory/hunt_perfect_validation_matrix.json`
-- `control/audits/hunt-perfect-closeout-01-v0/`
+- `.aide/queue/HUNT-TO-MAIN-PROMOTION-REVIEW/`
+- `control/inventory/hunt_main_promotion_result.json`
+- `control/audits/hunt-to-main-promotion-review-v0/`
 
 ## NON_GOALS
 
-No SYN/F0 implementation, source probes, extraction, model/provider calls, downloads/install/execution, deployment, main promotion, production readiness claim, public launch readiness claim, or Eureka product behavior change.
+No SYN/F0 implementation, source probes, extraction, model/provider calls, downloads/install/execution, deployment, force push, history rewrite, production readiness claim, public launch readiness claim, or Eureka product behavior change.
 
 ## ACCEPTANCE
 
-- HUNT closeout status is pass with zero warnings and zero hard blockers.
-- AIDE eval remains green.
-- Full unittest discovery passes.
+- Promotion gates pass.
+- dev and main are aligned by fast-forward only.
 - No forbidden HUNT boundary is crossed.
 
 ## OUTPUT_SCHEMA
 
-- `control/inventory/hunt_perfect_closeout_result.json` uses `hunt_perfect_closeout_result.v0`.
-- `control/inventory/hunt_perfect_next_task_decision.json` uses `hunt_perfect_next_task_decision.v0`.
+- `control/inventory/hunt_main_promotion_result.json` uses `hunt_main_promotion_result.v0`.
+- `control/inventory/hunt_main_next_task_decision.json` uses `hunt_main_next_task_decision.v0`.
 
 ## TOKEN_ESTIMATE
 

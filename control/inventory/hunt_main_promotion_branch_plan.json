@@ -1,0 +1,19 @@
+{
+  "branch_mutation_planned": true,
+  "current_branch": "dev",
+  "force_push_allowed": false,
+  "history_rewrite_allowed": false,
+  "local_head_before": "c4defda9de9666fa2c40e70b05c349e02a94a1bb",
+  "origin_dev_before": "be9a23c6a49415fbdceafd03a68555026a77b5bf",
+  "origin_main_before": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "promotion_method": "fast_forward_only",
+  "promotion_source_branch": "dev",
+  "reason": "Current dev contains origin/main and promotion is fast-forwardable; no force push, rebase, squash, or history rewrite is allowed.",
+  "rebase_allowed": false,
+  "requires_manual_merge": false,
+  "schema_version": "hunt_main_promotion_branch_plan.v0",
+  "source_branch_must_be_pushed_first": true,
+  "squash_allowed": false,
+  "target_branch": "main",
+  "task": "HUNT-TO-MAIN-PROMOTION-REVIEW"
+}
