@@ -7,15 +7,17 @@
       "blocks_hunt": false,
       "blocks_main_promotion": false,
       "blocks_syn": false,
-      "classification": "deferred_with_expiry",
+      "classification": "resolved",
       "count": 1954,
-      "disposition": "No new unallowlisted production findings remain; known findings are exact line/column/context-bound and expire at HUNT-00.",
-      "expiry": "HUNT-00",
+      "disposition": "Resolved by later HUNT and AIDE evidence: HUNT remediation continuation passed, runtime leakage validation reports zero new unallowlisted production findings, and the HUNT-WARNING-ZERO sweep keeps the item visible as resolved historical debt.",
+      "expiry": "resolved_at_HUNT_WARNING_ZERO_01",
       "recommended_child_task": "HUNT-00 planning disposition or scoped naming remediation before implementation closeout",
       "source_report": "scripts/audit_runtime_architecture_leakage.py --check --json",
       "warning_id": "remaining_context_bound_runtime_naming_debt",
-      "why_not_hiding_production_leakage": "The gate still reports every retained finding as allowlisted warning debt; no production path is generally ignored."
+      "why_not_hiding_production_leakage": "The gate still reports every retained finding as allowlisted warning debt; no production path is generally ignored.",
+      "resolved_by": "HUNT-WARNING-ZERO-01"
     }
   ],
-  "warnings_remaining": 1
+  "warnings_remaining": 0,
+  "resolved_by": "HUNT-WARNING-ZERO-01"
 }

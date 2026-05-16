@@ -2,7 +2,7 @@
   "schema_version": "eureka_repo_health.v0",
   "updated": "2026-05-16",
   "current_recommended_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
-  "last_completed_task": "AIDE-LEDGER-SIZE-01",
+  "last_completed_task": "HUNT-WARNING-ZERO-01",
   "last_completed_status": "pass",
   "aide_report_sizes_bounded": true,
   "file_quality_ledger_sharded": true,
@@ -24,5 +24,6 @@
   "extraction_execution_enabled": false,
   "deployment_performed": false,
   "production_readiness_claimed": false,
-  "public_launch_readiness_claimed": false
+  "public_launch_readiness_claimed": false,
+  "warning_zero_completed": true
 }

@@ -8,5 +8,9 @@
   "recommended_next_task": "HUNT-01 — Search Hunt Session runtime",
   "schema_version": "hunt_00_final_state_alignment.v0",
   "task": "HUNT-00",
-  "warnings_remaining": 3
+  "warnings_remaining": 0,
+  "warning_zero_resolution": {
+    "resolved_by": "HUNT-WARNING-ZERO-01",
+    "evidence": "The three inherited final-state warnings expired or were superseded by HUNT closeout/remediation and current AIDE/LOCAL validation evidence."
+  }
 }

@@ -26,8 +26,12 @@
   "runtime_leakage_gate_pass": true,
   "safe_repairs_applied": 3,
   "schema_version": "final_state_report.v0",
-  "status": "pass_with_warnings",
+  "status": "pass",
   "task": "EUREKA-FINAL-STATE-PROMOTION-PLAN-01",
-  "warnings_remaining": 3,
-  "working_tree_clean_after": true
+  "warnings_remaining": 0,
+  "working_tree_clean_after": true,
+  "warning_zero_resolution": {
+    "resolved_by": "HUNT-WARNING-ZERO-01",
+    "evidence": "Historical final-state warnings are resolved by later LOCAL, HUNT, AIDE eval, and ledger-size evidence; no production/public readiness claim is added."
+  }
 }

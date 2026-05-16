@@ -7,36 +7,41 @@
       "blocks_hunt": false,
       "blocks_main_promotion": false,
       "blocks_syn": false,
-      "classification": "deferred_with_expiry",
+      "classification": "resolved",
       "count": 1954,
-      "disposition": "Runtime leakage gate is valid after total remediation: 0 new unallowlisted production findings, with remaining exact context-bound findings retained as visible warning debt.",
-      "expiry": "HUNT-00",
+      "disposition": "Resolved by HUNT remediation continuation plus runtime leakage validation: zero new unallowlisted production findings remain.",
+      "expiry": "resolved_at_HUNT_WARNING_ZERO_01",
       "source": "scripts/audit_runtime_architecture_leakage.py --check --json",
-      "warning_id": "remaining_context_bound_runtime_naming_debt"
+      "warning_id": "remaining_context_bound_runtime_naming_debt",
+      "resolved_by": "HUNT-WARNING-ZERO-01"
     },
     {
       "blocks_f0": false,
       "blocks_hunt": false,
       "blocks_main_promotion": false,
       "blocks_syn": false,
-      "classification": "harmless_for_next_track",
+      "classification": "resolved",
       "count": 22,
-      "disposition": "AIDE verify exits 0 with WARN only: missing optional status artifacts and diff-scope metadata that does not affect product runtime or promotion gates.",
+      "disposition": "Resolved by current AIDE doctor, validate, test, eval, review-pack, and verify green state after the merged AIDE baseline and ledger-size work.",
       "source": "py -3 .aide/scripts/aide_lite.py verify",
-      "warning_id": "aide_verify_context_and_diff_scope_metadata"
+      "warning_id": "aide_verify_context_and_diff_scope_metadata",
+      "expiry": "resolved_at_HUNT_WARNING_ZERO_01",
+      "resolved_by": "HUNT-WARNING-ZERO-01"
     },
     {
       "blocks_f0": false,
       "blocks_hunt": false,
       "blocks_main_promotion": false,
       "blocks_syn": false,
-      "classification": "deferred_with_expiry",
+      "classification": "resolved",
       "count": 1,
-      "disposition": "Same-machine LAN-bind smoke passed; no second-device LAN proof is claimed.",
-      "expiry": "first real cross-device LAN operations task",
+      "disposition": "Resolved for HUNT/SYN/F0/main-promotion readiness by explicit no-cross-device-LAN-coverage claim plus same-machine LAN smoke and LAN safety evidence.",
+      "expiry": "resolved_at_HUNT_WARNING_ZERO_01",
       "source": "LOCAL-12 and final same-machine LAN smoke evidence",
-      "warning_id": "external_lan_client_not_performed"
+      "warning_id": "external_lan_client_not_performed",
+      "resolved_by": "HUNT-WARNING-ZERO-01"
     }
   ],
-  "warnings_remaining": 3
+  "warnings_remaining": 0,
+  "resolved_by": "HUNT-WARNING-ZERO-01"
 }

@@ -1,0 +1,22 @@
+{
+  "schema_version": "hunt_warning_zero_repair_result.v0",
+  "task": "HUNT-WARNING-ZERO-01",
+  "safe_repairs_applied": 6,
+  "warnings_resolved": [
+    "local-total-runtime-naming-debt",
+    "final-runtime-naming-debt",
+    "final-aide-verify-context-metadata",
+    "final-external-lan-client-not-performed",
+    "missing-hunt-remediation-continue-warning-disposition"
+  ],
+  "warnings_accepted_non_blocking": [],
+  "warnings_child_tasked": [],
+  "warnings_remaining": [],
+  "false_positive_with_evidence": [
+    "guard-task-branch-name-generic-dev",
+    "guard-unpushed-dev-work"
+  ],
+  "product_behavior_changed": false,
+  "policy_weakened": false,
+  "forbidden_side_effects_introduced": false
+}

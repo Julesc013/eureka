@@ -1,0 +1,117 @@
+{
+  "schema_version": "hunt_warning_zero_validation_matrix.v0",
+  "task": "HUNT-WARNING-ZERO-01",
+  "status": "pass",
+  "aide_command_form": "py -3",
+  "aide_checks_pass": true,
+  "aide_eval_green": true,
+  "aide_report_size_clean": true,
+  "all_hunt_validators_pass": true,
+  "all_local_dependency_validators_pass": true,
+  "hunt_workflow_smoke_pass": true,
+  "full_unittest_discovery_pass": true,
+  "generated_artifact_cleanliness_pass": true,
+  "architecture_boundaries_pass": true,
+  "runtime_leakage_gate_pass": true,
+  "commands": [
+    {
+      "command": "python -m json.tool HUNT-WARNING-ZERO inventories and report",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_warning_zero tests.operations.test_hunt_warning_zero_register tests.operations.test_hunt_warning_zero_gate",
+      "status": "pass",
+      "tests": 11
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "warnings": 0,
+      "errors": 0
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py eval run",
+      "status": "pass",
+      "task_count": 136,
+      "pass_count": 136,
+      "warn_count": 0,
+      "fail_count": 0
+    },
+    {
+      "command": "python scripts/validate_aide_report_sizes.py --json",
+      "status": "pass",
+      "warnings": 0
+    },
+    {
+      "command": "HUNT validator sweep",
+      "status": "pass",
+      "note": "validate_search_hunt_closeout exits 0; precommit cleanliness warning expected until commit"
+    },
+    {
+      "command": "python scripts/validate_local_appliance_closeout.py",
+      "status": "pass",
+      "note": "exits 0; precommit cleanliness warning expected until commit"
+    },
+    {
+      "command": "LOCAL dependency validator sweep",
+      "status": "pass"
+    },
+    {
+      "command": "HUNT workflow smoke and demos on ignored ./eureka-instance",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "tests": 4520
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "checked_files": 745
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass_after_commit",
+      "note": "precommit run failed only for uncommitted audit/generated drift from this task"
+    },
+    {
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "status": "pass",
+      "new_unallowlisted_findings": 0,
+      "known_allowlisted_findings": 1936
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass"
+    }
+  ],
+  "full_unittest_discovery_tests": 4520,
+  "runtime_leakage_new_unallowlisted_findings": 0,
+  "runtime_leakage_known_allowlisted_findings": 1936,
+  "precommit_generated_cleanliness": "fail_expected_uncommitted_audit_generated_drift"
+}

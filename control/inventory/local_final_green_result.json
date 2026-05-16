@@ -22,5 +22,13 @@
   "deployment_performed": false,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
-  "recommended_next_task": "LOCAL-LEAKAGE-01 \u2014 Reconcile runtime leakage gate after LOCAL track"
+  "recommended_next_task": "LOCAL-LEAKAGE-01 — Reconcile runtime leakage gate after LOCAL track",
+  "current_disposition": "superseded_by_later_local_and_hunt_green_evidence",
+  "current_hard_blockers_remaining": 0,
+  "current_warnings_remaining": 0,
+  "superseded_by": [
+    "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01",
+    "HUNT-REMEDIATION-CONTINUE",
+    "HUNT-WARNING-ZERO-01"
+  ]
 }

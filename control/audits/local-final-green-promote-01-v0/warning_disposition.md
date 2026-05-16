@@ -1,7 +1,5 @@
 # Warning Disposition
 
-Warnings:
+Warnings remaining: 0.
 
-- External second-device LAN smoke was not performed. Same-machine LAN-bind smoke passed, and no cross-device proof is claimed.
-
-The runtime leakage item is treated as a hard promotion blocker, not a warning for this final green task.
+The historical external second-device LAN warning and runtime leakage blocker are superseded by later LOCAL total remediation, HUNT remediation continuation, and HUNT-WARNING-ZERO evidence. No cross-device LAN coverage claim is made.

@@ -1,0 +1,16 @@
+{
+  "schema_version": "hunt_warning_zero_next_task_decision.v0",
+  "task": "HUNT-WARNING-ZERO-01",
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "alternative_next_task": "SYN-00 - Synthetic Query Foundry planning over Local Appliance",
+  "hunt_remediation_green": true,
+  "warnings_remaining": 0,
+  "hard_blockers_remaining": 0,
+  "syn_can_start": true,
+  "f0_can_resume": true,
+  "f0_recommended_now": false,
+  "main_promotion_review_required": true,
+  "reason": "HUNT, AIDE, and LOCAL warning debt is resolved; review dev-to-main promotion before starting SYN or F0.",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

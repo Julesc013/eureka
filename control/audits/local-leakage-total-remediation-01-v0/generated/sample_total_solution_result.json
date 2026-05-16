@@ -18,11 +18,15 @@
   "new_unallowlisted_production_findings": 0,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
-  "recommended_next_task": "HUNT-00 \u2014 Search Hunt track planning over Local Appliance",
+  "recommended_next_task": "HUNT-00 — Search Hunt track planning over Local Appliance",
   "runtime_leakage_gate_pass": true,
   "safe_repairs_applied": 6,
   "schema_version": "local_total_solution_result.v0",
-  "status": "pass_with_warnings",
+  "status": "pass",
   "task": "LOCAL-LEAKAGE-TOTAL-REMEDIATION-01",
-  "warnings_remaining": 1
+  "warnings_remaining": 0,
+  "warning_zero_resolution": {
+    "resolved_by": "HUNT-WARNING-ZERO-01",
+    "evidence": "Deferred LOCAL warning debt resolved by later HUNT-WARNING-ZERO evidence."
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "schema_version": "hunt_remediation_continue_warning_disposition.v0",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "status": "pass",
+  "warnings": [],
+  "warnings_remaining": 0,
+  "resolved_by": "HUNT-WARNING-ZERO-01",
+  "evidence": [
+    "control/inventory/hunt_remediation_continue_result.json status pass with warnings_remaining 0",
+    "control/inventory/hunt_remediation_continue_issue_register.json hard_blockers_remaining 0 and warnings_remaining 0"
+  ]
+}

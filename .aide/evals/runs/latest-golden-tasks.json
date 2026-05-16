@@ -182,7 +182,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1653,
+      "approx_tokens_if_applicable": 1769,
       "checks_run": 25,
       "errors": [],
       "notes": "Checks review packets stay evidence-oriented.",
@@ -1409,7 +1409,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1653,
+      "approx_tokens_if_applicable": 1769,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -1688,10 +1688,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 33261,
+      "checks_run": 33275,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 33261,
+      "passed_checks": 33275,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1744,10 +1744,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 33265,
+      "checks_run": 33279,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 33265,
+      "passed_checks": 33279,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1758,10 +1758,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 33286,
+      "checks_run": 33300,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 33286,
+      "passed_checks": 33300,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1788,10 +1788,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 31288,
+      "checks_run": 31456,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 31288,
+      "passed_checks": 31456,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1802,10 +1802,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 31292,
+      "checks_run": 31460,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 31292,
+      "passed_checks": 31460,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1831,10 +1831,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 876,
+      "checks_run": 884,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 876,
+      "passed_checks": 884,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"

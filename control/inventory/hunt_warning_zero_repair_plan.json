@@ -1,0 +1,40 @@
+{
+  "schema_version": "hunt_warning_zero_repair_plan.v0",
+  "task": "HUNT-WARNING-ZERO-01",
+  "warnings_to_fix_now": [
+    "local-total-runtime-naming-debt",
+    "final-runtime-naming-debt",
+    "final-aide-verify-context-metadata",
+    "final-external-lan-client-not-performed",
+    "missing-hunt-remediation-continue-warning-disposition"
+  ],
+  "warnings_to_mark_resolved": [
+    "local-total-runtime-naming-debt",
+    "final-runtime-naming-debt",
+    "final-aide-verify-context-metadata",
+    "final-external-lan-client-not-performed",
+    "missing-hunt-remediation-continue-warning-disposition"
+  ],
+  "warnings_to_child_task": [],
+  "warnings_to_accept_non_blocking": [],
+  "false_positive_with_evidence": [
+    "guard-task-branch-name-generic-dev",
+    "guard-unpushed-dev-work"
+  ],
+  "forbidden_repairs": [
+    "delete warning records without resolving them",
+    "mark warning pass without command evidence",
+    "remove tests",
+    "weaken validators",
+    "enable source probes",
+    "enable extraction",
+    "enable model providers",
+    "modify main",
+    "force push"
+  ],
+  "product_behavior_change_allowed": false,
+  "source_probe_allowed": false,
+  "extraction_allowed": false,
+  "model_provider_allowed": false,
+  "deployment_allowed": false
+}

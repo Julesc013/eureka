@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/policies/file-quality-ledger.yaml` (??; matches active task allowed path)
-- allowed: `.aide/policies/report-size.yaml` (??; matches active task allowed path)
-- allowed: `.aide/quality/file-quality-ledger.schema.json` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-LEDGER-SIZE-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `.aide/reports/file-quality-ledger` (??; matches active task allowed path)
-- allowed: `.aide/reports/file-quality-ledger.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/file-quality-ledger.schema.json` (M; matches active task allowed path)
-- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
-- allowed: `.aide/scripts/tests/test_q38_file_quality.py` (M; matches active task allowed path)
-- allowed: `control/audits/aide-ledger-size-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_file_quality_ledger_diagnosis.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_large_artifact_inventory.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_blocker_register.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_repair_plan.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/aide_ledger_size_validation_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 8; see task evidence changed-files report
+- allowed: `control/audits/final-state-promotion-plan-01-v0/final_state_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/final-state-promotion-plan-01-v0/generated/sample_final_state_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/final-state-promotion-plan-01-v0/warning_disposition.md` (M; matches active task allowed path)
+- allowed: `control/audits/hunt-warning-zero-01-v0` (??; matches active task allowed path)
+- allowed: `control/audits/local-final-green-promote-01-v0/generated/sample_local_final_green_result.json` (M; matches active task allowed path)
+- allowed: `control/audits/local-final-green-promote-01-v0/local_final_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/local-final-green-promote-01-v0/warning_disposition.md` (M; matches active task allowed path)
+- allowed: `control/audits/local-leakage-total-remediation-01-v0/generated/sample_total_solution_result.json` (M; matches active task allowed path)
+- allowed: `control/audits/local-leakage-total-remediation-01-v0/total_solution_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/local-leakage-total-remediation-01-v0/warning_disposition.md` (M; matches active task allowed path)
+- allowed: `control/inventory/final_warning_disposition.json` (M; matches active task allowed path)
+- allowed: `control/inventory/hunt_00_final_state_alignment.json` (M; matches active task allowed path)
+- allowed: `control/inventory/hunt_remediation_continue_warning_disposition.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_blocker_register.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_boundary_audit.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_register.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_repair_plan.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_repair_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/hunt_warning_zero_validation_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6609
-- approx_tokens: 1653
+- chars: 7073
+- approx_tokens: 1769
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

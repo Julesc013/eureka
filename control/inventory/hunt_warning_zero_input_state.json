@@ -1,0 +1,21 @@
+{
+  "schema_version": "hunt_warning_zero_input_state.v0",
+  "task": "HUNT-WARNING-ZERO-01",
+  "branch": "dev",
+  "head": "73c6508d6f2f188191048ac80878c946d7340a2e",
+  "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "origin_dev": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
+  "working_tree_clean_before": true,
+  "merge_state_active": false,
+  "repo_health_found": true,
+  "aide_eval_result_found": true,
+  "aide_ledger_size_result_found": true,
+  "hunt_closeout_found": true,
+  "hunt_remediation_found": true,
+  "local_warning_state_found": true,
+  "aide_eval_green": true,
+  "aide_report_size_clean": true,
+  "hunt_warnings_before": 0,
+  "aide_warnings_before": 0,
+  "local_or_final_stale_warnings_before": 5
+}
