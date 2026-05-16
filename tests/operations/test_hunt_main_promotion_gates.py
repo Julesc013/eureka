@@ -1,8 +1,10 @@
 import copy
+import tempfile
 import unittest
 from pathlib import Path
 
 from scripts.audit_hunt_main_promotion import build_promotion_records
+from scripts.hunt_queue_progress import current_recommended_task_id, post_hunt_current_allowed
 from scripts.validate_hunt_main_promotion import validate_branch_plan, validate_gates, validate_result
 
 
@@ -43,6 +45,23 @@ class HuntMainPromotionGateTests(unittest.TestCase):
             errors = []
             validate_result(payload, errors)
             self.assertIn(f"result {field} must be false", errors)
+
+    def test_post_hunt_queue_accepts_decorated_syn_task_title(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: SYN-00 - Synthetic Query Foundry planning over Local Appliance\n"
+                "entries:\n"
+                "  - id: HUNT-12\n"
+                "    status: completed\n"
+                "  - id: SYN-00\n"
+                "    status: ready\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("SYN-00", current_recommended_task_id(root))
+            self.assertTrue(post_hunt_current_allowed(root))
 
 
 if __name__ == "__main__":
