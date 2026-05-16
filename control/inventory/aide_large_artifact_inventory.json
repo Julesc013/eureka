@@ -1,0 +1,1406 @@
+{
+  "files": [
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/dependency-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 14572181,
+      "size_mb": 13.897
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/file-inventory.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 11612303,
+      "size_mb": 11.074
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0001.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7992061,
+      "size_mb": 7.622
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0003.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7991244,
+      "size_mb": 7.621
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0002.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7991000,
+      "size_mb": 7.621
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0004.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7988204,
+      "size_mb": 7.618
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/repo-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 7968538,
+      "size_mb": 7.599
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/repo-snapshot.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 5361624,
+      "size_mb": 5.113
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/orphan-candidates.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 5260655,
+      "size_mb": 5.017
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/doc-link-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 3908440,
+      "size_mb": 3.727
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/test-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 3054347,
+      "size_mb": 2.913
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0005.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2140515,
+      "size_mb": 2.041
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/ownership-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1452858,
+      "size_mb": 1.386
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/changelog.preview.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 624070,
+      "size_mb": 0.595
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/test-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 236117,
+      "size_mb": 0.225
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/reuse-modularity-report.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 121512,
+      "size_mb": 0.116
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/generated-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 114825,
+      "size_mb": 0.11
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/release-notes.preview.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 91483,
+      "size_mb": 0.087
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/evals/runs/latest-golden-tasks.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 63747,
+      "size_mb": 0.061
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/evals/runs/latest-golden-tasks.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 43172,
+      "size_mb": 0.041
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/README.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 31739,
+      "size_mb": 0.03
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/docs-consistency-report.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 25105,
+      "size_mb": 0.024
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/CHANGELOG.preview.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 20482,
+      "size_mb": 0.02
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/test-coverage-map.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 18620,
+      "size_mb": 0.018
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 16221,
+      "size_mb": 0.015
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/repo-map.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 12064,
+      "size_mb": 0.012
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/latest-review-packet.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 6410,
+      "size_mb": 0.006
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/module-quality-report.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 4983,
+      "size_mb": 0.005
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/token-ledger.jsonl",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 4809,
+      "size_mb": 0.005
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/latest-task-packet.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 4756,
+      "size_mb": 0.005
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-product-boundary-preservation.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 4243,
+      "size_mb": 0.004
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-aide-lite-operating-handoff.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 3614,
+      "size_mb": 0.003
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/token-savings-summary.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2666,
+      "size_mb": 0.003
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/aide-commit-message-standard.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2640,
+      "size_mb": 0.003
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-commit-message-standard.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2633,
+      "size_mb": 0.003
+    },
+    {
+      "canonical_or_transient": "canonical_generated_index",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/index.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2549,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "canonical_generated_index",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": true,
+      "safe_to_summarize": true,
+      "size_bytes": 2549,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-task-resumption-standard.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2277,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/latest-repo-intelligence.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 2142,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-reviewed-index-persistence.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1987,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-object-absence-surface.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1985,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-slice-behavior-proof.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1875,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/file-inventory.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1867,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/latest-context-packet.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 1836,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-next-aide-task.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1755,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/compiler.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 1720,
+      "size_mb": 0.002
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-summary.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1492,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/priority.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 1371,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/token-baselines.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1324,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/aide-task-resumption-standard.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1277,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-tool-capability-map.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1259,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-stable-aide-upgrade.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1215,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/aide-workunit-recovery-standard.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1132,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-existing-tool-absorption.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1113,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/dependency-map.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1099,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-fresh-upgrade-preflight.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1098,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-tool-preservation-plan.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 1058,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "canonical_generated_index",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/context-index.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 1014,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-aide-preservation-plan.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 995,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/repo-intelligence-summary.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 995,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/doc-link-map.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 988,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-observation-vertical-slice-plan.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 986,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-repo-health.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 984,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-slice-hardening.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 944,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/ignore.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 933,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-repo-health.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 909,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/file-quality-record.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 903,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-evidence-index-readiness.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 896,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/README.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 879,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-existing-tool-preflight.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 862,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/test-map.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 859,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-release-bundle-readiness.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 837,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-reviewed-index-rebuild-proof.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 831,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/ownership-map.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 815,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/excerpt-policy.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 808,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/README.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 790,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-evidence-index-slice-validation.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 785,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/config.yaml",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 781,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/file-quality-ledger.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 761,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-slice-no-live-proof.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 744,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/latest-changelog-report.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 708,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/README.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 707,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 694,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-fixture-source-observation-slice.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 691,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/eureka-source-observation-slice-result.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 688,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/module-quality.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 644,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/docs-consistency.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 639,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/reuse-modularity.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 592,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "manual",
+      "path": ".aide/quality/test-coverage-map.schema.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": false,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 571,
+      "size_mb": 0.001
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/templates/changelog.md.template",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 520,
+      "size_mb": 0.0
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/templates/release-notes.md.template",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 488,
+      "size_mb": 0.0
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/README.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 447,
+      "size_mb": 0.0
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/changelog/malformed-commits.md",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 161,
+      "size_mb": 0.0
+    }
+  ],
+  "files_above_hard_threshold_after": [],
+  "files_above_warning_threshold_after": [],
+  "hard_threshold_mb": 50,
+  "preferred_target_mb": 10,
+  "schema_version": "aide_large_artifact_inventory.v0",
+  "task": "AIDE-LEDGER-SIZE-01",
+  "warning_threshold_mb": 25
+}

@@ -1,0 +1,13 @@
+{
+  "branch": "dev",
+  "head": "3dacabb045c788639eb187f8838c9c42b62f1273",
+  "largest_aide_file_path": ".aide/reports/file-quality-ledger.json",
+  "largest_aide_file_size_bytes": 34103099,
+  "largest_aide_file_size_mb": 32.523,
+  "origin_dev": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
+  "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "oversized_files_detected": 1,
+  "schema_version": "aide_ledger_size_input_state.v0",
+  "task": "AIDE-LEDGER-SIZE-01",
+  "working_tree_clean_before": true
+}

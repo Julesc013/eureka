@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide_ledger_size_warning_disposition.v0",
+  "task": "AIDE-LEDGER-SIZE-01",
+  "warnings_before": [
+    {
+      "disposition": "resolved",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "size_bytes": 34103099,
+      "warning_id": "file_quality_ledger_above_warning_threshold"
+    }
+  ],
+  "warnings_remaining": 0
+}

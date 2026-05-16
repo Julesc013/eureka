@@ -1,0 +1,155 @@
+{
+  "files": [
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/dependency-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 14572181,
+      "size_mb": 13.897
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/file-inventory.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 11612303,
+      "size_mb": 11.074
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0001.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7992061,
+      "size_mb": 7.622
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0003.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7991244,
+      "size_mb": 7.621
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0002.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7991000,
+      "size_mb": 7.621
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0004.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 7988204,
+      "size_mb": 7.618
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/repo-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 7968538,
+      "size_mb": 7.599
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/context/repo-snapshot.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": false,
+      "size_bytes": 5361624,
+      "size_mb": 5.113
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/orphan-candidates.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 5260655,
+      "size_mb": 5.017
+    },
+    {
+      "canonical_or_transient": "generated_support",
+      "currently_referenced_by": [
+        "AIDE Lite commands",
+        "repo-local audit evidence"
+      ],
+      "generated_or_manual": "generated",
+      "path": ".aide/repo/doc-link-map.json",
+      "recommended_action": "keep",
+      "safe_to_regenerate": true,
+      "safe_to_shard": false,
+      "safe_to_summarize": true,
+      "size_bytes": 3908440,
+      "size_mb": 3.727
+    }
+  ],
+  "schema_version": "aide_large_artifact_inventory.v0"
+}

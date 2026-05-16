@@ -15,6 +15,10 @@
     "source_commit": { "type": "string" },
     "source_repo_intelligence": { "type": "object" },
     "summary": { "type": "object" },
+    "record_storage": { "type": "string" },
+    "record_count": { "type": "integer" },
+    "record_shards": { "type": "array" },
+    "regeneration_command": { "type": "string" },
     "records": { "type": "array" }
   }
 }

@@ -1,0 +1,25 @@
+schema_version: aide.report-size-policy.v0
+policy_id: aide-report-size-v0
+status: active
+purpose: >
+  Keep generated AIDE control-plane reports reviewable in Git without changing
+  product behavior or deleting useful audit information.
+thresholds:
+  warning_threshold_mb: 25
+  hard_threshold_mb: 50
+  preferred_max_report_mb: 10
+  generated_report_sharding_required_above_mb: 25
+  shard_hard_threshold_mb: 25
+binary_compression_default: false
+delete_without_replacement_forbidden: true
+product_behavior_change_forbidden: true
+retention:
+  compact_summary_required: true
+  deterministic_shards_allowed: true
+  regeneration_command_required: true
+  raw_prompt_storage_forbidden: true
+  raw_response_storage_forbidden: true
+  committed_secret_storage_forbidden: true
+non_claims:
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false

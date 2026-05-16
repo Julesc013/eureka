@@ -1,0 +1,33 @@
+schema_version: aide.file-quality-ledger-policy.v0
+policy_id: aide-file-quality-ledger-size-v0
+status: active
+purpose: >
+  Bound the generated file-quality ledger by storing a compact top-level index
+  plus deterministic JSON shards when record volume grows.
+compact_summary_required: true
+shard_large_ledgers: true
+stable_ordering_required: true
+generated_transient_path_policy: explicit
+deterministic_regeneration_required: true
+no_product_semantics: true
+storage:
+  top_level_path: .aide/reports/file-quality-ledger.json
+  shard_index_path: .aide/reports/file-quality-ledger/index.json
+  shard_dir: .aide/reports/file-quality-ledger/shards
+  preferred_max_file_mb: 10
+  shard_hard_threshold_mb: 25
+  binary_compression_allowed: false
+preservation:
+  total_record_count_required: true
+  warning_count_required: true
+  error_count_required: true
+  path_prefix_counts_required: true
+  shard_hashes_required: true
+  regeneration_command_required: true
+boundaries:
+  product_behavior_changed: false
+  provider_or_model_calls_allowed: false
+  network_calls_allowed: false
+  source_probe_execution_allowed: false
+  extraction_execution_allowed: false
+  deployment_allowed: false

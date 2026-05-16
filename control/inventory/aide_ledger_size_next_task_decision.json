@@ -1,0 +1,12 @@
+{
+  "aide_eval_green": true,
+  "alternative_next_task": "HUNT-REMEDIATION-CONTINUE",
+  "f0_not_started": true,
+  "main_promotion_performed": false,
+  "reason": "AIDE report sizes are bounded and HUNT is green; review dev-to-main promotion before starting SYN or F0.",
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "report_sizes_bounded": true,
+  "schema_version": "aide_ledger_size_next_task_decision.v0",
+  "syn_not_started": true,
+  "task": "AIDE-LEDGER-SIZE-01"
+}

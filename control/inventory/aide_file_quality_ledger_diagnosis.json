@@ -1,0 +1,14 @@
+{
+  "duplicate_or_redundant_fields_detected": false,
+  "generated_paths_included": true,
+  "large_text_fields_detected": false,
+  "ledger_present": true,
+  "ledger_record_count_before": 16843,
+  "ledger_size_before_bytes": 34103099,
+  "recommended_strategy": "summary_and_shards",
+  "regeneration_command_detected": "py -3 .aide/scripts/aide_lite.py quality ledger",
+  "safe_sharding_supported": true,
+  "safe_summary_supported": true,
+  "schema_version": "aide_file_quality_ledger_diagnosis.v0",
+  "task": "AIDE-LEDGER-SIZE-01"
+}

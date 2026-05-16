@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-EVAL-GREEN-01
+UNSPECIFIED - AIDE-LEDGER-SIZE-01
 
 ## GOAL
 
-AIDE-EVAL-GREEN-01
+AIDE-LEDGER-SIZE-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4756
-- approx_tokens: 1189
+- chars: 4758
+- approx_tokens: 1190
 - budget_status: PASS
 - warnings:
   - none

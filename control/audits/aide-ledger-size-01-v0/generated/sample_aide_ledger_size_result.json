@@ -1,0 +1,31 @@
+{
+  "deployment_performed": false,
+  "extraction_executed": false,
+  "file_quality_ledger_repaired": true,
+  "file_quality_ledger_size_after_bytes": 2549,
+  "file_quality_ledger_size_before_bytes": 34103099,
+  "hard_blockers_remaining": 0,
+  "largest_file_after_bytes": 14572181,
+  "largest_file_before_bytes": 34103099,
+  "oversized_files_after": 0,
+  "oversized_files_before": 1,
+  "product_behavior_changed": false,
+  "production_readiness_claimed": false,
+  "provider_model_network_calls_used": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "report_size_validator_added": true,
+  "schema_version": "aide_ledger_size_result.v0",
+  "shards_created": 5,
+  "source_probe_executed": false,
+  "status": "pass",
+  "summary_index_created": true,
+  "task": "AIDE-LEDGER-SIZE-01",
+  "tests_added_or_updated": [
+    "tests/operations/test_aide_report_sizes.py",
+    "tests/operations/test_file_quality_ledger_sharding.py",
+    "tests/operations/test_file_quality_ledger_regeneration.py",
+    ".aide/scripts/tests/test_q38_file_quality.py"
+  ],
+  "warnings_remaining": 0
+}

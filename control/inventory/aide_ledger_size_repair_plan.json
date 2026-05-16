@@ -1,0 +1,20 @@
+{
+  "chosen_strategy": "summary_and_shards",
+  "expected_max_file_size_mb_after": 10.0,
+  "files_to_add": [
+    ".aide/reports/file-quality-ledger/README.md",
+    ".aide/reports/file-quality-ledger/shards/*.json",
+    "scripts/validate_aide_report_sizes.py"
+  ],
+  "files_to_remove": [],
+  "files_to_rewrite": [
+    ".aide/reports/file-quality-ledger.json",
+    ".aide/reports/file-quality-ledger/index.json",
+    ".aide/scripts/aide_lite.py"
+  ],
+  "policy_weakened": false,
+  "product_behavior_changes_allowed": false,
+  "regeneration_command": "py -3 .aide/scripts/aide_lite.py quality ledger",
+  "schema_version": "aide_ledger_size_repair_plan.v0",
+  "task": "AIDE-LEDGER-SIZE-01"
+}

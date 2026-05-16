@@ -307,6 +307,15 @@ entries:
     gate: DEV-MAIN-AIDE-SYNC-01 complete enough for dev to contain the updated AIDE baseline; no source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
     task: .aide/queue/AIDE-EVAL-GREEN-01/task.yaml
     recommended_after: DEV-MAIN-AIDE-SYNC-01
+    recommended_next: AIDE-LEDGER-SIZE-01
+  - id: AIDE-LEDGER-SIZE-01
+    title: Reduce oversized AIDE report artifacts
+    status: completed
+    purpose: Bound generated AIDE report sizes by replacing the bulky file-quality ledger with a compact index and deterministic shards.
+    allowed_scope_summary: AIDE/control-plane report generation, report-size policy, validator, docs, tests, inventories, and audit evidence only.
+    gate: AIDE-EVAL-GREEN-01 complete with green AIDE evals; no product behavior changes, source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
+    task: .aide/queue/AIDE-LEDGER-SIZE-01/task.yaml
+    recommended_after: AIDE-EVAL-GREEN-01
     recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
   - id: LOCAL-TO-MAIN-PROMOTION-REVIEW
     title: Review and decide whether LOCAL dev promotes to main

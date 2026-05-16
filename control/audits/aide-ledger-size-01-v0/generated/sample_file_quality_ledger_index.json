@@ -1,0 +1,88 @@
+{
+  "generated_by": "aide-lite",
+  "record_count": 16843,
+  "record_shards": [
+    {
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0001.json",
+      "record_count": 3685,
+      "sha256": "5c294eb9942d09df3e8439fa7a28f4768b93fbfee925df24c16d32185235badb",
+      "shard_id": "file-quality-ledger-0001",
+      "size_bytes": 7992061
+    },
+    {
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0002.json",
+      "record_count": 4002,
+      "sha256": "140bcf853c4c8f8469b39e4c508341b1f2b5d72bdb0b614e073ece63d67d26f3",
+      "shard_id": "file-quality-ledger-0002",
+      "size_bytes": 7991000
+    },
+    {
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0003.json",
+      "record_count": 4210,
+      "sha256": "d027c5c25dd1ee4bf01538c192688181484ad4a0afba99a66520970cb3537af1",
+      "shard_id": "file-quality-ledger-0003",
+      "size_bytes": 7991244
+    },
+    {
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0004.json",
+      "record_count": 3806,
+      "sha256": "12170cd8330dc9dbc87705857c5205db9072228ce165f8d11974b8925440f7df",
+      "shard_id": "file-quality-ledger-0004",
+      "size_bytes": 7988204
+    },
+    {
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0005.json",
+      "record_count": 1140,
+      "sha256": "1482bd1802770fff5da2acf1491d1bfe4c4666c36c6c73dabadcbcfd24c83748",
+      "shard_id": "file-quality-ledger-0005",
+      "size_bytes": 2140515
+    }
+  ],
+  "record_storage": "sharded",
+  "records": [],
+  "regeneration_command": "py -3 .aide/scripts/aide_lite.py quality ledger",
+  "schema_version": "aide.file-quality-ledger.v0",
+  "shard_policy": {
+    "binary_compression": false,
+    "stable_ordering": true,
+    "target_max_bytes": 8000000
+  },
+  "source_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
+  "source_repo_intelligence": {
+    "dependency_map": ".aide/repo/dependency-map.json",
+    "doc_link_map": ".aide/repo/doc-link-map.json",
+    "file_inventory": ".aide/repo/file-inventory.json",
+    "generated_map": ".aide/repo/generated-map.json",
+    "orphan_candidates": ".aide/repo/orphan-candidates.json",
+    "ownership_map": ".aide/repo/ownership-map.json",
+    "test_map": ".aide/repo/test-map.json"
+  },
+  "summary": {
+    "auto_fixes": false,
+    "fail_count": 0,
+    "file_count": 16843,
+    "file_deletes": false,
+    "file_moves": false,
+    "network_calls": "none",
+    "next_recommended_phase": "Q39 Refactor Control Plane v0",
+    "provider_or_model_calls": "none",
+    "quality_level_counts": {
+      "exempt": 137,
+      "pass": 176,
+      "warn": 16530
+    },
+    "warning_counts": {
+      "large_module_candidate": 5,
+      "missing_doc_candidate": 1285,
+      "missing_test_or_validator_candidate": 1786,
+      "mixed_purpose_candidate": 8,
+      "orphan_candidate": 15503,
+      "public_surface_missing_doc_candidate": 222,
+      "reuse_candidate": 8430,
+      "stale_doc_reference_candidate": 1919,
+      "unknown_kind": 5928,
+      "unknown_owner": 15201,
+      "unknown_status": 5928
+    }
+  }
+}

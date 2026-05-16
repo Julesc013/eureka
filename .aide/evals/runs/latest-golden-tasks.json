@@ -89,7 +89,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1189,
+      "approx_tokens_if_applicable": 1190,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -104,7 +104,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1189,
+      "approx_tokens_if_applicable": 1190,
       "checks_run": 31,
       "errors": [],
       "notes": "Checks the latest compact packet is target-specific.",
@@ -182,7 +182,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1603,
+      "approx_tokens_if_applicable": 1653,
       "checks_run": 25,
       "errors": [],
       "notes": "Checks review packets stay evidence-oriented.",
@@ -1255,10 +1255,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 403,
+      "checks_run": 454,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 403,
+      "passed_checks": 454,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1284,10 +1284,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 25,
+      "checks_run": 28,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 25,
+      "passed_checks": 28,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -1409,7 +1409,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1603,
+      "approx_tokens_if_applicable": 1653,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -1688,10 +1688,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 31357,
+      "checks_run": 33261,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 31357,
+      "passed_checks": 33261,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1744,10 +1744,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 31361,
+      "checks_run": 33265,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 31361,
+      "passed_checks": 33265,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1758,10 +1758,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 31382,
+      "checks_run": 33286,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 31382,
+      "passed_checks": 33286,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1788,10 +1788,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 21166,
+      "checks_run": 31288,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 21166,
+      "passed_checks": 31288,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1802,10 +1802,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 21170,
+      "checks_run": 31292,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 21170,
+      "passed_checks": 31292,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1831,10 +1831,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 866,
+      "checks_run": 876,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 866,
+      "passed_checks": 876,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"

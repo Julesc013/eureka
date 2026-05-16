@@ -98,7 +98,23 @@ class Q38FileQualityTests(unittest.TestCase):
         self.ledger(root)
         ledger_text = (root / aide_lite.FILE_QUALITY_LEDGER_JSON_PATH).read_text(encoding="utf-8")
         self.assertNotIn('\n  "records"', ledger_text)
-        self.assertEqual(json.loads(ledger_text)["schema_version"], "aide.file-quality-ledger.v0")
+        data = json.loads(ledger_text)
+        self.assertEqual(data["schema_version"], "aide.file-quality-ledger.v0")
+        self.assertEqual(data["record_storage"], "sharded")
+        self.assertEqual(data["records"], [])
+        self.assertTrue(data["record_shards"])
+        self.assertTrue((root / aide_lite.FILE_QUALITY_LEDGER_INDEX_JSON_PATH).exists())
+        self.assertTrue((root / aide_lite.FILE_QUALITY_LEDGER_README_PATH).exists())
+
+    def test_sharded_ledger_hydrates_for_validation_and_lookup(self) -> None:
+        root = self.make_repo()
+        ledger = self.ledger(root)
+        hydrated = aide_lite.latest_or_missing_quality_ledger(root)
+        self.assertIsNotNone(hydrated)
+        assert hydrated is not None
+        self.assertEqual(len(hydrated["records"]), len(ledger["records"]))
+        checks = aide_lite.validate_quality_ledger_data(hydrated)
+        self.assertEqual(aide_lite.result_from_checks(checks), "PASS")
 
     def test_active_source_without_docs_or_tests_warns(self) -> None:
         ledger = self.ledger(self.make_repo())

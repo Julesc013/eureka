@@ -164,6 +164,11 @@ DOCS_CONSISTENCY_SCHEMA_PATH = ".aide/quality/docs-consistency.schema.json"
 TEST_COVERAGE_MAP_SCHEMA_PATH = ".aide/quality/test-coverage-map.schema.json"
 REUSE_MODULARITY_SCHEMA_PATH = ".aide/quality/reuse-modularity.schema.json"
 FILE_QUALITY_LEDGER_JSON_PATH = ".aide/reports/file-quality-ledger.json"
+FILE_QUALITY_LEDGER_DIR_PATH = ".aide/reports/file-quality-ledger"
+FILE_QUALITY_LEDGER_INDEX_JSON_PATH = ".aide/reports/file-quality-ledger/index.json"
+FILE_QUALITY_LEDGER_README_PATH = ".aide/reports/file-quality-ledger/README.md"
+FILE_QUALITY_LEDGER_SHARDS_DIR_PATH = ".aide/reports/file-quality-ledger/shards"
+FILE_QUALITY_LEDGER_SHARD_TARGET_BYTES = 8_000_000
 REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH = ".aide/reports/file-quality-ledger.schema.json"
 FILE_QUALITY_SUMMARY_MD_PATH = ".aide/reports/file-quality-summary.md"
 MODULE_QUALITY_REPORT_MD_PATH = ".aide/reports/module-quality-report.md"
@@ -954,6 +959,8 @@ Q38_SCHEMA_FILES = [
 
 Q38_GENERATED_OUTPUT_FILES = [
     FILE_QUALITY_LEDGER_JSON_PATH,
+    FILE_QUALITY_LEDGER_INDEX_JSON_PATH,
+    FILE_QUALITY_LEDGER_README_PATH,
     FILE_QUALITY_SUMMARY_MD_PATH,
     MODULE_QUALITY_REPORT_MD_PATH,
     DOCS_CONSISTENCY_REPORT_MD_PATH,
@@ -6249,7 +6256,33 @@ def latest_or_missing_quality_ledger(repo_root: Path) -> dict[str, object] | Non
     path = repo_root / FILE_QUALITY_LEDGER_JSON_PATH
     if not path.exists():
         return None
-    return read_json_file(path)
+    return hydrate_quality_ledger_records(repo_root, read_json_file(path))
+
+
+def hydrate_quality_ledger_records(repo_root: Path, ledger: dict[str, object]) -> dict[str, object]:
+    if ledger.get("record_storage") != "sharded":
+        return ledger
+    shard_entries = ledger.get("record_shards", [])
+    if not isinstance(shard_entries, list):
+        return ledger
+    records: list[object] = []
+    for entry in sorted(
+        (item for item in shard_entries if isinstance(item, dict)),
+        key=lambda item: str(item.get("shard_id", "")),
+    ):
+        rel_path = entry.get("path")
+        if not isinstance(rel_path, str):
+            continue
+        shard_path = repo_root / rel_path
+        if not shard_path.exists():
+            continue
+        shard = read_json_file(shard_path)
+        shard_records = shard.get("records", []) if isinstance(shard, dict) else []
+        if isinstance(shard_records, list):
+            records.extend(shard_records)
+    hydrated = dict(ledger)
+    hydrated["records"] = records
+    return hydrated
 
 
 def quality_dimension(level: str, reasons: list[str] | None = None) -> dict[str, object]:
@@ -6832,14 +6865,128 @@ def render_reuse_modularity_report(ledger: dict[str, object]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_quality_outputs(repo_root: Path, ledger: dict[str, object]) -> dict[str, WriteResult]:
+def quality_shard_payload(records: list[object], shard_id: str, source_commit: str) -> dict[str, object]:
+    return {
+        "schema_version": "aide.file-quality-ledger-shard.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": source_commit,
+        "shard_id": shard_id,
+        "record_count": len(records),
+        "records": records,
+    }
+
+
+def build_quality_record_shards(records: list[object], source_commit: str) -> list[dict[str, object]]:
+    shards: list[list[object]] = []
+    current: list[object] = []
+    current_bytes = 256
+    for record in records:
+        record_bytes = len(stable_compact_json_text(record).encode("utf-8")) + 2
+        if current and current_bytes + record_bytes > FILE_QUALITY_LEDGER_SHARD_TARGET_BYTES:
+            shards.append(current)
+            current = []
+            current_bytes = 256
+        current.append(record)
+        current_bytes += record_bytes
+    if current:
+        shards.append(current)
+    return [
+        quality_shard_payload(shard_records, f"file-quality-ledger-{index:04d}", source_commit)
+        for index, shard_records in enumerate(shards, start=1)
+    ]
+
+
+def build_quality_ledger_index(
+    repo_root: Path,
+    ledger: dict[str, object],
+    shard_payloads: list[dict[str, object]],
+    shard_write_results: list[WriteResult],
+) -> dict[str, object]:
     output_ledger = dict(ledger)
+    records = output_ledger.pop("records", [])
     output_ledger.pop("docs_report", None)
     output_ledger.pop("test_report", None)
     output_ledger.pop("module_report", None)
     output_ledger.pop("reuse_report", None)
+    output_ledger["record_storage"] = "sharded"
+    output_ledger["records"] = []
+    output_ledger["record_count"] = len(records) if isinstance(records, list) else 0
+    output_ledger["regeneration_command"] = "py -3 .aide/scripts/aide_lite.py quality ledger"
+    output_ledger["shard_policy"] = {
+        "stable_ordering": True,
+        "target_max_bytes": FILE_QUALITY_LEDGER_SHARD_TARGET_BYTES,
+        "binary_compression": False,
+    }
+    shard_entries: list[dict[str, object]] = []
+    for payload, write_result in zip(shard_payloads, shard_write_results):
+        text = stable_compact_json_text(payload)
+        rel_path = normalize_rel(write_result.path.relative_to(repo_root))
+        shard_entries.append(
+            {
+                "shard_id": payload.get("shard_id", ""),
+                "path": rel_path,
+                "record_count": payload.get("record_count", 0),
+                "size_bytes": len(text.encode("utf-8")),
+                "sha256": sha256_text(text),
+            }
+        )
+    output_ledger["record_shards"] = shard_entries
+    return output_ledger
+
+
+def render_file_quality_ledger_readme(index: dict[str, object]) -> str:
+    summary = index.get("summary", {}) if isinstance(index.get("summary"), dict) else {}
+    shard_entries = index.get("record_shards", []) if isinstance(index.get("record_shards"), list) else []
+    lines = [
+        "# File Quality Ledger Shards",
+        "",
+        "This directory stores the bounded AIDE file-quality ledger shard set.",
+        "",
+        "- product_behavior_changed: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- binary_compression: false",
+        f"- regeneration_command: `{index.get('regeneration_command', 'py -3 .aide/scripts/aide_lite.py quality ledger')}`",
+        f"- total_records: {index.get('record_count', summary.get('file_count', 0))}",
+        f"- shard_count: {len(shard_entries)}",
+        f"- fail_count: {summary.get('fail_count', 0)}",
+        "",
+        "## Shards",
+        "",
+    ]
+    for entry in shard_entries:
+        lines.append(f"- `{entry.get('path')}`: {entry.get('record_count', 0)} records, {entry.get('size_bytes', 0)} bytes")
+    return "\n".join(lines) + "\n"
+
+
+def write_quality_record_shards(repo_root: Path, ledger: dict[str, object]) -> tuple[list[dict[str, object]], list[WriteResult]]:
+    records = ledger.get("records", [])
+    source_commit = str(ledger.get("source_commit", ""))
+    record_list = records if isinstance(records, list) else []
+    shard_payloads = build_quality_record_shards(record_list, source_commit)
+    shard_dir = repo_root / FILE_QUALITY_LEDGER_SHARDS_DIR_PATH
+    shard_dir.mkdir(parents=True, exist_ok=True)
+    write_results: list[WriteResult] = []
+    current_paths: set[Path] = set()
+    for payload in shard_payloads:
+        shard_name = f"{payload.get('shard_id')}.json"
+        shard_path = shard_dir / shard_name
+        current_paths.add(shard_path)
+        write_results.append(write_text_if_changed(shard_path, stable_compact_json_text(payload)))
+    for stale_path in shard_dir.glob("file-quality-ledger-*.json"):
+        if stale_path not in current_paths:
+            stale_path.unlink()
+    return shard_payloads, write_results
+
+
+def write_quality_outputs(repo_root: Path, ledger: dict[str, object]) -> dict[str, WriteResult]:
+    shard_payloads, shard_write_results = write_quality_record_shards(repo_root, ledger)
+    output_ledger = build_quality_ledger_index(repo_root, ledger, shard_payloads, shard_write_results)
+    readme_text = render_file_quality_ledger_readme(output_ledger)
     return {
         "file_quality_ledger": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_JSON_PATH, stable_compact_json_text(output_ledger)),
+        "file_quality_ledger_index": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_INDEX_JSON_PATH, stable_compact_json_text(output_ledger)),
+        "file_quality_ledger_readme": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_README_PATH, readme_text),
         "file_quality_summary": write_text_if_changed(repo_root / FILE_QUALITY_SUMMARY_MD_PATH, render_file_quality_summary(ledger)),
         "module_quality_report": write_text_if_changed(repo_root / MODULE_QUALITY_REPORT_MD_PATH, render_module_quality_report(ledger)),
         "docs_consistency_report": write_text_if_changed(repo_root / DOCS_CONSISTENCY_REPORT_MD_PATH, render_docs_consistency_report(ledger)),

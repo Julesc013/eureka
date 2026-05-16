@@ -1,0 +1,99 @@
+{
+  "deployment_performed": false,
+  "extraction_executed": false,
+  "product_behavior_changed": false,
+  "production_readiness_claimed": false,
+  "provider_model_network_calls_used": false,
+  "public_launch_readiness_claimed": false,
+  "rows": [
+    {
+      "command": "git diff --check",
+      "id": "git_diff_check",
+      "status": "pass"
+    },
+    {
+      "command": "python -m json.tool control/inventory/aide_ledger_size_result.json",
+      "id": "json_validation",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_aide_report_sizes.py --json",
+      "id": "report_size_validator",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_aide_report_sizes tests.operations.test_file_quality_ledger_sharding tests.operations.test_file_quality_ledger_regeneration",
+      "id": "focused_report_size_tests",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/tests/test_q38_file_quality.py",
+      "id": "q38_file_quality_tests",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "id": "aide_doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "id": "aide_validate",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "id": "aide_test",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "id": "aide_selftest",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "id": "aide_verify",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "id": "aide_review_pack",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py eval run",
+      "id": "aide_eval_run",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py quality validate",
+      "id": "aide_quality_validate",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py quality status",
+      "id": "aide_quality_status",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "id": "architecture_boundaries",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "id": "generated_artifact_cleanliness",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "id": "full_unittest_discovery",
+      "status": "pass",
+      "test_count": 4509
+    }
+  ],
+  "schema_version": "aide_ledger_size_validation_matrix.v0",
+  "source_probe_executed": false,
+  "task": "AIDE-LEDGER-SIZE-01"
+}

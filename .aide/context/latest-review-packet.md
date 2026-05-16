@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4756 chars, 1189 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4758 chars, 1190 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/export` (??; matches active task allowed path)
-- allowed: `.aide/github/github-advisory.json` (M; matches active task allowed path)
-- allowed: `.aide/github/github-advisory.md` (M; matches active task allowed path)
-- allowed: `.aide/import` (??; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-EVAL-GREEN-01` (??; matches active task allowed path)
+- allowed: `.aide/policies/file-quality-ledger.yaml` (??; matches active task allowed path)
+- allowed: `.aide/policies/report-size.yaml` (??; matches active task allowed path)
+- allowed: `.aide/quality/file-quality-ledger.schema.json` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-LEDGER-SIZE-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-assets.json` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-checklist.json` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-checklist.md` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-draft-validation.json` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-draft-validation.md` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-draft.json` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-draft.md` (M; matches active task allowed path)
-- allowed: `.aide/release/github-release-upload-plan.json` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 45; see task evidence changed-files report
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/file-quality-ledger` (??; matches active task allowed path)
+- allowed: `.aide/reports/file-quality-ledger.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/file-quality-ledger.schema.json` (M; matches active task allowed path)
+- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
+- allowed: `.aide/scripts/tests/test_q38_file_quality.py` (M; matches active task allowed path)
+- allowed: `control/audits/aide-ledger-size-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_file_quality_ledger_diagnosis.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_large_artifact_inventory.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_blocker_register.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_repair_plan.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/aide_ledger_size_validation_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 8; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6410
-- approx_tokens: 1603
+- chars: 6609
+- approx_tokens: 1653
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

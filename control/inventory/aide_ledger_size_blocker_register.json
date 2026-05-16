@@ -1,0 +1,6 @@
+{
+  "blockers": [],
+  "hard_blockers_remaining": 0,
+  "schema_version": "aide_ledger_size_blocker_register.v0",
+  "task": "AIDE-LEDGER-SIZE-01"
+}

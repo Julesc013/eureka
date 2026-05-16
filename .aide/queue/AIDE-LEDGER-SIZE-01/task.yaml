@@ -1,0 +1,41 @@
+schema_version: aide.task.v0
+id: AIDE-LEDGER-SIZE-01
+title: Reduce oversized AIDE report artifacts without product behavior changes
+status: completed
+task_class: aide_control_plane_repair
+recommended_after: AIDE-EVAL-GREEN-01
+recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
+allowed_scope:
+  - .aide/reports/**
+  - .aide/quality/**
+  - .aide/repo/**
+  - .aide/scripts/aide_lite.py
+  - .aide/policies/**
+  - .aide/commands/catalog.yaml
+  - .aide/evals/**
+  - .aide/context/**
+  - docs/operations/**
+  - docs/reference/**
+  - control/inventory/**
+  - control/audits/**
+  - scripts/validate_*.py
+  - tests/operations/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+boundaries:
+  product_behavior_changed: false
+  source_probe_executed: false
+  extraction_executed: false
+  model_provider_used: false
+  deployment_performed: false
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false
+evidence:
+  result: control/inventory/aide_ledger_size_result.json
+  audit: control/audits/aide-ledger-size-01-v0/aide_ledger_size_report.json
