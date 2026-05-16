@@ -201,6 +201,7 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
         "HUNT-",
         "SYN-",
         "F0-",
+        "AIDE-",
     )
     advanced_beyond_ia = any(marker in text for marker in allowed_later_track_prefixes)
     if not any(marker in text for marker in allowed_ia_progression_markers) and not advanced_beyond_ia:

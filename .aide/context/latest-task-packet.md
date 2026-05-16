@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - DEV-MAIN-AIDE-SYNC-01 merge origin/main AIDE baseline into dev while preserving HUNT search work
+UNSPECIFIED - AIDE-EVAL-GREEN-01
 
 ## GOAL
 
-DEV-MAIN-AIDE-SYNC-01 merge origin/main AIDE baseline into dev while preserving HUNT search work
+AIDE-EVAL-GREEN-01
 
 ## WHY
 
@@ -14,6 +14,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
+- `AGENTS.md`
+- `.aide/queue/index.yaml`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -40,10 +42,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
-- `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
@@ -51,8 +61,20 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+- `.local/**`
+- `.cache/**`
+- `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
@@ -67,16 +89,18 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py repo inventory`
-- `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 scripts/aide validate`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python -m unittest discover -s tests -t .`
 - `git diff --check`
 
 ## COMMITS
@@ -96,7 +120,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -113,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4254
-- approx_tokens: 1064
+- chars: 4756
+- approx_tokens: 1189
 - budget_status: PASS
 - warnings:
   - none

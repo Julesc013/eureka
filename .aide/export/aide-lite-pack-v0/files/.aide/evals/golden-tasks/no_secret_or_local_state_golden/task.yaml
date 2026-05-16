@@ -1,0 +1,13 @@
+schema_version: aide.golden-task.v0
+task_id: no_secret_or_local_state_golden
+title: Eureka No Secret Or Local State Golden
+status: active
+purpose: Check that AIDE Lite artifacts keep secrets, local state, raw prompts, and raw responses out of committed paths.
+input_refs:
+  - .gitignore
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - AGENTS.md
+acceptance_ref: .aide/evals/golden-tasks/no_secret_or_local_state_golden/acceptance.md
+expected_result: PASS

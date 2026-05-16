@@ -12,6 +12,7 @@ from pathlib import Path
 
 QUEUE_INDEX = Path(".aide/queue/index.yaml")
 TASK_PACKET = Path(".aide/context/latest-task-packet.md")
+LATER_CONTROL_OR_HANDOFF_PREFIXES = ("AIDE-", "HUNT-", "SYN-", "F0-")
 
 
 def read_repo_text(root: Path, relative: Path) -> str:
@@ -59,6 +60,8 @@ def queue_current_or_advanced(root: Path, completed_task_id: str, expected_curre
     current = current_recommended_task(root)
     if current == expected_current:
         return True
+    if is_later_control_or_handoff(current) and queue_task_completed(root, completed_task_id):
+        return True
     return bool(current) and queue_task_completed(root, completed_task_id) and queue_has_task(root, expected_current)
 
 
@@ -67,4 +70,14 @@ def latest_packet_current_or_advanced(root: Path, completed_task_id: str, expect
     current = current_recommended_task(root)
     if expected_task in packet:
         return True
+    if queue_task_completed(root, completed_task_id) and packet_mentions_later_control_or_handoff(packet):
+        return True
     return bool(current) and current in packet and queue_task_completed(root, completed_task_id)
+
+
+def is_later_control_or_handoff(task_id: str) -> bool:
+    return any(task_id.startswith(prefix) for prefix in LATER_CONTROL_OR_HANDOFF_PREFIXES)
+
+
+def packet_mentions_later_control_or_handoff(packet: str) -> bool:
+    return any(prefix in packet for prefix in LATER_CONTROL_OR_HANDOFF_PREFIXES)

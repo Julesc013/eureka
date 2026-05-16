@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide_eval_green_result.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "status": "pass",
+  "eval_task_count_before": 136,
+  "eval_pass_count_before": 127,
+  "eval_fail_count_before": 9,
+  "eval_task_count_after": 136,
+  "eval_pass_count_after": 136,
+  "eval_fail_count_after": 0,
+  "aide_eval_green": true,
+  "safe_repairs_applied": 11,
+  "product_behavior_changed": false,
+  "provider_model_network_calls_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 0,
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW"
+}

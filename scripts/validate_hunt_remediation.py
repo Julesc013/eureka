@@ -205,10 +205,26 @@ def validate_closeout_state(root: Path, errors: list[str]) -> None:
 def validate_queue(root: Path, errors: list[str]) -> None:
     index = root / ".aide/queue/index.yaml"
     text = index.read_text(encoding="utf-8") if index.is_file() else ""
-    if "current_recommended_task: SYN-00" not in text:
-        errors.append("queue must still recommend SYN-00")
+    if not queue_preserves_hunt_handoff(root, text):
+        errors.append("queue must recommend SYN-00 or gated HUNT-TO-MAIN-PROMOTION-REVIEW after AIDE eval green")
     if "id: HUNT-REMEDIATION" not in text or "status: completed" not in text:
         errors.append("queue must mark HUNT-REMEDIATION completed")
+
+
+def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
+    if "current_recommended_task: SYN-00" in queue_text:
+        return True
+    if "current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW" not in queue_text:
+        return False
+    aide = load_json(root / "control/inventory/aide_eval_green_result.json", "aide_eval_green_result.v0", [])
+    closeout = load_json(root / "control/inventory/search_hunt_closeout_result.json", "search_hunt_closeout_result.v0", [])
+    return (
+        aide.get("aide_eval_green") is True
+        and aide.get("eval_fail_count_after") == 0
+        and aide.get("product_behavior_changed") is False
+        and closeout.get("syn_can_start") is True
+        and closeout.get("hard_blockers_remaining") == 0
+    )
 
 
 def validate_audit_pack(root: Path, errors: list[str]) -> None:

@@ -1,0 +1,209 @@
+{
+  "schema_version": "aide_eval_failure_register.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "failure_count_before": 9,
+  "failures": [
+    {
+      "failure_id": "aide-eval-001",
+      "golden_task_id": "compact_task_packet_golden",
+      "related_paths": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "checks_run": 31,
+      "passed_checks": 27,
+      "failed_checks": 4,
+      "error_messages": [
+        "Eureka packet references AGENTS.md",
+        "Eureka packet validation includes .aide/scripts/aide_lite.py eval run",
+        "Eureka packet validation includes scripts/check_architecture_boundaries.py",
+        "Eureka packet is target-specific"
+      ],
+      "failure_class": "target_specific_packet_mismatch",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Repair the AIDE packet generator for Eureka target packets and regenerate compact context."
+    },
+    {
+      "failure_id": "aide-eval-002",
+      "golden_task_id": "github_release_assets_have_checksums_golden",
+      "related_paths": [
+        ".aide/release/dist",
+        ".aide/release/github-release-assets.json"
+      ],
+      "checks_run": 14,
+      "passed_checks": 5,
+      "failed_checks": 9,
+      "error_messages": [
+        "required release assets missing or without hashes"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Rebuild the portable export pack and local no-publish release artifacts."
+    },
+    {
+      "failure_id": "aide-eval-003",
+      "golden_task_id": "github_report_only_golden",
+      "related_paths": [
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_q35_github_advisory.py"
+      ],
+      "checks_run": 11,
+      "passed_checks": 10,
+      "failed_checks": 1,
+      "error_messages": [
+        "no live workflow files are required"
+      ],
+      "failure_class": "aide_command_behavior_bug",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Assert report-only no-write behavior instead of failing on pre-existing target workflows."
+    },
+    {
+      "failure_id": "aide-eval-004",
+      "golden_task_id": "release_archive_generation_golden",
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0",
+        ".aide/release/dist"
+      ],
+      "checks_run": 4,
+      "passed_checks": 0,
+      "failed_checks": 4,
+      "error_messages": [
+        "release archive outputs missing"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Restore portable import templates, rebuild export pack, and regenerate release bundle."
+    },
+    {
+      "failure_id": "aide-eval-005",
+      "golden_task_id": "release_checksum_validation_golden",
+      "related_paths": [
+        ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+        ".aide/release/dist/SHA256SUMS.txt"
+      ],
+      "checks_run": 4,
+      "passed_checks": 0,
+      "failed_checks": 4,
+      "error_messages": [
+        "release checksum outputs missing"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Regenerate local release checksums from the rebuilt bundle."
+    },
+    {
+      "failure_id": "aide-eval-006",
+      "golden_task_id": "release_fixture_extraction_golden",
+      "related_paths": [
+        ".aide/release/dist/aide-lite-pack-v0.zip",
+        ".aide/release/dist/aide-lite-pack-v0.tar.gz"
+      ],
+      "checks_run": 4,
+      "passed_checks": 2,
+      "failed_checks": 2,
+      "error_messages": [
+        "release archives missing for fixture extraction validation"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Regenerate the local release archives and rerun fixture extraction validation."
+    },
+    {
+      "failure_id": "aide-eval-007",
+      "golden_task_id": "release_forbidden_paths_excluded_golden",
+      "related_paths": [
+        ".aide/release/dist/aide-lite-pack-v0.zip",
+        ".aide/release/dist/aide-lite-pack-v0.tar.gz"
+      ],
+      "checks_run": 4,
+      "passed_checks": 2,
+      "failed_checks": 2,
+      "error_messages": [
+        "release archives missing for forbidden-path validation"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Regenerate release archives from the export pack and validate no forbidden paths."
+    },
+    {
+      "failure_id": "aide-eval-008",
+      "golden_task_id": "release_no_publish_golden",
+      "related_paths": [
+        ".aide/release/latest-release-bundle.json"
+      ],
+      "checks_run": 9,
+      "passed_checks": 7,
+      "failed_checks": 2,
+      "error_messages": [
+        "latest release bundle no_publish true",
+        "latest release bundle publication status is local preview"
+      ],
+      "failure_class": "post_merge_artifact_drift",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Regenerate latest local release bundle evidence with no_publish true."
+    },
+    {
+      "failure_id": "aide-eval-009",
+      "golden_task_id": "repo_boundary_golden",
+      "related_paths": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "checks_run": 34,
+      "passed_checks": 23,
+      "failed_checks": 11,
+      "error_messages": [
+        "Eureka product boundaries missing from latest task packet",
+        "packet does not state no Eureka product behavior change"
+      ],
+      "failure_class": "target_specific_packet_mismatch",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false,
+      "blocks_hunt_closeout": false,
+      "blocks_syn_start": false,
+      "blocks_f0_resume": false,
+      "blocks_main_promotion": true,
+      "proposed_repair": "Repair the AIDE packet generator for Eureka product-boundary language and regenerate compact context."
+    }
+  ]
+}

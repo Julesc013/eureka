@@ -1,0 +1,140 @@
+{
+  "artifact_count": 11,
+  "artifacts": [
+    {
+      "asset_id": "aide-lite-pack-v0.checksums.json",
+      "included": true,
+      "kind": "checksums",
+      "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "b8eaf64dd60cb5096ef6570e21569a2905b18ba430353bf2f5e24b816c00dc93",
+      "size_bytes": 1200,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "aide-lite-pack-v0.tar.gz",
+      "included": true,
+      "kind": "tar_gz_archive",
+      "path": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "594ae1d123c7962465efbf2ea49216fc80ec2d51149fee3dd0a20364ddebb8c6",
+      "size_bytes": 468959,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "aide-lite-pack-v0.zip",
+      "included": true,
+      "kind": "zip_archive",
+      "path": ".aide/release/dist/aide-lite-pack-v0.zip",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "e5f714097effcce98d7263513d76a511fa8597aa468c0a4619af794240192553",
+      "size_bytes": 717891,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "CHANGELOG.preview.md",
+      "included": true,
+      "kind": "changelog_preview_copy",
+      "path": ".aide/release/dist/CHANGELOG.preview.md",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "4681c4a59a04225fc3345adce433b32f92dc1d9b23f5b3e28b57692faedf3136",
+      "size_bytes": 20286,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "install.md",
+      "included": true,
+      "kind": "install_notes",
+      "path": ".aide/release/dist/install.md",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "47bdd43779ea9c3c1cc1f35d8fea7a00f58ffb6cf17a362772b09b2e389d5bb8",
+      "size_bytes": 1251,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "manifest.yaml",
+      "included": true,
+      "kind": "manifest",
+      "path": ".aide/release/dist/manifest.yaml",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "c1e409ce684c736edc2c3f2586fced6f840180f9f9660f912b7ea8f32e58a18e",
+      "size_bytes": 1407,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "release-provenance.json",
+      "included": true,
+      "kind": "provenance_report",
+      "path": ".aide/release/dist/release-provenance.json",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "e85748d5067b50e157e3dbf800706fe9e485fc941e8dc8e7ee65f2b0ad1d93b3",
+      "size_bytes": 1441,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "release-validation.json",
+      "included": true,
+      "kind": "validation_report",
+      "path": ".aide/release/dist/release-validation.json",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "3f4164615521899ad86df1b9d57a122d9421cf777080d22d0ccc5b9aaaa7d5ad",
+      "size_bytes": 3168,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "release-validation.md",
+      "included": true,
+      "kind": "validation_report",
+      "path": ".aide/release/dist/release-validation.md",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "df35747cfd0d9361cf1dfd5d36a185bceb5e4939f0f892bb7dbb97da16040aae",
+      "size_bytes": 239,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "RELEASE_NOTES.preview.md",
+      "included": true,
+      "kind": "release_notes_preview_copy",
+      "path": ".aide/release/dist/RELEASE_NOTES.preview.md",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "db03847412e58581662c58f14f1ff3352d6966816352c3b9f779be8a75476ce6",
+      "size_bytes": 16033,
+      "source": "release_dist",
+      "validation_status": "pending"
+    },
+    {
+      "asset_id": "SHA256SUMS.txt",
+      "included": true,
+      "kind": "sha256sums_text",
+      "path": ".aide/release/dist/SHA256SUMS.txt",
+      "publish_candidate": false,
+      "reason": "generated local release artifact",
+      "sha256": "3ec99434b752c6f60900966a01b6aebeb390ab0a6442fa1dba48a0e18cdc4875",
+      "size_bytes": 690,
+      "source": "release_dist",
+      "validation_status": "pending"
+    }
+  ],
+  "bundle_id": "aide-lite-pack-v0-01f2470cc1c9346e",
+  "no_publish": true,
+  "schema_version": "aide.release-assets.v0"
+}

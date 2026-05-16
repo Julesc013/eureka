@@ -1,0 +1,8 @@
+{
+  "schema_version": "aide_eval_green_warning_disposition.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "warnings_remaining": 0,
+  "warnings": [],
+  "large_report_warning_resolved": true,
+  "disposition": "AIDE eval warnings are zero and the oversized file-quality ledger was compacted below 50 MB without removing records."
+}

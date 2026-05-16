@@ -1,32 +1,12 @@
 {
   "asset_validation": {
     "asset_count": 12,
-    "missing_required_count": 8
+    "missing_required_count": 0
   },
-  "blockers": [
-    "required release draft assets are present",
-    "release draft asset checksums match",
-    "required asset missing: .aide/release/dist/aide-lite-pack-v0.zip",
-    "required asset missing: .aide/release/dist/aide-lite-pack-v0.tar.gz",
-    "required asset missing: .aide/release/dist/aide-lite-pack-v0.checksums.json",
-    "required asset missing: .aide/release/dist/SHA256SUMS.txt",
-    "required asset missing: .aide/release/dist/manifest.yaml",
-    "required asset missing: .aide/release/dist/install.md",
-    "required asset missing: .aide/release/dist/CHANGELOG.preview.md",
-    "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md"
-  ],
+  "blockers": [],
   "checksum_validation": {
-    "problems": [
-      "required asset missing: .aide/release/dist/aide-lite-pack-v0.zip",
-      "required asset missing: .aide/release/dist/aide-lite-pack-v0.tar.gz",
-      "required asset missing: .aide/release/dist/aide-lite-pack-v0.checksums.json",
-      "required asset missing: .aide/release/dist/SHA256SUMS.txt",
-      "required asset missing: .aide/release/dist/manifest.yaml",
-      "required asset missing: .aide/release/dist/install.md",
-      "required asset missing: .aide/release/dist/CHANGELOG.preview.md",
-      "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md"
-    ],
-    "result": "FAIL"
+    "problems": [],
+    "result": "PASS"
   },
   "draft_ref": ".aide/release/github-release-draft.json",
   "no_publish": true,
@@ -53,8 +33,8 @@
     "tag_created": false,
     "upload_performed": false
   },
-  "result": "FAIL",
+  "result": "PASS",
   "schema_version": "aide.github-release-draft-validation.v0",
-  "validation_id": "aide-lite-pack-v0-github-draft-6f2698c6e109a3b3-validation",
+  "validation_id": "aide-lite-pack-v0-github-draft-01f2470cc1c9346e-validation",
   "warnings": []
 }

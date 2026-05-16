@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-15
 repo: julesc013/eureka
-current_recommended_task: SYN-00
+current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -298,7 +298,16 @@ entries:
     gate: Operator-selected continuation after green HUNT remediation; no source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/HUNT-REMEDIATION-CONTINUE/task.yaml
     recommended_after: HUNT-REMEDIATION
-    recommended_next: SYN-00
+    recommended_next: AIDE-EVAL-GREEN-01
+  - id: AIDE-EVAL-GREEN-01
+    title: Make Eureka AIDE golden evals pass under merged main-to-dev baseline
+    status: completed
+    purpose: Repair stale AIDE generated context, export/release artifacts, and AIDE-only golden behavior after the main-to-dev AIDE sync.
+    allowed_scope_summary: AIDE/control-plane artifacts, docs/reference, control evidence, and AIDE tests only; no Eureka product behavior changes.
+    gate: DEV-MAIN-AIDE-SYNC-01 complete enough for dev to contain the updated AIDE baseline; no source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
+    task: .aide/queue/AIDE-EVAL-GREEN-01/task.yaml
+    recommended_after: DEV-MAIN-AIDE-SYNC-01
+    recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
   - id: LOCAL-TO-MAIN-PROMOTION-REVIEW
     title: Review and decide whether LOCAL dev promotes to main
     status: queued

@@ -27,6 +27,7 @@ PUBLICATION_DIR = REPO_ROOT / "control" / "inventory" / "publication"
 HISTORICAL_ALLOW_DIRS = {
     ".aide/context",
     ".aide/queue",
+    ".aide/repo",
     "control/audits",
     ".aide/reports",
 }

@@ -1,0 +1,35 @@
+schema_version: aide.task.v0
+id: AIDE-EVAL-GREEN-01
+title: Make Eureka AIDE golden evals pass under merged main-to-dev baseline
+status: completed
+task_class: aide_control_plane_repair
+recommended_after: DEV-MAIN-AIDE-SYNC-01
+recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
+allowed_scope:
+  - .aide/**
+  - AGENTS.md
+  - docs/reference/**
+  - docs/operations/**
+  - control/inventory/**
+  - control/audits/**
+  - control/policies/**
+  - tests/operations/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+boundaries:
+  product_behavior_changed: false
+  source_probe_executed: false
+  extraction_executed: false
+  model_provider_used: false
+  deployment_performed: false
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false
+evidence:
+  result: control/inventory/aide_eval_green_result.json
+  audit: control/audits/aide-eval-green-01-v0/aide_eval_green_report.json

@@ -1,0 +1,12 @@
+schema_version: aide.golden-task.v0
+task_id: evidence_review_packet_golden
+title: Eureka Evidence Review Packet Golden
+status: active
+purpose: Check that review packets are compact, evidence-first, and free of raw prompt or secret leakage.
+input_refs:
+  - .aide/context/latest-review-packet.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-context-packet.md
+  - .aide/verification/latest-verification-report.md
+acceptance_ref: .aide/evals/golden-tasks/evidence_review_packet_golden/acceptance.md
+expected_result: PASS

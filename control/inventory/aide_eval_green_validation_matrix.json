@@ -1,0 +1,94 @@
+{
+  "schema_version": "aide_eval_green_validation_matrix.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "rows": [
+    {
+      "id": "git_diff_check",
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "id": "aide_doctor",
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "id": "aide_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "id": "aide_test",
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "id": "aide_selftest",
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "id": "aide_verify",
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "warnings": 0,
+      "errors": 0
+    },
+    {
+      "id": "aide_review_pack",
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "id": "aide_eval_list",
+      "command": "py -3 .aide/scripts/aide_lite.py eval list",
+      "status": "pass",
+      "task_count": 136
+    },
+    {
+      "id": "aide_eval_run",
+      "command": "py -3 .aide/scripts/aide_lite.py eval run",
+      "status": "pass",
+      "task_count": 136,
+      "pass_count": 136,
+      "fail_count": 0,
+      "warn_count": 0
+    },
+    {
+      "id": "aide_commit_check_latest",
+      "command": "py -3 .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass"
+    },
+    {
+      "id": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "id": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "pre_commit_status": "expected_dirty_until_task_artifacts_are_committed"
+    },
+    {
+      "id": "runtime_leakage_audit",
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "status": "pass"
+    },
+    {
+      "id": "runtime_leakage_validation",
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass"
+    },
+    {
+      "id": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "test_count": 4503
+    }
+  ],
+  "provider_model_network_calls_used": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "deployment_performed": false
+}

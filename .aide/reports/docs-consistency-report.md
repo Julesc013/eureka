@@ -1,6 +1,6 @@
 # Docs Consistency Report
 
-- docs_scanned: 5422
+- docs_scanned: 5627
 
 ## Stale Path Candidates
 
@@ -26,290 +26,290 @@
 - .aide/changelog/CHANGELOG.preview.md: governance
 - .aide/changelog/CHANGELOG.preview.md: hosts
 - .aide/changelog/CHANGELOG.preview.md: test
+- .aide/changelog/README.md: aide/changelog
+- .aide/changelog/README.md: aide/scripts/aide_lite.py
 - .aide/changelog/RELEASE_NOTES.preview.md: governance
 - .aide/changelog/RELEASE_NOTES.preview.md: hosts
 - .aide/changelog/RELEASE_NOTES.preview.md: test
+- .aide/changelog/changelog.preview.json: aide/context/latest-task-packet.md/n-
+- .aide/changelog/changelog.preview.json: aide/nAIDE-Quality-Gate
+- .aide/changelog/changelog.preview.json: aide/scripts/aide_lite.py
+- .aide/changelog/changelog.preview.json: aide/verification/latest-verification-report.md/n-
 - .aide/changelog/changelog.preview.json: governance
 - .aide/changelog/changelog.preview.json: hosts
+- .aide/changelog/changelog.preview.json: local machine proof, local service smoke, workbench smoke, auto-test/search, LAN same-machine smoke, clean-machine proof
+- .aide/changelog/changelog.preview.json: py -3 .aide/scripts/aide_lite.py verify
+- .aide/changelog/changelog.preview.json: python scripts/audit_contract_taxonomy.py --check --json
+- .aide/changelog/changelog.preview.json: python scripts/audit_runtime_architecture_leakage.py --check --json
+- .aide/changelog/changelog.preview.json: python scripts/check_architecture_boundaries.py
+- .aide/changelog/changelog.preview.json: python scripts/check_generated_artifact_cleanliness.py --check --json
+- .aide/changelog/changelog.preview.json: python scripts/update_contract_schema_references.py --apply --output control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json --summary-output control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_summary.md
+- .aide/changelog/changelog.preview.json: python scripts/update_contract_schema_references.py --dry-run --json
+- .aide/changelog/changelog.preview.json: python scripts/validate_contract_taxonomy_migration.py
+- .aide/changelog/changelog.preview.json: python scripts/validate_contract_taxonomy_plan.py
+- .aide/changelog/changelog.preview.json: python scripts/validate_local_auto_test_harness.py --json
+- .aide/changelog/changelog.preview.json: python scripts/validate_product_contract_tree.py
+- .aide/changelog/changelog.preview.json: python scripts/validate_runtime_architecture_leakage.py
+- .aide/changelog/changelog.preview.json: scripts/check_architecture_boundaries.py./n-
+- .aide/changelog/changelog.preview.json: scripts/check_architecture_boundaries.py./n/n-
+- .aide/changelog/changelog.preview.json: scripts/check_architecture_boundaries.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_candidate_index_contract.py./n-
+- .aide/changelog/changelog.preview.json: scripts/validate_clean_machine_bootstrap.py./n-
+- .aide/changelog/changelog.preview.json: scripts/validate_contract_taxonomy_migration.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_contract_taxonomy_plan.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_evidence_ledger_store.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_generated_artifact_drift.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_local_appliance_track.py./n/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_local_instance_bootstrap.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_local_lan_smoke.py./n-
+- .aide/changelog/changelog.preview.json: scripts/validate_r0_final_closeout.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_review_queue_store.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_reviewed_public_index.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_runtime_architecture_leakage.py/n-
+- .aide/changelog/changelog.preview.json: scripts/validate_source_cache_store.py/n-
 - .aide/changelog/changelog.preview.json: test
-- .aide/changelog/malformed-commits.md: test
-- .aide/context/latest-context-packet.md: aide/context/compiler.yaml
-- .aide/context/latest-context-packet.md: aide/context/context-index.json
-- .aide/context/latest-context-packet.md: aide/context/excerpt-policy.yaml
-- .aide/context/latest-context-packet.md: aide/context/ignore.yaml
-- .aide/context/latest-context-packet.md: aide/context/priority.yaml
-- .aide/context/latest-context-packet.md: aide/context/repo-map.json
-- .aide/context/latest-context-packet.md: aide/context/repo-map.md
-- .aide/context/latest-context-packet.md: aide/context/repo-snapshot.json
-- .aide/context/latest-context-packet.md: aide/context/test-map.json
-- .aide/context/latest-context-packet.md: aide/memory/decisions.md
-- .aide/context/latest-context-packet.md: aide/memory/open-risks.md
-- .aide/context/latest-context-packet.md: aide/memory/project-state.md
-- .aide/context/latest-context-packet.md: aide/queue/index.yaml
-- .aide/context/latest-context-packet.md: aide/reports/token-ledger.jsonl
-- .aide/context/latest-context-packet.md: test
-- .aide/context/latest-review-packet.md: aide/cache/latest-cache-keys.json
-- .aide/context/latest-review-packet.md: aide/changelog/README.md
-- .aide/context/latest-review-packet.md: aide/changelog/config.yaml
-- .aide/context/latest-review-packet.md: aide/changelog/templates
-- .aide/context/latest-review-packet.md: aide/commands/catalog.yaml
-- .aide/context/latest-review-packet.md: aide/context/context-index.json
-- .aide/context/latest-review-packet.md: aide/context/latest-context-packet.md
-- .aide/context/latest-review-packet.md: aide/context/latest-review-packet.md
-- .aide/context/latest-review-packet.md: aide/context/latest-task-packet.md
-- .aide/context/latest-review-packet.md: aide/context/repo-map.json
-- .aide/context/latest-review-packet.md: aide/context/test-map.json
-- .aide/context/latest-review-packet.md: aide/controller/latest-outcome-report.md
-- .aide/context/latest-review-packet.md: aide/controller/latest-recommendations.md
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/README.md
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/catalog.yaml
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/changelog_json_shape_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/changelog_preview_golden/acceptance.md
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/changelog_preview_golden/task.yaml
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/docs_consistency_report_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/file_classification_policy_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/file_quality_ledger_schema_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/file_quality_policy_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_ci_advisory_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_export_inclusion_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_protection_policy_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_asset_schema_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_assets_have_checksums_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_checklist_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_draft_policy_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_draft_schema_golden
-- .aide/context/latest-review-packet.md: aide/evals/golden-tasks/github_release_no_publish_golden
-- .aide/context/latest-review-packet.md: aide/gateway/latest-gateway-status.json
-- .aide/context/latest-review-packet.md: aide/providers/latest-provider-status.json
-- .aide/context/latest-review-packet.md: aide/queue/README.template.md
-- .aide/context/latest-review-packet.md: aide/queue/index.yaml
-- .aide/context/latest-review-packet.md: aide/reports/token-ledger.jsonl
-- .aide/context/latest-review-packet.md: aide/routing/latest-route-decision.json
-- .aide/context/latest-review-packet.md: aide/verification/latest-verification-report.md
-- .aide/context/latest-review-packet.md: aide/verification/review-decision-policy.yaml
-- .aide/context/latest-review-packet.md: chars / 4
-- .aide/context/latest-review-packet.md: governance
-- .aide/context/latest-review-packet.md: test
-- .aide/context/latest-task-packet.md: aide.local/**
-- .aide/context/latest-task-packet.md: aide/cache/latest-cache-keys.json
-- .aide/context/latest-task-packet.md: aide/cache/latest-cache-keys.md
-- .aide/context/latest-task-packet.md: aide/context
-- .aide/context/latest-task-packet.md: aide/context/**
-- .aide/context/latest-task-packet.md: aide/context/context-index.json
-- .aide/context/latest-task-packet.md: aide/context/latest-context-packet.md
-- .aide/context/latest-task-packet.md: aide/context/repo-map.json
-- .aide/context/latest-task-packet.md: aide/context/repo-map.md
-- .aide/context/latest-task-packet.md: aide/context/repo-snapshot.json
-- .aide/context/latest-task-packet.md: aide/context/test-map.json
-- .aide/context/latest-task-packet.md: aide/memory/decisions.md
-- .aide/context/latest-task-packet.md: aide/memory/open-risks.md
+- .aide/changelog/changelog.preview.json: test./n/nBoundaries
+- .aide/changelog/changelog.preview.json: test/eval/architecture
+- .aide/changelog/changelog.preview.json: test/n-
+- .aide/changelog/changelog.preview.json: tests./n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_contract_reference_updates/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_contract_taxonomy_remediation/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_dev_to_main_promotion_plan/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_generated_artifact_drift/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_generated_artifact_isolation/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_local_appliance_track./n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_local_appliance_track./n/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_local_instance_bootstrap./n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_local_instance_policy./n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_local_total_promotion_gate./n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_product_contract_tree/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_r0_final_closeout/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_r0_future_task_gate/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_r0_production_review/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_runtime_architecture_leakage/n-
+- .aide/changelog/changelog.preview.json: tests.operations.test_site_dist_no_mutation/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_evidence_ledger_integration/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_evidence_ledger_migrations/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_evidence_ledger_store/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_one_source_live_test/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_public_index_integration/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_pypi_json_metadata_source/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_source_cache_integration/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_source_cache_migrations/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_source_cache_store/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_source_observation_seam/n-
+- .aide/changelog/changelog.preview.json: tests.runtime.test_source_observation_validation/n-
+- .aide/changelog/changelog.preview.json: tests/n/n-
+- .aide/changelog/changelog.preview.json: tools
+- .aide/changelog/latest-changelog-report.md: aide/changelog/CHANGELOG.preview.md
+- .aide/changelog/latest-changelog-report.md: aide/changelog/RELEASE_NOTES.preview.md
+- .aide/changelog/latest-changelog-report.md: aide/changelog/changelog.preview.json
 
 ## Missing Doc Candidates
 
+- .aide/install/conflict-record.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/conflict-report.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/install-dry-run.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/install-observation.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/install-operation.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/install-plan.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/install-verification.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/managed-section.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/ownership-ledger.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/ownership-record.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/install/preservation-report.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/intake/intent-packet.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/intake/workunit-draft.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/adapters.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/branch-protection.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/branch-roles.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
 - .aide/policies/cache.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/changelog.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/ci-gates.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/commit-message-standard.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/commit-messages.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/controller.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/dependencies.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/dependency-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/doc-link-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/docs-consistency.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/doctor.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/documentation-quality-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/evals.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
 - .aide/policies/export-import.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/file-classification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/file-quality.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/gateway.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
 - .aide/policies/git-workflow.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/github-protection.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/github-release-draft.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/install-conflicts.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/install-migrations.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/install-ownership.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/install-verification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/install.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/intent.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/local-state.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/migration-ledger.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/migration.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/module-quality.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/move-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/ownership-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/ownership.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/path-aliases.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/promotion-rules.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/prompt-normalization.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/provider-adapters.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/prune-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
 - .aide/policies/recovery.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/refactor-application.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/refactor-evidence.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/refactor-safety.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/refactor.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/reference-rewrite.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-artifacts.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-bundle.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-checklist.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-provenance.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-publication-boundary.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-upload-plan.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-validation.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/release-versioning.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repair-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repair-detection.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repair-safety.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repair-verification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repair.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repo-intelligence.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/reuse-modularity.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/risk-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/rollback-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/rollback-safety.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/rollback-verification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/rollback.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/root-exceptions.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/root-fates.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/root-inventory.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/root-recycling.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/root-risk.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/routing.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/salvage-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/source-comment-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/sync-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/task-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/task-resumption.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/test-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/token-budget.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/policies/token-ledger.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
-- .aide/policies/verification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
-- .aide/policies/work-units.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
-- .aide/policies/workunit-recovery-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
-- .aide/routing/route-decision.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
-- .aide/scripts/aide_lite.py: large_module_candidate, missing_doc_candidate, mixed_purpose_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
-- contracts/runtime/live_metadata_test_request.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/runtime/live_metadata_test_result.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/source_cache/README.md: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/source_sync/README.md: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/sources/source_trust_lane.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_absence_report.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_migration.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_rebuild.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_record.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_search_result.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/public_index_store.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/review_event.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/review_item_record.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/review_queue_migration.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/review_queue_status.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/stores/review_queue_store.v0.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/README.md: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, stale_doc_reference_candidate, unknown_owner
-- contracts/ui/ui_contracts/action_plan.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/comparison.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/compatibility.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/local_index.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/local_task.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/member_access.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/query_plan.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/representation_selection.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/representations.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/resolution_run.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/search_results.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/ui_contracts/subject_states.ui_contract.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/README.md: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, stale_doc_reference_candidate, unknown_owner
-- contracts/ui/view_models/acquisition.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/action_plan.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/comparison.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/compatibility.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/decomposition.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/local_index.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/local_task.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/member_access.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/query_plan.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/representation_selection.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/representations.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/resolution_actions.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/resolution_memory.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/resolution_run.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/search_results.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/subject_states.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- contracts/ui/view_models/workbench_session.view_model.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- control/backlog/search_usefulness_triage/backlog_item.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- control/inventory/tests/test_registry.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_action_candidate.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_compatibility.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/fixture_loader.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/flashpoint_metadata.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/game_relation.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/game_software_identity.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/games_emulation_policy_blocked.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/games_rights_safety.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_emulator_compatibility.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_game_database.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/generic_preservation_hashset.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/gog_game_metadata_policy_limited.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/itchio_game_metadata_policy_limited.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_common.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_flashpoint_metadata.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_games_emulation_policy_blocked.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_emulator_compatibility.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_game_database.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_generic_preservation_hashset.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- control/prototypes/legacy_runtime/connectors/h10_games_emulation/live_probe_gog_game_metadata_policy_limited.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
+- .aide/policies/tool-absorption.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/tool-capabilities.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/tool-fates.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/tool-inventory.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/tool-risk.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/tool-wrapping.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 
 ## Public Surface Doc Candidates
 
+- .aide/install/conflict-record.schema.json (schema)
+- .aide/install/conflict-report.schema.json (schema)
+- .aide/install/install-dry-run.schema.json (schema)
+- .aide/install/install-observation.schema.json (schema)
+- .aide/install/install-operation.schema.json (schema)
+- .aide/install/install-plan.schema.json (schema)
+- .aide/install/install-verification.schema.json (schema)
+- .aide/install/managed-section.schema.json (schema)
+- .aide/install/ownership-ledger.schema.json (schema)
+- .aide/install/ownership-record.schema.json (schema)
+- .aide/install/preservation-report.schema.json (schema)
+- .aide/intake/intent-packet.schema.json (schema)
+- .aide/intake/workunit-draft.schema.json (schema)
 - .aide/policies/adapters.yaml (policy)
+- .aide/policies/branch-protection.yaml (policy)
 - .aide/policies/branch-roles.yaml (policy)
 - .aide/policies/cache.yaml (policy)
+- .aide/policies/changelog.yaml (policy)
+- .aide/policies/ci-gates.yaml (policy)
 - .aide/policies/commit-message-standard.yaml (policy)
 - .aide/policies/commit-messages.yaml (policy)
 - .aide/policies/controller.yaml (policy)
 - .aide/policies/dependencies.yaml (policy)
+- .aide/policies/dependency-map.yaml (policy)
+- .aide/policies/doc-link-map.yaml (policy)
+- .aide/policies/docs-consistency.yaml (policy)
+- .aide/policies/doctor.yaml (policy)
 - .aide/policies/documentation-quality-policy.yaml (policy)
 - .aide/policies/evals.yaml (policy)
 - .aide/policies/export-import.yaml (policy)
+- .aide/policies/file-classification.yaml (policy)
+- .aide/policies/file-quality.yaml (policy)
 - .aide/policies/gateway.yaml (policy)
 - .aide/policies/git-workflow.yaml (policy)
+- .aide/policies/github-protection.yaml (policy)
+- .aide/policies/github-release-draft.yaml (policy)
+- .aide/policies/install-conflicts.yaml (policy)
+- .aide/policies/install-migrations.yaml (policy)
+- .aide/policies/install-ownership.yaml (policy)
+- .aide/policies/install-verification.yaml (policy)
+- .aide/policies/install.yaml (policy)
+- .aide/policies/intent.yaml (policy)
 - .aide/policies/local-state.yaml (policy)
+- .aide/policies/migration-ledger.yaml (policy)
+- .aide/policies/migration.yaml (policy)
+- .aide/policies/module-quality.yaml (policy)
+- .aide/policies/move-map.yaml (policy)
+- .aide/policies/ownership-map.yaml (policy)
 - .aide/policies/ownership.yaml (policy)
+- .aide/policies/path-aliases.yaml (policy)
 - .aide/policies/promotion-rules.yaml (policy)
+- .aide/policies/prompt-normalization.yaml (policy)
 - .aide/policies/provider-adapters.yaml (policy)
 - .aide/policies/prune-policy.yaml (policy)
 - .aide/policies/recovery.yaml (policy)
+- .aide/policies/refactor-application.yaml (policy)
+- .aide/policies/refactor-evidence.yaml (policy)
+- .aide/policies/refactor-safety.yaml (policy)
+- .aide/policies/refactor.yaml (policy)
+- .aide/policies/reference-rewrite.yaml (policy)
+- .aide/policies/release-artifacts.yaml (policy)
+- .aide/policies/release-bundle.yaml (policy)
+- .aide/policies/release-checklist.yaml (policy)
+- .aide/policies/release-provenance.yaml (policy)
+- .aide/policies/release-publication-boundary.yaml (policy)
+- .aide/policies/release-upload-plan.yaml (policy)
+- .aide/policies/release-validation.yaml (policy)
+- .aide/policies/release-versioning.yaml (policy)
+- .aide/policies/repair-classes.yaml (policy)
+- .aide/policies/repair-detection.yaml (policy)
+- .aide/policies/repair-safety.yaml (policy)
+- .aide/policies/repair-verification.yaml (policy)
+- .aide/policies/repair.yaml (policy)
+- .aide/policies/repo-intelligence.yaml (policy)
+- .aide/policies/reuse-modularity.yaml (policy)
+- .aide/policies/risk-classes.yaml (policy)
+- .aide/policies/rollback-classes.yaml (policy)
+- .aide/policies/rollback-safety.yaml (policy)
+- .aide/policies/rollback-verification.yaml (policy)
+- .aide/policies/rollback.yaml (policy)
+- .aide/policies/root-exceptions.yaml (policy)
+- .aide/policies/root-fates.yaml (policy)
+- .aide/policies/root-inventory.yaml (policy)
+- .aide/policies/root-recycling.yaml (policy)
+- .aide/policies/root-risk.yaml (policy)
 - .aide/policies/routing.yaml (policy)
+- .aide/policies/salvage-map.yaml (policy)
 - .aide/policies/source-comment-policy.yaml (policy)
 - .aide/policies/sync-policy.yaml (policy)
+- .aide/policies/task-classes.yaml (policy)
 - .aide/policies/task-resumption.yaml (policy)
+- .aide/policies/test-map.yaml (policy)
 - .aide/policies/token-budget.yaml (policy)
 - .aide/policies/token-ledger.yaml (policy)
-- .aide/policies/verification.yaml (policy)
-- .aide/policies/work-units.yaml (policy)
-- .aide/policies/workunit-recovery-policy.yaml (policy)
-- .aide/routing/route-decision.schema.json (schema)
-- .aide/scripts/aide_lite.py (tool)
-- contracts/runtime/live_metadata_test_request.v0.json (contract)
-- contracts/runtime/live_metadata_test_result.v0.json (contract)
-- contracts/source_cache/README.md (contract)
-- contracts/source_sync/README.md (contract)
-- contracts/sources/source_trust_lane.v0.json (contract)
-- contracts/stores/public_index_absence_report.v0.json (contract)
-- contracts/stores/public_index_migration.v0.json (contract)
-- contracts/stores/public_index_rebuild.v0.json (contract)
-- contracts/stores/public_index_record.v0.json (contract)
-- contracts/stores/public_index_search_result.v0.json (contract)
-- contracts/stores/public_index_store.v0.json (contract)
-- contracts/stores/review_event.v0.json (contract)
-- contracts/stores/review_item_record.v0.json (contract)
-- contracts/stores/review_queue_migration.v0.json (contract)
-- contracts/stores/review_queue_status.v0.json (contract)
-- contracts/stores/review_queue_store.v0.json (contract)
-- contracts/ui/ui_contracts/README.md (contract)
-- contracts/ui/ui_contracts/action_plan.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/comparison.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/compatibility.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/local_index.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/local_task.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/member_access.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/query_plan.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/representation_selection.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/representations.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/resolution_run.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/search_results.ui_contract.yaml (contract)
-- contracts/ui/ui_contracts/subject_states.ui_contract.yaml (contract)
-- contracts/ui/view_models/README.md (contract)
-- contracts/ui/view_models/acquisition.view_model.yaml (contract)
-- contracts/ui/view_models/action_plan.view_model.yaml (contract)
-- contracts/ui/view_models/comparison.view_model.yaml (contract)
-- contracts/ui/view_models/compatibility.view_model.yaml (contract)
-- contracts/ui/view_models/decomposition.view_model.yaml (contract)
-- contracts/ui/view_models/local_index.view_model.yaml (contract)
-- contracts/ui/view_models/local_task.view_model.yaml (contract)
-- contracts/ui/view_models/member_access.view_model.yaml (contract)
-- contracts/ui/view_models/query_plan.view_model.yaml (contract)
-- contracts/ui/view_models/representation_selection.view_model.yaml (contract)
-- contracts/ui/view_models/representations.view_model.yaml (contract)
-- contracts/ui/view_models/resolution_actions.view_model.yaml (contract)
-- contracts/ui/view_models/resolution_memory.view_model.yaml (contract)
-- contracts/ui/view_models/resolution_run.view_model.yaml (contract)
-- contracts/ui/view_models/search_results.view_model.yaml (contract)
-- contracts/ui/view_models/subject_states.view_model.yaml (contract)
-- contracts/ui/view_models/workbench_session.view_model.yaml (contract)
-- control/backlog/search_usefulness_triage/backlog_item.schema.json (schema)
-- control/inventory/tests/test_registry.schema.json (schema)
-- native/mac/appkit/src/Contract/EurekaRelayAdapter.h (contract)
-- native/mac/appkit/src/Contract/EurekaRelayAdapter.m (contract)
-- native/mac/appkit/src/Contract/EurekaSnapshotAdapter.h (contract)
-- native/mac/appkit/src/Contract/EurekaSnapshotAdapter.m (contract)
-- native/mac/carbon/src/contract/eu_carbon_relay_adapter.c (contract)
-- native/mac/carbon/src/contract/eu_carbon_relay_adapter.h (contract)
-- native/mac/carbon/src/contract/eu_carbon_snapshot_adapter.c (contract)
-- native/mac/carbon/src/contract/eu_carbon_snapshot_adapter.h (contract)
-- native/win/win32/src/contract/eu_win32_relay_adapter.c (contract)
-- native/win/win32/src/contract/eu_win32_relay_adapter.h (contract)
-- native/win/win32/src/contract/eu_win32_snapshot_adapter.c (contract)
-- native/win/win32/src/contract/eu_win32_snapshot_adapter.h (contract)
-- scripts/audit_public_alpha_readiness.py (tool)
-- scripts/check_public_alpha_blocked_requests.py (tool)
-- scripts/check_public_launch_evidence.py (tool)
-- scripts/check_relay_routes.py (tool)
-- scripts/demo_resolution_slice.py (tool)
-- scripts/integrate_h8_manuals_docs_review.py (tool)
-- scripts/local_queue_progress.py (tool)
-- scripts/normalize_h12_retro_community_fixture.py (tool)
-- scripts/normalize_h4_code_source_fixture.py (tool)
+- .aide/policies/tool-absorption.yaml (policy)
+- .aide/policies/tool-capabilities.yaml (policy)
+- .aide/policies/tool-fates.yaml (policy)
+- .aide/policies/tool-inventory.yaml (policy)
+- .aide/policies/tool-risk.yaml (policy)
+- .aide/policies/tool-wrapping.yaml (policy)
 
 ## Caveats
 

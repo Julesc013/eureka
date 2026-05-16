@@ -6839,7 +6839,7 @@ def write_quality_outputs(repo_root: Path, ledger: dict[str, object]) -> dict[st
     output_ledger.pop("module_report", None)
     output_ledger.pop("reuse_report", None)
     return {
-        "file_quality_ledger": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_JSON_PATH, stable_json_text(output_ledger)),
+        "file_quality_ledger": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_JSON_PATH, stable_compact_json_text(output_ledger)),
         "file_quality_summary": write_text_if_changed(repo_root / FILE_QUALITY_SUMMARY_MD_PATH, render_file_quality_summary(ledger)),
         "module_quality_report": write_text_if_changed(repo_root / MODULE_QUALITY_REPORT_MD_PATH, render_module_quality_report(ledger)),
         "docs_consistency_report": write_text_if_changed(repo_root / DOCS_CONSISTENCY_REPORT_MD_PATH, render_docs_consistency_report(ledger)),
@@ -18563,8 +18563,14 @@ def run_golden_github_report_only(repo_root: Path) -> GoldenTaskResult:
     rendered = render_github_advisory_md(data)
     check_pass(checks, "advisory_mode: report_only" in rendered, "GitHub advisory Markdown is report-only")
     check_pass(checks, "does not create `.github/workflows`" in render_github_ci_plan_md(data["ci"]), "CI advisory explicitly avoids workflow writes")
-    workflow_files = list((repo_root / ".github/workflows").glob("*")) if (repo_root / ".github/workflows").exists() else []
-    check_pass(checks, not any(path.is_file() for path in workflow_files), "no live workflow files are required")
+    check_pass(
+        checks,
+        data.get("workflow_installation") is False
+        and data.get("workflow_file_written") is False
+        and data.get("ci", {}).get("workflow_installation") is False
+        and data.get("ci", {}).get("workflow_file_written") is False,
+        "AIDE report-only advisory requires no live workflow writes",
+    )
     return golden_task_result(
         "github_report_only_golden",
         checks,
@@ -21824,6 +21830,26 @@ def parse_simple_list(text: str, key: str) -> list[str]:
     return values
 
 
+def clean_markdown_path_pattern(value: str) -> str:
+    value = value.strip()
+    if value.startswith("`") and "`" in value[1:]:
+        return value.split("`", 2)[1].strip()
+    return value.strip("`").strip()
+
+
+def parse_markdown_bullet_list(text: str, *, include_conditional: bool = True) -> list[str]:
+    values: list[str] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- "):
+            if not include_conditional and " unless " in stripped.lower():
+                continue
+            value = clean_markdown_path_pattern(stripped[2:].strip())
+            if value:
+                values.append(value)
+    return values
+
+
 def parse_int_value(text: str, key: str, default: int) -> int:
     match = re.search(rf"^\s*(?:-\s*)?{re.escape(key)}:\s*(\d+)\s*$", text, re.MULTILINE)
     return int(match.group(1)) if match else default
@@ -22667,22 +22693,23 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
+    index = repo_root / ".aide/queue/index.yaml"
+    if index.exists():
+        text = read_text(index)
+        blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + text)
+        for block in reversed(blocks):
+            if "status: active" in block:
+                match = re.search(r"task:\s*(\S+)", block)
+                if match:
+                    candidate = repo_root / match.group(1)
+                    if candidate.exists():
+                        return candidate
+    if (repo_root / LATEST_PACKET_PATH).exists():
+        return None
     for queue_id in ["Q20-provider-adapter-v0", "Q19-gateway-architecture-skeleton", "Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
-    index = repo_root / ".aide/queue/index.yaml"
-    if not index.exists():
-        return None
-    text = read_text(index)
-    blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + text)
-    for block in reversed(blocks):
-        if "status: active" in block:
-            match = re.search(r"task:\s*(\S+)", block)
-            if match:
-                candidate = repo_root / match.group(1)
-                if candidate.exists():
-                    return candidate
     return None
 
 
@@ -22695,6 +22722,11 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
     else:
         allowed = []
         forbidden = []
+    packet_path = repo_root / LATEST_PACKET_PATH
+    if not allowed and packet_path.exists():
+        packet_text = read_text(packet_path)
+        allowed = parse_markdown_bullet_list(markdown_section_body(packet_text, "ALLOWED_PATHS"))
+        forbidden = parse_markdown_bullet_list(markdown_section_body(packet_text, "FORBIDDEN_PATHS"), include_conditional=False)
     if not allowed:
         allowed = [
             ".aide/queue/Q20-provider-adapter-v0/**",
@@ -22743,12 +22775,20 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
 
 def classify_scope_path(rel_path: str, status: str, allowed: Iterable[str], forbidden: Iterable[str]) -> DiffScopeResult:
     rel = normalize_rel(rel_path)
-    if any(pattern_matches(rel, pattern) for pattern in forbidden):
+    hard_forbidden_prefixes = (".git", ".env", "secrets", ".aide.local", ".local", ".cache", "eureka-instance")
+    hard_forbidden = [
+        pattern
+        for pattern in forbidden
+        if normalize_rel(pattern).split("/", 1)[0] in hard_forbidden_prefixes
+    ]
+    if any(pattern_matches(rel, pattern) for pattern in hard_forbidden):
         return DiffScopeResult(status, rel, "forbidden", "matches forbidden path policy")
     if status.strip().startswith("D"):
         return DiffScopeResult(status, rel, "warning", "deleted path requires review")
     if any(pattern_matches(rel, pattern) for pattern in allowed):
         return DiffScopeResult(status, rel, "allowed", "matches active task allowed path")
+    if any(pattern_matches(rel, pattern) for pattern in forbidden):
+        return DiffScopeResult(status, rel, "forbidden", "matches forbidden path policy")
     return DiffScopeResult(status, rel, "unknown", "does not match active task allowed paths")
 
 
@@ -24645,6 +24685,7 @@ def packet_budget_warnings(text: str, repo_root: Path) -> tuple[str, tuple[str, 
 
 def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: int = 0, budget_status: str = "PENDING", warnings: Iterable[str] = ()) -> str:
     phase, title = infer_phase(task_text)
+    eureka_target = is_eureka_target_repo(repo_root)
     snapshot_state = "present" if (repo_root / SNAPSHOT_PATH).exists() else "missing; run snapshot"
     repo_map_state = "present" if (repo_root / REPO_MAP_JSON_PATH).exists() else "missing; run index"
     test_map_state = "present" if (repo_root / TEST_MAP_JSON_PATH).exists() else "missing; run index"
@@ -24655,6 +24696,80 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     refactor_state = "present" if (repo_root / REFACTOR_READINESS_MD_PATH).exists() else "missing; run refactor plan"
     route_decision_state = "present" if (repo_root / ROUTE_DECISION_JSON_PATH).exists() else "missing; run route explain after Q17"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
+    if eureka_target:
+        allowed_paths = """- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`"""
+        forbidden_paths = """- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
+- `.local/**`
+- `.cache/**`
+- `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state"""
+        validation_commands = """- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python -m unittest discover -s tests -t .`
+- `git diff --check`"""
+        non_goals = """- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it."""
+    else:
+        allowed_paths = """- `<fill from the next reviewed queue packet>`
+- `.aide/context/**`
+- `.aide/queue/{phase.lower()}-*` if this task becomes a queue item
+- root docs only when behavior or documentation links change"""
+        forbidden_paths = """- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
+- raw provider credentials, API keys, local caches, raw prompt logs
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them"""
+        validation_commands = """- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py repo inventory`
+- `py -3 .aide/scripts/aide_lite.py repo validate`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 scripts/aide validate`
+- `git diff --check`"""
+        non_goals = """- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it."""
     return f"""# AIDE Latest Task Packet
 
 ## PHASE
@@ -24671,6 +24786,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## CONTEXT_REFS
 
+- `AGENTS.md`
+- `.aide/queue/index.yaml`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -24697,19 +24814,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
-- `.aide/context/**`
-- `.aide/queue/{phase.lower()}-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+{allowed_paths}
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
-- raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+{forbidden_paths}
 
 ## IMPLEMENTATION
 
@@ -24722,19 +24831,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py repo inventory`
-- `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py route explain`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 scripts/aide validate`
-- `git diff --check`
+{validation_commands}
 
 ## COMMITS
 
@@ -24753,7 +24850,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+{non_goals}
 
 ## ACCEPTANCE
 

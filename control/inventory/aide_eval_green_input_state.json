@@ -1,0 +1,20 @@
+{
+  "schema_version": "aide_eval_green_input_state.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "branch": "dev",
+  "head": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
+  "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "origin_dev": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
+  "dev_main_divergence": "0 16",
+  "working_tree_clean_before": true,
+  "merge_state_active": false,
+  "aide_doctor_status_before": "pass",
+  "aide_validate_status_before": "pass",
+  "aide_test_status_before": "pass",
+  "aide_selftest_status_before": "pass",
+  "aide_verify_status_before": "pass",
+  "eval_task_count_before": 136,
+  "eval_pass_count_before": 127,
+  "eval_fail_count_before": 9,
+  "eval_warn_count_before": 0
+}

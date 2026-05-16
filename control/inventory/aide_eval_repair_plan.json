@@ -1,0 +1,50 @@
+{
+  "schema_version": "aide_eval_repair_plan.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "repair_items": [
+    "Regenerate stale AIDE context and latest golden-task run outputs.",
+    "Patch Eureka target task-packet rendering to include required refs, validation, evidence, and no-product-change boundaries.",
+    "Patch GitHub report-only golden behavior to allow existing target workflows while preserving no-write behavior.",
+    "Restore portable import template inputs needed by export-pack.",
+    "Add missing GitHub protection and CI advisory reference doc required by export inclusion.",
+    "Regenerate local export pack, release bundle, release checksums, release draft, and no-publish checklist.",
+    "Compact the file-quality ledger JSON output without removing records.",
+    "Update completed HUNT, IA, and LOCAL validators to recognize the post-eval-green queue handoff without advancing product scope.",
+    "Record exact runtime architecture leakage allowlist evidence for fixture-only findings surfaced by the refreshed AIDE baseline.",
+    "Treat generated .aide/repo metadata as generated AIDE context in repository layout validation."
+  ],
+  "forbidden_repairs": [
+    "delete failing golden tasks",
+    "lower pass thresholds",
+    "remove safety assertions",
+    "edit Eureka product runtime behavior",
+    "run source probes",
+    "run extraction",
+    "call model or provider APIs",
+    "publish releases",
+    "promote or push main"
+  ],
+  "expected_artifacts_to_regenerate": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/context/latest-context-packet.md",
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/repo-map.json",
+    ".aide/context/repo-snapshot.json",
+    ".aide/context/test-map.json",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/evals/runs/latest-golden-tasks.md",
+    ".aide/export/aide-lite-pack-v0",
+    ".aide/release/dist",
+    ".aide/reports/file-quality-ledger.json"
+  ],
+  "expected_tests_to_rerun": [
+    "py -3 .aide/scripts/aide_lite.py eval run",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "python scripts/validate_repository_layout.py --json",
+    "python scripts/validate_runtime_architecture_leakage.py",
+    "python -m unittest discover -s tests -t ."
+  ],
+  "product_behavior_changes_allowed": false,
+  "provider_model_network_calls_allowed": false,
+  "main_promotion_allowed": false
+}

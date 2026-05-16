@@ -1,0 +1,6 @@
+{
+  "schema_version": "aide_eval_green_blocker_register.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "hard_blockers_remaining": 0,
+  "blockers": []
+}

@@ -1,0 +1,12 @@
+schema_version: aide.golden-task.v0
+task_id: eureka_architecture_context_golden
+title: Eureka Architecture Context Golden
+status: active
+purpose: Check that AIDE Lite context surfaces Eureka architecture boundaries and validation lanes.
+input_refs:
+  - AGENTS.md
+  - .aide/context/latest-context-packet.md
+  - .aide/context/repo-map.json
+  - scripts/check_architecture_boundaries.py
+acceptance_ref: .aide/evals/golden-tasks/eureka_architecture_context_golden/acceptance.md
+expected_result: PASS

@@ -368,7 +368,13 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
     queue_current = current_recommended_task(root)
     queue_points_to_local_01 = queue_current == NEXT_TASK
     queue_points_to_local_02 = queue_current == ADVANCED_NEXT_TASK
-    if not (queue_points_to_local_01 or queue_points_to_local_02 or queue_current_or_advanced(root, TASK_ID, NEXT_TASK)):
+    queue_points_to_later_handoff = local_track_handoff_queue(queue_current)
+    if not (
+        queue_points_to_local_01
+        or queue_points_to_local_02
+        or queue_points_to_later_handoff
+        or queue_current_or_advanced(root, TASK_ID, NEXT_TASK)
+    ):
         errors.append("queue index must point to LOCAL-01 or the completed LOCAL-01 successor LOCAL-02")
     if not queue_task_completed(root, TASK_ID) or not queue_task_available(root, NEXT_TASK) or not queue_task_available(root, ADVANCED_NEXT_TASK):
         errors.append("queue index must include LOCAL-00, LOCAL-01, and LOCAL-02")
@@ -380,7 +386,11 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
         errors.append("latest task packet must point to LOCAL-01")
     if queue_points_to_local_02 and ADVANCED_NEXT_TASK not in packet_text:
         errors.append("latest task packet must point to LOCAL-02 after LOCAL-01 completes")
-    if not (queue_points_to_local_01 or queue_points_to_local_02) and not latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
+    if (
+        not (queue_points_to_local_01 or queue_points_to_local_02)
+        and not (queue_points_to_later_handoff and latest_packet_is_later_control_or_handoff(packet_text))
+        and not latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK)
+    ):
         errors.append("latest task packet must point to the active advanced queue item")
     if "<fill from the next reviewed queue packet>" in packet_text:
         errors.append("latest task packet still contains placeholder allowed paths")
@@ -415,8 +425,32 @@ def validate_health(root: Path, errors: list[str]) -> None:
             errors.append(f"repo health must set {key}=false")
 
 
+def local_track_handoff_queue(queue_current: str | None) -> bool:
+    if not queue_current:
+        return False
+    if queue_current.startswith("AIDE-"):
+        return True
+    return queue_current in {
+        "SYN-00",
+        "F0-00",
+        "HUNT-REMEDIATION",
+        "HUNT-REMEDIATION-CONTINUE",
+        "HUNT-TO-MAIN-PROMOTION-REVIEW",
+    }
+
+
+def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
+    markers = (
+        "AIDE-",
+        "HUNT-",
+        "SYN-",
+        "F0-",
+    )
+    return any(marker in packet_text for marker in markers)
+
+
 def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[str], warnings: list[str]) -> None:
-    if current_recommended_task(root) in {"SYN-00", "F0-00", "HUNT-REMEDIATION", "HUNT-TO-MAIN-PROMOTION-REVIEW"}:
+    if local_track_handoff_queue(current_recommended_task(root)):
         return
     main = git(root, "rev-parse", "origin/main")
     dev = git(root, "rev-parse", "origin/dev")

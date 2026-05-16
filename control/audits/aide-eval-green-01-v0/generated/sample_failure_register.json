@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide_eval_failure_register.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "failure_count_before": 9,
+  "failures": [
+    {
+      "failure_id": "aide-eval-001",
+      "golden_task_id": "compact_task_packet_golden",
+      "failure_class": "target_specific_packet_mismatch",
+      "safe_to_fix_now": true,
+      "product_behavior_change_required": false
+    }
+  ]
+}

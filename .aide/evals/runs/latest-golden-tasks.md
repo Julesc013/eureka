@@ -1,10 +1,10 @@
 # Latest Golden Tasks
 
-- result: FAIL
+- result: PASS
 - task_count: 136
-- pass_count: 127
+- pass_count: 136
 - warn_count: 0
-- fail_count: 9
+- fail_count: 0
 - provider_or_model_calls: none
 - network_calls: none
 - raw_prompt_storage: false
@@ -63,22 +63,18 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1031
+- approx_tokens_if_applicable: 1189
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
 ### compact_task_packet_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 31
-- passed_checks: 28
-- approx_tokens_if_applicable: 1031
+- passed_checks: 31
+- approx_tokens_if_applicable: 1189
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-task-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json, AGENTS.md
 - notes: Checks the latest compact packet is target-specific.
-- errors:
-  - Eureka packet references AGENTS.md
-  - Eureka packet validation includes .aide/scripts/aide_lite.py eval run
-  - Eureka packet validation includes scripts/check_architecture_boundaries.py
 
 ### context-packet-no-full-repo-dump
 
@@ -121,24 +117,24 @@
 - result: PASS
 - checks_run: 25
 - passed_checks: 25
-- approx_tokens_if_applicable: 1063
+- approx_tokens_if_applicable: 1603
 - related_paths: .aide/context/latest-context-packet.md, .aide/context/latest-review-packet.md, .aide/context/latest-task-packet.md, .aide/verification/latest-verification-report.md
 - notes: Checks review packets stay evidence-oriented.
 
 ### export_pack_commit_policy_inclusion_golden
 
 - result: PASS
-- checks_run: 1
-- passed_checks: 1
+- checks_run: 8
+- passed_checks: 8
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/git/commit-template.md, .aide/hooks/commit-msg, .aide/policies/commit-messages.yaml
-- notes: Checks portable commit discipline and changelog support are exported from source-pack repos.
+- notes: Checks portable commit discipline and changelog support are exported or locally available after import.
 
 ### export_pack_excludes_source_branch_state_golden
 
 - result: PASS
-- checks_run: 1
-- passed_checks: 1
+- checks_run: 294
+- passed_checks: 294
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
 - notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
@@ -146,20 +142,20 @@
 ### export_pack_git_policy_inclusion_golden
 
 - result: PASS
-- checks_run: 1
-- passed_checks: 1
+- checks_run: 15
+- passed_checks: 15
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/git/helper-policy.yaml, .aide/policies/branch-roles.yaml, .aide/policies/git-workflow.yaml
-- notes: Checks portable Git workflow and helper governance are exported from source-pack repos.
+- notes: Checks portable Git workflow and helper governance are exported or locally available after import.
 
 ### export_pack_task_recovery_inclusion_golden
 
 - result: PASS
-- checks_run: 1
-- passed_checks: 1
+- checks_run: 8
+- passed_checks: 8
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/recovery.yaml, .aide/policies/task-resumption.yaml, .aide/policies/work-units.yaml
-- notes: Checks portable task resumption, WorkUnit, and recovery governance are exported from source-pack repos.
+- notes: Checks portable task resumption, WorkUnit, and recovery governance are exported or locally available after import.
 
 ### file_classification_policy_golden
 
@@ -191,8 +187,8 @@
 ### fixture_import_governance_commands_golden
 
 - result: PASS
-- checks_run: 1
-- passed_checks: 1
+- checks_run: 9
+- passed_checks: 9
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/hooks/commit-msg, .aide/scripts/aide_lite.py
 - notes: Checks safe fixture import receives governance files and can run portable commit/task/Git commands.
@@ -272,8 +268,8 @@
 ### github_export_inclusion_golden
 
 - result: PASS
-- checks_run: 5
-- passed_checks: 5
+- checks_run: 21
+- passed_checks: 21
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/branch-protection.yaml, .aide/policies/ci-gates.yaml, .aide/policies/export-import.yaml, .aide/policies/github-protection.yaml
 - notes: Checks Q35 portable policy export and generated advisory exclusion.
@@ -298,24 +294,12 @@
 
 ### github_release_assets_have_checksums_golden
 
-- result: FAIL
-- checks_run: 16
-- passed_checks: 5
+- result: PASS
+- checks_run: 26
+- passed_checks: 26
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/release/dist/SHA256SUMS.txt, .aide/release/dist/aide-lite-pack-v0.checksums.json, .aide/release/github-release-assets.json
 - notes: Checks release draft asset list includes checksums and validates hashes.
-- errors:
-  - github release asset hashes match files
-  - required asset missing: .aide/release/dist/aide-lite-pack-v0.zip
-  - required asset missing: .aide/release/dist/aide-lite-pack-v0.tar.gz
-  - required asset missing: .aide/release/dist/aide-lite-pack-v0.checksums.json
-  - required asset missing: .aide/release/dist/SHA256SUMS.txt
-  - required asset missing: .aide/release/dist/manifest.yaml
-  - required asset missing: .aide/release/dist/install.md
-  - required asset missing: .aide/release/dist/CHANGELOG.preview.md
-  - required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md
-  - checksum mismatch: .aide/release/dist/release-validation.json
-  - checksum mismatch: .aide/release/dist/release-validation.md
 
 ### github_release_checklist_golden
 
@@ -364,14 +348,12 @@
 
 ### github_report_only_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 11
-- passed_checks: 10
+- passed_checks: 11
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/github/github-advisory.json, .aide/github/github-advisory.md, .aide/github/latest-github-status.md
 - notes: Checks Q35 report-only behavior and no live GitHub/CI mutation.
-- errors:
-  - no live workflow files are required
 
 ### install_conflict_report_schema_golden
 
@@ -412,8 +394,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 3990
-- passed_checks: 3990
+- checks_run: 8624
+- passed_checks: 8624
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -663,17 +645,12 @@
 
 ### release_archive_generation_golden
 
-- result: FAIL
-- checks_run: 4
-- passed_checks: 0
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip, .aide/release/dist/install.md, .aide/release/dist/manifest.yaml
 - notes: Checks local archive generation outputs exist and validate.
-- errors:
-  - release artifact exists: .aide/release/dist/aide-lite-pack-v0.zip
-  - release artifact exists: .aide/release/dist/aide-lite-pack-v0.tar.gz
-  - release artifact exists: .aide/release/dist/manifest.yaml
-  - release artifact exists: .aide/release/dist/install.md
 
 ### release_asset_schema_golden
 
@@ -695,41 +672,30 @@
 
 ### release_checksum_validation_golden
 
-- result: FAIL
-- checks_run: 4
-- passed_checks: 0
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/release/dist/SHA256SUMS.txt, .aide/release/dist/aide-lite-pack-v0.checksums.json
 - notes: Checks release checksum JSON and SHA256SUMS validation.
-- errors:
-  - release checksums validate
-  - missing release checksums JSON
-  - release checksum artifact exists: .aide/release/dist/aide-lite-pack-v0.checksums.json
-  - release checksum artifact exists: .aide/release/dist/SHA256SUMS.txt
 
 ### release_fixture_extraction_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 4
-- passed_checks: 2
+- passed_checks: 4
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip
 - notes: Checks archive extraction fixture validation.
-- errors:
-  - fixture extraction validates: .aide/release/dist/aide-lite-pack-v0.zip
-  - fixture extraction validates: .aide/release/dist/aide-lite-pack-v0.tar.gz
 
 ### release_forbidden_paths_excluded_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 4
-- passed_checks: 2
+- passed_checks: 4
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/export-import.yaml, .aide/policies/release-artifacts.yaml, .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip
 - notes: Checks release archives exclude forbidden paths and generated release outputs are not target truth.
-- errors:
-  - release archive missing: .aide/release/dist/aide-lite-pack-v0.zip
-  - release archive missing: .aide/release/dist/aide-lite-pack-v0.tar.gz
 
 ### release_manifest_schema_golden
 
@@ -742,15 +708,12 @@
 
 ### release_no_publish_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 9
-- passed_checks: 7
+- passed_checks: 9
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/release-bundle.yaml, .aide/release/latest-release-bundle.json, .aide/scripts/aide_lite.py
 - notes: Checks Q47 remains local-only and non-publishing.
-- errors:
-  - latest release bundle no_publish true
-  - latest release bundle publication status is local preview
 
 ### release_notes_preview_golden
 
@@ -809,8 +772,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 352
-- passed_checks: 352
+- checks_run: 403
+- passed_checks: 403
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -827,32 +790,20 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 22
-- passed_checks: 22
+- checks_run: 25
+- passed_checks: 25
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
 
 ### repo_boundary_golden
 
-- result: FAIL
+- result: PASS
 - checks_run: 34
-- passed_checks: 23
+- passed_checks: 34
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/context/latest-task-packet.md, AGENTS.md
 - notes: Checks Eureka product/AIDE boundaries.
-- errors:
-  - forbidden paths include product boundary: runtime/**
-  - forbidden paths include product boundary: contracts/**
-  - forbidden paths include product boundary: surfaces/**
-  - forbidden paths include product boundary: site/**
-  - forbidden paths include product boundary: native/**
-  - forbidden paths include product boundary: crates/**
-  - forbidden paths include product boundary: examples/**
-  - forbidden paths include product boundary: evals/**
-  - forbidden paths include product boundary: tests/**
-  - forbidden paths include product boundary: scripts/**
-  - packet states no Eureka product behavior change
 
 ### repo_dependency_map_golden
 
@@ -922,7 +873,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1063
+- approx_tokens_if_applicable: 1603
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -1091,8 +1042,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 30643
-- passed_checks: 30643
+- checks_run: 31357
+- passed_checks: 31357
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1127,8 +1078,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 30647
-- passed_checks: 30647
+- checks_run: 31361
+- passed_checks: 31361
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1136,8 +1087,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 30668
-- passed_checks: 30668
+- checks_run: 31382
+- passed_checks: 31382
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1154,8 +1105,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 20911
-- passed_checks: 20911
+- checks_run: 21166
+- passed_checks: 21166
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1163,8 +1114,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 20915
-- passed_checks: 20915
+- checks_run: 21170
+- passed_checks: 21170
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1181,8 +1132,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 851
-- passed_checks: 851
+- checks_run: 866
+- passed_checks: 866
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1208,8 +1159,8 @@
 ### upgrade_mandatory_migration_gate_golden
 
 - result: PASS
-- checks_run: 19
-- passed_checks: 19
+- checks_run: 27
+- passed_checks: 27
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/upgrade-migrations.yaml, .aide/upgrade/latest-upgrade-migration-report.md, .aide/upgrade/upgrade-migration-report.schema.json
 - notes: Checks mandatory migrations are future-gated, non-automatic, and no-apply.
@@ -1226,8 +1177,8 @@
 ### upgrade_no_source_state_leak_golden
 
 - result: PASS
-- checks_run: 9
-- passed_checks: 9
+- checks_run: 13
+- passed_checks: 13
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/upgrade-preservation.yaml, .aide/upgrade/latest-upgrade-plan.json
 - notes: Checks source-generated, local, and secret-like state is never planned as upgrade truth.
@@ -1235,8 +1186,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 5985
-- passed_checks: 5985
+- checks_run: 13773
+- passed_checks: 13773
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.

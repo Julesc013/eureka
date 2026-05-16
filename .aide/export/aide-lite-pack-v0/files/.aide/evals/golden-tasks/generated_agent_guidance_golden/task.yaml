@@ -1,0 +1,11 @@
+schema_version: aide.golden-task.v0
+task_id: generated_agent_guidance_golden
+title: Eureka Generated Agent Guidance Golden
+status: active
+purpose: Check that maintained agent guidance is deterministic, compact, and aligned with Eureka AIDE Lite rules.
+input_refs:
+  - AGENTS.md
+  - .aide/adapters/templates/AGENTS.md.template
+  - .aide/generated/adapters/AGENTS.md
+acceptance_ref: .aide/evals/golden-tasks/generated_agent_guidance_golden/acceptance.md
+expected_result: PASS

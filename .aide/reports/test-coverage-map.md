@@ -1,6 +1,6 @@
 # Test Coverage Map
 
-- tests_detected: 1089
+- tests_detected: 1102
 
 ## Likely Test Targets
 
@@ -16,6 +16,19 @@
 - .aide/scripts/tests/test_q28_git_workflow.py: .aide/scripts/aide_lite.py
 - .aide/scripts/tests/test_q29_git_helper.py: .aide/scripts/aide_lite.py
 - .aide/scripts/tests/test_q31_export_pack_governance.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q34_changelog_release.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q35_github_advisory.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q36_intent_compiler.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q37_repo_intelligence.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q38_file_quality.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q39_refactor_control.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q40_root_recycling.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q41_tool_absorption.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q42_move_map_aliases.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q43_install_plan.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q45_upgrade_model.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q47_release_bundle.py: .aide/scripts/aide_lite.py
+- .aide/scripts/tests/test_q48_github_release_draft.py: .aide/scripts/aide_lite.py
 - .aide/scripts/tests/test_review_pack.py: .aide/scripts/aide_lite.py
 - .aide/scripts/tests/test_router_profile.py: .aide/scripts/aide_lite.py
 - .aide/scripts/tests/test_token_ledger.py: .aide/policies/token-ledger.yaml, .aide/scripts/aide_lite.py
@@ -91,22 +104,13 @@
 - runtime/engine/representations/tests/test_service.py: runtime/engine/representations/service.py
 - runtime/engine/resolution_runs/tests/__init__.py:
 - runtime/engine/resolution_runs/tests/test_run_store.py: runtime/engine/resolution_runs/run_store.py
-- runtime/engine/resolution_runs/tests/test_service.py: runtime/engine/resolution_runs/service.py
-- runtime/engine/snapshots/tests/__init__.py:
-- runtime/engine/snapshots/tests/test_resolution_bundle.py: runtime/engine/snapshots/resolution_bundle.py
-- runtime/engine/snapshots/tests/test_resolution_bundle_inspector.py: runtime/engine/snapshots/resolution_bundle_inspector.py
-- runtime/engine/states/tests/__init__.py:
-- runtime/engine/states/tests/test_subject_states.py: runtime/engine/states/subject_states.py
-- runtime/engine/store/tests/__init__.py:
-- runtime/engine/store/tests/test_export_store.py: runtime/engine/store/export_store.py
-- runtime/engine/store/tests/test_resolution_export_store_service.py:
-- runtime/engine/strategy/tests/__init__.py:
-- runtime/engine/strategy/tests/test_strategy_profile.py: runtime/engine/strategy/strategy_profile.py
-- runtime/engine/synthetic_records/tests/__init__.py:
-- runtime/engine/synthetic_records/tests/test_member_record_synthesis.py: runtime/engine/synthetic_records/member_record_synthesis.py
 
 ## Missing Test Or Validator Candidates
 
+- .aide/tools/latest-tool-adapter-map.json (tool, AIDE tool absorption framework)
+- .aide/tools/latest-tool-classification.json (tool, AIDE tool absorption framework)
+- .aide/tools/latest-tool-inventory.json (tool, AIDE tool absorption framework)
+- .aide/tools/latest-tool-wrap-plan.json (tool, AIDE tool absorption framework)
 - control/prototypes/legacy_runtime/connectors/h10_games_emulation/__init__.py (source, unknown)
 - control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_action_candidate.py (source, unknown)
 - control/prototypes/legacy_runtime/connectors/h10_games_emulation/emulator_compatibility.py (source, unknown)
@@ -203,10 +207,6 @@
 - control/prototypes/legacy_runtime/connectors/h12_retro_community/atarimania_metadata.py (source, unknown)
 - control/prototypes/legacy_runtime/connectors/h12_retro_community/betaarchive_public_metadata_policy_limited.py (source, unknown)
 - control/prototypes/legacy_runtime/connectors/h12_retro_community/community_review_comment.py (source, unknown)
-- control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py (source, unknown)
-- control/prototypes/legacy_runtime/connectors/h12_retro_community/dos_games_archive_metadata.py (source, unknown)
-- control/prototypes/legacy_runtime/connectors/h12_retro_community/fixture_loader.py (source, unknown)
-- control/prototypes/legacy_runtime/connectors/h12_retro_community/gated_source_boundary.py (source, unknown)
 
 ## Caveats
 

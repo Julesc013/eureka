@@ -1,0 +1,37 @@
+{
+  "schema_version": "aide_eval_repair_result.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "safe_repairs_applied": 11,
+  "golden_tasks_fixed": [
+    "compact_task_packet_golden",
+    "github_release_assets_have_checksums_golden",
+    "github_report_only_golden",
+    "release_archive_generation_golden",
+    "release_checksum_validation_golden",
+    "release_fixture_extraction_golden",
+    "release_forbidden_paths_excluded_golden",
+    "release_no_publish_golden",
+    "repo_boundary_golden"
+  ],
+  "generated_artifacts_regenerated": [
+    ".aide/context",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/evals/runs/latest-golden-tasks.md",
+    ".aide/export/aide-lite-pack-v0",
+    ".aide/release/dist",
+    ".aide/release/github-release-draft.json",
+    ".aide/reports/file-quality-ledger.json"
+  ],
+  "tests_added_or_updated": [
+    ".aide/scripts/tests/test_q35_github_advisory.py",
+    ".aide/scripts/tests/test_q38_file_quality.py",
+    "tests/operations/test_aide_eval_green.py",
+    "tests/operations/test_aide_eval_failure_register.py",
+    "tests/operations/test_aide_eval_no_product_mutation.py"
+  ],
+  "product_behavior_changed": false,
+  "provider_model_network_calls_used": false,
+  "policy_weakened": false,
+  "failures_remaining": [],
+  "child_tasks_created": []
+}

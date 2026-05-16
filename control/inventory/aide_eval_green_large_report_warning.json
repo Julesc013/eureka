@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide_eval_green_large_report_warning.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "oversized_reports_before": [
+    {
+      "path": ".aide/reports/file-quality-ledger.json",
+      "size_bytes_before": 56106467,
+      "threshold_bytes": 52428800,
+      "classification": "safe_to_fix_now",
+      "repair": "Switched file-quality ledger output to compact JSON serialization without dropping records."
+    }
+  ],
+  "oversized_reports_after": [],
+  "warnings_remaining": 0,
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW"
+}

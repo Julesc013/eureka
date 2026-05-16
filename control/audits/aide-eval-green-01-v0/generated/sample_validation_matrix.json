@@ -1,0 +1,13 @@
+{
+  "schema_version": "aide_eval_green_validation_matrix.v0",
+  "task": "AIDE-EVAL-GREEN-01",
+  "rows": [
+    {
+      "id": "aide_eval_run",
+      "status": "pass",
+      "task_count": 136,
+      "pass_count": 136,
+      "fail_count": 0
+    }
+  ]
+}

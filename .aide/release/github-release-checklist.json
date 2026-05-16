@@ -1,16 +1,6 @@
 {
-  "blockers": [
-    "missing required release asset: .aide/release/dist/aide-lite-pack-v0.zip",
-    "missing required release asset: .aide/release/dist/aide-lite-pack-v0.tar.gz",
-    "missing required release asset: .aide/release/dist/aide-lite-pack-v0.checksums.json",
-    "missing required release asset: .aide/release/dist/SHA256SUMS.txt",
-    "missing required release asset: .aide/release/dist/manifest.yaml",
-    "missing required release asset: .aide/release/dist/install.md",
-    "missing required release asset: .aide/release/dist/CHANGELOG.preview.md",
-    "missing required release asset: .aide/release/dist/RELEASE_NOTES.preview.md",
-    "Q47 release bundle validation failed; run release validate before publication review"
-  ],
-  "checklist_id": "aide-lite-pack-v0-github-draft-6f2698c6e109a3b3-checklist",
+  "blockers": [],
+  "checklist_id": "aide-lite-pack-v0-github-draft-01f2470cc1c9346e-checklist",
   "checks": [
     {
       "evidence": "dev",
@@ -19,7 +9,7 @@
       "status": "recorded"
     },
     {
-      "evidence": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+      "evidence": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
       "item": "source commit recorded",
       "section": "source repo state",
       "status": "recorded"
@@ -52,31 +42,31 @@
       "evidence": ".aide/release/dist/aide-lite-pack-v0.zip",
       "item": "zip exists",
       "section": "artifact gates",
-      "status": "blocker"
+      "status": "pass"
     },
     {
       "evidence": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
       "item": "tar.gz exists",
       "section": "artifact gates",
-      "status": "blocker"
+      "status": "pass"
     },
     {
       "evidence": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
       "item": "checksums exist",
       "section": "artifact gates",
-      "status": "blocker"
+      "status": "pass"
     },
     {
       "evidence": ".aide/release/dist/manifest.yaml",
       "item": "manifest exists",
       "section": "artifact gates",
-      "status": "blocker"
+      "status": "pass"
     },
     {
       "evidence": ".aide/release/dist/install.md",
       "item": "install notes exist",
       "section": "artifact gates",
-      "status": "blocker"
+      "status": "pass"
     },
     {
       "evidence": "targeted secret scan",
@@ -103,9 +93,6 @@
   "no_publish": true,
   "release_bundle_ref": ".aide/release/latest-release-bundle.json",
   "schema_version": "aide.github-release-checklist.v0",
-  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
-  "warnings": [
-    "missing optional release asset: .aide/release/dist/release-provenance.json",
-    "missing optional release asset: .aide/release/dist/release-assets.json"
-  ]
+  "source_commit": "01f2470cc1c9346ea2fecabe480555d8db9c1676",
+  "warnings": []
 }

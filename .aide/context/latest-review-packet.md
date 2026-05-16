@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4254 chars, 1064 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4756 chars, 1189 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,7 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
+- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
+- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/export` (??; matches active task allowed path)
+- allowed: `.aide/github/github-advisory.json` (M; matches active task allowed path)
+- allowed: `.aide/github/github-advisory.md` (M; matches active task allowed path)
+- allowed: `.aide/import` (??; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-EVAL-GREEN-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-assets.json` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-checklist.json` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-checklist.md` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-draft-validation.json` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-draft-validation.md` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-draft.json` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-draft.md` (M; matches active task allowed path)
+- allowed: `.aide/release/github-release-upload-plan.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 45; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -43,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4251
-- approx_tokens: 1063
+- chars: 6410
+- approx_tokens: 1603
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
