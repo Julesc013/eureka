@@ -1,0 +1,53 @@
+schema_version: aide.task.v0
+id: EUREKA-AIDE-UPGRADE-PREFLIGHT-01
+title: Eureka fresh upgrade preflight for stable AIDE Lite pack
+status: needs_review
+phase: Q54
+owner: Codex
+created_at: 2026-05-15
+purpose: >
+  Inspect the existing Eureka AIDE Lite install, target-local fixes, product
+  boundaries, source/evidence/index systems, tool surface, and local stable
+  AIDE release bundle before any Q55 upgrade.
+allowed_paths:
+  - .aide/queue/EUREKA-AIDE-UPGRADE-PREFLIGHT-01/**
+  - .aide/reports/eureka-fresh-upgrade-preflight.md
+  - .aide/reports/eureka-aide-preservation-plan.md
+  - .aide/reports/eureka-existing-tool-preflight.md
+  - .aide/reports/eureka-release-bundle-readiness.md
+  - .aide/reports/eureka-next-aide-task.md
+  - .aide/reports/eureka-product-boundary-preservation.md
+  - .aide/context/latest-task-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/git/latest-helper-plan.json
+  - .aide/git/latest-helper-plan.md
+  - .aide/changelog/CHANGELOG.preview.md
+  - .aide/changelog/RELEASE_NOTES.preview.md
+  - .aide/changelog/changelog.preview.json
+  - .aide/changelog/malformed-commits.md
+forbidden_paths:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - snapshots/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - docs/**
+  - scripts/**
+  - tests/**
+  - .github/**
+  - .git/**
+  - .aide.local/**
+acceptance:
+  - Repo identity confirmed as julesc013/eureka or blocked.
+  - Existing AIDE state, product boundaries, tool systems, release bundle, and Q55 readiness are documented.
+  - No AIDE install, upgrade, repair, rollback, uninstall, branch mutation, push, or product behavior change is performed.
+  - Status ends at needs_review.
+review_gate:
+  required: true
+  status: open
+recommended_next: Q55 Eureka Upgrade from Stable AIDE Pack

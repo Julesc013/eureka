@@ -1,0 +1,99 @@
+{
+  "apply_requested": false,
+  "blockers": [
+    "dirty_tree_requires_classification"
+  ],
+  "dry_run": true,
+  "executed_commands": [],
+  "force_push_allowed": false,
+  "generated_by": "aide-lite",
+  "non_mutating": true,
+  "operation": "plan",
+  "planned_commands": [],
+  "push_requested": false,
+  "recommendations": [
+    "clean or classify the working tree before branch-sensitive helper actions"
+  ],
+  "remote_mutation": false,
+  "schema_version": "aide.git-helper-plan.v0",
+  "source": "",
+  "state": {
+    "ahead_behind": {
+      "ahead": 11,
+      "behind": 13,
+      "error": "",
+      "known": true
+    },
+    "aide_branch_policy_path": "",
+    "aide_branch_policy_present": false,
+    "branch_roles": {
+      "dev": "integration",
+      "main": "canonical",
+      "origin/HUNT-00-search-hunt-track-v0": "unknown",
+      "origin/HUNT-01-search-hunt-session-runtime-v0": "unknown",
+      "origin/HUNT-02-search-hunt-ui-state-v0": "unknown",
+      "origin/HUNT-03-search-hunt-commands-v0": "unknown",
+      "origin/HUNT-04-hunt-exhaustion-report-v0": "unknown",
+      "origin/dev": "integration",
+      "origin/main": "canonical"
+    },
+    "current_branch": "dev",
+    "current_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
+    "current_role": "integration",
+    "detached_head": false,
+    "local_branches": [
+      "dev",
+      "main"
+    ],
+    "non_mutating": true,
+    "policy_files": {
+      ".aide/git/helper-policy.yaml": true,
+      ".aide/policies/branch-roles.yaml": true,
+      ".aide/policies/git-workflow.yaml": true,
+      ".aide/policies/promotion-rules.yaml": true,
+      ".aide/policies/prune-policy.yaml": true,
+      ".aide/policies/sync-policy.yaml": true
+    },
+    "policy_ready": true,
+    "protected_roles": [
+      "canonical",
+      "deploy",
+      "integration",
+      "release"
+    ],
+    "remote_branches": [
+      "origin/HUNT-00-search-hunt-track-v0",
+      "origin/HUNT-01-search-hunt-session-runtime-v0",
+      "origin/HUNT-02-search-hunt-ui-state-v0",
+      "origin/HUNT-03-search-hunt-commands-v0",
+      "origin/HUNT-04-hunt-exhaustion-report-v0",
+      "origin/dev",
+      "origin/main"
+    ],
+    "repo_root": "C:/Inbox/Git Repos/eureka",
+    "repo_root_detected": true,
+    "repo_root_error": "",
+    "schema_version": "aide.git-helper-state.v0",
+    "unpushed_protected_branches": [
+      {
+        "ahead": 11,
+        "behind": 13,
+        "branch": "dev",
+        "error": "",
+        "known": true,
+        "remote": "origin/dev"
+      }
+    ],
+    "upstream": "origin/dev",
+    "upstream_available": true,
+    "warnings": [
+      "dirty_tree_detected"
+    ],
+    "worktree_dirty": true
+  },
+  "status": "blocked",
+  "target": "",
+  "warnings": [
+    "dirty_tree_detected"
+  ]
+}

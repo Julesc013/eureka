@@ -1,0 +1,26 @@
+schema_version: aide.task.v0
+task_id: EUREKA-OBJECT-ABSENCE-SURFACE-01
+title: Q60 Eureka Object and Absence Surface v0
+status: needs_review
+task_class: product_surface
+risk_class: local_fixture_only
+created_at: 2026-05-15
+repo: julesc013/eureka
+branch: dev
+source_authority:
+  - .aide/queue/EUREKA-SOURCE-SLICE-HARDENING-01/evidence/q60-readiness.md
+  - .aide/queue/EUREKA-SOURCE-SLICE-HARDENING-01/evidence/positive-path-proof.md
+  - .aide/queue/EUREKA-SOURCE-SLICE-HARDENING-01/evidence/negative-absence-proof.md
+allowed_product_paths:
+  - runtime/local_foundry/fixture_source_observation_slice.py
+  - tests/runtime/test_fixture_source_observation_vertical_slice.py
+  - tests/operations/test_fixture_source_observation_vertical_slice_script.py
+forbidden_operations:
+  - live_source_probe
+  - network_call
+  - provider_or_model_call
+  - production_source_cache_write
+  - production_evidence_ledger_write
+  - production_public_index_write
+  - registry_mutation
+  - branch_or_remote_mutation

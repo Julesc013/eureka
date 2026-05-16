@@ -1,27 +1,15 @@
 {
   "schema_version": "aide.gateway-status.v0",
-  "generated_by": "HUNT-REMEDIATION",
-  "service": "aide-gateway-skeleton",
-  "mode": "local_skeleton_report_only",
-  "provider_calls_enabled": false,
-  "model_calls_enabled": false,
-  "outbound_network_enabled": false,
+  "generated_by": "Q26 Eureka handover revalidation",
+  "status": "report_only",
+  "gateway_enabled": false,
+  "provider_forwarding_enabled": false,
+  "model_execution_enabled": false,
+  "network_calls_made": false,
   "raw_prompt_storage": false,
   "raw_response_storage": false,
-  "readiness": {
-    "status": "metadata_only",
-    "live_gateway_enabled": false
-  },
-  "signals": {
-    "route": {
-      "route_class": "deterministic_local"
-    },
-    "verifier_status": "pass",
-    "golden_task_status": "pass"
-  },
-  "summaries": {
-    "provider_or_model_calls": "none",
-    "network_calls": "none",
-    "automatic_mutation": false
-  }
+  "notes": [
+    "Eureka AIDE Lite carries Gateway policy metadata only.",
+    "No local server, provider proxy, model call, or outbound network behavior is enabled by Q26."
+  ]
 }

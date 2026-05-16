@@ -1,0 +1,37 @@
+{
+  "branch_role_for_current_branch": "integration",
+  "canonical_branch": "main",
+  "confidence": "high",
+  "current_branch": "dev",
+  "current_commit": "df6a6967afdb510de46651f70e21541f20b6741b",
+  "detected_workflow": "trunk_with_dev_integration",
+  "generated_by": "aide-lite",
+  "integration_branch": "dev",
+  "integration_branch_detected": true,
+  "local_branches": [
+    "dev",
+    "main"
+  ],
+  "non_mutating": true,
+  "recommended_next_action": "classify dirty tree before branch-sensitive work",
+  "remote_branches": [
+    "origin/HUNT-00-search-hunt-track-v0",
+    "origin/HUNT-01-search-hunt-session-runtime-v0",
+    "origin/HUNT-02-search-hunt-ui-state-v0",
+    "origin/HUNT-03-search-hunt-commands-v0",
+    "origin/HUNT-04-hunt-exhaustion-report-v0",
+    "origin/dev",
+    "origin/main"
+  ],
+  "remote_url_summary": "Julesc013/eureka",
+  "repo_id": "Julesc013/eureka",
+  "schema_version": "aide.git-workflow-detection.v0",
+  "tags_summary": {
+    "count": 0,
+    "tags": []
+  },
+  "warnings": [
+    "dirty_tree_detected"
+  ],
+  "worktree_dirty": true
+}

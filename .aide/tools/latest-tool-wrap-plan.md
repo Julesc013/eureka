@@ -1,0 +1,98 @@
+# Tool Wrap Plan
+
+- plan_id: q41-latest-tool-wrap-plan
+- status: dry_run
+- source_commit: df6a6967afdb510de46651f70e21541f20b6741b
+- tool_count: 2164
+- execution_allowed: false
+- no_apply: true
+- tool_deletion: false
+- tool_rename: false
+- tool_migration: false
+
+## Wrapper Plans
+
+- `.aide/adapters/templates/continue-checks.template.md`: capability=validate status=planned execution_allowed=false
+- `.aide/cache/latest-cache-keys.json`: capability=test status=planned execution_allowed=false
+- `.aide/cache/latest-cache-keys.md`: capability=test status=planned execution_allowed=false
+- `.aide/changelog/RELEASE_NOTES.preview.md`: capability=release status=planned execution_allowed=false
+- `.aide/changelog/latest-changelog-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/changelog/release-notes.preview.json`: capability=release status=planned execution_allowed=false
+- `.aide/changelog/templates/release-notes.md.template`: capability=release status=planned execution_allowed=false
+- `.aide/context/latest-context-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/latest-review-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/latest-task-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/test-map.json`: capability=context status=planned execution_allowed=false
+- `.aide/controller/latest-outcome-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/controller/latest-recommendations.md`: capability=test status=planned execution_allowed=false
+- `.aide/evals/runs/latest-golden-tasks.json`: capability=test status=planned execution_allowed=false
+- `.aide/evals/runs/latest-golden-tasks.md`: capability=test status=planned execution_allowed=false
+- `.aide/gateway/latest-gateway-status.json`: capability=test status=planned execution_allowed=false
+- `.aide/gateway/latest-gateway-status.md`: capability=test status=planned execution_allowed=false
+- `.aide/git/latest-helper-plan.json`: capability=test status=planned execution_allowed=false
+- `.aide/git/latest-helper-plan.md`: capability=test status=planned execution_allowed=false
+- `.aide/git/sync-policy.md`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/github/latest-github-status.md`: capability=test status=planned execution_allowed=false
+- `.aide/hooks/commit-msg`: capability=unknown status=blocked_until_classified execution_allowed=false
+- `.aide/import-policy.template.yaml`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/import-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/import-report.template.md`: capability=audit status=planned execution_allowed=false
+- `.aide/install/install-dry-run.schema.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/install-observation.schema.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/install-operation.schema.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/install-plan.schema.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/install-verification.schema.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-conflict-report.json`: capability=audit status=planned execution_allowed=false
+- `.aide/install/latest-conflict-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/install/latest-install-dry-run.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-install-dry-run.md`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-install-observation.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-install-observation.md`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-install-plan.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-install-plan.md`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-ownership-ledger.example.json`: capability=install status=planned execution_allowed=false
+- `.aide/install/latest-preservation-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/install/latest-verification-plan.md`: capability=install status=planned execution_allowed=false
+- `.aide/intake/latest-intent-packet.json`: capability=context status=planned execution_allowed=false
+- `.aide/intake/latest-intent-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/intake/latest-workunit-draft.json`: capability=test status=planned execution_allowed=false
+- `.aide/intake/latest-workunit-draft.md`: capability=test status=planned execution_allowed=false
+- `.aide/policies/doctor.yaml`: capability=validate status=planned execution_allowed=false
+- `.aide/policies/export-import.yaml`: capability=unknown status=blocked_until_classified execution_allowed=false
+- `.aide/policies/github-release-draft.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/install-conflicts.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/install-migrations.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/install-ownership.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/install-preservation.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/install-verification.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/install.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/release-artifacts.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-bundle.yaml`: capability=package status=planned execution_allowed=false
+- `.aide/policies/release-checklist.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-provenance.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-publication-boundary.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-upload-plan.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-validation.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/release-versioning.yaml`: capability=release status=planned execution_allowed=false
+- `.aide/policies/rollback-classes.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/rollback-safety.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/rollback-verification.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/rollback.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/sync-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/policies/test-map.yaml`: capability=test status=planned execution_allowed=false
+- `.aide/policies/uninstall-classes.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/uninstall-safety.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/uninstall-verification.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/uninstall.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade-compatibility.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade-conflicts.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade-migrations.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade-preservation.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade-verification.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/policies/upgrade.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/prompts/AIDE-SYNC-01.md`: capability=unknown status=blocked_until_classified execution_allowed=false
+- `.aide/providers/latest-provider-status.json`: capability=test status=planned execution_allowed=false
+
+## Boundary
+
+- Q41 creates future wrapper plans only. No unknown tool is executed.

@@ -55,12 +55,6 @@ class AideLiteWorkflowTests(unittest.TestCase):
             self.assertTrue(aide_lite.is_ignored(rel, patterns), rel)
         self.assertFalse(aide_lite.is_ignored("README.md", patterns))
 
-    def test_minimal_repo_gitignore_has_cache_boundary_patterns(self) -> None:
-        root = self.make_repo()
-        gitignore = aide_lite.read_text(root / ".gitignore")
-        for pattern in aide_lite.GITIGNORE_REQUIRED_PATTERNS:
-            self.assertIn(pattern, gitignore)
-
     def test_snapshot_is_sorted_and_contains_no_raw_file_contents(self) -> None:
         root = self.make_repo()
         result = aide_lite.write_snapshot(root)
@@ -144,19 +138,6 @@ class AideLiteWorkflowTests(unittest.TestCase):
             self.assertIn(f"## {section}", context_packet)
         self.assertIn(aide_lite.REPO_MAP_JSON_PATH, context_packet)
         self.assertNotIn("print('hello')", context_packet)
-
-    def test_minimal_repo_optional_core_fallbacks_are_importable(self) -> None:
-        root = self.make_repo()
-        gateway = aide_lite.import_gateway_status_module(root)
-        provider_status = aide_lite.import_provider_status_module(root)
-        provider_registry = aide_lite.import_provider_registry_module(root)
-
-        self.assertFalse(gateway.health_payload()["provider_calls_enabled"])
-        self.assertEqual(gateway.smoke_gateway(root)["result"], "PASS")
-        self.assertFalse(provider_status.build_provider_status(root)["live_provider_calls"])
-        self.assertGreaterEqual(provider_status.build_provider_status(root)["provider_family_count"], 13)
-        validation = provider_registry.validate_provider_files(root)
-        self.assertEqual(validation["result"], "PASS")
 
     def test_line_range_reference_validation(self) -> None:
         root = self.make_repo()

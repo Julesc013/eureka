@@ -1,0 +1,192 @@
+{
+  "assets": [
+    {
+      "asset_id": "aide-lite-pack-v0.zip",
+      "filename": "aide-lite-pack-v0.zip",
+      "kind": "zip_archive",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/aide-lite-pack-v0.zip",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 1,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "aide-lite-pack-v0.tar.gz",
+      "filename": "aide-lite-pack-v0.tar.gz",
+      "kind": "tar_gz_archive",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 2,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "aide-lite-pack-v0.checksums.json",
+      "filename": "aide-lite-pack-v0.checksums.json",
+      "kind": "checksums",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 3,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "SHA256SUMS.txt",
+      "filename": "SHA256SUMS.txt",
+      "kind": "sha256sums_text",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/SHA256SUMS.txt",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 4,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "manifest.yaml",
+      "filename": "manifest.yaml",
+      "kind": "manifest",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/manifest.yaml",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 5,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "install.md",
+      "filename": "install.md",
+      "kind": "install_notes",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/install.md",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 6,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "CHANGELOG.preview.md",
+      "filename": "CHANGELOG.preview.md",
+      "kind": "changelog_preview_copy",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/CHANGELOG.preview.md",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 7,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "RELEASE_NOTES.preview.md",
+      "filename": "RELEASE_NOTES.preview.md",
+      "kind": "release_notes_preview_copy",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/RELEASE_NOTES.preview.md",
+      "publish_candidate": false,
+      "required": true,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 8,
+      "validation_status": "missing_required"
+    },
+    {
+      "asset_id": "release-validation.json",
+      "filename": "release-validation.json",
+      "kind": "validation_report",
+      "notes": "local draft asset candidate; no upload performed in Q48",
+      "path": ".aide/release/dist/release-validation.json",
+      "publish_candidate": true,
+      "required": false,
+      "sha256": "7d49badf0c8e63fda54a514eab1ce1aeaa6f82d0a6b219cd56c9e80ce3d48a0d",
+      "size_bytes": 4355,
+      "upload_order": 9,
+      "validation_status": "present"
+    },
+    {
+      "asset_id": "release-validation.md",
+      "filename": "release-validation.md",
+      "kind": "validation_report",
+      "notes": "local draft asset candidate; no upload performed in Q48",
+      "path": ".aide/release/dist/release-validation.md",
+      "publish_candidate": true,
+      "required": false,
+      "sha256": "727a6453692de5f232ad4a1e16b6fd5b4dbada88db899468252f132308d19864",
+      "size_bytes": 1264,
+      "upload_order": 10,
+      "validation_status": "present"
+    },
+    {
+      "asset_id": "release-provenance.json",
+      "filename": "release-provenance.json",
+      "kind": "provenance_report",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/release-provenance.json",
+      "publish_candidate": false,
+      "required": false,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 11,
+      "validation_status": "missing_optional"
+    },
+    {
+      "asset_id": "release-assets.json",
+      "filename": "release-assets.json",
+      "kind": "asset_index",
+      "notes": "asset missing from local Q47 bundle",
+      "path": ".aide/release/dist/release-assets.json",
+      "publish_candidate": false,
+      "required": false,
+      "sha256": "",
+      "size_bytes": 0,
+      "upload_order": 12,
+      "validation_status": "missing_optional"
+    }
+  ],
+  "draft_id": "aide-lite-pack-v0-github-draft-6f2698c6e109a3b3",
+  "generated_by": "aide-lite release draft q48",
+  "known_risks": [
+    "This is a local draft only; no GitHub publication, tag, or upload has occurred.",
+    "Suggested tag naming still requires human/operator review.",
+    "Dominium and Eureka target install readiness are not claimed by Q48.",
+    "Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.",
+    "Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state."
+  ],
+  "no_publish": true,
+  "preview_only": true,
+  "publication_status": "local_draft_no_publish",
+  "release_body_markdown": "# AIDE Lite Pack v0 Draft (6f2698c6e109a3b3)\n\n> Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.\n\n## Release Metadata\n\n- Suggested tag: `aide-lite-pack-v0-draft-6f2698c6e109a3b3`\n- Suggested tag created: no\n- Source commit: `6f2698c6e109a3b35d20402bb9871c1e4a674688`\n- Source branch: `dev`\n- Dirty state recorded: `true`\n- Release type: local draft / not published\n\n## Summary\n\n- AIDE Lite Pack v0 local release bundle prepared for human review.\n- Assets come from the Q47 local bundle under `.aide/release/dist/`.\n- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.\n\n## Release Notes Preview\n- .aide/release/dist/RELEASE_NOTES.preview.md missing\n\n## Changelog Preview\n- .aide/release/dist/CHANGELOG.preview.md missing\n\n## Install Notes\n\n- Local install notes: `.aide/release/dist/install.md`\n- Default install workflow is observe, plan, dry-run, review.\n- Target repositories must run their own validation after extraction/import.\n\n## Assets\n\n| Order | Asset | Kind | Size | SHA-256 | Required |\n| --- | --- | --- | ---: | --- | --- |\n| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 0 | `missing` | true |\n| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 0 | `missing` | true |\n| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 0 | `missing` | true |\n| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 0 | `missing` | true |\n| 5 | `.aide/release/dist/manifest.yaml` | manifest | 0 | `missing` | true |\n| 6 | `.aide/release/dist/install.md` | install_notes | 0 | `missing` | true |\n| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 0 | `missing` | true |\n| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 0 | `missing` | true |\n| 9 | `.aide/release/dist/release-validation.json` | validation_report | 4355 | `7d49badf0c8e63fd...` | false |\n| 10 | `.aide/release/dist/release-validation.md` | validation_report | 1264 | `727a6453692de5f2...` | false |\n| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 0 | `missing` | false |\n| 12 | `.aide/release/dist/release-assets.json` | asset_index | 0 | `missing` | false |\n\n## Validation Summary\n\n- release validate: FAIL\n- pack-status: FAIL\n- fixture extraction: FAIL\n- checksum validation: FAIL\n\n## Known Risks\n- This is a local draft only; no GitHub publication, tag, or upload has occurred.\n- Suggested tag naming still requires human/operator review.\n- Dominium and Eureka target install readiness are not claimed by Q48.\n- Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.\n- Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.\n\n## Publication Blockers\n- missing required release asset: .aide/release/dist/aide-lite-pack-v0.zip\n- missing required release asset: .aide/release/dist/aide-lite-pack-v0.tar.gz\n- missing required release asset: .aide/release/dist/aide-lite-pack-v0.checksums.json\n- missing required release asset: .aide/release/dist/SHA256SUMS.txt\n- missing required release asset: .aide/release/dist/manifest.yaml\n- missing required release asset: .aide/release/dist/install.md\n- missing required release asset: .aide/release/dist/CHANGELOG.preview.md\n- missing required release asset: .aide/release/dist/RELEASE_NOTES.preview.md\n- Q47 release bundle validation failed; run release validate before publication review\n\n## Warnings\n- missing optional release asset: .aide/release/dist/release-provenance.json\n- missing optional release asset: .aide/release/dist/release-assets.json\n\n## Manual Publication Checklist\n\n- Review this release body.\n- Review suggested tag naming.\n- Review asset list and checksums.\n- Review known risks and target install caveats.\n- Decide whether the eventual GitHub release is draft, pre-release, or stable.\n- Obtain explicit operator approval before any future publication phase.\n\n## Non-Publication Statement\n\n- tag_created: no\n- github_release_created: no\n- upload_performed: no\n- network_api_call: no\n- branch_mutation: no\n- active_ci_installed: no\n",
+  "schema_version": "aide.github-release-draft.v0",
+  "source_branch": "dev",
+  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "source_repo": "C:/Inbox/Git Repos/eureka",
+  "suggested_tag": "aide-lite-pack-v0-draft-6f2698c6e109a3b3",
+  "suggested_title": "AIDE Lite Pack v0 Draft (6f2698c6e109a3b3)",
+  "validation_summary": {
+    "checksum_problems": [
+      "missing release checksums JSON"
+    ],
+    "checksum_validation": "FAIL",
+    "draft_validate_result": "pending",
+    "fixture_extract": "FAIL",
+    "pack_problems": [
+      "export pack missing"
+    ],
+    "pack_status": "FAIL",
+    "release_validate_result": "FAIL"
+  }
+}

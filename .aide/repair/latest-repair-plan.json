@@ -1,0 +1,716 @@
+{
+  "conflicts": [
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "contracts/hosting/secrets_policy.v0.json"
+      ],
+      "issue_id": "repair-8e7db9396f4c",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-659f358a968a",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-2a77fbfddbcf",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md"
+      ],
+      "issue_id": "repair-58b10f1c6b71",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md"
+      ],
+      "issue_id": "repair-928de652332a",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-7c032c519429",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-96a9925c932b",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "control/inventory/hosting/secrets_credential_policy.json"
+      ],
+      "issue_id": "repair-ce53fcde89ee",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-e00852b9bf11",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "examples/hosting/security/secrets_policy_example_v0.json"
+      ],
+      "issue_id": "repair-d86f307e4da7",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+      ],
+      "issue_id": "repair-4f9e3c13d424",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+      ],
+      "issue_id": "repair-679e14e6da9a",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    },
+    {
+      "blocking": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+      ],
+      "issue_id": "repair-154537708718",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "severity": "blocking"
+    }
+  ],
+  "diagnoses": [
+    {
+      "blocker": false,
+      "diagnosis_id": "diagnosis-d9f05a8682b3",
+      "evidence_refs": [
+        ".aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "issue_id": "repair-d9f05a8682b3",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Export pack checksums are missing; future repair may regenerate pack evidence.",
+      "repair_class": "invalid_pack_checksum",
+      "risk_class": "high",
+      "severity": "warning"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-8e7db9396f4c",
+      "evidence_refs": [
+        "contracts/hosting/secrets_policy.v0.json"
+      ],
+      "issue_id": "repair-8e7db9396f4c",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-659f358a968a",
+      "evidence_refs": [
+        "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-659f358a968a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-2a77fbfddbcf",
+      "evidence_refs": [
+        "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-2a77fbfddbcf",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-58b10f1c6b71",
+      "evidence_refs": [
+        "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md"
+      ],
+      "issue_id": "repair-58b10f1c6b71",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-928de652332a",
+      "evidence_refs": [
+        "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md"
+      ],
+      "issue_id": "repair-928de652332a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-7c032c519429",
+      "evidence_refs": [
+        "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-7c032c519429",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-96a9925c932b",
+      "evidence_refs": [
+        "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-96a9925c932b",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-ce53fcde89ee",
+      "evidence_refs": [
+        "control/inventory/hosting/secrets_credential_policy.json"
+      ],
+      "issue_id": "repair-ce53fcde89ee",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-e00852b9bf11",
+      "evidence_refs": [
+        "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-e00852b9bf11",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-d86f307e4da7",
+      "evidence_refs": [
+        "examples/hosting/security/secrets_policy_example_v0.json"
+      ],
+      "issue_id": "repair-d86f307e4da7",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-4f9e3c13d424",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+      ],
+      "issue_id": "repair-4f9e3c13d424",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-679e14e6da9a",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+      ],
+      "issue_id": "repair-679e14e6da9a",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    },
+    {
+      "blocker": true,
+      "diagnosis_id": "diagnosis-154537708718",
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+      ],
+      "issue_id": "repair-154537708718",
+      "mandatory_migration_candidate": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking"
+    }
+  ],
+  "evidence_required": [
+    ".aide/repair/latest-repair-observation.json",
+    ".aide/repair/latest-repair-diagnosis.json",
+    ".aide/repair/latest-repair-plan.json",
+    ".aide/repair/latest-repair-dry-run.json",
+    ".aide/repair/latest-doctor-repair-report.json"
+  ],
+  "generated_by": "aide-lite",
+  "mode": "observe_plan_dry_run_only",
+  "no_apply": true,
+  "operations": [
+    {
+      "action": "manual_review_required",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-e2bab7245c1d",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Export pack checksums are missing; future repair may regenerate pack evidence.",
+      "repair_class": "invalid_pack_checksum",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-755fa64d3098",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "contracts/hosting/secrets_policy.v0.json",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-abc4bb5d3401",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-ae8bb420e6b3",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-72bebbf079cb",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-a73486a54889",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-b1498b33b772",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-2abd93bf56bb",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-38fbc6d5bf49",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "control/inventory/hosting/secrets_credential_policy.json",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-8f335214801f",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-0f1151124509",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "examples/hosting/security/secrets_policy_example_v0.json",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-e82ce4746885",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-2ad73bcae0b8",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    },
+    {
+      "action": "blocked",
+      "apply_allowed": false,
+      "delete_allowed": false,
+      "migration_required": false,
+      "operation_id": "repair-op-e22e93b5b0fe",
+      "operation_type": "candidate_repair",
+      "overwrite_allowed": false,
+      "preserve_target_state": true,
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+      "source_reference": "",
+      "target_path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "validation_required": [
+        "py -3 .aide/scripts/aide_lite.py doctor",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py install validate",
+        "py -3 .aide/scripts/aide_lite.py repair validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status"
+      ]
+    }
+  ],
+  "plan_id": "q44-repair-plan-current-repo",
+  "preserved_paths": [
+    ".aide/export/aide-lite-pack-v0/checksums.json",
+    "contracts/hosting/secrets_policy.v0.json",
+    "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md",
+    "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md",
+    "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md",
+    "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md",
+    "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md",
+    "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md",
+    "control/inventory/hosting/secrets_credential_policy.json",
+    "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
+    "examples/hosting/security/secrets_policy_example_v0.json",
+    "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+    "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+    "examples/query_guard/minimal_secret_rejected_v0/README.md"
+  ],
+  "required_migrations": [],
+  "rollback_prerequisites": [
+    "future repair apply phase must be explicit and reviewed",
+    "future repair apply phase must preserve target-specific memory, queue, evidence, reports, docs, and tools",
+    "future repair apply phase must record rollback notes before mutation"
+  ],
+  "schema_version": "aide.repair-plan.v0",
+  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "status": "candidate",
+  "target_root": ".",
+  "verification_plan": [
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py selftest",
+    "py -3 .aide/scripts/aide_lite.py install validate",
+    "py -3 .aide/scripts/aide_lite.py repair validate",
+    "py -3 .aide/scripts/aide_lite.py pack-status"
+  ]
+}

@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5355 chars, 1339 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4254 chars, 1064 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1828 chars, 457 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1836 chars, 459 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -23,8 +23,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - `.aide/verification/latest-verification-report.md`
 - verifier_result: PASS
-- report_chars: 3187
-- report_approx_tokens: 797
+- report_chars: 3444
+- report_approx_tokens: 861
 
 ## Evidence Packet References
 
@@ -43,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4254
-- approx_tokens: 1064
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -82,9 +82,9 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - gateway_status: `.aide/gateway/latest-gateway-status.json`
 - service: aide-gateway-skeleton
 - mode: local_skeleton_report_only
-- route_class: deterministic_local
-- verifier_status: pass
-- golden_task_status: pass
+- route_class: unknown
+- verifier_status: unknown
+- golden_task_status: unknown
 - provider_calls_enabled: false
 - model_calls_enabled: false
 - outbound_network_enabled: false
@@ -93,7 +93,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - provider_status: `.aide/providers/latest-provider-status.json`
 - provider_family_count: 0
-- validation_result: pass
+- validation_result: unknown
 - live_provider_calls: false
 - live_model_calls: false
 - network_calls: false

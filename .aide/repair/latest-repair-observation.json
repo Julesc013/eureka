@@ -1,0 +1,229 @@
+{
+  "detected_issues": [
+    {
+      "action": "manual_review_required",
+      "blocker": false,
+      "evidence_refs": [
+        ".aide/export/aide-lite-pack-v0/checksums.json"
+      ],
+      "issue_id": "repair-d9f05a8682b3",
+      "path": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "reason": "Export pack checksums are missing; future repair may regenerate pack evidence.",
+      "repair_class": "invalid_pack_checksum",
+      "risk_class": "high",
+      "severity": "warning",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "contracts/hosting/secrets_policy.v0.json"
+      ],
+      "issue_id": "repair-8e7db9396f4c",
+      "path": "contracts/hosting/secrets_policy.v0.json",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-659f358a968a",
+      "path": "control/audits/ai-provider-contract-v0/PRIVACY_AND_CREDENTIAL_POLICY.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-2a77fbfddbcf",
+      "path": "control/audits/deep-extraction-contract-v0/PRIVACY_PATH_AND_SECRET_POLICY.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md"
+      ],
+      "issue_id": "repair-58b10f1c6b71",
+      "path": "control/audits/deep-extraction-runtime-planning-v0/PRIVACY_PATH_SECRET_GATE_REVIEW.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md"
+      ],
+      "issue_id": "repair-928de652332a",
+      "path": "control/audits/e-bundle-01-hosting-ops-readiness-v0/secrets_credential_report.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-7c032c519429",
+      "path": "control/audits/pack-import-local-dry-run-runtime-v0/PRIVACY_PATH_SECRET_POLICY.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md"
+      ],
+      "issue_id": "repair-96a9925c932b",
+      "path": "control/audits/pack-import-runtime-planning-v0/PRIVACY_PATH_TRAVERSAL_AND_SECRET_POLICY.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "control/inventory/hosting/secrets_credential_policy.json"
+      ],
+      "issue_id": "repair-ce53fcde89ee",
+      "path": "control/inventory/hosting/secrets_credential_policy.json",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md"
+      ],
+      "issue_id": "repair-e00852b9bf11",
+      "path": "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "examples/hosting/security/secrets_policy_example_v0.json"
+      ],
+      "issue_id": "repair-d86f307e4da7",
+      "path": "examples/hosting/security/secrets_policy_example_v0.json",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+      ],
+      "issue_id": "repair-4f9e3c13d424",
+      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+      ],
+      "issue_id": "repair-679e14e6da9a",
+      "path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    },
+    {
+      "action": "blocked",
+      "blocker": true,
+      "evidence_refs": [
+        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+      ],
+      "issue_id": "repair-154537708718",
+      "path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+      "repair_class": "secret_like_file",
+      "risk_class": "critical",
+      "severity": "blocking",
+      "source_reference": ""
+    }
+  ],
+  "generated_by": "aide-lite",
+  "install_state_summary": {
+    "conflict_report": {},
+    "observation": {},
+    "plan": {}
+  },
+  "no_apply": true,
+  "observed_inputs": {
+    "file_count": 16289,
+    "files_source": "git",
+    "install_conflict_report_present": false,
+    "install_observation_present": false,
+    "install_plan_present": false,
+    "pack_checksums_present": false,
+    "pack_manifest_present": false,
+    "pack_payload_present": false
+  },
+  "schema_version": "aide.repair-observation.v0",
+  "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",
+  "target_root": ".",
+  "validation_summary": {
+    "blocking_count": 13,
+    "issue_count": 14,
+    "no_apply": true
+  },
+  "warnings": [
+    "install observation unavailable; repair observe used direct filesystem and pack inspection",
+    "blocking repair issues require manual review; Q44 applies no repairs"
+  ]
+}

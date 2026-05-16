@@ -1,0 +1,107 @@
+{
+  "schema_version": "dev_main_aide_sync_report.v0",
+  "task": "DEV-MAIN-AIDE-SYNC-01",
+  "status": "pass_pending_push",
+  "starting_branch_state": {
+    "starting_branch": "dev",
+    "local_head_start": "dada059e2ca9e6464d3aa12a7764baaaf4289052",
+    "origin_main_start": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+    "origin_dev_start": "419db7fbdcf3681676cd85496efec950e511fe81",
+    "merge_base": "7de5c8b708c2a75a82d2ab6fe55673634847c197",
+    "dirty_state": "clean",
+    "local_dev_ahead_origin_dev_by": 2
+  },
+  "branches": {
+    "backup_branch": "backup/dev-before-main-sync-20260516-1053",
+    "integration_branch": "sync/dev-merge-main-aide-20260516-1053"
+  },
+  "merge": {
+    "merge_performed": true,
+    "merge_source": "origin/main",
+    "merge_target_lineage": "dev",
+    "conflict_files": [
+      ".aide/context/latest-review-packet.md",
+      ".aide/context/latest-task-packet.md",
+      ".aide/controller/README.md",
+      ".aide/controller/failure-taxonomy.yaml",
+      ".aide/controller/latest-recommendations.md",
+      ".aide/gateway/latest-gateway-status.json",
+      ".aide/gateway/latest-gateway-status.md",
+      ".aide/providers/latest-provider-status.json",
+      ".aide/providers/latest-provider-status.md",
+      ".aide/reports/token-ledger.jsonl",
+      ".aide/reports/token-savings-summary.md",
+      ".aide/verification/latest-verification-report.md"
+    ],
+    "resolution_policy": {
+      "origin_main_wins": [
+        ".aide/controller/**",
+        ".aide/gateway/latest-gateway-status.*",
+        ".aide/providers/latest-provider-status.*",
+        ".aide/reports/token-ledger.jsonl",
+        ".aide/reports/token-savings-summary.md"
+      ],
+      "regenerated": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/context/latest-review-packet.md",
+        ".aide/context/repo-map.json",
+        ".aide/context/repo-snapshot.json",
+        ".aide/context/test-map.json",
+        ".aide/context/context-index.json",
+        ".aide/context/latest-context-packet.md",
+        ".aide/verification/latest-verification-report.md"
+      ],
+      "preserve_both": [
+        ".aide/queue/index.yaml",
+        ".aide/memory/**",
+        "AGENTS.md"
+      ],
+      "dev_hunt_preserved": [
+        "runtime/search_hunt/**",
+        "runtime/search_need/**",
+        "runtime/workunit_queue/**",
+        "runtime/agent_research/**",
+        "runtime/ai_escalation/**",
+        "control/audits/hunt-*/**",
+        "control/audits/hunt-remediation*/**",
+        "control/inventory/hunt_*",
+        "control/inventory/search_hunt_*"
+      ]
+    },
+    "main_aide_baseline_preserved": true,
+    "dev_hunt_work_preserved": true
+  },
+  "validation": {
+    "git_status_pre_merge": "pass_clean_ahead_origin_dev_by_2",
+    "git_diff_check": "pass",
+    "architecture_boundaries": "pass",
+    "source_slice_runtime_tests": "pass",
+    "source_slice_script_tests": "pass",
+    "hunt_targeted_validators": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "pass",
+    "aide_review_pack": "pass",
+    "commit_check": "pass"
+  },
+  "known_warnings": [],
+  "boundaries": {
+    "source_probe_executed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "push": {
+    "push_status": "pending_until_validation_and_remote_dev_recheck",
+    "pushed_origin_dev": false,
+    "pushed_origin_main": false,
+    "force_push_performed": false,
+    "history_rewrite_performed": false,
+    "no_force_push_proof": "Only plain git push origin dev is allowed after origin/dev is rechecked.",
+    "no_main_mutation_proof": "No command in this task pushes main; origin/main is read-only merge input."
+  }
+}

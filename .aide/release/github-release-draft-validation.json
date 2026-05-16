@@ -1,0 +1,60 @@
+{
+  "asset_validation": {
+    "asset_count": 12,
+    "missing_required_count": 8
+  },
+  "blockers": [
+    "required release draft assets are present",
+    "release draft asset checksums match",
+    "required asset missing: .aide/release/dist/aide-lite-pack-v0.zip",
+    "required asset missing: .aide/release/dist/aide-lite-pack-v0.tar.gz",
+    "required asset missing: .aide/release/dist/aide-lite-pack-v0.checksums.json",
+    "required asset missing: .aide/release/dist/SHA256SUMS.txt",
+    "required asset missing: .aide/release/dist/manifest.yaml",
+    "required asset missing: .aide/release/dist/install.md",
+    "required asset missing: .aide/release/dist/CHANGELOG.preview.md",
+    "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md"
+  ],
+  "checksum_validation": {
+    "problems": [
+      "required asset missing: .aide/release/dist/aide-lite-pack-v0.zip",
+      "required asset missing: .aide/release/dist/aide-lite-pack-v0.tar.gz",
+      "required asset missing: .aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "required asset missing: .aide/release/dist/SHA256SUMS.txt",
+      "required asset missing: .aide/release/dist/manifest.yaml",
+      "required asset missing: .aide/release/dist/install.md",
+      "required asset missing: .aide/release/dist/CHANGELOG.preview.md",
+      "required asset missing: .aide/release/dist/RELEASE_NOTES.preview.md"
+    ],
+    "result": "FAIL"
+  },
+  "draft_ref": ".aide/release/github-release-draft.json",
+  "no_publish": true,
+  "publication_boundary": {
+    "active_ci_installed": false,
+    "blocked_actions": [
+      "create_git_tag",
+      "push_git_tag",
+      "create_github_release",
+      "upload_release_asset",
+      "publish_package",
+      "mutate_branch",
+      "mutate_github_settings",
+      "install_ci",
+      "call_network",
+      "call_provider_model"
+    ],
+    "branch_mutation": false,
+    "generated_by": "aide-lite release draft q48",
+    "github_release_created": false,
+    "network_api_call": false,
+    "no_publish": true,
+    "schema_version": "aide.github-release-publication-boundary.v0",
+    "tag_created": false,
+    "upload_performed": false
+  },
+  "result": "FAIL",
+  "schema_version": "aide.github-release-draft-validation.v0",
+  "validation_id": "aide-lite-pack-v0-github-draft-6f2698c6e109a3b3-validation",
+  "warnings": []
+}

@@ -1,0 +1,21 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-SYNC-01
+status: needs_review
+planning_state: complete
+owner: Codex
+created_at: 2026-05-14
+started_at: 2026-05-14
+completed_at: 2026-05-14
+review_gate:
+  required: true
+  status: open
+  reason: >
+    Q32 must stop at needs_review after target-safe governance sync,
+    validation, and evidence. It does not approve product work or branch
+    mutation.
+evidence_path: .aide/queue/EUREKA-AIDE-SYNC-01/evidence/
+recommended_next: Select the next bounded Eureka task after canonical AIDE governance sync
+notes: >
+  Q32 synced portable Q31 governance from the canonical AIDE Lite Pack,
+  preserved Eureka-specific state, regenerated target-local reports, and stopped
+  at needs_review without product changes or branch mutation.

@@ -1,0 +1,19 @@
+schema_version: aide.queue-task.v0
+task_id: EUREKA-SOURCE-SLICE-HARDENING-01
+title: Q59 Eureka Source Slice Hardening v0
+status: needs_review
+task_class: product_hardening
+risk_class: medium_local_fixture_only
+source_authority:
+  q58_readiness: .aide/queue/EUREKA-SOURCE-SLICE-01/evidence/q59-readiness.md
+  q58_implementation: .aide/queue/EUREKA-SOURCE-SLICE-01/evidence/implementation-summary.md
+  q58_validation: .aide/queue/EUREKA-SOURCE-SLICE-01/evidence/validation.md
+allowed_product_paths:
+  - runtime/local_foundry/fixture_source_observation_slice.py
+  - tests/runtime/test_fixture_source_observation_vertical_slice.py
+  - tests/operations/test_fixture_source_observation_vertical_slice_script.py
+live_access: forbidden
+provider_model_calls: forbidden
+production_state_mutation: forbidden
+branch_remote_mutation: forbidden
+result: ready_for_q60_with_warnings

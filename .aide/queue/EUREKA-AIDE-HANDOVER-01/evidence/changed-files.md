@@ -1,22 +1,18 @@
 # Changed Files
 
-## Queue And Evidence
+## Q26 Evidence And Status
 
-- `.aide/queue/EUREKA-AIDE-HANDOVER-01/**`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/status.yaml`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/changed-files.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/pack-refresh.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/token-savings-confirmation.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/next-task-handoff.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/remaining-risks.md`
+- `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/local-runtime-composition-validation.json`
 
-## Portable Pack Refresh
-
-- `.aide/policies/export-import.yaml`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_export_import.py`
-
-## Eureka-Specific Memory
-
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-
-## Generated Eureka-Local Context And Reports
+## Generated Eureka AIDE Context And Reports
 
 - `.aide/context/repo-snapshot.json`
 - `.aide/context/repo-map.json`
@@ -33,10 +29,15 @@
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/evals/runs/latest-golden-tasks.md`
 
-## Documentation
+## AIDE Metadata Status Surfaces
 
-- `docs/reference/aide-lite-import.md`
-- `docs/reference/aide-handover.md`
+- `.aide/controller/README.md`
+- `.aide/controller/failure-taxonomy.yaml`
+- `.aide/controller/latest-recommendations.md`
+- `.aide/gateway/latest-gateway-status.json`
+- `.aide/gateway/latest-gateway-status.md`
+- `.aide/providers/latest-provider-status.json`
+- `.aide/providers/latest-provider-status.md`
 
 ## Product Source
 

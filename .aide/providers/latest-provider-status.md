@@ -1,11 +1,12 @@
-# AIDE Provider Status
+# Latest Provider Status
 
-- live_provider_calls: false
-- live_model_calls: false
-- network_calls: false
-- provider_probe_calls: false
-- credentials_configured: false
-- gateway_forwarding: false
-- raw_prompt_storage: false
-- raw_response_storage: false
-- metadata_only: true
+- status: offline_contracts_only
+- provider calls made: false
+- model calls made: false
+- network calls made: false
+- credentials present: false
+- raw prompt storage: false
+- raw response storage: false
+
+Q26 keeps provider surfaces disabled and records only deterministic local
+metadata for validation and review.

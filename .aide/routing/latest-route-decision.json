@@ -7,11 +7,13 @@
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-task-packet.md",
     ".aide/controller/latest-outcome-report.md",
+    ".aide/controller/latest-recommendations.md",
     ".aide/evals/runs/latest-golden-tasks.json",
     ".aide/models/hard-floors.yaml",
     ".aide/models/routes.yaml",
     ".aide/policies/provider-adapters.yaml",
     ".aide/policies/routing.yaml",
+    ".aide/providers/latest-provider-status.json",
     ".aide/providers/provider-catalog.yaml",
     ".aide/reports/token-savings-summary.md",
     ".aide/verification/latest-verification-report.md"

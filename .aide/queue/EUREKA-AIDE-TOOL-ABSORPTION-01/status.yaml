@@ -1,0 +1,22 @@
+task_id: EUREKA-AIDE-TOOL-ABSORPTION-01
+phase: Q56
+status: needs_review
+result: READY_FOR_Q57_WITH_WARNINGS
+summary:
+  repo_identity_confirmed: true
+  q55_inspected: true
+  q56_packet_created: true
+  tool_inventory_created: true
+  tool_classification_created: true
+  wrap_plan_created: true
+  architecture_checks_preserved: true
+  source_evidence_index_preserved: true
+  product_files_modified: false
+  unknown_tools_executed: false
+  branch_mutation: false
+warnings:
+  - Git task-state guard reported expected local-only multi-machine warnings.
+  - Pre-existing untracked native/win/winforms/src/Eureka/obj/ remains outside Q56 scope.
+  - Full AIDE eval run ended abnormally without output; targeted golden tasks are required before promotion.
+  - Tool inventory contains unknown and high-risk candidates that remain preserve/manual-review only.
+review_gate: needs_review

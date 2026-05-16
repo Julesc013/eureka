@@ -1,0 +1,58 @@
+[
+    {
+        "path":  ".aide/memory",
+        "exists":  true,
+        "kind":  "directory",
+        "file_count":  6,
+        "sha256":  null
+    },
+    {
+        "path":  ".aide/queue",
+        "exists":  true,
+        "kind":  "directory",
+        "file_count":  280,
+        "sha256":  null
+    },
+    {
+        "path":  ".aide/context/latest-task-packet.md",
+        "exists":  true,
+        "kind":  "file",
+        "file_count":  1,
+        "sha256":  "93522a7858337519a95c4ea8cdb93b97f98c4f864f3541a3071046d16ecd65ad"
+    },
+    {
+        "path":  ".aide/context/latest-review-packet.md",
+        "exists":  true,
+        "kind":  "file",
+        "file_count":  1,
+        "sha256":  "e5943bddd73608370e33c9ed34df82f0dca93e7db60c1cdc4896983f5c9933d6"
+    },
+    {
+        "path":  ".aide/reports",
+        "exists":  true,
+        "kind":  "directory",
+        "file_count":  18,
+        "sha256":  null
+    },
+    {
+        "path":  ".aide/evals/golden-tasks/catalog.yaml",
+        "exists":  true,
+        "kind":  "file",
+        "file_count":  1,
+        "sha256":  "6fb879d5ee06c7ab67c49d123b6f9807fc1cb67301092e810f45da3e012470b1"
+    },
+    {
+        "path":  "AGENTS.md",
+        "exists":  true,
+        "kind":  "file",
+        "file_count":  1,
+        "sha256":  "8f7b6778666df1462f232d25b2d2c86ea7e4cbd3bb3e2d2f981ce0c055c77469"
+    },
+    {
+        "path":  "scripts/check_architecture_boundaries.py",
+        "exists":  true,
+        "kind":  "file",
+        "file_count":  1,
+        "sha256":  "d4ccb7830fae4101e5a3b3aa456f5f52e844ee84646fbdbddbc2c2ffc0e27f18"
+    }
+]

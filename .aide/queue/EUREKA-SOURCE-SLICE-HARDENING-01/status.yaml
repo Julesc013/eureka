@@ -1,0 +1,21 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-SOURCE-SLICE-HARDENING-01
+status: needs_review
+result: ready_for_q60_with_warnings
+review_gate: required
+implemented: true
+fixture_only: true
+local_only: true
+repairs_performed:
+  - runtime/local_foundry/fixture_source_observation_slice.py imported tempfile for default temp output.
+  - validate_fixture_slice_report now checks object evidence refs and rebuild no-mutation flags.
+tests_added:
+  - deterministic ID proof
+  - default temp root proof
+  - malformed report rejection proof
+  - rejected review exclusion proof
+warnings:
+  - AIDE eval run has 9 golden failures unrelated to the Q58/Q59 fixture loop.
+  - Git task-state guard reports pre-existing dirty/sync drift.
+  - Q59 was reissued after Q60 artifacts existed; Q59 was verified without rolling back newer Q60/Q61 state.
+  - Q59-only commit is not safely separable from current Q60 product/test changes.

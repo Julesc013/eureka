@@ -9,15 +9,17 @@
 
 ## CHECK_COUNTS
 
-- info: 91
+- info: 105
 - warnings: 0
 - errors: 0
 - checked_files: 74
-- changed_files: 0
+- changed_files: 3
 
 ## CHANGED_FILES
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
 
 ## WARNINGS
 

@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: EUREKA-AIDE-STABLE-UPGRADE-01
+status: needs_review
+planning_state: complete
+owner: Codex
+created_at: 2026-05-15
+started_at: 2026-05-15
+review_gate:
+  required: true
+  status: open
+  reason: >
+    Q55 upgrades local AIDE control-plane files and must be reviewed before any
+    later remote sync, merge, or promotion.
+result: PASS_WITH_WARNINGS
+readiness: READY_FOR_Q56_WITH_WARNINGS
+evidence_path: .aide/queue/EUREKA-AIDE-STABLE-UPGRADE-01/evidence/
+recommended_next: Q56 Eureka Existing Tool Absorption
+notes: >
+  Q55 completed as a local-only preservation-first AIDE upgrade. Review is
+  required before any later remote sync, merge, or promotion.

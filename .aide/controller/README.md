@@ -1,8 +1,9 @@
-# AIDE Outcome Controller
+# AIDE Controller
 
-Repo-local advisory controller metadata for compact AIDE handoffs.
+Eureka imports the AIDE controller as an advisory metadata surface only.
 
-- advisory_only: true
-- applies_automatically: false
-- provider_or_model_calls: none
-- network_calls: none
+- No autonomous loop is enabled.
+- No prompts, policies, routes, provider settings, runtime behavior, or source
+  files are mutated automatically.
+- Controller outputs are deterministic repo-local reports and recommendations.
+- Provider calls, model calls, and network calls remain disabled.

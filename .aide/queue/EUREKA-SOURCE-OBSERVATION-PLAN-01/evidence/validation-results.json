@@ -1,0 +1,274 @@
+[
+    {
+        "name":  "git status --short",
+        "command":  "git status --short",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.16,
+        "summary":  "M .aide/changelog/CHANGELOG.preview.md\r\n M .aide/changelog/RELEASE_NOTES.preview.md\r\n M .aide/changelog/changelog.preview.json\r\n M .aide/changelog/latest-changelog-report.md\r\n M .aide/changelog/release-notes.preview.json\r\n M .aide/context/latest-review-packet.md\r\n M .aide/context/latest-task-packet.md\r\n M .aide/git/latest-helper-plan.json\r\n M .aide/git/latest-helper-plan.md\r\n M .aide/intake/latest-intent-packet.json\r\n M .aide/intake/latest-intent-packet.md\r\n M .aide/intake/latest-workunit-draft.json\r\n M .aide/intake/latest-workunit-draft.md\r\n M .aide/repo/dependency-map.json\r\n M .aide/repo/doc-link-map.json\r\n M .aide/repo/file-inventory.json\r\n M .aide/repo/generated-map.json\r\n M .aide/repo/latest-repo-intelligence.md\r\n M .aide/repo/orphan-candidates.json\r\n M .aide/repo/ownership-map.json\r\n M .aide/repo/test-map.json\r\n M .aide/reports/eureka-next-aide-task.md\r\n M .aide/reports/eureka-product-boundary-preservation.md\r\n M .aide/roots/latest-root-classification.json\r\n M .aide/roots/latest-root-classification.md\r\n M .aide/roots/latest-root-inventory.json\r\n M .aide/roots/latest-root-inventory.md\r\n M .aide/roots/latest-root-recycling-plan.json\r\n M .aide/roots/latest-root-recycling-plan.md\r\n M .aide/roots/root-exceptions.json\r\n M .aide/tools/latest-tool-adapter-map.json\r\n M .aide/tools/latest-tool-adapter-map.md\r\n M .aide/tools/latest-tool-classification.json\r\n M .aide/tools/latest-tool-classification.md\r\n M .aide/tools/latest-tool-inventory.json\r\n M .aide/tools/latest-tool-inventory.md\r\n M .aide/tools/latest-tool-wrap-plan.json\r\n M .aide/tools/latest-tool-wrap-plan.md\r\n M .aide/tools/tool-risk-summary.md\r\n?? .aide/queue/EUREKA-AIDE-TOOL-ABSORPTION-01/\r\n?? .aide/queue/EUREKA-SOURCE-OBSERVATION-PLAN-01/\r\n?? .aide/reports/eureka-existing-tool-absorption.md\r\n?? .aide/reports/eurek... [truncated]"
+    },
+    {
+        "name":  "git branch --show-current",
+        "command":  "git branch --show-current",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.07,
+        "summary":  "dev"
+    },
+    {
+        "name":  "git branch --all",
+        "command":  "git branch --all",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.07,
+        "summary":  "* dev\r\n  main\r\n  remotes/origin/HEAD -\u003e origin/main\r\n  remotes/origin/HUNT-00-search-hunt-track-v0\r\n  remotes/origin/HUNT-01-search-hunt-session-runtime-v0\r\n  remotes/origin/HUNT-02-search-hunt-ui-state-v0\r\n  remotes/origin/HUNT-03-search-hunt-commands-v0\r\n  remotes/origin/HUNT-04-hunt-exhaustion-report-v0\r\n  remotes/origin/dev\r\n  remotes/origin/main"
+    },
+    {
+        "name":  "git remote -v",
+        "command":  "git remote -v",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.06,
+        "summary":  "origin\thttps://github.com/Julesc013/eureka.git (fetch)\r\norigin\thttps://github.com/Julesc013/eureka.git (push)"
+    },
+    {
+        "name":  "git rev-parse HEAD",
+        "command":  "git rev-parse HEAD",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.07,
+        "summary":  "df6a6967afdb510de46651f70e21541f20b6741b"
+    },
+    {
+        "name":  "git rev-parse --show-toplevel",
+        "command":  "git rev-parse --show-toplevel",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.07,
+        "summary":  "C:/Inbox/Git Repos/eureka"
+    },
+    {
+        "name":  "git tag --list",
+        "command":  "git tag --list",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.07,
+        "summary":  ""
+    },
+    {
+        "name":  "git diff --check",
+        "command":  "git diff --check",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  2.94,
+        "summary":  "git.exe : warning: in the working copy of \u0027.aide/changelog/CHANGELOG.preview.md\u0027, LF will be replaced by CRLF the next \r\ntime Git touches it\r\nAt line:43 char:13\r\n+   $output = \u0026 $cmd.Exe @($cmd.Args) 2\u003e\u00261\r\n+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (warning: in the... Git touches it:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\nwarning: in the working copy of \u0027.aide/changelog/RELEASE_NOTES.preview.md\u0027, LF will be replaced by CRLF the next time \r\nGit touches it\r\nwarning: in the working copy of \u0027.aide/changelog/changelog.preview.json\u0027, LF will be replaced by CRLF the next time \r\nGit touches it\r\nwarning: in the working copy of \u0027.aide/changelog/latest-changelog-report.md\u0027, LF will be replaced by CRLF the next \r\ntime Git touches it\r\nwarning: in the working copy of \u0027.aide/changelog/release-notes.preview.json\u0027, LF will be replaced by CRLF the next \r\ntime Git touches it\r\nwarning: in the working copy of \u0027.aide/context/latest-review-packet.md\u0027, LF will be replaced by CRLF the next time Git \r\ntouches it\r\nwarning: in the working copy of \u0027.aide/context/latest-task-packet.md\u0027, LF will be replaced by CRLF the next time Git \r\ntouches it\r\nwarning: in the working copy of \u0027.aide/git/latest-helper-plan.json\u0027, LF will be replaced by CRLF the next time Git \r\ntouches it\r\nwarning: in the working copy of \u0027.aide/git/latest-helper-plan.md\u0027, LF will be replaced by CRLF the next time Git \r\ntouches it\r\nwarning: in the working copy of \u0027.aide/intake/latest-intent-packet.json\u0027, LF will be replaced by CRLF the next time \r\nGit touches it\r\nwarning: in the working copy of \u0027.aide/intake/latest-intent-packet.md\u0027, LF will be replaced by CRLF the next time Git \r\ntouches it\r\nwarning: in the working copy of \u0027.aide/intake/latest-work... [truncated]"
+    },
+    {
+        "name":  "git check-ignore .aide.local",
+        "command":  "git check-ignore -v .aide.local/",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.11,
+        "summary":  ".gitignore:37:.aide.local/\t.aide.local/"
+    },
+    {
+        "name":  "task-state guard",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe scripts/check_git_task_state.py --mode start-task --task-id EUREKA-SOURCE-OBSERVATION-PLAN-01",
+        "exit_code":  1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  1.22,
+        "summary":  "Git Task State Guard\r\nstatus: FAIL\r\nmode: start-task\r\ntask_id: EUREKA-SOURCE-OBSERVATION-PLAN-01\r\nbranch: dev\r\nhead: df6a6967afdb510de46651f70e21541f20b6741b\r\norigin_main: 7de5c8b708c2a75a82d2ab6fe55673634847c197\r\nupstream: origin/dev\r\nchecks:\r\n- FAIL: clean_working_tree - working tree has 51 changed path(s)\r\n- PASS: current_branch_not_main_for_task_work - current branch is not main\r\n- FAIL: local_main_fast_forwardable_or_current_with_origin_main - local main is behind origin/main by 22 commit(s)\r\n- PASS: no_cherry_pick_state - not present\r\n- PASS: no_forbidden_private_paths - no secret-like/private changed paths\r\n- PASS: no_merge_state - not present\r\n- PASS: no_rebase_state - not present\r\n- PASS: no_revert_state - not present\r\n- PASS: no_unpushed_main_work - main has no local-only commits\r\n- PASS: no_untracked_secret_like_paths - no untracked secret-like paths\r\n- PASS: origin_main_not_unexpectedly_advanced - no expected origin/main provided\r\n- FAIL: task_branch_not_behind_upstream - branch is behind upstream by 11 commit(s)\r\n- PASS: task_branch_upstream_status - upstream is origin/dev\r\n- WARN: task_id_branch_name_match - branch name does not include task ID\r\n- WARN: unpushed_task_branch_work - branch is ahead of upstream by 11 commit(s)"
+    },
+    {
+        "name":  "doctor",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py doctor",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  12.41,
+        "summary":  "AIDE Lite doctor\r\nstatus: PASS\r\n- repo_root: C:/Inbox/Git Repos/eureka\r\n- PASS required: .aide/policies/token-budget.yaml\r\n- PASS required: .aide/memory/project-state.md\r\n- PASS required: .aide/memory/decisions.md\r\n- PASS required: .aide/memory/open-risks.md\r\n- PASS required: .aide/prompts/compact-task.md\r\n- PASS required: .aide/prompts/evidence-review.md\r\n- PASS required: .aide/prompts/codex-token-mode.md\r\n- PASS required: .aide/context/ignore.yaml\r\n- INFO Q09 status: missing\r\n- INFO Q10 status: missing\r\n- INFO Q11 status: missing\r\n- INFO Q12 status: missing\r\n- INFO Q13 status: missing\r\n- INFO Q14 status: missing\r\n- INFO Q15 status: missing\r\n- INFO Q16 status: missing\r\n- INFO Q17 status: missing\r\n- INFO Q18 status: missing\r\n- INFO Q19 status: missing\r\n- INFO Q20 status: missing\r\n- PASS snapshot exists: .aide/context/repo-snapshot.json\r\n- PASS latest task packet exists: .aide/context/latest-task-packet.md\r\n- PASS context artifact exists: .aide/context/repo-map.json\r\n- PASS context artifact exists: .aide/context/repo-map.md\r\n- PASS context artifact exists: .aide/context/test-map.json\r\n- PASS context artifact exists: .aide/context/context-index.json\r\n- PASS context artifact exists: .aide/context/latest-context-packet.md\r\n- PASS verifier artifact exists: .aide/policies/verification.yaml\r\n- PASS verifier artifact exists: .aide/verification/latest-verification-report.md\r\n- PASS review artifact exists: .aide/verification/review-decision-policy.yaml\r\n- PASS review artifact exists: .aide/context/latest-review-packet.md\r\n- PASS token ledger artifact exists: .aide/policies/token-ledger.yaml\r\n- PASS token ledger artifact exists: .aide/reports/token-baselines.yaml\r\n- PASS token ledger artifact exists: .aide/reports/token-ledger.jsonl\r\n- PASS token ledger artifact exists: .aide/repo... [truncated]"
+    },
+    {
+        "name":  "validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  12.15,
+        "summary":  "AIDE Lite validate\r\nstatus: PASS\r\n- PASS required file: .aide/policies/token-budget.yaml\r\n- PASS required file: .aide/memory/project-state.md\r\n- PASS required file: .aide/memory/decisions.md\r\n- PASS required file: .aide/memory/open-risks.md\r\n- PASS required file: .aide/prompts/compact-task.md\r\n- PASS required file: .aide/prompts/evidence-review.md\r\n- PASS required file: .aide/prompts/codex-token-mode.md\r\n- PASS required file: .aide/context/ignore.yaml\r\n- PASS context compiler config exists: .aide/context/compiler.yaml\r\n- PASS context compiler config exists: .aide/context/priority.yaml\r\n- PASS context compiler config exists: .aide/context/excerpt-policy.yaml\r\n- PASS verifier config exists: .aide/policies/verification.yaml\r\n- PASS verifier config exists: .aide/verification/evidence-packet.template.md\r\n- PASS verifier config exists: .aide/verification/review-packet.template.md\r\n- PASS verifier config exists: .aide/verification/review-decision-policy.yaml\r\n- PASS verifier config exists: .aide/verification/diff-scope-policy.yaml\r\n- PASS verifier config exists: .aide/verification/file-reference-policy.yaml\r\n- PASS verifier config exists: .aide/verification/secret-scan-policy.yaml\r\n- PASS project state tokens: 401 \u003c= 1600\r\n- PASS latest task packet tokens: 1714\r\n- PASS review packet tokens: 1652\r\n- PASS repo map records: 16637\r\n- PASS test map mappings: 6551\r\n- PASS context index is readable\r\n- PASS latest context packet tokens: 459\r\n- PASS AGENTS token-survival managed section is current\r\n- PASS no obvious secrets in token-survival files"
+    },
+    {
+        "name":  "test",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py test",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  23.86,
+        "summary":  "AIDE Lite test\r\nstatus: PASS\r\n- PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks"
+    },
+    {
+        "name":  "selftest",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py selftest",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  20.81,
+        "summary":  "AIDE Lite selftest\r\nstatus: PASS\r\n- PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks"
+    },
+    {
+        "name":  "verify",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py verify",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.9,
+        "summary":  "AIDE Lite verify\r\nresult: WARN\r\nchecked_files: 74\r\nchanged_files: 51\r\ninfo: 147\r\nwarnings: 50\r\nerrors: 0\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=.aide/reports/eureka-fixture-source-observation-slice.md\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=runtime/local_foundry/fixture_source_observation_slice.py\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=scripts/validate_fixture_source_observation_vertical_slice.py\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=tests/runtime/test_fixture_source_observation_vertical_slice.py\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=tests/operations/test_fixture_source_observation_vertical_slice_script.py\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=.aide/queue/EUREKA-SOURCE-SLICE-01/evidence/fixture-run\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=.aide/queue/EUREKA-SOURCE-SLICE-01/evidence/fixture-run-report.json\r\n- WARN file_references: referenced path does not exist (from .aide/context/latest-task-packet.md) path=.aide/queue/EUREKA-SOURCE-SLICE-01/evidence/product-boundary-preservation.md\r\n- WARN diff_scope: does not match active task allowed paths path=.aide/changelog/CHANGELOG.preview.md\r\n- WARN diff_scope: does not match active task allowed paths path=.aide/changelog/RELEASE_NOTES.preview.md\r\n- WARN diff_scope: does not match active task allowed paths path=.aide/changelog/changelog.preview.json\r\n- WARN diff_scope: does not mat... [truncated]"
+    },
+    {
+        "name":  "review-pack",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py review-pack",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  2.81,
+        "summary":  "AIDE Lite review-pack\r\npath: .aide/context/latest-review-packet.md\r\naction: written\r\nchars: 6622\r\napprox_tokens: 1656\r\nbudget_status: PASS\r\nverifier_result: PASS\r\ncontents_inline: false"
+    },
+    {
+        "name":  "intent validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py intent validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.86,
+        "summary":  "AIDE Lite intent validate\r\nresult: PASS\r\n- PASS Q36 required file exists: .aide/policies/intent.yaml\r\n- PASS Q36 required file exists: .aide/policies/workunit-sizing.yaml\r\n- PASS Q36 required file exists: .aide/policies/task-classes.yaml\r\n- PASS Q36 required file exists: .aide/policies/risk-classes.yaml\r\n- PASS Q36 required file exists: .aide/policies/prompt-normalization.yaml\r\n- PASS Q36 required file exists: .aide/intake/intent-packet.schema.json\r\n- PASS Q36 required file exists: .aide/intake/workunit-draft.schema.json\r\n- PASS Q36 required file exists: .aide/intake/intent-examples.yaml\r\n- PASS Q36 required file exists: .aide/intake/README.md\r\n- PASS Q36 required file exists: .aide/intake/latest-intent-packet.json\r\n- PASS Q36 required file exists: .aide/intake/latest-intent-packet.md\r\n- PASS Q36 required file exists: .aide/intake/latest-workunit-draft.json\r\n- PASS Q36 required file exists: .aide/intake/latest-workunit-draft.md\r\n- PASS .aide/policies/intent.yaml contains anchor: aide.intent-policy.v0\r\n- PASS .aide/policies/intent.yaml contains anchor: deterministic_local\r\n- PASS .aide/policies/intent.yaml contains anchor: compile_only\r\n- PASS .aide/policies/intent.yaml contains anchor: no_task_execution\r\n- PASS .aide/policies/workunit-sizing.yaml contains anchor: aide.workunit-sizing-policy.v0\r\n- PASS .aide/policies/workunit-sizing.yaml contains anchor: split_required\r\n- PASS .aide/policies/workunit-sizing.yaml contains anchor: behavior_proof_required_when\r\n- PASS .aide/policies/task-classes.yaml contains anchor: aide.task-classes-policy.v0\r\n- PASS .aide/policies/task-classes.yaml contains anchor: refactor\r\n- PASS .aide/policies/task-classes.yaml contains anchor: install\r\n- PASS .aide/policies/task-classes.yaml contains anchor: git\r\n- PASS .aide/policies/risk-classes.ya... [truncated]"
+    },
+    {
+        "name":  "intent compile",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py intent compile --prompt Plan Eureka source observation vertical slice without live mutation",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.56,
+        "summary":  "AIDE Lite intent compile\r\nresult: PASS\r\ngenerated_from: inline_prompt\r\nraw_prompt_hash: b7981c77cd1e1bd562ff52aa502cc910e04782cfe32efd55b8b0bc9d9ad0bd7e\r\ntask_class: unknown\r\nrisk_class: external_side_effect\r\nsizing_class: live_test_gate\r\nsafe_to_execute: false\r\nrequires_split: true\r\nblocked: false\r\nnext_action: require behavior proof and live-test validation plan before implementation\r\nintent_json: .aide/intake/latest-intent-packet.json (written)\r\nintent_md: .aide/intake/latest-intent-packet.md (written)\r\nworkunit_json: .aide/intake/latest-workunit-draft.json (written)\r\nworkunit_md: .aide/intake/latest-workunit-draft.md (written)\r\ntask_execution: false\r\nprovider_or_model_calls: none\r\nnetwork_calls: none\r\nraw_long_prompt_storage: false"
+    },
+    {
+        "name":  "repo inventory",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py repo inventory",
+        "exit_code":  -1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  137.2,
+        "summary":  ""
+    },
+    {
+        "name":  "repo validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py repo validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.2,
+        "summary":  "AIDE Lite repo validate\r\nresult: WARN\r\n- PASS Q37 required file exists: .aide/policies/repo-intelligence.yaml\r\n- PASS Q37 required file exists: .aide/policies/file-classification.yaml\r\n- PASS Q37 required file exists: .aide/policies/ownership-map.yaml\r\n- PASS Q37 required file exists: .aide/policies/dependency-map.yaml\r\n- PASS Q37 required file exists: .aide/policies/test-map.yaml\r\n- PASS Q37 required file exists: .aide/policies/doc-link-map.yaml\r\n- PASS Q37 required file exists: .aide/repo/file-inventory.schema.json\r\n- PASS Q37 required file exists: .aide/repo/ownership-map.schema.json\r\n- PASS Q37 required file exists: .aide/repo/dependency-map.schema.json\r\n- PASS Q37 required file exists: .aide/repo/test-map.schema.json\r\n- PASS Q37 required file exists: .aide/repo/doc-link-map.schema.json\r\n- PASS Q37 required file exists: .aide/repo/repo-intelligence-summary.schema.json\r\n- PASS Q37 required file exists: .aide/repo/README.md\r\n- PASS Q37 required file exists: .aide/repo/file-inventory.json\r\n- PASS Q37 required file exists: .aide/repo/ownership-map.json\r\n- PASS Q37 required file exists: .aide/repo/dependency-map.json\r\n- PASS Q37 required file exists: .aide/repo/test-map.json\r\n- PASS Q37 required file exists: .aide/repo/doc-link-map.json\r\n- PASS Q37 required file exists: .aide/repo/generated-map.json\r\n- PASS Q37 required file exists: .aide/repo/orphan-candidates.json\r\n- PASS Q37 required file exists: .aide/repo/latest-repo-intelligence.md\r\n- PASS .aide/policies/repo-intelligence.yaml contains anchor: aide.repo-intelligence-policy.v0\r\n- PASS .aide/policies/repo-intelligence.yaml contains anchor: deterministic_local\r\n- PASS .aide/policies/repo-intelligence.yaml contains anchor: index_only\r\n- PASS .aide/policies/repo-intelligence.yaml contains anchor: no_file_moves\r\n- PASS .... [truncated]"
+    },
+    {
+        "name":  "repo status",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py repo status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.06,
+        "summary":  "AIDE Lite repo status\r\nresult: PASS\r\nfile_count: 16843\r\nunknown_count: 5928\r\ngenerated_count: 37\r\nevidence_count: 333\r\norphan_candidate_count: 15503\r\ncounts_by_kind:\r\n- contract: 330\r\n- doc: 5078\r\n- evidence: 333\r\n- fixture: 1981\r\n- generated: 37\r\n- policy: 101\r\n- schema: 108\r\n- source: 1151\r\n- template: 17\r\n- test: 1102\r\n- tool: 677\r\n- unknown: 5928\r\ncounts_by_status:\r\n- active: 10528\r\n- evidence_only: 333\r\n- generated: 37\r\n- template_only: 17\r\n- unknown: 5928\r\nowner_counts:\r\n- AIDE Git workflow: 13\r\n- AIDE GitHub advisory: 8\r\n- AIDE Lite: 32\r\n- AIDE changelog preview: 10\r\n- AIDE context compiler: 12\r\n- AIDE control plane: 254\r\n- AIDE evals: 279\r\n- AIDE governance: 77\r\n- AIDE harness: 1\r\n- AIDE intent compiler: 11\r\n- AIDE refactor control plane: 35\r\n- AIDE repo intelligence: 21\r\n- AIDE root recycling framework: 14\r\n- AIDE self-hosting queue: 294\r\n- AIDE tool absorption framework: 24\r\n- compatibility baseline: 2\r\n- documentation reference: 555\r\n- unknown: 15201\r\ninventory: .aide/repo/file-inventory.json\r\nlatest_markdown: .aide/repo/latest-repo-intelligence.md\r\nquality_ledger: .aide/reports/file-quality-ledger.json\r\nrefactor_readiness: .aide/refactors/latest-refactor-readiness.json"
+    },
+    {
+        "name":  "quality ledger",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py quality ledger",
+        "exit_code":  -1,
+        "status":  "WARN_OR_FAIL",
+        "seconds":  4.93,
+        "summary":  ""
+    },
+    {
+        "name":  "quality validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py quality validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  5.44,
+        "summary":  "AIDE Lite quality validate\r\nresult: PASS\r\n- PASS Q38 required file exists: .aide/policies/file-quality.yaml\r\n- PASS Q38 required file exists: .aide/policies/docs-consistency.yaml\r\n- PASS Q38 required file exists: .aide/policies/module-quality.yaml\r\n- PASS Q38 required file exists: .aide/policies/reuse-modularity.yaml\r\n- PASS Q38 required file exists: .aide/quality/file-quality-record.schema.json\r\n- PASS Q38 required file exists: .aide/quality/file-quality-ledger.schema.json\r\n- PASS Q38 required file exists: .aide/quality/module-quality.schema.json\r\n- PASS Q38 required file exists: .aide/quality/docs-consistency.schema.json\r\n- PASS Q38 required file exists: .aide/quality/test-coverage-map.schema.json\r\n- PASS Q38 required file exists: .aide/quality/reuse-modularity.schema.json\r\n- PASS Q38 required file exists: .aide/reports/file-quality-ledger.schema.json\r\n- PASS Q38 required file exists: .aide/quality/README.md\r\n- PASS .aide/policies/file-quality.yaml contains anchor: aide.file-quality-policy.v0\r\n- PASS .aide/policies/file-quality.yaml contains anchor: deterministic_local\r\n- PASS .aide/policies/file-quality.yaml contains anchor: advisory_only\r\n- PASS .aide/policies/file-quality.yaml contains anchor: no_file_mutation\r\n- PASS .aide/policies/file-quality.yaml contains anchor: orphan_candidates_warn_never_delete\r\n- PASS .aide/policies/docs-consistency.yaml contains anchor: aide.docs-consistency-policy.v0\r\n- PASS .aide/policies/docs-consistency.yaml contains anchor: stale_path_reference\r\n- PASS .aide/policies/docs-consistency.yaml contains anchor: missing_doc_candidate\r\n- PASS .aide/policies/docs-consistency.yaml contains anchor: deletion_recommendations_allowed: false\r\n- PASS .aide/policies/module-quality.yaml contains anchor: aide.module-quality-policy.v0\r\n- PASS .aide/poli... [truncated]"
+    },
+    {
+        "name":  "tools validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py tools validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.89,
+        "summary":  "AIDE Lite tools validate\r\nresult: PASS\r\n- PASS Q41 required file exists: .aide/policies/tool-absorption.yaml\r\n- PASS Q41 required file exists: .aide/policies/tool-inventory.yaml\r\n- PASS Q41 required file exists: .aide/policies/tool-fates.yaml\r\n- PASS Q41 required file exists: .aide/policies/tool-wrapping.yaml\r\n- PASS Q41 required file exists: .aide/policies/tool-risk.yaml\r\n- PASS Q41 required file exists: .aide/policies/tool-capabilities.yaml\r\n- PASS Q41 required file exists: .aide/tools/tool-inventory.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-record.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-capability.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-wrap-plan.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-adapter-map.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-risk.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-retirement.schema.json\r\n- PASS Q41 required file exists: .aide/tools/tool-evidence.schema.json\r\n- PASS Q41 required file exists: .aide/tools/README.md\r\n- PASS .aide/policies/tool-absorption.yaml contains anchor: aide.tool-absorption-policy.v0\r\n- PASS .aide/policies/tool-absorption.yaml contains anchor: no_unknown_tool_execution\r\n- PASS .aide/policies/tool-absorption.yaml contains anchor: drop_candidate_is_delete_approval: false\r\n- PASS .aide/policies/tool-inventory.yaml contains anchor: aide.tool-inventory-policy.v0\r\n- PASS .aide/policies/tool-inventory.yaml contains anchor: git_tracked_files\r\n- PASS .aide/policies/tool-inventory.yaml contains anchor: execute_discovered_tools: false\r\n- PASS .aide/policies/tool-fates.yaml contains anchor: aide.tool-fates-policy.v0\r\n- PASS .aide/policies/tool-fates.yaml contains anchor: drop_candidate_is_not_deletion_approval... [truncated]"
+    },
+    {
+        "name":  "tools status",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py tools status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.7,
+        "summary":  "AIDE Lite tools status\r\nresult: PASS\r\ntool_inventory: .aide/tools/latest-tool-inventory.json\r\ntool_classification: .aide/tools/latest-tool-classification.json\r\ntool_wrap_plan: .aide/tools/latest-tool-wrap-plan.json\r\ntool_adapter_map: .aide/tools/latest-tool-adapter-map.json\r\ntool_count: 2164\r\nhigh_risk_tool_count: 448\r\nunknown_tool_count: 285\r\ncapability_counts:\r\n- audit: 484\r\n- build: 107\r\n- context: 574\r\n- docs: 244\r\n- format: 14\r\n- generate: 130\r\n- install: 184\r\n- package: 425\r\n- release: 293\r\n- repo_policy: 412\r\n- security: 2\r\n- test: 148\r\n- unknown: 285\r\n- validate: 559\r\nexecution_allowed: false\r\nno_apply: true"
+    },
+    {
+        "name":  "roots status",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py roots status",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.7,
+        "summary":  "AIDE Lite roots status\r\nresult: PASS\r\nroot_inventory: .aide/roots/latest-root-inventory.json\r\nroot_classification: .aide/roots/latest-root-classification.json\r\nroot_plan: .aide/roots/latest-root-recycling-plan.json\r\nroot_count: 20\r\nfile_count: 16843\r\nmixed_root_count: 5\r\nunknown_root_count: 20\r\nhigh_risk_root_count: 19\r\nfate_counts:\r\n- keep: 1549\r\n- unknown: 15294\r\nno_apply: true"
+    },
+    {
+        "name":  "git policy",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py git policy",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.71,
+        "summary":  "AIDE Lite git policy\r\nPASS: git workflow policy artifact exists: .aide/policies/git-workflow.yaml\r\nPASS: .aide/policies/git-workflow.yaml contains anchor: aide.git-workflow-policy.v0\r\nPASS: .aide/policies/git-workflow.yaml contains anchor: canonical_branch: main\r\nPASS: .aide/policies/git-workflow.yaml contains anchor: integration_branch: dev\r\nPASS: .aide/policies/git-workflow.yaml contains anchor: no remote push in Q28\r\nPASS: git workflow policy artifact exists: .aide/policies/branch-roles.yaml\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: canonical:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: integration:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: task:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: release:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: hotfix:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: deploy:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: unknown:\r\nPASS: .aide/policies/branch-roles.yaml contains anchor: canonical_release_truth: false\r\nPASS: git workflow policy artifact exists: .aide/policies/promotion-rules.yaml\r\nPASS: .aide/policies/promotion-rules.yaml contains anchor: task_to_dev:\r\nPASS: .aide/policies/promotion-rules.yaml contains anchor: dev_to_main:\r\nPASS: .aide/policies/promotion-rules.yaml contains anchor: review packet\r\nPASS: .aide/policies/promotion-rules.yaml contains anchor: changelog preview\r\nPASS: git workflow policy artifact exists: .aide/policies/sync-policy.yaml\r\nPASS: .aide/policies/sync-policy.yaml contains anchor: no_implicit_merge_during_sync\r\nPASS: .aide/policies/sync-policy.yaml contains anchor: no_automatic_remote_mutation_in_q28\r\nPASS: .aide/policies/sync-policy.yaml contains anchor: do_not_treat_dev_as_canonical_truth\r\nPASS: git workflow polic... [truncated]"
+    },
+    {
+        "name":  "git plan",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py git plan",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  1.44,
+        "summary":  "AIDE Lite git plan\r\nresult: blocked\r\noperation: plan\r\ncurrent_branch: dev\r\ncurrent_role: integration\r\ndry_run: true\r\napply_requested: false\r\npush_requested: false\r\nremote_mutation: false\r\nforce_push_allowed: false\r\njson_report: .aide/git/latest-helper-plan.json (written)\r\nmarkdown_report: .aide/git/latest-helper-plan.md (unchanged)\r\nblockers:\r\n- dirty_tree_requires_classification\r\nwarnings:\r\n- dirty_tree_detected"
+    },
+    {
+        "name":  "commit check latest",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py commit check --latest",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.88,
+        "summary":  "AIDE Lite commit check\r\nresult: PASS\r\nsource: git log -1 --pretty=%B\r\npolicy: .aide/policies/commit-messages.yaml\r\nstandard: .aide/reports/aide-commit-message-standard.md\r\n- PASS commit subject is present\r\n- PASS commit subject is 72 characters or fewer\r\n- PASS commit subject follows type(scope): summary\r\n- PASS commit type is allowed: chore\r\n- PASS commit subject has no trailing period\r\n- PASS commit subject is not a vague placeholder\r\n- PASS commit summary is specific enough\r\n- PASS commit body is present\r\n- PASS blank line separates subject and Markdown body\r\n- PASS commit body contains heading: ## Summary\r\n- PASS commit body heading has content: ## Summary\r\n- PASS commit body heading has bullet content: ## Summary\r\n- PASS commit body contains heading: ## Why\r\n- PASS commit body heading has content: ## Why\r\n- PASS commit body heading has bullet content: ## Why\r\n- PASS commit body contains heading: ## Changed\r\n- PASS commit body heading has content: ## Changed\r\n- PASS commit body heading has bullet content: ## Changed\r\n- PASS commit body contains heading: ## Validation\r\n- PASS commit body heading has content: ## Validation\r\n- PASS commit body heading has bullet content: ## Validation\r\n- PASS commit body contains heading: ## Changelog\r\n- PASS commit body heading has content: ## Changelog\r\n- PASS commit body heading has bullet content: ## Changelog\r\n- PASS commit body contains heading: ## Risks\r\n- PASS commit body heading has content: ## Risks\r\n- PASS commit body heading has bullet content: ## Risks\r\n- PASS commit body contains heading: ## Follow-up\r\n- PASS commit body heading has content: ## Follow-up\r\n- PASS commit body heading has bullet content: ## Follow-up\r\n- PASS validation section records PASS/WARN/FAIL/NOT RUN outcome\r\n- PASS changelog section uses a machine-re... [truncated]"
+    },
+    {
+        "name":  "changelog preview",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py changelog preview",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.82,
+        "summary":  "AIDE Lite changelog preview\r\nresult: PASS\r\nrange: HEAD latest 50 commits\r\nsource_head: df6a6967afdb510de46651f70e21541f20b6741b\r\ncommit_count: 50\r\nchangelog: .aide/changelog/CHANGELOG.preview.md\r\nchangelog_json: .aide/changelog/changelog.preview.json\r\nrelease_notes: .aide/changelog/RELEASE_NOTES.preview.md\r\nrelease_notes_json: .aide/changelog/release-notes.preview.json\r\ncategories: 7\r\nmalformed_commits: 0\r\nrelease_highlights: 131\r\nrelease_publishing: false"
+    },
+    {
+        "name":  "changelog validate",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py changelog validate",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.64,
+        "summary":  "AIDE Lite changelog validate\r\nresult: PASS\r\n- PASS changelog source artifact exists: .aide/policies/changelog.yaml\r\n- PASS changelog source artifact exists: .aide/changelog/config.yaml\r\n- PASS changelog source artifact exists: .aide/changelog/templates/changelog.md.template\r\n- PASS changelog source artifact exists: .aide/changelog/templates/release-notes.md.template\r\n- PASS changelog output exists: .aide\\changelog\\CHANGELOG.preview.md\r\n- PASS changelog output exists: .aide\\changelog\\RELEASE_NOTES.preview.md\r\n- PASS changelog output exists: .aide\\changelog\\changelog.preview.json\r\n- PASS changelog output exists: .aide\\changelog\\release-notes.preview.json\r\n- PASS changelog output exists: .aide\\changelog\\malformed-commits.md\r\n- PASS changelog output exists: .aide\\changelog\\latest-changelog-report.md\r\n- PASS changelog JSON contains schema_version\r\n- PASS changelog JSON contains generated_by\r\n- PASS changelog JSON contains source_range\r\n- PASS changelog JSON contains source_head\r\n- PASS changelog JSON contains commit_count\r\n- PASS changelog JSON contains malformed_count\r\n- PASS changelog JSON contains categories\r\n- PASS changelog JSON contains entries\r\n- PASS changelog JSON contains malformed_commits\r\n- PASS changelog JSON contains warnings\r\n- PASS changelog JSON contains preview_only\r\n- PASS changelog JSON is preview-only\r\n- PASS release-notes JSON contains schema_version\r\n- PASS release-notes JSON contains source_range\r\n- PASS release-notes JSON contains highlights\r\n- PASS release-notes JSON contains validation_summary\r\n- PASS release-notes JSON contains risk_summary\r\n- PASS release-notes JSON contains follow_up\r\n- PASS release-notes JSON contains warnings\r\n- PASS release-notes JSON contains preview_only\r\n- PASS release-notes JSON is preview-only\r\n- PASS changelog Markdown ... [truncated]"
+    },
+    {
+        "name":  "pack Q58",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py pack --task Q58 Eureka Fixture Source Observation Vertical Slice v0",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.97,
+        "summary":  "AIDE Lite pack\r\npath: .aide/context/latest-task-packet.md\r\naction: written\r\nchars: 4152\r\napprox_tokens: 1038\r\nbudget_status: PASS\r\nledger: run `ledger scan` to refresh metadata records"
+    },
+    {
+        "name":  "estimate task packet",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  0.8,
+        "summary":  "AIDE Lite estimate\r\npath: .aide/context/latest-task-packet.md\r\nchars: 4152\r\nlines: 121\r\napprox_tokens: 1038\r\nmethod: chars / 4, rounded up\r\nsurface: task_packet\r\nbudget: 3200\r\nbudget_status: within_budget"
+    },
+    {
+        "name":  "architecture boundaries",
+        "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe scripts/check_architecture_boundaries.py",
+        "exit_code":  0,
+        "status":  "PASS",
+        "seconds":  2.23,
+        "summary":  "Checked 692 Python files under C:\\Inbox\\Git Repos\\eureka\r\nNo architecture-boundary violations found."
+    }
+]

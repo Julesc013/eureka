@@ -1,0 +1,7 @@
+{
+    "name":  "eval run",
+    "command":  "C:\\Program Files\\Hybrid\\64bit\\Vapoursynth\\python.exe .aide/scripts/aide_lite.py eval run",
+    "exit_code":  -1,
+    "seconds":  17.7,
+    "summary":  ""
+}

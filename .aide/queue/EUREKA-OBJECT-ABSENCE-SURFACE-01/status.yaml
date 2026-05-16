@@ -1,0 +1,13 @@
+schema_version: aide.task-status.v0
+task_id: EUREKA-OBJECT-ABSENCE-SURFACE-01
+status: needs_review
+result: pass_with_warnings
+updated_at: 2026-05-16
+review_required: true
+implementation_complete: true
+validation_complete: true
+warnings:
+  - Repeated Q60 prompt was reconciled against existing Q60 evidence; implementation was verified without rolling back the Q61 task packet.
+  - AIDE eval run timed out during the resume verification pass; latest available golden-task report still records 127 pass / 9 fail unrelated to the Q60 packet layer.
+  - Git task-state guard fails because the tree contains Q56-Q60 local work and dev is both ahead and behind origin/dev.
+  - Q60-only commit was not created because Q60 product/test files are untracked together with prior Q58/Q59 slice files and are not safely separable in the current worktree.
