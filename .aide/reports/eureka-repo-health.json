@@ -2,7 +2,7 @@
   "schema_version": "eureka_repo_health.v0",
   "updated": "2026-05-16",
   "current_recommended_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
-  "last_completed_task": "HUNT-WARNING-ZERO-01",
+  "last_completed_task": "HUNT-PERFECT-CLOSEOUT-01",
   "last_completed_status": "pass",
   "aide_report_sizes_bounded": true,
   "file_quality_ledger_sharded": true,
@@ -13,6 +13,7 @@
   "aide_golden_pass_count": 136,
   "aide_golden_fail_count": 0,
   "hunt_track_complete": true,
+  "hunt_perfect_closeout_complete": true,
   "hard_blockers_remaining": 0,
   "warnings_remaining": 0,
   "syn_can_start": true,
@@ -25,5 +26,7 @@
   "deployment_performed": false,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
-  "warning_zero_completed": true
+  "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "origin_dev": "be9a23c6a49415fbdceafd03a68555026a77b5bf",
+  "dev_main_divergence": "0\t19"
 }

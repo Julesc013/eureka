@@ -1,22 +1,19 @@
 {
-  "branch_mutation_performed": false,
-  "current_branch": "dev",
-  "dev_ahead_of_main": true,
+  "schema_version": "search_hunt_promotion_review.v0",
+  "task": "HUNT-12",
+  "status": "pass",
   "hunt_track_ready_for_main_promotion": true,
-  "limitations": [
-    "plan only; no merge or push",
-    "main promotion still requires explicit operator task"
-  ],
+  "dev_ahead_of_main": true,
+  "promotion_recommended": true,
+  "promotion_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "branch_mutation_performed": false,
   "merge_performed": false,
+  "push_performed": false,
   "no_deployment": true,
   "no_production_readiness_claim": true,
   "no_public_launch_readiness_claim": true,
-  "origin_dev_only_commits": 12,
-  "origin_main_only_commits": 0,
-  "promotion_recommended": true,
-  "promotion_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
-  "push_performed": false,
-  "schema_version": "search_hunt_promotion_review.v0",
-  "status": "pass",
-  "task": "HUNT-12"
+  "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+  "origin_dev": "be9a23c6a49415fbdceafd03a68555026a77b5bf",
+  "dev_main_divergence": "0\t19",
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01"
 }

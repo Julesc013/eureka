@@ -1,0 +1,111 @@
+{
+  "schema_version": "hunt_perfect_planning_packet.v0",
+  "task": "HUNT-PERFECT-CLOSEOUT-01",
+  "branch_state": {
+    "branch": "dev",
+    "head": "2af3514dd8fbf3a2e11661d07f12641ffab99796",
+    "origin_main": "73d8e9eb590f43a5554abe35f99345c57d4ec06c",
+    "origin_dev": "be9a23c6a49415fbdceafd03a68555026a77b5bf",
+    "dev_main_divergence": "0\t19",
+    "dev_contains_main": true,
+    "main_contains_dev": false
+  },
+  "implemented_hunt_capabilities": [
+    "hunt_00_track_plan",
+    "hunt_01_search_hunt_session_runtime",
+    "hunt_02_local_workbench_hunt_ui_state",
+    "hunt_03_pause_resume_cancel_steer_commands",
+    "hunt_04_exhaustion_reports",
+    "hunt_05_searchneed_runtime_and_hunt_to_need_pipeline",
+    "hunt_06_hunt_to_workunit_pipeline",
+    "hunt_07_background_hunt_runner",
+    "hunt_08_workbench_api_cli_workflow_smoke",
+    "hunt_09_agent_research_task_contract_provider_disabled",
+    "hunt_10_deterministic_replay_harness",
+    "hunt_11_ai_escalation_gate_disabled_by_default",
+    "hunt_12_closeout_and_syn_f0_handoff",
+    "hunt_remediation_state"
+  ],
+  "implemented_local_dependencies": [
+    "Local Appliance",
+    "localhost service",
+    "HTML workbench",
+    "WorkUnit queue",
+    "deterministic local workers",
+    "local eval/report checks"
+  ],
+  "aide_state": {
+    "updated_baseline_integrated": true,
+    "eval_green": true,
+    "golden_task_count": 136,
+    "golden_pass_count": 136,
+    "golden_fail_count": 0,
+    "report_size_clean": true
+  },
+  "validation_status": {
+    "git_state": "pass",
+    "AIDE doctor": "pass",
+    "AIDE validate": "pass",
+    "AIDE test": "pass",
+    "AIDE selftest": "pass",
+    "AIDE verify": "pass",
+    "AIDE review-pack": "pass",
+    "AIDE eval run": "pass",
+    "AIDE commit check": "pass",
+    "HUNT validators": "pass",
+    "LOCAL dependency validators": "pass",
+    "HUNT workflow smoke": "pass",
+    "HUNT API smoke": "pass",
+    "HUNT workbench smoke": "pass",
+    "HUNT replay demo": "pass",
+    "HUNT AI escalation disabled-boundary demo": "pass",
+    "full unittest discovery": "pass",
+    "generated artifact cleanliness": "pass",
+    "architecture boundaries": "pass",
+    "runtime leakage": "pass",
+    "report-size checks": "pass",
+    "secret/raw prompt/raw response checks": "pass"
+  },
+  "warnings": {
+    "remaining": 0,
+    "state": "zero"
+  },
+  "blockers": {
+    "remaining": 0,
+    "state": "zero"
+  },
+  "explicit_non_claims": [
+    "not production readiness",
+    "not public launch readiness",
+    "not source truth",
+    "not AI output truth",
+    "not rights or malware clearance",
+    "not authorization for source probes, extraction, downloads, installs, execution, scraping, crawling, provider calls, or deployment"
+  ],
+  "what_can_run_locally_now": [
+    "Search Hunt sessions",
+    "Hunt UI/API state",
+    "operator-gated command and steering state",
+    "exhaustion reports",
+    "SearchNeed and WorkUnit creation",
+    "safe deterministic background hunt workers",
+    "deterministic replay",
+    "AI escalation preflight with providers disabled"
+  ],
+  "what_remains_disabled": [
+    "source probes",
+    "extraction",
+    "AI/model/provider execution",
+    "agent research execution",
+    "downloads/install/execution",
+    "source sync",
+    "master index mutation",
+    "deployment",
+    "production/public launch claims"
+  ],
+  "why_syn_is_next": "SYN should create synthetic query and eval pressure over the completed Local Appliance and Search Hunt spine before extraction/source expansion.",
+  "why_f0_is_deferred_but_resumable": "F0 can resume through HUNT/SearchNeed/WorkUnit/local eval boundaries, but extraction should wait for SYN pressure unless the operator explicitly prioritizes extraction planning.",
+  "promotion_recommendation": "Run HUNT-TO-MAIN-PROMOTION-REVIEW before starting SYN unless the operator chooses to keep HUNT dev-only.",
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance"
+}

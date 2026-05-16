@@ -1,0 +1,25 @@
+id: HUNT-WARNING-ZERO-01
+title: Resolve remaining HUNT/AIDE/LOCAL warnings before promotion or SYN
+status: completed
+scope: control-plane evidence only
+allowed_paths:
+  - .aide/**
+  - control/**
+  - docs/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - .local/**
+  - .cache/**
+  - eureka-instance/**
+non_goals:
+  - source probes
+  - extraction
+  - model/provider calls
+  - deployment
+  - production readiness claim
+  - public launch readiness claim

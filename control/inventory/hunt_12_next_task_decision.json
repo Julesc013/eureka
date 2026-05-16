@@ -1,15 +1,15 @@
 {
   "schema_version": "hunt_12_next_task_decision.v0",
   "task": "HUNT-12",
-  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
-  "alternative_next_task": "F0-00 \u2014 Refresh F0 after Local Appliance and HUNT",
+  "recommended_next_task": "HUNT-TO-MAIN-PROMOTION-REVIEW",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local Appliance",
   "hunt_track_complete": true,
   "syn_can_start": true,
   "f0_can_resume": true,
   "f0_recommended_now": false,
-  "last_remediation_continue_status": "pass",
   "main_promotion_review_required": true,
-  "reason": "Search Hunt spine is complete; Synthetic Query Foundry should now generate query/eval pressure before extraction/source expansion.",
+  "reason": "Search Hunt is complete and warning-free under the updated AIDE baseline; review promotion to main before SYN unless the operator keeps the HUNT baseline dev-only.",
   "production_readiness_claimed": false,
-  "public_launch_readiness_claimed": false
+  "public_launch_readiness_claimed": false,
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01"
 }

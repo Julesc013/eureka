@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4758 chars, 1190 approximate tokens)
+- `.aide/context/latest-task-packet.md` (2819 chars, 705 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,18 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/final-state-promotion-plan-01-v0/final_state_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/final-state-promotion-plan-01-v0/generated/sample_final_state_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/final-state-promotion-plan-01-v0/warning_disposition.md` (M; matches active task allowed path)
-- allowed: `control/audits/hunt-warning-zero-01-v0` (??; matches active task allowed path)
-- allowed: `control/audits/local-final-green-promote-01-v0/generated/sample_local_final_green_result.json` (M; matches active task allowed path)
-- allowed: `control/audits/local-final-green-promote-01-v0/local_final_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/local-final-green-promote-01-v0/warning_disposition.md` (M; matches active task allowed path)
-- allowed: `control/audits/local-leakage-total-remediation-01-v0/generated/sample_total_solution_result.json` (M; matches active task allowed path)
-- allowed: `control/audits/local-leakage-total-remediation-01-v0/total_solution_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/local-leakage-total-remediation-01-v0/warning_disposition.md` (M; matches active task allowed path)
-- allowed: `control/inventory/final_warning_disposition.json` (M; matches active task allowed path)
-- allowed: `control/inventory/hunt_00_final_state_alignment.json` (M; matches active task allowed path)
-- allowed: `control/inventory/hunt_remediation_continue_warning_disposition.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_blocker_register.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_boundary_audit.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_register.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_repair_plan.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_repair_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/hunt_warning_zero_validation_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.md` (M; matches active task allowed path)
+- allowed: `control/audits/hunt-perfect-closeout-01-v0/generated/sample_planning_packet.json` (M; matches active task allowed path)
+- allowed: `control/audits/hunt-perfect-closeout-01-v0/input_state.md` (M; matches active task allowed path)
+- allowed: `control/audits/hunt-perfect-closeout-01-v0/planning_packet.md` (M; matches active task allowed path)
+- allowed: `control/inventory/hunt_perfect_closeout_input_state.json` (M; matches active task allowed path)
+- allowed: `control/inventory/hunt_perfect_planning_packet.json` (M; matches active task allowed path)
+- forbidden: `scripts/prepare_hunt_perfect_closeout.py` (M; matches forbidden path policy)
 
 ## Validation Summary
 
@@ -67,8 +54,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7073
-- approx_tokens: 1769
+- chars: 5427
+- approx_tokens: 1357
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

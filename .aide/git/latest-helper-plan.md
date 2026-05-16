@@ -3,7 +3,7 @@
 - schema_version: aide.git-helper-plan.v0
 - generated_by: aide-lite
 - operation: plan
-- status: blocked
+- status: ready_dry_run
 - dry_run: true
 - apply_requested: false
 - push_requested: false
@@ -15,8 +15,8 @@
 
 - branch: dev
 - role: integration
-- commit: df6a6967afdb510de46651f70e21541f20b6741b
-- dirty_tree: true
+- commit: 2af3514dd8fbf3a2e11661d07f12641ffab99796
+- dirty_tree: false
 - upstream: origin/dev
 - policy_ready: true
 
@@ -30,15 +30,15 @@
 
 ## Blockers
 
-- dirty_tree_requires_classification
+- none
 
 ## Warnings
 
-- dirty_tree_detected
+- none
 
 ## Recommendations
 
-- clean or classify the working tree before branch-sensitive helper actions
+- run git promote --dry-run --from dev --to main after review gates
 
 ## Safety Boundary
 

@@ -1,0 +1,801 @@
+{
+  "schema_version": "hunt_perfect_capability_matrix.v0",
+  "task": "HUNT-PERFECT-CLOSEOUT-01",
+  "status": "pass",
+  "capabilities": [
+    {
+      "capability_id": "hunt_00_track_plan",
+      "task_id": "HUNT-00",
+      "title": "Search Hunt track plan",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [],
+      "script_paths": [],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "python scripts/validate_search_hunt_track.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_track"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-00-search-hunt-track-v0/hunt_00_report.json"
+      ],
+      "proof_level": "scaffold",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_01_search_hunt_session_runtime",
+      "task_id": "HUNT-01",
+      "title": "Search Hunt Session runtime",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_hunt/"
+      ],
+      "script_paths": [
+        "scripts/eureka_search_hunt.py",
+        "scripts/demo_search_hunt_session.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [
+        "/api/v1/hunts",
+        "/api/v1/hunt/{hunt_id}"
+      ],
+      "validators": [
+        "python scripts/validate_search_hunt_runtime.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-01-search-hunt-session-runtime-v0/hunt_01_report.json"
+      ],
+      "proof_level": "runtime",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_02_local_workbench_hunt_ui_state",
+      "task_id": "HUNT-02",
+      "title": "Local workbench Hunt UI state",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/local_workbench/",
+        "runtime/local_service/"
+      ],
+      "script_paths": [
+        "scripts/eureka_search_hunt_ui_smoke.py"
+      ],
+      "ui_routes": [
+        "/hunts",
+        "/hunt/{hunt_id}"
+      ],
+      "api_routes": [
+        "/api/v1/hunts",
+        "/api/v1/hunt/{hunt_id}"
+      ],
+      "validators": [
+        "python scripts/validate_search_hunt_ui.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_ui_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-02-search-hunt-ui-state-v0/hunt_02_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_03_pause_resume_cancel_steer_commands",
+      "task_id": "HUNT-03",
+      "title": "Pause, resume, cancel, and steer commands",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_hunt/",
+        "runtime/local_service/"
+      ],
+      "script_paths": [
+        "scripts/eureka_search_hunt_command.py",
+        "scripts/demo_search_hunt_commands.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/pause",
+        "/hunt/{hunt_id}/resume",
+        "/hunt/{hunt_id}/cancel",
+        "/hunt/{hunt_id}/steer"
+      ],
+      "api_routes": [
+        "/api/v1/hunt/{hunt_id}/commands",
+        "/api/v1/hunt/{hunt_id}/steering"
+      ],
+      "validators": [
+        "python scripts/validate_search_hunt_commands.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_command_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-03-search-hunt-commands-v0/hunt_03_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_04_exhaustion_reports",
+      "task_id": "HUNT-04",
+      "title": "Exhaustion reports",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_hunt/"
+      ],
+      "script_paths": [
+        "scripts/eureka_search_hunt_exhaustion.py",
+        "scripts/demo_search_hunt_exhaustion.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/exhaustion"
+      ],
+      "api_routes": [
+        "/api/v1/hunt/{hunt_id}/exhaustion"
+      ],
+      "validators": [
+        "python scripts/validate_search_hunt_exhaustion.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_exhaustion_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-04-hunt-exhaustion-report-v0/hunt_04_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_05_searchneed_runtime_and_hunt_to_need_pipeline",
+      "task_id": "HUNT-05",
+      "title": "SearchNeed runtime and hunt-to-need pipeline",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_need/",
+        "runtime/search_hunt/"
+      ],
+      "script_paths": [
+        "scripts/eureka_hunt_to_search_need.py",
+        "scripts/demo_hunt_to_search_need.py"
+      ],
+      "ui_routes": [
+        "/needs",
+        "/need/{need_id}",
+        "/hunt/{hunt_id}/search-need"
+      ],
+      "api_routes": [
+        "/api/v1/needs",
+        "/api/v1/need/{need_id}",
+        "/api/v1/hunt/{hunt_id}/needs"
+      ],
+      "validators": [
+        "python scripts/validate_hunt_to_search_need.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_need_scripts",
+        "tests.operations.test_search_need_runtime_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-05-hunt-to-search-need-v0/hunt_05_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_06_hunt_to_workunit_pipeline",
+      "task_id": "HUNT-06",
+      "title": "Hunt-to-WorkUnit pipeline",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_need/",
+        "runtime/workunit_queue/"
+      ],
+      "script_paths": [
+        "scripts/demo_hunt_to_workunits.py"
+      ],
+      "ui_routes": [
+        "/need/{need_id}/workunits",
+        "/hunt/{hunt_id}/workunits"
+      ],
+      "api_routes": [
+        "/api/v1/need/{need_id}/workunits",
+        "/api/v1/hunt/{hunt_id}/workunits"
+      ],
+      "validators": [
+        "python scripts/validate_hunt_to_workunits.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_need_to_workunit_scripts",
+        "tests.operations.test_workunit_queue_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-06-hunt-to-workunit-v0/hunt_06_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_07_background_hunt_runner",
+      "task_id": "HUNT-07",
+      "title": "Background hunt runner over deterministic local workers",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_hunt/",
+        "runtime/local_worker/"
+      ],
+      "script_paths": [
+        "scripts/eureka_hunt_runner.py",
+        "scripts/demo_background_hunt_runner.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/runner"
+      ],
+      "api_routes": [
+        "/api/v1/hunt/{hunt_id}/runner"
+      ],
+      "validators": [
+        "python scripts/validate_background_hunt_runner.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_background_hunt_runner_scripts"
+      ],
+      "smoke_commands": [
+        "python scripts/demo_background_hunt_runner.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json"
+      ],
+      "audit_evidence": [
+        "control/audits/hunt-07-background-hunt-runner-v0/hunt_07_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim",
+        "only deterministic local workers are eligible"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_08_workbench_api_cli_workflow_smoke",
+      "task_id": "HUNT-08",
+      "title": "Workbench/API/CLI workflow smoke",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/local_service/",
+        "runtime/local_workbench/"
+      ],
+      "script_paths": [
+        "scripts/eureka_hunt_workflow_smoke.py",
+        "scripts/eureka_hunt_api_smoke.py",
+        "scripts/eureka_hunt_workbench_smoke.py",
+        "scripts/eureka_search_hunt_ui_smoke.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "python scripts/validate_search_hunt_workbench_integration.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_workflow_smoke_scripts",
+        "tests.operations.test_search_hunt_workbench_smoke_scripts"
+      ],
+      "smoke_commands": [
+        "python scripts/eureka_hunt_workflow_smoke.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json",
+        "python scripts/eureka_hunt_api_smoke.py --base-url http://127.0.0.1:8765 --json",
+        "python scripts/eureka_hunt_workbench_smoke.py --base-url http://127.0.0.1:8765 --instance ./eureka-instance --operator-token local-dev-token --json"
+      ],
+      "audit_evidence": [
+        "control/audits/hunt-08-workbench-integration-smoke-v0/hunt_08_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_09_agent_research_task_contract_provider_disabled",
+      "task_id": "HUNT-09",
+      "title": "Agent research task contract with provider disabled",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/agent_research/"
+      ],
+      "script_paths": [
+        "scripts/demo_agent_research_task.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/agent-tasks",
+        "/need/{need_id}/agent-tasks"
+      ],
+      "api_routes": [
+        "/api/v1/agent-research/report-schema"
+      ],
+      "validators": [
+        "python scripts/validate_agent_research_task_contract.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_agent_research_scripts"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-09-agent-research-task-contract-v0/hunt_09_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim",
+        "agent research tasks are drafts only; no provider execution"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_10_deterministic_replay_harness",
+      "task_id": "HUNT-10",
+      "title": "Deterministic replay harness",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/search_hunt/"
+      ],
+      "script_paths": [
+        "scripts/eureka_hunt_replay.py",
+        "scripts/demo_hunt_replay.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/replay"
+      ],
+      "api_routes": [
+        "/api/v1/hunt/{hunt_id}/replay"
+      ],
+      "validators": [
+        "python scripts/validate_hunt_replay.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_hunt_replay_scripts"
+      ],
+      "smoke_commands": [
+        "python scripts/demo_hunt_replay.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json"
+      ],
+      "audit_evidence": [
+        "control/audits/hunt-10-deterministic-replay-v0/hunt_10_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_11_ai_escalation_gate_disabled_by_default",
+      "task_id": "HUNT-11",
+      "title": "AI escalation gate disabled by default",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/ai_escalation/"
+      ],
+      "script_paths": [
+        "scripts/demo_ai_escalation_gate.py"
+      ],
+      "ui_routes": [
+        "/hunt/{hunt_id}/ai-escalation",
+        "/need/{need_id}/ai-escalation"
+      ],
+      "api_routes": [
+        "/api/v1/hunt/{hunt_id}/ai-escalation",
+        "/api/v1/need/{need_id}/ai-escalation"
+      ],
+      "validators": [
+        "python scripts/validate_ai_escalation_gate.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_ai_escalation_scripts"
+      ],
+      "smoke_commands": [
+        "python scripts/demo_ai_escalation_gate.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json"
+      ],
+      "audit_evidence": [
+        "control/audits/hunt-11-ai-escalation-gate-v0/hunt_11_report.json"
+      ],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim",
+        "AI escalation is candidate-only and provider-disabled"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_12_closeout_and_syn_f0_handoff",
+      "task_id": "HUNT-12",
+      "title": "Closeout and SYN/F0 handoff",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/audit_search_hunt_closeout.py",
+        "scripts/validate_search_hunt_closeout.py",
+        "scripts/prepare_hunt_to_syn_f0_handoff.py",
+        "scripts/prepare_hunt_to_main_promotion_review.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "python scripts/validate_search_hunt_closeout.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_search_hunt_closeout",
+        "tests.operations.test_search_hunt_handoff",
+        "tests.operations.test_hunt_to_main_promotion_review"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-12-search-hunt-closeout-v0/hunt_12_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "hunt_remediation_state",
+      "task_id": "HUNT-REMEDIATION-CONTINUE",
+      "title": "Remediation and warning-zero state",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [],
+      "script_paths": [
+        "scripts/validate_hunt_remediation.py",
+        "scripts/validate_hunt_remediation_continue.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "python scripts/validate_hunt_remediation.py",
+        "python scripts/validate_hunt_remediation_continue.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_hunt_remediation",
+        "tests.operations.test_hunt_remediation_continue",
+        "tests.operations.test_hunt_warning_zero"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/hunt-remediation-v0/hunt_remediation_report.json",
+        "control/audits/hunt-remediation-continue-v0/hunt_remediation_continue_report.json",
+        "control/audits/hunt-warning-zero-01-v0/hunt_warning_zero_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "SYN",
+        "F0",
+        "G",
+        "H",
+        "K"
+      ]
+    },
+    {
+      "capability_id": "aide_updated_baseline_compatibility",
+      "task_id": "AIDE-EVAL-GREEN-01",
+      "title": "Updated AIDE baseline compatibility",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [],
+      "script_paths": [
+        ".aide/scripts/aide_lite.py",
+        "scripts/validate_aide_report_sizes.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "py -3 .aide/scripts/aide_lite.py eval run",
+        "python scripts/validate_aide_report_sizes.py --json"
+      ],
+      "focused_tests": [
+        "tests.operations.test_aide_eval_green",
+        "tests.operations.test_aide_report_sizes"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/aide-eval-green-01-v0/aide_eval_green_report.json",
+        "control/audits/aide-ledger-size-01-v0/aide_ledger_size_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "HUNT promotion",
+        "SYN",
+        "F0"
+      ]
+    },
+    {
+      "capability_id": "local_appliance_dependency_compatibility",
+      "task_id": "LOCAL-14",
+      "title": "Local Appliance dependency compatibility",
+      "implemented": true,
+      "tested": true,
+      "runtime_paths": [
+        "runtime/local_appliance/",
+        "runtime/local_service/",
+        "runtime/local_workbench/",
+        "runtime/local_worker/",
+        "runtime/local_eval/"
+      ],
+      "script_paths": [
+        "scripts/validate_local_appliance_closeout.py"
+      ],
+      "ui_routes": [],
+      "api_routes": [],
+      "validators": [
+        "python scripts/validate_local_appliance_closeout.py"
+      ],
+      "focused_tests": [
+        "tests.operations.test_local_appliance_closeout"
+      ],
+      "smoke_commands": [],
+      "audit_evidence": [
+        "control/audits/local-14-local-appliance-closeout-v0/local_14_report.json"
+      ],
+      "proof_level": "operational",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blockers": [],
+      "warning_state": "resolved",
+      "future_tracks_supported": [
+        "HUNT",
+        "SYN",
+        "F0"
+      ]
+    }
+  ]
+}

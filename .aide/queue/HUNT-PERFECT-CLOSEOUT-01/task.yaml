@@ -1,0 +1,25 @@
+id: HUNT-PERFECT-CLOSEOUT-01
+title: Final zero-blocker Search Hunt closeout under updated AIDE baseline
+status: completed
+scope: control-plane evidence only
+allowed_paths:
+  - .aide/**
+  - control/**
+  - docs/**
+  - scripts/**
+  - tests/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - .local/**
+  - .cache/**
+  - eureka-instance/**
+non_goals:
+  - source probes
+  - extraction
+  - model/provider calls
+  - deployment
+  - production readiness claim
+  - public launch readiness claim

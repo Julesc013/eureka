@@ -1,254 +1,285 @@
 {
+  "schema_version": "search_hunt_capability_matrix.v0",
+  "task": "HUNT-12",
+  "status": "pass",
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01",
   "capabilities": [
     {
-      "blocks_future_tracks_if_missing": true,
       "capability_id": "hunt_track_plan",
-      "implemented": true,
-      "limitations": [
-        "source probes disabled",
-        "extraction disabled",
-        "model/provider calls disabled",
-        "deployment disabled"
-      ],
       "primary_task": "HUNT-00",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_search_hunt_track.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "search_hunt_session_runtime",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "search_hunt_session_runtime",
       "primary_task": "HUNT-01",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_search_hunt_runtime.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "hunt_ui_state",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "hunt_ui_state",
       "primary_task": "HUNT-02",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_search_hunt_ui.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "hunt_commands_and_steering",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "hunt_commands_and_steering",
       "primary_task": "HUNT-03",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_search_hunt_commands.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "exhaustion_reports",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "exhaustion_reports",
       "primary_task": "HUNT-04",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_search_hunt_exhaustion.py"
-      ]
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blocks_future_tracks_if_missing": true
     },
     {
-      "blocks_future_tracks_if_missing": true,
       "capability_id": "search_need_runtime",
+      "primary_task": "HUNT-05",
       "implemented": true,
+      "tested": true,
+      "validators": [
+        "python scripts/validate_hunt_to_search_need.py"
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
-      "primary_task": "HUNT-05",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
-      "tested": true,
-      "validators": [
-        "python scripts/validate_hunt_to_search_need.py"
-      ]
+      "blocks_future_tracks_if_missing": true
     },
     {
-      "blocks_future_tracks_if_missing": true,
       "capability_id": "hunt_to_search_need",
-      "implemented": true,
-      "limitations": [
-        "source probes disabled",
-        "extraction disabled",
-        "model/provider calls disabled",
-        "deployment disabled"
-      ],
       "primary_task": "HUNT-05",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_hunt_to_search_need.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "hunt_to_workunit",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "hunt_to_workunit",
       "primary_task": "HUNT-06",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_hunt_to_workunits.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "background_hunt_runner",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
+        "downloads/install/execution disabled",
         "deployment disabled",
-        "only deterministic local workers are eligible"
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "background_hunt_runner",
       "primary_task": "HUNT-07",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_background_hunt_runner.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "workbench_api_cli_smoke",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "workbench_api_cli_smoke",
       "primary_task": "HUNT-08",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
+      "implemented": true,
+      "tested": true,
+      "validators": [
+        "python scripts/validate_search_hunt_workbench_integration.py"
+      ],
       "smoke_commands": [
         "python scripts/eureka_hunt_workflow_smoke.py",
         "python scripts/eureka_hunt_api_smoke.py",
         "python scripts/eureka_hunt_workbench_smoke.py"
       ],
-      "tested": true,
-      "validators": [
-        "python scripts/validate_search_hunt_workbench_integration.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "agent_research_task_contract_provider_disabled",
-      "implemented": true,
+      "proof_level": "operational",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
+        "downloads/install/execution disabled",
         "deployment disabled",
-        "candidate-only contract; no provider execution"
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "agent_research_task_contract_provider_disabled",
       "primary_task": "HUNT-09",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_agent_research_task_contract.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "deterministic_replay",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
-        "deployment disabled"
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "deterministic_replay",
       "primary_task": "HUNT-10",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [
-        "python scripts/eureka_hunt_replay.py plan",
-        "python scripts/demo_hunt_replay.py"
-      ],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_hunt_replay.py"
-      ]
-    },
-    {
-      "blocks_future_tracks_if_missing": true,
-      "capability_id": "ai_escalation_gate_disabled_by_default",
-      "implemented": true,
+      ],
+      "smoke_commands": [],
+      "proof_level": "operational",
       "limitations": [
         "source probes disabled",
         "extraction disabled",
         "model/provider calls disabled",
+        "downloads/install/execution disabled",
         "deployment disabled",
-        "candidate-only contract; no provider execution"
+        "no production readiness claim",
+        "no public launch readiness claim"
       ],
+      "blocks_future_tracks_if_missing": true
+    },
+    {
+      "capability_id": "ai_escalation_gate_disabled_by_default",
       "primary_task": "HUNT-11",
-      "proof_level": "repo-local inventory, audit report, focused validator, and smoke evidence",
-      "smoke_commands": [
-        "python scripts/eureka_ai_escalation_gate.py preflight-hunt",
-        "python scripts/demo_ai_escalation_gate.py"
-      ],
+      "implemented": true,
       "tested": true,
       "validators": [
         "python scripts/validate_ai_escalation_gate.py"
-      ]
+      ],
+      "smoke_commands": [],
+      "proof_level": "integration",
+      "limitations": [
+        "source probes disabled",
+        "extraction disabled",
+        "model/provider calls disabled",
+        "downloads/install/execution disabled",
+        "deployment disabled",
+        "no production readiness claim",
+        "no public launch readiness claim"
+      ],
+      "blocks_future_tracks_if_missing": true
     }
-  ],
-  "schema_version": "search_hunt_capability_matrix.v0",
-  "status": "pass",
-  "task": "HUNT-12"
+  ]
 }

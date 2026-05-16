@@ -215,8 +215,8 @@ def validate_closeout_payload(payloads: Mapping[str, Mapping[str, Any]], report:
         errors.append("closeout with warnings must use pass_with_warnings")
     if closeout.get("f0_recommended_now") is not False:
         errors.append("F0 must not be recommended now by default")
-    if "SYN-00" not in str(closeout.get("recommended_next_task", "")):
-        errors.append("SYN-00 must be recommended next when no hard blockers remain")
+    if not hunt_closeout_next_task_allowed(closeout.get("recommended_next_task", "")):
+        errors.append("closeout next task must be SYN-00 or gated HUNT-TO-MAIN-PROMOTION-REVIEW")
     if report.get("schema_version") != "hunt_12_report.v0":
         errors.append("hunt_12_report schema mismatch")
     if report.get("status") not in PASS_STATUSES:
@@ -291,8 +291,8 @@ def validate_handoffs(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
     if promotion.get("branch_mutation_performed") is not False or promotion.get("merge_performed") is not False:
         errors.append("promotion review must not merge or mutate branches")
     decision = payloads.get("control/inventory/hunt_12_next_task_decision.json", {})
-    if "SYN-00" not in str(decision.get("recommended_next_task", "")):
-        errors.append("HUNT-12 next decision must recommend SYN-00")
+    if not hunt_closeout_next_task_allowed(decision.get("recommended_next_task", "")):
+        errors.append("HUNT-12 next decision must recommend SYN-00 or gated HUNT-TO-MAIN-PROMOTION-REVIEW")
     if decision.get("f0_recommended_now") is not False:
         errors.append("HUNT-12 decision must defer F0 by default")
 
@@ -326,6 +326,11 @@ def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
         and closeout.get("syn_can_start") is True
         and closeout.get("hard_blockers_remaining") == 0
     )
+
+
+def hunt_closeout_next_task_allowed(value: object) -> bool:
+    text = str(value)
+    return "SYN-00" in text or "HUNT-TO-MAIN-PROMOTION-REVIEW" in text
 
 
 def run_validation_commands(root: Path, warnings: list[str], errors: list[str], *, run_full_discovery: bool, run_local_closeout: bool) -> None:

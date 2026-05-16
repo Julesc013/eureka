@@ -280,7 +280,7 @@ entries:
     allowed_scope_summary: Branch comparison, evidence review, warning disposition, and promotion plan only; no merge, push, deployment, or readiness claim by default.
     gate: HUNT remediation continuation completed with no hard blockers or HUNT closeout warnings; generated cleanliness and runtime leakage gates must be rechecked.
     task: .aide/queue/HUNT-PROMOTION-REVIEW/task.yaml
-    recommended_after: HUNT-REMEDIATION-CONTINUE
+    recommended_after: HUNT-PERFECT-CLOSEOUT-01
   - id: HUNT-REMEDIATION
     title: Complete Search Hunt blockers
     status: completed
@@ -316,6 +316,24 @@ entries:
     gate: AIDE-EVAL-GREEN-01 complete with green AIDE evals; no product behavior changes, source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
     task: .aide/queue/AIDE-LEDGER-SIZE-01/task.yaml
     recommended_after: AIDE-EVAL-GREEN-01
+    recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
+  - id: HUNT-WARNING-ZERO-01
+    title: Resolve remaining HUNT/AIDE/LOCAL warnings before promotion
+    status: completed
+    purpose: Resolve or dispose warning debt before final HUNT closeout.
+    allowed_scope_summary: Warning disposition, validation evidence, and queue/context metadata only; no source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
+    gate: AIDE-LEDGER-SIZE-01 completed with current report-size disposition.
+    task: .aide/queue/HUNT-WARNING-ZERO-01/task.yaml
+    recommended_after: AIDE-LEDGER-SIZE-01
+    recommended_next: HUNT-PERFECT-CLOSEOUT-01
+  - id: HUNT-PERFECT-CLOSEOUT-01
+    title: Final zero-blocker Search Hunt closeout under updated AIDE baseline
+    status: completed
+    purpose: Produce the final authoritative HUNT closeout packet after AIDE eval, report-size, and warning-zero evidence.
+    allowed_scope_summary: Final closeout evidence, docs, focused tests, queue/context metadata, and handoff records only.
+    gate: HUNT-WARNING-ZERO-01 completed with no blockers or warnings; no source probes, extraction, model/provider calls, deployment, production readiness claim, public launch claim, main promotion, or force push.
+    task: .aide/queue/HUNT-PERFECT-CLOSEOUT-01/task.yaml
+    recommended_after: HUNT-WARNING-ZERO-01
     recommended_next: HUNT-TO-MAIN-PROMOTION-REVIEW
   - id: LOCAL-TO-MAIN-PROMOTION-REVIEW
     title: Review and decide whether LOCAL dev promotes to main

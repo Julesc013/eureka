@@ -1,11 +1,14 @@
 {
-  "all_warnings_disposed": true,
   "schema_version": "search_hunt_warning_disposition.v0",
-  "status": "pass",
   "task": "HUNT-12",
-  "last_remediation_continue_status": "pass",
+  "status": "pass",
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01",
+  "all_warnings_disposed": true,
+  "warnings_remaining": 0,
   "warnings": [],
+  "warnings_blocking_syn": 0,
   "warnings_blocking_f0": 0,
   "warnings_blocking_main_promotion": 0,
-  "warnings_blocking_syn": 0
+  "last_remediation_continue_status": "pass",
+  "last_warning_zero_status": "pass"
 }

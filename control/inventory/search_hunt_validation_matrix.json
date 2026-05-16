@@ -1,61 +1,8 @@
 {
-  "aide_check_status": "pass",
-  "architecture_boundary_status": "pass",
-  "focused_tests": [
-    {
-      "command": "python -m unittest tests.operations.test_search_hunt_closeout",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_search_hunt_future_track_gate",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_search_hunt_handoff",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_hunt_to_main_promotion_review",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_hunt_remediation_continue",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_gate",
-      "status": "pass"
-    },
-    {
-      "command": "python -m unittest tests.operations.test_hunt_remediation_continue_handoff",
-      "status": "pass"
-    }
-  ],
-  "full_discovery_status": "pass_after_remediation",
-  "generated_artifact_cleanliness_status": "pass",
-  "hunt_remediation_continue_status": "pass",
-  "local_validation_dependency_status": "pass",
   "schema_version": "search_hunt_validation_matrix.v0",
-  "smoke_scripts": [
-    {
-      "command": "python scripts/eureka_hunt_workflow_smoke.py",
-      "status": "covered_by_HUNT_08"
-    },
-    {
-      "command": "python scripts/eureka_hunt_api_smoke.py",
-      "status": "covered_by_HUNT_08"
-    },
-    {
-      "command": "python scripts/demo_hunt_replay.py",
-      "status": "covered_by_HUNT_10"
-    },
-    {
-      "command": "python scripts/demo_ai_escalation_gate.py",
-      "status": "covered_by_HUNT_11"
-    }
-  ],
-  "status": "pass",
   "task": "HUNT-12",
+  "status": "pass",
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01",
   "validators": [
     {
       "command": "python scripts/validate_search_hunt_track.py",
@@ -106,8 +53,42 @@
       "status": "pass"
     },
     {
-      "command": "python scripts/validate_hunt_remediation_continue.py",
+      "command": "python scripts/validate_search_hunt_closeout.py",
       "status": "pass"
     }
-  ]
+  ],
+  "focused_tests": [
+    {
+      "command": "python -m unittest tests.operations.test_hunt_perfect_closeout",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_perfect_closeout_gate",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_perfect_planning_packet",
+      "status": "pass"
+    }
+  ],
+  "smoke_scripts": [
+    {
+      "command": "python scripts/eureka_hunt_workflow_smoke.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_hunt_api_smoke.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_hunt_workbench_smoke.py --base-url http://127.0.0.1:8765 --instance ./eureka-instance --operator-token local-dev-token --json",
+      "status": "pass"
+    }
+  ],
+  "full_discovery_status": "pass",
+  "generated_artifact_cleanliness_status": "pass",
+  "architecture_boundary_status": "pass",
+  "runtime_leakage_status": "pass_zero_new_unallowlisted",
+  "local_validation_dependency_status": "pass",
+  "aide_check_status": "pass"
 }

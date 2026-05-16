@@ -1,8 +1,10 @@
 {
-  "blockers": [],
-  "hard_blockers_remaining": 0,
   "schema_version": "search_hunt_blocker_register.v0",
-  "status": "pass",
   "task": "HUNT-12",
-  "last_remediation_continue_status": "pass"
+  "status": "pass",
+  "perfect_closeout_task": "HUNT-PERFECT-CLOSEOUT-01",
+  "hard_blockers_remaining": 0,
+  "blockers": [],
+  "last_remediation_continue_status": "pass",
+  "last_warning_zero_status": "pass"
 }

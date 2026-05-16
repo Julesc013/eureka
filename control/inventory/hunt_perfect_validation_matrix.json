@@ -1,0 +1,249 @@
+{
+  "schema_version": "hunt_perfect_validation_matrix.v0",
+  "task": "HUNT-PERFECT-CLOSEOUT-01",
+  "status": "pass",
+  "validation_classes": [
+    {
+      "validation_class": "git_state",
+      "command": "git status --short --branch",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_perfect_closeout_input_state.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE doctor",
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/reports/eureka-repo-health.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE validate",
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/reports/eureka-repo-health.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE test",
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/reports/eureka-repo-health.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE selftest",
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/reports/eureka-repo-health.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE verify",
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/verification/latest-verification-report.md",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE review-pack",
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/context/latest-review-packet.md",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "AIDE eval run",
+      "command": "py -3 .aide/scripts/aide_lite.py eval run",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/evals/runs/latest-golden-tasks.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": "136/136 golden tasks pass"
+    },
+    {
+      "validation_class": "AIDE commit check",
+      "command": "py -3 .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/git/latest-helper-plan.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT validators",
+      "command": "HUNT validator sweep",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_perfect_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "LOCAL dependency validators",
+      "command": "LOCAL dependency validator sweep",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_perfect_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT workflow smoke",
+      "command": "python scripts/eureka_hunt_workflow_smoke.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT API smoke",
+      "command": "python scripts/eureka_hunt_api_smoke.py --base-url http://127.0.0.1:8765 --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT workbench smoke",
+      "command": "python scripts/eureka_hunt_workbench_smoke.py --base-url http://127.0.0.1:8765 --instance ./eureka-instance --operator-token local-dev-token --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT replay demo",
+      "command": "python scripts/demo_hunt_replay.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "HUNT AI escalation disabled-boundary demo",
+      "command": "python scripts/demo_ai_escalation_gate.py --instance ./eureka-instance --operator-token local-dev-token --query sampleproject --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "full unittest discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": "4520 tests passed in warning-zero sweep; rerun for perfect closeout"
+    },
+    {
+      "validation_class": "generated artifact cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "architecture boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_warning_zero_validation_matrix.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "runtime leakage",
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json; python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/hunt_perfect_boundary_audit.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": "zero new unallowlisted findings; known allowlisted findings remain tracked"
+    },
+    {
+      "validation_class": "report-size checks",
+      "command": "python scripts/validate_aide_report_sizes.py --json",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": "control/inventory/aide_ledger_size_result.json",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": ""
+    },
+    {
+      "validation_class": "secret/raw prompt/raw response checks",
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "exit_code": 0,
+      "evidence_path": ".aide/verification/latest-verification-report.md",
+      "blocks_promotion": false,
+      "blocks_syn": false,
+      "blocks_f0": false,
+      "notes": "no tracked secrets/raw prompt/raw response storage found by AIDE checks"
+    }
+  ]
+}

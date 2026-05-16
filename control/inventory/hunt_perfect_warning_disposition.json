@@ -1,0 +1,21 @@
+{
+  "schema_version": "hunt_perfect_warning_disposition.v0",
+  "task": "HUNT-PERFECT-CLOSEOUT-01",
+  "status": "pass",
+  "warnings_remaining": 0,
+  "warning_disposition_allowed_states": [
+    "resolved",
+    "accepted_non_blocking_with_expiry",
+    "child_task_required",
+    "blocks_promotion",
+    "blocks_syn",
+    "blocks_f0"
+  ],
+  "warnings": [],
+  "source_warning_registers": [
+    "control/inventory/hunt_warning_zero_warning_disposition.json",
+    "control/inventory/aide_eval_green_warning_disposition.json",
+    "control/inventory/aide_ledger_size_warning_disposition.json",
+    "control/inventory/search_hunt_warning_disposition.json"
+  ]
+}
