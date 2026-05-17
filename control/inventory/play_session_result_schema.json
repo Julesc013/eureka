@@ -1,0 +1,39 @@
+{
+  "schema_version": "play_session_result_schema.v0",
+  "task": "PLAY-01",
+  "report_schema_version": "play_session_report.v1",
+  "required_sections": [
+    "instance",
+    "seed_state",
+    "queries",
+    "absence",
+    "hunts",
+    "search_needs",
+    "workunits",
+    "blocked_future_actions",
+    "server",
+    "validation",
+    "boundaries",
+    "warnings",
+    "next_actions"
+  ],
+  "implementation_sections": [
+    "search_results",
+    "absence_results",
+    "server_routes_if_checked",
+    "next_suggested_actions"
+  ],
+  "forbidden_true_flags": [
+    "fake_evidence_created",
+    "fake_verified_records_created",
+    "live_source_call_performed",
+    "source_probe_executed",
+    "extraction_executed",
+    "model_provider_used",
+    "download_install_execute_performed",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "instance_state_committed"
+  ]
+}

@@ -1,71 +1,66 @@
-# AIDE Latest Task Packet
-
-phase: PLAY-01
+# Latest Task Packet
 
 ## PHASE
 
-PLAY-01
+PLAY-02 — Demo Query / Absence / Hunt Smoke Pack is the current recommended
+next task. PLAY-01 completed as PASS.
 
 ## GOAL
 
-Refine the operator play-session script and workbench handoff after PLAY-00
-added deterministic local demo data.
+Use the PLAY-01 operator play-session proof as the starting point for the next
+local-only demo query, absence, and Hunt smoke pack.
 
 ## WHY
 
-PLAY-00 made the Local Appliance demonstrable with committed fixture-backed
-demo records, demo Hunts, SearchNeeds, WorkUnits, and blocked future-action
-examples. PLAY-01 should improve the operator-facing session loop without
-opening live source calls, extraction, model/provider calls, downloads,
-deployment, or public/production claims.
+PLAY-01 made the PLAY-00 seed corpus repeatable through a dry-run-default
+operator command, explicit apply mode, smoke reporting, validator coverage,
+docs, inventories, and audit evidence.
 
 ## CONTEXT_REFS
 
-- `AGENTS.md`
-- `.aide/queue/PLAY-01/task.yaml`
-- `examples/play`
-- `examples/play/`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
+- `control/inventory/play_01_result.json`
+- `control/inventory/play_01_next_task_decision.json`
+- `control/audits/play-01-operator-play-session-v0/play_01_report.json`
+- `docs/operations/PLAY_SESSION_RUNBOOK.md`
+
+## ALLOWED_PATHS
+
 - `examples/play/**`
 - `docs/operations/PLAY_MODE_RUNBOOK.md`
 - `docs/operations/LOCAL_WORKBENCH_DEMO_QUERIES.md`
 - `docs/operations/PLAY_SEED_CORPUS_POLICY.md`
-- `control/inventory/play_00_result.json`
-- `control/audits/play-00-local-workbench-seed-corpus-v0/`
-
-## ALLOWED_PATHS
-
-- `examples/play/`
-- `runtime/local_appliance/**`
-- `runtime/local_workbench/**`
+- `docs/operations/PLAY_SESSION_RUNBOOK.md`
+- `scripts/eureka_play_session.py`
+- `scripts/eureka_play_smoke.py`
+- `scripts/eureka_seed_play_demo.py`
+- `scripts/validate_play_session.py`
+- `scripts/validate_play_seed_pack.py`
+- `tests/operations/test_play_session.py`
+- `tests/operations/test_play_smoke.py`
+- `tests/operations/test_play_session_report.py`
+- `tests/runtime/test_play_seed_pack.py`
+- `runtime/local_eval/**`
 - `runtime/local_service/**`
-- `runtime/public_index/**`
+- `runtime/local_workbench/**`
 - `runtime/search_hunt/**`
 - `runtime/search_need/**`
 - `runtime/workunit_queue/**`
-- `runtime/local_worker/**`
-- `runtime/local_eval/**`
-- `scripts/eureka_seed_play_demo.py`
-- `scripts/eureka_play_session.py`
-- `scripts/eureka_play_smoke.py`
-- `scripts/validate_play_seed_pack.py`
-- `tests/runtime/test_play_seed_pack.py`
-- `tests/operations/test_play_session.py`
-- `tests/operations/test_play_smoke.py`
-- `docs/operations/PLAY_MODE_RUNBOOK.md`
-- `docs/operations/LOCAL_WORKBENCH_DEMO_QUERIES.md`
-- `docs/operations/PLAY_SEED_CORPUS_POLICY.md`
+- `runtime/public_index/**`
 - `control/policies/play_seed_corpus_policy.json`
-- `control/inventory/play_00_input_state.json`
-- `control/inventory/play_seed_corpus_inventory.json`
-- `control/inventory/play_demo_query_matrix.json`
-- `control/inventory/play_demo_hunt_matrix.json`
-- `control/inventory/play_demo_workunit_matrix.json`
-- `control/inventory/play_00_result.json`
-- `control/inventory/play_00_next_task_decision.json`
-- `.aide/queue/PLAY-00/task.yaml`
-- `.aide/queue/PLAY-01`
+- `control/policies/play_session_policy.json`
+- `control/inventory/play_01_input_state.json`
+- `control/inventory/play_session_command_matrix.json`
+- `control/inventory/play_session_result_schema.json`
+- `control/inventory/play_session_smoke_matrix.json`
+- `control/inventory/play_01_result.json`
+- `control/inventory/play_01_next_task_decision.json`
 - `.aide/queue/PLAY-01/task.yaml`
-- `.aide/queue/IA-00`
+- `.aide/queue/PLAY-02/task.yaml`
+- `.aide/queue/PLAY-02/**`
 - `.aide/queue/IA-00/task.yaml`
 - `.aide/queue/SYN-00/task.yaml`
 - `.aide/queue/index.yaml`
@@ -73,24 +68,20 @@ deployment, or public/production claims.
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
-- `control/audits/play-00-local-workbench-seed-corpus-v0`
-- `control/audits/play-00-local-workbench-seed-corpus-v0/`
+- `control/audits/play-01-operator-play-session-v0/**`
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
-- `.local/**`
-- `.cache/**`
 - `eureka-instance/**`
 - `instances/**`
-- private local files
-- committed operator tokens
-- committed provider credentials
-- raw prompts
-- raw responses
+- `.aide.local/**`
+- `secrets/**`
+- `.env`
+- `private local files`
+- `committed operator tokens`
+- `committed provider credentials`
+- `raw prompts`
+- `raw responses`
 - `site/dist/**`
 - `data/public_index/**`
 - `runtime/connectors/**`
@@ -101,37 +92,40 @@ deployment, or public/production claims.
 
 ## IMPLEMENTATION
 
-- Build on PLAY-00 fixtures and scripts.
-- Keep the documented sibling default instance as the preferred local path.
-- Keep the legacy sibling instance explicit-only.
-- Do not run source probes, extraction, model/provider calls, downloads,
-  installs, execution, deployment, or source sync.
+PLAY-01 hardened `scripts/eureka_play_session.py`, hardened
+`scripts/eureka_play_smoke.py`, added `scripts/validate_play_session.py`, and
+recorded policy, command matrix, schema, smoke matrix, docs, tests, and audit
+evidence.
 
 ## VALIDATION
 
-- Use the PLAY-00 smoke/validator as the baseline unless a future PLAY-01
-  prompt narrows or expands validation.
+Focused PLAY validators and tests passed. Architecture boundary checks passed.
+Generated artifact cleanliness is expected to pass after the PLAY-01 commit
+because the new audit pack is committed.
 
 ## EVIDENCE
 
-- `.aide/queue/PLAY-01/`
+- `control/inventory/play_01_result.json`
+- `control/audits/play-01-operator-play-session-v0/`
+- `.aide/queue/PLAY-01/task.yaml`
+- `.aide/queue/PLAY-02/task.yaml`
 
 ## NON_GOALS
 
-No live source calls, Internet Archive calls, source probes, extraction,
-AI/model/provider calls, downloads, install/execute behavior, deployment,
-public launch claim, production readiness claim, master-index mutation,
-reviewed-index semantic mutation, operator instance move/delete, or committed
-runtime instance state.
+No live source calls, source probes, extraction, model/provider calls,
+downloads, install/execute behavior, deployment, production readiness claim,
+public launch readiness claim, or committed local instance state.
 
 ## ACCEPTANCE
 
-- To be defined by a future PLAY-01 prompt.
+PLAY-01 acceptance is recorded as pass in `control/inventory/play_01_result.json`.
+PLAY-02 should preserve all PLAY boundaries.
 
 ## OUTPUT_SCHEMA
 
-- To be defined by a future PLAY-01 prompt.
+Use compact structured final reports with status, summary, validation, boundary
+flags, commits, and next task.
 
 ## TOKEN_ESTIMATE
 
-approx_tokens: 650
+Compact packet under the normal AIDE token budget.

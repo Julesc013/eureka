@@ -1,6 +1,6 @@
 id: PLAY-01
 title: Operator Play Session Script
-status: queued
+status: completed
 purpose: Refine and harden the operator play-session script after PLAY-00 added deterministic demo data.
 allowed_scope_summary: Operator-facing play-session orchestration, runbook polishing, smoke reporting, tests, inventories, and audit evidence only.
 gate:
@@ -14,4 +14,8 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: PLAY-00
-recommended_next: IA-00
+recommended_next: PLAY-02
+result: pass
+evidence:
+  - control/inventory/play_01_result.json
+  - control/audits/play-01-operator-play-session-v0/play_01_report.json

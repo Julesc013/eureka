@@ -1,0 +1,146 @@
+{
+  "schema_version": "play_session_command_matrix.v0",
+  "task": "PLAY-01",
+  "rows": [
+    {
+      "command_id": "validate_seed_pack",
+      "command": "python scripts/validate_play_seed_pack.py",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["source_probes", "extraction", "model_provider_calls", "deployment"],
+      "expected_result": "PLAY demo seed pack validates."
+    },
+    {
+      "command_id": "dry_run_play_session",
+      "command": "python scripts/eureka_play_session.py --instance ../instances/default --operator-token local-dev-token --dry-run --json",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": false,
+      "forbidden_side_effects": ["instance_mutation", "source_probes", "extraction", "model_provider_calls"],
+      "expected_result": "Session report is emitted without writing instance state."
+    },
+    {
+      "command_id": "apply_seed_to_explicit_instance",
+      "command": "python scripts/eureka_play_session.py --instance <explicit-instance> --operator-token <token> --apply --json",
+      "mutates_instance": true,
+      "requires_operator_token": true,
+      "allowed_in_dry_run": false,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["source_probes", "extraction", "model_provider_calls", "downloads", "deployment"],
+      "expected_result": "Demo state is written only to the explicit initialized local instance."
+    },
+    {
+      "command_id": "known_hit_search",
+      "command": "sampleproject",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["live_source_calls"],
+      "expected_result": "Returns play.reviewed.sampleproject.v0 from committed demo data."
+    },
+    {
+      "command_id": "known_absence_search",
+      "command": "definitely-not-present-play-00",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["global_nonexistence_claim"],
+      "expected_result": "Returns local demo-corpus absence only."
+    },
+    {
+      "command_id": "inspect_demo_hunts",
+      "command": "play session report section: hunts",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["hunt_execution"],
+      "expected_result": "Demo Hunt records are visible."
+    },
+    {
+      "command_id": "inspect_demo_search_needs",
+      "command": "play session report section: search_needs",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["verified_result_creation"],
+      "expected_result": "Unresolved needs are visible without accepted truth."
+    },
+    {
+      "command_id": "inspect_demo_workunits",
+      "command": "play session report section: workunits",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["workunit_execution"],
+      "expected_result": "Queued and policy-blocked WorkUnits are visible."
+    },
+    {
+      "command_id": "check_blocked_source_probe",
+      "command": "play.workunit.stylewriter.source_probe.v0",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["source_probe_execution"],
+      "expected_result": "Source probe WorkUnit remains blocked_by_policy."
+    },
+    {
+      "command_id": "check_blocked_extraction",
+      "command": "play.workunit.stylewriter.extraction.v0",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["extraction_execution"],
+      "expected_result": "Extraction WorkUnit remains blocked_by_policy."
+    },
+    {
+      "command_id": "check_blocked_ai",
+      "command": "play.workunit.dtheater.ai_research.v0",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["model_provider_calls"],
+      "expected_result": "AI escalation WorkUnit remains blocked_by_policy."
+    },
+    {
+      "command_id": "optional_server_status",
+      "command": "python scripts/eureka_play_session.py --instance ../instances/default --operator-token local-dev-token --base-url http://127.0.0.1:8765 --expect-server --json",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["non_local_network_calls"],
+      "expected_result": "Localhost workbench status/search/hunts routes respond if the server is running."
+    },
+    {
+      "command_id": "optional_workbench_routes",
+      "command": "server_routes_if_checked",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["live_source_calls"],
+      "expected_result": "Route checks are skipped unless a localhost base URL is supplied."
+    },
+    {
+      "command_id": "emit_report",
+      "command": "python scripts/eureka_play_session.py --instance ../instances/default --operator-token local-dev-token --dry-run --output play-session.json --json",
+      "mutates_instance": false,
+      "requires_operator_token": false,
+      "allowed_in_dry_run": true,
+      "allowed_in_apply": true,
+      "forbidden_side_effects": ["instance_state_commit"],
+      "expected_result": "A structured play-session report is written to the requested output path."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: PLAY-01 — Operator Play Session Script
+current_recommended_task: PLAY-02 — Demo Query / Absence / Hunt Smoke Pack
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -295,12 +295,21 @@ entries:
     recommended_next: PLAY-01
   - id: PLAY-01
     title: Operator Play Session Script
-    status: queued
+    status: completed
     purpose: Refine the operator play-session script and local workbench handoff after deterministic PLAY-00 demo data exists.
     allowed_scope_summary: Operator play-session orchestration, docs, validation, and audit evidence only; no live source calls, extraction, model/provider calls, downloads, deployment, or public readiness claims.
     gate: PLAY-00 completed with deterministic fixture-backed demo data and blocked future-action examples.
     task: .aide/queue/PLAY-01/task.yaml
     recommended_after: PLAY-00
+    recommended_next: PLAY-02
+  - id: PLAY-02
+    title: Demo Query / Absence / Hunt Smoke Pack
+    status: queued
+    purpose: Tighten the demo query, local absence, and Hunt smoke proof after the operator play-session script exists.
+    allowed_scope_summary: Local demo query/absence/Hunt smoke tests, docs, validators, inventories, and audit evidence only; no live source calls, extraction, model/provider calls, downloads, deployment, or public readiness claims.
+    gate: PLAY-01 completed with dry-run default and temp-instance apply smoke proof.
+    task: .aide/queue/PLAY-02/task.yaml
+    recommended_after: PLAY-01
     recommended_next: IA-00
   - id: IA-00
     title: Internet Archive Metadata Connector Approval Closure

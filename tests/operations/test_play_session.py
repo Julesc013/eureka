@@ -28,9 +28,27 @@ class PlaySessionScriptTests(unittest.TestCase):
             self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
             payload = json.loads(completed.stdout)
             self.assertEqual("pass", payload["status"])
+            self.assertEqual("PLAY-01", payload["task"])
             self.assertEqual("dry_run", payload["seed_mode"])
+            self.assertEqual("dry_run", payload["seed_state"]["mode"])
             self.assertFalse(payload["seed_result"]["mutation_performed"])
+            self.assertFalse(payload["seed_state"]["mutation_performed"])
             self.assertFalse(instance.exists())
+            for section in (
+                "instance",
+                "seed_state",
+                "search_results",
+                "absence_results",
+                "hunts",
+                "search_needs",
+                "workunits",
+                "blocked_future_actions",
+                "server_routes_if_checked",
+                "warnings",
+                "boundaries",
+                "next_suggested_actions",
+            ):
+                self.assertIn(section, payload)
 
     def test_play_session_can_write_output_report(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -51,6 +69,47 @@ class PlaySessionScriptTests(unittest.TestCase):
             payload = json.loads(output.read_text(encoding="utf-8"))
             self.assertEqual("pass", payload["status"])
             self.assertFalse(payload["source_probe_executed"])
+
+    def test_seed_demo_without_apply_remains_dry_run(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            instance = Path(tmp) / "instances" / "default"
+            completed = run_script(
+                "scripts/eureka_play_session.py",
+                "--instance",
+                str(instance),
+                "--operator-token",
+                "local-dev-token",
+                "--seed-demo",
+                "--json",
+            )
+            self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+            payload = json.loads(completed.stdout)
+            self.assertTrue(payload["seed_state"]["dry_run"])
+            self.assertFalse(payload["seed_state"]["mutation_performed"])
+            self.assertFalse(instance.exists())
+
+    def test_apply_mode_requires_operator_token(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            instance = Path(tmp) / "instances" / "default"
+            completed = run_script(
+                "scripts/eureka_play_session.py",
+                "--instance",
+                str(instance),
+                "--apply",
+                "--json",
+            )
+            self.assertNotEqual(0, completed.returncode)
+            payload = json.loads(completed.stdout)
+            self.assertEqual("fail", payload["status"])
+            self.assertFalse(payload["source_probe_executed"])
+
+    def test_help_exposes_play_01_controls(self):
+        completed = run_script("scripts/eureka_play_session.py", "--help")
+        self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+        self.assertIn("--seed-demo", completed.stdout)
+        self.assertIn("--apply", completed.stdout)
+        self.assertIn("--query", completed.stdout)
+        self.assertIn("--expect-server", completed.stdout)
 
 
 if __name__ == "__main__":

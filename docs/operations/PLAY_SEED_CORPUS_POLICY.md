@@ -35,7 +35,10 @@ Only an explicit apply command may write to an initialized local instance:
 $Instance = "..\instances\default"
 $Token = "local-dev-token"
 python scripts\eureka_seed_play_demo.py --instance $Instance --operator-token $Token --apply --json
+python scripts\eureka_play_session.py --instance $Instance --operator-token $Token --apply --json
 ```
 
 The apply path writes only inside the explicit instance root. It does not move,
-copy, or delete operator instance directories.
+copy, or delete operator instance directories. The play-session script remains
+dry-run by default and requires `--apply` plus an operator token before it can
+seed demo state.

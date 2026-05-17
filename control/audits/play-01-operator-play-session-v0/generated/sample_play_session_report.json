@@ -1,0 +1,41 @@
+{
+  "schema_version": "play_session_report.v1",
+  "task": "PLAY-01",
+  "status": "pass",
+  "mode": "dry_run",
+  "instance": {
+    "root": "../instances/default",
+    "preferred_instance": "../instances/default"
+  },
+  "seed_state": {
+    "mode": "dry_run",
+    "mutation_performed": false
+  },
+  "search_results": {
+    "sampleproject": [
+      {
+        "record_id": "play.reviewed.sampleproject.v0",
+        "title": "SampleProject Demo Fixture"
+      }
+    ]
+  },
+  "absence_results": {
+    "known_absence_query": {
+      "query": "definitely-not-present-play-00",
+      "result_count": 0,
+      "absence_scope": "play_demo_corpus_only"
+    }
+  },
+  "blocked_future_actions": {
+    "source_probe_ids": ["play.workunit.stylewriter.source_probe.v0"],
+    "extraction_ids": ["play.workunit.stylewriter.extraction.v0"],
+    "ai_ids": ["play.workunit.dtheater.ai_research.v0"],
+    "all_remain_blocked_by_policy": true
+  },
+  "boundaries": {
+    "source_probe_executed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false
+  }
+}

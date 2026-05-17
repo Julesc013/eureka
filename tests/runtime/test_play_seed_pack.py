@@ -10,7 +10,9 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 from validate_play_seed_pack import (  # noqa: E402
+    COMPATIBILITY_QUERY,
     EXTRACTION_QUERY,
+    HARD_SOURCE_ROUTING_QUERY,
     KNOWN_ABSENCE_QUERY,
     KNOWN_HIT_QUERY,
     MEDIA_QUERY,
@@ -55,6 +57,13 @@ class PlaySeedPackTests(unittest.TestCase):
         blocked = blocked_workunits(self.pack, kind="extraction_task")
         self.assertTrue(blocked)
         self.assertFalse(blocked[0]["payload"]["extraction_execution_enabled"])
+
+    def test_hard_source_and_compatibility_queries_are_needs(self):
+        queries = {item["query"]: item for item in self.pack["search_needs"]["search_needs"]}
+        self.assertIn(HARD_SOURCE_ROUTING_QUERY, queries)
+        self.assertIn(COMPATIBILITY_QUERY, queries)
+        self.assertFalse(queries[HARD_SOURCE_ROUTING_QUERY]["verified_result_created"])
+        self.assertFalse(queries[COMPATIBILITY_QUERY]["verified_result_created"])
 
     def test_blocked_future_action_workunits_remain_blocked(self):
         self.assertTrue(blocked_workunits(self.pack, kind="source_probe"))

@@ -1,0 +1,15 @@
+{
+  "schema_version": "play_01_next_task_decision.v0",
+  "task": "PLAY-01",
+  "status": "pass",
+  "recommended_next_task": "PLAY-02 \u2014 Demo Query / Absence / Hunt Smoke Pack",
+  "alternative_next_task": "IA-00 \u2014 Internet Archive Metadata Connector Approval Closure",
+  "deferred_planning_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "reason": "PLAY-01 makes the operator play loop repeatable; the next local-only step is a narrower demo query, absence, and Hunt smoke pack before live-source approval or SYN planning.",
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

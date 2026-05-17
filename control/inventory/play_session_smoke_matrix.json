@@ -1,0 +1,26 @@
+{
+  "schema_version": "play_session_smoke_matrix.v0",
+  "task": "PLAY-01",
+  "smoke_checks": [
+    "dry_run_play_session",
+    "apply_play_session_temp_instance",
+    "known_hit_query",
+    "known_absence_query",
+    "media_search_need",
+    "extraction_search_need",
+    "demo_workunits",
+    "blocked_source_probe_checked",
+    "blocked_extraction_checked",
+    "blocked_ai_checked",
+    "source_probe_execution_disabled",
+    "extraction_execution_disabled",
+    "model_provider_disabled"
+  ],
+  "operator_instance_mutated": false,
+  "temp_instance_apply_allowed": true,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

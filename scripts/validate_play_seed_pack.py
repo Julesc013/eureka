@@ -28,6 +28,16 @@ KNOWN_HIT_QUERY = "sampleproject"
 KNOWN_ABSENCE_QUERY = "definitely-not-present-play-00"
 MEDIA_QUERY = "New York 1993 D-Theater HD demo tape original source"
 EXTRACTION_QUERY = "StyleWriter 2500 Mac OS 8 driver"
+HARD_SOURCE_ROUTING_QUERY = "DirectX SDK June 2010 offline installer"
+COMPATIBILITY_QUERY = "last Firefox for Windows XP"
+LEGACY_COMPATIBLE_QUERY = "Windows 7 compatible old app"
+DEMO_SEARCH_NEED_QUERIES = (
+    MEDIA_QUERY,
+    EXTRACTION_QUERY,
+    HARD_SOURCE_ROUTING_QUERY,
+    COMPATIBILITY_QUERY,
+    LEGACY_COMPATIBLE_QUERY,
+)
 
 FORBIDDEN_TRUE_FLAGS = (
     "fake_evidence_created",
@@ -108,6 +118,9 @@ def validate_play_seed_pack(*, run_script_smokes: bool = False) -> dict[str, Any
         "known_absence_demo_available": demo_absence(pack, KNOWN_ABSENCE_QUERY) is not None,
         "media_search_need_demo_available": _need_for_query(pack, MEDIA_QUERY) is not None,
         "extraction_search_need_demo_available": _need_for_query(pack, EXTRACTION_QUERY) is not None,
+        "hard_source_routing_search_need_demo_available": _need_for_query(pack, HARD_SOURCE_ROUTING_QUERY) is not None,
+        "compatibility_search_need_demo_available": _need_for_query(pack, COMPATIBILITY_QUERY) is not None,
+        "legacy_compatible_search_need_demo_available": _need_for_query(pack, LEGACY_COMPATIBLE_QUERY) is not None,
         "blocked_source_probe_demo_available": bool(blocked_workunits(pack, kind="source_probe")),
         "blocked_extraction_demo_available": bool(blocked_workunits(pack, kind="extraction_task")),
         "blocked_ai_demo_available": bool(blocked_workunits(pack, kind="agent_task")),
@@ -312,7 +325,7 @@ def _validate_pack(pack: Mapping[str, Any], errors: list[str], warnings: list[st
         errors.append("known hit query does not return a demo reviewed result")
     if demo_absence(pack, KNOWN_ABSENCE_QUERY) is None:
         errors.append("known absence query missing absence record")
-    for query in (MEDIA_QUERY, EXTRACTION_QUERY):
+    for query in DEMO_SEARCH_NEED_QUERIES:
         need = _need_for_query(pack, query)
         if need is None:
             errors.append(f"missing SearchNeed for query: {query}")

@@ -28,8 +28,14 @@ class PlaySmokeScriptTests(unittest.TestCase):
             self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
             payload = json.loads(completed.stdout)
             self.assertEqual("pass", payload["status"])
+            self.assertEqual("PLAY-01", payload["task"])
             self.assertTrue(payload["checks"]["known_hit_query"])
             self.assertTrue(payload["checks"]["known_absence_query"])
+            self.assertTrue(payload["checks"]["dry_run_play_session"])
+            self.assertTrue(payload["checks"]["apply_play_session_temp_instance"])
+            self.assertTrue(payload["checks"]["blocked_source_probe_checked"])
+            self.assertTrue(payload["checks"]["blocked_extraction_checked"])
+            self.assertTrue(payload["checks"]["blocked_ai_checked"])
             self.assertFalse(payload["source_probe_executed"])
             self.assertFalse(payload["extraction_executed"])
             self.assertFalse(payload["model_provider_used"])
@@ -56,6 +62,12 @@ class PlaySmokeScriptTests(unittest.TestCase):
 
     def test_play_validator_passes(self):
         completed = run_script("scripts/validate_play_seed_pack.py")
+        self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+        payload = json.loads(completed.stdout)
+        self.assertEqual("pass", payload["status"])
+
+    def test_play_session_validator_passes(self):
+        completed = run_script("scripts/validate_play_session.py")
         self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
         payload = json.loads(completed.stdout)
         self.assertEqual("pass", payload["status"])
