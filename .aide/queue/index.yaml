@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-17
+updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: PLAY-00 — Local Workbench Seed Corpus and Demo Hunt Pack
+current_recommended_task: PLAY-01 — Operator Play Session Script
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -286,20 +286,39 @@ entries:
     recommended_next: PLAY-00
   - id: PLAY-00
     title: Local Workbench Seed Corpus and Demo Hunt Pack
-    status: queued
+    status: completed
     purpose: Add a small local seed corpus and demo hunt pack so the operator can test the local workbench loop with predictable data.
     allowed_scope_summary: Local seed/demo data, local workbench play instructions, dry-run/demo hunt fixtures, docs, validators, tests, inventories, and audit evidence only when explicitly scoped.
     gate: INSTANCE-LAYOUT-01 completed; no source probes, extraction, model/provider calls, downloads, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/PLAY-00/task.yaml
     recommended_after: INSTANCE-LAYOUT-01
-  - id: SYN-00
-    title: Synthetic Query Foundry planning over Local Appliance
+    recommended_next: PLAY-01
+  - id: PLAY-01
+    title: Operator Play Session Script
     status: queued
-    purpose: Plan Synthetic Query Foundry over the completed Local Appliance and Search Hunt proof surface.
+    purpose: Refine the operator play-session script and local workbench handoff after deterministic PLAY-00 demo data exists.
+    allowed_scope_summary: Operator play-session orchestration, docs, validation, and audit evidence only; no live source calls, extraction, model/provider calls, downloads, deployment, or public readiness claims.
+    gate: PLAY-00 completed with deterministic fixture-backed demo data and blocked future-action examples.
+    task: .aide/queue/PLAY-01/task.yaml
+    recommended_after: PLAY-00
+    recommended_next: IA-00
+  - id: IA-00
+    title: Internet Archive Metadata Connector Approval Closure
+    status: queued
+    purpose: Close the approval and policy boundary for a future Internet Archive metadata connector without enabling live calls by default.
+    allowed_scope_summary: Policy, approval, fixture-only planning, docs, validators, inventories, and audit evidence only until a future task explicitly enables live metadata calls.
+    gate: PLAY-00 completed; source probes, downloads, extraction, model/provider calls, deployment, production readiness, and public launch readiness remain disabled.
+    task: .aide/queue/IA-00/task.yaml
+    recommended_after: PLAY-01
+    recommended_next: SYN-00
+  - id: SYN-00
+    title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+    status: queued
+    purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, and IA approval boundary.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
-    gate: HUNT remediation continuation pass; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    gate: PLAY-00 and IA approval closure context reviewed; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/SYN-00/task.yaml
-    recommended_after: HUNT-REMEDIATION-CONTINUE
+    recommended_after: IA-00
   - id: F0-00
     title: Refresh F0 after Local Appliance and HUNT
     status: queued

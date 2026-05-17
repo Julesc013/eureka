@@ -1,0 +1,15 @@
+{
+  "schema_version": "play_00_next_task_decision.v0",
+  "task": "PLAY-00",
+  "status": "pass",
+  "recommended_next_task": "PLAY-01 \u2014 Operator Play Session Script",
+  "alternative_next_task": "IA-00 \u2014 Internet Archive Metadata Connector Approval Closure",
+  "deferred_planning_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "reason": "PLAY-00 adds deterministic demo state and smoke proof; the next safe step is an operator play-session script refinement before live source approval closure or SYN planning.",
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "play_demo_queries.v0",
+  "task": "PLAY-00",
+  "queries": [
+    {
+      "id": "play.query.sampleproject.hit.v0",
+      "query": "sampleproject",
+      "kind": "known_reviewed_hit",
+      "expected_local_result": "reviewed_demo_result",
+      "expected_record_id": "play.reviewed.sampleproject.v0",
+      "operator_note": "Deterministic committed fixture hit for the local workbench."
+    },
+    {
+      "id": "play.query.absence.v0",
+      "query": "definitely-not-present-play-00",
+      "kind": "known_local_absence",
+      "expected_local_result": "known_local_absence",
+      "expected_absence_id": "play.absence.definitely_not_present.v0",
+      "operator_note": "Absence is limited to the demo local corpus and is not a global nonexistence claim."
+    },
+    {
+      "id": "play.query.media.need.v0",
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "kind": "demo_unresolved_media_search_need",
+      "expected_local_result": "search_need",
+      "expected_need_id": "play.need.dtheater_source.v0",
+      "operator_note": "Creates demand state only; no verified result or source observation is asserted."
+    },
+    {
+      "id": "play.query.stylewriter.need.v0",
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "kind": "demo_unresolved_source_and_extraction_need",
+      "expected_local_result": "search_need_and_blocked_workunits",
+      "expected_need_id": "play.need.stylewriter_driver.v0",
+      "operator_note": "Seeds future source and extraction work as blocked WorkUnits."
+    },
+    {
+      "id": "play.query.directx.need.v0",
+      "query": "DirectX SDK June 2010 offline installer",
+      "kind": "demo_hard_software_source_routing_need",
+      "expected_local_result": "search_need",
+      "expected_need_id": "play.need.directx_june_2010.v0",
+      "operator_note": "Records source, rights, and safety caution without download or verification."
+    },
+    {
+      "id": "play.query.firefox_xp.need.v0",
+      "query": "last Firefox for Windows XP",
+      "kind": "demo_compatibility_need",
+      "expected_local_result": "search_need",
+      "expected_need_id": "play.need.firefox_windows_xp.v0",
+      "operator_note": "Records compatibility demand state only."
+    },
+    {
+      "id": "play.query.windows7.need.v0",
+      "query": "Windows 7 compatible old app",
+      "kind": "demo_legacy_compatible_software_need",
+      "expected_local_result": "search_need",
+      "expected_need_id": "play.need.windows7_old_app.v0",
+      "operator_note": "Demonstrates a broad compatibility request without accepted compatibility truth."
+    }
+  ],
+  "live_source_calls_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "download_install_execute_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,13 +1,20 @@
 # Eureka Repo Health
 
-Updated: 2026-05-17
+Updated: 2026-05-18
 
-Current recommended task: PLAY-00 — Local Workbench Seed Corpus and Demo Hunt Pack.
+Current recommended task: PLAY-01 — Operator Play Session Script.
 
-Last completed task: INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01 - Repair instance-layout-caused clean-machine failures before PLAY-00.
+Last completed task: PLAY-00 - Local Workbench Seed Corpus and Demo Hunt Pack.
 
-Status: pass_with_warnings. The preferred local instance path is now `../instances/default`, the legacy sibling `../eureka-instance` remains explicit-only, repo-nested local instance state is no longer the documented default, and the LOCAL-13 clean-machine proof path has no instance-layout-caused failures remaining.
+Status: pass. The preferred local instance path remains `../instances/default`,
+with legacy sibling `../eureka-instance` explicit-only. PLAY-00 added a
+deterministic local demo corpus, known hit, known local absence, demo Hunts,
+SearchNeeds, WorkUnits, dry-run seed helper, play-session report, smoke script,
+validator, tests, docs, inventories, and audit evidence.
 
-The targeted broad subset still has 10 unrelated broad-lane validator failures. They do not block PLAY-00.
+The targeted broad subset still has 10 unrelated broad-lane validator failures
+from the instance-layout clean-machine closeout. They do not block PLAY-01.
 
-No source probes, extraction, model/provider calls, downloads, installs, deployment, production readiness claim, or public launch readiness claim occurred.
+No source probes, extraction, model/provider calls, downloads, installs,
+deployment, production readiness claim, or public launch readiness claim
+occurred.

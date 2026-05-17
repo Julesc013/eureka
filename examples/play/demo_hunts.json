@@ -1,0 +1,98 @@
+{
+  "schema_version": "play_demo_hunts.v0",
+  "task": "PLAY-00",
+  "hunts": [
+    {
+      "id": "play.hunt.sampleproject.v0",
+      "query": "sampleproject",
+      "normalized_query": "sampleproject",
+      "state": "complete",
+      "intent": "find_record",
+      "destination": "local_reviewed_index",
+      "reviewed_result_count": 1,
+      "candidate_result_count": 0,
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "unchecked_layers": [
+        "source_probes",
+        "extraction",
+        "broader_connectors",
+        "AI_research_escalation"
+      ],
+      "limitations": [
+        "Demo local hunt fixture only."
+      ],
+      "warnings": [],
+      "idempotency_key": "play.hunt.sampleproject.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "id": "play.hunt.dtheater_source.v0",
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "normalized_query": "new york 1993 d-theater hd demo tape original source",
+      "state": "waiting_for_policy",
+      "intent": "identify_source",
+      "destination": "need_candidate",
+      "reviewed_result_count": 0,
+      "candidate_result_count": 0,
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "unchecked_layers": [
+        "source_probes",
+        "extraction",
+        "broader_connectors",
+        "AI_research_escalation"
+      ],
+      "limitations": [
+        "Creates SearchNeed demand state only.",
+        "No live media source has been checked."
+      ],
+      "warnings": [
+        "Do not treat this as a verified media record."
+      ],
+      "idempotency_key": "play.hunt.dtheater_source.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "id": "play.hunt.stylewriter_driver.v0",
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "normalized_query": "stylewriter 2500 mac os 8 driver",
+      "state": "waiting_for_policy",
+      "intent": "find_record",
+      "destination": "work_candidate",
+      "reviewed_result_count": 0,
+      "candidate_result_count": 0,
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "unchecked_layers": [
+        "source_probes",
+        "extraction",
+        "broader_connectors",
+        "AI_research_escalation"
+      ],
+      "limitations": [
+        "Seeds blocked source/extraction work only."
+      ],
+      "warnings": [
+        "No driver source has been probed or downloaded."
+      ],
+      "idempotency_key": "play.hunt.stylewriter_driver.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    }
+  ],
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

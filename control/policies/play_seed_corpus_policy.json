@@ -1,0 +1,23 @@
+{
+  "schema_version": "play_seed_corpus_policy.v0",
+  "task": "PLAY-00",
+  "fixture_backed_records_allowed": true,
+  "reviewed_demo_records_allowed": true,
+  "absence_demo_records_allowed": true,
+  "search_need_demo_records_allowed": true,
+  "workunit_demo_records_allowed": true,
+  "provisional_candidates_allowed": true,
+  "fake_evidence_forbidden": true,
+  "fake_verified_records_forbidden": true,
+  "fake_hashes_forbidden": true,
+  "fake_rights_claims_forbidden": true,
+  "fake_malware_safety_claims_forbidden": true,
+  "live_source_calls_enabled": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "download_install_execute_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "play_demo_reviewed_records.v0",
+  "task": "PLAY-00",
+  "records": [
+    {
+      "record_id": "play.reviewed.sampleproject.v0",
+      "source_id": "play.demo.local.fixture",
+      "source_cache_entry_id": "play.demo.local.fixture.sampleproject.v0",
+      "evidence_id": "play.demo.fixture.backing.sampleproject.v0",
+      "review_item_id": "play.demo.review.item.sampleproject.v0",
+      "review_decision_id": "play.demo.review.decision.sampleproject.v0",
+      "title": "SampleProject Demo Fixture",
+      "description": "A committed local demo record used to prove the workbench hit path for sampleproject.",
+      "normalized_fields": {
+        "name": "SampleProject Demo Fixture",
+        "artifact_family": "local_demo_fixture",
+        "demo_record": true,
+        "fixture_backed": true,
+        "verified_external": false
+      },
+      "searchable_text": "sampleproject sample project demo fixture local reviewed workbench hit",
+      "source_family": "local_demo_fixture",
+      "trust_lane": "demo_fixture",
+      "fixture_backed": true,
+      "demo_local": true,
+      "verified_external": false,
+      "source_observation_created": false,
+      "evidence_claims": [],
+      "limitations": [
+        "Committed local demo fixture only.",
+        "Not a live source observation.",
+        "Not a global artifact resolution."
+      ],
+      "warnings": [
+        "Use only for local workbench smoke tests and operator play sessions."
+      ],
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    }
+  ],
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

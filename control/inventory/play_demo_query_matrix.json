@@ -1,0 +1,54 @@
+{
+  "schema_version": "play_demo_query_matrix.v0",
+  "task": "PLAY-00",
+  "queries": [
+    {
+      "query": "sampleproject",
+      "expected_state": "reviewed_demo_result",
+      "record_id": "play.reviewed.sampleproject.v0",
+      "verified_external": false
+    },
+    {
+      "query": "definitely-not-present-play-00",
+      "expected_state": "known_local_absence",
+      "absence_id": "play.absence.definitely_not_present.v0",
+      "global_absence_claimed": false
+    },
+    {
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "expected_state": "search_need",
+      "need_id": "play.need.dtheater_source.v0",
+      "verified_result_created": false
+    },
+    {
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "expected_state": "search_need_and_blocked_workunits",
+      "need_id": "play.need.stylewriter_driver.v0",
+      "verified_result_created": false
+    },
+    {
+      "query": "DirectX SDK June 2010 offline installer",
+      "expected_state": "search_need",
+      "need_id": "play.need.directx_june_2010.v0",
+      "download_install_execute_performed": false
+    },
+    {
+      "query": "last Firefox for Windows XP",
+      "expected_state": "compatibility_search_need",
+      "need_id": "play.need.firefox_windows_xp.v0",
+      "compatibility_answer_accepted": false
+    },
+    {
+      "query": "Windows 7 compatible old app",
+      "expected_state": "broad_compatibility_search_need",
+      "need_id": "play.need.windows7_old_app.v0",
+      "software_recommendation_accepted": false
+    }
+  ],
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

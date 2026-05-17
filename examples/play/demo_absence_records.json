@@ -1,0 +1,30 @@
+{
+  "schema_version": "play_demo_absence_records.v0",
+  "task": "PLAY-00",
+  "records": [
+    {
+      "absence_id": "play.absence.definitely_not_present.v0",
+      "query": "definitely-not-present-play-00",
+      "normalized_query": "definitely-not-present-play-00",
+      "result_count": 0,
+      "absence_scope": "play_demo_corpus_only",
+      "checked_layers": [
+        "examples/play/demo_reviewed_records.json"
+      ],
+      "limitations": [
+        "This absence applies only to the committed play demo corpus.",
+        "This is not a global nonexistence claim."
+      ],
+      "warnings": [],
+      "created_at": "2026-05-18T00:00:00Z"
+    }
+  ],
+  "global_absence_claimed": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

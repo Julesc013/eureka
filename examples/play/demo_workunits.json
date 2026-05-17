@@ -1,0 +1,118 @@
+{
+  "schema_version": "play_demo_workunits.v0",
+  "task": "PLAY-00",
+  "workunits": [
+    {
+      "id": "play.workunit.stylewriter.source_probe.v0",
+      "kind": "source_probe",
+      "state": "blocked",
+      "title": "Policy-blocked source probe for StyleWriter 2500 driver",
+      "payload": {
+        "need_id": "play.need.stylewriter_driver.v0",
+        "query": "StyleWriter 2500 Mac OS 8 driver",
+        "blocked_by_policy": true,
+        "execution_enabled": false,
+        "source_probe_execution_enabled": false,
+        "external_network_used": false
+      },
+      "priority": "normal",
+      "idempotency_key": "play.workunit.stylewriter.source_probe.v0",
+      "parent_id": "play.need.stylewriter_driver.v0",
+      "blocked_reason": "Source probes are disabled for PLAY demo state.",
+      "blocked_by_policy": true,
+      "warnings": [
+        "No live source has been contacted."
+      ],
+      "limitations": [
+        "Record only; no work execution is performed."
+      ],
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "id": "play.workunit.stylewriter.extraction.v0",
+      "kind": "extraction_task",
+      "state": "blocked",
+      "title": "Policy-blocked extraction check for StyleWriter 2500 driver container",
+      "payload": {
+        "need_id": "play.need.stylewriter_driver.v0",
+        "query": "StyleWriter 2500 Mac OS 8 driver",
+        "blocked_by_policy": true,
+        "execution_enabled": false,
+        "extraction_execution_enabled": false
+      },
+      "priority": "normal",
+      "idempotency_key": "play.workunit.stylewriter.extraction.v0",
+      "parent_id": "play.need.stylewriter_driver.v0",
+      "blocked_reason": "Extraction is disabled for PLAY demo state.",
+      "blocked_by_policy": true,
+      "warnings": [
+        "No local or downloaded file has been opened."
+      ],
+      "limitations": [
+        "Record only; no extraction is performed."
+      ],
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "id": "play.workunit.dtheater.ai_research.v0",
+      "kind": "agent_task",
+      "state": "blocked",
+      "title": "Policy-blocked model research escalation for D-Theater source question",
+      "payload": {
+        "need_id": "play.need.dtheater_source.v0",
+        "query": "New York 1993 D-Theater HD demo tape original source",
+        "blocked_by_policy": true,
+        "execution_enabled": false,
+        "model_provider_enabled": false,
+        "model_provider_used": false
+      },
+      "priority": "low",
+      "idempotency_key": "play.workunit.dtheater.ai_research.v0",
+      "parent_id": "play.need.dtheater_source.v0",
+      "blocked_reason": "Model/provider calls are disabled for PLAY demo state.",
+      "blocked_by_policy": true,
+      "warnings": [
+        "No model/provider API was called."
+      ],
+      "limitations": [
+        "Record only; no model/provider execution is performed."
+      ],
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "id": "play.workunit.directx.policy_review.v0",
+      "kind": "evidence_review",
+      "state": "queued",
+      "title": "Review policy boundaries for DirectX SDK June 2010 source routing",
+      "payload": {
+        "need_id": "play.need.directx_june_2010.v0",
+        "query": "DirectX SDK June 2010 offline installer",
+        "execution_enabled": false,
+        "download_install_execute_enabled": false
+      },
+      "priority": "normal",
+      "idempotency_key": "play.workunit.directx.policy_review.v0",
+      "parent_id": "play.need.directx_june_2010.v0",
+      "blocked_reason": null,
+      "blocked_by_policy": false,
+      "warnings": [
+        "Queued record only; no review decision has been accepted."
+      ],
+      "limitations": [
+        "Local queue seed only."
+      ],
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z"
+    }
+  ],
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

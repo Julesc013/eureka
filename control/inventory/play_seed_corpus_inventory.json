@@ -1,0 +1,50 @@
+{
+  "schema_version": "play_seed_corpus_inventory.v0",
+  "task": "PLAY-00",
+  "examples_root": "examples/play",
+  "files": [
+    "examples/play/README.md",
+    "examples/play/demo_queries.json",
+    "examples/play/demo_reviewed_records.json",
+    "examples/play/demo_absence_records.json",
+    "examples/play/demo_hunts.json",
+    "examples/play/demo_search_needs.json",
+    "examples/play/demo_workunits.json"
+  ],
+  "counts": {
+    "queries": 7,
+    "reviewed_records": 1,
+    "absence_records": 1,
+    "hunts": 3,
+    "search_needs": 5,
+    "workunits": 4,
+    "blocked_workunits": 3
+  },
+  "known_hit_query": "sampleproject",
+  "known_absence_query": "definitely-not-present-play-00",
+  "fixture_backed_records": [
+    "play.reviewed.sampleproject.v0"
+  ],
+  "unresolved_search_needs": [
+    "play.need.dtheater_source.v0",
+    "play.need.stylewriter_driver.v0",
+    "play.need.directx_june_2010.v0",
+    "play.need.firefox_windows_xp.v0",
+    "play.need.windows7_old_app.v0"
+  ],
+  "blocked_future_actions": [
+    "play.workunit.stylewriter.source_probe.v0",
+    "play.workunit.stylewriter.extraction.v0",
+    "play.workunit.dtheater.ai_research.v0"
+  ],
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

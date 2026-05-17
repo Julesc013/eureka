@@ -1,0 +1,14 @@
+{
+  "query": "sampleproject",
+  "result_count": 1,
+  "result": {
+    "record_id": "play.reviewed.sampleproject.v0",
+    "title": "SampleProject Demo Fixture",
+    "score": 1.0,
+    "fixture_backed": true,
+    "verified_external": false
+  },
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false
+}

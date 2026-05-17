@@ -1,0 +1,44 @@
+{
+  "schema_version": "play_demo_workunit_matrix.v0",
+  "task": "PLAY-00",
+  "workunits": [
+    {
+      "workunit_id": "play.workunit.stylewriter.source_probe.v0",
+      "kind": "source_probe",
+      "state": "blocked",
+      "blocked_by_policy": true,
+      "source_probe_executed": false
+    },
+    {
+      "workunit_id": "play.workunit.stylewriter.extraction.v0",
+      "kind": "extraction_task",
+      "state": "blocked",
+      "blocked_by_policy": true,
+      "extraction_executed": false
+    },
+    {
+      "workunit_id": "play.workunit.dtheater.ai_research.v0",
+      "kind": "agent_task",
+      "state": "blocked",
+      "blocked_by_policy": true,
+      "model_provider_used": false
+    },
+    {
+      "workunit_id": "play.workunit.directx.policy_review.v0",
+      "kind": "evidence_review",
+      "state": "queued",
+      "blocked_by_policy": false,
+      "download_install_execute_performed": false
+    }
+  ],
+  "blocked_source_probe_demo_available": true,
+  "blocked_extraction_demo_available": true,
+  "blocked_ai_demo_available": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

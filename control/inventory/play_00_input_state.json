@@ -1,0 +1,22 @@
+{
+  "schema_version": "play_00_input_state.v0",
+  "task": "PLAY-00",
+  "branch": "dev",
+  "head": "d4f40809d509bea1cec7c8aa2f8137aa798ae0e6",
+  "origin_main": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "origin_dev": "d4f40809d509bea1cec7c8aa2f8137aa798ae0e6",
+  "origin_main_origin_dev_divergence": {
+    "left": 0,
+    "right": 8,
+    "non_blocking": true,
+    "reason": "dev contains reviewed local/instance-layout follow-up work after main"
+  },
+  "working_tree_clean_before": true,
+  "instance_layout_complete": true,
+  "preferred_instance": "../instances/default",
+  "local_instance_state_tracked": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false
+}

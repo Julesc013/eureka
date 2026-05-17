@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2370 chars, 593 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3872 chars, 968 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,7 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/IA-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PLAY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PLAY-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/SYN-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `control/audits/play-00-local-workbench-seed-corpus-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/play_00_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_00_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_00_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_demo_hunt_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_demo_query_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_demo_workunit_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/play_seed_corpus_inventory.json` (??; matches active task allowed path)
+- allowed: `control/policies/play_seed_corpus_policy.json` (??; matches active task allowed path)
+- allowed: `docs/operations/LOCAL_WORKBENCH_DEMO_QUERIES.md` (??; matches active task allowed path)
+- allowed: `docs/operations/PLAY_MODE_RUNBOOK.md` (??; matches active task allowed path)
+- allowed: `docs/operations/PLAY_SEED_CORPUS_POLICY.md` (??; matches active task allowed path)
+- unknown: `examples/play` (??; does not match active task allowed paths)
+- allowed: `scripts/eureka_play_session.py` (??; matches active task allowed path)
+- allowed: `scripts/eureka_play_smoke.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 5; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -43,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4250
-- approx_tokens: 1063
+- chars: 6481
+- approx_tokens: 1621
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

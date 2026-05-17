@@ -1,0 +1,209 @@
+{
+  "schema_version": "play_demo_search_needs.v0",
+  "task": "PLAY-00",
+  "search_needs": [
+    {
+      "schema_version": "search_need_record.v0",
+      "id": "play.need.dtheater_source.v0",
+      "hunt_id": "play.hunt.dtheater_source.v0",
+      "exhaustion_report_id": "play.exhaustion.dtheater_source.v0",
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "normalized_query": "new york 1993 d-theater hd demo tape original source",
+      "need_title": "Identify original source for New York 1993 D-Theater HD demo tape",
+      "need_summary": "Demo demand state for a hard media provenance question; no source observation or verified result is asserted.",
+      "need_kind": "verify_provenance",
+      "desired_outcome": "cite_or_reference",
+      "priority": 55,
+      "state": "proposed",
+      "local_result_state": "not_found_in_play_demo_reviewed_records",
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "deferred_layers": [
+        "source_probes",
+        "broader_connectors",
+        "AI_research_escalation"
+      ],
+      "recommended_future_work": [
+        "Review source policy before any live media-source metadata lookup.",
+        "Compare future source observations only after review."
+      ],
+      "policy_limitations": [
+        "SearchNeed is local demand state only.",
+        "No live source calls are enabled."
+      ],
+      "warnings": [
+        "Do not represent this as a verified media artifact."
+      ],
+      "public_safe_summary_allowed": false,
+      "private_notes_allowed": true,
+      "idempotency_key": "play.need.dtheater_source.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "verified_result_created": false
+    },
+    {
+      "schema_version": "search_need_record.v0",
+      "id": "play.need.stylewriter_driver.v0",
+      "hunt_id": "play.hunt.stylewriter_driver.v0",
+      "exhaustion_report_id": "play.exhaustion.stylewriter_driver.v0",
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "normalized_query": "stylewriter 2500 mac os 8 driver",
+      "need_title": "Find StyleWriter 2500 driver path for Mac OS 8",
+      "need_summary": "Demo demand state for future source routing and extraction work; source and extraction WorkUnits remain blocked.",
+      "need_kind": "find_source_or_mirror",
+      "desired_outcome": "acquire_or_download_later_policy_gated",
+      "priority": 60,
+      "state": "proposed",
+      "local_result_state": "not_found_in_play_demo_reviewed_records",
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "deferred_layers": [
+        "source_probes",
+        "extraction",
+        "broader_connectors"
+      ],
+      "recommended_future_work": [
+        "Source policy review before probing vendor, archive, or community mirrors.",
+        "Extraction policy review before opening driver containers."
+      ],
+      "policy_limitations": [
+        "No source probe may execute in PLAY.",
+        "No extraction may execute in PLAY."
+      ],
+      "warnings": [
+        "No driver file has been located, downloaded, or inspected."
+      ],
+      "public_safe_summary_allowed": false,
+      "private_notes_allowed": true,
+      "idempotency_key": "play.need.stylewriter_driver.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "verified_result_created": false
+    },
+    {
+      "schema_version": "search_need_record.v0",
+      "id": "play.need.directx_june_2010.v0",
+      "hunt_id": "play.hunt.directx_june_2010.v0",
+      "exhaustion_report_id": "play.exhaustion.directx_june_2010.v0",
+      "query": "DirectX SDK June 2010 offline installer",
+      "normalized_query": "directx sdk june 2010 offline installer",
+      "need_title": "Route DirectX SDK June 2010 offline installer request",
+      "need_summary": "Demo source-routing need with rights and safety caution; no installer source is accepted and no download is performed.",
+      "need_kind": "find_source_or_mirror",
+      "desired_outcome": "acquire_or_download_later_policy_gated",
+      "priority": 65,
+      "state": "proposed",
+      "local_result_state": "not_found_in_play_demo_reviewed_records",
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "deferred_layers": [
+        "source_probes",
+        "broader_connectors"
+      ],
+      "recommended_future_work": [
+        "Require source policy review before checking official or archival metadata.",
+        "Require rights and safety review before any acquisition action."
+      ],
+      "policy_limitations": [
+        "No download, install, or execution is enabled."
+      ],
+      "warnings": [
+        "No rights, source, or safety clearance is implied."
+      ],
+      "public_safe_summary_allowed": false,
+      "private_notes_allowed": true,
+      "idempotency_key": "play.need.directx_june_2010.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "verified_result_created": false
+    },
+    {
+      "schema_version": "search_need_record.v0",
+      "id": "play.need.firefox_windows_xp.v0",
+      "hunt_id": "play.hunt.firefox_windows_xp.v0",
+      "exhaustion_report_id": "play.exhaustion.firefox_windows_xp.v0",
+      "query": "last Firefox for Windows XP",
+      "normalized_query": "last firefox for windows xp",
+      "need_title": "Clarify last Firefox version for Windows XP",
+      "need_summary": "Demo compatibility need only; the pack does not assert final compatibility truth.",
+      "need_kind": "find_compatible_version",
+      "desired_outcome": "verify_only",
+      "priority": 50,
+      "state": "proposed",
+      "local_result_state": "not_found_in_play_demo_reviewed_records",
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "deferred_layers": [
+        "source_probes",
+        "broader_connectors"
+      ],
+      "recommended_future_work": [
+        "Bind future compatibility claims to reviewed evidence before display."
+      ],
+      "policy_limitations": [
+        "Compatibility answer is not accepted in PLAY."
+      ],
+      "warnings": [],
+      "public_safe_summary_allowed": false,
+      "private_notes_allowed": true,
+      "idempotency_key": "play.need.firefox_windows_xp.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "verified_result_created": false
+    },
+    {
+      "schema_version": "search_need_record.v0",
+      "id": "play.need.windows7_old_app.v0",
+      "hunt_id": "play.hunt.windows7_old_app.v0",
+      "exhaustion_report_id": "play.exhaustion.windows7_old_app.v0",
+      "query": "Windows 7 compatible old app",
+      "normalized_query": "windows 7 compatible old app",
+      "need_title": "Find Windows 7 compatible older application candidate",
+      "need_summary": "Demo broad compatibility need for operator practice; no application is recommended or verified.",
+      "need_kind": "find_compatible_version",
+      "desired_outcome": "verify_only",
+      "priority": 40,
+      "state": "proposed",
+      "local_result_state": "not_found_in_play_demo_reviewed_records",
+      "checked_layers": [
+        "reviewed_public_index",
+        "local_absence_report"
+      ],
+      "deferred_layers": [
+        "source_probes",
+        "broader_connectors",
+        "ranking_identity_merge"
+      ],
+      "recommended_future_work": [
+        "Convert broad compatibility intent into a narrower artifact request before source work."
+      ],
+      "policy_limitations": [
+        "No software recommendation is accepted in PLAY."
+      ],
+      "warnings": [
+        "The query is intentionally broad and should be refined by an operator."
+      ],
+      "public_safe_summary_allowed": false,
+      "private_notes_allowed": true,
+      "idempotency_key": "play.need.windows7_old_app.v0",
+      "created_at": "2026-05-18T00:00:00Z",
+      "updated_at": "2026-05-18T00:00:00Z",
+      "verified_result_created": false
+    }
+  ],
+  "fake_verified_records_created": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

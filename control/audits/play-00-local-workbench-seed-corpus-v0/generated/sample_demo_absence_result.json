@@ -1,0 +1,9 @@
+{
+  "query": "definitely-not-present-play-00",
+  "result_count": 0,
+  "absence_scope": "play_demo_corpus_only",
+  "global_absence_claimed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false
+}

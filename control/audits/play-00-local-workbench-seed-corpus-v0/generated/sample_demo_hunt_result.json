@@ -1,0 +1,10 @@
+{
+  "hunt_id": "play.hunt.dtheater_source.v0",
+  "query": "New York 1993 D-Theater HD demo tape original source",
+  "state": "waiting_for_policy",
+  "search_need_id": "play.need.dtheater_source.v0",
+  "verified_result_created": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false
+}
