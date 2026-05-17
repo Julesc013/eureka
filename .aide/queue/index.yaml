@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-15
+updated: 2026-05-17
 repo: julesc013/eureka
-current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local Appliance
+current_recommended_task: INSTANCE-LAYOUT-01 — Standardize sibling instances/default layout for local appliance runtime state
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -257,6 +257,24 @@ entries:
     task: .aide/queue/HUNT-12/task.yaml
     recommended_after: HUNT-11
     recommended_next: SYN-00
+  - id: INSTANCE-LAYOUT-PREFLIGHT-01
+    title: Classify and preserve existing local-instance docs before INSTANCE-LAYOUT-01
+    status: completed
+    purpose: Resolve the dirty documentation state that blocked INSTANCE-LAYOUT-01 from starting on a clean worktree.
+    allowed_scope_summary: Local-instance docs, preflight inventories, audit evidence, and queue/context metadata only.
+    gate: no runtime changes, script changes, test changes, operator instance movement/deletion, source probes, extraction, model/provider calls, or deployment.
+    task: .aide/queue/INSTANCE-LAYOUT-PREFLIGHT-01/task.yaml
+    recommended_after: HUNT-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: INSTANCE-LAYOUT-01
+  - id: INSTANCE-LAYOUT-01
+    title: Standardize sibling instances/default layout for local appliance runtime state
+    status: queued
+    purpose: Make the sibling instances/default layout canonical for local appliance runtime state while preserving explicit legacy sibling instances.
+    allowed_scope_summary: Local-instance doctrine, path policy, docs, dry-run migration helpers, validators, tests, inventories, and audit evidence only.
+    gate: INSTANCE-LAYOUT-PREFLIGHT-01 completed; no automatic operator instance movement/deletion, committed instance state, source probes, extraction, model/provider calls, or deployment.
+    task: .aide/queue/INSTANCE-LAYOUT-01/task.yaml
+    recommended_after: INSTANCE-LAYOUT-PREFLIGHT-01
+    recommended_next: PLAY-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

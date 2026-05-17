@@ -2,13 +2,13 @@
 
 ## Review Objective
 
-Review HUNT-TO-MAIN-PROMOTION-REVIEW from promotion evidence.
+Review INSTANCE-LAYOUT-PREFLIGHT-01 evidence and confirm the next task can be INSTANCE-LAYOUT-01.
 
 ## Decision Requested
 
 `PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED`
 
-Confirm whether fast-forward-only promotion evidence is acceptable.
+Confirm whether the four pre-existing local-instance docs were safely classified and preserved.
 
 ## Task Packet Reference
 
@@ -21,22 +21,25 @@ Confirm whether fast-forward-only promotion evidence is acceptable.
 ## Verification Report Reference
 
 - `.aide/verification/latest-verification-report.md`
-
 - `.aide/verification/review-decision-policy.yaml`
 
 ## Evidence Packet References
 
-- `control/inventory/hunt_main_promotion_result.json`
-- `control/inventory/hunt_main_promotion_gate_matrix.json`
-- `control/audits/hunt-to-main-promotion-review-v0/`
+- `control/inventory/instance_layout_preflight_input_state.json`
+- `control/inventory/instance_layout_preflight_diff_classification.json`
+- `control/inventory/instance_layout_preflight_result.json`
+- `control/audits/instance-layout-preflight-01-v0/`
 
 ## Changed Files Summary
 
-- Promotion review inventories, audit pack, docs, queue packets, validators, and focused tests.
+- Local-instance docs were preserved.
+- Preflight classification inventories and audit evidence were added.
+- Queue/context metadata now points to INSTANCE-LAYOUT-01.
 
 ## Validation Summary
 
-- AIDE, HUNT, LOCAL, global validation, and branch fast-forward gates are required before promotion.
+- JSON and diff validation are required for the preflight evidence.
+- Commit check should run after committing the preflight docs and evidence.
 
 ## Token Summary
 
@@ -44,12 +47,12 @@ Confirm whether fast-forward-only promotion evidence is acceptable.
 
 ## Risk Summary
 
-- Promotion does not claim production readiness or public launch readiness.
+- No runtime, script, test, instance, source-probe, extraction, model/provider, deployment, production-readiness, or public-launch behavior is changed.
 
 ## Non-Goals / Scope Guard
 
-No source probes, extraction, model/provider calls, downloads, installs, deployment, force push, history rewrite, or product behavior change.
+No operator instance moves or deletion, source probes, extraction, model/provider calls, downloads, installs, deployment, force push, history rewrite, or product behavior change.
 
 ## Reviewer Instructions
 
-- Check gate matrix, branch plan, and promotion result before accepting main promotion.
+- Check the diff classification and preflight result before accepting INSTANCE-LAYOUT-01 as the next task.

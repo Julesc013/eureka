@@ -1,0 +1,22 @@
+id: INSTANCE-LAYOUT-PREFLIGHT-01
+title: Classify and preserve existing local-instance docs before INSTANCE-LAYOUT-01
+status: completed
+purpose: Resolve the dirty documentation state that blocked INSTANCE-LAYOUT-01 from starting on a clean worktree.
+allowed_scope_summary: Local-instance docs, preflight inventories, audit evidence, and queue/context metadata only.
+gate:
+  - no runtime changes
+  - no script changes
+  - no test changes
+  - no operator instance movement or deletion
+  - no source probes
+  - no extraction
+  - no model/provider calls
+  - no deployment
+recommended_after: HUNT-TO-MAIN-PROMOTION-REVIEW
+recommended_next: INSTANCE-LAYOUT-01
+evidence:
+  - control/inventory/instance_layout_preflight_input_state.json
+  - control/inventory/instance_layout_preflight_diff_classification.json
+  - control/inventory/instance_layout_preflight_result.json
+  - control/inventory/instance_layout_preflight_next_task_decision.json
+  - control/audits/instance-layout-preflight-01-v0/

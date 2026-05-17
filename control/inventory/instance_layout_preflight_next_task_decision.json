@@ -1,0 +1,8 @@
+{
+  "blockers": [],
+  "dirty_docs_action": "commit_preflight",
+  "recommended_next_task": "INSTANCE-LAYOUT-01 \u2014 Standardize sibling instances/default layout for local appliance runtime state",
+  "schema_version": "instance_layout_preflight_next_task_decision.v0",
+  "status": "pass",
+  "task": "INSTANCE-LAYOUT-PREFLIGHT-01"
+}

@@ -1,0 +1,29 @@
+{
+  "active_operation_state": {
+    "cherry_pick_active": false,
+    "merge_active": false,
+    "rebase_apply_active": false,
+    "rebase_merge_active": false,
+    "revert_active": false
+  },
+  "branch": "dev",
+  "dirty_docs": [
+    "docs/operations/LOCAL_INSTANCE_BOOTSTRAP.md",
+    "docs/operations/LOCAL_INSTANCE_MIGRATION_POLICY.md",
+    "docs/operations/INSTANCE_PATH_POLICY.md",
+    "docs/operations/LOCAL_INSTANCE_LAYOUT.md"
+  ],
+  "dirty_doc_count": 4,
+  "head": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "notes": [
+    "INSTANCE-LAYOUT-01 was blocked because these docs were dirty before that task started.",
+    "The dirty docs were reviewed as pre-existing documentation edits only.",
+    "No runtime, script, test, or instance paths were modified during input-state capture."
+  ],
+  "origin_dev": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "origin_main": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "origin_main_origin_dev_left_right_count": "0 0",
+  "schema_version": "instance_layout_preflight_input_state.v0",
+  "status": "dirty_docs_only",
+  "task": "INSTANCE-LAYOUT-PREFLIGHT-01"
+}

@@ -1,0 +1,64 @@
+{
+  "classifications": [
+    {
+      "aligns_with_preferred_layout": true,
+      "change_summary": "Adds a preferred workspace layout section, replaces documented command examples that used ./eureka-instance with $Instance, and sets $Instance to ..\\instances\\default from the repo root.",
+      "conflicts_with_INSTANCE_LAYOUT_01": false,
+      "incorrectly_recommends_repo_nested_instance": false,
+      "mentions_legacy_sibling": "./eureka-instance as a valid older validation fixture, not as the recommended default",
+      "mentions_preferred_default": "../instances/default via ..\\instances\\default",
+      "path": "docs/operations/LOCAL_INSTANCE_BOOTSTRAP.md",
+      "recommended_action": "commit_preflight",
+      "safe_to_commit_now": true,
+      "safe_to_preserve": true
+    },
+    {
+      "aligns_with_preferred_layout": true,
+      "change_summary": "Replaces migration-status and validation examples with ..\\instances\\default and adds a note that long-lived operator state should live outside the Git checkout.",
+      "conflicts_with_INSTANCE_LAYOUT_01": false,
+      "incorrectly_recommends_repo_nested_instance": false,
+      "mentions_legacy_sibling": "./eureka-instance as historical validation evidence only",
+      "mentions_preferred_default": "../instances/default via ..\\instances\\default",
+      "path": "docs/operations/LOCAL_INSTANCE_MIGRATION_POLICY.md",
+      "recommended_action": "commit_preflight",
+      "safe_to_commit_now": true,
+      "safe_to_preserve": true
+    },
+    {
+      "aligns_with_preferred_layout": true,
+      "change_summary": "Adds explicit instance path policy, preferred role names, forbidden roots, repo guard notes, and future resolver guidance.",
+      "conflicts_with_INSTANCE_LAYOUT_01": false,
+      "incorrectly_recommends_repo_nested_instance": false,
+      "mentions_legacy_sibling": "eureka-instance/ and eureka-instance-*/ only as ignored historical repo-local fixtures",
+      "mentions_preferred_default": "../instances/default via ..\\instances\\default and D:\\Projects\\Eureka\\instances\\...",
+      "path": "docs/operations/INSTANCE_PATH_POLICY.md",
+      "recommended_action": "commit_preflight",
+      "safe_to_commit_now": true,
+      "safe_to_preserve": true
+    },
+    {
+      "aligns_with_preferred_layout": true,
+      "change_summary": "Adds a full local instance layout runbook with workspace_root, repo_root, instances_root, default/smoke/lan/syn/f0 roles, PowerShell examples, and boundaries.",
+      "conflicts_with_INSTANCE_LAYOUT_01": false,
+      "incorrectly_recommends_repo_nested_instance": false,
+      "mentions_legacy_sibling": "./eureka-instance as an older LOCAL-01/LOCAL-02 validation fixture and valid explicit path",
+      "mentions_preferred_default": "../instances/default and D:\\Projects\\Eureka\\instances\\default",
+      "path": "docs/operations/LOCAL_INSTANCE_LAYOUT.md",
+      "recommended_action": "commit_preflight",
+      "safe_to_commit_now": true,
+      "safe_to_preserve": true
+    }
+  ],
+  "dirty_doc_count": 4,
+  "operator_review_required": false,
+  "schema_version": "instance_layout_preflight_diff_classification.v0",
+  "summary": {
+    "all_dirty_docs_safe": true,
+    "all_docs_only": true,
+    "all_recommended_action": "commit_preflight",
+    "conflicting_doc_count": 0,
+    "docs_safe_to_commit_now": true,
+    "repo_nested_instance_recommended_as_default": false
+  },
+  "task": "INSTANCE-LAYOUT-PREFLIGHT-01"
+}

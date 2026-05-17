@@ -1,0 +1,23 @@
+{
+  "all_dirty_docs_safe": true,
+  "backup_patch_created": false,
+  "committed_preflight_docs": true,
+  "deployment_performed": false,
+  "dirty_doc_count": 4,
+  "dirty_docs_reviewed": true,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "operator_instance_deleted": false,
+  "operator_instance_moved": false,
+  "operator_review_required": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "INSTANCE-LAYOUT-01 \u2014 Standardize sibling instances/default layout for local appliance runtime state",
+  "repo_nested_instance_recommended_as_default": false,
+  "runtime_modified": false,
+  "schema_version": "instance_layout_preflight_report.v0",
+  "scripts_modified": false,
+  "source_probe_executed": false,
+  "status": "pass",
+  "task": "INSTANCE-LAYOUT-PREFLIGHT-01",
+  "tests_modified": false
+}

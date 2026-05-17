@@ -18,17 +18,19 @@ LOCAL-02 sets the migration default mode to `check_only`.
 
 Inspect migration status:
 
-```bash
-python scripts/eureka_instance_migration_status.py --instance ./eureka-instance --json
+```powershell
+python scripts/eureka_instance_migration_status.py --instance ..\instances\default --json
 ```
 
 Validate instance state:
 
-```bash
-python scripts/eureka_validate_instance.py --instance ./eureka-instance --json
+```powershell
+python scripts/eureka_validate_instance.py --instance ..\instances\default --json
 ```
 
 No command in LOCAL-02 applies a migration.
+
+For normal development, prefer the sibling workspace layout in `docs/operations/LOCAL_INSTANCE_LAYOUT.md`. The historical `./eureka-instance` fixture remains valid for LOCAL validation evidence, but long-lived operator state should live outside the Git checkout under `../instances/<role>`.
 
 ## LOCAL-03 Handoff
 
