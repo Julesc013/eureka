@@ -8,6 +8,6 @@
 - `python -m unittest tests.operations.test_clean_machine_bootstrap.CleanMachineBootstrapScriptTests.test_bootstrap_creates_temp_checkout_and_validates_instance`: pass
 - `python -m unittest tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning`: pass
 - `python scripts/validate_clean_machine_bootstrap.py --json`: pass
-- targeted broad subset: fail, with no instance-layout-caused failures remaining
+- targeted broad subset: fail with 10 unrelated legacy/broad-lane failures and no instance-layout-caused failures remaining
 
 `python scripts/validate_local_instance_bootstrap.py` still fails on a historical latest-task packet expectation for LOCAL-02. That is broad-lane validation debt and not part of the clean-machine path repair.

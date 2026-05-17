@@ -9,7 +9,7 @@
   "instance_layout_caused_failures_remaining": 0,
   "instance_layout_validator_pass": true,
   "instance_state_committed": false,
-  "legacy_broad_lane_failures_remaining": 15,
+  "legacy_broad_lane_failures_remaining": 10,
   "model_provider_used": false,
   "operator_instance_deleted": false,
   "operator_instance_moved": false,

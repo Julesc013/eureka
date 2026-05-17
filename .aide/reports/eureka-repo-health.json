@@ -14,7 +14,7 @@
   "hunt_main_promotion_review_completed": true,
   "hunt_track_complete": true,
   "instance_layout_caused_failures_remaining": 0,
-  "legacy_broad_lane_failures_remaining": 15,
+  "legacy_broad_lane_failures_remaining": 10,
   "last_completed_status": "pass_with_warnings",
   "last_completed_task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01",
   "origin_dev_before_promotion": "be9a23c6a49415fbdceafd03a68555026a77b5bf",

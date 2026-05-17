@@ -44,9 +44,9 @@
     {
       "command": "python -m unittest tests.operations.test_clean_machine_bootstrap tests.operations.test_clean_machine_smoke tests.operations.test_contract_taxonomy_plan tests.operations.test_hunt_main_post_promotion_state tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_ia_readiness_polish tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_runtime_architecture_leakage tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track",
       "result": "fail_classified",
-      "failures": 18,
+      "failures": 10,
       "instance_layout_caused_failures": 0,
-      "notes": "Pre-commit targeted rerun had no clean-machine failures remaining. Remaining failures were dirty-tree-sensitive historical validators or unrelated broad-lane queue/latest-task expectations."
+      "notes": "Post-commit targeted rerun had no clean-machine or instance-layout failures remaining. Remaining failures are unrelated broad-lane queue/latest-task expectations."
     }
   ],
   "focused_instance_layout_tests_pass": true,
@@ -54,7 +54,7 @@
   "full_unittest_discovery_rerun": false,
   "instance_layout_caused_failures_remaining": 0,
   "instance_layout_validator_pass": true,
-  "legacy_broad_lane_failures_remaining": 15,
+  "legacy_broad_lane_failures_remaining": 10,
   "schema_version": "instance_layout_clean_machine_validation_matrix.v0",
   "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01"
 }
