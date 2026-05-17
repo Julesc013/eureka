@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2202 chars, 551 approximate tokens)
+- `.aide/context/latest-task-packet.md` (2370 chars, 593 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,10 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `control/audits/instance-layout-fixup-01-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_fixup_failure_classification.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_fixup_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_fixup_validation_matrix.json` (??; does not match active task allowed paths)
+- none
 
 ## Validation Summary
 
@@ -46,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4709
-- approx_tokens: 1178
+- chars: 4250
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
