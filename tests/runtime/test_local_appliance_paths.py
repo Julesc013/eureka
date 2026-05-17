@@ -41,6 +41,16 @@ class LocalAppliancePathsTests(unittest.TestCase):
             with self.assertRaises(LocalInstancePathError):
                 resolve_instance_root(repo / "eureka-instance", repo)
 
+    def test_clean_machine_temp_checkout_instance_is_accepted(self):
+        with tempfile.TemporaryDirectory(prefix="eureka-clean-machine-") as tmp:
+            repo = Path(tmp) / "checkout"
+            repo.mkdir()
+            instance = repo / "eureka-instance"
+            root = resolve_instance_root(instance, repo)
+            self.assertEqual(instance.resolve(), root)
+            layout = describe_instance_layout(repo, root)
+            self.assertEqual("clean_machine_temp_checkout", layout["layout_class"])
+
     def test_resolver_performs_no_filesystem_mutation(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp) / "eureka"

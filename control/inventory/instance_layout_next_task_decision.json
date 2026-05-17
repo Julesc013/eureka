@@ -5,8 +5,9 @@
     "F0-00"
   ],
   "do_not_start_in_this_task": true,
+  "instance_layout_caused_failures_remaining": 0,
   "recommended_next_task": "PLAY-00 \u2014 Local Workbench Seed Corpus and Demo Hunt Pack",
-  "reason": "After the local instance layout is canonical, the next useful operator loop is a small seed corpus and demo hunt pack for local workbench playtesting.",
+  "reason": "After the local instance layout is canonical and the clean-machine instance-layout failures are repaired, the next useful operator loop is a small seed corpus and demo hunt pack for local workbench playtesting.",
   "schema_version": "instance_layout_next_task_decision.v0",
   "status": "pass",
   "task": "INSTANCE-LAYOUT-01"

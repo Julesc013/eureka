@@ -1,0 +1,11 @@
+{
+  "branch": "dev",
+  "head": "79a88b68fe65ce0fd7ceb07069becb2002b12a62",
+  "origin_dev": "79a88b68fe65ce0fd7ceb07069becb2002b12a62",
+  "previous_fixup_found": true,
+  "previous_instance_layout_caused_failures": 2,
+  "previous_legacy_broad_lane_failures": 10,
+  "schema_version": "instance_layout_clean_machine_fix_input_state.v0",
+  "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01",
+  "working_tree_clean_before": true
+}

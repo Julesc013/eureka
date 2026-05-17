@@ -1,6 +1,8 @@
 {
   "deployment_performed": false,
   "extraction_executed": false,
+  "followup_clean_machine_fix": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01",
+  "instance_layout_caused_failures_remaining": 0,
   "instance_state_committed": false,
   "legacy_sibling_instance_allowed": true,
   "migration_helper_added": true,

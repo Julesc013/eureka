@@ -1,0 +1,39 @@
+{
+  "changed_files": [
+    "runtime/local_appliance/paths.py",
+    "tests/runtime/test_local_appliance_paths.py"
+  ],
+  "instance_layout_caused_failures_remaining": 0,
+  "repaired_failures": [
+    {
+      "changed_files": [
+        "runtime/local_appliance/paths.py",
+        "tests/runtime/test_local_appliance_paths.py"
+      ],
+      "failure_id": "ILF-001",
+      "repair_summary": "Added a resolver compatibility class for the legacy LOCAL-13 non-git temporary checkout harness at eureka-clean-machine-*/checkout/eureka-instance while keeping normal repo-nested instance roots rejected.",
+      "root_cause": "The clean-machine bootstrap harness creates a filtered temporary source copy without .git and initializes checkout/eureka-instance; INSTANCE-LAYOUT-01 rejected every repo-nested path before recognizing this harness as ephemeral proof state.",
+      "test_module": "tests.operations.test_clean_machine_bootstrap",
+      "test_name": "test_bootstrap_creates_temp_checkout_and_validates_instance",
+      "validation_command": "python -m unittest tests.operations.test_clean_machine_bootstrap.CleanMachineBootstrapScriptTests.test_bootstrap_creates_temp_checkout_and_validates_instance",
+      "why_repair_is_instance_layout_only": "The repair only changes path classification for the LOCAL-13 temporary checkout proof shape and adds path resolver coverage; it does not move operator state, change default paths, or modify source/search behavior."
+    },
+    {
+      "changed_files": [
+        "runtime/local_appliance/paths.py",
+        "tests/runtime/test_local_appliance_paths.py"
+      ],
+      "failure_id": "ILF-002",
+      "repair_summary": "Allowed the same LOCAL-13 temporary checkout compatibility path through the shared resolver used by runtime status and local server startup.",
+      "root_cause": "The clean-machine validator reuses the temporary checkout/eureka-instance path for smoke testing; the local server path resolver rejected that path as repo-nested before the smoke could start.",
+      "test_module": "tests.operations.test_clean_machine_smoke",
+      "test_name": "test_validator_passes_with_known_warning",
+      "validation_command": "python -m unittest tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning",
+      "why_repair_is_instance_layout_only": "The repair preserves ../instances/default as the preferred default, preserves explicit legacy sibling support, and only recognizes the local clean-machine proof harness as non-operator ephemeral state."
+    }
+  ],
+  "safe_repairs_applied": 1,
+  "schema_version": "instance_layout_clean_machine_failure_repair.v0",
+  "status": "pass",
+  "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01"
+}

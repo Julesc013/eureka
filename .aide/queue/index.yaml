@@ -275,6 +275,15 @@ entries:
     task: .aide/queue/INSTANCE-LAYOUT-01/task.yaml
     recommended_after: INSTANCE-LAYOUT-PREFLIGHT-01
     recommended_next: PLAY-00
+  - id: INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01
+    title: Repair instance-layout-caused clean-machine failures before PLAY-00
+    status: completed
+    purpose: Repair the two clean-machine failures caused by INSTANCE-LAYOUT-01 before handing off to PLAY-00.
+    allowed_scope_summary: Shared local-appliance path resolver, focused path tests, inventory/audit evidence, and AIDE queue metadata only.
+    gate: no PLAY-00 implementation, no operator instance movement/deletion, no committed instance state, no source probes, extraction, model/provider calls, or deployment.
+    task: .aide/queue/INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01/task.yaml
+    recommended_after: INSTANCE-LAYOUT-FIXUP-01
+    recommended_next: PLAY-00
   - id: PLAY-00
     title: Local Workbench Seed Corpus and Demo Hunt Pack
     status: queued

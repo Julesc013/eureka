@@ -1,0 +1,60 @@
+{
+  "commands": [
+    {
+      "command": "python scripts/eureka_resolve_paths.py --json",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/eureka_list_instances.py --json",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/eureka_migrate_instance_layout.py --from ../eureka-instance --to ../instances/default --dry-run --json",
+      "result": "pass_with_warnings",
+      "warnings": [
+        "source instance path does not exist; dry-run still reports the manual migration plan",
+        "target exists and is not empty; use --allow-existing only after manual review"
+      ]
+    },
+    {
+      "command": "python scripts/validate_instance_layout_policy.py",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_local_appliance_paths",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_clean_machine_bootstrap.CleanMachineBootstrapScriptTests.test_bootstrap_creates_temp_checkout_and_validates_instance",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_clean_machine_bootstrap.py --json",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_instance_bootstrap.py",
+      "result": "legacy_broad_lane_fail",
+      "notes": "Fails on historical latest-task packet expectation for LOCAL-02; unrelated to the instance-layout clean-machine repair."
+    },
+    {
+      "command": "python -m unittest tests.operations.test_clean_machine_bootstrap tests.operations.test_clean_machine_smoke tests.operations.test_contract_taxonomy_plan tests.operations.test_hunt_main_post_promotion_state tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_ia_readiness_polish tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_runtime_architecture_leakage tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track",
+      "result": "fail_classified",
+      "failures": 18,
+      "instance_layout_caused_failures": 0,
+      "notes": "Pre-commit targeted rerun had no clean-machine failures remaining. Remaining failures were dirty-tree-sensitive historical validators or unrelated broad-lane queue/latest-task expectations."
+    }
+  ],
+  "focused_instance_layout_tests_pass": true,
+  "full_unittest_discovery_pass": false,
+  "full_unittest_discovery_rerun": false,
+  "instance_layout_caused_failures_remaining": 0,
+  "instance_layout_validator_pass": true,
+  "legacy_broad_lane_failures_remaining": 15,
+  "schema_version": "instance_layout_clean_machine_validation_matrix.v0",
+  "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01"
+}

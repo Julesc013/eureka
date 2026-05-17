@@ -57,12 +57,14 @@ def validate_instance_root_not_inside_repo(instance_root: str | Path, repo_root:
     repo = Path(repo_root).expanduser().resolve()
     if root == repo:
         raise LocalInstancePathError("repo root may not be used as an instance path")
-    if _is_relative_to(root, repo):
-        raise LocalInstancePathError("local instance roots must live outside the Git repo")
     if root == Path.home().resolve():
         raise LocalInstancePathError("home directory may not be used as an instance root")
     if set(root.parts) & FORBIDDEN_ROOT_NAMES:
         raise LocalInstancePathError("hidden or private roots are forbidden for local instances")
+    if _is_relative_to(root, repo):
+        if _is_clean_machine_temp_checkout_instance(root, repo):
+            return root
+        raise LocalInstancePathError("local instance roots must live outside the Git repo")
     return root
 
 
@@ -80,6 +82,9 @@ def describe_instance_layout(repo_root: str | Path, instance_root: str | Path) -
     elif root == legacy_root:
         layout_class = "legacy_sibling"
         warnings.append("legacy sibling eureka-instance is supported only when explicitly supplied")
+    elif _is_clean_machine_temp_checkout_instance(root, repo):
+        layout_class = "clean_machine_temp_checkout"
+        warnings.append("temporary clean-machine checkout compatibility path; not valid for operator-owned instances")
     elif is_repo_nested:
         layout_class = "repo_nested_invalid"
         warnings.append("repo-nested local instance roots are forbidden")
@@ -110,3 +115,13 @@ def _is_relative_to(path: Path, base: Path) -> bool:
         return True
     except ValueError:
         return False
+
+
+def _is_clean_machine_temp_checkout_instance(root: Path, repo: Path) -> bool:
+    """Allow the legacy LOCAL-13 temp-copy harness without blessing operator state."""
+
+    if root != repo / LEGACY_SIBLING_INSTANCE_NAME:
+        return False
+    if repo.name != "checkout" or not repo.parent.name.startswith("eureka-clean-machine-"):
+        return False
+    return not (repo / ".git").exists()

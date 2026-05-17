@@ -24,7 +24,9 @@ downloads, deployment, or public/production claims.
 - `.aide/context/latest-context-packet.md`
 - `control/inventory/instance_layout_result.json`
 - `control/inventory/instance_layout_next_task_decision.json`
+- `control/inventory/instance_layout_clean_machine_fix_result.json`
 - `control/audits/instance-layout-01-v0/`
+- `control/audits/instance-layout-clean-machine-fix-01-v0/`
 - `docs/operations/LOCAL_INSTANCE_LAYOUT.md`
 - `docs/operations/INSTANCE_PATH_POLICY.md`
 
@@ -55,7 +57,7 @@ downloads, deployment, or public/production claims.
 
 ## IMPLEMENTATION
 
-- Do not start PLAY-00 from INSTANCE-LAYOUT-01.
+- Do not start PLAY-00 from INSTANCE-LAYOUT-01 or INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01.
 - Use the default instance under the sibling instances root as the documented local instance path.
 - Keep demo/seed work local and deterministic unless a future task says otherwise.
 

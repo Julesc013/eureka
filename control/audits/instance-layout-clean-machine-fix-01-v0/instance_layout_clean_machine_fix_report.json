@@ -1,0 +1,31 @@
+{
+  "boundaries": {
+    "deployment_performed": false,
+    "extraction_executed": false,
+    "instance_state_committed": false,
+    "model_provider_used": false,
+    "operator_instance_deleted": false,
+    "operator_instance_moved": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "source_probe_executed": false
+  },
+  "repair": {
+    "changed_files": [
+      "runtime/local_appliance/paths.py",
+      "tests/runtime/test_local_appliance_paths.py"
+    ],
+    "instance_layout_caused_failures_remaining": 0,
+    "previous_instance_layout_caused_failures": 2,
+    "safe_repairs_applied": 1
+  },
+  "schema_version": "instance_layout_clean_machine_fix_report.v0",
+  "status": "pass_with_warnings",
+  "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01",
+  "validation": {
+    "clean_machine_bootstrap_validator": "pass",
+    "focused_instance_layout_tests": "pass",
+    "instance_layout_validator": "pass",
+    "targeted_subset": "fail_classified_no_instance_layout_failures"
+  }
+}
