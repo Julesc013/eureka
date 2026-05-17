@@ -4,7 +4,7 @@
   "extraction_executed": false,
   "focused_instance_layout_tests_pass": true,
   "full_unittest_discovery_pass": false,
-  "full_unittest_discovery_rerun": false,
+  "full_unittest_discovery_rerun": true,
   "full_unittest_remaining_failures_classified": true,
   "instance_layout_caused_failures_remaining": 0,
   "instance_layout_validator_pass": true,

@@ -47,11 +47,22 @@
       "failures": 10,
       "instance_layout_caused_failures": 0,
       "notes": "Post-commit targeted rerun had no clean-machine or instance-layout failures remaining. Remaining failures are unrelated broad-lane queue/latest-task expectations."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "result": "fail_then_repaired",
+      "failures": 11,
+      "instance_layout_caused_failures": 1,
+      "notes": "Full discovery found the 10 classified broad-lane failures plus one runtime vocabulary failure in paths.py. The vocabulary failure was repaired and revalidated with the focused runtime vocabulary guard."
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_local_appliance_validation.LocalApplianceValidationTests.test_runtime_package_has_no_task_or_h_series_vocabulary",
+      "result": "pass"
     }
   ],
   "focused_instance_layout_tests_pass": true,
   "full_unittest_discovery_pass": false,
-  "full_unittest_discovery_rerun": false,
+  "full_unittest_discovery_rerun": true,
   "instance_layout_caused_failures_remaining": 0,
   "instance_layout_validator_pass": true,
   "legacy_broad_lane_failures_remaining": 10,

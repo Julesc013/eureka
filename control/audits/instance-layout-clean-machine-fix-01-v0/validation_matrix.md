@@ -9,5 +9,7 @@
 - `python -m unittest tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning`: pass
 - `python scripts/validate_clean_machine_bootstrap.py --json`: pass
 - targeted broad subset: fail with 10 unrelated legacy/broad-lane failures and no instance-layout-caused failures remaining
+- full unittest discovery: fail with 11 failures before final cleanup; 10 are the classified broad-lane failures, and 1 runtime vocabulary issue was repaired
+- `python -m unittest tests.runtime.test_local_appliance_validation.LocalApplianceValidationTests.test_runtime_package_has_no_task_or_h_series_vocabulary`: pass after cleanup
 
 `python scripts/validate_local_instance_bootstrap.py` still fails on a historical latest-task packet expectation for LOCAL-02. That is broad-lane validation debt and not part of the clean-machine path repair.

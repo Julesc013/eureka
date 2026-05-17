@@ -24,6 +24,7 @@
   "task": "INSTANCE-LAYOUT-CLEAN-MACHINE-FIX-01",
   "validation": {
     "clean_machine_bootstrap_validator": "pass",
+    "full_unittest_discovery": "fail_then_instance_layout_cleanup_repaired",
     "focused_instance_layout_tests": "pass",
     "instance_layout_validator": "pass",
     "targeted_subset": "fail_classified_no_instance_layout_failures"
