@@ -13,6 +13,7 @@ Thumbs.db
 __pycache__/
 *.pyc
 *.py[cod]
+*.pyo
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
@@ -45,5 +46,13 @@ native/win/winforms/src/Eureka/obj/
 .eureka-reports/
 
 # Local Appliance explicit instance roots (created by scripts/eureka_init_instance.py)
-eureka-instance/
-eureka-instance-*/
+/eureka-instance/
+/eureka-instance-*/
+/instances/
+/.local-instance/
+/.local/
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.db-journal

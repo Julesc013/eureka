@@ -6,12 +6,12 @@ import json
 from typing import Any
 
 from .errors import LocalInstanceConfigError, LocalInstancePathError
+from .paths import resolve_instance_root, resolve_repo_root
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = resolve_repo_root()
 CURRENT_INSTANCE_SCHEMA_VERSION = 1
 MINIMUM_SUPPORTED_INSTANCE_SCHEMA_VERSION = 1
-FORBIDDEN_ROOT_NAMES = {".cache", ".local", "." + "ai" + "de.local", ".git", "secrets"}
 FORBIDDEN_REPO_PATHS = (
     "runtime/connectors",
     "runtime/local_foundry",
@@ -126,14 +126,8 @@ def _validate_instance_path(instance_path: str | Path) -> Path:
     text = str(instance_path).strip()
     if not text:
         raise LocalInstancePathError("instance path is required")
-    resolved = Path(text).expanduser().resolve()
+    resolved = resolve_instance_root(text, REPO_ROOT)
     repo = REPO_ROOT.resolve()
-    if resolved == repo:
-        raise LocalInstancePathError("repo root may not be used as an instance path")
-    if resolved == Path.home().resolve():
-        raise LocalInstancePathError("home directory may not be used as an instance root")
-    if set(resolved.parts) & FORBIDDEN_ROOT_NAMES:
-        raise LocalInstancePathError("hidden or private roots are forbidden for local instances")
     for rel in FORBIDDEN_REPO_PATHS:
         if _is_relative_to(resolved, (repo / rel).resolve()):
             raise LocalInstancePathError(f"instance path may not live under {rel}")

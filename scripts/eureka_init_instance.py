@@ -19,6 +19,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from runtime.local_appliance.paths import describe_instance_layout, resolve_instance_root
+
 TASK_ID = "LOCAL-02"
 INSTANCE_SCHEMA_VERSION = "eureka_local_instance.v0"
 STATUS_SCHEMA_VERSION = "eureka_local_instance_status.v0"
@@ -26,7 +28,7 @@ STORE_MANIFEST_SCHEMA_VERSION = "eureka_local_store_manifest.v0"
 MIGRATION_STATE_SCHEMA_VERSION = "eureka_local_migration_state.v0"
 CURRENT_INSTANCE_SCHEMA_VERSION = 1
 MINIMUM_SUPPORTED_INSTANCE_SCHEMA_VERSION = 1
-DEFAULT_INSTANCE_NAME = "eureka-instance"
+DEFAULT_INSTANCE_NAME = "../instances/default"
 
 REQUIRED_DIRS = ("config", "db", "logs", "run", "tmp", "exports", "imports")
 REQUIRED_FILES = (
@@ -83,7 +85,10 @@ class InstanceVersionError(ValueError):
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instance", help="Explicit local instance root to initialize.")
+    parser.add_argument(
+        "--instance",
+        help="Explicit local instance root to initialize. Preferred local development path: ../instances/default.",
+    )
     parser.add_argument("--force", action="store_true", help="Rewrite existing manifest/status files.")
     parser.add_argument("--dry-run", action="store_true", help="Report actions without creating files.")
     parser.add_argument("--json", action="store_true", help="Emit JSON output.")
@@ -191,6 +196,7 @@ def initialize_instance(instance: Path, *, force: bool = False, dry_run: bool = 
         "status": result_status,
         "dry_run": dry_run,
         "instance_root": str(instance_root),
+        "instance_layout": describe_instance_layout(REPO_ROOT, instance_root),
         "instance_id": instance_id,
         "instance_schema_version": CURRENT_INSTANCE_SCHEMA_VERSION,
         "created_directories": list(REQUIRED_DIRS),
@@ -394,15 +400,11 @@ def sqlite_integrity(db_path: Path) -> dict[str, Any]:
 def validate_instance_path(instance: Path) -> Path:
     if not str(instance).strip():
         raise InstancePathError("instance path is required")
-    resolved = instance.expanduser().resolve()
+    try:
+        resolved = resolve_instance_root(instance, REPO_ROOT)
+    except Exception as exc:
+        raise InstancePathError(str(exc)) from exc
     repo = REPO_ROOT.resolve()
-    if resolved == repo:
-        raise InstancePathError("repo root may not be used as an instance path")
-    if resolved == Path.home().resolve():
-        raise InstancePathError("home directory may not be used as an implicit instance root")
-    parts = set(resolved.parts)
-    if parts & FORBIDDEN_ROOT_NAMES:
-        raise InstancePathError("hidden/private state roots are forbidden for local instances")
     for rel in FORBIDDEN_REPO_PATHS:
         forbidden = repo / rel
         if is_relative_to(resolved, forbidden.resolve()):

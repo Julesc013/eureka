@@ -30,7 +30,7 @@ python scripts/eureka_validate_instance.py --instance ..\instances\default --jso
 
 No command in LOCAL-02 applies a migration.
 
-For normal development, prefer the sibling workspace layout in `docs/operations/LOCAL_INSTANCE_LAYOUT.md`. The historical `./eureka-instance` fixture remains valid for LOCAL validation evidence, but long-lived operator state should live outside the Git checkout under `../instances/<role>`.
+For normal development, prefer the sibling workspace layout in `docs/operations/LOCAL_INSTANCE_LAYOUT.md`. The historical sibling `../eureka-instance` path remains valid when explicitly supplied, but long-lived operator state should live outside the Git checkout under `../instances/<role>`.
 
 ## LOCAL-03 Handoff
 

@@ -3,12 +3,15 @@
 from dataclasses import dataclass
 from typing import Any, Mapping
 
+from .paths import describe_instance_layout, resolve_repo_root
+
 
 @dataclass(frozen=True)
 class LocalRuntimeStatus:
     schema_version: str
     status: str
     instance_root: str
+    instance_layout: Mapping[str, Any]
     instance_id: str
     instance_schema_version: int
     store_count: int
@@ -32,6 +35,7 @@ class LocalRuntimeStatus:
             "schema_version": self.schema_version,
             "status": self.status,
             "instance_root": self.instance_root,
+            "instance_layout": dict(self.instance_layout),
             "instance_id": self.instance_id,
             "instance_schema_version": self.instance_schema_version,
             "store_count": self.store_count,
@@ -54,6 +58,7 @@ class LocalRuntimeStatus:
 
 def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
     integrity = runtime.check_integrity()
+    instance_layout = describe_instance_layout(resolve_repo_root(), runtime.instance_ref.instance_root)
     store_status = {
         store_id: {
             "store_id": store_id,
@@ -71,6 +76,7 @@ def build_local_runtime_status(runtime: Any) -> LocalRuntimeStatus:
         schema_version="local_runtime_status.v0",
         status=status,
         instance_root=str(runtime.instance_ref.instance_root),
+        instance_layout=instance_layout,
         instance_id=runtime.instance_ref.instance_id,
         instance_schema_version=runtime.instance_ref.instance_schema_version,
         store_count=len(store_status),

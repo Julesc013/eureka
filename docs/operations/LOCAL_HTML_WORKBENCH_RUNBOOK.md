@@ -2,15 +2,18 @@
 
 ## Initialize
 
-```bash
-python scripts/eureka_init_instance.py --instance ./eureka-instance --json
-python scripts/eureka_validate_instance.py --instance ./eureka-instance --json
+```powershell
+$Workspace = "D:\Projects\Eureka"
+$Instance = "$Workspace\instances\default"
+
+python scripts/eureka_init_instance.py --instance $Instance --json
+python scripts/eureka_validate_instance.py --instance $Instance --json
 ```
 
 ## Start
 
-```bash
-python scripts/eureka_local_server.py --instance ./eureka-instance --host 127.0.0.1 --port 8765
+```powershell
+python scripts/eureka_local_server.py --instance $Instance --host 127.0.0.1 --port 8765
 ```
 
 The service refuses LAN and wildcard hosts. Keep the bind on `127.0.0.1` for LOCAL-05.
@@ -31,14 +34,14 @@ Useful pages:
 
 ## Smoke
 
-```bash
+```powershell
 python scripts/eureka_local_workbench_smoke.py --base-url http://127.0.0.1:8765 --json
 python scripts/eureka_local_service_smoke.py --base-url http://127.0.0.1:8765 --json
 ```
 
 ## Validate
 
-```bash
+```powershell
 python scripts/validate_local_html_workbench.py
 python scripts/validate_local_workbench_page_hardening.py
 ```
@@ -55,15 +58,15 @@ LOCAL-06 hardens the same routes with store status, provenance, source-local sco
 
 Configure a local operator token before using review mutation forms:
 
-```bash
-python scripts/eureka_set_operator_token.py --instance ./eureka-instance --token "<operator-token>" --json
+```powershell
+python scripts/eureka_set_operator_token.py --instance $Instance --token "<operator-token>" --json
 ```
 
 Then start the service with an in-memory operator token or rely on the stored
 hash for CLI checks:
 
-```bash
-python scripts/eureka_local_server.py --instance ./eureka-instance --host 127.0.0.1 --port 8765 --operator-token "<operator-token>"
+```powershell
+python scripts/eureka_local_server.py --instance $Instance --host 127.0.0.1 --port 8765 --operator-token "<operator-token>"
 python scripts/eureka_local_review_smoke.py --base-url http://127.0.0.1:8765 --operator-token "<operator-token>" --json
 ```
 

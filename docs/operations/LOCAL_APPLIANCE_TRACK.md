@@ -9,3 +9,22 @@ The new route is:
 LOCAL-00 is planning/control only. LOCAL-01 starts with local instance layout and bootstrap. LOCAL-14 closes the track and hands back to F0, HUNT, and SYN.
 
 No server, HTML workbench, WorkUnit runtime, LAN binding, deployment, production readiness claim, or public launch claim is made by LOCAL-00.
+
+## Canonical Local Instance Layout
+
+The canonical development layout keeps operator state beside the repo, not
+inside it:
+
+```text
+D:\Projects\Eureka\
+  eureka\
+  instances\
+    default\
+    smoke\
+    syn\
+    f0\
+```
+
+Use `D:\Projects\Eureka\instances\default` for normal local work. The legacy
+sibling `D:\Projects\Eureka\eureka-instance` remains valid only when explicitly
+supplied to `--instance`; it is not the documented default.

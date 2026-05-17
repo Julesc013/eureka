@@ -1,0 +1,20 @@
+{
+  "automatic_copy_forbidden": true,
+  "automatic_delete_forbidden": true,
+  "automatic_move_forbidden": true,
+  "dry_run_helper": "python scripts/eureka_migrate_instance_layout.py --from ../eureka-instance --to ../instances/default --dry-run --json",
+  "legacy_sibling_instance": "../eureka-instance",
+  "manual_migration_commands": [
+    "mkdir D:\\Projects\\Eureka\\instances",
+    "move D:\\Projects\\Eureka\\eureka-instance D:\\Projects\\Eureka\\instances\\default",
+    "python scripts/eureka_validate_instance.py --instance D:\\Projects\\Eureka\\instances\\default --json"
+  ],
+  "operator_instance_deleted": false,
+  "operator_instance_moved": false,
+  "preferred_default_instance": "../instances/default",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "instance_layout_migration_plan.v0",
+  "status": "pass",
+  "task": "INSTANCE-LAYOUT-01"
+}

@@ -1,0 +1,12 @@
+{
+  "dry_run": true,
+  "from": "../eureka-instance",
+  "manual_commands": [
+    "mkdir D:\\Projects\\Eureka\\instances",
+    "move D:\\Projects\\Eureka\\eureka-instance D:\\Projects\\Eureka\\instances\\default"
+  ],
+  "mutation_performed": false,
+  "source_deleted": false,
+  "status": "pass",
+  "to": "../instances/default"
+}

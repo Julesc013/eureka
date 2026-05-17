@@ -1,0 +1,25 @@
+{
+  "audit_files": [
+    "control/audits/instance-layout-01-v0/current_policy.md",
+    "control/audits/instance-layout-01-v0/migration_plan.md",
+    "control/audits/instance-layout-01-v0/path_resolution.md",
+    "control/audits/instance-layout-01-v0/validation.md"
+  ],
+  "boundaries": {
+    "deployment_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "operator_instance_deleted": false,
+    "operator_instance_moved": false,
+    "source_probe_executed": false
+  },
+  "legacy_sibling_instance_allowed": true,
+  "preferred_default_instance": "../instances/default",
+  "preferred_layout_documented": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "repo_nested_instance_default_removed": true,
+  "schema_version": "instance_layout_report.v0",
+  "status": "pass_with_warnings",
+  "task": "INSTANCE-LAYOUT-01"
+}

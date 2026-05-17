@@ -1,0 +1,19 @@
+{
+  "auto_move_operator_instance_forbidden": true,
+  "commit_instance_state_forbidden": true,
+  "delete_operator_instance_forbidden": true,
+  "explicit_instance_path_required_for_mutating_commands": true,
+  "hidden_state_roots_forbidden": true,
+  "legacy_sibling_instance_allowed": true,
+  "legacy_sibling_instance_name": "eureka-instance",
+  "preferred_default_instance_name": "default",
+  "preferred_default_instance_relative_to_repo": "../instances/default",
+  "preferred_instances_root_name": "instances",
+  "preferred_repo_dir_name": "eureka",
+  "preferred_workspace_layout": "sibling_instances_root",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "repo_nested_instance_allowed": false,
+  "schema_version": "instance_layout_policy.v0",
+  "task": "INSTANCE-LAYOUT-01"
+}

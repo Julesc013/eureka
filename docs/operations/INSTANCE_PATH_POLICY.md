@@ -25,6 +25,10 @@ Commands should not infer an instance from the current working directory, the Gi
 
 Use role names instead of numbered or vague names.
 
+The legacy sibling `D:\Projects\Eureka\eureka-instance` is allowed only when an
+operator explicitly supplies it. It is not the default documented local
+development instance.
+
 ## Forbidden Roots
 
 An instance root must not be:
@@ -48,6 +52,9 @@ eureka-instance-*/
 ```
 
 The preferred sibling `D:\Projects\Eureka\instances\...` directory is outside the Git checkout. If a future task deliberately supports repo-local `instances/` for fixtures, it should add an explicit ignore rule and validator coverage in the same change.
+
+Instance folders must not appear in `git status`. If they do, stop and fix the
+path or ignore policy before committing.
 
 ## Resolver Rule
 

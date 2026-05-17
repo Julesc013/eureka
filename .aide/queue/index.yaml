@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-17
 repo: julesc013/eureka
-current_recommended_task: INSTANCE-LAYOUT-01 — Standardize sibling instances/default layout for local appliance runtime state
+current_recommended_task: PLAY-00 — Local Workbench Seed Corpus and Demo Hunt Pack
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -268,13 +268,21 @@ entries:
     recommended_next: INSTANCE-LAYOUT-01
   - id: INSTANCE-LAYOUT-01
     title: Standardize sibling instances/default layout for local appliance runtime state
-    status: queued
+    status: completed
     purpose: Make the sibling instances/default layout canonical for local appliance runtime state while preserving explicit legacy sibling instances.
     allowed_scope_summary: Local-instance doctrine, path policy, docs, dry-run migration helpers, validators, tests, inventories, and audit evidence only.
     gate: INSTANCE-LAYOUT-PREFLIGHT-01 completed; no automatic operator instance movement/deletion, committed instance state, source probes, extraction, model/provider calls, or deployment.
     task: .aide/queue/INSTANCE-LAYOUT-01/task.yaml
     recommended_after: INSTANCE-LAYOUT-PREFLIGHT-01
     recommended_next: PLAY-00
+  - id: PLAY-00
+    title: Local Workbench Seed Corpus and Demo Hunt Pack
+    status: queued
+    purpose: Add a small local seed corpus and demo hunt pack so the operator can test the local workbench loop with predictable data.
+    allowed_scope_summary: Local seed/demo data, local workbench play instructions, dry-run/demo hunt fixtures, docs, validators, tests, inventories, and audit evidence only when explicitly scoped.
+    gate: INSTANCE-LAYOUT-01 completed; no source probes, extraction, model/provider calls, downloads, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/PLAY-00/task.yaml
+    recommended_after: INSTANCE-LAYOUT-01
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local Appliance
     status: queued

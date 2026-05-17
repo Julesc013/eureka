@@ -15,6 +15,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.local_appliance.paths import resolve_instance_root
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -33,7 +34,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     runtime = None
     try:
-        runtime = open_local_appliance(Path(args.instance), read_only=args.read_only)
+        runtime = open_local_appliance(resolve_instance_root(Path(args.instance), REPO_ROOT), read_only=args.read_only)
         result = runtime.status().to_dict()
     except LocalApplianceError as exc:
         result = fail_result("runtime_status_failed", str(exc), instance=args.instance)

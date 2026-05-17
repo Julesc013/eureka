@@ -6,10 +6,16 @@ from typing import Any, Mapping
 from .config import LocalInstanceConfig
 from .errors import LocalInstanceConfigError, LocalRuntimeCompositionError, LocalUnsupportedInstanceVersionError
 from .instance import CURRENT_INSTANCE_SCHEMA_VERSION, MINIMUM_SUPPORTED_INSTANCE_SCHEMA_VERSION, resolve_instance_paths
+from .paths import describe_instance_layout, resolve_repo_root
 
 
 def validate_instance_root(path: str | Path) -> Path:
     return resolve_instance_paths(path).instance_root
+
+
+def instance_layout_description(path: str | Path) -> Mapping[str, Any]:
+    instance_root = resolve_instance_paths(path).instance_root
+    return describe_instance_layout(resolve_repo_root(), instance_root)
 
 
 def validate_supported_instance_version(config: LocalInstanceConfig) -> LocalInstanceConfig:

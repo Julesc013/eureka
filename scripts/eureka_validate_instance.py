@@ -30,6 +30,7 @@ from eureka_init_instance import (
     sqlite_integrity,
     validate_instance_path,
 )
+from runtime.local_appliance.paths import describe_instance_layout
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -64,8 +65,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
 def validate_instance(instance: Path) -> dict[str, Any]:
     instance_root = validate_instance_path(instance)
+    instance_layout = describe_instance_layout(REPO_ROOT, instance_root)
     errors: list[str] = []
-    warnings: list[str] = []
+    warnings: list[str] = list(instance_layout.get("warnings", []))
 
     for rel in REQUIRED_DIRS:
         if not (instance_root / rel).is_dir():
@@ -120,6 +122,7 @@ def validate_instance(instance: Path) -> dict[str, Any]:
         "task": TASK_ID,
         "status": result_status,
         "instance_root": str(instance_root),
+        "instance_layout": instance_layout,
         "instance_schema_version": manifest.get("instance_schema_version"),
         "minimum_supported_instance_schema_version": MINIMUM_SUPPORTED_INSTANCE_SCHEMA_VERSION,
         "current_instance_schema_version": CURRENT_INSTANCE_SCHEMA_VERSION,

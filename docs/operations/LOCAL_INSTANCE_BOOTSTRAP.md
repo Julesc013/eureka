@@ -19,7 +19,7 @@ From the repo root:
 $Instance = "..\instances\default"
 ```
 
-The older `./eureka-instance` name remains a valid explicit instance path and is still used by LOCAL-01/LOCAL-02 validation fixtures.
+The older sibling `../eureka-instance` name remains a valid explicit instance path when supplied deliberately and is still reflected in some LOCAL-01/LOCAL-02 validation history.
 
 ## Initialize
 

@@ -1,0 +1,10 @@
+{
+  "legacy_sibling_instance_allowed": true,
+  "legacy_sibling_instance_name": "eureka-instance",
+  "preferred_default_instance_relative_to_repo": "../instances/default",
+  "preferred_instances_root_name": "instances",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "repo_nested_instance_allowed": false,
+  "schema_version": "instance_layout_policy.v0"
+}

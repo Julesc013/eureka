@@ -17,6 +17,16 @@ from .errors import (
 from .instance import LocalInstancePaths, LocalInstanceRef, load_instance_ref, resolve_instance_paths
 from .manifest import LocalStoreEntry, LocalStoreManifest, load_store_manifest, validate_store_manifest
 from .migration import LocalMigrationState, load_migration_state, migration_needed, validate_migration_state
+from .paths import (
+    describe_instance_layout,
+    resolve_default_instance_root,
+    resolve_instance_root,
+    resolve_instances_root,
+    resolve_legacy_sibling_instance_root,
+    resolve_repo_root,
+    resolve_workspace_root,
+    validate_instance_root_not_inside_repo,
+)
 from .status import LocalRuntimeStatus, build_local_runtime_status
 from .validation import (
     validate_instance_root,
@@ -52,7 +62,15 @@ __all__ = [
     "load_store_manifest",
     "migration_needed",
     "open_local_appliance",
+    "describe_instance_layout",
+    "resolve_default_instance_root",
+    "resolve_instance_root",
     "resolve_instance_paths",
+    "resolve_instances_root",
+    "resolve_legacy_sibling_instance_root",
+    "resolve_repo_root",
+    "resolve_workspace_root",
+    "validate_instance_root_not_inside_repo",
     "validate_instance_config",
     "validate_instance_root",
     "validate_migration_state",

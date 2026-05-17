@@ -9,7 +9,8 @@ import sys
 from pathlib import Path
 from typing import Any, Sequence, TextIO
 
-from eureka_init_instance import TASK_ID, InstancePathError, validate_instance_path
+from eureka_init_instance import REPO_ROOT, TASK_ID, InstancePathError, validate_instance_path
+from runtime.local_appliance.paths import describe_instance_layout
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -42,6 +43,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
 def read_status(instance: Path) -> dict[str, Any]:
     instance_root = validate_instance_path(instance)
+    instance_layout = describe_instance_layout(REPO_ROOT, instance_root)
     manifest = json.loads((instance_root / "config" / "instance.json").read_text(encoding="utf-8"))
     status = json.loads((instance_root / "run" / "status.json").read_text(encoding="utf-8"))
     migration_state_path = instance_root / "config" / "migration_state.json"
@@ -53,6 +55,7 @@ def read_status(instance: Path) -> dict[str, Any]:
         "task": TASK_ID,
         "status": "pass_with_warnings" if failing else "pass",
         "instance_root": str(instance_root),
+        "instance_layout": instance_layout,
         "instance_id": manifest.get("instance_id"),
         "instance_schema_version": manifest.get("instance_schema_version"),
         "appliance_mode": manifest.get("appliance_mode"),

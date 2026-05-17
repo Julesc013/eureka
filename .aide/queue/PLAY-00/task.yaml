@@ -1,0 +1,15 @@
+id: PLAY-00
+title: Local Workbench Seed Corpus and Demo Hunt Pack
+status: queued
+purpose: Add a small local seed corpus and demo hunt pack so the operator can test the local workbench loop with predictable data.
+allowed_scope_summary: Local seed/demo data, local workbench play instructions, dry-run/demo hunt fixtures, docs, validators, tests, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - INSTANCE-LAYOUT-01 completed
+  - no source probes
+  - no extraction
+  - no model/provider calls
+  - no downloads
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: INSTANCE-LAYOUT-01

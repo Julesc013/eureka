@@ -1,6 +1,6 @@
 id: INSTANCE-LAYOUT-01
 title: Standardize sibling instances/default layout for local appliance runtime state
-status: queued
+status: completed
 purpose: Make the sibling `instances/default` layout canonical for local appliance runtime state while preserving explicit legacy sibling instances.
 allowed_scope_summary: Local-instance doctrine, path policy, docs, dry-run migration helpers, validators, tests, inventories, and audit evidence only.
 gate:
@@ -14,3 +14,7 @@ gate:
   - no deployment
 recommended_after: INSTANCE-LAYOUT-PREFLIGHT-01
 recommended_next: PLAY-00
+result:
+  status: pass_with_warnings
+  audit: control/audits/instance-layout-01-v0/
+  inventory: control/inventory/instance_layout_result.json
