@@ -118,7 +118,7 @@ def _is_relative_to(path: Path, base: Path) -> bool:
 
 
 def _is_clean_machine_temp_checkout_instance(root: Path, repo: Path) -> bool:
-    """Allow the legacy LOCAL-13 temp-copy harness without blessing operator state."""
+    """Allow the clean-machine temp-copy harness without blessing operator state."""
 
     if root != repo / LEGACY_SIBLING_INSTANCE_NAME:
         return False
