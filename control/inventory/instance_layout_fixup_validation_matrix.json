@@ -1,0 +1,101 @@
+{
+  "commands": [
+    {
+      "command": "git diff --check",
+      "result": "pass",
+      "summary": "no whitespace errors"
+    },
+    {
+      "command": "python scripts/eureka_resolve_paths.py --json",
+      "result": "pass",
+      "summary": "default resolves to sibling instances/default"
+    },
+    {
+      "command": "python scripts/eureka_list_instances.py --json",
+      "result": "pass",
+      "summary": "lists preferred default instance and legacy sibling classification"
+    },
+    {
+      "command": "python scripts/eureka_migrate_instance_layout.py --from ../eureka-instance --to ../instances/default --dry-run --json",
+      "result": "pass_with_warnings",
+      "summary": "dry-run only; warned that legacy source is absent and target exists"
+    },
+    {
+      "command": "python scripts/validate_instance_layout_policy.py",
+      "result": "pass",
+      "summary": "instance layout policy validator passed"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_local_appliance_paths",
+      "result": "pass",
+      "summary": "5 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_instance_layout_policy",
+      "result": "pass",
+      "summary": "2 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_instance_layout_scripts",
+      "result": "pass",
+      "summary": "4 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "pass",
+      "summary": "746 Python files checked; no architecture-boundary violations"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "fail_before_commit",
+      "summary": "new fixup audit pack is uncommitted generated audit evidence; rerun after commit required"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "pass_post_commit",
+      "summary": "generated artifact cleanliness passed after the fixup audit pack was committed"
+    },
+    {
+      "command": "python -m unittest <suspected failure modules>",
+      "result": "fail",
+      "summary": "134 tests run; 12 failures reproduced and classified"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "result": "pass",
+      "summary": "AIDE doctor passed"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "result": "pass",
+      "summary": "AIDE validate passed"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "result": "pass",
+      "summary": "AIDE test passed"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "result": "pass",
+      "summary": "AIDE selftest passed"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "result": "warn",
+      "summary": "warning-only diff-scope/context-ref output; no errors"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "result": "pass",
+      "summary": "review pack written; verifier result PASS"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "result": "pass_post_commit",
+      "summary": "latest fixup commit uses allowed chore type"
+    }
+  ],
+  "schema_version": "instance_layout_fixup_validation_matrix.v0",
+  "task": "INSTANCE-LAYOUT-FIXUP-01"
+}

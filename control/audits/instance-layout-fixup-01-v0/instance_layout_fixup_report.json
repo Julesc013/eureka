@@ -1,0 +1,16 @@
+{
+  "commit_check_passed": true,
+  "commit_message_fixed": false,
+  "commit_message_fix_blocked_reason": "ff484007 is already pushed to origin/dev",
+  "commit_policy_disposition": "latest fixup commit uses an allowed AIDE type; pushed ff484007 remains unamended",
+  "full_unittest_failures_classified": true,
+  "instance_layout_caused_failures_remaining": 2,
+  "legacy_broad_lane_failures_remaining": 10,
+  "operator_instance_deleted": false,
+  "operator_instance_moved": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "instance_layout_fixup_report.v0",
+  "status": "partial",
+  "task": "INSTANCE-LAYOUT-FIXUP-01"
+}

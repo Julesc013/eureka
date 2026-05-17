@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2176 chars, 544 approximate tokens)
+- `.aide/context/latest-task-packet.md` (2202 chars, 551 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/context/latest-review-packet.md` (M; does not match active task allowed paths)
-- unknown: `.aide/context/latest-task-packet.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/INSTANCE-LAYOUT-01/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/PLAY-00` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/reports/eureka-repo-health.json` (M; does not match active task allowed paths)
-- unknown: `.aide/reports/eureka-repo-health.md` (M; does not match active task allowed paths)
-- unknown: `.gitignore` (M; does not match active task allowed paths)
-- unknown: `control/audits/instance-layout-01-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_current_policy.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_migration_plan.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/instance_layout_result.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/instance_layout_policy.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/INSTANCE_PATH_POLICY.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_APPLIANCE_TRACK.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_HTML_WORKBENCH_RUNBOOK.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_HTTP_SERVICE_RUNBOOK.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_INSTANCE_BOOTSTRAP.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_INSTANCE_LAYOUT.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/LOCAL_INSTANCE_MIGRATION_POLICY.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/SEARCH_HUNT_COMMAND_RUNBOOK.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/SEARCH_HUNT_RUNTIME_RUNBOOK.md` (M; does not match active task allowed paths)
-- unknown: `runtime/local_appliance/__init__.py` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 16; see task evidence changed-files report
+- unknown: `control/audits/instance-layout-fixup-01-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/instance_layout_fixup_failure_classification.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/instance_layout_fixup_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/instance_layout_fixup_validation_matrix.json` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +46,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6743
-- approx_tokens: 1686
+- chars: 4709
+- approx_tokens: 1178
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
