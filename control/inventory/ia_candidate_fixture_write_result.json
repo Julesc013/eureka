@@ -1,0 +1,15 @@
+{
+  "schema_version": "ia_candidate_fixture_write_result.v0",
+  "task": "IA-05",
+  "status": "pass",
+  "source_kind": "ia_fixture_replay",
+  "candidate_count": 30,
+  "fixture_candidates_written_to_temp": true,
+  "candidate_index_mutated": true,
+  "candidate_index_write_scope": "temp_explicit_instance_only",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "download_performed": false,
+  "raw_response_committed": false
+}

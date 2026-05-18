@@ -1,0 +1,42 @@
+{
+  "schema_version": "ia_candidate_policy_matrix.v0",
+  "task": "IA-05",
+  "rows": [
+    {
+      "policy_id": "candidate_writes",
+      "setting": "enabled_for_IA_05",
+      "value": true,
+      "scope": "temp_or_explicit_local_instance_only"
+    },
+    {
+      "policy_id": "dry_run_default",
+      "setting": "dry_run_default",
+      "value": true,
+      "scope": "all CLI invocations unless --apply is explicit"
+    },
+    {
+      "policy_id": "review_boundary",
+      "setting": "review_required",
+      "value": true,
+      "scope": "all IA candidate records"
+    },
+    {
+      "policy_id": "truth_boundary",
+      "setting": "accepted_truth_enabled",
+      "value": false,
+      "scope": "all IA candidate records"
+    },
+    {
+      "policy_id": "reviewed_index_boundary",
+      "setting": "reviewed_index_mutation_enabled",
+      "value": false,
+      "scope": "IA-05"
+    },
+    {
+      "policy_id": "master_index_boundary",
+      "setting": "master_index_mutation_enabled",
+      "value": false,
+      "scope": "IA-05"
+    }
+  ]
+}

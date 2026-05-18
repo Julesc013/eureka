@@ -1,0 +1,28 @@
+{
+  "schema_version": "ia_candidate_write_plan.v0",
+  "task": "IA-05",
+  "inputs": [
+    "ia_evidence_candidates_from_fixtures",
+    "ia_evidence_candidates_from_live_preview"
+  ],
+  "steps": [
+    "validate IA-00 through IA-04 prerequisites",
+    "load IA evidence candidates from explicit evidence ledger or deterministic defaults",
+    "group evidence candidates by source-cache record",
+    "build provisional IA candidate-index records",
+    "validate review/no-truth/no-review-index invariants",
+    "dry-run by default without mutating an instance",
+    "apply only with explicit temp/local instance and operator token"
+  ],
+  "write_scope": "temp_explicit_instance_only",
+  "default_mode": "dry_run",
+  "forbidden_outputs": [
+    "accepted_truth",
+    "reviewed_records",
+    "reviewed_index_mutation",
+    "master_index_mutation",
+    "downloads",
+    "uploads",
+    "raw_live_response_body"
+  ]
+}

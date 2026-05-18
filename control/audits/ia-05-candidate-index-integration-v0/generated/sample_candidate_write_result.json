@@ -1,0 +1,16 @@
+{
+  "schema_version": "ia_candidate_write_report.v0",
+  "task": "IA-05",
+  "status": "pass",
+  "candidate_count": 39,
+  "fixture_candidate_count": 30,
+  "live_preview_candidate_count": 9,
+  "candidate_index_mutated": true,
+  "write_scope": "temp_explicit_instance_only",
+  "all_candidates_require_review": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "raw_response_committed": false,
+  "download_performed": false
+}

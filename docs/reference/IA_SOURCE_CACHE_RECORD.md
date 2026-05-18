@@ -38,3 +38,9 @@ IA-04 consumes these source-cache records to build evidence-ledger candidates.
 The source-cache record remains an observation, and the evidence record remains
 a claim candidate. This handoff does not accept evidence, rebuild an index, or
 promote IA metadata to reviewed local truth.
+
+## IA-05 Handoff
+
+IA-05 consumes IA evidence candidates derived from source-cache records to build
+provisional candidate-index records. The source-cache record remains an
+observation and the candidate record remains unreviewed.

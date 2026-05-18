@@ -49,10 +49,10 @@ IA-02 command:
 python scripts/eureka_ia_live_metadata_probe.py --approve-live --query sampleproject --rows 1 --max-requests 2 --user-agent "EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)" --contact "local-operator" --json --redacted-output control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_redacted_summary.json --boundary-output control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_boundary_report.json
 ```
 
-The current IA-02 run is partial: the bounded live request was attempted under
-policy, but local Python TLS verification failed before an IA HTTP response was
-available. No raw response, source-cache write, evidence write, download, or
-index mutation occurred.
+IA-02 initially exposed a local Python TLS trust failure. The follow-up TLS
+continuation repaired the local trust lane and reran the same bounded metadata
+probe successfully. Only redacted summaries and normalized preview records were
+committed; raw response bodies were not committed.
 
 Still forbidden in IA-02:
 
@@ -97,9 +97,25 @@ python scripts/eureka_ia_evidence_ledger_write.py --instance ..\instances\defaul
 IA-04 evidence candidates require review and are not accepted truth. Candidate,
 reviewed, and master indexes remain untouched.
 
+## IA-05
+
+IA-05 converts IA evidence candidates into provisional candidate-index records.
+The write path defaults to dry-run and may write only to an explicit temporary
+or local instance with `--apply` and a configured operator token.
+
+Run:
+
+```powershell
+python scripts/validate_ia_candidate_index_integration.py
+python scripts/eureka_ia_candidate_index_write.py --instance ..\instances\default --operator-token local-dev-token --from-evidence-ledger --dry-run --json
+```
+
+IA-05 candidates are searchable provisional records for future review. They are
+not reviewed records, not accepted truth, and do not mutate reviewed or master
+indexes.
+
 ## Later Gates
 
-IA-05 through IA-07 may define candidate, review, and reviewed local index
-integration.
+IA-06 and IA-07 may define review dry-run and reviewed local index integration.
 
 No gate may convert live metadata directly into public truth.

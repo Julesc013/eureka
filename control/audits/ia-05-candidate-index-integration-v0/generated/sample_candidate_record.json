@@ -1,0 +1,26 @@
+{
+  "schema_version": "ia_candidate_record.v0",
+  "candidate_id": "iacand_sample",
+  "candidate_kind": "ia_item_candidate",
+  "source_id": "internet_archive_metadata",
+  "source_cache_record_ids": [
+    "iasc_sample"
+  ],
+  "evidence_ids": [
+    "iaev_sample"
+  ],
+  "observation_ids": [
+    "obs_sample"
+  ],
+  "candidate_subject": "ia:sample",
+  "candidate_title": "Sample IA provisional candidate",
+  "candidate_summary": "Provisional IA candidate; review required before promotion.",
+  "review_required": true,
+  "accepted_truth": false,
+  "reviewer_decision": "pending",
+  "reviewed_record_created": false,
+  "reviewed_index_mutation_performed": false,
+  "master_index_mutation_performed": false,
+  "raw_response_committed": false,
+  "download_performed": false
+}

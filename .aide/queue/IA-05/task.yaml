@@ -1,6 +1,6 @@
 id: IA-05
 title: IA Candidate Index Integration
-status: queued
+status: completed
 purpose: Define candidate-index integration after IA metadata evidence candidates exist and remain review-required.
 allowed_scope_summary: IA candidate-index policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -12,4 +12,17 @@ gate:
   - no downloads or uploads
   - no extraction, model/provider calls, deployment, production readiness, or public launch claim
 recommended_after: IA-04
-recommended_next: SYN-00
+result:
+  status: pass
+  commit_pending: true
+  candidate_policy_added: true
+  candidate_record_schema_added: true
+  candidate_adapter_added: true
+  candidate_cli_added: true
+  candidate_validator_added: true
+  temp_instance_candidate_write_passed: true
+  all_candidates_require_review: true
+  accepted_truth_created: false
+  reviewed_index_mutated: false
+  master_index_mutated: false
+recommended_next: IA-06

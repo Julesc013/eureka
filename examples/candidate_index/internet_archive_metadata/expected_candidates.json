@@ -1,0 +1,37 @@
+{
+  "schema_version": "ia_candidate_expected_records.v0",
+  "task": "IA-05",
+  "expected_candidate_count_minimum": 6,
+  "expected_candidate_kinds": [
+    "ia_item_candidate",
+    "ia_media_metadata_candidate",
+    "ia_file_list_candidate",
+    "ia_collection_member_candidate",
+    "ia_source_locator_candidate",
+    "ia_near_miss_candidate",
+    "ia_absence_or_missing_item_candidate"
+  ],
+  "required_invariants": {
+    "review_required": true,
+    "accepted_truth": false,
+    "reviewed_record_created": false,
+    "reviewed_index_mutation_performed": false,
+    "master_index_mutation_performed": false,
+    "raw_response_committed": false,
+    "download_performed": false
+  },
+  "sample_record_shape": {
+    "schema_version": "ia_candidate_record.v0",
+    "candidate_kind": "ia_item_candidate",
+    "source_id": "internet_archive_metadata",
+    "source_cache_record_ids": [
+      "required"
+    ],
+    "evidence_ids": [
+      "required"
+    ],
+    "review_required": true,
+    "accepted_truth": false,
+    "reviewed_record_created": false
+  }
+}

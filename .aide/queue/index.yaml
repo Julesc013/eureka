@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-05 — IA Candidate Index Integration
+current_recommended_task: IA-06 — IA Review/Promotion Dry-Run
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -376,12 +376,21 @@ entries:
     recommended_next: IA-05
   - id: IA-05
     title: IA Candidate Index Integration
-    status: queued
+    status: completed
     purpose: Define candidate-index integration after IA evidence candidates exist and remain review-required.
     allowed_scope_summary: IA candidate-index policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
     gate: IA-04 completed with evidence candidates written only to a temp explicit instance; no reviewed/master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-05/task.yaml
     recommended_after: IA-04
+    recommended_next: IA-06
+  - id: IA-06
+    title: IA Review/Promotion Dry-Run
+    status: queued
+    purpose: Define review and promotion dry-run behavior after IA provisional candidate-index records exist.
+    allowed_scope_summary: IA review/promotion dry-run policy, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
+    gate: IA-05 completed with provisional candidate records written only to a temp explicit instance; no accepted truth, reviewed/master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-06/task.yaml
+    recommended_after: IA-05
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

@@ -37,3 +37,9 @@ Required invariants:
 The durable evidence-ledger payload uses sanitized field names so the shared
 ledger does not store reserved public-truth vocabulary. IA audit reports keep
 the explicit boundary booleans for operator review.
+
+## IA-05 Handoff
+
+IA-05 consumes evidence candidates to build provisional candidate-index records.
+The candidate remains review-required and cannot create accepted truth, reviewed
+records, reviewed-index mutations, or master-index mutations.

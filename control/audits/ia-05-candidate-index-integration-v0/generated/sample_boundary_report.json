@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_candidate_boundary_report.v0",
+  "task": "IA-05",
+  "passed": true,
+  "candidate_index_mutated": true,
+  "candidate_index_write_scope": "temp_explicit_instance_only",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "download_performed": false
+}

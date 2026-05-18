@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_candidate_boundary_report.v0",
+  "task": "IA-05",
+  "passed": true,
+  "dry_run": false,
+  "write_scope": "temp_explicit_instance_only",
+  "operator_instance_mutated": false,
+  "instance_state_committed": false,
+  "raw_response_committed": false,
+  "candidate_index_mutated": true,
+  "candidate_index_write_scope": "temp_explicit_instance_only",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "violations": []
+}

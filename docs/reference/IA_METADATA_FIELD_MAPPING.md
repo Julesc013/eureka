@@ -26,3 +26,9 @@ IA-02 may use these mappings against an approved, tiny live metadata response,
 but only to produce redacted source-observation candidate previews. The current
 IA-02 live attempt did not obtain a response body, so no live field mapping was
 performed.
+
+IA-03 writes mapped fixture/live-preview observations into the source cache.
+IA-04 converts source-cache fields into evidence claim candidates. IA-05 groups
+those evidence candidates into provisional candidate-index records for review.
+None of these stages creates accepted truth, reviewed records, download proof,
+rights clearance, compatibility truth, safety truth, or master-index truth.

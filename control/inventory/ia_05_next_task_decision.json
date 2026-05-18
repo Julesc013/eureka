@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_05_next_task_decision.v0",
+  "task": "IA-05",
+  "recommended_next_task": "IA-06 \u2014 IA Review/Promotion Dry-Run",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "do_not_start_next_task": true,
+  "basis": [
+    "IA-05 candidate-index write path passed in a temp explicit instance",
+    "candidate records remain provisional and review-required",
+    "reviewed and master indexes were not mutated"
+  ]
+}
