@@ -1,0 +1,369 @@
+{
+  "candidate_index_mutated": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": false,
+  "evidence_ledger_write_performed": false,
+  "extraction_executed": false,
+  "fixture_record_count": 8,
+  "fixture_records_written_to_temp": true,
+  "live_preview_record_count": 2,
+  "live_preview_records_written_to_temp": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "record_count": 10,
+  "record_ids": [
+    "iasc_d70a6f39da5837c6",
+    "iasc_486af3662118be4b",
+    "iasc_0942d6dacc0c596b",
+    "iasc_014c05bb568f514f",
+    "iasc_acd68738edd11325",
+    "iasc_81b540787730eadc",
+    "iasc_cda081026e612d40",
+    "iasc_d6d80b9ab9d56df1",
+    "iasc_20f8f95fdcf7ace3",
+    "iasc_86a3e225f319eb4c"
+  ],
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_source_cache_write_report.v0",
+  "source_cache_write_performed": true,
+  "status": "pass",
+  "store_result": {
+    "dry_run": false,
+    "integrity": {
+      "applied_migrations": [
+        {
+          "applied_at": "2026-05-18T13:18:57Z",
+          "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+          "id": "001_initial_source_cache_store",
+          "version": "source_cache_store.v0"
+        }
+      ],
+      "missing_tables": [],
+      "schema_version": "source_cache_store.v0",
+      "sqlite_integrity": "ok",
+      "status": "pass"
+    },
+    "record_count": 10,
+    "schema_version": "ia_source_cache_store_write_result.v0",
+    "summary": {
+      "cache_entry_count": 10,
+      "metadata_response_count": 10,
+      "normalized_observation_count": 10,
+      "source_observation_count": 10,
+      "source_record_count": 1,
+      "status_counts": {
+        "cached": 10
+      }
+    },
+    "write_applied": true,
+    "writes": [
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_1c999377e3064e2f",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_990df06f1a86a57b",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_bf20d36949fcb482",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_3fe1275d0dee4626",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_7220c58ee7f4a620",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_12242489924a92ee",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_0d54d0d28acaadd9",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_ddc3ca14140a3a17",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_48de0b87e2d5e86e",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_77aa60af96c860a1",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_561f7b070bb61ca3",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_66897962fb56f771",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_ea37a30291cc15f3",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_61f440b6239d2581",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_9dc4e70c4a3a85db",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_7c6aabed7893c82b",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_f428d2d7c8937fef",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_928b58e78b3b0f0c",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_1fcd15500961b8d5",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_50b635dba2ad9fd2",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_f61ef960e3058372",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_759e3aa025dc2726",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_423b372896463332",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_b537ae1218383bb6",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_201e83a2e4ee377f",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_f4c51fea0a8ddb7d",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_69a82d4e4aea18e6",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_6130f7288332fbaa",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_0c7db3c54ea9aeca",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_23e01da936f416d9",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_626569c9faacff5e",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_68ff89f3652ea598",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_dea94bd50532caa2",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_d381feb255a91523",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_f0c9e5096981e373",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_393c2f23f6add992",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      },
+      {
+        "record_id": "internet_archive_metadata",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_records"
+      },
+      {
+        "record_id": "res_c07463b88393e507",
+        "row_count": 1,
+        "status": "stored",
+        "table": "metadata_responses"
+      },
+      {
+        "record_id": "obs_d1f27feb9fdfbbd4",
+        "row_count": 1,
+        "status": "stored",
+        "table": "source_observations"
+      },
+      {
+        "record_id": "ianorm_aea41a84b0949312",
+        "row_count": 1,
+        "status": "stored",
+        "table": "normalized_observations"
+      },
+      {
+        "record_id": "sce_3341376e68cdbbc4",
+        "row_count": 1,
+        "status": "stored",
+        "table": "cache_entries"
+      }
+    ]
+  },
+  "task": "IA-03",
+  "upload_performed": false,
+  "write_scope": "temp_explicit_instance_only"
+}

@@ -1,0 +1,10 @@
+{
+  "fixture_records_written_to_temp": true,
+  "live_preview_records_written_to_temp": true,
+  "record_count": 10,
+  "schema_version": "ia_source_cache_write_report.v0",
+  "source_cache_write_performed": true,
+  "status": "pass",
+  "task": "IA-03",
+  "write_scope": "temp_explicit_instance_only"
+}

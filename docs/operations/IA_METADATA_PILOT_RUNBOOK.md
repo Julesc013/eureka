@@ -65,8 +65,25 @@ Still forbidden in IA-02:
 
 ## Later Gates
 
-IA-03 may define source-cache writes only after a successful approved IA-02
-live response summary exists. IA-04 may define evidence candidates. IA-05
-through IA-07 may define candidate, review, and reviewed local index integration.
+## IA-03
+
+IA-03 adds the first source-cache write path for IA metadata observations. It
+accepts IA-01 fixture normalized records and IA-02 redacted live-preview records
+only. The write path defaults to dry-run and may write only to an explicit
+temporary or local instance with `--apply` and a configured operator token.
+
+Run:
+
+```powershell
+python scripts/validate_ia_source_cache_write.py
+python scripts/eureka_ia_source_cache_write.py --instance ..\instances\default --operator-token local-dev-token --from-fixtures --dry-run --json
+```
+
+IA-03 source-cache records are not evidence and are not reviewed/indexed truth.
+
+## Later Gates
+
+IA-04 may define evidence candidates. IA-05 through IA-07 may define candidate,
+review, and reviewed local index integration.
 
 No gate may convert live metadata directly into public truth.

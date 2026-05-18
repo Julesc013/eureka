@@ -1,0 +1,21 @@
+{
+  "branch": "dev",
+  "deployment_performed": false,
+  "extraction_execution_enabled": false,
+  "head": "325999110bf7fdbedaeac3e28ae7484f023e0a36",
+  "ia_00_found": true,
+  "ia_01_found": true,
+  "ia_02_successful_live_response_found": true,
+  "ia_03_unblocked": true,
+  "local_instance_state_tracked": false,
+  "model_provider_enabled": false,
+  "origin_dev": "325999110bf7fdbedaeac3e28ae7484f023e0a36",
+  "origin_main": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "play_00_found": true,
+  "play_01_found": true,
+  "play_02_found": true,
+  "preferred_instance": "../instances/default",
+  "schema_version": "ia_03_input_state.v0",
+  "task": "IA-03",
+  "working_tree_clean_before": true
+}

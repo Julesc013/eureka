@@ -1,0 +1,38 @@
+{
+  "candidate_index_mutated": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": true,
+  "evidence_ledger_write_performed": false,
+  "extraction_executed": false,
+  "fixture_record_count": 0,
+  "fixture_records_written_to_temp": false,
+  "live_preview_record_count": 2,
+  "live_preview_records_written_to_temp": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "record_count": 2,
+  "record_ids": [
+    "iasc_20f8f95fdcf7ace3",
+    "iasc_86a3e225f319eb4c"
+  ],
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_source_cache_write_report.v0",
+  "source_cache_write_performed": false,
+  "status": "pass",
+  "store_result": {
+    "dry_run": true,
+    "integrity": {},
+    "record_count": 2,
+    "schema_version": "ia_source_cache_store_write_result.v0",
+    "summary": {},
+    "write_applied": false,
+    "writes": []
+  },
+  "task": "IA-03",
+  "upload_performed": false,
+  "write_scope": "dry_run_no_instance_mutation"
+}

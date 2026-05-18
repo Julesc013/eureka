@@ -2,37 +2,34 @@
 
 ## TASK
 
-IA-02-TLS-TRUST-CONTINUE - Repair local Python TLS trust and rerun approved IA
-metadata probe.
+IA-03 - IA Source Cache Write Path.
 
 ## PHASE
 
-IA-02 TLS trust continuation completed as `PASS`.
+IA-03 completed as `PASS`.
 
 ## GOAL
 
-Repair or safely work around the local Python TLS trust configuration with TLS
-verification enabled, rerun the approved bounded Internet Archive metadata-only
-probe, and unblock IA-03 only after a successful verified HTTPS metadata
-response exists.
+Add the first local source-cache write path for Internet Archive metadata
+observations using IA-01 fixture replay records and IA-02 redacted normalized
+live-probe preview records.
 
 ## WHY
 
-IA-02 previously failed before an IA HTTP response because the active Python
-OpenSSL trust paths had no usable CA file/capath. IA-02-TLS-TRUST-01 diagnosed
-that as a local trust-store issue. IA-03 could not proceed until verified TLS
-and the approved IA metadata probe succeeded without weakening security.
+IA-02 produced a successful verified metadata-only IA response and a redacted
+normalized preview, but IA-03 was still needed before any downstream evidence
+work could rely on a local persisted source-observation cache. The source cache
+is the required intermediate store before future IA-04 evidence integration.
 
 ## ALLOWED_PATHS
 
-- IA live probe scripts and runtime under the approved IA-02 TLS continuation
-  scope.
-- TLS diagnostic and validator scripts.
-- IA TLS/live-probe focused tests.
-- IA TLS troubleshooting and live-probe docs.
-- IA-02 TLS continuation inventories and audit pack.
-- AIDE queue/context/report metadata for IA-02-TLS-TRUST-CONTINUE, IA-03, and
-  SYN-00.
+- `runtime/source_cache/**`
+- `runtime/source_observation/internet_archive_source_cache.py`
+- IA metadata observation helpers already in `runtime/source_observation/`
+- `scripts/eureka_ia_source_cache_write.py`
+- `scripts/validate_ia_source_cache_write.py`
+- IA policy, inventory, docs, tests, examples, audit pack, and AIDE queue/report
+  metadata scoped to IA-03 and IA-04.
 
 ## FORBIDDEN_PATHS
 
@@ -41,8 +38,8 @@ and the approved IA metadata probe succeeded without weakening security.
 - `.aide.local/**`
 - `secrets/**`
 - `.env`
-- private local files, credentials, raw prompts, raw responses, committed CA
-  certificates, certificate bundles, and raw live IA response bodies
+- private local files, credentials, raw prompts, raw responses, and raw live IA
+  response bodies
 - `site/dist/**`
 - `data/public_index/**`
 - `runtime/connectors/**`
@@ -53,63 +50,66 @@ and the approved IA metadata probe succeeded without weakening security.
 
 ## IMPLEMENTATION
 
-The diagnostic script now supports redacting local paths from committed
-evidence. The TLS validator prefers the IA-02-TLS-TRUST-CONTINUE after-diagnosis
-when present and still rejects insecure TLS bypass patterns.
+IA-03 adds an IA source-cache policy, record schema inventory, adapter, CLI,
+validator, expected examples, focused tests, docs, inventories, and audit pack.
 
-The active Python environment has no top-level `certifi` and no default
-OpenSSL CA file/capath, but it does have a pip-vendored CA bundle. Setting
-`SSL_CERT_FILE` for the current shell only to that existing bundle allowed a
-verified TLS handshake to `archive.org` with `CERT_REQUIRED` and hostname
-checking enabled.
+The adapter builds IA-specific source-cache records and writes sanitized durable
+source-cache entries through the existing `runtime.source_cache.SourceCacheStore`
+API. The generic cache entry avoids reserved public-truth fields while the IA
+record and audit evidence preserve explicit non-claim flags.
 
-After that verified diagnostic passed, the approved IA metadata-only probe ran
-with the IA-02 caps: query `sampleproject`, rows 1, max requests 2, explicit
-User-Agent/contact. It succeeded with two HTTPS requests and wrote only redacted
-summary, normalized preview, and boundary proof.
+The CLI defaults to dry-run. Apply mode requires `--apply`, an explicit
+`--instance`, and a configured operator token. Validation proves apply against a
+temporary explicit local instance only.
 
 ## EVIDENCE
 
-- `control/inventory/ia_02_tls_continue_machine_diagnosis.json`
-- `control/inventory/ia_02_tls_continue_operator_action.json`
-- `control/inventory/ia_02_tls_continue_rerun_result_summary.json`
-- `control/inventory/ia_02_tls_continue_normalized_preview.json`
-- `control/inventory/ia_02_tls_continue_boundary_report.json`
-- `control/inventory/ia_02_tls_continue_result.json`
-- `control/audits/ia-02-tls-trust-continue-v0/`
+- `control/policies/ia_source_cache_policy.json`
+- `control/inventory/ia_source_cache_record_schema.json`
+- `control/inventory/ia_source_cache_fixture_write_result.json`
+- `control/inventory/ia_source_cache_live_preview_write_result.json`
+- `control/inventory/ia_source_cache_boundary_report.json`
+- `control/inventory/ia_03_result.json`
+- `control/audits/ia-03-source-cache-write-path-v0/`
 
 ## CONTEXT_REFS
 
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
 - `control/inventory/ia_02_result.json`
+- `control/inventory/ia_02_tls_continue_normalized_preview.json`
 - `control/inventory/ia_02_next_task_decision.json`
-- `.aide/queue/IA-02-TLS-TRUST-CONTINUE/task.yaml`
 - `.aide/queue/IA-03/task.yaml`
+- `.aide/queue/IA-04/task.yaml`
 - `.aide/queue/index.yaml`
-- `docs/operations/IA_TLS_TRUST_TROUBLESHOOTING.md`
-- `docs/operations/IA_METADATA_LIVE_PROBE_RUNBOOK.md`
+- `docs/operations/IA_SOURCE_CACHE_WRITE_RUNBOOK.md`
+- `docs/reference/IA_SOURCE_CACHE_RECORD.md`
 
 ## VALIDATION
 
-Required focused validation passed:
+Focused validation passed:
 
 - IA metadata policy validator
 - IA fixture replay validator
-- IA live-probe dry-run
-- Python TLS diagnostic after current-shell CA setting
-- IA TLS trust validator
 - IA live-probe validator
-- IA TLS/live-probe focused unittest modules
-- architecture boundary and generated artifact cleanliness checks
+- IA source-cache write validator
+- IA source-cache CLI dry-run
+- IA source-cache focused unittest modules
+- architecture boundary checks
+
+Generated artifact cleanliness should be checked after commit because the audit
+pack is generated evidence and appears as drift before it is committed.
 
 ## NON_GOALS
 
-- No TLS verification disabling.
-- No insecure context, `verify=False`, or hostname-check bypass.
-- No committed CA certificate, certificate bundle, or machine-specific path.
-- No raw IA response body commit.
-- No broad retry loop.
+- No new live IA call.
+- No raw response body commit.
+- No operator instance mutation.
+- No evidence ledger write.
+- No candidate, reviewed, or master index mutation.
 - No downloads/uploads.
-- No source-cache, evidence, candidate, reviewed, or master-index mutation.
 - No extraction, model/provider calls, deployment, production readiness claim,
   or public launch claim.
 
@@ -117,12 +117,12 @@ Required focused validation passed:
 
 Status is `PASS`.
 
-- TLS before/after diagnostics are recorded with local paths redacted.
-- TLS verification remained enabled.
-- The safe action class is `valid_ca_bundle_env_needed_for_current_shell`.
-- Approved live probe rerun succeeded.
-- Redacted summary, normalized preview, and boundary report exist.
-- IA-03 is unblocked for source-cache write path planning.
+- Source-cache policy, schema, adapter, CLI, validator, tests, docs, examples,
+  inventories, and audit pack exist.
+- Dry-run passes.
+- Temp-instance source-cache write passes.
+- Fixture and live-preview records are written to temp source cache.
+- IA-04 is the recommended next task.
 
 ## OUTPUT_SCHEMA
 
@@ -131,8 +131,7 @@ Final response sections:
 - `STATUS`
 - `SUMMARY`
 - `COMMITS`
-- `TLS`
-- `IA_RERUN`
+- `IA_SOURCE_CACHE`
 - `VALIDATION`
 - `BOUNDARIES`
 - `NEXT_TASK`

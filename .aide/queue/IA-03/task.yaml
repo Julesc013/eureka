@@ -1,6 +1,6 @@
 id: IA-03
 title: IA Source Cache Write Path
-status: queued
+status: completed
 purpose: Define source-cache write behavior only after a successful approved IA-02 metadata response exists.
 allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
 gate:
@@ -13,4 +13,4 @@ gate:
   - no evidence writes
   - no candidate/reviewed/master index mutation
 recommended_after: IA-02
-recommended_next: IA-03
+recommended_next: IA-04

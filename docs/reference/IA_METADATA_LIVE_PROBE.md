@@ -62,7 +62,10 @@ succeeded with:
 
 ## Handoff
 
-IA-03 may proceed to define the source-cache write path using the successful
+IA-03 has proceeded with the source-cache write path using the successful
 redacted response summary, normalized preview, and boundary report from
-IA-02-TLS-TRUST-CONTINUE. IA-03 still must not write source cache until its own
-explicit gate is implemented and validated.
+IA-02-TLS-TRUST-CONTINUE. IA-03 writes only source-cache observation records to
+an explicit temporary/local instance and still does not write evidence or mutate
+indexes.
+
+IA-04 is the next gate for evidence-ledger integration.

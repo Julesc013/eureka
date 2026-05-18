@@ -1,0 +1,7 @@
+{
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "reason": "IA-03 adds and proves the metadata source-cache write path against an explicit temporary local instance only. Evidence ledger and index mutation remain gated for IA-04 and later.",
+  "recommended_next_task": "IA-04 \u2014 IA Evidence Ledger Integration",
+  "schema_version": "ia_03_next_task_decision.v0",
+  "task": "IA-03"
+}

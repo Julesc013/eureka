@@ -1,0 +1,14 @@
+{
+  "candidate_index_mutated": false,
+  "download_performed": false,
+  "evidence_ledger_write_performed": false,
+  "master_index_mutated": false,
+  "operator_instance_mutated": false,
+  "passed": true,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_source_cache_boundary_report.v0",
+  "source_cache_write_performed": true,
+  "source_cache_write_scope": "temp_explicit_instance_only",
+  "task": "IA-03"
+}

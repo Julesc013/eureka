@@ -1,0 +1,36 @@
+{
+  "records": [
+    {
+      "accepted_truth": false,
+      "download_performed": false,
+      "endpoint_class": "item_file_list_metadata_read",
+      "evidence_ledger_write_performed": false,
+      "fixture_id": "item_file_list",
+      "index_mutation_performed": false,
+      "observation_id": "iaobs_item_file_list",
+      "observation_kind": "item_file_list",
+      "raw_response_committed": false,
+      "record_id": "iasc_d70a6f39da5837c6",
+      "review_required": true,
+      "source_id": "internet_archive_metadata",
+      "source_kind": "ia_fixture_replay"
+    },
+    {
+      "accepted_truth": false,
+      "download_performed": false,
+      "endpoint_class": "item_metadata_read",
+      "evidence_ledger_write_performed": false,
+      "fixture_id": "item_metadata",
+      "index_mutation_performed": false,
+      "observation_id": "iaobs_item_metadata",
+      "observation_kind": "item_metadata",
+      "raw_response_committed": false,
+      "record_id": "iasc_486af3662118be4b",
+      "review_required": true,
+      "source_id": "internet_archive_metadata",
+      "source_kind": "ia_fixture_replay"
+    }
+  ],
+  "schema_version": "ia_expected_source_cache_records.v0",
+  "task": "IA-03"
+}

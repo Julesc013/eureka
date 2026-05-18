@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-03 — IA Source Cache Write Path
+current_recommended_task: IA-04 — IA Evidence Ledger Integration
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -358,12 +358,21 @@ entries:
     recommended_next: IA-03
   - id: IA-03
     title: IA Source Cache Write Path
-    status: queued
+    status: completed
     purpose: Define source-cache write behavior only after a successful approved IA-02 metadata response exists.
     allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
     gate: IA-02 must have a successful approved live metadata response and verified TLS success; no downloads, uploads, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-03/task.yaml
     recommended_after: IA-02
+    recommended_next: IA-04
+  - id: IA-04
+    title: IA Evidence Ledger Integration
+    status: queued
+    purpose: Define evidence-ledger integration after IA metadata source-cache records are written and validated.
+    allowed_scope_summary: IA evidence candidate policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
+    gate: IA-03 completed with source-cache records written only to a temp explicit instance; no reviewed/master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-04/task.yaml
+    recommended_after: IA-03
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

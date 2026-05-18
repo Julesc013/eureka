@@ -1,0 +1,14 @@
+{
+  "accepted_truth": false,
+  "download_performed": false,
+  "endpoint_class": "item_file_list_metadata_read",
+  "evidence_ledger_write_performed": false,
+  "observation_id": "iaobs_item_file_list",
+  "observation_kind": "item_file_list",
+  "raw_response_committed": false,
+  "record_id": "iasc_d70a6f39da5837c6",
+  "review_required": true,
+  "schema_version": "ia_source_cache_record.v0",
+  "source_id": "internet_archive_metadata",
+  "source_kind": "ia_fixture_replay"
+}

@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "allowed": true,
+      "policy": "source_cache_writes_enabled_for_IA_03",
+      "scope": "temp_or_explicit_local_instance_only"
+    },
+    {
+      "allowed": false,
+      "policy": "evidence_ledger_writes_enabled",
+      "scope": "IA-03"
+    },
+    {
+      "allowed": false,
+      "policy": "candidate_reviewed_master_index_mutation",
+      "scope": "IA-03"
+    },
+    {
+      "allowed": false,
+      "policy": "download_upload_extract_model_deploy",
+      "scope": "IA-03"
+    }
+  ],
+  "schema_version": "ia_source_cache_policy_matrix.v0",
+  "task": "IA-03"
+}
