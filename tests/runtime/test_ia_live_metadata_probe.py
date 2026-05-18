@@ -108,6 +108,14 @@ class IALiveMetadataProbeTests(unittest.TestCase):
         boundary = report["boundary_report"]
         self.assertEqual("succeeded", summary["probe_status"])
         self.assertEqual(2, summary["total_http_requests"])
+        self.assertEqual(
+            "https://archive.org/metadata/<redacted-identifier>?<redacted-query>",
+            summary["http_responses"][1]["url"],
+        )
+        self.assertEqual(
+            "https://archive.org/metadata/<redacted-identifier>?<redacted-query>",
+            report["request_plan"][1]["url"],
+        )
         self.assertEqual(2, len(report["normalized_preview"]))
         for record in report["normalized_preview"]:
             self.assertNotIn("item_identifier", record)

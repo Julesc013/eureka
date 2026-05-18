@@ -13,6 +13,10 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DIAGNOSIS_PATH = REPO_ROOT / "control/inventory/ia_02_tls_trust_diagnosis.json"
 REPAIR_DECISION_PATH = REPO_ROOT / "control/inventory/ia_02_tls_trust_repair_decision.json"
+CONTINUE_DIAGNOSIS_PATH = (
+    REPO_ROOT / "control/audits/ia-02-tls-trust-continue-v0/generated/tls_diagnosis_after.json"
+)
+CONTINUE_OPERATOR_ACTION_PATH = REPO_ROOT / "control/inventory/ia_02_tls_continue_operator_action.json"
 IA03_TASK_PATH = REPO_ROOT / ".aide/queue/IA-03/task.yaml"
 
 SCAN_PATHS = (
@@ -42,8 +46,10 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
 def validate_ia_tls_trust(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
-    diagnosis = _load_json(DIAGNOSIS_PATH, errors)
-    repair_decision = _load_json(REPAIR_DECISION_PATH, errors, required=False)
+    diagnosis_path = CONTINUE_DIAGNOSIS_PATH if CONTINUE_DIAGNOSIS_PATH.exists() else DIAGNOSIS_PATH
+    decision_path = CONTINUE_OPERATOR_ACTION_PATH if CONTINUE_OPERATOR_ACTION_PATH.exists() else REPAIR_DECISION_PATH
+    diagnosis = _load_json(diagnosis_path, errors)
+    repair_decision = _load_json(decision_path, errors, required=False)
     if diagnosis:
         if diagnosis.get("verification_enabled") is not True:
             errors.append("tls_verification_not_enabled")
@@ -57,7 +63,8 @@ def validate_ia_tls_trust(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
     _validate_no_raw_response_commit(repo_root, errors)
 
     tls_passed = diagnosis.get("tls_handshake_status") == "pass"
-    ia03_blocked = "status: blocked" in IA03_TASK_PATH.read_text(encoding="utf-8") if IA03_TASK_PATH.exists() else False
+    ia03_task_text = IA03_TASK_PATH.read_text(encoding="utf-8") if IA03_TASK_PATH.exists() else ""
+    ia03_blocked = "status: blocked" in ia03_task_text
     if not tls_passed and not ia03_blocked:
         errors.append("ia_03_not_blocked_after_tls_failure")
     if repair_decision:
@@ -68,10 +75,11 @@ def validate_ia_tls_trust(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
 
     return {
         "schema_version": "ia_tls_trust_validation.v0",
-        "task": "IA-02-TLS-TRUST-01",
+        "task": str(diagnosis.get("task", "IA-02-TLS-TRUST-CONTINUE")),
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "warnings": warnings,
+        "diagnosis_path": diagnosis_path.relative_to(repo_root).as_posix(),
         "tls_handshake_status": diagnosis.get("tls_handshake_status", ""),
         "tls_failure_type": diagnosis.get("failure_type", ""),
         "verification_enabled": diagnosis.get("verification_enabled") is True,
@@ -109,7 +117,9 @@ def _validate_no_raw_response_commit(repo_root: Path, errors: list[str]) -> None
     paths = [
         repo_root / "control/inventory/ia_live_probe_result_summary.json",
         repo_root / "control/inventory/ia_02_tls_rerun_result_summary.json",
+        repo_root / "control/inventory/ia_02_tls_continue_rerun_result_summary.json",
         repo_root / "control/audits/ia-02-tls-trust-01-v0/generated/live_probe_redacted_summary.json",
+        repo_root / "control/audits/ia-02-tls-trust-continue-v0/generated/live_probe_redacted_summary.json",
     ]
     for path in paths:
         if not path.exists():

@@ -23,7 +23,7 @@ The probe may make at most two HTTP requests:
 - one one-row metadata search
 - one exact item metadata read if a safe identifier is returned
 
-## Current IA-02 Outcome
+## IA-02 Outcome
 
 The approved request was attempted once, but the local TLS trust store rejected
 the certificate chain with `ssl_certificate_verify_failed`. This is recorded as
@@ -46,6 +46,17 @@ IA-02-TLS-TRUST-01 diagnosed this machine as a local Python trust-store problem:
 verification is enabled, hostname checking is enabled, DNS resolution works, but
 the verified TLS handshake fails with a self-signed chain and Python has no
 usable default CA file/capath. IA-03 remains blocked.
+
+IA-02-TLS-TRUST-CONTINUE then used a current-shell `SSL_CERT_FILE` setting that
+points to an existing local CA bundle in the active Python installation. With
+verification still enabled, the TLS diagnostic passed and the approved IA
+metadata-only probe succeeded with two HTTP requests:
+
+- one one-row metadata search
+- one exact item metadata read
+
+The committed evidence is redacted summary, normalized preview, and boundary
+proof only. No raw response body or certificate bundle was committed.
 
 ## Boundaries
 

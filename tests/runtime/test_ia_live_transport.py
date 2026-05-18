@@ -120,6 +120,22 @@ class IALiveTransportTests(unittest.TestCase):
         self.assertTrue(response.rate_limited)
         self.assertEqual(60, response.retry_after_seconds)
 
+    def test_metadata_identifier_is_redacted_from_response_metadata_url(self):
+        transport = IALiveTransport(policy())
+        with patch("urllib.request.urlopen", return_value=FakeResponse()):
+            response = transport.get_json(
+                url="https://archive.org/metadata/sampleproject",
+                endpoint_class="item_metadata_read",
+                user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                contact="local-operator",
+                timeout_seconds=10,
+                kill_switch_enabled=True,
+            )
+        self.assertEqual(
+            "https://archive.org/metadata/<redacted-identifier>?<redacted-query>",
+            response.metadata()["url"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -164,7 +164,10 @@ def _parse_retry_after(value: str) -> int | None:
 
 def _redact_url(url: str) -> str:
     parsed = urllib.parse.urlparse(url)
-    return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", "<redacted-query>", ""))
+    path = parsed.path
+    if path.startswith("/metadata/"):
+        path = "/metadata/<redacted-identifier>"
+    return urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path, "", "<redacted-query>", ""))
 
 
 def _valid_user_agent(value: str) -> bool:

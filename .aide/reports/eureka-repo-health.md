@@ -2,30 +2,27 @@
 
 Updated: 2026-05-18
 
-Current recommended task: SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA.
+Current recommended task: IA-03 — IA Source Cache Write Path.
 
-Last completed task: IA-02-TLS-TRUST-01 - Diagnose local Python TLS trust and rerun approved IA metadata probe.
+Last completed task: IA-02-TLS-TRUST-CONTINUE - Repair local Python TLS trust
+and rerun approved IA metadata probe.
 
-Status: pass_with_warnings. The preferred local instance path remains `../instances/default`,
-with legacy sibling `../eureka-instance` explicit-only. IA-02-TLS-TRUST-01 added
-verified Python TLS diagnostics and validation around the IA-02 live-probe
-failure.
+Status: pass. The preferred local instance path remains
+`../instances/default`, with legacy sibling `../eureka-instance`
+explicit-only.
 
-The targeted broad subset still has 10 unrelated broad-lane validator failures
-from the instance-layout clean-machine closeout. They do not block PLAY-02.
+IA-02-TLS-TRUST-CONTINUE confirmed that Python TLS verification and hostname
+checking stayed enabled. The original local trust failure was repaired for the
+current shell by pointing `SSL_CERT_FILE` at an existing local CA bundle from
+the active Python installation; no local path, CA certificate, or certificate
+bundle was committed.
 
-One approved IA metadata request was attempted under policy. It failed before
-an IA HTTP response was available because the local Python TLS trust store
-reported `ssl_certificate_verify_failed`.
-
-The TLS diagnostic confirmed verification and hostname checking are enabled,
-DNS resolution works, Python has no usable default CA file/capath here, `certifi`
-is not available, and the verified handshake reports
-`self_signed_certificate_in_chain`. No insecure TLS bypass was used. The
-approved IA metadata probe was not rerun.
+The approved IA metadata-only live probe succeeded with two HTTP requests: one
+bounded metadata search and one exact item metadata read. The committed evidence
+is a redacted summary, normalized preview, and boundary report only.
 
 No raw response body, source-cache write, evidence write, index mutation,
 extraction, model/provider call, download, upload, public fanout, deployment,
 production readiness claim, or public launch readiness claim occurred. IA-03 is
-blocked until IA-02 has a successful approved live response summary, normalized
-preview, verified TLS success, and boundary report.
+now unblocked to define the source-cache write path; source-cache writes remain
+forbidden until IA-03 explicitly implements and validates that gate.

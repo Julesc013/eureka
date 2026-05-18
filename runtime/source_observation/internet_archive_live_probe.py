@@ -511,11 +511,14 @@ def _report(
 def _redact_request_plan_item(item: Mapping[str, Any]) -> dict[str, Any]:
     url = str(item.get("url", ""))
     parsed = urllib.parse.urlparse(url)
+    path = parsed.path
+    if path.startswith("/metadata/"):
+        path = "/metadata/<redacted-identifier>"
     return {
         "request_id": str(item.get("request_id", "")),
         "endpoint_class": str(item.get("endpoint_class", "")),
         "method": str(item.get("method", "GET")),
-        "url": urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path, "", "<redacted-query>", "")),
+        "url": urllib.parse.urlunparse((parsed.scheme, parsed.netloc, path, "", "<redacted-query>", "")),
         "query_or_identifier_hash": _hash_text(str(item.get("query_or_identifier", ""))),
         "rows": int(item.get("rows", 0)),
         "metadata_only": bool(item.get("metadata_only", True)),

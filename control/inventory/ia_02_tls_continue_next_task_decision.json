@@ -1,0 +1,8 @@
+{
+  "schema_version": "ia_02_tls_continue_next_task_decision.v0",
+  "task": "IA-02-TLS-TRUST-CONTINUE",
+  "ia_03_unblocked": true,
+  "recommended_next_task": "IA-03 \u2014 IA Source Cache Write Path",
+  "syn_alternative": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "reason": "A current-shell SSL_CERT_FILE setting to an existing local CA bundle allowed Python to complete verified TLS to archive.org. The approved IA metadata-only probe succeeded with two HTTPS requests, redacted summary, normalized preview, and boundary proof. IA-03 may proceed, but source-cache writes remain forbidden until IA-03 implements its own gate."
+}

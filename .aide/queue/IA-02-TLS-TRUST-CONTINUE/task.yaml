@@ -1,0 +1,24 @@
+id: IA-02-TLS-TRUST-CONTINUE
+title: Repair local Python TLS trust and rerun approved IA metadata probe
+status: completed
+purpose: Repair local Python TLS trust for the current shell and rerun the approved bounded IA metadata-only probe.
+allowed_scope_summary: TLS diagnostics, current-shell CA bundle environment action, redacted live-probe rerun evidence, validators, docs, inventories, audit evidence, and IA-03 queue gating only.
+gate:
+  - IA-02 partial result exists
+  - IA-02-TLS-TRUST-01 diagnosed local Python trust-store failure
+  - TLS verification remains enabled
+  - no insecure TLS bypass
+  - rerun only after verified TLS diagnostic passes
+result: control/inventory/ia_02_tls_continue_result.json
+audit: control/audits/ia-02-tls-trust-continue-v0/
+recommended_after: IA-02-TLS-TRUST-01
+recommended_next: IA-03
+completion:
+  status: pass
+  action_class: valid_ca_bundle_env_needed_for_current_shell
+  tls_verification_enabled: true
+  insecure_tls_bypass_used: false
+  live_probe_rerun_attempted: true
+  live_probe_rerun_succeeded: true
+  total_http_requests: 2
+  ia_03_unblocked: true

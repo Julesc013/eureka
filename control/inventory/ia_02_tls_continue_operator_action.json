@@ -1,0 +1,13 @@
+{
+  "schema_version": "ia_02_tls_continue_operator_action.v0",
+  "task": "IA-02-TLS-TRUST-CONTINUE",
+  "action_class": "valid_ca_bundle_env_needed_for_current_shell",
+  "repo_code_change_required": false,
+  "operator_shell_change_required": true,
+  "machine_admin_change_required": false,
+  "safe_to_rerun_probe": true,
+  "insecure_tls_bypass_required": false,
+  "insecure_tls_bypass_used": false,
+  "ia_03_unblocked": true,
+  "notes": "The active Python install has no default CA file/capath and no top-level certifi package. A verified handshake succeeds when SSL_CERT_FILE is set for the current shell to Python's existing pip-vendored CA bundle. The path and certificate material are not committed."
+}

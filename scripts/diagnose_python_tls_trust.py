@@ -11,7 +11,7 @@ import socket
 import ssl
 import sys
 from pathlib import Path
-from typing import Any, Sequence, TextIO
+from typing import Any, Mapping, Sequence, TextIO
 
 
 DEFAULT_HOST = "archive.org"
@@ -21,11 +21,17 @@ CERT_ENV_VARS = ("SSL_CERT_FILE", "SSL_CERT_DIR", "REQUESTS_CA_BUNDLE", "CURL_CA
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", default=DEFAULT_HOST, help="Host to test with a verified TLS handshake.")
+    parser.add_argument("--task-id", default="IA-02-TLS-TRUST-CONTINUE", help="Task identifier to record.")
+    parser.add_argument(
+        "--redact-local-paths",
+        action="store_true",
+        help="Redact local filesystem paths from the emitted diagnostic.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON.")
     parser.add_argument("--output", help="Optional JSON output path.")
     args = parser.parse_args(argv)
 
-    result = diagnose_python_tls_trust(args.host)
+    result = diagnose_python_tls_trust(args.host, task_id=args.task_id, redact_local_paths=args.redact_local_paths)
     if args.output:
         output_path = Path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -40,9 +46,18 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     return 0
 
 
-def diagnose_python_tls_trust(host: str = DEFAULT_HOST, port: int = 443, timeout: float = 10.0) -> dict[str, Any]:
+def diagnose_python_tls_trust(
+    host: str = DEFAULT_HOST,
+    port: int = 443,
+    timeout: float = 10.0,
+    *,
+    task_id: str = "IA-02-TLS-TRUST-CONTINUE",
+    redact_local_paths: bool = False,
+) -> dict[str, Any]:
     certifi_available, certifi_path = _certifi_info()
     context_info = _default_context_info()
+    verify_paths = ssl.get_default_verify_paths()
+    cert_env_vars = {name: os.environ.get(name, "") for name in CERT_ENV_VARS}
     can_resolve_host = False
     tls_status = "not_run"
     failure_type = ""
@@ -80,18 +95,19 @@ def diagnose_python_tls_trust(host: str = DEFAULT_HOST, port: int = 443, timeout
 
     return {
         "schema_version": "python_tls_trust_diagnosis.v0",
-        "task": "IA-02-TLS-TRUST-01",
+        "task": task_id,
         "host": host,
         "port": port,
         "python_version": sys.version.replace("\n", " "),
-        "executable": sys.executable,
+        "executable": _redact_path(sys.executable) if redact_local_paths else sys.executable,
+        "local_paths_redacted": bool(redact_local_paths),
         "platform": platform.platform(),
         "ssl_openssl_version": ssl.OPENSSL_VERSION,
-        "ssl_default_verify_paths": _verify_paths_to_dict(ssl.get_default_verify_paths()),
-        "ssl_default_verify_path_exists": _verify_path_exists(ssl.get_default_verify_paths()),
-        "cert_file_env_vars": {name: os.environ.get(name, "") for name in CERT_ENV_VARS},
+        "ssl_default_verify_paths": _redact_path_mapping(_verify_paths_to_dict(verify_paths), redact_local_paths),
+        "ssl_default_verify_path_exists": _verify_path_exists(verify_paths),
+        "cert_file_env_vars": _redact_path_mapping(cert_env_vars, redact_local_paths),
         "certifi_available": certifi_available,
-        "certifi_path": certifi_path,
+        "certifi_path": _redact_path(certifi_path) if redact_local_paths and certifi_path else certifi_path,
         "can_create_default_context": bool(context_info["can_create_default_context"]),
         "default_context_verify_mode": context_info["verify_mode"],
         "default_context_check_hostname": context_info["check_hostname"],
@@ -138,6 +154,21 @@ def _verify_paths_to_dict(paths: ssl.DefaultVerifyPaths) -> dict[str, str | None
         "openssl_capath": paths.openssl_capath,
         "openssl_capath_env": paths.openssl_capath_env,
     }
+
+
+def _redact_path_mapping(values: Mapping[str, str | None], redact: bool) -> dict[str, str | None]:
+    if not redact:
+        return dict(values)
+    return {key: _redact_path(value) if value else value for key, value in values.items()}
+
+
+def _redact_path(value: str | None) -> str | None:
+    if not value:
+        return value
+    text = str(value)
+    if "\\" in text or "/" in text or ":" in text:
+        return "<redacted-local-path>"
+    return text
 
 
 def _verify_path_exists(paths: ssl.DefaultVerifyPaths) -> dict[str, bool]:

@@ -1,0 +1,38 @@
+{
+  "schema_version": "ia_02_tls_continue_machine_diagnosis.v0",
+  "task": "IA-02-TLS-TRUST-CONTINUE",
+  "python_version": "3.11.9",
+  "python_executable_redacted": true,
+  "openssl_version": "OpenSSL 3.0.13 30 Jan 2024",
+  "default_verify_paths_redacted": true,
+  "cert_environment_before": {
+    "SSL_CERT_FILE": "",
+    "SSL_CERT_DIR": "",
+    "REQUESTS_CA_BUNDLE": "",
+    "CURL_CA_BUNDLE": ""
+  },
+  "top_level_certifi_installed": false,
+  "pip_vendor_certifi_available": true,
+  "git_ca_bundle_available": true,
+  "diagnosis_before": {
+    "path": "control/audits/ia-02-tls-trust-continue-v0/generated/tls_diagnosis_before.json",
+    "tls_handshake_status": "fail",
+    "failure_type": "ssl_certificate_verify_failed",
+    "failure_message_redacted": "self_signed_certificate_in_chain",
+    "verification_enabled": true,
+    "insecure_context_used": false
+  },
+  "safe_current_shell_action": {
+    "action_class": "valid_ca_bundle_env_needed_for_current_shell",
+    "ca_bundle_source": "python_pip_vendor_certifi",
+    "path_committed": false,
+    "certificate_committed": false
+  },
+  "diagnosis_after": {
+    "path": "control/audits/ia-02-tls-trust-continue-v0/generated/tls_diagnosis_after.json",
+    "tls_handshake_status": "pass",
+    "verification_enabled": true,
+    "insecure_context_used": false,
+    "local_paths_redacted": true
+  }
+}

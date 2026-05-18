@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+current_recommended_task: IA-03 — IA Source Cache Write Path
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -331,13 +331,13 @@ entries:
     recommended_next: IA-02
   - id: IA-02
     title: IA Local Live Metadata Probe
-    status: partial
+    status: completed
     purpose: Define and run only an explicitly operator-approved, one-shot, bounded local live metadata probe after IA-01 fixture replay passes.
     allowed_scope_summary: Tiny local live metadata probe approval and audit only; no downloads, source-cache writes by default, evidence writes, index mutation, public fanout, extraction, model/provider calls, or deployment.
-    gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call. Current IA-02 attempt is partial because local TLS trust rejected the connection before an IA HTTP response was available.
+    gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call. IA-02-TLS-TRUST-CONTINUE supplied the successful verified metadata response evidence.
     task: .aide/queue/IA-02/task.yaml
     recommended_after: IA-01
-    recommended_next: IA-02-TLS-TRUST-01
+    recommended_next: IA-03
   - id: IA-02-TLS-TRUST-01
     title: Diagnose local Python TLS trust and rerun approved IA metadata probe
     status: pass_with_warnings
@@ -346,10 +346,19 @@ entries:
     gate: IA-02 partial result exists; TLS verification must remain enabled; no insecure TLS bypass; rerun only after verified TLS diagnostic passes.
     task: .aide/queue/IA-02-TLS-TRUST-01/task.yaml
     recommended_after: IA-02
-    recommended_next: SYN-00
+    recommended_next: IA-02-TLS-TRUST-CONTINUE
+  - id: IA-02-TLS-TRUST-CONTINUE
+    title: Repair local Python TLS trust and rerun approved IA metadata probe
+    status: completed
+    purpose: Repair current-shell Python TLS trust configuration without disabling verification and rerun the approved IA metadata-only live probe.
+    allowed_scope_summary: TLS diagnostics, current-shell CA bundle environment action, redacted live-probe rerun evidence, validators, docs, inventories, audit evidence, and IA-03 queue gating only.
+    gate: IA-02-TLS-TRUST-01 completed; TLS verification remains enabled; no insecure TLS bypass; no downloads, source-cache writes, evidence writes, index mutation, extraction, model/provider calls, or deployment.
+    task: .aide/queue/IA-02-TLS-TRUST-CONTINUE/task.yaml
+    recommended_after: IA-02-TLS-TRUST-01
+    recommended_next: IA-03
   - id: IA-03
     title: IA Source Cache Write Path
-    status: blocked
+    status: queued
     purpose: Define source-cache write behavior only after a successful approved IA-02 metadata response exists.
     allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
     gate: IA-02 must have a successful approved live metadata response and verified TLS success; no downloads, uploads, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.

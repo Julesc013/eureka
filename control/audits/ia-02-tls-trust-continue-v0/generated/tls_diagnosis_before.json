@@ -1,0 +1,44 @@
+{
+  "can_create_default_context": true,
+  "can_resolve_host": true,
+  "cert_file_env_vars": {
+    "CURL_CA_BUNDLE": "",
+    "REQUESTS_CA_BUNDLE": "",
+    "SSL_CERT_DIR": "",
+    "SSL_CERT_FILE": ""
+  },
+  "certifi_available": false,
+  "certifi_path": "",
+  "default_context_check_hostname": true,
+  "default_context_verify_mode": "CERT_REQUIRED",
+  "executable": "<redacted-local-path>",
+  "failure_message_redacted": "self_signed_certificate_in_chain",
+  "failure_type": "ssl_certificate_verify_failed",
+  "host": "archive.org",
+  "insecure_context_used": false,
+  "local_paths_redacted": true,
+  "peer_issuer": "",
+  "peer_subject": "",
+  "platform": "Windows-10-10.0.19041-SP0",
+  "port": 443,
+  "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "schema_version": "python_tls_trust_diagnosis.v0",
+  "ssl_default_verify_path_exists": {
+    "cafile": false,
+    "capath": false,
+    "openssl_cafile": false,
+    "openssl_capath": false
+  },
+  "ssl_default_verify_paths": {
+    "cafile": null,
+    "capath": null,
+    "openssl_cafile": "<redacted-local-path>",
+    "openssl_cafile_env": "SSL_CERT_FILE",
+    "openssl_capath": "<redacted-local-path>",
+    "openssl_capath_env": "SSL_CERT_DIR"
+  },
+  "ssl_openssl_version": "OpenSSL 3.0.13 30 Jan 2024",
+  "task": "IA-02-TLS-TRUST-CONTINUE",
+  "tls_handshake_status": "fail",
+  "verification_enabled": true
+}

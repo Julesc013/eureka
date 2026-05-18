@@ -1,0 +1,59 @@
+{
+  "approved_live": true,
+  "contact_present": true,
+  "dry_run": false,
+  "endpoint_classes_attempted": [
+    "metadata_search_small",
+    "item_metadata_read"
+  ],
+  "failure_reason": "",
+  "http_responses": [
+    {
+      "content_sha256": "b326903fe8a2aab1442378e8977556fa764820218a2aed1fcf2f4be475c244b7",
+      "elapsed_ms": 952,
+      "endpoint_class": "metadata_search_small",
+      "rate_limited": false,
+      "response_byte_count": 756,
+      "retry_after_seconds": null,
+      "safe_headers": {
+        "content-type": "application/json"
+      },
+      "status_code": 200,
+      "transport_error": "",
+      "url": "https://archive.org/advancedsearch.php?<redacted-query>"
+    },
+    {
+      "content_sha256": "5d40abe3a9cbb9604b8cffb221344663455d1f0c6e726fc9afe41944109496e2",
+      "elapsed_ms": 1483,
+      "endpoint_class": "item_metadata_read",
+      "rate_limited": false,
+      "response_byte_count": 2707,
+      "retry_after_seconds": null,
+      "safe_headers": {
+        "content-type": "application/json"
+      },
+      "status_code": 200,
+      "transport_error": "",
+      "url": "https://archive.org/metadata/<redacted-identifier>?<redacted-query>"
+    }
+  ],
+  "identifier_count": 2,
+  "identifier_hashes": [
+    "a9a7636cb171f1a6",
+    "a9a7636cb171f1a6"
+  ],
+  "live_probe_rate_limited": false,
+  "metadata_search_rows_requested": 1,
+  "metadata_search_rows_returned": 1,
+  "normalized_preview_count": 2,
+  "policy_max_requests": 2,
+  "probe_status": "succeeded",
+  "query": "sampleproject",
+  "query_hash": "db0de47818a25cc7",
+  "raw_response_committed": false,
+  "request_timestamp_utc": "2026-05-18T12:16:09Z",
+  "schema_version": "ia_live_probe_redacted_summary.v0",
+  "task": "IA-02",
+  "total_http_requests": 2,
+  "user_agent_present": true
+}

@@ -31,6 +31,19 @@ REQUIRED_FILES = [
     "scripts/eureka_ia_live_metadata_probe.py",
 ]
 
+LATEST_SUMMARY_PATHS = [
+    "control/inventory/ia_02_tls_continue_rerun_result_summary.json",
+    "control/inventory/ia_live_probe_result_summary.json",
+]
+LATEST_PREVIEW_PATHS = [
+    "control/inventory/ia_02_tls_continue_normalized_preview.json",
+    "control/inventory/ia_live_probe_normalized_preview.json",
+]
+LATEST_BOUNDARY_PATHS = [
+    "control/inventory/ia_02_tls_continue_boundary_report.json",
+    "control/inventory/ia_live_probe_boundary_report.json",
+]
+
 ALLOWED_NETWORK_IMPORT_FILES = {
     "runtime/source_observation/internet_archive_live_transport.py",
     "runtime/source_observation/internet_archive_live_probe.py",
@@ -71,9 +84,9 @@ def validate_ia_live_metadata_probe(repo_root: Path = REPO_ROOT) -> dict[str, An
             errors.append(f"missing_file:{rel_path}")
 
     policy = _load_json(repo_root / "control/policies/ia_live_probe_policy.json", errors)
-    summary = _load_json(repo_root / "control/inventory/ia_live_probe_result_summary.json", errors)
-    preview = _load_json(repo_root / "control/inventory/ia_live_probe_normalized_preview.json", errors)
-    boundary = _load_json(repo_root / "control/inventory/ia_live_probe_boundary_report.json", errors)
+    summary = _load_first_json(repo_root, LATEST_SUMMARY_PATHS, errors)
+    preview = _load_first_json(repo_root, LATEST_PREVIEW_PATHS, errors)
+    boundary = _load_first_json(repo_root, LATEST_BOUNDARY_PATHS, errors)
     _validate_policy(policy, errors)
     _validate_summary(policy, summary, errors)
     _validate_preview(preview, errors)
@@ -134,6 +147,15 @@ def _load_json(path: Path, errors: list[str]) -> Mapping[str, Any]:
         errors.append(f"invalid_json:{path.relative_to(REPO_ROOT).as_posix()}:{exc}")
         return {}
     return payload if isinstance(payload, Mapping) else {}
+
+
+def _load_first_json(repo_root: Path, relative_paths: list[str], errors: list[str]) -> Mapping[str, Any]:
+    for rel_path in relative_paths:
+        path = repo_root / rel_path
+        if path.exists():
+            return _load_json(path, errors)
+    errors.append(f"missing_json:{relative_paths[-1]}")
+    return {}
 
 
 def _validate_policy(policy: Mapping[str, Any], errors: list[str]) -> None:
@@ -250,8 +272,13 @@ def _validate_no_raw_body_commit(repo_root: Path, errors: list[str]) -> None:
     for rel_path in (
         "control/inventory/ia_live_probe_result_summary.json",
         "control/inventory/ia_live_probe_normalized_preview.json",
+        "control/inventory/ia_02_tls_continue_rerun_result_summary.json",
+        "control/inventory/ia_02_tls_continue_normalized_preview.json",
+        "control/inventory/ia_02_tls_continue_boundary_report.json",
         "control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_redacted_summary.json",
         "control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_boundary_report.json",
+        "control/audits/ia-02-tls-trust-continue-v0/generated/live_probe_redacted_summary.json",
+        "control/audits/ia-02-tls-trust-continue-v0/generated/live_probe_boundary_report.json",
     ):
         path = repo_root / rel_path
         if not path.exists():

@@ -60,6 +60,16 @@ class IATlsTrustDiagnosticTests(unittest.TestCase):
         self.assertEqual("CERT_REQUIRED", result["default_context_verify_mode"])
         self.assertTrue(result["default_context_check_hostname"])
 
+    def test_diagnostic_can_redact_local_paths(self):
+        with patch("socket.getaddrinfo", return_value=[object()]), patch(
+            "socket.create_connection", return_value=FakeSocket()
+        ), patch("ssl.create_default_context", return_value=FakeContext()):
+            result = diagnose_python_tls_trust("archive.org", redact_local_paths=True)
+        self.assertTrue(result["local_paths_redacted"])
+        self.assertIn(result["executable"], {"<redacted-local-path>", sys.executable})
+        joined = json.dumps(result)
+        self.assertNotIn("\\Users\\", joined)
+
     def test_diagnostic_redacts_certificate_failures(self):
         with patch("socket.getaddrinfo", return_value=[object()]), patch(
             "socket.create_connection", return_value=FakeSocket()

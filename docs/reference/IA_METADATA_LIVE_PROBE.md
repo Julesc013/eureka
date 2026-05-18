@@ -49,7 +49,20 @@ hostname checking are enabled, but `archive.org` still fails a verified TLS
 handshake with `self_signed_certificate_in_chain`. The local Python OpenSSL
 default CA file and capath do not exist, and no insecure bypass was used.
 
+IA-02-TLS-TRUST-CONTINUE resolved the local trust path for the current shell by
+using an existing local CA bundle via `SSL_CERT_FILE`. TLS verification and
+hostname checking remained enabled. The approved metadata-only live probe then
+succeeded with:
+
+- `metadata_search_small`
+- `item_metadata_read`
+- total HTTP requests: 2
+- raw response committed: false
+- source-cache/evidence/index mutation: false
+
 ## Handoff
 
-IA-03 must not proceed to source-cache writes until a future approved live probe
-has a successful redacted response summary and boundary report.
+IA-03 may proceed to define the source-cache write path using the successful
+redacted response summary, normalized preview, and boundary report from
+IA-02-TLS-TRUST-CONTINUE. IA-03 still must not write source cache until its own
+explicit gate is implemented and validated.

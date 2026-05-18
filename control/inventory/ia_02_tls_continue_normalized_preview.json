@@ -1,0 +1,86 @@
+{
+  "schema_version": "ia_02_tls_continue_normalized_preview.v0",
+  "task": "IA-02-TLS-TRUST-CONTINUE",
+  "preview_records": [
+    {
+      "accepted_truth": false,
+      "candidate_index_mutated": false,
+      "checksum_candidate_count": 0,
+      "collection_candidate_count": 2,
+      "confidence": 0.55,
+      "creator_candidate_present": false,
+      "date_candidate_present": false,
+      "description_candidate_present": true,
+      "download_performed": false,
+      "evidence_ledger_write_performed": false,
+      "file_metadata_candidate_count": 0,
+      "fixture_id": "live_metadata_search_small",
+      "index_mutation_performed": false,
+      "item_identifier_hash": "a9a7636cb171f1a6",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 1"
+      ],
+      "master_index_mutated": false,
+      "mediatype_candidate": "data",
+      "observation_id": "iaobs_live_metadata_search_small",
+      "observation_kind": "metadata_search_result",
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_live_normalized_preview.v0",
+      "source_cache_write_performed": false,
+      "source_id": "internet_archive_metadata",
+      "title_candidate_present": true
+    },
+    {
+      "accepted_truth": false,
+      "candidate_index_mutated": false,
+      "checksum_candidate_count": 5,
+      "collection_candidate_count": 2,
+      "confidence": 0.6,
+      "creator_candidate_present": false,
+      "date_candidate_present": false,
+      "description_candidate_present": true,
+      "download_performed": false,
+      "evidence_ledger_write_performed": false,
+      "file_metadata_candidate_count": 5,
+      "fixture_id": "live_item_metadata",
+      "index_mutation_performed": false,
+      "item_identifier_hash": "a9a7636cb171f1a6",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only"
+      ],
+      "master_index_mutated": false,
+      "mediatype_candidate": "data",
+      "observation_id": "iaobs_live_item_metadata",
+      "observation_kind": "item_metadata",
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_live_normalized_preview.v0",
+      "source_cache_write_performed": false,
+      "source_id": "internet_archive_metadata",
+      "title_candidate_present": true
+    }
+  ]
+}
