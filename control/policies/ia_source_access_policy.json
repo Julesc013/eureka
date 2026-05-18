@@ -1,0 +1,39 @@
+{
+  "schema_version": "ia_source_access_policy.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "status": "policy_approved_runtime_disabled",
+  "allowed_future_access_classes": [
+    "metadata_search_small",
+    "item_metadata_read",
+    "item_file_list_metadata_read",
+    "fixture_replay"
+  ],
+  "forbidden_access_classes": [
+    "item_download",
+    "media_file_download",
+    "bulk_collection_crawl",
+    "upload_or_write_api",
+    "s3_api",
+    "authenticated_account_api",
+    "review_write_api",
+    "task_write_api",
+    "arbitrary_url_fetch",
+    "wayback_content_replay",
+    "public_query_fanout",
+    "page_scraping_outside_metadata_api"
+  ],
+  "metadata_is_source_observation_material_only": true,
+  "source_cache_writes_enabled_now": false,
+  "evidence_ledger_writes_enabled_now": false,
+  "candidate_index_mutation_enabled_now": false,
+  "reviewed_index_mutation_enabled_now": false,
+  "master_index_mutation_enabled_now": false,
+  "live_calls_enabled_now": false,
+  "fixture_replay_required_before_live_probe": true,
+  "operator_approval_required_before_live_probe": true,
+  "public_user_query_sync_enabled": false,
+  "telemetry_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

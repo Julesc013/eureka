@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_metadata_allowed_endpoint_matrix.v0",
+  "rows": [
+    {
+      "endpoint_class": "metadata_search_small",
+      "future_status": "future_allowed_after_IA_01_and_operator_approval",
+      "cache_required": true,
+      "review_required": true
+    }
+  ]
+}

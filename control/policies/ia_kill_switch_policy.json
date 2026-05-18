@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_kill_switch_policy.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "status": "required_before_future_live_probe",
+  "kill_switch_required": true,
+  "kill_switch_checked_before_every_future_live_call": true,
+  "default_state": "disabled",
+  "future_enable_requires_operator_approval": true,
+  "future_disable_must_fail_closed": true,
+  "suggested_local_flag": "EUREKA_IA_METADATA_LIVE_ENABLED",
+  "source_cache_writes_stop_when_disabled": true,
+  "evidence_writes_stop_when_disabled": true,
+  "public_search_fanout_enabled": false,
+  "live_calls_enabled_now": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

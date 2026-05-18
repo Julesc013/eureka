@@ -1,6 +1,6 @@
 id: IA-00
 title: Internet Archive Metadata Connector Approval Closure
-status: queued
+status: completed
 purpose: Define the approval closure and policy boundary for future Internet Archive metadata connector work without enabling live calls by default.
 allowed_scope_summary: Policy, approval, fixture-only planning, docs, validators, inventories, and audit evidence only.
 gate:
@@ -14,4 +14,16 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: PLAY-02
-recommended_next: SYN-00
+recommended_next: IA-01
+result: control/inventory/ia_00_result.json
+audit: control/audits/ia-00-metadata-connector-approval-v0/
+completion:
+  status: pass
+  connector_policy_added: true
+  live_source_call_performed: false
+  source_probe_executed: false
+  source_cache_write_performed: false
+  evidence_ledger_write_performed: false
+  download_performed: false
+  model_provider_used: false
+  deployment_performed: false

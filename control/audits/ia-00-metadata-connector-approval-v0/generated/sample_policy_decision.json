@@ -1,0 +1,9 @@
+{
+  "schema_version": "ia_metadata_policy_decision.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "decision": "approve_metadata_only_local_pilot_policy_runtime_disabled",
+  "live_calls_enabled_now": false,
+  "future_live_probe_allowed_after": "IA-01",
+  "recommended_next_task": "IA-01 \u2014 IA Fixture Replay Hardening"
+}

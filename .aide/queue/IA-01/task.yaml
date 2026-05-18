@@ -1,0 +1,20 @@
+id: IA-01
+title: IA Fixture Replay Hardening
+status: queued
+purpose: Harden fixture replay for the IA metadata-only local pilot before any live metadata probe can be considered.
+allowed_scope_summary: Fixture replay data, validators, docs, tests, inventories, and audit evidence only; runtime live calls remain disabled.
+gate:
+  - IA-00 completed
+  - no live Internet Archive calls
+  - no source probes
+  - no downloads
+  - no source-cache writes
+  - no evidence writes
+  - no index mutation
+  - no extraction
+  - no model/provider calls
+  - no deployment
+  - no production readiness claim
+  - no public launch claim
+recommended_after: IA-00
+recommended_next: IA-02

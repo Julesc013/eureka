@@ -1,0 +1,147 @@
+{
+  "schema_version": "ia_metadata_forbidden_action_matrix.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "rows": [
+    {
+      "action_id": "downloads",
+      "status": "forbidden",
+      "reason": "IA-00 approves metadata policy only and must not fetch artifact bytes.",
+      "future_reconsideration_gate": "separate reviewed download/action policy, not IA-00 through IA-02",
+      "validator_assertion": "downloads_enabled_false"
+    },
+    {
+      "action_id": "uploads",
+      "status": "forbidden",
+      "reason": "Upload/write behavior is outside local metadata observation.",
+      "future_reconsideration_gate": "separate write API approval",
+      "validator_assertion": "uploads_enabled_false"
+    },
+    {
+      "action_id": "write_apis",
+      "status": "forbidden",
+      "reason": "IA-00 is read-only policy closure.",
+      "future_reconsideration_gate": "separate write API approval",
+      "validator_assertion": "write_apis_enabled_false"
+    },
+    {
+      "action_id": "s3_apis",
+      "status": "forbidden",
+      "reason": "S3-style APIs are not metadata-only local pilot scope.",
+      "future_reconsideration_gate": "separate storage/API approval",
+      "validator_assertion": "s3_apis_absent_from_allowed_endpoints"
+    },
+    {
+      "action_id": "authenticated_account_apis",
+      "status": "forbidden",
+      "reason": "The future pilot must not require account credentials.",
+      "future_reconsideration_gate": "separate auth/privacy approval",
+      "validator_assertion": "account_auth_enabled_false"
+    },
+    {
+      "action_id": "reviews_write_apis",
+      "status": "forbidden",
+      "reason": "Review writes to IA are outside source observation.",
+      "future_reconsideration_gate": "separate write API approval",
+      "validator_assertion": "write_apis_enabled_false"
+    },
+    {
+      "action_id": "tasks_write_apis",
+      "status": "forbidden",
+      "reason": "External task mutation is outside metadata read posture.",
+      "future_reconsideration_gate": "separate task/write approval",
+      "validator_assertion": "write_apis_enabled_false"
+    },
+    {
+      "action_id": "item_file_fetch",
+      "status": "forbidden",
+      "reason": "File bytes are downloads, not metadata observations.",
+      "future_reconsideration_gate": "separate artifact access task",
+      "validator_assertion": "item_file_fetch_forbidden"
+    },
+    {
+      "action_id": "broad_collection_crawl",
+      "status": "forbidden",
+      "reason": "Unbounded discovery/crawling is not a small metadata pilot.",
+      "future_reconsideration_gate": "separate Scout/source expansion approval",
+      "validator_assertion": "broad_crawl_forbidden"
+    },
+    {
+      "action_id": "unbounded_paging",
+      "status": "forbidden",
+      "reason": "Future live probes must be capped and cache-aware.",
+      "future_reconsideration_gate": "rate-limit policy revision",
+      "validator_assertion": "unbounded_paging_forbidden"
+    },
+    {
+      "action_id": "public_query_fanout",
+      "status": "forbidden",
+      "reason": "Operator-local experiments must not fan out public user searches to IA.",
+      "future_reconsideration_gate": "separate public fanout review",
+      "validator_assertion": "public_search_fanout_enabled_false"
+    },
+    {
+      "action_id": "arbitrary_url_fetch",
+      "status": "forbidden",
+      "reason": "Only allowlisted metadata endpoint classes may ever be considered.",
+      "future_reconsideration_gate": "source policy allowlist revision",
+      "validator_assertion": "arbitrary_url_fetch_enabled_false"
+    },
+    {
+      "action_id": "wayback_content_replay",
+      "status": "forbidden",
+      "reason": "Wayback content replay is content access, not IA metadata observation.",
+      "future_reconsideration_gate": "separate Wayback/content policy",
+      "validator_assertion": "wayback_content_replay_enabled_false"
+    },
+    {
+      "action_id": "page_scraping_outside_metadata_api_posture",
+      "status": "forbidden",
+      "reason": "Scraping pages outside documented metadata/API posture bypasses source policy.",
+      "future_reconsideration_gate": "source policy allowlist revision",
+      "validator_assertion": "page_scraping_forbidden"
+    },
+    {
+      "action_id": "source_cache_write_in_IA_00",
+      "status": "forbidden",
+      "reason": "IA-00 does not write source observations or cache entries.",
+      "future_reconsideration_gate": "IA-03 source cache write path",
+      "validator_assertion": "source_cache_writes_enabled_false"
+    },
+    {
+      "action_id": "evidence_ledger_write_in_IA_00",
+      "status": "forbidden",
+      "reason": "IA-00 does not create evidence candidates.",
+      "future_reconsideration_gate": "IA-04 evidence ledger integration",
+      "validator_assertion": "evidence_ledger_writes_enabled_false"
+    },
+    {
+      "action_id": "candidate_index_mutation_in_IA_00",
+      "status": "forbidden",
+      "reason": "Metadata observations must not mutate candidate indexes in IA-00.",
+      "future_reconsideration_gate": "IA-05 candidate index integration",
+      "validator_assertion": "candidate_index_mutation_enabled_false"
+    },
+    {
+      "action_id": "reviewed_index_mutation_in_IA_00",
+      "status": "forbidden",
+      "reason": "Reviewed index integration requires later review/promotion work.",
+      "future_reconsideration_gate": "IA-07 reviewed local index rebuild",
+      "validator_assertion": "reviewed_index_mutation_enabled_false"
+    },
+    {
+      "action_id": "master_index_mutation",
+      "status": "forbidden",
+      "reason": "IA metadata must never bypass local review into master/public truth.",
+      "future_reconsideration_gate": "separate promotion governance",
+      "validator_assertion": "master_index_mutation_enabled_false"
+    },
+    {
+      "action_id": "production_deployment",
+      "status": "forbidden",
+      "reason": "IA-00 is not production or public launch readiness.",
+      "future_reconsideration_gate": "separate deployment track",
+      "validator_assertion": "deployment_enabled_false"
+    }
+  ]
+}

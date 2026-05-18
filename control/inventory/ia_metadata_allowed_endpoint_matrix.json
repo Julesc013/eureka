@@ -1,0 +1,88 @@
+{
+  "schema_version": "ia_metadata_allowed_endpoint_matrix.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "rows": [
+    {
+      "endpoint_class": "metadata_search_small",
+      "future_status": "future_allowed_after_IA_01_and_operator_approval",
+      "allowed_after": [
+        "IA-01 fixture replay hardening",
+        "IA-02 explicit operator approval"
+      ],
+      "purpose": "Small bounded metadata search over documented IA metadata search posture.",
+      "required_policy": [
+        "ia_source_access_policy.v0",
+        "ia_user_agent_policy.v0",
+        "ia_rate_limit_policy.v0",
+        "ia_kill_switch_policy.v0"
+      ],
+      "max_rows_or_scope": "first probe row cap 10; one page; bounded fields only",
+      "cache_required": true,
+      "review_required": true,
+      "public_fanout": false,
+      "forbidden_side_effects": [
+        "downloads",
+        "source_cache_write_in_IA_00",
+        "evidence_write_in_IA_00",
+        "candidate_index_mutation",
+        "reviewed_index_mutation",
+        "public_search_fanout"
+      ]
+    },
+    {
+      "endpoint_class": "item_metadata_read",
+      "future_status": "future_allowed_after_IA_01_and_operator_approval",
+      "allowed_after": [
+        "IA-01 fixture replay hardening",
+        "IA-02 explicit operator approval"
+      ],
+      "purpose": "Exact identifier metadata document read only.",
+      "required_policy": [
+        "ia_source_access_policy.v0",
+        "ia_user_agent_policy.v0",
+        "ia_rate_limit_policy.v0",
+        "ia_kill_switch_policy.v0"
+      ],
+      "max_rows_or_scope": "exact identifier only; first probe cap 3 identifiers",
+      "cache_required": true,
+      "review_required": true,
+      "downloads": false,
+      "forbidden_side_effects": [
+        "file_fetch",
+        "downloads",
+        "uploads",
+        "write_apis",
+        "source_cache_write_in_IA_00",
+        "accepted_truth_without_review"
+      ]
+    },
+    {
+      "endpoint_class": "item_file_list_metadata_read",
+      "future_status": "future_allowed_after_IA_01_and_operator_approval",
+      "allowed_after": [
+        "IA-01 fixture replay hardening",
+        "IA-02 explicit operator approval"
+      ],
+      "purpose": "File-list metadata only, including names, sizes, formats, and checksums as source observations.",
+      "required_policy": [
+        "ia_source_access_policy.v0",
+        "ia_user_agent_policy.v0",
+        "ia_rate_limit_policy.v0",
+        "ia_kill_switch_policy.v0"
+      ],
+      "max_rows_or_scope": "exact identifier only; large file-list cap required",
+      "cache_required": true,
+      "review_required": true,
+      "downloads": false,
+      "forbidden_side_effects": [
+        "downloads",
+        "item_file_fetch",
+        "media_download",
+        "source_cache_write_in_IA_00",
+        "evidence_write_in_IA_00",
+        "compatibility_truth_from_file_metadata"
+      ]
+    }
+  ]
+}

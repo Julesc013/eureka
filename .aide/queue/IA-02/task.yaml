@@ -1,0 +1,16 @@
+id: IA-02
+title: Approved Local Live Metadata Probe
+status: queued
+purpose: Define and run only an explicitly operator-approved, one-shot, bounded local live metadata probe after IA-01 fixture replay passes.
+allowed_scope_summary: Tiny local live metadata probe approval and audit only; no downloads, source-cache writes by default, evidence writes, index mutation, public fanout, extraction, model/provider calls, or deployment.
+gate:
+  - IA-01 completed
+  - explicit operator approval
+  - User-Agent/contact configured
+  - rate limits, timeout, retry budget, Retry-After, cache, and kill switch proved
+  - no downloads
+  - no public fanout
+  - no production readiness claim
+  - no public launch claim
+recommended_after: IA-01
+recommended_next: IA-03

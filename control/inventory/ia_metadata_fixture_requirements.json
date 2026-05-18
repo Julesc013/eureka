@@ -1,0 +1,47 @@
+{
+  "schema_version": "ia_metadata_fixture_requirements.v0",
+  "task": "IA-00",
+  "fixture_replay_required_before_live_probe": true,
+  "requirements": [
+    {
+      "requirement_id": "metadata_search_fixture",
+      "purpose": "Replay a bounded metadata search response without network access.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "exact_item_metadata_fixture",
+      "purpose": "Replay an exact identifier metadata document.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "file_list_metadata_fixture",
+      "purpose": "Replay file-list metadata without fetching file bytes.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "missing_item_fixture",
+      "purpose": "Prove missing identifiers fail closed and do not invent records.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "malformed_partial_fixture",
+      "purpose": "Prove malformed or partial metadata is rejected or marked incomplete.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "retry_after_429_fixture",
+      "purpose": "Prove Retry-After is honored and retry budget is bounded.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "large_file_list_fixture",
+      "purpose": "Prove large file lists are capped and summarized safely.",
+      "required_before": "IA-02"
+    },
+    {
+      "requirement_id": "no_download_proof",
+      "purpose": "Prove fixture replay and future live metadata code paths do not fetch item files.",
+      "required_before": "IA-02"
+    }
+  ]
+}

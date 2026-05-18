@@ -1,0 +1,42 @@
+{
+  "schema_version": "ia_existing_material_inventory.v0",
+  "task": "IA-00",
+  "summary": "Repo-local planning already defines source-policy gates, fixture-only source-cache dry-runs, and Track B handoff requirements for an Internet Archive metadata connector, but no live IA access is approved.",
+  "materials_found": true,
+  "references": [
+    {
+      "path": "docs/operations/TRACK_B_COMPLETION_AUDIT.md",
+      "classification": "approval_handoff",
+      "summary": "Records that the Internet Archive metadata connector still needs source policy, User-Agent/contact, rate limits, cache TTL, and kill switch approval before any external call."
+    },
+    {
+      "path": "docs/operations/SOURCE_POLICY_GATES.md",
+      "classification": "source_policy_gate",
+      "summary": "Defines the required approval checklist for future live source access: allowlist, User-Agent/contact, rate limits, timeout, retry budget, cache TTL, kill switch, review gates, fixture replay, and audit."
+    },
+    {
+      "path": "docs/operations/SOURCE_CACHE_LOCAL_DRY_RUN_RUNTIME.md",
+      "classification": "fixture_only_runtime_boundary",
+      "summary": "States that current source-cache dry-runs use repo-local synthetic files only and forbid live source calls, connector runtime, source-cache writes, evidence writes, and index mutation."
+    },
+    {
+      "path": "control/inventory/track_b_completion_matrix.json",
+      "classification": "completion_matrix_note",
+      "summary": "Notes that IA connector approval must decide source policy, User-Agent/contact posture, rate limits, cache TTL, and kill switch before external calls."
+    },
+    {
+      "path": "runtime/source_registry/README.md",
+      "classification": "runtime_boundary_note",
+      "summary": "Keeps source registry posture fixture-only and does not approve live IA API calls, scraping, or crawling."
+    },
+    {
+      "path": "tests/integration/test_real_source_coverage_pack.py",
+      "classification": "negative_test_signal",
+      "summary": "Contains assertions that existing real-source coverage does not make live Internet Archive API calls."
+    }
+  ],
+  "runtime_connector_code_modified": false,
+  "network_access_performed": false,
+  "source_probe_executed": false,
+  "recommended_policy_basis": "Approve a metadata-only local pilot policy with runtime disabled, require IA-01 fixture replay before IA-02 live probe approval, and keep IA metadata as source observation material only."
+}

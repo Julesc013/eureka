@@ -1,0 +1,60 @@
+{
+  "schema_version": "ia_00_report.v0",
+  "task": "IA-00",
+  "status": "pass",
+  "summary": "Approved metadata-only Internet Archive local pilot policy with runtime disabled.",
+  "policy_artifacts": {
+    "connector_policy": "control/policies/ia_metadata_connector_policy.json",
+    "source_access_policy": "control/policies/ia_source_access_policy.json",
+    "user_agent_policy": "control/policies/ia_user_agent_policy.json",
+    "rate_limit_policy": "control/policies/ia_rate_limit_policy.json",
+    "kill_switch_policy": "control/policies/ia_kill_switch_policy.json",
+    "non_claim_policy": "control/policies/ia_non_claim_policy.json"
+  },
+  "approved_future_endpoint_classes": [
+    "metadata_search_small",
+    "item_metadata_read",
+    "item_file_list_metadata_read"
+  ],
+  "forbidden_now": [
+    "live_ia_calls",
+    "source_probes",
+    "source_cache_writes",
+    "evidence_writes",
+    "candidate_index_mutation",
+    "reviewed_index_mutation",
+    "master_index_mutation",
+    "downloads",
+    "uploads",
+    "public_search_fanout",
+    "model_provider_calls",
+    "deployment"
+  ],
+  "required_before_future_live_probe": [
+    "IA-01 fixture replay hardening",
+    "explicit IA-02 operator approval",
+    "User-Agent/contact",
+    "rate limits",
+    "timeout",
+    "retry/backoff",
+    "Retry-After",
+    "cache",
+    "kill switch"
+  ],
+  "boundaries": {
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "source_cache_write_performed": false,
+    "evidence_ledger_write_performed": false,
+    "candidate_index_mutated": false,
+    "reviewed_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "recommended_next_task": "IA-01 \u2014 IA Fixture Replay Hardening"
+}

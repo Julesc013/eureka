@@ -2,19 +2,20 @@
 
 Updated: 2026-05-18
 
-Current recommended task: IA-00 — Internet Archive Metadata Connector Approval Closure.
+Current recommended task: IA-01 — IA Fixture Replay Hardening.
 
-Last completed task: PLAY-02 - Demo Query / Absence / Hunt Smoke Pack.
+Last completed task: IA-00 - Internet Archive Metadata Connector Approval Closure.
 
 Status: pass. The preferred local instance path remains `../instances/default`,
-with legacy sibling `../eureka-instance` explicit-only. PLAY-02 adds a compact
-demo query, local absence, Hunt, SearchNeed, WorkUnit, and blocked-path smoke
-pack for local usability checks before SYN, IA, F0, workbench, and source-pilot
-changes.
+with legacy sibling `../eureka-instance` explicit-only. IA-00 approves a
+metadata-only Internet Archive local pilot policy with runtime disabled. IA-01
+must harden fixture replay before any IA-02 operator-approved live metadata
+probe can be considered.
 
 The targeted broad subset still has 10 unrelated broad-lane validator failures
 from the instance-layout clean-machine closeout. They do not block PLAY-02.
 
-No source probes, extraction, model/provider calls, downloads, installs,
+No live IA calls, source probes, source-cache writes, evidence writes, index
+mutation, extraction, model/provider calls, downloads, uploads, public fanout,
 deployment, production readiness claim, or public launch readiness claim
 occurred.

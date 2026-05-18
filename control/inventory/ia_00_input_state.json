@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_00_input_state.v0",
+  "task": "IA-00",
+  "branch": "dev",
+  "head": "9c1907e5a0611c8bc29845e26b8e07f551b83a01",
+  "origin_main": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "origin_dev": "9c1907e5a0611c8bc29845e26b8e07f551b83a01",
+  "working_tree_clean_before": true,
+  "play_00_found": true,
+  "play_01_found": true,
+  "play_02_found": true,
+  "preferred_instance": "../instances/default",
+  "local_instance_state_tracked": false,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_performed": false
+}

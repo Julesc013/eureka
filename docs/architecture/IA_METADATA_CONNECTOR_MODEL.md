@@ -1,34 +1,56 @@
-# IA Metadata Connector Model
+# Internet Archive Metadata Connector Model
 
-The IA metadata connector foundation is a reference pattern for future source
-families. It separates source policy, endpoint permission, fixture replay,
-normalization, source-cache mapping, evidence preview mapping, and review.
+IA-00 is a policy closure task. It approves a future metadata-only local pilot
+posture for an Internet Archive metadata connector while keeping runtime
+execution disabled.
 
-## Flow
+The approved model is:
 
-1. A committed fixture is loaded from `examples/connectors/internet_archive/fixtures/`.
-2. The fixture boundary is checked for live-call, truth, and product violations.
-3. Metadata is normalized into an IA source observation.
-4. The normalized observation can be mapped to a source-cache candidate preview.
-5. The normalized observation can be mapped to evidence candidate previews.
-6. Later tasks may route reviewed candidates into review queues or dry-runs.
+```text
+fixture replay
+-> future approved local live metadata probe
+-> source observation
+-> source cache
+-> evidence candidate
+-> review
+-> reviewed local index
+```
 
-## Source Operating System Compatibility
+The forbidden model is:
 
-The model preserves the H0 concepts without implementing H0:
+```text
+live IA JSON
+-> public truth
+```
 
-- source family
-- source capability ladder
-- source policy gate
-- fixture/replay harness
-- live-probe envelope
-- source cache
-- evidence candidate bridge
-- review queue
-- future coverage ledger
-- future connector scorecard
+## Current State
 
-## No-Live Boundary
+Runtime execution disabled in IA-00. No live Archive.org calls, source probes,
+downloads, source-cache writes, evidence writes, candidate-index mutation,
+reviewed-index mutation, master-index mutation, public-search fanout, model
+provider calls, or deployment are approved.
 
-IA-BUNDLE-01 has no live-probe envelope execution. The envelope remains a
-future approval target for IA-BUNDLE-02.
+## Future Metadata Scope
+
+The only future endpoint classes approved in principle are:
+
+- small bounded metadata search
+- exact identifier item metadata read
+- exact identifier file-list metadata read
+
+They may only be used after IA-01 fixture replay hardening and a later IA-02
+operator-approved local live metadata probe.
+
+## Truth Boundary
+
+Internet Archive metadata is source observation material. It can help create
+candidate claims, but it is not accepted Eureka truth without review. Rights,
+safety, compatibility, availability, and source trust cannot be inferred from
+metadata alone.
+
+## Runtime Gates
+
+IA-00 does not implement runtime connector code. Later gates must prove fixture
+replay, operator approval, User-Agent/contact, rate limits, timeouts, retries,
+Retry-After handling, cache behavior, kill switch enforcement, and review gates
+before any source-cache or evidence integration is considered.

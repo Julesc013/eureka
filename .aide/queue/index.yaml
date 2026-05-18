@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-00 — Internet Archive Metadata Connector Approval Closure
+current_recommended_task: IA-01 — IA Fixture Replay Hardening
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -313,12 +313,30 @@ entries:
     recommended_next: IA-00
   - id: IA-00
     title: Internet Archive Metadata Connector Approval Closure
-    status: queued
+    status: completed
     purpose: Close the approval and policy boundary for a future Internet Archive metadata connector without enabling live calls by default.
     allowed_scope_summary: Policy, approval, fixture-only planning, docs, validators, inventories, and audit evidence only until a future task explicitly enables live metadata calls.
     gate: PLAY-02 completed; source probes, downloads, extraction, model/provider calls, deployment, production readiness, and public launch readiness remain disabled.
     task: .aide/queue/IA-00/task.yaml
     recommended_after: PLAY-02
+    recommended_next: IA-01
+  - id: IA-01
+    title: IA Fixture Replay Hardening
+    status: queued
+    purpose: Harden fixture replay for the IA metadata-only local pilot before any live metadata probe can be considered.
+    allowed_scope_summary: Fixture replay data, validators, docs, tests, inventories, and audit evidence only; runtime live calls remain disabled.
+    gate: IA-00 completed with metadata-only policy approval and runtime disabled; no live IA calls, source probes, downloads, source-cache writes, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-01/task.yaml
+    recommended_after: IA-00
+    recommended_next: IA-02
+  - id: IA-02
+    title: Approved Local Live Metadata Probe
+    status: queued
+    purpose: Define and run only an explicitly operator-approved, one-shot, bounded local live metadata probe after IA-01 fixture replay passes.
+    allowed_scope_summary: Tiny local live metadata probe approval and audit only; no downloads, source-cache writes by default, evidence writes, index mutation, public fanout, extraction, model/provider calls, or deployment.
+    gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call.
+    task: .aide/queue/IA-02/task.yaml
+    recommended_after: IA-01
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

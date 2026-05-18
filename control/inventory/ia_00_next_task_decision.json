@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_00_next_task_decision.v0",
+  "task": "IA-00",
+  "status": "ready",
+  "recommended_next_task": "IA-01 \u2014 IA Fixture Replay Hardening",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "do_not_start_next_task_in_ia_00": true,
+  "why": "IA-00 closes policy approval only. IA-01 must harden fixture replay before any IA-02 live metadata probe can be considered.",
+  "boundaries": {
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "source_cache_write_performed": false,
+    "evidence_ledger_write_performed": false,
+    "download_performed": false,
+    "model_provider_used": false,
+    "deployment_performed": false
+  }
+}

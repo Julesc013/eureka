@@ -1,0 +1,62 @@
+{
+  "schema_version": "ia_metadata_live_probe_requirements.v0",
+  "task": "IA-00",
+  "live_calls_enabled_now": false,
+  "requirements": [
+    {
+      "requirement_id": "operator_approval",
+      "required": true,
+      "summary": "IA-02 must record explicit local operator approval before any live metadata request."
+    },
+    {
+      "requirement_id": "kill_switch",
+      "required": true,
+      "summary": "The future live path must check the IA kill switch before every request and fail closed."
+    },
+    {
+      "requirement_id": "user_agent_contact",
+      "required": true,
+      "summary": "A descriptive Eureka User-Agent and operator-configured contact are required before live."
+    },
+    {
+      "requirement_id": "row_cap",
+      "required": true,
+      "summary": "Small first-probe row caps are mandatory; no deep paging."
+    },
+    {
+      "requirement_id": "timeout",
+      "required": true,
+      "summary": "Every future request must use an explicit timeout."
+    },
+    {
+      "requirement_id": "retry_policy",
+      "required": true,
+      "summary": "Retry budget must be finite and conservative."
+    },
+    {
+      "requirement_id": "retry_after",
+      "required": true,
+      "summary": "Retry-After must be honored."
+    },
+    {
+      "requirement_id": "cache",
+      "required": true,
+      "summary": "Cache is required before repeat requests."
+    },
+    {
+      "requirement_id": "one_shot_small_probe",
+      "required": true,
+      "summary": "IA-02 may only approve one-shot small local probes."
+    },
+    {
+      "requirement_id": "no_public_fanout",
+      "required": true,
+      "summary": "Public user queries must not fan out to IA."
+    },
+    {
+      "requirement_id": "no_downloads",
+      "required": true,
+      "summary": "No file or media downloads are permitted."
+    }
+  ]
+}

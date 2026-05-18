@@ -1,0 +1,16 @@
+{
+  "schema_version": "ia_user_agent_policy.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "status": "required_before_future_live_probe",
+  "descriptive_project_user_agent_required": true,
+  "contact_identifier_required": true,
+  "generic_python_urllib_default_forbidden": true,
+  "operator_must_configure_contact": true,
+  "committed_contact_secret_forbidden": true,
+  "example_user_agent_template": "EurekaLocalMetadataPilot/0.1 (+operator-configured-contact)",
+  "live_calls_enabled_now": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

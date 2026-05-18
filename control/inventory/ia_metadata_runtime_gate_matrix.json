@@ -1,0 +1,103 @@
+{
+  "schema_version": "ia_metadata_runtime_gate_matrix.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "gates": [
+    {
+      "gate_id": "IA-00",
+      "enables": "Metadata-only policy approval with runtime disabled.",
+      "still_forbids": "Live calls, source probes, source-cache writes, evidence writes, index mutation, downloads, uploads, public fanout.",
+      "required_validators": [
+        "scripts/validate_ia_metadata_policy.py"
+      ],
+      "required_audit": "control/audits/ia-00-metadata-connector-approval-v0/",
+      "rollback_or_kill_switch": "No runtime enabled; policy can be reverted by ordinary commit.",
+      "next_task": "IA-01"
+    },
+    {
+      "gate_id": "IA-01",
+      "enables": "Fixture replay hardening for metadata search, item metadata, file-list metadata, 429/Retry-After, missing, malformed, and no-download cases.",
+      "still_forbids": "Live calls, source-cache writes, evidence writes, index mutation, downloads, public fanout.",
+      "required_validators": [
+        "fixture replay validator",
+        "no live call validator"
+      ],
+      "required_audit": "IA-01 fixture replay audit",
+      "rollback_or_kill_switch": "Fixtures remain repo-local; no runtime live switch exists.",
+      "next_task": "IA-02"
+    },
+    {
+      "gate_id": "IA-02",
+      "enables": "One-shot approved local live metadata probe after IA-01 and explicit operator approval.",
+      "still_forbids": "Downloads, uploads, write APIs, public fanout, source-cache writes by default, evidence writes, index mutation.",
+      "required_validators": [
+        "operator approval validator",
+        "User-Agent/contact validator",
+        "rate/timeout/retry/cache/kill-switch validator"
+      ],
+      "required_audit": "IA-02 live probe audit",
+      "rollback_or_kill_switch": "Kill switch checked before every future live call; disabled state fails closed.",
+      "next_task": "IA-03"
+    },
+    {
+      "gate_id": "IA-03",
+      "enables": "Source cache write path for approved metadata observations only.",
+      "still_forbids": "Evidence acceptance, candidate/reviewed/master index mutation, downloads, public fanout.",
+      "required_validators": [
+        "source cache schema validator",
+        "TTL and reset validator"
+      ],
+      "required_audit": "IA-03 source cache audit",
+      "rollback_or_kill_switch": "Cache reset command and kill switch stop new writes.",
+      "next_task": "IA-04"
+    },
+    {
+      "gate_id": "IA-04",
+      "enables": "Evidence candidate generation from cached IA metadata source observations.",
+      "still_forbids": "Accepted truth without review, reviewed index mutation, master index mutation, downloads.",
+      "required_validators": [
+        "evidence candidate non-claim validator",
+        "review-required validator"
+      ],
+      "required_audit": "IA-04 evidence audit",
+      "rollback_or_kill_switch": "Disable evidence candidate worker and clear generated candidates by task-approved reset.",
+      "next_task": "IA-05"
+    },
+    {
+      "gate_id": "IA-05",
+      "enables": "Candidate index integration for reviewed candidate proposals.",
+      "still_forbids": "Reviewed local index mutation without review dry-run, master index mutation, public fanout.",
+      "required_validators": [
+        "candidate index mutation validator",
+        "review gate validator"
+      ],
+      "required_audit": "IA-05 candidate index audit",
+      "rollback_or_kill_switch": "Disable candidate integration and rebuild candidate fixture state.",
+      "next_task": "IA-06"
+    },
+    {
+      "gate_id": "IA-06",
+      "enables": "Review/promotion dry-run over IA-derived candidates.",
+      "still_forbids": "Automatic acceptance, master index mutation, production/public claims.",
+      "required_validators": [
+        "promotion dry-run validator",
+        "manual review proof"
+      ],
+      "required_audit": "IA-06 review dry-run audit",
+      "rollback_or_kill_switch": "Dry-run only; no reviewed index write.",
+      "next_task": "IA-07"
+    },
+    {
+      "gate_id": "IA-07",
+      "enables": "Reviewed local index rebuild only after review/promotion proof.",
+      "still_forbids": "Master index mutation, public launch claims, downloads/uploads, public fanout unless separately approved.",
+      "required_validators": [
+        "reviewed local index rebuild validator",
+        "no master mutation validator"
+      ],
+      "required_audit": "IA-07 reviewed local index audit",
+      "rollback_or_kill_switch": "Rebuild can be reverted to previous reviewed local index snapshot.",
+      "next_task": "SYN-00"
+    }
+  ]
+}

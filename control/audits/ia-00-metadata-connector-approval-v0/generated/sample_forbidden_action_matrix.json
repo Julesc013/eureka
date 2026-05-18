@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_metadata_forbidden_action_matrix.v0",
+  "rows": [
+    {
+      "action_id": "downloads",
+      "status": "forbidden",
+      "validator_assertion": "downloads_enabled_false"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4552 chars, 1138 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4931 chars, 1233 approximate tokens)
 
 ## Context Packet Reference
 
@@ -36,28 +36,28 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/IA-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/PLAY-02/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/IA-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-02` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/play-02-demo-query-absence-hunt-smoke-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/play_02_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_02_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_02_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_smoke_pack_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_smoke_query_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_smoke_result_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/play_smoke_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/play_smoke_policy.json` (??; matches active task allowed path)
-- allowed: `docs/operations/LOCAL_WORKBENCH_DEMO_QUERIES.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PLAY_MODE_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PLAY_SEED_CORPUS_POLICY.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PLAY_SESSION_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PLAY_SMOKE_RUNBOOK.md` (??; matches active task allowed path)
-- allowed: `scripts/eureka_play_smoke.py` (M; matches active task allowed path)
-- allowed: `scripts/validate_play_smoke_pack.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_play_smoke.py` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
+- allowed: `control/audits/ia-00-metadata-connector-approval-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_00_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_00_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_00_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_existing_material_inventory.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_allowed_endpoint_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_evidence_requirements.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_fixture_requirements.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_forbidden_action_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_live_probe_requirements.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_policy_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_runtime_gate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_metadata_source_cache_requirements.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_kill_switch_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_metadata_connector_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_non_claim_policy.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 13; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6528
-- approx_tokens: 1632
+- chars: 6645
+- approx_tokens: 1662
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

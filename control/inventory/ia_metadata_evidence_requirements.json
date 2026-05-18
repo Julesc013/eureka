@@ -1,0 +1,43 @@
+{
+  "schema_version": "ia_metadata_evidence_requirements.v0",
+  "task": "IA-00",
+  "evidence_writes_enabled_now": false,
+  "planned_for": "IA-04",
+  "requirements": [
+    {
+      "requirement_id": "title_claim_candidate",
+      "required": true,
+      "summary": "Title may become an evidence candidate only if present in cached metadata."
+    },
+    {
+      "requirement_id": "mediatype_claim_candidate",
+      "required": true,
+      "summary": "Mediatype may become an evidence candidate only if present in cached metadata."
+    },
+    {
+      "requirement_id": "creator_date_description_claim_candidate_if_present",
+      "required": true,
+      "summary": "Creator, date, and description may become candidates only when present and labeled as source-provided."
+    },
+    {
+      "requirement_id": "file_list_claim_candidate",
+      "required": true,
+      "summary": "File-list metadata may become a candidate observation, not proof of availability."
+    },
+    {
+      "requirement_id": "checksum_file_metadata_claim_candidate",
+      "required": true,
+      "summary": "Checksums and file metadata may become candidates and require review before trust."
+    },
+    {
+      "requirement_id": "source_locator_claim_candidate",
+      "required": true,
+      "summary": "IA identifiers and locators may become source locator candidates."
+    },
+    {
+      "requirement_id": "no_accepted_truth_without_review",
+      "required": true,
+      "summary": "No IA metadata field becomes accepted Eureka truth without review."
+    }
+  ]
+}

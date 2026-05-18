@@ -1,0 +1,48 @@
+{
+  "schema_version": "ia_metadata_source_cache_requirements.v0",
+  "task": "IA-00",
+  "source_cache_writes_enabled_now": false,
+  "planned_for": "IA-03",
+  "requirements": [
+    {
+      "requirement_id": "source_observation_id",
+      "required": true,
+      "summary": "Each cached IA observation must have a stable source observation ID."
+    },
+    {
+      "requirement_id": "observed_at",
+      "required": true,
+      "summary": "Each observation must record when it was observed."
+    },
+    {
+      "requirement_id": "request_policy_id",
+      "required": true,
+      "summary": "Each observation must record the policy version that allowed the request."
+    },
+    {
+      "requirement_id": "response_hash",
+      "required": true,
+      "summary": "Raw responses must have a deterministic hash for cache integrity."
+    },
+    {
+      "requirement_id": "raw_cache_policy",
+      "required": true,
+      "summary": "Raw cache retention, redaction, and reset behavior must be explicit."
+    },
+    {
+      "requirement_id": "normalized_summary",
+      "required": true,
+      "summary": "A normalized summary must be derived without claiming accepted truth."
+    },
+    {
+      "requirement_id": "ttl",
+      "required": true,
+      "summary": "Cache TTL must be recorded and enforced."
+    },
+    {
+      "requirement_id": "deletion_reset_command",
+      "required": true,
+      "summary": "A local reset command must exist before source-cache writes are enabled."
+    }
+  ]
+}

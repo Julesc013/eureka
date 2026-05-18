@@ -1,0 +1,17 @@
+{
+  "schema_version": "ia_metadata_policy_decision.v0",
+  "task": "IA-00",
+  "connector_id": "internet_archive_metadata",
+  "decision": "approve_metadata_only_local_pilot_policy_runtime_disabled",
+  "live_calls_enabled_now": false,
+  "future_live_probe_allowed_after": "IA-01",
+  "source_cache_writes_enabled_now": false,
+  "evidence_writes_enabled_now": false,
+  "candidate_index_mutation_enabled_now": false,
+  "reviewed_index_mutation_enabled_now": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "public_search_fanout_enabled": false,
+  "operator_approval_required_for_IA_02": true,
+  "recommended_next_task": "IA-01 \u2014 IA Fixture Replay Hardening"
+}
