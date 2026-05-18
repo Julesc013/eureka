@@ -1,0 +1,74 @@
+{
+  "schema_version": "play_smoke_result_schema.v0",
+  "task": "PLAY-02",
+  "sections": [
+    {
+      "section": "instance",
+      "description": "Resolved explicit or temporary instance used by the smoke run."
+    },
+    {
+      "section": "seed",
+      "description": "Dry-run or temp-instance apply seed state."
+    },
+    {
+      "section": "query_results",
+      "description": "Known hit and unresolved-query smoke results from committed PLAY fixtures."
+    },
+    {
+      "section": "absence_results",
+      "description": "Known local absence result and scope."
+    },
+    {
+      "section": "hunts",
+      "description": "Demo Search Hunt records visible to the smoke pack."
+    },
+    {
+      "section": "search_needs",
+      "description": "Demo SearchNeed records visible to the smoke pack."
+    },
+    {
+      "section": "workunits",
+      "description": "Demo WorkUnit records visible to the smoke pack."
+    },
+    {
+      "section": "blocked_future_actions",
+      "description": "Source-probe, extraction, and AI/model work that remains blocked by policy."
+    },
+    {
+      "section": "routes",
+      "description": "Optional localhost workbench/API route checks."
+    },
+    {
+      "section": "validation",
+      "description": "Boolean assertions and compact child reports."
+    },
+    {
+      "section": "boundaries",
+      "description": "Forbidden side effects, all false."
+    },
+    {
+      "section": "warnings",
+      "description": "Non-blocking warnings from optional checks."
+    },
+    {
+      "section": "next_actions",
+      "description": "Operator-oriented follow-up guidance."
+    }
+  ],
+  "required_false_flags": [
+    "operator_instance_mutated",
+    "instance_state_committed",
+    "fake_evidence_created",
+    "fake_verified_records_created",
+    "live_source_call_performed",
+    "source_probe_executed",
+    "extraction_executed",
+    "model_provider_used",
+    "download_install_execute_performed",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

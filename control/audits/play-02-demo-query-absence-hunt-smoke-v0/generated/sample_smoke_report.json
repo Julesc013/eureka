@@ -1,0 +1,40 @@
+{
+  "schema_version": "play_smoke_report.v2",
+  "task": "PLAY-02",
+  "status": "pass",
+  "mode": "temp_apply",
+  "instance": {
+    "root": "<temp>/instances/default",
+    "temporary": true,
+    "preferred_instance": "../instances/default",
+    "operator_instance_mutated": false
+  },
+  "validation": {
+    "checks": {
+      "known_hit_checked": true,
+      "known_absence_checked": true,
+      "media_search_need_checked": true,
+      "extraction_search_need_checked": true,
+      "hard_source_routing_checked": true,
+      "compatibility_query_checked": true,
+      "demo_hunts_visible": true,
+      "demo_search_needs_visible": true,
+      "demo_workunits_visible": true,
+      "blocked_source_probe_checked": true,
+      "blocked_extraction_checked": true,
+      "blocked_ai_checked": true
+    }
+  },
+  "operator_instance_mutated": false,
+  "instance_state_committed": false,
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

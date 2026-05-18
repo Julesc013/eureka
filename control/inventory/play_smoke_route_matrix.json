@@ -1,0 +1,211 @@
+{
+  "schema_version": "play_smoke_route_matrix.v0",
+  "task": "PLAY-02",
+  "routes": [
+    {
+      "route_id": "root_page",
+      "route": "/",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "Eureka"
+      ],
+      "forbidden_content_markers": [
+        "production ready",
+        "public launch ready"
+      ]
+    },
+    {
+      "route_id": "status_page",
+      "route": "/status",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "Status"
+      ],
+      "forbidden_content_markers": [
+        "source probes enabled",
+        "model provider enabled"
+      ]
+    },
+    {
+      "route_id": "search_known_hit",
+      "route": "/search?q=sampleproject",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "sampleproject"
+      ],
+      "forbidden_content_markers": [
+        "live source"
+      ]
+    },
+    {
+      "route_id": "search_known_absence",
+      "route": "/search?q=definitely-not-present-play-00",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "definitely-not-present-play-00"
+      ],
+      "forbidden_content_markers": [
+        "global nonexistence"
+      ]
+    },
+    {
+      "route_id": "hunts_page",
+      "route": "/hunts",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "Search Hunts"
+      ],
+      "forbidden_content_markers": [
+        "AI provider enabled"
+      ]
+    },
+    {
+      "route_id": "hunt_detail_if_available",
+      "route": "/hunt/play.hunt.sampleproject.v0",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200,
+        404
+      ],
+      "expected_content_markers": [
+        "Search Hunt"
+      ],
+      "forbidden_content_markers": [
+        "source_probe_executed: true"
+      ]
+    },
+    {
+      "route_id": "search_need_detail_if_available",
+      "route": "/need/play.need.dtheater_source.v0",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200,
+        404
+      ],
+      "expected_content_markers": [
+        "SearchNeed"
+      ],
+      "forbidden_content_markers": [
+        "verified media record"
+      ]
+    },
+    {
+      "route_id": "workunit_detail_or_list_if_available",
+      "route": "/need/play.need.stylewriter_driver.v0/workunits",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200,
+        404
+      ],
+      "expected_content_markers": [
+        "WorkUnit"
+      ],
+      "forbidden_content_markers": [
+        "extraction executed"
+      ]
+    },
+    {
+      "route_id": "api_search",
+      "route": "/api/v1/search?q=sampleproject",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "local_http_search_response.v0"
+      ],
+      "forbidden_content_markers": [
+        "external_network_used\": true"
+      ]
+    },
+    {
+      "route_id": "api_absence",
+      "route": "/api/v1/absence?q=definitely-not-present-play-00",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "local_http_absence_response.v0"
+      ],
+      "forbidden_content_markers": [
+        "global_nonexistence_claimed\": true"
+      ]
+    },
+    {
+      "route_id": "api_hunts_if_available",
+      "route": "/api/v1/hunts",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "search_hunt_ui_hunts_response.v0"
+      ],
+      "forbidden_content_markers": [
+        "model_provider_enabled\": true"
+      ]
+    },
+    {
+      "route_id": "api_status",
+      "route": "/api/v1/status",
+      "method": "GET",
+      "requires_server": true,
+      "requires_operator_token": false,
+      "expected_status": [
+        200
+      ],
+      "expected_content_markers": [
+        "local_http_status_response.v0"
+      ],
+      "forbidden_content_markers": [
+        "deployment_performed\": true"
+      ]
+    }
+  ],
+  "server_checks_optional_without_base_url": true,
+  "localhost_only": true,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

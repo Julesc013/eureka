@@ -4,7 +4,7 @@ status: queued
 purpose: Define the approval closure and policy boundary for future Internet Archive metadata connector work without enabling live calls by default.
 allowed_scope_summary: Policy, approval, fixture-only planning, docs, validators, inventories, and audit evidence only.
 gate:
-  - PLAY-00 completed
+  - PLAY-02 completed
   - no live Internet Archive calls
   - no source probes
   - no downloads
@@ -13,5 +13,5 @@ gate:
   - no deployment
   - no production readiness claim
   - no public launch claim
-recommended_after: PLAY-01
+recommended_after: PLAY-02
 recommended_next: SYN-00

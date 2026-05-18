@@ -1,0 +1,43 @@
+{
+  "schema_version": "play_02_report.v0",
+  "task": "PLAY-02",
+  "status": "pass",
+  "summary": [
+    "Added PLAY smoke policy, query matrix, route matrix, and result schema.",
+    "Hardened the play smoke runner for temp-instance apply and read-only operator-instance dry-run.",
+    "Added smoke-pack validator, focused tests, runbook updates, and audit evidence."
+  ],
+  "evidence": {
+    "policy": "control/policies/play_smoke_policy.json",
+    "query_matrix": "control/inventory/play_smoke_query_matrix.json",
+    "route_matrix": "control/inventory/play_smoke_route_matrix.json",
+    "result_schema": "control/inventory/play_smoke_result_schema.json",
+    "result": "control/inventory/play_02_result.json"
+  },
+  "checks": {
+    "known_hit_checked": true,
+    "known_absence_checked": true,
+    "media_search_need_checked": true,
+    "extraction_search_need_checked": true,
+    "hard_source_routing_checked": true,
+    "compatibility_query_checked": true,
+    "blocked_source_probe_checked": true,
+    "blocked_extraction_checked": true,
+    "blocked_ai_checked": true
+  },
+  "boundaries": {
+    "operator_instance_mutated": false,
+    "instance_state_committed": false,
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "download_install_execute_performed": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "recommended_next_task": "IA-00 \u2014 Internet Archive Metadata Connector Approval Closure"
+}

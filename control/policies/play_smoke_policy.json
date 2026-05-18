@@ -1,0 +1,17 @@
+{
+  "schema_version": "play_smoke_policy.v0",
+  "task": "PLAY-02",
+  "temp_instance_allowed": true,
+  "operator_instance_mutation_default": false,
+  "dry_run_default": true,
+  "explicit_apply_required": true,
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "download_install_execute_enabled": false,
+  "deployment_enabled": false,
+  "fake_evidence_forbidden": true,
+  "fake_verified_records_forbidden": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

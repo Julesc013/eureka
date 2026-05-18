@@ -11,7 +11,8 @@ $Token = "local-dev-token"
 python scripts\validate_play_seed_pack.py
 python scripts\eureka_seed_play_demo.py --instance $Instance --dry-run --json
 python scripts\eureka_play_session.py --instance $Instance --operator-token $Token --dry-run --json
-python scripts\eureka_play_smoke.py --instance $Instance --operator-token $Token --json
+python scripts\eureka_play_smoke.py --use-temp-instance --apply-demo-to-temp --operator-token $Token --json
+python scripts\eureka_play_smoke.py --instance $Instance --operator-token $Token --dry-run --json
 ```
 
 Known reviewed hit:
@@ -44,6 +45,10 @@ Windows 7 compatible old app
 
 Expected result: SearchNeed and WorkUnit demand state, not verified records.
 Source, extraction, and model-provider future actions remain blocked by policy.
+
+The PLAY-02 smoke matrix checks the known hit, known absence, media SearchNeed,
+source/extraction SearchNeed, hard source-routing need, compatibility need, demo
+Hunts, demo SearchNeeds, demo WorkUnits, and blocked future-action paths.
 
 To apply the demo pack to an explicit local instance:
 

@@ -29,6 +29,18 @@ $Instance = "..\instances\default"
 python scripts\eureka_seed_play_demo.py --instance $Instance --dry-run --json
 ```
 
+PLAY-02 smoke also defaults to no operator-instance mutation:
+
+```powershell
+$Instance = "..\instances\default"
+$Token = "local-dev-token"
+python scripts\eureka_play_smoke.py --instance $Instance --operator-token $Token --dry-run --json
+python scripts\eureka_play_smoke.py --use-temp-instance --apply-demo-to-temp --operator-token $Token --json
+```
+
+The temp-instance smoke may apply the demo pack only inside a temporary
+explicit instance. It must not mutate `..\instances\default`.
+
 Only an explicit apply command may write to an initialized local instance:
 
 ```powershell

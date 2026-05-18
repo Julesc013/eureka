@@ -1,0 +1,143 @@
+{
+  "schema_version": "play_smoke_query_matrix.v0",
+  "task": "PLAY-02",
+  "queries": [
+    {
+      "query_id": "known_hit",
+      "query": "sampleproject",
+      "expected_state": "reviewed_fixture_backed_hit",
+      "expected_artifacts": [
+        "play.reviewed.sampleproject.v0",
+        "play.hunt.sampleproject.v0"
+      ],
+      "must_not_create": [
+        "source_observation",
+        "download",
+        "new_evidence_claim"
+      ],
+      "blocked_paths_expected": [],
+      "smoke_assertions": [
+        "reviewed demo record is returned",
+        "record remains demo-local or fixture-backed",
+        "no live source call is performed"
+      ]
+    },
+    {
+      "query_id": "known_absence",
+      "query": "definitely-not-present-play-00",
+      "expected_state": "known_local_absence",
+      "expected_artifacts": [
+        "play.absence.definitely_not_present.v0"
+      ],
+      "must_not_create": [
+        "global_nonexistence_claim",
+        "verified_result",
+        "source_observation"
+      ],
+      "blocked_paths_expected": [],
+      "smoke_assertions": [
+        "absence record is visible",
+        "absence scope is play_demo_corpus_only",
+        "absence does not claim global nonexistence"
+      ]
+    },
+    {
+      "query_id": "media_search_need",
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "expected_state": "unresolved_search_need",
+      "expected_artifacts": [
+        "play.need.dtheater_source.v0",
+        "play.hunt.dtheater_source.v0"
+      ],
+      "must_not_create": [
+        "verified_media_record",
+        "source_observation",
+        "AI_evidence"
+      ],
+      "blocked_paths_expected": [
+        "AI_model"
+      ],
+      "smoke_assertions": [
+        "SearchNeed exists",
+        "verified_result_created is false",
+        "model-provider WorkUnit remains blocked"
+      ]
+    },
+    {
+      "query_id": "extraction_search_need",
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "expected_state": "unresolved_search_need_with_blocked_extraction_or_source_workunit",
+      "expected_artifacts": [
+        "play.need.stylewriter_driver.v0",
+        "play.workunit.stylewriter.source_probe.v0",
+        "play.workunit.stylewriter.extraction.v0"
+      ],
+      "must_not_create": [
+        "driver_file",
+        "source_observation",
+        "extraction_result"
+      ],
+      "blocked_paths_expected": [
+        "source_probe",
+        "extraction"
+      ],
+      "smoke_assertions": [
+        "SearchNeed exists",
+        "source-probe WorkUnit remains blocked_by_policy",
+        "extraction WorkUnit remains blocked_by_policy"
+      ]
+    },
+    {
+      "query_id": "hard_source_routing",
+      "query": "DirectX SDK June 2010 offline installer",
+      "expected_state": "hard_search_need_or_source_routing_demo",
+      "expected_artifacts": [
+        "play.need.directx_june_2010.v0",
+        "play.workunit.directx.policy_review.v0"
+      ],
+      "must_not_create": [
+        "download",
+        "installer_record",
+        "rights_claim",
+        "malware_safety_claim"
+      ],
+      "blocked_paths_expected": [
+        "download_install_execute"
+      ],
+      "smoke_assertions": [
+        "source-routing SearchNeed exists",
+        "policy review WorkUnit exists as local queue state",
+        "download/install/execute remains disabled"
+      ]
+    },
+    {
+      "query_id": "compatibility",
+      "query": "last Firefox for Windows XP",
+      "expected_state": "compatibility_search_need_not_final_truth",
+      "expected_artifacts": [
+        "play.need.firefox_windows_xp.v0"
+      ],
+      "must_not_create": [
+        "final_compatibility_truth",
+        "verified_result",
+        "software_recommendation"
+      ],
+      "blocked_paths_expected": [],
+      "smoke_assertions": [
+        "compatibility SearchNeed exists",
+        "verified_result_created is false",
+        "no final compatibility truth is asserted"
+      ]
+    }
+  ],
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "download_install_execute_performed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: PLAY-02 — Demo Query / Absence / Hunt Smoke Pack
+current_recommended_task: IA-00 — Internet Archive Metadata Connector Approval Closure
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -304,7 +304,7 @@ entries:
     recommended_next: PLAY-02
   - id: PLAY-02
     title: Demo Query / Absence / Hunt Smoke Pack
-    status: queued
+    status: completed
     purpose: Tighten the demo query, local absence, and Hunt smoke proof after the operator play-session script exists.
     allowed_scope_summary: Local demo query/absence/Hunt smoke tests, docs, validators, inventories, and audit evidence only; no live source calls, extraction, model/provider calls, downloads, deployment, or public readiness claims.
     gate: PLAY-01 completed with dry-run default and temp-instance apply smoke proof.
@@ -316,9 +316,9 @@ entries:
     status: queued
     purpose: Close the approval and policy boundary for a future Internet Archive metadata connector without enabling live calls by default.
     allowed_scope_summary: Policy, approval, fixture-only planning, docs, validators, inventories, and audit evidence only until a future task explicitly enables live metadata calls.
-    gate: PLAY-00 completed; source probes, downloads, extraction, model/provider calls, deployment, production readiness, and public launch readiness remain disabled.
+    gate: PLAY-02 completed; source probes, downloads, extraction, model/provider calls, deployment, production readiness, and public launch readiness remain disabled.
     task: .aide/queue/IA-00/task.yaml
-    recommended_after: PLAY-01
+    recommended_after: PLAY-02
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

@@ -1,0 +1,18 @@
+{
+  "schema_version": "play_02_next_task_decision.v0",
+  "task": "PLAY-02",
+  "recommended_next_task": "IA-00 \u2014 Internet Archive Metadata Connector Approval Closure",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "do_not_start_next_task_in_play_02": true,
+  "why": [
+    "PLAY-02 now provides a compact query, absence, Hunt, SearchNeed, WorkUnit, and blocked-path smoke lane.",
+    "IA-00 may close connector metadata approval without enabling live source calls.",
+    "SYN-00 remains the planning alternative after PLAY/IA boundaries are documented."
+  ],
+  "source_probe_execution_enabled": false,
+  "extraction_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

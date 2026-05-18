@@ -59,12 +59,13 @@ Server checks are restricted to localhost URLs and are skipped unless
 Run the smoke:
 
 ```powershell
-python scripts\eureka_play_smoke.py --instance $Instance --operator-token $Token --json
+python scripts\eureka_play_smoke.py --use-temp-instance --apply-demo-to-temp --operator-token $Token --json
+python scripts\eureka_play_smoke.py --instance $Instance --operator-token $Token --dry-run --json
 ```
 
-The smoke runs a dry-run session against the supplied instance path and proves
-apply mode against a temporary initialized instance. It must not mutate the
-operator instance.
+The temp-instance smoke proves explicit apply behavior without touching the
+operator instance. The `..\instances\default` smoke is read-only and proves the
+same query/absence/Hunt matrix without writing instance state.
 
 PLAY differs from later tracks:
 

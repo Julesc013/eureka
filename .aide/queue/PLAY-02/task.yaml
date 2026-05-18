@@ -1,6 +1,6 @@
 id: PLAY-02
 title: Demo Query / Absence / Hunt Smoke Pack
-status: queued
+status: completed
 purpose: Tighten the demo query, local absence, and Hunt smoke proof after the operator play-session script exists.
 allowed_scope_summary: Local demo query/absence/Hunt smoke tests, docs, validators, inventories, and audit evidence only.
 gate:
@@ -15,3 +15,14 @@ gate:
   - no public launch claim
 recommended_after: PLAY-01
 recommended_next: IA-00
+result: control/inventory/play_02_result.json
+audit: control/audits/play-02-demo-query-absence-hunt-smoke-v0/
+completion:
+  status: pass
+  temp_instance_smoke_passed: true
+  dry_run_smoke_passed: true
+  operator_instance_mutated: false
+  source_probe_executed: false
+  extraction_executed: false
+  model_provider_used: false
+  deployment_performed: false

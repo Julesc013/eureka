@@ -1,0 +1,36 @@
+{
+  "schema_version": "play_smoke_query_matrix_sample.v0",
+  "task": "PLAY-02",
+  "queries": [
+    {
+      "query_id": "known_hit",
+      "query": "sampleproject",
+      "expected_state": "reviewed_fixture_backed_hit"
+    },
+    {
+      "query_id": "known_absence",
+      "query": "definitely-not-present-play-00",
+      "expected_state": "known_local_absence"
+    },
+    {
+      "query_id": "media_search_need",
+      "query": "New York 1993 D-Theater HD demo tape original source",
+      "expected_state": "unresolved_search_need"
+    },
+    {
+      "query_id": "extraction_search_need",
+      "query": "StyleWriter 2500 Mac OS 8 driver",
+      "expected_state": "unresolved_search_need_with_blocked_extraction_or_source_workunit"
+    },
+    {
+      "query_id": "hard_source_routing",
+      "query": "DirectX SDK June 2010 offline installer",
+      "expected_state": "hard_search_need_or_source_routing_demo"
+    },
+    {
+      "query_id": "compatibility",
+      "query": "last Firefox for Windows XP",
+      "expected_state": "compatibility_search_need_not_final_truth"
+    }
+  ]
+}
