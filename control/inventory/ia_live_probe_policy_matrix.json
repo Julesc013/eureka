@@ -1,0 +1,42 @@
+{
+  "rows": [
+    {
+      "assertion": "Live calls require explicit --approve-live and policy caps.",
+      "enabled_now": true,
+      "policy_key": "live_calls_require_approve_live_flag",
+      "validator_assertion": "approve_live_required"
+    },
+    {
+      "assertion": "Only archive.org metadata endpoints are allowed.",
+      "enabled_now": true,
+      "policy_key": "allowed_domains",
+      "validator_assertion": "domain_allowlist_enforced"
+    },
+    {
+      "assertion": "Metadata search is capped at one row.",
+      "enabled_now": true,
+      "policy_key": "metadata_search_rows_max",
+      "validator_assertion": "row_cap_enforced"
+    },
+    {
+      "assertion": "The whole probe is capped at two HTTP requests.",
+      "enabled_now": true,
+      "policy_key": "total_http_requests_max",
+      "validator_assertion": "request_cap_enforced"
+    },
+    {
+      "assertion": "Raw live response bodies must not be committed.",
+      "enabled_now": true,
+      "policy_key": "raw_response_commit_forbidden",
+      "validator_assertion": "raw_body_commit_forbidden"
+    },
+    {
+      "assertion": "Downloads, uploads, writes, public fanout, and index mutations remain disabled.",
+      "enabled_now": false,
+      "policy_key": "forbidden_mutation_and_download_flags",
+      "validator_assertion": "forbidden_side_effects_false"
+    }
+  ],
+  "schema_version": "ia_live_probe_policy_matrix.v0",
+  "task": "IA-02"
+}

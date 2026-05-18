@@ -331,12 +331,21 @@ entries:
     recommended_next: IA-02
   - id: IA-02
     title: IA Local Live Metadata Probe
-    status: queued
+    status: partial
     purpose: Define and run only an explicitly operator-approved, one-shot, bounded local live metadata probe after IA-01 fixture replay passes.
     allowed_scope_summary: Tiny local live metadata probe approval and audit only; no downloads, source-cache writes by default, evidence writes, index mutation, public fanout, extraction, model/provider calls, or deployment.
-    gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call.
+    gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call. Current IA-02 attempt is partial because local TLS trust rejected the connection before an IA HTTP response was available.
     task: .aide/queue/IA-02/task.yaml
     recommended_after: IA-01
+    recommended_next: IA-02
+  - id: IA-03
+    title: IA Source Cache Write Path
+    status: blocked
+    purpose: Define source-cache write behavior only after a successful approved IA-02 metadata response exists.
+    allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
+    gate: IA-02 must have a successful approved live metadata response; no downloads, uploads, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-03/task.yaml
+    recommended_after: IA-02
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

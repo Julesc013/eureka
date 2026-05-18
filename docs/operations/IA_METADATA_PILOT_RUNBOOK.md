@@ -43,6 +43,17 @@ Only after IA-01, an operator may approve a tiny local live metadata probe. The
 probe must be one-shot, row-capped, cached, kill-switch guarded, and identified
 by a descriptive User-Agent with contact.
 
+IA-02 command:
+
+```powershell
+python scripts/eureka_ia_live_metadata_probe.py --approve-live --query sampleproject --rows 1 --max-requests 2 --user-agent "EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)" --contact "local-operator" --json --redacted-output control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_redacted_summary.json --boundary-output control/audits/ia-02-local-live-metadata-probe-v0/generated/live_probe_boundary_report.json
+```
+
+The current IA-02 run is partial: the bounded live request was attempted under
+policy, but local Python TLS verification failed before an IA HTTP response was
+available. No raw response, source-cache write, evidence write, download, or
+index mutation occurred.
+
 Still forbidden in IA-02:
 
 - downloads
@@ -54,8 +65,8 @@ Still forbidden in IA-02:
 
 ## Later Gates
 
-IA-03 may define source-cache writes. IA-04 may define evidence candidates.
-IA-05 through IA-07 may define candidate, review, and reviewed local index
-integration.
+IA-03 may define source-cache writes only after a successful approved IA-02
+live response summary exists. IA-04 may define evidence candidates. IA-05
+through IA-07 may define candidate, review, and reviewed local index integration.
 
 No gate may convert live metadata directly into public truth.

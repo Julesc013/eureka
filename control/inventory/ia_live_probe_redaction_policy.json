@@ -1,0 +1,26 @@
+{
+  "forbidden_to_commit": [
+    "raw_live_response_bodies",
+    "cookies",
+    "private_headers",
+    "ip_addresses",
+    "tokens",
+    "private_data",
+    "credentials"
+  ],
+  "safe_to_commit": [
+    "status_code",
+    "endpoint_class",
+    "request_timestamp",
+    "elapsed_ms",
+    "response_byte_count",
+    "row_count",
+    "identifier_count",
+    "normalized_preview_count",
+    "content_hash",
+    "identifier_hash",
+    "boundary_flags"
+  ],
+  "schema_version": "ia_live_probe_redaction_policy.v0",
+  "task": "IA-02"
+}

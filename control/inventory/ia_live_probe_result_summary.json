@@ -1,0 +1,38 @@
+{
+  "approved_live": true,
+  "contact_present": true,
+  "dry_run": false,
+  "endpoint_classes_attempted": [
+    "metadata_search_small"
+  ],
+  "failure_reason": "ssl_certificate_verify_failed",
+  "http_responses": [
+    {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elapsed_ms": 0,
+      "endpoint_class": "metadata_search_small",
+      "rate_limited": false,
+      "response_byte_count": 0,
+      "retry_after_seconds": null,
+      "safe_headers": {},
+      "status_code": 0,
+      "transport_error": "ssl_certificate_verify_failed",
+      "url": "https://archive.org/advancedsearch.php?<redacted-query>"
+    }
+  ],
+  "identifier_count": 0,
+  "identifier_hashes": [],
+  "live_probe_rate_limited": false,
+  "metadata_search_rows_requested": 1,
+  "metadata_search_rows_returned": 0,
+  "normalized_preview_count": 0,
+  "probe_status": "failed",
+  "query": "sampleproject",
+  "query_hash": "db0de47818a25cc7",
+  "raw_response_committed": false,
+  "request_timestamp_utc": "2026-05-18T11:15:41Z",
+  "schema_version": "ia_live_probe_redacted_summary.v0",
+  "task": "IA-02",
+  "total_http_requests": 1,
+  "user_agent_present": true
+}

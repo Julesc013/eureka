@@ -32,3 +32,10 @@ Those claims require later evidence candidate generation, review, and accepted
 reviewed-index promotion.
 
 No IA metadata field becomes accepted truth without review.
+
+## IA-02 Partial Live Attempt
+
+IA-02 attempted one approved metadata-only live request under policy. The local
+Python TLS trust store rejected the connection before an IA HTTP response was
+available. This does not claim live-source readiness, source-cache readiness, or
+reviewed-index integration readiness.

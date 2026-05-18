@@ -1,0 +1,11 @@
+{
+  "candidate_index_mutated": false,
+  "download_performed": false,
+  "evidence_ledger_write_performed": false,
+  "live_source_call_performed": true,
+  "raw_response_committed": false,
+  "schema_version": "ia_live_probe_boundary_report.v0",
+  "source_cache_write_performed": false,
+  "source_probe_executed": true,
+  "task": "IA-02"
+}

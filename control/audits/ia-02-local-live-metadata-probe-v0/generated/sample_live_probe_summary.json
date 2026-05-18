@@ -1,0 +1,11 @@
+{
+  "approved_live": true,
+  "dry_run": false,
+  "metadata_search_rows_requested": 1,
+  "normalized_preview_count": 0,
+  "probe_status": "failed",
+  "raw_response_committed": false,
+  "schema_version": "ia_live_probe_redacted_summary.v0",
+  "task": "IA-02",
+  "total_http_requests": 1
+}

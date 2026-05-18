@@ -1,6 +1,6 @@
 id: IA-02
 title: IA Local Live Metadata Probe
-status: queued
+status: partial
 purpose: Define and run only an explicitly operator-approved, one-shot, bounded local live metadata probe after IA-01 fixture replay passes.
 allowed_scope_summary: Tiny local live metadata probe approval and audit only; no downloads, source-cache writes by default, evidence writes, index mutation, public fanout, extraction, model/provider calls, or deployment.
 gate:
@@ -13,4 +13,24 @@ gate:
   - no production readiness claim
   - no public launch claim
 recommended_after: IA-01
-recommended_next: IA-03
+recommended_next: IA-02
+partial_reason: local Python TLS trust rejected the approved live request before an IA HTTP response was available
+result: control/inventory/ia_02_result.json
+audit: control/audits/ia-02-local-live-metadata-probe-v0/
+completion:
+  status: partial
+  live_probe_policy_added: true
+  live_transport_added: true
+  live_probe_runtime_added: true
+  live_probe_cli_added: true
+  live_probe_validator_added: true
+  dry_run_passed: true
+  live_probe_attempted: true
+  live_probe_succeeded: false
+  failure_reason: ssl_certificate_verify_failed
+  total_http_requests: 1
+  raw_response_committed: false
+  source_cache_write_performed: false
+  evidence_ledger_write_performed: false
+  download_performed: false
+  deployment_performed: false

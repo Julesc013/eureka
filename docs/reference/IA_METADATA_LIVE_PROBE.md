@@ -1,57 +1,50 @@
 # IA Metadata Live Probe
 
-The IA metadata live probe is the first controlled live-source boundary for
-the Internet Archive connector lane. It is designed to perform at most one
-metadata endpoint read for one explicitly approved identifier.
-
-Current status: `blocked`.
-
-The committed policy state does not approve live access, so the CLI and runtime
-return a blocked preflight report before any network call.
+IA-02 defines the first bounded Internet Archive metadata-only live probe. It is
+not a connector rollout and it does not make IA metadata Eureka truth.
 
 ## Scope
 
-Allowed after approval:
+Allowed only with explicit operator approval:
 
-- one `GET` to `https://archive.org/metadata/{identifier}`
-- one exact identifier from the committed allowlist
-- metadata JSON normalization into preview-only shapes
+- one `metadata_search_small` request to `archive.org`
+- at most one row
+- at most one exact `item_metadata_read` if the search returns a safe identifier
+- JSON metadata only
+- redacted summary and boundary report only
 
 Still forbidden:
 
-- broad search
-- advancedsearch
-- downloads
-- item file fetches
-- scraping or crawling
-- public-query fanout
-- source sync
-- public-index or master-index mutation
-- evidence, candidate, or public truth acceptance
+- downloads or item file fetches
+- uploads or write APIs
+- authenticated APIs
+- Wayback replay
+- page scraping or arbitrary URL fetch
+- public query fanout
+- source-cache writes
+- evidence writes
+- candidate, reviewed, or master index mutation
 
-## Outputs
+## Required Controls
 
-The runtime can build:
+- `--approve-live` must be supplied for network access.
+- User-Agent and contact must be present.
+- The kill switch is checked before every live request.
+- Total request and row caps are enforced before network access.
+- Retry-After is represented as backoff state, not hammered retries.
+- Raw live response bodies must not be committed.
 
-- live probe result
-- normalized metadata record
-- source cache candidate preview
-- evidence candidate preview
-- review queue seed preview
-- live probe summary
+## IA-02 Result
 
-All outputs are source observations or review seeds only.
+The IA-02 implementation and dry-run validation passed. The approved live
+attempt was made once under policy, but the local Python TLS trust store rejected
+the connection with `ssl_certificate_verify_failed` before an IA HTTP response
+was available.
 
-## Commands
+That result is partial. No live metadata was normalized into candidate previews
+because no IA response body was obtained.
 
-Dry preflight:
+## Handoff
 
-```text
-python scripts/run_ia_metadata_live_probe.py --identifier eureka-software-fixture --check
-```
-
-Offline validation:
-
-```text
-python scripts/validate_ia_metadata_live_probe.py
-```
+IA-03 must not proceed to source-cache writes until a future approved live probe
+has a successful redacted response summary and boundary report.

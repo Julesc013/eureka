@@ -1,0 +1,8 @@
+{
+  "blocked_next_task": "IA-03 — IA Source Cache Write Path",
+  "reason": "IA-02 dry-run, caps, tests, and boundary proof pass, but the approved live request failed in this local environment with ssl_certificate_verify_failed before an IA HTTP response was available.",
+  "recommended_next_task": "IA-02 — Rerun approved live metadata probe after resolving local TLS trust",
+  "schema_version": "ia_02_next_task_decision.v0",
+  "syn_alternative": "SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "task": "IA-02"
+}

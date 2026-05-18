@@ -1,0 +1,42 @@
+{
+  "account_auth_enabled": false,
+  "allowed_domains": [
+    "archive.org"
+  ],
+  "allowed_endpoint_classes": [
+    "metadata_search_small",
+    "item_metadata_read"
+  ],
+  "arbitrary_url_fetch_enabled": false,
+  "cache_before_repeat": true,
+  "candidate_index_mutation_enabled": false,
+  "contact_required": true,
+  "default_query": "sampleproject",
+  "deployment_enabled": false,
+  "downloads_enabled": false,
+  "evidence_ledger_writes_enabled": false,
+  "honor_retry_after": true,
+  "item_metadata_reads_max": 1,
+  "kill_switch_required": true,
+  "live_calls_allowed_in_IA_02": true,
+  "live_calls_require_approve_live_flag": true,
+  "live_probe_status": "operator_approved_metadata_only_probe",
+  "master_index_mutation_enabled": false,
+  "metadata_search_rows_max": 1,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_search_fanout_enabled": false,
+  "raw_response_commit_forbidden": true,
+  "redacted_summary_required": true,
+  "retry_attempts_max": 1,
+  "reviewed_index_mutation_enabled": false,
+  "schema_version": "ia_live_probe_policy.v0",
+  "source_cache_writes_enabled": false,
+  "task": "IA-02",
+  "timeout_seconds_max": 10,
+  "total_http_requests_max": 2,
+  "uploads_enabled": false,
+  "user_agent_required": true,
+  "wayback_content_replay_enabled": false,
+  "write_apis_enabled": false
+}

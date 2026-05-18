@@ -2,30 +2,33 @@
 
 ## PHASE
 
-IA-01 — IA Fixture Replay Hardening completed as PASS.
+IA-02 — IA Local Live Metadata Probe completed as PARTIAL.
 
 ## GOAL
 
-Add deterministic Internet Archive metadata fixture replay coverage for the
-metadata-only local pilot approved in IA-00.
+Perform the first tightly bounded Internet Archive live metadata probe under
+the IA-00 policy and IA-01 fixture replay rules.
 
 ## WHY
 
-IA-01 proves local parser, normalizer, and boundary behavior before any future
-operator-approved live metadata probe.
+IA-02 proves the live-probe guardrails before source-cache, evidence, or index
+integration. The live attempt is source observation material only, never truth.
 
 ## RESULT
 
-IA-01 added:
+IA-02 added:
 
-- eight committed IA metadata fixtures
-- normalized source-observation candidate records
-- boundary reports proving no live/write/download side effects
-- local fixture replay runtime under `runtime/source_observation/`
-- `scripts/eureka_ia_fixture_replay.py`
-- `scripts/validate_ia_fixture_replay.py`
+- IA live-probe policy, request plan, and redaction policy
+- stdlib-only bounded IA live transport and probe runtime
+- `scripts/eureka_ia_live_metadata_probe.py`
+- `scripts/validate_ia_live_metadata_probe.py`
 - focused runtime and operation tests
-- IA-01 inventories, docs, queue handoff, and audit evidence
+- IA-02 inventories, docs, and audit evidence
+
+The approved live request was attempted once with `--approve-live`, `rows=1`,
+`max-requests=2`, User-Agent, contact, and boundary outputs. It failed before
+an IA HTTP response was available because local Python TLS verification reported
+`ssl_certificate_verify_failed`.
 
 ## CONTEXT_REFS
 
@@ -33,14 +36,14 @@ IA-01 added:
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `examples/internet_archive_metadata/`
-- `runtime/source_observation/internet_archive_fixture_replay.py`
-- `runtime/source_observation/internet_archive_normalization.py`
-- `scripts/eureka_ia_fixture_replay.py`
-- `scripts/validate_ia_fixture_replay.py`
-- `control/inventory/ia_01_result.json`
-- `control/audits/ia-01-fixture-replay-hardening-v0/`
-- `.aide/queue/IA-01/task.yaml`
+- `runtime/source_observation/internet_archive_live_transport.py`
+- `runtime/source_observation/internet_archive_live_probe.py`
+- `scripts/eureka_ia_live_metadata_probe.py`
+- `scripts/validate_ia_live_metadata_probe.py`
+- `control/inventory/ia_02_result.json`
+- `control/inventory/ia_live_probe_result_summary.json`
+- `control/inventory/ia_live_probe_boundary_report.json`
+- `control/audits/ia-02-local-live-metadata-probe-v0/`
 - `.aide/queue/IA-02/task.yaml`
 
 ## ALLOWED_PATHS
@@ -105,36 +108,38 @@ IA-01 added:
 
 ## IMPLEMENTATION
 
-IA-01 is local fixture replay only. It reads committed fixture files, normalizes
-them into source-observation candidate records, and emits boundary reports. It
-does not add network-capable connector runtime.
+IA-02 is a tiny approved metadata-only live probe. It uses only Python standard
+library networking in the IA-02 live transport/runtime/script, enforces caps and
+redaction, and commits no raw live response bodies.
 
 ## VALIDATION
 
-Required IA-01 focused validation is recorded in
-`control/inventory/ia_01_result.json` and the audit pack. Full discovery remains
-optional for this focused fixture-replay task.
+Required IA-02 focused validation is recorded in
+`control/inventory/ia_02_result.json` and the audit pack. Full discovery remains
+optional for this focused live-probe task.
 
 ## EVIDENCE
 
-- `examples/internet_archive_metadata/`
-- `runtime/source_observation/internet_archive_fixture_replay.py`
-- `control/inventory/ia_fixture_inventory.json`
-- `control/inventory/ia_01_result.json`
-- `control/audits/ia-01-fixture-replay-hardening-v0/`
+- `runtime/source_observation/internet_archive_live_transport.py`
+- `runtime/source_observation/internet_archive_live_probe.py`
+- `control/inventory/ia_live_probe_result_summary.json`
+- `control/inventory/ia_live_probe_boundary_report.json`
+- `control/inventory/ia_02_result.json`
+- `control/audits/ia-02-local-live-metadata-probe-v0/`
 
 ## NON_GOALS
 
-No live IA calls, source probes, source-cache writes, evidence writes,
-candidate/reviewed/master index mutation, public fanout, extraction,
-model/provider calls, downloads, uploads, deployment, production readiness
-claim, public launch readiness claim, or committed local instance state.
+No source-cache writes, evidence writes, candidate/reviewed/master index
+mutation, public fanout, extraction, model/provider calls, downloads, uploads,
+deployment, production readiness claim, public launch readiness claim, or
+committed local instance state. IA-02 is the first task where the approved live
+metadata request and source probe flags are true.
 
 ## ACCEPTANCE
 
-IA-01 acceptance is recorded as pass in `control/inventory/ia_01_result.json`.
-All eight required fixtures replay deterministically, expected records match,
-and no-download proof passes.
+IA-02 is recorded as partial in `control/inventory/ia_02_result.json` because
+the local TLS trust failure prevented a successful IA response. Guardrails,
+dry-run, tests, and redacted boundary reporting pass.
 
 ## OUTPUT_SCHEMA
 
@@ -149,7 +154,7 @@ Compact packet under the normal AIDE token budget.
 
 Recommended next task:
 
-IA-02 — IA Local Live Metadata Probe
+IA-02 — Rerun approved live metadata probe after resolving local TLS trust
 
 Alternative:
 

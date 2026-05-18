@@ -21,3 +21,8 @@ writes, evidence writes, index mutation, or live calls.
 IA-01 fixture replay uses these mappings only against committed fixtures. Its
 normalized records remain source-observation candidates and always require
 review.
+
+IA-02 may use these mappings against an approved, tiny live metadata response,
+but only to produce redacted source-observation candidate previews. The current
+IA-02 live attempt did not obtain a response body, so no live field mapping was
+performed.

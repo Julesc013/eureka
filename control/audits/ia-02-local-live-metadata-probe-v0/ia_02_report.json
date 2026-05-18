@@ -1,0 +1,19 @@
+{
+  "boundary_report_written": true,
+  "dry_run_passed": true,
+  "failure_reason": "ssl_certificate_verify_failed",
+  "ia_00_policy_validated": true,
+  "ia_01_fixture_replay_validated": true,
+  "live_probe_attempted": true,
+  "live_probe_succeeded": false,
+  "live_source_call_performed": true,
+  "normalized_preview_written": true,
+  "raw_response_committed": false,
+  "redacted_summary_written": true,
+  "schema_version": "ia_02_audit_report.v0",
+  "source_cache_write_performed": false,
+  "source_probe_executed": true,
+  "status": "partial",
+  "task": "IA-02",
+  "total_http_requests": 1
+}

@@ -1,0 +1,36 @@
+{
+  "requests": [
+    {
+      "cache_before_repeat": true,
+      "contact_source": "operator_cli_flag_or_default_local_operator",
+      "endpoint_class": "metadata_search_small",
+      "kill_switch_check": "before_request",
+      "max_requests": 2,
+      "max_rows": 1,
+      "query_or_identifier": "sampleproject",
+      "raw_response_commit_forbidden": true,
+      "redaction_required": true,
+      "request_id": "ia02_metadata_search",
+      "retry_after_behavior": "honor_or_stop_without_hammering",
+      "timeout": 10,
+      "user_agent_source": "operator_cli_flag_or_default_eureka_local_pilot"
+    },
+    {
+      "cache_before_repeat": true,
+      "contact_source": "operator_cli_flag_or_default_local_operator",
+      "endpoint_class": "item_metadata_read",
+      "kill_switch_check": "before_request",
+      "max_requests": 1,
+      "max_rows": 0,
+      "query_or_identifier": "identifier_returned_by_metadata_search_or_explicit_operator_identifier",
+      "raw_response_commit_forbidden": true,
+      "redaction_required": true,
+      "request_id": "ia02_item_metadata_if_identifier_available",
+      "retry_after_behavior": "honor_or_stop_without_hammering",
+      "timeout": 10,
+      "user_agent_source": "operator_cli_flag_or_default_eureka_local_pilot"
+    }
+  ],
+  "schema_version": "ia_live_probe_request_plan.v0",
+  "task": "IA-02"
+}

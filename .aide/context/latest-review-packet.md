@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4973 chars, 1244 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5452 chars, 1363 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-01/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-02/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-01-fixture-replay-hardening-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_01_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_01_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_01_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_fixture_boundary_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_fixture_inventory.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_fixture_no_download_proof.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_fixture_normalization_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_fixture_replay_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md` (M; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_FIELD_MAPPING.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_FIXTURE_REPLAY.md` (??; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_POLICY_MATRIX.md` (M; matches active task allowed path)
-- allowed: `examples/internet_archive_metadata` (??; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_fixture_replay.py` (??; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_metadata.py` (??; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_normalization.py` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
+- none
 
 ## Validation Summary
 
@@ -67,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6633
-- approx_tokens: 1659
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
