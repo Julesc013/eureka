@@ -20,6 +20,7 @@
 | Candidate/reviewed/master index mutation | Forbidden in IA-00 |
 | Accepted truth from metadata alone | Forbidden |
 | Production/public readiness claim | Forbidden |
+| Fixture replay | IA-01 local committed fixtures only |
 
 See `control/inventory/ia_metadata_allowed_endpoint_matrix.json` and
 `control/inventory/ia_metadata_forbidden_action_matrix.json` for machine-readable

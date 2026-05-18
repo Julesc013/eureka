@@ -1,0 +1,13 @@
+{
+  "schema_version": "ia_fixture_no_download_proof.v0",
+  "task": "IA-01",
+  "fixture_id": "no_download_proof",
+  "fixture_path": "examples/internet_archive_metadata/no_download_proof.fixture.json",
+  "file_content_included": false,
+  "download_attempted": false,
+  "download_performed": false,
+  "file_metadata_candidates_expected": true,
+  "item_file_fetch_forbidden": true,
+  "live_source_call_performed": false,
+  "source_probe_executed": false
+}

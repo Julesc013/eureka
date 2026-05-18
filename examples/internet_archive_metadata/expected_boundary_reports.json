@@ -1,0 +1,62 @@
+{
+  "schema_version": "ia_expected_boundary_reports.v0",
+  "task": "IA-01",
+  "boundary_reports": [
+    {
+      "fixture_id": "item_file_list",
+      "observation_id": "iaobs_item_file_list",
+      "observation_kind": "item_file_list",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "item_metadata",
+      "observation_id": "iaobs_item_metadata",
+      "observation_kind": "item_metadata",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "large_file_list",
+      "observation_id": "iaobs_large_file_list",
+      "observation_kind": "large_file_list",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "malformed_partial",
+      "observation_id": "iaobs_malformed_partial",
+      "observation_kind": "malformed_partial",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "metadata_search_small",
+      "observation_id": "iaobs_metadata_search_small",
+      "observation_kind": "metadata_search_result",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "missing_item",
+      "observation_id": "iaobs_missing_item",
+      "observation_kind": "missing_item",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "no_download_proof",
+      "observation_id": "iaobs_no_download_proof",
+      "observation_kind": "no_download_proof",
+      "passed": true,
+      "network_imports_detected": false
+    },
+    {
+      "fixture_id": "retry_after_429",
+      "observation_id": "iaobs_retry_after_429",
+      "observation_kind": "retry_after",
+      "passed": true,
+      "network_imports_detected": false
+    }
+  ]
+}

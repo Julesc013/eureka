@@ -54,3 +54,11 @@ IA-00 does not implement runtime connector code. Later gates must prove fixture
 replay, operator approval, User-Agent/contact, rate limits, timeouts, retries,
 Retry-After handling, cache behavior, kill switch enforcement, and review gates
 before any source-cache or evidence integration is considered.
+
+## IA-01 Fixture Replay
+
+IA-01 adds committed local fixtures and a standard-library-only replay lane. It
+parses representative IA metadata shapes, normalizes them into source-
+observation candidate records, and emits boundary reports. It does not add a
+network-capable connector and it does not write source cache, evidence ledger,
+candidate index, reviewed index, or master index state.

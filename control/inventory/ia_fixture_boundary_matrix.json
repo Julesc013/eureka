@@ -1,0 +1,21 @@
+{
+  "schema_version": "ia_fixture_boundary_matrix.v0",
+  "task": "IA-01",
+  "required_false_flags": [
+    "live_source_call_performed",
+    "source_probe_executed",
+    "source_cache_write_performed",
+    "evidence_ledger_write_performed",
+    "candidate_index_mutated",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "network_imports_detected": false,
+  "boundary_reports_expected": "examples/internet_archive_metadata/expected_boundary_reports.json"
+}

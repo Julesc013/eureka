@@ -1,0 +1,60 @@
+{
+  "schema_version": "ia_fixture_inventory.v0",
+  "task": "IA-01",
+  "fixture_root": "examples/internet_archive_metadata",
+  "fixtures": [
+    {
+      "fixture_id": "metadata_search_small",
+      "path": "examples/internet_archive_metadata/metadata_search_small.fixture.json",
+      "fixture_class": "metadata_search_small",
+      "expected_observation_kind": "metadata_search_result"
+    },
+    {
+      "fixture_id": "item_metadata",
+      "path": "examples/internet_archive_metadata/item_metadata.fixture.json",
+      "fixture_class": "item_metadata_read",
+      "expected_observation_kind": "item_metadata"
+    },
+    {
+      "fixture_id": "item_file_list",
+      "path": "examples/internet_archive_metadata/item_file_list.fixture.json",
+      "fixture_class": "item_file_list_metadata_read",
+      "expected_observation_kind": "item_file_list"
+    },
+    {
+      "fixture_id": "missing_item",
+      "path": "examples/internet_archive_metadata/missing_item.fixture.json",
+      "fixture_class": "missing_item",
+      "expected_observation_kind": "missing_item"
+    },
+    {
+      "fixture_id": "malformed_partial",
+      "path": "examples/internet_archive_metadata/malformed_partial.fixture.json",
+      "fixture_class": "malformed_partial",
+      "expected_observation_kind": "malformed_partial"
+    },
+    {
+      "fixture_id": "retry_after_429",
+      "path": "examples/internet_archive_metadata/retry_after_429.fixture.json",
+      "fixture_class": "retry_after_429",
+      "expected_observation_kind": "retry_after"
+    },
+    {
+      "fixture_id": "large_file_list",
+      "path": "examples/internet_archive_metadata/large_file_list.fixture.json",
+      "fixture_class": "large_file_list",
+      "expected_observation_kind": "large_file_list"
+    },
+    {
+      "fixture_id": "no_download_proof",
+      "path": "examples/internet_archive_metadata/no_download_proof.fixture.json",
+      "fixture_class": "no_download_proof",
+      "expected_observation_kind": "no_download_proof"
+    }
+  ],
+  "fixture_count": 8,
+  "fixtures_are_committed_safe_inputs": true,
+  "download_payloads_included": false,
+  "credentials_included": false,
+  "live_source_call_performed": false
+}

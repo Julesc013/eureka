@@ -1,0 +1,39 @@
+{
+  "schema_version": "ia_01_report.v0",
+  "task": "IA-01",
+  "status": "pass",
+  "summary": "Added deterministic Internet Archive metadata fixture replay hardening.",
+  "fixtures": [
+    "metadata_search_small",
+    "item_metadata",
+    "item_file_list",
+    "missing_item",
+    "malformed_partial",
+    "retry_after_429",
+    "large_file_list",
+    "no_download_proof"
+  ],
+  "normalizer_added": true,
+  "fixture_replay_runtime_added": true,
+  "fixture_replay_cli_added": true,
+  "fixture_replay_validator_added": true,
+  "all_fixtures_replay": true,
+  "expected_records_match": true,
+  "no_download_proof_passed": true,
+  "boundaries": {
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "source_cache_write_performed": false,
+    "evidence_ledger_write_performed": false,
+    "candidate_index_mutated": false,
+    "reviewed_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "recommended_next_task": "IA-02 \u2014 IA Local Live Metadata Probe"
+}

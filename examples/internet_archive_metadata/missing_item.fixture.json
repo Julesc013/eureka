@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "missing_item",
+  "fixture_class": "missing_item",
+  "endpoint_class": "item_metadata_read",
+  "http_status": 404,
+  "request": {
+    "identifier": "eureka-fixture-missing-item"
+  },
+  "payload": {
+    "error": "not_found",
+    "message": "Synthetic missing item fixture."
+  },
+  "expected": {
+    "observation_kind": "missing_item",
+    "download_performed": false
+  }
+}

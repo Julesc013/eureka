@@ -1,0 +1,39 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "no_download_proof",
+  "fixture_class": "no_download_proof",
+  "endpoint_class": "item_file_list_metadata_read",
+  "http_status": 200,
+  "request": {
+    "identifier": "eureka-fixture-no-download-proof"
+  },
+  "payload": {
+    "metadata": {
+      "identifier": "eureka-fixture-no-download-proof",
+      "title": "Eureka Fixture No Download Proof Metadata",
+      "mediatype": "software",
+      "collection": [
+        "eureka-fixture-policy"
+      ],
+      "creator": "Eureka Fixture Lab",
+      "date": "2001",
+      "description": "Synthetic proof that replay observes metadata only."
+    },
+    "files": [
+      {
+        "name": "metadata_only_entry.txt",
+        "format": "Text",
+        "size": "256",
+        "md5": "fixture-md5-no-download"
+      }
+    ],
+    "assertions": {
+      "file_content_included": false,
+      "download_attempted": false
+    }
+  },
+  "expected": {
+    "observation_kind": "no_download_proof",
+    "download_performed": false
+  }
+}

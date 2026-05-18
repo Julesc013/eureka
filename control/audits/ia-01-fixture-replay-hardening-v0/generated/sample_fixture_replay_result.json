@@ -1,0 +1,7 @@
+{
+  "schema_version": "ia_fixture_replay_report.v0",
+  "task": "IA-01",
+  "fixture_count": 8,
+  "all_fixtures_replay": true,
+  "forbidden_network_imports_detected": false
+}

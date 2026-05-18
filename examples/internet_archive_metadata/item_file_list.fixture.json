@@ -1,0 +1,43 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "item_file_list",
+  "fixture_class": "item_file_list_metadata_read",
+  "endpoint_class": "item_file_list_metadata_read",
+  "http_status": 200,
+  "request": {
+    "identifier": "eureka-fixture-directx-sdk-2010"
+  },
+  "payload": {
+    "metadata": {
+      "identifier": "eureka-fixture-directx-sdk-2010",
+      "title": "Eureka Fixture DirectX SDK June 2010 Metadata",
+      "mediatype": "software",
+      "collection": [
+        "eureka-fixture-software"
+      ],
+      "creator": "Eureka Fixture Lab",
+      "date": "2010",
+      "description": "Synthetic file-list metadata for source-routing proof."
+    },
+    "files": [
+      {
+        "name": "DXSDK_Jun10_stub.txt",
+        "format": "Text",
+        "size": "2048",
+        "md5": "fixture-md5-dxsdk-stub",
+        "sha1": "fixture-sha1-dxsdk-stub"
+      },
+      {
+        "name": "DXSDK_Jun10_manifest.json",
+        "format": "Metadata",
+        "size": "512",
+        "md5": "fixture-md5-dxsdk-manifest",
+        "sha1": "fixture-sha1-dxsdk-manifest"
+      }
+    ]
+  },
+  "expected": {
+    "observation_kind": "item_file_list",
+    "download_performed": false
+  }
+}

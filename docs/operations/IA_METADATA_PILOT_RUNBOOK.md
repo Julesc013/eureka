@@ -26,6 +26,17 @@ Harden fixture replay before any live request:
 - large file-list fixture
 - no-download proof
 
+Run:
+
+```powershell
+python scripts/eureka_ia_fixture_replay.py --fixture-dir examples/internet_archive_metadata --json
+python scripts/validate_ia_fixture_replay.py
+```
+
+IA-01 output is source-observation candidate material only. It is not source
+truth, and it performs no live calls, downloads, source-cache writes, evidence
+writes, or index mutation.
+
 ## IA-02
 
 Only after IA-01, an operator may approve a tiny local live metadata probe. The

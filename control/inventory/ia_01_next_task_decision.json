@@ -1,0 +1,21 @@
+{
+  "schema_version": "ia_01_next_task_decision.v0",
+  "task": "IA-01",
+  "status": "ready",
+  "recommended_next_task": "IA-02 \u2014 IA Local Live Metadata Probe",
+  "alternative_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "do_not_start_next_task_in_ia_01": true,
+  "why": "IA-01 hardens no-network fixture replay only. IA-02 requires explicit operator approval plus live metadata probe controls before any live call.",
+  "boundaries": {
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "source_cache_write_performed": false,
+    "evidence_ledger_write_performed": false,
+    "candidate_index_mutated": false,
+    "reviewed_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "model_provider_used": false,
+    "deployment_performed": false
+  }
+}

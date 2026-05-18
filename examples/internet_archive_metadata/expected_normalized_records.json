@@ -1,0 +1,110 @@
+{
+  "schema_version": "ia_expected_normalized_records.v0",
+  "task": "IA-01",
+  "records": [
+    {
+      "fixture_id": "item_file_list",
+      "observation_id": "iaobs_item_file_list",
+      "observation_kind": "item_file_list",
+      "file_metadata_count": 2,
+      "risk_flags_include": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "item_metadata",
+      "observation_id": "iaobs_item_metadata",
+      "observation_kind": "item_metadata",
+      "file_metadata_count": 1,
+      "risk_flags_include": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "large_file_list",
+      "observation_id": "iaobs_large_file_list",
+      "observation_kind": "large_file_list",
+      "file_metadata_count": 5,
+      "risk_flags_include": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "malformed_partial",
+      "observation_id": "iaobs_malformed_partial",
+      "observation_kind": "malformed_partial",
+      "file_metadata_count": 1,
+      "risk_flags_include": [
+        "malformed_partial",
+        "metadata_not_truth"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "metadata_search_small",
+      "observation_id": "iaobs_metadata_search_small",
+      "observation_kind": "metadata_search_result",
+      "file_metadata_count": 0,
+      "risk_flags_include": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "missing_item",
+      "observation_id": "iaobs_missing_item",
+      "observation_kind": "missing_item",
+      "file_metadata_count": 0,
+      "risk_flags_include": [
+        "source_miss",
+        "metadata_not_truth"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "no_download_proof",
+      "observation_id": "iaobs_no_download_proof",
+      "observation_kind": "no_download_proof",
+      "file_metadata_count": 1,
+      "risk_flags_include": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    },
+    {
+      "fixture_id": "retry_after_429",
+      "observation_id": "iaobs_retry_after_429",
+      "observation_kind": "retry_after",
+      "file_metadata_count": 0,
+      "risk_flags_include": [
+        "quota_or_rate_limit",
+        "retry_after_required"
+      ],
+      "review_required": true,
+      "accepted_truth": false,
+      "download_performed": false
+    }
+  ]
+}

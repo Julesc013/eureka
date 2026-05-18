@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "retry_after_429",
+  "fixture_class": "retry_after_429",
+  "endpoint_class": "metadata_search_small",
+  "http_status": 429,
+  "headers": {
+    "Retry-After": "60"
+  },
+  "request": {
+    "query": "title:eureka fixture rate limit",
+    "rows": 10,
+    "page": 1
+  },
+  "payload": {
+    "error": "too_many_requests",
+    "message": "Synthetic Retry-After fixture."
+  },
+  "expected": {
+    "observation_kind": "retry_after",
+    "download_performed": false
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "large_file_list",
+  "fixture_class": "large_file_list",
+  "endpoint_class": "item_file_list_metadata_read",
+  "http_status": 200,
+  "request": {
+    "identifier": "eureka-fixture-large-file-list"
+  },
+  "payload": {
+    "metadata": {
+      "identifier": "eureka-fixture-large-file-list",
+      "title": "Eureka Fixture Large File List Metadata",
+      "mediatype": "software",
+      "collection": [
+        "eureka-fixture-software"
+      ],
+      "creator": "Eureka Fixture Lab",
+      "date": "2004",
+      "description": "Synthetic large file-list fixture with bounded committed size."
+    },
+    "files": [
+      {
+        "name": "file_001.txt",
+        "format": "Text",
+        "size": "101",
+        "md5": "fixture-md5-001"
+      },
+      {
+        "name": "file_002.txt",
+        "format": "Text",
+        "size": "102",
+        "md5": "fixture-md5-002"
+      },
+      {
+        "name": "file_003.txt",
+        "format": "Text",
+        "size": "103",
+        "md5": "fixture-md5-003"
+      },
+      {
+        "name": "file_004.txt",
+        "format": "Text",
+        "size": "104",
+        "md5": "fixture-md5-004"
+      },
+      {
+        "name": "file_005.txt",
+        "format": "Text",
+        "size": "105",
+        "md5": "fixture-md5-005"
+      },
+      {
+        "name": "file_006.txt",
+        "format": "Text",
+        "size": "106",
+        "md5": "fixture-md5-006"
+      },
+      {
+        "name": "file_007.txt",
+        "format": "Text",
+        "size": "107",
+        "md5": "fixture-md5-007"
+      },
+      {
+        "name": "file_008.txt",
+        "format": "Text",
+        "size": "108",
+        "md5": "fixture-md5-008"
+      }
+    ]
+  },
+  "expected": {
+    "observation_kind": "large_file_list",
+    "download_performed": false,
+    "file_cap": 5
+  }
+}

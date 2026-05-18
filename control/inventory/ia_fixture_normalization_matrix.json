@@ -1,0 +1,33 @@
+{
+  "schema_version": "ia_fixture_normalization_matrix.v0",
+  "task": "IA-01",
+  "normalized_record_shape": [
+    "observation_id",
+    "fixture_id",
+    "observation_kind",
+    "item_identifier",
+    "title_candidate",
+    "mediatype_candidate",
+    "collection_candidates",
+    "creator_candidate",
+    "date_candidate",
+    "description_candidate",
+    "file_metadata_candidates",
+    "checksum_candidates",
+    "source_locator",
+    "limitations",
+    "risk_flags",
+    "rights_flags",
+    "confidence",
+    "review_required",
+    "accepted_truth",
+    "download_performed",
+    "source_cache_write_performed",
+    "evidence_ledger_write_performed",
+    "index_mutation_performed"
+  ],
+  "review_required": true,
+  "accepted_truth": false,
+  "file_metadata_cap": 5,
+  "records_expected": "examples/internet_archive_metadata/expected_normalized_records.json"
+}

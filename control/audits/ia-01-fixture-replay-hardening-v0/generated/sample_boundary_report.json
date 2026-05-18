@@ -1,0 +1,8 @@
+{
+  "schema_version": "ia_fixture_boundary_report.v0",
+  "fixture_id": "metadata_search_small",
+  "passed": true,
+  "network_imports_detected": false,
+  "live_source_call_performed": false,
+  "download_performed": false
+}

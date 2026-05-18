@@ -1,0 +1,25 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "malformed_partial",
+  "fixture_class": "malformed_partial",
+  "endpoint_class": "item_metadata_read",
+  "http_status": 200,
+  "request": {
+    "identifier": "eureka-fixture-malformed-partial"
+  },
+  "payload": {
+    "metadata": {
+      "title": "Eureka Fixture Partial Metadata",
+      "mediatype": "software"
+    },
+    "files": [
+      {
+        "format": "Unknown"
+      }
+    ]
+  },
+  "expected": {
+    "observation_kind": "malformed_partial",
+    "download_performed": false
+  }
+}

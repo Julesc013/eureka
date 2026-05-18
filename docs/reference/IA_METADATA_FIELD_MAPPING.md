@@ -17,3 +17,7 @@ This reference is a policy mapping, not a runtime connector schema.
 
 All field mappings remain candidates until review. IA-00 performs no source-cache
 writes, evidence writes, index mutation, or live calls.
+
+IA-01 fixture replay uses these mappings only against committed fixtures. Its
+normalized records remain source-observation candidates and always require
+review.

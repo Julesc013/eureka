@@ -1,0 +1,74 @@
+{
+  "schema_version": "ia_fixture_replay_matrix.v0",
+  "task": "IA-01",
+  "rows": [
+    {
+      "fixture_id": "metadata_search_small",
+      "replay_expectation": "normalizes first bounded search result",
+      "must_not_do": [
+        "live call",
+        "download",
+        "source cache write",
+        "index mutation"
+      ]
+    },
+    {
+      "fixture_id": "item_metadata",
+      "replay_expectation": "normalizes exact item metadata",
+      "must_not_do": [
+        "download",
+        "evidence write",
+        "accepted truth"
+      ]
+    },
+    {
+      "fixture_id": "item_file_list",
+      "replay_expectation": "normalizes file-list metadata only",
+      "must_not_do": [
+        "item file fetch",
+        "download",
+        "compatibility truth"
+      ]
+    },
+    {
+      "fixture_id": "missing_item",
+      "replay_expectation": "normalizes source-miss candidate without crashing",
+      "must_not_do": [
+        "invent record",
+        "accepted absence truth"
+      ]
+    },
+    {
+      "fixture_id": "malformed_partial",
+      "replay_expectation": "normalizes partial/invalid state with limitations",
+      "must_not_do": [
+        "exception crash",
+        "accepted truth"
+      ]
+    },
+    {
+      "fixture_id": "retry_after_429",
+      "replay_expectation": "normalizes Retry-After/backoff state",
+      "must_not_do": [
+        "retry live",
+        "source call"
+      ]
+    },
+    {
+      "fixture_id": "large_file_list",
+      "replay_expectation": "normalizes capped file-list metadata",
+      "must_not_do": [
+        "unbounded file expansion",
+        "download"
+      ]
+    },
+    {
+      "fixture_id": "no_download_proof",
+      "replay_expectation": "proves metadata observation without file content",
+      "must_not_do": [
+        "file content fetch",
+        "download"
+      ]
+    }
+  ]
+}

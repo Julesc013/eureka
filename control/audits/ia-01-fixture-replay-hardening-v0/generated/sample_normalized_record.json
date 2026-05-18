@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_normalized_source_observation_candidate.v0",
+  "source_id": "internet_archive_metadata",
+  "observation_id": "iaobs_metadata_search_small",
+  "fixture_id": "metadata_search_small",
+  "observation_kind": "metadata_search_result",
+  "review_required": true,
+  "accepted_truth": false,
+  "download_performed": false
+}

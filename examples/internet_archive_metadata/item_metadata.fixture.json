@@ -1,0 +1,36 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "item_metadata",
+  "fixture_class": "item_metadata_read",
+  "endpoint_class": "item_metadata_read",
+  "http_status": 200,
+  "request": {
+    "identifier": "eureka-fixture-stylewriter-2500-driver"
+  },
+  "payload": {
+    "metadata": {
+      "identifier": "eureka-fixture-stylewriter-2500-driver",
+      "title": "Eureka Fixture StyleWriter 2500 Driver Metadata",
+      "mediatype": "software",
+      "collection": [
+        "eureka-fixture-software"
+      ],
+      "creator": "Eureka Fixture Lab",
+      "date": "1997",
+      "description": "Synthetic item metadata for a future source-routing need."
+    },
+    "files": [
+      {
+        "name": "StyleWriter_2500_Readme.txt",
+        "format": "Text",
+        "size": "1024",
+        "md5": "fixture-md5-readme",
+        "sha1": "fixture-sha1-readme"
+      }
+    ]
+  },
+  "expected": {
+    "observation_kind": "item_metadata",
+    "download_performed": false
+  }
+}

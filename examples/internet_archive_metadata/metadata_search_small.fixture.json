@@ -1,0 +1,58 @@
+{
+  "schema_version": "ia_metadata_fixture.v0",
+  "fixture_id": "metadata_search_small",
+  "fixture_class": "metadata_search_small",
+  "endpoint_class": "metadata_search_small",
+  "http_status": 200,
+  "request": {
+    "query": "title:eureka fixture d-theater",
+    "rows": 2,
+    "page": 1,
+    "fields": [
+      "identifier",
+      "title",
+      "mediatype",
+      "collection",
+      "creator",
+      "date",
+      "description"
+    ]
+  },
+  "payload": {
+    "responseHeader": {
+      "status": 0
+    },
+    "response": {
+      "numFound": 2,
+      "start": 0,
+      "docs": [
+        {
+          "identifier": "eureka-fixture-dtheater-sample",
+          "title": "Eureka Fixture D-Theater Demo Tape Metadata",
+          "mediatype": "movies",
+          "collection": [
+            "eureka-fixture-collection"
+          ],
+          "creator": "Eureka Fixture Lab",
+          "date": "1993",
+          "description": "Synthetic IA metadata fixture for D-Theater source routing."
+        },
+        {
+          "identifier": "eureka-fixture-dtheater-near-miss",
+          "title": "Eureka Fixture D-Theater Near Miss",
+          "mediatype": "movies",
+          "collection": [
+            "eureka-fixture-collection"
+          ],
+          "creator": "Eureka Fixture Lab",
+          "date": "1994",
+          "description": "Synthetic near miss for metadata search replay."
+        }
+      ]
+    }
+  },
+  "expected": {
+    "observation_kind": "metadata_search_result",
+    "download_performed": false
+  }
+}
