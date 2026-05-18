@@ -1,0 +1,8 @@
+{
+  "ia_03_unblocked": false,
+  "reason": "Verified TLS diagnostic still fails locally with ssl_certificate_verify_failed/self_signed_certificate_in_chain and no usable Python default CA file/capath. No insecure bypass was used, and the approved probe was not rerun.",
+  "recommended_next_task": "IA-02-TLS-TRUST-CONTINUE — Repair local Python trust store and rerun approved IA probe",
+  "schema_version": "ia_02_tls_next_task_decision.v0",
+  "syn_alternative": "SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "task": "IA-02-TLS-TRUST-01"
+}

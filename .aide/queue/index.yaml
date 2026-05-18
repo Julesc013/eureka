@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-02 — IA Local Live Metadata Probe
+current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -337,13 +337,22 @@ entries:
     gate: IA-01 completed; explicit operator approval plus User-Agent/contact, rate, timeout, retry, Retry-After, cache, and kill-switch proof required before any live call. Current IA-02 attempt is partial because local TLS trust rejected the connection before an IA HTTP response was available.
     task: .aide/queue/IA-02/task.yaml
     recommended_after: IA-01
-    recommended_next: IA-02
+    recommended_next: IA-02-TLS-TRUST-01
+  - id: IA-02-TLS-TRUST-01
+    title: Diagnose local Python TLS trust and rerun approved IA metadata probe
+    status: pass_with_warnings
+    purpose: Diagnose the local Python TLS trust failure that blocked IA-02 and rerun only if verified TLS succeeds.
+    allowed_scope_summary: TLS diagnostics, validators, docs, inventories, audit evidence, and IA-02 live-probe rerun only if verified TLS passes; no insecure TLS bypass, downloads, source-cache writes, evidence writes, index mutation, extraction, model/provider calls, or deployment.
+    gate: IA-02 partial result exists; TLS verification must remain enabled; no insecure TLS bypass; rerun only after verified TLS diagnostic passes.
+    task: .aide/queue/IA-02-TLS-TRUST-01/task.yaml
+    recommended_after: IA-02
+    recommended_next: SYN-00
   - id: IA-03
     title: IA Source Cache Write Path
     status: blocked
     purpose: Define source-cache write behavior only after a successful approved IA-02 metadata response exists.
     allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
-    gate: IA-02 must have a successful approved live metadata response; no downloads, uploads, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    gate: IA-02 must have a successful approved live metadata response and verified TLS success; no downloads, uploads, evidence writes, index mutation, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-03/task.yaml
     recommended_after: IA-02
     recommended_next: SYN-00

@@ -1,90 +1,43 @@
 # Latest Task Packet
 
+## TASK
+
+IA-02-TLS-TRUST-01 - Diagnose local Python TLS trust and rerun approved IA
+metadata probe.
+
 ## PHASE
 
-IA-02 — IA Local Live Metadata Probe completed as PARTIAL.
+IA-02 TLS trust follow-up completed as `PASS_WITH_WARNINGS`.
 
 ## GOAL
 
-Perform the first tightly bounded Internet Archive live metadata probe under
-the IA-00 policy and IA-01 fixture replay rules.
+Diagnose the local Python TLS trust failure, preserve verified TLS, rerun the
+approved bounded IA metadata probe only if safe, and keep IA-03 blocked until a
+successful verified HTTPS metadata response exists.
 
 ## WHY
 
-IA-02 proves the live-probe guardrails before source-cache, evidence, or index
-integration. The live attempt is source observation material only, never truth.
-
-## RESULT
-
-IA-02 added:
-
-- IA live-probe policy, request plan, and redaction policy
-- stdlib-only bounded IA live transport and probe runtime
-- `scripts/eureka_ia_live_metadata_probe.py`
-- `scripts/validate_ia_live_metadata_probe.py`
-- focused runtime and operation tests
-- IA-02 inventories, docs, and audit evidence
-
-The approved live request was attempted once with `--approve-live`, `rows=1`,
-`max-requests=2`, User-Agent, contact, and boundary outputs. It failed before
-an IA HTTP response was available because local Python TLS verification reported
-`ssl_certificate_verify_failed`.
-
-## CONTEXT_REFS
-
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
-- `runtime/source_observation/internet_archive_live_transport.py`
-- `runtime/source_observation/internet_archive_live_probe.py`
-- `scripts/eureka_ia_live_metadata_probe.py`
-- `scripts/validate_ia_live_metadata_probe.py`
-- `control/inventory/ia_02_result.json`
-- `control/inventory/ia_live_probe_result_summary.json`
-- `control/inventory/ia_live_probe_boundary_report.json`
-- `control/audits/ia-02-local-live-metadata-probe-v0/`
-- `.aide/queue/IA-02/task.yaml`
+IA-02 reached the approved live metadata probe but failed before an Internet
+Archive HTTP response because the local Python TLS verifier could not build a
+trusted chain. The follow-up must diagnose that environment problem without
+weakening TLS, and IA-03 must remain blocked until a successful verified HTTPS
+metadata response exists.
 
 ## ALLOWED_PATHS
 
-- `examples/internet_archive_metadata/**`
-- `runtime/source_observation/internet_archive_metadata.py`
-- `runtime/source_observation/internet_archive_fixture_replay.py`
-- `runtime/source_observation/internet_archive_normalization.py`
+- `runtime/source_observation/internet_archive_live_transport.py`
+- `runtime/source_observation/internet_archive_live_probe.py`
 - `runtime/source_observation/internet_archive_validation.py`
-- `scripts/eureka_ia_fixture_replay.py`
-- `scripts/validate_ia_fixture_replay.py`
-- `scripts/validate_ia_metadata_policy.py`
-- `tests/runtime/test_ia_metadata_fixture_replay.py`
-- `tests/runtime/test_ia_metadata_normalization.py`
-- `tests/runtime/test_ia_metadata_boundary.py`
-- `tests/operations/test_ia_fixture_replay_scripts.py`
-- `control/inventory/ia_01_*.json`
-- `control/inventory/ia_fixture_*.json`
-- `control/policies/ia_metadata_connector_policy.json`
-- `control/policies/ia_source_access_policy.json`
-- `control/policies/ia_user_agent_policy.json`
-- `control/policies/ia_rate_limit_policy.json`
-- `control/policies/ia_kill_switch_policy.json`
-- `control/policies/ia_non_claim_policy.json`
-- `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md`
-- `docs/operations/IA_METADATA_SOURCE_POLICY.md`
-- `docs/operations/IA_METADATA_NON_CLAIMS.md`
-- `docs/operations/IA_METADATA_PILOT_RUNBOOK.md`
-- `docs/reference/IA_METADATA_FIELD_MAPPING.md`
-- `docs/reference/IA_METADATA_FIXTURE_REPLAY.md`
-- `docs/reference/IA_METADATA_POLICY_MATRIX.md`
-- `.aide/queue/IA-01/task.yaml`
-- `.aide/queue/IA-01/**`
-- `.aide/queue/IA-02/**`
-- `.aide/queue/SYN-00/task.yaml`
-- `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
-- `control/audits/ia-01-fixture-replay-hardening-v0/**`
+- `scripts/diagnose_python_tls_trust.py`
+- `scripts/validate_ia_tls_trust.py`
+- `scripts/eureka_ia_live_metadata_probe.py`
+- `scripts/validate_ia_live_metadata_probe.py`
+- `docs/operations/IA_TLS_TRUST_TROUBLESHOOTING.md`
+- `docs/operations/IA_METADATA_LIVE_PROBE_RUNBOOK.md`
+- `docs/reference/IA_METADATA_LIVE_PROBE.md`
+- IA-02 TLS inventories and audit pack under `control/inventory/` and
+  `control/audits/ia-02-tls-trust-01-v0/`
+- AIDE queue/context/report metadata for this task and IA-03 gating.
 
 ## FORBIDDEN_PATHS
 
@@ -93,11 +46,7 @@ an IA HTTP response was available because local Python TLS verification reported
 - `.aide.local/**`
 - `secrets/**`
 - `.env`
-- private local files
-- committed operator tokens
-- committed provider credentials
-- raw prompts
-- raw responses
+- private local files, credentials, raw prompts, and raw responses
 - `site/dist/**`
 - `data/public_index/**`
 - `runtime/connectors/**`
@@ -108,54 +57,95 @@ an IA HTTP response was available because local Python TLS verification reported
 
 ## IMPLEMENTATION
 
-IA-02 is a tiny approved metadata-only live probe. It uses only Python standard
-library networking in the IA-02 live transport/runtime/script, enforces caps and
-redaction, and commits no raw live response bodies.
+Added a verified Python TLS diagnostic and an IA TLS validator. The diagnostic
+uses `ssl.create_default_context()` with hostname checking enabled, reports
+default verify paths, certificate-related environment variables, DNS status,
+and a redacted verified TLS handshake result. The validator rejects insecure TLS
+bypass patterns and confirms IA-03 remains blocked when the local trust chain
+still fails.
 
-## VALIDATION
-
-Required IA-02 focused validation is recorded in
-`control/inventory/ia_02_result.json` and the audit pack. Full discovery remains
-optional for this focused live-probe task.
+No approved IA live probe rerun was performed because the verified TLS
+diagnostic still fails locally.
 
 ## EVIDENCE
 
-- `runtime/source_observation/internet_archive_live_transport.py`
-- `runtime/source_observation/internet_archive_live_probe.py`
-- `control/inventory/ia_live_probe_result_summary.json`
-- `control/inventory/ia_live_probe_boundary_report.json`
+- `control/inventory/ia_02_tls_trust_diagnosis.json`
+- `control/inventory/ia_02_tls_trust_repair_decision.json`
+- `control/inventory/ia_02_tls_trust_result.json`
+- `control/inventory/ia_02_tls_next_task_decision.json`
+- `control/audits/ia-02-tls-trust-01-v0/`
+- `docs/operations/IA_TLS_TRUST_TROUBLESHOOTING.md`
+- `tests/operations/test_ia_tls_trust_diagnostics.py`
+
+## CONTEXT_REFS
+
 - `control/inventory/ia_02_result.json`
-- `control/audits/ia-02-local-live-metadata-probe-v0/`
+- `control/inventory/ia_02_tls_trust_diagnosis.json`
+- `control/inventory/ia_02_tls_trust_repair_decision.json`
+- `control/inventory/ia_02_tls_trust_result.json`
+- `control/inventory/ia_02_tls_next_task_decision.json`
+- `control/audits/ia-02-tls-trust-01-v0/`
+- `.aide/queue/IA-02-TLS-TRUST-01/task.yaml`
+- `.aide/queue/IA-03/task.yaml`
+
+## VALIDATION
+
+Passing focused validation:
+
+- `python scripts/validate_ia_metadata_policy.py`
+- `python scripts/validate_ia_fixture_replay.py`
+- `python scripts/eureka_ia_live_metadata_probe.py --dry-run --json`
+- `python scripts/diagnose_python_tls_trust.py --host archive.org --json`
+- `python scripts/validate_ia_tls_trust.py`
+- `python scripts/validate_ia_live_metadata_probe.py`
+- IA live-probe and TLS focused unittest modules
+- `python scripts/check_architecture_boundaries.py`
+
+Expected pre-commit generated-artifact cleanliness warning:
+
+- new audit generated evidence is untracked until commit.
 
 ## NON_GOALS
 
-No source-cache writes, evidence writes, candidate/reviewed/master index
-mutation, public fanout, extraction, model/provider calls, downloads, uploads,
-deployment, production readiness claim, public launch readiness claim, or
-committed local instance state. IA-02 is the first task where the approved live
-metadata request and source probe flags are true.
+- No TLS verification disabling.
+- No `ssl._create_unverified_context`.
+- No `verify=False` equivalent.
+- No hostname-check bypass.
+- No custom insecure CA bundle.
+- No raw response commit.
+- No broad retry loop.
+- No downloads/uploads.
+- No source-cache, evidence, candidate, reviewed, or master-index mutation.
+- No extraction, model/provider calls, deployment, production readiness claim,
+  or public launch claim.
 
 ## ACCEPTANCE
 
-IA-02 is recorded as partial in `control/inventory/ia_02_result.json` because
-the local TLS trust failure prevented a successful IA response. Guardrails,
-dry-run, tests, and redacted boundary reporting pass.
+Status is `PASS_WITH_WARNINGS`.
+
+- TLS diagnostic exists and runs.
+- TLS validator exists and passes.
+- TLS verification remains enabled.
+- No insecure TLS bypass is used.
+- Issue is classified as `local_python_trust_store`.
+- Operator machine action is required.
+- Live probe rerun was not attempted.
+- IA-03 remains blocked until a successful approved HTTPS metadata response
+  exists.
 
 ## OUTPUT_SCHEMA
 
-Use compact structured final reports with status, summary, validation, boundary
-flags, commits, and next task.
+Final response sections:
+
+- `STATUS`
+- `SUMMARY`
+- `COMMITS`
+- `TLS`
+- `IA_RERUN`
+- `VALIDATION`
+- `BOUNDARIES`
+- `NEXT_TASK`
 
 ## TOKEN_ESTIMATE
 
-Compact packet under the normal AIDE token budget.
-
-## NEXT
-
-Recommended next task:
-
-IA-02 — Rerun approved live metadata probe after resolving local TLS trust
-
-Alternative:
-
-SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+Approximate task packet tokens: 850.

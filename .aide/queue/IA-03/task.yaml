@@ -5,6 +5,7 @@ purpose: Define source-cache write behavior only after a successful approved IA-
 allowed_scope_summary: Source-cache write path policy, contracts, validators, tests, inventories, docs, and audit evidence only when IA-02 has a successful redacted live response and boundary report.
 gate:
   - IA-02 successful approved live metadata probe
+  - IA-02-TLS-TRUST-01 or successor confirms verified TLS succeeds
   - redacted live response summary exists
   - normalized preview exists from live metadata
   - no raw response commit

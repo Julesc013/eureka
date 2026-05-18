@@ -1,0 +1,16 @@
+{
+  "ia_03_unblocked": false,
+  "insecure_tls_bypass_used": false,
+  "live_probe_rerun_attempted": false,
+  "live_probe_rerun_succeeded": false,
+  "operator_machine_action_required": true,
+  "raw_response_committed": false,
+  "safe_repo_repair_applied": false,
+  "schema_version": "ia_02_tls_trust_report.v0",
+  "status": "pass_with_warnings",
+  "task": "IA-02-TLS-TRUST-01",
+  "tls_handshake_status": "fail",
+  "tls_issue_class": "local_python_trust_store",
+  "tls_verification_enabled": true,
+  "total_http_requests": 0
+}

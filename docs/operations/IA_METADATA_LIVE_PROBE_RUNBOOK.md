@@ -33,6 +33,20 @@ Do not bypass certificate verification to force a pass. Fix the local trust
 environment or run the approved probe from a machine with a valid Python TLS
 trust store.
 
+## TLS Trust Diagnosis
+
+Run:
+
+```powershell
+python scripts/diagnose_python_tls_trust.py --host archive.org --json
+python scripts/validate_ia_tls_trust.py
+```
+
+IA-02-TLS-TRUST-01 diagnosed this machine as a local Python trust-store problem:
+verification is enabled, hostname checking is enabled, DNS resolution works, but
+the verified TLS handshake fails with a self-signed chain and Python has no
+usable default CA file/capath. IA-03 remains blocked.
+
 ## Boundaries
 
 The live probe must not:

@@ -1,0 +1,10 @@
+{
+  "ia_03_unblocked": false,
+  "insecure_tls_bypass_used": false,
+  "operator_machine_action_required": true,
+  "rerun_live_probe_allowed": false,
+  "safe_repo_repair_applied": false,
+  "schema_version": "ia_02_tls_trust_repair_decision.v0",
+  "task": "IA-02-TLS-TRUST-01",
+  "tls_issue_class": "local_python_trust_store"
+}

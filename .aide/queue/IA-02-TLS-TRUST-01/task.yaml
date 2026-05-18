@@ -1,0 +1,25 @@
+id: IA-02-TLS-TRUST-01
+title: Diagnose local Python TLS trust and rerun approved IA metadata probe
+status: pass_with_warnings
+purpose: Diagnose the local Python TLS trust failure that blocked IA-02 and rerun only if verified TLS succeeds.
+allowed_scope_summary: TLS diagnostics, validators, docs, inventories, audit evidence, and IA-02 live-probe rerun only if verified TLS passes; no insecure TLS bypass, downloads, source-cache writes, evidence writes, index mutation, extraction, model/provider calls, or deployment.
+gate:
+  - IA-02 partial result exists
+  - TLS verification must remain enabled
+  - no insecure TLS bypass
+  - rerun only after verified TLS diagnostic passes
+recommended_after: IA-02
+recommended_next: SYN-00
+result: control/inventory/ia_02_tls_trust_result.json
+audit: control/audits/ia-02-tls-trust-01-v0/
+completion:
+  status: pass_with_warnings
+  tls_diagnosis_added: true
+  tls_validator_added: true
+  tls_verification_enabled: true
+  insecure_tls_bypass_used: false
+  tls_issue_class: local_python_trust_store
+  operator_machine_action_required: true
+  live_probe_rerun_attempted: false
+  live_probe_rerun_succeeded: false
+  ia_03_unblocked: false

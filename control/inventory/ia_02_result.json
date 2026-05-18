@@ -35,6 +35,8 @@
   "status": "partial",
   "task": "IA-02",
   "tests_added": true,
+  "tls_trust_diagnosed": true,
+  "tls_trust_failure_class": "local_python_trust_store",
   "total_http_requests": 1,
   "upload_performed": false
 }

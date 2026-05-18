@@ -1,0 +1,14 @@
+{
+  "approved_live": false,
+  "dry_run": false,
+  "failure_reason": "tls_diagnostic_failed_before_rerun",
+  "live_probe_rate_limited": false,
+  "metadata_search_rows_requested": 0,
+  "metadata_search_rows_returned": 0,
+  "normalized_preview_count": 0,
+  "probe_status": "not_run",
+  "raw_response_committed": false,
+  "schema_version": "ia_live_probe_redacted_summary.v0",
+  "task": "IA-02-TLS-TRUST-01",
+  "total_http_requests": 0
+}

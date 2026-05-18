@@ -44,6 +44,11 @@ was available.
 That result is partial. No live metadata was normalized into candidate previews
 because no IA response body was obtained.
 
+IA-02-TLS-TRUST-01 then diagnosed the machine TLS state. Python verification and
+hostname checking are enabled, but `archive.org` still fails a verified TLS
+handshake with `self_signed_certificate_in_chain`. The local Python OpenSSL
+default CA file and capath do not exist, and no insecure bypass was used.
+
 ## Handoff
 
 IA-03 must not proceed to source-cache writes until a future approved live probe
