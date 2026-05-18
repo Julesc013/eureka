@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4206 chars, 1052 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3947 chars, 987 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,7 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- unknown: `.aide/context/latest-review-packet.md` (M; does not match active task allowed paths)
+- unknown: `.aide/context/latest-task-packet.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/IA-04/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/IA-05` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/eureka-repo-health.json` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/eureka-repo-health.md` (M; does not match active task allowed paths)
+- unknown: `control/audits/ia-04-evidence-ledger-integration-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_04_input_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_04_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_04_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_boundary_report.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_fixture_write_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_live_preview_write_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_policy_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_record_schema.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ia_evidence_write_plan.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/ia_evidence_ledger_policy.json` (??; does not match active task allowed paths)
+- unknown: `docs/operations/IA_EVIDENCE_LEDGER_RUNBOOK.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; does not match active task allowed paths)
+- unknown: `docs/reference/IA_EVIDENCE_RECORD.md` (??; does not match active task allowed paths)
+- unknown: `docs/reference/IA_SOURCE_CACHE_RECORD.md` (M; does not match active task allowed paths)
+- unknown: `examples/evidence_ledger/internet_archive_metadata` (??; does not match active task allowed paths)
+- allowed: `runtime/source_observation/internet_archive_evidence.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -43,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4251
-- approx_tokens: 1063
+- chars: 6795
+- approx_tokens: 1699
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,44 @@
+{
+  "plan": [
+    {
+      "allowed_inputs": [
+        "ia_source_cache_records_from_fixtures",
+        "ia_source_cache_records_from_live_preview"
+      ],
+      "step_id": "load_source_cache_records"
+    },
+    {
+      "forbidden_outputs": [
+        "accepted_truth",
+        "candidate_index_mutation",
+        "reviewed_index_mutation",
+        "master_index_mutation"
+      ],
+      "step_id": "build_evidence_candidates"
+    },
+    {
+      "step_id": "dry_run",
+      "writes_instance": false
+    },
+    {
+      "requires": [
+        "--apply",
+        "--instance",
+        "--operator-token"
+      ],
+      "step_id": "temp_instance_apply"
+    },
+    {
+      "boundary_checks": [
+        "all_evidence_requires_review",
+        "accepted_truth_created_false",
+        "index_mutation_false",
+        "raw_response_committed_false",
+        "download_performed_false"
+      ],
+      "step_id": "emit_boundary_report"
+    }
+  ],
+  "schema_version": "ia_evidence_write_plan.v0",
+  "task": "IA-04"
+}

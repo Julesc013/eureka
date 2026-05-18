@@ -1,0 +1,522 @@
+{
+  "accepted_truth_created": false,
+  "all_evidence_requires_review": true,
+  "candidate_count": 73,
+  "candidate_index_mutated": false,
+  "claim_kind_counts": {
+    "checksum_metadata_claim_candidate": 5,
+    "collection_claim_candidate": 7,
+    "creator_claim_candidate": 5,
+    "date_claim_candidate": 5,
+    "description_claim_candidate": 8,
+    "file_metadata_claim_candidate": 6,
+    "mediatype_claim_candidate": 8,
+    "relation_claim_candidate": 11,
+    "source_locator_claim_candidate": 10,
+    "title_claim_candidate": 8
+  },
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": false,
+  "evidence_ids": [
+    "iaev_6b9d599e68d63ba4",
+    "iaev_ec518630a912adab",
+    "iaev_1c432bf1a5f83c40",
+    "iaev_f5803eb8571905b4",
+    "iaev_342d3753fdc2c7d6",
+    "iaev_e033900a1acbdd8c",
+    "iaev_3fcce8890bf5f5c6",
+    "iaev_e214299a3878d59c",
+    "iaev_4a39dc74f5bafc1b",
+    "iaev_3a70ed860094c732",
+    "iaev_157ad61c6baab6da",
+    "iaev_f68fca1af5f2aa81",
+    "iaev_90c55021014df176",
+    "iaev_ff9f3f66bdb6125c",
+    "iaev_ae6357bcacd9e25a",
+    "iaev_79665430d7ad709c",
+    "iaev_c54b48f4aa183ee6",
+    "iaev_a706a99df5123bd5",
+    "iaev_976e5cae841c84db",
+    "iaev_2e4597bf2d0205f2",
+    "iaev_8c364b463c33ed9b",
+    "iaev_3a935120fad455e5",
+    "iaev_a342a599a0211a08",
+    "iaev_6d91c63287f7d9c7",
+    "iaev_3629751c04340905",
+    "iaev_220304b424601f3c",
+    "iaev_bcfefdfba989d734",
+    "iaev_7a06c7cef7535a7b",
+    "iaev_46ceee78e9429a6f",
+    "iaev_94dd95c5bc84b603",
+    "iaev_e0174a14adea8df3",
+    "iaev_0178360374d0d58d",
+    "iaev_bc862a54606481de",
+    "iaev_64dcbd31bd4a39de",
+    "iaev_8fe077f498f3c523",
+    "iaev_2f6d5fa64bee4bb3",
+    "iaev_90f029588c97120c",
+    "iaev_a297f63f2d595b0c",
+    "iaev_f93f62c86fd367fc",
+    "iaev_296760a3253cd530",
+    "iaev_26c84b4efff1dc71",
+    "iaev_01960f45b5bcbf17",
+    "iaev_e88b611d7f07fe5a",
+    "iaev_813f11e247d10f88",
+    "iaev_3aa13442c9f9e114",
+    "iaev_8c3fb0ca3c9d558a",
+    "iaev_41c375106d6ae233",
+    "iaev_27beb00a8459b575",
+    "iaev_f11594d83ac319ef",
+    "iaev_5f20b07d08d794bb",
+    "iaev_244f3f40f4b4e155",
+    "iaev_b1e1dbce2bed598d",
+    "iaev_2a5d708879332beb",
+    "iaev_f8c3705d3fc21050",
+    "iaev_a7b77010c7b7765c",
+    "iaev_a28ea6cad45e95f7",
+    "iaev_52c98a85728eb107",
+    "iaev_78cea459fb1d361c",
+    "iaev_cec186a4567f9e54",
+    "iaev_0592b810e0c28fc6",
+    "iaev_f5e8db03b2b996f6",
+    "iaev_0f4c6372808cff0b",
+    "iaev_5541d091e20c5bcd",
+    "iaev_764263872435608b",
+    "iaev_92764c5cbcc65320",
+    "iaev_8deab278d0406b26",
+    "iaev_cf0b62e356700e9b",
+    "iaev_20211833e49b1b62",
+    "iaev_ae814b9c1885f1e2",
+    "iaev_0791b8b130b67d35",
+    "iaev_8bfe4d4d4da0eb3f",
+    "iaev_79dd683dbacc6833",
+    "iaev_09aa75883d835dd8"
+  ],
+  "evidence_ledger_write_performed": true,
+  "extraction_executed": false,
+  "fixture_candidate_count": 60,
+  "fixture_evidence_written_to_temp": true,
+  "live_preview_candidate_count": 13,
+  "live_preview_evidence_written_to_temp": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_evidence_write_report.v0",
+  "status": "pass",
+  "store_result": {
+    "candidate_count": 73,
+    "dry_run": false,
+    "integrity": {
+      "applied_migrations": [
+        {
+          "applied_at": "2026-05-18T14:40:04Z",
+          "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+          "id": "001_initial_evidence_ledger_store",
+          "version": "evidence_ledger_store.v0"
+        }
+      ],
+      "missing_tables": [],
+      "schema_version": "evidence_ledger_store.v0",
+      "sqlite_integrity": "ok",
+      "status": "pass"
+    },
+    "schema_version": "ia_evidence_store_write_result.v0",
+    "summary": {
+      "claim_kind_counts": {
+        "checksum_metadata_claim_candidate": 5,
+        "collection_claim_candidate": 7,
+        "creator_claim_candidate": 5,
+        "date_claim_candidate": 5,
+        "description_claim_candidate": 8,
+        "file_metadata_claim_candidate": 6,
+        "mediatype_claim_candidate": 8,
+        "relation_claim_candidate": 11,
+        "source_locator_claim_candidate": 10,
+        "title_claim_candidate": 8
+      },
+      "conflict_count": 0,
+      "evidence_candidate_count": 73,
+      "evidence_event_count": 73,
+      "review_status_count": 0,
+      "source_cache_link_count": 0,
+      "status_counts": {
+        "needs_review": 73
+      }
+    },
+    "write_applied": true,
+    "writes": [
+      {
+        "record_id": "iaev_6b9d599e68d63ba4",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_ec518630a912adab",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_1c432bf1a5f83c40",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f5803eb8571905b4",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_342d3753fdc2c7d6",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_e033900a1acbdd8c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_3fcce8890bf5f5c6",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_e214299a3878d59c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_4a39dc74f5bafc1b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_3a70ed860094c732",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_157ad61c6baab6da",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f68fca1af5f2aa81",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_90c55021014df176",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_ff9f3f66bdb6125c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_ae6357bcacd9e25a",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_79665430d7ad709c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_c54b48f4aa183ee6",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_a706a99df5123bd5",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_976e5cae841c84db",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_2e4597bf2d0205f2",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_8c364b463c33ed9b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_3a935120fad455e5",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_a342a599a0211a08",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_6d91c63287f7d9c7",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_3629751c04340905",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_220304b424601f3c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_bcfefdfba989d734",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_7a06c7cef7535a7b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_46ceee78e9429a6f",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_94dd95c5bc84b603",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_e0174a14adea8df3",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_0178360374d0d58d",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_bc862a54606481de",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_64dcbd31bd4a39de",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_8fe077f498f3c523",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_2f6d5fa64bee4bb3",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_90f029588c97120c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_a297f63f2d595b0c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f93f62c86fd367fc",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_296760a3253cd530",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_26c84b4efff1dc71",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_01960f45b5bcbf17",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_e88b611d7f07fe5a",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_813f11e247d10f88",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_3aa13442c9f9e114",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_8c3fb0ca3c9d558a",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_41c375106d6ae233",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_27beb00a8459b575",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f11594d83ac319ef",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_5f20b07d08d794bb",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_244f3f40f4b4e155",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_b1e1dbce2bed598d",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_2a5d708879332beb",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f8c3705d3fc21050",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_a7b77010c7b7765c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_a28ea6cad45e95f7",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_52c98a85728eb107",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_78cea459fb1d361c",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_cec186a4567f9e54",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_0592b810e0c28fc6",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_f5e8db03b2b996f6",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_0f4c6372808cff0b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_5541d091e20c5bcd",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_764263872435608b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_92764c5cbcc65320",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_8deab278d0406b26",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_cf0b62e356700e9b",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_20211833e49b1b62",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_ae814b9c1885f1e2",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_0791b8b130b67d35",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_8bfe4d4d4da0eb3f",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_79dd683dbacc6833",
+        "status": "stored",
+        "table": "evidence_candidates"
+      },
+      {
+        "record_id": "iaev_09aa75883d835dd8",
+        "status": "stored",
+        "table": "evidence_candidates"
+      }
+    ]
+  },
+  "task": "IA-04",
+  "upload_performed": false,
+  "write_scope": "temp_explicit_instance_only"
+}

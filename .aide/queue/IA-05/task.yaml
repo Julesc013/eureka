@@ -1,0 +1,15 @@
+id: IA-05
+title: IA Candidate Index Integration
+status: queued
+purpose: Define candidate-index integration after IA metadata evidence candidates exist and remain review-required.
+allowed_scope_summary: IA candidate-index policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
+gate:
+  - IA-04 completed
+  - evidence candidates written only to a temp explicit instance
+  - all evidence candidates require review
+  - no accepted truth
+  - no reviewed or master index mutation
+  - no downloads or uploads
+  - no extraction, model/provider calls, deployment, production readiness, or public launch claim
+recommended_after: IA-04
+recommended_next: SYN-00

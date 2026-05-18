@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-04 — IA Evidence Ledger Integration
+current_recommended_task: IA-05 — IA Candidate Index Integration
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -367,12 +367,21 @@ entries:
     recommended_next: IA-04
   - id: IA-04
     title: IA Evidence Ledger Integration
-    status: queued
+    status: completed
     purpose: Define evidence-ledger integration after IA metadata source-cache records are written and validated.
     allowed_scope_summary: IA evidence candidate policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
     gate: IA-03 completed with source-cache records written only to a temp explicit instance; no reviewed/master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-04/task.yaml
     recommended_after: IA-03
+    recommended_next: IA-05
+  - id: IA-05
+    title: IA Candidate Index Integration
+    status: queued
+    purpose: Define candidate-index integration after IA evidence candidates exist and remain review-required.
+    allowed_scope_summary: IA candidate-index policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
+    gate: IA-04 completed with evidence candidates written only to a temp explicit instance; no reviewed/master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-05/task.yaml
+    recommended_after: IA-04
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA

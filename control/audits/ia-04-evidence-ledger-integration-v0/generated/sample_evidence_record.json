@@ -1,0 +1,14 @@
+{
+  "accepted_truth": false,
+  "claim_id": "iaclaim_328e662f9a07ce52",
+  "claim_kind": "title_claim_candidate",
+  "claim_value": "Eureka Fixture DirectX SDK June 2010 Metadata",
+  "evidence_id": "iaev_6b9d599e68d63ba4",
+  "observation_id": "iaobs_item_file_list",
+  "raw_response_committed": false,
+  "review_required": true,
+  "reviewer_decision": "pending",
+  "schema_version": "ia_evidence_candidate.v0",
+  "source_cache_record_id": "iasc_d70a6f39da5837c6",
+  "source_id": "internet_archive_metadata"
+}

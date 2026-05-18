@@ -1,6 +1,6 @@
 id: IA-04
 title: IA Evidence Ledger Integration
-status: queued
+status: completed
 purpose: Define evidence-ledger integration after IA metadata source-cache records are written and validated.
 allowed_scope_summary: IA evidence candidate policy, mapping, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -11,4 +11,4 @@ gate:
   - no downloads or uploads
   - no extraction, model/provider calls, deployment, production readiness, or public launch claim
 recommended_after: IA-03
-recommended_next: SYN-00
+recommended_next: IA-05

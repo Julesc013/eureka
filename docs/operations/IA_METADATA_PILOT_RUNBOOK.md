@@ -81,9 +81,25 @@ python scripts/eureka_ia_source_cache_write.py --instance ..\instances\default -
 
 IA-03 source-cache records are not evidence and are not reviewed/indexed truth.
 
+## IA-04
+
+IA-04 converts IA source-cache records into evidence-ledger candidates. The
+write path defaults to dry-run and may write only to an explicit temporary or
+local instance with `--apply` and a configured operator token.
+
+Run:
+
+```powershell
+python scripts/validate_ia_evidence_ledger_integration.py
+python scripts/eureka_ia_evidence_ledger_write.py --instance ..\instances\default --operator-token local-dev-token --from-source-cache --dry-run --json
+```
+
+IA-04 evidence candidates require review and are not accepted truth. Candidate,
+reviewed, and master indexes remain untouched.
+
 ## Later Gates
 
-IA-04 may define evidence candidates. IA-05 through IA-07 may define candidate,
-review, and reviewed local index integration.
+IA-05 through IA-07 may define candidate, review, and reviewed local index
+integration.
 
 No gate may convert live metadata directly into public truth.

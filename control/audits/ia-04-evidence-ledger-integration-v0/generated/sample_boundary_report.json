@@ -1,0 +1,14 @@
+{
+  "accepted_truth_created": false,
+  "candidate_index_mutated": false,
+  "download_performed": false,
+  "evidence_ledger_write_performed": true,
+  "evidence_ledger_write_scope": "temp_explicit_instance_only",
+  "master_index_mutated": false,
+  "operator_instance_mutated": false,
+  "passed": true,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_evidence_boundary_report.v0",
+  "task": "IA-04"
+}

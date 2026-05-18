@@ -119,6 +119,16 @@ def build_ia_source_cache_record(
             normalized_record.get("collection_candidate_count", len(normalized_record.get("collection_candidates", []) or []))
             or 0
         ),
+        "creator_candidate": str(normalized_record.get("creator_candidate", "")),
+        "creator_candidate_present": bool(
+            normalized_record.get("creator_candidate") or normalized_record.get("creator_candidate_present", False)
+        ),
+        "date_candidate": str(normalized_record.get("date_candidate", "")),
+        "date_candidate_present": bool(normalized_record.get("date_candidate") or normalized_record.get("date_candidate_present", False)),
+        "description_candidate": str(normalized_record.get("description_candidate", "")),
+        "description_candidate_present": bool(
+            normalized_record.get("description_candidate") or normalized_record.get("description_candidate_present", False)
+        ),
         "file_metadata_summary": file_summary,
         "checksum_summary": checksum_summary,
         "limitation_flags": list(normalized_record.get("limitations", []) or []),
@@ -411,6 +421,9 @@ def _storage_payload(record: Mapping[str, Any]) -> dict[str, Any]:
             "title_present": bool(record.get("title_candidate_present", False)),
             "mediatype": str(record.get("mediatype_candidate", "")),
             "collection_count": int(record.get("collection_candidate_count", 0) or 0),
+            "creator_present": bool(record.get("creator_candidate_present", False)),
+            "date_present": bool(record.get("date_candidate_present", False)),
+            "description_present": bool(record.get("description_candidate_present", False)),
             "file_metadata_count": int((record.get("file_metadata_summary", {}) or {}).get("count", 0) or 0),
             "checksum_count": int((record.get("checksum_summary", {}) or {}).get("count", 0) or 0),
         },
@@ -469,6 +482,11 @@ def _normalized_summary(record: Mapping[str, Any]) -> dict[str, Any]:
         "mediatype_candidate": str(record.get("mediatype_candidate", "")),
         "collection_candidate_count": int(
             record.get("collection_candidate_count", len(record.get("collection_candidates", []) or [])) or 0
+        ),
+        "creator_candidate_present": bool(record.get("creator_candidate") or record.get("creator_candidate_present", False)),
+        "date_candidate_present": bool(record.get("date_candidate") or record.get("date_candidate_present", False)),
+        "description_candidate_present": bool(
+            record.get("description_candidate") or record.get("description_candidate_present", False)
         ),
         "file_metadata_candidate_count": int(
             record.get("file_metadata_candidate_count", len(record.get("file_metadata_candidates", []) or [])) or 0

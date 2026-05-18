@@ -31,3 +31,10 @@ Required invariants:
 
 The generic durable cache entry stores a sanitized payload so reserved public
 truth vocabulary is not embedded in the shared source-cache payload.
+
+## IA-04 Handoff
+
+IA-04 consumes these source-cache records to build evidence-ledger candidates.
+The source-cache record remains an observation, and the evidence record remains
+a claim candidate. This handoff does not accept evidence, rebuild an index, or
+promote IA metadata to reviewed local truth.

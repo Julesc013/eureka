@@ -1,0 +1,12 @@
+{
+  "accepted_truth_created": false,
+  "all_evidence_requires_review": true,
+  "candidate_count": 13,
+  "evidence_ledger_write_performed": true,
+  "evidence_ledger_write_scope": "temp_explicit_instance_only",
+  "live_preview_evidence_written_to_temp": true,
+  "raw_response_committed": false,
+  "schema_version": "ia_evidence_live_preview_write_result.v0",
+  "source_kind": "ia_live_probe_preview",
+  "task": "IA-04"
+}

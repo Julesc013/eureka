@@ -1,0 +1,36 @@
+{
+  "policy_rows": [
+    {
+      "assertion": "Evidence writes are enabled only for IA-04 local temp or explicit instances.",
+      "enabled": true,
+      "policy_field": "evidence_ledger_writes_enabled_for_IA_04"
+    },
+    {
+      "assertion": "Dry-run is the default behavior.",
+      "enabled": true,
+      "policy_field": "dry_run_default"
+    },
+    {
+      "assertion": "Apply requires an explicit flag and operator token.",
+      "enabled": true,
+      "policy_field": "explicit_apply_required"
+    },
+    {
+      "assertion": "Evidence candidates require review and are not accepted truth.",
+      "enabled": false,
+      "policy_field": "accepted_truth_enabled"
+    },
+    {
+      "assertion": "Candidate, reviewed, and master index mutation remain forbidden.",
+      "enabled": false,
+      "policy_field": "candidate_index_mutation_enabled"
+    },
+    {
+      "assertion": "Downloads, extraction, model providers, and deployment remain disabled.",
+      "enabled": false,
+      "policy_field": "download_install_execute_enabled"
+    }
+  ],
+  "schema_version": "ia_evidence_policy_matrix.v0",
+  "task": "IA-04"
+}

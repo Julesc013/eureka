@@ -1,0 +1,71 @@
+{
+  "candidate_count": 73,
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "candidate_index_mutation_performed": false,
+      "claim_id": "iaclaim_328e662f9a07ce52",
+      "claim_kind": "title_claim_candidate",
+      "claim_scope": "metadata_field:title",
+      "claim_subject": "ia:a6e90399ed34ab09",
+      "claim_value": "Eureka Fixture DirectX SDK June 2010 Metadata",
+      "claim_value_normalized": "eureka fixture directx sdk june 2010 metadata",
+      "confidence": 0.6,
+      "created_at": "2026-05-18T00:00:00Z",
+      "download_performed": false,
+      "evidence_id": "iaev_6b9d599e68d63ba4",
+      "observation_id": "iaobs_item_file_list",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "fixture_id": "item_file_list",
+        "live_probe_id": "",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "raw_response_committed": false,
+        "request_policy_id": "ia_source_cache_policy.v0",
+        "source_cache_record_id": "iasc_d70a6f39da5837c6",
+        "source_kind": "ia_fixture_replay"
+      },
+      "raw_response_committed": false,
+      "review_required": true,
+      "reviewer_decision": "pending",
+      "schema_version": "ia_evidence_candidate.v0",
+      "source_cache_record_id": "iasc_d70a6f39da5837c6",
+      "source_id": "internet_archive_metadata"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_index_mutation_performed": false,
+      "claim_id": "iaclaim_9480dcc43622d39c",
+      "claim_kind": "title_claim_candidate",
+      "claim_scope": "metadata_field:title",
+      "claim_subject": "ia:1b18e0c3ed14344e",
+      "claim_value": "title metadata present",
+      "claim_value_normalized": "title metadata present",
+      "confidence": 0.55,
+      "created_at": "2026-05-18T00:00:00Z",
+      "download_performed": false,
+      "evidence_id": "iaev_f5e8db03b2b996f6",
+      "observation_id": "iaobs_live_metadata_search_small",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "fixture_id": "live_metadata_search_small",
+        "live_probe_id": "ia02_tls_continue_verified_probe",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "raw_response_committed": false,
+        "request_policy_id": "ia_source_cache_policy.v0",
+        "source_cache_record_id": "iasc_20f8f95fdcf7ace3",
+        "source_kind": "ia_live_probe_preview"
+      },
+      "raw_response_committed": false,
+      "review_required": true,
+      "reviewer_decision": "pending",
+      "schema_version": "ia_evidence_candidate.v0",
+      "source_cache_record_id": "iasc_20f8f95fdcf7ace3",
+      "source_id": "internet_archive_metadata"
+    }
+  ],
+  "schema_version": "ia_expected_evidence_candidates.v0",
+  "task": "IA-04"
+}

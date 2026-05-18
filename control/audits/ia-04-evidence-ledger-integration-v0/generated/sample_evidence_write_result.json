@@ -1,0 +1,11 @@
+{
+  "accepted_truth_created": false,
+  "all_evidence_requires_review": true,
+  "candidate_count": 73,
+  "evidence_ledger_write_performed": true,
+  "fixture_candidate_count": 60,
+  "live_preview_candidate_count": 13,
+  "schema_version": "ia_evidence_write_report.v0",
+  "task": "IA-04",
+  "write_scope": "temp_explicit_instance_only"
+}
