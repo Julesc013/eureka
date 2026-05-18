@@ -43,3 +43,7 @@ the explicit boundary booleans for operator review.
 IA-05 consumes evidence candidates to build provisional candidate-index records.
 The candidate remains review-required and cannot create accepted truth, reviewed
 records, reviewed-index mutations, or master-index mutations.
+
+IA-06 consumes those provisional candidates for review queue and promotion
+preview dry-run only. It does not change evidence candidates into reviewed
+truth.

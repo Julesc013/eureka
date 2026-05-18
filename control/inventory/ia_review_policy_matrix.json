@@ -1,0 +1,23 @@
+{
+  "accepted_truth_enabled": false,
+  "allowed_decisions": [
+    "approve_for_reviewed_index_dry_run",
+    "reject_candidate",
+    "needs_more_evidence",
+    "mark_near_miss",
+    "mark_duplicate",
+    "mark_policy_blocked",
+    "mark_rights_risk",
+    "mark_safety_risk"
+  ],
+  "dry_run_default": true,
+  "explicit_apply_required": true,
+  "master_index_mutation_enabled": false,
+  "operator_instance_mutation_default": false,
+  "promotion_preview_only": true,
+  "review_queue_write_scope": "temp_or_explicit_local_instance_only",
+  "review_queue_writes_enabled_for_IA_06": true,
+  "reviewed_index_mutation_enabled": false,
+  "schema_version": "ia_review_policy_matrix.v0",
+  "task": "IA-06"
+}

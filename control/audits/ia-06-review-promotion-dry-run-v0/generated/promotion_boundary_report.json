@@ -1,0 +1,22 @@
+{
+  "accepted_truth_created": false,
+  "all_promotion_previews_preview_only": true,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "instance_state_committed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "passed": true,
+  "preview_only": true,
+  "production_readiness_claimed": false,
+  "promotion_previews_created": true,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_promotion_boundary_report.v0",
+  "task": "IA-06",
+  "upload_performed": false,
+  "violations": []
+}

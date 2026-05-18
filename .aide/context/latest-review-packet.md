@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6643 chars, 1661 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5519 chars, 1380 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,48 +35,40 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-05/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-06` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-06/task.yaml` (M; matches active task allowed path)
+- unknown: `.aide/queue/IA-07` (??; does not match active task allowed paths)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-05-candidate-index-integration-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_05_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_05_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_05_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_fixture_write_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_live_preview_write_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_policy_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_record_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_candidate_write_plan.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_candidate_index_policy.json` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_CANDIDATE_INDEX_RUNBOOK.md` (??; matches active task allowed path)
+- allowed: `control/audits/ia-06-review-promotion-dry-run-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_06_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_06_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_06_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_promotion_dry_run_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_promotion_preview_schema.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_decision_schema.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_fixture_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_item_schema.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_live_preview_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_policy_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_promotion_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_review_queue_write_plan.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_promotion_dry_run_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_review_policy.json` (??; matches active task allowed path)
 - allowed: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_CANDIDATE_RECORD.md` (??; matches active task allowed path)
-- allowed: `docs/reference/IA_EVIDENCE_RECORD.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_METADATA_FIELD_MAPPING.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_SOURCE_CACHE_RECORD.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
+- allowed: `docs/operations/IA_REVIEW_PROMOTION_DRY_RUN.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
 
 ## Validation Summary
 
-- IA-00 policy validator: PASS
-- IA-01 fixture replay validator: PASS
-- IA-02 live probe validator: PASS
-- IA-03 source-cache validator: PASS
-- IA-04 evidence validator: PASS
-- IA-05 candidate validator: PASS
-- IA candidate focused tests: PASS
-- architecture boundary check: PASS
-- AIDE verify: PASS
+- validation evidence not found
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6591
-- approx_tokens: 1648
+- chars: 6617
+- approx_tokens: 1655
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

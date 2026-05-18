@@ -1,0 +1,31 @@
+{
+  "accepted_inputs": [
+    "ia_candidate_records_from_fixtures",
+    "ia_candidate_records_from_live_preview"
+  ],
+  "accepted_truth_enabled": false,
+  "allowed_decisions": [
+    "approve_for_reviewed_index_dry_run",
+    "reject_candidate",
+    "needs_more_evidence",
+    "mark_near_miss",
+    "mark_duplicate",
+    "mark_policy_blocked",
+    "mark_rights_risk",
+    "mark_safety_risk"
+  ],
+  "allowed_write_scope": "temp_or_explicit_local_instance_only",
+  "dry_run_default": true,
+  "explicit_apply_required": true,
+  "master_index_mutation_enabled": false,
+  "operator_instance_mutation_default": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_response_write_forbidden": true,
+  "review_queue_writes_enabled_for_IA_06": true,
+  "review_required": true,
+  "reviewed_index_mutation_enabled": false,
+  "schema_version": "ia_review_policy.v0",
+  "source_id": "internet_archive_metadata",
+  "task": "IA-06"
+}

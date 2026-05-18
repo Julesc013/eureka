@@ -54,3 +54,9 @@ Required invariants:
 
 Candidate records retain source-cache and evidence provenance so future review
 can trace every provisional candidate back to the source observation path.
+
+## IA-06 Handoff
+
+IA-06 consumes candidate records to build local review queue items and promotion
+previews. The candidate remains provisional until a later reviewed-index rebuild
+gate explicitly writes reviewed records.

@@ -1,0 +1,15 @@
+{
+  "accepted_truth_enabled": false,
+  "master_index_write_enabled": false,
+  "preserve_limitations_required": true,
+  "preserve_provenance_required": true,
+  "preserve_uncertainty_required": true,
+  "preview_only": true,
+  "production_readiness_claimed": false,
+  "promotion_dry_run_enabled": true,
+  "public_launch_readiness_claimed": false,
+  "review_decision_required": true,
+  "reviewed_index_write_enabled": false,
+  "schema_version": "ia_promotion_dry_run_policy.v0",
+  "task": "IA-06"
+}

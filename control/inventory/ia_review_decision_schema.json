@@ -1,0 +1,32 @@
+{
+  "allowed_decisions": [
+    "approve_for_reviewed_index_dry_run",
+    "reject_candidate",
+    "needs_more_evidence",
+    "mark_near_miss",
+    "mark_duplicate",
+    "mark_policy_blocked",
+    "mark_rights_risk",
+    "mark_safety_risk"
+  ],
+  "invariants": {
+    "accepted_truth": false,
+    "master_index_mutation_performed": false,
+    "reviewed_index_mutation_performed": false
+  },
+  "required_fields": [
+    "review_decision_id",
+    "review_item_id",
+    "candidate_id",
+    "decision",
+    "rationale",
+    "reviewer_kind",
+    "creates_promotion_preview",
+    "accepted_truth",
+    "reviewed_index_mutation_performed",
+    "master_index_mutation_performed",
+    "created_at"
+  ],
+  "schema_version": "ia_review_decision_schema.v0",
+  "task": "IA-06"
+}

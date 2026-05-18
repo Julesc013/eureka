@@ -1,0 +1,9 @@
+{
+  "alternatives": [
+    "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA"
+  ],
+  "do_not_start_next_task": true,
+  "recommended_next_task": "IA-07 \u2014 IA Reviewed Local Index Rebuild",
+  "schema_version": "ia_06_next_task_decision.v0",
+  "task": "IA-06"
+}

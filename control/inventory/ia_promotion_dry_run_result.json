@@ -1,0 +1,12 @@
+{
+  "accepted_truth_created": false,
+  "all_promotion_previews_preview_only": true,
+  "master_index_mutated": false,
+  "promotion_preview_count": 39,
+  "promotion_previews_created": true,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_promotion_dry_run_result.v0",
+  "status": "pass",
+  "task": "IA-06"
+}

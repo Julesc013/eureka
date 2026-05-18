@@ -1,0 +1,13 @@
+{
+  "accepted_truth": false,
+  "candidate_id": "iacand_sample",
+  "master_index_write_performed": false,
+  "preview_only": true,
+  "promotion_preview_id": "iaprv_sample",
+  "proposed_reviewed_record_id": "iarprev_sample",
+  "review_decision_id": "iard_sample",
+  "review_required": true,
+  "reviewed_index_write_performed": false,
+  "schema_version": "ia_promotion_preview.v0",
+  "source_id": "internet_archive_metadata"
+}

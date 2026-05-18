@@ -1,0 +1,23 @@
+{
+  "accepted_truth_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": false,
+  "extraction_executed": false,
+  "instance_state_committed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "review_queue_mutated": true,
+  "review_queue_write_scope": "temp_explicit_instance_only",
+  "reviewed_index_mutated": false,
+  "schema_version": "ia_review_promotion_boundary_report.v0",
+  "task": "IA-06",
+  "upload_performed": false,
+  "violations": [],
+  "write_scope": "temp_explicit_instance_only"
+}

@@ -44,3 +44,9 @@ promote IA metadata to reviewed local truth.
 IA-05 consumes IA evidence candidates derived from source-cache records to build
 provisional candidate-index records. The source-cache record remains an
 observation and the candidate record remains unreviewed.
+
+## IA-06 Handoff
+
+IA-06 keeps source-cache provenance traceable in review queue items and
+promotion previews. It does not modify source-cache records or promote them to
+truth.

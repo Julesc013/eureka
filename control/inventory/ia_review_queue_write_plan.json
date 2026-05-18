@@ -1,0 +1,17 @@
+{
+  "candidate_inputs": [
+    "ia_candidate_records_from_fixtures",
+    "ia_candidate_records_from_live_preview"
+  ],
+  "default_decision_for_smoke": "approve_for_reviewed_index_dry_run",
+  "dry_run_default": true,
+  "evidence_index_setup_scope": "temp_explicit_instance_only",
+  "explicit_apply_required": true,
+  "operator_instance_mutation_default": false,
+  "promotion_dry_run_after_review_queue": true,
+  "review_queue_apply_scope": "temp_explicit_instance_only",
+  "schema_version": "ia_review_queue_write_plan.v0",
+  "task": "IA-06",
+  "writes_reviewed_index": false,
+  "writes_master_index": false
+}

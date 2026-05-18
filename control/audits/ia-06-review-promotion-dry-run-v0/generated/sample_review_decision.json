@@ -1,0 +1,12 @@
+{
+  "accepted_truth": false,
+  "candidate_id": "iacand_sample",
+  "creates_promotion_preview": true,
+  "decision": "approve_for_reviewed_index_dry_run",
+  "master_index_mutation_performed": false,
+  "rationale": "Sample IA decision creates a preview only.",
+  "review_decision_id": "iard_sample",
+  "review_item_id": "iarv_sample",
+  "reviewed_index_mutation_performed": false,
+  "schema_version": "ia_review_decision.v0"
+}

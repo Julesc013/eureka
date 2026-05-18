@@ -1,0 +1,35 @@
+{
+  "invariants": {
+    "accepted_truth": false,
+    "master_index_mutation_performed": false,
+    "raw_response_committed": false,
+    "review_required": true,
+    "reviewed_index_mutation_performed": false
+  },
+  "required_fields": [
+    "review_item_id",
+    "source_id",
+    "candidate_id",
+    "candidate_kind",
+    "evidence_ids",
+    "source_cache_record_ids",
+    "observation_ids",
+    "title",
+    "summary",
+    "source_locator",
+    "provenance",
+    "uncertainty",
+    "limitations",
+    "risk_flags",
+    "rights_flags",
+    "suggested_decision",
+    "review_required",
+    "accepted_truth",
+    "reviewed_index_mutation_performed",
+    "master_index_mutation_performed",
+    "raw_response_committed",
+    "created_at"
+  ],
+  "schema_version": "ia_review_item_schema.v0",
+  "task": "IA-06"
+}

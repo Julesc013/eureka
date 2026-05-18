@@ -1,0 +1,32 @@
+{
+  "invariants": {
+    "accepted_truth": false,
+    "master_index_write_performed": false,
+    "preview_only": true,
+    "review_required": true,
+    "reviewed_index_write_performed": false
+  },
+  "required_fields": [
+    "promotion_preview_id",
+    "review_decision_id",
+    "candidate_id",
+    "proposed_reviewed_record_id",
+    "proposed_title",
+    "proposed_summary",
+    "source_locator",
+    "evidence_ids",
+    "source_cache_record_ids",
+    "provenance",
+    "uncertainty",
+    "limitations",
+    "rights_flags",
+    "risk_flags",
+    "review_required",
+    "preview_only",
+    "reviewed_index_write_performed",
+    "master_index_write_performed",
+    "accepted_truth"
+  ],
+  "schema_version": "ia_promotion_preview_schema.v0",
+  "task": "IA-06"
+}

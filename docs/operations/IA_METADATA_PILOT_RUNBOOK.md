@@ -114,8 +114,24 @@ IA-05 candidates are searchable provisional records for future review. They are
 not reviewed records, not accepted truth, and do not mutate reviewed or master
 indexes.
 
+## IA-06
+
+IA-06 loads provisional IA candidate records into a review queue and records
+local review decisions. The temp-instance proof uses
+`approve_for_reviewed_index_dry_run` to create promotion previews only.
+
+Run:
+
+```powershell
+python scripts/validate_ia_review_promotion_dry_run.py
+python scripts/eureka_ia_review_queue.py --instance ..\instances\default --from-candidate-index --decision approve_for_reviewed_index_dry_run --dry-run --json
+python scripts/eureka_ia_promotion_dry_run.py --from-review-decisions --from-review-report <review-report.json> --json
+```
+
+IA-06 does not write the reviewed index or master index. Promotion previews are
+not accepted truth and do not create final reviewed records.
+
 ## Later Gates
 
-IA-06 and IA-07 may define review dry-run and reviewed local index integration.
-
-No gate may convert live metadata directly into public truth.
+IA-07 may define a reviewed local index rebuild. No gate may convert live
+metadata directly into public truth.

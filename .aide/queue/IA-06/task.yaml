@@ -1,6 +1,6 @@
 id: IA-06
 title: IA Review/Promotion Dry-Run
-status: queued
+status: completed
 purpose: Define review and promotion dry-run behavior after IA provisional candidate-index records exist.
 allowed_scope_summary: IA review/promotion dry-run policy, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -12,4 +12,4 @@ gate:
   - no downloads or uploads
   - no extraction, model/provider calls, deployment, production readiness, or public launch claim
 recommended_after: IA-05
-recommended_next: SYN-00
+recommended_next: IA-07

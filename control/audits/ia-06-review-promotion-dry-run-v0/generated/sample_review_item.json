@@ -1,0 +1,18 @@
+{
+  "accepted_truth": false,
+  "candidate_id": "iacand_sample",
+  "candidate_kind": "ia_item_candidate",
+  "evidence_ids": [
+    "iaev_sample"
+  ],
+  "master_index_mutation_performed": false,
+  "review_item_id": "iarv_sample",
+  "review_required": true,
+  "reviewed_index_mutation_performed": false,
+  "schema_version": "ia_review_item.v0",
+  "source_cache_record_ids": [
+    "iasc_sample"
+  ],
+  "source_id": "internet_archive_metadata",
+  "suggested_decision": "approve_for_reviewed_index_dry_run"
+}
